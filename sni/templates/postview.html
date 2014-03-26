@@ -1,0 +1,34 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="text-center">
+    <a href="{{url_for('posts')}}">All Posts</a>
+    <br>
+    {% if prev != None %}
+  	<a href="{{url_for('postview',postnum=post['id']-1,source=post['source'])}}">Previous</a> |
+  	{% endif %}
+  	<a href="{{url_for('forumposts', source=post['source'])}}">Back</a>
+  	{% if next != None %}
+  	| <a href="{{url_for('postview',postnum=post['id']+1,source=post['source'])}}">Next</a>
+  	{% endif %}</div>
+	<h3>{{post['name']}}</h3>
+  {% if post['source'] == "bitcointalk" %}
+  <h4>Bitcointalk</h4>
+  {% elif post['source'] == "p2pfoundation" %}
+  <h4>P2P Foundation</h4>
+  {% endif %}
+	<h5><em>{{post['date']}} UTC</em> - <a href="{{post['url']}}">Original Post</a></h5>
+  {{post['text']|safe}}
+	<br><br>
+	<div class="text-center">{% if prev != None %}
+  	<a href="{{url_for('postview',postnum=post['id']-1,source=post['source'])}}">Previous</a> |
+  	{% endif %}
+  	<a href="{{url_for('posts')}}">Back</a>
+  	{% if next != None %}
+  	| <a href="{{url_for('postview',postnum=post['id']+1,source=post['source'])}}">Next</a>
+        {% endif %}
+    <br>
+    <a href="{{url_for('posts')}}">All Posts</a>
+  </div>
+{% endblock %}
