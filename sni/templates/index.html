@@ -1,0 +1,41 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+{% block content %}
+	<div class="row">
+		<p class="text-center"><em>I've been working on a new electronic cash system that's fully peer-to-peer, with no trusted third party.</em> Satoshi Nakamoto, 2008</p>
+	</div>
+  	<div class="row">
+  		<div class="text-center">
+  			<img class="center img-responsive" src="{{url_for('static', filename='img/blockchain.png')}}" style="margin: 0 auto;" />
+  		</div>
+  	</div>
+    <div class="row">
+    	<div class="text-center">
+    		<h2>History</h2>
+    		<p>On January 3rd, 2009, an anonymous computer programmer (or programmers) going by the name Satoshi Nakamoto mined the first block of the Bitcoin blockchain, kickstarting the world's first fully realized crypto-currency. Satoshi did not build Bitcoin in a vacuum, however. Instead he stood upon the shoulders of cryptographic giants and free software gurus. From Timothy C. May and the Cypherpunks to Richard Stallman, Nick Szabo and beyond, the foundations of Bitcoin were built by a distributed network of innovators seeking to use cryptographic and open source software to bring freedom to an unfree world. Bitcoin itself is only the beginning. The Satoshi Nakamoto Institute will learn from the past and build toward the future, through scholarship, community, and coding.</p>
+    	</div>
+    </div>
+    <div class="row">
+    	<div class="text-center">
+    		<h2>Education</h2>
+    		<p>The Satoshi Nakamoto Institute is eager to share with the world the best ideas past, present, and future in cryptography, distributed networks, economic freedom, and freedom of information. We are dedicated to curating the best primary source literature that challenge the status quo through technological innovation.</p>
+                <h4><a href="{{url_for('literature')}}">Literature</a></h4>    
+	</div>
+    </div>
+    <div class="row">
+    	<div class="text-center">
+    		<h2>Future</h2>
+    		<p>Bitcoin is not the beginning, nor is it the end. SNI wants to not just think about but build the future through open source software development.</p>
+    	</div>
+    </div>
+    <div class="row">
+    	<div class="text-center">
+    		<h2>Join the Network</h2>
+    		<p>You can help us achieve our goals by donating today. Bitcoins only.</p>
+    		<p class="text-center">
+                <a class="coinbase-button" data-code="48919ffdd40c2c6571c29539d4d68afb" data-button-style="donation_large" href="https://coinbase.com/checkouts/48919ffdd40c2c6571c29539d4d68afb">Donate Bitcoins</a><script src="https://coinbase.com/assets/button.js" type="text/javascript"></script>
+            </p>
+        	<p>Keep reading, keep coding, and <a href="https://twitter.com/NakamotoInst">follow us on Twitter</a>.</p>
+    	</div>
+    </div>
+{% endblock %}

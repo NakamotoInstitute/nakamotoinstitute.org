@@ -1,0 +1,29 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+{% block content %}
+  <div class="row">
+    <div class="text-center">
+      <h2>The Complete Satoshi</h2>
+      <p>Between 2008 and 2012, a pseudonymous programmer (or programmers) going by the name Satoshi Nakamoto shared with the world a brilliant vision and the code to build it.</p>
+      <p>Read the original whitepaper, <a href="{{url_for('docinfo', docid=1)}}">"Bitcoin: A Peer-to-Peer Electronic Cash System"</a>.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="text-center">
+      <a href="{{url_for('emails')}}"><h3>Emails</h3></a>
+      <p>It all began here.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="text-center">
+      <a href="{{url_for('posts')}}"><h3>Forum Posts</h3></a>
+      <p>Where an idea flourished.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="text-center">
+      <h3>Code</h3>
+      <p>The vision distilled. (Coming soon.)</p>
+    </div>
+  </div>
+{% endblock %}

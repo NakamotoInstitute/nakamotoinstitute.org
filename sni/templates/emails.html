@@ -1,0 +1,11 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+{% block content %}
+  <h2 class="text-center">Cryptography Mailing List Emails</h2>
+  <ol>
+  {%for email in emails %}
+    <li><a href="{{url_for('emailview', emnum=email['id'])}}">{{email['subject']}}</a> <em>({{email['date']}} UTC)</em></li>
+  {%endfor%}
+  </ol>
+  </div>
+{%endblock%}

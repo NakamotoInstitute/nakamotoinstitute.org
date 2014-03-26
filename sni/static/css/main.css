@@ -1,0 +1,78 @@
+/*!
+ * Satoshi Nakamoto Institute (http://nakamotoinstitute.org)
+ * Copyright 2013 Satoshi Nakamoto Institute
+ * Licensed under GNU Affero GPL (https://github.com/pierrerochard/SNI-private/blob/master/LICENSE)
+ */
+
+.quoteheader {
+  padding: 5px 20px;
+  font-size: 95%;
+  border-left: 5px solid #eeeeee;
+}
+.quote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 95%;
+  border-left: 5px solid #eeeeee;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 120px;
+}
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 100px;
+  background-color: #f5f5f5;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 14px;
+}
+.container .text-muted {
+  margin: 14px 0;
+}
+
+.navbar-toggle > .icon-bar {
+  background-color: #428bca;
+}
+
+.email-text-monospace {
+  font-family: monospace;
+  font-size: 1em;
+}
+
+.dl-horizontal dt{
+    text-align: left;
+    margin-bottom: 1em;
+    width: auto;
+    padding-right: 1em;
+}
+
+.dl-horizontal dd{
+    margin-left: 0;
+    margin-bottom: 1em;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.dropdown-menu {
+    margin-top: 0px;
+}
