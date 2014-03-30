@@ -5,8 +5,9 @@
 #
 
 from sni import app, db, cache
-from models import Post, Email, Doc, Author, Format, Category
+from models import Post, Email, Doc, Author, Format, Category, BlogPost
 from flask import render_template, json, url_for, redirect
+from sqlalchemy import desc
 import re
  
 from jinja2 import evalcontextfilter, Markup, escape
@@ -125,6 +126,21 @@ def docview(docid, format):
             return redirect(url_for('docinfo', docid=docid))
     else:
         return redirect('literature')
+
+@cache.cached(timeout=900)
+@app.route('/blog/', methods=["GET"])
+def blog():
+    bps = BlogPost.query.all()
+    return render_template('blog.html', bps=bps)
+
+@cache.cached(timeout=900)
+@app.route('/blog/<string:slug>/', methods=["GET"])
+def blogpost(slug):
+    bp = BlogPost.query.filter_by(slug=slug).order_by(desc(BlogPost.date)).first()
+    if(bp != None):
+        return render_template('%s.html' % slug, bp=bp)
+    else:
+        return redirect(url_for("blog"))
 
 
 # Redirect old links

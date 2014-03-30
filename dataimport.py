@@ -92,3 +92,16 @@ for i in range(0, len(docs['docs'])):
 		doctype=docs['docs'][i]['doctype'])
 	db.session.add(doc)
 	db.session.commit()
+
+with open('./blogposts.json') as data_file:
+	blogps = json.load(data_file)
+
+for i in range(0,len(blogps['blogposts'])):
+	blogpost = BlogPost(
+		id=i+1,
+		title=blogps['blogposts'][i]['title'],
+		author=blogps['blogposts'][i]['author'],
+		date=parser.parse(blogps['blogposts'][i]['date']),
+		slug=blogps['blogposts'][i]['slug'])
+	db.session.add(blogpost)
+	db.session.commit()

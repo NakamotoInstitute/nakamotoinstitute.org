@@ -49,6 +49,10 @@ body {
   margin: 14px 0;
 }
 
+.navbar {
+  font-size: 95%;
+}
+
 .navbar-toggle > .icon-bar {
   background-color: #428bca;
 }
