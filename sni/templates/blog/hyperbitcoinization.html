@@ -1,14 +1,18 @@
 <!-- extend base layout -->
-{% extends "base.html" %}
-{% block content %}
-<div class="container">
-  <h2 class="text-center">Hyperbitcoinization</h2>
-  	<h3>Bitcoin-Induced Demonetization</h3>
+{% extends "blogpost.html" %}
+{% block post %}
+	<div class="page-header">
+  		<h1 class="text-center">Hyperbitcoinization <small>Daniel Krawisz</small></h1>
+  		<h4 class="text-center">{{bp.date.strftime('%B %d, %Y')}}</h4>
+  		<img class="img-responsive center-block" alt="BitcoinFace" src="{{url_for('static', filename='img/mempool/BitcoinFace.png')}}" />
+  	</div>
+
+  	<h2>Bitcoin-Induced Demonetization</h2>
 		<p>
 			This article is about Bitcoin-induced currency demonetization, or <em>hyperbitcoinization</em>, which is what will happen to any hapless currency that stands in Bitcoin's path of <a title="Why Bitcoin Will Continue to Grow" href="http://themisescircle.org/blog/2014/02/01/why-bitcoin-will-continue-to-grow/">total world domination</a>. The currency will rapidly lose value as Bitcoin supplants it. What will such an event be like and how can it be understood economically?
 		</p>
 
-	<h3>Comparison to Hyperinflation</h3>
+	<h2>Comparison to Hyperinflation</h2>
 		<p>
 			<em>Demonetization</em> refers to a process by which people cease to use a good as a currency, and <em>hyperinflation</em> is a kind of demonetization when the government inflates the currency at an accelerating pace. Hyperbitcoinization is a different kind, though it will appear (superficially) similar. In both kinds events, prices in the doomed currency will skyrocket until it is no longer a currency at all.
 		</p>
@@ -28,32 +32,32 @@
 			Hyperbitcoinization is a voluntary transition from an inferior currency to a superior one, and its adoption is a series of individual acts of entrepreneurship rather than a single monopolist that games the system.
 		</p>
 
-	<h3>Whoops, You Just Got Bitcoin'd!</h3>
+	<h2>Whoops, You Just Got Bitcoin'd!</h2>
 		<p>
 			Based on these two differences, I make two predictions about a hyperbitcoinization event.
 		</p>
-
 		<ol>
 			<li>
-				<em>A hyperbitcoinization event will be much quicker than a hyperinflation event</em>. I have two reasons for this. First, the government will have a much greater difficulty preventing bitcoins from entering the country due to the impotency of capital controls upon it. Second, hyperinflation is inherently an attempt to fool people, whereas hyperbitcoinization is quite regular and predictable (at least by comparison). Therefore people will more easily see that they had better switch over. Thus, as fast as hyperinflation is, hyperbitcoinization will be even faster. It will happen <a title="Why Bitcoin Will Continue to Grow" href="http://themisescircle.org/blog/2014/02/01/why-bitcoin-will-continue-to-grow/">much faster than you expect</a>.
+				<p><em>A hyperbitcoinization event will be much quicker than a hyperinflation event</em>. I have two reasons for this. First, the government will have a much greater difficulty preventing bitcoins from entering the country due to the impotency of capital controls upon it. Second, hyperinflation is inherently an attempt to fool people, whereas hyperbitcoinization is quite regular and predictable (at least by comparison). Therefore people will more easily see that they had better switch over. Thus, as fast as hyperinflation is, hyperbitcoinization will be even faster. It will happen <a title="Why Bitcoin Will Continue to Grow" href="http://themisescircle.org/blog/2014/02/01/why-bitcoin-will-continue-to-grow/">much faster than you expect</a>.</p>
 			</li>
 			<li>
-				<em>Hyperbitcoinization will not disrupt the economy to nearly the same degree as hyperinflation.</em> The currency is the instrument of the division of labor, and hyperinflation makes it unreliable and forces people to use worse alternatives.In a hyperbitcoinization event, people switch from a fundamentally inferior currency to a superior one, whereas in a hyperinflationary event people will only switch to a new currency once the old currency becomes worse than the next best alternative, such as gold or detergent. Hyperbitcoinization should be accompanied by a rapid improvement in productivity and wealth.
+				<p><em>Hyperbitcoinization will not disrupt the economy to nearly the same degree as hyperinflation.</em> The currency is the instrument of the division of labor, and hyperinflation makes it unreliable and forces people to use worse alternatives.In a hyperbitcoinization event, people switch from a fundamentally inferior currency to a superior one, whereas in a hyperinflationary event people will only switch to a new currency once the old currency becomes worse than the next best alternative, such as gold or detergent. Hyperbitcoinization should be accompanied by a rapid improvement in productivity and wealth.</p>
 			</li>
 		</ol>
 		<p>
-		Hyperbitcoinization will probably be a confusing time for everyone, like a second adolescence. However, once it is over, no one will be able to imagine how we got by with the earlier system.
+			Hyperbitcoinization will probably be a confusing time for everyone, like a second adolescence. However, once it is over, no one will be able to imagine how we got by with the earlier system.
 		</p>
 
-		<img class="aligncenter  wp-image-1586" alt="Bitcoinbody" src="{{url_for('static', filename='img/mempool/Bitcoinbody.png')}}" width="538" height="378" />
+		<img class="img-responsive center-block" alt="Bitcoinbody" src="{{url_for('static', filename='img/mempool/Bitcoinbody.png')}}" />
 
-		<p style="text-align: left;">
+		<p>
 			<strong style="font-size: 120%;">
 				<em>If you enjoyed imagining the future Bitcoin cryptopocalypse, why not <a href="https://coinbase.com/checkouts/d278c9afa75e809a3fc35f459e2cd3f0">donate some</a>?</em>
 			</strong>
 		</p>
 
-(Original artwork is by the author.)
+		<p>
+			(Original artwork is by the author.)
+		</p>
 
-</div>
 {%endblock%}

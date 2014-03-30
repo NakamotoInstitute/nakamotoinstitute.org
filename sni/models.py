@@ -83,3 +83,12 @@ class Doc(db.Model):
  	def __repr__(self):
  		return '<Doc %r>' % (self.title)
 
+class BlogPost(db.Model):
+	id = db.Column(db.Integer, primary_key = True)
+	title = db.Column(db.String())
+	author = db.Column(db.String())
+	date = db.Column(db.Date)
+	slug = db.Column(db.String())
+
+	def __repr__(self):
+ 		return '<BlogPost %r>' % (self.title)

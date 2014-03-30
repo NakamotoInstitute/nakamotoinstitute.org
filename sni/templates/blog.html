@@ -1,0 +1,26 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block title %}
+The Memory Pool | Satoshi Nakamoto Institute
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="text-center">
+      <h1>The Memory Pool</h1>
+      <p>
+      	Where ideas wait to be mined into the block chain of the collective conscience<br>
+      	<em>Some transactions may be invalid</em>
+      </p>
+    </div>
+  </div>
+
+  	<ul>
+  		{% for bp in bps %}
+  		<li>
+  			<a href="{{url_for('blogpost', slug=bp.slug)}}">{{bp.title}}</a> - {{bp.author}} ({{bp.date.strftime('%B %d, %Y')}})
+  		</li>
+  		{% endfor %}
+  	</ul>
+{% endblock %}
