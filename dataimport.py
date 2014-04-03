@@ -10,6 +10,7 @@ from dateutil import parser
 from sni.models import *
 
 # Clear out database
+BlogPost.query.delete()
 Email.query.delete()
 Post.query.delete()
 cats = Category.query.all()
