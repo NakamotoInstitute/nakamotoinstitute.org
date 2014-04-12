@@ -395,5 +395,14 @@
         "formats": ["pdf"],
         "categories": ["cryptography"],
         "doctype": "essay"
+    },
+    {
+        "title": "Bit Gold",
+        "author": ["Nick Szabo"],
+        "date": "December 29, 2005",
+        "slug": "bit-gold",
+        "formats": ["html"],
+        "categories": ["cryptography", "Bitcoin"],
+        "doctype": "essay"
     }]
 }

@@ -25,6 +25,7 @@ for auth in auths:
 	db.session.delete(auth)
 	db.session.commit()
 Doc.query.delete()
+BlogPost.query.delete()
 
 # See if object already exists for uniqueness
 def get_or_create(model, **kwargs):
