@@ -119,7 +119,7 @@ def docview(docid, format):
         slug = doc.slug
         if format in formats:
             if(format=='html'):
-                return render_template("%s.html" % slug)
+                return render_template("%s.html" % slug, doc=doc)
             else:
                 return redirect(url_for('static', filename='docs/%(x)s.%(y)s' % {"x": slug, "y": format}))
         else:
