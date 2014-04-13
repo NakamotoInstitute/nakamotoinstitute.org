@@ -3,13 +3,13 @@
 {% block post %}
 	<div class="page-header">
   		<h1 class="text-center">
-  			Mastercoin is a Nightmare of Insanity
+  			Crypto-Anarchy and Libertarian Entrepreneurship - Chapter 2: Public-Key Cryptography
   		 	<small>
   		 		Daniel Krawisz
   		 	</small>
   		 </h1>
   		<h4 class="text-center">
-  			{{bp.date.strftime('%B %d, %Y')}}
+  			May 24, 2013
   		</h4>
   		<img class="img-responsive center-block" alt="Internet" src="/static/img/mempool/cryptoanarchy2/internet.png"/>
   	</div>
@@ -31,7 +31,7 @@
 		</p>
 
 		<p>
-			To understand it, however, it will be necessary to go over the basics of symmetric-key cryptography, which is the sort of cryptography we are intuitively familiar with, the kind that has existed since antiquity. Once the limitations of symmetric-key cryptography are understood, then public-key cryptography will seem like magic.[5. See Stallings, W., <em>Cryptography and Network Security: Principles and Practice, 5th ed.</em>, Pearson Education, 2011 for an introduction to cryptography that explains everything I introduce here in detail. Or just read <a href="http://en.wikipedia.org/wiki/Public-key_cryptography">Wikipedia</a>.]
+			To understand it, however, it will be necessary to go over the basics of symmetric-key cryptography, which is the sort of cryptography we are intuitively familiar with, the kind that has existed since antiquity. Once the limitations of symmetric-key cryptography are understood, then public-key cryptography will seem like magic.<sup><a href="#1" id="ref1">1</a></sup>
 		</p>
 
 		<p>
@@ -115,7 +115,7 @@
 		</p>
 
 		<p>
-			There is a slight problem here. If there is a third party listening when you exchange public keys, he sees which public keys are exchanged. Even if he does not see you prove your identity, won't that be enough for him to assume that the public keys correspond to the private keys? This is easily resolved because the key that you use for authentication does not have to be the same as the one used to establish a secure channel. You can even generate a new key randomly with each conversation and then authenticate yourself with your permanent private key.[6. In fact you would more likely you would use something called <a href="http://www.youtube.com/watch?v=YEBfamv-_do">Diffie-Hellman</a> key exchange to establish a communication channel. The principle is the same even though it is slightly different than the method I explained.]
+			There is a slight problem here. If there is a third party listening when you exchange public keys, he sees which public keys are exchanged. Even if he does not see you prove your identity, won't that be enough for him to assume that the public keys correspond to the private keys? This is easily resolved because the key that you use for authentication does not have to be the same as the one used to establish a secure channel. You can even generate a new key randomly with each conversation and then authenticate yourself with your permanent private key.<sup><a href="#2" id="ref2">2</a></sup>
 		</p>
 
 		<p>
@@ -164,3 +164,26 @@
 			He can be contacted at <a title="Bitmessage" href="https://bitmessage.org/" target="_blank">Bitmessage</a> address BM-GuBgS6fRkyndWfvkUQa1C77knbcBxHpj
 		</em>
 	</p>
+
+<ol>
+	<li>
+		<p id="1">
+			See Stallings, W., <em>Cryptography and Network Security: Principles and Practice, 5th ed.</em>, Pearson Education, 2011 for an introduction to cryptography that explains everything I introduce here in detail. Or just read <a href="http://en.wikipedia.org/wiki/Public-key_cryptography">Wikipedia</a>.
+				<a href="#ref1" title="Jump back to footnote 1 in the text.">
+					↩
+				</a>
+		</p>
+	</li>
+
+	<li>
+		<p id="2">
+			In fact you would more likely you would use something called <a href="http://www.youtube.com/watch?v=YEBfamv-_do">Diffie-Hellman</a> key exchange to establish a communication channel. The principle is the same even though it is slightly different than the method I explained.
+				<a href="#ref2" title="Jump back to footnote 2 in the text.">
+					↩
+				</a>
+		</p>
+	</li>
+</ol>
+
+
+{%endblock%}
