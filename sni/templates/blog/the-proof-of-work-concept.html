@@ -3,7 +3,7 @@
 {% block post %}
 	<div class="page-header">
   		<h1 class="text-center">
-  			Mastercoin is a Nightmare of Insanity
+  			The proof-of-Work Concept
   		 	<small>
   		 		Daniel Krawisz
   		 	</small>
@@ -11,7 +11,7 @@
   		<h4 class="text-center">
   			{{bp.date.strftime('%B %d, %Y')}}
   		</h4>
-  		<img class="img-responsive center-block" alt="Spongebob and Patrick" src="/static/img/mempool/proofofwork/spongebob-and-patrick.png"/>
+  		<img class="img-responsive center-block" alt="Peacock" src="/static/img/mempool/proofofwork/peacock.jpg"/>
   	</div>
 
 
@@ -20,26 +20,18 @@
 	</h2>
 	
 		<p>
-			Perhaps the least intuitive aspect of the Bitcoin network is the <a href="https://en.bitcoin.it/wiki/Proof_of_work">proof-of-work</a> concept it uses to define the requirement for the generation of a new set of transactions ("<a href="https://en.bitcoin.it/wiki/Block">block</a>") to be added to the distributed transaction database ("<a href="https://en.bitcoin.it/wiki/Block_chain">block chain</a>"). This concept, which grew out of ideas from the early cypherpunk movement[1. See Back, A., <a href="http://www.hashcash.org/papers/hashcash.pdf">"Hashcash - A Denial of Service Counter-Measure"</a>, 1 Aug 2002, for a description of the proof-of-work concept and its applications by its original inventor.], is new to monetary theory and feels a little out of place in computer science too. I will show that biology gives us the most suitable framework for understanding it.
+			Perhaps the least intuitive aspect of the Bitcoin network is the <a href="https://en.bitcoin.it/wiki/Proof_of_work">proof-of-work</a> concept it uses to define the requirement for the generation of a new set of transactions ("<a href="https://en.bitcoin.it/wiki/Block">block</a>") to be added to the distributed transaction database ("<a href="https://en.bitcoin.it/wiki/Block_chain">block chain</a>"). This concept, which grew out of ideas from the early cypherpunk movement<sup><a href="#1" id="ref1">1</a></sup>, is new to monetary theory and feels a little out of place in computer science too. I will show that biology gives us the most suitable framework for understanding it.
 		</p>
 
 		<p>
-			All the blocks in the Bitcoin block chain have a short string of meaningless data—called a <a href="https://en.bitcoin.it/wiki/Nonce">nonce</a>—attached to them. The <a href="https://en.bitcoin.it/wiki/Mining">mining</a> computers are required to search for the right meaningless string such that the block as a whole satisfies a certain arbitrary condition. Specifically, it is required that the SHA-256 hash of the block have a certain number of leading zeros.[2. See Nakamoto, S., "Bitcoin: A Peer-to-Peer Electronic Cash System", 2008.] <a href="http://en.wikipedia.org/wiki/Cryptographic_hash_function">Hashes</a> are one-way functions, so there is no easy way to find the right nonce or otherwise to engineer a block to be correct. The only known way to find a good nonce is to simply to try randomly until one turns out to work. Khan Academy provides a visual explanation of proof-of-work:
+			All the blocks in the Bitcoin block chain have a short string of meaningless data—called a <a href="https://en.bitcoin.it/wiki/Nonce">nonce</a>—attached to them. The <a href="https://en.bitcoin.it/wiki/Mining">mining</a> computers are required to search for the right meaningless string such that the block as a whole satisfies a certain arbitrary condition. Specifically, it is required that the SHA-256 hash of the block have a certain number of leading zeros.<sup><a href="#2" id="ref2">2</a></sup> <a href="http://en.wikipedia.org/wiki/Cryptographic_hash_function">Hashes</a> are one-way functions, so there is no easy way to find the right nonce or otherwise to engineer a block to be correct. The only known way to find a good nonce is to simply to try randomly until one turns out to work. Khan Academy provides a visual explanation of proof-of-work:
 		</p>
 
 		<iframe width="560" height="315" src="//www.youtube.com/embed/9V1bipPkCTU" frameborder="0" allowfullscreen></iframe>
 
 
 		<p>
-			The procedure, remember, is totally arbitrary. It is simply an added complication, like a ritual, so as to make blocks more difficult to generate. Really anything else would do, as long as it was computationally difficult. Other crypto-currencies use other hash algorithms. There is no special condition from number theory which only someone like <a href="http://www.kurims.kyoto-u.ac.jp/~motizuki/top-english.html">Shinichi Mochizuki</a> could understand.[3. A world-class mathematician conjectured for superficial reasons to be the creator of Bitcoin by <a href="https://www.youtube.com/watch?v=emDJTGTrEm0">Ted Nelson</a>. He is known both for purported proof of the <a href="https://en.wikipedia.org/wiki/Abc_conjecture">abc/Oesterlé-Masser-Szpiro conjecture </a> and for his reluctance to advertise his work or to explain it to anybody. The proof is over 500 pages long and so original that no other mathematician yet fully understands it; if it were true, it would be a much bigger deal than the proof of Fermat's Last Theorem. See his website Mochizuki, S., <a href="http://www.kurims.kyoto-u.ac.jp/~motizuki/top-english.html">"Inter-Universal Geometer: Shinichi Mochizuki"</a>, 2013.
-		</p>
-
-		<p>
-			However, there is no reason to expect the creator of Bitcoin to be a math genius. Bitcoin is a brilliant work of engineering, not of logical deduction. The mathematics required to create it might be found in an introductory cryptography course. Satoshi did not come up with any fundamentally new ideas; he simply put some existing ideas together in an extraordinarily useful new way.
-		</p>
-
-		<p>
-			The reclusiveness of the two figures is also superficial. Mochizuki is a typical eccentric asocial mathematician, only just a bit more so. Nakamoto, on the other hand, was secretive about his identity for very good reasons. He was also not asocial: he was very active in the Bitcoin community until he felt that it no longer needed his guidance.]
+			The procedure, remember, is totally arbitrary. It is simply an added complication, like a ritual, so as to make blocks more difficult to generate. Really anything else would do, as long as it was computationally difficult. Other crypto-currencies use other hash algorithms. There is no special condition from number theory which only someone like <a href="http://www.kurims.kyoto-u.ac.jp/~motizuki/top-english.html">Shinichi Mochizuki</a> could understand.<sup><a href="#3" id="ref3">3</a></sup>
 		</p>
 
 	  		<img class="img-responsive center-block" alt="Bitcoin Mining" src="/static/img/mempool/proofofwork/mining.jpg"/>
@@ -77,7 +69,7 @@
 		</p>
 
 		<p>
-			The general rule is that the first block mined is not self-interested because no one can plan on being first. One can only be first by luck. Any hold-outs are suspect because to generate it, the miner had to make a choice to reject a perfectly good and presumably altruistic alternative. Not an easy thing to do.[4. Although this has happened once before. On March 13, 2013, a bug in version 0.7 of bitcoin-qt resulted in a conflict with version 0.8. The block chain forked, with each version of the software recognizing a different branch as valid. The community of bitcoin miners settled upon the version 0.7 branch as the one they would recognize even though it was the shorter one.]
+			The general rule is that the first block mined is not self-interested because no one can plan on being first. One can only be first by luck. Any hold-outs are suspect because to generate it, the miner had to make a choice to reject a perfectly good and presumably altruistic alternative. Not an easy thing to do.<sup><a href="#4" id="ref4">4</a></sup>
 		</p>
 
 
@@ -88,7 +80,7 @@
 	  	<img class="img-responsive center-block" alt="Bitcoin Mining" src="/static/img/mempool/proofofwork/handicap.jpg"/>
 
 		<p>
-			There is an idea from biology called the <a href="https://en.wikipedia.org/wiki/Handicap_principle">Handicap Principle</a> which sheds light on this process.[5. See Zahavi, A., Zahavi, A., <em>The Handicap Principle: A Missing Piece of Darwin's Puzzle, Oxford University Press</em>, 1997 for a delightful presentation of this idea, written by the biologist who originally proposed it. Although this is a popular presentation without mathematics, it is not dumbed-down and it uses sophisticated biological arguments to make its point. The Handicap Principle was originally proposed in 1975, but did not become mainstream until the 90's.] It says that when two animals have an incentive to cooperate they must communicate good intentions to one another in a believable way. In order to make lying implausible, the signal must impose a cost on the signaler that would make it very costly to cheat. In other words, the signal itself must be a handicap.
+			There is an idea from biology called the <a href="https://en.wikipedia.org/wiki/Handicap_principle">Handicap Principle</a> which sheds light on this process.<sup><a href="#5" id="ref5">5</a></sup> It says that when two animals have an incentive to cooperate they must communicate good intentions to one another in a believable way. In order to make lying implausible, the signal must impose a cost on the signaler that would make it very costly to cheat. In other words, the signal itself must be a handicap.
 		</p>
 
 		<p>
@@ -100,19 +92,19 @@
 		</p>
 
 		<p>
-			The Handicap Principle has been applied successfully to a diverse range of biological phenomena. To give a concrete example, suppose a prey animal notices a predator stalking it. Both animals would benefit if the prey could communicate to the predator that it is no longer unaware: the predator would not want to hunt further if it had lost the element of surprise and the prey would not be hunted. However, the prey could start randomly saying, "I see you!" even when it sees no predator, just to deter any which might happen to be there. As long as the prey might be lying, the predator cannot take its signal at face value and must ignore it.[6. Zahavi, Zahavi, 1997, pp. 3-13.]
+			The Handicap Principle has been applied successfully to a diverse range of biological phenomena. To give a concrete example, suppose a prey animal notices a predator stalking it. Both animals would benefit if the prey could communicate to the predator that it is no longer unaware: the predator would not want to hunt further if it had lost the element of surprise and the prey would not be hunted. However, the prey could start randomly saying, "I see you!" even when it sees no predator, just to deter any which might happen to be there. As long as the prey might be lying, the predator cannot take its signal at face value and must ignore it.<sup><a href="#6" id="ref6">6</a></sup>
 		</p>
 
 		<p>
-			Within a species, the handicap principle explains a lot about how animals compete with one another and interact with their mates. For example, among deer, the buck with the biggest antlers are the strongest and best specimens because any smaller deer who tried to grow larger ones would seriously risk using more energy and nutrients on them than they can handle. Thus, second-rate bucks end up with second-rate antlers and the third-rate bucks end up with third-rate antlers, and so on.[7. Zahavi, Zahavi, 1997, pp. 55-57.]
+			Within a species, the handicap principle explains a lot about how animals compete with one another and interact with their mates. For example, among deer, the buck with the biggest antlers are the strongest and best specimens because any smaller deer who tried to grow larger ones would seriously risk using more energy and nutrients on them than they can handle. Thus, second-rate bucks end up with second-rate antlers and the third-rate bucks end up with third-rate antlers, and so on.<sup><a href="#7" id="ref7">7</a></sup>
 		</p>
 
 		<p>
-			In a social species, the handicap principle explains much about ethics and altruism. Just as members of a species can differentiate themselves in strength and heath with a handicap like horns or antlers, members of a social species can use altruism as a handicap to distinguish one another. For example, The Handicap Principle describes a social bird called the Arabian Babbler that competes over altruism. The most powerful and dominant birds demonstrate their superiority by spending time on guard duty for the rest of the flock and by feeding nestlings and lower-ranking birds. Babblers do not like to be fed by other babblers of a similar rank because they do not like to feel inferior. The Handicap Principle even describes an observation in which one bird fed a worm to another bird only to have the same worm forced straight back down his own throat![8. Zahavi, Zahavi, 1997, pp. 125-150.]
+			In a social species, the handicap principle explains much about ethics and altruism. Just as members of a species can differentiate themselves in strength and heath with a handicap like horns or antlers, members of a social species can use altruism as a handicap to distinguish one another. For example, The Handicap Principle describes a social bird called the Arabian Babbler that competes over altruism. The most powerful and dominant birds demonstrate their superiority by spending time on guard duty for the rest of the flock and by feeding nestlings and lower-ranking birds. Babblers do not like to be fed by other babblers of a similar rank because they do not like to feel inferior. The Handicap Principle even describes an observation in which one bird fed a worm to another bird only to have the same worm forced straight back down his own throat!<sup><a href="#8" id="ref8">8</a></sup>
 		</p>
 
 		<p>
-			Proof-of-work should not, therefore, be seen as a mysterious or wasteful system, but as something functional, natural, and potentially of value for the design of any communication protocol. If a distributed system of computers is owned by one person, he can assume that they will all cooperate because he controls their behavior. When this is not the case, there is a real need for different computers to prove that they are working toward the same goal. The universality of the Handicap Principle in biology should be enough to make one suspect that a protocol which does not impose costs on its users invite abuse. It is interesting to think of how many problems with the Internet can be ascribed to a failure to account for this principle. If proof-of-work had been understood when email was invented, there might never have been a <a href="https://en.wikipedia.org/wiki/Spam_(electronic)">spam</a> problem. If the Internet Protocol could require proof-of-work for client requests, we might not have to worry about <a href="https://en.wikipedia.org/wiki/Denial-of-service_attack">Distributed Denial of Service</a> (DDOS) attacks.[9. <a href="http://www.hashcash.org/papers/hashcash.pdf">Back, 2002</a>.]
+			Proof-of-work should not, therefore, be seen as a mysterious or wasteful system, but as something functional, natural, and potentially of value for the design of any communication protocol. If a distributed system of computers is owned by one person, he can assume that they will all cooperate because he controls their behavior. When this is not the case, there is a real need for different computers to prove that they are working toward the same goal. The universality of the Handicap Principle in biology should be enough to make one suspect that a protocol which does not impose costs on its users invite abuse. It is interesting to think of how many problems with the Internet can be ascribed to a failure to account for this principle. If proof-of-work had been understood when email was invented, there might never have been a <a href="https://en.wikipedia.org/wiki/Spam_(electronic)">spam</a> problem. If the Internet Protocol could require proof-of-work for client requests, we might not have to worry about <a href="https://en.wikipedia.org/wiki/Denial-of-service_attack">Distributed Denial of Service</a> (DDOS) attacks.<sup><a href="#9" id="ref9">9</a></sup>
 		</p>
 
 		<p>
@@ -124,7 +116,7 @@
 	</h2>
 	
 		<p>
-			A more recent application of proof-of-work is <a href="https://bitmessage.org/wiki/Main_Page">Bitmessage</a>, which is an anonymous, distributed, encrypted message protocol which could one day be almost as important as Bitcoin.[10. See Warren, J., <a href="https://bitmessage.org/bitmessage.pdf">"Bitmessage: A Peer-to-Peer Message Authentication and Delivery System"</a>, 27 Nov 2012.] It was inspired by Bitcoin, but it works quite differently. There is no block chain in the Bitmessage protocol because there is no need to store all messages forever in a database. Instead, Bitmessage requires everyone who sends a message to perform some work before the network will relay it. This ensures that every message will be meaningful: no spammer could afford to let his computer run for a minute or so for every message he sends. Proof-of-work is essential because a distributed network that relies on computation donated by its users cannot afford to allow free-riders. It is in its early stages presently and it has not yet been studied sufficiently to be considered secure, but it has enormous potential as an alternative to e-mail.
+			A more recent application of proof-of-work is <a href="https://bitmessage.org/wiki/Main_Page">Bitmessage</a>, which is an anonymous, distributed, encrypted message protocol which could one day be almost as important as Bitcoin.<sup><a href="#10" id="ref10">10</a></sup> It was inspired by Bitcoin, but it works quite differently. There is no block chain in the Bitmessage protocol because there is no need to store all messages forever in a database. Instead, Bitmessage requires everyone who sends a message to perform some work before the network will relay it. This ensures that every message will be meaningful: no spammer could afford to let his computer run for a minute or so for every message he sends. Proof-of-work is essential because a distributed network that relies on computation donated by its users cannot afford to allow free-riders. It is in its early stages presently and it has not yet been studied sufficiently to be considered secure, but it has enormous potential as an alternative to e-mail.
 		</p>
 
 	<h2>
@@ -132,7 +124,7 @@
 	</h2>
 	
 		<p>
-			A discussion of proof-of-work would not be complete without a discussion of <a href="http://ppcoin.org/">PPCoin</a>, the third most popular crypto-currency after Bitcoin and Litecoin.[11. See King, S., Nadal, S., <a href="http://www.ppcoin.org/static/ppcoin-paper.pdf">"PPCoin: Peer-to-Peer Crypto-Currency with Proof-of-Stake"</a>, 19 Aug 2012. This paper is not well-written and I do not recommend it.] PPCoin also uses proof-of-work so as to make defection unprofitable, but the costs are distributed very differently among the miners: those miners who have held a lot of PPCoin for a long time suffer much less stringent requirements for producing a block than those who have held few PPCoin and who have held them for a shorter time. This means that people will not tend to follow the consensus proposed by the person with the most powerful computer, but rather the person who has demonstrated the greatest investment in the currency. Miners are distinguished by something more like seniority than strength. When a miner creates a new block in the PPcoin block chain, he has to trade in some of his old coins to get the new ones—meaning that everyone who creates a block is less able to create the next one. This system is called proof-of-stake.
+			A discussion of proof-of-work would not be complete without a discussion of <a href="http://ppcoin.org/">PPCoin</a>, the third most popular crypto-currency after Bitcoin and Litecoin.<sup><a href="#11" id="ref11">11</a></sup> PPCoin also uses proof-of-work so as to make defection unprofitable, but the costs are distributed very differently among the miners: those miners who have held a lot of PPCoin for a long time suffer much less stringent requirements for producing a block than those who have held few PPCoin and who have held them for a shorter time. This means that people will not tend to follow the consensus proposed by the person with the most powerful computer, but rather the person who has demonstrated the greatest investment in the currency. Miners are distinguished by something more like seniority than strength. When a miner creates a new block in the PPcoin block chain, he has to trade in some of his old coins to get the new ones—meaning that everyone who creates a block is less able to create the next one. This system is called proof-of-stake.
 		</p>
 
 		<p>
@@ -161,3 +153,118 @@
 				He can be contacted at <a title="Bitmessage" href="https://bitmessage.org/" target="_blank">Bitmessage</a> address BM-GuBgS6fRkyndWfvkUQa1C77knbcBxHpj
 			</em>
 		</p>
+
+
+<ol>
+	<li>
+		<p id="1">
+			See Back, A., <a href="http://www.hashcash.org/papers/hashcash.pdf">"Hashcash - A Denial of Service Counter-Measure"</a>, 1 Aug 2002, for a description of the proof-of-work concept and its applications by its original inventor.
+				<a href="#ref1" title="Jump back to footnote 1 in the text.">
+					↩
+				</a>
+		</p>
+	</li>
+
+	<li>
+		<p id="2">
+			See Nakamoto, S., "Bitcoin: A Peer-to-Peer Electronic Cash System", 2008.
+				<a href="#ref2" title="Jump back to footnote 2 in the text.">
+					↩
+				</a>
+		</p>
+	</li>
+
+	<li>
+		<p id="3">
+			A world-class mathematician conjectured for superficial reasons to be the creator of Bitcoin by <a href="https://www.youtube.com/watch?v=emDJTGTrEm0">Ted Nelson</a>. He is known both for purported proof of the <a href="https://en.wikipedia.org/wiki/Abc_conjecture">abc/Oesterlé-Masser-Szpiro conjecture </a> and for his reluctance to advertise his work or to explain it to anybody. The proof is over 500 pages long and so original that no other mathematician yet fully understands it; if it were true, it would be a much bigger deal than the proof of Fermat's Last Theorem. See his website Mochizuki, S., <a href="http://www.kurims.kyoto-u.ac.jp/~motizuki/top-english.html">"Inter-Universal Geometer: Shinichi Mochizuki"</a>, 2013.
+		</p>
+
+		<p>
+			However, there is no reason to expect the creator of Bitcoin to be a math genius. Bitcoin is a brilliant work of engineering, not of logical deduction. The mathematics required to create it might be found in an introductory cryptography course. Satoshi did not come up with any fundamentally new ideas; he simply put some existing ideas together in an extraordinarily useful new way.
+		</p>
+
+		<p>
+			The reclusiveness of the two figures is also superficial. Mochizuki is a typical eccentric asocial mathematician, only just a bit more so. Nakamoto, on the other hand, was secretive about his identity for very good reasons. He was also not asocial: he was very active in the Bitcoin community until he felt that it no longer needed his guidance.
+				<a href="#ref3" title="Jump back to footnote 3 in the text.">
+					↩
+				</a>
+		</p>
+	</li>
+
+
+	<li>
+		<p id="4">
+			Although this has happened once before. On March 13, 2013, a bug in version 0.7 of bitcoin-qt resulted in a conflict with version 0.8. The block chain forked, with each version of the software recognizing a different branch as valid. The community of bitcoin miners settled upon the version 0.7 branch as the one they would recognize even though it was the shorter one.
+				<a href="#ref4" title="Jump back to footnote 4 in the text.">
+					↩
+				</a>
+		</p>
+	</li>
+
+	<li>
+		<p id="5">
+			See Zahavi, A., Zahavi, A., <em>The Handicap Principle: A Missing Piece of Darwin's Puzzle, Oxford University Press</em>, 1997 for a delightful presentation of this idea, written by the biologist who originally proposed it. Although this is a popular presentation without mathematics, it is not dumbed-down and it uses sophisticated biological arguments to make its point. The Handicap Principle was originally proposed in 1975, but did not become mainstream until the 90's.
+				<a href="#ref5" title="Jump back to footnote 5 in the text.">
+					↩
+				</a>
+		</p>
+	</li>
+
+	<li>
+		<p id="6">
+			Zahavi, Zahavi, 1997, pp. 3-13.
+				<a href="#ref6" title="Jump back to footnote 6 in the text.">
+					↩
+				</a>
+		</p>
+	</li>
+
+
+	<li>
+		<p id="7">
+			Zahavi, Zahavi, 1997, pp. 55-57.
+				<a href="#ref7" title="Jump back to footnote 7 in the text.">
+					↩
+				</a>
+		</p>
+	</li>
+
+	<li>
+		<p id="8">
+			Zahavi, Zahavi, 1997, pp. 125-150.
+				<a href="#ref8" title="Jump back to footnote 8 in the text.">
+					↩
+				</a>
+		</p>
+	</li>
+
+	<li>
+		<p id="9">
+			<a href="http://www.hashcash.org/papers/hashcash.pdf">Back, 2002</a>.]
+				<a href="#ref9" title="Jump back to footnote 9 in the text.">
+					↩
+				</a>
+		</p>
+	</li>
+
+	<li>
+		<p id="10">
+			See Warren, J., <a href="https://bitmessage.org/bitmessage.pdf">"Bitmessage: A Peer-to-Peer Message Authentication and Delivery System"</a>, 27 Nov 2012.
+				<a href="#ref10" title="Jump back to footnote 10 in the text.">
+					↩
+				</a>
+		</p>
+	</li>
+
+	<li>
+		<p id="11">
+			See King, S., Nadal, S., <a href="http://www.ppcoin.org/static/ppcoin-paper.pdf">"PPCoin: Peer-to-Peer Crypto-Currency with Proof-of-Stake"</a>, 19 Aug 2012. This paper is not well-written and I do not recommend it.
+				<a href="#ref11" title="Jump back to footnote 11 in the text.">
+					↩
+				</a>
+		</p>
+	</li>
+</ol>
+
+
+{%endblock%}
