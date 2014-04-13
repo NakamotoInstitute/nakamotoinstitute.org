@@ -119,7 +119,7 @@ def docview(docid, format):
         slug = doc.slug
         if format in formats:
             if(format=='html'):
-                return render_template("%s.html" % slug)
+                return render_template("%s.html" % slug, doc=doc)
             else:
                 return redirect(url_for('static', filename='docs/%(x)s.%(y)s' % {"x": slug, "y": format}))
         else:
@@ -128,13 +128,13 @@ def docview(docid, format):
         return redirect('literature')
 
 @cache.cached(timeout=900)
-@app.route('/blog/', methods=["GET"])
+@app.route('/mempool/', methods=["GET"])
 def blog():
     bps = BlogPost.query.all()
     return render_template('blog.html', bps=bps)
 
 @cache.cached(timeout=900)
-@app.route('/blog/<string:slug>/', methods=["GET"])
+@app.route('/mempool/<string:slug>/', methods=["GET"])
 def blogpost(slug):
     bp = BlogPost.query.filter_by(slug=slug).order_by(desc(BlogPost.date)).first()
     if(bp != None):
