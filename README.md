@@ -18,9 +18,9 @@ NakamotoInstitute.org was written in Flask.
 
 3. Update your /etc/hosts file:
 
-    127.0.0.1     localhost
-    127.0.0.1     sni
-    127.0.0.1     satoshi.sni
+    127.0.0.1     localhost <br />
+    127.0.0.1     sni <br />
+    127.0.0.1     satoshi.sni <br />
 
 3. Update config.py if you would like to change "sni" in step 3 to a different domain:
 
