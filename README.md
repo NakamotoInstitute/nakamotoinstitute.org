@@ -26,7 +26,6 @@ NakamotoInstitute.org was written in Flask.
 
 <code> SERVER_NAME = '[domain]:5000' </code>
 
-
 4. Change the links in satoshiposts.json to http://sni:5000 (or the SERVER_NAME of your choice).
 
 5. Download the PDFs and txts [here](http://nakamotoinstitute.org/static/docs/sni-docs.zip) and place them in XXXX
@@ -35,9 +34,14 @@ NakamotoInstitute.org was written in Flask.
 
 8. Install the dependencies using <code>pip install -r requirements.txt</code>.
 
-9. Run <code>python dataimport.py</code>. The db will be cleared and re-populated each time you do this.
+9. In a Python console run the following: 
 
-10. Migrations are done with [Flask-Migrate](http://flask-migrate.readthedocs.org/en/latest/).
+<code> from sni import db </code> <br />
+<code> db.create_all() </code> <br />
+
+10. Run <code>python dataimport.py</code>. The db will be cleared and re-populated each time you do this.
+
+11. Migrations are done with [Flask-Migrate](http://flask-migrate.readthedocs.org/en/latest/).
 
 
 
