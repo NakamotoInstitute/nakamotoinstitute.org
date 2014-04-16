@@ -6,9 +6,15 @@ NakamotoInstitute.org was written in Flask.
 
 ## Guide to Installing SNI Locally
 
-1. Install PostGres
+1. Install [PostgreSQL](http://www.postgresql.org/)
 
-2. Create a database
+2. Create a user and a new database ([Debian instructions](https://wiki.debian.org/PostgreSql)).
+
+3. Apply your settings from step 2 in config.py:
+
+
+<code>SQLALCHEMY_DATABASE_URI = "postgresql://[user]:[password]@localhost/[db name]"</code>
+
 
 3. Update your /etc/hosts file:
 
@@ -16,7 +22,10 @@ NakamotoInstitute.org was written in Flask.
     127.0.0.1     sni
     127.0.0.1     satoshi.sni
 
-3. Update config.py if you would like to change "sni" to a different domain.
+3. Update config.py if you would like to change "sni" in step 3 to a different domain:
+
+<code> SERVER_NAME = '[domain]:5000' </code>
+
 
 4. Change the links in satoshiposts.json to http://sni:5000 (or the SERVER_NAME of your choice).
 
