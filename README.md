@@ -28,7 +28,7 @@ NakamotoInstitute.org was written in Flask.
 
 4. Change the links in satoshiposts.json to http://sni:5000 (or the SERVER_NAME of your choice).
 
-5. Download the PDFs and txts [here](http://nakamotoinstitute.org/static/docs/sni-docs.zip) and place them in XXXX
+5. Download the PDFs and txts [here](http://nakamotoinstitute.org/static/docs/sni-docs.zip) and place them in /static/templates/docs
 
 6. Set up a virtualenv 
 
