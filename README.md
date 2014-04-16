@@ -35,9 +35,9 @@ NakamotoInstitute.org was written in Flask.
 
 ## How You Can Help
 
-* Make the site look nicer. We are not graphic designers.
-* Write actually functional tests.
-* Format the HTML literature templates.
+* Format the HTML literature templates
+* Adjust the CSS and HTML to improve readability and navigation
+* Write tests for the Python code
 
 --
 
