@@ -13,7 +13,7 @@ NakamotoInstitute.org was written in Flask.
 3. Apply your settings from step 2 in config.py:
 
 
-<code>SQLALCHEMY_DATABASE_URI = "postgresql://[user]:[password]@localhost/[db name]"</code>
+<code>SQLALCHEMY_DATABASE_URI = "postgresql://[user]:[password]@localhost/[db name]?client_encoding=utf8"</code>
 
 
 3. Update your /etc/hosts file:
