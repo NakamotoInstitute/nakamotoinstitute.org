@@ -22,7 +22,7 @@ NakamotoInstitute.org was written in Flask.
     127.0.0.1     sni <br />
     127.0.0.1     satoshi.sni <br />
 
-3. Update config.py if you would like to change "sni" in step 3 to a different domain:
+3. Update config.py if you would like to change "sni" in step 3 to a different [domain]:
 
 <code> SERVER_NAME = '[domain]:5000' </code>
 
@@ -34,14 +34,13 @@ NakamotoInstitute.org was written in Flask.
 
 8. Install the dependencies using <code>pip install -r requirements.txt</code>.
 
-9. In a Python console run the following: 
-
-<code> from sni import db </code> <br />
-<code> db.create_all() </code> <br />
+9. In a Python console run <code> from sni import db </code> and <code> db.create_all() </code>
 
 10. Run <code>python dataimport.py</code>. The db will be cleared and re-populated each time you do this.
 
-11. Migrations are done with [Flask-Migrate](http://flask-migrate.readthedocs.org/en/latest/).
+11. Run <code>python run.py runserver</code> and navigate to sni:5000 in your browser.
+
+12. Migrations are done with [Flask-Migrate](http://flask-migrate.readthedocs.org/en/latest/).
 
 
 
