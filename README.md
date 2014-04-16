@@ -1,37 +1,39 @@
 Satoshi Nakamoto Institute
 ===========
 
-Our website was written in Flask. Set up a virtualenv and install the dependencies using <code>pip install -r requirements.txt</code>.
+NakamotoInstitute.org was written in Flask. 
 
-## Some Notes
 
-To get subdomains to work on your machine, update your /etc/hosts file:
+## Guide to Installing SNI Locally
+
+1. Install PostGres
+
+2. Create a database
+
+3. Update your /etc/hosts file:
 
     127.0.0.1     localhost
     127.0.0.1     sni
     127.0.0.1     satoshi.sni
 
-You can change sni to anything else. Just be sure to update config.py
+3. Update config.py if you would like to change "sni" to a different domain.
 
---
+4. Change the links in satoshiposts.json to http://sni:5000 (or the SERVER_NAME of your choice).
 
-The static docs folder does not contain the PDFs because of the large size. All of the files in this folder, including PDFs and txts can be obtained in a zip file at http://nakamotoinstitute.org/static/docs/sni-docs.zip
+5. Download the PDFs and txts [here](http://nakamotoinstitute.org/static/docs/sni-docs.zip) and place them in XXXX
 
---
+6. Set up a virtualenv 
 
-To import JSONs to db, run <code>python dataimport.py</code>. The db will be cleared and re-populated each time you do this.
+8. Install the dependencies using <code>pip install -r requirements.txt</code>.
 
---
+9. Run <code>python dataimport.py</code>. The db will be cleared and re-populated each time you do this.
 
-The links in satoshiposts.json must be changed to http://sni:5000 (or the SERVER_NAME of your choice).
+10. Migrations are done with [Flask-Migrate](http://flask-migrate.readthedocs.org/en/latest/).
 
---
 
-Migrations are done using [Flask-Migrate](http://flask-migrate.readthedocs.org/en/latest/).
+
 
 ## How You Can Help
-
-Help us:
 
 * Make the site look nicer. We are not graphic designers.
 * Write actually functional tests.
@@ -39,4 +41,4 @@ Help us:
 
 --
 
-Our website is under the GNU Affero License.
+NakamotoInstitute.org is under the GNU Affero License.
