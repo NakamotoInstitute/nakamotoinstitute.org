@@ -1,5 +1,5 @@
 *.py[cod]
-
+*config.py
 *.pdf
 
 # C extensions
