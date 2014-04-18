@@ -5,114 +5,133 @@
     	"title": "Hyperbitcoinization",
 		"author": "Daniel Krawisz",
 		"date": "March 29, 2014",
-		"slug": "hyperbitcoinization"
+		"slug": "hyperbitcoinization",
+        "excerpt":"Government currencies will rapidly lose value as Bitcoin supplants it. What will such an event be like and how can it be understood economically?"
     },
     {
     	"title": "The Coming Demise of the Altcoins (And What You Can Do to Hasten It)",
 		"author": "Daniel Krawisz",
 		"date": "March 14, 2014",
-		"slug": "the-coming-demise-of-altcoins"
+		"slug": "the-coming-demise-of-altcoins",
+        "excerpt":"What falleth, that shall one also push!"
     },
     {
     	"title": "Bitcoin Has No Image Problem",
 		"author": "Daniel Krawisz",
 		"date": "February 25, 2014",
-		"slug": "bitcoin-has-no-image-problem"
+		"slug": "bitcoin-has-no-image-problem",
+        "excerpt":"The best way to improve Bitcoin’s image is simply to improve the Bitcoin economy."
     },
     {
-      "title": "I'm Hoarding Bitcoins, and No You Can't Have Any",
-    "author": "Daniel Krawisz",
-    "date": "February 12, 2014",
-    "slug": "im-hoarding-bitcoins-and-no-you-cant-have-any"
+        "title": "I'm Hoarding Bitcoins, and No You Can't Have Any",
+        "author": "Daniel Krawisz",
+        "date": "February 12, 2014",
+        "slug": "im-hoarding-bitcoins-and-no-you-cant-have-any",
+        "excerpt":"The real hero is the hoarder."
     },
     {
-      "title": "Why Bitcoin Will Continue to Grow",
-    "author": "Daniel Krawisz",
-    "date": "February 1, 2014",
-    "slug": "why-bitcoin-will-continue-to-grow"
+        "title": "Why Bitcoin Will Continue to Grow",
+        "author": "Daniel Krawisz",
+        "date": "February 1, 2014",
+        "slug": "why-bitcoin-will-continue-to-grow",
+        "excerpt":"For now at least, Bitcoin’s present trend is self-reinforcing with no equilibrium in sight."
     },
     {
-      "title": "I Love Bitcoin's Volatility",
-    "author": "Daniel Krawisz",
-    "date": "January 28, 2014",
-    "slug": "i-love-bitcoins-volatility"
+        "title": "I Love Bitcoin's Volatility",
+        "author": "Daniel Krawisz",
+        "date": "January 28, 2014",
+        "slug": "i-love-bitcoins-volatility",
+        "excerpt": "Those who worry about Bitcoin’s volatility fail to understand what it actually means for Bitcoin."
     },
     {
-      "title": "Why Anarchy?",
-    "author": "Daniel Krawisz",
-    "date": "December 31, 2013",
-    "slug": "why-anarchy"
+        "title": "Why Anarchy?",
+        "author": "Daniel Krawisz",
+        "date": "December 31, 2013",
+        "slug": "why-anarchy",
+        "excerpt":"Anarchism is not extremism: it is simply correct."
     },
     {
-      "title": "Mastercoin is a Nightmare of Insanity",
-    "author": "Daniel Krawisz",
-    "date": "December 20, 2013",
-    "slug": "mastercoin-is-a-nightmare-of-insanity"
+        "title": "Mastercoin is a Nightmare of Insanity",
+        "author": "Daniel Krawisz",
+        "date": "December 20, 2013",
+        "slug": "mastercoin-is-a-nightmare-of-insanity",
+        "excerpt":"No one should ever use Mastercoin under any circumstances or appraise their value as anything above zero."
     },
     {
-      "title": "The Bitcoin Central Bank's Perfect Monetary Policy",
-    "author": "Pierre Rochard",
-    "date": "December 15, 2013",
-    "slug": "the-bitcoin-central-banks-perfect-monetary-policy"
+        "title": "The Bitcoin Central Bank's Perfect Monetary Policy",
+        "author": "Pierre Rochard",
+        "date": "December 15, 2013",
+        "slug": "the-bitcoin-central-banks-perfect-monetary-policy",
+        "excerpt":"The Bitcoin Central Bank will be the longest lasting institution of its kind thanks to the anti-fragile independent monetary policy it has set in stone."
     },
     {
-      "title": "The Problem with Altcoins",
-    "author": "Daniel Krawisz",
-    "date": "August 22, 2013",
-    "slug": "the-problem-with-altcoins"
+        "title": "The Problem with Altcoins",
+        "author": "Daniel Krawisz",
+        "date": "August 22, 2013",
+        "slug": "the-problem-with-altcoins",
+        "excerpt":"In short, the altcoin phenomenon is the product of greed and bounded rationality."
     },
     {
-      "title": "The Original Value of Bitcoins",
-    "author": "Daniel Krawisz",
-    "date": "July 2, 2013",
-    "slug": "the-original-value-of-bitcoins"
+        "title": "The Original Value of Bitcoins",
+        "author": "Daniel Krawisz",
+        "date": "July 2, 2013",
+        "slug": "the-original-value-of-bitcoins",
+        "excerpt":"Once it was known that bitcoin could be sold, even for a pittance, new possibilities opened up."
     },
     {
-      "title": "The Proof-of-Work Concept",
-    "author": "Daniel Krawisz",
-    "date": "June 24, 2013",
-    "slug": "the-proof-of-work-concept"
+        "title": "The Proof-of-Work Concept",
+        "author": "Daniel Krawisz",
+        "date": "June 24, 2013",
+        "slug": "the-proof-of-work-concept",
+        "excerpt":"Proof-of-work should not be seen as a mysterious or wasteful system, but as something functional, natural, and potentially of value for the design of any communication protocol."
     },
     {
-      "title": "Crypto-Anarchy and Libertarian Entrepreneurship - Chapter 4: The Risk from the Software Industry",
-    "author": "Daniel Krawisz",
-    "date": "June 5, 2013",
-    "slug": "crypto-anarchy-and-libertarian-entrepreneurship-4"
+        "title": "Crypto-Anarchy and Libertarian Entrepreneurship - Chapter 4: The Risk from the Software Industry",
+        "author": "Daniel Krawisz",
+        "date": "June 5, 2013",
+        "slug": "crypto-anarchy-and-libertarian-entrepreneurship-4",
+        "excerpt":"Stay one step ahead of the government and don’t get embroiled in politics."
     },
     {
-      "title": "Crypto-Anarchy and Libertarian Entrepreneurship - Chapter 3: The Killer App of Liberty",
-    "author": "Daniel Krawisz",
-    "date": "May 29, 2013",
-    "slug": "crypto-anarchy-and-libertarian-entrepreneurship-3"
+        "title": "Crypto-Anarchy and Libertarian Entrepreneurship - Chapter 3: The Killer App of Liberty",
+        "author": "Daniel Krawisz",
+        "date": "May 29, 2013",
+        "slug": "crypto-anarchy-and-libertarian-entrepreneurship-3",
+        "excerpt":"If Bitcoin becomes money, the government’s control of money will have ended."
     },
     {
-      "title": "Crypto-Anarchy and Libertarian Entrepreneurship - Chapter 2: Public-Key Cryptography",
-    "author": "Daniel Krawisz",
-    "date": "May 24, 2013",
-    "slug": "crypto-anarchy-and-libertarian-entrepreneurship-2"
+        "title": "Crypto-Anarchy and Libertarian Entrepreneurship - Chapter 2: Public-Key Cryptography",
+        "author": "Daniel Krawisz",
+        "date": "May 24, 2013",
+        "slug": "crypto-anarchy-and-libertarian-entrepreneurship-2",
+        "excerpt":"Public-key cryptography is the greatest tool of liberty ever devised."
     },
     {
-      "title": "Crypto-Anarchy and Libertarian Entrepreneurship - Chapter 1: The Strategy",
-    "author": "Daniel Krawisz",
-    "date": "May 22, 2013",
-    "slug": "crypto-anarchy-and-libertarian-entrepreneurship-1"
+        "title": "Crypto-Anarchy and Libertarian Entrepreneurship - Chapter 1: The Strategy",
+        "author": "Daniel Krawisz",
+        "date": "May 22, 2013",
+        "slug": "crypto-anarchy-and-libertarian-entrepreneurship-1",
+        "excerpt":"With cryptography, one libertarian inventor can create an entire libertarian society."
     },
     {
-      "title": "Fractional Reserve Banking is Obsolete",
-    "author": "Pierre Rochard",
-    "date": "February 22, 2013",
-    "slug": "fractional-reserve-banking-is-obsolete"
+        "title": "Fractional Reserve Banking is Obsolete",
+        "author": "Pierre Rochard",
+        "date": "February 22, 2013",
+        "slug": "fractional-reserve-banking-is-obsolete",
+        "excerpt":"There is no reason to deposit your money with a 3rd party. Bitcoin makes fractional reserve banking an obsolete technology."
     },
     {
-      "title": "End the Fed: Hoard Bitcoins",
-    "author": "Pierre Rochard",
-    "date": "February 19, 2013",
-    "slug": "end-the-fed-hoard-bitcoins"
+        "title": "End the Fed: Hoard Bitcoins",
+        "author": "Pierre Rochard",
+        "date": "February 19, 2013",
+        "slug": "end-the-fed-hoard-bitcoins",
+        "excerpt":"Low transaction costs make Bitcoin the most competitive medium of exchange in humanity’s history, and it may be the case that a currency with even lower transaction costs is theoretically impossible."
     },
     {
-      "title": "Working and Saving are Revolutionary Acts",
-    "author": "Pierre Rochard",
-    "date": "December 24, 2012",
-    "slug": "working-and-saving-are-revolutionary-acts"
+        "title": "Working and Saving are Revolutionary Acts",
+        "author": "Pierre Rochard",
+        "date": "December 24, 2012",
+        "slug": "working-and-saving-are-revolutionary-acts",
+        "excerpt":"New capital formation is the impetus for two trends that push the equilibrium of all industries towards decentralized markets: increasing technological sophistication and a deepening of the division of labor."
     }]
 }
