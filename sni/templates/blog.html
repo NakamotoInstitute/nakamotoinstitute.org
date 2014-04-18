@@ -16,11 +16,13 @@ The Memory Pool | Satoshi Nakamoto Institute
     </div>
   </div>
 
-  	<ul>
-  		{% for bp in bps %}
-  		<li>
-  			<a href="{{url_for('blogpost', slug=bp.slug)}}">{{bp.title}}</a> - {{bp.author}} ({{bp.date.strftime('%B %d, %Y')}})
-  		</li>
-  		{% endfor %}
-  	</ul>
+	{% for bp in bps %}
+  <div class="row text-center">
+    <a href="{{url_for('blogpost', slug=bp.slug)}}">{{bp.title}}</a><br>
+    {{bp.author}}<br>
+    <small><em>{{bp.date.strftime('%B %d, %Y')}}</em></small>
+  </div>
+	<hr>
+  {% endfor %}
+
 {% endblock %}
