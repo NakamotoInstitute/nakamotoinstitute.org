@@ -1,5 +1,9 @@
 *.py[cod]
+<<<<<<< HEAD
+*config.py
+=======
 
+>>>>>>> upstream/master
 *.pdf
 
 # C extensions
@@ -40,3 +44,7 @@ nosetests.xml
 *.sublime-project
 *.sublime-workspace
 venv/*
+<<<<<<< HEAD
+config.py
+=======
+>>>>>>> upstream/master

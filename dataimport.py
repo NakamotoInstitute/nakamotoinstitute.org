@@ -10,6 +10,10 @@ from dateutil import parser
 from sni.models import *
 
 # Clear out database
+<<<<<<< HEAD
+BlogPost.query.delete()
+=======
+>>>>>>> upstream/master
 Email.query.delete()
 Post.query.delete()
 cats = Category.query.all()
@@ -105,4 +109,8 @@ for i in range(0,len(blogps['blogposts'])):
 		date=parser.parse(blogps['blogposts'][i]['date']),
 		slug=blogps['blogposts'][i]['slug'])
 	db.session.add(blogpost)
+<<<<<<< HEAD
 	db.session.commit()
+=======
+	db.session.commit()
+>>>>>>> upstream/master

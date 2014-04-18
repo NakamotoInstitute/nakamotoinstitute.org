@@ -1,3 +1,237 @@
+<<<<<<< HEAD
+<!-- extend base layout -->
+{% extends "doc.html" %}
+{% block doc %}
+
+<!-- saved from url=(0047)http://szabo.best.vwh.net/bearer_contracts.html -->
+<div class="page-header">
+  		<h1 class="text-center">
+  			Contracts with Bearer
+	  		<small>
+	  			Nick Szabo
+	  		</small>
+  		</h1>
+  		<h4 class="text-center">
+  			1997
+  		</h4>
+  	</div>
+
+	<h2>
+		Bearer Certificates
+	</h2>
+	
+	<p>
+		"Digital bearer certificate" is a broad term developed by thisauthor[1] incorporating at least two emerging technologies: digital cash and distributed capabilities (secure distributed object references).   I will first describe the Chaumian protocol and its innovative privacy feature.  I will then discuss how these ideas map to the world of capabilities in the section on generic vs. specific rights.  I have altered digital cash terminology from digital cash to bearer certificate or token, from mint to issuer or transfer agent, and so on to reflect the ability of Chaum's protocols to generalize.Chaumian bearer certificates implement standardized rightstransferable regardless of the identity of the holder.  Each kind of contract (for example, each denomination of "coin" in digital cash) corresponds to a digital signature, just as each issue of Federal Reserve Notes or stock certificates corresponds to a particular plate.
+	</p>
+
+	<p>
+		In the most straightforward Chaumian protocol, the issuer and transfer agent (the same entity, for our purposes, though they can easily be unbundled) create a serial number (really a largeunguessable random number, rather than a sequence), and append it to a list of issued certificates. The transfer agent clears a transfer (i.e,. redeems the certificate) bychecking the signature to identify the class of bearer contractand verify that it was made, then looking on that contract's issued list to make sure the serial number is there, then removing the serial number. Alternatively, the issuer can let the issuee make up theserial number, then, when cleared, check the signature and put the number on the list of cleared certificates. The signature provides the assurance that the certificate is indeed the the particular kindof contract with bearer, while the serial number assures that the same instance of that contract is not cleared or redeemed more than once. In these simple versions, the transfer agent can link thetransferee to the transferor for all transfers. To implement the privacy characteristics of coins and physical bearer certificates, we need to add unlinkability features.
+	</p>
+
+
+	<h2>
+		Blind Signatures
+	</h2>
+
+	<p>
+		Meet the greatest simple equation since e=mc<sup>2</sup>:<pre>gSf(m) = S(m)</pre>S is a digital signature.  f  is the blinding function, and g an unblinding function.  The blinding functions are usually based on a secret random number called the "blinding factor".   m isanother random number, a unique identifier which can, for example,refer to an instance of some object.<p>
+	</p>
+
+	<p>
+		The idea is very clever but very simple.  It may be counterintuitive because the simplest physical world metaphor of this highly useful e-commerce primitive sounds worse than useless:  Alice can get Carol to sign a blank check!  Here's how:</p>
+
+	<p>
+		(1) Alice generates m and blinds it.  "Blinding" is just a one-time-pad encryption to oneself,  f(m).   She sends this to Carol.   This is like taking a piece of paper and sealing it inside an envelope which Carol can't open or see through.
+	</p>
+	
+	<p>
+		(2) Carol signs it: Sf(m), and sends this back to Alice.   Thisis like Carol signing the outside of the envelope.
+	</p>
+
+	<p>
+		(3) Alice unblinds it: gSf(m) = S(m).   Carol has alsosigned the paper Alice put inside the envelope!
+	</p>
+
+	<p>
+		The genius behind this discovery: cryptography  guru David Chaum.  The brilliance lies in step 3: Chaum discovered thatsome signatures have the property of being "commutative"with the blinding functions: Alice can strip off the blindingin the reverse order which the blinding and signaturewere applied, leaving just Alice's signature of n.  It is as ifAlice put a piece of  carbon paper inside the envelope!
+	</p>
+
+	<p>
+		In particular for RSA signatures, with public key (pq, e)and private key d, the blind signature functions are the followingmodulo pq:</p><pre>S(x) = x<sup>d</sup>g(x) = xk<sup>-1</sup>f(x)= xk<sup>e</sup></pre> 
+		We can check that the blind signature property holds:gSf(m) = (m(k<sup>e</sup>))<sup>d</sup> * k<sup>-1</sup> = 	m<sup>d</sup> * k * k<sup>-1</sup>	= m<sup>d</sup>, which is the valid RSA signature of private key d on m.
+	</p>
+
+	<h2>
+		Unlinkable Transfers
+	</h2>
+
+	<p>
+		Distinguish between either a counter or third party tracing one person's true name, via lack of or weak communicationsmix, and a third party linking two entities (whether nyms, use-more-than-once-addresses, account numbers, or true names) as being involved in the same transaction.   By unlinkabilityherein we mean the latter.  The goal where true names areused (this occurs, for example, when using true name accountsor not using good communications mixes), is to prevent thirdparty linking of two people doing business with each other.  Where nyms are used the goal is to minimize the release of traffic information, to prevent the unwanted accumulation of unique behavior patterns, which could be used to link nyms (including to their true names), or could augment other means of breaching privacy.  Blindingespecially helps where rights holders want to keep third partyor public accounts denominated in generic rights.  Inthat case a communications mix doesn't even in principlegive us what blinding does.
+	</p>
+
+	<p>
+		Besides protecting against the transfer agent, Chaum's transferor-, transferee-, anddouble-blinding protocols protect against collusion of a party with a transfer agent to identify the countparty account or nym.
+	</p>
+
+	<p> 
+		Unlinkability can be provided by combining a list of cleared certificates with blind signatures and a delay-mixing effect. Enough instances of a standardized contract are issuedover a period of time to create a mix. Between the issuing and clearing of a certificate, many othercertificates with the same signature will be cleared, making it highly improbable that a particularclearing can be linked to a particular issue via the signature. There is a tradeoff between the mixingeffect and the exposure to the theft of a "plate" for a particular issue: the smaller the issue, thesmaller the exposure but the greater the linkability; a larger issue has both greater exposure andgreater confidentiality.
+	</p>
+
+	<p>
+		Blind signatures can be used to make certificate transfers unlinkable via serial number. Privacy fromthe transfer agent can take the form of transferee-unlinkability, transferor-unlinkability, or "doubleblinded" where both transferor and transferee are unlinkable by the transfer agent or a collusion of atransfer agent and counterparty.
+	</p>
+
+	<p>
+		A use-once-address communications mix plus foreswearingany reputation gain from keeping accounts, in theory also buys us unlinkability, but a communications mixis weak and very expensive.
+	</p>
+
+	<p>
+		Bearer certificates come in an "online" variety, cleared during every transfer, and thus both verifiableand observable, and an "offline" variety, which can be transferred without being cleared, but is onlyverifiable when finally cleared, by revealing any the clearing name of any intermediate holder whotransferred the object multiple times (a breach of contract). 
+	</p>
+
+	<p>
+		This unlinkability is often called "anonymity", but the issue of whether accounts are issued to realnames or pseudonyms, and whether transferor and transferee identify themselves to each other, isorthogonal to unlinkability by the transfer agent inthe online model. In the off-line model, accountidentification (or at least a highly reputable and/or secured pseudonym) is required: passing an offlinecertificate a second time reveals this identity. Furthermore, communications channels can allow Eveto link transferor and transferee, unless they take the precaution of using an anonymous remailer.Online clearing does make lack of identification a reasonable option for many kinds of transactions,although common credit and warrantee situations often benefit from or even require identification.
+	</p>
+
+	<p>
+		When confronting an attempted clearing of a cleared serial number, we face an error-or-frauddilemma similar to the one we encountered above in double entry bookkeeping. The ecash(tm)protocol from DigiCash actually takes advantage of on purpose to recover from a network failure. When certificates are lost over the net it is not clearto the transferor whether they have been received and cleared by the transferee or not.Second-transferring directly with the transfer agent resolves the ambiguity. This only works with theonline protocol. The issue of distinguishing error from fraud is urgent in the offline protocol, but thereis as yet no highly satisfactory solution. This problem is often intractable due to the subjectivity ofintent.
+	</p>
+
+	<p>
+		With ideal two-way anonymous communications between use-oncekeys, and completely accountless clearing, unlinkabilityvia blind signatures becomes redundant.  This idealcase has yet to be even closely approached with implemented technology, and necessarily involves longcommunications delays which are often intolerable.Real imperfect communications mixes and less expensiveblinded tokens complement each other.
+	</p>
+
+	<h4>
+		Conserved Objects
+	</h4>
+
+	<p>
+		Issuance and cleared transfer of references to adistributed object conserves the usage of thatobject. This object becomes "scarce" in economic terms, just as use of physical objects is finite.Conserved objects provide the basis for a software economics that more closely resembleseconomics of scarce physical objects. Conserved objects can be used to selectively exclude notonly scarce physical resources (such as CPU time, network bandwidth and response time, etc.), butalso fruits of intellectual labor - as long as one is willing to pay the price to interact with thatinformation over the network rather than locally (cf. content rights management). Conservationimmunizes objects and the resources they encapsulate to denial of service attacks. Bearer certificateprotocols can be used to transfer references to a particular instance or set of instances of an object,just as they can be used to transfer other kinds of standardized rights.
+	</p>
+
+	<p>
+		To implement a full transaction of payment for services, we often need need more than just thedigital cash protocol; we need a protocol that guarantees that service will be rendered if payment ismade, and vice versa. Current commercial systems use a wide variety of techniques to accomplishthis, such as certified mail, face to face exchange,reliance on credit history and collection agenciesto extend credit, etc.  I discuss such issuesin my article on <a href="http://nakamotoinstitute.org/formalizing-securing-relationships.html">smart contracts</a>.
+
+<!-- h4>          Credentials </h4>
+A credential is a claim made by one party about another. A positive credential is one the secondparty would prefer to reveal, such as a degree from a prestigious school, while that party wouldprefer not to reveal a negative credential such as a bad credit rating. <p>A Chaumian credential is a cryptographic protocol for proving that one's pseudonym (for example,the identification number one uses in a health care system) possesses credentials issued to one'sother pseudonyms, without revealing linkages between these pseudonyms or between pseudonymand true name. It's based around the is-a-person credential the true name credential, used toprove, without revealing, the linkage between pseudonyms, and to prevent the transfer ofpseudonyms between parties.<p-->
+		</p>
+
+	<h2>
+		Generic vs. Specific Rights
+	</h2>
+
+	<p>
+		To discuss the mapping between Chaumian certificatesand distributed capabilities as implemented infor example <a href="http://www.erights.org/">E</a>I introduce some different, partly overlapping terminology: generic vs. specific,exclusive vs. non-, Transfer Agent vs. Provider,token vs. Swiss number. 
+	</p>
+
+	<p>
+		Rights can be generic or specific.  Generic rights correspond to a class of objects, specific rights to an instance.  So a specific right is implemented with a Swiss number, a large random number.  The signed numbers corresponding to generic rights I will call "tokens".
+	</p>
+
+	<p>
+		Rights can also be exclusive or non-exlusive.  Any object which must be conserved, or finally allocated to a specific user, is "exclusive".
+	</p>
+
+	<p>
+		Simple example: the right to an exclusive lock on some 1 MB of memory is generic and exclusive.  The right to an exclusive lock on the specific address space 100-101 is specific and exclusive.The right to two dozen particular stock quotes at 12:22 p.m.today is specific and non-exclusive.
+	</p>
+
+	<p>
+		The main motivation for these distinctions are differentmechanisms of unlinkable transfer of these rights, setout below.
+	</p>
+
+	<p>
+		For simplicity generic rights are all "use-once": the life cycle of a token consists of issuance, followed by a series of transfers, followed by consumption.   More sophisticated life cycles,such as alternating transfer and consumption, are likely possiblewith some extra protocol.
+	</p>
+
+	<p>
+		With a perfect communications mix, including use-oncereturn addresses, and no reputation building, we wouldn't need blinded tokens.  However, communications mixesare expensive, and we want the option of having certainpublic records by which to build reputations, yet docertain rights transfers privately.  For these reasons,we should allow clients to blind token transfersin addition to providing a communications mix.
+	</p>
+
+	<p>
+		For inexpensive, unlinkable, and verifiable transfer of exclusive generic rights, using blinded tokens, there must be a signficant population of interchangable generic rights.   Such rights bundled with nonexlusive specific rightscan also be cheaply transferred since online clearingis not required for the latter.  Unlinkable and verifiable transfer of exclusive specific rights seems to require onlineclearing via an expensive communications mix.
+	</p>
+
+	<p>
+		Two kinds of TTPs: a Transfer Agent (TA) and a Provider.  The TA operates like an accountless digital cash mint, clearing the transfer of tokens for generic rights.  Digital cash is a special case: money is the most generic of rights.
+	</p>
+
+	<p>
+		The Provider is responsible for actually holding the object, which can contain unique state.   The Providerissues a Swiss number, or better a signed descriptionof the specific right and its Swiss number.   Thissignature allows offline verification of the nonexlusive right where the Provider is reputable.  The TAissues a token for the corresponding generic rights.
+	</p>
+
+	<p>
+		Chaum has also developed other means for dealing withunique state[2].
+	</p>
+
+	<p>
+		I'm assuming the TA and Provider have known reputablesignatures.   The trust or reputation  needed to ensure correctness of transfer between Provider, TA, and users is partly left for later analysis.   The two main goals here are to assure thatusers can verify their rights (including exclusivity fromtransferors where promised) and retain full privacy from TAs and Providers.   Some other trust assumptions are likely made here which need to be explicated and analyzed.
+	</p>
+
+	<p>
+		To implement exclusive transfers, the TA keeps a list of cleared (cancelled) token numbers.   The TA corresponds  to a "mint" in the Chaumian online digital cash protocol (see above).  A class of generic rights corresponds to a "denomination" of coin.  The Provider may also keep a list of outstanding or used Swiss numbers, like an E Registrar.
+	</p>
+
+	<p>
+		Here is another example of a generic right, or class of fungibleobjects:  "A queriable SQL database with up to 10 MB of storage, and certain standard response time guaruntees".
+	</p>
+
+	<p>
+		The TA sees only classes of fungible objects.  The Provider andusers see particular instances with unique state, for example a databasefilled with unique information.
+	</p>
+
+	<p>
+		The Provider acts analogously to a "shop".  It is just another tokenclient to the TA, which like other clients can transfer or receive tokens.  Its special role is that it is responsible for issuance, where ittells the TA about a new instance, obtains a new token,and transfers it to the client to whom the new generic rightis being issued.  The TA generates and destroys token supply only at the behest of the Provider; otherwise all itstransfers conserve the supply of a particular generic right.  The Provider is also responsible for the delivery of service to the client bearing the promised right(s), at which time the Provider "deposits" the generic token(s), instructing the TA to decrement the token supply.  In digital cash terminology, the Provider isthe only entity which has to keep something like a bank account.  Rights holders can also keep an account, if they wish to use it to help build reputation, or they can just use the TA for accountless conserved rights transfer.
+	</p>
+
+	<p>
+		The Provider issues along with the initial generic rights tokena signed affadavit, machine or human readable, describingaspects of the object which may be non-exlusive andunique, along with that instance's Swiss number and thepublic key(s) of the generic right(s) for which it is valid.    For example, it  might say  "a database containing quotes of these two dozen listed stocks as of 12:22 pm Monday", without actually containing those quotes.  Often such description is worthmore when bundled with generic exclusive rights, such as the right to a fast response time.  The specific rights can elaborate in unique ways upon the generic rights, as long as these elaborations are not taken to define exclusive rights.  The generic rights let theTAs garuntee exclusivity to users and conservation of resources to Providers, while the specific rights describe the unique state to any desired degree of elaboration.   The Provider must beprepared to service any specific promise it has issued, as long as it is accompanied by the proper conserved generic tokens.
+	</p>
+
+	<p>
+		This method of composing specific and generic rights, transferred as a bundle but with exlusive generic atoms cleared by different TAs, allows arbitrarily sophisticated rights bundles, referringto objects with arbitrarily unique state, to be transferredunlinkably.  A wide variety of derivatives and combinations arepossible.  The only restriction is that obtaining rights to specific exclusive resources must either be deferred to the consumption phase, or transferred with online clearingvia expensive communications mix.
+	</p>
+
+	<p>
+		If the Provider wished to garuntee exclusivity to a specificright, transfer seems to require an expensive communicationsmix  between Provider and transferee, rather than a cheapblinded token.    For example, "Deep Space Station60 from 0500-0900 Sunday" or "a  lock on autoexec.bat now"demands exclusivity to a specific right, and thus seemsto require a communications mix to unlinkably transfer.On the other hand, "A one hour block on DSS-60 in May"and "the right to lock autoexec.bat at some point" are generic and can be transferred privately with the muchless expensive blinding, given a sufficient populationof other tokens for this class of generic right transferedbetween the issuance and consumption of a given token.
+	</p>
+
+	<p>
+		Clients can deal with the TA without a communicationsmix. They deal with the Provider via a communicationsmix.  If both the initial and final holders failed to do this,the Provider could link them.   If just the final holder failedto do so,  the Provider could identify him as the actual user of the resource.  Thus for full privacy generic transfers are cheap, and nonexclusive transfers are cheap, while specific exsclusivetransfers and actually using the object seem to requirethe expensive communications mix.
+	</p>
+	
+
+	<h2>
+		Acknowledgements
+	</h2>
+
+
+	<p>
+		My thanks to David Chaum, Mark Miller, BillFrantz, Norm Hardy, and many others for taking the timeto give me their valuable insights into these issues.
+	</p>
+
+	<h2>
+		References
+	</h2>
+
+	[1] The first public references to this idea can be found     <a href="http://www.i-m.com/archives/9412/0179.html">here,</a>,     <a href="http://szabo.best.vwh.net/smart.contracts.html">here</a>.     I also referred to this idea during this period in many      personal communications, using the phrases "digital bearer      instrument", "digital bearer certificate", "scarce object",      and "conserved object".  The idea of digital bearer certificates as a serious proposal for the financial industry has	been popularized, with many intruiging additional ideas, by Bob Hettinga.<!--    The phrases "digital bearer certificate" and "digital     bearer settlement(DBS)" were soon thereafter popularized     by a correspondent of mine, Robert Hettinga, as referring to a     legal/institutional idea of instant, irrevocable settlement    made possible by both the instant clearing and privacy    features of this technology.--><br>
+
+	[2] David Chaum, <a href="http://www.digicash.com/news/archive/online.html">Online Cash Checks</a><br>
+
+	[3] "Blind Signatures for Untraceable Payments," D. Chaum, <br>Advances in Cryptology Proceedings of Crypto 82, <br>D. Chaum, R.L. Rivest, &amp; A.T. Sherman (Eds.), Plenum, pp. 199-203.<br>[4] <a href="http://www.erights.org/">The E distributed object language</a><br>
+
+
+	<p> 
+		Please send your comments to nszabo (at) law (dot) gwu (dot) edu
+	</p>
+
+	<p>
+		Copyright (c) 1997, 1999 by Nick Szabo permission to redistribute without alteration hereby granted.
+	</p>
+
+
+{% endblock %}
+=======
 
 <!-- saved from url=(0047)http://szabo.best.vwh.net/bearer_contracts.html -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title> Nick Szabo -- Contracts with Bearer</title>
@@ -503,3 +737,4 @@ Please send your comments to nszabo (at) law (dot) gwu (dot) edu
 
 
 </body></html>
+>>>>>>> upstream/master
