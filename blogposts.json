@@ -1,3 +1,4 @@
+
 {
   "blogposts": [
     {
@@ -5,5 +6,113 @@
 		"author": "Daniel Krawisz",
 		"date": "March 29, 2014",
 		"slug": "hyperbitcoinization"
+    },
+    {
+    	"title": "The Coming Demise of the Altcoins (And What You Can Do to Hasten It)",
+		"author": "Daniel Krawisz",
+		"date": "March 14, 2014",
+		"slug": "the-coming-demise-of-altcoins"
+    },
+    {
+    	"title": "Bitcoin Has No Image Problem",
+		"author": "Daniel Krawisz",
+		"date": "February 25, 2014",
+		"slug": "bitcoin-has-no-image-problem"
+    },
+    {
+      "title": "I'm Hoarding Bitcoins, and No You Can't Have Any",
+    "author": "Daniel Krawisz",
+    "date": "February 12, 2014",
+    "slug": "im-hoarding-bitcoins-and-no-you-cant-have-any"
+    },
+    {
+      "title": "Why Bitcoin Will Continue to Grow",
+    "author": "Daniel Krawisz",
+    "date": "February 1, 2014",
+    "slug": "why-bitcoin-will-continue-to-grow"
+    },
+    {
+      "title": "I Love Bitcoin's Volatility",
+    "author": "Daniel Krawisz",
+    "date": "January 28, 2014",
+    "slug": "i-love-bitcoins-volatility"
+    },
+    {
+      "title": "Why Anarchy?",
+    "author": "Daniel Krawisz",
+    "date": "December 31, 2013",
+    "slug": "why-anarchy"
+    },
+    {
+      "title": "Mastercoin is a Nightmare of Insanity",
+    "author": "Daniel Krawisz",
+    "date": "December 20, 2013",
+    "slug": "mastercoin-is-a-nightmare-of-insanity"
+    },
+    {
+      "title": "The Bitcoin Central Bank's Perfect Monetary Policy",
+    "author": "Pierre Rochard",
+    "date": "December 15, 2013",
+    "slug": "the-bitcoin-central-banks-perfect-monetary-policy"
+    },
+    {
+      "title": "The Problem with Altcoins",
+    "author": "Daniel Krawisz",
+    "date": "August 22, 2013",
+    "slug": "the-problem-with-altcoins"
+    },
+    {
+      "title": "The Original Value of Bitcoins",
+    "author": "Daniel Krawisz",
+    "date": "July 2, 2013",
+    "slug": "the-original-value-of-bitcoins"
+    },
+    {
+      "title": "The Proof-of-Work Concept",
+    "author": "Daniel Krawisz",
+    "date": "June 24, 2013",
+    "slug": "the-proof-of-work-concept"
+    },
+    {
+      "title": "Crypto-Anarchy and Libertarian Entrepreneurship - Chapter 4: The Risk from the Software Industry",
+    "author": "Daniel Krawisz",
+    "date": "June 5, 2013",
+    "slug": "crypto-anarchy-and-libertarian-entrepreneurship-4"
+    },
+    {
+      "title": "Crypto-Anarchy and Libertarian Entrepreneurship - Chapter 3: The Killer App of Liberty",
+    "author": "Daniel Krawisz",
+    "date": "May 29, 2013",
+    "slug": "crypto-anarchy-and-libertarian-entrepreneurship-3"
+    },
+    {
+      "title": "Crypto-Anarchy and Libertarian Entrepreneurship - Chapter 2: Public-Key Cryptography",
+    "author": "Daniel Krawisz",
+    "date": "May 24, 2013",
+    "slug": "crypto-anarchy-and-libertarian-entrepreneurship-2"
+    },
+    {
+      "title": "Crypto-Anarchy and Libertarian Entrepreneurship - Chapter 1: The Strategy",
+    "author": "Daniel Krawisz",
+    "date": "May 22, 2013",
+    "slug": "crypto-anarchy-and-libertarian-entrepreneurship-1"
+    },
+    {
+      "title": "Fractional Reserve Banking is Obsolete",
+    "author": "Pierre Rochard",
+    "date": "February 22, 2013",
+    "slug": "fractional-reserve-banking-is-obsolete"
+    },
+    {
+      "title": "End the Fed: Hoard Bitcoins",
+    "author": "Pierre Rochard",
+    "date": "February 19, 2013",
+    "slug": "end-the-fed-hoard-bitcoins"
+    },
+    {
+      "title": "Working and Saving are Revolutionary Acts",
+    "author": "Pierre Rochard",
+    "date": "December 24, 2012",
+    "slug": "working-and-saving-are-revolutionary-acts"
     }]
 }
