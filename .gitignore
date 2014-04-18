@@ -40,3 +40,4 @@ nosetests.xml
 *.sublime-project
 *.sublime-workspace
 venv/*
+config.py
