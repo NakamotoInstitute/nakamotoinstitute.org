@@ -25,22 +25,26 @@ subject to other licenses.-->
     </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-              <a href="{{url_for('satoshi_index')}}" class="dropdown-toggle">The Complete Satoshi <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="{{url_for('emails')}}">Emails</a></li>
-                <li><a href="{{url_for('posts')}}">Forum Posts</a></li>
-              </ul>
+            <li>
+              <a href="{{url_for('satoshi_index')}}">
+                The Complete Satoshi
+              </a>
             </li>
-            <li class="dropdown">
-              <a href="{{url_for('literature')}}" class="dropdown-toggle">Literature <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="{{url_for('literature')}}">Literature</a></li>
-                <li><a href="{{url_for('blog')}}">Mempool</a></li>
-              </ul>
+            <li>
+              <a href="{{url_for('literature')}}">
+                Literature
+              </a>
             </li>
-            <li><a href="{{url_for('about')}}">About</a></li>
-            <li><a href="{{url_for('contact')}}">Contact</a></li>
+            <li>
+              <a href="{{url_for('blog')}}">
+                Mempool
+              </a>
+            </li>
+            <li>
+              <a href="{{url_for('about')}}">
+                About
+              </a>
+            </li>
           </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -52,7 +56,8 @@ subject to other licenses.-->
   <div id="footer">
       <div class="container">
         <p class="text-muted"><small><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
-        &nbsp;&ndash; <a href="https://coinbase.com/checkouts/48919ffdd40c2c6571c29539d4d68afb" target="_blank">Donate Bitcoins</a>
+        &nbsp;&ndash; <a href="https://coinbase.com/checkouts/48919ffdd40c2c6571c29539d4d68afb" target="_blank">Donate Bitcoins</a> 
+        &nbsp;&ndash; <a href="{{url_for('contact')}}">Contact</a>
         <br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Satoshi Nakamoto Institute</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. Some works may be subject to other licenses.</small></p>
       </div>
     </div>
