@@ -103,6 +103,7 @@ for i in range(0,len(blogps['blogposts'])):
 		title=blogps['blogposts'][i]['title'],
 		author=blogps['blogposts'][i]['author'],
 		date=parser.parse(blogps['blogposts'][i]['date']),
-		slug=blogps['blogposts'][i]['slug'])
+		slug=blogps['blogposts'][i]['slug'],
+		excerpt=blogps['blogposts'][i]['excerpt'])
 	db.session.add(blogpost)
 	db.session.commit()

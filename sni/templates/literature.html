@@ -1,31 +1,58 @@
 <!-- extend base layout -->
 {% extends "base.html" %}
 {% block content %}
+<div class="container">
   	<div class="row">
   		<div class="text-center">
-  			<h2>Literature</h2>
-  			<p>Bitcoin was not forged in a vacuum. These works serve to contextualize Bitcoin into the broader story of cryptography and freedom.</p>
+  			
+        <h2>
+          Literature
+        </h2>
+  			
+        <p>
+          Bitcoin was not forged in a vacuum. These works serve to contextualize Bitcoin into the broader story of cryptography and freedom.
+        </p>
+        
   		</div>
   	</div>
   	
-    <ul>
-    {%for doc in docs%}
-      <li>
-      	<a href="{{url_for('docinfo', docid=doc['id'])}}">
-      	{% if doc['doctype']=="book" %}
-      		<em>{{doc['title']}}</em>
-      	{% else %}
-      		"{{doc['title']}}"
-      	{% endif %}
-      	</a>
-      	{% if doc['author']|length == 3 %}
-      		- {{doc['author'][0].name}}, {{doc['author'][1].name}}, and {{doc['author'][2].name}}
-      	{% elif doc['author']|length == 2 %}
-      		- {{doc['author'][0].name}} and {{doc['author'][1].name}}
-      	{% else %}
-      		- {{doc['author'][0].name}}
-      	{% endif %}
-      	({{doc['date']}})
-      </li>
-    {%endfor%}
+  <div class="row">
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%for doc in docs%}
+          <tr>
+            <td>
+            	<a href="{{url_for('docinfo', docid=doc['id'])}}">
+            	{% if doc['doctype']=="book" %}
+            		<em>{{doc['title']}}</em>
+            	{% else %}
+            		"{{doc['title']}}"
+            	{% endif %}
+            	</a>
+            </td>
+            <td>
+            	{% if doc['author']|length == 3 %}
+            		{{doc['author'][0].name}}, {{doc['author'][1].name}}, and {{doc['author'][2].name}}
+            	{% elif doc['author']|length == 2 %}
+            		{{doc['author'][0].name}} and {{doc['author'][1].name}}
+            	{% else %}
+            		{{doc['author'][0].name}}
+            	{% endif %}
+            </td>
+            <td>
+            	{{doc['date']}}
+            </td>
+          </tr>
+        {%endfor%}
+        </tbody>
+        </table>
+  </div>
+</div>
 {% endblock %}

@@ -89,6 +89,7 @@ class BlogPost(db.Model):
 	author = db.Column(db.String())
 	date = db.Column(db.Date)
 	slug = db.Column(db.String())
+	excerpt = db.Column(db.String())
 
 	def __repr__(self):
  		return '<BlogPost %r>' % (self.title)
