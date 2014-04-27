@@ -128,6 +128,25 @@ def docview(docid, format):
         return redirect('literature')
 
 @cache.cached(timeout=900)
+@app.route('/<string:slug>/', methods=["GET"])
+def slugview(slug):
+    doc = Doc.query.filter_by(slug=slug).first()
+
+    if(doc!=None):
+        docid = doc.id
+        formats = []
+        for form in doc.formats:
+            formats += [form.name]
+        for format in formats:
+            if(format=='html'):
+                return render_template("%s.html" % slug, doc=doc)
+            else:
+                return redirect('literature')
+    else:
+        return redirect('literature')
+
+
+@cache.cached(timeout=900)
 @app.route('/mempool/', methods=["GET"])
 def blog():
     bps = BlogPost.query.all()
