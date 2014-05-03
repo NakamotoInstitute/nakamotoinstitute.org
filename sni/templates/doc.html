@@ -6,11 +6,6 @@
 {% endblock %}
 
 {% block content %}
-	
-	<div class="text-center">
-		<a href="{{url_for('docinfo', docid=doc.id)}}">Back</a> | <a href="{{url_for('literature')}}">Index</a>
-	</div>
-	
 	{% block doc %}{% endblock %}
 
 	<div class="text-center">

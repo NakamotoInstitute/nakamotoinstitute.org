@@ -10,19 +10,27 @@ The Memory Pool | Satoshi Nakamoto Institute
     <div class="text-center">
       <h1>The Memory Pool</h1>
       <p>
-      	Where ideas wait to be mined into the block chain of the collective conscience<br>
-      	<em>Some transactions may be invalid</em>
+        Where ideas wait to be mined into the block chain of the collective conscience<br>
+        <em>Some transactions may be invalid</em>
       </p>
     </div>
   </div>
 
-	{% for bp in bps %}
-  <div class="row text-center">
-    <a href="{{url_for('blogpost', slug=bp.slug)}}">{{bp.title}}</a><br>
-    {{bp.author}}<br>
-    <small><em>{{bp.date.strftime('%B %d, %Y')}}</em></small>
-  </div>
-	<hr>
-  {% endfor %}
+      {% for bp in bps %}
+      <hr>
+      <h3>
+        <a href="{{url_for('blogpost', slug=bp.slug)}}">
+            {{bp.title}}
+        </a>
+        <p>
+        <small>
+          {{bp.author}} - {{bp.date.strftime('%B %d, %Y')}}
+        </small>
+        </p>
+      </h3>
+        <p>
+          {{bp.excerpt}}
+        </p>
+      {% endfor %}
 
 {% endblock %}

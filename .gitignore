@@ -6,6 +6,8 @@ config.py
 # C extensions
 *.so
 
+config.py
+
 # Packages
 *.egg
 *.egg-info

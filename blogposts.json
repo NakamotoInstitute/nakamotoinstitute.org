@@ -1,5 +1,27 @@
 {
   "blogposts": [
+
+    {
+        "title": "Bitcoin is the Best Unit of Account",
+        "author": "Daniel Krawisz",
+        "date": "May 10, 2014",
+        "slug": "bitcoin-is-the-best-unit-of-account",
+        "excerpt":"Someone still lost in the dollar world looks at Bitcoin and sees wild and extreme volatility, whereas someone in Bitcoin looking back at the dollar sees the worst and longest economic crash in history."
+    },
+    {
+        "title": "How We Know Bitcoin Is Not a Bubble",
+        "author": "Daniel Krawisz",
+        "date": "May 3, 2014",
+        "slug": "how-we-know-bitcoin-is-not-a-bubble",
+        "excerpt":"The difference between money and a bubble is that a commodity whose price is a bubble actually has some underlying value."
+    },
+    {
+        "title": "How to Market Bitcoin",
+        "author": "Daniel Krawisz",
+        "date": "April 26, 2014",
+        "slug": "how-to-market-bitcoin",
+        "excerpt":"Does Bitcoin need to be sanitized and separated from its anarchist, black-market roots in order to become acceptable to the general population? Absolutely not!"
+    },
     {
     	"title": "Hyperbitcoinization",
 		"author": "Daniel Krawisz",
