@@ -137,11 +137,10 @@ def slugview(slug):
         formats = []
         for form in doc.formats:
             formats += [form.name]
-        for format in formats:
-            if(format=='html'):
-                return render_template("%s.html" % slug, doc=doc)
-            else:
-                return redirect('literature')
+        if('html' in formats):
+            return render_template("%s.html" % slug, doc=doc)
+        else:
+            return redirect('literature')
     else:
         return redirect('literature')
 
