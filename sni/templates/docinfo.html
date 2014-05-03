@@ -5,7 +5,7 @@
   <h1>{{doc['title']}}<br />
   <small>{% if doc['author']|length == 3 %}
       		{{doc['author'][0].name}}, {{doc['author'][1].name}}, and {{doc['author'][2].name}}
-      	{% elif doc['author'].name|length == 2 %}
+      	{% elif doc['author']|length == 2 %}
       		{{doc['author'][0].name}} and {{doc['author'][1].name}}
       	{% else %}
       		{{doc['author'][0].name}}
