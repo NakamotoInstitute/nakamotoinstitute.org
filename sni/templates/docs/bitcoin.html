@@ -48,7 +48,7 @@
 		</p>
 
 		<p>
-			<img width="500" src="/static/img/transactions.png">
+        <center><img width="600" src="/static/img/svg/transactions.svg" onerror="this.src=/static/img/transactions.png"></center>
 		</p>
 		
 		<p>
@@ -68,7 +68,7 @@
 		</p>
 			
 		<p>
-			<img width="500" src="{{url_for('static', filename='img/timestamp-server.png')}}">
+        <center><img width="600" src="{{url_for('static', filename='img/svg/timestamp-server.svg')}}" onerror="this.src={{url_for('static', filename='img/timestamp-server.png')}}"></center>
 		</p>
 			
 		<h2>
@@ -84,7 +84,7 @@
 		</p>
 		
 		<p>
-			<img width="500" src="{{url_for('static', filename='img/proof-of-work.png')}}">
+        <center><img width="600" src="{{url_for('static', filename='img/svg/proof-of-work.svg')}}" onerror="this.src={{url_for('static', filename='img/proof-of-work.png')}}"></center>
 		</p>
 		
 		<p>
@@ -161,7 +161,7 @@
 			</p>
 			
 			<p>
-				<img width="600" src="{{url_for('static', filename='img/reclaiming-disk-space.png')}}">
+            <center><img width="600" src="{{url_for('static', filename='img/svg/reclaiming-disk-space.svg')}}" onerror="this.src={{url_for('static', filename='img/reclaiming-disk-space.png')}}"></center>
 			</p>
 			
 			<p>
@@ -177,7 +177,7 @@
 			</p>
 			
 			<p>
-				<img width="600" src="{{url_for('static', filename='img/simplified-payment-verification.png')}}">
+            <center><img width="700" src="{{url_for('static', filename='img/svg/simplified-payment-verification.svg')}}" onerror="{{url_for('static', filename='img/simplified-payment-verification.png')}}"></center>
 			</p>
 			
 			<p>
@@ -193,7 +193,7 @@
 			</p>
 			
 			<p>
-				<img width="275" src="{{url_for('static', filename='img/combining-splitting-value.png')}}">
+            <center><img width="275" src="{{url_for('static', filename='img/svg/combining-splitting-value.svg')}}" onerror="this.src={{url_for('static', filename='img/combining-splitting-value.png')}}"></center>
 			</p>
 			
 			<p>
@@ -209,7 +209,7 @@
 			</p>
 			
 			<p>
-				<img width="600" src="{{url_for('static', filename='img/privacy.png')}}">
+            <center><img width="600" src="{{url_for('static', filename='img/svg/privacy.svg')}}" onerror="this.src={{url_for('static', filename='img/privacy.png')}}"></center>
 			</p>
 			
 			<p>
@@ -233,11 +233,13 @@
 			</p>
 			
 			<p>
-				$\large p$ = probability an honest node finds the next block
-				<br>
-				$\large q$ = probability the attacker finds the next block
-				<br>
-				$\large q_z$ = probability the attacker will ever catch up from $z$ blocks behind
+                $$
+                \begin{eqnarray*}
+                \large p &=& \text{ probability an honest node finds the next block}\\
+                \large q &=& \text{ probability the attacker finds the next block}\\
+                \large q_z &=& \text{ probability the attacker will ever catch up from $z$ blocks behind}
+                \end{eqnarray*}
+                $$
 				</p>
 
 			<p>
