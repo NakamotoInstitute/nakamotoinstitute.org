@@ -148,7 +148,7 @@ def slugview(slug):
 @cache.cached(timeout=900)
 @app.route('/mempool/', methods=["GET"])
 def blog():
-    bps = BlogPost.query.all()
+    bps = BlogPost.query.order_by(desc(BlogPost.date)).all()
     return render_template('blog.html', bps=bps)
 
 @cache.cached(timeout=900)
