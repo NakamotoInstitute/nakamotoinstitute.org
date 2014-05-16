@@ -26,7 +26,8 @@ def satoshi_index():
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    bp = BlogPost.query.order_by(desc(BlogPost.date)).first()
+    return render_template("index.html", bp=bp)
 
 @app.route('/about/', methods = ["GET"])
 def about():

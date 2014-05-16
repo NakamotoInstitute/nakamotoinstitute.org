@@ -30,10 +30,12 @@
                 Mempool
             </h2>
             <p>
-                Hyperbitcoinization describes what will happen to any hapless currency that stands in Bitcoin's path of total world domination...
+                <em>{{bp.title}}</em><br>
+                {{bp.excerpt}}
             </p>
+            <br>
             <p>
-                <a class="btn btn-primary" href="{{url_for('blogpost',slug='hyperbitcoinization')}}" role="button">
+                <a class="btn btn-primary" href="{{url_for('blogpost',slug=bp.slug)}}" role="button">
                     Read more &raquo;
                 </a>
             </p>            
