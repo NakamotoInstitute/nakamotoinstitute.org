@@ -6,8 +6,9 @@
 
 from sni import app, db, cache
 from models import Post, Email, Doc, Author, Format, Category, BlogPost
-from flask import render_template, json, url_for, redirect
+from flask import render_template, json, url_for, redirect, request
 from sqlalchemy import desc
+from werkzeug.contrib.atom import AtomFeed
 import re
  
 from jinja2 import evalcontextfilter, Markup, escape
@@ -160,6 +161,23 @@ def blogpost(slug):
         return render_template('%s.html' % slug, bp=bp)
     else:
         return redirect(url_for("blog"))
+
+@cache.cached(timeout=900)
+@app.route('/mempool/feed/')
+def atomfeed():
+    feed = AtomFeed('Mempool | Satoshi Nakamoto Institute',
+                    feed_url=request.url, url=request.url_root)
+    articles = BlogPost.query.order_by(desc(BlogPost.date)).all()
+    for article in articles:
+        articleurl = url_for('blogpost', slug=article.slug, _external=True)
+        content = article.excerpt + '\n\n<a href=articleurl>Read more...</a>'
+        feed.add(article.title, unicode(content),
+                 content_type='html',
+                 author=article.author,
+                 url=articleurl,
+                 updated=article.date,
+                 published=article.date)
+    return feed.get_response()
 
 
 # Redirect old links
