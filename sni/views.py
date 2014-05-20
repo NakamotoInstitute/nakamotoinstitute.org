@@ -170,7 +170,7 @@ def atomfeed():
     articles = BlogPost.query.order_by(desc(BlogPost.date)).all()
     for article in articles:
         articleurl = url_for('blogpost', slug=article.slug, _external=True)
-        content = article.excerpt + '\n\n<a href=articleurl>Read more...</a>'
+        content = article.excerpt + '<br><br><a href=articleurl>Read more...</a>'
         feed.add(article.title, unicode(content),
                  content_type='html',
                  author=article.author,
