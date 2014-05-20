@@ -163,7 +163,7 @@ def blogpost(slug):
         return redirect(url_for("blog"))
 
 @cache.cached(timeout=900)
-@app.route('/mempool/atom/')
+@app.route('/mempool/feed/')
 def atomfeed():
     feed = AtomFeed('Mempool | Satoshi Nakamoto Institute',
                     feed_url=request.url, url=request.url_root)
