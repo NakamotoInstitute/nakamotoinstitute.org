@@ -27,6 +27,11 @@ for auth in auths:
 Doc.query.delete()
 BlogPost.query.delete()
 
+# return object
+
+def get(model, **kwargs):
+	return db.session.query(model).filter_by(**kwargs).first()
+
 # See if object already exists for uniqueness
 def get_or_create(model, **kwargs):
     instance = db.session.query(model).filter_by(**kwargs).first()
@@ -66,6 +71,19 @@ for i in range(0,len(posts['posts'])):
 	db.session.add(post)
 	db.session.commit()
 
+with open('./authors.json') as data_file:
+	authors = json.load(data_file)
+
+for i in range(0, len(authors['authors'])):
+	author = Author(
+		id=i+1,
+		first=authors['authors'][i]['first'],
+		middle=authors['authors'][i]['middle'],
+		last=authors['authors'][i]['last'],
+		slug=authors['authors'][i]['slug'])
+	db.session.add(author)
+	db.session.commit()
+
 with open('./literature.json') as data_file:
 	docs = json.load(data_file)
 
@@ -73,7 +91,7 @@ for i in range(0, len(docs['docs'])):
 	authorlist = docs['docs'][i]['author']
 	dbauthor = []
 	for auth in authorlist:
-		dbauthor += [get_or_create(Author, name=auth)]
+		dbauthor += [get(Author, slug=auth)]
 	formlist = docs['docs'][i]['formats']
 	dbformat = []
 	for form in formlist:
@@ -101,7 +119,7 @@ for i in range(0,len(blogps['blogposts'])):
 	blogpost = BlogPost(
 		id=i+1,
 		title=blogps['blogposts'][i]['title'],
-		author=blogps['blogposts'][i]['author'],
+		author=[get(Author,slug=blogps['blogposts'][i]['author'])],
 		date=parser.parse(blogps['blogposts'][i]['date']),
 		slug=blogps['blogposts'][i]['slug'],
 		excerpt=blogps['blogposts'][i]['excerpt'])

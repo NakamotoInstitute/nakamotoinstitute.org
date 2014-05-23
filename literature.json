@@ -2,7 +2,7 @@
   "docs": [
     {
         "title": "Bitcoin: A Peer-to-Peer Electronic Cash System",
-        "author": ["Satoshi Nakamoto"],
+        "author": ["satoshi-nakamoto"],
         "date": "October 31, 2008",
         "slug": "bitcoin",
         "formats": ["html", "pdf"],
@@ -11,7 +11,7 @@
     },
     {
         "title": "Economics of Bitcoin: is Bitcoin an alternative to fiat currencies and gold?",
-        "author": ["Peter Šurda"],
+        "author": ["peter-surda"],
         "date": "November 19, 2012",
         "slug": "economics-of-bitcoin",
         "formats": ["pdf"],
@@ -20,7 +20,7 @@
     },
     {
         "title": "On the Origins of Bitcoin",
-        "author": ["Konrad S. Graf"],
+        "author": ["konrad-s-graf"],
         "date": "October 23, 2013",
         "slug": "origins-of-bitcoin",
         "formats": ["pdf"],
@@ -29,7 +29,7 @@
     },
     {
         "title": "b-money",
-        "author": ["Wei Dai"],
+        "author": ["wei-dai"],
         "date": "November 1998",
         "slug": "bmoney",
         "formats": ["txt"],
@@ -38,7 +38,7 @@
     },
     {
         "title": "Design of a Secure Timestamping Service with Minimal Trust Requirements",
-        "author": ["H. Massias", "X. Serret Avila", "J.-J. Quisquater"],
+        "author": ["henri-massias", "xavier-serret-avila", "jean-jacques-quisquater"],
         "date": "May 1999",
         "slug": "secure-timestamping-service",
         "formats": ["unavailable"],
@@ -47,7 +47,7 @@
     },
     {
         "title": "How to Time-Stamp a Digital Document",
-        "author": ["Stuart Haber", "W. Scott Stornetta"],
+        "author": ["stuart-haber", "w-scott-stornetta"],
         "date": "1991",
         "slug": "time-stamp-digital-document",
         "formats": ["unavailable"],
@@ -56,7 +56,7 @@
     },
     {
         "title": "Improving the Efficiency and Reliability of Digital Time-Stamping",
-        "author": ["Dave Bayer", "Stuart Haber", "W. Scott Stornetta"],
+        "author": ["dave-bayer", "stuart-haber", "w-scott-stornetta"],
         "date": "March 1992",
         "slug": "improving-time-stamping",
         "formats": ["unavailable"],
@@ -65,7 +65,7 @@
     },
     {
         "title": "Secure Names for Bit-Strings",
-        "author": ["Stuart Haber", "W. Scott Stornetta"],
+        "author": ["stuart-haber", "w-scott-stornetta"],
         "date": "April 1997",
         "slug": "secure-names-bit-strings",
         "formats": ["pdf"],
@@ -74,7 +74,7 @@
     },
     {
         "title": "Hashcash - A Denial of Service Counter-Measure",
-        "author": ["Adam Back"],
+        "author": ["adam-back"],
         "date": "August 1, 2002",
         "slug": "hashcash",
         "formats": ["pdf"],
@@ -83,7 +83,7 @@
     },
     {
         "title": "Protocols for Public Key Cryptosystems",
-        "author": ["Ralph C. Merkle"],
+        "author": ["ralph-c-merkle"],
         "date": "April 1978",
         "slug": "public-key-cryptosystems",
         "formats": ["unavailable"],
@@ -92,7 +92,7 @@
     },
     {
         "title": "An Introduction to Probability Theory and Its Applications, Vol. I",
-        "author": ["William Feller"],
+        "author": ["william-feller"],
         "date": "1957",
         "slug": "introduction-probability-theory-vol-i",
         "formats": ["unavailable"],
@@ -101,7 +101,7 @@
     },
     {
         "title": "The Crypto Anarchist Manifesto",
-        "author": ["Timothy C. May"],
+        "author": ["timothy-c-may"],
         "date": "November 22, 1992",
         "slug": "crypto-anarchist-manifesto",
         "formats": ["html"],
@@ -110,7 +110,7 @@
     },
     {
         "title": "The Cyphernomicon",
-        "author": ["Timothy C. May"],
+        "author": ["timothy-c-may"],
         "date": "September 10, 1994",
         "slug": "cyphernomicon",
         "formats": ["txt"],
@@ -119,7 +119,7 @@
     },
     {
         "title": "Crypto Anarchy and Virtual Communities",
-        "author": ["Timothy C. May"],
+        "author": ["timothy-c-may"],
         "date": "December 1994",
         "slug": "virtual-communities",
         "formats": ["html"],
@@ -128,7 +128,7 @@
     },
     {
         "title": "Formalizing and Securing Relationships on Public Networks",
-        "author": ["Nick Szabo"],
+        "author": ["nick-szabo"],
         "date": "1997",
         "slug": "formalizing-securing-relationships",
         "formats": ["html"],
@@ -137,7 +137,7 @@
     },
     {
         "title": "A Formal Language for Analyzing Contracts",
-        "author": ["Nick Szabo"],
+        "author": ["nick-szabo"],
         "date": "2002",
         "slug": "contract-language",
         "formats": ["html"],
@@ -146,7 +146,7 @@
     },
     {
         "title": "Secure Property Titles with Owner Authority",
-        "author": ["Nick Szabo"],
+        "author": ["nick-szabo"],
         "date": "1998",
         "slug": "secure-property-titles",
         "formats": ["html"],
@@ -155,7 +155,7 @@
     },
     {
         "title": "Trusted Third Parties are Security Holes",
-        "author": ["Nick Szabo"],
+        "author": ["nick-szabo"],
         "date": "2001",
         "slug": "trusted-third-parties",
         "formats": ["html"],
@@ -164,7 +164,7 @@
     },
     {
         "title": "Contracts with Bearer",
-        "author": ["Nick Szabo"],
+        "author": ["nick-szabo"],
         "date": "1999",
         "slug": "contracts-with-bearer",
         "formats": ["html"],
@@ -173,7 +173,7 @@
     },
     {
         "title": "The God Protocols",
-        "author": ["Nick Szabo"],
+        "author": ["nick-szabo"],
         "date": "1999",
         "slug": "the-god-protocols",
         "formats": ["html"],
@@ -182,7 +182,7 @@
     },
     {
         "title": "Multinational Small Business",
-        "author": ["Nick Szabo"],
+        "author": ["nick-szabo"],
         "date": "1993",
         "slug": "multinational-small-business",
         "formats": ["html"],
@@ -191,7 +191,7 @@
     },
     {
         "title": "Shelling Out: The Origins of Money",
-        "author": ["Nick Szabo"],
+        "author": ["nick-szabo"],
         "date": "2002",
         "slug": "shelling-out",
         "formats": ["html"],
@@ -200,7 +200,7 @@
     },
     {
         "title": "Untraceable Electronic Mail, Return Addresses, and Digital Pseudonyms",
-        "author": ["David Chaum"],
+        "author": ["david-chaum"],
         "date": "1988",
         "slug": "untraceable-electronic-mail",
         "formats": ["pdf"],
@@ -209,7 +209,7 @@
     },
     {
         "title": "Blind Signatures for Untraceable Payments",
-        "author": ["David Chaum"],
+        "author": ["david-chaum"],
         "date": "1982",
         "slug": "blind-signatures",
         "formats": ["unavailable"],
@@ -218,7 +218,7 @@
     },
     {
         "title": "The Dining Cryptographers Problem: Unconditional Sender and Recipient Untraceability",
-        "author": ["David Chaum"],
+        "author": ["david-chaum"],
         "date": "1988",
         "slug": "dining-cryptographers-problem",
         "formats": ["unavailable"],
@@ -227,7 +227,7 @@
     },
     {
         "title": "New Directions in Cryptography",
-        "author": ["Whitfield Diffie", "Martin E. Hellman"],
+        "author": ["whitfield-diffie", "martin-e-hellman"],
         "date": "November 1976",
         "slug": "new-directions-in-cryptography",
         "formats": ["unavailable"],
@@ -236,7 +236,7 @@
     },
     {
         "title": "A Method for Obtaining Digital Signatures and Public-key Cryptosystems",
-        "author": ["Ronald L. Rivest", "Adi Shamir", "Leonard M. Adleman"],
+        "author": ["ronald-l-rivest", "adi-shamir", "leonard-m-adleman"],
         "date": "February 1978",
         "slug": "rsa-paper",
         "formats": ["pdf"],
@@ -245,7 +245,7 @@
     },
     {
         "title": "Proofs that Yield Nothing But Their Validity or All Languages in NP Have Zero-Knowledge Proof Systems",
-        "author": ["Oded Goldreich", "Silvio Micali", "Avi Wigderson"],
+        "author": ["oded-goldreich", "silvio-micali", "avi-wigderson"],
         "date": "July 1991",
         "slug": "zero-knowledge-proofs",
         "formats": ["pdf"],
@@ -254,7 +254,7 @@
     },
     {
         "title": "Secure Communications over Insecure Channels",
-        "author": ["Ralph C. Merkle"],
+        "author": ["ralph-c-merkle"],
         "date": "April 1978",
         "slug": "secure-communications-insecure-channels",
         "formats": ["pdf"],
@@ -263,7 +263,7 @@
     },
     {
         "title": "The Ricardian Contract",
-        "author": ["Ian Grigg"],
+        "author": ["ian-grigg"],
         "date": "July 6, 2004",
         "slug": "the-ricardian-contract",
         "formats": ["html"],
@@ -272,7 +272,7 @@
     },
     {
         "title": "Triple Entry Accounting",
-        "author": ["Ian Grigg"],
+        "author": ["ian-grigg"],
         "date": "December 25, 2005",
         "slug": "triple-entry-accounting",
         "formats": ["html"],
@@ -281,7 +281,7 @@
     },
     {
         "title": "Truledger in Plain English",
-        "author": ["Bill St. Clair"],
+        "author": ["bill-st-clair"],
         "date": "2008",
         "slug": "truledger",
         "formats": ["html"],
@@ -290,7 +290,7 @@
     },
     {
         "title": "A Cypherpunk's Manifesto",
-        "author": ["Eric Hughes"],
+        "author": ["eric-hughes"],
         "date": "March 9, 1993",
         "slug": "cypherpunk-manifesto",
         "formats": ["txt"],
@@ -299,7 +299,7 @@
     },
     {
         "title": "State and Terrorist Conspiracies & Conspiracy as Governance",
-        "author": ["Julian Assange"],
+        "author": ["julian-assange"],
         "date": "December 3, 2006",
         "slug": "julian-assange-conspiracies",
         "formats": ["pdf"],
@@ -308,7 +308,7 @@
     },
     {
         "title": "The Art of Unix Programming",
-        "author": ["Eric S. Raymond"],
+        "author": ["eric-s-raymond"],
         "date": "2003",
         "slug": "taoup",
         "formats": ["pdf"],
@@ -317,7 +317,7 @@
     },
     {
         "title": "The Theory of Money and Credit",
-        "author": ["Ludwig von Mises"],
+        "author": ["ludwig-von-mises"],
         "date": "1953",
         "slug": "theory-money-credit",
         "formats": ["pdf"],
@@ -326,7 +326,7 @@
     },
     {
         "title": "Deflation and Liberty",
-        "author": ["Jörg Guido Hülsmann"],
+        "author": ["jorg-guido-hulsmann"],
         "date": "2008",
         "slug": "deflation-and-liberty",
         "formats": ["pdf"],
@@ -335,7 +335,7 @@
     },
     {
         "title": "Money, Bank Credit, and Economic Cycles (Third Edition)",
-        "author": ["Jesús Huerta de Soto"],
+        "author": ["jesus-huerta-de-soto"],
         "date": "2012",
         "slug": "economic-cycles",
         "formats": ["pdf"],
@@ -344,7 +344,7 @@
     },
     {
         "title": "Denationalisation of Money: The Argument Refined",
-        "author": ["Friedrich A. Hayek"],
+        "author": ["friedrich-a-hayek"],
         "date": "1978",
         "slug": "denationalisation",
         "formats": ["pdf"],
@@ -353,7 +353,7 @@
     },
     {
         "title": "Against Intellectual Property",
-        "author": ["Stephan Kinsella"],
+        "author": ["n-stephan-kinsella"],
         "date": "2001",
         "slug": "against-ip",
         "formats": ["pdf"],
@@ -362,7 +362,7 @@
     },
     {
         "title": "Against Intellectual Monopoly",
-        "author": ["Michele Boldrin", "David K. Levine"],
+        "author": ["michele-boldrin", "david-k-levine"],
         "date": "2008",
         "slug": "against-intellectual-monopoly",
         "formats": ["pdf"],
@@ -371,7 +371,7 @@
     },
     {
         "title": "The Right to Read: A Dystopian Short Story",
-        "author": ["Richard M. Stallman"],
+        "author": ["richard-m-stallman"],
         "date": "February 1997",
         "slug": "right-to-read",
         "formats": ["html"],
@@ -380,7 +380,7 @@
     },
     {
         "title": "Areopagitica: A Speech for the Liberty of Unlicensed Printing to the Parliament of England",
-        "author": ["John Milton"],
+        "author": ["john-milton"],
         "date": "1644",
         "slug": "areopagitica",
         "formats": ["html"],
@@ -389,7 +389,7 @@
     },
     {
         "title": "The libbitcoin Manifesto",
-        "author": ["Amir Taaki", "unSYSTEM"],
+        "author": ["amir-taaki"],
         "date": "October 2013",
         "slug": "libbitcoin-manifesto",
         "formats": ["pdf"],
@@ -398,7 +398,7 @@
     },
     {
         "title": "Bit Gold",
-        "author": ["Nick Szabo"],
+        "author": ["nick-szabo"],
         "date": "December 29, 2005",
         "slug": "bit-gold",
         "formats": ["html"],
