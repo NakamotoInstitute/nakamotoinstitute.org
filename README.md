@@ -46,7 +46,7 @@ CSRF_ENABLED = True
 
 12. Run <code>python run.py runserver</code> and navigate to sni:5000 in your browser.
 
-13. Migrations are done with [Flask-Migrate](http://flask-migrate.readthedocs.org/en/latest/).
+13. Migrations are done with [Flask-Migrate](http://flask-migrate.readthedocs.org/en/latest/). You can start enable migrations by running:<br /> <code>python run.py db init</code>
 
 
 
