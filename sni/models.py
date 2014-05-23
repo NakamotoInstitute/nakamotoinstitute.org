@@ -34,12 +34,20 @@ authors = db.Table('authors',
 	db.Column('author_id', db.Integer, db.ForeignKey('author.id'))
 )
 
+blogauthors = db.Table('blogauthors',
+	db.Column('blog_post_id', db.Integer, db.ForeignKey('blog_post.id')),
+	db.Column('author_id', db.Integer, db.ForeignKey('author.id'))
+)
+
 class Author(db.Model):
 	id = db.Column(db.Integer, primary_key = True)
-	name = db.Column(db.String())
+	first = db.Column(db.String())
+	middle = db.Column(db.String())
+	last = db.Column(db.String())
+	slug = db.Column(db.String())
 
 	def __repr__(self):
- 		return '<Author %r>' % (self.name)
+ 		return '<Author %r>' % (self.slug)
 
 formats = db.Table('formats',
 	db.Column('doc_id', db.Integer, db.ForeignKey('doc.id')),
@@ -86,7 +94,9 @@ class Doc(db.Model):
 class BlogPost(db.Model):
 	id = db.Column(db.Integer, primary_key = True)
 	title = db.Column(db.String())
-	author = db.Column(db.String())
+	author = db.relationship('Author',
+ 		secondary = blogauthors,
+ 		backref=db.backref('blogposts', lazy='dynamic'))
 	date = db.Column(db.Date)
 	slug = db.Column(db.String())
 	excerpt = db.Column(db.String())
