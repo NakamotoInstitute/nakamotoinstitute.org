@@ -81,6 +81,22 @@ def postview(postnum,source):
         return render_template("postview.html", post=post, prev=prev, next=next)
     else:
         return redirect('posts')
+
+@cache.cached(timeout=900)
+@app.route('/authors/', methods=["GET"])
+def authors():
+    authors = Author.query.order_by(Author.last).all()
+    return render_template("authors.html", authors=authors)
+
+@cache.cached(timeout=900)
+@app.route('/authors/<string:authslug>/', methods=["GET"])
+def author(authslug):
+    if (authslug=='satoshi-nakamoto'):
+        return redirect(url_for('satoshi_index'))
+    author = Author.query.filter_by(slug=authslug).first()
+    mem = author.blogposts.all()
+    lit = author.docs.all()
+    return render_template("author.html", author=author, mem=mem, lit=lit)
     
 @cache.cached(timeout=900)
 @app.route('/literature/', methods=["GET"])

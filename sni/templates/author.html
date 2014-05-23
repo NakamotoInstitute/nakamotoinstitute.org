@@ -1,0 +1,39 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block title %}
+{{author.first}} {{author.middle}} {{author.last}} | Satoshi Nakamoto Institute
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="text-center">
+      <h1>{{author.first}} {{author.middle}} {{author.last}}</h1>
+    </div>
+  </div>
+
+  {% if lit|length != 0%}
+    <h3>Literature</h3>
+    {% for li in lit %}
+    <hr>
+        <a href="">
+            {{li.title}}
+        </a> - {{li.date}}
+    {% endfor %}
+  {%endif%}
+
+  {% if mem|length != 0%}
+    <h3>The Memory Pool</h3>
+    {% for me in mem %}
+    <hr>
+      <h5>
+        <a href="">
+            {{me.title}}
+        </a> - {{me.date.strftime('%B %d, %Y')}}
+      </h5>
+      <p>
+        <em>{{me.excerpt}}</em>
+      </p>
+    {% endfor %}
+  {%endif%}
+{% endblock %}
