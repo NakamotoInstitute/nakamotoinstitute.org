@@ -1,6 +1,8 @@
 *.py[cod]
 config.py
 
+migrations/*
+
 *.pdf
 
 # C extensions
