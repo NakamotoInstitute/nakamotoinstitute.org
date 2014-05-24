@@ -1,3 +1,4 @@
+
 #
 # Satoshi Nakamoto Institute (http://nakamotoinstitute.org)
 # Copyright 2013 Satoshi Nakamoto Institute
@@ -105,8 +106,30 @@ def literature():
     return render_template("literature.html", docs=docs)
 
 @cache.cached(timeout=900)
+@app.route('/literature/<string:slug>/', methods=["GET"])
+def docinfo(slug):
+    doc = Doc.query.filter_by(slug=slug).first()
+    if(doc!=None):
+        forms = []
+        for form in doc.formats:
+            if form.name == 'html':
+                forms += ['html']
+            if form.name == 'pdf':
+                forms += ['pdf']
+            if form.name == 'txt':
+                forms += ['txt']
+            if form.name == 'unavailable':
+                forms += ['una']
+            pdf = 'pdf' == form.name
+            txt = 'txt' == form.name
+            una = 'unavailable' == form.name
+        return render_template("docinfo.html",doc=doc, forms=forms)
+    else:
+        return redirect('literature')
+
+@cache.cached(timeout=900)
 @app.route('/literature/<int:docid>/', methods=["GET"])
-def docinfo(docid):
+def docinfoid(docid):
     doc = Doc.query.filter_by(id=docid).first()
     if(doc!=None):
         forms = []
@@ -127,8 +150,27 @@ def docinfo(docid):
         return redirect('literature')
 
 @cache.cached(timeout=900)
+@app.route('/literature/<string:slug>/<string:format>/', methods=["GET"])
+def docview(slug, format):
+    doc = Doc.query.filter_by(slug=slug).first()
+    if(doc!=None):
+        formats = []
+        for form in doc.formats:
+            formats += [form.name]
+        slug = doc.slug
+        if format in formats:
+            if(format=='html'):
+                return render_template("%s.html" % slug, doc=doc)
+            else:
+                return redirect(url_for('static', filename='docs/%(x)s.%(y)s' % {"x": slug, "y": format}))
+        else:
+            return redirect(url_for('docinfo', slug=slug))
+    else:
+        return redirect('literature')
+
+@cache.cached(timeout=900)
 @app.route('/literature/<int:docid>/<string:format>/', methods=["GET"])
-def docview(docid, format):
+def docviewid(docid, format):
     doc = Doc.query.filter_by(id=docid).first()
     if(doc!=None):
         formats = []
@@ -141,7 +183,7 @@ def docview(docid, format):
             else:
                 return redirect(url_for('static', filename='docs/%(x)s.%(y)s' % {"x": slug, "y": format}))
         else:
-            return redirect(url_for('docinfo', docid=docid))
+            return redirect(url_for('docinfo', slug=doc.slug))
     else:
         return redirect('literature')
 

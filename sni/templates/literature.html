@@ -29,7 +29,7 @@
         {%for doc in docs%}
           <tr>
             <td>
-            	<a href="{{url_for('docinfo', docid=doc['id'])}}">
+            	<a href="{{url_for('docinfo', slug=doc['slug'])}}">
             	{% if doc['doctype']=="book" %}
             		<em>{{doc['title']}}</em>
             	{% else %}
