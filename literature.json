@@ -404,5 +404,14 @@
         "formats": ["html"],
         "categories": ["cryptography", "Bitcoin"],
         "doctype": "essay"
+    },
+    {
+        "title": "Libertaria in Cyberspace",
+        "author": ["timothy-c-may"],
+        "date": "September 1, 1992",
+        "slug": "libertaria-in-cyberspace",
+        "formats": ["html"],
+        "categories": ["cryptography", "Cypherpunk"],
+        "doctype": "essay"
     }]
 }
