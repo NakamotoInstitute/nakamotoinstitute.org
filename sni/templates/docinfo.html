@@ -4,11 +4,11 @@
 <div class="page-header">
   <h1>{{doc['title']}}<br />
   <small>{% if doc['author']|length == 3 %}
-      		{{doc['author'][0].first}} {{doc['author'][0].middle}} {{doc['author'][0].last}}, {{doc['author'][1].first}} {{doc['author'][1].middle}} {{doc['author'][1].last}}, and {{doc['author'][2].first}} {{doc['author'][2].middle}} {{doc['author'][2].last}}
+      		<a href="{{url_for('author', authslug=doc['author'][0].slug)}}">{{doc['author'][0].first}} {{doc['author'][0].middle}} {{doc['author'][0].last}}</a>, <a href="{{url_for('author', authslug=doc['author'][1].slug)}}">{{doc['author'][1].first}} {{doc['author'][1].middle}} {{doc['author'][1].last}}</a>, and <a href="{{url_for('author', authslug=doc['author'][2].slug)}}">{{doc['author'][2].first}} {{doc['author'][2].middle}} {{doc['author'][2].last}}</a>
       	{% elif doc['author']|length == 2 %}
-      		{{doc['author'][0].first}} {{doc['author'][0].middle}} {{doc['author'][0].last}} and {{doc['author'][1].first}} {{doc['author'][1].middle}} {{doc['author'][1].last}}
+      		<a href="{{url_for('author', authslug=doc['author'][0].slug)}}">{{doc['author'][0].first}} {{doc['author'][0].middle}} {{doc['author'][0].last}}</a> and <a href="{{url_for('author', authslug=doc['author'][1].slug)}}">{{doc['author'][1].first}} {{doc['author'][1].middle}} {{doc['author'][1].last}}</a>
       	{% else %}
-      		{{doc['author'][0].first}} {{doc['author'][0].middle}} {{doc['author'][0].last}}
+      		<a href="{{url_for('author', authslug=doc['author'][0].slug)}}">{{doc['author'][0].first}} {{doc['author'][0].middle}} {{doc['author'][0].last}}</a>
       	{% endif %}</small>
   </h1>
 </div>
