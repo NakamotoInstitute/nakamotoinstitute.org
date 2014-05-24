@@ -8,7 +8,7 @@ NakamotoInstitute.org was written in Flask.
 
 1. Install [PostgreSQL](http://www.postgresql.org/)
 
-2. Create a user and a new database ([Debian instructions](https://wiki.debian.org/PostgreSql)).
+2. Create a user and a new database ([Instructions](http://killtheyak.com/use-postgresql-with-django-flask/)).
 
 3. Create file in the project's root folder called <code>config.py</code>:
 
@@ -36,7 +36,7 @@ CSRF_ENABLED = True
 
 7. Download the PDFs and txts [here](http://nakamotoinstitute.org/static/docs/sni-docs.zip) and place them in /static/templates/docs
 
-8. Set up a virtualenv 
+8. Set up a virtualenv with <code>virtualenv venv </code> and <code>. venv/bin/activate </code>
 
 9. Install the dependencies using <code>pip install -r requirements.txt</code>.
 
