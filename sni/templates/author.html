@@ -16,7 +16,7 @@
     <h3>Literature</h3>
     {% for li in lit %}
     <hr>
-        <a href="">
+        <a href="{{url_for('docinfo', slug=li.slug)}}">
             {{li.title}}
         </a> - {{li.date}}
     {% endfor %}
@@ -27,7 +27,7 @@
     {% for me in mem %}
     <hr>
       <h5>
-        <a href="">
+        <a href="{{url_for('blogpost', slug=me.slug)}}">
             {{me.title}}
         </a> - {{me.date.strftime('%B %d, %Y')}}
       </h5>
