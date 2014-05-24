@@ -36,7 +36,7 @@ CSRF_ENABLED = True
 
 7. Download the PDFs and txts [here](http://nakamotoinstitute.org/static/docs/sni-docs.zip) and place them in /static/templates/docs
 
-8. Set up a virtualenv with <code>virtualenv venv </code> and <code>. venv/bin/activate </code>
+8. Set up a virtualenv with <code>virtualenv --no-site-packages venv </code> and <code>. venv/bin/activate </code>
 
 9. Install the dependencies using <code>pip install -r requirements.txt</code>.
 
