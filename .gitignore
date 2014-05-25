@@ -1,5 +1,6 @@
 *.py[cod]
 config.py
+.DS_Store
 
 migrations/*
 
