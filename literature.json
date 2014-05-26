@@ -23,7 +23,7 @@
         "author": ["konrad-s-graf"],
         "date": "October 23, 2013",
         "slug": "origins-of-bitcoin",
-        "formats": ["pdf"],
+        "formats": ["html","pdf"],
         "categories": ["economics", "bitcoin"],
         "doctype": "essay"
     },
