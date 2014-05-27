@@ -15,7 +15,9 @@ subject to other licenses.-->
   </head>
   <body>
   <div class="navbar" role="navigation">
-    <div class="container">
+    <div class="container-fluid">
+    <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+
       <div class="navbar-header">
       <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
@@ -51,12 +53,15 @@ subject to other licenses.-->
         </div>
     </div>
   </div>
+  </div>
   </nav>
   <div class="container-fluid">
   {% block content %}{% endblock %}
   </div>
   <div id="footer">
-      <div class="container">
+      <div class="container-fluid">
+      <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+
         <p class="text-muted">
           <small>
             <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
@@ -79,6 +84,7 @@ subject to other licenses.-->
           </small>
         </p>
       </div>
+    </div>
     </div>
   <script src="{{ url_for('static', filename = 'js/jquery-1.11.0.min.js') }}"></script>
     <script src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}"></script>
