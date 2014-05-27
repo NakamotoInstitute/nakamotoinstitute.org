@@ -26,7 +26,7 @@
       </p>
       {% else %}
   		<dt>Formats:</dt>
-  		<dd>{% if 'html' in forms %}<a href="{{url_for('docview', slug=doc['slug'], format='html')}}">HTML</a></br>{% endif %}
+  		<dd>{% if 'html' in forms %}<a href="{{url_for('slugview', slug=doc['slug'])}}">HTML</a></br>{% endif %}
   			{% if 'pdf' in forms %}<a href="{{url_for('docview', slug=doc['slug'], format='pdf')}}">PDF</a></br>{% endif %}
   			{% if 'txt' in forms %}<a href="{{url_for('docview', slug=doc['slug'], format='txt')}}">txt</a>{% endif %}</dd>
 	</dl>
