@@ -236,6 +236,7 @@ def atomfeed():
 def reroute(url_slug, format):
     doc=Doc.query.filter_by(slug=url_slug).first()
     if(doc!=None):
-        return redirect(url_for("docview", docid=doc.id, format=format))
+        return redirect(url_for("docview", slug=doc.slug, format=format))
     else:
         return redirect(url_for("index"))
+
