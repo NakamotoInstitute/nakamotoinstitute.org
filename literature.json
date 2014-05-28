@@ -31,8 +31,8 @@
         "title": "b-money",
         "author": ["wei-dai"],
         "date": "November 1998",
-        "slug": "bmoney",
-        "formats": ["txt"],
+        "slug": "b-money",
+        "formats": ["html", "txt"],
         "categories": ["economics", "cryptography", "bitcoin", "Cypherpunk"],
         "doctype": "essay"
     },
