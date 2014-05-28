@@ -103,7 +103,13 @@ def author(authslug):
 @app.route('/literature/', methods=["GET"])
 def literature():
     docs = Doc.query.order_by('id').all()
-    return render_template("literature.html", docs=docs)
+    formats = {}
+    for doc in docs:
+        formlist = []
+        for format in doc.formats:
+            formlist += [format.name]
+        formats[doc.slug] = formlist
+    return render_template("literature.html", docs=docs, formats=formats)
 
 @cache.cached(timeout=900)
 @app.route('/literature/<string:slug>/', methods=["GET"])
