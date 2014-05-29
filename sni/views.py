@@ -103,7 +103,13 @@ def author(authslug):
 @app.route('/literature/', methods=["GET"])
 def literature():
     docs = Doc.query.order_by('id').all()
-    return render_template("literature.html", docs=docs)
+    formats = {}
+    for doc in docs:
+        formlist = []
+        for format in doc.formats:
+            formlist += [format.name]
+        formats[doc.slug] = formlist
+    return render_template("literature.html", docs=docs, formats=formats)
 
 @cache.cached(timeout=900)
 @app.route('/literature/<string:slug>/', methods=["GET"])
@@ -120,9 +126,6 @@ def docinfo(slug):
                 forms += ['txt']
             if form.name == 'unavailable':
                 forms += ['una']
-            pdf = 'pdf' == form.name
-            txt = 'txt' == form.name
-            una = 'unavailable' == form.name
         return render_template("docinfo.html",doc=doc, forms=forms)
     else:
         return redirect('literature')
@@ -142,9 +145,6 @@ def docinfoid(docid):
                 forms += ['txt']
             if form.name == 'unavailable':
                 forms += ['una']
-            pdf = 'pdf' == form.name
-            txt = 'txt' == form.name
-            una = 'unavailable' == form.name
         return render_template("docinfo.html",doc=doc, forms=forms)
     else:
         return redirect('literature')
@@ -157,10 +157,9 @@ def docview(slug, format):
         formats = []
         for form in doc.formats:
             formats += [form.name]
-        slug = doc.slug
         if format in formats:
             if(format=='html'):
-                return render_template("%s.html" % slug, doc=doc)
+                return redirect(url_for('slugview', slug=slug))
             else:
                 return redirect(url_for('static', filename='docs/%(x)s.%(y)s' % {"x": slug, "y": format}))
         else:
@@ -179,7 +178,7 @@ def docviewid(docid, format):
         slug = doc.slug
         if format in formats:
             if(format=='html'):
-                return render_template("%s.html" % slug, doc=doc)
+                return redirect(url_for('slugview', slug=slug))
             else:
                 return redirect(url_for('static', filename='docs/%(x)s.%(y)s' % {"x": slug, "y": format}))
         else:
@@ -243,6 +242,7 @@ def atomfeed():
 def reroute(url_slug, format):
     doc=Doc.query.filter_by(slug=url_slug).first()
     if(doc!=None):
-        return redirect(url_for("docview", docid=doc.id, format=format))
+        return redirect(url_for("docview", slug=doc.slug, format=format))
     else:
         return redirect(url_for("index"))
+

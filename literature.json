@@ -31,8 +31,8 @@
         "title": "b-money",
         "author": ["wei-dai"],
         "date": "November 1998",
-        "slug": "bmoney",
-        "formats": ["txt"],
+        "slug": "b-money",
+        "formats": ["html", "txt"],
         "categories": ["economics", "cryptography", "bitcoin", "Cypherpunk"],
         "doctype": "essay"
     },
@@ -411,6 +411,15 @@
         "date": "September 1, 1992",
         "slug": "libertaria-in-cyberspace",
         "formats": ["html"],
+        "categories": ["cryptography", "Cypherpunk"],
+        "doctype": "essay"
+    },
+    {
+        "title": "Crypto Glossary",
+        "author": ["timothy-c-may"],
+        "date": "November 22, 1992",
+        "slug": "crypto-glossary",
+        "formats": ["txt"],
         "categories": ["cryptography", "Cypherpunk"],
         "doctype": "essay"
     }]
