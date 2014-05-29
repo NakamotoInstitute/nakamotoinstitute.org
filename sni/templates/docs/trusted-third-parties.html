@@ -1,551 +1,234 @@
+<!-- extend base layout -->
+{% extends "doc.html" %}
+{% block doc %}
+  <div class="page-header">
+    <h1 class="text-center">
+  	  Trusted Third Parties Are Security Holes <br><small>Nick Szabo</small>
+  	</h1>
+  	<h4 class="text-center">
+  	  Copyright &copy; 2001, 2004, 2005<br>
+    </h4>
+  </div>
 
-<!-- saved from url=(0035)http://szabo.best.vwh.net/ttps.html -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-   <title> Trusted Third Parties Are Security Holes</title>
-   <meta name="GENERATOR" content="Mozilla/3.0Gold (Win95; I) [Netscape]">
-<style type="text/css"></style></head>
-<!-- BODY TEXT="#000000" LINK="#900002" VLINK="#543100" BACKGROUND="http://szabo.best.vwh.net/multiblue.jpg"-->
+  <h2>Introduction</h2>
+    <p>
+      Commercial security is a matter of solving the practical problems of business relationships such as privacy, integrity, protecting property, or detecting breach of contract. A security hole is any weakness that increases the risk of violating these goals. In this real world view of security, a problem does not dissapear because a designer assumes it away. The invocation or assumption in a security protocol design of a "trusted third party" (TTP) or a "trusted computing base" (TCB) controlled by a third party constitutes the introduction of a security hole into that design. The security hole will then need to be plugged by other means.
+    </p>
+    <p>
+      If the risks and costs of TTP institutional alternatives were not accounted for in the protocol design, the resulting protocol will in most cases be too costly or risky to be practical. If the protocol beats these odds and proves practical, it will only succeed after extensive effort has gone into plugging the TTP security hole(s).  TTP assumptions cause most of the costs and risks in a security protocol, and plugging TTP security holes produces the most benefit and profit.
+    </p>
+    <p>
+      As a result, we propose a security protocol design methodology whereby the most risky and expensive part(s) of a security protocol, the trusted third partie(s), are designed in parallel with security protocol(s) using those parties.  The objectives of cost and risk minimization are focused on the TTPs rather than the security protocols themselves, which should be designed to suit the cost and risk minimized TTPs.
+    </p>
+    <p>
+      We also briefly discuss and reference research and implementation in security mechanisms that radically reduce trusted third party costs and risks by distributing automated TTPs across several parties, only a portion of which need to act in a reliable or trustworthy matter for the protocol to be reliable or trustworthy.
+    </p>
 
-<body><hr> 
-<a href="http://szabo.best.vwh.net/index.html">Nick Szabo's Papers and Concise Tutorials</a>
-<br>
-<h3>Trusted Third Parties Are Security Holes</h3>   
-<p>Copyright (c) 2001, 2004, 2005 by Nick Szabo<br>
-</p><hr>
+  <h2>New Trusted Third Parties are Costly and Risky</h2>
 
-<h3>Introduction</h3>
-Commercial security is a matter of solving the practical problems 
-of business relationships such
-as privacy, integrity, protecting property, or detecting
-breach of contract.  A security hole is any weakness that increases 
-the risk of violating these goals.  In this real world view of
-security, a problem does not dissapear because a designer assumes
-it away.  The invocation or assumption in a security protocol design of a 
-"trusted third party" (TTP) or a "trusted computing base" (TCB) controlled by a third party constitutes 
-the introduction of a security hole into that design.  The security hole
-will then need to be plugged by other means.
-<p>
-If the risks and costs of 
-TTP institutional alternatives were not accounted for in the protocol design,
-the resulting protocol will in most cases be too costly or risky 
-to be practical.
-If the protocol beats these odds and proves practical, it will
-only succeed after extensive effort has gone into plugging the TTP
-security hole(s).  TTP assumptions cause most of the costs and risks
-in a security protocol, and plugging TTP security holes produces
-the most benefit and profit.
-</p><p>
-As a result, we propose a security protocol design methodology 
-whereby the most risky and expensive part(s) of a security protocol,
-the trusted third partie(s), are designed in parallel with
-security protocol(s) using those parties.  The objectives of
-cost and risk minimization are focused on the TTPs rather
-than the security protocols themselves, which should be 
-designed to suit the cost and risk minimized TTPs.
-</p><p>
+    <p>
+      This author has professional experience implementing a TTP that was assumed by early advocates of public key cryptography. This TTP has come to be called a "certificate authority" (CA). It has been given the responsibility of vouching for the "identity" of participants. (Here I focus on the costs imposed by the TTP; alternatives such as PGP's Web of Trust and SPKI have been discussed amply elsewhere).
+    </p>
 
-We also briefly discuss and reference research and implementation
-in security mechanisms that radically reduce trusted third party
-costs and risks by distributing automated TTPs across 
-several parties, only a portion of which need to act
-in a reliable or trustworthy matter for the protocol
-to be reliable or trustworthy.
+    <p>
+      The certificate authority has proved to be by far the most expensive component of this centralized public key infrastructure (PKI). This is exacerbated when the necessity for a TTP deemed by protocol designers is translated, in PKI standards such as SSL and S/MIME, into a <em>requirement</em> for a TTP. A TTP that must be trusted by all users of a protocol becomes an arbiter of who may and may not use the protocol. So that, for example, to run a secure SSL web server, or to participate in S/MIME, one must obtain a certifcate from a mutually trusted certificate authority. The earliest and most popular of these has been Verisign. It has been able to charge several hundred dollars for end user certificates &ndash; far outstripping the few dollars charged (implicitly in the cost of end user software) for the security protocol code itself. The bureaucratic process of applying for and renewing certificates takes up far more time than configuring the SSL options, and the CA's identification process is subject to far greater exposure than the SSL protocol itself. Verisign amassed a stock market valuation in the 10's of <i>billions</i> of U.S. dollars (even before it went into another TTP business, the Internet Domain Name System(DNS) by acquiring Network Solutions). How? By coming up with a solution &ndash; <em>any</em> solution, almost, as its security is quite crude and costly compared to the cryptographic components of a PKI &ndash; to the seemingly innocuous assumption of a "trusted third party" made by the designers of public key protocols for e-mail and the Web.
+    </p>
 
-</p><h3>New Trusted Third Parties are Costly and Risky</h3>
-This author has professional experience implementing a
-TTP that was assumed by early advocates of
-public key cryptography.   This TTP has come to be called
-a "certificate authority" (CA).  It has been given the responsibility
-of vouching for the "identity" of participants.  (Here
-I focus on the costs imposed by the TTP; alternatives such
-as PGP's Web of Trust and SPKI have been discussed amply
-elsewhere).
-<p>
-The certificate authority has proved to be by far the most
-expensive component of this centralized public key infrastructure
-(PKI).   This is exacerbated when the necessity for a TTP deemed
-by protocol designers is translated, in PKI standards such as SSL and 
-S/MIME, into a <i>requirement</i> for a TTP.   A TTP that must be
-trusted by all users of a protocol becomes an arbiter 
-of who may and may not use the protocol.   So that, for example,
-to run a secure SSL web server, or to participate in S/MIME, one
-must obtain a certifcate from a mutually trusted certificate authority.
-The earliest and most popular of these has been Verisign.  It has
-been able to charge several hundred dollars for end user certificates --
-far outstripping the few dollars charged (implicitly in the cost
-of end user software) for the security protocol code itself. 
-The
-bureaucratic process of applying for and renewing certificates takes
-up far more time than configuring the SSL options, and the
-CA's identification process is subject to far greater exposure than
-the SSL protocol itself.
- Verisign 
-amassed a stock market valuation in the 10's of <i>billions</i> of
-U.S. dollars  (even before it went into another TTP business, the Internet
-Domain Name System(DNS) by acquiring Network Solutions).  How?
-By coming up with a solution -- <i>any</i> solution, almost,
-as its security is quite crude and costly
-compared to the cryptographic components of a PKI -- to the
-seemingly innocuous assumption of a "trusted third party"
-made by the designers of public key protocols for
-e-mail and the Web.
-</p><p>
-Some more problems with CAs are dealt with <a href="http://iang.org/ssl/pki_considered_harmful.html">here</a>.
-</p><p>
-The Internet DNS is another example of the high costs and
-risks imposed by a TTP.
-This one tiny part of the TCP/IP protocol stack has accounted for
-a majority of the disputes and handwringing involving that protocol.
-Why?  Because it is one of the few areas of the TCP/IP stack that
-depends on a centralized hieararchy of TTPs rather than on protocol
-negotiations between individual Internet nodes.  The DNS is also
-the single component of the Internet  most likely to fail even when 
-its names are not being disputed or spoofed.
-</p><p>
-The high costs of implementing a TTP come about mainly because 
-traditional security solutions,
-which must be invoked where the protocol itself leaves off,
- involve
-high personnel costs.  For more information on the
-necessity and security benefits of these traditional
-security solutions, especially personnel controls, when
-implementing TTP organizations,
-see this author's essay on 
-<a href="http://szabo.best.vwh.net/groupcontrols.html">group
-controls</a>.  The risks and costs borne by protocol users also
-come to be dominated by the unreliability of the TTP -- the
-DNS and certificate authorities being two quite commom
-sources of unreliability and frustration with the Internet
-and PKIs respectively.  
-</p><p>
-</p><h3>Existing Trusted Third Parties are Valuable</h3>
-Companies like Visa,
-Dun and Bradstreet, Underwriter's Laboratories, and so
-forth connect untrusting strangers into a common trust
-network.  Our economy depends on them.
-that many developing
-countries lack these <a href="http://www.erights.org/talks/pisa/paper/index.html">trust hubs</a> and would benefit
-greatly from integrating with developed word hubs like these.  While these 
-organizations often have many flaws and weaknesses -- credit
-card companies, for example, have growing problems with fraud, 
-identity theft, and innacurate reports, and Barings recently
-went belly up because their control systems had not properly
-adapted to digital securities trading -- by and large
-these institutions will be with us for a long time.
-<p>
-This doesn't help us get TTPs for new protocols.  These institutions 
-have a particular way of doing business that is highly evolved and
-specialized.  They usually cannot "hill climb" to a substantially different
-way of doing business.  Substantial innovations
-in new areas, e.g. e-commerce and digital security, must come
-from elsewhere.  Any new protocol design, especially paradigmatically
-different areas such as capabilities or cryptographic computations,
-will be a mismatch to the existing institutions.  Since building
-new TTPs from scratch is so costly, it is far cheaper when introducing
-protocols from these institutionally novel security technologies
-to minimize their dependencies on TTPs.
-</p><p>
+    <p>
+      Some more problems with CAs are dealt with <a href="http://iang.org/ssl/pki_considered_harmful.html">here</a>.
+    </p>
 
-</p><h3>New Trusted Third Parties Can Be Tempting</h3>
+    <p>
+      The Internet DNS is another example of the high costs and risks imposed by a TTP. This one tiny part of the TCP/IP protocol stack has accounted for a majority of the disputes and handwringing involving that protocol. Why? Because it is one of the few areas of the TCP/IP stack that depends on a centralized hieararchy of TTPs rather than on protocol negotiations between individual Internet nodes. The DNS is also the single component of the Internet most likely to fail even when its names are not being disputed or spoofed.
+    </p>
 
-Many are the reasons why organizations may come to favor 
-costly TTP based security over more efficient and effective
-security that minimizes the use of TTPs:
-<p>
-<b>Limitations of imagination, effort, knowledge, or time amongst
-protocol designers</b> -- it is far easier to design security protocols that
-rely on TTPs than those that do not (i.e. to fob off the problem
-rather than solve it).  Naturally design costs are an important
-factor limiting progress towards minimizing TTPs in security protocols.
-A bigger factor is lack of awareness of the importance of the problem
-among many security architects, especially the corporate architects
-who draft Internet and wireless security standards.
-</p><p>
-<b>The temptation to claim the "high ground" as a TTP of choice are great.</b>
-The ambition to become the next Visa or Verisign is a power trip 
-that's hard to refuse.  The barriers to actually
-building a successful TTP business are, however, often severe --
-the startup costs are substantial, ongoing costs remain high, liability
-risks are great, and unless there is a substantial "first mover" 
-advantage barriers to entry for competitors are few.  Still, if 
-nobody solves the TTP problems in the protocol
-this can be a lucrative business, and it's easy to envy big winners
-like Verisign rather than remembering all the now obscure companies
-that tried but lost.  It's also easy to imagine oneself as the successful
-TTP, and come to advocate the security protocol that requires the TTP,
-rather than trying harder to actually solve the security problem.
-</p><p>
-<img src="{{url_for('static', filename='img/miracle.jpg')}}" align="right">
-</p><p>
-<b>Entrenched interests.</b>  Large numbers of articulate professionals make 
-their living using the skills necessary in TTP organizations.  For
-example, the legions of auditors and lawyers who create and operate 
-traditional control structures and legal protections.  They naturally 
-favor security models that assume they must step in and implement
-the real security.  In new areas like e-commerce they favor new 
-business models based on TTPs (e.g. Application Service
-Providers) rather than taking the time to learn new practices that
-may threaten their old skills.
-</p><p>
-<b>Mental transaction costs.</b>  Trust, like, <a href="http://szabo.best.vwh.net/micropayments.html">taste</a>, is a <a href="http://www.eros-os.org/pipermail/e-lang/2004-February/009555.html">subjective judgment</a>.  Making such judgement requires <a>mental effort</a>.  A third party with a good reputation, and that is actually trustworthy, can save its customers from having to do so much research or bear other costs associated with making these judgments.  However, entities that claim to be trusted but end up not being trustworthy impose costs not only of a direct nature, when they breach the trust, but increase the general cost of trying to choose between trustworthy and treacherous trusted third parties.
-</p><p>
+    <p>
+      The high costs of implementing a TTP come about mainly because traditional security solutions, which must be invoked where the protocol itself leaves off, involve high personnel costs. For more information on the necessity and security benefits of these traditional security solutions, especially personnel controls, when implementing TTP organizations, see this author's essay on <a href="http://szabo.best.vwh.net/groupcontrols.html">group controls</a>. The risks and costs borne by protocol users also come to be dominated by the unreliability of the TTP &ndash; the DNS and certificate authorities being two quite commom sources of unreliability and frustration with the Internet and PKIs respectively.  
+    </p>
+  
+  <h2>Existing Trusted Third Parties are Valuable</h2>
 
-</p><h3>Personal Property Has Not and Should Not Depend On TTPs</h3>
-<p>
-For most of human history the dominant form of property has been
-personal property.  The functionality of personal property has not under 
-normal conditions ever depended on trusted third parties.   Security 
-properties of simple goods could be 
-verified at sale or first use, and there was no need for 
-continued interaction with the manufacturer or other third parties
-(other than on occasion repair personel after exceptional use
-and on a voluntary and temporary basis).   Property 
-rights for many kinds of chattel (portable property) were only 
-minimally  dependent 
-on  third parties -- the only problem where TTPs were needed
-was to defend against the depredations of other third parties.  
-The main security property of personal chattel was often not other 
-TTPs as protectors but rather its portability and intimacy.   
-</p><p>
-Here are some examples of the ubiquity of personal property in which
-there was a reality or at least a strong desire on the part of owners
-to be free of dependence on TTPs for functionality or security:
-</p><pre>* Jewelry (far more often used for money in traditional cultures than
-coins, e.g. Northern Europe up to 1000 AD, and worn on the body
-for better property protection as well as decoration)
-* Automobiles operated by and house doors opened by personal
-keys.
-* Personal computers -- in the original visions of many personal
-computing pioneers (e.g. many members of the Homebrew Computer
-Club), the PC was intended as personal property -- the owner
-would have total control (and understanding) of the software
-running on the PC, including the ability to copy bits on the
-PC at will.  Software complexity, Internet connectivity, and
-unresolved incentive mismatches between software publishers
-and users (PC owners) have substantially eroded the reality
-of the personal computer as personal property.
-</pre>
+    <p>
+      Companies like Visa, Dun and Bradstreet, Underwriter's Laboratories, and so forth connect untrusting strangers into a common trust network. Our economy depends on them. Many developing countries lack these <a href="http://www.erights.org/talks/pisa/paper/index.html">trust hubs</a> and would benefit greatly from integrating with developed world hubs like these. While these organizations often have many flaws and weaknesses &ndash; credit card companies, for example, have growing problems with fraud, identity theft, and innacurate reports, and Barings recently went belly up because their control systems had not properly adapted to digital securities trading &ndash; by and large these institutions will be with us for a long time.
+    </p>
 
-This desire is instinctive and remains today.  It manifests 
-in consumer resistance when they discover unexpected dependence
-on and vulnerability to third parties in the devices they use.
-Suggestions that the functionality of personal property
-be dependent on third parties, even agreed to ones under strict 
-conditions such as creditors until a chattel loan is paid off (a 
-<a href="http://szabo.best.vwh.net/idea.html">smart lien</a>) are met with strong resistance.   Making personal property
-functionality dependent on <i>trusted</i> third parties (i.e. trusted 
-rather than forced by the protocol to keep to the agreement governing 
-the security 
-protocol and property) is in most cases quite
-unacceptable.
-<p>
+    <p>
+      This doesn't help us get TTPs for new protocols. These institutions have a particular way of doing business that is highly evolved and specialized. They usually cannot "hill climb" to a substantially different way of doing business. Substantial innovations in new areas, e.g. e-commerce and digital security, must come from elsewhere. Any new protocol design, especially paradigmatically different areas such as capabilities or cryptographic computations, will be a mismatch to the existing institutions. Since building new TTPs from scratch is so costly, it is far cheaper when introducing protocols from these institutionally novel security technologies to minimize their dependencies on TTPs.
+    </p>
 
-</p><h3>TTP Minimizing Methodology</h3>
-We now propose a security protocol design methodology whereby 
-protocol(s) are designed to minimize these costs and risks of
-the TTPs.  Minimizing the costs and risks of the security protocol(s) 
-themselves is an important but secondary priority.
-<p>
-Currently, security designers usually invoke or assume TTPs to
-suit the most elegant and secure or least computationally costly 
-security protocol.
-These naive TTPs are then used in a proof of concept of an overall 
-protocol architecture.  But this does not discover the important 
-things that need to be discovered.  Once a security protocol is 
-implemented the code itself costs very little, and exponential
-cost functions such as Moore's law keep
-reducing computational, bandwidth, and many other technological
-costs.  The costs of the security protocol
-itself (except for the costs of message rounds, limited by the
-speed of light, and the costs of the user interface, limited
-by 
-<a href="http://www.berlecon.de/services/en/iew2/papers/szabo.pdf">
-mental transaction costs</a>
-) approach zero.  By far the 
-largest long-term cost of the system (as we learned with PKI) 
-is the cost of implementing the TTPs.   
-</p><p>
-It's far more fruitful
-to estimate from the beginning what the TTPs will cost,
-rather than try to design the security protocols to minimize the
-costs of the TTPs.  This will likely bring the designer to quite different
-trust assumptions and thus security protocols than if (s)he assumes 
-pure, unanalyzed TTPs in certain places in order to simplify 
-the security protocol.   A natural corrolary is if that there
-exists a security protocol that can eliminate or greatly reduce
-the costs of a TTP, then it pays greatly to implement it rather
-than one which assumes a costly TTP.   Even if the latter 
-security protocol is simpler and much more computationally 
-efficient.
-</p><p>
-A corrolary of "trusted third parties are security holes" is 
-"all security protocols have security holes", since no protocol
-is fully free of such assumptions.   The key steps in estimating
-TTP costs and risk are to (1) examine one's assumptions thoroughly to 
-uncover all TTP assumptions and characterize specifically what each
-TTP is and is not expected to do, (2) observe that each 
-such specific hole and task has an associated cost and risk.
-</p><p>
-There are several other important considerations, including:
-</p><ul>
-<li>Design costs. Minimizing TTPs often involves learning and
-applying nonintuitive and complex cryptographic and fault tolerance 
-techniques, like some
-of those mentioned below.  This can be a major burden or impractical
-for a small
-smart contracts project.   On the other hand, design costs for a novel
-TTP institution are usually much higher than the design costs for a 
-new protocol, as expensive as the latter may be.  Determining whether
-the new institution is robust over the long term is more
-expensive still, while protocols can be formally analyzed and
-implementations audited against this analysis to achieve a very
-high level of confidence in a typical product development 
-timeframe.
-</li><li>User mental transaction costs -- multiplying TTPs, even ones
-with a reasonably limited function, can quickly tax the ability
-of end users to track the reputation and quality of the different
-trusted brands.  When TTPs are distributed (as in the technology
-described below) reputation tracking must be automated, which is
-much easier when the TTPs redundantly perform the same function.
-</li></ul>
-<p>
-If for a new context like e-commerce we can find a security protocol 
-which replaces a TTP organization (a complex set of traditions 
-quite unproven in the new context) with mathematics (which at 
-least in itself is quite clear and provable) it will often be 
-a very big win to do so.   More often we will replace a complex
-costly TTP with one or more much simpler TTPs plus mathematics.
-That too is a big win.  We can only tell if and by how much it
-is a win by focusing on the trust assumptions and the resulting 
-costs of the TTPs rather than focusing on the efficiency of the
-security protocol.   The key is to focus on the cost of
-the TTPs and design the security protocol to minimize them,
-rather than assuming TTPs in order to simplify or optimize
-the efficiency of the security protocol.
-</p><p>
-A good digital security protocol designer is not only an
-expert in computer science and cryptography, but also very 
-knowledgeable about the traditional 
-costly techniques of physical security, auditing, law, and
-the business relationships to be secured.  This knowledge is not 
-used to substitute these costly security methods
-for more cost effective digital security, but in order to
-minimize hidden dependence on costly methods for the real security.
-A good protocol designer also designs, rather than merely
-assumes, TTPs that work 
-with minimal use of costly techniques.
-</p><p>
+  <h2>New Trusted Third Parties Can Be Tempting</h2>
 
-</p><h3>TTP Minimizing Protocols</h3>
-<p>
+    <p>
+      Many are the reasons why organizations may come to favor costly TTP based security over more efficient and effective security that minimizes the use of TTPs:
+    </p>
+    
+    <p>
+      <strong>Limitations of imagination, effort, knowledge, or time amongst protocol designers</strong> &ndash; it is far easier to design security protocols that rely on TTPs than those that do not (i.e. to fob off the problem rather than solve it). Naturally design costs are an important factor limiting progress towards minimizing TTPs in security protocols. A bigger factor is lack of awareness of the importance of the problem among many security architects, especially the corporate architects who draft Internet and wireless security standards.
+    </p>
 
-We saw above that the keys to minimizing TTPs are to identify them,
-characterize them, estimate their costs and risks, and then design protocols
-around TTPs of minimal cost and risk.  When the risk is 
-mitigated with techniques like those in this session, it can be very 
-substantially reduced.
-</p><p>
-Three areas of research and implementation show special
-promise in improving trust.
-Two of these involve the particularly thorny area of privacy,
-where breach of trust is often irreversible -- once data gets
-out it can be impossible to put back.
-</p><p>
-The first protocol family in which trust can be distributed to preserve
-privacy is the 
-<a href="http://www.onion-router.net/Publications.html">Chaum mixes</a>
-Mixes allow communications immune from third
-party tracing.  Only any one out of N proxies in a proxy
-chain need be trustworthy for the privacy to be preserved.
-Unfortunately, all N of the proxies need to be reliable
-or the message will be lost and must be resent.
-The digital mix protocol's tradeoff is to increase messaging delays 
-(resends)
-in order to minimizes the risk of irreversible privacy loss.
-</p><p>
-Another protocol family in which trust can be distributed to preserve
-privacy is the <a href="http://szabo.best.vwh.net/msc.html">multiparty private computations</a>.
-Here a virtual computer is distributed across the N parties who provide
-specially encyrpted input to each other rather than to a trusted third 
-party.  The distributed computer takes inputs from each of the N parties,
-computes an agreed to algorithm, then outputs the answer.   Each party
-learns only the answer not the inputs of any other party.  The threshold 
-of parties that that must collude to violate privacy
-or threaten reliability can be traded off and have been studied
-in detail in the ample literature on this topic.  Multiparty private
-computations can be used for confidential auditing, confidential
-preference gathering and data mining, auctions and exchanges with 
-confidential bids, and so on.
-</p><p>
-A protocol family that replicates data, and distributes operations
-on that data, while preserving the integrity of that data, are
-the <a href="http://www.research.att.com/~dalia/">Byzantine resilient 
-replicated databases</a>.  Implementations of
-Byzantine resilient replicated databases include
-<a href="http://www.cs.huji.ac.il/~dalia/fleet/">Fleet</a> and
-<a href="http://www.bell-labs.com/user/reiter/#Phalanx">Phalanx</a>.
-Fleet implements replicated persistence of general purpose objects.
-Some open source
-implementations, which approach but do not achieve Byzantine resilience,
-general purpose, or complete decentralization 
-include <a href="http://www.mojonation.net/docs/technical_overview.shtml">Mojo 
-Nation</a> and <a href="http://freenetproject.org/">Freenet</a>.
-Applications include <a href="http://nakamotoinstitute.org/secure-property-titles.html">secure name registries
-and property titles</a> as well as securely published content in
-Mojo Nation and Freenet.  The most advace work in this area involves
-<a href="http://szabo.best.vwh.net/coalition.html">Byzantine fault
-tolerant quorum systems</a> and other <a href="http://szabo.best.vwh.net/distributed.html">recent advanced in distributed security</a>.
-</p><p>
-It is important to note that these threshold techniques
-are only meant to enhance the
-integrity of a <i>single step or run</i> of the protocol.
-Practical systems, such as
-<a href="http://www.mojonation.net/docs/technical_overview.shtml">
-Mojo Nation</a>, combine a majority
-or super-majority
-within a particular run with <i>failure detection</i> and <i>choice</i>
-by clients of servers between runs.   So
-we can add back all the reputation systems, auditing, and so
-on that add robustness in the long term to distributed systems.
-The majorities or super-majorities within an invocation create a very
-good short-term robustness that is missing from current systems
-like Freenet and Mojo Nation.  (It's only party missing from
-Mojo, which has a 4-of-8 voting scheme but this has not been
-shown to be Byzantine resilient up to 4-of-8).  
-</p><p>
-</p><h3>Remote Attestation of Server Code</h3>
-Remote attestation has been proposed for verifying the
-state of software running on <a href="http://en.wikipedia.org/wiki/Trusted_computing#Remote_attestation">clients</a> to protect intellectual property.
-A more valuable use for remote attestation is for verifying the behavior
-of servers.   This is also called the <a href="http://c2.com/cgi/wiki?TransparentServer">transparent server</a> approach.
-Through remote attestation, clients can verify that 
-the specific desired code is running
-on a server.  Combined with the ability to audit that code as open
-source, remote attestation of servers can greatly decrease the vulnerability
-of clients and users to the server.
-Given the importance of the trusted third party problem we have discussed
-here, this approach has vast potential to convert trusted third party
-protocols into secure protocols, and to make possible a wide variety
-of secure protocols that were heretofore impossible.  For example,
-Hal Finney has implemented a version of <a href="http://c2.com/cgi/wiki?BitGold">bit gold</a>
-called <a href="http://rpow.net/">reusable proofs of work</a>, based
-on a secure coprrocessor board that allows users to remotely attest
-the code running on the card.  While one still needs to trust
-the manufacturer of the card, this manufacturer is <a href="http://szabo.best.vwh.net/separationofduties.html">separated</a> from the installation of server code onto and the operation
-of the server on the card.
+    <p>
+      <strong>The temptation to claim the "high ground" as a TTP of choice are great.</strong> The ambition to become the next Visa or Verisign is a power trip that's hard to refuse.  The barriers to actually building a successful TTP business are, however, often severe &ndash; the startup costs are substantial, ongoing costs remain high, liability risks are great, and unless there is a substantial "first mover" advantage barriers to entry for competitors are few.  Still, if nobody solves the TTP problems in the protocol this can be a lucrative business, and it's easy to envy big winners like Verisign rather than remembering all the now obscure companies that tried but lost.  It's also easy to imagine oneself as the successful TTP, and come to advocate the security protocol that requires the TTP, rather than trying harder to actually solve the security problem.
+    </p>
+    
+    <img class="img-responsive center-block" src="/static/img/docs/trusted-third-parties/miracle.jpg">
+    
+    <p>
+      <strong>Entrenched interests.</strong> Large numbers of articulate professionals make their living using the skills necessary in TTP organizations. For example, the legions of auditors and lawyers who create and operate traditional control structures and legal protections. They naturally favor security models that assume they must step in and implement the real security. In new areas like e-commerce they favor new business models based on TTPs (e.g. Application Service Providers) rather than taking the time to learn new practices that may threaten their old skills.
+    </p>
 
-<h3>Leaving Small  Holes Unplugged</h3>
-Often the protocol designer can't figure out how to fix a vulnerability.  If the
- attack one needs a TTP to protect against is not a serious real-world threat in
-the context of the application the designer is trying to secure, it is better to
- simply leave the small hole unplugged than to assign the task to a TTP.  In the
- case of public key cryptography, for example, protocol designers haven't
-figured out how to prevent a "man-in-the-middle" (MITM) attack during the 
-initial key exchange.  SSL tried to prevent this by requiring CAs as trusted 
-third parties, as described above, and this solution cost the web community
-billions of dollars in certificate fees and lost opportunities to 
-secure communications. <a href="http://www.openssh.com/">SSH</a>, on 
-the other hand, decided to simply leave this small hole unplugged.  
-The MITM hole has, to the best of my knowledge, never even once been 
-exploited to compromise the privacy of an SSH user, yet SSH is far 
-more widely used to protect privacy than SSL,
-at a tiny fraction of the cost.  This economical approach to security has
-been looked at at greater length by <a href="http://iang.org/papers/spock.html">
-Ian Grigg</a>.
-<p>
-</p><h3>Unscrambling the Terminology</h3>
-<a href="http://www.eros-os.org/pipermail/cap-talk/2005-February/003128.html">Alan Karp</a>, <a href="http://www.eros-os.org/pipermail/e-lang/2004-February/009555.html">Mark Miller</a>, and others have observed the confusion over words like "trust"
-and "trusted" as used in the security community, and proposed replacing
-the verb "trusts" with "is vulnerable to".
-This substitution is a great way to radically clarify 
-security protocol designs.  "Trusted third party" as used in this
-essay becomes "vulnerable to a third party", and the point of
-this paper, that this is a security hole, becomes obvious.
-<p>
-In the context of protocol designs, instead of saying 
-the protocol designer trusts some little-known generic class of 
-parties (referred to in the singular as "a trusted
-third party") with a given authorization (which probably really means 
-the protocol designer just can't figure out how to plug a security 
-hole), an honest
-protocol designer will admit that there is a vulnerability here -- 
-and that it is up to "out of band" mechanisms to plug or minimize,
-or up to users to knowledgeably ignore, that hole.  
-The class of parties is little-known because security protocol designers 
-typically don't know much 
-about the traditional non-digital security, legal, and institutional 
-solutions needed to make such a party trustworthy.
-The substitution 
-of "vulnerable to" for "trusted" works well in protocol design, 
-and in communicating
-honestly about the security of a protocol.
-</p><p>
-Alas, are security designers and sellers of security systems 
-who invoke "trusted third parties", "trusted computing", and the
-like really going to come 
-out and admit that their protocols are "vulnerable"?  Security designs 
-sound so much more secure when they use the euphemism "trust".  
-</p><p>
-In the real world, beyond the
-technical context of security protocol design, "trust" has a variety 
-of meanings.  One different use of "trust" is well-informed trust, for 
-example "I trust this armor
-to protect me from normal bullets, because it's been very well tested",
-"I trust this 
-site with this authorization because we're using a strong security protocol 
-to protect me when I grant this authorization", 
-or "I trust my wife with the kids", in which cases translating 
-"trust" to "am vulnerable to" would be to reverse its meaning.
-That "trust" can take on practically opposite meanings, depending upon
-the context, is another strong argument for avoiding use of the word
-when describing the vulnerabilities, or lack thereof, of security protocols.
-Whether a designer thinks he does or must trust some generic 
-class of parties is one thing. 
-Whether a particular user will 
-actually trust a particular entity in that class when the protocol 
-actually runs is quite another matter.  Whether either the user's trust 
-or the designer's trust is well informed is yet another matter still.
+    <p>
+      <strong>Mental transaction costs.</strong> Trust, like <a href="http://szabo.best.vwh.net/micropayments.html">taste</a>, is a <a href="http://www.eros-os.org/pipermail/e-lang/2004-February/009555.html">subjective judgment</a>. Making such judgement requires mental effort. A third party with a good reputation, and that is actually trustworthy, can save its customers from having to do so much research or bear other costs associated with making these judgments. However, entities that claim to be trusted but end up not being trustworthy impose costs not only of a direct nature, when they breach the trust, but increase the general cost of trying to choose between trustworthy and treacherous trusted third parties.
+    </p>
 
-</p><p>
+  <h2>Personal Property Has Not and Should Not Depend On TTPs</h2>
 
+    <p>
+      For most of human history the dominant form of property has been personal property. The functionality of personal property has not under normal conditions ever depended on trusted third parties.   Security properties of simple goods could be verified at sale or first use, and there was no need for continued interaction with the manufacturer or other third parties (other than on occasion repair personel after exceptional use and on a voluntary and temporary basis). Property rights for many kinds of chattel (portable property) were only minimally  dependent on third parties &ndash; the only problem where TTPs were neededwas to defend against the depredations of other third parties. The main security property of personal chattel was often not other TTPs as protectors but rather its portability and intimacy.
+    </p>
 
-</p><h3>Conclusion</h3>
-Traditional security is costly and risky.  Digital security when
-designed well diminishes dramatically in cost over time.  When a protocol 
-designer invokes or assumes a TTP, (s)he is creating the need for a 
-novel organization to try to solve an unsolved security problem via 
-traditional security and control methods.   Especially in a digital
-context these methods require continuing high expenditures by the
-TTP and the TTP creates a bottleneck which imposes continuing high
-costs and risks on the end user.
-<p>
-A far better methodology is
-to work starting from TTPs that either well known, or easy
-to characterize, and of minimal 
-cost.   The best "TTP" of all is one that does not exist, but the
-necessity for which has been eliminated by the protocol design,
-or which has been automated and distributed amongst the parties to
-a protocol.  The latter strategy has given rise to the most
-promising areas of security protocol research including digital
-mixes, multiparty private computations, and Byzantine resiliant
-databases.   These and similar implementations will be used to
-radically reduce the cost of current TTPs and to solve the many
-outstanding problems in privacy, integrity, property rights,
-and contract enforcement while minimizing the very high 
-costs of creating and operating new TTP institutions.
-</p><p>
-</p><p>
-</p><h3>References</h3>
-Links in the text.
-<p>
+    <p>
+      Here are some examples of the ubiquity of personal property in which there was a reality or at least a strong desire on the part of owners to be free of dependence on TTPs for functionality or security:
+    </p>
 
-</p><h3>Acknowledgements</h3>
-My thanks to Mark Miller who encouraged me to write down
-these thoughts and provided many good comments.  My thanks
-also to Hal Finney, Marc Stiegler, David Wager, and Ian Grigg for their
-comments.                   
-<p>
-</p><hr>
-Please send your comments to
-nszabo (at) law (dot) gwu (dot) edu
-</body></html>
+    <p>
+      <ul>
+        <li>
+          Jewelry (far more often used for money in traditional cultures than coins, e.g. Northern Europe up to 1000 AD, and worn on the body for better property protection as well as decoration)
+        </li>
+        <li>
+          Automobiles operated by and house doors opened by personal keys.
+        </li>
+        <li>
+          Personal computers &ndash; in the original visions of many personal computing pioneers (e.g. many members of the Homebrew Computer Club), the PC was intended as personal property &ndash; the owner would have total control (and understanding) of the software running on the PC, including the ability to copy bits on the PC at will.  Software complexity, Internet connectivity, and unresolved incentive mismatches between software publishers and users (PC owners) have substantially eroded the reality of the personal computer as personal property.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      This desire is instinctive and remains today. It manifests in consumer resistance when they discover unexpected dependence on and vulnerability to third parties in the devices they use. Suggestions that the functionality of personal property be dependent on third parties, even agreed to ones under strict conditions such as creditors until a chattel loan is paid off (a <a href="http://szabo.best.vwh.net/idea.html">smart lien</a>) are met with strong resistance. Making personal property functionality dependent on <em>trusted</em> third parties (i.e. trusted rather than forced by the protocol to keep to the agreement governing the security protocol and property) is in most cases quite unacceptable.
+    </p>
+
+  <h2>TTP Minimizing Methodology</h2>
+
+    <p>
+      We now propose a security protocol design methodology whereby protocol(s) are designed to minimize these costs and risks of the TTPs.  Minimizing the costs and risks of the security protocol(s) themselves is an important but secondary priority.
+    </p>
+
+    <p>
+      Currently, security designers usually invoke or assume TTPs to suit the most elegant and secure or least computationally costly security protocol. These naive TTPs are then used in a proof of concept of an overall protocol architecture. But this does not discover the important things that need to be discovered.  Once a security protocol is implemented the code itself costs very little, and exponential cost functions such as Moore's law keep reducing computational, bandwidth, and many other technological costs. The costs of the security protocol itself (except for the costs of message rounds, limited by the speed of light, and the costs of the user interface, limited by <a href="http://www.berlecon.de/services/en/iew2/papers/szabo.pdf">mental transaction costs</a>) approach zero. By far the largest long-term cost of the system (as we learned with PKI) is the cost of implementing the TTPs.   
+    </p>
+
+    <p>
+      It's far more fruitful to estimate from the beginning what the TTPs will cost, rather than try to design the security protocols to minimize the costs of the TTPs. This will likely bring the designer to quite different trust assumptions and thus security protocols than if (s)he assumes pure, unanalyzed TTPs in certain places in order to simplify the security protocol. A natural corrolary is if that there exists a security protocol that can eliminate or greatly reduce the costs of a TTP, then it pays greatly to implement it rather than one which assumes a costly TTP. Even if the latter security protocol is simpler and much more computationally efficient.
+    </p>
+
+    <p>
+      A corollary of "trusted third parties are security holes" is "all security protocols have security holes", since no protocol is fully free of such assumptions. The key steps in estimating TTP costs and risk are to (1) examine one's assumptions thoroughly to uncover all TTP assumptions and characterize specifically what each TTP is and is not expected to do, (2) observe that each such specific hole and task has an associated cost and risk.
+    </p>
+
+    <p>
+      There are several other important considerations, including:
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          Design costs. Minimizing TTPs often involves learning and applying nonintuitive and complex cryptographic and fault tolerance techniques, like some of those mentioned below. This can be a major burden or impractical for a small smart contracts project. On the other hand, design costs for a novel TTP institution are usually much higher than the design costs for a new protocol, as expensive as the latter may be.  Determining whether the new institution is robust over the long term is more expensive still, while protocols can be formally analyzed and implementations audited against this analysis to achieve a very high level of confidence in a typical product development timeframe.
+        </li>
+        <li>
+          User mental transaction costs &ndash; multiplying TTPs, even ones with a reasonably limited function, can quickly tax the ability of end users to track the reputation and quality of the different trusted brands. When TTPs are distributed (as in the technology described below) reputation tracking must be automated, which is much easier when the TTPs redundantly perform the same function.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      If for a new context like e-commerce we can find a security protocol which replaces a TTP organization (a complex set of traditions quite unproven in the new context) with mathematics (which at least in itself is quite clear and provable) it will often be a very big win to do so. More often we will replace a complex costly TTP with one or more much simpler TTPs plus mathematics. That too is a big win.  We can only tell if and by how much it is a win by focusing on the trust assumptions and the resulting costs of the TTPs rather than focusing on the efficiency of the security protocol. The key is to focus on the cost of the TTPs and design the security protocol to minimize them, rather than assuming TTPs in order to simplify or optimize the efficiency of the security protocol.
+    </p>
+    
+    <p>
+      A good digital security protocol designer is not only an expert in computer science and cryptography, but also very knowledgeable about the traditional costly techniques of physical security, auditing, law, and the business relationships to be secured.  This knowledge is not used to substitute these costly security methods for more cost effective digital security, but in order to minimize hidden dependence on costly methods for the real security. A good protocol designer also designs, rather than merely assumes, TTPs that work with minimal use of costly techniques.
+    </p>
+
+  <h2>TTP Minimizing Protocols</h2>
+
+    <p>
+      We saw above that the keys to minimizing TTPs are to identify them, characterize them, estimate their costs and risks, and then design protocols around TTPs of minimal cost and risk. When the risk is mitigated with techniques like those in this session, it can be very substantially reduced.
+    </p>
+
+    <p>
+      Three areas of research and implementation show special promise in improving trust. Two of these involve the particularly thorny area of privacy, where breach of trust is often irreversible &ndash; once data gets out it can be impossible to put back.
+    </p>
+
+    <p>
+      The first protocol family in which trust can be distributed to preserve privacy is the <a href="http://www.onion-router.net/Publications.html">Chaum mixes</a>. Mixes allow communications immune from third party tracing. Only any one out of N proxies in a proxy chain need be trustworthy for the privacy to be preserved. Unfortunately, all N of the proxies need to be reliable or the message will be lost and must be resent. The digital mix protocol's tradeoff is to increase messaging delays (resends) in order to minimizes the risk of irreversible privacy loss.
+    </p>
+
+    <p>
+      Another protocol family in which trust can be distributed to preserve privacy is the <a href="http://nakamotoinstitute.org/the-god-protocols/">multiparty private computations</a>. Here a virtual computer is distributed across the N parties who provide specially encrypted input to each other rather than to a trusted third party. The distributed computer takes inputs from each of the N parties, computes an agreed to algorithm, then outputs the answer. Each party learns only the answer not the inputs of any other party.  The threshold of parties that that must collude to violate privacy or threaten reliability can be traded off and have been studied in detail in the ample literature on this topic. Multiparty private computations can be used for confidential auditing, confidential preference gathering and data mining, auctions and exchanges with confidential bids, and so on.
+    </p>
+
+    <p>
+      A protocol family that replicates data, and distributes operations on that data, while preserving the integrity of that data, are the <a href="http://www.research.att.com/~dalia/">Byzantine resilient replicated databases</a>. Implementations of Byzantine resilient replicated databases include <a href="http://www.cs.huji.ac.il/~dalia/fleet/">Fleet</a> and <a href="http://www.bell-labs.com/user/reiter/#Phalanx">Phalanx</a>. Fleet implements replicated persistence of general purpose objects. Some open source implementations, which approach but do not achieve Byzantine resilience, general purpose, or complete decentralization include <a href="http://www.mojonation.net/docs/technical_overview.shtml"> Mojo Nation</a> and <a href="http://freenetproject.org/">Freenet</a>. Applications include <a href="http://nakamotoinstitute.org/secure-property-titles.html">secure name registries and property titles</a> as well as securely published content in Mojo Nation and Freenet.  The most advace work in this area involves <a href="http://szabo.best.vwh.net/coalition.html">Byzantine fault tolerant quorum systems</a> and other <a href="http://szabo.best.vwh.net/distributed.html">recent advanced in distributed security</a>.
+    </p>
+
+    <p>
+      It is important to note that these threshold techniques are only meant to enhance the integrity of a <em>single step or run</em> of the protocol. Practical systems, such as <a href="http://www.mojonation.net/docs/technical_overview.shtml">Mojo Nation</a>, combine a majority or super-majority within a particular run with <em>failure detection</em> and <em>choice</em> by clients of servers between runs. So we can add back all the reputation systems, auditing, and so on that add robustness in the long term to distributed systems. The majorities or super-majorities within an invocation create a very good short-term robustness that is missing from current systems like Freenet and Mojo Nation.  (It's only party missing from Mojo, which has a 4-of-8 voting scheme but this has not been shown to be Byzantine resilient up to 4-of-8).
+    </p>
+
+  <h2>Remote Attestation of Server Code</h2>
+
+    <p>
+      Remote attestation has been proposed for verifying the state of software running on <a href="http://en.wikipedia.org/wiki/Trusted_computing#Remote_attestation">clients</a> to protect intellectual property. A more valuable use for remote attestation is for verifying the behavior of servers. This is also called the <a href="http://c2.com/cgi/wiki?TransparentServer">transparent server</a> approach. Through remote attestation, clients can verify that the specific desired code is running on a server. Combined with the ability to audit that code as open source, remote attestation of servers can greatly decrease the vulnerability of clients and users to the server. Given the importance of the trusted third party problem we have discussed here, this approach has vast potential to convert trusted third party protocols into secure protocols, and to make possible a wide variety of secure protocols that were heretofore impossible. For example, Hal Finney has implemented a version of <a href="http://nakamotoinstitute.org/bit-gold/">bit gold</a> called <a href="http://rpow.net/">reusable proofs of work</a>, based on a secure coprrocessor board that allows users to remotely attest the code running on the card. While one still needs to trust the manufacturer of the card, this manufacturer is <a href="http://szabo.best.vwh.net/separationofduties.html">separated</a> from the installation of server code onto and the operation of the server on the card.
+
+  <h2>Leaving Small Holes Unplugged</h2>
+
+    <p>
+      Often the protocol designer can't figure out how to fix a vulnerability. If the attack one needs a TTP to protect against is not a serious real-world threat in the context of the application the designer is trying to secure, it is better to simply leave the small hole unplugged than to assign the task to a TTP. In the case of public key cryptography, for example, protocol designers haven't figured out how to prevent a "man-in-the-middle" (MITM) attack during the initial key exchange. SSL tried to prevent this by requiring CAs as trusted third parties, as described above, and this solution cost the web community billions of dollars in certificate fees and lost opportunities to secure communications. <a href="http://www.openssh.com/">SSH</a>, on the other hand, decided to simply leave this small hole unplugged. The MITM hole has, to the best of my knowledge, never even once been exploited to compromise the privacy of an SSH user, yet SSH is far more widely used to protect privacy than SSL, at a tiny fraction of the cost.  This economical approach to security has been looked at at greater length by <a href="http://iang.org/papers/spock.html">Ian Grigg</a>.
+    </p>
+
+  <h2>Unscrambling the Terminology</h2>
+    
+    <p>
+      <a href="http://www.eros-os.org/pipermail/cap-talk/2005-February/003128.html">Alan Karp</a>, <a href="http://www.eros-os.org/pipermail/e-lang/2004-February/009555.html">Mark Miller</a>, and others have observed the confusion over words like "trust" and "trusted" as used in the security community, and proposed replacing the verb "trusts" with "is vulnerable to". This substitution is a great way to radically clarify security protocol designs. "Trusted third party" as used in this essay becomes "vulnerable to a third party", and the point of this paper, that this is a security hole, becomes obvious.
+    </p>
+
+    <p>
+      In the context of protocol designs, instead of saying the protocol designer trusts some little-known generic class of parties (referred to in the singular as "a trusted third party") with a given authorization (which probably really means the protocol designer just can't figure out how to plug a security hole), an honest protocol designer will admit that there is a vulnerability here &ndash; and that it is up to "out of band" mechanisms to plug or minimize, or up to users to knowledgeably ignore, that hole. The class of parties is little-known because security protocol designers typically don't know much about the traditional non-digital security, legal, and institutional solutions needed to make such a party trustworthy. The substitution of "vulnerable to" for "trusted" works well in protocol design, and in communicating honestly about the security of a protocol.
+    </p>
+
+    <p>
+      Alas, are security designers and sellers of security systems who invoke "trusted third parties", "trusted computing", and the like really going to come out and admit that their protocols are "vulnerable"?  Security designs sound so much more secure when they use the euphemism "trust".
+    </p>
+
+    <p>
+      In the real world, beyond the technical context of security protocol design, "trust" has a variety of meanings. One different use of "trust" is well-informed trust, for example "I trust this armor to protect me from normal bullets, because it's been very well tested", "I trust this site with this authorization because we're using a strong security protocol to protect me when I grant this authorization", or "I trust my wife with the kids", in which cases translating "trust" to "am vulnerable to" would be to reverse its meaning. That "trust" can take on practically opposite meanings, depending upon the context, is another strong argument for avoiding use of the word when describing the vulnerabilities, or lack thereof, of security protocols. Whether a designer thinks he does or must trust some generic class of parties is one thing. Whether a particular user will actually trust a particular entity in that class when the protocol actually runs is quite another matter. Whether either the user's trust or the designer's trust is well informed is yet another matter still.
+    </p>
+
+  <h2>Conclusion</h2>
+
+    <p>
+      Traditional security is costly and risky. Digital security when designed well diminishes dramatically in cost over time.  When a protocol designer invokes or assumes a TTP, (s)he is creating the need for a novel organization to try to solve an unsolved security problem via traditional security and control methods. Especially in a digital context these methods require continuing high expenditures by the TTP and the TTP creates a bottleneck which imposes continuing high costs and risks on the end user.
+    </p>
+
+    <p>
+      A far better methodology is to work starting from TTPs that either well known, or easy to characterize, and of minimal cost. The best "TTP" of all is one that does not exist, but the necessity for which has been eliminated by the protocol design, or which has been automated and distributed amongst the parties to a protocol. The latter strategy has given rise to the most promising areas of security protocol research including digital mixes, multiparty private computations, and Byzantine resiliant databases. These and similar implementations will be used to radically reduce the cost of current TTPs and to solve the many outstanding problems in privacy, integrity, property rights, and contract enforcement while minimizing the very high costs of creating and operating new TTP institutions.
+    </p>
+
+  <h2>References</h2>
+
+    <p>
+      Links in the text.
+    </p>
+
+  <h2>Acknowledgements</h2>
+
+    <p>
+      My thanks to Mark Miller who encouraged me to write down these thoughts and provided many good comments. My thanks also to Hal Finney, Marc Stiegler, David Wager, and Ian Grigg for their comments.
+    </p>
+
+  <hr>
+
+    <p>
+      Please send your comments to nszabo (at) law (dot) gwu (dot) edu
+    </p>
+{% endblock %}
