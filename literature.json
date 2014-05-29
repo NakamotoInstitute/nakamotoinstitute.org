@@ -422,5 +422,14 @@
         "formats": ["txt"],
         "categories": ["cryptography", "Cypherpunk"],
         "doctype": "essay"
+    },
+    {
+        "title": "Detecting Double Spending",
+        "author": ["hal-finney"],
+        "date": "October 15, 1993",
+        "slug": "detecting-double-spending",
+        "formats": ["html"],
+        "categories": ["cryptography", "Cypherpunk"],
+        "doctype": "essay"
     }]
 }
