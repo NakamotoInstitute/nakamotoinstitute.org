@@ -1,0 +1,100 @@
+<!-- extend base layout -->
+{% extends "doc.html" %}
+{% block doc %}
+	<div class="page-header">
+  	<h1 class="text-center">
+  		Detecting Double Spending <br><small>Hal Finney</small>
+  	</h1>
+  	<h4 class="text-center">
+  		October 15, 1993<br>
+      (Revised March 13, 1996)
+  	</h4>
+  </div>
+	<p>
+		Here is an attempt to describe Chaum's digital cash from his paper, Untraceable Electronic Cash, by Chaum, Fiat, and Naor, from the Crypto 88 proceedings. This cash has the property that the user of the cash can remain anonymous so long as she does not spend it more than once, but if she does double-spend then her identity is revealed.
+	</p>
+
+  <p>
+    This is how it works in general terms: Alice opens an account with a bank non-anonymously. She shows ID so that the bank knows who she is; both she and the bank know her account number. When she withdraws cash, she goes to the bank or contacts them electronically and presents some proof of who she is and what her account number is, and the bank gives her some digital cash. The digital cash is an information pattern, perhaps stored in a computer file on a smart card or magnetic disk. Later, she spends the digital cash by sending or giving it to Bob, a merchant. Bob can check and verify that the cash must have come from the bank. He accepts the cash if it is valid, giving Alice the merchandise. Later, he sends the cash to the bank to be added to his own account.
+  </p>
+
+  <p>
+    Note that this much could basically be done with a simple RSA signature. The bank could give Alice a statement saying, "this is worth $1", signed by the bank's secret key. Bob could verify that the statement was in fact signed by the bank, and know therefore that no one else than the bank could have created that statement. He accepts it and sends it to the bank, which honors it since it recognizes its own signature.
+  </p>
+
+  <p>
+    One problem with this trivial money is that double-spending can not be detected or prevented since all the cash looks alike. This can be remedied by having the cash include a unique serial number. Now when Bob goes to accept the cash from Alice, he can call the bank and say, has anyone else deposited serial number 123456? If not, he accepts the cash and deposits it. This is called on-line electronic money; the merchant must check with the bank for each transaction.
+  </p>
+
+  <p>
+    This improved simple system does not deserve to be called cash, though, because it lacks the distinguishing characteristic of digital cash: it is not anonymous. When the bank sees money with serial number 123456 being deposited, the bank recognizes that this was the same bill that Alice withdrew. The bank can therefore deduce that Alice spent the money at Bob's, and from this kind of information a dossier could be built up with all kinds of privacy-destroying information about her.
+  </p>
+
+  <p>
+    To allow anonymity, we have to get into the mathematics. What we want is for Alice and the bank collectively to create an RSA signature from the bank that could not be forged, but one which the bank will not recognize as coming from Alice. This is the first thing Chaum's paper discusses.
+  </p>
+
+  <p>
+    The money in this system is of the form (x, f(x)^(1/3)) mod n, where n is the bank's public modulus. f() (and, below, g()) is a one-way function, one which can be calculated easily but for which it is infeasible to calculate the inverse. It should also be infeasible to come up with two different y,z such that f(y) = f(z). Today there are several suitable choices for one-way functions, the most common being the MD5 algorithm from RSA, and the US government's Secure Hash Algorithm (SHA).
+  </p>
+
+  <p>
+    The reason the expression above would be accepted as cash is two-fold. First, only the bank can calculate anything ^ (1/3) mod n. This is basically the RSA signing operation for the exponent of 3. Nobody else can find cube roots. The reason f(x) is used is this. Suppose we proposed that (x, x^(1/3)) should be the cash, for some random x, reasoning that only the bank could find the cube root of x. Can you see how to forge cash like this? (Take a few moments and try to see how you could construct a pair like this even if you can't take cube roots.)
+  </p>
+
+  <p>
+    The answer is that it is easy to forge this by first choosing a random y, and exhibiting the pair (y^3, y). Now we have a number and then its cube root. Yet we didn't have to take any cube roots to find it. That's why this kind of money would be no good.
+  </p>
+
+  <p>
+    Chaum's system avoids this by taking the cube root of a one-way function of x. To forge it without taking a cube root you'd have to produce (finv(y^3), y), which would match the above pattern, but you can't invert the one-way function like that. So only the bank can create money of the proper form. This can be thought of as the formal, mathematical form of my informal "money" above which was a digitally signed note with a serial number. Here, x is the serial number, and it's digitally signed in this special way. Nothing more is needed.
+  </p>
+
+  <p>
+    The nice thing about this money is that it allows for blinding, a method of having the bank sign the value without knowing what value it is signing. It works like this. Alice chooses x, which will be the x in the cash. She calculates f(x), but instead of sending it to the bank to be signed (raised to the 1/3 power) she first chooses a random number r, and sends f(x)*r^3 to the bank. The bank takes this number to the 1/3 power, getting r * f(x)^(1/3). Remember, though, that the bank doesn't see r or f(x) separately, but just their product. It doesn't know what r or f(x) is. They could each be anything, actually.
+  </p>
+
+  <p>
+    The bank sends this r * f(x)^(1/3) back to Alice, and she divides it by r, which she knows. This gives her f(x)^(1/3), and she puts that together with x to get her digital cash: (x, f(x)^(1/3)). She has a piece of money which could only have been signed by the bank, yet the bank won't recognize it when it is deposited.
+  </p>
+
+  <p>
+    Other, non-mathematical, things take place as this withdrawal goes on. Alice must prove her identity to the bank, as mentioned above. And the bank will debit her account by the value of the cash. In this system, we are assuming for simplicity that all cash has the same value. In a real system, different values might be encoded by different exponents than 3.
+  </p>
+
+  <p>
+    When Alice deposits the money, Bob must call the bank to make sure that it hasn't been deposited before, this being an "on-line" system. Although the bank won't recognize x (it's never heard of it) it will remember all the x's which have been deposited and so can alert Bob if the money has been spent before. Both Bob and the bank can verify the digital signature on the money and so will honor it.
+  </p>
+
+  <p>
+    All the material above takes up less than one page of Chaum's nine-page paper. For Chaum, this much is trivial. Now we get to the interesting part. Now we will see the scheme that allows double-spenders to lose their anonymity. This will allow for "off-line" electronic cash; Bob will no longer have to check with the bank to see if the money has already been spent. He accepts it from Alice knowing that if she does cheat, the bank will honor the cash and sue Alice to make up the loss.
+  </p>
+
+  <p>
+    (To make this explanation easier to follow, I will describe a slightly simplified version of Chaum's off-line cash. The version I describe requires the use of a non-invertable one-way function as in the f() used above. Chaum's version does not require as strong an assumption and provides "unconditional" untraceability even if the one-way function is broken.)
+  </p>
+
+  <p>
+    Let's start with the form of the cash itself. It is the product of k/2 numbers, where k is a "security parameter" that affects the chance of a cheater succeeding. Each number is of the form g(xi,yi)^(1/3), where g is a two-argument one-way function similar to the f above. (The "xi", "yi", "ai", etc. here are separate values for each i from 0 to k/2.)
+  </p>
+
+  <p>
+    xi and yi are like this: xi = f(ai), where ai is a random number, and f is another one-way function. yi is kind of complicated. It is f(ai xor &lt;info&gt;), where &lt;info&gt;, the key to this whole operation, is identifying information about Alice's account! It is her account number concatenated with a serial number for the cash.
+  </p>
+
+  <p>
+    Now, why go through all this? Here's why. If you could find out both ai and (ai xor &lt;info&gt;), for some i, you would know Alice's identity. (Xor'ing them would produce &lt;info&gt;.) When Alice double-spends, both ai and ai xor &lt;info&gt;will be revealed.
+  </p>
+
+  <p>
+    What happens when Alice spends the coin is this. For each i from 0 to k/2 Bob chooses 0 or 1 at random. If he chooses 1 he gets told ai and yi. If he chooses 0 he gets told (ai xor &lt;info&gt;) and xi. This will let him check the signature on the money, as described in more detail below.
+  </p>
+
+  <p>
+    Notice that when Bob gets this information, he'll know a bunch of ai's, and he'll know a bunch of (ai xor &lt;info&gt;)'s, but they are for different i's. He doesn't know both ai and (ai xor &lt;info&gt;) for any one i. So he can't break Alice's anonymity.
+  </p>
+
+  <p>
+    When Bob deposits the money at the bank, he passes along the information he got from Alice regarding the ai's and such.
+  </p>
+{% endblock %}

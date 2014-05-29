@@ -416,10 +416,19 @@
     },
     {
         "title": "Crypto Glossary",
-        "author": ["timothy-c-may"],
+        "author": ["timothy-c-may", "eric-hughes"],
         "date": "November 22, 1992",
         "slug": "crypto-glossary",
         "formats": ["txt"],
+        "categories": ["cryptography", "Cypherpunk"],
+        "doctype": "essay"
+    },
+    {
+        "title": "Detecting Double Spending",
+        "author": ["hal-finney"],
+        "date": "October 15, 1993",
+        "slug": "detecting-double-spending",
+        "formats": ["html"],
         "categories": ["cryptography", "Cypherpunk"],
         "doctype": "essay"
     }]
