@@ -6,6 +6,8 @@
 {% endblock %}
 
 {% block content %}
+<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+
 	{% block post %}{% endblock %}
 
 	<a href="{{url_for('blog')}}">Back</a>
@@ -27,5 +29,5 @@
 	</script>
 	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
+</div>
 {% endblock %}
