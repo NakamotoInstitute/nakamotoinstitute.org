@@ -5,6 +5,7 @@ subject to other licenses.-->
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}Satoshi Nakamoto Institute{% endblock %}</title>
     <link href="{{ url_for('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet" media="screen">
     <link href="{{ url_for('static', filename = 'css/bootstrap-theme.min.css') }}" rel="stylesheet">
@@ -47,11 +48,10 @@ subject to other licenses.-->
               </a>
             </li>
           </ul>
-        </div><!--/.nav-collapse -->
+        </div>
     </div>
   </div>
-  </nav>
-  <div class="container">
+  <div class="container-fluid">
   {% block content %}{% endblock %}
   </div>
   <div id="footer">

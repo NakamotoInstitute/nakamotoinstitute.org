@@ -1,6 +1,7 @@
 <!-- extend base layout -->
 {% extends "base.html" %}
 {% block content %}
+<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
   <div class="text-center">{% if prev != None %}
     <a href="{{url_for('emailview',emnum=email['id']-1)}}">Previous</a> |
     {% endif %}
@@ -21,4 +22,5 @@
     | <a href="{{url_for('emailview',emnum=email['id']+1)}}">Next</a>
     {% endif %}
   </div>
+</div>
 {%endblock%}
