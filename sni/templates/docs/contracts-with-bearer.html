@@ -1,6 +1,7 @@
 <!-- extend base layout -->
 {% extends "doc.html" %}
 {% block doc %}
+
 <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
 	<div class="page-header">
 		<h1 class="text-center">
@@ -14,7 +15,7 @@
 	<h2>Bearer Certificates</h2>
 
 	<p>
-		"Digital bearer certificate" is a broad term developed by this author[1] incorporating at least two emerging technologies: digital cash and distributed capabilities (secure distributed object references). I will first describe the Chaumian protocol and its innovative privacy feature. I will then discuss how these ideas map to the world of capabilities in the section on generic vs. specific rights. I have altered digital cash terminology from digital cash to bearer certificate or token, from mint to issuer or transfer agent, and so on to reflect the ability of Chaum's protocols to generalize. Chaumian bearer certificates implement standardized rights transferable regardless of the identity of the holder. Each kind of contract (for example, each denomination of "coin" in digital cash) corresponds to a digital signature, just as each issue of Federal Reserve Notes or stock certificates corresponds to a particular plate.
+		"Digital bearer certificate" is a broad term developed by this author<sup><a href="#fn1" id="ref1">[1]</a></sup> incorporating at least two emerging technologies: digital cash and distributed capabilities (secure distributed object references). I will first describe the Chaumian protocol and its innovative privacy feature. I will then discuss how these ideas map to the world of capabilities in the section on generic vs. specific rights. I have altered digital cash terminology from digital cash to bearer certificate or token, from mint to issuer or transfer agent, and so on to reflect the ability of Chaum's protocols to generalize. Chaumian bearer certificates implement standardized rights transferable regardless of the identity of the holder. Each kind of contract (for example, each denomination of "coin" in digital cash) corresponds to a digital signature, just as each issue of Federal Reserve Notes or stock certificates corresponds to a particular plate.
 	</p>
  
 	<p>
@@ -176,7 +177,7 @@ f(x)= xk<sup>e</sup>
 	</p>
 
 	<p>
-		Chaum has also developed other means for dealing with unique state[2].
+		Chaum has also developed other means for dealing with unique state<sup><a href="#fn2" id="ref2">[2]</a></sup>.
 	</p>
 
 	<p>
@@ -224,23 +225,23 @@ f(x)= xk<sup>e</sup>
 	<h2>References</h2>
 
 	<ol>
-		<li>
+		<li id="fn1">
 			<p>
-				The first public references to this idea can be found <a href="http://www.i-m.com/archives/9412/0179.html">here,</a>, <a href="http://szabo.best.vwh.net/smart.contracts.html">here</a>. I also referred to this idea during this period in many personal communications, using the phrases "digital bearer instrument", "digital bearer certificate", "scarce object", and "conserved object". The idea of digital bearer certificates as a serious proposal for the financial industry has been popularized, with many intruiging additional ideas, by Bob Hettinga.
+				The first public references to this idea can be found <a href="http://www.i-m.com/archives/9412/0179.html">here</a>, <a href="http://szabo.best.vwh.net/smart.contracts.html">here</a>. I also referred to this idea during this period in many personal communications, using the phrases "digital bearer instrument", "digital bearer certificate", "scarce object", and "conserved object". The idea of digital bearer certificates as a serious proposal for the financial industry has been popularized, with many intruiging additional ideas, by Bob Hettinga.
 			</p>
 
 			<p class="text-muted">
-				The phrases "digital bearer certificate" and "digital bearer settlement(DBS)" were soon thereafter popularized by a correspondent of mine, Robert Hettinga, as referring to a legal/institutional idea of instant, irrevocable settlement made possible by both the instant clearing and privacy features of this technology.
+				The phrases "digital bearer certificate" and "digital bearer settlement(DBS)" were soon thereafter popularized by a correspondent of mine, Robert Hettinga, as referring to a legal/institutional idea of instant, irrevocable settlement made possible by both the instant clearing and privacy features of this technology.&nbsp;<a href="#ref1">↩</a>
 			</p>
 		</li>
 
-		<li>
+		<li id="fn2">
 			<p>
-				David Chaum, <a href="http://www.digicash.com/news/archive/online.html">Online Cash Checks</a>
+				David Chaum, <a href="http://www.digicash.com/news/archive/online.html">Online Cash Checks</a>&nbsp;<a href="#ref2">↩</a>
 			</p>
 		</li>
 
-		<li>
+		<li id="fn3">
 			<p>
 				<a href="http://nakamotoinstitute.org/literature/blind-signatures/">"Blind Signatures for Untraceable Payments,"</a> D. Chaum, <br>
 				Advances in Cryptology Proceedings of Crypto 82, <br>
@@ -248,7 +249,7 @@ f(x)= xk<sup>e</sup>
 			</p>
 		</li>
 
-		<li>
+		<li id="fn4">
 			<p>
 				<a href="http://www.erights.org/">The E distributed object language</a>
 			</p>
@@ -269,5 +270,5 @@ f(x)= xk<sup>e</sup>
 	<p class="text-muted">
 		<em>Editor's note: muted text indicates the text was commented out in the source file.</em>
 	</p>
-</div>
+
 {% endblock %}
