@@ -50,1379 +50,1429 @@ ul
 </style>
 
 
-  <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-1 main">
+<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-1 main">
   <div>
-      <section id="1">
-    <h3>
-      1. Introduction
-    </h3> 
+    <section id="1">
+        <h3>
+          1. Introduction
+        </h3> 
     </section>
+
     <br>
+
     <h4>
-      1.1. Copyright
+        1.1. Copyright
     </h4>
+
     <ul>
-        <li> 
-          THE CYPHERNOMICON: Cypherpunks FAQ and More, Version 0.666, 1994-09-10, Copyright Timothy C. May. All rights reserved. See the detailed disclaimer. Use short sections under "fair use" provisions, with appropriate credit, but don't put your name on my words.
-        </li>
+        THE CYPHERNOMICON: Cypherpunks FAQ and More, Version 0.666, 1994-09-10, Copyright Timothy C. May. All rights reserved. See the detailed disclaimer. Use short sections under "fair use" provisions, with appropriate credit, but don't put your name on my words.
     </ul>
+
     <h4>
-      1.2. Foreword
+        1.2. Foreword
     </h4>
+
     <ul>
         <li>
-         - The Cypherpunks have existed since September, 1992. In that time, a vast amount has been written on cryptography, key escrow, Clipper, the Net, the Information Superhighway, cyber terrorists, and crypto anarchy. We have found ourselves (or _placed_ ourselves) at the center of the storm.
+           - The Cypherpunks have existed since September, 1992. In that time, a vast amount has been written on cryptography, key escrow, Clipper, the Net, the Information Superhighway, cyber terrorists, and crypto anarchy. We have found ourselves (or _placed_ ourselves) at the center of the storm.
         </li>
 
         <li>
-         - This FAQ may help to fill in some gaps about what we're about, what motivates us, and where we're going. And maybe some useful knowledge on crypto, remailers, anonymity, digital cash, and other interesting things.
+           - This FAQ may help to fill in some gaps about what we're about, what motivates us, and where we're going. And maybe some useful knowledge on crypto, remailers, anonymity, digital cash, and other interesting things.
         </li>
 
         <li>
-         + The Basic Issues
+        + The Basic Issues
         </li>
 
         <ul>
             <li>
-              + Great Divide: privacy vs. compliance with laws
+                + Great Divide: privacy vs. compliance with laws
             </li>
-              <ul>
+            
+            <ul>
                 <li>
-                + free speech and privacy, even if it means some criminals cannot be caught (a stand the U.S. Constitution was strongly in favor of, at one time)
+                    + free speech and privacy, even if it means some criminals cannot be caught (a stand the U.S. Constitution was strongly in favor of, at one time)
                 </li>
-                    <ul>
-                        <li>
-                        - a man's home is his castle...the essence of the Magna Carta systems...rights of the individual to be secure from random searches
-                        </li>
-                    </ul>
-                    <li>
-                    + or invasive tactics to catch criminals, regulate behavior, and control the population
-                    </li>
-                    <ul>
-                        <li>
-                        - the legitimate needs to enforce laws, to respond to situations
-                        </li>
-                    </ul>
-                  <li>
-                  + this parallels the issue of self-protection vs. protection by law and police
-                  </li>
+                
                 <ul>
                     <li>
-                    - as seen in the gun debated
-                    </li>
+                        - a man's home is his castle...the essence of the Magna Carta systems...rights of the individual to be secure from random searches
+                    </li>    
+                </ul>
+
+                <li>
+                    + or invasive tactics to catch criminals, regulate behavior, and control the population
+                </li>
+
+                <ul>
                     <li>
-                    - crypto = guns in the sense of being an individual's preemptive protection
+                        - the legitimate needs to enforce laws, to respond to situations
                     </li>
-      </ul>
-      <li>
-        - past the point of no return
-        </li>
-      </ul>
-    </ul>
+                </ul>
 
-    <ul>
-    <li>
-      - Strong crypto as building material for a new age
-      </li>
-      <ul>
-      <li>
-  + Transnationalism and Increased Degrees of Freedom
-  </li>
-  <ul>
-  <li>
-    - governments can't hope to control movements and communications of citizens; borders are transparent
-       </li>
-      </ul>
-      </ul>
-      </ul>
-    <li>
-      + Not all list members share all views
-    </li>
-    <ul>
+                <li>
+                    + this parallels the issue of self-protection vs. protection by law and police
+                </li>
+
+                <ul>
+                    <li>
+                      - as seen in the gun debated
+                    </li>
+
+                    <li>
+                      - crypto = guns in the sense of being an individual's preemptive protection
+                    </li>
+                </ul>
+
+                <li>
+                    - past the point of no return
+                </li>
+            </ul>
+        </ul>
+        <ul>
+            <li>
+               - Strong crypto as building material for a new age
+            </li>
+            <ul>
+                <li>
+                    + Transnationalism and Increased Degrees of Freedom
+                </li>
+                <ul>
+                    <li>
+                        - governments can't hope to control movements and communications of citizens; borders are transparent
+                    </li>
+                </ul>
+            </ul>
+        </ul>
         <li>
-            - This is not "the Official Cypherpunks FAQ." No such thing can exist. This is the FAQ I wanted written. Views expressed are my own, with as much input from others, as much consensus, as I can manage. If you want a radically different FAQ, write it yourself.If you don't like this FAQ, don't read it. And tell your friends not to read it. But don't bog down my mailbox, or the 500 others on the list, with messages about how you would have worded Section 12.4.7.2 slightly differently, or how Section 6.9.12 does not fully reflect your views. For obvious reasons.    
+            + Not all list members share all views
         </li>
+        <ul>
+            <li>
+                - This is not "the Official Cypherpunks FAQ." No such thing can exist. This is the FAQ I wanted written. Views expressed are my own, with as much input from others, as much consensus, as I can manage. If you want a radically different FAQ, write it yourself.If you don't like this FAQ, don't read it. And tell your friends not to read it. But don't bog down my mailbox, or the 500 others on the list, with messages about how you would have worded Section 12.4.7.2 slightly differently, or how Section 6.9.12 does not fully reflect your views. For obvious reasons.    
+            </li>
+
+            <li>
+                - All FAQs are the products of a primary author, sometimes of a committee. For this FAQ, I am the sole author. At least of the version you are reading now. Future versions may have more input from others, though this makes me nervous (I favor new authors writing their own stuff, or using hypertext links, rather than taking my basic writing and attaching their name to it--it is true that I include the quotes of many folks here, but I do so by explicitly quoting them in the chunk they wrote....it will be tough for later authors to clearly mark what Tim May wrote without excessively cluttering the text. The revisionist's dilemma.    
+            </li>
+
+            <li>
+                    - The list has a lot of radical libertarians, some anarcho- capitalists, and even a few socialists    
+            </li>
+
+            <li>
+                    - Mostly computer-related folks, as might be expected. (There are some political scientists, classical scholars, etc. Even a few current or ex-lawyers.)    
+            </li>
+        </ul>
+
         <li>
-            - All FAQs are the products of a primary author, sometimes of a committee. For this FAQ, I am the sole author. At least of the version you are reading now. Future versions may have more input from others, though this makes me nervous (I favor new authors writing their own stuff, or using hypertext links, rather than taking my basic writing and attaching their name to it--it is true that I include the quotes of many folks here, but I do so by explicitly quoting them in the chunk they wrote....it will be tough for later authors to clearly mark what Tim May wrote without excessively cluttering the text. The revisionist's dilemma.    
+                + Do I Speak for Others?    
         </li>
 
-    <ul>
-            - The list has a lot of radical libertarians, some anarcho- capitalists, and even a few socialists    
-    </ul>
+        <ul>
+            <li>
+                - As I said, no. But sometimes I make claims about what "most" list members believe, what "many" believe, or what "some" believe.    
+            </li>
 
-    <ul>
-            - Mostly computer-related folks, as might be expected. (There are some political scientists, classical scholars, etc. Even a few current or ex-lawyers.)    
-    </ul>
+            <li>
+                - "Most" is my best judgment of what the majority believe, at least the vocal majority in Cypherpunks discussions (at the physical meetings, parties, etc.) and on the List. "Many" means fewer, and "some" fewer still. "A few" will mean a distinct minority. Note that this is from the last 18 months of activity (so don't send in clarifications now to try to "sway the vote").    
+            </li>
 
-    <li>
-            + Do I Speak for Others?    
-    </li>
+            <li>
+                - In particular, some members may be quite uncomfortable being described as anarchists, crypto anarchists, money launderers, etc.    
+            </li>
+        </ul>
+        <li>
+                +My comments won't please everyone    
+        </li>
+        <ul>
+            <li>
+                    - on nearly every point ever presented, some have disagreed    
+            </li>
 
-    <ul>
-            - As I said, no. But sometimes I make claims about what "most" list members believe, what "many" believe, or what "some" believe.    
-    </ul>
+            <li>
+                    - feuds, battles, flames, idee fixes    
+            </li>
 
-    <ul>
-            - "Most" is my best judgment of what the majority believe, at least the vocal majority in Cypherpunks discussions (at the physical meetings, parties, etc.) and on the List. "Many" means fewer, and "some" fewer still. "A few" will mean a distinct minority. Note that this is from the last 18 months of activity (so don't send in clarifications now to try to "sway the vote").    
-    </ul>
+            <li>
+                    - on issues ranging from gun control to Dolphin Encrypt to various pet theories held dearly    
+            </li>
 
-    <ul>
-            - In particular, some members may be quite uncomfortable being described as anarchists, crypto anarchists, money launderers, etc.    
-    </ul>
+            <li>
+                    - Someone once made a mundane joke about pseudonyms being like multiple personality disorder--and a flame came back saying: "That's not funny. I am MPD and my SO is MPD. Please stop immediately!"    
+            </li>
 
-    <li>
-            +My comments won't please everyone    
-    </li>
+            <li>
+                    - can't be helped....can't present all sides to all arguments    
+            </li>
+        </ul>
 
-    <ul>
-            - on nearly every point ever presented, some have disagreed    
-    </ul>
+        <li>
+                + Focus of this FAQ is U.S.-centric, for various reasons    
+        </li>
 
-    <ul>
-            - feuds, battles, flames, idee fixes    
-    </ul>
+        <ul>
+            <li>
+                    - most on list are in U.S., and I am in U.S.    
+            </li>
 
-    <ul>
-            - on issues ranging from gun control to Dolphin Encrypt to various pet theories held dearly    
-    </ul>
+            <li>
+                    - NSA and crypto community is largely centered in the U.S., with some strong European activities    
+            </li>
 
-    <ul>
-            - Someone once made a mundane joke about pseudonyms being like multiple personality disorder--and a flame came back saying: "That's not funny. I am MPD and my SO is MPD. Please stop immediately!"    
-    </ul>
+            <li>
+                    - U.S. law is likely to influence overseas law    
+            </li>
+        </ul>
 
-    <ul>
-            - can't be helped....can't present all sides to all arguments    
-    </ul>
+        <li>
+                + We are at a fork in the road, a Great Divide    
+        </li>
+        <ul>
+            <li>
+                    - Surveillance vs. Freedom    
+            </li>
 
-    <li>
-            + Focus of this FAQ is U.S.-centric, for various reasons    
-    </li>
+            <li>
+                    - nothing in the middle...either strong crypto and privacy is strongly limited, or the things I describe here will be done by some people....hence the "tipping factor" applies (point of no return, horses out of the barn)    
+            </li>
+        </ul>
 
-    <ul>
-            - most on list are in U.S., and I am in U.S.    
-    </ul>
+        <li>
+                + I make no claim to speaking "for the group." If you're offended, write your own FAQ. My focus on things loosely called "crypto anarchy" is just that: my _focus_. This focus naturally percolates over into something like this FAQ, just as someone primarily interested in the mechanics of PGP would  devote more space to PGP issues than I have.    
+        </li>
 
-    <ul>
-            - NSA and crypto community is largely centered in the U.S., with some strong European activities    
-    </ul>
+        <ul>
+            <li>
+                    - Gary Jeffers, for example, devotes most of his "CEB" to issues surrounding PGP.    
+            </li>
+        </ul>
 
-    <ul>
-            - U.S. law is likely to influence overseas law    
-    </ul>
+        <li>
+                + Will leave out some of the highly detailed items...    
+        </li>
 
-    <li>
-            + We are at a fork in the road, a Great Divide    
-    </li>
+        <ul>
+            <li>
+                    - Clipper, LEAF, escrow, Denning, etc.    
+            </li>
 
-    <ul>
-            - Surveillance vs. Freedom    
-    </ul>
+            <li>
+                    - a myriad of encryption programs, bulkciphers, variants on PGP, etc. Some of these I've listed...others I've had to throw my hands over and just ignore. (Keeping track of zillions of versions for dozens of platforms...)    
+            </li>
 
-    <ul>
-            - nothing in the middle...either strong crypto and privacy is strongly limited, or the things I describe here will be done by some people....hence the "tipping factor" applies (point of no return, horses out of the barn)    
-    </ul>
-
-    <li>
-            + I make no claim to speaking "for the group." If you're offended, write your own FAQ. My focus on things loosely called "crypto anarchy" is just that: my _focus_. This focus naturally percolates over into something like this FAQ, just as someone primarily interested in the mechanics of PGP would  devote more space to PGP issues than I have.    
-    </li>
-
-    <ul>
-            - Gary Jeffers, for example, devotes most of his "CEB" to issues surrounding PGP.    
-    </ul>
-
-    <li>
-            + Will leave out some of the highly detailed items...    
-    </li>
-
-    <ul>
-            - Clipper, LEAF, escrow, Denning, etc.    
-    </ul>
-
-    <ul>
-            - a myriad of encryption programs, bulkciphers, variants on PGP, etc. Some of these I've listed...others I've had to throw my hands over and just ignore. (Keeping track of zillions of versions for dozens of platforms...)    
-    </ul>
-
-    <ul>
-            - easy to get lost in the details, buried in the bullshit    
-    </ul>
+            <li>
+                    - easy to get lost in the details, buried in the bullshit    
+            </li>
+        </ul>
     </ul>
 
     <h4>
             1.3. Motivations 
     </h4>
     <ul>
-    <h5>
-            1.3.1. With so much material available, why another FAQ?
-    </h5>
-    <h5>
-            1.3.2. No convenient access to archives of the list....and who could read 50 MB of stuff anyway? 
-    </h5>
-    <h5>
-            1.3.3. Why not Web? (Mosaic, Http, URL, etc.)    
-    </h5>
+        <h5>
+                1.3.1. With so much material available, why another FAQ?
+        </h5>
+        <h5>
+                1.3.2. No convenient access to archives of the list....and who could read 50 MB of stuff anyway? 
+        </h5>
+        <h5>
+                1.3.3. Why not Web? (Mosaic, Http, URL, etc.)    
+        </h5>
+        <ul>
+            <li>
+                    - Why not a navigable Web document?    
+            </li>
 
-    <ul>
-            - Why not a navigable Web document?    
+            <li>
+                    - This is becoming trendy. Lots of URLs are included here, in fact. But making all documents into Web documents has downsides.    
+            </li>
+
+            <li>
+                    + Reasons why not:    
+            </li>
+
+            <ul>
+                <li>
+                      - No easy access for me.    
+                </li>
+
+                <li>
+                      - Many others also lack access. Text still rules.    
+                </li>
+
+                <li>
+                      - Not at all clear that a collection of hundreds of fragments is useful    
+                </li>
+
+                <li>
+                      - I like the structured editors available on my Mac (specifically, MORE, an outline editor)    
+                </li>
+            </ul>
+        </ul>
+
+        <h5>
+                1.3.4. What the Essential Points Are    
+        </h5>
+
+        <ul>
+            <li>
+                    - It's easy to lose track of what the core issues are, what the really important points are. In a FAQ like this, a vast amount of "cruft" is presented, that is, a vast amount of miscellaneous, tangential, and epiphenomenal material. Names of PGP versions, variants on steganograhy, and other such stuff, all of which will change over the next few months and years.    
+            </li>
+
+            <li>
+                    + And yet that's partly what a FAQ is for. The key is just not to lose track of the key ideas. I've mentioned what I think are the important ideas many times. To wit:    
+            </li>
+
+            <ul>
+                <li>
+                        - that many approaches to crypto exist    
+                </li>
+
+                <li>
+                        - that governments essentially cannot stop most of these approaches, short of establishing a police state (and probably not even then)    
+                </li>
+
+                <li>
+                        - core issues of identity, authentication, pseudonyms, reputations, etc.    
+                </li>
+            </ul>
+        </ul>
     </ul>
 
-    <ul>
-            - This is becoming trendy. Lots of URLs are included here, in fact. But making all documents into Web documents has downsides.    
-    </ul>
-
-    <ul>
-            + Reasons why not:    
-    </ul>
-
-    <ul>
-      <ul>
-              - No easy access for me.    
-      </ul>
-
-      <ul>
-              - Many others also lack access. Text still rules.    
-      </ul>
-
-      <ul>
-              - Not at all clear that a collection of hundreds of fragments is useful    
-      </ul>
-
-      <ul>
-              - I like the structured editors available on my Mac (specifically, MORE, an outline editor)    
-      </ul>
-    </ul>
-    <h5>
-            1.3.4. What the Essential Points Are    
-    </h5>
-
-    <ul>
-            - It's easy to lose track of what the core issues are, what the really important points are. In a FAQ like this, a vast amount of "cruft" is presented, that is, a vast amount of miscellaneous, tangential, and epiphenomenal material. Names of PGP versions, variants on steganograhy, and other such stuff, all of which will change over the next few months and years.    
-    </ul>
-
-    <ul>
-            + And yet that's partly what a FAQ is for. The key is just not to lose track of the key ideas. I've mentioned what I think are the important ideas many times. To wit:    
-    <ul>
-            - that many approaches to crypto exist    
-    </ul>
-
-    <ul>
-            - that governments essentially cannot stop most of these approaches, short of establishing a police state (and probably not even then)    
-    </ul>
-
-    <ul>
-            - core issues of identity, authentication, pseudonyms, reputations, etc.    
-    </ul>
-    </ul>
-    </ul>
     <h4>
             1.4. Who Should Read This 
-
     </h4>
-    <ul>
-    <h5>
-      1.4.1. "Should I read this?"    
-    </h5>
 
     <ul>
-            - Yes, reading this will point you toward other sources of information, will answer the most commonly asked questions, and will (hopefully) head off the reappearance of the same tired themes every few months.    
+        <h5>
+          1.4.1. "Should I read this?"    
+        </h5>
+        <ul>
+            <li>
+                - Yes, reading this will point you toward other sources of information, will answer the most commonly asked questions, and will (hopefully) head off the reappearance of the same tired themes every few months.    
+            </li>
+
+            <li>
+                    - Use a search tool if you have one. Grep for the things that interest you, etc. The granularity of this FAQ does not lend itself to Web conversion, at least not with present tools.    
+            </li>
+
+            <li>
+                    + What _Won't_ Be Covered Here    
+            </li>
+
+            <ul>
+                <li>
+                    + basic cryptography
+                </li>  
+
+                <ul>
+                    <li>
+                        + many good texts, FAQs, etc., written by full-time cryptologists and educators    
+                    </li>
+
+                    <ul>
+                        <li>
+                            - in particular, some of the ideas are not simple, and take several pages of well-written text to get the point across  
+                        </li>  
+                    </ul>
+                </ul>
+                <li>
+                        - not the focus of this FAQ    
+                </li>
+                <li>
+                    - basic political rants  
+                </li>  
+            </ul>
+        </ul>
     </ul>
 
-    <ul>
-            - Use a search tool if you have one. Grep for the things that interest you, etc. The granularity of this FAQ does not lend itself to Web conversion, at least not with present tools.    
-    </ul>
-
-    <ul>
-            + What _Won't_ Be Covered Here    
-
-    <ul>
-            + basic cryptography    
-
-
-    <ul>
-            + many good texts, FAQs, etc., written by full-time cryptologists and educators    
-
-
-    <ul>
-            - in particular, some of the ideas are not simple, and take several pages of well-written text to get the point across    
-    </ul>
-    </ul>
-    <ul>
-            - not the focus of this FAQ    
-    </ul>
-
-            - basic political rants    
-    </ul>
-    </ul>
-
-    </ul>
     <h4>
-            1.5. Comments on Style and Thoroughness  
+        1.5. Comments on Style and Thoroughness  
     </h4>
 
     <ul>
-    <h5>
-    1.5.1. "Why is this FAQ not in Mosaic form?"   
-    </h5>
-    <ul>
+        <h5>
+            1.5.1. "Why is this FAQ not in Mosaic form?"   
+        </h5>
 
-    <li>
-            - because the author (tcmay, as of 7/94) does not have Mosaic access, and even if did, would not necessarily....    
-    </li>
+        <ul>
+            <li>
+                    - because the author (tcmay, as of 7/94) does not have Mosaic access, and even if did, would not necessarily....    
+            </li>
+            <li>
+                    - linear text is still fine for some things...can be read on all platforms, can be printed out, and can be searched with standard grep and similar tools  
+            </li>
+        </ul>
 
-    <li>
-            - linear text is still fine for some things...can be read on all platforms, can be printed out, and can be searched with standard grep and similar tools  
-    </li>
-    </ul>
-            <h5>
+        <h5>
             1.5.2. "Why the mix of styles?"   
-            </h5>
-    <ul>
-    <li>
-            + There are three main types of styles here:    
-    </li>
-    <ul>
-    <li>
-            - Standard prose sections, explaining some point or listing things. Mini-essays, like most posts to Cypherpunks.    
-    </li>
+        </h5>
 
-    <li>
-            + Short, outline-style comments    
-    </li>
+        <ul>
+            <li>
+                    + There are three main types of styles here:    
+            </li>
+            <ul>
+                <li>
+                        - Standard prose sections, explaining some point or listing things. Mini-essays, like most posts to Cypherpunks.    
+                </li>
 
-    <li>
-            - that I didn't have time or willpower to expand into prose format    
-    </li>
+                <li>
+                        + Short, outline-style comments    
+                </li>
+                <ul>
+                    <li>
+                            - that I didn't have time or willpower to expand into prose format    
+                    </li>
 
-    <li>
-            - that work best in outline format anyway    
-    </li>
+                    <li>
+                            - that work best in outline format anyway    
+                    </li>
 
-    <li>
-            - like this    
-    </li>
+                    <li>
+                            - like this    
+                    </li>
+                </ul>
+                <li>
+                        + Quotes from others    
+                </li>
+                <ul>
+                    <li>
+                            - Cypherpunks are a bright group. A lot of clever things have been said in the 600 days x 40 posts/day = 24,000 posts, and I am trying to use what I can.    
+                    </li>
 
-    <li>
-            + Quotes from others    
-    </li>
+                    <li>
+                            + Sadly, only a tiny fraction can be used    
+                    </li>
+                    <ul>
+                        <li>
+                                - because I simply cannot _read_even a fraction of these posts over again (though I've only saved several thousand of the posts)    
+                        </li>
 
-    <li>
-            - Cypherpunks are a bright group. A lot of clever things have been said in the 600 days x 40 posts/day = 24,000 posts, and I am trying to use what I can.    
-    </li>
+                        <li>
+                                - and because including too many of these posts would simply make the FAQ too long (it's still too long, I suppose)    
+                        </li>
+                    </ul>
+                </ul>
+            </ul>
+            <li>
+                    - I hope you can handle the changes in tone of voice, in styles, and even in formats. It'll just too much time to make it all read uniformly. 
+            </li>
+        </ul>
 
-    <li>
-            + Sadly, only a tiny fraction can be used    
-    </li>
+        <h5>
+            1.5.3. Despite the length of this thing, a vast amount of stuff is missing. 
+        </h5>
+        
+        <ul>
+            <li>
+                    There have been hundreds of incisive analyses by Cypherpunks, dozens of survey articles on Clipper, and thousands of clever remarks. Alas, only a few of them here.    
+            </li>
 
-    <li>
-            - because I simply cannot _read_even a fraction of these posts over again (though I've only saved several thousand of the posts)    
-    </li>
+            <ul>
+                <li>
+                        - And with 25 or more books on the Internet, hundreds of FAQs and URLs, it's clear that we're all drowning in a sea of information about the Net.    
+                </li>
 
-    <li>
-            - and because including too many of these posts would simply make the FAQ too long (it's still too long, I suppose)    
-    </li>
-    </ul>
-    <li>
-            - I hope you can handle the changes in tone of voice, in styles, and even in formats. It'll just too much time to make it all read uniformly. 
-    </li>
-    </ul>
+                <li>
+                        - Ironically, good old-fashioned books have a lot more relevant and timeless information. 
+                </li>
+            </ul>
+        </ul>
 
-    <h5>
-    1.5.3. Despite the length of this thing, a vast amount of stuff is missing. 
-    </h5>
-<ul>
-    <li>
-            There have been hundreds of incisive analyses by Cypherpunks, dozens of survey articles on Clipper, and thousands of clever remarks. Alas, only a few of them here.    
-    </li>
-
-    <ul>
-    <li>
-            - And with 25 or more books on the Internet, hundreds of FAQs and URLs, it's clear that we're all drowning in a sea of information about the Net.    
-    </li>
-
-    <li>
-            - Ironically, good old-fashioned books have a lot more relevant and timeless information. 
-    </li>
-
-    </ul>
-    </ul>
-    <h5>
+        <h5>
             1.5.4. Caveats on the completeness or accuracy of this FAQ    
-    </h5>
+        </h5>
 
-    <ul>
-    <li>
-            + not all points are fully fleshed out...the outline nature means that nearly all points could be further added-to, subdivided, taxonomized, and generally fleshed-out with more points, counterpoints, examples    
-    </li>
-    <ul>
-    <li>
-            - like a giant tree...branches, leaves, tangled hierarchies    
-    </li>
-    </ul>
-    <li>
-            + It is inevitable that conflicting points will be made in a document of this size    
-    </li>
-    <ul>
-    <li>
-            - views change, but don't get corrected in all places    
-    </li>
+        <ul>
+            <li>
+                    + not all points are fully fleshed out...the outline nature means that nearly all points could be further added-to, subdivided, taxonomized, and generally fleshed-out with more points, counterpoints, examples    
+            </li>
+            <ul>
+                <li>
+                        - like a giant tree...branches, leaves, tangled hierarchies    
+                </li>
+            </ul>
+            <li>
+                    + It is inevitable that conflicting points will be made in a document of this size    
+            </li>
+            <ul>
+                <li>
+                        - views change, but don't get corrected in all places    
+                </li>
 
-    <li>
-            - different contexts lead to different viewpoints    
-    </li>
+                <li>
+                        - different contexts lead to different viewpoints    
+                </li>
 
-    <li>
-            - simple failure by me to be fully consistent    
-    </li>
+                <li>
+                        - simple failure by me to be fully consistent    
+                </li>
 
-    <li>
-            - and many points raised here would, if put into an essay for the Cypherpunks list, generate comments, rebuttals, debate, and even acrimony....I cannot expect to have all sides represented fully, especially as the issues are often murky, unresolved, in dispute, and generally controversial    
-    </li>
+                <li>
+                        - and many points raised here would, if put into an essay for the Cypherpunks list, generate comments, rebuttals, debate, and even acrimony....I cannot expect to have all sides represented fully, especially as the issues are often murky, unresolved, in dispute, and generally controversial    
+                </li>
+            </ul>
+            <li>
+                    - inconsistencies in the points here in this FAQ    
+            </li>
+        </ul>
     </ul>
-    <li>
-            - inconsistencies in the points here in this FAQ    
-    </li>
 
-    <li>
-          
-    </li>
-    </ul>
-    </ul>
-    </ul>
     <h4>
-            1.6. Corrections and Elaborations    
+        1.6. Corrections and Elaborations    
     </h4>
-    <ul>
-    <li>
-            + "How to handle corrections or clarifications?"    
-    </li>
-    <ul>
-    <li>
-            - While I have done my best to ensure accuracy, errors will no doubt exist. And as anyone can see from reading the Cypherpunks list, nearly *any* statement made about any subject can produce a flurry of rebuttals, caveats, expansions, and whatnot. Some subjects, such as the nature of money, the role of Cypherpunks, and the role of reputations, produce dozens of differing opinions every time they come up!    
-    </li>
 
-    <li>
-            - So, it is not likely that my points here will be any different. Fortunately, the sheer number of points here means that not every one of them will be disagreed with. But the math is pretty clear: if every reader finds even one thing to disagree with and then posts his rebuttal or elaboration....disaster! (Especially if some people can't trim quotes properly and end up including a big chunk of text.)    
-    </li>
-    </ul>
-    <li>
+    <ul>
+        <li>
+                + "How to handle corrections or clarifications?"    
+        </li>
+        <ul>
+            <li>
+                    - While I have done my best to ensure accuracy, errors will no doubt exist. And as anyone can see from reading the Cypherpunks list, nearly *any* statement made about any subject can produce a flurry of rebuttals, caveats, expansions, and whatnot. Some subjects, such as the nature of money, the role of Cypherpunks, and the role of reputations, produce dozens of differing opinions every time they come up!    
+            </li>
+
+            <li>
+                    - So, it is not likely that my points here will be any different. Fortunately, the sheer number of points here means that not every one of them will be disagreed with. But the math is pretty clear: if every reader finds even one thing to disagree with and then posts his rebuttal or elaboration....disaster! (Especially if some people can't trim quotes properly and end up including a big chunk of text.)    
+            </li>
+        </ul>
+
+        <li>
             + Recommendations    
-    </li>
-    <ul>
-    <li>
-            - Send corrections of _fact_ to me    
-    </li>
+        </li>
+        <ul>
+            <li>
+                    - Send corrections of _fact_ to me    
+            </li>
 
-    <li>
-            - If you disagree with my opinion, and you think you can change my mind, or cause me to include your opinion as an elaboration or as a dissenting view, then send it. If your point requires long debate or is a deep disagreement, then I doubt I have the time or energy to debate. If you want your views heard, write your own FAQ!    
-    </li>
+            <li>
+                    - If you disagree with my opinion, and you think you can change my mind, or cause me to include your opinion as an elaboration or as a dissenting view, then send it. If your point requires long debate or is a deep disagreement, then I doubt I have the time or energy to debate. If you want your views heard, write your own FAQ!    
+            </li>
 
-    <li>
-            - Ultimately, send what you want. But I of course will evaluate comments and apply a reputation-based filter to the traffic. Those who send me concise, well-reasoned corrections or clarifications are likelier to be listened to than those who barrage me with minor clarifications and elaborations.    
-    </li>
+            <li>
+                    - Ultimately, send what you want. But I of course will evaluate comments and apply a reputation-based filter to the traffic. Those who send me concise, well-reasoned corrections or clarifications are likelier to be listened to than those who barrage me with minor clarifications and elaborations.    
+            </li>
 
-    <li>
-            - In short, this is not a group project. The "stone soup FAQ" is not what this is.    
-    </li>
+            <li>
+                    - In short, this is not a group project. The "stone soup FAQ" is not what this is.    
+            </li>
+        </ul>
+        <li>
+                + More information    
+        </li>
+        <ul>
+            <li>
+                    - Please don't send me e-mail asking for more information on a particular topic--I just can't handle custom research. This FAQ is long enough, and the Glossary at the end contains additional information, so that I cannot expand upon these topics (unless there is a general debate on the list). In other words, don't assume this FAQ is an entry point into a larger data base I will generate. I hate to sound so blunt, but I've seen the requests that come in every time I write a fairly long article.    
+            </li>
+        </ul>
+        <li>
+                + Tips on feedback    
+        </li>
+        <ul>
+            <li>
+                    - Comments about writing style, of the form "I would have written it _this_ way," are especially unwelcome.    
+            </li>
+        </ul>
+        <li>
+                + Credit issues    
+        </li>
+        <ul>
+            <li>
+                    - inevitable that omissions or collisions will occur    
+            </li>
+
+            <li>
+                    - ideas have many fathers    
+            </li>
+
+            <li>
+                    - some ideas have been "in the air" for many years    
+            </li>
+        </ul>
+        <li>
+                + slogans are especially problematic    
+        </li>
+        <ul>
+            <li>
+                    - "They can have my...."...I credit Barlow with this, but I've heard others use it independently (I think; at least I used it before hearing Barlow used it)    
+            </li>
+
+            <li>
+                    - "If crypto is outlawed, only outlaws will have crypto"    
+            </li>
+
+            <li>
+                    - "Big Brother Inside"    
+            </li>
+
+            <li>
+                    - if something really bothers you, send me a note    
+            </li>
+        </ul>
     </ul>
-    <li>
-            + More information    
-    </li>
-    <ul>
-    <li>
-            - Please don't send me e-mail asking for more information on a particular topic--I just can't handle custom research. This FAQ is long enough, and the Glossary at the end contains additional information, so that I cannot expand upon these topics (unless there is a general debate on the list). In other words, don't assume this FAQ is an entry point into a larger data base I will generate. I hate to sound so blunt, but I've seen the requests that come in every time I write a fairly long article.    
-    </li>
-    </ul>
-    <li>
-            + Tips on feedback    
-    </li>
-    <ul>
-    <li>
-            - Comments about writing style, of the form "I would have written it _this_ way," are especially unwelcome.    
-    </li>
-    </ul>
-    <li>
-            + Credit issues    
-    </li>
-    <ul>
-    <li>
-            - inevitable that omissions or collisions will occur    
-    </li>
 
-    <li>
-            - ideas have many fathers    
-    </li>
-
-    <li>
-            - some ideas have been "in the air" for many years    
-    </li>
-    </ul>
-    <li>
-            + slogans are especially problematic    
-    </li>
-    <ul>
-    <li>
-            - "They can have my...."...I credit Barlow with this, but I've heard others use it independently (I think; at least I used it before hearing Barlow used it)    
-    </li>
-
-    <li>
-            - "If crypto is outlawed, only outlaws will have crypto"    
-    </li>
-
-    <li>
-            - "Big Brother Inside"    
-    </li>
-
-    <li>
-            - if something really bothers you, send me a note    
-    </li>
-    </ul>
-    <li>
-          
-    </li>
-    </ul>
     <h4>
             1.7. Acknowledgements    
     </h4>
 
     <ul>
-    <h5>
-        1.7.1. Acknowledgements
-    </h5>
-    <ul>
-    <li>
-            - My chief thanks go to the several hundred active Cypherpunks posters, past and present.    
-    </li>
+        <h5>
+            1.7.1. Acknowledgements
+        </h5>
+        <ul>
+            <li>
+                    - My chief thanks go to the several hundred active Cypherpunks posters, past and present.    
+            </li>
 
-    <li>
-            - All rights reserved. Copyright Timothy C. May. Don't try to sell this or incorporate it into anything that is sold. Quoting brief sections is "fair use"...quoting long sections is not.    
-    </li>
-    </ul>
+            <li>
+                    - All rights reserved. Copyright Timothy C. May. Don't try to sell this or incorporate it into anything that is sold. Quoting brief sections is "fair use"...quoting long sections is not.    
+            </li>
+        </ul>
     </ul>
 
     <h4>
             1.8. Ideas and Notes (not to be printed)    
     </h4>
-    <ul>
-    <h5>
-        1.8.1. Graphics for cover
-    </h5>
-
 
     <ul>
-    <li>
-            - two blocks...plaintext to cryptotext    
-    </li>
+        <h5>
+            1.8.1. Graphics for cover
+        </h5>
 
-    <li>
-            - Cypherpunks FAQ    
-    </li>
 
-    <li>
-            - compiled by Timothy C. May, tcmay@netcom.com    
-    </li>
+        <ul>
+            <li>
+                    - two blocks...plaintext to cryptotext    
+            </li>
 
-    <li>
-            - with help from many Cypherpunks    
-    </li>
+            <li>
+                    - Cypherpunks FAQ    
+            </li>
 
-    <li>
-            - with material from other sources    
-    </li>
-    </ul>
-    <h5>
+            <li>
+                    - compiled by Timothy C. May, tcmay@netcom.com    
+            </li>
+
+            <li>
+                    - with help from many Cypherpunks    
+            </li>
+
+            <li>
+                    - with material from other sources    
+            </li>
+        </ul>
+
+        <h5>
             1.8.2. "So don't ask"    
-    </h5>
-
+        </h5>
     </ul>
 
     <h4>
-            1.9. Things are moving quickly in crypto and crypto policy
+        1.9. Things are moving quickly in crypto and crypto policy
     </h4>
 
     <ul>
-    <h5>
-
+        <h5>
             1.9.1. hard to keep this FAQ current, as info changes 
-    </h5>
-    <h5>
-    1.9.2. PGP in state of flux
-    </h5>
-    <h5>
-    1.9.3. new versions of tools coming constantly
-    </h5>
-    <h5>
-    1.9.4. And the whole Clipper thing has been turned on its head recently by the Administration's backing off...lots of points already made here are now rendered moot and are primarily of historical interest only.    
-    </h5>
-    <ul>
-    <li>
-            - Gore's letter to Cantwell    
-    </li>
+        </h5>
 
-    <li>
-            - Whit Diffie described a conference on key escrow systems in Karlsruhe, Germany, which seemed to contain new ideas    
-    </li>
+        <h5>
+            1.9.2. PGP in state of flux
+        </h5>
 
-    <li>
-            - TIS? (can't use this info?)    
-    </li>
+        <h5>
+            1.9.3. new versions of tools coming constantly
+        </h5>
 
+        <h5>
+            1.9.4. And the whole Clipper thing has been turned on its head recently by the Administration's backing off...lots of points already made here are now rendered moot and are primarily of historical interest only.    
+        </h5>
+
+        <ul>
+            <li>
+                    - Gore's letter to Cantwell    
+            </li>
+            <li>
+                    - Whit Diffie described a conference on key escrow systems in Karlsruhe, Germany, which seemed to contain new ideas    
+            </li>
+            <li>
+                    - TIS? (can't use this info?)    
+            </li>
+        </ul>
     </ul>
-    </ul>
+
     <h4>
-            1.10. Notes: The Cyphernomicon: the CypherFAQ and More    
+        1.10. Notes: The Cyphernomicon: the CypherFAQ and More    
     </h4>
+
     <ul>
-    <h5>
-            1.10.1. 2.3.1."The Book of Encyphered Names"    
-    </h5>
-    <ul>
-    <li>
-            - Ibn al-Taz Khallikak, the Pine Barrens Horror.    
-    </li>
+        <h5>
+                1.10.1. 2.3.1."The Book of Encyphered Names"    
+        </h5>
+        <ul>
+            <li>
+                    - Ibn al-Taz Khallikak, the Pine Barrens Horror.    
+            </li>
 
-    <li>
-            - Liber Grimoiris....Cifur???    
-    </li>
+            <li>
+                    - Liber Grimoiris....Cifur???    
+            </li>
 
-    <li>
-            - spreading from the Sumerian sands, through the gate of Ishtar, to the back alleys of Damascus, tempered with the blood of Westerners    
-    </li>
+            <li>
+                    - spreading from the Sumerian sands, through the gate of Ishtar, to the back alleys of Damascus, tempered with the blood of Westerners    
+            </li>
 
-    <li>
-            - Keys of Solomon, Kool John Dee and the Rapping CrypsGone to Croatan    
-    </li>
+            <li>
+                    - Keys of Solomon, Kool John Dee and the Rapping CrypsGone to Croatan    
+            </li>
 
-    <li>
-            - Peter Krypotkin, the Russian crypto anarchist    
-    </li>
+            <li>
+                    - Peter Krypotkin, the Russian crypto anarchist    
+            </li>
 
-    <li>
-            - Twenty-nine Primes, California    
-    </li>
+            <li>
+                    - Twenty-nine Primes, California    
+            </li>
+        </ul>
+
+        <h5>
+                1.10.2. 2.3.2.THE CYPHERNOMICON: a Cypherpunk FAQ and More--- Version 0.666    
+        </h5>
+
+        <h5>
+                1.10.3. 1994-09-01, Copyright Timothy C. May, tcmay@netcom.com    
+        </h5>
+
+        <h5>
+                1.10.4.    
+        </h5>
+        
+        <ul>
+            <li>
+                    - Written and compiled by Tim May, except as noted by credits. (Influenced by years of good posts on the Cypherpunks list.) Permission is granted to post and distribute this document in an unaltered and complete state, for non-profit and educational purposes only. Reasonable quoting under "fair use" provisions is permitted. See the detailed disclaimer of responsibilities and liabilities in the Introduction chapter.    
+            </li>
+        </ul>
     </ul>
-    <h5>
-            1.10.2. 2.3.2.THE CYPHERNOMICON: a Cypherpunk FAQ and More--- Version 0.666    
-    </h5>
-
-    <h5>
-            1.10.3. 1994-09-01, Copyright Timothy C. May, tcmay@netcom.com    
-    </h5>
-
-    <h5>
-            1.10.4.    
-    </h5>
-    <ul>
-    <li>
-            - Written and compiled by Tim May, except as noted by credits. (Influenced by years of good posts on the Cypherpunks list.) Permission is granted to post and distribute this document in an unaltered and complete state, for non-profit and educational purposes only. Reasonable quoting under "fair use" provisions is permitted. See the detailed disclaimer of responsibilities and liabilities in the Introduction chapter.    
-    </li>
-    </ul>
-    </ul>
+    
     <section id="2">
-    <h3>
+        <h3>
             2. MFAQ - Most Frequently Asked Questions
-    </h3>
+        </h3>
     </section>
-    <li>
-          
-    </li>
 
     <h4>
-            2.1. Copyright 
+        2.1. Copyright 
     </h4>
+
     <ul>
-    <li>
-        THE CYPHERNOMICON: Cypherpunks FAQ and More, Version 0.666, 1994-09-10, Copyright Timothy C. May. All rights reserved. See the detailed disclaimer. Use short sections under "fair use" provisions, with appropriate credit, but don't put your name on my words.    
-    </li>
+        <li>
+            THE CYPHERNOMICON: Cypherpunks FAQ and More, Version 0.666, 1994-09-10, Copyright Timothy C. May. All rights reserved. See the detailed disclaimer. Use short sections under "fair use" provisions, with appropriate credit, but don't put your name on my words.    
+        </li>
     </ul>
 
     <h4>
-            2.2. SUMMARY: MFAQ--Most Frequently Asked Questions 
+        2.2. SUMMARY: MFAQ--Most Frequently Asked Questions 
     </h4>
-    <ul>
-    <h5>
 
+    <ul>
+        <h5>
             2.2.1. Main Points    
-    </h5>
-    <ul>
-    <li>
-            - These are the main questions that keep coming up. Not necessarily the most basic question, just the ones that get asked a lot. What most FAQs are. 
-    </li>
-    </ul>
-    <h5>
+        </h5>
+
+        <ul>
+            <li>
+                    - These are the main questions that keep coming up. Not necessarily the most basic question, just the ones that get asked a lot. What most FAQs are. 
+            </li>
+        </ul>
+
+        <h5>
             2.2.2. Connections to Other Sections 
-    </h5>
-    <h5>
+        </h5>
+
+        <h5>
             2.2.3. Where to Find Additional Information    
-    </h5>
-    <ul>
-    <li>
-            - newcomers to crypto should buy Bruce Schneier's "Applied Cryptography"...it will save many hours worth of unnecessary questions and clueless remarks about cryptography.    
-    </li>
+        </h5>
 
-    <li>
-            - the various FAQs publishe in the newsroups (like sci.crypt, alt.security.pgp) are very helpful. (also at rtfm.mit.edu) 
-    </li>
-    </ul>
-    <h5>
-            2.2.4. Miscellaneous Comments    
-    </h5>
+        <ul>
+            <li>
+                    - newcomers to crypto should buy Bruce Schneier's "Applied Cryptography"...it will save many hours worth of unnecessary questions and clueless remarks about cryptography.    
+            </li>
 
-    <ul>
-    <li>
-            - I wasn't sure what to include here in the MFAQ--perhaps people can make suggestions of other things to include.    
-    </li>
+            <li>
+                    - the various FAQs publishe in the newsroups (like sci.crypt, alt.security.pgp) are very helpful. (also at rtfm.mit.edu) 
+            </li>
+        </ul>
 
-    <li>
-            - My advice is that if something interests you, use your editing/searching tools to find the same topic in the main section. Usually (but not always) there's more material in the main chapters than here in the MFAQ.    
-    </li>
+        <h5>
+                2.2.4. Miscellaneous Comments    
+        </h5>
 
-    </ul>
-    </ul>
-    <h4>
-            2.3. "What's the 'Big Picture'?"
-    </h4>
-    <ul>
-    <h5>
-     2.3.1. Strong crypto is here. It is widely available. 
-    </h5>
-    <h5>
-     2.3.2. It implies many changes in the way the world works. 
-    </h5>
-    <ul>
-    <li>
-     Private channels between parties who have never met and who never will meet are possible. Totally anonymous, unlinkable, untraceable communications and exchanges are possible. 
-    </li>
-    </ul>
-    <h5>
-     2.3.3. Transactions can only be *voluntary*, since the parties are untraceable and unknown and can withdraw at any time. 
-    </h5>
-    <ul>
-    <li>
-     This has profound implications for the conventional approach of using the threat of force, directed against parties by governments or by others. In particular, threats of force will fail. 
-    </li>
-    </ul>
-    <h5>
-     2.3.4. What emerges from this is unclear, but I think it will be a form of anarcho-capitalist market system I call "crypto anarchy." (Voluntary communications only, with no third parties butting in.)
-    </h5>
+        <ul>
+            <li>
+                    - I wasn't sure what to include here in the MFAQ--perhaps people can make suggestions of other things to include.    
+            </li>
+
+            <li>
+                    - My advice is that if something interests you, use your editing/searching tools to find the same topic in the main section. Usually (but not always) there's more material in the main chapters than here in the MFAQ.    
+            </li>
+        </ul>
     </ul>
 
     <h4>
-            2.4. Organizational 
+        2.3. "What's the 'Big Picture'?"
     </h4>
+
     <ul>
-    <h5>
-            2.4.1. "How do I get on--and off--the Cypherpunks list?"    
-    </h5>
-    <ul>
-    <li>
-            - Send a message to "cypherpunks-request@toad.com"    
-    </li>
+        <h5>
+            2.3.1. Strong crypto is here. It is widely available. 
+        </h5>
 
-    <li>
-            - Any auto-processed commands?    
-    </li>
+        <h5>
+            2.3.2. It implies many changes in the way the world works. 
+        </h5>
+        <ul>
+            <li>
+                Private channels between parties who have never met and who never will meet are possible. Totally anonymous, unlinkable, untraceable communications and exchanges are possible. 
+            </li>
+        </ul>
 
-    <li>
-            - don't send requests to the list as a whole....this will mark you as "clueless" 
-    </li>
-    </ul>
-    <h5>
-            2.4.2. "Why does the Cypherpunks list sometimes go down, or lose the subscription list?"    
-    </h5>
-    <ul>
-    <li>
-            - The host machine, toad.com, owned by John Gilmore, has had the usual problems such machines have: overloading, shortages of disk space, software upgrades, etc. Hugh Daniel has done an admirable job of keeping it in good shape, but problems do occur.    
-    </li>
+        <h5>
+            2.3.3. Transactions can only be *voluntary*, since the parties are untraceable and unknown and can withdraw at any time. 
+        </h5>
 
-    <li>
-            - Think of it as warning that lists and communication systems remain somewhat fragile....a lesson for what is needed to make digital money more robust and trustable.    
-    </li>
+        <ul>
+            <li>
+                This has profound implications for the conventional approach of using the threat of force, directed against parties by governments or by others. In particular, threats of force will fail. 
+            </li>
+        </ul>
 
-    <li>
-            - There is no paid staff, no hardware budget for improvements. The work done is strictly voluntarily. 
-    </li>
+        <h5>
+            2.3.4. What emerges from this is unclear, but I think it will be a form of anarcho-capitalist market system I call "crypto anarchy." (Voluntary communications only, with no third parties butting in.)
+        </h5>
     </ul>
 
-    <h5>
-            2.4.3. "If I've just joined the Cypherpunks list, what should I do?"    
-    </h5>
+    <h4>
+        2.4. Organizational 
+    </h4>
+    
     <ul>
-    <li>
-            - Read for a while. Things will become clearer, themes will emerge, and certain questions will be answered. This is good advice for any group or list, and is especially so for a list with 500 or more people on it. (We hit 700+ at one point, then a couple of list outages knocked the number down a bit.)    
-    </li>
-
-    <li>
-            - Read the references mentioned here, if you can. The sci.crypt FAQ should be read. And purchase Bruce Schneier's "Applied Cryptography" the first chance you get.    
-    </li>
-
-    <li>
-            - Join in on things that interest you, but don't make a fool of yourself. Reputations matter, and you may come to regret having come across as a tedious fool in your first weeks on the list. (If you're a tedious fool after the first few weeks, that may just be your nature, of course.)    
-    </li>
-
-    <li>
-            - Avoid ranting and raving on unrelated topics, such as abortion (pro or con), guns (pro or con), etc. Theusual topics that usually generate a lot of heat and not much light. (Yes, most of us have strong views on these and other topics, and, yes, we sometimes let our views creep into discussions. There's no denying that certain resonances exist. I'm just urging caution.) 
-
-    </li>
-    </ul>
-    <h5>
-            2.4.4. "I'm swamped by the list volume; what can I do?"    
-    </h5>
-    <ul>
-    <li>
-            - This is a natural reaction. Nobody can follow it all; I spend entirely too many hours a day reading the list, and I certainly can't follow it all. Pick areas of expertise and then follow them and ignore the rest. After all, not seeing things on the list can be no worse than not even being subscribed to the list!    
-    </li>
-
-    <li>
-            - Hit the "delete" key quickly    
-    </li>
-
-    <li>
-            - find someone who will digest it for you (Eric Hughes has repeatedly said anyone can retransmit the list this way; Hal Finney has offered an encrypted list)    
-    </li>
-
-    <li>
-            + Better mailers may help. Some people have used mail-to-news systems and then read the list as a local newsgroup, with threads.    
-    </li>
-    <ul>
-    <li>
-            - I have Eudora, which supports off-line reading and sorting features, but I generally end up reading with an online mail program (elm).    
-    </li>
-    </ul>
-    <li>
-            - The mailing list may someday be switched over to a newsgroup, a la "alt.cypherpunks." (This may affect some people whose sites do not carry alt groups.) 
-    </li>
-    </ul>
-    <h5>
-            2.4.5. "It's very easy to get lost in the morass of detail here. Are there any ways to track what's *really* important?"    
-    </h5>
-    <ul>
-    <li>
-            - First, a lot of the stuff posted in the Usenet newsgroups, and on the Cypherpunks list, is peripheral stuff, epiphenomenal cruft that will blow away in the first strong breeze. Grungy details about PGP shells, about RSA encryption speeds, about NSA supercomputers. There's just no reason for people to worry about "weak IDEA keys" when so many more pressing matters exist. (Let the experts worry.) Little of this makes any real difference, just as little of the stuff in daily newspapers is memorable or deserves to be memorable.    
-    </li>
-
-    <li>
-            - Second, "read the sources." Read "1984," "The Shockwave Rider," "Atlas Shrugged," "True Names." Read the Chaum article on making Big Brother obsolete (October 1985, "Communications of the ACM").    
-    </li>
-
-    <li>
-            - Third, don't lose sight of the core values: privacy, technological solutions over legal solutions, avoiding taxation, bypassing laws, etc. (Not everyone will agree with all of these points.)    
-    </li>
-
-    <li>
-            - Fourth, don't drown in the detail. Pick some areas of interest and follow _them_. You may not need to know the inner workings of DES or all the switches on PGP to make contributions in other areas. (In fact, you surely don't.) 
-    </li>
-    </ul>
-    <h5>
-            2.4.6. "Who are the Cypherpunks?"    
-    </h5>
-    <ul>
-    <li>
-            - A mix of about 500-700    
-    </li>
-
-    <li>
-            + Can find out who by sending message to majordomo@toad.com with the message body text "who cypherpunks" (no quotes, of course).    
-    </li>
-    <ul>
-    <li>
-            - Is this a privacy flaw? Maybe.    
-    </li>
-    </ul>
-    <li>
-            - Lots of students (they have the time, the Internet accounts). Lots of computer science/programming folks. Lots of libertarians.    
-    </li>
-
-    <li>
-            - quote from Wired article, and from "Whole Earth Review" 
-    </li>
-    </ul>
-
-    <h5>
-
-            2.4.7. "Who runs the Cypherpunks?"    
-    </h5>
-    <ul>
-    <li>
-            - Nobody. There's no formal "leadership." No ruler = no head = an arch = anarchy. (Look up the etymology of anarchy.)    
-    </li>
-
-    <li>
-            - However, the mailing list currently resides on a physical machine, and this machine creates some nexus of control, much like having a party at someone's house. The list administrator is currently Eric Hughes (and has been since the beginning). He is helped by Hugh Daniel, who often does maintenance of the toad.com, and by John Gilmore, who owns the toad.com machine and account.    
-    </li>
-
-    <li>
-            - In an extreme situation of abuse or neverending ranting, these folks could kick someone off the list and block them from resubscribing via majordomo. (I presume they could-- it's never happened.)    
-    </li>
-
-    <li>
-            - To emphasize: nobody's ever been kicked off the list, so far as I know. Not even Detweiler...he asked to be removed (when the list subscribes were done manually).    
-    </li>
-
-    <li>
-            - As to who sets policy, there is no policy! No charter, no agenda, no action items. Just what people want to work on themselves. Which is all that can be expected. (Some people get frustrated at this lack of consensus, and they sometimes start flaming and ranting about "Cypherpunks never do anything," but this lack of consensus is to be expected. Nobody's being paid, nobody's got hiring and firing authority, so any work that gets done has to be voluntary. Some volunteer groups are more organized than we are, but there are other factors that make this more possible for them than it is for us. C'est la vie.)    
-    </li>
-
-    <li>
-            - Those who get heard on the mailing list, or in the physical meetings, are those who write articles that people find interesting or who say things of note. Sounds fair to me. 
-    </li>
-    </ul>
-
-    <h5>
-            2.4.8. "Why don't the issues that interest me get discussed?"    
-    </h5>
-    <ul>
-    <li>
-            - Maybe they already have been--several times. Many newcomers are often chagrined to find arcane topics being discussed, with little discussion of "the basics."    
-    </li>
-
-    <li>
-            - This is hardly surprising....people get over the "basics" after a few months and want to move on to more exciting (to them) topics. All lists are like this.    
-    </li>
-
-    <li>
-            - In any case, after you've read the list for a while--maybe several weeks--go ahead and ask away. Making your topic fresher may generate more responses than, say, asking what's wrong with Clipper. (A truly overworked topic, naturally.) 
-    </li>
-    </ul>
-
-    <h5>
-            2.4.9. "How did the Cypherpunks group get started?"    
-    </h5>
-
-    <h5>
-            2.4.10. "Where did the name 'Cypherpunks' come from?"    
-    </h5>
-    <ul>
-    <li>
-            + Jude Milhon, aka St. Jude, then an editor at "Mondo 2000," was at the earliest meetings...she quipped "You guys are just a bunch of cypherpunks." The name was adopted immediately.    
-    </li>
-    <ul>
-    <li>
-            - The 'cyberpunk' genre of science fiction often deals with issues of cyberspace and computer security ("ice"), so the link is natural.A point of confusion is that cyberpunks are popularly thought of as, well, as "punks," while many Cyberpunks are frequently libertarians and anarchists of various stripes. In my view, the two are not in conflict.    
-    </li>
-
-    <li>
-            - Some, however, would prefer a more staid name. The U.K. branch calls itself the "U.K. Crypto Privacy Association." [check this] However, the advantages of the name are clear. For one thing, many people are bored by staid names. For another, it gets us noticed by journalists and others.    
-    </li>
-    </ul>
-
-    <li>
-            - We are actually not very "punkish" at all. About as punkish as most of our cyberpunk cousins are, which is to say, not very.    
-    </li>
-
-    <li>
-            + the name    
-    </li>
-    <ul>
-    <li>
-            - Crypto Cabal (this before the sci.crypt FAQ folks appeared, I think), Crypto Liberation Front, other names    
-    </li>
-
-    <li>
-            - not everybody likes the name...such is life    
-    </li>
-    </ul>
-    </ul>
-    <h5>
-            2.4.11. "Why doesn't the Cypherpunks group have announced goals, ideologies, and plans?"    
-    </h5>
-    <ul>
-    <li>
-            - The short answer: we're just a mailing list, a loose association of folks interested in similar things    
-    </li>
-
-    <li>
-            - no budget, no voting, no leadership (except the "leadership of the soapbox")    
-    </li>
-
-    <li>
-            - How could such a consensus emerge? The usual approach is for an elected group (or a group that seized power) to write the charter and goals, to push their agenda. Such is not the case here.    
-    </li>
-
-    <li>
-            - Is this FAQ a de facto statement of goals? Not if I can help it, to be honest. Several people before me planned some sort of FAQ, and had they completed them, I certainly would not have felt they were speaking for me or for the group. To be consistent, then, I cannot have others think this way about _this_ FAQ!    
-    </li>
-    </ul>
-    <h5>
-            2.4.12. "What have the Cypherpunks actually done?"    
-    </h5>
-    <ul>
-    <li>
-            - spread of crypto: Cypherpunks have helped (PGP)...publicity, an alternative forum to sci.crypt (in many ways, better...better S/N ratio, more polite)    
-    </li>
-
-    <li>
-            - Wired, Whole Earth Review, NY Times, articles    
-    </li>
-
-    <li>
-            - remailers, encrypted remailers    
-    </li>
-
-    <li>
-            + The Cypherpunk- and Julf/Kleinpaste-style remailers were both written very quickly, in just days    
-    </li>
-    <ul>
-    <li>
-            - Eric Hughes wrote the first Cypherpunks remailer in a weekend, and he spent the first day of that weekend learning enough Perl to do the job.    
-    </li>
-
-    <li>
-            + Karl Kleinpaste wrote the code that eventually turned into Julf's remailer (added to since, of course) in a similarly short time:    
-    </li>
-    <ul>
-    <li>
-            - "My original anon server, for godiva.nectar.cs.cmu.edu 2 years ago, was written in a few hours one bored afternoon.It wasn't as featureful as it ended up being, but it was "complete" for its initial goals, and bug-free." [Karl_Kleinpaste@cs.cmu.edu, alt.privacy.anon-server, 1994-09-01]    
-    </li>
-    </ul>
-    <li>
-            - That other interesting ideas, such as digital cash, have not yet really emerged and gained use even after years of active discussion, is an interesting contrast to this rapid deployment of remailers. (The text-based nature of both straight encryption/signing and of remailing is semantically simpler to understand and then use than are things like digital cash, DC-nets, and other crypto protocols.)    
-    </li>
-    </ul>
-    <li>
-            - ideas for Perl scripts, mail handlers    
-    </li>
-
-    <li>
-            - general discussion, with folks of several political persuasions    
-    </li>
-
-    <li>
-            - concepts: pools, Information Liberation Front, BlackNet    
-    </li>
-    </ul>
-
-
-    <h5>
-            2.4.13. "How Can I Learn About Crypto and Cypherpunks Info?"    
-    </h5>
-
-    <h5>
-            2.4.14. "Why is there sometimes disdain for the enthusiasm and proposals of newcomers?"    
-    </h5>
-    <ul>
-    <li>
-            - None of us is perfect, so we sometimes are impatient with newcomers. Also, the comments seen tend to be issues of disagreement--as in all lists and newsgroups (agreement is so boring).    
-    </li>
-
-    <li>
-            - But many newcomers also have failed to do the basic reading that many of us did literally _years_ before joining this list. Cryptology is a fairly technical subject, and one can no more jump in and expect to be taken seriously without any preparation than in any other technical field.    
-    </li>
-
-    <li>
-            - Finally, many of us have answered the questions of newcomers too many times to be enthusiastic about it anymore. Familiarity breeds contempt.    
-    </li>
-
-    <li>
-            + Newcomers should try to be patient about our impatience. Sometimes recasting the question generates interest. Freshness matters. Often, making an incisive comment, instead of just asking a basic question, can generate responses. (Just like in real life.)    
-    </li>
-    <ul>
-    <li>
-            - "Clipper sux!" won't generate much response.    
-    </li>
-    </ul>
-    </ul>
-
-    <h5>
-            2.4.15. "Should I join theCypherpunks mailing list?"    
-    </h5>
-    <ul>
-    <li>
-            - If you are reading this, of course, you are most likely on the Cypherpunks list already and this point is moot--you may instead be asking if you should_leave_the List!    
-    </li>
-
-    <li>
-            - Only if you are prepared to handle 30-60 messages a day, with volumes fluctuating wildly    
-    </li>
-    </ul>
-
-    <h5>
-            2.4.16. "Why isn't the Cypherpunks list encrypted? Don't you believe in encryption?"    
-    </h5>
-    <ul>
-    <li>
-            - what's the point, for a publically-subscribable list?    
-    </li>
-
-    <li>
-            - except to make people jump through hoops, to put a large burden on toad (unless everybody was given the same key, so that just one encryption could be done...which underscores the foolishness)    
-    </li>
-
-    <li>
-            + there have been proposals, mainly as a stick to force people to start using encryption...and to get the encrypted traffic boosted    
-    </li>
-    <ul>
-    <li>
-            - involving delays for those who choose not or can't use crypto (students on terminals, foreigners in countries which have banned crypto, corporate subscribers....)    
-    </li>
-
-    </ul>
-    </ul>
-
-    <h5>
-            2.4.17. "What does "Cypherpunks write code' mean?"    
-    </h5>
-    <ul>
-    <li>
-            - a clarifying statement, not an imperative    
-    </li>
-
-    <li>
-            - technology and concrete solutions over bickering and chatter    
-    </li>
-
-    <li>
-            - if you don't write code, fine. Not everyone does (in fact, probably less than 10% of the list writes serious code, and less than 5% writes crypto or security software)    
-    </li>
-    </ul>
-
-    <h5>
-            2.4.18. "What does 'Big Brother Inside' Mean?"    
-    </h5>
-    <ul>
-    <li>
-            - devised by yours truly (tcmay) at Clipper meeting    
-    </li>
-
-    <li>
-            - Matt Thomlinson, Postscript    
-    </li>
-
-    <li>
-            - printed by ....    
-    </li>
-    </ul>
-
-    <h5>
-            2.4.19. "I Have a New Idea for a Cipher---Should I Discuss it Here?"    
-    </h5>
-    <ul>
-    <li>
-            - Please don't. Ciphers require careful analysis, and should be in paper form (that is, presented in a detailed paper, with the necessary references to show that due diligence was done, the equations, tables, etc. The Net is a poor substitute.    
-    </li>
-
-    <li>
-            - Also, breaking a randomly presented cipher is by no means trivial, even if the cipher is eventually shown to be weak. Most people don't have the inclination to try to break a cipher unless there's some incentive, such as fame or money involved.    
-    </li>
-
-    <li>
-            - And new ciphers are notoriously hard to design. Experts are the best folks to do this. With all the stuff waiting to be done (described here), working on a new cipher is probably the least effective thing an amateur can do. (If you are not an amateur, and have broken other people's ciphers before, then you know who you are, and these comments don't apply. But I'll guess that fewer than a handful of folks on this list have the necessary background to do cipher design.)    
-    </li>
-
-    <li>
-            - There are a vast number of ciphers and systems, nearly all of no lasting significance. Untested, undocumented, unused- -and probably unworthy of any real attention. Don't add to the noise.    
-    </li>
-    </ul>
-
-    <h5>
-            2.4.20. Are all the Cypherpunks libertarians?    
-    </h5>
-
-    <h5>
-            2.4.21. "What can we do?"    
-    </h5>
-    <ul>
-    <li>
-            - Deploy strong crypto, to ensure the genie cannot be put in the bottle    
-    </li>
-
-    <li>
-            - Educate, lobby, discuss    
-    </li>
-
-    <li>
-            - Spread doubt, scorn..help make government programs look foolish    
-    </li>
-
-    <li>
-            - Sabotage, undermine, monkeywrench    
-    </li>
-
-    <li>
-            - Pursue other activities    
-    </li>
-    </ul>
-
-    <h5>
-            2.4.22. "Why is the list unmoderated? Why is there no filtering of disrupters like Detweiler?"    
-    </h5>
-    <ul>
-    <li>
-            - technology over law    
-    </li>
-
-    <li>
-            - each person makes their own choice    
-    </li>
-
-    <li>
-            - also, no time for moderation, and moderation is usually stultifying    
-    </li>
-
-    <li>
-            + anyone who wishes to have some views silenced, or some posters blocked, is advised to:    
-    </li>
-    <ul>
-    <li>
-            - contract with someone to be their Personal Censor, passing on to them only approved material    
-    </li>
-
-    <li>
-            - subscribe to a filtering service, such as Ray and Harry are providing    
-    </li>
-    </ul>
-    </ul>
-
-    <h5>
-            2.4.23. "What Can I Do?"    
-    </h5>
-    <ul>
-    <li>
-            - politics, spreading the word    
-    </li>
-
-    <li>
-            - writing code ("Cypherpunks write code")    
-    </li>
-    </ul>
-
-    <h5>
-            2.4.24. "Should I publicize my new crypto program?"    
-    </h5>
-    <ul>
-    <li>
-            - "I have designed a crypting program, that I think is unbreakable.I challenge anyone who is interested to get in touch with me, and decrypt an encrypted massage."     
-    </li>
-
-    <li>
-            "With highest regards, Babak Sehari." [Babak Sehari, sci.crypt, 6-19-94]     
-    </li>
-    </ul>
-
-    <h5>
-            2.4.25. "Ask Emily Post Crypt"    
-    </h5>
-    <ul>
-    <li>
-            + my variation on "Ask Emily Postnews"    
-    </li>
-    <ul>
-    <li>
-            - for those that don't know, a scathing critique of clueless postings    
-    </li>
-    </ul>
-    <li>
-            + "I just invented a new cipher. Here's a sample. Bet you can't break it!"    
-    </li>
-    <ul>
-    <li>
-            - By all means post your encrypted junk. We who have nothing better to do with our time than respond will be more than happy to spend hours running your stuff through our codebreaking Crays!    
-    </li>
-    <li>
-            - Be sure to include a sample of encrypted text, to make yourself appear even more clueless.    
-    </li>
-    </ul>
-
-    <li>
-            + "I have a cypher I just invented...where should I post it?"    
-    </li>
-    <ul>
-    <li>
-            - "One of the very most basic errors of making ciphers is simply to add layer upon layer of obfuscation and make a cipher which is nice and "complex". Read Knuth on making random number generators for the folly in this kind of approach." [Eric Hughes, 4-17- 94, Cypherpunks]
-    </li>
-    <li>
-            - "Ciphers carry the presumption of guilt, not innocence. Ciphers designed by amateurs invariably fail under scrutiny by experts.This sociological fact (well borne out) is where the presumption of insecurity arises. This is not ignorance, to assume that this will change. The burden of proof is on the claimer of security, not upon the codebreaker. [Eric Hughes, 4-17-94, Cypherpunks] 
-    </li>
-    </ul>
-
-    <li>
-            + "I've just gotten very upset at something--should I vent my anger on the mailing list?"    
-    </li>
-    <ul>
-    <li>
-            - By all means! If you're fed up doing your taxes, or just read something in the newspaper that really angered you, definitely send an angry message out to the 700 or so readers and help make _them_ angry!    
-    </li>
-
-    <li>
-            - Find a bogus link to crypto or privacy issues to make it seem more relevant.    
-    </li>
-    </ul>
-    </ul>
-
-    <h5>
-            2.4.26. "What are some main Cypherpunks projects?"    
-    </h5>
-    <ul>
-    <li>
-            + remailers    
-    </li>
-    <ul>
-    <li>
-            + better remailers, more advanced features    
-    </li>
-    <ul>
-    <li>
-            - digital postage    
-    </li>
-
-    <li>
-            - padding, batching/latency    
-    </li>
-
-    <li>
-            - agent features    
-    </li>
-    </ul>
-    <li>
-            - more of them    
-    </li>
-
-    <li>
-            - offshore (10 sites in 5 countries, as a minimum)    
-    </li>
-    </ul>
-
-    <li>
-            - tools, services    
-    </li>
-
-    <li>
-            - digital cash in better forms    
-    </li>
-
-    </ul>
-
-    <h5>
-            2.4.27. "What about sublists, to reduce the volume on the main list."    
-    </h5>
-    <ul>
-    <li>
-            - There are already half a dozen sub-lists, devoted to planning meetings, to building hardware, and to exploring DC-Nets. There's one for remailer operators, or there used to be. There are also lists devoted to similar topics as Cypherpunks, including Robin Hanson's "AltInst" list (Alternative Institutions), Nick Szabo's "libtech-l" list, the "IMP-Interest" (Internet Mercantile Protocols) list, and so on. Most are very low volume.    
-    </li>
-
-    <li>
-            + That few folks have heard of any of them, and that traffic volumes are extremely low, or zero, is not all that surprising, and matches experiences elsewhere. Several reasons:    
-    </li>
-    <ul>
-    <li>
-            - Sublists are a bother to remember; most people forget they exist, and don't think to post to them. (This "forgetting" is one of the most interesting aspects of cyberspace; successful lists seem to be Schelling points that accrete even more members, while unsuccessful lists fade away into nothingness.)    
-    </li>
-
-    <li>
-            - There's a natural desire to see one's words in the larger of two forums, so people tend to post to the main list.    
-    </li>
-
-    <li>
-            - The sublists were sometimes formed in a burst of exuberance over some topic, which then faded.    
-    </li>
-
-    <li>
-            - Topics often span several subinterest areas, so posting to the main list is better than copying all the relevant sublists.    
-    </li>
-    </ul>
-    <li>
-            - In any case, the Cypherpunks main listis "it," for now, and has driven other lists effectively out of business. A kind of Gresham's Law.    
-    </li>
-
-    </ul>
+        <h5>
+                2.4.1. "How do I get on--and off--the Cypherpunks list?"    
+        </h5>
+        <ul>
+        <li>
+                - Send a message to "cypherpunks-request@toad.com"    
+        </li>
+
+        <li>
+                - Any auto-processed commands?    
+        </li>
+
+        <li>
+                - don't send requests to the list as a whole....this will mark you as "clueless" 
+        </li>
+        </ul>
+        <h5>
+                2.4.2. "Why does the Cypherpunks list sometimes go down, or lose the subscription list?"    
+        </h5>
+        <ul>
+        <li>
+                - The host machine, toad.com, owned by John Gilmore, has had the usual problems such machines have: overloading, shortages of disk space, software upgrades, etc. Hugh Daniel has done an admirable job of keeping it in good shape, but problems do occur.    
+        </li>
+
+        <li>
+                - Think of it as warning that lists and communication systems remain somewhat fragile....a lesson for what is needed to make digital money more robust and trustable.    
+        </li>
+
+        <li>
+                - There is no paid staff, no hardware budget for improvements. The work done is strictly voluntarily. 
+        </li>
+        </ul>
+
+        <h5>
+                2.4.3. "If I've just joined the Cypherpunks list, what should I do?"    
+        </h5>
+        <ul>
+        <li>
+                - Read for a while. Things will become clearer, themes will emerge, and certain questions will be answered. This is good advice for any group or list, and is especially so for a list with 500 or more people on it. (We hit 700+ at one point, then a couple of list outages knocked the number down a bit.)    
+        </li>
+
+        <li>
+                - Read the references mentioned here, if you can. The sci.crypt FAQ should be read. And purchase Bruce Schneier's "Applied Cryptography" the first chance you get.    
+        </li>
+
+        <li>
+                - Join in on things that interest you, but don't make a fool of yourself. Reputations matter, and you may come to regret having come across as a tedious fool in your first weeks on the list. (If you're a tedious fool after the first few weeks, that may just be your nature, of course.)    
+        </li>
+
+        <li>
+                - Avoid ranting and raving on unrelated topics, such as abortion (pro or con), guns (pro or con), etc. Theusual topics that usually generate a lot of heat and not much light. (Yes, most of us have strong views on these and other topics, and, yes, we sometimes let our views creep into discussions. There's no denying that certain resonances exist. I'm just urging caution.) 
+
+        </li>
+        </ul>
+        <h5>
+                2.4.4. "I'm swamped by the list volume; what can I do?"    
+        </h5>
+        <ul>
+        <li>
+                - This is a natural reaction. Nobody can follow it all; I spend entirely too many hours a day reading the list, and I certainly can't follow it all. Pick areas of expertise and then follow them and ignore the rest. After all, not seeing things on the list can be no worse than not even being subscribed to the list!    
+        </li>
+
+        <li>
+                - Hit the "delete" key quickly    
+        </li>
+
+        <li>
+                - find someone who will digest it for you (Eric Hughes has repeatedly said anyone can retransmit the list this way; Hal Finney has offered an encrypted list)    
+        </li>
+
+        <li>
+                + Better mailers may help. Some people have used mail-to-news systems and then read the list as a local newsgroup, with threads.    
+        </li>
+        <ul>
+        <li>
+                - I have Eudora, which supports off-line reading and sorting features, but I generally end up reading with an online mail program (elm).    
+        </li>
+        </ul>
+        <li>
+                - The mailing list may someday be switched over to a newsgroup, a la "alt.cypherpunks." (This may affect some people whose sites do not carry alt groups.) 
+        </li>
+        </ul>
+        <h5>
+                2.4.5. "It's very easy to get lost in the morass of detail here. Are there any ways to track what's *really* important?"    
+        </h5>
+        <ul>
+        <li>
+                - First, a lot of the stuff posted in the Usenet newsgroups, and on the Cypherpunks list, is peripheral stuff, epiphenomenal cruft that will blow away in the first strong breeze. Grungy details about PGP shells, about RSA encryption speeds, about NSA supercomputers. There's just no reason for people to worry about "weak IDEA keys" when so many more pressing matters exist. (Let the experts worry.) Little of this makes any real difference, just as little of the stuff in daily newspapers is memorable or deserves to be memorable.    
+        </li>
+
+        <li>
+                - Second, "read the sources." Read "1984," "The Shockwave Rider," "Atlas Shrugged," "True Names." Read the Chaum article on making Big Brother obsolete (October 1985, "Communications of the ACM").    
+        </li>
+
+        <li>
+                - Third, don't lose sight of the core values: privacy, technological solutions over legal solutions, avoiding taxation, bypassing laws, etc. (Not everyone will agree with all of these points.)    
+        </li>
+
+        <li>
+                - Fourth, don't drown in the detail. Pick some areas of interest and follow _them_. You may not need to know the inner workings of DES or all the switches on PGP to make contributions in other areas. (In fact, you surely don't.) 
+        </li>
+        </ul>
+        <h5>
+                2.4.6. "Who are the Cypherpunks?"    
+        </h5>
+        <ul>
+        <li>
+                - A mix of about 500-700    
+        </li>
+
+        <li>
+                + Can find out who by sending message to majordomo@toad.com with the message body text "who cypherpunks" (no quotes, of course).    
+        </li>
+        <ul>
+        <li>
+                - Is this a privacy flaw? Maybe.    
+        </li>
+        </ul>
+        <li>
+                - Lots of students (they have the time, the Internet accounts). Lots of computer science/programming folks. Lots of libertarians.    
+        </li>
+
+        <li>
+                - quote from Wired article, and from "Whole Earth Review" 
+        </li>
+        </ul>
+
+        <h5>
+
+                2.4.7. "Who runs the Cypherpunks?"    
+        </h5>
+        <ul>
+        <li>
+                - Nobody. There's no formal "leadership." No ruler = no head = an arch = anarchy. (Look up the etymology of anarchy.)    
+        </li>
+
+        <li>
+                - However, the mailing list currently resides on a physical machine, and this machine creates some nexus of control, much like having a party at someone's house. The list administrator is currently Eric Hughes (and has been since the beginning). He is helped by Hugh Daniel, who often does maintenance of the toad.com, and by John Gilmore, who owns the toad.com machine and account.    
+        </li>
+
+        <li>
+                - In an extreme situation of abuse or neverending ranting, these folks could kick someone off the list and block them from resubscribing via majordomo. (I presume they could-- it's never happened.)    
+        </li>
+
+        <li>
+                - To emphasize: nobody's ever been kicked off the list, so far as I know. Not even Detweiler...he asked to be removed (when the list subscribes were done manually).    
+        </li>
+
+        <li>
+                - As to who sets policy, there is no policy! No charter, no agenda, no action items. Just what people want to work on themselves. Which is all that can be expected. (Some people get frustrated at this lack of consensus, and they sometimes start flaming and ranting about "Cypherpunks never do anything," but this lack of consensus is to be expected. Nobody's being paid, nobody's got hiring and firing authority, so any work that gets done has to be voluntary. Some volunteer groups are more organized than we are, but there are other factors that make this more possible for them than it is for us. C'est la vie.)    
+        </li>
+
+        <li>
+                - Those who get heard on the mailing list, or in the physical meetings, are those who write articles that people find interesting or who say things of note. Sounds fair to me. 
+        </li>
+        </ul>
+
+        <h5>
+                2.4.8. "Why don't the issues that interest me get discussed?"    
+        </h5>
+        <ul>
+        <li>
+                - Maybe they already have been--several times. Many newcomers are often chagrined to find arcane topics being discussed, with little discussion of "the basics."    
+        </li>
+
+        <li>
+                - This is hardly surprising....people get over the "basics" after a few months and want to move on to more exciting (to them) topics. All lists are like this.    
+        </li>
+
+        <li>
+                - In any case, after you've read the list for a while--maybe several weeks--go ahead and ask away. Making your topic fresher may generate more responses than, say, asking what's wrong with Clipper. (A truly overworked topic, naturally.) 
+        </li>
+        </ul>
+
+        <h5>
+                2.4.9. "How did the Cypherpunks group get started?"    
+        </h5>
+
+        <h5>
+                2.4.10. "Where did the name 'Cypherpunks' come from?"    
+        </h5>
+        <ul>
+        <li>
+                + Jude Milhon, aka St. Jude, then an editor at "Mondo 2000," was at the earliest meetings...she quipped "You guys are just a bunch of cypherpunks." The name was adopted immediately.    
+        </li>
+        <ul>
+        <li>
+                - The 'cyberpunk' genre of science fiction often deals with issues of cyberspace and computer security ("ice"), so the link is natural.A point of confusion is that cyberpunks are popularly thought of as, well, as "punks," while many Cyberpunks are frequently libertarians and anarchists of various stripes. In my view, the two are not in conflict.    
+        </li>
+
+        <li>
+                - Some, however, would prefer a more staid name. The U.K. branch calls itself the "U.K. Crypto Privacy Association." [check this] However, the advantages of the name are clear. For one thing, many people are bored by staid names. For another, it gets us noticed by journalists and others.    
+        </li>
+        </ul>
+
+        <li>
+                - We are actually not very "punkish" at all. About as punkish as most of our cyberpunk cousins are, which is to say, not very.    
+        </li>
+
+        <li>
+                + the name    
+        </li>
+        <ul>
+        <li>
+                - Crypto Cabal (this before the sci.crypt FAQ folks appeared, I think), Crypto Liberation Front, other names    
+        </li>
+
+        <li>
+                - not everybody likes the name...such is life    
+        </li>
+        </ul>
+        </ul>
+        <h5>
+                2.4.11. "Why doesn't the Cypherpunks group have announced goals, ideologies, and plans?"    
+        </h5>
+        <ul>
+        <li>
+                - The short answer: we're just a mailing list, a loose association of folks interested in similar things    
+        </li>
+
+        <li>
+                - no budget, no voting, no leadership (except the "leadership of the soapbox")    
+        </li>
+
+        <li>
+                - How could such a consensus emerge? The usual approach is for an elected group (or a group that seized power) to write the charter and goals, to push their agenda. Such is not the case here.    
+        </li>
+
+        <li>
+                - Is this FAQ a de facto statement of goals? Not if I can help it, to be honest. Several people before me planned some sort of FAQ, and had they completed them, I certainly would not have felt they were speaking for me or for the group. To be consistent, then, I cannot have others think this way about _this_ FAQ!    
+        </li>
+        </ul>
+        <h5>
+                2.4.12. "What have the Cypherpunks actually done?"    
+        </h5>
+        <ul>
+        <li>
+                - spread of crypto: Cypherpunks have helped (PGP)...publicity, an alternative forum to sci.crypt (in many ways, better...better S/N ratio, more polite)    
+        </li>
+
+        <li>
+                - Wired, Whole Earth Review, NY Times, articles    
+        </li>
+
+        <li>
+                - remailers, encrypted remailers    
+        </li>
+
+        <li>
+                + The Cypherpunk- and Julf/Kleinpaste-style remailers were both written very quickly, in just days    
+        </li>
+        <ul>
+        <li>
+                - Eric Hughes wrote the first Cypherpunks remailer in a weekend, and he spent the first day of that weekend learning enough Perl to do the job.    
+        </li>
+
+        <li>
+                + Karl Kleinpaste wrote the code that eventually turned into Julf's remailer (added to since, of course) in a similarly short time:    
+        </li>
+        <ul>
+        <li>
+                - "My original anon server, for godiva.nectar.cs.cmu.edu 2 years ago, was written in a few hours one bored afternoon.It wasn't as featureful as it ended up being, but it was "complete" for its initial goals, and bug-free." [Karl_Kleinpaste@cs.cmu.edu, alt.privacy.anon-server, 1994-09-01]    
+        </li>
+        </ul>
+        <li>
+                - That other interesting ideas, such as digital cash, have not yet really emerged and gained use even after years of active discussion, is an interesting contrast to this rapid deployment of remailers. (The text-based nature of both straight encryption/signing and of remailing is semantically simpler to understand and then use than are things like digital cash, DC-nets, and other crypto protocols.)    
+        </li>
+        </ul>
+        <li>
+                - ideas for Perl scripts, mail handlers    
+        </li>
+
+        <li>
+                - general discussion, with folks of several political persuasions    
+        </li>
+
+        <li>
+                - concepts: pools, Information Liberation Front, BlackNet    
+        </li>
+        </ul>
+
+
+        <h5>
+                2.4.13. "How Can I Learn About Crypto and Cypherpunks Info?"    
+        </h5>
+
+        <h5>
+                2.4.14. "Why is there sometimes disdain for the enthusiasm and proposals of newcomers?"    
+        </h5>
+        <ul>
+        <li>
+                - None of us is perfect, so we sometimes are impatient with newcomers. Also, the comments seen tend to be issues of disagreement--as in all lists and newsgroups (agreement is so boring).    
+        </li>
+
+        <li>
+                - But many newcomers also have failed to do the basic reading that many of us did literally _years_ before joining this list. Cryptology is a fairly technical subject, and one can no more jump in and expect to be taken seriously without any preparation than in any other technical field.    
+        </li>
+
+        <li>
+                - Finally, many of us have answered the questions of newcomers too many times to be enthusiastic about it anymore. Familiarity breeds contempt.    
+        </li>
+
+        <li>
+                + Newcomers should try to be patient about our impatience. Sometimes recasting the question generates interest. Freshness matters. Often, making an incisive comment, instead of just asking a basic question, can generate responses. (Just like in real life.)    
+        </li>
+        <ul>
+        <li>
+                - "Clipper sux!" won't generate much response.    
+        </li>
+        </ul>
+        </ul>
+
+        <h5>
+                2.4.15. "Should I join theCypherpunks mailing list?"    
+        </h5>
+        <ul>
+        <li>
+                - If you are reading this, of course, you are most likely on the Cypherpunks list already and this point is moot--you may instead be asking if you should_leave_the List!    
+        </li>
+
+        <li>
+                - Only if you are prepared to handle 30-60 messages a day, with volumes fluctuating wildly    
+        </li>
+        </ul>
+
+        <h5>
+                2.4.16. "Why isn't the Cypherpunks list encrypted? Don't you believe in encryption?"    
+        </h5>
+        <ul>
+        <li>
+                - what's the point, for a publically-subscribable list?    
+        </li>
+
+        <li>
+                - except to make people jump through hoops, to put a large burden on toad (unless everybody was given the same key, so that just one encryption could be done...which underscores the foolishness)    
+        </li>
+
+        <li>
+                + there have been proposals, mainly as a stick to force people to start using encryption...and to get the encrypted traffic boosted    
+        </li>
+        <ul>
+        <li>
+                - involving delays for those who choose not or can't use crypto (students on terminals, foreigners in countries which have banned crypto, corporate subscribers....)    
+        </li>
+
+        </ul>
+        </ul>
+
+        <h5>
+                2.4.17. "What does "Cypherpunks write code' mean?"    
+        </h5>
+        <ul>
+        <li>
+                - a clarifying statement, not an imperative    
+        </li>
+
+        <li>
+                - technology and concrete solutions over bickering and chatter    
+        </li>
+
+        <li>
+                - if you don't write code, fine. Not everyone does (in fact, probably less than 10% of the list writes serious code, and less than 5% writes crypto or security software)    
+        </li>
+        </ul>
+
+        <h5>
+                2.4.18. "What does 'Big Brother Inside' Mean?"    
+        </h5>
+        <ul>
+        <li>
+                - devised by yours truly (tcmay) at Clipper meeting    
+        </li>
+
+        <li>
+                - Matt Thomlinson, Postscript    
+        </li>
+
+        <li>
+                - printed by ....    
+        </li>
+        </ul>
+
+        <h5>
+                2.4.19. "I Have a New Idea for a Cipher---Should I Discuss it Here?"    
+        </h5>
+        <ul>
+        <li>
+                - Please don't. Ciphers require careful analysis, and should be in paper form (that is, presented in a detailed paper, with the necessary references to show that due diligence was done, the equations, tables, etc. The Net is a poor substitute.    
+        </li>
+
+        <li>
+                - Also, breaking a randomly presented cipher is by no means trivial, even if the cipher is eventually shown to be weak. Most people don't have the inclination to try to break a cipher unless there's some incentive, such as fame or money involved.    
+        </li>
+
+        <li>
+                - And new ciphers are notoriously hard to design. Experts are the best folks to do this. With all the stuff waiting to be done (described here), working on a new cipher is probably the least effective thing an amateur can do. (If you are not an amateur, and have broken other people's ciphers before, then you know who you are, and these comments don't apply. But I'll guess that fewer than a handful of folks on this list have the necessary background to do cipher design.)    
+        </li>
+
+        <li>
+                - There are a vast number of ciphers and systems, nearly all of no lasting significance. Untested, undocumented, unused- -and probably unworthy of any real attention. Don't add to the noise.    
+        </li>
+        </ul>
+
+        <h5>
+                2.4.20. Are all the Cypherpunks libertarians?    
+        </h5>
+
+        <h5>
+                2.4.21. "What can we do?"    
+        </h5>
+        <ul>
+        <li>
+                - Deploy strong crypto, to ensure the genie cannot be put in the bottle    
+        </li>
+
+        <li>
+                - Educate, lobby, discuss    
+        </li>
+
+        <li>
+                - Spread doubt, scorn..help make government programs look foolish    
+        </li>
+
+        <li>
+                - Sabotage, undermine, monkeywrench    
+        </li>
+
+        <li>
+                - Pursue other activities    
+        </li>
+        </ul>
+
+        <h5>
+                2.4.22. "Why is the list unmoderated? Why is there no filtering of disrupters like Detweiler?"    
+        </h5>
+        <ul>
+        <li>
+                - technology over law    
+        </li>
+
+        <li>
+                - each person makes their own choice    
+        </li>
+
+        <li>
+                - also, no time for moderation, and moderation is usually stultifying    
+        </li>
+
+        <li>
+                + anyone who wishes to have some views silenced, or some posters blocked, is advised to:    
+        </li>
+        <ul>
+        <li>
+                - contract with someone to be their Personal Censor, passing on to them only approved material    
+        </li>
+
+        <li>
+                - subscribe to a filtering service, such as Ray and Harry are providing    
+        </li>
+        </ul>
+        </ul>
+
+        <h5>
+                2.4.23. "What Can I Do?"    
+        </h5>
+        <ul>
+        <li>
+                - politics, spreading the word    
+        </li>
+
+        <li>
+                - writing code ("Cypherpunks write code")    
+        </li>
+        </ul>
+
+        <h5>
+                2.4.24. "Should I publicize my new crypto program?"    
+        </h5>
+        <ul>
+        <li>
+                - "I have designed a crypting program, that I think is unbreakable.I challenge anyone who is interested to get in touch with me, and decrypt an encrypted massage."     
+        </li>
+
+        <li>
+                "With highest regards, Babak Sehari." [Babak Sehari, sci.crypt, 6-19-94]     
+        </li>
+        </ul>
+
+        <h5>
+                2.4.25. "Ask Emily Post Crypt"    
+        </h5>
+        <ul>
+        <li>
+                + my variation on "Ask Emily Postnews"    
+        </li>
+        <ul>
+        <li>
+                - for those that don't know, a scathing critique of clueless postings    
+        </li>
+        </ul>
+        <li>
+                + "I just invented a new cipher. Here's a sample. Bet you can't break it!"    
+        </li>
+        <ul>
+        <li>
+                - By all means post your encrypted junk. We who have nothing better to do with our time than respond will be more than happy to spend hours running your stuff through our codebreaking Crays!    
+        </li>
+        <li>
+                - Be sure to include a sample of encrypted text, to make yourself appear even more clueless.    
+        </li>
+        </ul>
+
+        <li>
+                + "I have a cypher I just invented...where should I post it?"    
+        </li>
+        <ul>
+        <li>
+                - "One of the very most basic errors of making ciphers is simply to add layer upon layer of obfuscation and make a cipher which is nice and "complex". Read Knuth on making random number generators for the folly in this kind of approach." [Eric Hughes, 4-17- 94, Cypherpunks]
+        </li>
+        <li>
+                - "Ciphers carry the presumption of guilt, not innocence. Ciphers designed by amateurs invariably fail under scrutiny by experts.This sociological fact (well borne out) is where the presumption of insecurity arises. This is not ignorance, to assume that this will change. The burden of proof is on the claimer of security, not upon the codebreaker. [Eric Hughes, 4-17-94, Cypherpunks] 
+        </li>
+        </ul>
+
+        <li>
+                + "I've just gotten very upset at something--should I vent my anger on the mailing list?"    
+        </li>
+        <ul>
+        <li>
+                - By all means! If you're fed up doing your taxes, or just read something in the newspaper that really angered you, definitely send an angry message out to the 700 or so readers and help make _them_ angry!    
+        </li>
+
+        <li>
+                - Find a bogus link to crypto or privacy issues to make it seem more relevant.    
+        </li>
+        </ul>
+        </ul>
+
+        <h5>
+                2.4.26. "What are some main Cypherpunks projects?"    
+        </h5>
+        <ul>
+        <li>
+                + remailers    
+        </li>
+        <ul>
+        <li>
+                + better remailers, more advanced features    
+        </li>
+        <ul>
+        <li>
+                - digital postage    
+        </li>
+
+        <li>
+                - padding, batching/latency    
+        </li>
+
+        <li>
+                - agent features    
+        </li>
+        </ul>
+        <li>
+                - more of them    
+        </li>
+
+        <li>
+                - offshore (10 sites in 5 countries, as a minimum)    
+        </li>
+        </ul>
+
+        <li>
+                - tools, services    
+        </li>
+
+        <li>
+                - digital cash in better forms    
+        </li>
+
+        </ul>
+
+        <h5>
+                2.4.27. "What about sublists, to reduce the volume on the main list."    
+        </h5>
+        <ul>
+        <li>
+                - There are already half a dozen sub-lists, devoted to planning meetings, to building hardware, and to exploring DC-Nets. There's one for remailer operators, or there used to be. There are also lists devoted to similar topics as Cypherpunks, including Robin Hanson's "AltInst" list (Alternative Institutions), Nick Szabo's "libtech-l" list, the "IMP-Interest" (Internet Mercantile Protocols) list, and so on. Most are very low volume.    
+        </li>
+
+        <li>
+                + That few folks have heard of any of them, and that traffic volumes are extremely low, or zero, is not all that surprising, and matches experiences elsewhere. Several reasons:    
+        </li>
+        <ul>
+        <li>
+                - Sublists are a bother to remember; most people forget they exist, and don't think to post to them. (This "forgetting" is one of the most interesting aspects of cyberspace; successful lists seem to be Schelling points that accrete even more members, while unsuccessful lists fade away into nothingness.)    
+        </li>
+
+        <li>
+                - There's a natural desire to see one's words in the larger of two forums, so people tend to post to the main list.    
+        </li>
+
+        <li>
+                - The sublists were sometimes formed in a burst of exuberance over some topic, which then faded.    
+        </li>
+
+        <li>
+                - Topics often span several subinterest areas, so posting to the main list is better than copying all the relevant sublists.    
+        </li>
+        </ul>
+        <li>
+                - In any case, the Cypherpunks main listis "it," for now, and has driven other lists effectively out of business. A kind of Gresham's Law.    
+        </li>
+
+        </ul>
     </ul>
     <h4>
             2.5. Crypto 
