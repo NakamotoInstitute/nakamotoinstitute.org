@@ -212,143 +212,55 @@
     Within the full record of the signed receipt, the user's intention is expressed, and is fully confirmed by the server's response. Both of these are covered by digital signatures, locking these data down. A reviewer such as an auditor can confirm the two sets of data, and can verify the signatures.
   </p>
 
+  <h2>The Signed Receipt as a Bookkeeping system</h2>
 
+  <p>
+    The principle of the Receipt as the Transaction has become sacrosact over time. In our client software, the principle has been hammered into the design consistently, resulting in a simplified accounting regime, and delivering a high reliability. Issues still remain, such as the loss of receipts and the counting of balances by the client side software, but these become reasonably tractable once the goal of receipts as transactions is placed paramount in the designer's mind.
+  </p>
 
-<h2><a href="#index" name="clash">The Signed Receipt as a Bookkeeping system</a></h2>
+  <h3>As Single Entry</h3>
 
-<p>
-The principle of the Receipt as the Transaction
-has become sacrosact over time.
-In our client software, the principle has been
-hammered into the design consistently, resulting
-in a simplified accounting regime, and delivering
-a high reliability.
-Issues still remain, such as the
-loss of receipts and the counting of balances
-by the client side software, but these become
-reasonably tractable once the goal of receipts
-as transactions is placed paramount in the
-designer's mind.
-</p>
+  <p>
+    In order to calculate balances on a related set of receipts, or to present a transaction history, a book would be constructed on the fly from the set. This amounts to using the Signed Receipt as a basis for single entry bookkeeping. In effect, the bookkeeping is derived from the raw receipts, and this raises the question as to whether to keep the books in place.
+  </p>
 
-<h3><a href="#index" name="sr1">As Single Entry</a></h3>
+  <p>
+    The principles of Relational Databases provide guidance here. The <em>fourth normal form</em> directs that we store the primary records, in this case the set of receipts, and we construct derivative records, the accounting books, on the fly<small>[<a href="#ref_4NF" name="back_4NF">4NF</a>]</small>.
+  </p>
 
-<p>
-In order to calculate balances on a related
-set of receipts, or to present a transaction
-history, a book would be constructed
-on the fly from the set.
-This amounts to using the Signed Receipt
-as a basis for single entry bookkeeping.
-In effect, the bookkeeping is derived from
-the raw receipts, and this raises the
-question as to whether to keep the books
-in place.
-</p>
+  <h3>Recovering Double Entry</h3>
 
-<p>
-The principles of Relational Databases
-provide guidance here.
-The <em>fourth normal form</em>
-directs that we store the primary records,
-in this case the set of receipts, and we
-construct derivative records, the accounting
-books, on the fly
-    <small>[<a href="#ref_4NF" name="back_4NF">4NF</a>]</small>.
-</p>
+  <p>
+    Similar issues arise for Ivan the Issuer. The server has to accept each new transaction on the basis of the available balance in the effected books; for this reason Ivan needs those books to be available efficiently. Due to the greater number of receipts and books (one for each user account), both receipts and books will tend to exist, in direct contrast to fourth normal form. A meld between relationally sound sets of receipts and double entry books comes to assist here.
+  </p>
 
-<h3><a href="#index" name="sr2">Recovering Double Entry</a></h3>
-<p>
-Similar issues arise for Ivan the Issuer.
-The server has to accept each new transaction
-on the basis of the available balance in the
-effected books;  for this reason Ivan needs
-those books to be available efficiently.
-Due to the greater number of receipts and
-books (one for each user account), both
-receipts and books will tend to exist, in
-direct contrast to fourth normal form.
-A meld
-between relationally sound sets of receipts
-and double entry books comes to assist here.
-</p>
+  <p>
+    Alice and Bob both are granted a book each within the server's architecture. As is customary, we place those books on the liabilities side. Receipts then can be placed in a separate single book and this could be logically placed on the assets side. Each transaction from Alice to Bob now has a logical contra entry, and is then represented in 3 places within the accounts of the server. Yet, the assets side remains in fourth normal form terms as the liabilities entries are derived, each pair from one entry on the assets side.
+  </p>
 
-<p>
-Alice and Bob both are granted a book
-each within the server's architecture.
-As is customary, we place those
-books on the liabilities side.
-Receipts then can be placed in a separate
-single book and this could be logically
-placed on the assets side.
-Each transaction from Alice to Bob
-now has a logical contra entry,
-and is then represented in 3 places
-within the accounts of the server.
-Yet, the assets side remains in fourth
-normal form terms as the liabilities
-entries are derived, each pair from one
-entry on the assets side.
-</p>
+  <p>
+    By extension, a more sophisticated client-side software agent, working for Alice or Bob, could employ the same techniques. At this extreme, entries are now in place in three separate locations, and each holding potentially three records.
+  </p>
 
-<p>
-By extension, a more sophisticated
-client-side software agent,
-working for Alice or Bob,
-could employ the same techniques.
-At this extreme, entries are now in place in
-three separate locations, and each holding
-potentially three records.
-</p>
+  <h3>Triple Entry Accounting</h3>
 
-<h3><a href="#index" name="sr3">Triple Entry Accounting</a></h3>
+  <p>
+    The digitally signed receipt, with the entire authorisation for a transaction, represents a dramatic challenge to double entry bookkeeping at least at the conceptual level. The cryptographic invention of the digital signature gives powerful evidentiary force to the receipt, and in practice reduces the accounting problem to one of the receipt's presence or its absence. This problem is solved by sharing the records &ndash; each of the agents has a good copy.
+  </p>
 
-<p>
-The digitally signed receipt, with the entire
-authorisation for a transaction, represents
-a dramatic challenge to double entry bookkeeping
-at least at the conceptual level.  The cryptographic
-invention of the digital signature gives powerful
-evidentiary force to the receipt, and in practice
-reduces the accounting problem to one of the
-receipt's presence or its absence.  This problem
-is solved by sharing the records - each of the
-agents has a good copy.
-</p>
+  <p>
+    In some strict sense of relational database theory, double entry book keeping is now redundant; it is normalised away by the fourth normal form. Yet this is more a statement of theory than practice, and in the software systems that we have built, the two remain together, working mostly hand in hand.
+  </p>
 
-<p>
-In some strict sense of relational database theory,
-double entry book keeping is now redundant;
-it is normalised away by the fourth normal form.
-Yet this is
-more a statement of theory than practice, and
-in the software systems that we have built, the
-two remain together, working mostly hand in hand.
-</p>
+  <p>
+    Which leads to the pairs of double entries connected by the central list of receipts; three entries for each transaction. Not only is each accounting agent led to keep three entries, the natural roles of a transaction are of three parties, leading to three by three entries.
+  </p>
 
-<p>
-Which leads to the pairs of double entries
-connected by the central list of receipts;
-three entries for each transaction.
-Not only is each accounting agent led to
-keep three entries, the natural roles
-of a transaction are of three parties,
-leading to three by three entries.
-</p>
+  <p>
+    We term this <em>triple entry bookkeeping</em>. Although the digitally signed receipt dominates in information terms, in processing terms it falls short. Double entry book keeping fills in the processing gap, and thus the two will work better together than apart. In this sense, our term of triple entry bookkeeping recommends an advance in accounting, rather than a revolution.
+  </p>
 
-<p>
-We term this <em>triple entry bookkeeping</em>.
-Although the digitally signed receipt dominates
-in information
-terms, in processing terms it falls short.  Double
-entry book keeping fills in the processing gap,
-and thus the two will work better together
-than apart.  In this sense, our term of triple
-entry bookkeeping recommends an advance in
-accounting, rather than a revolution.
-</p>
-
-<h3><a href="#index" name="conc">Software Considerations</a></h3>
+  <h3>Software Considerations</h3>
 
 <p>
 The precise layout of the entries in software
