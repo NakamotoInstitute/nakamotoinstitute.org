@@ -39,7 +39,7 @@
   <h3>Credits</h3>
 
   <p>
-    This paper benefitted from comments by Graeme Burnett and Todd Boyle<small>[<a href="#ref_TB" name="back_TB">TB</a>]</small>.
+    This paper benefitted from comments by Graeme Burnett and Todd Boyle<sup><a href="#fn1" id="ref1">[1]</a></sup>.
   </p>
 
   <h2>A Very Brief History of Accounting</h2>
@@ -87,7 +87,7 @@
   <h3>Which Came First - Double Entry or the Enterprise?</h3>
 
   <p>
-    Double Entry bookkeeping is one of the greatest discoveries of commerce, and its significance is difficult to overstate. Historians think it to have been invented around the 1300s AD, although there are suggestions that it existed in some form or other as far back as the Greek empire. The earliest strong evidence is a 1494 treatise on mathematics by the Venetian Friar <a href="http://www-groups.dcs.st-andrews.ac.uk/~history/Mathematicians/Pacioli.html">Luca Pacioli</a><small>[<a href="#ref_LP" name="back_LP">LP</a>]</small>. In his treatise, Pacioli documented many standard techniques, including a chapter on accounting. It was to become the basic text in double entry bookkeeping for many a year.
+    Double Entry bookkeeping is one of the greatest discoveries of commerce, and its significance is difficult to overstate. Historians think it to have been invented around the 1300s AD, although there are suggestions that it existed in some form or other as far back as the Greek empire. The earliest strong evidence is a 1494 treatise on mathematics by the Venetian Friar <a href="http://www-groups.dcs.st-andrews.ac.uk/~history/Mathematicians/Pacioli.html">Luca Pacioli</a><sup><a href="#fn2" id="ref2">[2]</a></sup>. In his treatise, Pacioli documented many standard techniques, including a chapter on accounting. It was to become the basic text in double entry bookkeeping for many a year.
   </p>
 
   <p>
@@ -95,7 +95,7 @@
   </p>
 
   <p>
-    Our experiences weigh in on the side of enablement. I refer to the experiences of digital money issuers. Our own first deployment of a system was with a single entry bookkeeping system. Its failure rate even though coding was tight was such that it could not sustain more than 20 accounts before errors in accounting crept in and the system lost cohesion. This occurred within weeks of initial testing and was never capable of being fielded. The replacement double entry system was fielded in early 1996 and has never lost a transaction (although there have been some close shaves<small>[<a href="#ref_IG1" name="back_IG1">IG1</a>]</small>).
+    Our experiences weigh in on the side of enablement. I refer to the experiences of digital money issuers. Our own first deployment of a system was with a single entry bookkeeping system. Its failure rate even though coding was tight was such that it could not sustain more than 20 accounts before errors in accounting crept in and the system lost cohesion. This occurred within weeks of initial testing and was never capable of being fielded. The replacement double entry system was fielded in early 1996 and has never lost a transaction (although there have been some close shaves<sup><a href="#fn3" id="ref3">[3]</a></sup>).
   </p>
 
   <p>
@@ -145,17 +145,17 @@
   </blockquote>
 
   <p>
-    There are several variants, with softer and harder claims to that property. For example, <em>message digests</em> with <em>entanglement</em> form one simple and effective form of signature, and <em>public key cryptosystems</em> provide another form where signers hold a private key and verifiers hold a public key<small>[<a href="#ref_MB" name="back_MB">MB</a>]</small>. There are also many ways to attack the basic property. In this essay I avoid comparisons, and assume the basic property as a reliable mark of having been seen by a computer at some point in time.
+    There are several variants, with softer and harder claims to that property. For example, <em>message digests</em> with <em>entanglement</em> form one simple and effective form of signature, and <em>public key cryptosystems</em> provide another form where signers hold a private key and verifiers hold a public key<sup><a href="#fn4" id="ref4">[4]</a></sup>. There are also many ways to attack the basic property. In this essay I avoid comparisons, and assume the basic property as a reliable mark of having been seen by a computer at some point in time.
   </p>
 
   <p>
-    Digital signatures then represent a new way to create reliable and trustworthy entries, which can be constructed into accounting systems. At first it was suggested that a variant known as the <em>blinded signature</em> would enable digital cash<small>[<a href="#ref_DC" name="back_DC">DC</a>]</small>. Then, <em>certificates</em> would circulate as rights or contracts, in much the same way as the share certificates of old and thus replace centralised accounting systems<small>[<a href="#ref_RAH" name="back_RAH">RAH</a>]</small>. These ideas took financial cryptography part of the way there. Although they showed how to strongly verify each transaction, they stopped short of placing the the digital signature in an overall framework of accountancy and governance. A needed step was to add in the redundancy implied in double entry bookkeeping in order to protect both the transacting agents and the system operators from fraud.
+    Digital signatures then represent a new way to create reliable and trustworthy entries, which can be constructed into accounting systems. At first it was suggested that a variant known as the <em>blinded signature</em> would enable digital cash<sup><a href="#fn5" id="ref5">[5]</a></sup>. Then, <em>certificates</em> would circulate as rights or contracts, in much the same way as the share certificates of old and thus replace centralised accounting systems<sup><a href="#fn6" id="ref6">[6]</a></sup>. These ideas took financial cryptography part of the way there. Although they showed how to strongly verify each transaction, they stopped short of placing the the digital signature in an overall framework of accountancy and governance. A needed step was to add in the redundancy implied in double entry bookkeeping in order to protect both the transacting agents and the system operators from fraud.
   </p>
 
   <h3>The Initial Role of a Receipt</h3>
 
   <p>
-    Designs that derived from the characteristics of the Internet, the capabilities of cryptography and the needs of governance led to the development of the <em>signed receipt</em><small>[<a href="#ref_GH" name="back_GH">GH</a>]</small>. In order to develop this concept, let us assume a simple three party payment system, wherein each party holds an authorising key which can be used to sign their instructions. We call these players <em>Alice</em>, <em>Bob</em> (two users) and <em>Ivan</em> (the Issuer) for convenience.
+    Designs that derived from the characteristics of the Internet, the capabilities of cryptography and the needs of governance led to the development of the <em>signed receipt</em><sup><a href="#fn7" id="ref7">[7]</a></sup>. In order to develop this concept, let us assume a simple three party payment system, wherein each party holds an authorising key which can be used to sign their instructions. We call these players <em>Alice</em>, <em>Bob</em> (two users) and <em>Ivan</em> (the Issuer) for convenience.
   </p>
 
   <img class="img-responsive center-block" src="/static/img/docs/triple-entry-accounting/interim-receipt.png">
@@ -197,7 +197,7 @@
   </p>
 
   <p>
-    Secondly, we bind a signed contract of issuance known as a <em>Ricardian Contract</em> into the receipt<small>[<a href="#ref_IG2" name="back_IG2">IG2</a>]</small>. This invention relates a digitally signed document securely to the signed receipt by means of a unique identifier called a <em>message digest</em>, again provided by cryptography. It provides strong binding for the unit of account, the nature of the issue, the terms, conditions and promises being made by the Issuer, and of course the identity of the Issuer.
+    Secondly, we bind a signed contract of issuance known as a <em>Ricardian Contract</em> into the receipt<sup><a href="#fn8" id="ref8">[8]</a></sup>. This invention relates a digitally signed document securely to the signed receipt by means of a unique identifier called a <em>message digest</em>, again provided by cryptography. It provides strong binding for the unit of account, the nature of the issue, the terms, conditions and promises being made by the Issuer, and of course the identity of the Issuer.
   </p>
 
   <p>
@@ -225,7 +225,7 @@
   </p>
 
   <p>
-    The principles of Relational Databases provide guidance here. The <em>fourth normal form</em> directs that we store the primary records, in this case the set of receipts, and we construct derivative records, the accounting books, on the fly<small>[<a href="#ref_4NF" name="back_4NF">4NF</a>]</small>.
+    The principles of Relational Databases provide guidance here. The <em>fourth normal form</em> directs that we store the primary records, in this case the set of receipts, and we construct derivative records, the accounting books, on the fly<sup><a href="#fn9" id="ref9">[9]</a></sup>.
   </p>
 
   <h3>Recovering Double Entry</h3>
@@ -262,609 +262,267 @@
 
   <h3>Software Considerations</h3>
 
-<p>
-The precise layout of the entries in software
-and data terms is not settled,
-and may ultimately become one of
-those ephemeral <em>implementation issues</em>.
-The signed receipts may form a natural
-asset-side contra account, or they
-may be a separate non-book list underlying
-the bookkeeping system and its two sides.
-</p>
-
-<p>
-Auditing issues arise where construction
-of the books derives from the receipts,
-and normalisation issues arise when a
-receipt is lost.  These are issues for
-future research.
-</p>
-
-<p>
-Likewise, it is worth stating that
-the technique of signing receipts works
-both with private key signatures and also
-with entanglement message digest signatures;
-whether the security aspects of these
-techniques is adequate to task is dependent
-on the business environment.
-</p>
-
-<h3><a href="#index" name="roles">Roles of the Agents</a></h3>
-
-<p>
-It will be noted that the above design of
-triple entry bookkeeping assumed that Alice
-and Bob were agents of some independence.
-This was made possible, and reflected the
-usage of the system as a digital cash system,
-and not as a classical accounting system.
-</p>
-
-<p>
-Far from reducing the relevance of this work
-to the accounting profession, it introduces
-digital cash as an alternate to corporate
-bookkeeping.
-If an accounting system for a corporation or
-other administrative entity is recast as a
-system of digital cash, or <em>internal
-money</em>, then experience shows that
-benefits accrue to the organisation.
-</p>
-
-<p>
-Although the core of the system looks exactly
-like an accounting system, each department's
-books are pushed out as digital cash accounts.
-Departments no longer work so much with budgets
-as have control over their own corporate money.
-Fundamental governance control is still held
-within the accounting department by dint of their
-operation of the system, and by the limited scope
-of the money as only being usable within the
-organisation;  the accounting department might
-step in as a <em>market maker</em>, exchanging
-payments in internal money for payments in
-external money to outside suppliers.
-</p>
-
-<p>
-We have operated this system on a small scale.
-Rather than be inefficient on such a small
-scale, the system has generated dramatic
-savings in coordination.  No longer are bills
-and salaries paid using conventional monies;
-many transactions are dealt with by internal
-money transfers and at the edges of the
-corporation, formal and informal agents work
-to <em>exchange</em> between internal money and
-external money.  Paperwork reduces dramatically,
-as the records of the money system are reliable
-enough to quickly resolve questions even years
-after the event.
-</p>
-
-<p>
-The innovations present in internal money
-go beyond the present paper, but suffice
-to say that they answer the obvious question
-of why this design of triple entry accounting
-sprung from the world of digital cash, and
-has relevence back to the corporate world.
-</p>
-
-<h2><a href="#index" name="poc"> Patterns of Commerce </a> </h2>
-
-<p>
-Todd Boyle looked at a similar problem from the point
-of view of small business needs in an Internet age,
-and reached the same conclusion - triple entry
-accounting
-    <small>[<a href="#ref_1" name="back_1">1</a>]</small>.
-
-His starting premises were that:
-</p>
-
-<ol><li><p>
-    The major need is not accounting or payments, per se,
-    but patterns of exchange - complex patterns of trade;
-  </p></li><li><p>
-    Small businesses could not afford large complex
-    systems that understood these patterns;
-  </p></li><li><p>
-    They would not lock themselves into proprietary
-    frameworks;
-</p></li></ol>
-
-<p>
-From those foundations, Boyle concluded that
-therefore what is needed is a shared access repository
-that provides arms-length access.  Fundamentally, this
-repository is akin to the classic double-entry accounting ledger
-of transaction rows ("GLT" for General Ledger - Transactions),
-yet its entries are dynamic and shared.
-</p>
-
-<p>
-Simple examples will help.
-When Alice forms a transaction, she enters it into her software.
-Every GLT transaction requires naming her external
-counterparty, Bob.  When she posts the transaction,
-her software stores it in her local GLT and also
-submits it to the shared repository service's GLT.
-</p>
-
-<p>
-The Shared Transaction Repository ("STR") then forwards
-the transaction on to Bob.  Both Bob and Alice are now
-expected to store the handle to the transaction as
-an index or stub, and the STR then stores the entire
-transaction.
-</p>
-
-<p>
-Boyle's ideas are logically comparable to Grigg and Howland's,
-although they arive from different directions
-(the STR is Grigg's Ivan, above) and are not totally
-equivalent.
-Where the latter limited themselves to payments,
-the accuracy of amounts,
-and protection with hard cryptographic shells,
-Boyle looked at wider patterns of transactions,
-and showed that the STR could mediate these transactions,
-if the core shared data could be extracted and made into
-a single shared record.
-Boyle's focus was on the economic substance of the
-transaction.
-</p>
-
-<h3> <a href="#index" name="poc_inv"> Extending the Humble Invoice </a> </h3>
-
-<p>
-Imagine a simple invoicing procedure.
-Alice creates an invoice and posts it to her software (GLT).
-As she has named Bob,
-the GLT automatically posts it to Ivan,
-the STR, and he forwards it to Bob.
-At this point Bob has a decision to make, accept or
-reject.  Assuming acceptance, his
-software can then respond by sending
-an acceptance message to Ivan.
-The STR now assembles an accepted
-invoice record to replace the earlier
-speculative invoice record and posts that threeways.
-At some related time (to do with payment policy)
-Bob also posts a separate transaction to pay for the
-invoice.  This could operate in much the same way as
-a separate transaction, linking directly to the
-original invoice.
-</p>
-
-<p>
-Now, as the payment links back,
-and the invoice is a live transaction within the three
-entries in the three accounting systems, it is possible
-for a new updated invoice record to refer back to the
-payment activity.
-When the payment clears, the new record can
-again replace the older unpaid copy and
-promulgate to all three parties.
-</p>
-
-<h3> <a href="#index" name="poc_tx"> Patterns of Transactions </a> </h3>
-
-<p>
-Software could be written to facilitate and monitor
-this flow and similar flows.
-If the payments system is sufficiently
-flexible, and integrated with the needs of the users,
-if might be possible to merge the above invoice
-with the payment itself, at the Receipts level.
-Seen in this light, the Signed receipt of Ricardo
-is simply the smallest and simplest pattern within
-the more general set of patterns.
-We could then suggest that the narrow principle of
-<em>the Receipt <u>is</u> the Transaction</em>
-could be extended into
-<em>The Invoice <u>is</u> the Transaction</em>.
-</p>
-
-<p>
-A particular transaction in business almost never
-stands alone.  They come in patterns.
-For example offers and acceptances form a wider
-transaction but seldom encapsulate the entire
-fulfillment and payment cycle.
-Even if there has been a payment
-accompanying a PO message,
-the customer then waits for fulfillment.
-</p>
-
-<p>
-There is a large body of science and literature
-built around these <em>patterns of transactions</em>.
-These have been adopted by the Business Process
-workgroup of ebXML and other standards bodies,
-where they are called "Commercial Transactions."
-Where however the present work distinguishes itself
-is in breaking down these transactions into the
-atomic elements.  It is to that we now turn.
-</p>
-
-<h2> <a href="#index" name="poc_req"> The Requirements of Triple Entry Accounting </a> </h2>
-
-<p>
-The implementation of Triple Entry Accounting
-will in time evolve to support
-patterns of transactions.
-What has become clear is that double entry does
-not sufficiently support these patterns, as it
-is a framework that breaks down as soon as the
-number of parties exceeds one.
-Yet, even as double entry is "broken" on the net
-and unable to support commercial demands,
-triple entry is not widely understood,
-nor are the infrastructure requirements
-that it imposes well recognised.
-</p>
-
-<p>
-Below are the list of requirements that we
-believed to be important
-    <small>[<a href="#ref_2" name="back_2">2</a>]</small>
-    <small>[<a href="#ref_3" name="back_3">3</a>]</small>.
-</p>
-
-<p>
-<b>1. Strong Psuedonymity, At Least</b>.
-As there are many cycles in the patterns, the
-system must support a clear relationship of
-participants.  At the minimum this requires
-a nymous architecture of the nature of Ricardo
-or AADS.  (This requirement is very clear,
-but space prevents any discussion of it.)
-</p>
-
-<p>
-<b>2. Entry Signing</b>.
-In order to neutralise the threats to and by the
-parties, a mechanism that freezes and confirms
-the basic data is needed.
-This is signing, and we require that all entries
-are capable of carrying digital signatures
-(see 1, above, which suggests public key signatures).
-</p>
-
-
-
-<p>
-<b>3. Message Passing</b>.
-The system is fundamentally one of message passing,
-in contrast to much of the net's connection based
-architecture.
-Boyle recognised early on that a critical
-component was the generic message passing nature,
-and Systemics proposed and built this
-into Ricardo over the period 2001-2004
-   <small>[<a href="#ref_4" name="back_4">4</a>]</small>.
-</p>
-
-<p>
-<b>4. Entry Enlargement and Migration</b>.
-Each new version of a message coming in represents
-an entry that is either to be updated or added.
-As each message adds to a prior conversation,
-the stored entry needs to enlarge and absorb the
-new information, while preserving the other properties.
-</p>
-
-<p>
-<b>5. Local Entry Storage and Reports</b>.
-The persistent saving and responsive availability
-of entries.
-In practice, this is the classical accounting
-general ledger, at least in storage terms.
-It needs to bend somewhat
-to handle much more flexible entries,
-and its report capabilities become more key
-as they conduct instrinsic reconciliation
-on a demand or live basis.
-</p>
-
-<p>
-<b>6. Integrated Hard Payments</b>.
-Trade can only be as efficient as the payment.
-That means that the payment must be at least as
-efficient as every other part;  which in practice
-means that a payment system should be built-in
-at the infrastructure level.  C.f., Ricardo.
-</p>
-
-
-<p>
-<b>7 Integrated Application-Level Messaging</b>.
-As distinct to the messaging at the lower protocol
-levels (1 above), there is a requirement for Alice and Bob
-to be able to communicate.  That is because the
-vast majority of the patterns turns around the
-basic communications of the agents.  There is no
-point in establishing a better payment and invoice
-mechanism than the means of communication and
-negotiation.  This concept is perhaps best seen
-in the SWIFT system which is a messaging system,
-first and foremost, to deliver instructions for
-payments.
-</p>
-
-
-<h2><a href="#index" name="conc">Conclusion</a></h2>
-
-<p>
-Double Entry bookkeeping provides evidence of
-intent and origin, leading to strategies for
-dealing with errors of accident and fraud.
-The financial cryptography invention of the
-signed receipt provides the same benefits,
-and thus challenges the 800 year reign of
-double entry.
-Indeed, in evidentiary terms, the signed receipt
-is more powerful than double entry records due to
-the technical qualities of its signature.
-</p>
-
-<p>
-There remain some weaknesses in strict comparison
-with double entry bookkeeping.  Firstly, in
-the Ricardo instantiation of triple entry
-accounting, the
-receipts themselves may be lost or removed,
-and for this reason we stress as a principle that
-<em>the entry <u>is</u> the transaction</em>.
-This results in three
-active agents who are charged with securing
-the signed entry as their most important
-record of transaction.
-</p>
-
-<p>
-Secondly, the software ramifications of the
-triple entry system that are less convenient than that
-offered by double entry bookkeeping.  For this
-reason, we expand the information held in the
-receipt into a set of double entry books;
-in this way we have the best of both worlds on each node:
-the evidentiary power of the signed entries and
-the convenience and local crosschecking power of
-the double entry concept.
-</p>
-
-<p>
-Both of these imperitives meld signed receipts in
-with double entry bookkeeping.  As we end up with
-a logical arrangement of three by three entries,
-we feel the term <em>triple entry bookkeeping</em>
-is useful to describe the advance on the older form.
-</p>
-
-<h3><a href="#index" name="conc_ag">Drawing in the Agents</a></h3>
-
-<p>
-To fully benefit from triple entry bookkeeping,
-we have to expand accounting systems out to
-agents and offer them direct capabilities to
-do transactions.
-That is, we make the agents stakeholders by
-giving them internal money
-  <small>[<a href="#ref_5" name="back_5">5</a>]</small>.
-Use of digital cash to do company accounts
-empowers the use of this concept as a general
-replacement for accounting using books and
-departmental budgets, and is an enabler for
-verifying and auditing the centralised
-accounts system by way of signed receipts.
-</p>
-
-<h3><a href="#index" name="conc_fraud">Solving Frauds</a></h3>
-
-<p>
-Once there, governance receives substantial
-benefits.  Accounts are now much more difficult
-to change, and much more transparent.  It is
-our opinion that various scandals and failures
-of governance would have been impossible given
-these techniques:  the mutual funds scandal
-would have shown a clear audit trail of transactions
-and thus late timing and otherwise perverted or
-dropped transactions would have been clearly
-identified or eliminated completely
-    <small>[<a href="#ref_NG" name="back_NG">NG</a>]</small>.
-The emerging scandal in the USA known as
-<em>Stockgate</em> would have been impossible
-as forgery of shares and value for manipulative
-trading purposes is revealed by signed receipts.
-Likewise, Barings would still be a force in
-investment banking if accounts had been
-organised around easily transparent digital cash
-with open and irreducible signed receipts that
-evidence invisible accounts (<em>88888</em>).
-Enron style scandals would have permitted more
-direct "follow the money" governance lifting
-the veil on various innovative but economically
-meaningless swaps.
-</p>
-
-
-<h2><a href="#index" name="ref"> References </a></h2>
-<font size="-1">
-
-<p>
-<b><a name="ref_TB">[TB]</a></b>
-   A draft form of this paper credited Todd Boyle
-   as an author, but this was later withdrawn at
-   his request due to wider differences between
-   the views.
-
-
-</p>
-
-<p>
-<b><a name="ref_LP">[LP]</a></b>
-Friar Luca Pacioli,
-<cite><a href="http://www.acsac.org/2001/papers/110.pdf">
-Summa de Arithmetica, Geometria,
-Proportioni et Proportionalita
-</a></cite>
-1494, Venice.
-
-
-</p>
-
-<p>
-<b><a name="ref_IG1">[IG1]</a></b>
-Ian Grigg
-"<a href="http://www.financialcryptography.com/mt/archives/000442.html">
-The Twilight Zone
-</a>,"
-<cite>Financial Cryptography blog</cite>
-16th April 2005
-
-
-</p>
-
-<p>
-<b><a name="ref_MB">[MB]</a></b>
-Entanglement is discussed in:
-Petros Maniatis and Mary Baker,
-"Secure History Preservation through Timeline Entanglement,"
-Proc. <cite>11th USENIX Security Symposium</cite>,
-August 2002.
-
-
-</p>
-
-<p>
-<b><a name="ref_DC">[DC]</a></b>
-David Chaum,
-"Achieving Electronic Privacy,"
-<cite>Scientific American</cite>,
-v. 267, n. 2 Aug 1992.
-
-
-</p>
-
-<p>
-<b><a name="ref_RAH">[RAH]</a></b>
-Robert A. Hettinga
-"<a href="http://www.shipwright.com/rants/rant_02.html">
-The Book-Entry/Certificate Distinction
-</a>"
-1995, Cypherpunks
-
-
-</p>
-
-<p>
-<b><a name="ref_GH">[GH]</a></b>
-Gary Howland
-"<a href="http://www.systemics.com/docs/sox/overview.html">
-Development of an Open and Flexible Payment System
-</a>
-1996, Amsterdam, NL.
-
-
-</p>
-
-<p>
-<b><a name="ref_IG2">[IG2]</a></b>
-  Ian Grigg
-  "<a href="http://iang.org/papers/ricardian_contract.html">
-  The Ricardian Contract
-  </a>,"
-  <cite>First IEEE International
-  Workshop on Electronic Contracting</cite>
-  (WEC) 6th July 2004
-
-
-</p>
-
-<p>
-<b><a name="ref_4NF">[4NF]</a></b>
-E.F. Codd,
-"<a href="">
-A Relational Model of Data for Large Shared Data Banks
-</a>,"
-<cite>Comm. ACM</cite> 13 (6), June 1970, pp. 377-387.
-
-
-</p>
-
-<p>
-<b><a name="ref_1">[1]</a></b>
-    Todd Boyle,
-    "<a href="http://ledgerism.net/GLT-GLR.htm">
-    GLT and GLR: conceptual architecture for general ledgers</a>,"
-    Ledgerism.net, 1997-2005.
-
-
-</p>
-
-<p>
-<b><a name="ref_2">[2]</a></b>
-    Todd Boyle,
-    "<a href="http://www.ledgerism.net/STR.htm">
-    STR software specification</a>,"
-    Goals, 1-5.
-    This section adopts that numbering convention.
-
-
-</p>
-
-<p>
-<b><a name="ref_3">[3]</a></b>
-    Ian Grigg,
-    various design and requirements documents,
-    Systemics, unpublished.
-
-
-</p>
-
-<p>
-<b><a name="ref_4">[4]</a></b>
-   A substantial part of the programming and design was conducted
-   by Edwin Woudt (first demo, SOX layers, UI)
-   and Jeroen van Gelderen
-   (message passing client architecture).
-
-
-</p>
-
-<p>
-<b><a name="ref_5">[5]</a></b>
-  Using internal money instead of an accounting system
-  is not a new idea but has only been recently experienced:
-  Ian Grigg,
-  <a href="http://iang.org/rants/systemics_psd.html">
-  How we raised capital at 0%, saved our
-  creditors from an accounting nightmare, gave our suppliers
-  a discount and got to bed before midnight.</a>
-  Informal essay (rant), 7 Jul 2003.
-
-
-</p>
-
-<p>
-<b><a name="ref_NG">[NG]</a></b>
-James Nesfield and Ian Grigg
-"<a href="http://iang.org/papers/mutual_funds.html">
-Mutual Funds and Financial Flaws
-</a>,"
-<cite>U.S. Senate Finance Subcommittee</cite>
-27th January, 2004
-
-
-</p>
-</font>
+  <p>
+    The precise layout of the entries in software and data terms is not settled, and may ultimately become one of those ephemeral <em>implementation issues</em>. The signed receipts may form a natural asset-side contra account, or they may be a separate non-book list underlying the bookkeeping system and its two sides.
+  </p>
+
+  <p>
+    Auditing issues arise where construction of the books derives from the receipts, and normalisation issues arise when a receipt is lost. These are issues for future research.
+  </p>
+
+  <p>
+    Likewise, it is worth stating that the technique of signing receipts works both with private key signatures and also with entanglement message digest signatures; whether the security aspects of these techniques is adequate to task is dependent on the business environment.
+  </p>
+
+  <h3>Roles of the Agents</h3>
+
+  <p>
+    It will be noted that the above design of triple entry bookkeeping assumed that Alice and Bob were agents of some independence. This was made possible, and reflected the usage of the system as a digital cash system, and not as a classical accounting system.
+  </p>
+
+  <p>
+    Far from reducing the relevance of this work to the accounting profession, it introduces digital cash as an alternate to corporate bookkeeping. If an accounting system for a corporation or other administrative entity is recast as a system of digital cash, or <em>internal money</em>, then experience shows that benefits accrue to the organisation.
+  </p>
+
+  <p>
+    Although the core of the system looks exactly like an accounting system, each department's books are pushed out as digital cash accounts. Departments no longer work so much with budgets as have control over their own corporate money. Fundamental governance control is still held within the accounting department by dint of their operation of the system, and by the limited scope of the money as only being usable within the organisation; the accounting department might step in as a <em>market maker</em>, exchanging payments in internal money for payments in external money to outside suppliers.
+  </p>
+
+  <p>
+    We have operated this system on a small scale. Rather than be inefficient on such a small scale, the system has generated dramatic savings in coordination. No longer are bills and salaries paid using conventional monies; many transactions are dealt with by internal money transfers and at the edges of the corporation, formal and informal agents work to <em>exchange</em> between internal money and external money. Paperwork reduces dramatically, as the records of the money system are reliable enough to quickly resolve questions even years after the event.
+  </p>
+
+  <p>
+    The innovations present in internal money go beyond the present paper, but suffice to say that they answer the obvious question of why this design of triple entry accounting sprung from the world of digital cash, and has relevence back to the corporate world.
+  </p>
+
+  <h2>Patterns of Commerce</h2>
+
+  <p>
+    Todd Boyle looked at a similar problem from the point of view of small business needs in an Internet age, and reached the same conclusion &ndash; triple entry accounting<sup><a href="#fn10" id="ref10">[10]</a></sup>. His starting premises were that:
+  </p>
+
+  <ol>
+    <li>
+      <p>
+        The major need is not accounting or payments, per se, but patterns of exchange &ndash; complex patterns of trade;
+      </p>
+    </li>
+
+    <li>
+      <p>
+        Small businesses could not afford large complex systems that understood these patterns;
+      </p>
+    </li>
+
+    <li>
+      <p>
+        They would not lock themselves into proprietary frameworks;
+      </p>
+    </li>
+  </ol>
+
+  <p>
+    From those foundations, Boyle concluded that therefore what is needed is a shared access repository that provides arms-length access. Fundamentally, this repository is akin to the classic double-entry accounting ledger of transaction rows ("GLT" for General Ledger - Transactions), yet its entries are dynamic and shared.
+  </p>
+
+  <p>
+    Simple examples will help. When Alice forms a transaction, she enters it into her software. Every GLT transaction requires naming her external counterparty, Bob. When she posts the transaction, her software stores it in her local GLT and also submits it to the shared repository service's GLT.
+  </p>
+
+  <p>
+    The Shared Transaction Repository ("STR") then forwards the transaction on to Bob. Both Bob and Alice are now expected to store the handle to the transaction as an index or stub, and the STR then stores the entire transaction.
+  </p>
+
+  <p>
+    Boyle's ideas are logically comparable to Grigg and Howland's, although they arive from different directions (the STR is Grigg's Ivan, above) and are not totally equivalent. Where the latter limited themselves to payments, the accuracy of amounts, and protection with hard cryptographic shells, Boyle looked at wider patterns of transactions, and showed that the STR could mediate these transactions, if the core shared data could be extracted and made into a single shared record. Boyle's focus was on the economic substance of the transaction.
+  </p>
+
+  <h3>Extending the Humble Invoice</h3>
+
+  <p>
+    Imagine a simple invoicing procedure. Alice creates an invoice and posts it to her software (GLT). As she has named Bob, the GLT automatically posts it to Ivan, the STR, and he forwards it to Bob. At this point Bob has a decision to make, accept or reject. Assuming acceptance, his software can then respond by sending an acceptance message to Ivan. The STR now assembles an accepted invoice record to replace the earlier speculative invoice record and posts that threeways. At some related time (to do with payment policy) Bob also posts a separate transaction to pay for the invoice. This could operate in much the same way as a separate transaction, linking directly to the original invoice.
+  </p>
+
+  <p>
+    Now, as the payment links back, and the invoice is a live transaction within the three entries in the three accounting systems, it is possible for a new updated invoice record to refer back to the payment activity. When the payment clears, the new record can again replace the older unpaid copy and promulgate to all three parties.
+  </p>
+
+  <h3>Patterns of Transactions</h3>
+
+  <p>
+    Software could be written to facilitate and monitor this flow and similar flows. If the payments system is sufficiently flexible, and integrated with the needs of the users, if might be possible to merge the above invoice with the payment itself, at the Receipts level. Seen in this light, the Signed receipt of Ricardo is simply the smallest and simplest pattern within the more general set of patterns. We could then suggest that the narrow principle of <em>the Receipt</em> is <em>the Transaction</em> could be extended into <em>The Invoice</em> is <em>the Transaction</em>.
+  </p>
+
+  <p>
+    A particular transaction in business almost never stands alone. They come in patterns. For example offers and acceptances form a wider transaction but seldom encapsulate the entire fulfillment and payment cycle. Even if there has been a payment accompanying a PO message, the customer then waits for fulfillment.
+  </p>
+
+  <p>
+    There is a large body of science and literature built around these <em>patterns of transactions</em>. These have been adopted by the Business Process workgroup of ebXML and other standards bodies, where they are called "Commercial Transactions." Where however the present work distinguishes itself is in breaking down these transactions into the atomic elements. It is to that we now turn.
+  </p>
+
+  <h2>The Requirements of Triple Entry Accounting</h2>
+
+  <p>
+    The implementation of Triple Entry Accounting will in time evolve to support patterns of transactions. What has become clear is that double entry does not sufficiently support these patterns, as it is a framework that breaks down as soon as the number of parties exceeds one. Yet, even as double entry is "broken" on the net and unable to support commercial demands, triple entry is not widely understood, nor are the infrastructure requirements that it imposes well recognised.
+  </p>
+
+  <p>
+    Below are the list of requirements that we believed to be important<sup><a href="#fn11" id="ref11">[11]</a></sup><sup><a href="#fn12" id="ref12">[12]</a></sup>.
+  </p>
+
+  <p>
+    <strong>1. Strong Psuedonymity, At Least</strong>. As there are many cycles in the patterns, the system must support a clear relationship of participants. At the minimum this requires a nymous architecture of the nature of Ricardo or AADS. (This requirement is very clear, but space prevents any discussion of it.)
+  </p>
+
+  <p>
+    <strong>2. Entry Signing</strong>. In order to neutralise the threats to and by the parties, a mechanism that freezes and confirms the basic data is needed. This is signing, and we require that all entries are capable of carrying digital signatures (see 1, above, which suggests public key signatures).
+  </p>
+
+  <p>
+    <strong>3. Message Passing</strong>. The system is fundamentally one of message passing, in contrast to much of the net's connection based architecture. Boyle recognised early on that a critical component was the generic message passing nature, and Systemics proposed and built this into Ricardo over the period 2001-2004<sup><a href="#fn13" id="ref13">[13]</a></sup>.
+  </p>
+
+  <p>
+    <strong>4. Entry Enlargement and Migration</strong>. Each new version of a message coming in represents an entry that is either to be updated or added. As each message adds to a prior conversation, the stored entry needs to enlarge and absorb the new information, while preserving the other properties.
+  </p>
+
+  <p>
+    <strong>5. Local Entry Storage and Reports</strong>. The persistent saving and responsive availability of entries. In practice, this is the classical accounting general ledger, at least in storage terms. It needs to bend somewhat to handle much more flexible entries, and its report capabilities become more key as they conduct instrinsic reconciliation on a demand or live basis.
+  </p>
+
+  <p>
+    <strong>6. Integrated Hard Payments</strong>. Trade can only be as efficient as the payment. That means that the payment must be at least as efficient as every other part; which in practice means that a payment system should be built-in at the infrastructure level. C.f., Ricardo.
+  </p>
+
+  <p>
+    <strong>7. Integrated Application-Level Messaging</strong>. As distinct to the messaging at the lower protocol levels (1 above), there is a requirement for Alice and Bob to be able to communicate. That is because the vast majority of the patterns turns around the basic communications of the agents. There is no point in establishing a better payment and invoice mechanism than the means of communication and negotiation. This concept is perhaps best seen in the SWIFT system which is a messaging system, first and foremost, to deliver instructions for payments.
+  </p>
+
+  <h2>Conclusion</h2>
+
+  <p>
+    Double Entry bookkeeping provides evidence of intent and origin, leading to strategies for dealing with errors of accident and fraud. The financial cryptography invention of the signed receipt provides the same benefits, and thus challenges the 800 year reign of double entry. Indeed, in evidentiary terms, the signed receipt is more powerful than double entry records due to the technical qualities of its signature.
+  </p>
+
+  <p>
+    There remain some weaknesses in strict comparison with double entry bookkeeping.  Firstly, in the Ricardo instantiation of triple entry accounting, the receipts themselves may be lost or removed, and for this reason we stress as a principle that<em>the entry</em> is <em>the transaction</em>. This results in three active agents who are charged with securing the signed entry as their most important record of transaction.
+  </p>
+
+  <p>
+    Secondly, the software ramifications of the triple entry system that are less convenient than that offered by double entry bookkeeping. For this reason, we expand the information held in the receipt into a set of double entry books; in this way we have the best of both worlds on each node: the evidentiary power of the signed entries and the convenience and local crosschecking power of the double entry concept.
+  </p>
+
+  <p>
+    Both of these imperitives meld signed receipts in with double entry bookkeeping. As we end up with a logical arrangement of three by three entries, we feel the term <em>triple entry bookkeeping</em> is useful to describe the advance on the older form.
+  </p>
+
+  <h3>Drawing in the Agents</h3>
+
+  <p>
+    To fully benefit from triple entry bookkeeping, we have to expand accounting systems out to agents and offer them direct capabilities to do transactions. That is, we make the agents stakeholders by giving them internal money<sup><a href="#fn14" id="ref14">[14]</a></sup>. Use of digital cash to do company accounts empowers the use of this concept as a general replacement for accounting using books and departmental budgets, and is an enabler for verifying and auditing the centralised accounts system by way of signed receipts.
+  </p>
+
+  <h3>Solving Frauds</h3>
+
+  <p>
+    Once there, governance receives substantial benefits. Accounts are now much more difficult to change, and much more transparent. It is our opinion that various scandals and failures of governance would have been impossible given these techniques: the mutual funds scandal would have shown a clear audit trail of transactions and thus late timing and otherwise perverted or dropped transactions would have been clearly identified or eliminated completely<sup><a href="#fn15" id="ref15">[15]</a></sup>. The emerging scandal in the USA known as <em>Stockgate</em> would have been impossible as forgery of shares and value for manipulative trading purposes is revealed by signed receipts. Likewise, Barings would still be a force in investment banking if accounts had been organised around easily transparent digital cash with open and irreducible signed receipts that evidence invisible accounts (<em>88888</em>). Enron style scandals would have permitted more direct "follow the money" governance lifting the veil on various innovative but economically meaningless swaps.
+  </p>
+
+
+  <h2>References</h2>
+
+  <ol>
+    <li id="fn1">
+      <p>
+        A draft form of this paper credited Todd Boyle as an author, but this was later withdrawn at his request due to wider differences between the views.&nbsp;<a href="#ref1">↩</a>
+      </p>
+    </li>
+
+    <li id="fn2">
+      <p>
+        Friar Luca Pacioli, <cite><a href="http://www.acsac.org/2001/papers/110.pdf">Summa de Arithmetica, Geometria, Proportioni et Proportionalita</a></cite> 1494, Venice.&nbsp;<a href="#ref2">↩</a>
+      </p>
+    </li>
+
+    <li id="fn3">
+      <p>
+        Ian Grigg "<a href="http://www.financialcryptography.com/mt/archives/000442.html">The Twilight Zone</a>," <cite>Financial Cryptography blog</cite> 16th April 2005&nbsp;<a href="#ref3">↩</a>
+      </p>
+    </li>
+
+    <li id="fn4">
+      <p>
+        Entanglement is discussed in: Petros Maniatis and Mary Baker, "Secure History Preservation through Timeline Entanglement," Proc. <cite>11th USENIX Security Symposium</cite>, August 2002.&nbsp;<a href="#ref4">↩</a>
+      </p>
+    </li>
+
+    <li id="fn5">
+      <p>
+        David Chaum, "Achieving Electronic Privacy," <cite>Scientific American</cite>, v. 267, n. 2 Aug 1992.&nbsp;<a href="#ref5">↩</a>
+      </p>
+    </li>
+
+    <li id="fn6">
+      <p>
+        Robert A. Hettinga "<a href="http://www.shipwright.com/rants/rant_02.html">The Book-Entry/Certificate Distinction</a>" 1995, Cypherpunks&nbsp;<a href="#ref6">↩</a>
+      </p>
+    </li>
+
+    <li id="fn7">
+      <p>
+        Gary Howland "<a href="http://www.systemics.com/docs/sox/overview.html">Development of an Open and Flexible Payment System</a>" 1996, Amsterdam, NL.&nbsp;<a href="#ref7">↩</a>
+      </p>
+    </li>
+
+    <li id="fn8">
+      <p>
+        Ian Grigg "<a href="http://nakamotoinstitute.org/the-ricardian-contract/">The Ricardian Contract</a>," <cite>First IEEE International Workshop on Electronic Contracting</cite> (WEC) 6th July 2004&nbsp;<a href="#ref8">↩</a>
+      </p>
+    </li>
+
+    <li id="fn9">
+      <p>
+        E.F. Codd, "A Relational Model of Data for Large Shared Data Banks</a>," <cite>Comm. ACM</cite> 13 (6), June 1970, pp. 377-387.&nbsp;<a href="#ref9">↩</a>
+      </p>
+    </li>
+
+    <li id="fn10">
+      <p>
+        Todd Boyle, "<a href="http://ledgerism.net/GLT-GLR.htm">GLT and GLR: conceptual architecture for general ledgers</a>," Ledgerism.net, 1997-2005.&nbsp;<a href="#ref10">↩</a>
+      </p>
+    </li>
+
+    <li id="fn11">
+      <p>
+        Todd Boyle, "<a href="http://www.ledgerism.net/STR.htm">STR software specification</a>," Goals, 1-5. This section adopts that numbering convention.&nbsp;<a href="#ref11">↩</a>
+      </p>
+    </li>
+
+    <li id="fn12">
+      <p>
+        Ian Grigg, various design and requirements documents, Systemics, unpublished.&nbsp;<a href="#ref12">↩</a>
+      </p>
+    </li>
+
+    <li id="fn13">
+      <p>
+        A substantial part of the programming and design was conducted by Edwin Woudt (first demo, SOX layers, UI) and Jeroen van Gelderen (message passing client architecture).&nbsp;<a href="#ref13">↩</a>
+      </p>
+    </li>
+
+    <li id="fn14">
+      <p>
+        Using internal money instead of an accounting system is not a new idea but has only been recently experienced: Ian Grigg, <a href="http://iang.org/rants/systemics_psd.html">How we raised capital at 0%, saved our creditors from an accounting nightmare, gave our suppliers a discount and got to bed before midnight.</a> Informal essay (rant), 7 Jul 2003.&nbsp;<a href="#ref14">↩</a>
+      </p>
+    </li>
+
+    <li id="fn15">
+      <p>
+        James Nesfield and Ian Grigg "<a href="http://iang.org/papers/mutual_funds.html">Mutual Funds and Financial Flaws</a>," <cite>U.S. Senate Finance Subcommittee</cite> 27th January, 2004&nbsp;<a href="#ref15">↩</a>
+      </p>
+    </li>
+  </ol>
 </div>
 {% endblock %}
