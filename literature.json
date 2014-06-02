@@ -293,7 +293,7 @@
         "author": ["eric-hughes"],
         "date": "March 9, 1993",
         "slug": "cypherpunk-manifesto",
-        "formats": ["txt"],
+        "formats": ["html","txt"],
         "categories": ["Cypherpunk"],
         "doctype": "essay"
     },
