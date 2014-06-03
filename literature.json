@@ -293,7 +293,7 @@
         "author": ["eric-hughes"],
         "date": "March 9, 1993",
         "slug": "cypherpunk-manifesto",
-        "formats": ["txt"],
+        "formats": ["html","txt"],
         "categories": ["Cypherpunk"],
         "doctype": "essay"
     },
@@ -390,9 +390,9 @@
     {
         "title": "The libbitcoin Manifesto",
         "author": ["amir-taaki"],
-        "date": "October 2013",
+        "date": "September 23, 2013",
         "slug": "libbitcoin-manifesto",
-        "formats": ["pdf"],
+        "formats": ["html", "pdf"],
         "categories": ["cryptography"],
         "doctype": "essay"
     },
