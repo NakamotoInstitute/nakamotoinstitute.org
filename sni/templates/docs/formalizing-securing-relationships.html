@@ -1,269 +1,243 @@
-
-<!-- saved from url=(0040)http://szabo.best.vwh.net/formalize.html -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Formalizing and Securing Relationships on Public Networks</title>
-<meta name="KeyWords" content="Szabo Nick Nicholas financial finance cryptography contracts derivatives combinations property accounting auditing network security">
-<style type="text/css"></style></head>
-<body bgcolor="#FFFFFF" link="#BB7777" vlink="#7777BB" alink="#FFEE99" text="#000000">
-<blockquote><blockquote>
-<hr>
-<h2>
-Formalizing and Securing Relationships on Public Networks 
-</h2>	
-By Nick Szabo
-<hr>
+<!-- extend base layout -->
+{% extends "doc.html" %}
+{% block doc %}
+<style>
+  .contents{
+    list-style:none;
+    text-indent: none;
+    padding:0;
+    margin:0;
+  }
+</style>
 
 
-<!-- H2>Abstract</H2>
-<i>
-Smart contracts combine protocols with 
-user interfaces to formalize and secure relationships
-over computer networks.  Objectives and principles for the design of
-these systems are derived from legal principles, economic theory, and
-theories of reliable and secure protocols.
-Similarities and differences between smart contracts
-and traditional business procedures based on written contracts,
-controls, and static forms are discussed.  By using cryptographic 
-and other security 
-mechanisms, we can secure many algorithmically specifiable 
-relationships from breach by principals, and from eavesdropping 
-or malicious interference by third parties, 
-up to considerations of
-time, user interface, and completeness of the algorithmic
-specification.  This article discusses protocols with application
-in important contracting areas, including credit,
-content rights management, payment systems, and 
-contracts with bearer.
-</I><p-->
-<h2>Contents</h2>
-<a href="#introduction">Introduction</a><br>
-<a href="#Contracts Embedded in the World">Contracts Embedded in the World</a><br>
-<a href="#Contemporary Practice">Contemporary Practice</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;Accounting Controls
-<br>&nbsp;&nbsp;&nbsp;&nbsp;Electronic Data Interchange
-<br>&nbsp;&nbsp;&nbsp;&nbsp;Automata as Authority
-<br><a href="#Dimensions of Contract Design">Dimensions of Contract Design</a><br> 
-&nbsp;&nbsp;&nbsp;&nbsp;Mental and Computational Transaction Costs
-<br>&nbsp;&nbsp;&nbsp;&nbsp;The Economics Of Security
-<br>&nbsp;&nbsp;&nbsp;&nbsp;Proactive vs. Reactive Security
-<br>&nbsp;&nbsp;&nbsp;&nbsp;Online Enforceability
-<br>&nbsp;&nbsp;&nbsp;&nbsp;Observability by Principals
-<br>&nbsp;&nbsp;&nbsp;&nbsp;Verifiability by Adjudicators
-<br>&nbsp;&nbsp;&nbsp;&nbsp;Privity: Protection from Third Parties
-<br>&nbsp;&nbsp;&nbsp;&nbsp;Contracting Phases
-<br>&nbsp;&nbsp;&nbsp;&nbsp;Trading off Contract Design Objectives
-<br>&nbsp;&nbsp;&nbsp;&nbsp;Auditing Intermediaries
-<br><a href="#Building Blocks of Smart Contract Protocols">Building Blocks of Smart Contract Protocols</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;Protocols
-<br>&nbsp;&nbsp;&nbsp;&nbsp;The "Physics of Cyberspace"
-<br>&nbsp;&nbsp;&nbsp;&nbsp;Cryptographic Protocols
-<br>&nbsp;&nbsp;&nbsp;&nbsp;Attacks against Smart Contracts
-<br>&nbsp;&nbsp;&nbsp;&nbsp;Public and Secret Key Cryptography
-<br>&nbsp;&nbsp;&nbsp;&nbsp;Mutually Confidential Computation 
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Privy Authentication
-<br>&nbsp;&nbsp;&nbsp;&nbsp;Post-unforgeable Transaction Logs
-<br>&nbsp;&nbsp;&nbsp;&nbsp;Quora
-<br>&nbsp;&nbsp;&nbsp;&nbsp;Protection of Keys
-<br>&nbsp;&nbsp;&nbsp;&nbsp;Capabilities
-<br><a href="#Contracts with Bearer">Contracts with Bearer</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;Bearer Certificates 
-<br>&nbsp;&nbsp;&nbsp;&nbsp;Unlinkable Transfer
-<br>&nbsp;&nbsp;&nbsp;&nbsp;Conserved Objects
-<br>&nbsp;&nbsp;&nbsp;&nbsp;Digital Cash
-<br>&nbsp;&nbsp;&nbsp;&nbsp;Credentials
-<br><a href="#Content Rights Management">Content Rights Management</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;Watermarks
-<br>&nbsp;&nbsp;&nbsp;&nbsp;Controlled CPUs
-<br><a href="#Reputation Systems">Reputation Systems</a><br>
-<a href="#Credit">Credit</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;Secured Credit
-<br>&nbsp;&nbsp;&nbsp;&nbsp;Ripped Instruments
-<br>&nbsp;&nbsp;&nbsp;&nbsp;Credit Cards
-<br>&nbsp;&nbsp;&nbsp;&nbsp;Interval Instruments
-<br>&nbsp;&nbsp;&nbsp;&nbsp;Known Borrowers of Unknown Amounts
-<br>&nbsp;&nbsp;&nbsp;&nbsp;Pseudonymous Credit Ratings
-<br><a href="#Conclusion">Conclusion</a><p>
-<a name="introduction"></a></p><h2><a name="introduction">Introduction</a></h2><a name="introduction">
+<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+  <div class="page-header">
+    <h1 class="text-center">
+      Formalizing and Securing Relationships on Public Networks <br><small>Nick Szabo</small>
+    </h1>
+    <h4 class="text-center">
+      Originally published in 1997<br>
+    </h4>
+  </div>
 
-History has seen successive revolutions in the costs of doing
-global business.  First transportation, then manufacturing, 
-and recently communications costs have fallen dramatically.
-Yet there are still major barriers to doing business internationally.
-The cost of doing business globally is increasingly
-dominated by issues of jurisdiction, security, and trust:
-the costs of developing, maintaining, and securing our relationships.
-<p>
-Despite the recent rise of global computer networks, our institutions
-still take for granted that we live in a world of paper.  We formalize
-our relationships with written contracts, written laws, and forms
-designed for paper.  Our attitudes and laws regarding intellectual
-property and privacy have assumed a world of paper which is
-costly to copy.  Increasingly, we can no longer take these
-deeply embedded, highly evolved paper institutions for granted.
-Nor, since these institutions involve complex human relationships,
-can we redesign them overnight.  We are entering a period where 
-civilization must once again adapt to a radical new media.
-</p><p>
+  <!-- begin commented section -->
+  <h2 class="text-muted">Abstract</h2>
 
-Over the long stretch civilization, 
-paper represents only one of many technologies used to mediate commercial
-relationships.  The Inca used quipu -- accounts encoded on strings, a system
-with interesting tamper-resistance properties.  Early
-Middle Eastern civilizations used clay tokens for thousands
-of years.  These combined the function of, and were a precursor to,
-both cuneiform writing and coins.  Coins started out as lumps
-of standardize metal and weight.  Since these were too expensive
-to test during a normal business transaction, they came to be
-stamped by reputable or powerful authorities.  Coins played
-a major role in commerce for thousands of years, but that
-era is now over.
-</p><p>
+  <p class="text-muted">
+    <em>
+      Smart contracts combine protocols with user interfaces to formalize and secure relationships over computer networks. Objectives and principles for the design of these systems are derived from legal principles, economic theory, and theories of reliable and secure protocols. Similarities and differences between smart contracts and traditional business procedures based on written contracts, controls, and static forms are discussed. By using cryptographic and other security mechanisms, we can secure many algorithmically specifiable relationships from breach by principals, and from eavesdropping or malicious interference by third parties, up to considerations of time, user interface, and completeness of the algorithmic specification. This article discusses protocols with application in important contracting areas, including credit, content rights management, payment systems, and contracts with bearer.
+    </em>
+  </p>
 
-Business is now dominated by paper and institutions of written
-literacy.  Security measures have included chops, seals, and written
-signatures.  Value has been transered via bills of exchange
-(which evolved into checks), bearer certificates, and accounts
-using the double-entry bookeeping system.  Most importantly,
-we take for granted that contracts and law are written on
-this static medium, to be interpreted and enforced by 
-human authorities.
-</p><p>
+  <h2>Contents</h2>
+  
+  <ul class="contents">
+    <li><a href="#introduction">Introduction</a>
+    <li><a href="#contracts-embedded-in-the-world">Contracts Embedded in the World</a>
+    <li><a href="#contemporary-practice">Contemporary Practice</a>
+    <ul>
+      <li>Accounting Controls
+      <li>Electronic Data Interchange
+      <li>Automata as Authority
+    </ul>
+    <li><a href="#dimensions-of-contract-design">Dimensions of Contract Design</a>
+    <ul>
+      <li>Mental and Computational Transaction Costs
+      <li>The Economics Of Security
+      <li>Proactive vs. Reactive Security
+      <li>Online Enforceability
+      <li>Observability by Principals
+      <li>Verifiability by Adjudicators
+      <li>Privity: Protection from Third Parties
+      <li>Contracting Phases
+      <li>Trading off Contract Design Objectives
+      <li>Auditing Intermediaries
+    </ul>
+    <li><a href="#building-blocks-of-smart-contract-protocols">Building Blocks of Smart Contract Protocols</a>
+    <ul>
+      <li>Protocols
+      <li>The "Physics of Cyberspace"
+      <li>Cryptographic Protocols
+      <li>Attacks against Smart Contracts
+      <li>Public and Secret Key Cryptography
+      <li>Mutually Confidential Computation
+      <ul>
+        <li>Privy Authenticaion
+      </ul>
+      <li>Post-unforgeable Transaction Logs
+      <li>Quora
+      <li>Protection of Keys
+      <li>Capabilities
+    </ul>
+    <li><a href="#contracts-with-bearer">Contracts with Bearer</a>
+    <ul>
+      <li>Bearer Certificates
+      <li>Unlinkable Transfer
+      <li>Conserved Objects
+      <li>Digital Cash
+      <li>Credentials
+    </ul>
+    <li><a href="#content-rights-management">Content Rights Management</a>
+    <ul>
+      <li>Watermarks
+      <li>Controlled CPUs
+    </ul>
+    <li><a href="#reputation-systems">Reputation Systems</a>
+    <li><a href="#credit">Credit</a>
+    <ul>
+      <li>Secured Credit
+      <li>Ripped Instruments
+      <li>Credit Cards
+      <li>Interval Instruments
+      <li>Known Borrowers of Unknown Amounts
+      <li>Pseudonymous Credit Ratings
+    </ul>
+    <li><a href="#conclusion">Conclusion</a>
+  </ul>
 
-We are now entering an era of online communications and
-software "literacy".  The "physics of cyberspace", studied
-by computer scientists, are radically different from the properties of 
-paper, to an even greater degree than paper was different from 
-string, clay, and metal.   Not only written but also aural,
-visual, and other sensory media can be combined.  Most
-importantly, digital media are dynamic -- they not only
-transmit information, but can also make some kinds of decisions.
-Digital media can perform calculations, directly operate machinery,
-and work through some kinds of reasoning much more efficiently than 
-humans.
-</p><p>
-The movement from static to dynamic media promises to bring about
-a fourth cost revolution in the related areas of jurisdiction,
-trust, and security.  Impacts on business will be felt
-in law, accounting, auditing, billing, collections, 
-contracts, confidentiality, and so on: in short, the entire
-nature of our business relationships will be altered in ways
-only partially foreseeable.
-</p><p>
-The main traditional way to formalize a business relationship is the
-contract, a set of promises agreed to in a "meeting of the
-minds".  We naturally think of contracts as written, but oral agreements
-are also considered contracts, and have been around since prehistory.
-The contract is the basic building block of a market economy.  Over 
-many centuries of cultural
-evolution has emerged both the concept of contract and principles related
-to it, encoded into common law.  Such evolved structures are often
-prohibitively costly to rederive. If we started 
-from scratch, using reason
-and experience, it could take many centuries to redevelop sophisticated
-ideas like contract law and property rights that make the modern market 
-work.  But the digital revolution challenges us to develop new
-institutions in a much shorter period of time.  By extracting
-from our current laws, procedures, and theories those principles
-which remain applicable in cyberspace, we can retain much of this 
-deep tradition, and greatly shorten the time needed to develop
-useful digital institutions.
-</p><p>Computers make possible the running of algorithms heretofore prohibitively
-costly, and networks the quicker transmission of larger and more 
-sophisticated messages. Furthermore, computer scientists and cryptographers have recently
-discovered many new and quite interesting algorithms. 
-Combining these messages
-and algorithms makes possible a wide variety of new protocols.  These
-protocols, running on public networks such as the Internet, both challenge
-and enable us to formalize and secure new kinds of relationships in this new 
-environment, just as contract law, business forms, and accounting controls
-have long formalized and secured business relationships in the 
-paper-based world.
-</p></a><p><a name="introduction">In electronic commerce so far, the design criteria important for automating contract execution have 
-come from disparate fields like economics and cryptography,
-with little cross-communication: little awareness of the technology on
-the one hand, and little awareness of its best business uses other. 
-These efforts are striving after common objectives, and converge on 
-the concept of smart contracts [ </a><a href="#1">1</a> ].
 
-</p><p>
-Smart contracts reduce mental and computational 
-transaction costs imposed by either principals, third parties, or their 
-tools.  The contractual phases of search, negotiation, commitment,
-performance, and adjudication constitute the realm of smart contracts.
-This article covers all phases, with an emphasis on performance.  Smart 
-contracts utilize protocols and user interfaces to facilitate all steps of 
-the contracting process. This gives us new ways to formalize and secure 
-digital relationships which are far more functional than their inanimate 
-paper-based ancestors. 
-</p><p>
-<a name="Contracts Embedded in the World"></a></p><h2>Contracts Embedded in the World</h2><br>
+  <h2 id="introduction">Introduction</h2>
 
-<p>The basic idea behind smart contracts is that many kinds of contractual
-clauses (such as collateral, bonding, delineation of property rights, etc.)
-can be embedded in the hardware and software we deal with, in such a way
-as to make breach of contract expensive (if desired, sometimes prohibitively
-so) for the breacher. A canonical real-life example, which we might consider
-to be the primitive ancestor of smart contracts, is the humble vending
-machine. Within a limited amount of potential loss (the amount in the till
-should be less than the cost of breaching the mechanism), the machine takes
-in coins, and via a simple mechanism, which makes a freshman computer science problem
-in design with finite automata, dispense change and product according
-to the displayed price. The vending machine is a contract with bearer: anybody with
-coins can participate in an exchange with the vendor. The lockbox and other 
-security mechanisms protect the stored coins and contents
-from attackers, sufficiently to allow profitable deployment of vending 
-machines in a wide variety of areas.
+  <p>
+    History has seen successive revolutions in the costs of doing global business. First transportation, then manufacturing, and recently communications costs have fallen dramatically. Yet there are still major barriers to doing business internationally. The cost of doing business globally is increasingly dominated by issues of jurisdiction, security, and trust: the costs of developing, maintaining, and securing our relationships.
+  </p>
 
-</p><p>Smart contracts go beyond the vending machine in proposing to embed contracts
-in all sorts of property that is valuable and controlled by digital means.
-Smart contracts reference that property in a dynamic, often proactively 
-enforced form, and provide much better observation and verification where proactive
-measures must fall short.
+  <p>
+    Despite the recent rise of global computer networks, our institutions still take for granted that we live in a world of paper. We formalize our relationships with written contracts, written laws, and forms designed for paper. Our attitudes and laws regarding intellectual property and privacy have assumed a world of paper which is costly to copy. Increasingly, we can no longer take these deeply embedded, highly evolved paper institutions for granted. Nor, since these institutions involve complex human relationships, can we redesign them overnight. We are entering a period where civilization must once again adapt to a radical new media.
+  </p>
 
-</p><p>
-As another example, consider a hypothetical digital security system
-for automobiles. The smart contract design strategy suggests that we
-successively refine security protocols to more fully embed in a property
-the contractual terms which deal with it. These protocols would
-give control of the cryptographic keys for operating the property to the 
-person who rightfully owns that property, based on the terms of the contract.
-In the most straightforward implementation, the car can be rendered 
-inoperable unless the proper challenge-response protocol is completed with its rightful
-owner, preventing theft. But if the car is being used to secure
-credit, strong security implemented in this traditional way
-would create a headache for the creditor - the repo man would no longer be able to
-confiscate a deadbeat's car. To redress this problem, we can create a smart
-lien protocol: if the owner fails to make payments, the smart contract 
-invokes the lien protocol, which returns control 
-of the car keys to the bank. This protocol might be much cheaper 
-and more effective than a repo man.  A further reification would 
-provably remove the lien when the loan has been paid off, as well as account for hardship and 
-operational exceptions. For example, it would be rude to revoke 
-operation of the car while it's doing 75 down the freeway.  
-</p><p>
-In this process of successive refinement
-we've gone from a crude security system to a reified contract:
-</p><pre>(1) A lock to selectively let in the owner and 
+  <p>
+    Over the long stretch civilization, paper represents only one of many technologies used to mediate commercial relationships. The Inca used quipu &ndash; accounts encoded on strings, a system with interesting tamper-resistance properties. Early Middle Eastern civilizations used clay tokens for thousands of years. These combined the function of, and were a precursor to, both cuneiform writing and coins. Coins started out as lumps of standardize metal and weight. Since these were too expensive to test during a normal business transaction, they came to be stamped by reputable or powerful authorities. Coins played a major role in commerce for thousands of years, but that era is now over.
+  </p>
+
+  <p>
+    Business is now dominated by paper and institutions of written literacy. Security measures have included chops, seals, and written signatures. Value has been transered via bills of exchange (which evolved into checks), bearer certificates, and accounts using the double-entry bookeeping system. Most importantly, we take for granted that contracts and law are written on this static medium, to be interpreted and enforced by human authorities.
+  </p>
+
+  <p>
+    We are now entering an era of online communications and software "literacy". The "physics of cyberspace", studied by computer scientists, are radically different from the properties of paper, to an even greater degree than paper was different from string, clay, and metal. Not only written but also aural, visual, and other sensory media can be combined. Most importantly, digital media are dynamic &ndash; they not only transmit information, but can also make some kinds of decisions. Digital media can perform calculations, directly operate machinery, and work through some kinds of reasoning much more efficiently than humans.
+  </p>
+
+  <p>
+    The movement from static to dynamic media promises to bring about a fourth cost revolution in the related areas of jurisdiction, trust, and security. Impacts on business will be felt in law, accounting, auditing, billing, collections, contracts, confidentiality, and so on: in short, the entire nature of our business relationships will be altered in ways only partially foreseeable.
+  </p>
+
+  <p>
+    The main traditional way to formalize a business relationship is the contract, a set of promises agreed to in a "meeting of the minds". We naturally think of contracts as written, but oral agreements are also considered contracts, and have been around since prehistory. The contract is the basic building block of a market economy. Over many centuries of cultural evolution has emerged both the concept of contract and principles related to it, encoded into common law. Such evolved structures are often prohibitively costly to rederive. If we started from scratch, using reason and experience, it could take many centuries to redevelop sophisticated ideas like contract law and property rights that make the modern market work. But the digital revolution challenges us to develop new institutions in a much shorter period of time. By extracting from our current laws, procedures, and theories those principles which remain applicable in cyberspace, we can retain much of this deep tradition, and greatly shorten the time needed to develop useful digital institutions.
+  </p>
+
+  <p>
+    Computers make possible the running of algorithms heretofore prohibitively costly, and networks the quicker transmission of larger and more sophisticated messages. Furthermore, computer scientists and cryptographers have recently discovered many new and quite interesting algorithms. Combining these messages and algorithms makes possible a wide variety of new protocols. These protocols, running on public networks such as the Internet, both challenge and enable us to formalize and secure new kinds of relationships in this new environment, just as contract law, business forms, and accounting controls have long formalized and secured business relationships in the paper-based world.
+  </p>
+
+  <p>
+    In electronic commerce so far, the design criteria important for automating contract execution have come from disparate fields like economics and cryptography, with little cross-communication: little awareness of the technology on the one hand, and little awareness of its best business uses other. These efforts are striving after common objectives, and converge on the concept of smart contracts [1].
+  </p>
+
+  <p>
+    Smart contracts reduce mental and computational transaction costs imposed by either principals, third parties, or their tools. The contractual phases of search, negotiation, commitment, performance, and adjudication constitute the realm of smart contracts. This article covers all phases, with an emphasis on performance. Smart contracts utilize protocols and user interfaces to facilitate all steps of the contracting process. This gives us new ways to formalize and secure digital relationships which are far more functional than their inanimate paper-based ancestors.
+  </p>
+
+  <h2 id="contracts-embedded-in-the-world">Contracts Embedded in the World</h2>
+
+  <p>
+    The basic idea behind smart contracts is that many kinds of contractual clauses (such as collateral, bonding, delineation of property rights, etc.) can be embedded in the hardware and software we deal with, in such a way as to make breach of contract expensive (if desired, sometimes prohibitively so) for the breacher. A canonical real-life example, which we might consider to be the primitive ancestor of smart contracts, is the humble vending machine. Within a limited amount of potential loss (the amount in the till should be less than the cost of breaching the mechanism), the machine takes in coins, and via a simple mechanism, which makes a freshman computer science problem in design with finite automata, dispense change and product according to the displayed price. The vending machine is a contract with bearer: anybody with coins can participate in an exchange with the vendor. The lockbox and other security mechanisms protect the stored coins and contents from attackers, sufficiently to allow profitable deployment of vending machines in a wide variety of areas.
+  </p>
+
+  <p>
+    Smart contracts go beyond the vending machine in proposing to embed contracts in all sorts of property that is valuable and controlled by digital means. Smart contracts reference that property in a dynamic, often proactively enforced form, and provide much better observation and verification where proactive measures must fall short.
+  </p>
+
+  <p>
+    As another example, consider a hypothetical digital security system for automobiles. The smart contract design strategy suggests that we successively refine security protocols to more fully embed in a property the contractual terms which deal with it. These protocols would give control of the cryptographic keys for operating the property to the person who rightfully owns that property, based on the terms of the contract. In the most straightforward implementation, the car can be rendered inoperable unless the proper challenge-response protocol is completed with its rightful owner, preventing theft. But if the car is being used to secure credit, strong security implemented in this traditional way would create a headache for the creditor &ndash; the repo man would no longer be able to confiscate a deadbeat's car. To redress this problem, we can create a smart lien protocol: if the owner fails to make payments, the smart contract invokes the lien protocol, which returns control of the car keys to the bank. This protocol might be much cheaper and more effective than a repo man. A further reification would provably remove the lien when the loan has been paid off, as well as account for hardship and operational exceptions. For example, it would be rude to revoke operation of the car while it's doing 75 down the freeway.
+  </p>
+
+  <p>
+    In this process of successive refinement we've gone from a crude security system to a reified contract:
+  </p>
+
+<pre>
+(1) A lock to selectively let in the owner and 
     exlude third parties;
 (2) A back door to let in the creditor;
 (3a) Creditor back door switched on only upon nonpayment 
      for a certain period of time; and
 (3b) The final electronic payment permanently switches 
-     off the back door.
-</pre>
-<p>
-Mature security systems will be 
-undertaking different behavior for different contracts. To continue
-with our example, if the automobile contract were a lease, the final payment
-would switch off leasee access; for purchase on credit, it would switch
-off creditor access. A security system, by successive redesign, 
-increasingly approaches the logic of the contract which governs the 
-rights and obligations covering the object, information, or
-computation being secured. Qualitatively different 
-contractual terms, as well as technological differences in the property,
-give rise to the need for different protocols.
-</p><p>
-</p><h2><a name="Contemporary Practice"></a>Contemporary Practice</h2>
+     off the back door.</pre>
+
+  <p>
+    Mature security systems will be undertaking different behavior for different contracts. To continue with our example, if the automobile contract were a lease, the final payment would switch off leasee access; for purchase on credit, it would switch off creditor access. A security system, by successive redesign, increasingly approaches the logic of the contract which governs the rights and obligations covering the object, information, or computation being secured. Qualitatively different contractual terms, as well as technological differences in the property, give rise to the need for different protocols.
+  </p>
+
+  <h2 id="contemporary-practice"></a>Contemporary Practice</h2>
+
+  <h3>Accounting Controls</h3>
+
+  <p>
+    Outside of the financial cryptography community, and long predating it, there is a deep tradition of protocols used in the course of performing contracts. These protocols consist of a flow of forms ("data flow", canonically displayed in data flow diagrams), along with checks and procedures called "controls". Controls serve many of the same functions as cryptographic protocols: integrity, authorization, and so on. This article uses "control protocols" or simply "controls" to refer to this combination of data flow and controls.
+  </p>
+
+  <p>
+    Control protocols, and the professions of auditing and accounting [ 2 ] based on them, play a critical but ill-analyzed role in our economy. Economists lump them, along with other costs of negotiating and ensuring the performance of contracts, under their catch-all rubric of "transaction costs". But without controls, large corporations and the economies of scale they create would not be possible. Controls allow a quarrelsome species ill-suited to organizations larger than small tribes to work together on vast projects like manufacturing jumbo jets and running hospitals. These control protocols are the result of many centuries of business experience and have a long future ahead of them, but the digital revolution will soon cause these paper-era techniques to be dramatically augmented by, and eventually integrate into, smart contracts.
+  </p>
+
+  <p>
+    Controls enable auditing of contract performances, allowing more precise inference of the behavior of an agent. Auditing is costly, so it is undertaken by random sampling. Economists study the substitutability between the probability of verifying a breach and the magnitude of legal fines, where physical enforcement is used. Conceivably, one could substitute increasingly high penalties for increasingly rarer and less expensive auditing. However, this is not robust to real-world conditions of imperfect information.
+  </p>
+
+  <p>
+    Since controls primarily address the implicit contracts between employees and employer, there is little mapping from contract to control. A secondary function of controls to to monitor contracts with other organizations. Here there is some mapping, but it is confounded by the integration of the two functions in most controls. Rather than based on contractual terms, controls are typically based on managerial authorization.
+  </p>
+
+  <p>
+    Controls are typically based around amounts of money and quantities of goods. A canonical control is double entry bookkeeping, where two books are kept, and there must be arithmetic reconciliation between the books. To conceal an irregularity, necessary to omit from both sides, or to record entries offsetting the irregularity. Notice that there is a problem distinguishing error from fraud. This problem crops up in many areas in both auditing and smart contracts. To illustrate, here are two common control techniques:
+  </p>
+
+  <p>
+    <em>Imprest</em>: this is a family of controls involving the receipt or disbursement of bearer certificates (usually notes and coins). One example is the protocol used at most movie theaters. Entry is segregated from payment by introducing tickets and establishing two employee roles, the ticket seller in a booth, and the ticket stub salesman at the entrance. Periodically, a bookkeeper reconciles the number of tickets with the total paid. Discrepancy again indicates fraud or error.
+  </p>
+
+  <p>
+    <em>Customer audit</em>: Techniques to get the customer to generate initial documentation of a transaction. For example, pricing goods at $.99 forces the employee to open the cash register to make change, generating a receipt.
+  </p>
+
+  <p>
+    A complete control protocol typically features the generation of initial documentation, segregation of duties, and arithmetic reconciliation of quantities of goods, standard service events, and money.
+  </p>
+
+  <p>
+    Of these, the segregation of duties deserves special comment.
+  </p>
+
+  <p>
+    In a large business, transactions are divided up so that no single person can commit fraud. Segregation of duties is an instance of the principle of required conspiracy. For example, the functions of warehouse/delivery, sales, and receipt of payments are each performed by different parties, with a policy that each party reports every transaction to a fourth function, accounting. Any singular reported activity (e.g., delivery without receipt of payment) indicates potential fraud (e.g., a delivery was made to a customer and the payment pocketed instead of being put into the corporate treasury). Segregation of duties is the auditor's favorite tool. Where it is absent the auditor cries "foul", just as a good engineer would react to a single point of failure. Many cryptographic systems have rightfully gone down to commercial failure because they ground down to trust in a single entity rather than segregating functions so as to require conspiracy.
+  </p>
+
+  <p>
+    There are least three significant differences between the scope and emphasis of smart contracts and controls. Controls are paper-era protocols designed around static forms, place little emphasis on confidentiality, and are based on management authorizations rather than one-to-one relationships.
+  </p>
+
+  <p>
+    Smart contracts can be based on a wide variety of interactive protocols and user interfaces, and can be involved in a wide variety of kinds of contractual performance. Control protocols, developed in the era of paper, are based on static forms passed as messages and processed in tables and spreadsheets. Controls focus on money and counts of standardized goods and service events, easily recorded by numbers and manipulated by arithmetic, while mostly ignoring other kinds or aspects of contractual performance. Checksums on numbers, the basis of reconciliation, are crude and forgeable compared to cryptographic hashes. Electronic Data Interchange (EDI) keeps these static forms and maintains reliance on controls. It uses cryptographic hashes for nothing more sophisticated than integrity checks on individual messages.
+  </p>
+
+  <p>
+    Controls place little emphasis on confidentiality, at least in the modern accounting literature. The emphasis on confidentiality in paper-era protocols is lacking because violation of often implicit confidences, via replication of data, was much more difficult with paper. Furthermore, technologies for protecting confidentiality while auditing were not feasible. Businesses traditionally trusted accounting firms with confidences, a trust that has eroded over the last century, and will erode still further as accounting firms start taking advantage of the vast amounts of inside and marketing information they are collecting from their customers' databases during audits. Using paper-based protocols in a digital world, there are few effective controls against the auditors themselves. Post-unforgeable transaction logs and multiparty secure computation, discussed below, indicate the possibility of cryptographic protocols to implement less relavatory but more effective auditing trails and controls; their use may be able to ameliorate the growing problems with data mining and breach of confidentiality.
+  </p>
+
+  <p>
+    Auditors place quite a bit of trust in management to authorize transactions in a secure and productive manner. Objecting to this dual trust in management and distrust of employees inherent in the accounting tradition, there has been a trend in the last two decades towards a loosening of controls as a part of hierarchy flattening and empowerment of professional employees. Unfortunately, loose controls have led to several recent scandals in the banking and investment trade. The most recent view is that there must be a learned tradeoff between controls and empowerment. The smart contract view is that we need smarter controls, originating at the ownership of the company, and entailing less asymmetry between management and other professional employees. This means converting many implicit employee contracts to more explicit smart contracts based on more direct relationships between owners (or at least their directors) and employees, and symmetric formalizations between employees.
+  </p>
+
+  <p>
+    Although most of these differences are biased against controls, these traditional protocols have a long future ahead of them, simply because they have a long past. They are highly evolved, hundreds of years old (double-entry bookkeeping, for example, predates the Renaissance). Smart contracts will incorporate many techniques and strategies from control protocols, such as generation of an initial record, segregation of duties, and reconciliation. It will not be long, however, before smart contracts start augmenting and transforming traditional business procedures, making a wide variety of new business structures possible and in the long run replacing traditional controls.
+  </p>
+
+  <h3>Electronic Data Interchange</h3>
+
+
+
 <h4>Accounting Controls</h4>
 
 Outside of the financial cryptography community, and long predating
@@ -1729,9 +1703,5 @@ nszabo (at) law (dot) gwu (dot) edu
 </blockquote>
 <hr>
 
-
-
-
-
-
-</body></html>
+</div>
+{% endblock %}
