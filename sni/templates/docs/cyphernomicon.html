@@ -8030,1738 +8030,2095 @@ ul
         <h5>
                 5.7.5. "What is the "Diffie-Hellman" protocol and why is it important?"    
         </h5>
+        <ul>
+            <li>
+                    + What it is    
+            </li>
+            <ul>
+                <li>
+                        - Diffie-Hellman, first described in 1976, allows key exchange over insecure channels.    
+                </li>
+
+                <li>
+                        + Steve Bellovin was one of several people to explaine D-H to the list (every few months someone does!). I'm including his explanation, despite its length, to help readers who are not cryptologists get some flavor of the type of math involved. The thing to notice is the use of *exponentiations* and *modular arithmetic* (the "clock arithmetic" of our "new math" childhoods, except with really, really big numbers!). The difficulty of inverting the exponention (the discrete log problem) is what makes this a cryptographically interesting approach.    
+                </li>
+                <ul>
+                    <li>
+                            - "The basic idea is simple.Pick a large number p (probably a prime), and a base b that is a generator of the group of integers modulo p. Now, it turns out that given a known p, b, and (b^x) mod p, it's extremely hard to find out x.That's known as the discrete log problem.  "Here's how to use it.Let two parties, X and Y, pick random numbers x and y, 1 < x,y < p.They each calculate  (b^x) mod p  and  (b^y) mod p  and transmit them to each other.Now, X knows x and (b^y) mod p, so s/he can calculate (b^y)^x mod p = (b^(xy)) mod p.Y can do the same calculation.Now they both know (b^(xy)) mod p.But eavesdroppers know only (b^x) mod p and (b^y) mod p, and can't use those quantities to recover the shared secret.Typically, of course, X and Y will use that shared secret as a key to a conventional cryptosystem.  "The biggest problem with the algorithm, as outlined above, is that there is no authentication.An attacker can sit in the middle and speak that protocol to each legitimate party.  "One last point -- you can treat x as a secret key, and publish (b^X) mod p as a public key.Proof is left as an exercise for the reader."[Steve Bellovin, 1993-07-17]    
+                    </li>
+                </ul>
+            </ul>
+            <li>
+                    - Why it's important    
+            </li>
+
+            <li>
+                    + Using it    
+            </li>
+            <ul>
+                <li>
+                        + Matt Ghio has made available Phil Karn's program for generating numbers useful for D-H:    
+                </li>
+                <ul>
+                    <li>
+                            - ftp cs.cmu.edu: /afs/andrew.cmu.edu/usr12/mg5n/public/Karn.DH.generator    
+                    </li>
+                </ul>
+            </ul>
+            <li>
+                    + Variants and Comments    
+            </li>
+            <ul>
+                <li>
+                        + Station to Station protocol    
+                </li>
+                <ul>
+                    <li>
+                            - "The STS protocol is a regular D-H followed by a (delicately designed) exchange of signatures on the key exchange parameters.The signatures in the second exchange that they can't be separated from the original parameters.....STS is a well-thought out protocol, with many subtleties already arranged for.For the issue at hand, though, which is Ethernet sniffing, it's authentication aspects are not required now, even though they certainly will be in the near future." [Eric Hughes, 1994-02-06] 
+                    </li>
+                </ul>
+            </ul>
+        </ul>
+
+        <h5>
+                5.7.6. groups, multiple encryption, IDEA, DES, difficulties in analyzing 
+        </h5>
+
+        <h5>
+                5.7.7. "Why and how is "randomness" tested?"    
+        </h5>
+        <ul>
+            <li>
+                    - Randomness is a core concept in cryptography. Ciphers often fail when things are not as random as designers thought they would be.    
+            </li>
+
+            <li>
+                    - Entropy, randomness, predictablility. Can never actually _prove_ a data set is random, though one can be fairly confident (cf. Kolmogorov-Chaitin complexity theory).    
+            </li>
+
+            <li>
+                    - Still, tricks can make a random-looking text block look regular....this is what decryption does; such files are said to be cryptoregular.    
+            </li>
+
+            <li>
+                    + As to how much testing is needed, this depends on the use, and on the degree of confidence needed. It may take millions of test samples, or even more, to establish randomness in set of data. For example:    
+            </li>
+
+            <li>
+                    - "The standard tests for 'randomness' utilized in govt systems requires 1X10^6 samples. Most of the tests are standard probability stuff and some are classified. " [Wray Kephart, sci.crypt, 1994-08-07]    
+            </li>
+
+            <li>
+                    - never assume something is really random just becuase it _looks_ random! (Dynamic Markov compressors can find nonrandomness quickly.) 
+            </li>
+        </ul>
+
+        <h5>
+                5.7.8. "Is it possible to tell if a file is encrypted?"    
+        </h5>
+        <ul>
+            <li>
+                    - Not in general. Undecideability and all that. (Can't tell in general if a virus exists in code, Adleman showed, and can't tell in general if a file is encrypted, compressed, etc. Goes to issues of what we mean by encrypted or compressed.)    
+            </li>
+
+            <li>
+                    + Sometimes we can have some pretty clear signals:    
+            </li>
+            <ul>
+                <li>
+                        - headers are attached    
+                </li>
+
+                <li>
+                        - other characteristic signs    
+                </li>
+
+                <li>
+                        - entropy per character    
+                </li>
+            </ul>
+            <li>
+                    + But files encrypted with strong methods typically look random; in fact, randomness is closely related to encyption.    
+            </li>
+            <ul>
+                <li>
+                        + regularity: all symbols represented equally, in all bases (that is, in doubles, triples, and all n-tuples)    
+                </li>
+                <ul>
+                    <li>
+                            - "cryptoregular" is the term: file looks random (regular) until proper key is applied, then the randomness vaDCharles Bennett, "Physics of Computation Workshop," 1993]    
+                    </li>
+                </ul>
+            </ul>
+            <li>
+                    - "entropy" near the maximum (e.g., near 6 or 7 bits per character, whereas ordinary English has roughly 1.5-2 bits per character of entropy) 
+            </li>
+        </ul>
+
+        <h5>
+                5.7.9. "Why not use CD-ROMs for one-time pads?"    
+        </h5>
+        <ul>
+            <li>
+                    - The key distribution problem, and general headaches. Theft or compromise of the keying material is of course the greatest threat.    
+            </li>
+
+            <li>
+                    - And one-time pads, being symmetric ciphers, give up the incredible advantages of public key methods.    
+            </li>
+
+            <li>
+                    - "CD ROM is a terrible medium for the OTP key stream. First, you want exactly two copies of the random stream. CD ROM has an economic advantage only for large runs. Second, you want to destroy the part of the stream already used.CD ROM has no erase facilities, outside of physical destruction of the entire disk." [Bryan G. Olson, sci.crypt, 1994-08-31]    
+            </li>
+
+            <li>
+                    - If you have to have a one-time pad, a DAT makes more sense; cheap, can erase the bits already used, doesn't require pressing of a CD, etc. (One company claims to be selling CD- ROMs as one-time pads to customers...the security problems here should be obvious to all.)    
+            </li>
+        </ul>
+    </ul>
+
+    <h4>
+            5.8. The Nature of Cryptology 
+    </h4>
+    <ul>
+        <h5>
+                5.8.1. "What are the truly basic, core, primitive ideas of cryptology, crypto protocols, crypto anarchy, digital cash, and the things we deal with here?"    
+        </h5>
+        <ul>
+            <li>
+                    - I don't just mean things like the mechanics of encryption, but more basic conceptual ideas. 
+            </li>
+        </ul>
+
+        <h5>
+                5.8.2. Crypto is about the creation and linking of private spaces... 
+        </h5>
+
+        <h5>
+                5.8.3. The "Core" Ideas of Cryptology and What we Deal With    
+        </h5>
+
+        <ul>
+            <li>
+                    - Physics has mass, energy, force, momentum, angular momentum, gravitation, friction, the Uncertainty Principle, Complementarity, Least Action, and a hundred other such concepts and prinicples, some more basic than others. Ditto for any other field.    
+            </li>
+
+            <li>
+                    + It seems to many of us that crypto is part of a larger study of core ideas involving: identity, proof, complexity, randomness, reputations, cut-and-choose protocols, zero knowledge, etc. In other words, the buzzwords.    
+            </li>
+            <ul>
+                <li>
+                        - But which of these are "core" concepts, from which others are derived?    
+                </li>
+
+                <li>
+                        - Why, for example, do the "cut-and-choose" protocols work so well, so fairly? (That they do has been evident for a long time, and they literally are instances of Solomonic wisdom. Game theory has explanations in terms of payoff matrices, Nash equilibria, etc. It seems likely to me that the concepts of crypto will be recast in terms of a smaller set of basic ideas taken from these disparate fields of economics, game theory, formal systems, and ecology. Just my hunch.)    
+                </li>
+            </ul>
+            <li>
+                    + statements, assertions, belief, proof    
+            </li>
+            <ul>
+                <li>
+                        - "I am Tim"    
+                </li>
+
+                <li>
+                        + possession of a key to a lock is usually treated as proof of...    
+                </li>
+                <ul>
+                    <li>
+                            - not always, but that's the default assumption, that someone who unlocks a door is one of the proper people..access privileges, etc. 
+                    </li>
+                </ul>
+            </ul>
+        </ul>
+
+        <h5>
+                5.8.4. We don't seem to know the "deep theory" about why certain protocols "work." For example, why is "cut-and-choose," where Alice cuts and Bob chooses (as in fairly dividing a pie), such a fair system? Game theory has a lot to do with it. Payoff matrices, etc.    
+        </h5>
+
+        <ul>
+            <li>
+                    - But many protocols have not been fully studied. We know they work, but I think we don't know fully why they work. (Maybe I'm wrong here, but I've seen few papers looking at these issues in detail.)    
+            </li>
+
+            <li>
+                    - Economics is certainly crucial, and tends to get overlooked in analysis of crypto protocols....the various "Crypto Conference Proceedings" papers typically ignore economic factors (except in the area of measuring the strength of a system in terms of computational cost to break).    
+            </li>
+
+            <li>
+                    - "All crypto is economics."    
+            </li>
+
+            <li>
+                    - We learn what works, and what doesn't. My hunch is that complex crypto systems will have emergent behaviors that are discovered only after deployment, or good simulation (hence my interest in "protocol ecologies"). 
+            </li>
+        </ul>
+
+        <h5>
+                5.8.5. "Is it possible to create ciphers that are unbreakable in any amount of time with any amount of computer power?"    
+        </h5>
+        <ul>
+            <li>
+                    + Information-theoretically secure vs. computationally-secure    
+            </li>
+            <ul>
+                <li>
+                        + not breakable even in principle, e.g., a one-time pad with random characters selected by a truly random process (die tosses, radioactive decay, certain types of noise, etc.)    
+                </li>
+                <ul>
+                    <li>
+                            - and ignoring the "breakable by break-ins" approach of stealing the one-time pad, etc. ("Black bag cryptography")    
+                    </li>
+                </ul>
+                <li>
+                        - not breakable in "reasonable" amounts of time with computers    
+                </li>
+            </ul>
+            <li>
+                    - Of course, a one-time pad (Vernam cipher) is theoretically unbreakable without the key. It is "information- theoretically secure."    
+            </li>
+
+            <li>
+                    - RSA and similar public key algorithms are said to be only "computationally-secure," to some level of security dependent on modulus lenght, computer resources and time available, etc. Thus, given enough time and enough computer power, these ciphers are breakable.    
+            </li>
+
+            <li>
+            <p>
+                    - However, they may be practically impossible to break, given the amount of energy in the universe.Not to split universes here, but it is interesting to consider that some ciphers may not be breakable in _our_ universe, in any amount of time. Our universe presumably has some finite number of particles (currently estimated to be 10^73 particles). This leads to the "even if every particle were a Cray Y-MP it would take..." sorts of thought experiments.  
+            </p>
+
+            <p>
+                    But I am considering _energy_ here. Ignoring reversible computation for the moment, computations dissipate energy (some disagree with this point). There is some uppper limit on how many basic computations could ever be done with the amount of free energy in the universe. (A rough calculation could be done by calculating the energy output of stars, stuff falling into black holes, etc., and then assuming about kT per logical operation. This should be accurate to within a few orders of magnitude.) I haven't done this calculation, and won't today, but the result would likely be something along the lines of X joules of energy that could be harnessed for computation, resulting in Y basic primitive computational steps.  I can then find a modulus of 3000 digits or 5000 digits, or whatever,that takes more than this number of steps to factor.  
+            </p>
+
+            <p>
+                    Caveats:
+            </p>
+
+            <p>
+                    1. Maybe there are really shortcuts to factoring. Certainly improvements in factoring methods will continue. (But of course these improvements are not things that convert factoring into a less than exponential-in-length problem...that is, factoring appears to remain "hard.")
+            </p>
+
+            <p>
+                    2. Maybe reversible computations (a la Landauer, Bennett, et. al.) actually work. Maybe this means a "factoring machine" can be built which takes a fixed, or very slowly growing, amount of energy.
+            </p>
+
+            <p>
+                    3. Maybe the quantum-mechanical idea of Shore is possible. (I doubt it, for various reasons.)  
+            </p>
+
+            <p>
+                    I continue to find it useful to think of very large numbers as creating "force fields" or "bobbles" (a la Vinge) around data. A 5000-decimal-digit modulus is as close to being unbreakable as anything we'll see in this universe.    
+            </p>
+            </li>
+        </ul>
+    </ul>
+    
+    <h4>
+            5.9. Practical Crypto 
+    </h4>
+
+    <ul>
+        <h5>
+            5.9.1. again, this stuff is covered in many of the FAQs on PGP and on security that are floating around... 
+        </h5>
+
+        <h5>
+                5.9.2. "How long should crypto be valid for?"    
+        </h5>
+        <ul>
+            <li>
+                    + That is, how long should a file remain uncrackable, or a digital signature remain unforgeable?    
+            </li>
+            <ul>
+                <li>
+                        - probabalistic, of course, with varying confidence levels    
+                </li>
+
+                <li>
+                        - depends on breakthroughs, in math and in computer power    
+                </li>
+            </ul>
+
+            <li>
+                    + Some messages may only need to be valid for a few days or weeks. Others, for decades. Certain contracts may need to be unforgeable for many decades. And given advances in computer power, what appears to be a strong key today may fail utterly by 2020 or 2040.(I'm of course not suggesting that a 300- or 500-digit RSA modulus will be practical by then.)    
+            </li>
+            <ul>
+                <li>
+                        + many people only need security for a matter of months or so, while others may need it (or think they need it) for decades or even for generations    
+                </li>
+                <ul>
+                    <li>
+                            - they may fear retaliation against their heirs, for example, if certain communications were ever made public    
+                    </li>
+                </ul>
+            </ul>
+            <li>
+                    - "If you are signing the contract digitally, for instance, you would want to be sure that no one could forge your signature to change the terms after the fact -- a few months isn't enough for such purposes, only something that will last for fifteen or twenty years is okay." [Perry Metzger, 1994-07-06] 
+            </li>
+        </ul>
+
+        <h5>
+                5.9.3. "What about commercial encryption programs for protecting files?"    
+        </h5>
+        <ul>
+            <li>
+                    - ViaCrypt, PGP 2.7    
+            </li>
+
+            <li>
+                    - Various commercial programs have existed for years (I got "Sentinel" back in 1987-8...long since discontinued). Check reviews in the leading magazines.    
+            </li>
+
+            <li>
+                    + Kent Marsh, FolderBolt for Macs and Windows    
+            </li>
+            <ul>
+                <li>
+                        - "The best Mac security program....is CryptoMactic by Kent Marsh Ltd.It uses triple-DES in CBC mode, hashes an arbitrary-length password into a key, and has a whole lot of Mac-interface features.(The Windows equivalent is FolderBolt for Windows, by the way.)" [Bruce Schneier, sci.crypt, 1994-07-19] 
+                </li>
+            </ul>
+        </ul>
+
+        <h5>
+                5.9.4. "What are some practical steps to take to improve security?"    
+        </h5>
+        <ul>
+            <li>
+                    - Do you, like most of us, leave backup diskettes laying around?    
+            </li>
+
+            <li>
+                    - Do you use multiple-pass erasures of disks? If not, the bits may be recovered.    
+            </li>
+
+            <li>
+                    - (Either of these can compromise all encrypted material you have, all with nothing more than a search warrant of your premises.) 
+            </li>
+        </ul>
+
+        <h5>
+                5.9.5. Picking (and remembering) passwords    
+        </h5>
+        <ul>
+            <li>
+                    - Many of the issues here also apply to choosing remailers, etc. Things are often trickier than they seem. The "structure" of these spaces is tricky. For example, it may seem really sneaky (and "high entropy" to permute some words in a popular song and use that as a pass phrase....but this is obviously worth only a few bits of extra entropy. Specifically, the attacker will like take the thousand or so most popular songs, thousand or so most popular names, slogans, speeches, etc., and then run many permutations on each of them.    
+            </li>
+
+            <li>
+                    - bits of entropy    
+            </li>
+
+            <li>
+                    - lots of flaws, weaknesses, hidden factors    
+            </li>
+
+            <li>
+                    - avoid simple words, etc.    
+            </li>
+
+            <li>
+                    - hard to get 100 or more bits of real entropy    
+            </li>
+
+            <li>
+                    - As Eli Brandt puts it, "Obscurity is no substitute for strong random numbers." [E.B., 1994-07-03]    
+            </li>
+
+            <li>
+                    - Cryptanalysis is a matter of deduction, of forming and refining hypotheses. For example, the site "bitbucket@ee.und.ac.za" is advertised on the Net as a place to send "NSA food" to...mail sent to it gets discarded. So , a great place to send cover traffic to, no? No, as the NSA will mark this site for what it is and its usefulness is blown. (Unless its usefulness is actually something else, in which case the recursive descent has begun.)    
+            </li>
+
+            <li>
+                    - Bohdan Tashchuk suggests [1994-07-04] using telephone-like numbers, mixed in with words, to better fit with human memorization habits; he notes that 30 or more bits of entropy are routinely memorized this way. 
+            </li>
+        </ul>
+
+        <h5>
+                5.9.6. "How can I remember long passwords or passphrases?"    
+        </h5>
+        <ul>
+            <li>
+                    - Lots of security articles have tips on picking hard-to- guess (high entropy) passwords and passphrases.    
+            </li>
+
+            <li>
+                    + Just do it.    
+            </li>
+            <ul>
+                <li>
+                        - People can learn to memorize long sequences. I'm not good at this, but others apparently are. Still, it seems dangerous, in terms of forgetting. (And writing down a passphrase may be vastly more risky than a shorter but more easily memorized passphrase is. I think theft of keys and keystroke capturing on compromised machines are much more important practical weaknesses.)    
+                </li>
+            </ul>
+            <li>
+                    + The first letters of long phrases that have meaning only to the owner.    
+            </li>
+            <ul>
+                <li>
+                        - e.g., "When I was ten I ate the whole thing."---> "wiwtiatwt" (Purists will quibble that prepositional phrases like "when i was" have lower entropy. True, but better than "Joshua.")    
+                </li>
+            </ul>
+            <li>
+                    + Visual systems    
+            </li>
+            <ul>
+            <li>
+                <p>
+                        - Another approach to getting enough entropy in passwords/phrases is a "visual key" where one mouses from position to position in a visual environment. That is, one is presented with a scene containg some number of nodes, perhaps representing familiar objects from one's own home, and a path is chosen.The advantage is that most people can remember fairly complicated (read: high entropy) "stories." Each object triggers a memory of the next object to visit. (Example: door to kitchen to blender to refrigerator to ..... ) This is the visual memory system said to be favored by Greek epic poets. This also gets around the keyboard-monitoring trick (but not necessarily the CRT-reading trick, of course).
+                </p>
+                <p>
+                        It might be an interesting hack to offer this as a front end for PGP. Even a simple grid of characters which could be moused on could be an assist in using long passphrases.
+                </p>  
+                </li>
+            </ul>
+        </ul>
+    </ul>
+
+    <h4>
+            5.10. DES    
+    </h4>
+    <ul>
+        <h5>
+                5.10.1. on the design of DES    
+        </h5>
 
         <li>
-                + What it is    
+                - Biham and Shamir showed how "differential cryptanalyis" could make the attack easier than brute-force search of the 2^56 keyspace. Wiener did a thought experiment design of a "DES buster" machine (who ya gonna call?) that could break a DES key in a matter of days. (Similar to the Diffie and Hellman analysis of the mid-70s, updated to current technology.)    
         </li>
 
         <li>
-                - Diffie-Hellman, first described in 1976, allows key exchange over insecure channels.    
+                + The IBM designers knew about differential cryptanalyis, it is now clear, and took steps to optimize DES. After Shamir and Biham published, Don Coppersmith acknowledged this. He's written a review paper:    
         </li>
+        <ul>
+            <li>
+                    - Coppersmith, D.,"The Data Encryption Standard (DES) and its strength against attacks."IBM Journal of Research and Development.38(3): 243-250. (May 1994)    
+            </li>
+        </ul>
+    </ul>
 
-        <li>
-                + Steve Bellovin was one of several people to explaine D-H to the list (every few months someone does!). I'm including his explanation, despite its length, to help readers who are not cryptologists get some flavor of the type of math involved. The thing to notice is the use of *exponentiations* and *modular arithmetic* (the "clock arithmetic" of our "new math" childhoods, except with really, really big numbers!). The difficulty of inverting the exponention (the discrete log problem) is what makes this a cryptographically interesting approach.    
-        </li>
+    <h4>
+            5.11. Breaking Ciphers    
+    </h4>
+    <ul>
+        <h5>
+                5.11.1. This is not a main Cypherpunks concern, for a variety of reasons (lots of work, special expertise, big machines, not a core area, ciphers always win in the long run). Breaking ciphers is something to consider, hence this brief section.    
+        </h5>
 
-        <li>
-                - "The basic idea is simple.Pick a large number p (probably a prime), and a base b that is a generator of the group of integers modulo p. Now, it turns out that given a known p, b, and (b^x) mod p, it's extremely hard to find out x.That's known as the discrete log problem.  "Here's how to use it.Let two parties, X and Y, pick random numbers x and y, 1 < x,y < p.They each calculate  (b^x) mod p  and  (b^y) mod p  and transmit them to each other.Now, X knows x and (b^y) mod p, so s/he can calculate (b^y)^x mod p = (b^(xy)) mod p.Y can do the same calculation.Now they both know (b^(xy)) mod p.But eavesdroppers know only (b^x) mod p and (b^y) mod p, and can't use those quantities to recover the shared secret.Typically, of course, X and Y will use that shared secret as a key to a conventional cryptosystem.  "The biggest problem with the algorithm, as outlined above, is that there is no authentication.An attacker can sit in the middle and speak that protocol to each legitimate party.  "One last point -- you can treat x as a secret key, and publish (b^X) mod p as a public key.Proof is left as an exercise for the reader."[Steve Bellovin, 1993-07-17]    
-        </li>
+        <h5>
+                5.11.2. "What are the possible consequences of weaknesses in crypto systems?"    
+        </h5>
+        <ul>
+            <li>
+                    - maybe reading messages    
+            </li>
 
-        <li>
-                - Why it's important    
-        </li>
+            <li>
+                    - maybe forging messages    
+            </li>
 
-        <li>
-                + Using it    
-        </li>
+            <li>
+                    - maybe faking timestamped documents    
+            </li>
 
-        <li>
-                + Matt Ghio has made available Phil Karn's program for generating numbers useful for D-H:    
-        </li>
+            <li>
+                    - maybe draining a bank account in seconds    
+            </li>
 
-        <li>
-                - ftp cs.cmu.edu: /afs/andrew.cmu.edu/usr12/mg5n/public/Karn.DH.generator    
-        </li>
+            <li>
+                    - maybe winning in a crypto gambling system    
+            </li>
 
-        <li>
-                + Variants and Comments    
-        </li>
+            <li>
+                    - maybe matters of life and death    
+            </li>
+        </ul>
 
-        <li>
-                + Station to Station protocol    
-        </li>
+        <h5>
+                5.11.3. "What are the weakest places in ciphers, practically speaking?"    
+        </h5>
+        <ul>
+            <li>
+                    - Key management, without a doubt. People leave their keys lying around , write down their passphrases. etc.    
+            </li>
+        </ul>
 
-        <li>
-                - "The STS protocol is a regular D-H followed by a (delicately designed) exchange of signatures on the key exchange parameters.The signatures in the second exchange that they can't be separated from the original parameters.....STS is a well-thought out protocol, with many subtleties already arranged for.For the issue at hand, though, which is Ethernet sniffing, it's authentication aspects are not required now, even though they certainly will be in the near future." [Eric Hughes, 1994-02-06] 5.7.6. groups, multiple encryption, IDEA, DES, difficulties in analyzing 5.7.7. "Why and how is "randomness" tested?"    
-        </li>
+        <h5>
+                5.11.4. Birthday attacks    
+        </h5>
 
-        <li>
-                - Randomness is a core concept in cryptography. Ciphers often fail when things are not as random as designers thought they would be.    
-        </li>
+        <h5>
+                5.11.5. For example, at Crypto '94 it was reported in a rump session (by Michael Wiener with Paul van Oorschot) that a machine to break the MD5 ciphers could be built for about $10 M (in 1994 dollars, of course) and could break MD5 in about 20 days. (This follows the 1993 paper on a similar machine to break DES.)    
+        </h5>
+        <ul>
+            <li>
+                    - Hal Finney did some calculations and reported to us:    
+            </li>
 
-        <li>
-                - Entropy, randomness, predictablility. Can never actually _prove_ a data set is random, though one can be fairly confident (cf. Kolmogorov-Chaitin complexity theory).    
-        </li>
+            <li>
+                    - "I mentioned a few days ago that one of the "rump session" papers at the crypto conference claimed that a machine could be built which would find MD5 collisions for $10M in about 20 days.....The net result is that we have taken virtually no more time (the 2^64 creations of MD5 will dominate) and virtually no space (compared to 2^64stored values) and we get the effect of a birthday attack.This is another cautionary data point about the risks of relying on space costs for security rather than time costs." [Hal Finney, 1994-09-09]    
+            </li>
+        </ul>
 
-        <li>
-                - Still, tricks can make a random-looking text block look regular....this is what decryption does; such files are said to be cryptoregular.    
-        </li>
+        <h5>
+                5.11.6. pkzip reported broken    
+        </h5>
+        <ul>
+            <li>
+                    - "I finally found time to take a closer look at the encryption algorithm by Roger Schlafly that is used in PKZIP and have developed a practical known plaintext attack that can find the entire 96-bit internal state." [Paul Carl Kocher, comp.risks, 1994-09-04]    
+            </li>
+        </ul>
 
-        <li>
-                + As to how much testing is needed, this depends on the use, and on the degree of confidence needed. It may take millions of test samples, or even more, to establish randomness in set of data. For example:    
-        </li>
+        <h5>
+                5.11.7. Gaming attacks, where loopholes in a system are exploited    
+        </h5>
+        <ul>
+            <li>
+                    - contests that are defeated by automated attacks    
+            </li>
 
-        <li>
-                - "The standard tests for 'randomness' utilized in govt systems requires 1X10^6 samples. Most of the tests are standard probability stuff and some are classified. " [Wray Kephart, sci.crypt, 1994-08-07]    
-        </li>
+            <li>
+                    - the entire legal system can be viewed this way, with competing teams of lawyers looking for legal attacks(and the more complex the legal code, the more attacks can be mounted)    
+            </li>
 
-        <li>
-                - never assume something is really random just becuase it _looks_ random! (Dynamic Markov compressors can find nonrandomness quickly.) 5.7.8. "Is it possible to tell if a file is encrypted?"    
-        </li>
+            <li>
+                    - ecologies, where weaknesses are exploited ruthlessly, forcing most species into extinction    
+            </li>
 
-        <li>
-                - Not in general. Undecideability and all that. (Can't tell in general if a virus exists in code, Adleman showed, and can't tell in general if a file is encrypted, compressed, etc. Goes to issues of what we mean by encrypted or compressed.)    
-        </li>
+            <li>
+                    - economies, ditto, except must faster    
+            </li>
 
-        <li>
-                + Sometimes we can have some pretty clear signals:    
-        </li>
+            <li>
+                    - the hazards for crypto schemes are clear    
+            </li>
 
-        <li>
-                - headers are attached    
-        </li>
+            <li>
+                    + And there are important links to the issue of overly formal systems, or systems in which ordinary "discretion" and "choice" is overridden by rules from outside    
+            </li>
+            <ul>
+                <li>
+                        - as with rules telling employers in great detail when and how they can discharge employees (cf. the discussion of "reasonable rules made mandatory," elsewhere)    
+                </li>
 
-        <li>
-                - other characteristic signs    
-        </li>
+                <li>
+                        - such rules get exploited by employees, who follow the "letter of the law" but are performing in a way unacceptable to the employer    
+                </li>
 
-        <li>
-                - entropy per character    
-        </li>
+                <li>
+                        - related to "locality of reference" points, in that problem should be resolved locally, not with intervention from afar.    
+                </li>
 
-        <li>
-                + But files encrypted with strong methods typically look random; in fact, randomness is closely related to encyption.    
-        </li>
+                <li>
+                        - things will never be perfect, from the perspetive of all parties, but meddling from outside makes things into a game, the whole point of this section    
+                </li>
+            </ul>
 
-        <li>
-                + regularity: all symbols represented equally, in all bases (that is, in doubles, triples, and all n-tuples)    
-        </li>
+            <li>
+                    + Implications for digital money: overly complex legal systems, without the local advantages of true cash (settled locally)    
+            </li>
+            <ul>
+                <li>
+                        + may need to inject some supra-legal enforcement mechanisms into the system, to make it converge    
+                </li>
+                <ul>
+                    <li>
+                            - offshore credit databases, beyond reach of U.S. and other laws    
+                    </li>
 
-        <li>
-                - "cryptoregular" is the term: file looks random (regular) until proper key is applied, then the randomness vaDCharles Bennett, "Physics of Computation Workshop," 1993]    
-        </li>
+                    <li>
+                            + physical violence (one reason people don't "play games" with Mafia, Triads, etc., is that they know the implications)    
+                    </li>
+                    <ul>
+                        <li>
+                                - it's not unethical, as I see it, for contractsin which the parties understand that a possible or even likely consequence of their failure to perform is death    
+                        </li>
+                    </ul>
+                </ul>
+            </ul>
+        </ul>
 
-        <li>
-                - "entropy" near the maximum (e.g., near 6 or 7 bits per character, whereas ordinary English has roughly 1.5-2 bits per character of entropy) 5.7.9. "Why not use CD-ROMs for one-time pads?"    
-        </li>
+        <h5>
+                5.11.8. Diffie-Hellman key exchange vulnerabilities    
+        </h5>
+        <ul>
+            <li>
+                    - "man-in-the-midle" attack    
+            </li>
 
-        <li>
-                - The key distribution problem, and general headaches. Theft or compromise of the keying material is of course the greatest threat.    
-        </li>
+            <li>
+                    + phone systems use voice readback of LCD indicated number    
+            </li>
+            <ul>
+                <li>
+                        - as computer power increases, even _this_ may be insufficient    
+                </li>
+            </ul>
+        </ul>
 
-        <li>
-                - And one-time pads, being symmetric ciphers, give up the incredible advantages of public key methods.    
-        </li>
+        <h5>
+                5.11.9. Reverse engineering of ciphers    
+        </h5>
+        <ul>
+            <li>
+                    - A5 code used in GSM phones was reverse engineered from a hardware description    
+            </li>
 
-        <li>
-                - "CD ROM is a terrible medium for the OTP key stream. First, you want exactly two copies of the random stream. CD ROM has an economic advantage only for large runs. Second, you want to destroy the part of the stream already used.CD ROM has no erase facilities, outside of physical destruction of the entire disk." [Bryan G. Olson, sci.crypt, 1994-08-31]    
-        </li>
+            <li>
+                    - Graham Toal reports (1994-07-12) that GCHQ blocked a public lectures on this    
+            </li>
+        </ul>
+    </ul>
 
+    <h4>
+            5.12. Loose Ends    
+    </h4>
+
+    <ul>
+        <h5>
+                5.12.1. "Chess Grandmaster Problem" and other Frauds and Spoofs    
+        </h5>
+        <ul>
+            <li>
+                    - of central importance to proofs of identity (a la Fiat- Shamir)    
+            </li>
+
+            <li>
+                    - "terrorist" and "Mafia spoof" problems    
+            </li>
+        </ul>
+    </ul>
+
+    <section id="6">
+        <h3>
+                6. The Need For Strong Crypto    
+        </h3>
+    </section>
+
+
+    <h4>
+            6.1. Copyright
+    </h4>
+    <ul>
         <li>
-                - If you have to have a one-time pad, a DAT makes more sense; cheap, can erase the bits already used, doesn't require pressing of a CD, etc. (One company claims to be selling CD- ROMs as one-time pads to customers...the security problems here should be obvious to all.)    
+                THECYPHERNOMICON: Cypherpunks FAQ and More, Version 0.666, 1994-09-10, Copyright Timothy C. May. All rights reserved. See the detailed disclaimer. Use short sections under "fair use" provisions, with appropriate credit, but don't put your name on my words.    
         </li>
     </ul>
 
-    <li>
-            5.8. The Nature of Cryptology 5.8.1. "What are the truly basic, core, primitive ideas of cryptology, crypto protocols, crypto anarchy, digital cash, and the things we deal with here?"    
-    </li>
-
-    <li>
-            - I don't just mean things like the mechanics of encryption, but more basic conceptual ideas. 5.8.2. Crypto is about the creation and linking of private spaces... 5.8.3. The "Core" Ideas of Cryptology and What we Deal With    
-    </li>
-
-    <li>
-            - Physics has mass, energy, force, momentum, angular momentum, gravitation, friction, the Uncertainty Principle, Complementarity, Least Action, and a hundred other such concepts and prinicples, some more basic than others. Ditto for any other field.    
-    </li>
-
-    <li>
-            + It seems to many of us that crypto is part of a larger study of core ideas involving: identity, proof, complexity, randomness, reputations, cut-and-choose protocols, zero knowledge, etc. In other words, the buzzwords.    
-    </li>
-
-    <li>
-            - But which of these are "core" concepts, from which others are derived?    
-    </li>
-
-    <li>
-            - Why, for example, do the "cut-and-choose" protocols work so well, so fairly? (That they do has been evident for a long time, and they literally are instances of Solomonic wisdom. Game theory has explanations in terms of payoff matrices, Nash equilibria, etc. It seems likely to me that the concepts of crypto will be recast in terms of a smaller set of basic ideas taken from these disparate fields of economics, game theory, formal systems, and ecology. Just my hunch.)    
-    </li>
-
-    <li>
-            + statements, assertions, belief, proof    
-    </li>
-
-    <li>
-            - "I am Tim"    
-    </li>
-
-    <li>
-            + possession of a key to a lock is usually treated as proof of...    
-    </li>
-
-    <li>
-            - not always, but that's the default assumption, that someone who unlocks a door is one of the proper people..access privileges, etc. 5.8.4. We don't seem to know the "deep theory" about why certain protocols "work." For example, why is "cut-and-choose," where Alice cuts and Bob chooses (as in fairly dividing a pie), such a fair system? Game theory has a lot to do with it. Payoff matrices, etc.    
-    </li>
-
-    <li>
-            - But many protocols have not been fully studied. We know they work, but I think we don't know fully why they work. (Maybe I'm wrong here, but I've seen few papers looking at these issues in detail.)    
-    </li>
-
-    <li>
-            - Economics is certainly crucial, and tends to get overlooked in analysis of crypto protocols....the various "Crypto Conference Proceedings" papers typically ignore economic factors (except in the area of measuring the strength of a system in terms of computational cost to break).    
-    </li>
-
-    <li>
-            - "All crypto is economics."    
-    </li>
-
-    <li>
-            - We learn what works, and what doesn't. My hunch is that complex crypto systems will have emergent behaviors that are discovered only after deployment, or good simulation (hence my interest in "protocol ecologies"). 5.8.5. "Is it possible to create ciphers that are unbreakable in any amount of time with any amount of computer power?"    
-    </li>
-
-    <li>
-            + Information-theoretically secure vs. computationally-secure    
-    </li>
-
-    <li>
-            + not breakable even in principle, e.g., a one-time pad with random characters selected by a truly random process (die tosses, radioactive decay, certain types of noise, etc.)    
-    </li>
-
-    <li>
-            - and ignoring the "breakable by break-ins" approach of stealing the one-time pad, etc. ("Black bag cryptography")    
-    </li>
-
-    <li>
-            - not breakable in "reasonable" amounts of time with computers    
-    </li>
-
-    <li>
-            - Of course, a one-time pad (Vernam cipher) is theoretically unbreakable without the key. It is "information- theoretically secure."    
-    </li>
-
-    <li>
-            - RSA and similar public key algorithms are said to be only "computationally-secure," to some level of security dependent on modulus lenght, computer resources and time available, etc. Thus, given enough time and enough computer power, these ciphers are breakable.    
-    </li>
-
-    <li>
-            - However, they may be practically impossible to break, given the amount of energy in the universe.Not to split universes here, but it is interesting to consider that some ciphers may not be breakable in _our_ universe, in any amount of time. Our universe presumably has some finite number of particles (currently estimated to be 10^73 particles). This leads to the "even if every particle were a Cray Y-MP it would take..." sorts of thought experiments.  But I am considering _energy_ here. Ignoring reversible computation for the moment, computations dissipate energy (some disagree with this point). There is some uppper limit on how many basic computations could ever be done with the amount of free energy in the universe. (A rough calculation could be done by calculating the energy output of stars, stuff falling into black holes, etc., and then assuming about kT per logical operation. This should be accurate to within a few orders of magnitude.) I haven't done this calculation, and won't today, but the result would likely be something along the lines of X joules of energy that could be harnessed for computation, resulting in Y basic primitive computational steps.  I can then find a modulus of 3000 digits or 5000 digits, or whatever,that takes more than this number of steps to factor.  Caveats:  1. Maybe there are really shortcuts to factoring. Certainly improvements in factoring methods will continue. (But of course these improvements are not things that convert factoring into a less than exponential-in-length problem...that is, factoring appears to remain "hard.")  2. Maybe reversible computations (a la Landauer, Bennett, et. al.) actually work. Maybe this means a "factoring machine" can be built which takes a fixed, or very slowly growing, amount of energy.  3. Maybe the quantum-mechanical idea of Shore is possible. (I doubt it, for various reasons.)  I continue to find it useful to think of very large numbers as creating "force fields" or "bobbles" (a la Vinge) around data. A 5000-decimal-digit modulus is as close to being unbreakable as anything we'll see in this universe.    
-    </li>
-
-    <li>
-          
-    </li>
-
-    <li>
-            5.9. Practical Crypto 5.9.1. again, this stuff is covered in many of the FAQs on PGP and on security that are floating around... 5.9.2. "How long should crypto be valid for?"    
-    </li>
-
-    <li>
-            + That is, how long should a file remain uncrackable, or a digital signature remain unforgeable?    
-    </li>
-
-    <li>
-            - probabalistic, of course, with varying confidence levels    
-    </li>
-
-    <li>
-            - depends on breakthroughs, in math and in computer power    
-    </li>
-
-    <li>
-            + Some messages may only need to be valid for a few days or weeks. Others, for decades. Certain contracts may need to be unforgeable for many decades. And given advances in computer power, what appears to be a strong key today may fail utterly by 2020 or 2040.(I'm of course not suggesting that a 300- or 500-digit RSA modulus will be practical by then.)    
-    </li>
-
-    <li>
-            + many people only need security for a matter of months or so, while others may need it (or think they need it) for decades or even for generations    
-    </li>
-
-    <li>
-            - they may fear retaliation against their heirs, for example, if certain communications were ever made public    
-    </li>
-
-    <li>
-            - "If you are signing the contract digitally, for instance, you would want to be sure that no one could forge your signature to change the terms after the fact -- a few months isn't enough for such purposes, only something that will last for fifteen or twenty years is okay." [Perry Metzger, 1994-07-06] 5.9.3. "What about commercial encryption programs for protecting files?"    
-    </li>
-
-    <li>
-            - ViaCrypt, PGP 2.7    
-    </li>
-
-    <li>
-            - Various commercial programs have existed for years (I got "Sentinel" back in 1987-8...long since discontinued). Check reviews in the leading magazines.    
-    </li>
-
-    <li>
-            + Kent Marsh, FolderBolt for Macs and Windows    
-    </li>
-
-    <li>
-            - "The best Mac security program....is CryptoMactic by Kent Marsh Ltd.It uses triple-DES in CBC mode, hashes an arbitrary-length password into a key, and has a whole lot of Mac-interface features.(The Windows equivalent is FolderBolt for Windows, by the way.)" [Bruce Schneier, sci.crypt, 1994-07-19] 5.9.4. "What are some practical steps to take to improve security?"    
-    </li>
-
-    <li>
-            - Do you, like most of us, leave backup diskettes laying around?    
-    </li>
-
-    <li>
-            - Do you use multiple-pass erasures of disks? If not, the bits may be recovered.    
-    </li>
-
-    <li>
-            - (Either of these can compromise all encrypted material you have, all with nothing more than a search warrant of your premises.) 5.9.5. Picking (and remembering) passwords    
-    </li>
-
-    <li>
-            - Many of the issues here also apply to choosing remailers, etc. Things are often trickier than they seem. The "structure" of these spaces is tricky. For example, it may seem really sneaky (and "high entropy" to permute some words in a popular song and use that as a pass phrase....but this is obviously worth only a few bits of extra entropy. Specifically, the attacker will like take the thousand or so most popular songs, thousand or so most popular names, slogans, speeches, etc., and then run many permutations on each of them.    
-    </li>
-
-    <li>
-            - bits of entropy    
-    </li>
-
-    <li>
-            - lots of flaws, weaknesses, hidden factors    
-    </li>
-
-    <li>
-            - avoid simple words, etc.    
-    </li>
-
-    <li>
-            - hard to get 100 or more bits of real entropy    
-    </li>
-
-    <li>
-            - As Eli Brandt puts it, "Obscurity is no substitute for strong random numbers." [E.B., 1994-07-03]    
-    </li>
-
-    <li>
-            - Cryptanalysis is a matter of deduction, of forming and refining hypotheses. For example, the site "bitbucket@ee.und.ac.za" is advertised on the Net as a place to send "NSA food" to...mail sent to it gets discarded. So , a great place to send cover traffic to, no? No, as the NSA will mark this site for what it is and its usefulness is blown. (Unless its usefulness is actually something else, in which case the recursive descent has begun.)    
-    </li>
-
-    <li>
-            - Bohdan Tashchuk suggests [1994-07-04] using telephone-like numbers, mixed in with words, to better fit with human memorization habits; he notes that 30 or more bits of entropy are routinely memorized this way. 5.9.6. "How can I remember long passwords or passphrases?"    
-    </li>
-
-    <li>
-            - Lots of security articles have tips on picking hard-to- guess (high entropy) passwords and passphrases.    
-    </li>
-
-    <li>
-            + Just do it.    
-    </li>
-
-    <li>
-            - People can learn to memorize long sequences. I'm not good at this, but others apparently are. Still, it seems dangerous, in terms of forgetting. (And writing down a passphrase may be vastly more risky than a shorter but more easily memorized passphrase is.I think theft of keys and keystroke capturing on compromised machines are much more important practical weaknesses.)    
-    </li>
-
-    <li>
-            + The first letters of long phrases that have meaning only to the owner.    
-    </li>
-
-    <li>
-            - e.g., "When I was ten I ate the whole thing."---> "wiwtiatwt" (Purists will quibble that prepositional phrases like "when i was" have lower entropy. True, but better than "Joshua.")    
-    </li>
-
-    <li>
-            + Visual systems    
-    </li>
-
-    <li>
-            - Another approach to getting enough entropy in passwords/phrases is a "visual key" where one mouses from position to position in a visual environment. That is, one is presented with a scene containg some number of nodes, perhaps representing familiar objects from one's own home, and a path is chosen.The advantage is that most people can remember fairly complicated (read: high entropy) "stories." Each object triggers a memory of the next object to visit. (Example: door to kitchen to blender to refrigerator to ..... ) This is the visual memory system said to be favored by Greek epic poets. This also gets around the keyboard-monitoring trick (but not necessarily the CRT-reading trick, of course).   It might be an interesting hack to offer this as a front end for PGP. Even a simple grid of characters which could be moused on could be an assist in using long passphrases.    
-    </li>
-
-    <li>
-          
-    </li>
-
-    <li>
-            5.10. DES    
-    </li>
-
-    <li>
-            5.10.1. on the design of DES    
-    </li>
-
-    <li>
-            - Biham and Shamir showed how "differential cryptanalyis" could make the attack easier than brute-force search of the 2^56 keyspace. Wiener did a thought experiment design of a "DES buster" machine (who ya gonna call?) that could break a DES key in a matter of days. (Similar to the Diffie and Hellman analysis of the mid-70s, updated to current technology.)    
-    </li>
-
-    <li>
-            + The IBM designers knew about differential cryptanalyis, it is now clear, and took steps to optimize DES. After Shamir and Biham published, Don Coppersmith acknowledged this. He's written a review paper:    
-    </li>
-
-    <li>
-            - Coppersmith, D.,"The Data Encryption Standard (DES) and its strength against attacks."IBM Journal of Research and Development.38(3): 243-250. (May 1994)    
-    </li>
-
-    <li>
-          
-    </li>
-
-    <li>
-            5.11. Breaking Ciphers    
-    </li>
-
-    <li>
-            5.11.1. This is not a main Cypherpunks concern, for a variety of reasons (lots of work, special expertise, big machines, not a core area, ciphers always win in the long run). Breaking ciphers is something to consider, hence this brief section.    
-    </li>
-
-    <li>
-            5.11.2. "What are the possible consequences of weaknesses in crypto systems?"    
-    </li>
-
-    <li>
-            - maybe reading messages    
-    </li>
-
-    <li>
-            - maybe forging messages    
-    </li>
-
-    <li>
-            - maybe faking timestamped documents    
-    </li>
-
-    <li>
-            - maybe draining a bank account in seconds    
-    </li>
-
-    <li>
-            - maybe winning in a crypto gambling system    
-    </li>
-
-    <li>
-            - maybe matters of life and death    
-    </li>
-
-    <li>
-            5.11.3. "What are the weakest places in ciphers, practically speaking?"    
-    </li>
-
-    <li>
-            - Key management, without a doubt. People leave their keys lying around , write down their passphrases. etc.    
-    </li>
-
-    <li>
-            5.11.4. Birthday attacks    
-    </li>
-
-    <li>
-            5.11.5. For example, at Crypto '94 it was reported in a rump session (by Michael Wiener with Paul van Oorschot) that a machine to break the MD5 ciphers could be built for about $10 M (in 1994 dollars, of course) and could break MD5 in about 20 days. (This follows the 1993 paper on a similar machine to break DES.)    
-    </li>
-
-    <li>
-            - Hal Finney did some calculations and reported to us:    
-    </li>
-
-    <li>
-            - "I mentioned a few days ago that one of the "rump session" papers at the crypto conference claimed that a machine could be built which would find MD5 collisions for $10M in about 20 days.....The net result is that we have taken virtually no more time (the 2^64 creations of MD5 will dominate) and virtually no space (compared to 2^64stored values) and we get the effect of a birthday attack.This is another cautionary data point about the risks of relying on space costs for security rather than time costs." [Hal Finney, 1994-09-09]    
-    </li>
-
-    <li>
-            5.11.6. pkzip reported broken    
-    </li>
-
-    <li>
-            - "I finally found time to take a closer look at the encryption algorithm by Roger Schlafly that is used in PKZIP and have developed a practical known plaintext attack that can find the entire 96-bit internal state." [Paul Carl Kocher, comp.risks, 1994-09-04]    
-    </li>
-
-    <li>
-            5.11.7. Gaming attacks, where loopholes in a system are exploited    
-    </li>
-
-    <li>
-            - contests that are defeated by automated attacks    
-    </li>
-
-    <li>
-            - the entire legal system can be viewed this way, with competing teams of lawyers looking for legal attacks(and the more complex the legal code, the more attacks can be mounted)    
-    </li>
-
-    <li>
-            - ecologies, where weaknesses are exploited ruthlessly, forcing most species into extinction    
-    </li>
-
-    <li>
-            - economies, ditto, except must faster    
-    </li>
-
-    <li>
-            - the hazards for crypto schemes are clear    
-    </li>
-
-    <li>
-            + And there are important links to the issue of overly formal systems, or systems in which ordinary "discretion" and "choice" is overridden by rules from outside    
-    </li>
-
-    <li>
-            - as with rules telling employers in great detail when and how they can discharge employees (cf. the discussion of "reasonable rules made mandatory," elsewhere)    
-    </li>
-
-    <li>
-            - such rules get exploited by employees, who follow the "letter of the law" but are performing in a way unacceptable to the employer    
-    </li>
-
-    <li>
-            - related to "locality of reference" points, in that problem should be resolved locally, not with intervention from afar.    
-    </li>
-
-    <li>
-            - things will never be perfect, from the perspetive of all parties, but meddling from outside makes things into a game, the whole point of this section    
-    </li>
-
-    <li>
-            + Implications for digital money: overly complex legal systems, without the local advantages of true cash (settled locally)    
-    </li>
-
-    <li>
-            + may need to inject some supra-legal enforcement mechanisms into the system, to make it converge    
-    </li>
-
-    <li>
-            - offshore credit databases, beyond reach of U.S. and other laws    
-    </li>
-
-    <li>
-            + physical violence (one reason people don't "play games" with Mafia, Triads, etc., is that they know the implications)    
-    </li>
-
-    <li>
-            - it's not unethical, as I see it, for contractsin which the parties understand that a possible or even likely consequence of their failure to perform is death    
-    </li>
-
-    <li>
-            5.11.8. Diffie-Hellman key exchange vulnerabilities    
-    </li>
-
-    <li>
-            - "man-in-the-midle" attack    
-    </li>
-
-    <li>
-            + phone systems use voice readback of LCD indicated number    
-    </li>
-
-    <li>
-            - as computer power increases, even _this_ may be insufficient    
-    </li>
-
-    <li>
-            5.11.9. Reverse engineering of ciphers    
-    </li>
-
-    <li>
-            - A5 code used in GSM phones was reverse engineered from a hardware description    
-    </li>
-
-    <li>
-            - Graham Toal reports (1994-07-12) that GCHQ blocked a public lectures on this    
-    </li>
-
-    <li>
-          
-    </li>
-
-    <li>
-            5.12. Loose Ends    
-    </li>
-
-    <li>
-            5.12.1. "Chess Grandmaster Problem" and other Frauds and Spoofs    
-    </li>
-
-    <li>
-            - of central importance to proofs of identity (a la Fiat- Shamir)    
-    </li>
-
-    <li>
-            - "terrorist" and "Mafia spoof" problems    
-    </li>
-
-    <li>
-          
-    </li>
-      <section id="6">
-    <h3>
-            6. The Need For Strong Crypto    
-    </h3>
-    </section>
-
-    <li>
-          
-    </li>
-
-    <li>
-            6.1. copyright THECYPHERNOMICON: Cypherpunks FAQ and More, Version 0.666, 1994-09-10, Copyright Timothy C. May. All rights reserved. See the detailed disclaimer. Use short sections under "fair use" provisions, with appropriate credit, but don't put your name on my words.    
-    </li>
-
-    <li>
-          
-    </li>
-
-    <li>
-            6.2. SUMMARY: The Need For Strong Crypto 6.2.1. Main Points    
-    </li>
-
-    <li>
-            - Strong crypto reclaims the power to decide for one's self, to deny the "Censor" the power to choose what one reads, watches, or listens to. 6.2.2. Connections to Other Sections 6.2.3. Where to Find Additional Information 6.2.4. Miscellaneous Comments    
-    </li>
-
-    <li>
-            - this section is short, but is less focussed than other sections; it is essentially a "transition" chapter.    
-    </li>
-
-    <li>
-          
-    </li>
-
-    <li>
-            6.3. General Uses of and Reasons for Crypto 6.3.1. (see also the extensive listing of "Reasons for Anonymity," which makes many points about the need and uses for strong crypto) 6.3.2. "Where is public key crypto really needed?"    
-    </li>
-
-    <li>
-            - "It is the case that there is relatively little need for asymmetric key cryptography in small closed populations. For example, the banks get along quite well without.The advantage of public key is that it permits private communication in a large and open population and with a minimum of prearrangement." [WHMurray, sci.crypt, 1994-08- 25]    
-    </li>
-
-    <li>
-            - That is, symmetric key systems (such as conventional ciphers, one time pads, etc.) work reasonably well by prearrangement between parties. And of course one time pads have the additional advantage of being information- theoretically secure. But asymmetric or public key methods are incredibly useful when: the parties have not met before, when key material has not been exchanged, and when concerns exist about storing the key material. The so- called "key management problem" when N people want to communicate pairwise with each other is well-founded.    
-    </li>
-
-    <li>
-            - And of course public key crypto makes possible all the other useful stuff like digital money, DC-Nets, zero knowledge proofs, secret sharing, etc. 6.3.3. "What are the main reasons to use cryptography?"    
-    </li>
-
-    <li>
-            - people encrypt for the same reason they close and lock their doors    
-    </li>
-
-    <li>
-            + Privacy in its most basic forms    
-    </li>
-
-    <li>
-            - text -- records, diaries, letters, e-mail    
-    </li>
-
-    <li>
-            - sound -- phone conversations    
-    </li>
-
-    <li>
-            - other --video    
-    </li>
-
-    <li>
-            + phones, intercepts, cellular, wireless, car phones, scanners    
-    </li>
-
-    <li>
-            + making listening illegal is useless (and wrong-headed)    
-    </li>
-
-    <li>
-            - and authorites are exempt from such laws    
-    </li>
-
-    <li>
-            - people need to protect, end to end    
-    </li>
-
-    <li>
-            + "How should I protect my personal files, and my phone calls?"    
-    </li>
-
-    <li>
-            - Personally, I don't worry too much. But many people do. Encryption tools are widely available.    
-    </li>
-
-    <li>
-            - Cellular telephones are notoriously insecure, as are cordless phones (even less secure). There are laws about monitoring, small comfort as that may be. (And I'm largely opposed to such laws, for libertarian reasons and because it creates a false sense of security.)    
-    </li>
-
-    <li>
-            - Laptops are probably less vulnerable to Van Eck types of RF monitoring than are CRTs. The trend to lower power, LCDs, etc., all works toward decreasing vulnerability. (However, computer power for extracting weak signals out of noise is increasing faster than RF are decreasing....tradeoffs are unclear.)    
-    </li>
-
-    <li>
-            + encrypting messages because mail delivery is so flaky    
-    </li>
-
-    <li>
-            - that is, mail is misdelivered,via hosts incorrectly processing the addresses    
-    </li>
-
-    <li>
-            - encryption obviously prevents misunderstandings (though it does little to get the mail delivered correctly)    
-    </li>
-
-    <li>
-            + Encryption to Protect Information    
-    </li>
-
-    <li>
-            - the standard reason    
-    </li>
-
-    <li>
-            + encryption of e-mail is increasing    
-    </li>
-
-    <li>
-            - the various court cases about employers reading ostensibly private e-mail will sharpen this debate (and raise the issue of employers forbidding encryption; resonances with the mostly-settled issue of reasonable use of company phones for private calls-more efficient to let some personal calls be made than to lose the time of employees going to public phones)    
-    </li>
-
-    <li>
-            + encryption of faxes will increase, too, especially as technology advances and as the dangers of interception become more apparent    
-    </li>
-
-    <li>
-            - also, tighter links between sender and receive, as opposed to the current "dial the number and hope it's the right one" approach, will encourage the additional use of encryption    
-    </li>
-
-    <li>
-            - "electronic vaulting" of large amounts of information, sent over T1 and T3 data networks, e.g., backup material for banks and large corporations    
-    </li>
-
-    <li>
-            + the miles and miles of network wiring within a corporation-LANs, WANs, Novell, Ethernet, TCP-IP, Banyan, and so on-cannot all be checked for taps...who would even have the records to know if some particular wire is going where it should? (so many undocumented hookups, lost records, ad hoc connections, etc.)    
-    </li>
-
-    <li>
-            - the solution is to have point-to-point encryption, even withing corporations (for important items, at least)    
-    </li>
-
-    <li>
-            - wireless LANs    
-    </li>
-
-    <li>
-            + corporations are becoming increasingly concerned about interception of important information-or even seemingly minor information-and about hackers and other intruders    
-    </li>
-
-    <li>
-            - calls for network security enhancement    
-    </li>
-
-    <li>
-            - they are hiring "tiger teams" to beef up security    
-    </li>
-
-    <li>
-            + cellular phones    
-    </li>
-
-    <li>
-            - interceptions are common (and this is becoming publicized)    
-    </li>
-
-    <li>
-            - modifications to commercial scanners are describe in newsletters    
-    </li>
-
-    <li>
-            - something like Lotus Notes may be a main substrate for the effective introduction of crypto methods (ditto for hypertext)    
-    </li>
-
-    <li>
-            - encryption provides "solidity" to cyberspace, in the sense of creating walls, doors, permanent structures    
-    </li>
-
-    <li>
-            - there may even be legal requirements for better security over documents, patient files, employee records, etc.    
-    </li>
-
-    <li>
-            + Encryption of Video Signals and Encryption to Control Piracy    
-    </li>
-
-    <li>
-            - this is of course a whole technology and industry    
-    </li>
-
-    <li>
-            - Videocypher II has been cracked by many video hackers    
-    </li>
-
-    <li>
-            - a whole cottage industry in cracking such cyphers    
-    </li>
-
-    <li>
-            - note that outlawing encryption would open up many industries to destruction by piracy, which is yet another reason a wholesale ban on encryption is doomed to failure    
-    </li>
-
-    <li>
-            - Protecting home videos--several cases of home burglaries where private x-rated tapes of stars were taken, then sold (Leslile Visser, CBS Sports)    
-    </li>
-
-    <li>
-            - these general reasons will make encryption more common, more socially and legally acceptable, and will hence make eventual attempts to limit the use of crypto anarchy methods moot    
-    </li>
-
-    <li>
-            + Digital Signatures and Authentication    
-    </li>
-
-    <li>
-            + for electronic forms of contracts and digital timestamping    
-    </li>
-
-    <li>
-            - not yet tested in the courts, though this should come soon (perhaps by 1996)    
-    </li>
-
-    <li>
-            + could be very useful for proving that transactions happened at a certain time (Tom Clancy has a situation in "Debt of Honor" in which all Wall Street central records of stock trades are wiped out in a software scheme: only the records of traders are useful, and they are worried about these being fudged to turn profits...timestamping would help immensely)    
-    </li>
-
-    <li>
-            - though certain spoofs, a la the brilliant penny scam, are still possible (register multiple trades, only reveal the profitable ones)    
-    </li>
-
-    <li>
-            - negotiations    
-    </li>
-
-    <li>
-            - AMIX, Xanadu, etc.    
-    </li>
-
-    <li>
-            + is the real protection against viruses (since all other scanning methods will increasingly fail)    
-    </li>
-
-    <li>
-            - software authors and distributors "sign" their work...no virus writer can possibly forge the digital signature    
-    </li>
-
-    <li>
-            + Proofs of identity, passwords, and operating system use    
-    </li>
-
-    <li>
-            - ZKIPS especially in networks, where the chances of seeing a password being transmitted are much greater (an obvious point that is not much discussed)    
-    </li>
-
-    <li>
-            + operating systems and databases will need more secure procedures for access, for agents and the like to pay for services, etc.    
-    </li>
-
-    <li>
-            - unforgeable tokens    
-    </li>
-
-    <li>
-            + Cyberspace will need better protection    
-    </li>
-
-    <li>
-            - to ensure spoofing and counterfeiting is reduced (recall Habitat's problems with people figuring out the loopholes)    
-    </li>
-
-    <li>
-            + if OH is also working on "world- building" at Los Alamos, he may be using evolutionary systems and abstract math to help build better and more "coherent" worlds    
-    </li>
-
-    <li>
-            - agents, demons, structures, persistent objects    
-    </li>
-
-    <li>
-            - encryption to protect these structures    
-    </li>
-
-    <li>
-            + the abstract math part of cyberspace: abstract measure spaces, topologies, distance metrics    
-    </li>
-
-    <li>
-            - may figure in to the balance between user malleabilty and rigidity of the space    
-    </li>
-
-    <li>
-            - Chaitin's AIT...he has obtained measures for these    
-    </li>
-
-    <li>
-            + Digital Contracts    
-    </li>
-
-    <li>
-            - e-mail too easily forged, faked (and lost, misplaced)    
-    </li>
-
-    <li>
-            + Anonymity    
-    </li>
-
-    <li>
-            - remailing    
-    </li>
-
-    <li>
-            - law avoidance    
-    </li>
-
-    <li>
-            - samizdats,    
-    </li>
-
-    <li>
-            - Smart cards, ATMs, etc.    
-    </li>
-
-    <li>
-            - Digital Money    
-    </li>
-
-    <li>
-            - Voting    
-    </li>
-
-    <li>
-            + Information Markets    
-    </li>
-
-    <li>
-            - data havens, espionage    
-    </li>
-
-    <li>
-            + Privacy of Purchases    
-    </li>
-
-    <li>
-            - for general principles, to prevent a surveillance society    
-    </li>
-
-    <li>
-            + specialized mailing lists    
-    </li>
-
-    <li>
-            - vendors pay to get names (Crest labels)    
-    </li>
-
-    <li>
-            - Smalltalk job offers    
-    </li>
-
-    <li>
-            - in electronic age, will be much easier to "troll" for specialized names    
-    </li>
-
-    <li>
-            - people will want to "selectively disclose" their interests (actually, some will, some won't) 6.3.4. "What may limit the use of crypto?"    
-    </li>
-
-    <li>
-            + "It's too hard to use"    
-    </li>
-
-    <li>
-            - multiple protocols (just consider how hard it is to actually send encrypted messages between people today)    
-    </li>
-
-    <li>
-            - the need to remember a password or passphrase    
-    </li>
-
-    <li>
-            + "It's too much trouble"    
-    </li>
-
-    <li>
-            - the argument being that people will not bother to use passwords    
-    </li>
-
-    <li>
-            - partly because they don't think anything will happen to them    
-    </li>
-
-    <li>
-            + "What have you got to hide?"    
-    </li>
-
-    <li>
-            - e.g.,, imagine some comments I'd have gotten at Intel had I encrypted everything    
-    </li>
-
-    <li>
-            - and governments tend to view encryption as ipso facto proof that illegalities are being committed: drugs, money laundering, tax evasion    
-    </li>
-
-    <li>
-            - recall the "forfeiture" controversy    
-    </li>
-
-    <li>
-            + Government is taking various steps to limit the use of encryption and secure communication    
-    </li>
-
-    <li>
-            - some attempts have failed (S.266), some have been shelved, and almost none have yet been tested in the courts    
-    </li>
-
-    <li>
-            - see the other sections...    
-    </li>
-
-    <li>
-            + Courts Are Falling Behind, Are Overcrowded, and Can't Deal Adequately with New Issues-Such as Encryption and Cryonics    
-    </li>
-
-    <li>
-            - which raises the issue of the "Science Court" again    
-    </li>
-
-    <li>
-            - and migration to private adjudication (regulatory arbitrage)    
-    </li>
-
-    <li>
-            - BTW, anonymous systems are essentially the ultimate merit system (in the obvious sense) and so fly in the face of the "hiring by the numbers" de facto quota systems now creeeping in to so many areas of life....there may be rules requiring all business dealings to keep track of the sex, race, and "ability group" (I'm kidding, I hope) of their employees and their consultants 6.3.5. "What are some likely future uses of crypto?"    
-    </li>
-
-    <li>
-            - Video conferencing: without crypto, or with government access, corporate meetings become public...as if a government agent was sitting in a meeting, taking notes. (There may be some who think this is a good idea, a check on corporate shenanigans. I don't. Much too high a price to pay for marginal or illusory improvements.)    
-    </li>
-
-    <li>
-            - presenting unpopular views    
-    </li>
-
-    <li>
-            + getting and giving medical treatments    
-    </li>
-
-    <li>
-            - with or without licenses from the medical union (AMA)    
-    </li>
-
-    <li>
-            - unapproved treatments    
-    </li>
-
-    <li>
-            - bootleg medical treatments    
-    </li>
-
-    <li>
-            - information markets    
-    </li>
-
-    <li>
-            + sanctuary movements, underground railroads    
-    </li>
-
-    <li>
-            - for battered wives    
-    </li>
-
-    <li>
-            - and for fathers taking back their children    
-    </li>
-
-    <li>
-            - (I'm not taking sides)    
-    </li>
-
-    <li>
-            - smuggling    
-    </li>
-
-    <li>
-            - tax evasion    
-    </li>
-
-    <li>
-            - data havens    
-    </li>
-
-    <li>
-            - bookies, betting, numbers games    
-    </li>
-
-    <li>
-            - remailers, anonymity    
-    </li>
-
-    <li>
-            - religious networks (digital confessionals)    
-    </li>
-
-    <li>
-            - digital cash, for privacy and for tax evasion    
-    </li>
-
-    <li>
-            - digital hits    
-    </li>
-
-    <li>
-            - newsgroup participation -- archiving of Netnews is commonplace, and increases in storage density make it likely that in future years one will be able to purchase disks with "Usenet, 1985-1995" and so forth (or access, search, etc. online sites) 6.3.6. "Are there illegal uses of crypto?"    
-    </li>
-
-    <li>
-            - Currently, there are no blanket laws in the U.S. about encryption.    
-    </li>
-
-    <li>
-            + There are specific situations in which encryption cannot be freely used (or the use is spelled out)    
-    </li>
-
-    <li>
-            - over the amateur radio airwave...keys must be provided    
-    </li>
-
-    <li>
-            + Carl Elllison has noted many times that cryptography has been in use for many centuries; the notion that it is a "military" technology that civilians have some how gotten ahold of is just plain false.    
-    </li>
-
-    <li>
-            - and even public key crypto was developed in a university (Stanford, then MIT)    
-    </li>
-
-    <li>
-          
-    </li>
-
-    <li>
-            6.4. Protection of Corporate and Financial Privacy 6.4.1. corporations are becoming increasingly concerned about interception of important information-or even seemingly minor information-and about hackers and other intruders    
-    </li>
-
-    <li>
-            - calls for network security enhancement    
-    </li>
-
-    <li>
-            - they are hiring "tiger teams" to beef up security    
-    </li>
-
-    <li>
-            + cellular phones    
-    </li>
-
-    <li>
-            - interceptions are common (and this is becoming publicized)    
-    </li>
-
-    <li>
-            - modifications to commercial scanners are describe in newsletters    
-    </li>
-
-    <li>
-            - something like Lotus Notes may be a main substrate for the effective introduction of crypto methods (ditto for hypertext) 6.4.2. Corporate Espionage (or "Business Research")    
-    </li>
-
-    <li>
-            + Xeroxing of documents    
-    </li>
-
-    <li>
-            - recall the way Murrray Woods inspected files of Fred Buch, suspecting he had removed the staples and Xeroxed the documents for Zilog (circa late 1977)    
-    </li>
-
-    <li>
-            - a precedent: shapes of staples    
-    </li>
-
-    <li>
-            + colors of the paper and ink...blues, for example    
-    </li>
-
-    <li>
-            - but these low-tech schemes are easy to circumvent    
-    </li>
-
-    <li>
-            + Will corporations crack down on use of modems?    
-    </li>
-
-    <li>
-            + after all, the specs of a chip or product could be mailed out of the company using the companies own networks!    
-    </li>
-
-    <li>
-            - applies to outgoing letters as well (and I've never heard ofany company inspecting to this detail, though it may happen at defense contractors)    
-    </li>
-
-    <li>
-            + and messages can still be hidden (covert channels)    
-    </li>
-
-    <li>
-            - albeit at much lower bandwidths and with more effort required (it'll stop the casual leakage of information)    
-    </li>
-
-    <li>
-            - the LSB method (though this still involves a digital storage means, e.g., a diskette, which might be restricted)    
-    </li>
-
-    <li>
-            - various other schemes: buried in word processing format (at low bandwidth)    
-    </li>
-
-    <li>
-            - subtleties such as covert channels are not even considered by corporations-too many leakage paths!    
-    </li>
-
-    <li>
-            + it seems likely that government workers with security clearances will face restrictions on their access to AMIX- like systems, or even to "private" use of conventional databases    
-    </li>
-
-    <li>
-            - at least when they use UseNet, the argument will go, they can be overseen to some extent    
-    </li>
-
-    <li>
-            + Offsite storage and access of stolen material    
-    </li>
-
-    <li>
-            + instead of storing stolen blueprints and schematics on company premises, they may be stored at a remote location    
-    </li>
-
-    <li>
-            - possiby unknown to the company, via cryptoanarchy techniques    
-    </li>
-
-    <li>
-            + "Business research" is the euphemism for corporate espionage    
-    </li>
-
-    <li>
-            - often hiring ex-DIA and CIA agents    
-    </li>
-
-    <li>
-            + American companies may step up their economic espionage once it is revealed just how extensive the spying by European and Japanese companies has been    
-    </li>
-
-    <li>
-            - Chobetsu reports to MITI    
-    </li>
-
-    <li>
-            - Mossad aids Israeli companies, e.g., Elscint. Elbit    
-    </li>
-
-    <li>
-            + Bidzos calls this "a digital Pearl Harbor" (attacks on network security)    
-    </li>
-
-    <li>
-            - would be ironic if weaknesses put into encryption gear came back to haunt us    
-    </li>
-
-    <li>
-            + corporations will want an arms length relationship with corporate spies, to protect themselves against lawsuits, criminal charges, etc.    
-    </li>
-
-    <li>
-            - third party research agencies will be used 6.4.3. Encryption to Protect Information    
-    </li>
-
-    <li>
-            - the standard reason    
-    </li>
-
-    <li>
-            + encryption of e-mail is increasing    
-    </li>
-
-    <li>
-            - the various court cases about employers reading ostensibly private e-mail will sharpen this debate (and raise the issue of employers forbidding encryption; resonances with the mostly-settled issue of reasonable use of company phones for private calls-more efficient to let some personal calls be made than to lose the time of employees going to public phones)    
-    </li>
-
-    <li>
-            + encryption of faxes will increase, too, especially as technology advances and as the dangers of interception become more apparent    
-    </li>
-
-    <li>
-            - also, tighter links between sender and receive, as opposed to the current "dial the number and hope it's the right one" approach, will encourage the additional use of encryption    
-    </li>
-
-    <li>
-            - "electronic vaulting" of large amounts of information, sent over T1 and T3 data networks, e.g., backup material for banks and large corporations    
-    </li>
-
-    <li>
-            + the miles and miles of network wiring within a corporation-LANs, WANs, Novell, Ethernet, TCP-IP, Banyan, and so on-cannot all be checked for taps...who would even have the records to know if some particular wire is going where it should? (so many undocumented hookups, lost records, ad hoc connections, etc.)    
-    </li>
-
-    <li>
-            - the solution is to have point-to-point encryption, even withing corporations (for important items, at least)    
-    </li>
-
-    <li>
-            - wireless LANs    
-    </li>
-
-    <li>
-            - encryption provides "solidity" to cyberspace, in the sense of creating walls, doors, permanent structures    
-    </li>
-
-    <li>
-            - there may even be legal requirements for better security over documents, patient files, employee records, etc. 6.4.4. U.S. willing to seize assets as they pass through U.S. (Haiti, Iraq) 6.4.5. Privacy of research    
-    </li>
-
-    <li>
-            - attacks on tobacco companies, demanding their private research documents be turned over to the FDA (because tobacco is 'fair game" for all such attacks, ...) 6.4.6. Using crypto-mediated business to bypass "deep pockets" liability suits, abuse of regulations, of the court system, etc.    
-    </li>
-
-    <li>
-            + Abuses of Lawsuits: the trend of massive judgments...several million for a woman burned when she spilled hot coffee at a MacDonald's ($160K for damages, the rest for "punitive damages")    
-    </li>
-
-    <li>
-            - billions of dollars for various jury decisions    
-    </li>
-
-    <li>
-            - "deep pockets" lawsuits are a new form of populism, of de Tocqueville's pocket-picking    
-    </li>
-
-    <li>
-            + For example, a shareware author might collect digital cash without being traceable by those who feel wronged    
-    </li>
-
-    <li>
-            - Is this "right"? Well , what does the contract say? If the customer bought or used the product knowing that the author/seller was untraceable, and that no additional warranties or guarantees were given, what fraud was committed?    
-    </li>
-
-    <li>
-            + crypto can, with some costs, take interactions out of the reach of courts    
-    </li>
-
-    <li>
-            - replacing the courts with PPL-style private-produced justice 6.4.7. on anonymous communication and corporations    
-    </li>
-
-    <li>
-            - Most corporations will avoid anonymous communications, fearing the repercussions, the illegality (vis-a-vis antitrust law), and the "unwholesomeness" of it    
-    </li>
-
-    <li>
-            + Some may use it to access competitor intelligence, offshore data havens, etc.    
-    </li>
-
-    <li>
-            - Even here, probably through "arm's length" relationships with outside consultants, analogous to the cutouts used by the CIA and whatnot to insulate themselves from charges    
-    </li>
-
-    <li>
-            - Boldest of all will be the "crypto-zaibatsu" that use strong crypto of the crypto anarchy flavor to arrange collusive deals, to remove competitors via force, and to generally pursue the "darker side ofthe force," to coin a phrase.    
-    </li>
-
-    <li>
-          
-    </li>
-
-    <li>
-            6.5. Digital Signatures 6.5.1. for electronic forms of contracts    
-    </li>
-
-    <li>
-            - not yet tested in the courts, though this should come soon (perhaps by 1996) 6.5.2. negotiations 6.5.3. AMIX, Xanadu, etc. 6.5.4. is the real protection against viruses (since all other scanning methods will increasingly fail)    
-    </li>
-
-    <li>
-            - software authors and distributors "sign" their work...no virus writer can possibly forge the digital signature    
-    </li>
-
-    <li>
-          
-    </li>
-
-    <li>
-            6.6. Political Uses of Crypto 6.6.1. Dissidents, Amnesty International    
-    </li>
-
-    <li>
-            - Most governments want to know what their subjects are saying...    
-    </li>
-
-    <li>
-            - Strong crypto (including steganography to hide the existence of the communications) is needed    
-    </li>
-
-    <li>
-            - Myanmar (Burma) dissidents are known to be using PGP 6.6.2. reports that rebels in Chiapas (Mexico, Zapatistas) are on the Net, presumably using PGP    
-    </li>
-
-    <li>
-            - (if NSA can really crack PGP, this is probably a prime target for sharing with the Mexican government) 6.6.3. Free speech has declined in America--crypto provides an antidote    
-    </li>
-
-    <li>
-            - people are sued for expressing opinions, books are banned ("Loompanics Press" facing investigations, because some children ordered some books)    
-    </li>
-
-    <li>
-            + SLAPP suits (Strategic Lawsuiits Against Public Participation), designed to scare off differing opinions by threatening legal ruination in the courts    
-    </li>
-
-    <li>
-            - some judges have found for the defendants and ordered the SLAPPers to pay damages themselves, but this is still a speech-chilling trend    
-    </li>
-
-    <li>
-            - crypto untraceability is good immunity to this trend, and is thus *real* free speech    
-    </li>
-
-    <li>
-          
-    </li>
-
-    <li>
-            6.7. Beyond Good and Evil, or, Why Crypto is Needed 6.7.1. "Why is cryptography good? Why is anonymity good?"    
-    </li>
-
-    <li>
-            - These moral questions pop up on the List once in a while, often asked by someone preparing to write a paper for a class on ethics or whatnot. Most of us on the list probably think the answers are clearly "yes," but many in the public may not think so. The old dichotomy between "None of your damned business" and "What have you got to hide?"    
-    </li>
-
-    <li>
-            - "Is it good that people can write diaried unread by others?" "Is it good that people can talk to each other without law enforcement knowing what they're saying?" "Is it good that people can lock their doors and hide from outsiders?" These are all essentially equivalent to the questions above.    
-    </li>
-
-    <li>
-            - Anonymity may not be either good or not good, but the _outlawing_ of anonymity would require a police state to enforce, would impinge on basic ideas about private transactions, and would foreclose many options that some degree of anonymity makes possible.    
-    </li>
-
-    <li>
-            - "People should not be anonymous" is a normative statement that is impractical to enforce. 6.7.2. Speaking of the isolation from physical threats and pressures that cyberspace provides, Eric Hughes writes: "One of the whole points of anonymity and pseudonymity is to create immunity from these threats, which are all based upon the human body and its physical surroundings.What is the point of a system of anonymity which can be pierced when something "bad" happens?These systems do not reject the regime of violence; rather, they merely mitigate it slightly further and make their morality a bit more explicit.....I desire systems which do not require violence for their existence and stability.I desire anonymity as an ally to break the hold of morality over culture." [Eric Hughes, 1994-08-31] 6.7.3. Crypto anarchy means prosperity for those who can grab it, those competent enough to have something of value to offer for sale; the clueless 95% will suffer, but that is only just. With crypto anarchy we can painlessly, without initiation of aggression, dispose of the nonproductive, the halt and the lame. (Charity is always possible, but I suspect even the liberal do-gooders will throw up their hands at the prospect of a nation of mostly unskilled and essentially illiterate and innumerate workers being unable to get meaninful, well-paying jobs.) 6.7.4. Crypto gets more important as communication increases and as computing gets distributed    
-    </li>
-
-    <li>
-            + with bits and pieces of one's environment scattered around    
-    </li>
-
-    <li>
-            - have to worry about security    
-    </li>
-
-    <li>
-            - others have to also protect their own products, and yet still provide/sell access    
-    </li>
-
-    <li>
-            - private spaces needed in disparate locations...multinationals, teleconferencing, video    
-    </li>
-
-    <li>
-          
-    </li>
-
-    <li>
-            6.8. Crypo Needed for Operating Systems and Networks 6.8.1. Restrictions on cryptography--difficult as they may be to enforce--may also impose severe hardships on secure operating system design, Norm Hardy has made this point several times.    
-    </li>
-
-    <li>
-            - Agents and objects inside computer systems will likely need security, credentials, robustness, and even digital money for transactions. 6.8.2. Proofs of identity, passwords, and operating system use    
-    </li>
-
-    <li>
-            - ZKIPS especially in networks, where the chances of seeing a password being transmitted are much greater (an obvious point that is not much discussed)    
-    </li>
-
-    <li>
-            + operating systems and databases will need more secure procedures for access, for agents and the like to pay for services, etc.    
-    </li>
-
-    <li>
-            - unforgeable tokens 6.8.3. An often unmentioned reason why encyption is needed is for the creation of private, or virtual, networks    
-    </li>
-
-    <li>
-            - so that channels are independent of the "common carrier"    
-    </li>
-
-    <li>
-            + to make this clear: prospects are dangerously high for a consolidation under government control of networks    
-    </li>
-
-    <li>
-            - in parallel with roads    
-    </li>
-
-    <li>
-            + and like roads, may insist on equivalent of licenses    
-    </li>
-
-    <li>
-            - is-a-person    
-    </li>
-
-    <li>
-            - bans on encryption    
-    </li>
-
-    <li>
-            - The Nightmare Scenario: "We own the networks, we won't let anyone install new networks without our approval, and we will make the laws about what gets carried, what encryption can be used, and how taxes will be collected."    
-    </li>
-
-    <li>
-            - Fortunately, I doubt this is enforceable...too many ways to create virtual networks...satellites like Iridium, fiber optics, ways to hide crypto or bury it in other traffic    
-    </li>
-
-    <li>
-            + cyberspace walls...    
-    </li>
-
-    <li>
-            + more than just crypto: physical security is needed (and for much the same reason no "digital coin" exists)    
-    </li>
-
-    <li>
-            - processes running on controlled-accesss machines (as with remailers)    
-    </li>
-
-    <li>
-            - access by crypto    
-    </li>
-
-    <li>
-            + a web of mutually suspicious machines may be sufficient    
-    </li>
-
-    <li>
-            - robust cyberspaces built with DC-Net ("dining cryptographers") methods?    
-    </li>
-
-    <li>
-          
-    </li>
-
-    <li>
-            6.9. Ominous Trends 6.9.1. Ever-increasing numbers of laws, complexities of tax codes, etc.    
-    </li>
-
-    <li>
-            - individuals no longer can navigate 6.9.2. National ID cards    
-    </li>
-
-    <li>
-            - work permits, immigration concerns, welfare fraud, stopping terrorists, collecting taxes    
-    </li>
-
-    <li>
-            - USPS and other proposals 6.9.3. Key Escrow 6.9.4. Extension of U.S. law around the world    
-    </li>
-
-    <li>
-            - Now that the U.S. has vanquished the U.S.S.R., a free field ahead of it for spreading the New World Order, led of course by the U.S.A. and its politicians.    
-    </li>
-
-    <li>
-            - treaties, international agreements    
-    </li>
-
-    <li>
-            - economic hegemony    
-    </li>
-
-    <li>
-            - U.N. mandates, forces, "blue helmets" 6.9.5. AA BBS case means cyberspace is not what we though it was    
-    </li>
-
-    <li>
-          
-    </li>
-
-    <li>
+    <h4>
+            6.2. SUMMARY: The Need For Strong Crypto 
+    </h4>
+    <ul>
+        <h5>
+                6.2.1. Main Points    
+        </h5>
+        <ul>
+            <li>
+                    - Strong crypto reclaims the power to decide for one's self, to deny the "Censor" the power to choose what one reads, watches, or listens to. 
+            </li>
+        </ul>
+
+        <h5>
+                6.2.2. Connections to Other Sections 
+        </h5>
+
+        <h5>
+                6.2.3. Where to Find Additional Information 
+        </h5>
+
+        <h5>
+                6.2.4. Miscellaneous Comments    
+        </h5>
+        <ul>
+            <li>
+                    - this section is short, but is less focussed than other sections; it is essentially a "transition" chapter.    
+            </li>
+        </ul>
+    </ul>
+
+    <h4>
+            6.3. General Uses of and Reasons for Crypto 
+    </h4>
+    <ul>
+        <h5>
+                6.3.1. (see also the extensive listing of "Reasons for Anonymity," which makes many points about the need and uses for strong crypto) 
+        </h5>
+
+        <h5>
+                6.3.2. "Where is public key crypto really needed?"    
+        </h5>
+        <ul>
+            <li>
+                    - "It is the case that there is relatively little need for asymmetric key cryptography in small closed populations. For example, the banks get along quite well without.The advantage of public key is that it permits private communication in a large and open population and with a minimum of prearrangement." [WHMurray, sci.crypt, 1994-08- 25]    
+            </li>
+
+            <li>
+                    - That is, symmetric key systems (such as conventional ciphers, one time pads, etc.) work reasonably well by prearrangement between parties. And of course one time pads have the additional advantage of being information- theoretically secure. But asymmetric or public key methods are incredibly useful when: the parties have not met before, when key material has not been exchanged, and when concerns exist about storing the key material. The so- called "key management problem" when N people want to communicate pairwise with each other is well-founded.    
+            </li>
+
+            <li>
+                    - And of course public key crypto makes possible all the other useful stuff like digital money, DC-Nets, zero knowledge proofs, secret sharing, etc. 
+            </li>
+        </ul>
+
+        <h5>
+                6.3.3. "What are the main reasons to use cryptography?"    
+        </h5>
+        <ul>
+            <li>
+                    - people encrypt for the same reason they close and lock their doors    
+            </li>
+
+            <li>
+                    + Privacy in its most basic forms    
+            </li>
+            <ul>
+                <li>
+                        - text -- records, diaries, letters, e-mail    
+                </li>
+
+                <li>
+                        - sound -- phone conversations    
+                </li>
+
+                <li>
+                        - other --video    
+                </li>
+
+                <li>
+                        + phones, intercepts, cellular, wireless, car phones, scanners    
+                </li>
+                <ul>
+                    <li>
+                            + making listening illegal is useless (and wrong-headed)    
+                    </li>
+                    <ul>
+                        <li>
+                                - and authorites are exempt from such laws    
+                        </li>
+                    </ul>
+                </ul>
+
+                <li>
+                        - people need to protect, end to end    
+                </li>
+
+                <li>
+                        + "How should I protect my personal files, and my phone calls?"    
+                </li>
+                <ul>
+                    <li>
+                            - Personally, I don't worry too much. But many people do. Encryption tools are widely available.    
+                    </li>
+
+                    <li>
+                            - Cellular telephones are notoriously insecure, as are cordless phones (even less secure). There are laws about monitoring, small comfort as that may be. (And I'm largely opposed to such laws, for libertarian reasons and because it creates a false sense of security.)    
+                    </li>
+
+                    <li>
+                            - Laptops are probably less vulnerable to Van Eck types of RF monitoring than are CRTs. The trend to lower power, LCDs, etc., all works toward decreasing vulnerability. (However, computer power for extracting weak signals out of noise is increasing faster than RF are decreasing....tradeoffs are unclear.)    
+                    </li>
+                </ul>
+            </ul>
+
+            <li>
+                    + encrypting messages because mail delivery is so flaky    
+            </li>
+            <ul>
+                <li>
+                        - that is, mail is misdelivered,via hosts incorrectly processing the addresses    
+                </li>
+
+                <li>
+                        - encryption obviously prevents misunderstandings (though it does little to get the mail delivered correctly)    
+                </li>
+            </ul>
+
+            <li>
+                    + Encryption to Protect Information    
+            </li>
+            <ul>
+                <li>
+                        - the standard reason    
+                </li>
+
+                <li>
+                        + encryption of e-mail is increasing    
+                </li>
+                <ul>
+                    <li>
+                            - the various court cases about employers reading ostensibly private e-mail will sharpen this debate (and raise the issue of employers forbidding encryption; resonances with the mostly-settled issue of reasonable use of company phones for private calls-more efficient to let some personal calls be made than to lose the time of employees going to public phones)    
+                    </li>
+                </ul>
+                <li>
+                        + encryption of faxes will increase, too, especially as technology advances and as the dangers of interception become more apparent    
+                </li>
+                <ul>
+                    <li>
+                            - also, tighter links between sender and receive, as opposed to the current "dial the number and hope it's the right one" approach, will encourage the additional use of encryption    
+                    </li>
+                </ul>
+
+                <li>
+                        - "electronic vaulting" of large amounts of information, sent over T1 and T3 data networks, e.g., backup material for banks and large corporations    
+                </li>
+
+                <li>
+                        + the miles and miles of network wiring within a corporation-LANs, WANs, Novell, Ethernet, TCP-IP, Banyan, and so on-cannot all be checked for taps...who would even have the records to know if some particular wire is going where it should? (so many undocumented hookups, lost records, ad hoc connections, etc.)    
+                </li>
+                <ul>
+                    <li>
+                            - the solution is to have point-to-point encryption, even withing corporations (for important items, at least)    
+                    </li>
+                </ul>
+
+                <li>
+                        - wireless LANs    
+                </li>
+
+                <li>
+                        + corporations are becoming increasingly concerned about interception of important information-or even seemingly minor information-and about hackers and other intruders    
+                </li>
+                <ul>
+                    <li>
+                            - calls for network security enhancement    
+                    </li>
+
+                    <li>
+                            - they are hiring "tiger teams" to beef up security    
+                    </li>
+
+                    <li>
+                            + cellular phones    
+                    </li>
+                    <ul>
+                        <li>
+                                - interceptions are common (and this is becoming publicized)    
+                        </li>
+
+                        <li>
+                                - modifications to commercial scanners are describe in newsletters    
+                        </li>
+                    </ul>
+                    <li>
+                            - something like Lotus Notes may be a main substrate for the effective introduction of crypto methods (ditto for hypertext)    
+                    </li>
+                </ul>
+
+                <li>
+                        - encryption provides "solidity" to cyberspace, in the sense of creating walls, doors, permanent structures    
+                </li>
+
+                <li>
+                        - there may even be legal requirements for better security over documents, patient files, employee records, etc.    
+                </li>
+
+                <li>
+                        + Encryption of Video Signals and Encryption to Control Piracy    
+                </li>
+                <ul>
+                    <li>
+                            - this is of course a whole technology and industry    
+                    </li>
+
+                    <li>
+                            - Videocypher II has been cracked by many video hackers    
+                    </li>
+
+                    <li>
+                            - a whole cottage industry in cracking such cyphers    
+                    </li>
+
+                    <li>
+                            - note that outlawing encryption would open up many industries to destruction by piracy, which is yet another reason a wholesale ban on encryption is doomed to failure    
+                    </li>
+                </ul>
+                <li>
+                        - Protecting home videos--several cases of home burglaries where private x-rated tapes of stars were taken, then sold (Lesley Visser, CBS Sports)    
+                </li>
+            </ul>
+            <li>
+                    - these general reasons will make encryption more common, more socially and legally acceptable, and will hence make eventual attempts to limit the use of crypto anarchy methods moot    
+            </li>
+
+            <li>
+                    + Digital Signatures and Authentication    
+            </li>
+            <ul>
+                <li>
+                        + for electronic forms of contracts and digital timestamping    
+                </li>
+                <ul>
+                    <li>
+                            - not yet tested in the courts, though this should come soon (perhaps by 1996)    
+                    </li>
+
+                    <li>
+                            + could be very useful for proving that transactions happened at a certain time (Tom Clancy has a situation in "Debt of Honor" in which all Wall Street central records of stock trades are wiped out in a software scheme: only the records of traders are useful, and they are worried about these being fudged to turn profits...timestamping would help immensely)    
+                    </li>
+                    <ul>
+                        <li>
+                                - though certain spoofs, a la the brilliant penny scam, are still possible (register multiple trades, only reveal the profitable ones)    
+                        </li>
+                    </ul>
+                </ul>
+
+                <li>
+                        - negotiations    
+                </li>
+
+                <li>
+                        - AMIX, Xanadu, etc.    
+                </li>
+
+                <li>
+                        + is the real protection against viruses (since all other scanning methods will increasingly fail)    
+                </li>
+                <ul>
+                    <li>
+                            - software authors and distributors "sign" their work...no virus writer can possibly forge the digital signature    
+                    </li>
+                </ul>
+            </ul>
+
+            <li>
+                    + Proofs of identity, passwords, and operating system use    
+            </li>
+            <ul>
+                <li>
+                        - ZKIPS especially in networks, where the chances of seeing a password being transmitted are much greater (an obvious point that is not much discussed)    
+                </li>
+
+                <li>
+                        + operating systems and databases will need more secure procedures for access, for agents and the like to pay for services, etc.    
+                </li>
+                <ul>
+                    <li>
+                            - unforgeable tokens    
+                    </li>
+                </ul>
+
+                <li>
+                        + Cyberspace will need better protection    
+                </li>
+                <ul>
+                    <li>
+                            - to ensure spoofing and counterfeiting is reduced (recall Habitat's problems with people figuring out the loopholes)    
+                    </li>
+
+                    <li>
+                            + if OH is also working on "world- building" at Los Alamos, he may be using evolutionary systems and abstract math to help build better and more "coherent" worlds    
+                    </li>
+                    <ul>
+                        <li>
+                                - agents, demons, structures, persistent objects    
+                        </li>
+
+                        <li>
+                                - encryption to protect these structures    
+                        </li>
+
+                        <li>
+                                + the abstract math part of cyberspace: abstract measure spaces, topologies, distance metrics    
+                        </li>
+                        <ul>
+                            <li>
+                                    - may figure in to the balance between user malleabilty and rigidity of the space    
+                            </li>
+                        </ul>
+                        <li>
+                                - Chaitin's AIT...he has obtained measures for these    
+                        </li>
+                    </ul>
+                </ul>
+            </ul>
+
+            <li>
+                    + Digital Contracts    
+            </li>
+            <ul>
+                <li>
+                        - e-mail too easily forged, faked (and lost, misplaced)    
+                </li>
+
+                <li>
+                        + Anonymity    
+                </li>
+                <ul>
+                    <li>
+                            - remailing    
+                    </li>
+
+                    <li>
+                            - law avoidance    
+                    </li>
+
+                    <li>
+                            - samizdats,    
+                    </li>
+                </ul>
+            </ul>
+
+            <li>
+                    - Smart cards, ATMs, etc.    
+            </li>
+
+            <li>
+                    - Digital Money    
+            </li>
+
+            <li>
+                    - Voting    
+            </li>
+
+            <li>
+                    + Information Markets    
+            </li>
+            <ul>
+                <li>
+                        - data havens, espionage    
+                </li>
+            </ul>
+
+            <li>
+                    + Privacy of Purchases    
+            </li>
+            <ul>
+                <li>
+                        - for general principles, to prevent a surveillance society    
+                </li>
+
+                <li>
+                        + specialized mailing lists    
+                </li>
+                <ul>
+                    <li>
+                            - vendors pay to get names (Crest labels)    
+                    </li>
+
+                    <li>
+                            - Smalltalk job offers    
+                    </li>
+
+                    <li>
+                            - in electronic age, will be much easier to "troll" for specialized names    
+                    </li>
+
+                    <li>
+                            - people will want to "selectively disclose" their interests (actually, some will, some won't) 
+                    </li>
+                </ul>
+            </ul>
+        </ul>
+
+        <h5>
+                6.3.4. "What may limit the use of crypto?"    
+        </h5>
+        <ul>
+            <li>
+                    + "It's too hard to use"    
+            </li>
+            <ul>
+                <li>
+                        - multiple protocols (just consider how hard it is to actually send encrypted messages between people today)    
+                </li>
+
+                <li>
+                        - the need to remember a password or passphrase    
+                </li>
+
+                <li>
+                        + "It's too much trouble"    
+                </li>
+                <ul>
+                    <li>
+                            - the argument being that people will not bother to use passwords    
+                    </li>
+
+                    <li>
+                            - partly because they don't think anything will happen to them    
+                    </li>
+                </ul>
+            </ul>
+
+            <li>
+                    + "What have you got to hide?"    
+            </li>
+            <ul>
+                <li>
+                        - e.g.,, imagine some comments I'd have gotten at Intel had I encrypted everything    
+                </li>
+
+                <li>
+                        - and governments tend to view encryption as ipso facto proof that illegalities are being committed: drugs, money laundering, tax evasion    
+                </li>
+
+                <li>
+                        - recall the "forfeiture" controversy    
+                </li>
+            </ul>
+
+            <li>
+                    + Government is taking various steps to limit the use of encryption and secure communication    
+            </li>
+            <ul>
+                <li>
+                        - some attempts have failed (S.266), some have been shelved, and almost none have yet been tested in the courts    
+                </li>
+
+                <li>
+                        - see the other sections...    
+                </li>
+            </ul>
+
+            <li>
+                    + Courts Are Falling Behind, Are Overcrowded, and Can't Deal Adequately with New Issues-Such as Encryption and Cryonics    
+            </li>
+            <ul>
+                <li>
+                        - which raises the issue of the "Science Court" again    
+                </li>
+
+                <li>
+                        - and migration to private adjudication (regulatory arbitrage)    
+                </li>
+            </ul>
+            <li>
+                    - BTW, anonymous systems are essentially the ultimate merit system (in the obvious sense) and so fly in the face of the "hiring by the numbers" de facto quota systems now creeeping in to so many areas of life....there may be rules requiring all business dealings to keep track of the sex, race, and "ability group" (I'm kidding, I hope) of their employees and their consultants 
+            </li>
+        </ul>
+
+        <h5>
+                6.3.5. "What are some likely future uses of crypto?"    
+        </h5>
+        <ul>
+            <li>
+                    - Video conferencing: without crypto, or with government access, corporate meetings become public...as if a government agent was sitting in a meeting, taking notes. (There may be some who think this is a good idea, a check on corporate shenanigans. I don't. Much too high a price to pay for marginal or illusory improvements.)    
+            </li>
+
+            <li>
+                    - presenting unpopular views    
+            </li>
+
+            <li>
+                    + getting and giving medical treatments    
+            </li>
+            <ul>
+                <li>
+                        - with or without licenses from the medical union (AMA)    
+                </li>
+
+                <li>
+                        - unapproved treatments    
+                </li>
+            </ul>
+            <li>
+                    - bootleg medical treatments    
+            </li>
+
+            <li>
+                    - information markets    
+            </li>
+
+            <li>
+                    + sanctuary movements, underground railroads    
+            </li>
+            <ul>
+                <li>
+                        - for battered wives    
+                </li>
+
+                <li>
+                        - and for fathers taking back their children    
+                </li>
+
+                <li>
+                        - (I'm not taking sides)    
+                </li>
+            </ul>
+            <li>    
+                    - smuggling    
+            </li>
+
+            <li>
+                    - tax evasion    
+            </li>
+
+            <li>
+                    - data havens    
+            </li>
+
+            <li>
+                    - bookies, betting, numbers games    
+            </li>
+
+            <li>
+                    - remailers, anonymity    
+            </li>
+
+            <li>
+                    - religious networks (digital confessionals)    
+            </li>
+
+            <li>
+                    - digital cash, for privacy and for tax evasion    
+            </li>
+
+            <li>
+                    - digital hits    
+            </li>
+
+            <li>
+                    - newsgroup participation -- archiving of Netnews is commonplace, and increases in storage density make it likely that in future years one will be able to purchase disks with "Usenet, 1985-1995" and so forth (or access, search, etc. online sites) 
+            </li>
+        </ul>
+
+
+        <h5>
+                6.3.6. "Are there illegal uses of crypto?"    
+        </h5>
+        <ul>
+            <li>
+                    - Currently, there are no blanket laws in the U.S. about encryption.    
+            </li>
+
+            <li>
+                    + There are specific situations in which encryption cannot be freely used (or the use is spelled out)    
+            </li>
+            <ul>
+                <li>
+                        - over the amateur radio airwave...keys must be provided    
+                </li>
+            </ul>
+
+            <li>
+                    + Carl Elllison has noted many times that cryptography has been in use for many centuries; the notion that it is a "military" technology that civilians have some how gotten ahold of is just plain false.    
+            </li>
+            <ul>
+                <li>
+                        - and even public key crypto was developed in a university (Stanford, then MIT)    
+                </li>
+            </ul>
+        </ul>
+    </ul>
+
+    <h4>
+            6.4. Protection of Corporate and Financial Privacy
+    </h4>
+    <ul>
+        <h5>
+                6.4.1. corporations are becoming increasingly concerned about interception of important information-or even seemingly minor information-and about hackers and other intruders    
+        </h5>
+        <ul>
+            <li>
+                    - calls for network security enhancement    
+            </li>
+
+            <li>
+                    - they are hiring "tiger teams" to beef up security    
+            </li>
+
+            <li>
+                    + cellular phones    
+            </li>
+            <ul>
+                <li>
+                        - interceptions are common (and this is becoming publicized)    
+                </li>
+
+                <li>
+                        - modifications to commercial scanners are describe in newsletters    
+                </li>
+            </ul>
+            <li>
+                    - something like Lotus Notes may be a main substrate for the effective introduction of crypto methods (ditto for hypertext) 
+            </li>
+        </ul>
+
+        <h5>
+                6.4.2. Corporate Espionage (or "Business Research")    
+        </h5>
+        <ul>
+            <li>
+                    + Xeroxing of documents    
+            </li>
+            <ul>
+                <li>
+                        - recall the way Murrray Woods inspected files of Fred Buch, suspecting he had removed the staples and Xeroxed the documents for Zilog (circa late 1977)    
+                </li>
+
+                <li>
+                        - a precedent: shapes of staples    
+                </li>
+
+                <li>
+                        + colors of the paper and ink...blues, for example    
+                </li>
+                <ul>
+                    <li>
+                            - but these low-tech schemes are easy to circumvent    
+                    </li>
+                </ul>
+            </ul>
+
+            <li>
+                    + Will corporations crack down on use of modems?    
+            </li>
+            <ul>
+                <li>
+                        + after all, the specs of a chip or product could be mailed out of the company using the companies own networks!    
+                </li>
+                <ul>
+                    <li>
+                            - applies to outgoing letters as well (and I've never heard of any company inspecting to this detail, though it may happen at defense contractors)    
+                    </li>
+                </ul>
+                <li>
+                        + and messages can still be hidden (covert channels)    
+                </li>
+                <ul>
+                    <li>
+                            - albeit at much lower bandwidths and with more effort required (it'll stop the casual leakage of information)    
+                    </li>
+
+                    <li>
+                            - the LSB method (though this still involves a digital storage means, e.g., a diskette, which might be restricted)    
+                    </li>
+
+                    <li>
+                            - various other schemes: buried in word processing format (at low bandwidth)    
+                    </li>
+
+                    <li>
+                            - subtleties such as covert channels are not even considered by corporations-too many leakage paths!    
+                    </li>
+                </ul>
+                <li>
+                        + it seems likely that government workers with security clearances will face restrictions on their access to AMIX- like systems, or even to "private" use of conventional databases    
+                </li>
+                <ul>
+                    <li>
+                            - at least when they use UseNet, the argument will go, they can be overseen to some extent    
+                    </li>
+                </ul>
+            </ul>
+
+            <li>
+                    + Offsite storage and access of stolen material    
+            </li>
+            <ul>
+                <li>
+                        + instead of storing stolen blueprints and schematics on company premises, they may be stored at a remote location    
+                </li>
+                <ul>
+                    <li>
+                            - possiby unknown to the company, via cryptoanarchy techniques    
+                    </li>
+                </ul>
+            </ul>
+
+            <li>
+                    + "Business research" is the euphemism for corporate espionage    
+            </li>
+            <ul>
+                <li>
+                        - often hiring ex-DIA and CIA agents    
+                </li>
+            </ul>
+
+            <li>
+                    + American companies may step up their economic espionage once it is revealed just how extensive the spying by European and Japanese companies has been    
+            </li>
+            <ul>
+                <li>
+                        - Chobetsu reports to MITI    
+                </li>
+
+                <li>
+                        - Mossad aids Israeli companies, e.g., Elscint. Elbit    
+                </li>
+            </ul>
+
+            <li>
+                    + Bidzos calls this "a digital Pearl Harbor" (attacks on network security)    
+            </li>
+            <ul>
+                <li>
+                        - would be ironic if weaknesses put into encryption gear came back to haunt us    
+                </li>
+            </ul>
+
+            <li>
+                    + corporations will want an arms length relationship with corporate spies, to protect themselves against lawsuits, criminal charges, etc.    
+            </li>
+            <ul>
+                <li>
+                        - third party research agencies will be used 
+                </li>
+            </ul>
+        </ul>
+
+        <h5>
+                6.4.3. Encryption to Protect Information    
+        </h5>
+        <ul>
+            <li>
+                    - the standard reason    
+            </li>
+
+            <li>
+                    + encryption of e-mail is increasing    
+            </li>
+            <ul>
+                <li>
+                        - the various court cases about employers reading ostensibly private e-mail will sharpen this debate (and raise the issue of employers forbidding encryption; resonances with the mostly-settled issue of reasonable use of company phones for private calls-more efficient to let some personal calls be made than to lose the time of employees going to public phones)    
+                </li>
+            </ul>
+            <li>
+                    + encryption of faxes will increase, too, especially as technology advances and as the dangers of interception become more apparent    
+            </li>
+            <ul>
+                <li>
+                        - also, tighter links between sender and receive, as opposed to the current "dial the number and hope it's the right one" approach, will encourage the additional use of encryption    
+                </li>
+            </ul>
+            <li>
+                    - "electronic vaulting" of large amounts of information, sent over T1 and T3 data networks, e.g., backup material for banks and large corporations    
+            </li>
+
+            <li>
+                    + the miles and miles of network wiring within a corporation-LANs, WANs, Novell, Ethernet, TCP-IP, Banyan, and so on-cannot all be checked for taps...who would even have the records to know if some particular wire is going where it should? (so many undocumented hookups, lost records, ad hoc connections, etc.)    
+            </li>
+            <ul>
+                <li>
+                        - the solution is to have point-to-point encryption, even withing corporations (for important items, at least)    
+                </li>
+            </ul>
+
+            <li>
+                    - wireless LANs    
+            </li>
+
+            <li>
+                    - encryption provides "solidity" to cyberspace, in the sense of creating walls, doors, permanent structures    
+            </li>
+
+            <li>
+                    - there may even be legal requirements for better security over documents, patient files, employee records, etc. 
+            </li>
+        </ul>
+
+        <h5>
+                6.4.4. U.S. willing to seize assets as they pass through U.S. (Haiti, Iraq) 
+        </h5>
+
+        <h5>
+                6.4.5. Privacy of research    
+        </h5>
+        <ul>
+            <li>
+                    - attacks on tobacco companies, demanding their private research documents be turned over to the FDA (because tobacco is 'fair game" for all such attacks, ...) 
+            </li>
+        </ul>
+
+        <h5>
+            6.4.6. Using crypto-mediated business to bypass "deep pockets" liability suits, abuse of regulations, of the court system, etc.    
+        </h5>
+
+        <ul>
+            <li>
+                    + Abuses of Lawsuits: the trend of massive judgments...several million for a woman burned when she spilled hot coffee at a MacDonald's ($160K for damages, the rest for "punitive damages")    
+            </li>
+            <ul>
+                <li>
+                        - billions of dollars for various jury decisions    
+                </li>
+
+                <li>
+                        - "deep pockets" lawsuits are a new form of populism, of de Tocqueville's pocket-picking    
+                </li>
+            <ul>
+
+            <li>
+                    + For example, a shareware author might collect digital cash without being traceable by those who feel wronged    
+            </li>
+            <ul>
+                <li>
+                        - Is this "right"? Well , what does the contract say? If the customer bought or used the product knowing that the author/seller was untraceable, and that no additional warranties or guarantees were given, what fraud was committed?    
+                </li>
+            </ul>
+
+            <li>
+                    + crypto can, with some costs, take interactions out of the reach of courts    
+            </li>
+            <ul>
+                <li>
+                        - replacing the courts with PPL-style private-produced justice 
+                </li>
+            </ul>
+        </ul>
+
+        <h5>
+                6.4.7. on anonymous communication and corporations    
+        </h5>
+        <ul>
+            <li>
+                    - Most corporations will avoid anonymous communications, fearing the repercussions, the illegality (vis-a-vis antitrust law), and the "unwholesomeness" of it    
+            </li>
+
+            <li>
+                    + Some may use it to access competitor intelligence, offshore data havens, etc.    
+            </li>
+            <ul>
+                <li>
+                        - Even here, probably through "arm's length" relationships with outside consultants, analogous to the cutouts used by the CIA and whatnot to insulate themselves from charges    
+                </li>
+            </ul>
+            <li>
+                    - Boldest of all will be the "crypto-zaibatsu" that use strong crypto of the crypto anarchy flavor to arrange collusive deals, to remove competitors via force, and to generally pursue the "darker side ofthe force," to coin a phrase.    
+            </li>
+        </ul>
+    </ul>
+
+    <h4>
+            6.5. Digital Signatures 
+    </h4>
+
+    <ul>
+
+        <h5>
+                6.5.1. for electronic forms of contracts    
+        </h5>
+        <ul>
+            <li>
+                    - not yet tested in the courts, though this should come soon (perhaps by 1996) 
+            </li>
+        </ul>
+
+        <h5>
+                6.5.2. negotiations 6.5.3. AMIX, Xanadu, etc. 
+        </h5>
+
+        <h5>
+                6.5.4. is the real protection against viruses (since all other scanning methods will increasingly fail)
+        </h5> 
+        <ul>
+            <li>
+                    - software authors and distributors "sign" their work...no virus writer can possibly forge the digital signature    
+            </li>
+        </ul>
+    </ul>
+
+
+    <h4>
+            6.6. Political Uses of Crypto 
+    </h4>
+    <ul>
+        <h5>
+                6.6.1. Dissidents, Amnesty International    
+        </h5>
+
+        <ul>
+            <li>
+                    - Most governments want to know what their subjects are saying...    
+            </li>
+
+            <li>
+                    - Strong crypto (including steganography to hide the existence of the communications) is needed    
+            </li>
+
+            <li>
+                    - Myanmar (Burma) dissidents are known to be using PGP 
+            </li>
+        </ul>
+
+        <h5>
+                6.6.2. reports that rebels in Chiapas (Mexico, Zapatistas) are on the Net, presumably using PGP    
+        </h5>
+        <ul>
+            <li>
+                    - (if NSA can really crack PGP, this is probably a prime target for sharing with the Mexican government) 
+            </li>
+        </ul>
+
+        <h5>
+                6.6.3. Free speech has declined in America--crypto provides an antidote    
+        </h5>
+        <ul>
+            <li>
+                    - people are sued for expressing opinions, books are banned ("Loompanics Press" facing investigations, because some children ordered some books)    
+            </li>
+
+            <li>
+                    + SLAPP suits (Strategic Lawsuiits Against Public Participation), designed to scare off differing opinions by threatening legal ruination in the courts    
+            </li>
+            <ul>
+                <li>
+                        - some judges have found for the defendants and ordered the SLAPPers to pay damages themselves, but this is still a speech-chilling trend    
+                </li>
+            </ul>
+            <li>
+                    - crypto untraceability is good immunity to this trend, and is thus *real* free speech    
+            </li>
+        </ul>
+    </ul>
+
+    <h4>
+            6.7. Beyond Good and Evil, or, Why Crypto is Needed 
+    </h4>
+
+    <ul>
+        <h5>
+                6.7.1. "Why is cryptography good? Why is anonymity good?"    
+        </h5>
+        <ul>
+            <li>
+                    - These moral questions pop up on the List once in a while, often asked by someone preparing to write a paper for a class on ethics or whatnot. Most of us on the list probably think the answers are clearly "yes," but many in the public may not think so. The old dichotomy between "None of your damned business" and "What have you got to hide?"    
+            </li>
+
+            <li>
+                    - "Is it good that people can write diaried unread by others?" "Is it good that people can talk to each other without law enforcement knowing what they're saying?" "Is it good that people can lock their doors and hide from outsiders?" These are all essentially equivalent to the questions above.    
+            </li>
+
+            <li>
+                    - Anonymity may not be either good or not good, but the _outlawing_ of anonymity would require a police state to enforce, would impinge on basic ideas about private transactions, and would foreclose many options that some degree of anonymity makes possible.    
+            </li>
+
+            <li>
+                    - "People should not be anonymous" is a normative statement that is impractical to enforce. 
+            </li>
+        </ul>
+
+        <h5>
+                6.7.2. Speaking of the isolation from physical threats and pressures that cyberspace provides
+        </h5>
+        <ul>
+            <li>
+                    Eric Hughes writes: "One of the whole points of anonymity and pseudonymity is to create immunity from these threats, which are all based upon the human body and its physical surroundings.What is the point of a system of anonymity which can be pierced when something "bad" happens?These systems do not reject the regime of violence; rather, they merely mitigate it slightly further and make their morality a bit more explicit.....I desire systems which do not require violence for their existence and stability.I desire anonymity as an ally to break the hold of morality over culture." [Eric Hughes, 1994-08-31]
+            </li>
+        </ul>
+
+        <h5>
+                6.7.3. Crypto anarchy means prosperity for those who can grab it, those competent enough to have something of value to offer for sale; the clueless 95% will suffer, but that is only just. With crypto anarchy we can painlessly, without initiation of aggression, dispose of the nonproductive, the halt and the lame. (Charity is always possible, but I suspect even the liberal do-gooders will throw up their hands at the prospect of a nation of mostly unskilled and essentially illiterate and innumerate workers being unable to get meaninful, well-paying jobs.) 
+        </h5>
+
+        <h5>
+                6.7.4. Crypto gets more important as communication increases and as computing gets distributed    
+        </h5>
+        <ul>
+            <li>
+                    + with bits and pieces of one's environment scattered around    
+            </li>
+            <ul>
+                <li>
+                        - have to worry about security    
+                </li>
+
+                <li>
+                        - others have to also protect their own products, and yet still provide/sell access    
+                </li>
+            </ul>
+            <li>
+                    - private spaces needed in disparate locations...multinationals, teleconferencing, video    
+            </li>
+        </ul>
+    </ul>
+
+    <h4>
+            6.8. Crypto Needed for Operating Systems and Networks
+    </h4>
+    <ul>
+        <h5>
+                6.8.1. Restrictions on cryptography--difficult as they may be to enforce--may also impose severe hardships on secure operating system design, Norm Hardy has made this point several times.    
+        </h5>
+        <ul>
+            <li>
+                    - Agents and objects inside computer systems will likely need security, credentials, robustness, and even digital money for transactions. 
+            </li>
+        </ul>
+
+        <h5>
+                6.8.2. Proofs of identity, passwords, and operating system use    
+        </h5>
+        <ul>
+            <li>
+                    - ZKIPS especially in networks, where the chances of seeing a password being transmitted are much greater (an obvious point that is not much discussed)    
+            </li>
+
+            <li>
+                    + operating systems and databases will need more secure procedures for access, for agents and the like to pay for services, etc.    
+            </li>
+            <ul>
+                <li>
+                        - unforgeable tokens 
+                </li>
+            </ul>
+        </ul>
+
+        <h5>
+                6.8.3. An often unmentioned reason why encyption is needed is for the creation of private, or virtual, networks    
+        </h5>
+        <ul>
+            <li>
+                    - so that channels are independent of the "common carrier"    
+            </li>
+
+            <li>
+                    + to make this clear: prospects are dangerously high for a consolidation under government control of networks    
+            </li>
+            <ul>
+                <li>
+                        - in parallel with roads    
+                </li>
+
+                <li>
+                        + and like roads, may insist on equivalent of licenses    
+                </li>
+                <ul>
+                    <li>
+                            - is-a-person    
+                    </li>
+
+                    <li>
+                            - bans on encryption    
+                    </li>
+                </ul>
+
+                <li>
+                        - The Nightmare Scenario: "We own the networks, we won't let anyone install new networks without our approval, and we will make the laws about what gets carried, what encryption can be used, and how taxes will be collected."    
+                </li>
+
+                <li>
+                        - Fortunately, I doubt this is enforceable...too many ways to create virtual networks...satellites like Iridium, fiber optics, ways to hide crypto or bury it in other traffic    
+                </li>
+            </ul>
+
+            <li>
+                    + cyberspace walls...    
+            </li>
+            <ul>
+                <li>
+                        + more than just crypto: physical security is needed (and for much the same reason no "digital coin" exists)    
+                </li>
+                <ul>
+                    <li>
+                            - processes running on controlled-accesss machines (as with remailers)    
+                    </li>
+                </ul>
+            </ul>
+            <li>
+                    - access by crypto    
+            </li>
+
+            <li>
+                    + a web of mutually suspicious machines may be sufficient    
+            </li>
+            <ul>
+                <li>
+                        - robust cyberspaces built with DC-Net ("dining cryptographers") methods?    
+                </li>
+            </ul>
+        </ul>
+    </ul>
+
+    <h4>
+            6.9. Ominous Trends 
+    </h4>
+    <ul>
+        <h5>
+                6.9.1. Ever-increasing numbers of laws, complexities of tax codes, etc.    
+        </h5>
+        <ul>
+            <li>
+                    - individuals no longer can navigate 
+            </li>
+        </ul>
+
+        <h5>
+                6.9.2. National ID cards    
+        </h5>
+        <ul>
+            <li>
+                    - work permits, immigration concerns, welfare fraud, stopping terrorists, collecting taxes    
+            </li>
+
+            <li>
+                    - USPS and other proposals 
+            </li>
+        </ul>
+
+        <h5>
+                6.9.3. Key Escrow 
+        </h5>
+
+        <h5>
+                6.9.4. Extension of U.S. law around the world    
+        </h5>
+
+        <ul>
+            <li>
+                    - Now that the U.S. has vanquished the U.S.S.R., a free field ahead of it for spreading the New World Order, led of course by the U.S.A. and its politicians.    
+            </li>
+
+            <li>
+                    - treaties, international agreements    
+            </li>
+
+            <li>
+                    - economic hegemony    
+            </li>
+
+            <li>
+                    - U.N. mandates, forces, "blue helmets" 6.9.5. AA BBS case means cyberspace is not what we though it was    
+            </li>
+        </ul>
+    </ul>
+
+    <h4>
             6.10. Loose Ends    
-    </li>
+    </h4>
+    <ul>
+        <h5>
+                6.10.1. "Why don't most people pay more attention to security issues?"    
+        </h5>
+        <ul>
+            <li>
+                    - Fact is, most people never think about real security.    
+            </li>
 
-    <li>
-            6.10.1. "Why don't most people pay more attention to security issues?"    
-    </li>
+            <li>
+                    - Safe manufacturers have said that improvements in safes (the metal kind) were driven by insurance rates. A direct incentive to spend more money to improve security (cost of better safe < cost of higher insurance rate).    
+            </li>
 
-    <li>
-            - Fact is, most people never think about real security.    
-    </li>
+            <li>
+                    - Right now there is almost no economic incentive for people to worry about PIN security, about protecting their files, etc. (Banks eat the costs and pass them on...any bank which tried to save a few bucks in losses by requiring 10-digit PINs--which people would *write down* anyway!--would lose customers. Holograms and pictures on bank cards are happening because the costs have dropped enough.)    
+            </li>
 
-    <li>
-            - Safe manufacturers have said that improvements in safes (the metal kind) were driven by insurance rates. A direct incentive to spend more money to improve security (cost of better safe < cost of higher insurance rate).    
-    </li>
+            <li>
+                    - Crypto is economics. People will begin to really care when it costs them.     
+            </li>
+        </ul>
 
-    <li>
-            - Right now there is almost no economic incentive for people to worry about PIN security, about protecting their files, etc. (Banks eat the costs and pass them on...any bank which tried to save a few bucks in losses by requiring 10-digit PINs--which people would *write down* anyway!--would lose customers. Holograms and pictures on bank cards are happening because the costs have dropped enough.)    
-    </li>
+        <h5>
+                6.10.2. What motivates an attackers is not the intrinsic value of the data but his perception of the value of the data.    
+        </h5>
 
-    <li>
-            - Crypto is economics. People will begin to really care when it costs them.     
-    </li>
+        <h5>
+                6.10.3. Crypto allows more refinement of permissions...access to groups, lists    
+        </h5>
+        <ul>
+            <li>
+                    - beyond such crude methods as banning domain names or "edu" sorts of accounts    
+            </li>
+        </ul>
 
-    <li>
-            6.10.2. What motivates an attackers is not the intrinsic value of the data but his perception of the value of the data.    
-    </li>
+        <h5>
+                6.10.4. these general reasons will make encryption more common, more socially and legally acceptable, and will hence make eventual attempts to limit the use of crypto anarchy methods moot    
+        </h5>
 
-    <li>
-            6.10.3. Crypto allows more refinement of permissions...access to groups, lists    
-    </li>
+        <h5>
+                6.10.5. protecting reading habits..    
+        </h5>
+        <ul>
+            <li>
+                    - (Imagine using your MicroSoftCashCard for library checkouts...)    
+            </li>
+        </ul>
 
-    <li>
-            - beyond such crude methods as banning domain names or "edu" sorts of accounts    
-    </li>
+        <h5>
+                6.10.6. Downsides    
+        </h5>
+        <ul>
+            <li>
+                    - loss of trust    
+            </li>
 
-    <li>
-            6.10.4. these general reasons will make encryption more common, more socially and legally acceptable, and will hence make eventual attempts to limit the use of crypto anarchy methods moot    
-    </li>
+            <li>
+                    - markets in unsavory things    
+            </li>
 
-    <li>
-            6.10.5. protecting reading habits..    
-    </li>
+            <li>
+                    - espionage    
+            </li>
 
-    <li>
-            - (Imagine using your MicroSoftCashCard for library checkouts...)    
-    </li>
+            <li>
+                    + expect to see new kinds of con jobs    
+            </li>
+            <ul>
+                <li>
+                        - confidence games    
+                </li>
 
-    <li>
-            6.10.6. Downsides    
-    </li>
+                <li>
+                        - "Make Digital Money Fast"    
+                </li>
+            </ul>
+        </ul>
 
-    <li>
-            - loss of trust    
-    </li>
 
-    <li>
-            - markets in unsavory things    
-    </li>
+        <h5>
+                6.10.7. Encryption of Video Signals and Encryption to Control Piracy    
+        </h5>
+        <ul>
+            <li>
+                    - this is of course a whole technology and industry    
+            </li>
 
-    <li>
-            - espionage    
-    </li>
+            <li>
+                    - Videocypher II has been cracked by many video hackers    
+            </li>
 
-    <li>
-            + expect to see new kinds of con jobs    
-    </li>
+            <li>
+                    - a whole cottage industry in cracking such cyphers    
+            </li>
 
-    <li>
-            - confidence games    
-    </li>
+            <li>
+                    - note that outlawing encryption would open up many industries to destruction by piracy, which is yet another reason a wholesale ban on encryption is doomed to failure    
+            </li>
+        </ul>
+    </ul>
 
-    <li>
-            - "Make Digital Money Fast"    
-    </li>
-
-    <li>
-            6.10.7. Encryption of Video Signals and Encryption to Control Piracy    
-    </li>
-
-    <li>
-            - this is of course a whole technology and industry    
-    </li>
-
-    <li>
-            - Videocypher II has been cracked by many video hackers    
-    </li>
-
-    <li>
-            - a whole cottage industry in cracking such cyphers    
-    </li>
-
-    <li>
-            - note that outlawing encryption would open up many industries to destruction by piracy, which is yet another reason a wholesale ban on encryption is doomed to failure    
-    </li>
-
-    <li>
-          
-    </li>
-
-      <section id="7">
-    <h3>
-            7. PGP --Pretty Good Privacy    
-    </h3>
+    <section id="7">
+        <h3>
+                7. PGP --Pretty Good Privacy    
+        </h3>
     </section>
 
-    <li>
-          
-    </li>
+    <h4>
+            7.1. Copyright
+    </h4>
 
-    <li>
-            7.1. copyright THECYPHERNOMICON: Cypherpunks FAQ and More, Version 0.666, 1994-09-10, Copyright Timothy C. May. All rights reserved. See the detailed disclaimer. Use short sections under "fair use" provisions, with appropriate credit, but don't put your name on my words.    
-    </li>
+    <ul>
+        <li>
+            THECYPHERNOMICON: Cypherpunks FAQ and More, Version 0.666, 1994-09-10, Copyright Timothy C. May. All rights reserved. See the detailed disclaimer. Use short sections under "fair use" provisions, with appropriate credit, but don't put your name on my words.
+        </li>
+    </ul>
 
-    <li>
-          
-    </li>
+    <h4>
+            7.2. SUMMARY: PGP --Pretty Good Privacy 
+    </h4>
 
-    <li>
-            7.2. SUMMARY: PGP --Pretty Good Privacy 7.2.1. Main Points    
-    </li>
+    <ul>
+        <h5>
+                7.2.1. Main Points    
+        </h5>
+        <ul>
+            <li>
+                    - PGP is the most important crypto tool there is, having single-handedly spread public key methods around the world    
+            </li>
 
-    <li>
-            - PGP is the most important crypto tool there is, having single-handedly spread public key methods around the world    
-    </li>
+            <li>
+                    - many other tools are being built on top of it 
+            </li>
+        </ul>
 
-    <li>
-            - many other tools are being built on top of it 7.2.2. Connections to Other Sections    
-    </li>
+        <h5>
+                7.2.2. Connections to Other Sections    
+        </h5>
 
-    <li>
-            - ironically, almost no understanding of how PGP works in detail is needed; there are plenty of experts who specialize in that 7.2.3. Where to Find Additional Information    
-    </li>
+        <ul>
+            <li>
+                    - ironically, almost no understanding of how PGP works in detail is needed; there are plenty of experts who specialize in that 
+            </li>
+        </ul>
 
-    <li>
-            - newsgroups carry up to date comments; just read them for a few weeks and many things will float by    
-    </li>
+        <h5>
+                7.2.3. Where to Find Additional Information    
+        </h5>
+        <ul>
+            <li>
+                    - newsgroups carry up to date comments; just read them for a few weeks and many things will float by    
+            </li>
 
-    <li>
-            - various FAQs on PGP    
-    </li>
+            <li>
+                    - various FAQs on PGP    
+            </li>
 
-    <li>
-            + even an entire book, by Simpson Garfinkel:    
-    </li>
+            <li>
+                    + even an entire book, by Simpson Garfinkel:    
+            </li>
+            <ul>
+                <li>
+                        - PGP: Pretty Good Privacy    
+                </li>
 
-    <li>
-            - PGP: Pretty Good Privacy    
-    </li>
+                <li>
+                        by Simson Garfinkel    
+                </li>
 
-    <li>
-            by Simson Garfinkel    
-    </li>
+                <li>
+                        1st Edition November 1994 (est.)    
+                </li>
 
-    <li>
-            1st Edition November 1994 (est.)    
-    </li>
+                <li>
+                        250 pages (est),ISBN: 1-56592-098-8, $17.95 (est)
+                </li>
+            </ul>
+        </ul>
 
-    <li>
-            250 pages (est),ISBN: 1-56592-098-8, $17.95 (est) 7.2.4. Miscellaneous Comments    
-    </li>
+        <h5>
+                7.2.4. Miscellaneous Comments    
+        </h5>
+        <ul>
+            <li>
+                    - a vast number of ftp sites, URLs, etc., and these change    
+            </li>
 
-    <li>
-            - a vast number of ftp sites, URLs, etc., and these change    
-    </li>
+            <li>
+                    - this document can't possibly stay current on these--see the pointers in the newsgroups for the most current sites    
+            </li>
+        </ul>
+    </ul>
 
-    <li>
-            - this document can't possibly stay current on these--see the pointers in the newsgroups for the most current sites    
-    </li>
+    <h4>
+            7.3. Introduction 
+    </h4>
+    <ul>
+        <h5>
+                7.3.1. Why does PGP rate its own section?    
+        </h5>
+        <ul>
+            <li>
+                    - Like Clipper, PGP is too big a set of issues not to have its own section 
+            </li>
+        </ul>
 
-    <li>
-          
-    </li>
+        <h5>
+                7.3.2. "What's the fascination in Cypherpunks with PGP?"    
+        </h5>
+        <ul>
+            <li>
+                    - Ironically, our first meeting, in September 1992, coincided within a few days of the release of PGP 2.0. Arthur Abraham provided diskettes of 2.0, complete with laser-printed labels. Version 2.0 was the first truly useful version of PGP (so I hear....I never tried Version 1.0, which had limited distribution). So PGP and Cypherpunks shared a history--and Phil Zimmermann has been to some physical meetings.    
+            </li>
 
-    <li>
-            7.3. Introduction 7.3.1. Why does PGP rate its own section?    
-    </li>
+            <li>
+                    - A practical, usable, understandable tool. Fairly easy to use. In contrast, many other developments are more abstract and do not lend themselves to use by hobbyists and amateurs. This alone ensures PGP an honored place (and might be an object lesson for developers of other tools). 
+            </li>
+        </ul>
 
-    <li>
-            - Like Clipper, PGP is too big a set of issues not to have its own section 7.3.2. "What's the fascination in Cypherpunks with PGP?"    
-    </li>
+        <h5>
+                7.3.3. The points here focus on PGP, but may apply as well to similar crypto programs, such as commercial RSA packages (integrated into mailers, commercial programs, etc.).    
+        </h5>
+    </ul>
 
-    <li>
-            - Ironically, our first meeting, in September 1992, coincided within a few days of the release of PGP 2.0. Arthur Abraham provided diskettes of 2.0, complete with laser-printed labels. Version 2.0 was the first truly useful version of PGP (so I hear....I never tried Version 1.0, which had limited distribution). So PGP and Cypherpunks shared a history--and Phil Zimmermann has been to some physical meetings.    
-    </li>
+    <h4>
+            7.4. What is PGP? 
+    </h4>
 
-    <li>
-            - A practical, usable, understandable tool. Fairly easy to use. In contrast, many other developments are more abstract and do not lend themselves to use by hobbyists and amateurs. This alone ensures PGP an honored place (and might be an object lesson for developers of other tools). 7.3.3. The points here focus on PGP, but may apply as well to similar crypto programs, such as commercial RSA packages (integrated into mailers, commercial programs, etc.).    
-    </li>
+    <ul>
+        <h5>
+            7.4.1. "What is PGP?" 
+        </h5>
 
-    <li>
-          
-    </li>
+        <h5>
+            7.4.2. "Why was PGP developed?" 
+        </h5>
 
-    <li>
-            7.4. What is PGP? 7.4.1. "What is PGP?" 7.4.2. "Why was PGP developed?" 7.4.3. Who developed PGP?    
-    </li>
-
-    <li>
-          
-    </li>
+        <h5>
+            7.4.3. Who developed PGP?    
+        </h5>
+    </ul>
 
     <li>
             7.5. Importance of PGP 7.5.1. PGP 2.0 arrived at an important time    
