@@ -1,74 +1,50 @@
-<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
-<!-- saved from url=(0036) -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-   
-   <meta name="GENERATOR" content="Mozilla/4.7 [en] (WinNT; I) [Netscape]">
-   <title>Shelling Out -- The Origins of Money</title>
-<style type="text/css"></style></head>
-<body text="#000000" link="#900002" vlink="#543100"> 
+<!-- extend base layout -->
+{% extends "doc.html" %}
+{% block doc %}
+<style>
+  .contents{
+    list-style:none;
+    text-indent: none;
+    padding:0;
+    margin:0;
+  }
+</style>
 
-<br>
-<a href="http://szabo.best.vwh.net/index.html">Nick Szabo's Papers and Concise Tutorials</a> 
-nszabo (at) law (dot) gwu (dot) edu
-<br>
-<hr>
-<br>
-<br>
-<h2>
-Shelling Out -- The Origins of Money</h2>
-New theories on the origins and nature of money&nbsp;
-<br>Copyright (c) 2002, 2005 by Nick Szabo
-<br>Permission to redistribution with attribution and without alteration
-<br> 	hereby granted.  
-<br>
-<br>
-<hr>
-<!-- font size=+1 -->   
-<br>
-<br>
-<h3>Abstract</h3>
-The precursors of money, along
-with language, enabled early modern humans to solve problems of cooperation 
-that 
-other animals cannot -- including problems of reciprocal altruism, 
-kin altruism, and the mitigation of aggression.  These precursors
-shared with non-fiat currencies very specific characteristics -- 
-they were not merely symbolic or decorative objects. 
-<br>
-<p>
-<br>
+<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+  <div class="page-header">
+    <h1 class="text-center">
+      Secure Property Titles with Owner Authority <br><small>Nick Szabo</small>
+    </h1>
+    <h4 class="text-center">
+      Originally published in 2002<br>
+    </h4>
+  </div>
 
-</p><h3>Table of Contents</h3>
-<a href="#Money">Money</a>
-<br>
-<a href="#Collectibles">Collectibles</a>
-<br>
-<a href="#Evolution, Cooperation, and Collectibles">
-Evolution, Cooperation, and Collectibles</a>
-<br>
-<a href="#Gains From Wealth Transfers">Gains From Wealth Transfers</a>
-<br>
-<a href="#Starvation Insurance">Starvation Insurance</a>
-<br>
-<a href="#Kin Altruism Beyond The Grave">Kin Altruism Beyond the Grave</a>
-<br>
-<a href="#The Family Trade">The Family Trade</a>
-<br>
-<a href="#The Spoils of War">The Spoils of War </a>
-<br>
-<a href="#Disputes and Remedies">Disputes and Remedies</a>
-<br>
-<a href="#Attributes of Collectibles">Attributes of Collectibles</a>
-<br>
-<a href="#Conclusion">Conclusion</a>
-<br>
-<a href="#References">References</a>
-<br>
-<a href="#Acknowledgements">Acknowledgements</a>
-<br>
-<br>
+  <h2>Abstract</h2>
 
-<br>
+  <p>
+  	The precursors of money, along with language, enabled early modern humans to solve problems of cooperation that other animals cannot &ndash; including problems of reciprocal altruism, kin altruism, and the mitigation of aggression. These precursors shared with non-fiat currencies very specific characteristics &ndash; they were not merely symbolic or decorative objects. 
+  </p>
+
+  <h2>Table of Contents</h2>
+
+  <ul class="contents">
+  	<li><a href="#money">Money</a>
+  	<li><a href="#collectibles">Collectibles</a>
+  	<li><a href="#evolution-cooperation-and-collectibles">Evolution, Cooperation, and Collectibles</a>
+  	<li><a href="#gains-from-wealth-transfers">Gains From Wealth Transfers</a>
+  	<li><a href="#starvation-insurance">Starvation Insurance</a>
+  	<li><a href="#kin-altruism-beyond-the-grave">Kin Altruism Beyond the Grave</a>
+  	<li><a href="#the-family-trade">The Family Trade</a>
+  	<li><a href="#the-spoils-of-war">The Spoils of War</a>
+  	<li><a href="#disputes-and-remedies">Disputes and Remedies</a>
+  	<li><a href="#attributes-of-collectibles">Attributes of Collectibles</a>
+  	<li><a href="#conclusion">Conclusion</a>
+  	<li><a href="#references">References</a>
+  	<li><a href="#acknowledgements">Acknowledgements</a>
+  </ul>
+
+
 <a name="money"></a>
 <h3>Money</h3>
 From the very start, England's 17th century colonies in America had a problem -- a shortage of coins [D94, T01]   The British idea was to grow large amounts of tobacco, cut timber for the ships of their global navy and merchant marine, and so forth, sending in return the supplies they felt were needed to keep the Americans working.    In effect, early colonists were supposed to both work for the company and shop at the company store.  The investors and the Crown much preferred this to paying in coin what the farmers might ask, letting the farmers themselves buy the supplies -- and, heaven forbid, keep some of the profit as well.
@@ -945,9 +921,20 @@ http://www.unc.edu/depts/ecology/winterweb/intra_group.html
 <a name="Acknowledgements"></a>
 </p><h3>Acknowledgements</h3>
 My thanks to Jerome Barkow, Andrew Odlyzko, Bruce Smith, K. Eric Drexler, Markus Krummenacker, Mark Wiley, Norm Hardy, and others for their insightful comments.
-<p>
-</p><hr>Please send your comments to nszabo (at) law (dot) gwu (dot) edu
 
-<br>&nbsp;
-<hr>
-</body></html>
+  <hr>
+  <p>
+    Please send your comments to nszabo (at) law (dot) gwu (dot) edu 
+  </p>
+
+  <p>
+    Copyright &copy; 2002, 2005 by Nick Szabo<br>
+    Permission to redistribute without alteration hereby granted
+  </p>
+  <hr>
+  <p class="text-muted">
+    <em>Editor's note: muted text indicates the text was commented out in the source file.</em>
+  </p>
+
+</div>
+{% endblock %}
