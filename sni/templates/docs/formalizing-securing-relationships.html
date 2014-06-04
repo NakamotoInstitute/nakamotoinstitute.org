@@ -44,15 +44,13 @@
     <li><a href="#dimensions-of-contract-design">Dimensions of Contract Design</a>
     <ul>
       <li>Mental and Computational Transaction Costs
-      <li>The Economics Of Security
-      <li>Proactive vs. Reactive Security
+      <li>Contracting Phases
+      <li>Observability, Hidden Knowledge, and Hidden Actions
       <li>Online Enforceability
       <li>Observability by Principals
       <li>Verifiability by Adjudicators
       <li>Privity: Protection from Third Parties
-      <li>Contracting Phases
       <li>Trading off Contract Design Objectives
-      <li>Auditing Intermediaries
     </ul>
     <li><a href="#building-blocks-of-smart-contract-protocols">Building Blocks of Smart Contract Protocols</a>
     <ul>
@@ -61,14 +59,13 @@
       <li>Cryptographic Protocols
       <li>Attacks against Smart Contracts
       <li>Public and Secret Key Cryptography
-      <li>Mutually Confidential Computation
-      <ul>
-        <li>Privy Authenticaion
-      </ul>
-      <li>Post-unforgeable Transaction Logs
-      <li>Quora
+      <li>Public Authentication
+      <li>Privy Authenticaion
       <li>Protection of Keys
       <li>Capabilities
+      <li>Quora
+      <li>Post-Unforgeable Transaction Logs
+      <li>Mutually Confidential Computation
     </ul>
     <li><a href="#contracts-with-bearer">Contracts with Bearer</a>
     <ul>
@@ -76,7 +73,6 @@
       <li>Unlinkable Transfer
       <li>Conserved Objects
       <li>Digital Cash
-      <li>Credentials
     </ul>
     <li><a href="#content-rights-management">Content Rights Management</a>
     <ul>
@@ -86,6 +82,7 @@
     <li><a href="#reputation-systems">Reputation Systems</a>
     <li><a href="#credit">Credit</a>
     <ul>
+      <li>Local Name Credit Ratings
       <li>Secured Credit
       <li>Ripped Instruments
       <li>Credit Cards
@@ -94,6 +91,7 @@
       <li>Pseudonymous Credit Ratings
     </ul>
     <li><a href="#conclusion">Conclusion</a>
+    <li><a href="#notes">Notes</a>
   </ul>
 
 
@@ -132,7 +130,7 @@
   </p>
 
   <p>
-    In electronic commerce so far, the design criteria important for automating contract execution have come from disparate fields like economics and cryptography, with little cross-communication: little awareness of the technology on the one hand, and little awareness of its best business uses other. These efforts are striving after common objectives, and converge on the concept of smart contracts [1].
+    In electronic commerce so far, the design criteria important for automating contract execution have come from disparate fields like economics and cryptography, with little cross-communication: little awareness of the technology on the one hand, and little awareness of its best business uses other. These efforts are striving after common objectives, and converge on the concept of smart contracts<sup><a href="#fn1" id="ref1">[1]</a></sup>.
   </p>
 
   <p>
@@ -179,7 +177,7 @@
   </p>
 
   <p>
-    Control protocols, and the professions of auditing and accounting [ 2 ] based on them, play a critical but ill-analyzed role in our economy. Economists lump them, along with other costs of negotiating and ensuring the performance of contracts, under their catch-all rubric of "transaction costs". But without controls, large corporations and the economies of scale they create would not be possible. Controls allow a quarrelsome species ill-suited to organizations larger than small tribes to work together on vast projects like manufacturing jumbo jets and running hospitals. These control protocols are the result of many centuries of business experience and have a long future ahead of them, but the digital revolution will soon cause these paper-era techniques to be dramatically augmented by, and eventually integrate into, smart contracts.
+    Control protocols, and the professions of auditing and accounting<sup><a href="#fn2" id="ref2">[2]</a></sup> based on them, play a critical but ill-analyzed role in our economy. Economists lump them, along with other costs of negotiating and ensuring the performance of contracts, under their catch-all rubric of "transaction costs". But without controls, large corporations and the economies of scale they create would not be possible. Controls allow a quarrelsome species ill-suited to organizations larger than small tribes to work together on vast projects like manufacturing jumbo jets and running hospitals. These control protocols are the result of many centuries of business experience and have a long future ahead of them, but the digital revolution will soon cause these paper-era techniques to be dramatically augmented by, and eventually integrate into, smart contracts.
   </p>
 
   <p>
@@ -249,7 +247,7 @@
   </p>
 
   <p>
-    The following classification, derived from Sokol [3 ], illustrates the variety of business forms that have been rendered in electronic form:
+    The following classification, derived from Sokol<sup><a href="#fn3" id="ref3">[3]</a></sup>, illustrates the variety of business forms that have been rendered in electronic form:
   </p>
 
 <pre>
@@ -488,11 +486,11 @@ Reactive
   <h3>Protocols</h3>
 
   <p>
-    A <em>protocol</em> [ 9 ] in computer science is a sequence of messages between at least two computers. At a higher level of abstraction, a protocol consists of algorithms communicating via messages. These programs act as proxies, or agents, for human users, who communicate their preferences via users interfaces. We distinguish protocol endpoints by names such as "Alice" and "Bob", but it should be kept in mind that the end points are really computer processing units, which may or may not be under the control of, or taking actions contrary to the intent of, the human user. Human users typically do not have full knowledge of the protocol in question, but rather a metaphorical understanding obtained via user interface, manuals, and so on. Unlike most real-world contracts, protocols must be unambiguous and complete.
+    A <em>protocol</em><sup><a href="#fn5" id="ref5">[5]</a></sup> in computer science is a sequence of messages between at least two computers. At a higher level of abstraction, a protocol consists of algorithms communicating via messages. These programs act as proxies, or agents, for human users, who communicate their preferences via users interfaces. We distinguish protocol endpoints by names such as "Alice" and "Bob", but it should be kept in mind that the end points are really computer processing units, which may or may not be under the control of, or taking actions contrary to the intent of, the human user. Human users typically do not have full knowledge of the protocol in question, but rather a metaphorical understanding obtained via user interface, manuals, and so on. Unlike most real-world contracts, protocols must be unambiguous and complete.
   </p>
 
   <p>
-    Protocols come in three basic types. I have modified the terminology of Schneier [ 5 ] to match more closely to the corresponding business terminology:
+    Protocols come in three basic types. I have modified the terminology of Schneier<sup><a href="#fn6" id="ref6">[6]</a></sup> to match more closely to the corresponding business terminology:
   </p>
 
 <pre>
@@ -745,7 +743,7 @@ adjudicated:  (Alice <--> Bob) --> [evidence] --> adjudicator
   <h2 id="content-rights-management">Content Rights Management</h2>
 
   <p>
-    Content protection contracts are valuable in that they incentive publishers to allow users to view content directly, rather than indirectly and partially via queries to remote servers. Content protection of software distributed online would allow it to be run locally rather than remotely, while enforcing the contract rights and copyrights of the publisher against the user. This local usage billing of software often goes under the rubric of "superdistribution" [ 11 ].
+    Content protection contracts are valuable in that they incentive publishers to allow users to view content directly, rather than indirectly and partially via queries to remote servers. Content protection of software distributed online would allow it to be run locally rather than remotely, while enforcing the contract rights and copyrights of the publisher against the user. This local usage billing of software often goes under the rubric of "superdistribution"<sup><a href="#fn11" id="ref11">[11]</a></sup>.
   </p>
 
   <h3>Watermarks</h3>
@@ -763,7 +761,7 @@ adjudicated:  (Alice <--> Bob) --> [evidence] --> adjudicator
   </p>
 
   <p>
-    All watermark schemes can be defeated with sufficient effort. These schemes can then be distributed as software worldwide. Once the initial effort is put into breaking a scheme, the marginal cost of breaking it is minimal. Furthermore, once the watermark is removed, the content can be distributed and even published [ 12 ] with secure anonymity.
+    All watermark schemes can be defeated with sufficient effort. These schemes can then be distributed as software worldwide. Once the initial effort is put into breaking a scheme, the marginal cost of breaking it is minimal. Furthermore, once the watermark is removed, the content can be distributed and even published<sup><a href="#fn12" id="ref12">[12]</a></sup> with secure anonymity.
   </p>
 
   <p>
@@ -777,7 +775,7 @@ adjudicated:  (Alice <--> Bob) --> [evidence] --> adjudicator
   </p>
 
   <p>
-    As a result, some publishers have begun putting their research dollars into a radical alternative, innocuously dubbed the "secure CPU" (SPU) [ 13 ]. This is a CPU that is "secure" against the owner of the computer! To enforce copyright or content contracts, the SPU monitors all content-related activity. Some marketing literature even lists, alongside the traditional copyright, a new "right" of publishers to monitor the usage of their content. Remarkably enough, these panoptic non-personal computers are the focus of major R&D efforts.
+    As a result, some publishers have begun putting their research dollars into a radical alternative, innocuously dubbed the "secure CPU" (SPU)<sup><a href="#fn13" id="ref13">[13]</a></sup>. This is a CPU that is "secure" against the owner of the computer! To enforce copyright or content contracts, the SPU monitors all content-related activity. Some marketing literature even lists, alongside the traditional copyright, a new "right" of publishers to monitor the usage of their content. Remarkably enough, these panoptic non-personal computers are the focus of major R&D efforts.
   </p>
 
   <p>
@@ -791,7 +789,7 @@ adjudicated:  (Alice <--> Bob) --> [evidence] --> adjudicator
   <h2 id="reputation-systems">Reputation Systems</h2>
 
   <p>
-    Reputation can be viewed as the amount of trust an agent has created for himself [ 14 ]. Reputation systems ultimately need to be based on fact rather than mere opinion or faith to be effective. For example, if we are to have a good credit rating system, we need to be confident that the credit record assembled by the agency is sufficiently accurate. Reputation information is typical gathered and distributed by intermediaries trusted to perform this task. Reputation can take the form of a public database (such as credit rating services) or credentials issued by the tracking agency and carried by the user. A bearer doesn't want to show his negative credentials, so credentials are often only positive. But we want to protect ourselves against negative behavior sources well as search out positive sources.
+    Reputation can be viewed as the amount of trust an agent has created for himself<sup><a href="#fn14" id="ref14">[14]</a></sup>. Reputation systems ultimately need to be based on fact rather than mere opinion or faith to be effective. For example, if we are to have a good credit rating system, we need to be confident that the credit record assembled by the agency is sufficiently accurate. Reputation information is typical gathered and distributed by intermediaries trusted to perform this task. Reputation can take the form of a public database (such as credit rating services) or credentials issued by the tracking agency and carried by the user. A bearer doesn't want to show his negative credentials, so credentials are often only positive. But we want to protect ourselves against negative behavior sources well as search out positive sources.
   </p>
 
   <p>
@@ -799,7 +797,7 @@ adjudicated:  (Alice <--> Bob) --> [evidence] --> adjudicator
   </p>
 
   <p>
-    Robin Hanson [ 15 ] has observed that in a world of global names, the use of a local name may signal the hiding of negative credentials, so that the use of global names is in equilibrium. A further problem with local names is that our relationships are often not neatly compartmentalizable into standard service types, and even where they are we might like to expand them into new areas. On the other hand, local names are essential for privacy. I suggest that we will want to reveal progressively more local names to our counterparties as our relationships with them become closer and more co-exposed.
+    Robin Hanson<sup><a href="#fn15" id="ref15">[15]</a></sup> has observed that in a world of global names, the use of a local name may signal the hiding of negative credentials, so that the use of global names is in equilibrium. A further problem with local names is that our relationships are often not neatly compartmentalizable into standard service types, and even where they are we might like to expand them into new areas. On the other hand, local names are essential for privacy. I suggest that we will want to reveal progressively more local names to our counterparties as our relationships with them become closer and more co-exposed.
   </p>
 
   <p>
@@ -867,7 +865,7 @@ adjudicated:  (Alice <--> Bob) --> [evidence] --> adjudicator
 </pre>
 
   <p>
-    In turn, Peter Swire [ 17 ] describes two problems facing inadequately secured or unsecured loans to "credit names":
+    In turn, Peter Swire<sup><a href="#fn16" id="ref16">[16]</a></sup> describes two problems facing inadequately secured or unsecured loans to "credit names":
   </p>
 
   <p>
@@ -913,7 +911,7 @@ adjudicated:  (Alice <--> Bob) --> [evidence] --> adjudicator
   <h3>Known Borrowers of Unknown Amounts</h3>
 
   <p>
-    Hal Finney [ 18 ] has described a loan mix, to unlink borrowers from amount borrowed. The identity of the potential borrowers is still public, as well as the system for enforcing payment, but the actual amount loaned or borrowed remains unknown. The system starts with participants putting unknown amounts into a pot and getting receipts (bearer bonds) for these amount. All participants then borrow a standard amount. Whether a participant is a net borrower or a net creditor, and of what amount, remains private. When the loan is due all participants repay the standard amount, and the creditors reclaim the amounts on their bearer bonds. The amount actually borrowed (or, if negative, loaned) is the public amount borrowed minus the amount put into the pot. One consequence is that while negative reputations can still be accumulated when participants fail to pay back the standard amount, positive reputations are minimal, since participants who borrow and loan are indistinguishable. If future creditors put stock in positive participation, one could gain a credit rating by perpetually participating as a net borrower of zero, by loaning and borrowing the same amounts.
+    Hal Finney<sup><a href="#fn17" id="ref17">[17]</a></sup> has described a loan mix, to unlink borrowers from amount borrowed. The identity of the potential borrowers is still public, as well as the system for enforcing payment, but the actual amount loaned or borrowed remains unknown. The system starts with participants putting unknown amounts into a pot and getting receipts (bearer bonds) for these amount. All participants then borrow a standard amount. Whether a participant is a net borrower or a net creditor, and of what amount, remains private. When the loan is due all participants repay the standard amount, and the creditors reclaim the amounts on their bearer bonds. The amount actually borrowed (or, if negative, loaned) is the public amount borrowed minus the amount put into the pot. One consequence is that while negative reputations can still be accumulated when participants fail to pay back the standard amount, positive reputations are minimal, since participants who borrow and loan are indistinguishable. If future creditors put stock in positive participation, one could gain a credit rating by perpetually participating as a net borrower of zero, by loaning and borrowing the same amounts.
   </p>
 
   <h2 id="conclusion">Conclusion</h2>
@@ -923,66 +921,114 @@ adjudicated:  (Alice <--> Bob) --> [evidence] --> adjudicator
   </p>
 
   <p>
-    Mark Miller [ 19 ] foresees that the law of the Internet, and the devices attached to it, will be provided by a grand merger of law and computer security. If so, smart contracts will be a major force behind this merger.
+    Mark Miller<sup><a href="#fn18" id="ref18">[18]</a></sup> foresees that the law of the Internet, and the devices attached to it, will be provided by a grand merger of law and computer security. If so, smart contracts will be a major force behind this merger.
   </p>
 
-  <h2>Notes</h2>
-<a name="1">
-A previous version of this paper appeared in the peer-reviewed journal
-First Monday, at http://www.firstmonday.dk/issues/issue2_9/szabo/index.html<p>
-Many of the links above and references here rely on URLs that can
-be found in the online edition of this paper, at 
-http://szabo.best.vwh.net/caymanpaper.html.</p></a><p><a name="1">
-1. The </a><a href="http://szabo.best.vwh.net/">author</a> has been refining these ideas since the early 1990's.  A variety of earlier articles on this topic can
-be found  at http://szabo.best.vwh.net</p><p>
-<a name="2">
-2. George H. Bodnar and William S. Hopwood, 1987.<i>Accounting Information Systems</i>. 3rd ed. Boston: Allyn and Bacon.</a></p><p><a name="2">
-</a><a name="3">
-3. Phyllis K. Sokol, 1995. <i>From EDI to Electronic Commerce: a business initiative</i>. New York: McGraw-Hill.</a></p><p><a name="3">
-</a><a name="4">
-4. Oliver Hart, 1989. "Incomplete Contracts," In: John Eatwell, Murray Milgate, and Peter Newman (eds.), <i>The New Palgrave: Allocation, Information, and Markets</i>.
-New York: Norton.</a></p><p><a name="4">
-</a><a name="5">
-5. John Bouvier, 1856. <i></i></a><i><a href="http://www.constitution.org/bouv/bouvierp.txt">A Law Dictionary</a>: Adapted to the Constitution and Laws of the
-United States of American and of the Several States of the American Union</i>. Rev. 6th ed.</p><p>
-<a name="6">
-6. Michael Polanyi, <i>Personal knowledge: Towards a
-post-critical philosophy</i>. Chicago: University of Chicago Press.</a></p><p><a name="6">
-</a><a name="7">
-7. The economics of distributed knowledge is studied by the Austrian
-   school; in particular see Friedrich Hayek, "On the Use of Knowledge in 
-   Society."</a></p><p><a name="7">
-</a><a name="8">
-8. Vernon V. Palmer, 1992. <i>The Paths to Privity: The History of Third-Party Beneficiary Contracts at English Law</i>.
-San Francisco: Austin and Winfield.</a></p><p><a name="8">
-</a><a name="9">
-9. Bruce Schneier,1996. <i>Applied Cryptography</i>. 2nd ed. New York: Wiley. </a></p><p><a name="9">
-</a><a name="10">
-10. Lance Cotrell, 1995. "</a><a href="http://www.obscura.com/~loki/remailer/remailer-essay.html">Mixmaster &amp; Remailer Attacks</a>."</p><p>
-<a name="11">
-11. Brad Cox, 1995. <i>Superdistribution:: Objects as Property on the Electronic Frontier</i>. Reading, Mass.: Addison-Wesley.</a></p><p><a name="11">
-</a><a name="12">
-12. Ian Goldberg and David Wagner, 1997. "</a><a href="http://www.cs.berkeley.edu/~daw/cs268/taz-www/rewebber.html">Enabling Anonymous
-Publishing on the World Wide Web</a>."</p><p>
-<a name="13">
-13. Olin Silbert, David Bernstein, and David Van Wie, 1996. "</a><a href="http://www.epr.com/architecture/stc.html">Securing the Content, Not the Wire for Information Commerce</a>."</p><p>
-<a name="14">
-14. Joseph M. Reagle Jr., 1996. "</a><a href="http://www.firstmonday.dk/issues/issue2/markets/index.html">Trust in Electronic Markets</a>," First Monday,
-Volume 2, number 2 (August).</p><p>
-<a name="15">
-15. </a><a href="http://hss.caltech.edu/~hanson/">Robin Hanson</a>, personal communication.</p><p>
-<a name="17">
-17. Peter Swire, 1997. "</a><a href="http://www.osu.edu/units/law/ray.htm">The Uses and Limits of Financial Cryptography</a>: A Law Professor's Perspective."</p><p>
-<a name="18">
-18. Hal Finney, 1997. "</a><a href="http://infinity.nus.sg/cypherpunks/dir.archive-97.04.10-97.04.16/">Anonymous Credit</a>" posts.</p><p>
-<a name="19">
-19. </a><a href="http://www.caplet.com/">Mark Miller</a>, 1997. "The Future of Law," paper delivered at the <i>Extro 3</i> Conference (August 9).</p><p>
-</p><hr>
-Please send your comments to
-nszabo (at) law (dot) gwu (dot) edu      
-</blockquote>
-</blockquote>
+  <h2 id="notes">Notes</h2>
+
+  <ol>
+    <li id="fn1">
+      <p>
+        The <a href="http://szabo.best.vwh.net/">author</a> has been refining these ideas since the early 1990's. A variety of earlier articles on this topic can be found  at http://szabo.best.vwh.net&nbsp;<a href="#ref1">↩</a>
+      </p>
+    </li>
+    <li id="fn2">
+      <p>
+        George H. Bodnar and William S. Hopwood, 1987.<em>Accounting Information Systems</em>. 3rd ed. Boston: Allyn and Bacon.&nbsp;<a href="#ref2">↩</a>
+      </p>
+    </li>
+    <li id="fn3">
+      <p>
+        Phyllis K. Sokol, 1995. <em>From EDI to Electronic Commerce: a business initiative</em>. New York: McGraw-Hill.&nbsp;<a href="#ref3">↩</a>
+      </p>
+    </li>
+    <li id="fn4">
+      <p>
+        Oliver Hart, 1989. "Incomplete Contracts," In: John Eatwell, Murray Milgate, and Peter Newman (eds.), <em>The New Palgrave: Allocation, Information, and Markets</em>. New York: Norton.
+      </p>
+    </li>
+    <li id="fn5">
+      <p>
+        Bruce Schneier,1996. <em>Applied Cryptography</em>. 2nd ed. New York: Wiley.&nbsp;<a href="#ref5">↩</a>
+      </p>
+    </li>
+    <li id="fn6">
+      <p>
+        John Bouvier, 1856. <em><a href="http://www.constitution.org/bouv/bouvierp.txt">A Law Dictionary</a>: Adapted to the Constitution and Laws of the United States of American and of the Several States of the American Union</em>. Rev. 6th ed.&nbsp;<a href="#ref6">↩</a>
+      </p>
+    </li>
+    <li id="fn7">
+      <p>
+        Michael Polanyi, <em>Personal knowledge: Towards a post-critical philosophy</em>. Chicago: University of Chicago Press.
+      </p>
+    </li>
+    <li id="fn8">
+      <p>
+        The economics of distributed knowledge is studied by the Austrian school; in particular see Friedrich Hayek, "On the Use of Knowledge in Society."
+      </p>
+    </li>
+    <li id="fn9">
+      <p>
+        Vernon V. Palmer, 1992. <em>The Paths to Privity: The History of Third-Party Beneficiary Contracts at English Law</em>. San Francisco: Austin and Winfield.
+      </p>
+    </li>
+    <li id="fn10">
+      <p>
+        Lance Cotrell, 1995. "<a href="http://www.obscura.com/~loki/remailer/remailer-essay.html">Mixmaster &amp; Remailer Attacks</a>."
+      </p>
+    </li>
+    <li id="fn11">
+      <p>
+        Brad Cox, 1995. <em>Superdistribution:: Objects as Property on the Electronic Frontier</em>. Reading, Mass.: Addison-Wesley.&nbsp;<a href="#ref11">↩</a>
+      </p>
+    </li>
+    <li id="fn12">
+      <p>
+        Ian Goldberg and David Wagner, 1997. "<a href="http://www.cs.berkeley.edu/~daw/cs268/taz-www/rewebber.html">Enabling Anonymous Publishing on the World Wide Web</a>."&nbsp;<a href="#ref12">↩</a>
+      </p>
+    </li>
+    <li id="fn13">
+      <p>
+        Olin Silbert, David Bernstein, and David Van Wie, 1996. "</a><a href="http://www.epr.com/architecture/stc.html">Securing the Content, Not the Wire for Information Commerce</a>."&nbsp;<a href="#ref13">↩</a>
+      </p>
+    </li>
+    <li id="fn14">
+      <p>
+        Joseph M. Reagle Jr., 1996. "</a><a href="http://www.firstmonday.dk/issues/issue2/markets/index.html">Trust in Electronic Markets</a>," First Monday, Volume 2, number 2 (August).&nbsp;<a href="#ref14">↩</a>
+      </p>
+    </li>
+    <li id="fn15">
+      <p>
+        <a href="http://hss.caltech.edu/~hanson/">Robin Hanson</a>, personal communication.&nbsp;<a href="#ref15">↩</a>
+      </p>
+    </li>
+    <li id="fn16">
+      <p>
+        Peter Swire, 1997. "</a><a href="http://www.osu.edu/units/law/ray.htm">The Uses and Limits of Financial Cryptography</a>: A Law Professor's Perspective."&nbsp;<a href="#ref16">↩</a>
+      </p>
+    </li>
+    <li id="fn17">
+      <p>
+        Hal Finney, 1997. "</a><a href="http://infinity.nus.sg/cypherpunks/dir.archive-97.04.10-97.04.16/">Anonymous Credit</a>" posts.&nbsp;<a href="#ref17">↩</a>
+      </p>
+    </li>
+    <li id="fn18">
+      <p>
+        <a href="http://www.caplet.com/">Mark Miller</a>, 1997. "The Future of Law," paper delivered at the <em>Extro 3</em> Conference (August 9).&nbsp;<a href="#ref18">↩</a>
+      </p>
+    </li>
+  </ol>
+
+
 <hr>
+  <p>
+    Please send your comments to nszabo (at) law (dot) gwu (dot) edu 
+  </p>
+
+  <hr>
+  <p class="text-muted">
+    <em>Editor's note: muted text indicates the text was commented out in the source file.</em>
+  </p>
 
 </div>
 {% endblock %}
