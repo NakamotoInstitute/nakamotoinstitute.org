@@ -1,335 +1,229 @@
+<!-- extend base layout -->
+{% extends "doc.html" %}
+{% block doc %}
 
-<!-- saved from url=(0047)http://szabo.best.vwh.net/contractlanguage.html -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>A Formal Language for Analyzing Contracts</title> 
-<style type="text/css"></style></head><body text="#000000" vlink="#543100" link="#900002">
-<!-- background="multitan.jpg" -->
-<hr>
-<a href="http://szabo.best.vwh.net/index.html">Nick Szabo's Papers and Concise Tutorials</a> 
-<br>
-<h3>A Formal Language for Analyzing Contracts</h3>
-		Copyright (c) 2002 by Nick Szabo
-<br>
-	Preliminary draft -- Redistribution only with written permission of author.
-<!-- 
-<hr>
-<b>Nick Szabo</b> is a computer scientist and economist
-living in Menlo Park, California.
--->
-<hr>
-<p>
-The author presents a mini-language for
-<!-- lawyers, legal
-scholars, economists, legal and economic historians, business 
-analysts, accountants, auditors,
-and others
--->
-professionals and researchers interested in drafting and
-analyzing contracts.   It is intended for
-computers to read, too.  
-The main purpose of this language is to, as unambiguously
-and completely and succinctly as possible, specify common 
-contracts or contractual terms.  These include financial contracts,
-liens and other kinds of security, transfer of ownership, 
-performance of online services, and supply chain workflow.
-</p><p>
-The following problems may be addressed by the language when
-interpreted by computer:
-</p><ul>
-<li> Accounting and auditing.  Sophisticated contracts, including
-derivatives and combinations, can be specified in our formal language.
-Then automated or manual accounting rules may be applied to
-convert transactions completed under the contract to audit trails
-and ledger entries.
-</li><li> Analyze formally specified contracts for flaws in
-logic, scheduling, opportunities for parties to breach the
-contract, and conflicts with other contracts one is already
-committed to.[5]
-</li><li> Translate the formal contracts into an existing 
-programming language such as E [1], and/or cryptographic protocols[2],
-for partially self-enforcing and protected execution as
-<a href="http://szabo.best.vwh.net/idea.html"> smart contracts</a>.
-</li><li>Some kinds of contracts, especially financial and commodity
-contracts and their derivatives, can be converted into a decision or 
-game tree that can be analyzed to determine risk, net present value, etc.
-</li></ul>
-<p>
-The process of designing
-this language is also a great way to explore the basic nature of
-contracts (what are the "elements" out of which a wide variety
-of useful contracts
-can be drafted?) and their composibility (what rules for composing
-these atoms rule out impossible contracts?)  The language is
-also a creative tool for thinking up and "sketching"
-new kinds of contracts.  I welcome your participation.
-</p><p>
+<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+  <div class="page-header">
+    <h1 class="text-center">
+      A Formal Language for Analyzing Contracts <br><small>Nick Szabo</small>
+    </h1>
+    <h4 class="text-center">
+      Preliminary Draft from 2002<br>
+    </h4>
+  </div>
+  <!-- 
+  <hr>
+  <strong>Nick Szabo</strong> is a computer scientist and economist living in Menlo Park, California.
+  -->
 
-The words in our language
-follow legal terminology as much as possible -- thus for example
-<i>performance</i> means execution 
-to satisfy the terms of the contract
-(as in the legal field), rather than measured quantities like speed, memory 
-usage,
-bandwidth, etc. (as programmers use the term).  A law degree is not
-required to use the language, but some familiarity with contract
-law and the drafting of contracts is recommended.
-A lawyer who did reasonably well on the analytical and logical
-sections of the U.S. LSAT or its overseas equivalent, will, I suspect, 
-have better luck drafting contracts in this language than than a 
-programmer whose sole experience lies in traditional procedural 
-language.  That is why I call this a <i>drafting
-language</i> not a programming language.
-</p><p>
+  <hr>
+  <p>
+    The author presents a mini-language for <!-- lawyers, legal scholars, economists, legal and economic historians, business analysts, accountants, auditors, and others --> pprofessionals and researchers interested in drafting and analyzing contracts. It is intended for computers to read, too. The main purpose of this language is to, as unambiguously and completely and succinctly as possible, specify common contracts or contractual terms. These include financial contracts, liens and other kinds of security, transfer of ownership, performance of online services, and supply chain workflow.
+  </p>
 
+  <p>
+    The following problems may be addressed by the language when interpreted by computer:
+  </p>
 
+  <ul>
+    <li>
+      <p>
+        Accounting and auditing. Sophisticated contracts, including derivatives and combinations, can be specified in our formal language. Then automated or manual accounting rules may be applied to convert transactions completed under the contract to audit trails and ledger entries.
+      </p>
+    </li>
 
-Our language can specify the output of a negotiation
-(which could be an auction, an exchange, or two parties drafting the
-contract, or one party drafting and the other agreeing to
-it, etc. ).  It also can define the input to an engine that drives and monitors 
-the transactions that perform the contract:
+    <li>
+      <p>
+        Analyze formally specified contracts for flaws in logic, scheduling, opportunities for parties to breach the contract, and conflicts with other contracts one is already committed to.[5]
+      </p>
+    </li>
 
-</p><pre>negotiation --&gt; contract --&gt; performance
+    <li>
+      <p>
+        Translate the formal contracts into an existing programming language such as E [1], and/or cryptographic protocols[2], for partially self-enforcing and protected execution as <a href="http://szabo.best.vwh.net/idea.html">smart contracts</a>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        Some kinds of contracts, especially financial and commodity contracts and their derivatives, can be converted into a decision or game tree that can be analyzed to determine risk, net present value, etc.
+      </p>
+    </li>
+  </ul>
+
+  <p>
+    The process of designing this language is also a great way to explore the basic nature of contracts (what are the "elements" out of which a wide variety of useful contracts can be drafted?) and their composibility (what rules for composing these atoms rule out impossible contracts?) The language is also a creative tool for thinking up and "sketching" new kinds of contracts. I welcome your participation.
+  </p>
+
+  <p>
+    The words in our language follow legal terminology as much as possible &ndash; thus for example <em>performance</em> means execution to satisfy the terms of the contract (as in the legal field), rather than measured quantities like speed, memory usage, bandwidth, etc. (as programmers use the term). A law degree is not required to use the language, but some familiarity with contract law and the drafting of contracts is recommended. A lawyer who did reasonably well on the analytical and logical sections of the U.S. LSAT or its overseas equivalent, will, I suspect, have better luck drafting contracts in this language than than a programmer whose sole experience lies in traditional procedural language. That is why I call this a <em>drafting language</em> not a programming language.
+  </p>
+
+  <p>
+    Our language can specify the output of a negotiation (which could be an auction, an exchange, or two parties drafting the contract, or one party drafting and the other agreeing to it, etc. ). It also can define the input to an engine that drives and monitors the transactions that perform the contract:
+  </p>
+
+<pre>
+negotiation --> contract --> performance
 </pre>
-<p>
-Performance of the contract, i.e. its reification as a smart contract,
-can thus be seen as (hypothetical, at this point) execution of a program 
-written in our language.  
-Furthermore, our language incorporates a wide variety of contractual terms, 
-not just abstract monetary terms and their derivatives.  These two 
-characteristics make our language very different 
-from special purpose financial contract languages such as [3].  While 
-we use several financial contract examples to introduce our language and
-demonstrate its flexibility, its scope
-both in functionality and the kinds of contracts and transaction
-protocols it can represent is far broader.
-<br>
-</p><h3>Semantics</h3>
-Each word and phrase in our language has a clear standard meaning.
-As a result, contracts can be drafted that will be far less subject to
-disputes over interpretation.  On the other hand, the language is
-not very good at expressing many subjective and ambiguous concepts
-that are often necessary in contracts.  Nor is it any good, in its
-present state, in referring to jurisdictions or doctrines of law.
-The language is nevertheless very different from a traditional programming
-language.  Contractual
-terms are defined in terms of events that trigger their performance.
-Such events include dates and times, choices made by the parties, 
-observable breaches of contract, and so on.  
-<p>
-Our language is not a markup language.   It is not about manipulating
-text for the purposes of drafting contracts.
-It is not about structuring text, specifying fill-out forms, defining 
-static data formats, or similar tasks of languages such as HTML or XML.
-For those tasks one should use a markup language, or a text-manipulating
-programming language (e.g. Perl), not this language.
-Our language does something very different.  It models the dynamics
-of contract performance -- when and under what conditions obligations
-should be performed.
-</p><p>
-The words and sentences of the
-language do not consist of instructions followed down the 
-page from one step to the next.  Instead, a contract
-is read (both by human and computer) by following nested definitions of 
-contractual terms as they expand, and by
-looking at events in <b>when</b> statements and seeing what they trigger.
-If the drafter does need to explicitly 
-construct a step by step calendar schedule, this can be done by
-using calendar-driven events or words like <b>for</b> and <b>then</b>.
-</p><p>
-The language encourages composition of contracts.  Contracts, rights,
-and obligations can be nested.   We call these nested structures
-<i>clauses</i>.  Contracts and clauses involve two parties,
-the <i>Holder</i>, from whose point of view we read the
-contract, and a <i>Counterparty</i>.  Multi-party agreements can
-be drafted by composing several two-party contracts.
-</p><p>
 
-<br>
-</p><h3>Example -- Futures Contract</h3>
-Our first example is a well-known financial contract, the <i>future</i>.
-A future is an obligation on the part of the Holder
-of the futures contract to purchase a certain amount of a certain 
-commodity in a certain month, and the obligation on the part of the
-future contract writer, the Counterparty, to deliver these goods. 
-For the purposes of introducing this contract, we give it in the abstract
-form in which financial analysts usually deal with it, leaving out 
-important details that describe the third parties who act as
-trusted intermediaries to define "fair bundles" of commodities,
-and we also leave out many details about the actual delivery.
-<pre>future(rightA="1 round lot pork bellies", 
+  <p>
+    Performance of the contract, i.e. its reification as a smart contract, can thus be seen as (hypothetical, at this point) execution of a program written in our language. Furthermore, our language incorporates a wide variety of contractual terms, not just abstract monetary terms and their derivatives. These two characteristics make our language very different from special purpose financial contract languages such as [3]. While we use several financial contract examples to introduce our language and demonstrate its flexibility, its scope both in functionality and the kinds of contracts and transaction protocols it can represent is far broader. 
+  </p>
+
+  <h2>Semantics</h2>
+
+  <p>
+    Each word and phrase in our language has a clear standard meaning. As a result, contracts can be drafted that will be far less subject to disputes over interpretation. On the other hand, the language is not very good at expressing many subjective and ambiguous concepts that are often necessary in contracts. Nor is it any good, in its present state, in referring to jurisdictions or doctrines of law. The language is nevertheless very different from a traditional programming language. Contractual terms are defined in terms of events that trigger their performance. Such events include dates and times, choices made by the parties, observable breaches of contract, and so on.
+  </p>
+
+  <p>
+    Our language is not a markup language. It is not about manipulating text for the purposes of drafting contracts. It is not about structuring text, specifying fill-out forms, defining static data formats, or similar tasks of languages such as HTML or XML. For those tasks one should use a markup language, or a text-manipulating programming language (e.g. Perl), not this language. Our language does something very different. It models the dynamics of contract performance &ndash; when and under what conditions obligations should be performed.
+  </p>
+
+  <p>
+    The words and sentences of the language do not consist of instructions followed down the page from one step to the next. Instead, a contract is read (both by human and computer) by following nested definitions of contractual terms as they expand, and by looking at events in <strong>when</strong> statements and seeing what they trigger. If the drafter does need to explicitly construct a step by step calendar schedule, this can be done by using calendar-driven events or words like <strong>for</strong> and <strong>then</strong>.
+  </p>
+
+  <p>
+    The language encourages composition of contracts. Contracts, rights, and obligations can be nested. We call these nested structures <em>clauses</em>. Contracts and clauses involve two parties, the <em>Holder</em>, from whose point of view we read the contract, and a <em>Counterparty</em>. Multi-party agreements can be drafted by composing several two-party contracts.
+  </p>
+
+  <h2>Example &ndash; Futures Contracts</h2>
+
+  <p>
+    Our first example is a well-known financial contract, the <em>future</em>. A future is an obligation on the part of the Holder of the futures contract to purchase a certain amount of a certain commodity in a certain month, and the obligation on the part of the future contract writer, the Counterparty, to deliver these goods. For the purposes of introducing this contract, we give it in the abstract form in which financial analysts usually deal with it, leaving out important details that describe the third parties who act as trusted intermediaries to define "fair bundles" of commodities, and we also leave out many details about the actual delivery.
+  </p>
+
+<pre>
+future(rightA="1 round lot pork bellies", 
        rightB="$1,500.00", 
        p = "for delivery in July 2002") = 
-	
-	when withinPeriod(p) 
-		to Holder rightA   with   to Counterparty rightB 
-   	then terminate
+  
+        when withinPeriod(p) 
+                to Holder rightA   with   to Counterparty rightB 
+        then terminate
 </pre>
-Since this language is not yet being computer interpreted, the syntax
-is designed more for human than computer readability.  I will 
-be a bit fast and loose with the syntax, and you can be too.    I
-mostly use tabs instead of brackets {} to structure clauses in a way that 
-seems natural and readable to me -- and I hope to you -- but might 
-confuse a computer.
-Feel free to develop your own style. 
-<p>
-The top three lines in the contract,
-in the form <b>name(parameters) = </b>
-tells us that we are defining a <i>named clause</i>.  
-The named
-clause can define an entire contract or just a clause in a larger
-contract.  We can pass the names of other named clauses, lists of events,
-and other kinds of information that the named clause needs -- these
-are the parameters.</p><p>
- 
-<b>when withinPeriod(p)</b> means "when the first calendar or clock
-event generated during period p". 
-The drafter can elsewhere set how often this regular "clock tick" event
-occurs.  The first such clock tick after the start of the period,
-in this case the first scheduled delivery day in the month of July,
-triggers the clause with the brackets {}.  More sophisticated
-schedules are possible, such as those that minimize delivery costs
-for the Counterparty by delivering to different Holders on different
-days in July.  
-Fortunately, we can hide these scheduling details within the
-calendar event and schedule iterator mechanisms, leaving the
-drafter free from worrying about exactly when markets are open,
-which days are weekends or holidays or leap days, and the like.  
-The Counterparty's delivery schedule can be negotiated
-or this detail can be left up to the Counterparty.  In the contract
-above, the constraints on delivery are that it occur within July
-and only in conjunction with payment from the Holder.
-<!-- This indented clause after the <b>when</b>
-is called a "contract clause" since it contains a right
-clause for each party (that is, there is mutual consideration, each
-party has at least one right and at least one obligation under the
-contract clause).  Because contracts,
-especially the kinds written in our language, can often be 
-composed by combining smaller contracts, sometimes such a clause is 
-even just called a "contract". -->
-</p><p>
-The innermost clause says to swap <b>rightA</b> for <b>rightB</b>.
-This clause is split into a Holder right and a Counterparty right.
-The right clause <b> Holder rightA</b> means "Holder has the right
-to performance of rightA", in this case delivery of the pork bellies.
-The clause <b> Counterparty rightB</b> means "Counterparty has the
-right to performance of rightB", which here is the payment of 1,500 dollars.
-<b>with</b> indicates a simultaneous swap -- the two transactions should
-occur together, perhaps intermediated by an escrow agent to enforce
-both the delivery and payment terms.
-</p><p>
 
-A <b>then</b> statement allows us to proceed step by
-step.  If we had two clauses
-written thus
-</p><pre>	to Holder right1
-	also to Holder right2
+  <p>
+    Since this language is not yet being computer interpreted, the syntax is designed more for human than computer readability. I will be a bit fast and loose with the syntax, and you can be too. I mostly use tabs instead of brackets {} to structure clauses in a way that seems natural and readable to me &ndash; and I hope to you &ndash; but might confuse a computer. Feel free to develop your own style.
+  </p>
+
+  <p>
+    The top three lines in the contract, in the form <strong>name(parameters)</strong> = tells us that we are defining a <em>named clause</em>. The named clause can define an entire contract or just a clause in a larger contract. We can pass the names of other named clauses, lists of events, and other kinds of information that the named clause needs &ndash; these are the parameters.
+  </p>
+
+  <p>
+    <strong>when withinPeriod(p)</strong> means "when the first calendar or clock event generated during period p". The drafter can elsewhere set how often this regular "clock tick" event occurs. The first such clock tick after the start of the period, in this case the first scheduled delivery day in the month of July, triggers the clause with the brackets {}. More sophisticated schedules are possible, such as those that minimize delivery costs for the Counterparty by delivering to different Holders on different days in July. Fortunately, we can hide these scheduling details within the calendar event and schedule iterator mechanisms, leaving the drafter free from worrying about exactly when markets are open, which days are weekends or holidays or leap days, and the like. The Counterparty's delivery schedule can be negotiated or this detail can be left up to the Counterparty. In the contract above, the constraints on delivery are that it occur within July and only in conjunction with payment from the Holder.<!-- This indented clause after the <strong>when</strong> is called a "contract clause" since it contains a right clause for each party (that is, there is mutual consideration, each party has at least one right and at least one obligation under the contract clause).  Because contracts, especially the kinds written in our language, can often be composed by combining smaller contracts, sometimes such a clause is even just called a "contract". -->
+  </p>
+
+  <p>
+    The innermost clause says to swap <strong>rightA</strong> for <strong>rightB</strong>. This clause is split into a Holder right and a Counterparty right. The right clause <strong>Holder rightA</strong> means "Holder has the right to performance of rightA", in this case delivery of the pork bellies. The clause <strong>Counterparty rightB</strong> means "Counterparty has the right to performance of rightB", which here is the payment of 1,500 dollars. <strong>with</strong> indicates a simultaneous swap &ndash; the two transactions should occur together, perhaps intermediated by an escrow agent to enforce both the delivery and payment terms.
+  </p>
+
+  <p>
+    A <strong>then</strong> statement allows us to proceed step by step. If we had two clauses written thus:
+  </p>
+
+<pre>
+to Holder right1
+also to Holder right2
 </pre>
-they could be performed in any order -- right2 might be performed
-first, or right1 might be, or (most likely) performance on both
-might proceed at the sime time.   Several <b>when</b> statements
-nested together at the same level have any implicit <b>also</b>
-as they can be triggered in any order.
-<p>
-<!-- Unless the drafter needs to constrain
-the performance to fit a calendar schedule, or must ensure that 
-one clause must be performed before another, it is best to let
-them be performed in any order as above.  This makes for more 
-simplicity and flexibility in the analysis and performance of the
-contract. -->
-Envision a dancing elf that follows nesting of clauses as they
-are performed and of events as they are caught.  
-(Programmers call this dancing elf by the boring name "instruction
- pointer").  There can be more than one dancing elf if there is an 
-<b>also</b> or if more than one when statement is triggered while another 
-is active, but usually we only need to think about one at a time.
-</p><p>
-If we wish to add the constraint that right2 cannot be 
-performed until right1 has been, we use <b>then</b>:
-</p><pre>	to Holder right1
-	then to Holder right2
+
+  <p>
+    They could be performed in any order &ndash; right2 might be performed first, or right1 might be, or (most likely) performance on both might proceed at the sime time. Several <strong>when</strong> statements nested together at the same level have any implicit <strong>also</strong> as they can be triggered in any order.
+  </p>
+
+  <p>
+    <!-- Unless the drafter needs to constrain the performance to fit a calendar schedule, or must ensure that one clause must be performed before another, it is best to let them be performed in any order as above.  This makes for more simplicity and flexibility in the analysis and performance of the contract. -->Envision a dancing elf that follows nesting of clauses as they are performed and of events as they are caught. (Programmers call this dancing elf by the boring name "instruction pointer"). There can be more than one dancing elf if there is an <strong>also</strong> or if more than one when statement is triggered while another is active, but usually we only need to think about one at a time.
+  </p>
+
+  <p>
+    If we wish to add the constraint that right2 cannot be performed until right1 has been, we use <strong>then</strong>:
+  </p>
+
+<pre>
+to Holder right1
+then to Holder right2
 </pre>
-Traditional programmers will be sorely tempted to fill their contracts with
-<b>then</b> statements, mimicking the style of procedural programming.
-Do not!  Those experienced with drafting contracts 
-know that is some cases such a constraint is clearly 
-appropriate and in some cases it clearly isn't, and it is
-important when adding constraints to be explicit.  Therefore
-the following statement is illegal, and will be rejected both
-by the computer and by any right-thinking drafters working
-without a computer:
-<pre># Do not do this!
-	to Holder right1
-	to Holder right2
+
+  <p>
+    Traditional programmers will be sorely tempted to fill their contracts with <strong>then</strong> statements, mimicking the style of procedural programming. Do not! Those experienced with drafting contracts know that is some cases such a constraint is clearly appropriate and in some cases it clearly isn't, and it is important when adding constraints to be explicit. Therefore the following statement is illegal, and will be rejected both by the computer and by any right-thinking drafters working without a computer:
+  </p>
+
+<pre>
+# Do not do this!
+        to Holder right1
+        to Holder right2
 </pre>
-Finally, we have already seen this kind of clause:
-<pre>	to Holder right1
-	with to Holder right2
-</pre>     
-This means that right1 and right2 should be performed
-simultaneously -- and either both of them should be
-performed, or neither of them.  In the lingo of computer scientists, it 
-should be an "atomic" transaction.
-<p>
-The <b>then terminate</b> at the end of the named clause ensures 
-that all rights and obligations under the contract are 
-terminated once it has been performed.  It is not 
-triggered until the 
-one-line body of the future contract has been completed.
-as well as any outstanding subordinate clauses with their rights 
-and obligations.  This clause is implicit at the end of every
-named clause, but for this one time we make it explicit.  This
-clause is often used explicitly when the drafter wants to ensure
-the proper termination of non-named clauses nested within a named
-clause.
-</p><p>
-Let's now proceed through the futures contract step by step, as
-clauses are activated and then performed.  
-A normal font indicates the clause is inactive. 
-A <b>bold</b> font
-indicates an active state -- the clauses is being performed.
-</p><p>
-When the parties commit to the contract its first clauses
-(the clauses at the highest level of indentation)
-are awoken.  In our futures contract we have only one
-such clause, and so the <b>when</b> (but not the clauses
-nested underneath it) go to in an active state, waiting for the
-<b>withinPeriod()</b> event:
-</p><pre>	<b>when withinPeriod(p) </b>
-		to Holder rightA   with   to Counterparty rightB 
-   	then terminate
+
+  <p>
+    Finally, we have already seen this kind of clause:
+  </p>
+
+<pre>
+to Holder right1
+with to Holder right2
 </pre>
-When the calendar has advanced to the end of trading on the last
-trading day of August, the <b>withinPeriod(p)</b> event occurs
-and the <b>when</b> activates the clauses nested at the
-next level inside.  The when itself becomes inactive -- it is no longer
-waiting for an event:
-<pre>	when withinPeriod(p) 
-		<b>to Holder rightA   with   to Counterparty rightB </b>
-   	then terminate
+
+  <p>
+    This means that right1 and right2 should be performed simultaneously &ndash; and either both of them should be performed, or neither of them. In the lingo of computer scientists, it should be an "atomic" transaction.
+  </p>
+
+  <p>
+    The <strong>then terminate</strong> at the end of the named clause ensures that all rights and obligations under the contract are terminated once it has been performed. It is not triggered until the one-line body of the future contract has been completed. as well as any outstanding subordinate clauses with their rights and obligations. This clause is implicit at the end of every named clause, but for this one time we make it explicit. This clause is often used explicitly when the drafter wants to ensure the proper termination of non-named clauses nested within a named clause.
+  </p>
+
+  <p>
+    Let's now proceed through the futures contract step by step, as clauses are activated and then performed. A normal font indicates the clause is inactive. A <strong>bold</strong> font indicates an active state &ndash; the clauses is being performed.
+  </p>
+
+  <p>
+    When the parties commit to the contract its first clauses (the clauses at the highest level of indentation) are awoken. In our futures contract we have only one such clause, and so the <strong>when</strong> (but not the clauses nested underneath it) go to in an active state, waiting for the <strong>withinPeriod()</strong> event:
+  </p>
+
+<pre>
+<strong>when withinPeriod(p)</strong> 
+        to Holder rightA   with   to Counterparty rightB 
+then terminate
 </pre>
-The <b>then</b> has cause the <b>terminate</b> to wait for 
-the <b>when</b> and its subclauses to be performed.  
-Once the swap of rights has been performed, the performed clauses
-convert to inactivity and the terminate fires:
-<pre>	when withinPeriod(p) 
-		to Holder rightA   with   to Counterparty rightB 
-   	then <b>terminate</b>
+
+  <p>
+    When the calendar has advanced to the end of trading on the last trading day of August, the <strong>withinPeriod(p)</strong> event occurs and the <strong>when</strong> activates the clauses nested at the next level inside. The when itself becomes inactive &ndash; it is no longer waiting for an event:
+  </p>
+
+<pre>
+when withinPeriod(p) 
+        <strong>to Holder rightA   with   to Counterparty rightB</strong> 
+then terminate
 </pre>
-<p>
-It is easy to generalize in our language.  The
-generic futures contract looks like this:
-</p><pre>future(rightA, rightB, p) = 
-	when withinPeriod(p) 
-		to Holder rightA   with   to Counterparty rightB 
-   	then terminate
+
+  <p>
+    The <strong>then</strong> has cause the <strong>terminate</strong> to wait for the <strong>when</strong> and its subclauses to be performed. Once the swap of rights has been performed, the performed clauses convert to inactivity and the terminate fires:
+  </p>
+
+<pre>
+when withinPeriod(p) 
+        to Holder rightA   with   to Counterparty rightB
+then <strong>terminate</strong>
 </pre>
-Instead of pork bellies, we can swap any
-other <b>rightA</b> for <b>rightB</b>,
-which can be a wide variety of things beside money.  Drafters
-can specify very general boilerplate and fill in details for
-specific contracts later.
-<p>
-</p><h3>Example -- Option Contract</h3>
+
+  <p>
+    It is easy to generalize in our language. The generic futures contract looks like this:
+  </p>
+
+<pre>
+future(rightA, rightB, p) = 
+        when withinPeriod(p) 
+                to Holder rightA   with   to Counterparty rightB 
+        then terminate
+</pre>
+
+  <p>
+    Instead of pork bellies, we can swap any other <strong>rightA</strong> for <strong>rightB</strong>, which can be a wide variety of things beside money. Drafters can specify very general boilerplate and fill in details for specific contracts later.
+  </p>
+
+<h2>Example -- Option Contract</h2>
 We now present another kind of financial contract. In
 this <i>American option</i>, the Holder has the right to buy for
 $20 (the option strike price) per share one round lot (100 shares) of XYZ Corp
@@ -1589,9 +1483,19 @@ for example a promise not to sell to a customer's competitors in
 an industry for a certain period of time.  Worse, such a 
 conflict might not be discovered until the contraditory commitment
 has been made.
-<hr>
-Please send your comments to
-nszabo (at) law (dot) gwu (dot) edu      
-<hr>
-<a href="http://szabo.best.vwh.net/index.html">Nick Szabo's Papers and Concise Tutorials</a> 
-</body></html>
+
+  <hr>
+  <p>
+    Please send your comments to nszabo (at) law (dot) gwu (dot) edu 
+  </p>
+
+  <p>
+    Copyright &copy; 2002 by Nick Szabo<br>
+    Preliminary draft -- Redistribution only with written permission of author.
+  </p>
+  <hr>
+  <p>
+    <em>Editor's note: The source file contains comments with additional notes and thoughts by the author. Some links may be broken.</em>
+  </p>
+</div>
+{% endblock %}
