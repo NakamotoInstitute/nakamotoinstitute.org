@@ -16,7 +16,6 @@
   <strong>Nick Szabo</strong> is a computer scientist and economist living in Menlo Park, California.
   -->
 
-  <hr>
   <p>
     The author presents a mini-language for <!-- lawyers, legal scholars, economists, legal and economic historians, business analysts, accountants, auditors, and others --> pprofessionals and researchers interested in drafting and analyzing contracts. It is intended for computers to read, too. The main purpose of this language is to, as unambiguously and completely and succinctly as possible, specify common contracts or contractual terms. These include financial contracts, liens and other kinds of security, transfer of ownership, performance of online services, and supply chain workflow.
   </p>
@@ -100,9 +99,9 @@ future(rightA="1 round lot pork bellies",
        rightB="$1,500.00", 
        p = "for delivery in July 2002") = 
   
-        when withinPeriod(p) 
-                to Holder rightA   with   to Counterparty rightB 
-        then terminate
+    when withinPeriod(p) 
+        to Holder rightA   with   to Counterparty rightB 
+    then terminate
 </pre>
 
   <p>
@@ -153,8 +152,8 @@ then to Holder right2
 
 <pre>
 # Do not do this!
-        to Holder right1
-        to Holder right2
+    to Holder right1
+    to Holder right2
 </pre>
 
   <p>
@@ -184,7 +183,7 @@ with to Holder right2
 
 <pre>
 <strong>when withinPeriod(p)</strong> 
-        to Holder rightA   with   to Counterparty rightB 
+    to Holder rightA   with   to Counterparty rightB 
 then terminate
 </pre>
 
@@ -194,7 +193,7 @@ then terminate
 
 <pre>
 when withinPeriod(p) 
-        <strong>to Holder rightA   with   to Counterparty rightB</strong> 
+    <strong>to Holder rightA   with   to Counterparty rightB</strong> 
 then terminate
 </pre>
 
@@ -204,7 +203,7 @@ then terminate
 
 <pre>
 when withinPeriod(p) 
-        to Holder rightA   with   to Counterparty rightB
+    to Holder rightA   with   to Counterparty rightB
 then <strong>terminate</strong>
 </pre>
 
@@ -214,469 +213,342 @@ then <strong>terminate</strong>
 
 <pre>
 future(rightA, rightB, p) = 
-        when withinPeriod(p) 
-                to Holder rightA   with   to Counterparty rightB 
-        then terminate
+    when withinPeriod(p) 
+        to Holder rightA   with   to Counterparty rightB 
+    then terminate
 </pre>
 
   <p>
     Instead of pork bellies, we can swap any other <strong>rightA</strong> for <strong>rightB</strong>, which can be a wide variety of things beside money. Drafters can specify very general boilerplate and fill in details for specific contracts later.
   </p>
 
-  <h2>Example -- Option Contract</h2>
-We now present another kind of financial contract. In
-this <i>American option</i>, the Holder has the right to buy for
-$20 (the option strike price) per share one round lot (100 shares) of XYZ Corp
-on or before the last trading day of August.
-These kinds of contracts are called "derivatives" because the call 
-option is derived from the underlying right (here a stock).
+  <h2>Example &ndash; Option Contract</h2>
 
-<pre>callOptionAmerican (rightA="1 round lot XYZ Corp.", 
-		    rightB="$2,000/lot", 
-		    time="end of trading on last trading day of August") =
-	when beforeTime(time) 
-     		when choiceOf(Holder) 
-			to Holder rightA with to Counterparty rightB
-	when afterTime(time) 
-		terminate 
+  <p>
+    We now present another kind of financial contract. In this <em>American option</em>, the Holder has the right to buy for $20 (the option strike price) per share one round lot (100 shares) of XYZ Corp on or before the last trading day of August. These kinds of contracts are called "derivatives" because the call option is derived from the underlying right (here a stock).
+  </p>
+
+<pre>
+callOptionAmerican (rightA="1 round lot XYZ Corp.", 
+                    rightB="$2,000/lot", 
+                    time="end of trading on last trading day of August") =
+    when beforeTime(time) 
+        when choiceOf(Holder) 
+            to Holder rightA with to Counterparty rightB
+    when afterTime(time) 
+        terminate
 </pre>
-<p>
-Think about that dancing elf again.  (When reading or writing in our
-language it's important to follow these dancing elves.  If the elves 
-become
-annoying, think
-of some other dynamic character or process for a metaphor that suits). 
-As it goes around
-it wakes up clauses, making them active, causing them to be performed.
-Sometimes there can be more than one elf dancing through the
-code at the same time,
-for example if more than one when statement is triggered while another 
-is active, but usually we only need to think about one at a time.
-</p><p>
-The contract starts out with dancing elves in the two top-level
-clauses:
-</p><pre>	<b>when beforeTime(time) </b>
-     		when choiceOf(Holder) 
-			to Holder rightA with to Counterparty rightB
-	<b>when afterTime(time) </b>
-		terminate 
+
+  <p>
+    Think about that dancing elf again. (When reading or writing in our language it's important to follow these dancing elves. If the elves become annoying, think of some other dynamic character or process for a metaphor that suits). As it goes around it wakes up clauses, making them active, causing them to be performed. Sometimes there can be more than one elf dancing through the code at the same time, for example if more than one when statement is triggered while another is active, but usually we only need to think about one at a time.
+  </p>
+
+  <p>
+    The contract starts out with dancing elves in the two top-level clauses:
+  </p>
+
+<pre>
+<strong>when beforeTime(time)</strong>
+    when choiceOf(Holder)
+        to Holder rightA with to Counterparty rightB
+<strong>when afterTime(time)</strong>
+    terminate
 </pre>
-These when statements are now waiting for their respective events.
-Since the events are mutually exclusive (it is first <b>beforeTime(time)</b>,
-then <b>afterTime(time)</b>, but never both) we only need to worry about
-the first to be executed.  Note that, unless separated by a <b>then</b>,
-the order of the clauses at the same level is not important.  The
-following code is identical to the code in our example:
-<pre>	when afterTime(time) 
-		terminate 
-	when beforeTime(time) 
-     		when choiceOf(Holder) 
-			to Holder rightA with to Counterparty rightB
+
+  <p>
+    These when statements are now waiting for their respective events. Since the events are mutually exclusive (it is first <strong>beforeTime(time)</strong>, then <strong>afterTime(time)</strong>, but never both) we only need to worry about the first to be executed. Note that, unless separated by a <strong>then</strong>, the order of the clauses at the same level is not important. The following code is identical to the code in our example:
+  </p>
+
+<pre>
+when afterTime(time)
+    terminate
+when beforeTime(time)
+    when choiceOf(Holder)
+        to Holder rightA with to Counterparty rightB
 </pre>
-The <b>beforeTime(time)</b> is immediately activiated,
-so that we start with the nested clause(s) at the level immediate below
-it active as well -- in this case, <b>when choiceOf(Holder)</b>.
-<pre>	when beforeTime(time)
-     		<b>when choiceOf(Holder) </b>
-			to Holder rightA with to Counterparty rightB
-	<b>when afterTime(time) </b>
-		terminate 
+
+  <p>
+    The <strong>beforeTime(time)</strong> is immediately activiated, so that we start with the nested clause(s) at the level immediate below it active as well &ndash; in this case, when choiceOf(Holder).
+  </p>
+
+<pre>
+when beforeTime(time)
+    <strong>when choiceOf(Holder)</strong>
+        to Holder rightA with to Counterparty rightB
+<strong>when afterTime(time)</strong>
+    terminate 
 </pre>
-  A series of whenes at the same level
-in that clause all start waiting for any of them to be triggered.
-When a when receives an event  thrown below it or at it, the
-nested clause below it becomes active.  Then the clauses below it become 
-active and are performed down to the wheness one level below.  The
-whenes at that level go from inactive to active, now waiting for
-their events to occur.
-<p>
-The <b>when beforeTime(time)</b> becomes active when the option itself
-is first activated, and remains active until <b>time</b>.  Being
-active it wakes up the <b>when choiceOf(Holder)</b>.  This
-when specifies the event that gives
-the contract its nature as an option -- the choice of its holder
-to exercise it or not.  
-If the Holder chooses to do so, the Holder
-gets the stock (<b>rightA</b>) from the Counterparty (the writer of the call
-option) in exchange for the money (<b>rightB</b>).    The dancing
-elves then move from the <b>when</b> clause to the swap clause:
-</p><pre>	when beforeTime(time)
-     		when choiceOf(Holder)
-			<b>to Holder rightA with to Counterparty rightB</b>
-	<b>when afterTime(time) </b>
-		terminate 
+
+  <p>
+    A series of whenes at the same level in that clause all start waiting for any of them to be triggered. When a when receives an event thrown below it or at it, the nested clause below it becomes active. Then the clauses below it become active and are performed down to the wheness one level below. The whenes at that level go from inactive to active, now waiting for their events to occur.
+  </p>
+
+  <p>
+    The <strong>when beforeTime(time)</strong> becomes active when the option itself is first activated, and remains active until <strong>time</strong>. Being active it wakes up the when choiceOf(Holder). This when specifies the event that gives the contract its nature as an option -- the choice of its holder to exercise it or not. If the Holder chooses to do so, the Holder gets the stock (rightA) from the Counterparty (the writer of the call option) in exchange for the money (rightB). The dancing elves then move from the when clause to the swap clause:
+  </p>
+
+<pre>
+when beforeTime(time)
+    when choiceOf(Holder)
+        <strong>to Holder rightA with to Counterparty rightB</strong>
+<strong>when afterTime(time)</strong> 
+    terminate 
 </pre>
-<p>
-When code gets complicated, we might not be able to easily
-tell whether the implicit <b>then terminate</b> on the last line
-will get executed. So it's a good idea to
-to <b>terminate</b> the
-contract explicitly when the option expires.
-</p><p>
-We will see examples where more than one kind of event, and even
-sequences of events (such as a calender schedule of payment dates)
-trigger the execution of contractual terms.
-</p><p>
-<!-- Here is the same contract in a more general form.
+
+  <p>
+    When code gets complicated, we might not be able to easily tell whether the implicit <strong>then terminate</strong> on the last line will get executed. So it's a good idea to <strong>terminate</strong> the contract explicitly when the option expires.
+  </p>
+
+  <p>
+    We will see examples where more than one kind of event, and even sequences of events (such as a calender schedule of payment dates) trigger the execution of contractual terms.
+  </p>
+
+<!--
+  <p>
+    Here is the same contract in a more general form.
+  </p>
+
 <pre>
 callOptionAmerican(rightA, rightB, time) = 
-	when beforeTime(time)
-     		when choiceOf(Holder) 
-			to Holder rightA   with   to Counterparty rightB
-	when afterTime(time) 
-		terminate 
-</pre> -->
-
-</p><p>
-Remember that the language does not proceed by default
-step by step -- instead the reader (human or computer) should
-follow down the nested contract definitions as they expand, and
-look at events in <b>when</b> statements to see what they trigger.
-Explicit step by step calendar schedules can be built using 
-<b>for</b>, <b>then</b>, and calendar events.
-</p><p>
-Here's an example that uses such explicit steps.
-A <i>bond</i> makes a sequence of fixed payments,
-called <i>coupons</i>, on a regular schedule, and then makes a final
-payment, the <i>principal</i>.  We don't show here the details of the
-schedule itself, but in general a schedule could be defined to be
-any kind of temporal sequence -- we could pay out coupons on
-the last day of every month, on every Japanese holiday, according
-to the computation of Easter (don't laugh -- schedulers
-of medieval fairs had to face this problem), or however we choose.
-When implemented the calendar events and schedule iterator will
-contain a very thorough implementation that solves many of the nasty
-calendar problems that often appear in transaction processing systems.
-</p><p>
-<b>for</b> iterates through the events in the schedule one by
-one, with the nested <b>when</b> handling them.  When it appears
-after a <b>for</b> clause, a <b>then</b> advances the iterator one
-more step.
-</p><pre>bond(coupon, principal, schedule) = 
-	for schedule 
-		when withinPeriod(schedule.next) 
-			to Holder coupon
-	then
- 	when withinPeriod(schedule.next) 
-		to Holder principal 
+    when beforeTime(time)
+        when choiceOf(Holder) 
+            to Holder rightA   with   to Counterparty rightB
+    when afterTime(time) 
+        terminate 
 </pre>
-<p>
-Next we sketch a contract to sell a car on credit.  Being a sketch
-rather than a full-fledged design, this is an 
-oversimplified or "toy" example -- 
-we leave out fees, any references to a related insurance
-contract, warrantees, waivers, etc.  We also for simplicity have the 
-bank (here the Holder)
-be the same as the car dealer.  
-Finally, we don't show here any lien on the car to secure the loan.
-We will make a stab at a lien-like mechanism in an example below.
+-->
 
+  <p>
+    Remember that the language does not proceed by default step by step &ndash; instead the reader (human or computer) should follow down the nested contract definitions as they expand, and look at events in <strong>when</strong> statements to see what they trigger. Explicit step by step calendar schedules can be built using <strong>for</strong>, <strong>then</strong>, and calendar events.
+  </p>
 
-</p><pre>loanPayments(payment, schedule) =
-	for schedule 
-		when withinPeriod(schedule.next) 
-			payment 
-carPurchase(car, downPayment, monthlyPayment, schedule)  = 
-	to Counterparty getTitle(car)   with   to Holder downPayment 
-	then to Holder loanPayment(monthlyPayment, schedule)
+  <p>
+    Here's an example that uses such explicit steps. A <em>bond</em> makes a sequence of fixed payments, called <em>coupons</em>, on a regular schedule, and then makes a final payment, the <em>principal</em>. We don't show here the details of the schedule itself, but in general a schedule could be defined to be any kind of temporal sequence &ndash; we could pay out coupons on the last day of every month, on every Japanese holiday, according to the computation of Easter (don't laugh &ndash; schedulers of medieval fairs had to face this problem), or however we choose. When implemented the calendar events and schedule iterator will contain a very thorough implementation that solves many of the nasty calendar problems that often appear in transaction processing systems.
+  </p>
+
+  <p>
+    <strong>for</strong> iterates through the events in the schedule one by one, with the nested <strong>when</strong> handling them. When it appears after a <strong>for</strong> clause, a <strong>then</strong> advances the iterator one more step.
+  </p>
+
+<pre>
+bond(coupon, principal, schedule) = 
+    for schedule 
+        when withinPeriod(schedule.next) 
+            to Holder coupon
+    then
+    when withinPeriod(schedule.next) 
+        to Holder principal 
 </pre>
-If we want to allow prepayment, our schedule would contain single
-times rather than periods with a begin time and an end time.  And
-our loan payments would look as follows:
-<pre>loanPayments(payment, schedule) =
-	for schedule
-		when beforeTime(schedule.next) 
-			payment
-</pre>     
-We could compute the above payment from other information we
-are more likely to see in the contract, but this involves
-just normal programming.  We can use a function to perform
-the computation in the first place:
-<pre>loanPayments(principal, interest, schedule) =
-	constant payment.amount = computeInterest(principal, schedule, interest)
-		# normal computational function goes here
-	then for schedule
-		when beforeTime(schedule.next) 
-			payment
+
+  <p>
+    Next we sketch a contract to sell a car on credit. Being a sketch rather than a full-fledged design, this is an oversimplified or "toy" example &ndash; we leave out fees, any references to a related insurance contract, warrantees, waivers, etc. We also for simplicity have the bank (here the Holder) be the same as the car dealer. Finally, we don't show here any lien on the car to secure the loan. We will make a stab at a lien-like mechanism in an example below.
+  </p>
+
+<pre>
+loanPayments(payment, schedule) =
+    for schedule
+        when withinPeriod(schedule.next)
+            payment
+carPurchase(car, downPayment, monthlyPayment, schedule)  =
+    to Counterparty getTitle(car)   with   to Holder downPayment
+    then to Holder loanPayment(monthlyPayment, schedule)
 </pre>
-"=" sets, for all time (thus <b>constant</b>), the number <b>payment.amount</b> 
-to the value returned by the function <b>computeInterest</b>.
-<!--  We can 
-also make <b>payment a variable, that is an object whose value could
-change,  and use the function as an <i>invariant condition</i> to make sure
-the payment is proper is made in the proper amount, using the 
-<b>==</b> and <b>if/else</b> constructions:
+
+  <p>
+    If we want to allow prepayment, our schedule would contain single times rather than periods with a begin time and an end time. And our loan payments would look as follows:
+  </p>
+
+<pre>
+loanPayments(payment, schedule) =
+    for schedule
+           when beforeTime(schedule.next)
+                 payment
+</pre>
+
+  <p>
+    We could compute the above payment from other information we are more likely to see in the contract, but this involves just normal programming. We can use a function to perform the computation in the first place:
+  </p>
+
+<pre>
+loanPayments(principal, interest, schedule) =
+        constant payment.amount = computeInterest(principal, schedule, interest)
+                # normal computational function goes here
+        then for schedule
+                when beforeTime(schedule.next) 
+                        payment
+</pre>
+
+  <p>
+    "=" sets, for all time (thus <strong>constant</strong>), the number <strong>payment.amount</strong> to the value returned by the function <strong>computeInterest</strong>. We could also do more complicated things &ndash; deduct interest for prepayment, or conversely add prepayment penalties, or a wide variety of other conditions.
+  </p>
+
+  <!--
+  <p>
+    We can also make <strong>payment</strong> a variable, that is an object whose value could change, and use the function as an <em>invariant condition</em> to make sure the payment is proper is made in the proper amount, using the <strong>==</strong> and <strong>if/else</strong> constructions:
+  </p>
+
 <pre>
 variable payment.amount = computeInterest(principal, schedule, interest)
-	# normal computational function goes here
+    # normal computational function goes here
 loanPayments(principal, schedule, interest) =
-        for schedule
-                when beforeTime(schedule.next) 	
-			if (payment.amount == computeInterest(principal, schedule, interest)
-			payment
--->
+    for schedule
+        when beforeTime(schedule.next)  
+            if (payment.amount == computeInterest(principal, schedule, interest))
+            payment
+  -->
 
+  <p>
+    We can also structure the car purchase contract so that the new owner doesn't get the title until after the downPayment has been received:
+  </p>
 
-We could also do more complicated things -- deduct interest for
-prepayment, or conversely add prepayment penalties, or a wide
-variety of other conditions.
-<p>
-We can also structure the car purchase contract so that the
-new owner doesn't get the title until after the downPayment
-has been received:
-</p><pre>carPurchase(car, downPayment, monthlyPayment, schedule)  =
-	to Holder downPayment 
-	then to Counterparty getTitle(car) 
-	then to Holder loanPayments(monthlyPayment, schedule) 
+<pre>
+carPurchase(car, downPayment, monthlyPayment, schedule)  =
+    to Holder downPayment 
+    then to Counterparty getTitle(car) 
+    then to Holder loanPayments(monthlyPayment, schedule)
 </pre>
 
-<br>
-<h3>Damage Clauses</h3>
-Let's use our language to analyze some important advances
-in the history of economic institutions.
-Genoa was an
-independent and rather libertarian (for its time) city heavily
-involved in the Mediterranean sea trade.
-During its height in the twelth through
-fifteenth centuries it developed many commercial innovations, including
-two we will examine here, the "dry exchange" loan and pooled-risk
-insurance.
-<p>
-Here is a
-clause from a contract made in Genoa on June 23 in
-1271 A.D.  A man is co-signing an obligation being made by
-his son:
-</p><pre>Wherefore and for which we promise, both of us [liable] for the whole
-amount, to give and to pay to you or to your accredited messenger
-53 gold hyperpers, good and of correct weight, in Romania [Byzantium].
-by the Kalends of September.  If, however, we do not give you these
-[hyperpers] within the said time limit, [we promise] for each of the said 
-hyperpers 11 shillings Genoese in Genoa whenever you wish.   Otherwise
-we promise, both of us [liable] for the whole amount, to give to you,
-making the stipulation, the penalty of the double of the said amount, 
-the aforesaid [conditions] remaining as settled.  And we pledge to you
-as security for the aforesaid [promises] all our goods, existing and
-future... [4]
+  <h2>Damage Clauses</h2>
+
+  <p>
+    Let's use our language to analyze some important advances in the history of economic institutions. Genoa was an independent and rather libertarian (for its time) city heavily involved in the Mediterranean sea trade. During its height in the twelth through fifteenth centuries it developed many commercial innovations, including two we will examine here, the "dry exchange" loan and pooled-risk insurance.
+  </p>
+
+  <p>
+    Here is a clause from a contract made in Genoa on June 23 in 1271 A.D. A man is co-signing an obligation being made by his son:
+  </p>
+
+  <blockquote>
+    <p>
+      Wherefore and for which we promise, both of us [liable] for the whole amount, to give and to pay to you or to your accredited messenger 53 gold hyperpers, good and of correct weight, in Romania [Byzantium], by the Kalends of September. If, however, we do not give you these [hyperpers] within the said time limit, [we promise] for each of the said hyperpers 11 shillings Genoese in Genoa whenever you wish. Otherwise we promise, both of us [liable] for the whole amount, to give to you, making the stipulation, the penalty of the double of the said amount, the aforesaid [conditions] remaining as settled. And we pledge to you as security for the aforesaid [promises] all our goods, existing and future... [4]
+    </p>
+  </blockquote>
+
+  <p>
+    Now, this is a very clever contract, called by scholars a "dry exchange". The Catholic Church forbad the charging of interest, so a loan contract that came right out and charged interest would be unenforceable and expose the drafters to further Church sanctions. But both long-distance exchange (making a trade at a distant market at a later date -- often via a sea voyage, thus a "wet" exchange) and currency exchange were quite legal, enforceable, and common. The above contract combined these two, along with damage clauses, in a clever way. None of the above parties had any intention of travelling to Byzantium, or even outside Genoa, to perform on this contract. Its logic can be analyzed as follows (the Holder is the creditor). We've added the statements "in (geographic location)", <strong>security</strong>, and <strong>foreclose</strong> to highlight important aspects of this contract. The latter sells enough of the goods at auction to satisfy penalty (if there was not enough to satisfy the creditors there was a bankruptcy procedure to fairly allocate the remain security among the creditors, but this is not shown):
+  </p>
+
+<pre>
+    counterpartySecurity =  pledge(allGoods(Counterparty))
+    also cosignerSecurity = pledge(allGoods(co-signer))
+    then  
+payment1() =  
+    when beforeTime("Kalends of September 1275")
+        to Holder in Byzantium "53 hyperpers"
+        terminate
+payment2() =  
+    when breachedPerformance(payment1)
+        to Holder in Genoa "53*11 = 583 shillings"
+        terminate
+payment3() =  
+    when breachedPerformance(payment2)
+        to Holder in Genoa "2*583 shillings"
+        terminate
+payment3() =  
+    when breachedPerformance(payment3) 
+        when choiceOf(Holder)
+            to Holder in Genoa foreclose(counterpartySecurity, penalty)
+            terminate 
+        when choiceOf(Holder)
+            to Holder in Genoa foreclose(cosignerSecurity, penalty)
+            terminate
+        continue
 </pre>
-Now, this is a very clever contract, called by scholars a
-"dry exchange".  The Catholic Church forbad
-the charging of interest, so a loan contract that came right out and
-charged interest would be unenforceable and expose the drafters
-to further Church sanctions.
-But both long-distance exchange (making a trade at a distant 
-market at a later date -- often via a sea voyage, thus a "wet"
-exchange) and currency exchange were quite legal, enforceable,
-and common.
-The above contract combined these two, along with damage clauses,
-in a clever way.  None of the above parties had any intention of travelling 
-to Byzantium, or even outside Genoa, to perform on this contract.
-Its logic can be analyzed as follows (the Holder is the creditor).
-We've added the statements "in (geographic location)" , <b>security</b>,
-and <b>foreclose</b> to highlight important aspects of this
-contract.  The latter sells enough of the goods at auction 
-to satisfy penalty (if there was not enough to satisfy the
-creditors there was a bankruptcy procedure to fairly
-allocate the remain security among the creditors, but this is not
-shown):
 
-<pre>	counterpartySecurity = 	pledge(allGoods(Counterparty))
-	also cosignerSecurity =	pledge(allGoods(co-signer))
-	then	
-payment1() = 	
-	when beforeTime("Kalends of September 1275")
-		to Holder in Byzantium "53 hyperpers"
-		terminate
-payment2() = 	
-	when breachedPerformance(payment1)
-		to Holder in Genoa "53*11 = 583 shillings"
-		terminate
-payment3() = 	
-	when breachedPerformance(payment2)
-		to Holder in Genoa "2*583 shillings"
-		terminate
-payment3() = 	
-	when breachedPerformance(payment3) 
-		when choiceOf(Holder)
-			to Holder in Genoa foreclose(counterpartySecurity, penalty)
-			terminate	
-		when choiceOf(Holder)
-			to Holder in Genoa foreclose(cosignerSecurity, penalty)
-		    	terminate
-		continue
-</pre>
-Neither party expected payment1 to be performed.
-The amounts
-of hyperpers and shillings probably reflected accurately the exchange rate
-between the two coins at the time -- there's no sense being
-too obvious.  But it would have been far
-too expensive to travel to Byzantium just to do this exchange.
-So in fact both parties expected payment2, a fake
-damage clause, to normally be performed.  If it wasn't,
-then we have two real damage clauses -- the somewhat reasonable
-"penalty of the double" and the lethal "all our goods, existing
-and future".  Another interpretation of the latter clause is that
-it would only  refer to a value of goods up to
-the double penalty amount, but the goods could be chosen from
-among all the goods of the debtor and the co-signer.
-Certainly a modern court would consider the interpretation I
-have placed on it in our language to be unconscionable, therefore
-unenforceable.
-<p>
-Above the part we quoted, the contract does not
-specify how much the original loan amount was -- the debtors
-simply acknowledge that they have received from the creditor
-"a number of Genoese deniers" and then promise other currencies
-in return as quoted above.
-So a Church investigator couldn't prove just from reading the
-contract that any interest was charged.  As for the Genoese
-judge arbitrating a dispute, he would likely be in favor of
-loans at interest, and happy to wink and nod and interpret
-the contract literally.
-</p><p>
-Modern derivatives traders do this all the time, creating <i>synthetic assets</i>
-or <i>combinations</i> that mimic the financial functionality of some other
-contract while avoiding its legal limitations.  Our language is ideal
-for drafting and analyzing such contracts.
+  <p>
+    Neither party expected payment1 to be performed. The amounts of hyperpers and shillings probably reflected accurately the exchange rate between the two coins at the time &ndash; there's no sense being too obvious. But it would have been far too expensive to travel to Byzantium just to do this exchange. So in fact both parties expected payment2, a fake damage clause, to normally be performed. If it wasn't, then we have two real damage clauses &ndash; the somewhat reasonable "penalty of the double" and the lethal "all our goods, existing and future". Another interpretation of the latter clause is that it would only refer to a value of goods up to the double penalty amount, but the goods could be chosen from among all the goods of the debtor and the co-signer. Certainly a modern court would consider the interpretation I have placed on it in our language to be unconscionable, therefore unenforceable.
+  </p>
 
-<!-- -->
-<br>
-</p><h3>Insurance</h3>
-The earliest risk-pooling insurance contracts were structured
-similarly to, and enforced under the same legal principals as,
-loans.   Indeed, let's start with a simple loan for
-a purchase of goods with no
-interest where the Holder (the creditor) can call in
-the loan any time between days <b>t1</b> and <b>t2</b>:
+  <p>
+    Above the part we quoted, the contract does not specify how much the original loan amount was &ndash; the debtors simply acknowledge that they have received from the creditor "a number of Genoese deniers" and then promise other currencies in return as quoted above. So a Church investigator couldn't prove just from reading the contract that any interest was charged. As for the Genoese judge arbitrating a dispute, he would likely be in favor of loans at interest, and happy to wink and nod and interpret the contract literally.
+  </p>
 
-<pre>loan(goods, principal, penalty, t1, t2) =
-	counterpartySecurity = 	pledge(allGoods(Counterparty))
-	with to Counterparty getTitle(goods) 
-	loanPayment(principal, t1, t2)
-	with when breachedPerformance(loanPayment)
-		to Holder foreclose(counterpartySecurity, penalty)
+  <p>
+    Modern derivatives traders do this all the time, creating synthetic assets or combinations that mimic the financial functionality of some other contract while avoiding its legal limitations. Our language is ideal for drafting and analyzing such contracts. 
+  </p>
+
+  <h2>Insurance</h2>
+
+  <p>
+    The earliest risk-pooling insurance contracts were structured similarly to, and enforced under the same legal principals as, loans. Indeed, let's start with a simple loan for a purchase of goods with no interest where the Holder (the creditor) can call in the loan any time between days <strong>t1</strong> and <strong>t2</strong>:
+  </p>
+
+<pre>
+loan(goods, principal, penalty, t1, t2) =
+    counterpartySecurity =  pledge(allGoods(Counterparty))
+    with to Counterparty getTitle(goods) 
+    loanPayment(principal, t1, t2)
+    with when breachedPerformance(loanPayment)
+        to Holder foreclose(counterpartySecurity, penalty)
 loanPayment(principal, t1, t2) =
-	when withinPeriod(t1,t2)
-		when choiceOf(Holder)
-			to Holder principal
-
+    when withinPeriod(t1,t2)
+        when choiceOf(Holder)
+            to Holder principal
 </pre>
-Let's add to our language a <b>safeArrival(goods)</b>
-event --
-the event that a ship carrying <b>goods</b> arrives 
-safely in port and that <b>goods</b> are offloaded and accounted for.
-Now by adding to this loan contract only one extra line,
-whening <b>safeArrival()</b>, and slightly modifying
-a few others we can transform
-it into a marine  insurance 
-contract.  The insured is the Holder, the insurer is the Counterparty.
-For this simple version damages are paid in a fixed
-amount (<b>principal</b>) if <b>safeArrival</b> does not occur:
-<pre>insureGoods(goodsPremium, principal, penalty, t1, t2, goodsInsured) =
-	counterpartySecurity = 	pledge(allGoods(Counterparty))
-	with to Counterparty getTitle(goodsPremium) 
-	insurancePayment(goodsInsured, principal, t1, t2)
-	with when breachedPerformance(insurancePayment)
-		to Holder foreclose(counterpartySecurity, penalty)
+
+  <p>
+    Let's add to our language a <strong>safeArrival(goods)</strong> event &ndash; the event that a ship carrying <strong>goods</strong> arrives safely in port and that <strong>goods</strong> are offloaded and accounted for. Now by adding to this loan contract only one extra line, whening <strong>safeArrival()</strong>, and slightly modifying a few others we can transform it into a marine insurance contract. The insured is the Holder, the insurer is the Counterparty. For this simple version damages are paid in a fixed amount (<strong>principal</strong>) if <strong>safeArrival</strong> does not occur:
+  </p>
+
+<pre>
+insureGoods(goodsPremium, principal, penalty, t1, t2, goodsInsured) =
+    counterpartySecurity =  pledge(allGoods(Counterparty))
+    with to Counterparty getTitle(goodsPremium) 
+    insurancePayment(goodsInsured, principal, t1, t2)
+    with when breachedPerformance(insurancePayment)
+        to Holder foreclose(counterpartySecurity, penalty)
 insurancePayment(goodsInsured, principal, t1, t2) =
-	when safeArrival(goodsInsured) terminate
-	when withinPeriod(t1,t2)
-		when choiceOf(Holder)
-			to Holder principal
-
+    when safeArrival(goodsInsured) terminate
+    when withinPeriod(t1,t2)
+        when choiceOf(Holder)
+            to Holder principal
 </pre>
 
-Here's an example of an early insurance contract of this kind --
-again from Genoa, the birthplace of modern commercial institutions.
-For the first time we see a pool of insurers -- not one but
-many counterparties, each pledging their entire property
-as security.  Often these were feudal lords with large landholdings,
-so the value that could be brought to bear to back these insurance
-contracts was vast.  This is how Lloyds Names still work
-today.  Since several Names back a single contract (e.g. covering
-a single shipment of goods, as here), each Name puts only a 
-tiny fraction of their estate at risk in that voyage.
-An insurance
-exchange like Lloyds allows the agents of goods owners, shippers, and
-Names to meet and mass-produce these kinds of
-contracts.
-<p>
-</p><pre>...Geri, [son] of the late Ser Lapo 
-of Florence, Simone Guascone, [9 more Names listed], each of them
-[liable] for the amount written below, have acknowledged and in truth 
-have declared to me, notary undersigned, as a public official [holding]
-a public office, making the stipulation and receiving in the name and
-stead of Federico Vivaldi, citizen of Genoa, that they have bought,
-have had, and have received from him a certain amount of goods of the
-said Frederico...And for these goods and in consideration of their
-price each of them has promised to give and to pay to said 
-Frederico or to his accredited messenger: [from] the said Geri,
-150 gold florins, the said Simone, 50 florins, [100 florins
-each from the other Names] within the next five months from
-now.   Otherwise they have promised to give and to pay
-to the said Frederico the penalty of the double of it and of the
-entire amount to which and to the extent of which [this agreement]
-is violated or is not observed as above, together with restitution
-of all losses, unrealized profits, and expenses which might be
-incurred because of it in court or outside -- the
-aforesaid remaining as settled, and under hypothecation and pledge
-of their goods and [the goods] of any one of them, existing
-and future.
+  <p>
+    Here's an example of an early insurance contract of this kind &ndash; again from Genoa, the birthplace of modern commercial institutions. For the first time we see a pool of insurers &ndash; not one but many counterparties, each pledging their entire property as security. Often these were feudal lords with large landholdings, so the value that could be brought to bear to back these insurance contracts was vast. This is how Lloyds Names still work today. Since several Names back a single contract (e.g. covering a single shipment of goods, as here), each Name puts only a tiny fraction of their estate at risk in that voyage. An insurance exchange like Lloyds allows the agents of goods owners, shippers, and Names to meet and mass-produce these kinds of contracts.
+  </p>
 
-[The above is binding] with the exception and special reservation
-that if the amount of goods, property, and merchandise which was
-loaded or is to be loaded by Frederico Imperiale or by another in
-his behalf for the account of the said Frederico Vivaldi in
-Aigues-Mortes -- to be transported to Ayassoluk and Rhodes or to
-either of these two localities in a certain ship...and which
-departed from Aigues-Mortes or is about to depart in order
-to sail to aforesaid regions -- is brought and unloaded in the said
-localities of Ayasoluk and Rhodes or in either of them, in safety,
-then and in such a case the present intrument is cancelled, void,
-and of no value and pro rata.   And be it understood that such
-a risk begins when the said ship departs and sets sail from Aigues-Mortes,
-and it remains and lasts, while the captain goes, stays [in port],
-sails, loads and unloads, from the said locality of Aigues-Mortres
-up to the said localities of Ayassoluk and Rhodes, in whatever
-manner and way he wishes, until said amount of goods, property,
-and merchandise has been brought and unloaded in Ayassoluk and Rhodes
-or in either of these two localities in safety, and pro rata.
-Let the present instrument also be cancelled if the said
-Frederico refrains from asking payments of the aforesaid amounts
-of money for the space of one year after the time or the time limit
-has elapsed for asking or obtaining their payment....
-Done as above, September 15th, around nones. [1393 A.D.] [4] 
+  <blockquote>
+    <p>
+      ...Geri, [son] of the late Ser Lapo of Florence, Simone Guascone, [9 more Names listed], each of them [liable] for the amount written below, have acknowledged and in truth have declared to me, notary undersigned, as a public official [holding] a public office, making the stipulation and receiving in the name and stead of Federico Vivaldi, citizen of Genoa, that they have bought, have had, and have received from him a certain amount of goods of the said Frederico...And for these goods and in consideration of their price each of them has promised to give and to pay to said Frederico or to his accredited messenger: [from] the said Geri, 150 gold florins, the said Simone, 50 florins, [100 florins each from the other Names] within the next five months from now. Otherwise they have promised to give and to pay to the said Frederico the penalty of the double of it and of the entire amount to which and to the extent of which [this agreement] is violated or is not observed as above, together with restitution of all losses, unrealized profits, and expenses which might be incurred because of it in court or outside &ndash; the aforesaid remaining as settled, and under hypothecation and pledge of their goods and [the goods] of any one of them, existing and future.
+    </p>
+
+    <p>
+      [The above is binding] with the exception and special reservation that if the amount of goods, property, and merchandise which was loaded or is to be loaded by Frederico Imperiale or by another in his behalf for the account of the said Frederico Vivaldi in Aigues-Mortes &ndash; to be transported to Ayassoluk and Rhodes or to either of these two localities in a certain ship...and which departed from Aigues-Mortes or is about to depart in order to sail to aforesaid regions &ndash; is brought and unloaded in the said localities of Ayasoluk and Rhodes or in either of them, in safety, then and in such a case the present intrument is cancelled, void, and of no value and pro rata. And be it understood that such a risk begins when the said ship departs and sets sail from Aigues-Mortes, and it remains and lasts, while the captain goes, stays [in port], sails, loads and unloads, from the said locality of Aigues-Mortres up to the said localities of Ayassoluk and Rhodes, in whatever manner and way he wishes, until said amount of goods, property, and merchandise has been brought and unloaded in Ayassoluk and Rhodes or in either of these two localities in safety, and pro rata. Let the present instrument also be cancelled if the said Frederico refrains from asking payments of the aforesaid amounts of money for the space of one year after the time or the time limit has elapsed for asking or obtaining their payment....Done as above, September 15th, around nones. [1393 A.D.] [4]
+    </p>
+  </blockquote>
+
+  <p>
+    Ignoring the pro rata language, the specific definition of the risks that prevent generation or not of the safeArrival() event, and ignoring the multiple Names (i.e. treating them as one Counterparty), the contract can be modelled by the insurance contract we drafted above with its parameters filled in as follows, and with Frederico Vivaldi as the insured (the Holder):
+  </p>
+
+<pre>
+insureGoods(goodsPremium="a certain amount of goods", 
+      principal="100 fl + 50 fl + 7*100 fl",
+      penalty=2*principal,
+      t1="5 months from now",
+      t2="1 year after [legal] time limit has expired"
+      goodsInsured="that amount of goods, property, 
+          and merchandise which was loaded")
 </pre>
-Ignoring the pro rata language,
-the specific definition of the risks that 
-prevent generation or not of the safeArrival() event, and ignoring
-the multiple Names (i.e. treating them as one
-Counterparty), the contract can be modelled by the insurance 
-contract we drafted above with its parameters filled in as follows,
-and with Frederico Vivaldi as the insured (the Holder):
-<pre>insureGoods(goodsPremium="a certain amount of goods", 
-	    principal="100 fl + 50 fl + 7*100 fl",
-	    penalty=2*principal,
-	    t1="5 months from now",
-	    t2="1 year after [legal] time limit has expired"
-	    goodsInsured="that amount of goods, property, 
-			and merchandise which was loaded")
-</pre>
-This contract was still, legally speaking, a loan.  This had
-at least two interesting consequences on what we now call
-the insurance premium.  Firstly, the premium was treated
-as goods purchases by the insurer on credit.  Secondly,
-even at this late date, contracts were coy about the
-actual value of such goods. 
-Leaving the value of those goods unspecified
-made usury difficult to prove in this "loan".
 
-<!-- 
-Let's call <b>damages</b> the amount of damages to said goods,
-and maxDamages the maximium amount payable.
-Then we can draft the following contract:
--->
+  <p>
+    This contract was still, legally speaking, a loan. This had at least two interesting consequences on what we now call the insurance premium. Firstly, the premium was treated as goods purchases by the insurer on credit. Secondly, even at this late date, contracts were coy about the actual value of such goods. Leaving the value of those goods unspecified made usury difficult to prove in this "loan".
+  </p>
 
-<br>
+  <!-- 
+  <p>
+    Let's call <b>damages</b> the amount of damages to said goods, and maxDamages the maximium amount payable. Then we can draft the following contract:
+  </p>
+  -->
+
+
+
+
+
+
+
+
 <h3>Rules: Logically Combined and Superimposed Events</h3>
 Events in a <b>when</b> clause can be combined in logical
 conditions which must evaluate to true in order to trigger
