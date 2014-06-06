@@ -33,13 +33,13 @@
 
     <li>
       <p>
-        Analyze formally specified contracts for flaws in logic, scheduling, opportunities for parties to breach the contract, and conflicts with other contracts one is already committed to.[5]
+        Analyze formally specified contracts for flaws in logic, scheduling, opportunities for parties to breach the contract, and conflicts with other contracts one is already committed to.<sup><a href="#fn1" id="ref1">[1]</a></sup>
       </p>
     </li>
 
     <li>
       <p>
-        Translate the formal contracts into an existing programming language such as E [1], and/or cryptographic protocols[2], for partially self-enforcing and protected execution as <a href="http://szabo.best.vwh.net/idea.html">smart contracts</a>.
+        Translate the formal contracts into an existing programming language such as E<sup><a href="#fn2" id="ref2">[2]</a></sup>, and/or cryptographic protocols<sup><a href="#fn3" id="ref3">[3]</a></sup>, for partially self-enforcing and protected execution as <a href="http://szabo.best.vwh.net/idea.html">smart contracts</a>.
       </p>
     </li>
 
@@ -67,7 +67,7 @@ negotiation --> contract --> performance
 </pre>
 
   <p>
-    Performance of the contract, i.e. its reification as a smart contract, can thus be seen as (hypothetical, at this point) execution of a program written in our language. Furthermore, our language incorporates a wide variety of contractual terms, not just abstract monetary terms and their derivatives. These two characteristics make our language very different from special purpose financial contract languages such as [3]. While we use several financial contract examples to introduce our language and demonstrate its flexibility, its scope both in functionality and the kinds of contracts and transaction protocols it can represent is far broader. 
+    Performance of the contract, i.e. its reification as a smart contract, can thus be seen as (hypothetical, at this point) execution of a program written in our language. Furthermore, our language incorporates a wide variety of contractual terms, not just abstract monetary terms and their derivatives. These two characteristics make our language very different from special purpose financial contract languages such as<sup><a href="#fn4" id="ref4">[4]</a></sup>. While we use several financial contract examples to introduce our language and demonstrate its flexibility, its scope both in functionality and the kinds of contracts and transaction protocols it can represent is far broader. 
   </p>
 
   <h2>Semantics</h2>
@@ -420,7 +420,7 @@ carPurchase(car, downPayment, monthlyPayment, schedule)  =
 
   <blockquote>
     <p>
-      Wherefore and for which we promise, both of us [liable] for the whole amount, to give and to pay to you or to your accredited messenger 53 gold hyperpers, good and of correct weight, in Romania [Byzantium], by the Kalends of September. If, however, we do not give you these [hyperpers] within the said time limit, [we promise] for each of the said hyperpers 11 shillings Genoese in Genoa whenever you wish. Otherwise we promise, both of us [liable] for the whole amount, to give to you, making the stipulation, the penalty of the double of the said amount, the aforesaid [conditions] remaining as settled. And we pledge to you as security for the aforesaid [promises] all our goods, existing and future... [4]
+      Wherefore and for which we promise, both of us [liable] for the whole amount, to give and to pay to you or to your accredited messenger 53 gold hyperpers, good and of correct weight, in Romania [Byzantium], by the Kalends of September. If, however, we do not give you these [hyperpers] within the said time limit, [we promise] for each of the said hyperpers 11 shillings Genoese in Genoa whenever you wish. Otherwise we promise, both of us [liable] for the whole amount, to give to you, making the stipulation, the penalty of the double of the said amount, the aforesaid [conditions] remaining as settled. And we pledge to you as security for the aforesaid [promises] all our goods, existing and future...<sup><a href="#fn5" id="ref5-1">[5]</a></sup>
     </p>
   </blockquote>
 
@@ -514,7 +514,7 @@ insurancePayment(goodsInsured, principal, t1, t2) =
     </p>
 
     <p>
-      [The above is binding] with the exception and special reservation that if the amount of goods, property, and merchandise which was loaded or is to be loaded by Frederico Imperiale or by another in his behalf for the account of the said Frederico Vivaldi in Aigues-Mortes &ndash; to be transported to Ayassoluk and Rhodes or to either of these two localities in a certain ship...and which departed from Aigues-Mortes or is about to depart in order to sail to aforesaid regions &ndash; is brought and unloaded in the said localities of Ayasoluk and Rhodes or in either of them, in safety, then and in such a case the present intrument is cancelled, void, and of no value and pro rata. And be it understood that such a risk begins when the said ship departs and sets sail from Aigues-Mortes, and it remains and lasts, while the captain goes, stays [in port], sails, loads and unloads, from the said locality of Aigues-Mortres up to the said localities of Ayassoluk and Rhodes, in whatever manner and way he wishes, until said amount of goods, property, and merchandise has been brought and unloaded in Ayassoluk and Rhodes or in either of these two localities in safety, and pro rata. Let the present instrument also be cancelled if the said Frederico refrains from asking payments of the aforesaid amounts of money for the space of one year after the time or the time limit has elapsed for asking or obtaining their payment....Done as above, September 15th, around nones. [1393 A.D.] [4]
+      [The above is binding] with the exception and special reservation that if the amount of goods, property, and merchandise which was loaded or is to be loaded by Frederico Imperiale or by another in his behalf for the account of the said Frederico Vivaldi in Aigues-Mortes &ndash; to be transported to Ayassoluk and Rhodes or to either of these two localities in a certain ship...and which departed from Aigues-Mortes or is about to depart in order to sail to aforesaid regions &ndash; is brought and unloaded in the said localities of Ayasoluk and Rhodes or in either of them, in safety, then and in such a case the present intrument is cancelled, void, and of no value and pro rata. And be it understood that such a risk begins when the said ship departs and sets sail from Aigues-Mortes, and it remains and lasts, while the captain goes, stays [in port], sails, loads and unloads, from the said locality of Aigues-Mortres up to the said localities of Ayassoluk and Rhodes, in whatever manner and way he wishes, until said amount of goods, property, and merchandise has been brought and unloaded in Ayassoluk and Rhodes or in either of these two localities in safety, and pro rata. Let the present instrument also be cancelled if the said Frederico refrains from asking payments of the aforesaid amounts of money for the space of one year after the time or the time limit has elapsed for asking or obtaining their payment....Done as above, September 15th, around nones. [1393 A.D.]<sup><a href="#fn5" id="ref5-2">[5]</a></sup>
     </p>
   </blockquote>
 
@@ -542,500 +542,370 @@ insureGoods(goodsPremium="a certain amount of goods",
   </p>
   -->
 
+  <h2>Rules: Logically Combined and Superimposed Events</h2>
 
+  <p>
+    Events in a <strong>when</strong> clause can be combined in logical conditions which must evaluate to true in order to trigger the subclause. This can be used to model conditional clauses in contracts, and, more broadly, procedural and substantive rules of law. When constructing rules we call the primitive events <em>elements</em>. For example, here is, roughly following the Restatement(Second) of Contracts, a legal rule for promissory estoppel:
+  </p>
 
-
-
-
-
-
-<h3>Rules: Logically Combined and Superimposed Events</h3>
-Events in a <b>when</b> clause can be combined in logical
-conditions which must evaluate to true in order to trigger
-the subclause.  This can be used to model conditional clauses
-in contracts, and, more broadly, procedural and substantive
-rules of law.  When constructing rules we call the primitive
-events <i>elements</i>.  For example, here is, roughly following
-the Restatement(Second) of Contracts, a legal rule for
-promissory estoppel:
-
-<pre>when 
-	"there is a promise"
- 	P "has relied on that promise"
-	D "should reasonably expect P would rely on that promise"  and
- 	"injustice can only be remedied by enforcing the promise"
+<pre>
+when 
+    "there is a promise"
+    P "has relied on that promise"
+    D "should reasonably expect P would rely on that promise"  and
+    "injustice can only be remedied by enforcing the promise"
 then 
-	"the promise will be enforced"
-else 	
-	"the promise will not be enforced"
-
+    "the promise will be enforced"
+else  
+    "the promise will not be enforced"
 </pre>
-We include a gratuitous "then" here for readability.  
-Computer programmers should note that we are following a shorthand
-here used by lawyers -- we write the logical phrase 
-<b> (A and B and C and D)</b>
-as <b>(A B C and D)</b>.  When mixing and and or, write
-out the complete logic, and use parentheses where appropriate.
-<p>
-The rule elements, such as "there is a promise", exist in a <i>superimposed</i>
-state.  By default, the logic is ignorant of the facts, and each element
-is <i>genuinely at issue</i>.  As a result, "there is a promise" and 
-the other elements of the above rule are both true and false, at the
-same time.  (Those familiar with quantum mechanics or legal reasoning
-know what I'm talking about here). In the initial state, where every 
-element is genuinely at issue, nontrivial rules will always 
-evaluate to both true and false.   Thus, <i>both</i> 
-"promise will be enforced" and "promise will not be enforced"
-clauses will be triggered.  When the clauses are incompatible,
-as these appear to be by their label, it is up to the implementor 
-of the clause to deal with this properly.  In this case, such a 
-clause should only be treated
-as <i>advisory</i> until all material elements have been decided --
-i.e., they are no longer genuinely at issue, at which point
-the rule can be used to make a <i>decision</i>, i.e. trigger
-a single clause which takes a consistent action.  A future version
-of this document will describe how to resolve elements genuinely
-at issue into elements not genuinely at issue, and thus decide on
-a single outcome or course of action.  It will also describe
-how to deal with advisory clauses; for example, to analyze
-which elements are most favorable to one outcome or another.
-Finally, another future feature will include elements that 
-cover a range of numerical values, rather than just true
-or false, and a formalized "balancing test"
-that determines outcomes based on underlying numerical estimates.
 
-</p><h3>Property -- Estates and Future Interests</h3>
-Our rule language is ideal for specifying estates and future interests in real estate deeds.  One can also apply these patterns to other kinds of property where appropriate.  Here are some examples:
-<p>
+  <p>
+    We include a gratuitous "then" here for readability. Computer programmers should note that we are following a shorthand here used by lawyers &ndash; we write the logical phrase <strong>(A and B and C and D)</strong> as <strong>(A B C and D)</strong>. When mixing and and or, write out the complete logic, and use parentheses where appropriate.
+  </p>
+
+  <p>
+    The rule elements, such as "there is a promise", exist in a <em>superimposed</em> state. By default, the logic is ignorant of the facts, and each element is <em>genuinely at issue</em>. As a result, "there is a promise" and the other elements of the above rule are both true and false, at the same time. (Those familiar with quantum mechanics or legal reasoning know what I'm talking about here). In the initial state, where every element is genuinely at issue, nontrivial rules will always evaluate to both true and false. Thus, <em>both</em> "promise will be enforced" and "promise will not be enforced" clauses will be triggered. When the clauses are incompatible, as these appear to be by their label, it is up to the implementor of the clause to deal with this properly. In this case, such a clause should only be treated as <em>advisory</em> until all material elements have been decided &ndash; i.e., they are no longer genuinely at issue, at which point the rule can be used to make a <em>decision</em>, i.e. trigger a single clause which takes a consistent action. A future version of this document will describe how to resolve elements genuinely at issue into elements not genuinely at issue, and thus decide on a single outcome or course of action. It will also describe how to deal with advisory clauses; for example, to analyze which elements are most favorable to one outcome or another. Finally, another future feature will include elements that cover a range of numerical values, rather than just true or false, and a formalized "balancing test" that determines outcomes based on underlying numerical estimates.
+  </p>
+
+  <h2>Property &ndash; Estates and Future Interests</h2>
+
+  <p>
+    Our rule language is ideal for specifying estates and future interests in real estate deeds. One can also apply these patterns to other kinds of property where appropriate. Here are some examples:
+  </p>
 <!--  TODO
-	* assignment of future interests
-		+ define them separately?
-		+ granting vs. devising
-	* RAP -- determining vesting (i.e. elimination of all contingencies)
-	* I need to rewrite every contract in this article from the _obligee_ or rightholder's side, since they will normally be the ones with a bearer cert demanding payment.  Of course, obligors should keep records as per here in order to know what they are or may be obligated to perform in the future.
-	* another section on writing WILLS
-	* servitudes -- are these specific to the kind of property?
-	* co-tenancies
+  * assignment of future interests
+    + define them separately?
+    + granting vs. devising
+  * RAP -- determining vesting (i.e. elimination of all contingencies)
+  * I need to rewrite every contract in this article from the _obligee_ or rightholder's side, since they will normally be the ones with a bearer cert demanding payment.  Of course, obligors should keep records as per here in order to know what they are or may be obligated to perform in the future.
+  * another section on writing WILLS
+  * servitudes -- are these specific to the kind of property?
+  * co-tenancies
 -->
 
-Lease for Term: (n.b. -- Grantor = self).  This is an old common law lease that actually transfers title for a certain period of time.
-</p><pre>leaseWithTerm(Property, Lessee, Start, Term) =
-	when afterTime(Start) to Lessee Property
-	then when afterTime(Start+Term) to Grantor Property
-</pre>
-<p>
-Life Estate with Reverter: (n.b. -- Grantor = self)
-</p><pre>lifeEstateReverter(Property, Grantee) =
-	to Grantee Property
-	then when afterDeath(Grantee)
-		to Grantor Property
-</pre>
-Assignable Reverter for Lease.  To make future interests assignable, define them separately.  Note to make the Grantor explicit.  (As usual we are looking at things from the obligor's side):
-<pre>Reverter (Grantor, Grantee, Property) =
-	when afterDeath(Grantee)
-		to Grantor Property
-</pre>
-We can now redefine the Life Estate with Reverter in terms of the separately defined future interest:
-<pre>lifeEstateReverter(Property, Grantee, Reverter) =
-	to Grantee Property
-	then Reverter(Grantor, Grantee, Property)
-</pre>	
-<p>
-Life Estate with Remainder.  The only difference here is that the property is remaindered to a third party instead of reverting to the grantor.
-</p><pre>lifeEstateRemainder(Property, Grantee, Remainderman) =
-	to Grantee Property
-	then when afterDeath(Grantee) to Remainderman Property
-</pre>
-<p>
+  <p>
+    Lease for Term: (n.b. &ndash; Grantor = self). This is an old common law lease that actually transfers title for a certain period of time.
+  </p>
 
-Fee Simple Determinable.  The <b>Condition</b> can be any verifiable event or change of state of the property or its title.   A common real estate condition, for example, is "used for commercial purposes" -- i.e., a restriction that the property may not be used for commercial purposes, otherwise the grantee is penalized by losing title to the grantor.
-</p><pre>feeSimpleDeterminable(Property, Grantee, Condition) =
-	to Grantee Property 
-	then when Condtion(Property) to Grantor Property
-</pre>
-<p>
-Fee Simple Subject to Executory Limitation.  Same as Fee Simple Determinable, except the property gets remaindered to a third party instead of revertin to the grantor.
-</p><pre>feeSimpleSubjectToExecutoryLimitation(Property, Grantee, Condition, Remainderman) =
-	to Grantee Property 
-	then when Condtion(Property) to Remainderman Property
-</pre>
-<p>
-Fee Simple Subject to Condition Subsequent.  Here title is not automatically transferred upon occurence of the condtion.  Instead the Grantor must do some affirmative and verifiable act (in this example "entering" the property), to reclaim the title.
-</p><pre>feeSimpleSubjectToConditionSubsequent(Property, Grantee, Condition, Enters) =
-	to Grantee Property 
-	then when Condtion(Property)
-		when Enters(Grantor, Property) to Grantor Property
+<pre>
+leaseWithTerm(Property, Lessee, Start, Term) =
+    when afterTime(Start) to Lessee Property
+    then when afterTime(Start+Term) to Grantor Property
 </pre>
 
+  <p>
+    Life Estate with Reverter: (n.b. &ndash; Grantor = self)
+  </p>
 
-<h3>Some More Advanced Examples</h3>
-In this section we will look at ways to construct multiparty
-agreements, distinguish ambient from thrown events, and examine
-a number of other more advanced features of or ways to use our language.
-<p>
-We will complete the life cycle of the American option we
-drafted above by "writing" the option --
-creating it from an underlying security <b>rightA</b> and selling it for 
-<b>rightX.</b>
-Here the Holder (same party as the Holder above, in this case the
-person who will buy the written option) first verifies that the
-Counterparty indeed holds the underlying security (<b>rightA</b>)  with
-Broker.   The Broker is trusted by the Holder to make sure Counterparty
-continues to hold the security until the option is exercised or
-expired.  The contract between the Broker and Holder is
-<b>escrowRight()</b>.)
-</p><p>
-Since Counterparty, the option writer,  is not paying anything up front for an option on <b>rightB</b>,
-this right does not need to be escrowed.
-</p><pre>escrowRight(right, escrow, newHolder, currentHolder,
-	    newHolderReleaseEvents, currentHolderReleaseEvents) =
-	to escrow right 
-	then
-	when (holderReleaseEvents) 
-		to rightHolder right then terminate 
-	when (counterpartyReleaseEvents) 
-		to currentHolder right then terminate 
+<pre>
+lifeEstateReverter(Property, Grantee) =
+    to Grantee Property
+    then when afterDeath(Grantee)
+        to Grantor Property
+</pre>
 
-		
+  <p>
+    Assignable Reverter for Lease. To make future interests assignable, define them separately. Note to make the Grantor explicit. (As usual we are looking at things from the obligor's side):
+  </p>
+
+<pre>
+Reverter (Grantor, Grantee, Property) =
+    when afterDeath(Grantee)
+        to Grantor Property
+</pre>
+
+  <p>
+    We can now redefine the Life Estate with Reverter in terms of the separately defined future interest:
+  </p>
+
+<pre>
+lifeEstateReverter(Property, Grantee, Reverter) =
+    to Grantee Property
+    then Reverter(Grantor, Grantee, Property)
+</pre>
+
+  <p>
+    Life Estate with Remainder. The only difference here is that the property is remaindered to a third party instead of reverting to the grantor.
+  </p>
+
+<pre>
+lifeEstateRemainder(Property, Grantee, Remainderman) =
+    to Grantee Property
+    then when afterDeath(Grantee) to Remainderman Property
+</pre>
+
+  <p>
+    Fee Simple Determinable. The <strong>Condition</strong> can be any verifiable event or change of state of the property or its title. A common real estate condition, for example, is "used for commercial purposes" &ndash; i.e., a restriction that the property may not be used for commercial purposes, otherwise the grantee is penalized by losing title to the grantor.
+  </p>
+
+<pre>
+feeSimpleDeterminable(Property, Grantee, Condition) =
+    to Grantee Property 
+    then when Condtion(Property) to Grantor Property
+</pre>
+
+  <p>
+    Fee Simple Subject to Executory Limitation. Same as Fee Simple Determinable, except the property gets remaindered to a third party instead of revertin to the grantor.
+  </p>
+
+<pre>
+feeSimpleSubjectToExecutoryLimitation(Property, Grantee, Condition, Remainderman) =
+    to Grantee Property 
+    then when Condtion(Property) to Remainderman Property
+</pre>
+
+  <p>
+    Fee Simple Subject to Condition Subsequent. Here title is not automatically transferred upon occurence of the condtion. Instead the Grantor must do some affirmative and verifiable act (in this example "entering" the property), to reclaim the title.
+  </p>
+
+<pre>
+feeSimpleSubjectToConditionSubsequent(Property, Grantee, Condition, Enters) =
+    to Grantee Property 
+    then when Condtion(Property)
+        when Enters(Grantor, Property) to Grantor Property
+</pre>
+
+  <h2>Some More Advanced Examples</h2>
+
+  <p>
+    In this section we will look at ways to construct multiparty agreements, distinguish ambient from thrown events, and examine a number of other more advanced features of or ways to use our language.
+  </p>
+
+  <p>
+    We will complete the life cycle of the American option we drafted above by "writing" the option &ndash; creating it from an underlying security <strong>rightA</strong> and selling it for <strong>rightX</strong>. Here the Holder (same party as the Holder above, in this case the person who will buy the written option) first verifies that the Counterparty indeed holds the underlying security (<strong>rightA</strong>) with Broker. The Broker is trusted by the Holder to make sure Counterparty continues to hold the security until the option is exercised or expired. The contract between the Broker and Holder is <strong>escrowRight()</strong>.)
+  </p>
+
+  <p>
+    Since Counterparty, the option writer, is not paying anything up front for an option on <strong>rightB</strong>, this right does not need to be escrowed.
+  </p>
+
+<pre>
+escrowRight(right, escrow, newHolder, currentHolder,
+            newHolderReleaseEvents, currentHolderReleaseEvents) =
+    to escrow right
+    then
+    when (holderReleaseEvents)
+        to rightHolder right then terminate
+    when (counterpartyReleaseEvents)
+        to currentHolder right then terminate
+
+
 writeCallOptionAmerican(rightA, rightB, rightX, time) = 
-	escrowRight(rightA, Holder, Counterparty, 
-		(optionExercised), (optionExpired))
-	then 
-		to Counterparty callOptionAmercian(rightA, rightB, time) 
-          	with to Holder rightX
+    escrowRight(rightA, Holder, Counterparty, 
+            (optionExercised), (optionExpired))
+    then 
+            to Counterparty callOptionAmercian(rightA, rightB, time) 
+            with to Holder rightX
 </pre>
 
-We now redraft the option itself to take advantage of the escrow.
-<b>rightA</b> is transferred to Holder by the <b>throw</b> upon
-excercise, or back to Counterparty if the option expires.
-<pre>callOptionAmerican(escrowRight, rightB, time) = 
-	when beforeTime(time) 
-     		when choiceOf(Holder) 
-			{ throw optionExercised at escrowRight } 
-			with to Counterparty rightB 
-			then terminate
-	when afterTime(time) 
-		throw optionExpired at escrowRight 
-		then terminate
-</pre>
-We can think of events as coming in two kinds.  The first,
-<i>ambient</i> events, occur spontaneously in the environment,
-or are generated by an entity external to our specification such
-as a user or a schedule.  The second,
-<i>thrown</i> events, are events we explicitly throw as above.
-<p>
-In this manual I have expressed contract clauses in terms of rights.  
-Often contract language is expressed in terms of obligations, which can
-be done as a mirror image -- <b>to Holder right</b> is the same
-as <b>from Counterparty obligation</b> and vice versa.   Use 
-<b>from</b> to distinguish an obligation.
-</p><p>
+  <p>
+    We now redraft the option itself to take advantage of the escrow. <strong>rightA</strong> is transferred to Holder by the <strong>throw</strong> upon excercise, or back to Counterparty if the option expires.
+  </p>
 
-
-
-<br>
-</p><h3>Hooking Up Machines</h3>
-Further showing the flexibility of our language we can add sensors
-and effectors, adding "smarts" to our contracts and augmenting
-legal enforcement with technological constraints.
-<p>
-First we draft a specification
-for the contract-like bevavior of a vending machine:
-</p><pre>sellCandy(candyPrice = $0.90) =
-	variable moneyAmount = $0.00 
-	then 
-		# coins also fall into a temporary till tempTill
-	when (nickel)  
-		add(moneyAmount, $0.05) 
-	when (dime)    
-		add(moneyAmount, $0.10) 
-	when (quarter) 
-		add(moneyAmount, $0.25)
-	when (moneyReturn)  
-		dropCoins(tempTill, returnTill) 
-		with moneyAmount = $0.00
-	when threshold(moneyAmount, candyPrice) 
-		when (nickel | dime | quarter) 
-			redirectNewCoinsTo(returnTill)
-		also display("ready to dispense -- please select candy")
-		then when (candySelection) 
-			dropCandy(candyRacks, candySelection) 
-			with dropCoins(tempTill, permTill)
-			with moneyAmount = $0.00
-	continue
+<pre>
+callOptionAmerican(escrowRight, rightB, time) = 
+    when beforeTime(time) 
+        when choiceOf(Holder) 
+            { throw optionExercised at escrowRight } 
+            with to Counterparty rightB 
+            then terminate
+    when afterTime(time) 
+        throw optionExpired at escrowRight 
+        then terminate
 </pre>
 
+  <p>
+    We can think of events as coming in two kinds. The first, <em>ambient</em> events, occur spontaneously in the environment, or are generated by an entity external to our specification such as a user or a schedule. The second, <em>thrown</em> events, are events we explicitly throw as above.
+  </p>
 
+  <p>
+    In this manual I have expressed contract clauses in terms of rights. Often contract language is expressed in terms of obligations, which can be done as a mirror image &ndash; <strong>to Holder right</strong> is the same as <strong>from Counterparty obligation</strong> and vice versa. Use <strong>from</strong> to distinguish an obligation.
+  </p>
 
+  <h2>Hooking Up Machines</h2>
 
-<p>
-We have here introduced a new language feature, a <i>state variable</i>.
-Our state variable <b>moneyAmount</b>
-generates an event upon
-surpassing the candy price threshold of $0.90.  Note
-that nickels, dimes, etc. are actual physical objects that the sensors
-(generating events "nickel", "dime", etc.) detect and treat separately -- 
-they are not merely abstract amounts of money.  
-</p><p>
-State variables can be troublesome, and should be avoided unless
-utterly necessary as here.  This one is relatively harmless 
-because the coin slot tends to force the coins to come in one
-at a time, so that no two clauses are trying to change the
-state variable at the same time.  Even if they were, the
-addition operation is what mathematicians call "commutative",
-meaning it doesn't matter what order it's done in.  But if
-the operation on the state variable were more complicated or
-involved certain other kinds of operations, we wouldn't know
-whether it was commutative.  The order in which events occured
-and changed the state variable might matter very much, and we
-could get into big trouble.  So avoid state variables whenever
-possible.
-</p><p>
-To simplify things, we've left out making change -- our machine
-has to have one of those signs you sometimes see,
-"exact change only".   If the customer puts in a coin
-that pushes the amount from, say, $.80 to $1.05 -- too
-bad, the machine eats it.  If the customer puts in $0.90
-(or more) and <i>then</i> adds more coins, however, the machine
-automatically returns the extra coins.  The machine will 
-also return whatever has been put in the till,
-if the customer changes her mind and decides not
-to buy the candy.  Exercise for the reader: verify for yourself
-that the above behavior descriptions are correct as the
-code is written.
-</p><p>
-<b>RedirectNewCoinsTo(returnTill)</b> causes any further 
-coins to drop into the return chute instead of onto the 
-sensor that triggers the above events.  The reader must
-here imagine what the mechanism looks 
-like, as part of the behavior
-is "encoded" in its mechaninism rather than explitly
-in this statement.  
-</p><p>
-Think of the nested contracts and rights as an upside-down
-tree -- a hierarchy of nested clauses.  Events propagate 
-from up from the "leaves" of the tree
-towards the "root" at the top.  They are caught by the first <b>when event</b>
-they encounter for that event.  In this case, once we enter the 
-<b>when threshold()</b> clause,
-the <b>when (nickel | dime | quarter) </b> clause overrides
-the <b>when(nickel)</b> and so on clauses above them.
-</p><p>
-Like a perpetuity, our vending machine has no scheduled time or condition
-where it stops performing -- therefore we have a <b>continue</b>
-statement to overrid the implicit <b>then terminate</b> on the
-last line.
-</p><p>
-Alas, neither I nor real world candy machine makers have any code
-to solve the case where the candy gets stuck in the machine.
+  <p>
+    Further showing the flexibility of our language we can add sensors and effectors, adding "smarts" to our contracts and augmenting legal enforcement with technological constraints.
+  </p>
 
+  <p>
+    First we draft a specification for the contract-like bevavior of a vending machine:
+  </p>
 
-<!--  -->
-</p><p>
-
-The above is a transcription of machine behavior.  Now
-we make it even more like a contract.
-Here we incorporate
-the customer and his choices, which implicitly generated
-the coin events in the code above -- here the coins
-are rights of the Holder.  Thinking more about the
-party, rather than the machine, allows us to recognize
-that at each step the customer wants feedback on
-how much money they have put in, thus <b>to Counterparty 
-display(moneyAmount)</b>.
-This display is done by the Holder (the vending machine as an agent
-of the vendor) as a right of the Counterparty (the customer).
-To enable better customer choice, we add a new
-construct to our language: <b>choiceOf(agent, right)</b> which
-allows the customer multiple choice, based on which right
-they wish to transfer to the agent's counterparty (here the
-vending machine, the Holder).
-
-</p><pre>sellCandy(candyPrice = $0.90) =
-	variable moneyAmount = $0.00 
-	then 
-		# coins also fall into a temporary till tempTill
-	when choiceOf(Counterparty, nickel) 	
-		to TempTill nickel 
-		then to Counterparty add(moneyAmount, $0.05) 
-		then to Counterparty display(moneyAmount)
-	when choiceOf(Counterparty, dime) 
-		to TempTill dime
-		then to Counterparty add(moneyAmount, $0.10) 
-		then to Counterparty display(moneyAmount)
-	when choiceOf(Counterparty, quarter) 
-		to TempTill quarter 
-		then to Counterparty add(moneyAmount, $0.25) 
-		then to Counterparty display(moneyAmount)
-	when choiceOf(Counterparty, moneyReturn)
-		to Counterparty dropCoins(tempTill, returnTill)
-		with moneyAmount = $0.00 
-		then to Counterparty display(moneyAmount)
-	when threshold(moneyAmount, candyPrice) 
-	 	to Holder (nickel | dime | quarter) 
-			to CounterParty redirectNewCoinsTo(returnTill)
-		also display("ready to dispense -- please select candy")
-		then when (candySelection) 
-			to Counterparty dropCandy(candyRacks, candySelection) 
-			with to PermanentTill dropCoins(TempTill)
-			with moneyAmount = $0.00
-	continue
+<pre>
+sellCandy(candyPrice = $0.90) =
+    variable moneyAmount = $0.00 
+    then 
+        # coins also fall into a temporary till tempTill
+    when (nickel)  
+        add(moneyAmount, $0.05) 
+    when (dime)    
+        add(moneyAmount, $0.10) 
+    when (quarter) 
+        add(moneyAmount, $0.25)
+    when (moneyReturn)  
+        dropCoins(tempTill, returnTill) 
+        with moneyAmount = $0.00
+    when threshold(moneyAmount, candyPrice) 
+        when (nickel | dime | quarter) 
+            redirectNewCoinsTo(returnTill)
+        also display("ready to dispense -- please select candy")
+        then when (candySelection) 
+          dropCandy(candyRacks, candySelection) 
+          with dropCoins(tempTill, permTill)
+          with moneyAmount = $0.00
+    continue
 </pre>
 
+  <p>
+    We have here introduced a new language feature, a state variable. Our state variable <strong>moneyAmount</strong> generates an event upon surpassing the candy price threshold of $0.90. Note that nickels, dimes, etc. are actual physical objects that the sensors (generating events "nickel", "dime", etc.) detect and treat separately &ndash; they are not merely abstract amounts of money.
+  </p>
 
+  <p>
+    State variables can be troublesome, and should be avoided unless utterly necessary as here. This one is relatively harmless because the coin slot tends to force the coins to come in one at a time, so that no two clauses are trying to change the state variable at the same time. Even if they were, the addition operation is what mathematicians call "commutative", meaning it doesn't matter what order it's done in. But if the operation on the state variable were more complicated or involved certain other kinds of operations, we wouldn't know whether it was commutative. The order in which events occured and changed the state variable might matter very much, and we could get into big trouble. So avoid state variables whenever possible.
+  </p>
 
+  <p>
+    To simplify things, we've left out making change &ndash; our machine has to have one of those signs you sometimes see, "exact change only". If the customer puts in a coin that pushes the amount from, say, $.80 to $1.05 &ndash; too bad, the machine eats it. If the customer puts in $0.90 (or more) and then adds more coins, however, the machine automatically returns the extra coins. The machine will also return whatever has been put in the till, if the customer changes her mind and decides not to buy the candy. Exercise for the reader: verify for yourself that the above behavior descriptions are correct as the code is written.
+  </p>
 
+  <p>
+    <strong>RedirectNewCoinsTo(returnTill)</strong> causes any further coins to drop into the return chute instead of onto the sensor that triggers the above events. The reader must here imagine what the mechanism looks like, as part of the behavior is "encoded" in its mechaninism rather than explitly in this statement.
+  </p>
 
-<p>
-How is it that we have specified the behavior of a vending machine
-in a language designed for drafting contracts?   Can nickels, dimes,
-quarters, and operations like dropping coins from one till to another
-be thought of as rights and obligations?  I think so.  They
-are not <i>legal</i> rights and obligations, to be sure.  There
-is no explicit contract between the vendor and candy machine customers,
-and if their were it would probably waive liability for violating most
-of the clauses in our code.   What this code describes is
-the logical and typical behavior of a vending machine.  It also reifies
-the implicit understanding most customers have when using a vending 
-machine.  Thus it models a contract-like "meeting of the minds"
-between the customer and the vendor that is mediated by the machine.
-</p><p>
-Here is a stab at formally describing the hypothetical <a href="http://szabo.best.vwh.net/idea.html">"auto repo auto" </a>.
-The car is controlled by a <a href="http://szabo.best.vwh.net/proplets.html">proplet</a>
-and the proplet looks to <a href="http://nakamotoinstitute.org/secure-property-titles.html">property titles</a> to determine ownership authority.
-The proplet lets only the titled owner enter and drive
-the car.  "Holder" is the bank that made the loan 
-and "Counterparty" is the new owner.   As above we
-ignore the car dealer; the bank originally owning
-the car.  This example highlights the ability of the 
-language to very succinctly describe contracts but also its
-inability to describe the actual security that will enforce the 
-contract.  
-There is of course a lot missing here, including the items missing
-from the above car loan contract.  From a smart contracts viewpoint,
-the biggest thing missing
-is that there is nothing to motivate the "Holder getTitle(car)"
-in the last <b>when</b>, nor any way specified here to enforce it.
-And of course all connection between ownership and authority
-to enter, start, and drive the car is here implicit -- the actual
-proplet behavior in this regard would have to account for safety, 
-emergency use, etc.
-</p><p>
-For all that work-up, we've only actually added one clause to our
-car purchase contract above.  The clause forfeits the title and is 
-structured much like the damage clauses we have seen.   A 
-<b>breachedPerformance()</b>
-event is generated if it is detected (by the Holder, a third party
-auditor, or the proplet itself) that the Countparty failed to make
-a payment according to the schedule specified by <b>loan</b>.
-</p><pre>loan(payment, schedule) =
-	for schedule 
-		when withinPeriod(schedule.next) 
-			payment 
+  <p>
+    Think of the nested contracts and rights as an upside-down tree &ndash; a hierarchy of nested clauses. Events propagate from up from the "leaves" of the tree towards the "root" at the top. They are caught by the first <strong>when event</strong> they encounter for that event. In this case, once we enter the <strong>when threshold()</strong> clause, the <strong>when (nickel | dime | quarter)</strong> clause overrides the <strong>when(nickel)</strong> and so on clauses above them.
+  </p>
+
+  <p>
+    Like a perpetuity, our vending machine has no scheduled time or condition where it stops performing &ndash; therefore we have a <strong>continue</strong> statement to overrid the implicit <strong>then terminate</strong> on the last line.
+  </p>
+
+  <p>
+    Alas, neither I nor real world candy machine makers have any code to solve the case where the candy gets stuck in the machine.
+  </p>
+
+  <p>
+    The above is a transcription of machine behavior. Now we make it even more like a contract. Here we incorporate the customer and his choices, which implicitly generated the coin events in the code above &ndash; here the coins are rights of the Holder. Thinking more about the party, rather than the machine, allows us to recognize that at each step the customer wants feedback on how much money they have put in, thus <strong>to Counterparty display(moneyAmount)</strong>. This display is done by the Holder (the vending machine as an agent of the vendor) as a right of the Counterparty (the customer). To enable better customer choice, we add a new construct to our language: <strong>choiceOf(agent, right)</strong> which allows the customer multiple choice, based on which right they wish to transfer to the agent's counterparty (here the vending machine, the Holder).
+  </p>
+
+<pre>
+sellCandy(candyPrice = $0.90) =
+    variable moneyAmount = $0.00 
+    then 
+        # coins also fall into a temporary till tempTill
+    when choiceOf(Counterparty, nickel)   
+        to TempTill nickel 
+        then to Counterparty add(moneyAmount, $0.05) 
+        then to Counterparty display(moneyAmount)
+    when choiceOf(Counterparty, dime) 
+        to TempTill dime
+        then to Counterparty add(moneyAmount, $0.10) 
+        then to Counterparty display(moneyAmount)
+    when choiceOf(Counterparty, quarter) 
+        to TempTill quarter 
+        then to Counterparty add(moneyAmount, $0.25) 
+        then to Counterparty display(moneyAmount)
+    when choiceOf(Counterparty, moneyReturn)
+        to Counterparty dropCoins(tempTill, returnTill)
+        with moneyAmount = $0.00 
+        then to Counterparty display(moneyAmount)
+    when threshold(moneyAmount, candyPrice) 
+        to Holder (nickel | dime | quarter) 
+            to CounterParty redirectNewCoinsTo(returnTill)
+        also display("ready to dispense -- please select candy")
+        then when (candySelection) 
+            to Counterparty dropCandy(candyRacks, candySelection) 
+            with to PermanentTill dropCoins(TempTill)
+            with moneyAmount = $0.00
+    continue
+</pre>
+
+  <p>
+    How is it that we have specified the behavior of a vending machine in a language designed for drafting contracts? Can nickels, dimes, quarters, and operations like dropping coins from one till to another be thought of as rights and obligations? I think so. They are not <em>legal</em> rights and obligations, to be sure. There is no explicit contract between the vendor and candy machine customers, and if their were it would probably waive liability for violating most of the clauses in our code. What this code describes is the logical and typical behavior of a vending machine. It also reifies the implicit understanding most customers have when using a vending machine. Thus it models a contract-like "meeting of the minds" between the customer and the vendor that is mediated by the machine.
+  </p>
+
+  <p>
+    Here is a stab at formally describing the hypothetical <a href="http://szabo.best.vwh.net/idea.html">"auto repo auto"</a>. The car is controlled by a <a href="http://szabo.best.vwh.net/proplets.html">proplet</a> and the proplet looks to <a href="http://nakamotoinstitute.org/secure-property-titles.html">property titles</a> to determine ownership authority. The proplet lets only the titled owner enter and drive the car. "Holder" is the bank that made the loan and "Counterparty" is the new owner. As above we ignore the car dealer; the bank originally owning the car. This example highlights the ability of the language to very succinctly describe contracts but also its inability to describe the actual security that will enforce the contract. There is of course a lot missing here, including the items missing from the above car loan contract. From a smart contracts viewpoint, the biggest thing missing is that there is nothing to motivate the "Holder getTitle(car)" in the last <strong>when</strong>, nor any way specified here to enforce it. And of course all connection between ownership and authority to enter, start, and drive the car is here implicit &ndash; the actual proplet behavior in this regard would have to account for safety, emergency use, etc.
+  </p>
+
+  <p>
+    For all that work-up, we've only actually added one clause to our car purchase contract above. The clause forfeits the title and is structured much like the damage clauses we have seen. A <strong>breachedPerformance()</strong> event is generated if it is detected (by the Holder, a third party auditor, or the proplet itself) that the Countparty failed to make a payment according to the schedule specified by <strong>loan</strong>.
+  </p>
+
+<pre>
+loan(payment, schedule) =
+    for schedule 
+        when withinPeriod(schedule.next) 
+            payment 
 carPurchase(car, downPayment, monthlyPayment, schedule)  =
-	to Counterparty getTitle(car)  with  to Holder downPayment 
-	then
-	to Holder loan(monthlyPayment, schedule)
-	when breachedPerformance(loan) 
-		to Holder getTitle(car) 
+    to Counterparty getTitle(car)  with  to Holder downPayment 
+    then
+    to Holder loan(monthlyPayment, schedule)
+    when breachedPerformance(loan) 
+        to Holder getTitle(car)
 </pre>
 
+  <!--
 
+  <p>
+    Next we use our language to sketch out an idea for something that I won't claim bears much resemblance to a contract at all. It nevertheless bears some relationship to contracts, and in particular to property title transfers and the relationship between a property owner and the provider of security services to that property. Furthermore, security services and technologies are important for both enforcing the performance of contracts and protecting this performance from interfering third parties.
+  </p>
 
-<!-- Next we use our language to sketch out an idea for something that
-I won't claim bears much resemblance to a contract at all.  It
-nevertheless bears some relationship to contracts, and in
-particular to property title transfers and the relationship
-between a property owner and the provider of security services
-to that property.  Furthermore, security services and technologies
-are important for both enforcing the performance of contracts and
-protecting this performance from interfering third parties.
-<p>
-The idea is for a security system to protect
-a building.  Our hypothetical device learns who the buildings 
-owner is from a public title database (see article securetitle.html).   
-Lacking such
-a service it could have the owner or security service reprogrammed into
-it specifically by a new owner (but we don't show that design).  Our
-system looks up which security service the owner has hired, and notifies
-them of the security event.  If the property is sold, the
-software automatically figures out, from <b>getTitle()</b>, who the 
-new owner is, and
-which security service is their authorized agent for handling
-security events.  <b>passEvent()</b> passes on the event information
-as it was received by the current event. 
+  <p>
+    The idea is for a security system to protect a building. Our hypothetical device learns who the buildings owner is from a public title database (see article securetitle.html). Lacking such a service it could have the owner or security service reprogrammed into it specifically by a new owner (but we don't show that design). Our system looks up which security service the owner has hired, and notifies them of the security event. If the property is sold, the software automatically figures out, from <strong>getTitle()</strong>, who the new owner is, and which security service is their authorized agent for handling security events. <strong>passEvent()</strong> passes on the event information as it was received by the current event. 
+  </p>
 
 <pre>
 buildingSecurity = 
-	when(glassBreak) { 
-		aimCamera(glassBreak.location) 
-		with passEvent(securityService(getTitle(property).Owner))
-	}
-	when(laserPerimeterBreach) { 
-		aimCamera(lasterPerimeterBreach.location) 
-		with passEvent(securityService(getTitle(property).Owner))
-	}
+    when(glassBreak) { 
+        aimCamera(glassBreak.location) 
+        with passEvent(securityService(getTitle(property).Owner))
+    }
+    when(laserPerimeterBreach) { 
+        aimCamera(lasterPerimeterBreach.location) 
+        with passEvent(securityService(getTitle(property).Owner))
+    }
 </pre>
 
-We might save precious seconds of delay in notifying security by
-having a property title transfer and change of security service
-generate events, then storing <b>securityService</b> as a state variable.
-This way the security system doesn't have to take time to look up
-the owner and then the security service during a break-in.
+  <p>
+    We might save precious seconds of delay in notifying security by having a property title transfer and change of security service generate events, then storing <strong>securityService</strong> as a state variable. This way the security system doesn't have to take time to look up the owner and then the security service during a break-in.
+  </p>
 
 <pre>
 buildingSecurity =
-	securityService = securityService(getTitle(property).Owner)) 
-	then
-	when(glassBreak) { 
-		aimCamera(glassBreak.location) 
-        	with passEvent(securityService)
-	}
-	when(laserPerimeterBreach) { 
-		aimCamera(lasterPerimeterBreach.location) 
-		with passEvent(securityService)
-	}
-	when(titleTransfer OR newSecurityService) 
-		securityService = securityService(getTitle(property).Owner)) 
-	}
-</pre>   
-We design a security system in the same general way the drafters of
-contracts tend to work.  First start with the most relevant and
-available boilerplate.  Work out the main clauses, then fill in missing 
-details, think about ways parties could cheat, and revise accordingly,
-until we have a satisfactory contract -- or security system.
-Clearly when used in this way, our language demonstrates its
-flexibility as a tool for making high-level sketches of a wide
-variety of relationships, whether mediated and constrained by
-legal contract or machine or both, but we've hardly actually
-implemented a real security system.  
-Our language may play a high level role in coordinating and
-constraining, via smart contract, the people, organizations, 
-devices, and software that make up the security system.  The
-security system might also be used to help enforce and protect
-the smart contracts.
+    securityService = securityService(getTitle(property).Owner)) 
+    then
+    when(glassBreak) { 
+        aimCamera(glassBreak.location) 
+        with passEvent(securityService)
+    }
+    when(laserPerimeterBreach) { 
+        aimCamera(lasterPerimeterBreach.location) 
+        with passEvent(securityService)
+    }
+    when(titleTransfer OR newSecurityService) 
+        securityService = securityService(getTitle(property).Owner)) 
+    }
+</pre>
+
+  <p>
+    We design a security system in the same general way the drafters of contracts tend to work. First start with the most relevant and available boilerplate. Work out the main clauses, then fill in missing details, think about ways parties could cheat, and revise accordingly, until we have a satisfactory contract &ndash; or security system. Clearly when used in this way, our language demonstrates its flexibility as a tool for making high-level sketches of a wide variety of relationships, whether mediated and constrained by legal contract or machine or both, but we've hardly actually implemented a real security system. Our language may play a high level role in coordinating and constraining, via smart contract, the people, organizations, devices, and software that make up the security system. The security system might also be used to help enforce and protect the smart contracts.
+  </p>
 -->
 
+  <h2>Technical Note &ndash; A Computer-Readable Syntax</h2>
 
+  <p>
+    Here is a formal specification of the language's grammar in "Backus-Naur Form"(BNF). The specification is for a planned computer-readable version of the language and there are a few minor differences, such as the use of brackets {} instead of tabs to denote nesting. BNF is used to define what linguists call "context-free grammars". It is also used, as here, to define the syntax of languages that computers can also interpret and execute. I also include some more discussion of the meanings of the words and structures, especially how the computer might interpret them. As you can see, this is an evolving language, a work in progress with many unresolved issues. Your suggestions for changing or adding more kinds of contractual terms to our language are quite welcome.
+  </p>
 
-<br>
-<h3>Technical Note-- A Computer-Readable Syntax</h3>
-Here is a formal specification of the language's grammar in "Backus-Naur 
-Form"(BNF).  The specification is for a planned computer-readable
-version of the language and there are a few minor differences, such
-as the use of brackets {} instead of tabs to denote nesting.
-BNF is used to define what linguists call "context-free 
-grammars".  It is also used, as here, to define the syntax of 
-languages that computers can also interpret and execute.  I also
-include some more discussion of the meanings of the words and
-structures, especially how the computer might interpret them.
-As you can see, this is an evolving language, a work in progress
-with many unresolved issues.  Your suggestions for changing or adding
-more kinds of contractual terms to our language are quite welcome.
-
-<pre>agent = Holder | Counterparty
-	## makes contract look different on each side
+<pre>
 <p>
+agent = Holder | Counterparty
+    ## makes contract look different on each side
+</p><p>
 period = (startTime,finishTime)
 # period is the window within which the performance must be
 # executed, e.g. a European option must be exercised 
@@ -1050,20 +920,18 @@ period = (startTime,finishTime)
 # each periodIterator.next generates an event which is caught by
 # the next tempral event (withinPeriod() if the iterator generates
 # periods, aftertime() or beforeTime() if it generates times) 
-# *down* from the *for*.  The implicit "throw" occurs at periodIterator.next
+# *down* from the *for*. The implicit "throw" occurs at periodIterator.next
 # so we can still view it, just barely, as propagating up from
 # the "throw".
 # (this is different from the normal event semantics where throws
 # propagate *up* the parse tree) -- should I change it to *up*
 # and rewrite the schedule iterator code above?  but it confuses
 # me &amp;  perhaps the comuter to put it *outside* the loop.
-
 </p><p>
 event = choiceOf(agent) | withinPeriod(period) |  
     performed(right)  | breachedPerformance(right) |
     threshold(amount,threshold) | afterTime(time) | beforeTime(time)
 </p><p>
-
 right = throw event at [ contract | right] | passEvent([right | contract])
 # generates an event to be caught by the specified contract or right.
 # if contract or right is not specified, the first parent when(event)
@@ -1074,287 +942,276 @@ right = throw event at [ contract | right] | passEvent([right | contract])
 </p><p>
 # semantically equivalent:
 # Holder right = O Counterparty obligation
-
 </p><p>
 right = getTitle(property)
 # transfer property title from obligor to obligee
-# see http://szabo.best.vwh.net/securetitle.html
- </p><p>
+# see http://nakamotoinstitute.org/secure-property-titles/
+</p><p>
 right = null
 </p><p>
 right = [ when event "{" right "}" ]*
-	## envision an "instruction pointer" that 
-	## follows nesting and events as they occur.
-	## there can be more than one instruction pointer
-	## if there is an "also" or two events occur at
-	## the same time, but usually we only need to think
-	## about one.
-	## a clause is either active or  inactive.
-	## when a when clause is active, it is waiting for
-	## an event to occur.
-	## when the instruction pointer a nested when,
-	## the when goes from inactive to waiting.
-	## A series of when's at the same level
-	## all wait for any of them to be triggered.
-	## When it receives an event  thrown below
-	## it or at it, it becomes active.  Then
-	## the clauses below it become active up
-	## to the when's one level below.  The
-	## whenes at that level go from inactive
-	## to waiting.
-	## alternative design being considered: continue where left off
-	## unless an explicit "terminate" in the when
-
+    ## envision an "instruction pointer" that 
+    ## follows nesting and events as they occur.
+    ## there can be more than one instruction pointer
+    ## if there is an "also" or two events occur at
+    ## the same time, but usually we only need to think
+    ## about one.
+    ## a clause is either active or  inactive.
+    ## when a when clause is active, it is waiting for
+    ## an event to occur.
+    ## when the instruction pointer a nested when,
+    ## the when goes from inactive to waiting.
+    ## A series of when's at the same level
+    ## all wait for any of them to be triggered.
+    ## When it receives an event  thrown below
+    ## it or at it, it becomes active.  Then
+    ## the clauses below it become active up
+    ## to the when's one level below.  The
+    ## whenes at that level go from inactive
+    ## to waiting.
+    ## alternative design being considered: continue where left off
+    ## unless an explicit "terminate" in the when
 </p><p>
 right = functionPerformance     
-	## functional specification of a specific 
-	## service goes here
-	## function sig, pre-, post-conditions
+    ## functional specification of a specific 
+    ## service goes here
+    ## function sig, pre-, post-conditions
 </p><p>
 obligation = throw event at [contract | right]
-# generates an event to be caught by the specified contract or right.
-# if contract or right is not specified, the first parent when
-# is triggered.
+  # generates an event to be caught by the specified contract or right.
+  # if contract or right is not specified, the first parent when
+  # is triggered.
 </p><p>
-# semantically equivalent: Holder obligation = Counterparty right
+  # semantically equivalent: Holder obligation = Counterparty right
 </p><p>
 obligation = surrenderTitle(property)
-# transfer property title from obligor to right holder
-# see http://szabo.best.vwh.net/securetitle.html
+  # transfer property title from obligor to right holder
+  # see http://nakamotoinstitute.org/secure-property-titles/
 </p><p>
 obligation = null
 </p><p>
 obligation = [ when event "{" obligation "}" ]*
-	## alternative design being considered: continue where left off
-	## unless an explicit "terminate" in the when
+    ## alternative design being considered: continue where left off
+    ## unless an explicit "terminate" in the when
 </p><p>
 obligation = functionPerformance     
-	## functional specification of a specific 
-	## service goes here
-	## function sig, pre-, post-conditions
+  ## functional specification of a specific 
+  ## service goes here
+  ## function sig, pre-, post-conditions
 </p><p>
 contract = agent [right | obligation] ["with" agent [right | obligation]]*
-	## "with" allows composing Holder and Counterparty 
-        ## rights vs. each other
-</p><p>
+    ## "with" allows composing Holder and Counterparty 
+    ## rights vs. each other
 </p><p>
 contract = [ when event "{" contract "}" ]*
-</p><p>
 </p></pre>
 
+  <h2>Basic Fucntions</h2>
 
-
-<br>
-<h3>Basic Functions</h3>
-<pre>doOn(right, period) = 
-	when withinPeriod(p) { right }
+<pre>
+<p>
+doOn(right, period) = 
+    when withinPeriod(p) { right }
 # must perform "right" within (period)
 # = zero-coupon bond = coupon
 #
-<p>
+</p><p>
 doOnDemand(right) = 
-	when choiceOf(Holder) { right }
+    when choiceOf(Holder) { right }
 # must perform "right" anytime/on demand
 #
 </p><p>
 doOn(contract, period) = 
-	when withinPeriod(p) { contract }
+    when withinPeriod(p) { contract }
 # must perform "contract" within (period)
 #
 </p><p>
 doOnDemand(contract) = 
-	when choiceOf(Holder) { contract }
+    when choiceOf(Holder) { contract }
 # must perform "contract" anytime/on demand
 #
-</p><p>
 </p></pre>
 
-
-<br>
-<h3>More Examples</h3>
-<pre>future(rightA, rightB, p) = 
-   Holder doOn(rightA, p)   with   Counterparty doOn(rightB, p)
+  <h2>More Examples</h2>
+<pre>
+future(rightA, rightB, p) = 
+    Holder doOn(rightA, p)   with   Counterparty doOn(rightB, p)
 #
 # [additional constraint p=p is not mere algebraic composition]
 #
 callOptionAmerican(rightA, rightB, t) = 
-   when withinPeriod(whenWritten, t) 
-	when choiceOf(Holder) 
-		Holder rightA  with  Counterparty rightB 
+    when withinPeriod(whenWritten, t)
+        when choiceOf(Holder) 
+          Holder rightA  with  Counterparty rightB 
 #
 callOptionEuro(rightA, rightB, p) =  
-   when choiceOf(Holder) 
-   	Holder doOn(rightA, p)  
-        with Counterparty doOn(rightB, p))
+      when choiceOf(Holder) 
+   	      Holder doOn(rightA, p)  
+              with Counterparty doOn(rightB, p))
 #
 putOptionAmerican(rightA,rightB,t) = 
-   when withinPeriod(whenWritten, t)
-	when choiceOf(Holder) 
-		Holder rightA   with   Counterparty rightB 
+    when withinPeriod(whenWritten, t)
+        when choiceOf(Holder) 
+		        Holder rightA   with   Counterparty rightB 
    
 # event semantics need to store the choiceOf even
 # by waiting for the next when.
 putOptionEuro(rightA,rightB,p) = 
-   when choiceOf(Holder) 
-   	Holder doOn(rightB, p) 
-        with Counterparty doOn(rightA, p))
+    when choiceOf(Holder) 
+   	    Holder doOn(rightB, p) 
+            with Counterparty doOn(rightA, p))
 #
 note(right) = demandDeposit(right) = 
-   Holder doOnDemand(right)
+    Holder doOnDemand(right)
 # [distinction of bearer vs. account holder has not 
 # been introduced]
 #
 zeroCouponBond(right,p) = doOn(right, p)
 #
 callableZeroCouponBond(right,p) = 
-   when choiceOf(Holder) { right }
-   when withinPeriod(p) { right }
+    when choiceOf(Holder) { right }
+    when withinPeriod(p) { right }
 #
 bond(coupon, principal, schedule) = 
-	for schedule {
-	   doOn(coupon, schedule.next)
-	} then
-	doOn(principal, schedule.next)
+    for schedule {
+        doOn(coupon, schedule.next)
+    } then
+    doOn(principal, schedule.next)
 bond(coupon, principal, schedule) = 
-	for schedule {
-	   doOn(coupon, schedule.next)
-	} then
-	doOn(principal, schedule.next)
+    for schedule {
+      doOn(coupon, schedule.next)
+    } then
+    doOn(principal, schedule.next)
+</pre>
 
 
+  <h2>Frequently Asked Questions</h2>
+
+  <p>
+    <strong>Q: There are already languages for specifying financial contracts<sup><a href="#fn3" id="ref3">[3]</a></sup>, what is the novelty here?</strong>
+  </p>
+
+  <p>
+    A: This the first specification language to generalize contractual structures to any kind of exclusive rights, not just money. This is also the first language that incorporates the dynamic nature of many contracts, (their dependence on time or events) in a succinct, complete, and potentially executable manner. Surprisingly, this often makes the specification more not less succinct.
+  </p>
+
+  <p>
+    <strong>Where's the money?</strong>
+  </p>
+
+  <p>
+    A: This language is targeted toward an economy of distributed software and devices performing services for each other. A money economy can be constructed out of a barter economy but not vice versa. Real online money is far more subtle than a mere shared variable (or even the specification of "bank notes" in this language). Money is just one kind of fungible exclusive right, and the structure of financial contracts are generalized by converting money terms into any fungible exclusive right.
+  </p>
+
+  <p>
+    <strong>Q: What assumptions are you making?</strong>
+  </p>
+
+  <p>
+    A: This is the most important question to ask of any novel scheme! I have identified at least the following:
+  
+    <ol>
+      <li>
+        I'm assuming away, for the moment, issues of the protection and enforcement of performance, which I've addressed elsewhere (http://szabo.vwh.best.com/ has many essays that focus on this topic). An eventual goal is to create protocols to enforce the language's atoms and then to compose these atoms maintaining the enforceability.
+      </li>
+      <li>
+        Two specific enforcement assumptions &ndash; there exists a secure, agreed-upon time source, and the occurence of other defined events can be agreed upon by the parties and/or audited by third parties.
+      </li>
+      <li>
+        I am assuming some kind of atomicity for each right atom performance &ndash; for example, when an event triggers a "when", a functionPerformance in another thread is gracefully either rolled back or completed.
+      </li>
+      <li>
+        There are only two parties to the contract, the Holder and Counterparty.
+      </li>
+      <li>
+        A contract comes in two mirror forms, one of which can be inferred from the other. A party always sees himself as the Holder. Obligations of the Holder can always be expressed in and inferred from rights of the Counterparty, and vice versa.
+      </li>
+      <li>
+        I'm probably making other assumptions I haven't discovered yet &ndash; if you find any please let me know!
+      </li>
+    </ol>
+  </p>
+
+  <p>
+    <strong>Q: What are some problems with this language you'd like to see solved?</strong>
+  </p>
+
+  <p>
+    A: Implementations that satisfy the above assumptions for the particular language atoms, and also for compositions of the atoms. (Of course, various protocols in the "financial cryptography" field, in my own proposals, in the E language, etc. provide many valuable building blocks for such solutions).
+  </p>
+
+  <!--
+  <h3>Technical Notes &ndash; Innovations in this Language</h3>
+
+  <ul>
+    <li>
+      <p>
+        Specific keywords after each instruction that distinguish it as:
+      </p>
+      <ul>
+        <li>asynchronous (also)</li>
+        <li>
+          asynchrononous and atomic (with)
+          <p>
+            Since this is not guarunteed atomic, is the only sure property that both instructions must be complete before we move on? In this case "X with Y" is equivalent to "X also Y then".
+          </p>
+        </li>
+        <li>synchronous (then).  this also blocks all equally or lower
+nested prior asynchronous calls.</li>
+      </ul>
+    </li>
+    <li>
+      <p>
+        My messages are only-way &ndash; they have no return arguments. (But then again, the whole point is to swap rights and perform services defined outside the scope of the language.  Actual "information processing" should be done using another language).
+      </p>
+    </li>
+    <li>
+      <p>
+        E allows "then" by defualt.  An asynch "also"-style call must have an explicit "when" to wait for its return. In my language these calls block at the next equally or higher nested "then" and there are no return arguments. E has no equivalent of "with", probably becomes atomicity does not have proven reliability and doing "with" across trust boundaries (as usually done here) requires a trusted escrow or, perhaps, some very weird crypto protocol.
+      </p>
+    </li>
+    <li>
+      <p>
+        Events are asynch-callable methods that are active only when "when" is in the "waiting" state. (Catch can also be in a "inactive" or "active" state). They search for whenes starting from the leaves of the target named clause ("throw at target"). E doesn't have anything like this, as far as I know. Would break capability discipline? (But my intention is to implement all atoms securely &ndash; surely there is some subset of events that can be sent securely, i.e. by never sending capabilities in their message args?)
+      </p>
+    </li>
+  </ul>
+  -->
 
 
+  <h2>References</h2>
 
-<br>
-<h3>Frequently Asked Questions</h3>
+  <ol>
+    <li id="fn1">
+      <p>
+        There are many instances of deals gone sour at the last minute when the salesfolk check with legal and discover that the deal is not possible due to a clause in another contract &ndash; for example a promise not to sell to a customer's competitors in an industry for a certain period of time. Worse, such a conflict might not be discovered until the contraditory commitment has been made.&nbsp;<a href="#ref1">↩</a>
+      </p>
+    </li>
 
+    <li id="fn2">
+      <p>
+        <a href="http://www.erights.org/">The E programming language</a>&nbsp;<a href="#ref2">↩</a>
+      </p>
+    </li>
 
+    <li id="fn3">
+      <p>
+        <em>Proceedings of the Financial Cryptography Conferences</em>, Springer-Verlag&nbsp;<a href="#ref3">↩</a>
+      </p>
+    </li>
 
-Q: There are already languages for specifying financial
-contracts (e.g., [2]), what is the novelty here?
-<p>
-A: This the first specification language
-to generalize contractual structures to any kind of exclusive
-rights, not just money.  This is also the first language
-that incorporates the dynamic nature of many 
-contracts, (their dependence on time or events)
-in a succinct, complete, and potentially executable manner. 
-Surprisingly, this often makes the specification more 
-not less succinct.  
-</p><p>
+    <li id="fn4">
+      <p>
+        <a href="http://citeseer.nj.nec.com/jones00composing.html"> Composing contracts: an adventure in financial engineering</a> &ndash; A different kind of language for specifying financial contracts in order to compute their risk and value.&nbsp;<a href="#ref4">↩</a>
+      </p>
+    </li>
 
-Q: Where's the money?
-</p><p>
-A: This language is targeted toward an economy of distributed
-software and devices performing services for each other.  A money 
-economy can be constructed out of a barter economy but not vice 
-versa.   Real online money is far more subtle than a mere 
-shared variable (or even the specification
-of "bank notes" in this language). Money is just one
-kind of fungible exclusive right, and the structure
-of financial contracts are generalized by converting
-money terms into any fungible exclusive right.
-</p><p>
-Q: What assumptions are you making?
-</p><p>
-A: This is the most important question to ask of
-any novel scheme!   I have identified at least the following:
-</p><p>
-(1) I'm assuming away, for the moment, issues of the protection
-and enforcement of performance, which I've addressed elsewhere 
-(http://szabo.vwh.best.com/ has many essays that focus
-on this topic).  An eventual goal is to create protocols
-to enforce the language's atoms and then to compose these
-atoms maintaining the enforceability.
-</p><p>
-(2) Two specific enforcement assumptions -- there exists
-a secure, agreed-upon time source, and the occurence of
-other defined events can be agreed upon by the parties 
-and/or audited by third parties.
-</p><p>
-(3) I am assuming some kind of atomicity for each
-right atom performance -- for example, when an event 
-triggers a "when", a functionPerformance in another
-thread is gracefully either  rolled back or completed.
-</p><p>
-(4) There are only two parties to the contract, the Holder
-and Counterparty.
-</p><p>
-(5) A contract comes in two mirror forms, one of which can
-be inferred from the other.  A party always sees himself as the 
-Holder.  Obligations of the Holder can always be 
-expressed in and inferred from rights of the Counterparty, and
-vice versa.
-</p><p>
-(6) I'm probably making other assumptions I haven't discovered
-yet -- if you find any please let me know!
-</p><p>
-
-Q: What are some problems with this language you'd like
-to see solved?
-</p><p>
-A: Implementations that satisfy the above assumptions
-for the particular language atoms, and also for compositions
-of the atoms.  (Of course, various protocols in the "financial
-cryptography" field, in my own proposals, in the E language, etc. 
-provide many valuable building blocks for such solutions).
-</p><p>
-<!--
-<h3>Technical Notes -- Innovations in this Language</h3>
-<pre>
--- Specific keywords after each instruction that distinguish it
-as:
-- asynchronous (also)
-- asynchrononous and atomic (with)
-Since this is not guarunteed atomic, is the only sure property
-that both instructions must be complete before we move on?  In
-this case "X with Y" is equivalent to "X also Y then".
-- synchronous (then).  this also blocks all equally or lower
-nested prior asynchronous calls.
--- My messages are only-way -- they have no return arguments.
-(But then again, the whole point is to swap rights and perform
-services defined outside the scope of the language.  Actual
-"information processing" should be done using another language).
--- E allows "then" by defualt.  An asynch "also"-style call must have 
-an explicit "when" to wait for its return.  In my language
-these calls block at the next equally or higher nested "then"
-and there are no return arguments.  E has no equivalent of 
-"with", probably becomes atomicity does not have proven 
-reliability and doing "with" across trust boundaries
-(as usually done here)  requires a trusted escrow or,
-perhaps, some very weird crypto protocol.
--- Events are asynch-callable methods that are active only
-when "when" is in the "waiting" state.  (Catch can also
-be in a "inactive" or "active" state).  They search for whenes
-starting from the leaves of the target named clause ("throw at target").
-E doesn't have anything like this, as far as I know.  Would
-break capability discipline?  (But my intention is to implement
-all atoms securely -- surely there is some subset of events
-that can be sent securely, i.e. by never sending capabilities
-in their message args?)
--->
-</p></pre>
-
-<br>
-<h3>References</h3>
-[1] <a href="http://www.erights.org/">The E programming language</a> 
-<br>
-[2] <i>Proceedings of the Financial Cryptography Conferences</i>, Springer-Verlag
-<br>
-[3] <a href="http://citeseer.nj.nec.com/jones00composing.html"> Composing contracts: an adventure in financial engineering </a>
-A different kind of language for specifying financial contracts in 
-order to compute their risk and value. 
-<br>
-[4] Lopez and Raymond, <i>Medieval Trade in the Mediterranean World:
-Illustrative Documents</i>, Columbia University Press 2001 
-<br>
-[5] There are many instances of deals gone sour at the last 
-minute when the salesfolk check with legal and discover that 
-the deal is not possible due to a clause in another contract --
-for example a promise not to sell to a customer's competitors in 
-an industry for a certain period of time.  Worse, such a 
-conflict might not be discovered until the contraditory commitment
-has been made.
+    <li id="fn5">
+      <p>
+        Lopez and Raymond, <em>Medieval Trade in the Mediterranean World: Illustrative Documents</em>, Columbia University Press 2001.&nbsp;<a href="#ref5-1">↩</a>&nbsp;<a href="#ref5-2">↩</a>
+      </p>
+    </li>
+  </ol>
 
   <hr>
   <p>
