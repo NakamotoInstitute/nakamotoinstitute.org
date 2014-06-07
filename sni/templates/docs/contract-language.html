@@ -1,6 +1,13 @@
 <!-- extend base layout -->
 {% extends "doc.html" %}
 {% block doc %}
+<style>
+  .snippet {
+    overflow:auto;
+    word-wrap:normal;
+    white-space:pre;
+  }
+</style>
 
 <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
   <div class="page-header">
@@ -62,7 +69,7 @@
     Our language can specify the output of a negotiation (which could be an auction, an exchange, or two parties drafting the contract, or one party drafting and the other agreeing to it, etc. ). It also can define the input to an engine that drives and monitors the transactions that perform the contract:
   </p>
 
-<pre>
+<pre class="snippet">
 negotiation --> contract --> performance
 </pre>
 
@@ -94,7 +101,7 @@ negotiation --> contract --> performance
     Our first example is a well-known financial contract, the <em>future</em>. A future is an obligation on the part of the Holder of the futures contract to purchase a certain amount of a certain commodity in a certain month, and the obligation on the part of the future contract writer, the Counterparty, to deliver these goods. For the purposes of introducing this contract, we give it in the abstract form in which financial analysts usually deal with it, leaving out important details that describe the third parties who act as trusted intermediaries to define "fair bundles" of commodities, and we also leave out many details about the actual delivery.
   </p>
 
-<pre>
+<pre class="snippet">
 future(rightA="1 round lot pork bellies", 
        rightB="$1,500.00", 
        p = "for delivery in July 2002") = 
@@ -124,7 +131,7 @@ future(rightA="1 round lot pork bellies",
     A <strong>then</strong> statement allows us to proceed step by step. If we had two clauses written thus:
   </p>
 
-<pre>
+<pre class="snippet">
 to Holder right1
 also to Holder right2
 </pre>
@@ -141,7 +148,7 @@ also to Holder right2
     If we wish to add the constraint that right2 cannot be performed until right1 has been, we use <strong>then</strong>:
   </p>
 
-<pre>
+<pre class="snippet">
 to Holder right1
 then to Holder right2
 </pre>
@@ -150,7 +157,7 @@ then to Holder right2
     Traditional programmers will be sorely tempted to fill their contracts with <strong>then</strong> statements, mimicking the style of procedural programming. Do not! Those experienced with drafting contracts know that is some cases such a constraint is clearly appropriate and in some cases it clearly isn't, and it is important when adding constraints to be explicit. Therefore the following statement is illegal, and will be rejected both by the computer and by any right-thinking drafters working without a computer:
   </p>
 
-<pre>
+<pre class="snippet">
 # Do not do this!
     to Holder right1
     to Holder right2
@@ -160,7 +167,7 @@ then to Holder right2
     Finally, we have already seen this kind of clause:
   </p>
 
-<pre>
+<pre class="snippet">
 to Holder right1
 with to Holder right2
 </pre>
@@ -181,7 +188,7 @@ with to Holder right2
     When the parties commit to the contract its first clauses (the clauses at the highest level of indentation) are awoken. In our futures contract we have only one such clause, and so the <strong>when</strong> (but not the clauses nested underneath it) go to in an active state, waiting for the <strong>withinPeriod()</strong> event:
   </p>
 
-<pre>
+<pre class="snippet">
 <strong>when withinPeriod(p)</strong> 
     to Holder rightA   with   to Counterparty rightB 
 then terminate
@@ -191,7 +198,7 @@ then terminate
     When the calendar has advanced to the end of trading on the last trading day of August, the <strong>withinPeriod(p)</strong> event occurs and the <strong>when</strong> activates the clauses nested at the next level inside. The when itself becomes inactive &ndash; it is no longer waiting for an event:
   </p>
 
-<pre>
+<pre class="snippet">
 when withinPeriod(p) 
     <strong>to Holder rightA   with   to Counterparty rightB</strong> 
 then terminate
@@ -201,7 +208,7 @@ then terminate
     The <strong>then</strong> has cause the <strong>terminate</strong> to wait for the <strong>when</strong> and its subclauses to be performed. Once the swap of rights has been performed, the performed clauses convert to inactivity and the terminate fires:
   </p>
 
-<pre>
+<pre class="snippet">
 when withinPeriod(p) 
     to Holder rightA   with   to Counterparty rightB
 then <strong>terminate</strong>
@@ -211,7 +218,7 @@ then <strong>terminate</strong>
     It is easy to generalize in our language. The generic futures contract looks like this:
   </p>
 
-<pre>
+<pre class="snippet">
 future(rightA, rightB, p) = 
     when withinPeriod(p) 
         to Holder rightA   with   to Counterparty rightB 
@@ -228,7 +235,7 @@ future(rightA, rightB, p) =
     We now present another kind of financial contract. In this <em>American option</em>, the Holder has the right to buy for $20 (the option strike price) per share one round lot (100 shares) of XYZ Corp on or before the last trading day of August. These kinds of contracts are called "derivatives" because the call option is derived from the underlying right (here a stock).
   </p>
 
-<pre>
+<pre class="snippet">
 callOptionAmerican (rightA="1 round lot XYZ Corp.", 
                     rightB="$2,000/lot", 
                     time="end of trading on last trading day of August") =
@@ -247,7 +254,7 @@ callOptionAmerican (rightA="1 round lot XYZ Corp.",
     The contract starts out with dancing elves in the two top-level clauses:
   </p>
 
-<pre>
+<pre class="snippet">
 <strong>when beforeTime(time)</strong>
     when choiceOf(Holder)
         to Holder rightA with to Counterparty rightB
@@ -259,7 +266,7 @@ callOptionAmerican (rightA="1 round lot XYZ Corp.",
     These when statements are now waiting for their respective events. Since the events are mutually exclusive (it is first <strong>beforeTime(time)</strong>, then <strong>afterTime(time)</strong>, but never both) we only need to worry about the first to be executed. Note that, unless separated by a <strong>then</strong>, the order of the clauses at the same level is not important. The following code is identical to the code in our example:
   </p>
 
-<pre>
+<pre class="snippet">
 when afterTime(time)
     terminate
 when beforeTime(time)
@@ -271,7 +278,7 @@ when beforeTime(time)
     The <strong>beforeTime(time)</strong> is immediately activiated, so that we start with the nested clause(s) at the level immediate below it active as well &ndash; in this case, when choiceOf(Holder).
   </p>
 
-<pre>
+<pre class="snippet">
 when beforeTime(time)
     <strong>when choiceOf(Holder)</strong>
         to Holder rightA with to Counterparty rightB
@@ -287,7 +294,7 @@ when beforeTime(time)
     The <strong>when beforeTime(time)</strong> becomes active when the option itself is first activated, and remains active until <strong>time</strong>. Being active it wakes up the when choiceOf(Holder). This when specifies the event that gives the contract its nature as an option -- the choice of its holder to exercise it or not. If the Holder chooses to do so, the Holder gets the stock (rightA) from the Counterparty (the writer of the call option) in exchange for the money (rightB). The dancing elves then move from the when clause to the swap clause:
   </p>
 
-<pre>
+<pre class="snippet">
 when beforeTime(time)
     when choiceOf(Holder)
         <strong>to Holder rightA with to Counterparty rightB</strong>
@@ -308,7 +315,7 @@ when beforeTime(time)
     Here is the same contract in a more general form.
   </p>
 
-<pre>
+<pre class="snippet">
 callOptionAmerican(rightA, rightB, time) = 
     when beforeTime(time)
         when choiceOf(Holder) 
@@ -330,7 +337,7 @@ callOptionAmerican(rightA, rightB, time) =
     <strong>for</strong> iterates through the events in the schedule one by one, with the nested <strong>when</strong> handling them. When it appears after a <strong>for</strong> clause, a <strong>then</strong> advances the iterator one more step.
   </p>
 
-<pre>
+<pre class="snippet">
 bond(coupon, principal, schedule) = 
     for schedule 
         when withinPeriod(schedule.next) 
@@ -344,7 +351,7 @@ bond(coupon, principal, schedule) =
     Next we sketch a contract to sell a car on credit. Being a sketch rather than a full-fledged design, this is an oversimplified or "toy" example &ndash; we leave out fees, any references to a related insurance contract, warrantees, waivers, etc. We also for simplicity have the bank (here the Holder) be the same as the car dealer. Finally, we don't show here any lien on the car to secure the loan. We will make a stab at a lien-like mechanism in an example below.
   </p>
 
-<pre>
+<pre class="snippet">
 loanPayments(payment, schedule) =
     for schedule
         when withinPeriod(schedule.next)
@@ -358,7 +365,7 @@ carPurchase(car, downPayment, monthlyPayment, schedule)  =
     If we want to allow prepayment, our schedule would contain single times rather than periods with a begin time and an end time. And our loan payments would look as follows:
   </p>
 
-<pre>
+<pre class="snippet">
 loanPayments(payment, schedule) =
     for schedule
            when beforeTime(schedule.next)
@@ -369,7 +376,7 @@ loanPayments(payment, schedule) =
     We could compute the above payment from other information we are more likely to see in the contract, but this involves just normal programming. We can use a function to perform the computation in the first place:
   </p>
 
-<pre>
+<pre class="snippet">
 loanPayments(principal, interest, schedule) =
         constant payment.amount = computeInterest(principal, schedule, interest)
                 # normal computational function goes here
@@ -387,7 +394,7 @@ loanPayments(principal, interest, schedule) =
     We can also make <strong>payment</strong> a variable, that is an object whose value could change, and use the function as an <em>invariant condition</em> to make sure the payment is proper is made in the proper amount, using the <strong>==</strong> and <strong>if/else</strong> constructions:
   </p>
 
-<pre>
+<pre class="snippet">
 variable payment.amount = computeInterest(principal, schedule, interest)
     # normal computational function goes here
 loanPayments(principal, schedule, interest) =
@@ -401,7 +408,7 @@ loanPayments(principal, schedule, interest) =
     We can also structure the car purchase contract so that the new owner doesn't get the title until after the downPayment has been received:
   </p>
 
-<pre>
+<pre class="snippet">
 carPurchase(car, downPayment, monthlyPayment, schedule)  =
     to Holder downPayment 
     then to Counterparty getTitle(car) 
@@ -428,7 +435,7 @@ carPurchase(car, downPayment, monthlyPayment, schedule)  =
     Now, this is a very clever contract, called by scholars a "dry exchange". The Catholic Church forbad the charging of interest, so a loan contract that came right out and charged interest would be unenforceable and expose the drafters to further Church sanctions. But both long-distance exchange (making a trade at a distant market at a later date -- often via a sea voyage, thus a "wet" exchange) and currency exchange were quite legal, enforceable, and common. The above contract combined these two, along with damage clauses, in a clever way. None of the above parties had any intention of travelling to Byzantium, or even outside Genoa, to perform on this contract. Its logic can be analyzed as follows (the Holder is the creditor). We've added the statements "in (geographic location)", <strong>security</strong>, and <strong>foreclose</strong> to highlight important aspects of this contract. The latter sells enough of the goods at auction to satisfy penalty (if there was not enough to satisfy the creditors there was a bankruptcy procedure to fairly allocate the remain security among the creditors, but this is not shown):
   </p>
 
-<pre>
+<pre class="snippet">
     counterpartySecurity =  pledge(allGoods(Counterparty))
     also cosignerSecurity = pledge(allGoods(co-signer))
     then  
@@ -473,7 +480,7 @@ payment3() =
     The earliest risk-pooling insurance contracts were structured similarly to, and enforced under the same legal principals as, loans. Indeed, let's start with a simple loan for a purchase of goods with no interest where the Holder (the creditor) can call in the loan any time between days <strong>t1</strong> and <strong>t2</strong>:
   </p>
 
-<pre>
+<pre class="snippet">
 loan(goods, principal, penalty, t1, t2) =
     counterpartySecurity =  pledge(allGoods(Counterparty))
     with to Counterparty getTitle(goods) 
@@ -490,7 +497,7 @@ loanPayment(principal, t1, t2) =
     Let's add to our language a <strong>safeArrival(goods)</strong> event &ndash; the event that a ship carrying <strong>goods</strong> arrives safely in port and that <strong>goods</strong> are offloaded and accounted for. Now by adding to this loan contract only one extra line, whening <strong>safeArrival()</strong>, and slightly modifying a few others we can transform it into a marine insurance contract. The insured is the Holder, the insurer is the Counterparty. For this simple version damages are paid in a fixed amount (<strong>principal</strong>) if <strong>safeArrival</strong> does not occur:
   </p>
 
-<pre>
+<pre class="snippet">
 insureGoods(goodsPremium, principal, penalty, t1, t2, goodsInsured) =
     counterpartySecurity =  pledge(allGoods(Counterparty))
     with to Counterparty getTitle(goodsPremium) 
@@ -522,7 +529,7 @@ insurancePayment(goodsInsured, principal, t1, t2) =
     Ignoring the pro rata language, the specific definition of the risks that prevent generation or not of the safeArrival() event, and ignoring the multiple Names (i.e. treating them as one Counterparty), the contract can be modelled by the insurance contract we drafted above with its parameters filled in as follows, and with Frederico Vivaldi as the insured (the Holder):
   </p>
 
-<pre>
+<pre class="snippet">
 insureGoods(goodsPremium="a certain amount of goods", 
       principal="100 fl + 50 fl + 7*100 fl",
       penalty=2*principal,
@@ -548,7 +555,7 @@ insureGoods(goodsPremium="a certain amount of goods",
     Events in a <strong>when</strong> clause can be combined in logical conditions which must evaluate to true in order to trigger the subclause. This can be used to model conditional clauses in contracts, and, more broadly, procedural and substantive rules of law. When constructing rules we call the primitive events <em>elements</em>. For example, here is, roughly following the Restatement(Second) of Contracts, a legal rule for promissory estoppel:
   </p>
 
-<pre>
+<pre class="snippet">
 when 
     "there is a promise"
     P "has relied on that promise"
@@ -588,7 +595,7 @@ else
     Lease for Term: (n.b. &ndash; Grantor = self). This is an old common law lease that actually transfers title for a certain period of time.
   </p>
 
-<pre>
+<pre class="snippet">
 leaseWithTerm(Property, Lessee, Start, Term) =
     when afterTime(Start) to Lessee Property
     then when afterTime(Start+Term) to Grantor Property
@@ -598,7 +605,7 @@ leaseWithTerm(Property, Lessee, Start, Term) =
     Life Estate with Reverter: (n.b. &ndash; Grantor = self)
   </p>
 
-<pre>
+<pre class="snippet">
 lifeEstateReverter(Property, Grantee) =
     to Grantee Property
     then when afterDeath(Grantee)
@@ -609,7 +616,7 @@ lifeEstateReverter(Property, Grantee) =
     Assignable Reverter for Lease. To make future interests assignable, define them separately. Note to make the Grantor explicit. (As usual we are looking at things from the obligor's side):
   </p>
 
-<pre>
+<pre class="snippet">
 Reverter (Grantor, Grantee, Property) =
     when afterDeath(Grantee)
         to Grantor Property
@@ -619,7 +626,7 @@ Reverter (Grantor, Grantee, Property) =
     We can now redefine the Life Estate with Reverter in terms of the separately defined future interest:
   </p>
 
-<pre>
+<pre class="snippet">
 lifeEstateReverter(Property, Grantee, Reverter) =
     to Grantee Property
     then Reverter(Grantor, Grantee, Property)
@@ -629,7 +636,7 @@ lifeEstateReverter(Property, Grantee, Reverter) =
     Life Estate with Remainder. The only difference here is that the property is remaindered to a third party instead of reverting to the grantor.
   </p>
 
-<pre>
+<pre class="snippet">
 lifeEstateRemainder(Property, Grantee, Remainderman) =
     to Grantee Property
     then when afterDeath(Grantee) to Remainderman Property
@@ -639,7 +646,7 @@ lifeEstateRemainder(Property, Grantee, Remainderman) =
     Fee Simple Determinable. The <strong>Condition</strong> can be any verifiable event or change of state of the property or its title. A common real estate condition, for example, is "used for commercial purposes" &ndash; i.e., a restriction that the property may not be used for commercial purposes, otherwise the grantee is penalized by losing title to the grantor.
   </p>
 
-<pre>
+<pre class="snippet">
 feeSimpleDeterminable(Property, Grantee, Condition) =
     to Grantee Property 
     then when Condtion(Property) to Grantor Property
@@ -649,7 +656,7 @@ feeSimpleDeterminable(Property, Grantee, Condition) =
     Fee Simple Subject to Executory Limitation. Same as Fee Simple Determinable, except the property gets remaindered to a third party instead of revertin to the grantor.
   </p>
 
-<pre>
+<pre class="snippet">
 feeSimpleSubjectToExecutoryLimitation(Property, Grantee, Condition, Remainderman) =
     to Grantee Property 
     then when Condtion(Property) to Remainderman Property
@@ -659,7 +666,7 @@ feeSimpleSubjectToExecutoryLimitation(Property, Grantee, Condition, Remainderman
     Fee Simple Subject to Condition Subsequent. Here title is not automatically transferred upon occurence of the condtion. Instead the Grantor must do some affirmative and verifiable act (in this example "entering" the property), to reclaim the title.
   </p>
 
-<pre>
+<pre class="snippet">
 feeSimpleSubjectToConditionSubsequent(Property, Grantee, Condition, Enters) =
     to Grantee Property 
     then when Condtion(Property)
@@ -680,7 +687,7 @@ feeSimpleSubjectToConditionSubsequent(Property, Grantee, Condition, Enters) =
     Since Counterparty, the option writer, is not paying anything up front for an option on <strong>rightB</strong>, this right does not need to be escrowed.
   </p>
 
-<pre>
+<pre class="snippet">
 escrowRight(right, escrow, newHolder, currentHolder,
             newHolderReleaseEvents, currentHolderReleaseEvents) =
     to escrow right
@@ -703,7 +710,7 @@ writeCallOptionAmerican(rightA, rightB, rightX, time) =
     We now redraft the option itself to take advantage of the escrow. <strong>rightA</strong> is transferred to Holder by the <strong>throw</strong> upon excercise, or back to Counterparty if the option expires.
   </p>
 
-<pre>
+<pre class="snippet">
 callOptionAmerican(escrowRight, rightB, time) = 
     when beforeTime(time) 
         when choiceOf(Holder) 
@@ -733,7 +740,7 @@ callOptionAmerican(escrowRight, rightB, time) =
     First we draft a specification for the contract-like bevavior of a vending machine:
   </p>
 
-<pre>
+<pre class="snippet">
 sellCandy(candyPrice = $0.90) =
     variable moneyAmount = $0.00 
     then 
@@ -790,7 +797,7 @@ sellCandy(candyPrice = $0.90) =
     The above is a transcription of machine behavior. Now we make it even more like a contract. Here we incorporate the customer and his choices, which implicitly generated the coin events in the code above &ndash; here the coins are rights of the Holder. Thinking more about the party, rather than the machine, allows us to recognize that at each step the customer wants feedback on how much money they have put in, thus <strong>to Counterparty display(moneyAmount)</strong>. This display is done by the Holder (the vending machine as an agent of the vendor) as a right of the Counterparty (the customer). To enable better customer choice, we add a new construct to our language: <strong>choiceOf(agent, right)</strong> which allows the customer multiple choice, based on which right they wish to transfer to the agent's counterparty (here the vending machine, the Holder).
   </p>
 
-<pre>
+<pre class="snippet">
 sellCandy(candyPrice = $0.90) =
     variable moneyAmount = $0.00 
     then 
@@ -834,7 +841,7 @@ sellCandy(candyPrice = $0.90) =
     For all that work-up, we've only actually added one clause to our car purchase contract above. The clause forfeits the title and is structured much like the damage clauses we have seen. A <strong>breachedPerformance()</strong> event is generated if it is detected (by the Holder, a third party auditor, or the proplet itself) that the Countparty failed to make a payment according to the schedule specified by <strong>loan</strong>.
   </p>
 
-<pre>
+<pre class="snippet">
 loan(payment, schedule) =
     for schedule 
         when withinPeriod(schedule.next) 
@@ -857,7 +864,7 @@ carPurchase(car, downPayment, monthlyPayment, schedule)  =
     The idea is for a security system to protect a building. Our hypothetical device learns who the buildings owner is from a public title database (see article securetitle.html). Lacking such a service it could have the owner or security service reprogrammed into it specifically by a new owner (but we don't show that design). Our system looks up which security service the owner has hired, and notifies them of the security event. If the property is sold, the software automatically figures out, from <strong>getTitle()</strong>, who the new owner is, and which security service is their authorized agent for handling security events. <strong>passEvent()</strong> passes on the event information as it was received by the current event. 
   </p>
 
-<pre>
+<pre class="snippet">
 buildingSecurity = 
     when(glassBreak) { 
         aimCamera(glassBreak.location) 
@@ -873,7 +880,7 @@ buildingSecurity =
     We might save precious seconds of delay in notifying security by having a property title transfer and change of security service generate events, then storing <strong>securityService</strong> as a state variable. This way the security system doesn't have to take time to look up the owner and then the security service during a break-in.
   </p>
 
-<pre>
+<pre class="snippet">
 buildingSecurity =
     securityService = securityService(getTitle(property).Owner)) 
     then
@@ -901,7 +908,7 @@ buildingSecurity =
     Here is a formal specification of the language's grammar in "Backus-Naur Form"(BNF). The specification is for a planned computer-readable version of the language and there are a few minor differences, such as the use of brackets {} instead of tabs to denote nesting. BNF is used to define what linguists call "context-free grammars". It is also used, as here, to define the syntax of languages that computers can also interpret and execute. I also include some more discussion of the meanings of the words and structures, especially how the computer might interpret them. As you can see, this is an evolving language, a work in progress with many unresolved issues. Your suggestions for changing or adding more kinds of contractual terms to our language are quite welcome.
   </p>
 
-<pre>
+<pre class="snippet">
 <p>
 agent = Holder | Counterparty
     ## makes contract look different on each side
@@ -1008,7 +1015,7 @@ contract = [ when event "{" contract "}" ]*
 
   <h2>Basic Fucntions</h2>
 
-<pre>
+<pre class="snippet">
 <p>
 doOn(right, period) = 
     when withinPeriod(p) { right }
@@ -1033,7 +1040,7 @@ doOnDemand(contract) =
 </p></pre>
 
   <h2>More Examples</h2>
-<pre>
+<pre class="snippet">
 future(rightA, rightB, p) = 
     Holder doOn(rightA, p)   with   Counterparty doOn(rightB, p)
 #
