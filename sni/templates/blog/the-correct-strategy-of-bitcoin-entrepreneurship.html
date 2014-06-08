@@ -1,6 +1,7 @@
 <!-- extend base layout -->
 {% extends "blogpost.html" %}
 {% block post %}
+<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
 	<div class="page-header">
   		<h1 class="text-center">
   			The Correct Strategy of Bitcoin Entrepreneurship
@@ -52,7 +53,7 @@
 		</p>
 
 		<p>
-			The proof that ideas aren't scarce is that anybody can make his own <a href="http://nakamotoinstitute.org/mempool/the-coming-demise-of-altcoins/">altcoin</a> at any time. Already there are hundreds, and every one of them a bad idea from people who <a href="http://nakamotoinstitute.org/mempool/the-problem-with-altcoins/">don't understand</a> the cumulative benefits of cooperation. Since entrepreneurs don't understand Bitcoin very well yet, it is easy to dazzle them with technobabble and funnel investment into flawed projects like Protoshares, Mastercoin, and Ethereum that have a very low probability of furthering Bitcoin adoption to any significant degree.
+			The proof that ideas aren't scarce is that anybody can make his own <a href="{{url_for('blogpost', slug='the-coming-demise-of-altcoins')}}">altcoin</a> at any time. Already there are hundreds, and every one of them a bad idea from people who <a href="{{url_for('blogpost', slug='the-problem-with-altcoins')}}">don't understand</a> the cumulative benefits of cooperation. Since entrepreneurs don't understand Bitcoin very well yet, it is easy to dazzle them with technobabble and funnel investment into flawed projects like Protoshares, Mastercoin, and Ethereum that have a very low probability of furthering Bitcoin adoption to any significant degree.
 		</p>
 
 		<p>
@@ -118,5 +119,6 @@
 		</p>
 	</li>
 </ol>
+</div>
 
 {%endblock%}
