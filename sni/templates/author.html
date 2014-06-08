@@ -21,6 +21,13 @@
             {{li.title}}
         </a> - {{li.date}}
     {% endfor %}
+      <br>
+      <br>
+  <div class = "text-center">
+    <a type="button" class="btn btn-default" href="{{url_for('literature')}}">
+      Back to Literature
+    </a>
+  </div>
   {%endif%}
 
   {% if mem|length != 0%}
@@ -36,6 +43,14 @@
         <em>{{me.excerpt}}</em>
       </p>
     {% endfor %}
+  <br>
+  <div class = "text-center">
+    <a type="button" class="btn btn-default" href="{{url_for('blog')}}">
+      Back to the Memory Pool
+    </a>
+  </div>
   {%endif%}
+
+<br>
 </div>
 {% endblock %}

@@ -1,23 +1,42 @@
 <!-- extend base layout -->
 {% extends "blogpost.html" %}
 {% block post %}
-	<div class="page-header">
-  		<h1 class="text-center">
-  		Crypto-Anarchy and Libertarian Entrepreneurship <br>Chapter 1: The Strategy 
-  			<br>
-  			<small>
-  				Daniel Krawisz
-  			</small>
-  		</h1>
-  		<h4 class="text-center">
-  			May 22, 2013
-  		</h4>
-  		<p>
-  			<img class="img-responsive center-block" alt="Distributed" src="/static/img/mempool/crypto-anarchy-and-libertarian-entrepreneurship-1/distributed.jpg"/>
-  		</p>
-  	</div>
+<div class="container">
+    <div class="row">
+        <div class="page-header">
+	  		<h1 class="text-center">
+	  		Crypto-Anarchy and <br>Libertarian Entrepreneurship <br>Chapter 1: The Strategy 
+	  			<br>
+	  			<small>
+	  				Daniel Krawisz
+	  			</small>
+	  		</h1>
+	  		<h4 class="text-center">
+	  			May 22, 2013
+	  		</h4>
+	  		<p>
+	  			<img class="img-responsive center-block" alt="Distributed" src="/static/img/mempool/crypto-anarchy-and-libertarian-entrepreneurship-1/distributed.jpg"/>
+	  		</p>
+  		</div>
+	</div>
+</div>
+<div class = "row">
+	<div class="col-sm-3 col-md-2 ">
+		<ul  class="nav" data-spy="affix-top">
+			<li><a href="{{url_for('blogpost', slug='crypto-anarchy-and-libertarian-entrepreneurship-1')}}">Chapter 1: The Strategy</a></li>
+			<li><a href="{{url_for('blogpost', slug='crypto-anarchy-and-libertarian-entrepreneurship-2')}}">Chapter 2: Public-Key Cryptography </a></li>
+			<li><a href="{{url_for('blogpost', slug='crypto-anarchy-and-libertarian-entrepreneurship-3')}}">Chapter 3: The Killer App of Liberty</a></li>
+			<li><a href="{{url_for('blogpost', slug='crypto-anarchy-and-libertarian-entrepreneurship-4')}}">Chapter 4: The Risk from the Software Industry</a></li>
+		</ul>
+	</div>
 
-	<h2>Libertarian Entrepreneurship</h2>
+	<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-1 main">
+
+	<div>
+	<h3>
+		Libertarian Entrepreneurship
+	</h3>
+	
 		<p>
 			Liberty is an ideology for everyone. It benefits all people and groups whose goals do not inherently require oppression. All objections to liberty have simply stimulated more thought into what is possible with voluntary organizations and shown more clearly how much better they are at providing services originally thought to be possible by government. Movements once believed to be wholly incompatible with libertarianism, such as feminism and environmentalism<sup><a title = 'See Long, R., Johnson, C., "Libertarian Feminism: Can This Marriage Be Saved?", 1 May 2005 for a libertarian take on feminism. See Block, W., "Environmentalism and Economic Freedom: The Case for Private Property Rights", vol. 17, Journal of Business Ethics, 1998, pp. 1887-1899 for an argument for libertarian environmentalism.' href="#1" id="ref1">1</a></sup>, now have their own branches of libertarian thought. Liberty is a universal <a href="http://en.wikipedia.org/wiki/Acid">acid</a>.
 		</p>
@@ -56,9 +75,9 @@
 			The strategy, therefore, is to promote decentralization by enabling people to coordinate with one another by a shared system of rules or traditions rather than through a mediator. Promote independence from particular organizations by promoting greater dependence on networks and on society as a whole.
 		</p>
 
-	<h2>
+	<h3>
 		Crypto-Anarchy
-	</h2>
+	</h3>
 		
 		<br>
 		<p>
@@ -84,17 +103,17 @@
 
 		<em>
 		<p>
-			<a title="Crypto-Anarchy and Libertarian Entrepreneurship – Chapter 2: Public-Key Cryptography" href="http://nakamotoinstitute.org/mempool/crypto-anarchy-and-libertarian-entrepreneurship-2/">
+			<a title="Crypto-Anarchy and Libertarian Entrepreneurship – Chapter 2: Public-Key Cryptography" href="{{url_for('blogpost', slug='crypto-anarchy-and-libertarian-entrepreneurship-2')}}">
 				Chapter 2: Public-Key Cryptography
 			</a>
 		</p>
 		<p>
-			<a title="Crypto-Anarchy and Libertarian Entrepreneurship – Chapter 3: The Killer App of Liberty" href="http://nakamotoinstitute.org/mempool/crypto-anarchy-and-libertarian-entrepreneurship-3/">
+			<a title="Crypto-Anarchy and Libertarian Entrepreneurship – Chapter 3: The Killer App of Liberty" href="{{url_for('blogpost', slug='crypto-anarchy-and-libertarian-entrepreneurship-3')}}">
 				Chapter 3: The Killer App of Liberty
 			</a>
 		</p>
 		<p>
-			<a title="Crypto-Anarchy and Libertarian Entrepreneurship – Chapter 4: The Risk From the Software Industry" href="http://nakamotoinstitute.org/mempool/crypto-anarchy-and-libertarian-entrepreneurship-4/">
+			<a title="Crypto-Anarchy and Libertarian Entrepreneurship – Chapter 4: The Risk From the Software Industry" href="{{url_for('blogpost', slug='crypto-anarchy-and-libertarian-entrepreneurship-4')}}">
 				Chapter 4: The Risk From the Software Industry
 			</a>
 		</p>
@@ -150,5 +169,7 @@
 	</li>
 </ol>
 <br>
-
+</div>
+</div>
+</div>
 {%endblock%}
