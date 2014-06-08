@@ -1,9 +1,10 @@
 <!-- extend base layout -->
 {% extends "blogpost.html" %}
 {% block post %}
+<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
 	<div class="page-header">
   		<h1 class="text-center">
-  			The Coming Demise of the Altcoins (And What You Can Do to Hasten It)
+  			The Coming Demise of the Altcoins <br>(And What You Can Do to Hasten It)
   			<br>
   			<small>
   				Daniel Krawisz
@@ -12,7 +13,8 @@
   		<h4 class="text-center">
   			March 14, 2014
   		</h4>
-  		<img class="img-responsive center-block" alt="Wanderer Sea of Fog" src="/static/img/mempool/the-coming-demise-of-altcoins/wanderer-sea-of-fog.jpg"/>
+  		<br>
+  		<img class="img-responsive center-block img-rounded" alt="Wanderer Sea of Fog" src="/static/img/mempool/the-coming-demise-of-altcoins/wanderer-sea-of-fog.jpg"/>
   	</div>
 
 	<blockquote>
@@ -21,14 +23,14 @@
 		Know ye the delight which rolleth stones into precipitous depths?—Those men of to-day, see just how they roll into my depths!<br>
 		A prelude am I to better players, O my brethren! An example! DO according to mine example!<br>
 		And him whom ye do not teach to fly, teach I pray you—TO FALL FASTER!—<br>
-		<cite>
-			– Friedrich Nietzsche, 
+		<footer>
+			Friedrich Nietzsche, 
 			<a href="http://www.gutenberg.org/ebooks/1998" target="_blank">
 				<em>
 					Thus Spake Zarathustra
 				</em>
 			</a>
-		</cite>
+		</footer>
 	</blockquote>
 
 	<h2>
@@ -279,11 +281,21 @@
 			<em>Update March 17, 2014:</em> Clarified 2nd paragraph of section &#8220;Liquidity Cannot be Designed&#8221;.
 		</p>
 	
-	<strong>
-		<em>
-			If you like putting altcoins out of their misery, please <a href="https://coinbase.com/checkouts/ead96a331186da7f9243db2ae133d486">donate to Daniel&#8217;s writing</a>!
-		</em>
-	</strong>
+	<br>
+		<div class = "text-center">
+			<p>
+				<a href="https://coinbase.com/checkouts/c16886a2ff866480977fde7c18ce0edf" target="_blank" type="button" class="btn btn-success">
+					Donate to Daniel
+				</a>
+			</p>
+			<br>
+			<p>
+				<a href="http://pgp.mit.edu/pks/lookup?op=get&search=0x101BBC10F86C4A64" type="button" class="btn btn-info">
+					Daniel's Public Key
+				</a>
+			</p>
+		</div>
+	<br>
 
 <ol>
 	<li>
@@ -321,6 +333,5 @@
 		</p>
 	</li>
 </ol>
-
-
+</div>
 {%endblock%}
