@@ -419,7 +419,7 @@
         "author": ["timothy-c-may", "eric-hughes"],
         "date": "November 22, 1992",
         "slug": "crypto-glossary",
-        "formats": ["txt"],
+        "formats": ["html","txt"],
         "categories": ["cryptography", "Cypherpunk"],
         "doctype": "essay"
     },
