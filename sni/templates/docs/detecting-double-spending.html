@@ -99,5 +99,62 @@
     When Bob deposits the money at the bank, he passes along the information he got from Alice regarding the ai's and such.
   </p>
 
+  <p>
+    Now, suppose Alice cheats. She spends the money again somewhere else, at Charlie's. Charlie goes through the same procedure as Bob, choosing 0 or 1 at random for each value of i. Here is the catch. Since he is choosing at random, it would be very unlikely that he will choose exactly the same 0's and 1's that Bob chose. (Here is where the size of k matters &ndash; making it bigger makes it less likely that Charlie and Bob will choose the same pattern of 0's and 1's. But it makes the calculations take longer.) That means for one or more values of i, Charlie will probably choose a 0 where Bob chose a 1, or vice versa.
+  </p>
+
+  <p>
+    Because of this, if Bob got ai for that i, Charlie will get ai xor &lt;info&gt;. Or if Bob got ai xor &lt;info&gt;, Charlie will get ai. Either way, when Charlie sends his record of this information to the bank, the bank will put Bob's and Charlie's information together and get both ai and ai xor &lt;info&gt;. Xor'ing these together reveals &lt;info&gt;, and Alice is caught! This is the main idea.
+  </p>
+
+  <p>
+    (Chaum suggests not just relying on random chance to make sure Bob and Charlie use different sets of 1's and 0's. At least some of the bits might be assigned to Bob and Charlie by the bank in such a way that everybody gets a different number. This way it would be guaranteed that Bob and Charlie would choose opposite values for some i.)
+  </p>
+
+  <p>
+    The reason for the money to have the form it does is so that Bob can check that it is signed by the bank. For each value of i Alice has to give him enough information to calculate xi and yi. If Bob choses a 1, she gives him ai and yi. Given ai Bob can calculate xi (=f(ai)), and with this and yi he can calculate g(xi,yi). If Bob chooses a 0, she gives him (ai xor &lt;info&gt;), as described before, and also xi. Given (ai xor &lt;info&gt;), Bob calculates yi (=f(ai xor &lt;info&gt;)), and with this and xi he can calculate g(xi,yi).
+  </p>
+
+  <p>
+    So for each i, whether Bob gives a 0 or a 1 he gets enough information to calculate g(xi,yi). He multiplies these all together and confirms that they are equal to Alice's original "money" value when it is taken to the 3rd power (recall the money was product of g(xi,yi)^(1/3) for all i). Only the bank could have produced a signature on this one-way function f whose arguments take this special form.
+  </p>
+
+  <p>
+    One more complication exists. (Well, actually, an almost infinite number of complications exist if you look hard enough. But we'll just focus on one more.) Alice needs to get this special form of money from the bank in such a way that the bank won't recognize it. That means she has to blind it. But in this case the bank wants to be sure that the money is of the proper form when it signs it; in particular, it wants to make darned sure that Alice's &lt;info&gt; which is buried deep in all of those f's of g's is actually the right one for her. But since the bank can't see what it is signing, this is hard to do.
+  </p>
+
+  <p>
+    Chaum uses cut-and-choose for this. He has Alice prepare all these f's and g's according to the form above, carefully embedding her own incriminating &lt;info&gt; in each one. Then she multiplies each g(xi,yi) by a blinding factor ri^3 just like in the first cash. These are what she sends to the bank to be signed.
+  </p>
+
+  <p>
+    The trick, though, is that she sends twice as many as will be used. She sends k of them, but only k/2 will be used. (That's why the loop above used k/2 as the limit.) The bank chooses k/2 at random out of the k she sent as the ones which will actually be used. Alice then has to send the blinding ri values for the ones which the bank didn't pick.
+  </p>
+
+  <p>
+    The idea is that if Alice tries to cheat, embedding "Bozo" instead of "Alice" in that &lt;info&gt; field, she's taking a chance. First, to be useful, she's going to have to embed it in a lot of &lt;info&gt; fields for different values of i. When Bob and Charlie compare notes after she double-spends, every value of i for which they chose different 0's and 1's, which will be on the average half of them, will reveal an &lt;info&gt; field. If she only fakes a few, chances are her real identity will still be revealed.
+  </p>
+
+  <p>
+    But if she falsifies a great many of them, then when the bank chooses half, chances are at least some of the fake ones will be in the set the bank didn't choose. Then when Alice has to reveal her blinding r's, the jig will be up. The bank will un-blind all those g(xi,yi)'s which aren't being used, and see the fake &lt;info&gt; fields.
+  </p>
+
+  <p>
+    This cut-and-choose methodology has the disadvantage that Alice has to do twice as much work in preparing the money, half of which will just be thrown away. But it is a simple, "brute force" way to make sure that blinding signatures are actually being done on properly-formed data.
+  </p>
+
+  <p>
+    So, there you have it. Anonymity as long as you don't cheat, and double-spenders get caught. It's a little complicated but that's what computers are for; Bob and Alice wouldn't do all this stuff by hand. Alice would push the "generate a money candidate" button and get something to be sent to the bank (lots of the new PDA's have infrared wireless communications that would be perfect for face-to-face transactions). Bob would push the "check money" button when Alice spent it and it would flash red or green. As long as the calculations don't actually take too much time, which they really wouldn't in this case despite this long-winded explanation, the people involved can ignore the details.
+  </p>
+
+  <p>
+    Hal Finney<br>
+    <em>hal@rain.org</em>
+  </p>
+
+  <p>
+    <a href="http://finney.org/~hal/">Hal Finney Home Page</a>
+  </p>
+
 </div>
 {% endblock %}
