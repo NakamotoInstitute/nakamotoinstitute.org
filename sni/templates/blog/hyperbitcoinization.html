@@ -1,6 +1,7 @@
 <!-- extend base layout -->
 {% extends "blogpost.html" %}
 {% block post %}
+<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
 	<div class="page-header">
   		<h1 class="text-center">
   			Hyperbitcoinization 
@@ -12,8 +13,10 @@
   		<h4 class="text-center">
   			March 29, 2014
   		</h4>
-
-  		<img class="img-responsive center-block" alt="BitcoinFace" src="/static/img/mempool/hyperbitcoinization/BitcoinFace.png"/>
+  		<br>
+  		<p>
+	  		<img class="img-responsive center-block img-rounded" alt="BitcoinFace" src="/static/img/mempool/hyperbitcoinization/BitcoinFace.png"/>
+  		</p>
   	</div>
 
   	<h2>
@@ -21,7 +24,7 @@
   	</h2>
 	
 		<p>
-			This article is about Bitcoin-induced currency demonetization, or <em>hyperbitcoinization</em>, which is what will happen to any hapless currency that stands in Bitcoin&#8217;s path of <a title="Why Bitcoin Will Continue to Grow" href="http://themisescircle.org/blog/2014/02/01/why-bitcoin-will-continue-to-grow/">total world domination</a>. The currency will rapidly lose value as Bitcoin supplants it. What will such an event be like and how can it be understood economically?
+			This article is about Bitcoin-induced currency demonetization, or <em>hyperbitcoinization</em>, which is what will happen to any hapless currency that stands in Bitcoin&#8217;s path of <a title="Why Bitcoin Will Continue to Grow" href="{{url_for('blogpost', slug='why-bitcoin-will-continue-to-grow')}}">total world domination</a>. The currency will rapidly lose value as Bitcoin supplants it. What will such an event be like and how can it be understood economically?
 		</p>
 
 	<h2>
@@ -63,7 +66,7 @@
 		<ol>
 			<li>
 				<p>
-					<em>A hyperbitcoinization event will be much quicker than a hyperinflation event</em>. I have two reasons for this. First, the government will have a much greater difficulty preventing bitcoins from entering the country due to the impotency of capital controls upon it. Second, hyperinflation is inherently an attempt to fool people, whereas hyperbitcoinization is quite regular and predictable (at least by comparison). Therefore people will more easily see that they had better switch over. Thus, as fast as hyperinflation is, hyperbitcoinization will be even faster. It will happen <a title="Why Bitcoin Will Continue to Grow" href="http://themisescircle.org/blog/2014/02/01/why-bitcoin-will-continue-to-grow/">much faster than you expect</a>.
+					<em>A hyperbitcoinization event will be much quicker than a hyperinflation event</em>. I have two reasons for this. First, the government will have a much greater difficulty preventing bitcoins from entering the country due to the impotency of capital controls upon it. Second, hyperinflation is inherently an attempt to fool people, whereas hyperbitcoinization is quite regular and predictable (at least by comparison). Therefore people will more easily see that they had better switch over. Thus, as fast as hyperinflation is, hyperbitcoinization will be even faster. It will happen <a title="Why Bitcoin Will Continue to Grow" href="{{url_for('blogpost', slug='why-bitcoin-will-continue-to-grow')}}">much faster than you expect</a>.
 				</p>
 			</li>
 
@@ -77,17 +80,33 @@
 		<p>
 			Hyperbitcoinization will probably be a confusing time for everyone, like a second adolescence. However, once it is over, no one will be able to imagine how we got by with the earlier system.
 		</p>
-
-		<img class="img-responsive center-block" alt="Bitcoinbody" src="{{url_for('static', filename='img/mempool/hyperbitcoinization/Bitcoinbody.png')}}" />
-
+		<br>
+		
 		<p>
-			<strong style="font-size: 120%;">
-				<em>If you enjoyed imagining the future Bitcoin cryptopocalypse, why not <a href="https://coinbase.com/checkouts/d278c9afa75e809a3fc35f459e2cd3f0">donate some</a>?</em>
-			</strong>
+			<img class="img-responsive center-block img-rounded" alt="Bitcoinbody" src="/static/img/mempool/hyperbitcoinization/Bitcoinbody.png"/>
 		</p>
+		
+		<p class="text-muted text-center">
+			(Original artwork by the author)
+		</p>
+		<br>
+	<br>
+		<div class = "text-center">
+			<p>
+				<a href="https://coinbase.com/checkouts/c16886a2ff866480977fde7c18ce0edf" target="_blank" type="button" class="btn btn-success">
+					Donate to Daniel
+				</a>
+			</p>
+			<br>
+			<p>
+				<a href="http://pgp.mit.edu/pks/lookup?op=get&search=0x101BBC10F86C4A64" type="button" class="btn btn-info">
+					Daniel's Public Key
+				</a>
+			</p>
+		</div>
+	<br>
 
-		<p>
-			(Original artwork is by the author.)
-		</p>
+
+</div>
 
 {%endblock%}

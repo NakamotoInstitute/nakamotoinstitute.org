@@ -1,6 +1,7 @@
 <!-- extend base layout -->
 {% extends "blogpost.html" %}
 {% block post %}
+<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
 	<div class="page-header">
   		<h1 class="text-center">
   			Why Bitcoin Will Continue to Grow 
@@ -12,8 +13,8 @@
   		<h4 class="text-center">
   			{{bp.date.strftime('%B %d, %Y')}}
   		</h4>
-
-  		<img class="img-responsive center-block" alt="BitcoinFace" src="/static/img/mempool/why-bitcoin-will-continue-to-grow/hulk.jpg"/>
+  		<br>
+  		<img class="img-responsive center-block img-rounded" alt="BitcoinFace" src="/static/img/mempool/why-bitcoin-will-continue-to-grow/hulk.jpg"/>
 
   	</div>
 
@@ -38,8 +39,11 @@
 			By this metaphor, the supercooled liquid is the world as of a few years ago, ripe for a monetary revolution, and the seed is the initial bitcoin purchase. The fact that Bitcoin successfully transformed into something with value seems like a miracle. However, it was no miracle. It was a result of the dedication and faith of its community, whose members will not let go of the beautiful vision of a Bitcoin future. It might be better to use a word like “crystallization” to describe the formation of the initial “seed” of Bitcoin trading rather than a metaphor like “bootstrapping”, which depicts a physical paradox.[1. Crystallization implies a transition from liquid to solid, which is not appropriate for Bitcoin. An even better physical metaphor would be the more general concept of spontaneous symmetry breaking, which includes not just crystallization but all kinds of other processes without a transition from liquid to solid. However, unfortunately not enough people understand what that is to make it a good metaphor.]
 		</p>
 
-  		<img class="img-responsive center-block" alt="BitcoinFace" src="/static/img/mempool/why-bitcoin-will-continue-to-grow/breaking-bad.jpg"/>
-
+		<br>
+		<p>
+	  		<img class="img-responsive center-block img-rounded" alt="Breaking Bad" src="/static/img/mempool/why-bitcoin-will-continue-to-grow/breaking-bad.jpg"/>
+	  	</p>
+	  	<br>
 		<p>
 			Thus, when people dismiss Bitcoin as valueless and call every upward price movement a bubble, they are really missing the point. An investment in bitcoins is an investment in the Bitcoin community. It was in late 2012 that I came to realize just how wonderfully fanatical this community was, and this was what convinced me to treat my bitcoins not as simply an utter speculation, but as something with very real prospects.
 		</p>
@@ -83,10 +87,11 @@
 		<p>
 			All things being equal, a larger network is better than a smaller one. This puts Bitcoin at a disadvantage with respect to national currencies. One would therefore expect Bitcoin to decline relative to dollars or euros. The fact that this is not the case tells us that all things are not equal. It shows us that Bitcoin is still good enough compared to the national currencies. It can grow anyway despite their advantages over it. The network effect means that the bigger Bitcoin gets, the better its prospects. The fact that Bitcoin has grown in the immediate past is strong evidence that it will continue to grow in the immediate future.
 		</p>
-
+	<br>
+	<p>
   		<img class="img-responsive center-block" alt="BitcoinFace" src="/static/img/mempool/why-bitcoin-will-continue-to-grow/chart.png"/>
-
-
+  	</p>
+  	<br>
 		<p>
 			A possible objection is that Bitcoin’s demand is mostly investment demand rather than demand as a currency. Therefore, the objection goes, it is no longer the case that Bitcoin’s demand is self-promoting. However, a currency becomes more useful as a result of any kind of demand, not just demand as a currency. I would bet that most people who are invested in bitcoins today would be happy to get more by trading goods and services for them. They are also happy to serve as a facilitator for bitcoin trades via the dollar, which is effectively what happens when a merchant accepts bitcoins as payment and then immediately converts them to dollars. Thus, their investment demand enables more use of Bitcoin as a currency. By merely investing in Bitcoin, they enable more potential trades and make Bitcoin a better currency.
 		</p>
@@ -111,12 +116,21 @@
 			For now at least, Bitcoin’s present trend is self-reinforcing with no equilibrium in sight.
 		</p>
 
-	<p>
-		<strong style="font-size: 120%;">
-			<em>
-				If you want to read more articles like this, please <a href="https://coinbase.com/checkouts/9c2c7ff5eab037bc8a6fe2774ff5a436">donate to Daniel&#8217;s writing</a>!
-			</em>
-		</strong>
-	</p>
+	<br>
+		<div class = "text-center">
+			<p>
+				<a href="https://coinbase.com/checkouts/c16886a2ff866480977fde7c18ce0edf" target="_blank" type="button" class="btn btn-success">
+					Donate to Daniel
+				</a>
+			</p>
+			<br>
+			<p>
+				<a href="http://pgp.mit.edu/pks/lookup?op=get&search=0x101BBC10F86C4A64" type="button" class="btn btn-info">
+					Daniel's Public Key
+				</a>
+			</p>
+		</div>
+	<br>
+</div>
 
 {%endblock%}

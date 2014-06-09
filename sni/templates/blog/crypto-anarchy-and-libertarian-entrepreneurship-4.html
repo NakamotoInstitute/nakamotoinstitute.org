@@ -1,40 +1,50 @@
 <!-- extend base layout -->
 {% extends "blogpost.html" %}
 {% block post %}
-	<div class="page-header">
-  		<h1 class="text-center">
-  			Crypto-Anarchy and Libertarian Entrepreneurship - Chapter 4: The Risk from the Software Industry
-  		 	<br>
-  			<small>
-  		 		Daniel Krawisz
-  		 	</small>
-  		 </h1>
-  		<h4 class="text-center">
-  			June 5, 2013
-  		</h4>
-  		<img class="img-responsive center-block" alt="Make Install Anarchy" src="/static/img/mempool/crypto-anarchy-and-libertarian-entrepreneurship-4/make.jpg"/>
-  	</div>
+<div class="container">
+    <div class="row">
+		<div class="page-header">
+	  		<h1 class="text-center">
+	  			Crypto-Anarchy and <br>Libertarian Entrepreneurship <br>Chapter 4: The Risk from the Software Industry
+	  		 	<br>
+	  			<small>
+	  		 		Daniel Krawisz
+	  		 	</small>
+	  		 </h1>
+	  		<h4 class="text-center">
+	  			June 5, 2013
+	  		</h4>
+	  		<br>
+	  		<p>
+		  		<img class="img-responsive center-block img-rounded" alt="Make Install Anarchy" src="/static/img/mempool/crypto-anarchy-and-libertarian-entrepreneurship-4/make.jpg"/>
+		  	</p>
+	  	</div>
+	</div>
+</div>
+<div class = "row">
+	<div class="col-sm-3 col-md-2 ">
+		<ul  class="nav" data-spy="affix-top">
+			<li><a href="{{url_for('blogpost', slug='crypto-anarchy-and-libertarian-entrepreneurship-1')}}">Chapter 1: The Strategy</a></li>
+			<li><a href="{{url_for('blogpost', slug='crypto-anarchy-and-libertarian-entrepreneurship-2')}}">Chapter 2: Public-Key Cryptography </a></li>
+			<li><a href="{{url_for('blogpost', slug='crypto-anarchy-and-libertarian-entrepreneurship-3')}}">Chapter 3: The Killer App of Liberty</a></li>
+			<li><a href="{{url_for('blogpost', slug='crypto-anarchy-and-libertarian-entrepreneurship-4')}}">Chapter 4: The Risk from the Software Industry</a></li>
+		</ul>
+	</div>
 
+	<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-1 main">
 
-	<em>
-		<a title="Crypto-Anarchy and Libertarian Entrepreneurship – Chapter 1: The Strategy" href="http://themisescircle.org/blog/2013/05/22/crypto-anarchy-and-libertarian-entrepreneurship-chapter-i/">Chapter 1: The Strategy</a>
-
-		<a title="Crypto-Anarchy and Libertarian Entrepreneurship – Chapter 2: Public-Key Cryptography" href="http://themisescircle.org/blog/2013/05/24/crypto-anarchy-and-libertarian-entrepreneurship-chapter-ii/">Chapter 2: Public-Key Cryptography</a>
-
-		<a title="Crypto-Anarchy and Libertarian Entrepreneurship – Chapter 3: The Killer App of Liberty" href="http://themisescircle.org/blog/2013/05/29/crypto-anarchy-and-libertarian-entrepreneurship-chapter-iii/">Chapter 3: The Killer App of Liberty</a>
-
-	</em>
+	<div>
 	
-	<h2>
+	<h3>
 		The Government Attack
-	</h2>
+	</h3>
 
 		<p>
 			As wonderful as it is, public-key cryptography can be subverted and even turned against us. It is subverted when our computers cannot keep them secret, and it becomes a tool of oppression when we are issued private keys in a way that prevents us from seeing them.
 		</p>
 
 		<p>
-			The first of these attacks is performed either by remotely controlling our computers with a virus that is secretly installed on it or tricking us into installing ourselves, or by altering our computers so that all data is stored on some remote server rather than a hard drive. The second attack is done by giving everyone computer chips with private keys inside them. This could be in form of an ID card with an RFID chip inside or as a computer with a Fritz-chip attached.<sup><a href="#1" id="ref1">1</a></sup>
+			The first of these attacks is performed either by remotely controlling our computers with a virus that is secretly installed on it or tricking us into installing ourselves, or by altering our computers so that all data is stored on some remote server rather than a hard drive. The second attack is done by giving everyone computer chips with private keys inside them. This could be in form of an ID card with an RFID chip inside or as a computer with a Fritz-chip attached.<sup><a href="#1" id="ref1" title='See Anderson, R., "Trusted Computing Frequently Asked Questions", Jul 2003 and Stallman, R., "Can You Trust Your Computer?", 28 Feb 2013 for discussions of Trusted (Treacherous) Computing. See Wikipedia for a more neutral explanation.'>1</a></sup>
 		</p>
 
 		<p>
@@ -50,15 +60,21 @@
 		</p>
 
 		<p>
-			This may seem far-fetched. Today it appears that we have won the battle on file-sharing. Media companies are even beginning to incorporate file sharing into their business models. This is no reason to be complacent because other attacks are in the works. Now it is <a title="Unlocking Cellphones Becomes Illegal Saturday" href="http://www.technewsdaily.com/16514-unlocking-cellphones-becomes-illegal.html" target="_blank">illegal to root your own phone</a> under the DMCA. Although DRM is not yet required by law, most computer manufacturers already make computers with Fritz-chips attached.<sup><a href="#2" id="ref2">2</a></sup> The computer industry is ready. Once a law does go into effect, we will be confined. The FBI has lobbied for a law that would <a title="U.S. Weighs Wide Overhaul of Wiretap Laws - NY Times" href="http://www.nytimes.com/2013/05/08/us/politics/obama-may-back-fbi-plan-to-wiretap-web-users.html" target="_blank">require back-doors</a> to be built in all security services. Although this proposal has been watered down from its original version, it can be expected that they will continue pushing for more and more draconian measures.
+			This may seem far-fetched. Today it appears that we have won the battle on file-sharing. Media companies are even beginning to incorporate file sharing into their business models. This is no reason to be complacent because other attacks are in the works. Now it is <a title="Unlocking Cellphones Becomes Illegal Saturday" href="http://www.technewsdaily.com/16514-unlocking-cellphones-becomes-illegal.html" target="_blank">illegal to root your own phone</a> under the DMCA. Although DRM is not yet required by law, most computer manufacturers already make computers with Fritz-chips attached.<sup><a title='Wikipedia, "Trusted Computing Platform", Wikimedia Foundation, 6 May 2013.' href="#2" id="ref2">2</a></sup> The computer industry is ready. Once a law does go into effect, we will be confined. The FBI has lobbied for a law that would <a title="U.S. Weighs Wide Overhaul of Wiretap Laws - NY Times" href="http://www.nytimes.com/2013/05/08/us/politics/obama-may-back-fbi-plan-to-wiretap-web-users.html" target="_blank">require back-doors</a> to be built in all security services. Although this proposal has been watered down from its original version, it can be expected that they will continue pushing for more and more draconian measures.
 		</p>
 
 		<p>
 			Furthermore, consider the criteria I gave in chapter one for evaluating the risk of an industry to government attack.
 			<ul>
-				<li>It is obvious that any government would consider communication to be a high-priority industry. The fourth amendment is still theoretically in effect in the USA, but the government has merely to collude with computer manufacturers, service providers, and software companies, to access your data through them without a search warrant. It can use this strategy to censor the internet as well.</li>
-				<li>The software industry is highly centralized, not in the sense that a single company produces nearly all the software, but rather that there are some software packages that are used by most people. If Microsoft, Apple, Google, and Facebook, were all corrupted (which they already are) nearly all computer users would be affected.</li>
-				<li>The software industry promotes dependence. It is very difficult to switch from Windows to iOS, for example. So difficult, in fact, that people people cover up for their dependence on Microsoft or Apple by developing irrational loyalties to one brand so as to make it appear as if they continue to choose their favorite brand for reasons other than an inability to leave it.</li>
+				<li>
+					It is obvious that any government would consider communication to be a high-priority industry. The fourth amendment is still theoretically in effect in the USA, but the government has merely to collude with computer manufacturers, service providers, and software companies, to access your data through them without a search warrant. It can use this strategy to censor the internet as well.
+				</li>
+				<li>
+					The software industry is highly centralized, not in the sense that a single company produces nearly all the software, but rather that there are some software packages that are used by most people. If Microsoft, Apple, Google, and Facebook, were all corrupted (which they already are) nearly all computer users would be affected.
+				</li>
+				<li>
+					The software industry promotes dependence. It is very difficult to switch from Windows to iOS, for example. So difficult, in fact, that people people cover up for their dependence on Microsoft or Apple by developing irrational loyalties to one brand so as to make it appear as if they continue to choose their favorite brand for reasons other than an inability to leave it.
+				</li>
 			</ul>
 		</p>
 
@@ -66,9 +82,9 @@
 			As yet the government does not appear to be pursuing a deliberate policy of cartelization, but as these companies lobby their way into privilege through software patents and legally enforced DRM, the government may eventually find itself in the position of having the internet within its grasp. This is why computer manufacturers and the software industries should be seen as high-risk. The service provider industry is also at risk, but if we can retain control over our devices and software, then its threat will have been mostly eliminated as well.
 		</p>
 
-	<h2>
+	<h3>
 		Free Software and Libertarian Strategy
-	</h2>
+	</h3>
 	
 		<p>
 			Libertarians know to fear the banking industry because we know from history what is possible with a government banking cartel. The computer and software industries should be even more feared. This is not merely a problem with individual companies. It is a problem with standard business practices. Although libertarians complain about how Microsoft crushes smaller companies with their use of patent monopolies and how Facebook shares information with the FBI, I have observed little awareness among libertarians of the correct solution. Perhaps we are so dependent upon these companies and so used to their business practices that to state the correct answer is such an annoying prospect that we would rather just wish there were an easier way.
@@ -79,14 +95,15 @@
 		</p>
 
 		<p>
-			Fortunately, the necessary philosophy was developed by Richard Stallman, founder of the free software movement and of <a href="https://www.gnu.org/">GNU</a>, a project to create a free operating system that eventually evolved into the GNU/Linux.<sup><a href="#3" id="ref3">3</a></sup> Free software is software whose source code is as available as its binaries and which comes with the right to edit and redistribute edited versions.<sup><a href="#4" id="ref4">4</a></sup> This term refers only to the rights that come with the software, not to its money price. Proprietary software is software that is not free software. The major goal of the free software movement is that all software should be free software.
+			Fortunately, the necessary philosophy was developed by Richard Stallman, founder of the free software movement and of <a href="https://www.gnu.org/">GNU</a>, a project to create a free operating system that eventually evolved into the GNU/Linux.<sup><a title='See Stallman, R., "The GNU Project", 28 Feb 2013 for a history of the GNU Project.' href="#3" id="ref3">3</a></sup> Free software is software whose source code is as available as its binaries and which comes with the right to edit and redistribute edited versions.<sup><a title = 'See Stallman, R., "What is Free Software", 28 Feb 2013 for a much more detailed description. Also see Stallman, R., Free Software, Free Society: Selected Essays of Richard Stallman, GNU Press, 2002 for a wonderful collection of essays expounding upon the philosophy of free software.' href="#4" id="ref4">4</a></sup> This term refers only to the rights that come with the software, not to its money price. Proprietary software is software that is not free software. The major goal of the free software movement is that all software should be free software.
 		</p>
-
-
-		<img class="img-responsive center-block" alt="Stallman" src="/static/img/mempool/crypto-anarchy-and-libertarian-entrepreneurship-4/stallman.jpg"/>
-
+		<br>
 		<p>
-			Libertarians have not had much of a connection with the free software movement before. I would rate it as at least as important an ally to the libertarian movement as the homeschooling movement. There is much that is admirable about it: Stallman, for example, was against copyright and patents long before libertarians got the picture. He invented copyleft, which, though not entirely compatible with libertarianism, is, as a form of self-defense in a world oppressed by intellectual property, a stroke of genius.<sup><a href="#5" id="ref5">5</a></sup>
+			<img class="img-responsive center-block img-rounded" alt="Stallman" src="/static/img/mempool/crypto-anarchy-and-libertarian-entrepreneurship-4/stallman.jpg"/>
+		</p>
+		<br>
+		<p>
+			Libertarians have not had much of a connection with the free software movement before. I would rate it as at least as important an ally to the libertarian movement as the homeschooling movement. There is much that is admirable about it: Stallman, for example, was against copyright and patents long before libertarians got the picture. He invented copyleft, which, though not entirely compatible with libertarianism, is, as a form of self-defense in a world oppressed by intellectual property, a stroke of genius.<sup><a title='See Stallman, R., "What is Copyleft?", 28 Feb 2013 and Stallman, R., "Freedom or Power", 28 Feb 2013 for Stallmans views on copyleft.' href="#5" id="ref5">5</a></sup>
 		</p>
 
 		<p>
@@ -120,16 +137,17 @@
 		<p>
 			To retain control over our computers, we must drastically reduce proprietary software, proprietary devices, and software-as-a-service as business practices. Libertarian entrepreneurs should try to compete with other business practices that make our computers more secure against outside control. This will greatly reduce the risk of a government invasion of our computers and the internet.
 		</p>
-
-
+		<br>
+		<p>
 		<img class="img-responsive center-block" alt="Tux" src="/static/img/mempool/crypto-anarchy-and-libertarian-entrepreneurship-4/tux.png"/>
-
-	<h2>
+		</p>
+		<br>
+	<h3>
 		Free Software and Voluntary Slavery
-	</h2>
+	</h3>
 	
 		<p>
-			I do not think there is anything wrong in principle with the concept of voluntary slavery<sup><a href="#6" id="ref6">6</a></sup>, but I would not want to live in a world where it was the accepted norm. Not only would such a society be unlikely to present me with acceptable opportunities to fit my own personality, but such a system could easily evolve into one of involuntary slavery because the tools of mass repression would necessarily exist. Voluntary slavery should be seen as an issue of libertarian strategy rather than libertarian principle.
+			I do not think there is anything wrong in principle with the concept of voluntary slavery<sup><a title='See Block, W., "Toward a Libertarian Theory of Inalienability: A Critique of Rothbard, Barnett, Smith, Kinsella, Gordon, and Epstein", vol. 17, no. 2, Journal of Libertarian Studies, 2003, pp. 39-85 for a libertarian defense of voluntary slavery. See Kinsella, N., "How We Come to Own Ourselves", Mises Daily, 7 Sep 2006 for a libertarian argument against it.' href="#6" id="ref6">6</a></sup>, but I would not want to live in a world where it was the accepted norm. Not only would such a society be unlikely to present me with acceptable opportunities to fit my own personality, but such a system could easily evolve into one of involuntary slavery because the tools of mass repression would necessarily exist. Voluntary slavery should be seen as an issue of libertarian strategy rather than libertarian principle.
 		</p>
 
 		<p>
@@ -139,13 +157,15 @@
 		<p>
 			Already people depend on their computers so much that they are getting to be like body parts. Our computers are a conduit to the rest of the world. They are our eyes, ears, and mouth. Thus, I do not consider myself to be speaking hyperbolically to say that a person who buys an iPhone becomes a voluntary slave. He uses the device as his eyes and ears to the world and he does not even have the right to say what software he wants to install on it. Apple retains the ability to remotely control his device, so at any moment, Apple might shut off his vision, send him hallucinations, or secretly watch him.
 		</p>
+		<br>
+	<p>
+		<img class="img-responsive center-block img-rounded" alt="Tux" src="/static/img/mempool/crypto-anarchy-and-libertarian-entrepreneurship-4/apple.jpg"/>
+	</p>
+	<br>
 
-	<img class="img-responsive center-block" alt="Tux" src="/static/img/mempool/crypto-anarchy-and-libertarian-entrepreneurship-4/apple.jpg"/>
-
-
-	<h2>
+	<h3>
 		Free Software Values
-	</h2>
+	</h3>
 	
 		<p>
 			GNU/Linux does not yet have enough popular appeal. It appeals to people who like to program, people who don't want to give up control, or people who understand its technical superiority. Most people are in none of these categories. Although it is the foundation for many devices, the philosophy behind it is not. Android is a version of GNU/Linux, for example, but the devices that run it have restrictions to prevent the user from gaining root access. Thus, they are not free devices.
@@ -159,9 +179,9 @@
 			One hope now is that Wikipedia is has become ubiquitous. Thus by analogy people can understand the advantages of software that is built according to a similar model. However, it is only once people people actually could actually exercise control over their computers that they will want to retain it. Unfortunately, we live in an illiterate world. Perhaps one day that will change. Programming ought to be seen as an essential component to a liberal education, as much as science, mathematics, or literature.
 		</p>
 
-	<h2>
+	<h3>
 		Conclusion
-	</h2>
+	</h3>
 	
 		<p>
 			When I first became a libertarian, I wondered how we would ever win enough elections. When I came to understand that this is impossible, I wondered if there was anything we could do at all to prevent a decline into fascism. Now I no longer wonder. The way out is entirely within our means.
@@ -175,14 +195,21 @@
 			My prescriptions are simple: promote Bitcoin and oppose proprietary software and proprietary devices. These will greatly diminish the risk imposed on us from the banking and financial industries, and from the software and computer industries. If you are a coder, improve cryptographic free software, such as Bitcoin, Tor, or RetroShare. Above all, however, is to keep the mind open for new ideas. Search for government risks that have not yet been addressed. Search for new services that can be provided by cryptographic communities. Stay one step ahead of the government and don't get embroiled in politics.
 		</p>
 
-		<p>
-			<em>
-				Enjoy this chapter? Support Daniel's writing by donating bitcoins to him directly at <a href="16PuewxyR8PeUsW6bqcUXGepyoemddkr67">16PuewxyR8PeUsW6bqcUXGepyoemddkr67</a>
-			
-				He can be contacted at <a title="Bitmessage" href="https://bitmessage.org/" target="_blank">Bitmessage</a> address BM-GuBgS6fRkyndWfvkUQa1C77knbcBxHpj
-			</em>
-		</p>
-
+	<br>
+		<div class = "text-center">
+			<p>
+				<a href="https://coinbase.com/checkouts/c16886a2ff866480977fde7c18ce0edf" target="_blank" type="button" class="btn btn-success">
+					Donate to Daniel
+				</a>
+			</p>
+			<br>
+			<p>
+				<a href="http://pgp.mit.edu/pks/lookup?op=get&search=0x101BBC10F86C4A64" type="button" class="btn btn-info">
+					Daniel's Public Key
+				</a>
+			</p>
+		</div>
+	<br>
 <ol>
 	<li>
 		<p id="1">
@@ -238,5 +265,8 @@
 		</p>
 	</li>
 </ol>
+</div>
+</div>
+</div>
 
 {%endblock%}

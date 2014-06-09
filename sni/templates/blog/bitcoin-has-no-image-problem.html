@@ -1,6 +1,7 @@
 <!-- extend base layout -->
 {% extends "blogpost.html" %}
 {% block post %}
+<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
 	<div class="page-header">
   		<h1 class="text-center">
   			Bitcoin Has No Image Problem
@@ -12,7 +13,10 @@
   		<h4 class="text-center">
   			February 25, 2014
   		</h4>
-  		<img class="img-responsive center-block" alt="Bag Head" src="/static/img/mempool/bitcoin-has-no-image-problem/bag-head.jpg"/>
+  		<br>
+  		<p>
+  		<img class="img-responsive center-block img-rounded" alt="Bag Head" src="/static/img/mempool/bitcoin-has-no-image-problem/bag-head.jpg"/>
+  		</p>
   	</div>
 
 	<h2>
@@ -35,8 +39,11 @@
 			The data on Bitcoin&#8217;s adoption rate show no evidence of an image problem. First look at this <a href="https://en.wikipedia.org/wiki/Logarithmic_scale">log chart</a> of Bitcoin&#8217;s market cap.
 		</p>
 
+		<br>
+		<p>
   		<img class="img-responsive center-block" alt="Marketcap" src="/static/img/mempool/bitcoin-has-no-image-problem/marketcap-chart.png"/>
-
+  		</p>
+  		<br>
 
 		<p>
 			Bitcoin&#8217;s image is so bad that it&#8217;s been growing exponentially since its inception.
@@ -46,7 +53,11 @@
 			Now take a look at the number of MyWallet users over the past two years. This is also a log chart.
 		</p>
 
-  		<img class="img-responsive center-block" alt="Mywallets" src="/static/img/mempool/bitcoin-has-no-image-problem/mywallet-chart.png"/>
+		<br>
+		<p>
+  			<img class="img-responsive center-block" alt="Mywallets" src="/static/img/mempool/bitcoin-has-no-image-problem/mywallet-chart.png"/>
+  		</p>
+  		<br>
 
 		<p>
 			That&#8217;s an increase of like 500 times in two years. Ooo, I&#8217;m so terrified Bitcoin&#8217;s image will stop people from wanting it.
@@ -92,13 +103,16 @@
 		<p>
 			These &#8220;image problem&#8221; people are like if the Clampetts discovered that they were sitting on a swamp made out of crude oil and worrying that people won&#8217;t accept it because it&#8217;s too ugly and gross, so they try to convince people that it&#8217;s a pretty shiny pink and tastes like cherries.
 		</p>
-
-  		<img class="img-responsive center-block" alt="Narcissism" src="/static/img/mempool/bitcoin-has-no-image-problem/narcissism.jpg"/>
-
+		<br>
 		<p>
-			Oh Narcissus, you&#8217;ll never understand Bitcoin.
+	  		<img class="img-responsive center-block img-rounded" alt="Narcissism" src="/static/img/mempool/bitcoin-has-no-image-problem/narcissism.jpg"/>
+  		</p>
+  		<div class="text-center text-muted">
+		<p>
+			Oh Narcissus, you&#8217;ll never understand Bitcoin
 		</p>
-
+		</div>
+		<br>
 		<p>
 			The only way to think Bitcoin has a bad image is by marketing it to the wrong people. Yes, just about everyone could benefit from Bitcoin right now, but for most people, the immediate benefit would be relatively small, and it is too much to ask them to understand both the economics and the cryptography that would be required to convince them that Bitcoin has a vastly greater potential than it has yet achieved. Instead of marketing Bitcoin to the people creative enough to see its potential, or to those who so desperately need it now that its benefits are obvious, entrepreneurs like Jeremy Allaire are attempting to market Bitcoin to the average American as a payment-processing system. This is premature because Bitcoin&#8217;s benefit as a payment system is only significant after lots of people already have it—therefore the benefit is marginal to most people. As Bitcoin improves, and particularly when it begins to weaken the fiat money system, more and more people will find it prudent to adopt it.
 		</p>
@@ -119,22 +133,35 @@
 		<p>
 			The best way to improve Bitcoin&#8217;s image is simply to improve the Bitcoin economy. With every new service, the incentives for more people to join us grows. We should feel lucky that we are in on such a wonderful secret as Bitcoin. If people mistrust and misunderstand it now, then we should be happy if it gives us a little extra time—however brief—to buy more. Every time someone figures out how great Bitcoin really is, he makes Bitcoin even <em>more</em> great by joining in.
 		</p>
-
-  		<img class="img-responsive center-block" alt="Miss Sunshine" src="/static/img/mempool/bitcoin-has-no-image-problem/miss-sunshine.jpg"/>
-
-		<p> 
-			When you&#8217;re an immortal distributed system that can&#8217;t be controlled, you don&#8217;t have to care what other people think.
-		</p>
-
+		<br>
+		<p>
+  			<img class="img-responsive center-block" alt="Miss Sunshine" src="/static/img/mempool/bitcoin-has-no-image-problem/miss-sunshine.jpg"/>
+  		</p>
+  		<div class="text-center text-muted">
+			<p> 
+				When you&#8217;re an immortal distributed system that can&#8217;t be controlled, <br>you don&#8217;t have to care what other people think
+			</p>
+		</div>
+		<br>
 		<p>
 			Bitcoin is stronger than all its enemies put together. It is so strong that its image does not matter one bit. It is the 800-pound gorilla that can sleep where it pleases. It is only through timidity, and by failing to see its own strength, that it will bow to outside forces.
 		</p>
 
-		<strong>
-			<em>
-				If you&#8217;re sick of people soiling themselves in fear over Bitcoin&#8217;s image, please <a href="https://coinbase.com/checkouts/43dee07349937029d2b6950d7fa59522">donate to Daniel&#8217;s writing</a>!
-			</em>
-		</strong>
+	<br>
+		<div class = "text-center">
+			<p>
+				<a href="https://coinbase.com/checkouts/c16886a2ff866480977fde7c18ce0edf" target="_blank" type="button" class="btn btn-success">
+					Donate to Daniel
+				</a>
+			</p>
+			<br>
+			<p>
+				<a href="http://pgp.mit.edu/pks/lookup?op=get&search=0x101BBC10F86C4A64" type="button" class="btn btn-info">
+					Daniel's Public Key
+				</a>
+			</p>
+		</div>
+	<br>
 <ol>
 	<li>
 		<p id="1">
@@ -145,5 +172,7 @@
 		</p>
 	</li>
 </ol>
+
+</div>
 
 {%endblock%}

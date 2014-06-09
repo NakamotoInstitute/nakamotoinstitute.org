@@ -1,6 +1,7 @@
 <!-- extend base layout -->
 {% extends "blogpost.html" %}
 {% block post %}
+<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
 	<div class="page-header">
   		<h1 class="text-center">
   			How We Know Bitcoin Is Not a Bubble
@@ -51,7 +52,7 @@
 		</p>
 
 		<p>
-			Money, however, need not have any ultimate use. It may only ever passed around from person to person, without ever being consumed. A stock is valued by the sum of its interest-adjusted dividends. A bond is valued by its redemption value adjusted by the interest rate and the risk of default. A commodity is valued by the value of the goods it can be used to produce. However, for money, there is no independent quantity to provide a reality check. All money is like a bubble that never bursts.<sup><a href="#fn1" id="ref1">1</a></sup> 
+			Money, however, need not have any ultimate use. It may only ever passed around from person to person, without ever being consumed. A stock is valued by the sum of its interest-adjusted dividends. A bond is valued by its redemption value adjusted by the interest rate and the risk of default. A commodity is valued by the value of the goods it can be used to produce. However, for money, there is no independent quantity to provide a reality check. All money is like a bubble that never bursts.<sup><a href="#fn1" id="ref1" title='One of the best arguments against the bubble theory of Bitcoin was presented by Peter Šurda in The Economics of Bitcoin, in which he asks "What would replace Bitcoin?" The point of the question is that because Bitcoin reduces transaction costs over its alternatives, people have at least some reason to continue holding it until a superior alternative emerges.'>1</a></sup> 
 		</p>
 
 	<h2>
@@ -69,7 +70,12 @@
 		<p>
 			A striking test of Metcalfe&#8217;s law in Bitcoin recently appeared on the <a href="https://bitcointalk.org/index.php?topic=366214.msg5919365#msg5919365">Bitcointalk forums</a>, created by Peter R. I have made my own chart here. 
 		</p>
-  		<img class="center-block" alt="Metcalfe's Law" src="/static/img/mempool/how-we-know-bitcoin-is-not-a-bubble/MetcalfeGraph.png"/>
+  		
+  		<br>
+  		<p>
+	  		<img class="center-block" alt="Metcalfe's Law" src="/static/img/mempool/how-we-know-bitcoin-is-not-a-bubble/MetcalfeGraph.png"/>
+		</p>
+		<br>
 		<p>
 			This chart plots the market cap in blue and the square of the transaction volume excluding popular addresses in green. The axis on the left is the price in dollars. Exactly as Metcalfe&#8217;s law predicts, the transaction volume increases very neatly as the square root of the size of the network. The correspondence is beautiful. I wish I had thought to make it first!
 		</p>
@@ -83,7 +89,7 @@
 		</p>
 
 		<p>
-			This may seem like hair-splitting, but a confusion of cause and effect can have serious consequences. For example, many people believe that it is necessary to spend bitcoins and increase the transaction volume in order to make Bitcoin more valuable. Of course this is nonsense; all this does is fill up the network with transactions for things that nobody actually wanted. That does not present a good value for a newcomer because he will want a network that presents him with <em>real</em> opportunities, not just ways of artificially increasing transaction volume. The more that the Bitcoin network is focused on artificially increasing the transaction volume to make it look good, the more it resembles a Ponzi scheme. Rather, to make the network more valuable, we <a href="http://nakamotoinstitute.org/mempool/im-hoarding-bitcoins-and-no-you-cant-have-any/">should be hoarders</a>. This is more likely to present newcomers with lots of potential uses for Bitcoin as a medium of exchange. 
+			This may seem like hair-splitting, but a confusion of cause and effect can have serious consequences. For example, many people believe that it is necessary to spend bitcoins and increase the transaction volume in order to make Bitcoin more valuable. Of course this is nonsense; all this does is fill up the network with transactions for things that nobody actually wanted. That does not present a good value for a newcomer because he will want a network that presents him with <em>real</em> opportunities, not just ways of artificially increasing transaction volume. The more that the Bitcoin network is focused on artificially increasing the transaction volume to make it look good, the more it resembles a Ponzi scheme. Rather, to make the network more valuable, we <a href="{{url_for('blogpost', slug='im-hoarding-bitcoins-and-no-you-cant-have-any')}}">should be hoarders</a>. This is more likely to present newcomers with lots of potential uses for Bitcoin as a medium of exchange. 
 		</p>
 
 	<h2>
@@ -103,7 +109,7 @@
 		</p>
 
 		<p>
-			Any demand for Bitcoin at all is enough to enable it to function as a medium of exchange. If demand continues to grow, then it becomes a better medium of exchange. <a href="http://nakamotoinstitute.org/mempool/why-bitcoin-will-continue-to-grow/">There is no end to this process</a> because the primary value of Bitcoin is the network effect surrounding it, not any final productive use. Each step in Bitcoin's growth follows a similar pattern of investment in the coin, improving Bitcoin's liquidity, creating more opportunity for its use as a medium of exchange, followed by investment in Bitcoin's infrastructure, thus realizing those opportunities.<sup><a href="#fn2" id="ref2">2</a></sup>
+			Any demand for Bitcoin at all is enough to enable it to function as a medium of exchange. If demand continues to grow, then it becomes a better medium of exchange. <a href="{{url_for('blogpost', slug='why-bitcoin-will-continue-to-grow')}}">There is no end to this process</a> because the primary value of Bitcoin is the network effect surrounding it, not any final productive use. Each step in Bitcoin's growth follows a similar pattern of investment in the coin, improving Bitcoin's liquidity, creating more opportunity for its use as a medium of exchange, followed by investment in Bitcoin's infrastructure, thus realizing those opportunities.<sup><a href="#fn2" id="ref2" title="This analysis leaves something to explain—if the value of a medium of exchange is just the market cap, why does Bitcoin go through hype cycles? Every time Bitcoin goes up in price, that is an increase in its underlying value, so why does its price ever crash? I don’t know the answer, but I think I have a reasonable hypothesis: the network takes time to adjust to the enormous number of newcomers during each hype cycle. Each member of the network adds value, but this takes time—the members of the network must learn something about one another before the value they add to the network is more fully realized. If this effect is real, then the price could temporarily rise more rapidly than the growth that the network can support.">2</a></sup>
 		</p>
 
 		<p>
@@ -122,10 +128,26 @@
 			[Update 5/15/2014: Clarified section &#8216;Appraising Bitcoin&#8217; in response to criticisms.] 
 		</p>
 
+	<br>
+		<div class = "text-center">
+			<p>
+				<a href="https://coinbase.com/checkouts/c16886a2ff866480977fde7c18ce0edf" target="_blank" type="button" class="btn btn-success">
+					Donate to Daniel
+				</a>
+			</p>
+			<br>
+			<p>
+				<a href="http://pgp.mit.edu/pks/lookup?op=get&search=0x101BBC10F86C4A64" type="button" class="btn btn-info">
+					Daniel's Public Key
+				</a>
+			</p>
+		</div>
+	<br>
+
 <ol>
 	<li id="fn1">
 		<p>
-			One of the best arguments against the bubble theory of Bitcoin was presented by Peter Šurda in <a href="http://nakamotoinstitute.org/static/docs/economics-of-bitcoin.pdf">The Economics of Bitcoin</a>, in which he asks "What would replace Bitcoin?" The point of the question is that because Bitcoin reduces transaction costs over its alternatives, people have at least <em>some</em> reason to continue holding it until a superior alternative emerges.<a href="#ref1">↩</a>
+			One of the best arguments against the bubble theory of Bitcoin was presented by Peter Šurda in <a href="{{url_for('docinfo', slug='economics-of-bitcoin')}}">The Economics of Bitcoin</a>, in which he asks "What would replace Bitcoin?" The point of the question is that because Bitcoin reduces transaction costs over its alternatives, people have at least <em>some</em> reason to continue holding it until a superior alternative emerges.<a href="#ref1">↩</a>
 		</p>
 	</li>
 	<li id="fn2">
@@ -134,5 +156,5 @@
 		</p>
 	</li>
 </ol>
-
+</div>
 {%endblock%}
