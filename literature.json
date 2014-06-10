@@ -431,5 +431,14 @@
         "formats": ["html"],
         "categories": ["cryptography", "Cypherpunk"],
         "doctype": "essay"
+    },
+    {
+        "title": "The Cathedral and the Bazaar",
+        "author": ["eric-s-raymond"],
+        "date": "2000",
+        "slug": "the-cathedral-and-the-bazaar",
+        "formats": ["html"],
+        "categories": ["cryptography", "Cypherpunk"],
+        "doctype": "essay"
     }]
 }
