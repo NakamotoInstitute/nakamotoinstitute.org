@@ -213,6 +213,9 @@ def blog():
 @cache.cached(timeout=900)
 @app.route('/mempool/<string:slug>/', methods=["GET"])
 def blogpost(slug):
+    # Redirect for new appcoin slug
+    if slug == "appcoins-are-fraudulent":
+        return redirect(url_for("blogpost", slug="appcoins-are-snake-oil"))
     bp = BlogPost.query.filter_by(slug=slug).order_by(desc(BlogPost.date)).first()
     if(bp != None):
         return render_template('%s.html' % slug, bp=bp)
