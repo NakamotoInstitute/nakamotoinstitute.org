@@ -440,5 +440,14 @@
         "formats": ["html"],
         "categories": ["cryptography", "Cypherpunk"],
         "doctype": "essay"
+    },
+    {
+        "title": "Micropayments and Mental Transaction Costs",
+        "author": ["nick-szabo"],
+        "date": "May 1999",
+        "slug": "micropayments-and-mental-transaction-costs",
+        "formats": ["pdf"],
+        "categories": ["economics"],
+        "doctype": "essay"
     }]
 }
