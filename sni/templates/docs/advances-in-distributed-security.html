@@ -1,0 +1,45 @@
+<!-- extend base layout -->
+{% extends "doc.html" %}
+{% block doc %}
+<style>
+  .contents, .references{
+    list-style:none;
+    text-indent: none;
+    padding:0;
+    margin:0;
+  }
+</style>
+
+<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+  <div class="page-header">
+    <h1 class="text-center">
+      Advances in Distributed Security <br><small>Nick Szabo</small>
+    </h1>
+    <h4 class="text-center">
+      2003<br>
+    </h4>
+  </div>
+
+  <h2>Table of Contents</h2>
+
+  <ul class="contents">
+    <li><a href="#introduction">Introduction</a>
+    <li><a href="#fault-tolerance">Fault Tolerance and Security in Networks and Their Services</a>
+    <li><a href="#partial-and-total-orders">Partial and Total Orders</a>
+    <li><a href="#some-cryptographic-primitives">Some Cryptographic Primitives</a>
+    <li><a href="#physical-broadcasts-and-global-clocks">Physical Broadcasts and Global Clocks</a>
+    <li><a href="#secure-time-stamping">Secure Time-stamping</a>
+    <li><a href="#byzantine-generals-problem">The Byzantine Generals Problem</a>
+    <li><a href="#logical-broadcast-over-the-internet">Local Broadcast Over the Internet</a>
+    <li><a href="#byzantine-resilient-replications">Byzantine-Resilient Replication</a>
+    <li><a href="#some-applications">Some Applications</a>
+    <li><a href="#conclusion">Conclusion</a>
+    <li><a href="#appendix">Appendix A &ndash; Implementations</a>
+    <li><a href="#references">References</a>
+  </ul>
+
+  <h3 id="introduction">Introduction</h3>
+
+  <p>
+    The last decade has witnessed a revolution in distributed security. Old, pessimistic proofs that security and fault tolerance were "impossible", based on assumptions that protocols had to be deterministic and security and fault tolerance properties had to be absolutely certain, have given way to new proofs and implementations of provable security based on the assumption of cryptography and other randomized protocols that achieving security with very high probability is sufficient. The old view "proved" that the integrity properties of a wide variety of services on which civilization depends, whether <a href="http://szabo.best.vwh.net/synch.html">synchronized clocks</a>, <a href="">public directories</a>, censorship-proof file sharing and publication, or issuing money or securities were "impossible" on asynchronous networks like the Internet unless we put unlimited faith in a third party to enforce many of the rules of the service. We now know how to provide such services with a high degree of integrity and availability, yet far more resilient to the possibility that any party might act in a malicious manner. 
+  </p>
