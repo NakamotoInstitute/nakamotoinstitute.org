@@ -11,8 +11,9 @@ from flask import render_template, json, url_for, redirect, request
 from sqlalchemy import desc
 from werkzeug.contrib.atom import AtomFeed
 import re
- 
+
 from jinja2 import evalcontextfilter, Markup, escape
+
 
 @app.errorhandler(404)
 def internal_error(error):
@@ -28,27 +29,34 @@ def satoshi_index():
 
 @app.route('/')
 def index():
+
+    app.logger.info( 'IP: "' + str(request.remote_addr) + '", page:"Index"')
     bp = BlogPost.query.order_by(desc(BlogPost.date)).first()
     return render_template("index.html", bp=bp)
 
 @app.route('/about/', methods = ["GET"])
 def about():
+    app.logger.info( 'IP: "' + str(request.remote_addr) + '", page:"About"')
+
     return render_template("about.html")
 
 @app.route('/contact/', methods = ["GET"])
 def contact():
+    app.logger.info( 'IP: "' + str(request.remote_addr) + '", page:"Contact"')
     return render_template("contact.html")
 
 @cache.cached(timeout=900)
 @app.route('/emails/', subdomain="satoshi", methods = ["GET"])
 @app.route('/emails/cryptography/', subdomain="satoshi", methods = ["GET"])
 def emails():
+    app.logger.info( 'IP: "' + str(request.remote_addr) + '", page:"Emails"')
     emails = Email.query.order_by(Email.date)
     return render_template("emails.html", emails=emails)
 
 @cache.cached(timeout=900)
 @app.route('/emails/cryptography/<int:emnum>/', subdomain="satoshi", methods = ["GET"])
 def emailview(emnum):
+    app.logger.info( 'IP: "' + str(request.remote_addr) + '", page:"Emails ' + str(emnum) + '"')
     email = Email.query.filter_by(id=emnum).first()
     prev = Email.query.filter_by(id=emnum-1).first()
     next = Email.query.filter_by(id=emnum+1).first()
@@ -60,12 +68,14 @@ def emailview(emnum):
 @cache.cached(timeout=900)
 @app.route('/posts/', subdomain="satoshi", methods = ["GET"])
 def posts():
+    app.logger.info( 'IP: "' + str(request.remote_addr) + '", page:"posts"')
     posts = Post.query.order_by(Post.date).all()
     return render_template("posts.html", posts=posts, source=None)
 
 @cache.cached(timeout=900)
 @app.route('/posts/<string:source>/', subdomain="satoshi", methods = ["GET"])
 def forumposts(source):
+    app.logger.info( 'IP: "' + str(request.remote_addr) + '", page:"posts ' + source + '"')
     posts = Post.query.filter_by(source=source).order_by(Post.date).all()
     if(len(posts)!=0):
         return render_template("posts.html", posts=posts, source=source)
@@ -75,6 +85,7 @@ def forumposts(source):
 @cache.cached(timeout=900)
 @app.route('/posts/<string:source>/<int:postnum>/', subdomain="satoshi", methods=["GET"])
 def postview(postnum,source):
+    app.logger.info( 'IP: "' + str(request.remote_addr) + '", page:"posts ' + source + str(postnum) + '"')
     post = Post.query.filter_by(id=postnum, source=source).first()
     prev = Post.query.filter_by(id=postnum-1, source=source).first()
     next = Post.query.filter_by(id=postnum+1, source=source).first()
@@ -86,12 +97,15 @@ def postview(postnum,source):
 @cache.cached(timeout=900)
 @app.route('/authors/', methods=["GET"])
 def authors():
+    app.logger.info( 'IP: "' + str(request.remote_addr) + '", page:"authors"')
+
     authors = Author.query.order_by(Author.last).all()
     return render_template("authors.html", authors=authors)
 
 @cache.cached(timeout=900)
 @app.route('/authors/<string:authslug>/', methods=["GET"])
 def author(authslug):
+    app.logger.info( 'IP: "' + str(request.remote_addr) + '", page:"authors ' + authslug + '"')
     if (authslug=='satoshi-nakamoto'):
         return redirect(url_for('satoshi_index'))
     author = Author.query.filter_by(slug=authslug).first()
@@ -102,6 +116,7 @@ def author(authslug):
 @cache.cached(timeout=900)
 @app.route('/literature/', methods=["GET"])
 def literature():
+    app.logger.info( 'IP: "' + str(request.remote_addr) + '", page:"literature"')
     docs = Doc.query.order_by('id').all()
     formats = {}
     for doc in docs:
@@ -114,6 +129,7 @@ def literature():
 @cache.cached(timeout=900)
 @app.route('/literature/<string:slug>/', methods=["GET"])
 def docinfo(slug):
+    app.logger.info( 'IP: "' + str(request.remote_addr) + '", page:"literature ' + slug + '"')
     doc = Doc.query.filter_by(slug=slug).first()
     if(doc!=None):
         forms = []
@@ -133,6 +149,7 @@ def docinfo(slug):
 @cache.cached(timeout=900)
 @app.route('/literature/<int:docid>/', methods=["GET"])
 def docinfoid(docid):
+    app.logger.info( 'IP: "' + str(request.remote_addr) + '", page:"literature ' + str(docid) + '"')
     doc = Doc.query.filter_by(id=docid).first()
     if(doc!=None):
         forms = []
@@ -152,6 +169,8 @@ def docinfoid(docid):
 @cache.cached(timeout=900)
 @app.route('/literature/<string:slug>/<string:format>/', methods=["GET"])
 def docview(slug, format):
+    app.logger.info( 'IP: "' + str(request.remote_addr) + '", page:"literature ' + slug + format + '"')
+
     doc = Doc.query.filter_by(slug=slug).first()
     if(doc!=None):
         formats = []
@@ -170,6 +189,8 @@ def docview(slug, format):
 @cache.cached(timeout=900)
 @app.route('/literature/<int:docid>/<string:format>/', methods=["GET"])
 def docviewid(docid, format):
+    app.logger.info( 'IP: "' + str(request.remote_addr) + '", page:"literature ' + str(docid) + format + '"')
+
     doc = Doc.query.filter_by(id=docid).first()
     if(doc!=None):
         formats = []
@@ -189,6 +210,8 @@ def docviewid(docid, format):
 @cache.cached(timeout=900)
 @app.route('/<string:slug>/', methods=["GET"])
 def slugview(slug):
+    app.logger.info( 'IP: "' + str(request.remote_addr) + '", page:"slugview ' + slug + '"')
+
     doc = Doc.query.filter_by(slug=slug).first()
 
     if(doc!=None):
@@ -207,12 +230,15 @@ def slugview(slug):
 @cache.cached(timeout=900)
 @app.route('/mempool/', methods=["GET"])
 def blog():
+    app.logger.info( 'IP: "' + str(request.remote_addr) + '", page:"mempool"')
+
     bps = BlogPost.query.order_by(desc(BlogPost.date)).all()
     return render_template('blog.html', bps=bps)
 
 @cache.cached(timeout=900)
 @app.route('/mempool/<string:slug>/', methods=["GET"])
 def blogpost(slug):
+    app.logger.info( 'IP: "' + str(request.remote_addr) + '", page:"mempool ' + slug + '"')
     # Redirect for new appcoin slug
     if slug == "appcoins-are-fraudulent":
         return redirect(url_for("blogpost", slug="appcoins-are-snake-oil"))
@@ -225,6 +251,7 @@ def blogpost(slug):
 @cache.cached(timeout=900)
 @app.route('/mempool/feed/')
 def atomfeed():
+    app.logger.info( 'IP: "' + str(request.remote_addr) + '", page:"atomfeed"')
     feed = AtomFeed('Mempool | Satoshi Nakamoto Institute',
                     feed_url=request.url, url=request.url_root)
     articles = BlogPost.query.order_by(desc(BlogPost.date)).all()
@@ -243,6 +270,7 @@ def atomfeed():
 # Redirect old links
 @app.route('/<string:url_slug>.<string:format>/')
 def reroute(url_slug, format):
+    app.logger.info( 'IP: "' + str(request.remote_addr) + '", page:"reroute '+ url_slug + format + '"')
     doc=Doc.query.filter_by(slug=url_slug).first()
     if(doc!=None):
         return redirect(url_for("docview", slug=doc.slug, format=format))
