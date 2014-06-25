@@ -449,5 +449,14 @@
         "formats": ["pdf"],
         "categories": ["economics"],
         "doctype": "essay"
+    },
+    {
+        "title": "Lucre: Anonymous Electronic Tokens v1.8",
+        "author": ["ben-laurie"],
+        "date": "October 30, 2008",
+        "slug": "lucre",
+        "formats": ["pdf"],
+        "categories": ["cryptography"],
+        "doctype": "essay"
     }]
 }
