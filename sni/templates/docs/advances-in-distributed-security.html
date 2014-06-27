@@ -10,8 +10,10 @@
   }
 </style>
 
-<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-  <div class="page-header">
+
+    <div class="container">
+        <div class="row">
+        <div class="page-header">
     <h1 class="text-center">
       Advances in Distributed Security <br><small>Nick Szabo</small>
     </h1>
@@ -19,25 +21,28 @@
       2003<br>
     </h4>
   </div>
+</div>
+</div>
 
-  <h2>Table of Contents</h2>
-
-  <ul class="contents">
-    <li><a href="#introduction">Introduction</a>
-    <li><a href="#fault-tolerance">Fault Tolerance and Security in Networks and Their Services</a>
-    <li><a href="#partial-and-total-orders">Partial and Total Orders</a>
-    <li><a href="#some-cryptographic-primitives">Some Cryptographic Primitives</a>
-    <li><a href="#physical-broadcasts-and-global-clocks">Physical Broadcasts and Global Clocks</a>
-    <li><a href="#secure-time-stamping">Secure Time-stamping</a>
-    <li><a href="#byzantine-generals-problem">The Byzantine Generals Problem</a>
-    <li><a href="#logical-broadcast-over-the-internet">Local Broadcast Over the Internet</a>
-    <li><a href="#byzantine-resilient-replications">Byzantine-Resilient Replication</a>
-    <li><a href="#some-applications">Some Applications</a>
-    <li><a href="#conclusion">Conclusion</a>
-    <li><a href="#appendix-a">Appendix A &ndash; Implementations</a>
-    <li><a href="#references">References</a>
+<div class = "row">
+  <div class="col-sm-3 col-md-2 ">
+    <ul  class="nav" data-spy="affix-top">
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#fault-tolerance">Fault Tolerance and Security in Networks and Their Services</a></li>
+    <li><a href="#partial-and-total-orders">Partial and Total Orders</a></li>
+    <li><a href="#some-cryptographic-primitives">Some Cryptographic Primitives</a></li>
+    <li><a href="#physical-broadcasts-and-global-clocks">Physical Broadcasts and Global Clocks</a></li>
+    <li><a href="#secure-time-stamping">Secure Time-stamping</a></li>
+    <li><a href="#byzantine-generals-problem">The Byzantine Generals Problem</a></li>
+    <li><a href="#logical-broadcast-over-the-internet">Local Broadcast Over the Internet</a></li>
+    <li><a href="#byzantine-resilient-replications">Byzantine-Resilient Replication</a></li>
+    <li><a href="#some-applications">Some Applications</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+    <li><a href="#appendix-a">Appendix A &ndash; Implementations</a></li>
+    <li><a href="#references">References</a></li>
   </ul>
-
+  </div>
+  <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-1 main">
   <h3 id="introduction">Introduction</h3>
 
   <p>
@@ -529,59 +534,84 @@
   <h4>Byzantine-Resilient Replication</h4>
   
   <ul>
-    <li><a href="http://www.zurich.ibm.com/security/dti/index.html">IBM Zurich: SINTRA and MAFTIA &ndash; distributing trust on the Internet</a>
+    <li>
+      <a href="http://www.zurich.ibm.com/security/dti/index.html">IBM Zurich: SINTRA and MAFTIA &ndash; distributing trust on the Internet</a>
+    </li>
 
-    <li><a href="http://theory.stanford.edu/~dabo/ITTC/">ITTC Project (Intrusion Detection via Threshold Cryptography)</a>
-
-    <li><a href="http://oceanstore.cs.berkeley.edu/">OceanStore distributed filesystem</a>
-
-    <li><a href="http://www.nai.com/common/media/nai/pdf/dsn-itdos-w-ieee.pdf">Object replication in CORBA</a>
-
-    <li>Rampart
+    <li>
+      <a href="http://theory.stanford.edu/~dabo/ITTC/">ITTC Project (Intrusion Detection via Threshold Cryptography)</a>
+    </li>
+    <li>
+      <a href="http://oceanstore.cs.berkeley.edu/">OceanStore distributed filesystem</a>
+    </li>
+    <li>
+      <a href="http://www.nai.com/common/media/nai/pdf/dsn-itdos-w-ieee.pdf">Object replication in CORBA</a>
+    </li>
+    <li>
+      Rampart
+    </li>
     
-    <li>Fleet
-    
-    <li><a href="http://beta.ece.ucsb.edu/smp/project_sr.html">SecureRing</a>
+    <li>
+      Fleet
+    </li>
+    <li>
+      <a href="http://beta.ece.ucsb.edu/smp/project_sr.html">SecureRing</a>
+    </li>
   </ul>
 
   <h4>Traffic Analysis Reistant Messaging</h4>
 
   <ul>
-    <li><a href="http://sourceforge.net/projects/mixmaster/">MixMaster</a>
-
-    <li><a href="http://www.mixminion.net/">MixMinion</a>
-
-    <li><a href="http://www.onion-router.net/">Onion Routing</a>
+    <li>
+      <a href="http://sourceforge.net/projects/mixmaster/">MixMaster</a>
+    </li>
+    <li>
+      <a href="http://www.mixminion.net/">MixMinion</a>
+    </li>
+    <li>
+      <a href="http://www.onion-router.net/">Onion Routing</a>
+    </li>
   </ul>
 
   <h4>Blind Signatures and Bearer Instruments</h4>
 
   <ul>
-    <li><a href="http://anoncvs.aldigital.co.uk/lucre/">Lucre: based on Wagner's patent-free variant of Chaumian blinding</a>
-
-    <li><a href="http://lucrative.thirdhost.com/index.php">Lucrative (bearer instruments in SOAP and based on lucre)</a>
+    <li>
+      <a href="http://anoncvs.aldigital.co.uk/lucre/">Lucre: based on Wagner's patent-free variant of Chaumian blinding</a>
+    </li>
+    <li>
+      <a href="http://lucrative.thirdhost.com/index.php">Lucrative (bearer instruments in SOAP and based on lucre)</a>
+    </li>
   </ul>
 
   <h4>Hash Chain Structures and Secure Time-stamping</h4>
 
   <ul>
-    <li><a href="http://open-content.net/specs/draft-jchapweske-thex-02.html">THEX (Merkle hash trees)</a>
-
-    <li><a href="http://www.tcs.hut.fi/~helger/crypto/link/timestamping/">Helger Lipmaa's list of research projects and commercial implementations in secure timestamping</a>
+    <li>
+      <a href="http://open-content.net/specs/draft-jchapweske-thex-02.html">THEX (Merkle hash trees)</a>
+    </li>
+    <li>
+      <a href="http://www.tcs.hut.fi/~helger/crypto/link/timestamping/">Helger Lipmaa's list of research projects and commercial implementations in secure timestamping</a>
+    </li>
   </ul>
 
   <h4>Oblivious Transfer and Multiparty Secure Computation</h4>
 
   <ul>
-    <li><a href="http://theory.stanford.edu/~dabo/ITTC/">Intrusion Detection via Threshold Cryptography</a>
+    <li>
+      <a href="http://theory.stanford.edu/~dabo/ITTC/">Intrusion Detection via Threshold Cryptography</a>
+    </li>
   </ul>
 
   <h4>Capabilities / Smart Sandboxes</h4>
 
   <ul>
-    <li><a href="http://www.eros.org">EROS operating system</a>
-
-    <li><a href="http://www.erights.org/">E programming language</a>
+    <li>
+      <a href="http://www.eros.org">EROS operating system</a>
+    </li>
+    <li>
+      <a href="http://www.erights.org/">E programming language</a>
+    </li>
   </ul>
 
   <h3 id="references">References</h3>
@@ -892,5 +922,8 @@
   <p>
     <em>Editor's note: Some links may be broken.</em>
   </p>
+
+</div>
+</div>
 
 {% endblock %}
