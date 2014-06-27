@@ -34,7 +34,7 @@
     <li><a href="#byzantine-resilient-replications">Byzantine-Resilient Replication</a>
     <li><a href="#some-applications">Some Applications</a>
     <li><a href="#conclusion">Conclusion</a>
-    <li><a href="#appendix">Appendix A &ndash; Implementations</a>
+    <li><a href="#appendix-a">Appendix A &ndash; Implementations</a>
     <li><a href="#references">References</a>
   </ul>
 
@@ -71,7 +71,7 @@
   </p>
 
   <p>
-    A security property is <em>almost perfect</em> if its attack structure must contain T-1 out of N participants. For example, in the <em>digital mix</em> of Chaum [C81], for a single message, it would take collusion of N-1 out of N of the mix servers to trace a message. The untraceability property of this system has almost perfect security for a single message. On the other hand, the reliability property of the digital mix is almost perfectly insecure, since any one of the n mix servers can block a message from getting through. Often we must trade off two different properties like this. Since reliability is an error reversible by the end user and a privacy breach is not, the tradeoff made here by Chaum makes sense.
+    A security property is <em>almost perfect</em> if its attack structure must contain T-1 out of N participants. For example, in the <em>digital mix</em> of Chaum<sup><a href="#fnC81" id="refC81-1">[C81]</a></sup>, for a single message, it would take collusion of N-1 out of N of the mix servers to trace a message. The untraceability property of this system has almost perfect security for a single message. On the other hand, the reliability property of the digital mix is almost perfectly insecure, since any one of the n mix servers can block a message from getting through. Often we must trade off two different properties like this. Since reliability is an error reversible by the end user and a privacy breach is not, the tradeoff made here by Chaum makes sense.
   </p>
 
   <p>
@@ -93,13 +93,13 @@
   <h3 id="partial-and-total-orders">Partial and Total Orders</h3>
 
   <p>
-    A basic issue of security and fault tolerance that must be resolved is the secure determination of which order events occured in. If a contract specifies a deadline and it goes down to the wire, how can a relying party or third party adjudicator determine whether the deadline was met? The outcome itself, and its fairness, may rest on fairly deciding who came first. If Alice tries to double-spend a piece of digital cash [C82], only the recipient who checks with the bank first is entitled to its value. But if the bank servers are replicated, which of the two recipients Bob or Charles checked with the bank first? In the case of a <a href="{{url_for('slugview', slug='secure-property-titles')}}">replicated property title service</a> [S98] we have a similar problem &ndash; if Alice transfers her title to two other owners, which new owner actually received the deed? If property is homesteaded on a first-come first-serve basis, which of two or more "land rushers" competing for a lucrative parcel is entitled to the land?
+    A basic issue of security and fault tolerance that must be resolved is the secure determination of which order events occured in. If a contract specifies a deadline and it goes down to the wire, how can a relying party or third party adjudicator determine whether the deadline was met? The outcome itself, and its fairness, may rest on fairly deciding who came first. If Alice tries to double-spend a piece of digital cash<sup><a href="#fnC82" id="refC82-1">[C82]</a></sup>, only the recipient who checks with the bank first is entitled to its value. But if the bank servers are replicated, which of the two recipients Bob or Charles checked with the bank first? In the case of a <a href="{{url_for('slugview', slug='secure-property-titles')}}">replicated property title service</a><sup><a href="#fnS98" id="refS98">[S98]</a></sup> we have a similar problem &ndash; if Alice transfers her title to two other owners, which new owner actually received the deed? If property is homesteaded on a first-come first-serve basis, which of two or more "land rushers" competing for a lucrative parcel is entitled to the land?
   </p>
 
   <h4>Lamport (Causal) Order</h4>
 
   <p>
-    Imagine a network where computers don't know how to keep time very well &ndash; they are always getting out of synchronization. (Alas, all you have to really think of here is the actual Internet with PCs). Such a network, called an <em>asynchronous</em> network, lacks an accurate and secure global clock time by which computers can determine the order in which events, which might be messages sent or instructions executed on a particular local machine, have happened. Lamport [L78] was among the first to tackle the problem of how to determine the order of events in such a network.
+    Imagine a network where computers don't know how to keep time very well &ndash; they are always getting out of synchronization. (Alas, all you have to really think of here is the actual Internet with PCs). Such a network, called an <em>asynchronous</em> network, lacks an accurate and secure global clock time by which computers can determine the order in which events, which might be messages sent or instructions executed on a particular local machine, have happened. Lamport<sup><a href="#fnL78" id="refL78">[L78]</a></sup> was among the first to tackle the problem of how to determine the order of events in such a network.
   </p>
 
   <p>
@@ -207,7 +207,7 @@
   <h4>Fair Coin Tosses</h4>
 
   <p>
-    Joe Killian introduces this problem as follows [K90]:
+    Joe Killian introduces this problem as follows<sup><a href="#fnK90" id="refK90">[K90]</a></sup>:
   </p>
 
   <blockquote>
@@ -245,7 +245,7 @@
   </blockquote>
 
   <p>
-    Bruce Schneier [Sh96] goes on to describe what is wrong with this protocol:
+    Bruce Schneier<sup><a href="#fnSh96" id="refSh96">[Sh96]</a></sup> goes on to describe what is wrong with this protocol:
   </p>
 
   <blockquote>
@@ -259,11 +259,11 @@
   </blockquote>
 
   <p>
-    On a computer, those "envelopes" are committed bits &ndash; see the protocol for bit commitment above. Also see Manuel Blum's landmark paper "Coin Flipping By Telephone" [B82] for more details. He subtitled the paper "A Protocol for Solving Impossible Problems", which was more prescient than he knew.
+    On a computer, those "envelopes" are committed bits &ndash; see the protocol for bit commitment above. Also see Manuel Blum's landmark paper "Coin Flipping By Telephone"<sup><a href="#fnB82" id="refB82">[B82]</a></sup> for more details. He subtitled the paper "A Protocol for Solving Impossible Problems", which was more prescient than he knew.
   </p>
 
   <p>
-    Fair coin tosses can be used to create a fair total order of events out of a partial order of events, defined by sending and receiving times for messages, in an asynchronous distributed system. They can similarly be used to achieve atomic broadcast, and thus Byzantine agreement and replication [C01], [CP02].
+    Fair coin tosses can be used to create a fair total order of events out of a partial order of events, defined by sending and receiving times for messages, in an asynchronous distributed system. They can similarly be used to achieve atomic broadcast, and thus Byzantine agreement and replication<sup><a href="#fnC01" id="refC01">[C01]</a><a href="#fnCP02" id="refCP02">[CP02]</a></sup>.
   </p>
 
   <p>
@@ -273,7 +273,7 @@
   <h4>Against Traffic Analysis</h4>
 
   <p>
-    There are a wide variety of other cryptographic primitives and protocols, beyond the well-known symmetric and asymmetric cryptosystems, that give us security properties not otherwise in distributed systems, including and mixing and channel padding[C81] and blind signatures[C82] to combat traffice analysis.
+    There are a wide variety of other cryptographic primitives and protocols, beyond the well-known symmetric and asymmetric cryptosystems, that give us security properties not otherwise in distributed systems, including and mixing and channel padding<sup><a href="#fnC81" id="refC81-2">[C81]</a></sup> and blind signatures<sup><a href="#fnC82" id="refC82-2">[C82]</a></sup> to combat traffice analysis.
   </p>
 
   <h3 id="physical-broadcasts-and-global-clocks">Physical Broadcasts and Global Clocks</h3>
@@ -297,11 +297,11 @@
   </p>
 
   <p>
-    In the larger and more important belfries were present at least two bell-ringers. They lived up there full-time[D96]. This arrangement is an example of the pattern of dual control &ndash; each ringer served as a check for the other; neither could spoof the time or other bell signals without the collusion of both.
+    In the larger and more important belfries were present at least two bell-ringers. They lived up there full-time<sup><a href="#fnD96" id="refD96-1">[D96]</a></sup>. This arrangement is an example of the pattern of dual control &ndash; each ringer served as a check for the other; neither could spoof the time or other bell signals without the collusion of both.
   </p>
 
   <p>
-    The heaviest and most expensive elements of the towers were the bells. Bells smiths competed to produce the most distantly hearable ringing. The "Maria Angola" bell, cast in 1659 and installed in a cathedral in Cusco, Peru could be heard up to 25 miles away [G95]. In Cordova in the 16th century, a cathedral boasted a one-ton bell that could be heard 8 miles away. At the cathedral at Rouen, in 1321, a carillon was installed that played on an array of bells a hymn audible 5 miles away [D96]. The typical range of a parish church’s bells was 3-5 miles. These bells would primarily be heard and in the surrounding town; larger bells could also be heard by peasants working in the fields miles away.
+    The heaviest and most expensive elements of the towers were the bells. Bells smiths competed to produce the most distantly hearable ringing. The "Maria Angola" bell, cast in 1659 and installed in a cathedral in Cusco, Peru could be heard up to 25 miles away<sup><a href="#fnG95" id="refG95">[G95]</a></sup>. In Cordova in the 16th century, a cathedral boasted a one-ton bell that could be heard 8 miles away. At the cathedral at Rouen, in 1321, a carillon was installed that played on an array of bells a hymn audible 5 miles away<sup><a href="#fnD96" id="refD96-2">[D96]</a></sup>. The typical range of a parish church’s bells was 3-5 miles. These bells would primarily be heard and in the surrounding town; larger bells could also be heard by peasants working in the fields miles away.
   </p>
 
   <p>
@@ -309,7 +309,7 @@
   </p>
 
   <p>
-    While nearby churches or monasteries provided the public, standard time, workers and employers both often employed their own timekeeping devices as a check. Peasants could tell the time by observing their own shadow against some standard sized object. In Germany and Flanders, even the smallest peasant villages had "quadrants to indicate the hours without the sun". Miners, working underground, followed work bells, operated by the employers, and passed their signal on through the tunnels by workers banging on tools. As a check, the miners had their own marked tallow candles[D96]. Despite the public broadcast of authoritative time, few dispensed with the option to check their own independent sources.
+    While nearby churches or monasteries provided the public, standard time, workers and employers both often employed their own timekeeping devices as a check. Peasants could tell the time by observing their own shadow against some standard sized object. In Germany and Flanders, even the smallest peasant villages had "quadrants to indicate the hours without the sun". Miners, working underground, followed work bells, operated by the employers, and passed their signal on through the tunnels by workers banging on tools. As a check, the miners had their own marked tallow candles<sup><a href="#fnD96" id="refD96-3">[D96]</a></sup>. Despite the public broadcast of authoritative time, few dispensed with the option to check their own independent sources.
   </p>
 
   <p>
@@ -385,7 +385,7 @@
   <h4>Ladies and Gentlemen, Set Your Watches</h4>
 
   <p>
-    The Internet with its wide and unpredictable variances in message delays makes for an extremely poor method of distributing time. Some clock synchronization protocols for an asynchronous network are described in [C??, CF94]. Unfortunately, their accuracy is limited to the same order of magnitude of uncertainty as that would face an attacker. So they don't clearly eliminate the possibility that an attacker could take advantage of the different servers hosting a critical service disagreeing on the time.
+    The Internet with its wide and unpredictable variances in message delays makes for an extremely poor method of distributing time. Some clock synchronization protocols for an asynchronous network are described in <sup><a href="#fnC--" id="refC--">[C??]</a><a href="#fnCF94" id="refCF94">[CF94]</a></sup>. Unfortunately, their accuracy is limited to the same order of magnitude of uncertainty as that would face an attacker. So they don't clearly eliminate the possibility that an attacker could take advantage of the different servers hosting a critical service disagreeing on the time.
   </p>
 
   <p>
@@ -426,7 +426,7 @@
   </ol>
 
   <p>
-    The protocol should be able to resist up to T traitorous generals. In the case of a fully deterministic protocol (no random choices or cryptography allowed) the best we can do is tolerate T = floor(N/3) - 1 generals for a synchronous network. For an asynchronous and deterministic network no traitors at all can be tolerated. [FLP85].
+    The protocol should be able to resist up to T traitorous generals. In the case of a fully deterministic protocol (no random choices or cryptography allowed) the best we can do is tolerate T = floor(N/3) - 1 generals for a synchronous network. For an asynchronous and deterministic network no traitors at all can be tolerated.<sup><a href="#fnFLP85" id="refFLP85">[FLP85]</a></sup>
   </p>
 
   <p>
@@ -522,6 +522,375 @@
 
   <p>
     The old pessimism has been overturned. Old proofs of "impossibility", based on strict insistence in perfect certainty, have given way to new proofs demonstrating how to do the "impossible" by being satisfied with extremely high probability against a sophisticated but computationally bounded opponent &ndash; the assumption of cryptography &ndash; rather than of absolute certainty. This overturning of the old view has led to a raft of new possibilities for securing distributed applications. The simple protocol of the bell tower, which broadcast to every resident of a medieval town the same time, can now be implemented on a network &ndash; either through logical broadcast on the Internet or physical broadcast with radio. For the first time we can implement on the Internet the integrity properties on which civilization depends &ndash; including synchronized clocks, unforgeable transactions, and censorship-proof publishing. Where today's Internet, lacking this technology, fails to provide many of these properties, we now know how to provide them with a greater degree of integrity and availability than either the Internet or any previous media was capable of.
+  </p>
+
+  <h3 id="appendix-a">Appendex A &ndash; Implementations</h3>
+
+  <h4>Byzantine-Resilient Replication</h4>
+  
+  <ul>
+    <li><a href="http://www.zurich.ibm.com/security/dti/index.html">IBM Zurich: SINTRA and MAFTIA &ndash; distributing trust on the Internet</a>
+
+    <li><a href="http://theory.stanford.edu/~dabo/ITTC/">ITTC Project (Intrusion Detection via Threshold Cryptography)</a>
+
+    <li><a href="http://oceanstore.cs.berkeley.edu/">OceanStore distributed filesystem</a>
+
+    <li><a href="http://www.nai.com/common/media/nai/pdf/dsn-itdos-w-ieee.pdf">Object replication in CORBA</a>
+
+    <li>Rampart
+    
+    <li>Fleet
+    
+    <li><a href="http://beta.ece.ucsb.edu/smp/project_sr.html">SecureRing</a>
+  </ul>
+
+  <h4>Traffic Analysis Reistant Messaging</h4>
+
+  <ul>
+    <li><a href="http://sourceforge.net/projects/mixmaster/">MixMaster</a>
+
+    <li><a href="http://www.mixminion.net/">MixMinion</a>
+
+    <li><a href="http://www.onion-router.net/">Onion Routing</a>
+  </ul>
+
+  <h4>Blind Signatures and Bearer Instruments</h4>
+
+  <ul>
+    <li><a href="http://anoncvs.aldigital.co.uk/lucre/">Lucre: based on Wagner's patent-free variant of Chaumian blinding</a>
+
+    <li><a href="http://lucrative.thirdhost.com/index.php">Lucrative (bearer instruments in SOAP and based on lucre)</a>
+  </ul>
+
+  <h4>Hash Chain Structures and Secure Time-stamping</h4>
+
+  <ul>
+    <li><a href="http://open-content.net/specs/draft-jchapweske-thex-02.html">THEX (Merkle hash trees)</a>
+
+    <li><a href="http://www.tcs.hut.fi/~helger/crypto/link/timestamping/">Helger Lipmaa's list of research projects and commercial implementations in secure timestamping</a>
+  </ul>
+
+  <h4>Oblivious Transfer and Multiparty Secure Computation</h4>
+
+  <ul>
+    <li><a href="http://theory.stanford.edu/~dabo/ITTC/">Intrusion Detection via Threshold Cryptography</a>
+  </ul>
+
+  <h4>Capabilities / Smart Sandboxes</h4>
+
+  <ul>
+    <li><a href="http://www.eros.org">EROS operating system</a>
+
+    <li><a href="http://www.erights.org/">E programming language</a>
+  </ul>
+
+  <h3 id="references">References</h3>
+
+  <ol class="references">
+    <li id="fnA01">
+      <p>
+        [A01] Agilent Application Note AN 1289, <a href="http://www.educatorscorner.com/tools/lectures/appnotes/discipline/pdf/5965-7984E.pdf">"The Science of Timekeeping"</a>
+      </p>
+    </li>
+
+    <li id="fnAMPR00">
+      <p>
+        [AMPR00] L. Alvisi, D. Malkhi, L. Pierce, and M. Reiter, <a href="http://fp.ieeexplore.ieee.org/iel5/71/20644/00954640.pdf?isNumber=20644&prod=JNL&arnumber=00954640">"Fault detection for Byzantine quorum systems."</a>
+      </p>
+    </li>
+
+    <li id="fnAMPW00">
+      <p>
+        [AMPW00] L. Alvisi, D. Malkhi, L. Pierce, M. Reiter, and R. Wright, <a href="http://fp.ieeexplore.ieee.org/iel5/6928/18625/00857551.pdf?isNumber=18625&prod=CNF&arnumber=00857551">"Dynamic Byzantine Quorum Systems"</a>
+      </p>
+    </li>
+
+    <li id="fnB83">
+      <p>
+        [B83] M. Ben-Or, "Another advantage of free choice: Completely asynchronous agreement protocols", in Proc. 2nd ACM Symposium on Principles of Distributed Computing (PODC), 1983
+      </p>
+    </li>
+
+    <li id="fnB82">
+      <p>
+        [B82] M. Blum, "Coin Flipping by Telephone: A Protocol for Solving Impossible Problems", Proceedings of the 24th IEEE Computer Conference (CompCon), 1982, pp. 133-137.&nbsp;<a href="#refB82">↩</a>
+      </p>
+    </li>
+
+    <li id="fnBT85">
+      <p>
+        [BT85] G. Bracha and S. Toueg, "Asynchronous consensus and broadcast protocols", Journal of the ACM, vol. 32, pp. 824-840, Oct. 1985
+      </p>
+    </li>
+
+    <li id="fnCP02">
+      <p>
+        [CP02] C. Cachin, J. Poritz, <a href="http://citeseer.nj.nec.com/cachin02secure.html">"Secure Intrusion-tolerant Replication on the Internet"</a>&nbsp;<a href="#refCP02">↩</a>
+      </p>
+    </li>
+
+    <li id="fnC01">
+      <p>
+        [C01] C. Cachin, <a href="http://citeseer.nj.nec.com/cachin00distributing.html">"Distributing Trust on the Internet"</a> Conference on dependable systems and networks (DSN-2001). This is an excellent survey of the state of the art in Byzantine-resililient replication as well as presenting his own Byzantine-resilient replication system that uses fair toin cossing.&nbsp;<a href="#refC01">↩</a>
+      </p>
+    </li>
+
+    <li id="fnC98">
+      <p>
+        [C98] C. Cachin , "On the foundations of oblivious transfer", Advances in Cryptology: EUROCRYPT '98, Lecture Notes in Computer Science v. 1403, Kaisa Nyberg, ed., pp. 361-374. Springer-Verlag, 1998.
+      </p>
+    </li>
+
+    <li id="fnCT96">
+      <p>
+        [CT96] T.D. Chandra and S. Toueg, "Unreliable failure detectors for reliable distributed systems", Journal of the ACM, vol. 43, no. 2, pp. 225-267, 1996.
+      </p>
+    </li>
+
+    <li id="fnC81">
+      <p>
+        [C81] <a href="{{url_for('docinfo', slug='untraceable-electronic-mail')}}">"Untraceable Electronic Mail, Return Addresses, and Digital Pseudonyms,"</a> D. Chaum, Communications of the ACM, vol. 24 no. 2, February, 1981.&nbsp;<a href="#refC81-1">↩</a>&nbsp;<a href="#refC81-2">↩</a>
+      </p>
+    </li>
+
+    <li id="fnC82">
+      <p>
+        [C82] <a href="{{url_for('docinfo', slug='blind-signatures')}}">"Blind Signatures for Untraceable Payments,"</a> D. Chaum, Advances in Cryptology Proceedings of Crypto 82, D. Chaum, R.L. Rivest, & A.T. Sherman (Eds.), Plenum, pp. 199-203.&nbsp;<a href="#refC82-1">↩</a>&nbsp;<a href="#refC82-2">↩</a>
+      </p>
+    </li>
+
+    <li id="fnC85">
+      <p>
+        [C85] "Online Cash Checks", <a href="http://www.chaum.com/articles/Online_Cash_Checks.htm">http://www.chaum.com/articles/Online_Cash_Checks.htm</a>
+      </p>
+    </li>
+
+    <li id="fnCE86">
+      <p>
+        [CE86] "A Secure and Privacy-Protecting Protocol for Transmitting Personal Information Between Organizations," D. Chaum & J.-H. Evertse, Advances in Cryptology CRYPTO '86, A.M. Odlyzko (Ed.), Springer-Verlag, pp. 118-167.
+      </p>
+    </li>
+
+    <li id="fnC89-1">
+      <p>
+        [C89] "Showing Credentials Without Identification: Signatures Transferred Between Unconditionally Unlinkable Pseudonyms," D. Chaum, Accepted but not Presented Auscrypt '89.
+      </p>
+    </li>
+
+    <li id="fnC89b">
+      <p>
+        [C89b] "Privacy Protected Payments: Unconditional Payer and/or Payee Untraceability," D. Chaum, Smart Card 2000, D. Chaum & I. Schaumuller-Bichl (Eds.), North Holland, 1989, pp. 69-93.
+      </p>
+    </li>
+
+    <li id="fnCV">
+      <p>
+        [CV] "Group Signatures," D. Chaum & E van Heyst, Advances in Cryptology EUROCRYPT '91, D.W. Davies (Ed.), Springer-Verlag, pp. 257-265.
+      </p>
+    </li>
+
+    <li id="fnC97">
+      <p>
+        [C97] C. Cocks. "Split knowledge generation of RSA paremeters." Presented at the 6th IMA Conference on Coding and Cryptography, Cirencester, England, to appear in the proceedings, December 17&ndash;19, 1997.
+      </p>
+    </li>
+
+    <li id="fnCGT95">
+      <p>
+        [CGT95] C. Crépeau , J. van de Graaf , and A. Tapp , <a href="http://www.cs.mcgill.ca/~crepeau/GZIP/CGT95.ps">"Committed Oblivious Transfer and Private Multi-Party Computations"</a>; Advances in Cryptology: Proceedings of Crypto '95, Springer-Verlag, pages 110-123, 1995.
+      </p>
+    </li>
+
+    <li id="fnC--">
+      <p>
+        [C??] F. Cristian [et. al?] on external clock synchronization&nbsp;<a href="#refC--">↩</a>
+      </p>
+    </li>
+
+    <li id="fnCF94">
+      <p>
+        [CF94] F. Cristian and C. Fetzer, "Probabilistic Internal Clock Synchronization", 13th Symposium on Reliable Distributed Systems", 1994&nbsp;<a href="#refCF94">↩</a>
+      </p>
+    </li>
+
+    <li id="fnD96">
+      <p>
+        [D96] Dohrn-van Rossum, <em>History of the Hour &ndash; Clocks and Modern Temporal Orders</em>, University of Chicago Press, 1996.&nbsp;<a href="#refD96-1">↩</a>&nbsp;<a href="#refD96-2">↩</a>&nbsp;<a href="#refD96-3">↩</a>
+      </p>
+    </li>
+
+    <li id="fnDA01">
+      <p>
+        [DA01] W. Du, M. Atallah, <a href="http://citeseer.nj.nec.com/rd/0,552294,1,0.25,Download/http://citeseer.nj.nec.com/cache/papers/cs/26813/http:zSzzSzwww.cis.syr.eduzSz~weduzSzResearchzSzpaperzSznspw2001.pdf/du01secure.pdf">"Secure Multi-Party Computation Problems and Their Applications: A Review And Open Problems"</a> (2001), New Security Paradigms Workshop&nbsp;<a href="#ref">↩</a>
+      </p>
+    </li>
+
+    <li id="fnFLP95">
+      <p>
+        [FLP85] M.J. Fischer, N.A. Lynch,, and M.S. Peterson, "Impossibility of distributed consensus with one faulty process", Journal of the ACM, vol 32, pp. 374-382, April 1985.&nbsp;<a href="#refFLP85">↩</a>
+      </p>
+    </li>
+
+    <li id="fnG95">
+      <p>
+        [G95] Vicente Goyzueta, <a href="http://users.bestweb.net/~goyzueta/qosqo/catedral.htm">"Cathedral of Qosco City"</a>&nbsp;<a href="#refG95">↩</a>
+      </p>
+    </li>
+
+    <li id="fnHM97">
+      <p>
+        [HM97] M. Hirt and U. Maurer, "Complete characterization of adversaries tolerable in secure multi-party computation", 16th ACM PODC J. Kilian, <em>Uses of Randomness in Algorithms and Protocols</em>, MIT Press 1990.
+      </p>
+    </li>
+
+    <li id="fnISN93">
+      <p>
+        [ISN93] M. Ito, A. Saito and T. Nishizeki. Secret Sharing Scheme Realizing General Access Structure. J. Cryptology, 6 (1993) 15--20.
+      </p>
+    </li>
+
+    <li id="fnK90">
+      <p>
+        [K90] J. Kilian, <em>The Use of Randomness in Algorithms and Protocols</em>, MIT Press 1990&nbsp;<a href="#refK90">↩</a>
+      </p>
+    </li>
+
+    <li id="fnL78">
+      <p>
+        [L78] L. Lamport, "Time, Clocks, and the Ordering of Events in a Distributed System", <em>Communications of the ACM</em> 21(7):558-565, July 1978&nbsp;<a href="#refL78">↩</a>
+      </p>
+    </li>
+
+    <li id="fnL95">
+      <p>
+        [L95] Susan K. Langford. "Threshold DSS signatures without a trusted party." In D. Coppersmith, editor, Advances in Cryptology Crypto '95 proceedings, number 963 in LNCS, pages 397 409. Springer-Verlag, 1995. (some context online at http://citeseer.nj.nec.com/context/478327/0)
+      </p>
+    </li>
+
+    <li id="fnMR97">
+      <p>
+        [MR97] D. Maklhi & M. Reiter, <a href="http://link.springer.de/link/service/journals/00446/bibs/8011004/80110203.htm">"Byzantine Quorum Systems"</a>, also in 21st ACM STOC, 1979
+      </p>
+    </li>
+
+    <li id="fnMM95">
+      <p>
+        [MM95] L. E. Moser and P. M. Melliar-Smith, <a href="http://citeseer.nj.nec.com/context/145304/0">"Total ordering algorithms for asynchronous Byzantine systems."</a> In Proceedings of the 9th International Workshop on Distributed Algorithms, Springer-Verlag, September 1995.
+      </p>
+    </li>
+
+    <li id="fnMMA99">
+      <p>
+        [MMA99] L. Moser, P.M. Melliar-Smith, V. Agrawala, <a href="http://portal.acm.org/citation.cfm?id=327298&dl=ACM&coll=portal">"Total ordering algorithms"</a>, Proceedings of the 19th annual conference on Computer Science 1991 , San Antonio, Texas, United States, Pages: 375 - 380 Series-Proceeding-Article Year of Publication: 1999 ISBN:0-89791-382-5 ACM Press New York, NY, USA
+      </p>
+    </li>
+
+    <li id="fnMM99">
+      <p>
+        [MM99] L.E. Moser and P.M. Mellar-Smith, "Byzantine-resistant total ordering algorithms", Information and Computation, vol. 150, pp. 75-111, 1999.
+      </p>
+    </li>
+
+    <li id="fnNW96">
+      <p>
+        [NW96] M. Naor and A. Wool, "Access control and signatures via quorum secret sharing", 3rd ACM Conf. on Computer and Communications Security
+      </p>
+    </li>
+
+    <li id="fnMB94">
+      <p>
+        [MB94] M. Reiter and K. P. Birman. "How to securely replicate services."" ACM Transactions on Programming Languages and Systems, 16(3):986&ndash;1009, May 1994.
+      </p>
+    </li>
+
+    <li id="fnP91">
+      <p>
+        [P91] T.P. Pedersen. "A Threshold Cryptosystem without a Trusted Party."" In Eurocrypt'91, LNCS 547, pages 522--526. Springer-Verlag, 1991.
+      </p>
+    </li>
+
+    <li id="fnPSL80">
+      <p>
+        [PSL80] M. Pease, R. Shostak, and L. Lamport, "Reaching Agreement in the Presence of Faults", <em>Journal of the ACM</em> 27(2):228-234, April 1980
+      </p>
+    </li>
+
+    <li id="fnRab93">
+      <p>
+        [Rab83] M. Rabin, "Randomized Byzantine Generals," <em>Proceedings of the IEEE Symposium on the Foundations of Computer Science</em>, pp. 403-409, IEEE, 1983
+      </p>
+    </li>
+
+    <li id="fnSMNTWB02">
+      <p>
+        [SMNTWB02] David Sames, Brian Matt, Brian Niebuhr, Gregg Tally, Brent Whitmore, and David Bakken, "Developing a Heterogeneous Intrusion Tolerant CORBA System", Proceedings of the 2002 International Conference on Dependable Systems & Networks, Washington, D.C., June 23-26, 2002.
+      </p>
+    </li>
+
+    <li id="fnSh79">
+      <p>
+        [Sh79] A. Shamir. "How to share a secret."" In Com. of the ACM, 22(11):612613, 1979. (online at secret.html)
+      </p>
+    </li>
+
+    <li id="fnSh96">
+      <p>
+        [Sh96] B. Schneier, <em>Applied Cryptography</em>, 2nd edition, John Wiley & Sons 1996&nbsp;<a href="#refSh96">↩</a>
+      </p>
+    </li>
+
+    <li id="fnSG98">
+      <p>
+        [SG98] V. Shoup and R. Gennaro. "Securing Threshold Cryptosystems against Chosen Ciphertext Attack", in Eurocrypt '98, LNCS 1403, pages 1&ndash;16. SpringerVerlag, 1998. cf. the extended version for the Journal of Cryptology, available at <a href="http://www.shoup.net/papers/">http://www.shoup.net/papers/</a>
+      </p>
+    </li>
+
+    <li id="fnSh00">
+      <p>
+        [Sh00] V. Shoup, "Practical threshold signatures", in Advances in Cryptology: EUROCRYPT 2000 (B. Preneel, ed.) vol. 1087 of Lecture Notes in Computer Science, pp. 207-220, Springer, 2000
+      </p>
+    </li>
+
+    <li id="fnS97">
+      <p>
+        [S97] N. Szabo, <a href="{{url_for('slugview', slug='contracts-with-bearer')}}">"Contracts With Bearer"</a>
+      </p>
+    </li>
+
+    <li id="fnS97b">
+      <p>
+        [S97b] N. Szabo, <a href="{{url_for('slugview', slug='the-god-protocols')}}">"The God Protocols"</a>
+      </p>
+    </li>
+
+    <li id="fnS98">
+      <p>
+        [S98] N. Szabo, <a href="{{url_for('slugview', slug='secure-property-titles')}}">"Secure Property Titles with Owner Authority"</a>&nbsp;<a href="#refS98">↩</a>
+      </p>
+    </li>
+
+    <li id="fnS00">
+      <p>
+        [S00] N. Szabo, <a href="{{url_for('slugview', slug='trusted-third-parties')}}">"Trusted Third Parties are Security Holes"</a>
+      </p>
+    </li>
+  </ol>
+
+  <hr>
+
+  <p>
+    Please send your comments to nszabo (at) law (dot) gwu (dot) edu
+  </p>
+
+  <p>
+    Copyright &copy; 2003 by Nick Szabo<br>
+    rough draft &ndash; quoting or redistribution without permission of the author prohibited
+  </p>
+
+  <hr>
+
+  <p>
+    <em>Editor's note: Some links may be broken.</em>
   </p>
 
 {% endblock %}

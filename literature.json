@@ -458,5 +458,14 @@
         "formats": ["pdf"],
         "categories": ["cryptography"],
         "doctype": "essay"
+    },
+    {
+        "title": "Advances in Distributed Security",
+        "author": ["nick-szabo"],
+        "date": "2003",
+        "slug": "advances-in-distributed-security",
+        "formats": ["html"],
+        "categories": ["cryptography"],
+        "doctype": "essay"
     }]
 }
