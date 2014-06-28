@@ -467,5 +467,14 @@
         "formats": ["html"],
         "categories": ["cryptography"],
         "doctype": "essay"
+    },
+    {
+        "title": "Online Cash Checks",
+        "author": ["david-chaum"],
+        "date": "1989",
+        "slug": "online-cash-checks",
+        "formats": ["html"],
+        "categories": ["cryptography"],
+        "doctype": "essay"
     }]
 }
