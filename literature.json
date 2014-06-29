@@ -476,5 +476,14 @@
         "formats": ["html"],
         "categories": ["cryptography"],
         "doctype": "essay"
+    },
+    {
+        "title": "Measuring Value",
+        "author": ["nick-szabo"],
+        "date": "2002",
+        "slug": "measuring-value",
+        "formats": ["html"],
+        "categories": ["economics"],
+        "doctype": "essay"
     }]
 }
