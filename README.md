@@ -32,21 +32,20 @@ CSRF_ENABLED = True
 
 5. Update config.py if you would like to change "sni" in step 4 to a different [domain]
 
-6. Find-replace the <code>http://nakamotoinstitute.org</code> in satoshiposts.json to <code>http://sni:5000</code> (or the SERVER_NAME of your choice).
 
-7. Download the PDFs and txts [here](http://nakamotoinstitute.org/static/docs/sni-docs.zip) and place them in /static/templates/docs
+6. Download the PDFs and txts [here](http://nakamotoinstitute.org/static/docs/sni-docs.zip) and place them in /static/templates/docs
 
-8. Set up a virtualenv with <code>virtualenv --no-site-packages venv</code> and <code>. venv/bin/activate </code>
+7. Set up a virtualenv with <code>virtualenv --no-site-packages venv</code> and <code>. venv/bin/activate </code>
 
-9. Install the dependencies using <code>pip install -r requirements.txt</code>.
+8. Install the dependencies using <code>pip install -r requirements.txt</code>.
 
-10. In a Python console run <code>from sni import db</code> and <code>db.create_all()</code>
+9. In a Python console run <code>from sni import db</code> and <code>db.create_all()</code>
 
-11. Run <code>python dataimport.py</code>. The db will be cleared and re-populated each time you do this.
+10. Run <code>python dataimport.py</code>. The db will be cleared and re-populated each time you do this.
 
-12. Run <code>python run.py runserver</code> and navigate to sni:5000 in your browser.
+11. Run <code>python run.py runserver</code> and navigate to sni:5000 in your browser.
 
-13. Migrations are done with [Flask-Migrate](http://flask-migrate.readthedocs.org/en/latest/). You can start enable migrations by running:<br /> <code>python run.py db init</code>
+12. Migrations are done with [Flask-Migrate](http://flask-migrate.readthedocs.org/en/latest/). You can start enable migrations by running:<br /> <code>python run.py db init</code>
 
 
 
