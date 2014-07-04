@@ -1,6 +1,13 @@
 {
   "blogposts": [
     {
+        "title": "Speculative Attack",
+        "author": "pierre-rochard",
+        "date": "July 4, 2014",
+        "slug": "speculative-attack",
+        "excerpt": "Slow bleed from fiat to bitcoins is only the first step. The second step will be speculative attacks that use bitcoins as a platform. The third and final step will be hyperbitcoinization."
+    },
+    {
         "title": "Appcoins Are Snake Oil",
         "author": "daniel-krawisz",
         "date": "May 24, 2014",
