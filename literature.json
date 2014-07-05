@@ -478,6 +478,15 @@
         "doctype": "essay"
     },
     {
+        "title": "Why I Wrote PGP",
+        "author": ["philip-r-zimmermann"],
+        "date": "1991",
+        "slug": "why-i-wrote-pgp",
+        "formats": ["html"],
+        "categories": ["cryptography"],
+        "doctype": "essay"
+    },
+    {
         "title": "Measuring Value",
         "author": ["nick-szabo"],
         "date": "2002",
