@@ -1,0 +1,95 @@
+<!-- extend base layout -->
+{% extends "doc.html" %}
+{% block doc %}
+
+<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+  <div class="page-header">
+    <h1 class="text-center">
+      The God Protocols <br><small>Nick Szabo</small>
+    </h1>
+    <h4 class="text-center">
+      Originally published in 1997<br>
+    </h4>
+  </div>
+
+  <h3>Introduction</h3>
+
+  <p>
+  	An acquaintance does you a favor. How can you pay her back and deepen the relationship? An investor examines the balance sheet of a company. What do the numbers mean? Are they even trustworthy? A judge must decide on an award for damages done to a plaintiff. What amount of money, if any, fairly compensates for the plaintiff's suffering?
+  </p>
+
+  <p>
+  	A wide variety of human relationships and institutions, from the most friendly to the most antagonistic, must tackle the thorny problem of value: how can we securely distinguish, using the inputs of our fallible senses, that which we value from that which we do not? How can we figure out what another person values? <a href="{{url_for('slugview', slug='shelling-out')}}">Money</a>, <a href="http://szabo.best.vwh.net/synch.html">wage labor</a>, markets, and many other economic institutions take the forms they do primarily because they solve problems of measuring value. Such questions also lie at the heart of the current crisis in accounting.
+  </p>
+
+  <p>
+  	Questions of value are inherently subjective and personal. Value is very different from the objective phenomena of physics, chemistry, and the like. Societies have evolved institutions such as firms and competitive markets to set prices, legal precedents and judicial proceedings to make judgments, and so forth. These institutions in turn often rely on answering the second question, the topic of our essay &ndash; how can we securely determine value from what we observe? We will examine tax collection as an antagonistic instance of the measurement problem. The last section of this essay will focus on a particular institution developed to measure value &ndash; accounting &ndash; and suggest how it might rise to challenge the radical changes underway in our services and information economies.
+  </p>
+
+  <h3>Economic Relationships</h3>
+
+  <p>
+  	In the nineteenth century economists developed a theory of perfectly competitive commodity markets (often now called the "neoclassical model"). This is the source of supply and demand curves, for example. In the ideal market, supply balances demand resulting in a price that incorporates all the relevant skills and preferences of the market's participants. In such a market, this balance between skills needed to create a commodity and the preferences for that commodity constitute the value of that commodity &ndash; we can measure value by the equilibrium market price. Some modern markets, especially well known ones such as the commodity futures markets, approach this ideal in practice. However, many other institutions, such as the hierarchical firm, operate in very different ways. And modern markets are mostly quite recent in origin. Even today most human economic relationships, such as those that occur within a firm, are far from this ideal.
+  </p>
+
+  <p>
+  	In the competitive market, one commodity is traded for another. (Money is just a particularly interesting kind of commodity). In order for this market to work &ndash; in order for prices to accurately communicate value &ndash; first the participants must be able to measure the value of the two commodities traded. Indeed, that's the main property that distinguishes a commodity from a less economically tractable good or service &ndash; the ability of parties to measure its value &ndash; the ability of parties to observe properties of a good or service, matching what they observe against their private preferences, and making sure this process isn't spoofed by wily traders. 
+  </p>
+
+  <p>
+  	The competitive market model was so successful that modern economists are now approaching other economic institutions that we take for granted &ndash; such as the firm &ndash; and asking why they exist at all! They are working backwards from a very clear theory of competitive markets to explain the wide variety of other kinds of economic relationships, usually formalized by property rights and contracts, that we enter into. This school is most widely known as the "transaction cost" school of economics. Often it is referred to as "new institutional", or "property rights school." The idea of transaction costs was developed by Nobel prize winning economist Ronald Coase. His brilliant heirs include Oliver Hart and Oliver Williamson, along with Steve Cheung, Yoram Barzel, Armen Alchian, Harold Demsetz, Janet Landa, Robert Ellickson, and many others. 
+  </p>
+
+  <p>
+  	By comparing a wide variety of contractual forms to the ideal commodity market, and by re-using many of the same assumptions used by neoclassical economists &ndash; individuals with rational self-interest, unique preferences, and unique skills &ndash; we are better understanding these other economic institutions. Modern economies contain a wide variety of commercial institutions, from hierarchically commanded firms on the one hand to freely competitive commodity markets on the other. In between are a wide variety of institutions and the contracts that formalize them.
+  </p>
+
+  <p>
+  	When somebody starts a new company rather than hiring on as an employee at a current one, we can think of this decision as a "vote" that the economy needs more market relationships and less employee-employer relationships. Contrariwise, when one firm buys out another, they are implicitly betting that the economy needs less market and more firm. Socialists, seeing the trends of integration and economies of scale in industrial capitalism, thought the world would end up as one big firm, and decided this firm should be run by the government. That worked out horribly. Others have idealized a world in which there are no firms &ndash; everybody is a private contractor, selling their services to other individuals. In many industries that's a non-starter as well. Oliver Williamson and other economists have studied many of these forms and come up with some criteria that make competitive commodity markets less than perfect, causing other contractual forms to be used. (Here "contractual form" is shorthand for a certain kind business relationship &ndash; employment, franchising, commodity exchange, etc. The contract used by the parties is usually the most formal and complete description of their relationship, as well as the "security protocol" that defines the basic rules of the relationship).
+  </p>
+
+  <p>
+  	 These economists have identified a number of limitations of ideal commodity exchange that often cause other contractual forms to be used instead. These include:
+  </p>
+
+  <ol>
+  	<li>
+  		<p>
+  			<strong>Security</strong> costs. Other kinds of transaction costs are incurred from parties that are opportunistic &ndash; they are self-interested, but they follow the letter if not necessarily the spirit of the rules of a relationship (whether these rules are legal, contractual, or informal). Security costs are incurred from, or to protect a relationship against, parties that are outright malicious &ndash; they might break any of the rules, use threats of force, or actually carry out acts of trespass, theft, or violence, in order to satisfy their (alas, not so rare) coercive kinds of preferences.
+  		</p>
+  	</li>
+
+  	<li>
+  		<p>
+  			<strong>Rule incompleteness</strong> &ndash; the difficulty for parties to anticipate all contingencies that might occur in a relationship, and thus the inability to plan for them with rules (for example, by terms in a contract). Most disputes that go to court, and most interesting new legal precedents, occur over situations that the parties entering into a relationship didn't foresee well enough to deal with up front.
+  		</p>
+  	</li>
+
+  	<li>
+  		<p>
+  			<strong>Exit costs</strong> and/or <strong>investments that are specific</strong> to a particular relationship. For example, when you take a class to learn how to use Windows or Word, you are investing in a relationship with Microsoft. Another example is when a railroad is built to a coal mine &ndash; the railroad now depends on the mine for business, and the mine operator depends on the railroad to ship his coal. A third example is the layout on a factory floor, where the results of one machine's operation feed into another specific machine. The most common examples are employees developing relationships and learning skills that are specific to a particular job. In these kinds relationships with high investments or exit costs, without good contractual safeguards you can end up stuck in a bad relationship &ndash; even if it goes sour, the other guy cheats on you, it may be too expensive to exit the relationship, or you may lose your investment.
+  		</p>
+
+  		<p>
+  			When there is both lack of ability to specify rules and relationship specific investments, the result is often vertical integration into a single firm. The coal mine might buy the railroad, the machine operations occur on a factory floor owned by a single company, and so on. On the other hand, a firm has diseconomies of scale due to the increasing inability to match preferences to skills in larger firms. As Friedrich Hayek pointed out, diseconomies of scale in the distribution of knowledge about skills and preferences are a big reason why socialism works so much more poorly than market economies. More generally, these diseconomies limit firm size. Certain innovations (such as in accounting at the beginning of the industrial revolution, or in supply chain management in the last two decades) have improved the reliable distribution of knowledge within a firm and thereby allowed firms to grow larger.
+  		</p>
+
+  		<p>
+  			 Innovations that better cover contingencies or reduce the need for relationship specific investments and exit costs can disadvantage larger firms and advantage a larger number of smaller firms. Rather than an commodity market often a contractual form intermediate between a market and a firm, such as a franchise, is used. A franchise is a long term contract that, roughly speaking, specifies many basic rules for operating a business but leaves temporary or unique problems to the discretion of the local operator.
+  		</p>
+  	</li>
+
+  	<li>
+  		<p>
+  			We will shortly turn to perhaps the most important kind of transaction cost, the <strong>measurement of value</strong>, the main subject of our essay.
+  		</p>
+  	</li>
+  </ol>
+
+  <p>
+  	Before we do that, however, let us note that these kinds of transaction costs, while first studied in the context of markets, are not confined to markets or even market-embedded institutions. They occur any time a good is transferred or a service rendered according to a set of rules or customs, however simple or complicated. Not only do these transaction costs provide a basis for comparing non-market or extra-market institutions such as the firm to the market; they also apply to a wide variety of other institutions, including many we may not typically think of as economic institutions. So, for example, the ancient institutions of inheritance, marriage, tribute, tax collection, and tort law all involved an important component of wealth transfer. All are subject to the main kinds of transaction costs outlined here &ndash; including that of our main topic.
+  </p>
+
+</div>
+
+{% endblock %}
