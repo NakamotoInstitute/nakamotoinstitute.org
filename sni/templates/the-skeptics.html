@@ -1,0 +1,38 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block title %}
+The Skeptics | Satoshi Nakamoto Institute
+{% endblock %}
+
+{% block content %}
+<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+
+  <div class="row">
+    <div class="text-center">
+   	  <h1>The Skeptics</h1>
+      <h4>A Tribute to Bold Assertions</h4>
+    </div>
+  </div>
+
+  <p class="text-center">
+    Submit a link via <a href="https://github.com/NakamotoInstitute/nakamotoinstitute.org">GitHub</a>
+  </p>
+
+  {% for skeptic in skeptics %}
+    <hr>
+    <h3>{{skeptic.name}} - {{skeptic.date.strftime('%B %d, %Y')}} ({{skeptic.price}})</h3>
+    <h4><a href="{{skeptic.link}}">{{skeptic.article}}</a> (<em>{{skeptic.source}}</em>)</h4>
+    <p>
+      <em>{{skeptic.excerpt}}</em><br>
+    </p>
+    {% if skeptic.waybacklink %}
+    <p>
+      <a href="{{skeptic.waybacklink}}">Wayback Machine</a>
+    </p>
+    {% endif %}
+  {% endfor %}
+
+  <hr>
+</div>
+{% endblock %}
