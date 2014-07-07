@@ -48,6 +48,13 @@ CSRF_ENABLED = True
 12. Migrations are done with [Flask-Migrate](http://flask-migrate.readthedocs.org/en/latest/). You can start enable migrations by running:<br /> <code>python run.py db init</code>
 
 
+## Add a link to "the Skeptics" page
+
+To add a link, fork the repo, add an entry to skeptics.json and make a pull request to 'the-skeptics' branch:
+
+<code>git pull origin the-skeptics<code>
+
+You can also email the information to contact@nakamotoinstitute.org
 
 
 ## How You Can Help
