@@ -22,6 +22,7 @@ The Skeptics | Satoshi Nakamoto Institute
   {% for skeptic in skeptics %}
     <hr>
     <h3>{{skeptic.name}} - {{skeptic.date.strftime('%B %d, %Y')}} ({{skeptic.price}})</h3>
+    <p><em>{{skeptic.title}}</em></p>
     <h4><a href="{{skeptic.link}}">{{skeptic.article}}</a> (<em>{{skeptic.source}}</em>)</h4>
     <p>
       <em>{{skeptic.excerpt}}</em><br>
