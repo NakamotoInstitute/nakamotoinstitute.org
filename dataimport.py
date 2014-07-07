@@ -141,6 +141,7 @@ for i in range(0,len(skeptics['skeptics'])):
 		excerpt = skeptics['skeptics'][i]['excerpt'],
 		price = skeptics['skeptics'][i]['price'],
 		link = skeptics['skeptics'][i]['link'],
-		waybacklink = skeptics['skeptics'][i]['waybacklink'])
+		waybacklink = skeptics['skeptics'][i]['waybacklink'],
+		slug = skeptics['skeptics'][i]['slug']+'-'+str(parser.parse(skeptics['skeptics'][i]['date']))[0:10])
 	db.session.add(skeptic)
 	db.session.commit()

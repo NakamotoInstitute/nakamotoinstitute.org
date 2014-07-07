@@ -115,3 +115,4 @@ class Skeptic(db.Model):
 	price = db.Column(db.String())
 	link = db.Column(db.String())
 	waybacklink = db.Column(db.String())
+	slug = db.Column(db.String())
