@@ -21,19 +21,30 @@ The Skeptics | Satoshi Nakamoto Institute
 
   {% for skeptic in skeptics %}
     <hr>
-    <h3>{{skeptic.name}} - {{skeptic.date.strftime('%B %d, %Y')}} ({{skeptic.price}})</h3>
+    <h3 id="#{{skeptic.slug}}">{{skeptic.name}} - {{skeptic.date.strftime('%B %d, %Y')}} ({{skeptic.price}})</h3>
     <p><em>{{skeptic.title}}</em></p>
-    <h4><a href="{{skeptic.link}}">{{skeptic.article}}</a> (<em>{{skeptic.source}}</em>)</h4>
-    <p>
-      <em>{{skeptic.excerpt}}</em><br>
-    </p>
-    {% if skeptic.waybacklink %}
-    <p>
-      <a href="{{skeptic.waybacklink}}">Wayback Machine</a>
-    </p>
+    {% if skeptic.source == "Twitter" %}
+      <p>
+        <img class="img-responsive center-block" src="/static/img/the-skeptics/{{skeptic.slug}}.jpg">
+      </p>
+      <ul>
+        {% for link in skeptic.link.split(", ") %}
+          <li><a href="{{link}}">{{link}}</a></li>
+        {%endfor%}
+      </ul>
+    {% else %}
+      <h4><a href="{{skeptic.link}}">{{skeptic.article}}</a> (<em>{{skeptic.source}}</em>)</h4>
+      {% if skeptic.waybacklink %}
+      <p>
+        <em>{{skeptic.excerpt}}</em><br>
+      </p>
+      {% endif %}
+      {% if skeptic.waybacklink %}
+      <p>
+        <a href="{{skeptic.waybacklink}}">Wayback Machine</a>
+      </p>
+      {% endif %}
     {% endif %}
   {% endfor %}
-
-  <hr>
 </div>
 {% endblock %}

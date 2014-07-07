@@ -268,7 +268,7 @@ def atomfeed():
 
 @cache.cached(timeout=900)
 @app.route('/the-skeptics/')
-def naysayers():
+def skeptics():
     skeptics = Skeptic.query.order_by(Skeptic.date).all()
     return render_template('the-skeptics.html', skeptics=skeptics)
 
