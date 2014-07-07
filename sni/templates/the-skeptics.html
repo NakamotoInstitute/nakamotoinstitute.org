@@ -24,9 +24,11 @@ The Skeptics | Satoshi Nakamoto Institute
     <h3>{{skeptic.name}} - {{skeptic.date.strftime('%B %d, %Y')}} ({{skeptic.price}})</h3>
     <p><em>{{skeptic.title}}</em></p>
     <h4><a href="{{skeptic.link}}">{{skeptic.article}}</a> (<em>{{skeptic.source}}</em>)</h4>
+    {% if skeptic.excerpt %}
     <p>
       <em>{{skeptic.excerpt}}</em><br>
     </p>
+    {% endif %}
     {% if skeptic.waybacklink %}
     <p>
       <a href="{{skeptic.waybacklink}}">Wayback Machine</a>
