@@ -169,6 +169,30 @@
 		"slug": "charlie-stross"
   },
 	{
+    "name": "Brad DeLong",
+    "title": "Professor of Economics, U.C. Berkeley",
+    "article": "Watching Bitcoin, Dogecoin, Etc...",
+    "date": "December 28. 2013",
+    "source": "The Equitablog",
+    "excerpt": "You can either work doing something useful, or you can set up a botnet to mine BitCoins, or you can fork the code behind BitCoin and set up your own slightly-tweaked virtual cryptographic money network. Setting up a new, alternative network is really cheap. Thus unless BitCoin going can somehow successfully differentiate itself from the latecomers who are about to emerge, the money supply of BitCoin-like things is infinite because the cost of production of them is infinitesimal.",
+    "price": "$717.51",
+    "link": "http://equitablegrowth.org/2013/12/28/watching-bitcoin-dogecoin-etc/",
+    "waybacklink": "https://web.archive.org/web/20140411101406/http://equitablegrowth.org/2013/12/28/watching-bitcoin-dogecoin-etc/",
+    "slug": "brad-delong"
+  },
+  {
+  	"name": "Paul Krugman",
+  	"title": "Nobel Prize-winning Economist",
+  	"article": "Bitcoin is Evil",
+  	"date": "December 28, 2013",
+  	"source": "The New York Times",
+  	"excerpt": "So far almost all of the Bitcoin discussion has been positive economics — can this actually work? And I have to say that I’m still deeply unconvinced. To be successful, money must be both a medium of exchange and a reasonably stable store of value. And it remains completely unclear why BitCoin should be a stable store of value.",
+  	"price": "$717.51",
+  	"link": "http://krugman.blogs.nytimes.com/2013/12/28/bitcoin-is-evil/",
+  	"waybacklink": "https://web.archive.org/web/20131228193758/http://krugman.blogs.nytimes.com/2013/12/28/bitcoin-is-evil/",
+  	"slug": "paul-krugman"
+   },
+	{
 		"name": "Lisa Kramer",
 		"title": "\"Serious Economist\"",
 		"article": "Bursting the bitcoin bubble",
