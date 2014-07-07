@@ -103,3 +103,15 @@ class BlogPost(db.Model):
 
 	def __repr__(self):
  		return '<BlogPost %r>' % (self.title)
+
+class Skeptic(db.Model):
+	id = db.Column(db.Integer, primary_key = True)
+	name = db.Column(db.String())
+	title = db.Column(db.String())
+	article = db.Column(db.String())
+	date = db.Column(db.Date)
+	source = db.Column(db.String())
+	excerpt = db.Column(db.String())
+	price = db.Column(db.String())
+	link = db.Column(db.String())
+	waybacklink = db.Column(db.String())

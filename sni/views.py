@@ -6,7 +6,7 @@
 #
 
 from sni import app, db, cache
-from models import Post, Email, Doc, Author, Format, Category, BlogPost
+from models import Post, Email, Doc, Author, Format, Category, BlogPost, Skeptic
 from flask import render_template, json, url_for, redirect, request
 from sqlalchemy import desc
 from werkzeug.contrib.atom import AtomFeed
@@ -266,8 +266,14 @@ def atomfeed():
                  published=article.date)
     return feed.get_response()
 
+@cache.cached(timeout=900)
+@app.route('/the-skeptics/')
+def naysayers():
+    skeptics = Skeptic.query.order_by(Skeptic.date).all()
+    return render_template('the-skeptics.html', skeptics=skeptics)
 
 # Redirect old links
+@cache.cached(timeout=900)
 @app.route('/<string:url_slug>.<string:format>/')
 def reroute(url_slug, format):
     app.logger.info( 'IP: "' + str(request.remote_addr) + '", page:"reroute '+ url_slug + format + '"')

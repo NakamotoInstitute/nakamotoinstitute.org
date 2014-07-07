@@ -26,6 +26,7 @@ for auth in auths:
 	db.session.commit()
 Doc.query.delete()
 BlogPost.query.delete()
+Skeptic.query.delete()
 
 # return object
 
@@ -124,4 +125,22 @@ for i in range(0,len(blogps['blogposts'])):
 		slug=blogps['blogposts'][i]['slug'],
 		excerpt=blogps['blogposts'][i]['excerpt'])
 	db.session.add(blogpost)
+	db.session.commit()
+
+with open('./skeptics.json') as data_file:
+	skeptics = json.load(data_file)
+
+for i in range(0,len(skeptics['skeptics'])):
+	skeptic = Skeptic(
+		id = i + 1,
+		name = skeptics['skeptics'][i]['name'],
+		title = skeptics['skeptics'][i]['title'],
+		article = skeptics['skeptics'][i]['article'],
+		date = parser.parse(skeptics['skeptics'][i]['date']),
+		source = skeptics['skeptics'][i]['source'],
+		excerpt = skeptics['skeptics'][i]['excerpt'],
+		price = skeptics['skeptics'][i]['price'],
+		link = skeptics['skeptics'][i]['link'],
+		waybacklink = skeptics['skeptics'][i]['waybacklink'])
+	db.session.add(skeptic)
 	db.session.commit()

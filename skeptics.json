@@ -1,0 +1,47 @@
+{
+	"skeptics": [
+	{
+		"name": "Niels van der Linden",
+		"title": "Amateur economist",
+		"article": "Don't Buy Bitcoins",
+		"date": "April 22, 2011",
+		"source": "YouTube",
+		"excerpt": "",
+		"price": "$0.77",
+		"link": "https://www.youtube.com/watch?v=DoK8HXMSsNg",
+		"waybacklink": ""
+	},
+	{
+		"name": "Adrian Covert",
+		"title": "Journalist",
+		"article": "The Bitcoin Is Dying",
+		"date": "August 9, 2011",
+		"source": "Gizmodo Australia",
+		"excerpt": "The lulz were abundant. But frankly, it’s time for you to go. Farewell.",
+		"price": "$8.02",
+		"link": "http://www.gizmodo.com.au/2011/08/the-bitcoin-is-dying-whatever/",
+		"waybacklink": "https://web.archive.org/web/20120331165346/http://www.gizmodo.com.au/2011/08/the-bitcoin-is-dying-whatever/"
+	},
+	{
+		"name": "Michael Calore",
+		"title": "Journalist",
+		"article": "Wired, Tired, Expired for 2012: From Stellar to Suck",
+		"date": "December 24, 2012",
+		"source": "Wired",
+		"excerpt": "Then came the malware, the black market, the legal ambiguities and The Man. Today, you can't even use it to buy Facebook stock",
+		"price": "$13.27",
+		"link": "http://www.wired.com/2012/12/wired-tired-expired/",
+		"waybacklink": "https://web.archive.org/web/20140408141723/http://www.wired.com/2012/12/wired-tired-expired/"
+	},
+	{
+		"name": "Tim Worstall",
+		"title": "Journalist",
+		"article": "So, That's the End of Bitcoin Then",
+		"date": "June 20, 2011",
+		"source": "Forbes",
+		"excerpt": "It’s difficult to see what the currency has going for it.",
+		"price": "$17.26",
+		"link": "http://www.forbes.com/sites/timworstall/2011/06/20/so-thats-the-end-of-bitcoin-then/",
+		"waybacklink": "https://web.archive.org/web/20110811144818/http://www.forbes.com/sites/timworstall/2011/06/20/so-thats-the-end-of-bitcoin-then/"
+	}]
+}
