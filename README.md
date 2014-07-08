@@ -1,7 +1,7 @@
 Satoshi Nakamoto Institute
 ===========
 
-NakamotoInstitute.org was written in Flask. 
+NakamotoInstitute.org was written in Flask.
 
 
 ## Guide to Installing SNI Locally
@@ -45,7 +45,7 @@ CSRF_ENABLED = True
 
 11. Run <code>python run.py runserver</code> and navigate to sni:5000 in your browser.
 
-12. Migrations are done with [Flask-Migrate](http://flask-migrate.readthedocs.org/en/latest/). You can start enable migrations by running:<br /> <code>python run.py db init</code>
+12. Migrations are done with [Flask-Migrate](http://flask-migrate.readthedocs.org/en/latest/). You can start enable migrations by running:<br /> <code>python run.py db init</code>, <code>python run.py db migrate</code>, and <code>python run.py db upgrade</code>.
 
 
 ## Add a link to "the Skeptics" page
