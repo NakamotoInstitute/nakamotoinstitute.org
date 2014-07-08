@@ -494,5 +494,14 @@
         "formats": ["html"],
         "categories": ["economics"],
         "doctype": "essay"
+    },
+    {
+        "title": "From Crossbows To Cryptography: Techno-Thwarting The State",
+        "author": ["chuck-hammill"],
+        "date": "November 1987",
+        "slug": "from-crossbows-to-cryptography",
+        "formats": ["pdf"],
+        "categories": ["cryptography"],
+        "doctype": "essay"
     }]
 }
