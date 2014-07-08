@@ -203,5 +203,18 @@
 		"link": "http://www.theglobeandmail.com/report-on-business/economy/economy-lab/bursting-the-bitcoin-bubble/article16327155/",
 		"waybacklink": "https://web.archive.org/web/20140117082757/http://www.theglobeandmail.com/try-it-now/?articleId=16327155",
 		"slug": "lisa-kramer"
-	}]
+	},
+	{
+		"name": "Robert J. Shiller",
+		"title": "Nobel Prize-winning Economist",
+		"article": "In Search of a Stable Electronic Currency",
+		"date": "March 1, 2014",
+		"source": "The New York Times",
+		"excerpt": "The Bitcoin phenomenon seems to fit the basic definition of a speculative bubble — that is, a special kind of fad, a mania for holding an asset in expectation of its appreciation.",
+		"price": "$560.18",
+		"link": "http://www.nytimes.com/2014/03/02/business/in-search-of-a-stable-electronic-currency.html",
+		"waybacklink": "http://web.archive.org/web/20140301165850/http://www.nytimes.com/2014/03/02/business/in-search-of-a-stable-electronic-currency.html",
+		"slug": "robert-shiller"
+	}
+	]
 }
