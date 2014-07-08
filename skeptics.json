@@ -203,5 +203,16 @@
 		"link": "http://www.theglobeandmail.com/report-on-business/economy/economy-lab/bursting-the-bitcoin-bubble/article16327155/",
 		"waybacklink": "https://web.archive.org/web/20140117082757/http://www.theglobeandmail.com/try-it-now/?articleId=16327155",
 		"slug": "lisa-kramer"
-	}]
+	},{
+        "name": "Sean Helvey",
+        "title": "Founder, Blue Hook",
+        "article": "The Bitcoin Bubble",
+        "date": "December 3, 2013",
+        "source": "seanhelvey.com",
+        "excerpt": "Bitcoin is just like the South Sea Bubble and Tulip mania in that the price increases are unsustainable as they are not based on intrinsic value",
+        "price": "$1068.67",
+        "link": "http://www.seanhelvey.com/?p=469",
+        "waybacklink": "",
+        "slug": "sean-helvey"
+    }]
 }
