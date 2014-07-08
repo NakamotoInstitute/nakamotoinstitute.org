@@ -1,6 +1,34 @@
 {
   "blogposts": [
     {
+        "title": "Speculative Attack",
+        "author": "pierre-rochard",
+        "date": "July 4, 2014",
+        "slug": "speculative-attack",
+        "excerpt": "Slow bleed from fiat to bitcoins is only the first step. The second step will be speculative attacks that use bitcoins as a platform. The third and final step will be hyperbitcoinization."
+    },
+{
+    "title": "Bitcoin's Shroud of Subtlety and Allure",
+    "author": "daniel-krawisz",
+    "date": "June 29, 2014",
+    "slug": "bitcoins-shroud-of-subtlety-and-allure",
+    "excerpt": "Potential Bitcoin attackers are in a Prisoner's Dilemma. In the same way that the people cannot easily rebel against the king owing to a lack of coordination on their part, governments cannot rebel against Bitcoin for the same reason. The government puts the people in a Prisoner's Dilemma against one another, and Bitcoin does the same to government agents."
+},
+    {
+        "title": "Bitcoin's Rugged Individualism",
+        "author": "daniel-krawisz",
+        "date": "June 29, 2014",
+        "slug": "bitcoins-rugged-individualism",
+        "excerpt": "There is a fundamental agency problem with Bitcoin: agents can disappear or simulate a heist upon themselves. They cannot rationally be trusted without extreme costs being imposed on them which are more stringent than traditional banks."
+    },
+    {
+        "title": "Anarchist Strategy",
+        "author": "daniel-krawisz",
+        "date": "June 12, 2014",
+        "slug": "anarchist-strategy",
+        "excerpt": "The strength of the state is the perception of strength. No matter how vast and powerful it appears, the state can always be destroyed in a moment."
+    },
+    {
         "title": "Appcoins Are Snake Oil",
         "author": "daniel-krawisz",
         "date": "May 24, 2014",
