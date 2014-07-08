@@ -72,6 +72,18 @@
     "waybacklink": "https://web.archive.org/web/20131030110314/http://www.theguardian.com/commentisfree/2013/apr/03/bitcoin-currency-bubble-crash-not-rocking-financial-markets",
 		"slug": "heidi-moore"
   },
+  {
+    "name": "Robert McMillan",
+    "title": "Journalist",
+    "article": "Watch Wired Get Rich Quick With Our Sleek Bitcoin Miner",
+    "date": "May 10, 2013",
+    "source": "Wired",
+    "excerpt": "But in the end, the answer was obvious. The world’s most popular digital currency really is nothing more than an abstraction. So we’re destroying the private key used by our Bitcon wallet.",
+    "price": "$115.48",
+    "link": "http://www.wired.com/2013/05/butterfly_live/",
+    "waybacklink": "https://web.archive.org/web/20140708202012/http://www.wired.com/2013/05/butterfly_live/",
+    "slug": "robert-mcmillan"
+  },
 	{
 		"name": "Justin Wolfers",
 		"title": "Economist, Brookings Institution",
@@ -84,6 +96,18 @@
 		"waybacklink": "",
 		"slug": "justin-wolfers"
 	},
+  {
+    "name": "David S. Evans",
+    "title": "Chairman of the Global Economics Group",
+    "article": "Bitcoin is a Remarkable Innovation, Here's Why It Will Fail",
+    "date": "October 16, 2013",
+    "source": "Pymnts.com",
+    "excerpt": "I think there are two realistic directions the bitcoin ecosystem could go in. First, it could just implode and disappear if governments decide that virtual currencies cause too much harm and are too hard to regulate. Long-term investments in bitcoin would then go up in smoke. Second, it could continue as a virtual currency that is only used on the dark web with exchanges that are run by people willing to break the laws. The value of bitcoin would decline to whatever the illegal sector could support; regular investors wouldn’t be able to get their value from bitcoin unless they cashed it in with someone who wanted to do bad things.",
+    "price": "$137.54",
+    "link": "http://www.pymnts.com/uncategorized/2013/bitcoin-is-a-remarkable-innovation-here-s-why-it-will-fail/",
+    "waybacklink": "https://web.archive.org/web/20140708192152/http://www.pymnts.com/uncategorized/2013/bitcoin-is-a-remarkable-innovation-here-s-why-it-will-fail/",
+    "slug": "david-s-evans"
+  },
 	{
     "name": "Emin Gün Sirer",
     "title": "Professor, Cornell University",
@@ -120,6 +144,18 @@
 		"waybacklink": "https://web.archive.org/web/20131122075218/http://www.theatlantic.com/business/archive/2013/11/bitcoin-is-the-segway-of-currency/281625/",
 		"slug": "matthew-obrien"
 	},
+  {
+    "name": "Gary North",
+    "title": "Economist",
+    "article": "Bitcoins: The Second Biggest Ponzi Scheme in History",
+    "date": "November 29, 2013",
+    "source": "Gary North's Specific Answers",
+    "excerpt": "Bitcoins will never achieve this. It is a mania going up. It will be a mania coming down. It will not increase the division of labor, because people will recognize it as having been a Ponzi scheme, and they will not again buy it. They will not use it in exchange. Companies will not sell goods and services based on Bitcoins. Bitcoins have to have stable purchasing power if they are to serve as money, and they will never, ever achieve stable purchasing power.",
+    "price": "$1065.36",
+    "link": "http://www.garynorth.com/public/11828.cfm",
+    "waybacklink": "https://web.archive.org/web/20131201174014/http://www.garynorth.com/public/11828.cfm",
+    "slug": "gary-north"
+  },
 	{
 		"name": "Matthew Yglesias",
 		"title": "Executive Editor, Vox",
@@ -168,6 +204,18 @@
     "waybacklink": "https://web.archive.org/web/20131219092133/http://www.antipope.org/charlie/blog-static/2013/12/why-i-want-bitcoin-to-die-in-a.html",
 		"slug": "charlie-stross"
   },
+  {
+    "name": "Edward Hadas",
+    "title": "Economics Editor, Reuters",
+    "article": "Bitcoin Mania Heads Into the Endgame",
+    "date": "December 18, 2013",
+    "source": "NY Times Dealbook",
+    "excerpt": "The electronic pseudocurrency has had a good run. Ideologues, speculators and scammers enjoyed the fun while it lasted. But now that the authorities are taking notice, the price has much further to fall.",
+    "price": "$527.76",
+    "link": "http://dealbook.nytimes.com/2013/12/18/bitcoin-mania-heads-into-the-endgame/",
+    "waybacklink": "https://web.archive.org/web/20131218172143/http://dealbook.nytimes.com/2013/12/18/bitcoin-mania-heads-into-the-endgame/",
+    "slug": "edward-hadas"
+  },
 	{
     "name": "Brad DeLong",
     "title": "Professor of Economics, U.C. Berkeley",
@@ -204,6 +252,30 @@
 		"waybacklink": "https://web.archive.org/web/20140117082757/http://www.theglobeandmail.com/try-it-now/?articleId=16327155",
 		"slug": "lisa-kramer"
 	},
+  {
+    "name": "Jamie Dimon",
+    "title": "President & CEO, JPMorgan Chase",
+    "article": "Dimon Disses Bitcoin, and Bitcoiners Diss Back",
+    "date": "January 23, 2014",
+    "source": "WSJ MoneyBeat",
+    "excerpt": "\"It’s a terrible store of value,\" Mr. Dimon said in <a href='http://video.cnbc.com/gallery/?video=3000238715'>an interview with CNBC</a>. \"It could be replicated over and over.\"",
+    "price": "$811.40",
+    "link": "http://blogs.wsj.com/moneybeat/2014/01/23/dimon-disses-bitcoin-and-bitcoiners-diss-back/",
+    "waybacklink": "https://web.archive.org/web/20140329172053/http://blogs.wsj.com/moneybeat/2014/01/23/dimon-disses-bitcoin-and-bitcoiners-diss-back/",
+    "slug": "jamie-dimon"
+  },
+  {
+    "name": "Paul Singer",
+    "title": "CEO, Elliott Management Corporation",
+    "article": "Paul Singer: Bitcoin over gold? Are you crazy?!",
+    "date": "January 29, 2014",
+    "source": "CNBC",
+    "excerpt": "There is no more reason to believe that bitcoin will stand the test of time than that governments will protect the value of government-created money, although bitcoin is newer and we always look at babies with hope.",
+    "price": "$794.65",
+    "link": "http://www.cnbc.com/id/101370047",
+    "waybacklink": "https://web.archive.org/web/20140130133956/http://www.cnbc.com/id/101370047",
+    "slug": "paul-singer"
+  },
 	{
 		"name": "Robert J. Shiller",
 		"title": "Nobel Prize-winning Economist",
@@ -214,7 +286,30 @@
 		"price": "$560.18",
 		"link": "http://www.nytimes.com/2014/03/02/business/in-search-of-a-stable-electronic-currency.html",
 		"waybacklink": "http://web.archive.org/web/20140301165850/http://www.nytimes.com/2014/03/02/business/in-search-of-a-stable-electronic-currency.html",
-		"slug": "robert-shiller"
-	}
-	]
+		"slug": "robert-j-shiller"
+	},
+  {
+    "name": "Nouriel Roubini",
+    "title": "Professor of Economics, New York University",
+    "article": "",
+    "date": "March 9, 2014",
+    "source": "Twitter",
+    "excerpt": "",
+    "price": "$637.38",
+    "link": "https://twitter.com/Nouriel/statuses/442721938054868992, https://twitter.com/Nouriel/statuses/442723134693969920, https://twitter.com/Nouriel/statuses/442724222239277057, https://twitter.com/Nouriel/statuses/442725037289005056, https://twitter.com/Nouriel/statuses/442725510423248897, https://twitter.com/Nouriel/statuses/442754188192538624",
+    "waybacklink": "",
+    "slug": "nouriel-roubini"
+  },
+  {
+    "name": "Warren Buffett",
+    "title": "Chairman & CEO, Berkshire Hathaway",
+    "article": "Buffett: ‘Stay Away’ From Bitcoin",
+    "date": "March 14, 2014",
+    "source": "WSJ MoneyBeat",
+    "excerpt": "\"Stay away from it,\" he said, according to a transcript. \"It’s a mirage basically.\"",
+    "price": "$634.10",
+    "link": "http://blogs.wsj.com/moneybeat/2014/03/14/buffett-stay-away-from-bitcoin/",
+    "waybacklink": "https://web.archive.org/web/20140315074917/http://blogs.wsj.com/moneybeat/2014/03/14/buffett-stay-away-from-bitcoin/",
+    "slug": "warren-buffett"
+  }]
 }
