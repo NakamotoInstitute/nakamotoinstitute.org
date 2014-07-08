@@ -269,6 +269,7 @@ def atomfeed():
 @cache.cached(timeout=900)
 @app.route('/the-skeptics/')
 def skeptics():
+    app.logger.info( 'IP: "' + str(request.remote_addr) + '", page:"the-skeptics"')
     skeptics = Skeptic.query.order_by(Skeptic.date).all()
     return render_template('the-skeptics.html', skeptics=skeptics)
 
