@@ -1,6 +1,12 @@
 {
 	"authors": [
 	{
+		"first": "Peter",
+		"middle": "",
+		"last": "Dushenski",
+		"slug": "peter-dushenski"
+	},
+	{
 		"first": "Satoshi",
 		"middle": "",
 		"last": "Nakamoto",
