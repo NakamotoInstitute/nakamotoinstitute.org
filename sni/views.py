@@ -232,7 +232,7 @@ def slugview(slug):
 def blog():
     app.logger.info( 'IP: "' + str(request.remote_addr) + '", page:"mempool"')
 
-    bps = BlogPost.query.order_by(desc(BlogPost.date)).all()
+    bps = BlogPost.query.order_by(desc(BlogPost.added)).all()
     return render_template('blog.html', bps=bps)
 
 @cache.cached(timeout=900)

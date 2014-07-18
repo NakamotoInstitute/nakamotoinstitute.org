@@ -122,6 +122,7 @@ for i in range(0,len(blogps['blogposts'])):
 		title=blogps['blogposts'][i]['title'],
 		author=[get(Author,slug=blogps['blogposts'][i]['author'])],
 		date=parser.parse(blogps['blogposts'][i]['date']),
+		added=parser.parse(blogps['blogposts'][i]['added']),
 		slug=blogps['blogposts'][i]['slug'],
 		excerpt=blogps['blogposts'][i]['excerpt'])
 	db.session.add(blogpost)
