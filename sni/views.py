@@ -31,7 +31,7 @@ def satoshi_index():
 def index():
 
     app.logger.info( 'IP: "' + str(request.remote_addr) + '", page:"Index"')
-    bp = BlogPost.query.order_by(desc(BlogPost.date)).first()
+    bp = BlogPost.query.order_by(desc(BlogPost.added)).first()
     return render_template("index.html", bp=bp)
 
 @app.route('/about/', methods = ["GET"])
