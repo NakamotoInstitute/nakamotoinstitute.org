@@ -31,7 +31,7 @@ def satoshi_index():
 def index():
 
     app.logger.info( 'IP: "' + str(request.remote_addr) + '", page:"Index"')
-    bp = BlogPost.query.order_by(desc(BlogPost.date)).first()
+    bp = BlogPost.query.order_by(desc(BlogPost.added)).first()
     return render_template("index.html", bp=bp)
 
 @app.route('/about/', methods = ["GET"])
@@ -232,7 +232,7 @@ def slugview(slug):
 def blog():
     app.logger.info( 'IP: "' + str(request.remote_addr) + '", page:"mempool"')
 
-    bps = BlogPost.query.order_by(desc(BlogPost.date)).all()
+    bps = BlogPost.query.order_by(desc(BlogPost.added)).all()
     return render_template('blog.html', bps=bps)
 
 @cache.cached(timeout=900)
@@ -254,7 +254,7 @@ def atomfeed():
     app.logger.info( 'IP: "' + str(request.remote_addr) + '", page:"atomfeed"')
     feed = AtomFeed('Mempool | Satoshi Nakamoto Institute',
                     feed_url=request.url, url=request.url_root)
-    articles = BlogPost.query.order_by(desc(BlogPost.date)).all()
+    articles = BlogPost.query.order_by(desc(BlogPost.added)).all()
     for article in articles:
         articleurl = url_for('blogpost', slug=article.slug, _external=True)
         content = article.excerpt + "<br><br><a href='"+articleurl+"'>Read more...</a>"
@@ -262,7 +262,7 @@ def atomfeed():
                  content_type='html',
                  author=article.author[0].first + ' ' + article.author[0].last,
                  url=articleurl,
-                 updated=article.date,
+                 updated=article.added,
                  published=article.date)
     return feed.get_response()
 

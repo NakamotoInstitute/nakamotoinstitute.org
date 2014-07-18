@@ -98,6 +98,7 @@ class BlogPost(db.Model):
  		secondary = blogauthors,
  		backref=db.backref('blogposts', lazy='dynamic'))
 	date = db.Column(db.Date)
+	added = db.Column(db.Date)
 	slug = db.Column(db.String())
 	excerpt = db.Column(db.String())
 
