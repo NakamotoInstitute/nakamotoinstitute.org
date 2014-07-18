@@ -1,19 +1,26 @@
 {
   "blogposts": [
     {
+        "title": "Bitcoin: Killer of Nietzschian Nihilism",
+        "author": "peter-dushenski",
+        "date": "July 4, 2014",
+        "slug": "bitcoin-killer-of-nietzschian-nihilism",
+        "excerpt": "Bitcoin will overtake weak currencies like the dollar through speculative attacks and currency crises, not through the careful evaluation of tech journalists and 'mainstream consumers'."
+    },
+    {
         "title": "Speculative Attack",
         "author": "pierre-rochard",
         "date": "July 4, 2014",
         "slug": "speculative-attack",
         "excerpt": "Bitcoin will overtake weak currencies like the dollar through speculative attacks and currency crises, not through the careful evaluation of tech journalists and 'mainstream consumers'."
     },
-{
-    "title": "Bitcoin's Shroud of Subtlety and Allure",
-    "author": "daniel-krawisz",
-    "date": "June 29, 2014",
-    "slug": "bitcoins-shroud-of-subtlety-and-allure",
-    "excerpt": "Potential Bitcoin attackers are in a Prisoner's Dilemma. In the same way that the people cannot easily rebel against the king owing to a lack of coordination on their part, governments cannot rebel against Bitcoin for the same reason. The government puts the people in a Prisoner's Dilemma against one another, and Bitcoin does the same to government agents."
-},
+    {
+        "title": "Bitcoin's Shroud of Subtlety and Allure",
+        "author": "daniel-krawisz",
+        "date": "June 29, 2014",
+        "slug": "bitcoins-shroud-of-subtlety-and-allure",
+        "excerpt": "Potential Bitcoin attackers are in a Prisoner's Dilemma. In the same way that the people cannot easily rebel against the king owing to a lack of coordination on their part, governments cannot rebel against Bitcoin for the same reason. The government puts the people in a Prisoner's Dilemma against one another, and Bitcoin does the same to government agents."
+    },
     {
         "title": "Bitcoin's Rugged Individualism",
         "author": "daniel-krawisz",
