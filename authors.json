@@ -1,6 +1,12 @@
 {
 	"authors": [
 	{
+		"first": "Mircea",
+		"middle": "",
+		"last": "Popescu",
+		"slug": "mircea-popescu"
+	},
+	{
 		"first": "Peter",
 		"middle": "",
 		"last": "Dushenski",
