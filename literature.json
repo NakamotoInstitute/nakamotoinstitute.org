@@ -28,15 +28,6 @@
         "doctype": "essay"
     },
     {
-        "title": "GPG Contracts",
-        "author": ["mircea-popescu"],
-        "date": "October 24, 2012",
-        "slug": "gpg-contracts",
-        "formats": ["html"],
-        "categories": ["economics", "cryptography", "bitcoin"],
-        "doctype": "essay"
-    },
-    {
         "title": "b-money",
         "author": ["wei-dai"],
         "date": "November 1998",
@@ -511,6 +502,15 @@
         "slug": "from-crossbows-to-cryptography",
         "formats": ["pdf"],
         "categories": ["cryptography"],
+        "doctype": "essay"
+    },
+    {
+        "title": "GPG Contracts",
+        "author": ["mircea-popescu"],
+        "date": "October 24, 2012",
+        "slug": "gpg-contracts",
+        "formats": ["html"],
+        "categories": ["economics", "cryptography", "bitcoin"],
         "doctype": "essay"
     }]
 }
