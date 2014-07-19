@@ -503,5 +503,14 @@
         "formats": ["pdf"],
         "categories": ["cryptography"],
         "doctype": "essay"
+    },
+    {
+        "title": "GPG Contracts",
+        "author": ["mircea-popescu"],
+        "date": "October 24, 2012",
+        "slug": "gpg-contracts",
+        "formats": ["html"],
+        "categories": ["economics", "cryptography", "bitcoin"],
+        "doctype": "essay"
     }]
 }
