@@ -36,8 +36,12 @@ cache = Cache(app,config={'CACHE_TYPE': 'simple'})
 if not app.debug:
     import logging
     from logging.handlers import RotatingFileHandler
-    file_handler = RotatingFileHandler('tmp/sni.log', 'a', 10 * 1024 * 1024, 100)
-    file_handler.setFormatter(logging.Formatter('%(asctime)s %(levelname)s: %(message)s'))
+    file_handler = RotatingFileHandler('tmp/snilog.csv',
+                                      'a',
+                                      10 * 1024 * 1024,
+                                      100)
+
+    file_handler.setFormatter(logging.Formatter('%(asctime)s, %(levelname)s, %(message)s'))
     app.logger.setLevel(logging.INFO)
     file_handler.setLevel(logging.INFO)
     app.logger.addHandler(file_handler)
@@ -45,7 +49,3 @@ if not app.debug:
 
 
 from sni import views, models
-
-
-
-
