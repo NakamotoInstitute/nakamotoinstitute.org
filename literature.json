@@ -512,5 +512,14 @@
         "formats": ["html"],
         "categories": ["economics", "cryptography", "bitcoin"],
         "doctype": "essay"
+    },
+    {
+        "title": "Financial Cryptography in 7 Layers",
+        "author": ["ian-grigg"],
+        "date": "2000",
+        "slug": "financial-cryptography-in-7-layers",
+        "formats": ["html"],
+        "categories": ["economics", "cryptography"],
+        "doctype": "essay"
     }]
 }
