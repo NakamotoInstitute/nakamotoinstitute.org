@@ -147,7 +147,7 @@
     Here, we choose a descriptive presentation that traverses bottom-to-top. Later, an <a href="#example">example</a> is presented in the reverse order, top-to-bottom. 
   </p>
 
-  <h2>Cryptography</h2>
+  <h3>Cryptography</h3>
 
   <p>
     At the bottom is Cryptography<sup><a href="#fn7" id="ref7">[7]</a></sup>. To some extent, the pure science domain of cryptography solves problems in a mathematical sense only, but it delivers useful properties, including:
@@ -163,7 +163,7 @@
     Cryptography also can solve special problems, when correctly formulated<sup><a href="#fn8" id="ref8">[8]</a></sup>. For example, how can Alice sign a statement of Bob's without being aware of the contents of the statement<sup><a href="#fn9" id="ref9">[9]</a></sup>?
   </p>
 
-  <h2>Software Engineering</h2>
+  <h3>Software Engineering</h3>
 
   <p>
     It takes Software Engineering, layer 2, to usefully benefit from the properties of cryptography. We draw from database theory (atomicity, transactional integrity and recovery) and networking theory (feedback and idempotency) in order to add such properties as reliability and robustness in the face of network and nodal unreliability, or, designed unavailability such as smart cards and handhelds<sup><a href="#fn10" id="ref10">[10]</a><a href="#fn11" id="ref11">[11]</a></sup>.
@@ -173,7 +173,7 @@
     Software engineering provides us with a practical network. We can talk about sending a message across an open network and know that a message will eventually get to the addressee. With the integrity techniques of the previous layer, we can know that the information received by the addressee is as intended by the addressor. By using the specialised sequences of database theory, we can preserve the integrity of the messages over time, in the face of software and hardware failure. 
   </p>
 
-  <h2>Rights</h2>
+  <h3>Rights</h3>
 
   <p>
     With both cryptography and software engineering providing a network upon which we can rely, we can think about distributing messages that are designed to Financial Cryptographic purposes<sup><a href="#fn12" id="ref12">[12]</a></sup>. In the Rights layer, we are looking for a protocol that provides a user with control over assets, in an unequivocable, determinable fashion<sup><a href="#fn13" id="ref13">[13]</a></sup>. Techniques aimed at achieving this include:
@@ -215,7 +215,7 @@
     although this is not an exclusive list<sup><a href="#fn19" id="ref19">[19]</a><a href="#fn20" id="ref20">[20]</a></sup>.
   </p>
 
-  <h2>Accounting</h2>
+  <h3>Accounting</h3>
 
   <p>
     The previous layers provide methods reliable enough to be used for passing something of value, which we call rights, over an otherwise unsuitable network. Now, we need the techniques of Accounting in order to store and manage rights over time, To financial cryptographers, accounting is a mundane field, and it has perhaps been attractive to ignore it, but experience shows that systems without conventional accounting features tend to lose the value entrusted to them.
@@ -229,7 +229,7 @@
     The above layer, Rights, defines what needs to be accounted for. As an example, the most basic method would be token money. An accounting model based on tokens or coins would need a simple store of coins for the client. The server would be more complex, requiring an account for unissued value, a float account, and a double spend database that matches the float amount<sup><a href="#fn22" id="ref22">[22]</a></sup>.
   </p>
 
-  <h2>Governance</h2>
+  <h3>Governance</h3>
 
   <p>
     Once there is a guarantee that the digital amounts &ndash; the accounting numbers &ndash; under management can be securely passed over the net, and stored on nodes safely, we need to cast our view wider to threats outside the technical domain<sup><a href="#fn23" id="ref23">[23]</a></sup>. 
@@ -250,6 +250,429 @@
 
     <li>
       Separation of powers: routine management from value creation, authentication from accounting, systems from marketing<sup><a href="#fn25" id="ref25">[25]</a><a href="#fn26" id="ref26">[26]</a><a href="#fn27" id="ref27">[27]</a></sup>.
+    </li>
+
+    <li>
+      Dispute resolution procedures such as mediation, arbitration, ombudsmen, judiciary, and force<sup><a href="#fn28" id="ref28">[28]</a></sup>.
+    </li>
+
+    <li>
+      Use of third parties for some part of the protocol, such as creation of value within a closed system.
+    </li>
+
+    <li>
+      Auditing techniques that permit external monitoring of performance and assets<sup><a href="#fn29" id="ref29">[29]</a></sup>.
+    </li>
+
+    <li>
+      Reports generation to keep information flowing to interested parties. For example, user-driven display of the reserved funds against which a currency is backed<sup><a href="#fn30" id="ref30">[30]</a></sup>.
+    </li>
+  </ul>
+
+  <p>
+    As technologists, we strive to make the protocols that we build as secure and self-sustaining as possible; our art is expressed in pushing problem resolution into the lower layers. This is an ideal, however, to which we can only aspire; there will always be some value somewhere that must be protected by non-protocol means.
+  </p>
+
+  <p>
+    Our task is made easier if we recognise the existance of this gap in the technological armoury, and seek to fill it with the tools of Governance. The design of a system is often ultimately expressed in a compromise between Governance and the lower layers: what we can do in the lower layers, we do; and what we cannot is cleaned up in Governance<sup><a href="#fn31" id="ref31">[31]</a></sup>.
+  </p>
+
+  <h3>Value</h3>
+
+  <p>
+    With a system that provides internal and external stability and security, we are now in a position to assign value to the structure. By value, we mean the unit of account, the meaning of that unit, and the range of numbers that are applicable.
+  </p>
+
+  <p>
+    For example, a Value layer might ascribe any one of the following to the virginal numbers of lower layers:
+  </p>
+
+  <ul>
+    <li>
+      US dollars with a transaction range of 25 cents up to 500 dollars<sup><a href="#fn32" id="ref32">[32]</a></sup>.
+    </li>
+
+    <li>
+      Bonds and stock, representing tradeable assets for the purpose of raising capital.
+    </li>
+
+    <li>
+      Loyalty Points that can be awarded for purchase of goods.
+    </li>
+
+    <li>
+      Public goods such as tonnes of fish, or of public bads such as tonnes of pollution<sup><a href="#fn33" id="ref33">[33]</a><a href="#fn34" id="ref34">[34]</a></sup>.
+    </li>
+
+    <li>
+      Shares in virtual projects.
+    </li>
+
+    <li>
+      Funny money, being internal money for corporate groups.
+    </li>
+  </ul>
+
+  <p>
+    As the software is somewhat unconcerned about this decision, we could just as easily used the software for any other value &ndash; but the business needs to harmonise the security and cost implications.
+  </p>
+
+  <p>
+    We might also call this the Contract layer, as any value in electronic form is an agreement between the holder and the owner<sup><a href="#fn35" id="ref35">[35]</a></sup>. It is here that we design the contract that formalises the agreement between an Issuer and a user.
+  </p>
+
+  <h3>Finance</h3>
+
+  <p>
+    Finally, on top of the value layer, which provides a structure for financial transactions, we can build our application. As we are concerned with Financial Cryptography, it is convenient to call this last layer the Finance layer. Here, we build an application that adds financial meaning to our designs. 
+  </p>
+
+  <p>
+    In the Finance layer, we construct any and all applications that might readily be useful to users. For example,
+  </p>
+
+  <ul>
+    <li>
+      Retail trading involving the purchase of goods<sup><a href="#fn36" id="ref36">[36]</a></sup>.
+    </li>
+
+    <li>
+      Investment trading of securities<sup><a href="#fn37" id="ref37">[37]</a></sup>.
+    </li>
+
+    <li>
+      Loyalty systems and Gift systems to encourage repeat business but not to necessarily replace existing methods of payment<sup><a href="#fn38" id="ref38">[38]</a></sup>.
+    </li>
+    
+    <li>
+      Markets for the fair allocation of limited public goods, such as depletable fishing zones or pollution<sup><a href="#fn39" id="ref39">[39]</a></sup>.
+    </li>
+
+    <li>
+      Intermediation of Labour markets<sup><a href="#fn40" id="ref40">[40]</a></sup>.
+    </li>
+
+    <li>
+      Closed or limited purpose systems such as shareware sales or corporate group accounting systems.
+    </li>
+  </ul>
+
+  <p>
+    And many more.
+  </p>
+
+  <hr>
+
+  <h2>An Example &ndash; The Ricardo System</h2>
+
+  <p>
+    In order to see the model in its descriptive role, I present an example, starting from the Finance layer and working down, by following the roadmap of requirements.
+  </p>
+
+  <p>
+    In practice, the model is not a design methodology for setting and mapping requirements, but can be used to reverse-engineer an existing design, for the purposes of presentation and discussion of the mutually agreed contract between the builders and the stakeholders. The following description reflects such a process.
+  </p>
+
+  <h3>Finance</h3>
+
+  <p>
+    <a href="http://www.systemics.com/">Systemics</a>, a company specialising in Financial Cryptography, built a system to trade financial securities<sup><a href="#fn41" id="ref41">[41]</a></sup>. The Ricardo system, as an application, required clients and servers to maintain securities, and they communicated using a value system suitable to manage securities and cash<sup><a href="#fn42" id="ref42">[42]</a></sup>. 
+  </p>
+
+  <p>
+    As trials evolved into experience, and strategic analysis of the securities industry evolved into appreciation, if not wisdom, the following primary requirements were built up.
+  </p>
+
+  <ul>
+    <li><strong>Suitable for all securities,</strong></li>
+
+    <li><strong>Cheap,</strong></li>
+
+    <li><strong>Fair to all parties.</strong></li>
+  </ul>
+
+  <p>
+    These led to many subsidiary requirements:
+  </p>
+
+  <ul>
+    <li>
+      There must be no arbitrary limits on the activities of parties.
+    </li>
+
+    <li>
+      Arbitrary amounts of value to be managed. 
+    </li>
+
+    <li>
+      All can issue, trade and redeem securities.
+    </li>
+
+    <li>
+      "nothing but net."
+    </li>
+
+    <li>
+      Secure.
+    </li>
+
+    <li>
+      Real Time Gross Settlement, or RTGS.
+    </li>
+
+    <li>
+      Minimise disputes, by eliminating failures / RTGS.
+    </li>
+
+    <li>
+      Privacy, competition both help to keep cost down.
+    </li>
+  </ul>
+
+  <p>
+    The following discussion concentrates on the value architecture of the Ricardo system built by Systemics, rather than the trading aspects. However, experience shows that trading becomes a tractable problem if the value architecture is solid.
+  </p>
+
+  <h3>Value</h3>
+
+  <p>
+    The requirements of the Finance layer result in a derivative requirement for a Value architecture, amongst other things. This Value architecture follows directly after the Finance layer, as the former defines the scope of the security requirements for the remaining layers.
+  </p>
+
+  <p>
+    We developed a notion of instruments as follows:
+  </p>
+
+  <ul>
+    <li>Definition of Securities is broad:</li>
+
+    <ul>
+      <li>From small to very large value.</li>
+      <li>Extreme flexibility in design of instruments.</li>
+    </ul>
+  </ul>
+
+  <ul>
+    <li>Fair. The system should:</li>
+
+    <ul>
+      <li>protect individual information, but</li>
+      <li>reveal aggregate information to permit user auditing.</li>
+      <li>Especially, it should reveal changes in assets.</li>
+    </ul>
+  </ul>
+
+  <ul>
+    <li>Cheap to operate:</li>
+
+    <ul>
+      <li>Full auditability in the event of disputes.</li>
+      <li>No permission is required to participate.</li>
+      <li>No assumptions are permitted with respect to the use of law or physical force (i.e., cannot rely on laws that "disallow" certain activity or "enforce" certain contracts).</li>
+    </ul>
+  </ul>
+
+  <p>
+    To meet many of these requirements, the notion of a contract for value was developed<sup><a href="#fn43" id="ref43">[43]</a></sup>. This document, which we call a Ricardian contract, documents an agreement between the holder of a security and the issuer of that security, and provides for the flexibility requirement by allowing many and arbitrary clauses to be included. 
+  </p>
+
+  <p>
+    It is both program- and user- readable, and is signed by the Issuer of the instrument as a binding agreement for any holder of units of that issue. By having a strong basis to determine the nature of the contract, in both human and program terms, we support the auditability requirement, and we can clearly identify the regime for resolution of disputes.
+  </p>
+
+  <p>
+    Once set in stone with a digital signature, an identifier can be allocated, leading to efficient description in packets. Thus, this invention requires two things of lower layers &ndash; a signature form and a unique document identifier &ndash; which are addressed below. 
+  </p>
+
+  <h3>Governance</h3>
+
+  <p>
+    Once the Value context is defined, indicating the size and nature of instruments, we can address the Governance issues of payment systems and trading.
+  </p>
+
+  <p>
+    These are substantially complex<sup><a href="#fn44" id="ref44">[44]</a></sup>. In order to preserve systems intact in the presence of active fraud in the non-technical domain, many disclosure and informational duties abound. In the Ricardo system, we address the governance layer in three main ways:
+  </p>
+
+  <ul>
+    <li>
+      <p>
+        <strong>Static Governance:</strong> persistance and availability of contract.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <strong>Structural Governance:</strong> separation of concerns and ensuring that reliable parties are employed to carry out singular elements of the protocol.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <strong>Dynamic Governance:</strong> real time auditing of the balance sheet and other key values.
+      </p>
+    </li>
+  </ul>
+
+  <p>
+    Each of these is discussed below<sup><a href="#fn45" id="ref45">[45]</a></sup>.
+  </p>
+
+  <h4>Static Governance</h4>
+
+  <p>
+    In static governance, we ensure that the user has the contract, and that all concerned know that the user has the contract<sup><a href="#fn46" id="ref46">[46]</a></sup>.
+  </p>
+
+  <p>
+    In order to ensure that the Ricardian contract is always present and available to the user, and is continuously binding to the Issuer, we take the message digest of the document and use that message digest as the identifier of the instrument<sup><a href="#fn47" id="ref47">[47]</a></sup>.
+  </p>
+
+  <p>
+    Consider a message digest, for example, <code>9c7c9e7bb564224977aea8674623a37407b8f6ee</code> being a large number of bits encoded in hexadecimal. The user cannot meaningfully interpret this string of apparently random information, so the software (and thus, the software engineer) is more or less forced to maintain a database that describes what the message digest represents. As the contract is readable by software, it makes a superior source of data than any other (such as an intermediate database that holds the contents) and thus we can reasonably assume, to the extent that the software can, that the user has the full contract available<sup><a href="#fn48" id="ref48">[48]</a></sup>.
+  </p>
+
+  <p>
+    The system will thus ensure that, to all practical intent, the user has the contract. This provides two cost savings, limiting both on-going support and the likelihood of litigation<sup><a href="#fn49" id="ref49">[49]</a></sup>.
+  </p>
+
+  <h4>Structural Governance</h4>
+
+  <p>
+    Within structural governance, we consider the question of insider fraud, the theft of both digital value within the Financial Cryptography system and of any physical value that underlies the virtual value managed by the system.
+  </p>
+
+  <p>
+    With any payment system, there is an ability to create new assets, or misdirect existing assets, all with no more work than a few button pushes. To address this, we use the approach of <em>separation of concerns</em> to address the agency problem of holding owners' assets, but protecting them from internal attack. This problem is normally handled by separating out management of day-to-day assets with the creation of assets in the system, and increasing the work required for any fraudulent transactions. 
+  </p>
+
+  <p>
+    The general schema that is advised to Issuers is as follows<sup><a href="#fn50" id="ref50">[50]</a></sup>. In order to limit the creation of value, for each issuance, a special account is designated as <em>the mint</em>, or the creator of value. This account is placed in the hands of a reliable professional source such as an accountant or lawyer, who will hopefully only have an interest in using the account under the probity of the governance regime. 
+  </p>
+
+  <p>
+    Then, a manager account is designated that receives any new float from the mint, and also returns any redemptions.
+  </p>
+
+  <p>
+    It thus becomes the Issuer's responsibility to ensure that the mint account is rarely used, and then with full authorisation and wide scrutiny. Meanwhile, the manager's account is regularly used, but holds only limited amounts of value for day to day requirements.
+  </p>
+
+  <p>
+    The above are general techniques that are supported within the Ricardo system, but are as applicable elsewhere. Certain features get specific support, such as value caps on accounts and target account limitatons.
+  </p>
+
+  <p>
+    Note how these protection techniques that we use are partly outside the domain of the technical system. Rather than being outside scope, their discussion here is simply a reflection of the claims that the total security of the system is a holistic issue, and governance is the layer where we solve the security challenges that remain after we have attempted to solve as many as possible in the lower layers.
+  </p>
+
+  <h4>Dynamic Governance</h4>
+
+  <p>
+    Finally, in dynamic governance, we provide for monitoring of key values by the user community, and thus share the auditing burden. These values can be audited in an issued currency within the Ricardo system:
+  </p>
+
+  <ul>
+    <li>
+      <p>
+         Total value of digital float: the value issued by the mint account.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        Amount currently held in the issuance manager's account. From this account is drawn new value to be sold, or into this account, old user value is redeemed.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        The balance sheet of the currency, which is effectively the above numbers, and the total of user value outstanding. As a balance sheet, the total float, minus the manager's account, should equal the outstanding users' total value.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        With some limitations, it is useful to provide summaries of movements such as bought and sold values through the manager's account, the mint account, and number of user accounts.
+      </p>
+    </li>
+  </ul>
+
+  <h4>Mirroring the Governance Model</h4>
+
+  <p>
+    It is also worth noting that when a currency is reserved by an underlying asset (for example, if a gold-denominated currency had physical metal escrowed to reserve it) then the above governance features should be mirrored for the reserves.
+  </p>
+
+  <p>
+    That is, to continue the example of gold, there should be separate parties responsible for the ingress and egress of metal into storage, and there should be independent verification of the number of bars currently placed in escrow.
+  </p>
+
+  <h3>Accounting</h3>
+
+  <p>
+    In order to meet the conflicting objectives of privacy and flexibility, Ricardo uses a conventional accounting model with some additional features:
+  </p>
+
+  <ul>
+    <li>
+      <p>
+         Accounts are units of allocation of ownership, and are not identities. A user may create these on demand, and likewise dispose of them. Lower layers must provide some mechanism for these accounts.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        Sub-accounts manage a particular form of value within an account. The sub-account is simply the intersection of ownership authentication (the account) with the value description (the contract).
+      </p>
+    </li>
+
+    <li>
+      <p>
+        Transactions are movements of value from one account to another, within the sub-account of the instrument.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        The backend accounting engine is responsible for guaranteeing that each transaction is atomic and persistant. The result of transaction completion is the issuance of a signed receipt.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        Each transaction settles in real time, as measured by the issuance of the receipt.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        Both backend and client keep a list of receipts as the sub-account.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        In order to meet Governance layer requirements for open auditability, some accounts must present balance sheets on demand, and select accounts must be examinable.
+      </p>
+    </li>
+  </ul>
+
+  <p>
+    Because of the top level requirement for cheapness, the accounting model was designed for complete reliability, right up to the support desk level. It does this by employing a group of non-obvious techniques:
+  </p>
+
+  <ul>
+    <li>
+      <p>
+        the Issuer backend forces the client to maintain the same data, as discussed in the Rights layer, below<sup><a href="#fn51" id="ref51">[51]</a></sup>. This helps to reduce the frequency of the "request for information" support call<sup><a href="#fn52" id="ref52">[52]</a></sup>. 
+      </p>
+    </li>
+
+    <li>
+      <p>
+        A signed request from the user is merely a request for the backend to attempt a transaction, and the backend is at liberty to ignore it [53]. Only the signed receipt is evidence of a transaction [54].
+      </p>
     </li>
   </ul>
 
@@ -434,5 +857,155 @@
         In <a href="http://www.systemics.com/docs/ricardo/issuer/FAQ.html#governance">Ricardo documentation</a>, and also further below in the section on <a href="#structural">Structural Governance</a> I suggest breaking up the system into 5 parties, Owner, Mint, Manager, Users, Operator.&nbsp;<a href="#ref27">↩</a>
       </p>
     </li>
+
+    <li id="fn28">
+      <p>
+        See Jane Kaufman Winn's writings on the validity of current contracts in governance: Jane Kaufman Winn, <a href="http://www.smu.edu/~jwinn/ecouriers.html">Couriers without Luggage: Negotiable Instruments and Digital Signatures</a>, South Carolina Law Review, 1998.&nbsp;<a href="#ref28">↩</a>
+      </p>
+    </li>
+
+    <li id="fn29">
+      <p>
+        See the <a href="http://www.webfunds.org/ricardo/contracts/digigold/">DigiGold Page</a> for an example of a real time report on the currency balance sheet.&nbsp;<a href="#ref29">↩</a>
+      </p>
+    </li>
+
+    <li id="fn30">
+      <p>
+        See the <a href="http://www.e-gold.com/examiner.html">e-gold Examiner</a> for an example of a real time report on reserves.&nbsp;<a href="#ref30">↩</a>
+      </p>
+    </li>
+
+    <li id="fn31">
+      <p>
+        See Jane Kaufman Winn, op cit, for a classic description of the Certificate Authority industry's attempts to clean up a poor security model with an implausible contract.&nbsp;<a href="#ref31">↩</a>
+      </p>
+    </li>
+
+    <li id="fn32">
+      <p>
+        25 cents is a fair minimum for credit cards, due to the cost of these transactions. $500 is a popular upper limit imposed on smart cards by the threat model (actually, it is 500 of the local unit, for some obscure reason).&nbsp;<a href="#ref32">↩</a>
+      </p>
+    </li>
+
+    <li id="fn33">
+      <p>
+        For a description of Individual Transferable Quotas &ndash; ITQs &ndash; describing instruments for quantities of fish stocks, see Policy, <a href="http://www.cis.org.au/Policy/autumn98/aut9804.htm">Fencing the Oceans A Rights-based Approach to Privatising Fisheries</a>, Professor Birgir Runolfsson, Autumn 1998.&nbsp;<a href="#ref33">↩</a>
+      </p>
+    </li>
+
+    <li id="fn34">
+      <p>
+        Ian Brown (ianb <em>at</em> acm <em>dot</em> com) points out that pollution is in fact a public bad.&nbsp;<a href="#ref34">↩</a>
+      </p>
+    </li>
+
+    <li id="fn35">
+      <p>
+        Ian Grigg, <a href="http://www.iang.org/papers/universal_value.html">Universal Value</a>, work in progress. This is introduced later in the example.&nbsp;<a href="#ref35">↩</a>
+      </p>
+    </li>
+
+    <li id="fn36">
+      <p>
+        For example, this was the target application of <a href="http://www.cybercash.com/">Cybercash Inc</a>, First Virtual Inc, and DigiCash BV (now eCash Technologies Inc).&nbsp;<a href="#ref36">↩</a>
+      </p>
+    </li>
+
+    <li id="fn37">
+      <p>
+        <a href="http://www.iang.org/papers/digital_trading.html#e_team">Digital Trading</a>, op cit.&nbsp;<a href="#ref37">↩</a>
+      </p>
+    </li>
+
+    <li id="fn38">
+      <p>
+        For example, see the so-called second wavers: <a href="http://www.beenz.com/">Beenz</a>, <a href="http://www.flooz.com/">Flooz</a>, <a href="http://www.cybergold.com/">Cybergold</a>.&nbsp;<a href="#ref38">↩</a>
+      </p>
+    </li>
+
+    <li id="fn39">
+      <p>
+         See <a href="http://www.cis.org.au/Policy/autumn98/aut9804.htm">Fencing the Oceans</a>, op cit. Whilst not discussed in the article, there are a small number of marketmakers in Iceland that work the thin market in ITQs. For more background on fishing property rights, see <a href="http://www.nextcity.com/EnvironmentProbe/pubs/ev534.htm">The Ecological Implications of Establishing Property Rights in Atlantic Fisheries</a>, Elizabeth Brubaker, April 1996.&nbsp;<a href="#ref39">↩</a>
+      </p>
+    </li>
+
+    <li id="fn40">
+      <p>
+        Ian Grigg and C. Petros, <em><a href="http://www.fc99.ai/">Proceedings of Financial Cryptography</a></em>, <a href="http://www.iang.org/papers/task_market.html">Using Electronic Markets to Achieve Efficient Task Distribution</a>, February 1996.&nbsp;<a href="#ref40">↩</a>
+      </p>
+    </li>
+
+    <li id="fn41">
+      <p>
+        Ian Grigg and Gary Howland designed the Ricardo system in 1996-1997.&nbsp;<a href="#ref41">↩</a>
+      </p>
+    </li>
+
+    <li id="fn42">
+      <p>
+         The Ricardo system is currently in use for a series of metal based currencies managed by <a href="http://www.digigold.net/">DigiGold</a>.&nbsp;<a href="#ref42">↩</a>
+      </p>
+    </li>
+
+    <li id="fn43">
+      <p>
+        Ian Grigg, <em>work in progress</em>, <a href="http://www.iang.org/papers/universal_value.html">Universal Value</a>.&nbsp;<a href="#ref43">↩</a>
+      </p>
+    </li>
+
+    <li id="fn44">
+      <p>
+        Many designs of Financial Cryptography systems have limited Issuers to being banks, which allows the designer to assume away many complications.&nbsp;<a href="#ref44">↩</a>
+      </p>
+    </li>
+
+    <li id="fn45">
+      <p>
+        This section is based upon Ian Grigg, <em>Talk on DigiGold Governance</em>, Financial Cryptography 1999, commercial sessions.&nbsp;<a href="#ref45">↩</a>
+      </p>
+    </li>
+
+    <li id="fn46">
+      <p>
+        The same logic would also imply that the user must have access to dynamic trading information such as prices, but we pass over that here.&nbsp;<a href="#ref46">↩</a>
+      </p>
+    </li>
+
+    <li id="fn47">
+      <p>
+        Having abstracted the contents from the identity of the document by taking a message digest of it, we can discuss value, from payment systems perspective, as being fully and uniquely defined by the message digest. This ensures that the Issuer of the security cannot change the terms of the contract in any way without offering to the user terms for exchange.&nbsp;<a href="#ref47">↩</a>
+      </p>
+    </li>
+
+    <li id="fn48">
+      <p>
+        This also has a secondary effect of shortening the distance between the contract and the software that manages it, thus simplifying the design. However, the prime objective was, and remains, a system where we know that the user has strong access to contract information.&nbsp;<a href="#ref48">↩</a>
+      </p>
+    </li>
+
+    <li id="fn49">
+      <p>
+        Such a scheme might not prevent the software engineer from providing a client application that misrepresents the contract. However, this would be an issue between the user and the software supplier, rather than the system itself, especially, the operators of the system and issuers of securities would clearly not be at fault.&nbsp;<a href="#ref49">↩</a>
+      </p>
+    </li>
+
+    <li id="fn50">
+      <p>
+        This is described more fully in a FAQ question on <a href="http://www.systemics.com/docs/ricardo/issuer/FAQ.html#governance">Structural Governance</a>&nbsp;<a href="#ref50">↩</a>
+      </p>
+    </li>
+
+    <li id="fn51">
+      <p>
+        In order to force the client to maintain the data, the SOX mail facility, introduced in layer 3, requires signatures for all important documents such as receipts.&nbsp;<a href="#ref51">↩</a>
+      </p>
+    </li>
+
+    <li id="fn52">
+      <p>
+        Or, more correctly, to treat such a support call as a bug, in that the client is not making the information available.&nbsp;<a href="#ref52">↩</a>
+      </p>
+    </li>
   </ol>
-{% endblock %} 
+{% endblock %}
