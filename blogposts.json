@@ -1,6 +1,14 @@
 {
   "blogposts": [
     {
+        "title": "Everyone's a Scammer",
+        "author": "michael-goldstein",
+        "date": "September 11, 2014",
+        "added": "September 11, 2014",
+        "slug": "everyones-a-scammer",
+        "excerpt": "There is a war going on for your bitcoins, and willpower is your only defense."
+    },
+    {
         "title": "Bitcoin: Killer of Nietzschean Nihilism",
         "author": "peter-dushenski",
         "date": "April 29, 2014",
