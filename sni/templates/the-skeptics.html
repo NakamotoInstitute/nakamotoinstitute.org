@@ -25,7 +25,7 @@ The Skeptics: A Tribute to Bold Assertions | Satoshi Nakamoto Institute
 
   {% for skeptic in skeptics %}
     <hr>
-    <h3 id="#{{skeptic.slug}}">{{skeptic.name}} - {{skeptic.date.strftime('%B %d, %Y')}} ({{skeptic.price}})</h3>
+    <h3 id="{{skeptic.slug}}">{{skeptic.name}} - {{skeptic.date.strftime('%B %d, %Y')}} ({{skeptic.price}})<a href="#{{skeptic.slug}}"><span class="glyphicon glyphicon-link btn-lg"></span></a></h3>
     <p><em>{{skeptic.title}}</em></p>
     {% if skeptic.source == "Twitter" %}
       <p>
