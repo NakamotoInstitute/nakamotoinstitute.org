@@ -1,6 +1,14 @@
 {
   "blogposts": [
     {
+        "title": "Real Crypto-Anarchy Without Anonymity",
+        "author": "oleg-andreev",
+        "date": "December 28, 2013",
+        "added": "October 2, 2014",
+        "slug": "real-crypto-anarchy-without-anonymity",
+        "excerpt": "Bitcoin raises the cost of many kinds of attacks, going far beyond protecting against central banks meddling with money supply."
+    },
+    {
         "title": "Bitcoin Is Great, But It Won’t Fix Our Monkey Brains",
         "author": "andrea-castillo",
         "date": "June 10, 2014",
