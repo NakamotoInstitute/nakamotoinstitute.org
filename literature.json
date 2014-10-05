@@ -521,5 +521,14 @@
         "formats": ["html"],
         "categories": ["economics", "cryptography"],
         "doctype": "essay"
+    },
+    {
+        "title": "The Playdough Protocols",
+        "author": ["nick-szabo"],
+        "date": "2002",
+        "slug": "the-playdough-protocols",
+        "formats": ["html"],
+        "categories": ["cryptography"],
+        "doctype": "essay"
     }]
 }
