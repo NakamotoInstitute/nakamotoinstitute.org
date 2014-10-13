@@ -1,6 +1,24 @@
 {
 	"authors": [
 	{
+		"first": "Mark",
+		"middle": "S.",
+		"last": "Miller",
+		"slug": "mark-s-miller"
+	},
+	{
+		"first": "Chip",
+		"middle": "",
+		"last": "Morningstar",
+		"slug": "chip-morningstar"
+	},
+	{
+		"first": "Bill",
+		"middle": "",
+		"last": "Frantz",
+		"slug": "bill-frantz"
+	},
+	{
 		"first": "Oleg",
 		"middle": "",
 		"last": "Andreev",

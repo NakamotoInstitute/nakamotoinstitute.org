@@ -530,5 +530,14 @@
         "formats": ["html"],
         "categories": ["cryptography"],
         "doctype": "essay"
+    },
+    {
+        "title": "Capability-based Financial Instruments",
+        "author": ["mark-s-miller", "chip-morningstar", "bill-frantz"],
+        "date": "2000",
+        "slug": "capability-based-financial-instruments",
+        "formats": ["pdf"],
+        "categories": ["cryptography", "law"],
+        "doctype": "essay"
     }]
 }
