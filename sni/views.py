@@ -237,7 +237,22 @@ def blogpost(slug):
     bp = BlogPost.query.filter_by(slug=slug).order_by(desc(BlogPost.date)).first()
     if(bp != None):
         app.logger.info(str(request.remote_addr) + ', mempool, ' + slug)
-        return render_template('%s.html' % slug, bp=bp)
+        return render_template('%s.html' % slug, bp=bp, lang='en')
+    else:
+        return redirect(url_for("blog"))
+
+@cache.cached(timeout=900)
+@app.route('/mempool/<string:slug>/<string:lang>/', methods=["GET"])
+def blogposttrans(slug, lang):
+    bp = BlogPost.query.filter_by(slug=slug).order_by(desc(BlogPost.date)).first()
+    languages = bp.languages.split(', ')
+    lang = lang.lower()
+    if(bp != None):
+        if(lang == 'en' or all(lang not in l for l in languages)):
+            return redirect(url_for("blogpost", slug=slug))
+        else:
+            app.logger.info(str(request.remote_addr) + ', mempool, ' + slug+'-lang')
+            return render_template('%s-%s.html' % (slug, lang), bp=bp, lang=lang)
     else:
         return redirect(url_for("blog"))
 

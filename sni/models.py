@@ -101,6 +101,7 @@ class BlogPost(db.Model):
 	added = db.Column(db.Date)
 	slug = db.Column(db.String())
 	excerpt = db.Column(db.String())
+	languages = db.Column(db.String())
 
 	def __repr__(self):
  		return '<BlogPost %r>' % (self.title)

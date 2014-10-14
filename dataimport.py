@@ -124,7 +124,8 @@ for i in range(0,len(blogps['blogposts'])):
 		date=parser.parse(blogps['blogposts'][i]['date']),
 		added=parser.parse(blogps['blogposts'][i]['added']),
 		slug=blogps['blogposts'][i]['slug'],
-		excerpt=blogps['blogposts'][i]['excerpt'])
+		excerpt=blogps['blogposts'][i]['excerpt'],
+		languages=blogps['blogposts'][i]['languages'])
 	db.session.add(blogpost)
 	db.session.commit()
 
