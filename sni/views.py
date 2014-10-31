@@ -6,10 +6,11 @@
 #
 
 from sni import app, db, cache
-from models import Post, Email, Doc, Author, Format, Category, BlogPost, Skeptic
+from models import Post, Email, Doc, Author, Format, Category, BlogPost, Skeptic, DonationAddress
 from flask import render_template, json, url_for, redirect, request
 from sqlalchemy import desc
 from werkzeug.contrib.atom import AtomFeed
+from datetime import datetime
 import re
 
 from jinja2 import evalcontextfilter, Markup, escape
@@ -32,9 +33,12 @@ def satoshi_index():
 
 @app.route('/')
 def index():
+    address = DonationAddress.query.order_by(DonationAddress.lastseen).first()
+    address.lastseen = datetime.now()
+    db.session.commit()
     bp = BlogPost.query.order_by(desc(BlogPost.added)).first()
     app.logger.info(str(request.remote_addr) + ', Index')
-    return render_template("index.html", bp=bp)
+    return render_template("index.html", bp=bp, address=address)
 
 @app.route('/about/', methods = ["GET"])
 def about():
