@@ -33,12 +33,9 @@ def satoshi_index():
 
 @app.route('/')
 def index():
-    address = DonationAddress.query.order_by(DonationAddress.lastseen).first()
-    address.lastseen = datetime.now()
-    db.session.commit()
     bp = BlogPost.query.order_by(desc(BlogPost.added)).first()
     app.logger.info(str(request.remote_addr) + ', Index')
-    return render_template("index.html", bp=bp, address=address)
+    return render_template("index.html", bp=bp)
 
 @app.route('/about/', methods = ["GET"])
 def about():
