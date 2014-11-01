@@ -39,13 +39,13 @@ CSRF_ENABLED = True
 
 8. Install the dependencies using <code>pip install -r requirements.txt</code>.
 
-9. In a Python console run <code>from sni import db</code> and <code>db.create_all()</code>
+9. Run <code>createdb.py</code>
 
 10. Run <code>python dataimport.py</code>. The db will be cleared and re-populated each time you do this.
 
-11. Run <code>python run.py runserver</code> and navigate to sni:5000 in your browser.
+11. [Generate new addresses](http://pacio.li/bitcoind/2014/10/31/how-to-connect-to-bitcoin-cores-json-rpc-api-with-python.html) and import them with <code>python importaddresses.py</code>
 
-12. Migrations are done with [Flask-Migrate](http://flask-migrate.readthedocs.org/en/latest/). You can start enable migrations by running:<br /> <code>python run.py db init</code>, <code>python run.py db migrate</code>, and <code>python run.py db upgrade</code>.
+12. Run <code>python run.py runserver</code> and navigate to sni:5000 in your browser.
 
 
 ## Add a link to "the Skeptics" page
