@@ -10,7 +10,7 @@ from flask.ext.script import Manager
 from flask.ext.migrate import Migrate, MigrateCommand
 from flask.ext.cache import Cache
 import jinja2
-
+from datetime import datetime
 
 app = Flask(__name__)
 app.config.from_object('config')
@@ -32,6 +32,17 @@ manager.add_command('db', MigrateCommand)
 
 cache = Cache(app,config={'CACHE_TYPE': 'simple'})
 
+from models import DonationAddress
+
+@app.context_processor
+def utility_processor():
+    def donation_address():
+        address = DonationAddress.query.order_by(DonationAddress.lastseen).first()
+        address.lastseen = datetime.now()
+        db.session.commit()
+        address = address.address
+        return address
+    return dict(donation_address=donation_address)
 
 if not app.debug:
     import logging

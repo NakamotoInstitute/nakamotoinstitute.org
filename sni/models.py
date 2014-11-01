@@ -118,3 +118,8 @@ class Skeptic(db.Model):
 	link = db.Column(db.String())
 	waybacklink = db.Column(db.String())
 	slug = db.Column(db.String())
+
+
+class DonationAddress(db.Model):
+    address = db.Column(db.String, primary_key = True)
+    lastseen = db.Column(db.DateTime)

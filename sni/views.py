@@ -6,10 +6,11 @@
 #
 
 from sni import app, db, cache
-from models import Post, Email, Doc, Author, Format, Category, BlogPost, Skeptic
+from models import Post, Email, Doc, Author, Format, Category, BlogPost, Skeptic, DonationAddress
 from flask import render_template, json, url_for, redirect, request
 from sqlalchemy import desc
 from werkzeug.contrib.atom import AtomFeed
+from datetime import datetime
 import re
 
 from jinja2 import evalcontextfilter, Markup, escape
