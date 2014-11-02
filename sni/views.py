@@ -248,10 +248,10 @@ def blogpost(slug):
 @app.route('/mempool/<string:slug>/<string:lang>/', methods=["GET"])
 def blogposttrans(slug, lang):
     bp = BlogPost.query.filter_by(slug=slug).order_by(desc(BlogPost.date)).first()
-    languages = bp.languages.split(', ')
     lang = lang.lower()
     if(bp != None):
-        if(lang == 'en' or all(lang not in l for l in languages)):
+        languages = bp.languages.split(', ')
+        if(lang == 'en' or all(lang != l for l in languages)):
             return redirect(url_for("blogpost", slug=slug))
         else:
             app.logger.info(str(request.remote_addr) + ', mempool, ' + slug+'-lang')
