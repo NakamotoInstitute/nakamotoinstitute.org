@@ -539,5 +539,15 @@
         "formats": ["pdf"],
         "categories": ["cryptography", "law"],
         "doctype": "essay"
+    },
+    {
+        "title": "Contracts in Cyberspace",
+        "author": ["david-d-friedman"],
+        "date": "May 4, 2000",
+        "slug": "contracts-in-cyberspace",
+        "formats": ["ext"],
+        "categories": ["cryptography"],
+        "doctype": "essay",
+        "external": "http://www.daviddfriedman.com/Academic/contracts_in_%20cyberspace/contracts_in_cyberspace.htm"
     }]
 }

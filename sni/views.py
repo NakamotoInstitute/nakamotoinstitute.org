@@ -142,6 +142,8 @@ def docinfo(slug):
                 forms += ['txt']
             if form.name == 'unavailable':
                 forms += ['una']
+            if form.name == 'ext':
+                forms += ['ext']
         app.logger.info(str(request.remote_addr) + ', literature, ' + slug)
         return render_template("docinfo.html",doc=doc, forms=forms)
     else:

@@ -48,6 +48,9 @@
               {% if 'txt' in formats[doc.slug] %}
                 <a href="{{url_for('static', filename='docs/' + doc.slug + '.txt')}}">txt</a>
               {%endif%}
+              {% if 'ext' in formats[doc.slug] %}
+                <a href="{{doc.external}}">Link</a>
+              {%endif%}
             </td>
             <td>
             	{% if doc['author']|length == 3 %}

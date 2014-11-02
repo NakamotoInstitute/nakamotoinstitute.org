@@ -87,6 +87,7 @@ class Doc(db.Model):
  		secondary = categories,
  		backref=db.backref('docs', lazy='dynamic'))
  	doctype = db.Column(db.String())
+ 	external = db.Column(db.String())
 
  	def __repr__(self):
  		return '<Doc %r>' % (self.title)

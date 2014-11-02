@@ -93,6 +93,13 @@
       <a href="{{url_for('docview', slug=doc['slug'], format='txt')}}">
         txt
       </a>
+      </br>
+      {% endif %}
+
+      {% if 'ext' in forms %}
+      <a href="{{doc.external}}">
+        External link
+      </a>
       {% endif %}
       </dd>
     </dl>

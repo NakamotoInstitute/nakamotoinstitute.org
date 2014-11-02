@@ -101,6 +101,10 @@ for i in range(0, len(docs['docs'])):
 	dbcat = []
 	for cat in catlist:
 		dbcat += [get_or_create(Category, name=cat)]
+	if 'external' in docs['docs'][i]:
+		ext = docs['docs'][i]['external']
+	else:
+		ext = None
 	doc = Doc(
 		id=i+1,
 		title=docs['docs'][i]['title'],
@@ -109,7 +113,8 @@ for i in range(0, len(docs['docs'])):
 		slug=docs['docs'][i]['slug'],
 		formats=dbformat,
 		categories=dbcat,
-		doctype=docs['docs'][i]['doctype'])
+		doctype=docs['docs'][i]['doctype'],
+		external=ext)
 	db.session.add(doc)
 	db.session.commit()
 
