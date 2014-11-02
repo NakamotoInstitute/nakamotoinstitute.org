@@ -106,13 +106,18 @@ def authors():
 @cache.cached(timeout=900)
 @app.route('/authors/<string:authslug>/', methods=["GET"])
 def author(authslug):
-    if (authslug=='satoshi-nakamoto'):
+    if (authslug.lower()=='satoshi-nakamoto'):
         return redirect(url_for('satoshi_index'))
     author = Author.query.filter_by(slug=authslug).first()
-    mem = author.blogposts.all()
-    lit = author.docs.all()
-    app.logger.info(str(request.remote_addr) + ', authors, ' + authslug)
-    return render_template("author.html", author=author, mem=mem, lit=lit)
+    if (author!=None):
+        mem = author.blogposts.all()
+        lit = author.docs.all()
+        app.logger.info(str(request.remote_addr) + ', authors, ' + authslug)
+        return render_template("author.html", author=author, mem=mem, lit=lit)
+    elif (not authslug.islower()):
+        return redirect(url_for('author', authslug=authslug.lower()))
+    else:
+        return redirect(url_for('index'))
 
 @cache.cached(timeout=900)
 @app.route('/literature/', methods=["GET"])
