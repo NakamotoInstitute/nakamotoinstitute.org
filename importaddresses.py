@@ -4,7 +4,7 @@
 # Licensed under GNU Affero GPL (https://github.com/pierrerochard/SNI-private/blob/master/LICENSE)
 #
 
-import json
+import csv
 from dateutil import parser
 from datetime import datetime
 from sni.models import DonationAddress
@@ -27,11 +27,11 @@ def get_or_create(model, **kwargs):
         instance = model(**kwargs)
         return instance
 
-with open('./addresses.json') as data_file:
-	addresses = json.load(data_file)
+with open('./addresses/addresses.csv') as csvfile:
+	addresses = csv.reader(csvfile)
 	now = datetime.now()
-	for address in addresses['addresses']:
-		address = address['address']
-		record = DonationAddress(address=address, lastseen=now)
+	for address in addresses:
+		print address
+		record = DonationAddress(address=address[0], lastseen=now)
 		db.session.add(record)
 		db.session.commit()

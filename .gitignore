@@ -4,6 +4,7 @@ config.py
 
 tmp/*
 migrations/*
+addresses/*
 
 *.pdf
 
