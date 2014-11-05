@@ -31,7 +31,6 @@ with open('./addresses/addresses.csv') as csvfile:
 	addresses = csv.reader(csvfile)
 	now = datetime.now()
 	for address in addresses:
-		print address
 		record = DonationAddress(address=address[0], lastseen=now)
 		db.session.add(record)
 		db.session.commit()
