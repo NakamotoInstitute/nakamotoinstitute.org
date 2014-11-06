@@ -591,5 +591,14 @@
         "categories": ["cryptography"],
         "doctype": "essay",
         "external": "http://www.daviddfriedman.com/Academic/contracts_in_%20cyberspace/contracts_in_cyberspace.htm"
+    },
+    {
+        "title": "Digital Cash & Privacy",
+        "author": ["hal-finney"],
+        "date": "August 19, 1993",
+        "slug": "digital-cash-and-privacy",
+        "formats": ["html"],
+        "categories": ["cryptography", "Cypherpunk"],
+        "doctype": "essay"
     }]
 }
