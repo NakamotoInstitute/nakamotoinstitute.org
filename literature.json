@@ -600,5 +600,15 @@
         "formats": ["html"],
         "categories": ["cryptography", "Cypherpunk"],
         "doctype": "essay"
+    },
+    {
+        "title": "From Imperial China to Cyberspace: Contracting Without the State",
+        "author": ["david-d-friedman"],
+        "date": "2005",
+        "slug": "from-imperial-china-to-cyberspace",
+        "formats": ["ext"],
+        "categories": ["cryptography"],
+        "doctype": "essay",
+        "external": "http://www.daviddfriedman.com/Academic/Course_Pages/analytical_methods_08/china_to_cyberspace.htm"
     }]
 }
