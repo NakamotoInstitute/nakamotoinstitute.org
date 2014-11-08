@@ -26,6 +26,7 @@ for auth in auths:
 	db.session.commit()
 Doc.query.delete()
 BlogPost.query.delete()
+Skeptic.query.delete()
 
 # return object
 
@@ -100,6 +101,10 @@ for i in range(0, len(docs['docs'])):
 	dbcat = []
 	for cat in catlist:
 		dbcat += [get_or_create(Category, name=cat)]
+	if 'external' in docs['docs'][i]:
+		ext = docs['docs'][i]['external']
+	else:
+		ext = None
 	doc = Doc(
 		id=i+1,
 		title=docs['docs'][i]['title'],
@@ -108,7 +113,8 @@ for i in range(0, len(docs['docs'])):
 		slug=docs['docs'][i]['slug'],
 		formats=dbformat,
 		categories=dbcat,
-		doctype=docs['docs'][i]['doctype'])
+		doctype=docs['docs'][i]['doctype'],
+		external=ext)
 	db.session.add(doc)
 	db.session.commit()
 
@@ -121,7 +127,28 @@ for i in range(0,len(blogps['blogposts'])):
 		title=blogps['blogposts'][i]['title'],
 		author=[get(Author,slug=blogps['blogposts'][i]['author'])],
 		date=parser.parse(blogps['blogposts'][i]['date']),
+		added=parser.parse(blogps['blogposts'][i]['added']),
 		slug=blogps['blogposts'][i]['slug'],
-		excerpt=blogps['blogposts'][i]['excerpt'])
+		excerpt=blogps['blogposts'][i]['excerpt'],
+		languages=blogps['blogposts'][i]['languages'])
 	db.session.add(blogpost)
+	db.session.commit()
+
+with open('./skeptics.json') as data_file:
+	skeptics = json.load(data_file)
+
+for i in range(0,len(skeptics['skeptics'])):
+	skeptic = Skeptic(
+		id = i + 1,
+		name = skeptics['skeptics'][i]['name'],
+		title = skeptics['skeptics'][i]['title'],
+		article = skeptics['skeptics'][i]['article'],
+		date = parser.parse(skeptics['skeptics'][i]['date']),
+		source = skeptics['skeptics'][i]['source'],
+		excerpt = skeptics['skeptics'][i]['excerpt'],
+		price = skeptics['skeptics'][i]['price'],
+		link = skeptics['skeptics'][i]['link'],
+		waybacklink = skeptics['skeptics'][i]['waybacklink'],
+		slug = skeptics['skeptics'][i]['slug']+'-'+str(parser.parse(skeptics['skeptics'][i]['date']))[0:10])
+	db.session.add(skeptic)
 	db.session.commit()

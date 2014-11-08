@@ -2,7 +2,9 @@
 config.py
 .DS_Store
 
+tmp/*
 migrations/*
+addresses/*
 
 *.pdf
 

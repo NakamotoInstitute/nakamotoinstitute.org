@@ -1,0 +1,221 @@
+<!-- extend base layout -->
+{% extends "doc.html" %}
+{% block doc %}
+<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+	<div class="page-header">
+		<h1 class="text-center">
+			GPG Contracts<br><small>Mircea Popescu</small>
+		</h1>
+		<h4 class="text-center">
+			<p>
+				October 24, 2012
+			</p>
+		</h4>
+	</div>
+
+	<p class="text-center">
+		<em>Originally published at <a href="http://trilema.com/2012/gpg-contracts/">Trilema</a></em>
+	</p>
+
+	<p>
+		While economics certainly predate writing and could in principle be recognised in the functioning of simple organisms or even basic physical processes<sup><a href="#i" id="ref-i"  title="Such as the trajectory of a boulder expelled from a volcano, where the kinetic energy is the capital and the trajectory the purchase ; or the life of stars where hydrogen and later helium are the means of production allowing for radiative output.">i</a></sup>, the current formalisation thereof is doubtless an invention of the later Latins<sup><a href="#ii" id="ref-ii"  title="Lombards, Venetians, Genovese and others.">ii</a></sup> reaching us through the mediation of Blackstone&#8217;s Common Law if we speak English, Napoleon&#8217;s Code if we speak most any other European language and so forth. It is quite strictly a white man&#8217;s invention, it is quite strictly European<sup><a href="#iii" id="ref-iii"  title="In a non-Continental sense of that word.">iii</a></sup> and it is a central (or possibly the principal) component of &#8220;Western&#8221; cultural identity. It is, if you will, what makes white people white rather than Asian or African.
+	</p>
+	<p>
+		Consequently it has been imposed with varying degrees of success everywhere the white man went, from the Americas to the Bengal Valley and beyond. American Indians&#8217; vague and mostly philosophically confused notions of ownership (in particular in what pertains to land) were from the very beginning the root of political tension on that continent, and ultimately congealed in &#8220;the Indian question&#8221; as well as the genocidal solution thereof. Africans&#8217; naive representation of economics were in good faith seen as sufficient cause for the inferior social position of that entire race as late as the 18th century. White people have judged all others primarily on the basis of those others&#8217; depth of understanding and craftiness in applying this central mental structure since the very beginning of time, and the Crusades have had more to do with Arabs&#8217; bizarre notions of economy than with any interest of theology or religion.
+	</p>
+
+	<p>
+		We won&#8217;t go into a detailed discussion of that mental structure here, fascinating as it may be<sup><a href="#iv" id="ref-iv"  title="Both for lack of space and because I&#8217;m not being paid quite enough to be holding impromptu doctoral courses on History of Culture.">iv</a></sup>, but instead limit ourselves to observing that the contract is a central piece thereof<sup><a href="#v" id="ref-v"  title="Thrice in one article, take that!">v</a></sup>. This contract, or should we maybe say Contract is quite the term of art<sup><a href="#vi" id="ref-vi"  title="Meaning, something with a fixed and peculiar meaning which is not open to intra-discourse negotiation the way most other words are.">vi</a></sup>, and it means a. an agreement b. reached by willing participants which c. shall be enforced against them.
+	</p>
+
+	<p>
+		A voids any contracts that were obtained &#8220;improperly&#8221;, such as by the use of force, deceit, from participants unable to agree (properly or statutorily in later reinterpretations of this simple equation). B gives grounds for requiring particular forms, and also putting aside purported contracts that don&#8217;t satisfy those forms. Because B you can say &#8220;well if the parties couldn&#8217;t be bothered to at least put their contract in writing you can&#8217;t say they were actually willing to enter a contract&#8221;. Because B you can demand all contracts be registered with some authority or be void, because B you can demand all contracts entered carry a fee paid to some authority or be void and so forth. And finally, C is what interests us in this present article (yes, this has been a five hundred word introduction).
+	</p>
+
+	<p>
+		Traditionally, contracts are instruments of torture. People agree to be married (thus entering into, of course, a Marriage Contract) and then have to suffer their spouse whether they&#8217;d like to or not.
+	</p>
+	<br>
+	<p>
+		<img class="img center-block img-rounded" width="45%" src="/static/img/docs/gpg-contracts/now-i-can-get-fat.jpg">
+	</p>
+	<br>
+
+	<p>
+		This is the entire point of contracts : once entered into they will be enforced, to the detriment of either party (and usually both parties). This view of contracts as instruments into which people enter wilfully and then have to respect whether they want to or not is what gave rise to the organised state as seen in post-Roman Empire Europe, this view of contracts is the proximate cause of the European standing army, the European politics and pretty much all of the history of this corner of the world. Also practically speaking of the entire world altogether, mostly because of the preminence (essentially cultural and flowing from that economical, military and so on) that this particular mental construct bestowed upon its practitioners. I will go as far as to say that the reason men everywhere, from the deserts of rural Egypt to the desolate windblown outskirts of Irkutsk wear suits today as opposed to Iroquis shaman headdresses or Hawaiian stupidskirts whatever those things are called is simply the world domination allowed by and achieved through the Contract. Suitwearer, Contractbearer, Master of the World.
+	</p>
+
+	<p>
+		The problem with this holy institution that has carried us so very far and fed us so very well is that it has costs, and those costs have the unfortunate property that <strong>they mount with use</strong>.
+	</p>
+
+	<p>
+		I&#8217;m not sure the full horror of the curse embodied in that bolded phrase is directly obvious, so let&#8217;s dwell. The first contract ever entered into has the friction cost of explaining to everyone concerned or somehow coming into contact with its workings wtf a contract is and how it&#8217;s to be used. These costs may well have been significant, but they were also limited (as opposed to infinite). Subsequent contracts cost less mostly because they&#8217;d build on already sunk-in costs. And less, and less. Unseen is the hidden seed of disaster : subsequent contracts also cost more because the cost of enforcing a contract increases with the amount of contracts already entered into.
+	</p>
+
+	<p>
+		Why would the cost of enforcing a contract increase with the amount of contracts already entered into ? Well, because as people use them people also look for ways to abuse them. As these ways are found they have to be patched. As the patches are applied new holes are found, so new patches are issued. Sometimes the patches work better in some cases than others, in the end it&#8217;s not even obvious which would be the proper case a contract falls into, the administration of all this has some costs and moreover due to the adversarial nature of contracts<sup><a href="#vii" id="ref-vii"  title="Because the contract &#8220;is opposable&#8221; to either party, which really means to say contracts are there as the adversary to each party involved, joint and several.">vii</a></sup> there&#8217;s always someone with an incentive to argue absolutely anything, no matter how &#8220;insane&#8221;. Besides, what&#8217;s insane anymore once we have contracts ?
+	</p>
+
+	<p>
+		And so that seed grows, invisible at first because the comparative friction cost of burning the Sioux huts and Cherokee library to teach those &#8220;savages&#8221; once and for all wtf contracts are is larger than the hidden cost of figuring out what our contracts even mean to say, or how should that contrivance be construed (not to mention the entire advantage of adversity : obviously the contracts say the enemies suck!). The seed grows, and it is the seed of doom, for once we&#8217;ve conquered the entire world (as white people in fact have) and have no enemies left (as white people don&#8217;t) the problem becomes internecine<sup><a href="#viii" id="ref-viii"  title="Which word does not mean, by the way, &#8220;marked by slaughter : deadly; especially : mutually destructive&#8221; nor &#8220;of, relating to, or involving conflict within a group &#8221; ; nor does it mean &#8221;		Destructive to both sides in a conflict: &#8220;savage internecine warfare&#8221;.&#8221; as the sorely uncultivated dictionaries available online purport. It simply means damaging within a body organised with a view to do damage without ; conflict within a space constructed for harmony not competition. A civil war, an autoimmune disorder, a quarrel between husband and wife : all fine examples.">viii</a></sup> : what do all these contracts even mean ?!
+	</p>
+
+	<p>
+		I know plenty of people who have dispensed with even entering into contracts altogether, as a point of principle. Silicon Valley deals would be anywhere between one third and two thirds undocumented to any degree - only when companies are about to go public does a mad rush commence to retroactively document years&#8217; worth of&#8230; contracts, they would be, except they weren&#8217;t. Why not ? Because contracts are just too damned expensive, both to enter into rationally and then to enforce against the other party. The attempts mostly end up as a competition of &#8220;who has the largest bank account&#8221; and therefore can afford the best lawyers, and since this is known at the outset the only real believers in the entire contract-with-enforcement construct are, predictably, the very large corporations.
+	</p>
+
+	<p>
+		And so here we are today : contract litigation is a great way to earn a living as a lawyer, a premier way to generate that mostly fake &#8220;social mobility&#8221; and a great way for Apple, Samsung and obviously the US government to fill their otherwise idle time during board meetings. Most common claims are not pressed, and in the rare instance they are pressed would end up in something called &#8220;Small Claims&#8221;, which is much akin to the lost and found box they used to keep in train stations and movie theatres. Something at any rate closer to a &#8220;reality&#8221; show premise than the solemn and citizenesque thing a good court case was back in the early days of the previous century, when every dusty, sleepy Great Plains town had its Court right across from the <del>Theatre</del> <del>Church</del> Townhall.
+	</p>
+
+	<p>
+		All this is sadly both unavoidable and beyond repair : the seed has grown to fruition, and we can&#8217;t either throw out the history of untold billions of contracts entered into over the centuries or meaningfully distill anything out of it. Blackstone tried desperately to codify the nonsense and to a large degree succeeded, Napoleon achieved the same exact result, and both of these happened <em>exclusively</em> because of the convenient backing of dictatorial power. Napoleon had the autocratic authority to do absolutely anything, and so he could create a new code. Blackstone had the monarch&#8217;s support, a monarch both absolute and disinterested in the finer points. Thus the respective products gloss over some details that are <em>perhaps</em> irrelevant, and through this license are capable to deliver something that is coherent and doubtlessly useful.
+	</p>
+
+	<p>
+		Who today would or will be able to set aside the perhaps justified objections of the disenfranchised parties (which would necessarily exist) to create a new code, and somewhat reset the clock ? Nobody, practically speaking, it&#8217;d have to be done by &#8220;consensus&#8221; and &#8220;negotiation&#8221; which is to say it&#8217;d be much better for it to not be done at all. In short, this great dragon called Contract has flown as far as he can. He is old now, and tired. His bones ache, his mood is sour, he will soon go below the ground. We will forever remember it, or at any rate I will, but for what he was in his youth, and that youth was much, much before your parents were being born I would think.
+	</p>
+
+	<p>
+		So what now ?
+	</p>
+
+	<p>
+		Well&#8230; I&#8217;m glad you asked. There&#8217;s a spiffy young fellow I&#8217;m betting on : the GPG Contract. He&#8217;s also  a. an agreement b. reached by willing participants. But that&#8217;s all.
+	</p>
+
+	<p>
+		What do I mean &#8220;that&#8217;s all&#8221; ? I literally mean, that&#8217;s all. A contract which is entered into by willing participants and <em>won&#8217;t be enforced</em>. Nonsense ? IKR!
+	</p>
+
+	<p>
+		Except not really. Obviously entering into a GPG Contract thinking it&#8217;s an Old Contract is nonsense, and will get you burned. In fact the history of &#8220;scams&#8221; in the Bitcoin space is pretty much this, people behaving with what should really be GPG Contracts as if they were Old Contracts, and then discovering midway through that&#8230; well&#8230; it doesn&#8217;t really work that way.
+	</p>
+
+	<p>
+		But if you go in knowing that the contract won&#8217;t be enforced, you can actually act quite rationally. Online identities are obviously a dime a dozen, in fact in the time I took to write this opus I might have made a few million. However, because of GPG they are <em>in fact</em> identities. Add to this the fact that nobody forces you to venture money in a deal with something that&#8217;s worth a dime a dozen and suddenly some sense begins to emerge.
+	</p>
+
+	<p>
+		Sure all identities are a dime a dozen, but with the passing of time and the accumulation of history they become differentiated, and through this differentiation acquire value. When people see 2FB7B452 at the end of a signed document they don&#8217;t think &#8220;a dime a dozen&#8221;, they think &#8220;a guy valued around half a million BTC or thereabouts, my fifty should be safe then&#8221;. Why should his fifty be safe then ? Because the value to me of not having a fifty bitcoin default added to my track record is actually larger than fifty bitcoins, and so rationally my best choice is to actually live up to the deal, whatever it may be.
+	</p>
+
+	<p>
+		This system is obviously far from perfect at the current time. For one, as it is nascent there exists the incentive to follow short term goals : build an identity up to whatever value, then strip it by taking the money and splitting. This has happened so far numerous times, and from a certain perspective it may seem the main economic activity surrounding Bitcoin at the moment, greatly compounded by the yet inept identity-valuation methods used by participants, their unwarranted self confidence (everyone thinks they&#8217;re a great judge of men, and everyone thinks their particular assumptions are both correct and warranted), their imbecillic pride manifested in the stupidest way it could, ie trying to keep &#8220;things&#8221; under wraps and all the rest of typically human failure. For the other, as it is nascent very little is in fact understood or <a href="https://bitcointalk.org/index.php?topic=110861.msg1227871#msg1227871">generally known</a> about it, and so gross mistakes happen quite cavalierly.
+	</p>
+
+	<p>
+		All this aside, non-enforced contracts, contracts which the participants uphold out of their own free will rather than at the behest of some third party or by the point of the sword of some blind demigoddess are a thoroughly fascinating turn of events. For one, they are fundamentally human, they&#8217;re one step up on the stairwell of freedom. Do it if you think it&#8217;s right is certainly a lot more empowering, civilised and overall <em>good</em> than &#8220;do it or else&#8221;. For the other, they allow all the enforcing to happen <em>before</em> the actual contract is entered into. Old contracts contain unknown future costs, nobody can ever tell you exactly how much will you have to pay in legal fees to recoup this five hundred owed on whatever deal. GPG Contracts don&#8217;t have any future costs at all. The cost of enforcing one after the fact is always going to be zero, pretty much because there&#8217;s never going to be anything you need (or indeed can) do.
+	</p>
+
+	<p>
+		And it doesn&#8217;t stop here. I have always thought the principal utility of Bitcoin is that it renders any sort of mandatory taxation model unviable. I am firmly persuaded that as Bitcoin takes hold<sup><a href="#ix" id="ref-ix"  title="As it will no matter of any other consideration, nuclear war followed by nuclear winter would not stop it any more than it would stop the Moon still in its orbit.">ix</a></sup> taxes will have to return to what they were in ancient Greece : willing donations to the state treasury, and something people openly took pride in. This shift will bring about all the improvements we were vainly trying to achieve in the old money paradigm, such as public accountability and reasonable expenditure in one fell swoop : good luck getting people to donate to the police department if they don&#8217;t like the police. And good luck with the welfare programs, for sure.
+	</p>
+
+	<p>
+		Add to that a shift of contracts from the old model to the new and suddenly you have - and I mean this quite literally - a new Renaissance. Man at the center of all things. Man, the willing enforcer of his own promises. Man, the willing contributor to the wealth of an obviously much reduced, but by that fact probably much nicer, lovable and huggable cute little state.
+	</p>
+
+	<p>
+		I&#8217;m crying with joy over here, my toes are curling in untold glee, I have little doubt that I shall live to see this, all of it. And for the first time in many, many years I feel again like the world is worth living in.
+	</p>
+
+	<hr>
+
+	<p class="text-center">
+		<em>Visit <a href="http://trilema.com/">Trilema</a> to read more from Mircea Popescu. <br>Mircea holds court in the <a href="http://webchat.freenode.net/?channels=bitcoin-assets">#bitcoin-assets</a> IRC channel.<br> Read <a href="http://log.bitcoin-assets.com/">the logs</a> before bloviating.<br>
+		Learn the <a href="http://bitcoinpete.com/2014/03/27/who-what-where-when-why-web-of-trust/">why</a> and the <a href="http://bitcoinpete.com/2014/03/31/biting-into-the-wot-elephant-and-irc-nicknames/">how</a> of joining <a href="http://webchat.freenode.net/?channels=bitcoin-otc">#bitcoin-otc</a>'s Web of Trust from Bitcoin Pete.</em>
+	</p>
+
+	<hr>
+
+	<h3>
+		Footnotes
+	</h3>
+
+	<ol type="i">
+		<li id="i">
+			<p>
+				Such as the trajectory of a boulder expelled from a volcano, where the kinetic energy is the capital and the trajectory the purchase ; or the life of stars where hydrogen and later helium are the means of production allowing for radiative output.
+				<a href="#ref-i" title="Jump back to footnote 1 in the text.">
+					↩
+				</a>
+			</p>
+		</li>
+
+		<li id="ii">
+			<p>
+				Lombards, Venetians, Genovese and others.
+				<a href="#ref-ii" title="Jump back to footnote 2 in the text.">
+					↩
+				</a>
+			</p>
+		</li>
+
+		<li id="iii">
+			<p>
+				In a non-Continental sense of that word.
+				<a href="#ref-iii" title="Jump back to footnote 3 in the text.">
+					↩
+				</a>
+			</p>
+		</li>
+
+		<li id="iv">
+			<p>
+				Both for lack of space and because I&#8217;m not being paid quite enough to be holding impromptu doctoral courses on History of Culture.
+				<a href="#ref-iv" title="Jump back to footnote 4 in the text.">
+					↩
+				</a>
+			</p>
+		</li>
+
+		<li id="v">
+			<p>
+				Thrice in one article, take that!
+				<a href="#ref-v" title="Jump back to footnote 5 in the text.">
+					↩
+				</a>
+			</p>
+		</li>
+
+		<li id="vi">
+			<p>
+				Meaning, something with a fixed and peculiar meaning which is not open to intra-discourse negotiation the way most other words are.
+				<a href="#ref-vi" title="Jump back to footnote 6 in the text.">
+					↩
+				</a>
+			</p>
+		</li>
+
+		<li id="vii">
+			<p>
+				Because the contract &#8220;is opposable&#8221; to either party, which really means to say contracts are there as the adversary to each party involved, joint and several.
+				<a href="#ref-vii" title="Jump back to footnote 7 in the text.">
+					↩
+				</a>
+			</p>
+		</li>
+
+		<li id="viii">
+			<p>
+				Which word does not mean, by the way, &#8220;marked by slaughter : deadly; especially : mutually destructive&#8221; nor &#8220;of, relating to, or involving conflict within a group <bitter internecine feuds>&#8221; ; nor does it mean &#8221;		Destructive to both sides in a conflict: &#8220;savage internecine warfare&#8221;.&#8221; as the sorely uncultivated dictionaries available online purport. It simply means damaging within a body organised with a view to do damage without ; conflict within a space constructed for harmony not competition. A civil war, an autoimmune disorder, a quarrel between husband and wife : all fine examples.
+				<a href="#ref-viii" title="Jump back to footnote 8 in the text.">
+					↩
+				</a>
+			</p>
+		</li>
+
+		<li id="ix">
+			<p>
+				As it will no matter of any other consideration, nuclear war followed by nuclear winter would not stop it any more than it would stop the Moon still in its orbit.
+				<a href="#ref-ix" title="Jump back to footnote 9 in the text.">
+					↩
+				</a>
+			</p>
+		</li>
+	</ol>
+
+</div>
+{% endblock %}

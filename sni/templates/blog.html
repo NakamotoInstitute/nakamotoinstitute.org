@@ -27,13 +27,23 @@ The Memory Pool | Satoshi Nakamoto Institute
         </a>
         <p>
         <small>
-          <a href="{{url_for('author', authslug=bp['author'][0].slug)}}">{{bp.author[0].first}} {{bp.author[0].middle}} {{bp.author[0].last}}</a> - {{bp.date.strftime('%B %d, %Y')}}
+          <a href="{{url_for('author', authslug=bp['author'][0].slug)}}">{{bp.author[0].first}} {{bp.author[0].middle}} {{bp.author[0].last}}</a> - {{bp.added.strftime('%B %d, %Y')}}
+          {% if bp.date != bp.added %}(Originally published {{bp.date.strftime('%B %d, %Y')}}){% endif %}
         </small>
         </p>
       </h3>
         <p>
           {{bp.excerpt}}
         </p>
+        {% set langs = bp.languages.split(',') %}
+        {% if langs|length > 1 %}
+        <p>
+          Also available in: 
+          {% for l in langs[1:] %}
+            <a href="{{url_for('blogposttrans', slug=bp.slug, lang=l.strip())}}">{{l}}</a>
+          {% endfor %}
+        </p>
+        {% endif %}
       {% endfor %}
 </div>
 {% endblock %}

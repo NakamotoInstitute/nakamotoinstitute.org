@@ -1,7 +1,7 @@
 Satoshi Nakamoto Institute
 ===========
 
-NakamotoInstitute.org was written in Flask. 
+NakamotoInstitute.org was written in Flask.
 
 
 ## Guide to Installing SNI Locally
@@ -32,23 +32,29 @@ CSRF_ENABLED = True
 
 5. Update config.py if you would like to change "sni" in step 4 to a different [domain]
 
-6. Find-replace the <code>http://nakamotoinstitute.org</code> in satoshiposts.json to <code>http://sni:5000</code> (or the SERVER_NAME of your choice).
 
-7. Download the PDFs and txts [here](http://nakamotoinstitute.org/static/docs/sni-docs.zip) and place them in /static/templates/docs
+6. Download the PDFs and txts [here](http://nakamotoinstitute.org/static/docs/sni-docs.zip) and place them in /static/templates/docs
 
-8. Set up a virtualenv with <code>virtualenv --no-site-packages venv</code> and <code>. venv/bin/activate </code>
+7. Set up a virtualenv with <code>virtualenv --no-site-packages venv</code> and <code>. venv/bin/activate </code>
 
-9. Install the dependencies using <code>pip install -r requirements.txt</code>.
+8. Install the dependencies using <code>pip install -r requirements.txt</code>.
 
-10. In a Python console run <code>from sni import db</code> and <code>db.create_all()</code>
+9. Run <code>createdb.py</code>
 
-11. Run <code>python dataimport.py</code>. The db will be cleared and re-populated each time you do this.
+10. Run <code>python dataimport.py</code>. The db will be cleared and re-populated each time you do this.
+
+11. [Generate new addresses](http://pacio.li/bitcoind/2014/10/31/how-to-connect-to-bitcoin-cores-json-rpc-api-with-python.html) and import them with <code>python importaddresses.py</code>
 
 12. Run <code>python run.py runserver</code> and navigate to sni:5000 in your browser.
 
-13. Migrations are done with [Flask-Migrate](http://flask-migrate.readthedocs.org/en/latest/). You can start enable migrations by running:<br /> <code>python run.py db init</code>
 
+## Add a link to "the Skeptics" page
 
+To add a link, fork the repo, add an entry to skeptics.json and make a pull request to 'the-skeptics' branch:
+
+<code>git pull origin the-skeptics<code>
+
+You can also email the information to contact@nakamotoinstitute.org
 
 
 ## How You Can Help

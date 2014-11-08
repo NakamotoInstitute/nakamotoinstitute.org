@@ -1,6 +1,48 @@
 {
 	"authors": [
 	{
+		"first": "Mark",
+		"middle": "S.",
+		"last": "Miller",
+		"slug": "mark-s-miller"
+	},
+	{
+		"first": "Chip",
+		"middle": "",
+		"last": "Morningstar",
+		"slug": "chip-morningstar"
+	},
+	{
+		"first": "Bill",
+		"middle": "",
+		"last": "Frantz",
+		"slug": "bill-frantz"
+	},
+	{
+		"first": "Oleg",
+		"middle": "",
+		"last": "Andreev",
+		"slug": "oleg-andreev"
+	},
+	{
+		"first": "Andrea",
+		"middle": "",
+		"last": "Castillo",
+		"slug": "andrea-castillo"
+	},
+	{
+		"first": "Mircea",
+		"middle": "",
+		"last": "Popescu",
+		"slug": "mircea-popescu"
+	},
+	{
+		"first": "Peter",
+		"middle": "",
+		"last": "Dushenski",
+		"slug": "peter-dushenski"
+	},
+	{
 		"first": "Satoshi",
 		"middle": "",
 		"last": "Nakamoto",
@@ -241,6 +283,24 @@
 		"slug": "amir-taaki"
 	},
 	{
+		"first": "Ben",
+		"middle": "",
+		"last": "Laurie",
+		"slug": "ben-laurie"
+	},
+	{
+		"first": "Philip",
+		"middle": "R.",
+		"last": "Zimmermann",
+		"slug": "philip-r-zimmermann"
+	},
+	{
+		"first": "Chuck",
+		"middle": "",
+		"last": "Hammill",
+		"slug": "chuck-hammill"
+	},
+	{
 		"first": "Daniel",
 		"middle": "",
 		"last": "Krawisz",
@@ -251,5 +311,17 @@
 		"middle": "",
 		"last": "Rochard",
 		"slug": "pierre-rochard"
+	},
+	{
+		"first": "Michael",
+		"middle": "",
+		"last": "Goldstein",
+		"slug": "michael-goldstein"
+	},
+	{
+		"first": "David",
+		"middle": "D.",
+		"last": "Friedman",
+		"slug": "david-d-friedman"
 	}]
 }

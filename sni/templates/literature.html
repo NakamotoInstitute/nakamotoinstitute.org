@@ -40,13 +40,16 @@
             </td>
             <td>
               {% if 'html' in formats[doc.slug] %}
-                <a href="{{url_for('slugview', slug=doc.slug)}}">HTML</a>
+                <a href="{{url_for('slugview', slug=doc.slug)}}">HTML</a><br>
               {%endif%}
               {% if 'pdf' in formats[doc.slug] %}
-                <a href="{{url_for('static', filename='docs/' + doc.slug + '.pdf')}}">PDF</a>
+                <a href="{{url_for('static', filename='docs/' + doc.slug + '.pdf')}}">PDF</a><br>
               {%endif%}
               {% if 'txt' in formats[doc.slug] %}
-                <a href="{{url_for('static', filename='docs/' + doc.slug + '.txt')}}">txt</a>
+                <a href="{{url_for('static', filename='docs/' + doc.slug + '.txt')}}">txt</a><br>
+              {%endif%}
+              {% if 'ext' in formats[doc.slug] %}
+                <a href="{{doc.external}}">Link</a>
               {%endif%}
             </td>
             <td>

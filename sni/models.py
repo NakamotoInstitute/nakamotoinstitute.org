@@ -87,6 +87,7 @@ class Doc(db.Model):
  		secondary = categories,
  		backref=db.backref('docs', lazy='dynamic'))
  	doctype = db.Column(db.String())
+ 	external = db.Column(db.String())
 
  	def __repr__(self):
  		return '<Doc %r>' % (self.title)
@@ -98,8 +99,28 @@ class BlogPost(db.Model):
  		secondary = blogauthors,
  		backref=db.backref('blogposts', lazy='dynamic'))
 	date = db.Column(db.Date)
+	added = db.Column(db.Date)
 	slug = db.Column(db.String())
 	excerpt = db.Column(db.String())
+	languages = db.Column(db.String())
 
 	def __repr__(self):
  		return '<BlogPost %r>' % (self.title)
+
+class Skeptic(db.Model):
+	id = db.Column(db.Integer, primary_key = True)
+	name = db.Column(db.String())
+	title = db.Column(db.String())
+	article = db.Column(db.String())
+	date = db.Column(db.Date)
+	source = db.Column(db.String())
+	excerpt = db.Column(db.String())
+	price = db.Column(db.String())
+	link = db.Column(db.String())
+	waybacklink = db.Column(db.String())
+	slug = db.Column(db.String())
+
+
+class DonationAddress(db.Model):
+    address = db.Column(db.String, primary_key = True)
+    lastseen = db.Column(db.DateTime)

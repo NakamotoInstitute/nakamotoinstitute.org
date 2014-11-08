@@ -10,7 +10,7 @@ from flask.ext.script import Manager
 from flask.ext.migrate import Migrate, MigrateCommand
 from flask.ext.cache import Cache
 import jinja2
-
+from datetime import datetime
 
 app = Flask(__name__)
 app.config.from_object('config')
@@ -31,5 +31,32 @@ manager = Manager(app)
 manager.add_command('db', MigrateCommand)
 
 cache = Cache(app,config={'CACHE_TYPE': 'simple'})
+
+from models import DonationAddress
+
+@app.context_processor
+def utility_processor():
+    def donation_address():
+        address = DonationAddress.query.order_by(DonationAddress.lastseen).first()
+        address.lastseen = datetime.now()
+        db.session.commit()
+        address = address.address
+        return address
+    return dict(donation_address=donation_address)
+
+if not app.debug:
+    import logging
+    from logging.handlers import RotatingFileHandler
+    file_handler = RotatingFileHandler('tmp/snilog.csv',
+                                      'a',
+                                      10 * 1024 * 1024,
+                                      100)
+
+    file_handler.setFormatter(logging.Formatter('%(asctime)s, %(levelname)s, %(message)s'))
+    app.logger.setLevel(logging.INFO)
+    file_handler.setLevel(logging.INFO)
+    app.logger.addHandler(file_handler)
+    app.logger.info('sni')
+
 
 from sni import views, models

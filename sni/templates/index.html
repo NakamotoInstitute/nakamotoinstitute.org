@@ -34,14 +34,12 @@
                 <em>{{bp.title}}</em><br>
                 {{bp.excerpt}}
             </p>
-            <br>
-            <br>
-            <br>
+
             <p>
                 <a class="btn btn-primary" href="{{url_for('blogpost',slug=bp.slug)}}" role="button">
                     Read more &raquo;
                 </a>
-            </p>            
+            </p>
         </div>
 
         <div class="col-lg-4">
@@ -52,11 +50,13 @@
                 See a typo? Want to fix a bug? Looking to (re)publish a post to the Memory Pool? Send a pull request!
             </p>
             <br>
+            <br>
+            <br>
             <p>
                 <a class="btn btn-primary" href="https://github.com/NakamotoInstitute/nakamotoinstitute.org" role="button">
                     Go to GitHub &raquo;
                 </a>
-            </p>  
+            </p>
         </div>
 
         <div class="col-lg-4">
@@ -64,12 +64,15 @@
                 Support
             </h2>
             <p>
-                You can help us achieve our goals by donating today. Bitcoins only.
+                You can help us achieve our goals by donating today. Bitcoins only.                 
             </p>
             <br>
             <br>
-            <p class="text-center">
-            <a class="coinbase-button" data-code="48919ffdd40c2c6571c29539d4d68afb" data-button-style="donation_large" href="https://coinbase.com/checkouts/48919ffdd40c2c6571c29539d4d68afb">Donate Bitcoins</a><script src="https://coinbase.com/assets/button.js" type="text/javascript"></script>
+            <br>
+            <br>
+            <p>
+             <a class="btn btn-primary" href="bitcoin:{{donation_address()}}">Donate &raquo;</a>
+            </p>
         </div>
     </div>
 </div>
