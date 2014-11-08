@@ -118,7 +118,7 @@
         "author": ["timothy-c-may"],
         "date": "September 10, 1994",
         "slug": "cyphernomicon",
-        "formats": ["txt"],
+        "formats": ["html","txt"],
         "categories": ["cryptography", "Cypherpunk"],
         "doctype": "essay"
     },

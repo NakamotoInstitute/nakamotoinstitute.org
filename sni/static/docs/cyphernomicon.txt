@@ -3569,8 +3569,8 @@ THE CYPHERNOMICON
     + can quantum mechanics help?
       - probably not
   + Certification Authorities
-    - heierarchy vs. distributed web of trust
-    - in heierarchy, individual businesses may set themselves
+    - hierarchy vs. distributed web of trust
+    - in hierarchy, individual businesses may set themselves
        up as CAs, as CommerceNet is talking about doing
     + Or, scarily, the governments of the world may insist that
        they be "in the loop"
@@ -3630,10 +3630,10 @@ THE CYPHERNOMICON
          Incompleteness_, World Scientific Publishing Co.,
          1990." [John E. Kreznar, 1993-12-02]
   + "How can I generate reasonably random numbers?"
-    - I say "reasonably" becuae of the point above: no number
+    - I say "reasonably" because of the point above: no number
        or sequence is provably "random." About the best that can
-       be said is that a number of string is the reuslt of a
-       process we call "random." If done algorithimically, and
+       be said is that a number of string is the result of a
+       process we call "random." If done algorithmically, and
        deterministically, we call this process "pseudo-random."
        (And  pseudorandom is usually more valuable than "really
        random" because we want to be able to generate the same
