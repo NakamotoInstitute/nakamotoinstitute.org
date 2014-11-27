@@ -610,5 +610,15 @@
         "categories": ["cryptography"],
         "doctype": "essay",
         "external": "http://www.daviddfriedman.com/Academic/Course_Pages/analytical_methods_08/china_to_cyberspace.htm"
+    },
+    {
+        "title": "Bitcoin and Me",
+        "author": ["hal-finney"],
+        "date": "March 19, 2013",
+        "slug": "bitcoin-and-me",
+        "formats": ["html", "ext"],
+        "categories": ["cryptography"],
+        "doctype": "essay",
+        "external": "https://bitcointalk.org/index.php?topic=155054.msg1643833#msg1643833"
     }]
 }
