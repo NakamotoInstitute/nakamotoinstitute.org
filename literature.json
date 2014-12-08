@@ -620,5 +620,14 @@
         "categories": ["cryptography"],
         "doctype": "essay",
         "external": "https://bitcointalk.org/index.php?topic=155054.msg1643833#msg1643833"
+    },
+    {
+        "title": "Reciprocal Altruism in the Theory of Money",
+        "author": ["daniel-krawisz"],
+        "date": "December 8, 2014",
+        "slug": "reciprocal_altruism_in_the_theory_of_money",
+        "formats": ["html"],
+        "categories": ["economics", "bitcoin"],
+        "doctype": "essay"
     }]
 }
