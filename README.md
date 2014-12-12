@@ -48,15 +48,6 @@ CSRF_ENABLED = True
 12. Run <code>python run.py runserver</code> and navigate to sni:5000 in your browser.
 
 
-## Add a link to "the Skeptics" page
-
-To add a link, fork the repo, add an entry to skeptics.json and make a pull request to 'the-skeptics' branch:
-
-<code>git pull origin the-skeptics<code>
-
-You can also email the information to contact@nakamotoinstitute.org
-
-
 ## How You Can Help
 
 * Format the HTML literature templates
