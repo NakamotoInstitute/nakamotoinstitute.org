@@ -10,24 +10,27 @@ from dateutil import parser
 from sni.models import *
 
 # Clear out database
-Email.query.delete()
-Post.query.delete()
-cats = Category.query.all()
-for cat in cats:
-	db.session.delete(cat)
-	db.session.commit()
-forms = Format.query.all()
-for form in forms:
-	db.session.delete(form)
-	db.session.commit()
-auths = Author.query.all()
-for auth in auths:
-	db.session.delete(auth)
-	db.session.commit()
-Doc.query.delete()
-ResearchDoc.query.delete()
-BlogPost.query.delete()
-Skeptic.query.delete()
+# Email.query.delete()
+# Post.query.delete()
+# cats = Category.query.all()
+# for cat in cats:
+# 	db.session.delete(cat)
+# 	db.session.commit()
+# forms = Format.query.all()
+# for form in forms:
+# 	db.session.delete(form)
+# 	db.session.commit()
+# auths = Author.query.all()
+# for auth in auths:
+# 	db.session.delete(auth)
+# 	db.session.commit()
+# Doc.query.delete()
+# ResearchDoc.query.delete()
+# BlogPost.query.delete()
+# Skeptic.query.delete()
+
+db.drop_all()
+db.create_all()
 
 # return object
 
@@ -187,3 +190,11 @@ for i in range(0,len(skeptics['skeptics'])):
 		slug = skeptics['skeptics'][i]['slug']+'-'+str(parser.parse(skeptics['skeptics'][i]['date']))[0:10])
 	db.session.add(skeptic)
 	db.session.commit()
+
+with open('./addresses/addresses.csv') as csvfile:
+	addresses = csv.reader(csvfile)
+	now = datetime.now()
+	for address in addresses:
+		record = DonationAddress(address=address[0], lastseen=now)
+		db.session.add(record)
+		db.session.commit()
