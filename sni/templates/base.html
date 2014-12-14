@@ -38,13 +38,13 @@ subject to other licenses.-->
               </a>
             </li>
             <li>
-              <a href="{{url_for('blog')}}">
-                Mempool
+              <a href="{{url_for('research')}}">
+                Research
               </a>
             </li>
             <li>
-              <a href="{{url_for('about')}}">
-                About
+              <a href="{{url_for('blog')}}">
+                Mempool
               </a>
             </li>
           </ul>
@@ -62,13 +62,17 @@ subject to other licenses.-->
               <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
             </a>
             &nbsp;&ndash;
-            <a href="bitcoin:{{donation_address()}}" target="_blank">
-              Donate Bitcoins
-            </a> 
+            <a href="{{url_for('about')}}">
+              About
+            </a>
             &nbsp;&ndash;
             <a href="{{url_for('contact')}}">
               Contact
             </a>
+            &nbsp;&ndash;
+            <a href="bitcoin:{{donation_address()}}" target="_blank">
+              Donate BTC
+            </a> 
             &nbsp;&ndash;
             <a href="{{url_for('atomfeed')}}">Atom feed</a>
             &nbsp;&ndash;

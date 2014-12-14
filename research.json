@@ -34,5 +34,15 @@
         "categories": ["economics", "cryptography", "bitcoin"],
         "doctype": "essay",
         "external": "http://trilema.com/2012/gpg-contracts/"
+    },
+    {
+        "id": 4,
+        "title": "Reciprocal Altruism in the Theory of Money",
+        "author": ["daniel-krawisz"],
+        "date": "December 8, 2014",
+        "slug": "reciprocal_altruism_in_the_theory_of_money",
+        "formats": ["html"],
+        "categories": ["economics", "bitcoin"],
+        "doctype": "essay"
     }
 ]

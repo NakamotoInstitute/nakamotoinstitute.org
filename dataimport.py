@@ -6,7 +6,9 @@
 
 import json
 import datetime
+import csv
 from dateutil import parser
+from datetime import datetime
 from sni.models import *
 
 # Clear out database
@@ -138,10 +140,14 @@ for i in range(0, len(research)):
 	dbcat = []
 	for cat in catlist:
 		dbcat += [get_or_create(Category, name=cat)]
-	if 'external' in docs['docs'][i]:
-		ext = docs['docs'][i]['external']
+	if 'external' in research[i]:
+		ext = research[i]['external']
 	else:
 		ext = None
+	if 'lit_id' in research[i]:
+		lit = research[i]['lit_id']
+	else:
+		lit_id = None
 	doc = ResearchDoc(
 		id=research[i]['id'],
 		title=research[i]['title'],
@@ -152,7 +158,7 @@ for i in range(0, len(research)):
 		categories=dbcat,
 		doctype=research[i]['doctype'],
 		external=ext,
-		lit_id=research[i]['lit_id'])
+		lit_id=lit)
 	db.session.add(doc)
 	db.session.commit()
 
