@@ -25,6 +25,7 @@ for auth in auths:
 	db.session.delete(auth)
 	db.session.commit()
 Doc.query.delete()
+ResearchDoc.query.delete()
 BlogPost.query.delete()
 Skeptic.query.delete()
 
@@ -106,7 +107,7 @@ for i in range(0, len(docs['docs'])):
 	else:
 		ext = None
 	doc = Doc(
-		id=i+1,
+		id=docs['docs'][i]['id'],
 		title=docs['docs'][i]['title'],
 		author=dbauthor,
 		date=docs['docs'][i]['date'],
@@ -115,6 +116,40 @@ for i in range(0, len(docs['docs'])):
 		categories=dbcat,
 		doctype=docs['docs'][i]['doctype'],
 		external=ext)
+	db.session.add(doc)
+	db.session.commit()
+
+with open('./research.json') as data_file:
+	research = json.load(data_file)
+
+for i in range(0, len(research)):
+	authorlist = research[i]['author']
+	dbauthor = []
+	for auth in authorlist:
+		dbauthor += [get(Author, slug=auth)]
+	formlist = research[i]['formats']
+	dbformat = []
+	for form in formlist:
+		dbformat += [get_or_create(Format, name=form)]
+	catlist = research[i]['categories']
+	dbcat = []
+	for cat in catlist:
+		dbcat += [get_or_create(Category, name=cat)]
+	if 'external' in docs['docs'][i]:
+		ext = docs['docs'][i]['external']
+	else:
+		ext = None
+	doc = ResearchDoc(
+		id=research[i]['id'],
+		title=research[i]['title'],
+		author=dbauthor,
+		date=research[i]['date'],
+		slug=research[i]['slug'],
+		formats=dbformat,
+		categories=dbcat,
+		doctype=research[i]['doctype'],
+		external=ext,
+		lit_id=research[i]['lit_id'])
 	db.session.add(doc)
 	db.session.commit()
 

@@ -1,0 +1,73 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+{% block content %}
+<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+    <div class="row">
+      <div class="text-center">
+        
+        <h2>
+          Research
+        </h2>
+        
+        <p>
+          Bitcoin exists. Now what?
+        </p>
+        
+      </div>
+    </div>
+    
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Formats</th>
+          <th>Author</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%for doc in docs%}
+          <tr>
+            <td>
+              <a href="{{url_for('docinfo', slug=doc['slug'])}}">
+              {% if doc['doctype']=="book" %}
+                <em>{{doc['title']}}</em>
+              {% else %}
+                "{{doc['title']}}"
+              {% endif %}
+              </a>
+            </td>
+            <td>
+              {% if 'html' in formats[doc.slug] %}
+                <a href="{{url_for('slugview', slug=doc.slug)}}">HTML</a><br>
+              {%endif%}
+              {% if 'pdf' in formats[doc.slug] %}
+                <a href="{{url_for('static', filename='docs/' + doc.slug + '.pdf')}}">PDF</a><br>
+              {%endif%}
+              {% if 'txt' in formats[doc.slug] %}
+                <a href="{{url_for('static', filename='docs/' + doc.slug + '.txt')}}">txt</a><br>
+              {%endif%}
+              {% if 'ext' in formats[doc.slug] %}
+                <a href="{{doc.external}}">Link</a>
+              {%endif%}
+            </td>
+            <td>
+              {% if doc['author']|length == 3 %}
+                <a href="{{url_for('author', authslug=doc['author'][0].slug)}}">{{doc['author'][0].first}} {{doc['author'][0].middle}} {{doc['author'][0].last}}</a>, <a href="{{url_for('author', authslug=doc['author'][1].slug)}}">{{doc['author'][1].first}} {{doc['author'][1].middle}} {{doc['author'][1].last}}</a>, and <a href="{{url_for('author', authslug=doc['author'][2].slug)}}">{{doc['author'][2].first}} {{doc['author'][2].middle}} {{doc['author'][2].last}}</a>
+              {% elif doc['author']|length == 2 %}
+                <a href="{{url_for('author', authslug=doc['author'][0].slug)}}">{{doc['author'][0].first}} {{doc['author'][0].middle}} {{doc['author'][0].last}}</a> and <a href="{{url_for('author', authslug=doc['author'][1].slug)}}">{{doc['author'][1].first}} {{doc['author'][1].middle}} {{doc['author'][1].last}}</a>
+              {% else %}
+                <a href="{{url_for('author', authslug=doc['author'][0].slug)}}">{{doc['author'][0].first}} {{doc['author'][0].middle}} {{doc['author'][0].last}}</a>
+              {% endif %}
+            </td>
+            <td>
+              {{doc['date']}}
+            </td>
+          </tr>
+        {%endfor%}
+        </tbody>
+        </table>
+  </div>
+</div>
+{% endblock %}

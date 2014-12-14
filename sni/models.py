@@ -39,6 +39,11 @@ blogauthors = db.Table('blogauthors',
 	db.Column('author_id', db.Integer, db.ForeignKey('author.id'))
 )
 
+researchauthors = db.Table('researchauthors',
+	db.Column('research_doc_id', db.Integer, db.ForeignKey('research_doc.id')),
+	db.Column('author_id', db.Integer, db.ForeignKey('author.id'))
+)
+
 class Author(db.Model):
 	id = db.Column(db.Integer, primary_key = True)
 	first = db.Column(db.String())
@@ -54,6 +59,11 @@ formats = db.Table('formats',
 	db.Column('format_id', db.Integer, db.ForeignKey('format.id'))
 )
 
+researchformats = db.Table('researchformats',
+	db.Column('research_doc_id', db.Integer, db.ForeignKey('research_doc.id')),
+	db.Column('format_id', db.Integer, db.ForeignKey('format.id'))
+)
+
 class Format(db.Model):
 	id = db.Column(db.Integer, primary_key = True)
 	name = db.Column(db.String())
@@ -63,6 +73,10 @@ class Format(db.Model):
 
 categories = db.Table('categories',
 	db.Column('doc_id', db.Integer, db.ForeignKey('doc.id')),
+	db.Column('category_id', db.Integer, db.ForeignKey('category.id')))
+
+researchcategories = db.Table('researchcategories',
+	db.Column('research_doc_id', db.Integer, db.ForeignKey('research_doc.id')),
 	db.Column('category_id', db.Integer, db.ForeignKey('category.id')))
 
 class Category(db.Model):
@@ -91,6 +105,27 @@ class Doc(db.Model):
 
  	def __repr__(self):
  		return '<Doc %r>' % (self.title)
+
+class ResearchDoc(db.Model):
+ 	id = db.Column(db.Integer, primary_key = True)
+ 	title = db.Column(db.String())
+ 	author = db.relationship('Author',
+ 		secondary = researchauthors,
+ 		backref=db.backref('researchdocs', lazy='dynamic'))
+ 	date = db.Column(db.String())
+ 	slug = db.Column(db.String())
+ 	formats = db.relationship('Format',
+ 		secondary = researchformats,
+ 		backref=db.backref('researchdocs', lazy='dynamic'))
+ 	categories = db.relationship('Category',
+ 		secondary = researchcategories,
+ 		backref=db.backref('researchdocs', lazy='dynamic'))
+ 	doctype = db.Column(db.String())
+ 	external = db.Column(db.String())
+ 	lit_id = db.Column(db.Integer)
+
+ 	def __repr__(self):
+ 		return '<ResearchDoc %r>' % (self.title)
 
 class BlogPost(db.Model):
 	id = db.Column(db.Integer, primary_key = True)

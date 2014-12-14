@@ -9,7 +9,11 @@
 	{% block doc %}{% endblock %}
 	<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
 		<div class="text-center">
+      {% if is_lit %}
 			<a href="{{url_for('docinfo', slug=doc.slug)}}">Back</a> | <a href="{{url_for('literature')}}">Index</a>
+      {% else %}
+      <a href="{{url_for('researchdocinfo', slug=doc.slug)}}">Back</a> | <a href="{{url_for('research')}}">Index</a>
+      {% endif %}
 		</div>
 	</div>
 {% endblock %}

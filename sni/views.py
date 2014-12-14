@@ -6,7 +6,8 @@
 #
 
 from sni import app, db, cache
-from models import Post, Email, Doc, Author, Format, Category, BlogPost, Skeptic, DonationAddress
+from models import Post, Email, Doc, ResearchDoc, Author, Format, Category,\
+                   BlogPost, Skeptic, DonationAddress
 from flask import render_template, json, url_for, redirect, request
 from sqlalchemy import desc
 from werkzeug.contrib.atom import AtomFeed
@@ -112,8 +113,9 @@ def author(authslug):
     if (author!=None):
         mem = author.blogposts.all()
         lit = author.docs.all()
+        res = author.researchdocs.all()
         app.logger.info(str(request.remote_addr) + ', authors, ' + authslug)
-        return render_template("author.html", author=author, mem=mem, lit=lit)
+        return render_template("author.html", author=author, mem=mem, lit=lit, res=res)
     elif (not authslug.islower()):
         return redirect(url_for('author', authslug=authslug.lower()))
     else:
@@ -150,7 +152,9 @@ def docinfo(slug):
             if form.name == 'ext':
                 forms += ['ext']
         app.logger.info(str(request.remote_addr) + ', literature, ' + slug)
-        return render_template("docinfo.html",doc=doc, forms=forms)
+        return render_template("docinfo.html",doc=doc, forms=forms, is_lit=True)
+    elif (ResearchDoc.query.filter_by(slug=slug).first() != None):
+        return redirect(url_for('researchdocinfo', slug=slug))
     else:
         return redirect('literature')
 
@@ -169,10 +173,13 @@ def docinfoid(docid):
                 forms += ['txt']
             if form.name == 'unavailable':
                 forms += ['una']
-        app.logger.info(str(request.remote_addr) + ', literature, ' + str(docid))
-        return render_template("docinfo.html",doc=doc, forms=forms)
+        return redirect(url_for('docinfo', slug=doc.slug))
     else:
-        return redirect('literature')
+        doc = ResearchDoc.query.filter_by(lit_id=docid).first()
+        if (doc != None):
+            return redirect(url_for('researchdocinfo', slug=doc.slug))
+    
+    return redirect('literature')
 
 @cache.cached(timeout=900)
 @app.route('/literature/<string:slug>/<string:format>/', methods=["GET"])
@@ -190,7 +197,11 @@ def docview(slug, format):
         else:
             return redirect(url_for('docinfo', slug=slug))
     else:
-        return redirect('literature')
+        doc = ResearchDoc.query.filter_by(slug=slug).first()
+        if (doc != None):
+            return redirect(url_for('researchdocview', slug=slug))
+    
+    return redirect('literature')
 
 @cache.cached(timeout=900)
 @app.route('/literature/<int:docid>/<string:format>/', methods=["GET"])
@@ -209,6 +220,101 @@ def docviewid(docid, format):
         else:
             return redirect(url_for('docinfo', slug=doc.slug))
     else:
+        doc = ResearchDoc.query.filter_by(lit_id=docid).first()
+        if (doc != None):
+            return redirect(url_for('researchdocviewid', id=doc.id))
+
+    return redirect('literature')
+
+@cache.cached(timeout=900)
+@app.route('/research/', methods=["GET"])
+def research():
+    docs = ResearchDoc.query.order_by('id').all()
+    formats = {}
+    for doc in docs:
+        formlist = []
+        for format in doc.formats:
+            formlist += [format.name]
+        formats[doc.slug] = formlist
+    app.logger.info(str(request.remote_addr) + ', research')
+    return render_template('research.html', docs=docs, formats=formats)
+
+@cache.cached(timeout=900)
+@app.route('/research/<string:slug>/', methods=["GET"])
+def researchdocinfo(slug):
+    res = ResearchDoc.query.filter_by(slug=slug).first()
+    if(res!=None):
+        forms = []
+        for form in res.formats:
+            if form.name == 'html':
+                forms += ['html']
+            if form.name == 'pdf':
+                forms += ['pdf']
+            if form.name == 'txt':
+                forms += ['txt']
+            if form.name == 'unavailable':
+                forms += ['una']
+            if form.name == 'ext':
+                forms += ['ext']
+        app.logger.info(str(request.remote_addr) + ', research, ' + slug)
+        return render_template("docinfo.html", doc=res, forms=forms, is_lit=False)
+    else:
+        return redirect('research')
+
+@cache.cached(timeout=900)
+@app.route('/research/<int:resid>/', methods=["GET"])
+def researchdocinfoid(resid):
+    res = ResearchDoc.query.filter_by(id=resid).first()
+    if(res!=None):
+        forms = []
+        for form in res.formats:
+            if form.name == 'html':
+                forms += ['html']
+            if form.name == 'pdf':
+                forms += ['pdf']
+            if form.name == 'txt':
+                forms += ['txt']
+            if form.name == 'unavailable':
+                forms += ['una']
+        return redirect(url_for('researchdocinfo', slug=res.slug))
+    else:
+        return redirect('research')
+
+@cache.cached(timeout=900)
+@app.route('/research/<string:slug>/<string:format>/', methods=["GET"])
+def researchdocview(slug, format):
+    doc = ResearchDoc.query.filter_by(slug=slug).first()
+    if(doc!=None):
+        formats = []
+        for form in doc.formats:
+            formats += [form.name]
+        if format in formats:
+            if(format=='html'):
+                return redirect(url_for('slugview', slug=slug))
+            else:
+                return redirect(url_for('static', filename='docs/%(x)s.%(y)s' % {"x": slug, "y": format}))
+        else:
+            return redirect(url_for('researchdocinfo', slug=slug))
+    else:
+        return redirect('literature')
+
+@cache.cached(timeout=900)
+@app.route('/research/<int:resid>/<string:format>/', methods=["GET"])
+def researchdocviewid(docid, format):
+    doc = ResearchDoc.query.filter_by(id=resid).first()
+    if(doc!=None):
+        formats = []
+        for form in doc.formats:
+            formats += [form.name]
+        slug = doc.slug
+        if format in formats:
+            if(format=='html'):
+                return redirect(url_for('slugview', slug=slug))
+            else:
+                return redirect(url_for('static', filename='docs/%(x)s.%(y)s' % {"x": slug, "y": format}))
+        else:
+            return redirect(url_for('researchdocinfo', slug=doc.slug))
+    else:
         return redirect('literature')
 
 @cache.cached(timeout=900)
@@ -226,7 +332,18 @@ def slugview(slug):
         else:
             return redirect('literature')
     else:
-        return redirect('literature')
+        doc = ResearchDoc.query.filter_by(slug=slug).first()
+        if(doc!=None):
+            docid = doc.id
+            formats = []
+            for form in doc.formats:
+                formats += [form.name]
+            if('html' in formats):
+                app.logger.info(str(request.remote_addr) + ', slugview, ' + slug)
+                return render_template("%s.html" % slug, doc=doc)
+            else:
+                return redirect('research')
+    return redirect('literature')
 
 
 @cache.cached(timeout=900)
@@ -297,4 +414,7 @@ def reroute(url_slug, format):
     if(doc!=None):
         return redirect(url_for("docview", slug=doc.slug, format=format))
     else:
-        return redirect(url_for("index"))
+        doc = ResearchDoc.query.filter_by(slug=url_slug).first()
+        if (doc != None):
+            return redirect(url_for("researchdocview", slug=doc.slug, format=format))
+    return redirect(url_for("index"))
