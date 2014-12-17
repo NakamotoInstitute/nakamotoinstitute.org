@@ -1,6 +1,7 @@
 {
   "docs": [
-    {
+    { 
+        "id": 1,
         "title": "Bitcoin: A Peer-to-Peer Electronic Cash System",
         "author": ["satoshi-nakamoto"],
         "date": "October 31, 2008",
@@ -11,26 +12,7 @@
         "external": "https://bitcoin.org/bitcoin.pdf"
     },
     {
-        "title": "Economics of Bitcoin: is Bitcoin an alternative to fiat currencies and gold?",
-        "author": ["peter-surda"],
-        "date": "November 19, 2012",
-        "slug": "economics-of-bitcoin",
-        "formats": ["pdf", "ext"],
-        "categories": ["economics", "bitcoin"],
-        "doctype": "essay",
-        "external": "http://dev.economicsofbitcoin.com/mastersthesis/mastersthesis-surda-2012-11-19b.pdf"
-    },
-    {
-        "title": "On the Origins of Bitcoin",
-        "author": ["konrad-s-graf"],
-        "date": "October 23, 2013",
-        "slug": "origins-of-bitcoin",
-        "formats": ["html","pdf", "ext"],
-        "categories": ["economics", "bitcoin"],
-        "doctype": "essay",
-        "external": "http://konradsgraf.com/storage/On%20the%20Origins%20of%20Bitcoin%20Graf%2003.11.13.pdf"
-    },
-    {
+        "id": 4,
         "title": "b-money",
         "author": ["wei-dai"],
         "date": "November 1998",
@@ -41,6 +23,7 @@
         "external": "http://www.weidai.com/bmoney.txt"
     },
     {
+        "id": 5,
         "title": "Design of a Secure Timestamping Service with Minimal Trust Requirements",
         "author": ["henri-massias", "xavier-serret-avila", "jean-jacques-quisquater"],
         "date": "May 1999",
@@ -50,6 +33,7 @@
         "doctype": "journal"
     },
     {
+        "id": 6,
         "title": "How to Time-Stamp a Digital Document",
         "author": ["stuart-haber", "w-scott-stornetta"],
         "date": "1991",
@@ -59,6 +43,7 @@
         "doctype": "journal"
     },
     {
+        "id": 7,
         "title": "Improving the Efficiency and Reliability of Digital Time-Stamping",
         "author": ["dave-bayer", "stuart-haber", "w-scott-stornetta"],
         "date": "March 1992",
@@ -68,6 +53,7 @@
         "doctype": "journal"
     },
     {
+        "id": 8,
         "title": "Secure Names for Bit-Strings",
         "author": ["stuart-haber", "w-scott-stornetta"],
         "date": "April 1997",
@@ -77,6 +63,7 @@
         "doctype": "journal"
     },
     {
+        "id": 9,
         "title": "Hashcash - A Denial of Service Counter-Measure",
         "author": ["adam-back"],
         "date": "August 1, 2002",
@@ -87,6 +74,7 @@
         "external": "http://www.hashcash.org/papers/hashcash.pdf"
     },
     {
+        "id": 10,
         "title": "Protocols for Public Key Cryptosystems",
         "author": ["ralph-c-merkle"],
         "date": "April 1978",
@@ -96,6 +84,7 @@
         "doctype": "journal"
     },
     {
+        "id": 11,
         "title": "An Introduction to Probability Theory and Its Applications, Vol. I",
         "author": ["william-feller"],
         "date": "1957",
@@ -105,6 +94,7 @@
         "doctype": "book"
     },
     {
+        "id": 12,
         "title": "The Crypto Anarchist Manifesto",
         "author": ["timothy-c-may"],
         "date": "November 22, 1992",
@@ -114,6 +104,7 @@
         "doctype": "essay"
     },
     {
+        "id": 13,
         "title": "The Cyphernomicon",
         "author": ["timothy-c-may"],
         "date": "September 10, 1994",
@@ -123,6 +114,7 @@
         "doctype": "essay"
     },
     {
+        "id": 14,
         "title": "Crypto Anarchy and Virtual Communities",
         "author": ["timothy-c-may"],
         "date": "December 1994",
@@ -132,6 +124,7 @@
         "doctype": "essay"
     },
     {
+        "id": 15,
         "title": "Formalizing and Securing Relationships on Public Networks",
         "author": ["nick-szabo"],
         "date": "1997",
@@ -142,6 +135,7 @@
         "external": "http://szabo.best.vwh.net/formalize.html"
     },
     {
+        "id": 16,
         "title": "A Formal Language for Analyzing Contracts",
         "author": ["nick-szabo"],
         "date": "2002",
@@ -152,6 +146,7 @@
         "external": "http://szabo.best.vwh.net/contractlanguage.html"
     },
     {
+        "id": 17,
         "title": "Secure Property Titles with Owner Authority",
         "author": ["nick-szabo"],
         "date": "1998",
@@ -162,6 +157,7 @@
         "external": "http://szabo.best.vwh.net/securetitle.html"
     },
     {
+        "id": 18,
         "title": "Trusted Third Parties are Security Holes",
         "author": ["nick-szabo"],
         "date": "2001",
@@ -172,6 +168,7 @@
         "external": "http://szabo.best.vwh.net/ttps.html"
     },
     {
+        "id": 19,
         "title": "Contracts with Bearer",
         "author": ["nick-szabo"],
         "date": "1999",
@@ -182,6 +179,7 @@
         "external": "http://szabo.best.vwh.net/bearer_contracts.html"
     },
     {
+        "id": 20,
         "title": "The God Protocols",
         "author": ["nick-szabo"],
         "date": "1999",
@@ -192,6 +190,7 @@
         "external": "http://web.archive.org/web/20061230075325/http://www.theiia.org/ITAudit/index.cfm?act=itaudit.archive&fid=216"
     },
     {
+        "id": 21,
         "title": "Multinational Small Business",
         "author": ["nick-szabo"],
         "date": "1993",
@@ -202,6 +201,7 @@
         "external": "http://szabo.best.vwh.net/multi_small.html"
     },
     {
+        "id": 22,
         "title": "Shelling Out: The Origins of Money",
         "author": ["nick-szabo"],
         "date": "2002",
@@ -212,6 +212,7 @@
         "external": "http://szabo.best.vwh.net/shell.html"
     },
     {
+        "id": 23,
         "title": "Untraceable Electronic Mail, Return Addresses, and Digital Pseudonyms",
         "author": ["david-chaum"],
         "date": "1988",
@@ -221,6 +222,7 @@
         "doctype": "journal"
     },
     {
+        "id": 24,
         "title": "Blind Signatures for Untraceable Payments",
         "author": ["david-chaum"],
         "date": "1982",
@@ -230,6 +232,7 @@
         "doctype": "journal"
     },
     {
+        "id": 25,
         "title": "The Dining Cryptographers Problem: Unconditional Sender and Recipient Untraceability",
         "author": ["david-chaum"],
         "date": "1988",
@@ -239,6 +242,7 @@
         "doctype": "essay"
     },
     {
+        "id": 26,
         "title": "New Directions in Cryptography",
         "author": ["whitfield-diffie", "martin-e-hellman"],
         "date": "November 1976",
@@ -248,6 +252,7 @@
         "doctype": "journal"
     },
     {
+        "id": 27,
         "title": "A Method for Obtaining Digital Signatures and Public-key Cryptosystems",
         "author": ["ronald-l-rivest", "adi-shamir", "leonard-m-adleman"],
         "date": "February 1978",
@@ -258,6 +263,7 @@
         "external": "http://people.csail.mit.edu/rivest/Rsapaper.pdf"
     },
     {
+        "id": 28,
         "title": "Proofs that Yield Nothing But Their Validity or All Languages in NP Have Zero-Knowledge Proof Systems",
         "author": ["oded-goldreich", "silvio-micali", "avi-wigderson"],
         "date": "July 1991",
@@ -268,6 +274,7 @@
         "external": "http://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Zero%20Knowledge/Proofs_That_Yield_Nothing_But_Their_Validity_or_All_Languages_in_NP_Have_Zero-Knowledge_Proof_Systems.pdf"
     },
     {
+        "id": 29,
         "title": "Secure Communications over Insecure Channels",
         "author": ["ralph-c-merkle"],
         "date": "April 1978",
@@ -278,6 +285,7 @@
         "external": "http://www.merkle.com/1974/Puzzles1975.12.07.pdf"
     },
     {
+        "id": 30,
         "title": "The Ricardian Contract",
         "author": ["ian-grigg"],
         "date": "July 6, 2004",
@@ -288,6 +296,7 @@
         "external": "http://iang.org/papers/ricardian_contract.html"
     },
     {
+        "id": 31,
         "title": "Triple Entry Accounting",
         "author": ["ian-grigg"],
         "date": "December 25, 2005",
@@ -298,6 +307,7 @@
         "external": "http://iang.org/papers/triple_entry.html"
     },
     {
+        "id": 32,
         "title": "Truledger in Plain English",
         "author": ["bill-st-clair"],
         "date": "2008",
@@ -308,6 +318,7 @@
         "external": "http://truledger.com/doc/plain-english.html"
     },
     {
+        "id": 33,
         "title": "A Cypherpunk's Manifesto",
         "author": ["eric-hughes"],
         "date": "March 9, 1993",
@@ -317,6 +328,7 @@
         "doctype": "essay"
     },
     {
+        "id": 34,
         "title": "State and Terrorist Conspiracies & Conspiracy as Governance",
         "author": ["julian-assange"],
         "date": "December 3, 2006",
@@ -326,6 +338,7 @@
         "doctype": "essay"
     },
     {
+        "id": 35,
         "title": "The Art of Unix Programming",
         "author": ["eric-s-raymond"],
         "date": "2003",
@@ -336,6 +349,7 @@
         "external": "http://www.catb.org/esr/writings/taoup/html/"
     },
     {
+        "id": 36,
         "title": "The Theory of Money and Credit",
         "author": ["ludwig-von-mises"],
         "date": "1953",
@@ -346,6 +360,7 @@
         "external": "https://mises.org/document/194/The-Theory-of-Money-and-Credit"
     },
     {
+        "id": 37,
         "title": "Deflation and Liberty",
         "author": ["jorg-guido-hulsmann"],
         "date": "2008",
@@ -356,6 +371,7 @@
         "external": "https://mises.org/document/3726/Deflation-and-Liberty"
     },
     {
+        "id": 38,
         "title": "Money, Bank Credit, and Economic Cycles (Third Edition)",
         "author": ["jesus-huerta-de-soto"],
         "date": "2012",
@@ -366,6 +382,7 @@
         "external": "https://mises.org/document/2745/Money-Bank-Credit-and-Economic-Cycles"
     },
     {
+        "id": 39,
         "title": "Denationalisation of Money: The Argument Refined",
         "author": ["friedrich-a-hayek"],
         "date": "1978",
@@ -376,6 +393,7 @@
         "external": "https://mises.org/document/3970/Denationalisation-of-Money-The-Argument-Refined"
     },
     {
+        "id": 40,
         "title": "Against Intellectual Property",
         "author": ["n-stephan-kinsella"],
         "date": "2001",
@@ -386,6 +404,7 @@
         "external": "https://mises.org/document/3582/Against-Intellectual-Property"
     },
     {
+        "id": 41,
         "title": "Against Intellectual Monopoly",
         "author": ["michele-boldrin", "david-k-levine"],
         "date": "2008",
@@ -396,6 +415,7 @@
         "external": "http://levine.sscnet.ucla.edu/general/intellectual/againstfinal.htm"
     },
     {
+        "id": 42,
         "title": "The Right to Read: A Dystopian Short Story",
         "author": ["richard-m-stallman"],
         "date": "February 1997",
@@ -406,6 +426,7 @@
         "external": "https://www.gnu.org/philosophy/right-to-read.html"
     },
     {
+        "id": 43,
         "title": "Areopagitica: A Speech for the Liberty of Unlicensed Printing to the Parliament of England",
         "author": ["john-milton"],
         "date": "1644",
@@ -416,6 +437,7 @@
         "external": "https://en.wikisource.org/wiki/Areopagitica"
     },
     {
+        "id": 44,
         "title": "The libbitcoin Manifesto",
         "author": ["amir-taaki"],
         "date": "September 23, 2013",
@@ -426,6 +448,7 @@
         "external": "https://libbitcoin.dyne.org/libbitcoin-manifesto.pdf"
     },
     {
+        "id": 45,
         "title": "Bit Gold",
         "author": ["nick-szabo"],
         "date": "December 29, 2005",
@@ -436,6 +459,7 @@
         "external": "http://unenumerated.blogspot.com/2005/12/bit-gold.html"
     },
     {
+        "id": 46,
         "title": "Libertaria in Cyberspace",
         "author": ["timothy-c-may"],
         "date": "September 1, 1992",
@@ -445,6 +469,7 @@
         "doctype": "essay"
     },
     {
+        "id": 47,
         "title": "Crypto Glossary",
         "author": ["timothy-c-may", "eric-hughes"],
         "date": "November 22, 1992",
@@ -454,6 +479,7 @@
         "doctype": "essay"
     },
     {
+        "id": 48,
         "title": "Detecting Double Spending",
         "author": ["hal-finney"],
         "date": "October 15, 1993",
@@ -464,6 +490,7 @@
         "external": "https://web.archive.org/web/20140410150152/http://www.finney.org/~hal/chcash2.html"
     },
     {
+        "id": 49,
         "title": "The Cathedral and the Bazaar",
         "author": ["eric-s-raymond"],
         "date": "2000",
@@ -474,6 +501,7 @@
         "external": "http://www.catb.org/~esr/writings/cathedral-bazaar/cathedral-bazaar/"
     },
     {
+        "id": 50,
         "title": "Micropayments and Mental Transaction Costs",
         "author": ["nick-szabo"],
         "date": "May 1999",
@@ -484,6 +512,7 @@
         "external": "http://szabo.best.vwh.net/berlinmentalmicro.pdf"
     },
     {
+        "id": 51,
         "title": "Lucre: Anonymous Electronic Tokens v1.8",
         "author": ["ben-laurie"],
         "date": "October 30, 2008",
@@ -494,6 +523,7 @@
         "external": "http://anoncvs.aldigital.co.uk/lucre/theory2.pdf"
     },
     {
+        "id": 52,
         "title": "Advances in Distributed Security",
         "author": ["nick-szabo"],
         "date": "2003",
@@ -504,6 +534,7 @@
         "external": "http://szabo.best.vwh.net/distributed.html"
     },
     {
+        "id": 53,
         "title": "Online Cash Checks",
         "author": ["david-chaum"],
         "date": "1989",
@@ -514,6 +545,7 @@
         "external": "http://www.chaum.com/articles/Online_Cash_Checks.htm"
     },
     {
+        "id": 54,
         "title": "Why I Wrote PGP",
         "author": ["philip-r-zimmermann"],
         "date": "1991",
@@ -524,6 +556,7 @@
         "external": "https://www.philzimmermann.com/EN/essays/WhyIWrotePGP.html"
     },
     {
+        "id": 55,
         "title": "Measuring Value",
         "author": ["nick-szabo"],
         "date": "2002",
@@ -534,6 +567,7 @@
         "external": "http://szabo.best.vwh.net/measuringvalue.html"
     },
     {
+        "id": 56,
         "title": "From Crossbows To Cryptography: Techno-Thwarting The State",
         "author": ["chuck-hammill"],
         "date": "November 1987",
@@ -543,16 +577,7 @@
         "doctype": "essay"
     },
     {
-        "title": "GPG Contracts",
-        "author": ["mircea-popescu"],
-        "date": "October 24, 2012",
-        "slug": "gpg-contracts",
-        "formats": ["html", "ext"],
-        "categories": ["economics", "cryptography", "bitcoin"],
-        "doctype": "essay",
-        "external": "http://trilema.com/2012/gpg-contracts/"
-    },
-    {
+        "id": 58,
         "title": "Financial Cryptography in 7 Layers",
         "author": ["ian-grigg"],
         "date": "2000",
@@ -563,6 +588,7 @@
         "external": "http://iang.org/papers/fc7.html"
     },
     {
+        "id": 59,
         "title": "The Playdough Protocols",
         "author": ["nick-szabo"],
         "date": "2002",
@@ -573,6 +599,7 @@
         "external": "http://szabo.best.vwh.net/seals.html"
     },
     {
+        "id": 60,
         "title": "Capability-based Financial Instruments",
         "author": ["mark-s-miller", "chip-morningstar", "bill-frantz"],
         "date": "2000",
@@ -583,6 +610,7 @@
         "external": "http://www.erights.org/elib/capability/ode/index.html"
     },
     {
+        "id": 61,
         "title": "Contracts in Cyberspace",
         "author": ["david-d-friedman"],
         "date": "May 4, 2000",
@@ -593,6 +621,7 @@
         "external": "http://www.daviddfriedman.com/Academic/contracts_in_%20cyberspace/contracts_in_cyberspace.htm"
     },
     {
+        "id": 62,
         "title": "Digital Cash & Privacy",
         "author": ["hal-finney"],
         "date": "August 19, 1993",
@@ -602,6 +631,7 @@
         "doctype": "essay"
     },
     {
+        "id": 63,
         "title": "From Imperial China to Cyberspace: Contracting Without the State",
         "author": ["david-d-friedman"],
         "date": "2005",
@@ -612,6 +642,7 @@
         "external": "http://www.daviddfriedman.com/Academic/Course_Pages/analytical_methods_08/china_to_cyberspace.htm"
     },
     {
+        "id": 64,
         "title": "Bitcoin and Me",
         "author": ["hal-finney"],
         "date": "March 19, 2013",

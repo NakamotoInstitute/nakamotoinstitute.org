@@ -6,27 +6,33 @@
 
 import json
 import datetime
+import csv
 from dateutil import parser
+from datetime import datetime
 from sni.models import *
 
 # Clear out database
-Email.query.delete()
-Post.query.delete()
-cats = Category.query.all()
-for cat in cats:
-	db.session.delete(cat)
-	db.session.commit()
-forms = Format.query.all()
-for form in forms:
-	db.session.delete(form)
-	db.session.commit()
-auths = Author.query.all()
-for auth in auths:
-	db.session.delete(auth)
-	db.session.commit()
-Doc.query.delete()
-BlogPost.query.delete()
-Skeptic.query.delete()
+# Email.query.delete()
+# Post.query.delete()
+# cats = Category.query.all()
+# for cat in cats:
+# 	db.session.delete(cat)
+# 	db.session.commit()
+# forms = Format.query.all()
+# for form in forms:
+# 	db.session.delete(form)
+# 	db.session.commit()
+# auths = Author.query.all()
+# for auth in auths:
+# 	db.session.delete(auth)
+# 	db.session.commit()
+# Doc.query.delete()
+# ResearchDoc.query.delete()
+# BlogPost.query.delete()
+# Skeptic.query.delete()
+
+db.drop_all()
+db.create_all()
 
 # return object
 
@@ -106,7 +112,7 @@ for i in range(0, len(docs['docs'])):
 	else:
 		ext = None
 	doc = Doc(
-		id=i+1,
+		id=docs['docs'][i]['id'],
 		title=docs['docs'][i]['title'],
 		author=dbauthor,
 		date=docs['docs'][i]['date'],
@@ -115,6 +121,44 @@ for i in range(0, len(docs['docs'])):
 		categories=dbcat,
 		doctype=docs['docs'][i]['doctype'],
 		external=ext)
+	db.session.add(doc)
+	db.session.commit()
+
+with open('./research.json') as data_file:
+	research = json.load(data_file)
+
+for i in range(0, len(research)):
+	authorlist = research[i]['author']
+	dbauthor = []
+	for auth in authorlist:
+		dbauthor += [get(Author, slug=auth)]
+	formlist = research[i]['formats']
+	dbformat = []
+	for form in formlist:
+		dbformat += [get_or_create(Format, name=form)]
+	catlist = research[i]['categories']
+	dbcat = []
+	for cat in catlist:
+		dbcat += [get_or_create(Category, name=cat)]
+	if 'external' in research[i]:
+		ext = research[i]['external']
+	else:
+		ext = None
+	if 'lit_id' in research[i]:
+		lit = research[i]['lit_id']
+	else:
+		lit_id = None
+	doc = ResearchDoc(
+		id=research[i]['id'],
+		title=research[i]['title'],
+		author=dbauthor,
+		date=research[i]['date'],
+		slug=research[i]['slug'],
+		formats=dbformat,
+		categories=dbcat,
+		doctype=research[i]['doctype'],
+		external=ext,
+		lit_id=lit)
 	db.session.add(doc)
 	db.session.commit()
 
@@ -152,3 +196,11 @@ for i in range(0,len(skeptics['skeptics'])):
 		slug = skeptics['skeptics'][i]['slug']+'-'+str(parser.parse(skeptics['skeptics'][i]['date']))[0:10])
 	db.session.add(skeptic)
 	db.session.commit()
+
+with open('./addresses/addresses.csv') as csvfile:
+	addresses = csv.reader(csvfile)
+	now = datetime.now()
+	for address in addresses:
+		record = DonationAddress(address=address[0], lastseen=now)
+		db.session.add(record)
+		db.session.commit()

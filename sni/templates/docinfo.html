@@ -42,12 +42,7 @@
   </h1>
 </div>
 	<dl class="dl-horizontal">
-  		<dt>
-        Date:
-      </dt>
-  		<dd>
-        {{doc['date']}}
-      </dd>
+  		<dt>Date:</dt><dd>{{doc['date']}}</dd>
       {% if 'una' in forms %}
 
         </dl>
@@ -65,49 +60,47 @@
 
       {% else %}
 
-  		<dt>
-        Formats:
-      </dt>
-
+  		<dt>Formats:</dt>
   		<dd>
-
-      {% if 'html' in forms %}
-
-        <a href="{{url_for('slugview', slug=doc['slug'])}}">
-          HTML
-        </a>
+        {% if 'html' in forms %}
+          <a href="{{url_for('slugview', slug=doc['slug'])}}">
+            HTML
+          </a>
+          </br>
+        {% endif %}
+        {% if 'pdf' in forms %}
+          <a href="{{url_for('docview', slug=doc['slug'], format='pdf')}}">
+            PDF
+          </a>
+          </br>
+        {% endif %}
+        {% if 'txt' in forms %}
+          <a href="{{url_for('docview', slug=doc['slug'], format='txt')}}">
+            txt
+          </a>
         </br>
-
-      {% endif %}
-
-  		{% if 'pdf' in forms %}
-
-      <a href="{{url_for('docview', slug=doc['slug'], format='pdf')}}">
-        PDF
-      </a>
-      </br>
-
-      {% endif %}
-
-      {% if 'txt' in forms %}
-      <a href="{{url_for('docview', slug=doc['slug'], format='txt')}}">
-        txt
-      </a>
-      </br>
-      {% endif %}
-
-      {% if 'ext' in forms %}
-      <a href="{{doc.external}}">
-        External link
-      </a>
-      {% endif %}
+        {% endif %}
+        {% if 'ext' in forms %}
+          <a href="{{doc.external}}">
+            External link
+          </a>
+        {% endif %}
       </dd>
     </dl>
 
       {% endif %}
-      
-  <a href="{{url_for('literature')}}">
-    Back
-  </a>
+  
+
+  <div class = "text-center">
+    {% if is_lit %}
+    <a type="button" class="btn btn-default" href="{{url_for('literature')}}">
+      Back to Literature
+    </a>
+    {% else %}
+    <a type="button" class="btn btn-default" href="#">
+      Back to Research
+    </a>
+    {% endif %}
+  </div>
 </div>
 {% endblock %}

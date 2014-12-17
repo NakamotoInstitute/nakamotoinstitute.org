@@ -50,7 +50,7 @@ body {
 }
 
 .navbar {
-  font-size: 95%;
+  font-size: 90%;
 }
 
 .navbar-toggle > .icon-bar {
@@ -60,18 +60,6 @@ body {
 .email-text-monospace {
   font-family: monospace;
   font-size: 1em;
-}
-
-.dl-horizontal dt{
-    text-align: left;
-    margin-bottom: 1em;
-    width: auto;
-    padding-right: 1em;
-}
-
-.dl-horizontal dd{
-    margin-left: 0;
-    margin-bottom: 1em;
 }
 
 .dropdown:hover .dropdown-menu {

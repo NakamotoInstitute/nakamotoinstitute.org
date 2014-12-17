@@ -13,7 +13,7 @@
     </div>
   </div>
 
-  {% if lit|length != 0%}
+  {% if lit|length != 0 %}
     <h3>Literature</h3>
     {% for li in lit %}
     <hr>
@@ -30,7 +30,24 @@
   </div>
   {%endif%}
 
-  {% if mem|length != 0%}
+  {% if res|length != 0 %}
+    <h3>Research</h3>
+    {% for re in res %}
+    <hr>
+        <a href="#">
+            {{re.title}}
+        </a> - {{re.date}}
+    {% endfor %}
+      <br>
+      <br>
+  <div class = "text-center">
+    <a type="button" class="btn btn-default" href="#">
+      Back to Research
+    </a>
+  </div>
+  {%endif%}
+
+  {% if mem|length != 0 %}
     <h3>The Memory Pool</h3>
     {% for me in mem %}
     <hr>

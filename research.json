@@ -1,0 +1,48 @@
+[
+    {
+        "id": 1,
+        "lit_id": 2,
+        "title": "Economics of Bitcoin: is Bitcoin an alternative to fiat currencies and gold?",
+        "author": ["peter-surda"],
+        "date": "November 19, 2012",
+        "slug": "economics-of-bitcoin",
+        "formats": ["pdf", "ext"],
+        "categories": ["economics", "bitcoin"],
+        "doctype": "essay",
+        "external": "http://dev.economicsofbitcoin.com/mastersthesis/mastersthesis-surda-2012-11-19b.pdf"
+    },
+    {
+        "id": 2,
+        "lit_id": 3,
+        "title": "On the Origins of Bitcoin",
+        "author": ["konrad-s-graf"],
+        "date": "October 23, 2013",
+        "slug": "origins-of-bitcoin",
+        "formats": ["html","pdf", "ext"],
+        "categories": ["economics", "bitcoin"],
+        "doctype": "essay",
+        "external": "http://konradsgraf.com/storage/On%20the%20Origins%20of%20Bitcoin%20Graf%2003.11.13.pdf"
+    },
+    {
+        "id": 3,
+        "lit_id": 57,
+        "title": "GPG Contracts",
+        "author": ["mircea-popescu"],
+        "date": "October 24, 2012",
+        "slug": "gpg-contracts",
+        "formats": ["html", "ext"],
+        "categories": ["economics", "cryptography", "bitcoin"],
+        "doctype": "essay",
+        "external": "http://trilema.com/2012/gpg-contracts/"
+    },
+    {
+        "id": 4,
+        "title": "Reciprocal Altruism in the Theory of Money",
+        "author": ["daniel-krawisz"],
+        "date": "December 8, 2014",
+        "slug": "reciprocal-altruism-in-the-theory-of-money",
+        "formats": ["html"],
+        "categories": ["economics", "bitcoin"],
+        "doctype": "essay"
+    }
+]
