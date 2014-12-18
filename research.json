@@ -44,5 +44,16 @@
         "formats": ["html"],
         "categories": ["economics", "bitcoin"],
         "doctype": "essay"
+    },
+    {
+        "id": 5,
+        "title": "Anonymous Byzantine Consensus from Moderately-Hard Puzzles: A Model for Bitcoin",
+        "author": ["andrew-miller", "joseph-j-laviola-jr"],
+        "date": "April 24, 2014",
+        "slug": "anonymous-byzantine-consensus",
+        "formats": ["pdf", "ext"],
+        "categories": ["cryptography"],
+        "doctype": "essay",
+        "external": "http://tr.eecs.ucf.edu/78/"
     }
 ]
