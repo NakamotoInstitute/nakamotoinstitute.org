@@ -69,15 +69,27 @@
           </br>
         {% endif %}
         {% if 'pdf' in forms %}
+          {% if is_lit %}
           <a href="{{url_for('docview', slug=doc['slug'], format='pdf')}}">
             PDF
           </a>
+          {% else %}
+          <a href="{{url_for('researchdocview', slug=doc['slug'], format='pdf')}}">
+            PDF
+          </a>
+          {% endif %}
           </br>
         {% endif %}
         {% if 'txt' in forms %}
+          {% if is_lit %}
           <a href="{{url_for('docview', slug=doc['slug'], format='txt')}}">
             txt
           </a>
+          {% else %}
+          <a href="{{url_for('researchdocview', slug=doc['slug'], format='txt')}}">
+            txt
+          </a>
+          {% endif %}
         </br>
         {% endif %}
         {% if 'ext' in forms %}
