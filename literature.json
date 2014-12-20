@@ -651,5 +651,16 @@
         "categories": ["cryptography"],
         "doctype": "essay",
         "external": "https://bitcointalk.org/index.php?topic=155054.msg1643833#msg1643833"
+    },
+    {
+        "id": 65,
+        "title": "The Byzantine Generals Problem",
+        "author": ["leslie-lamport", "robert-shostak", "marshall-pease"],
+        "date": "July 1982",
+        "slug": "the-byzantine-generals-problem",
+        "formats": ["pdf", "ext"],
+        "categories": ["cryptography", "computer science"],
+        "doctype": "essay",
+        "external": "http://research.microsoft.com/en-us/um/people/lamport/pubs/pubs.html#byz"
     }]
 }
