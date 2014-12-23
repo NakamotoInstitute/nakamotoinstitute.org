@@ -662,5 +662,16 @@
         "categories": ["cryptography", "computer science"],
         "doctype": "essay",
         "external": "http://research.microsoft.com/en-us/um/people/lamport/pubs/pubs.html#byz"
+    },
+    {
+        "id": 66,
+        "title": "Implementing Fault-Tolerant Services Using the State Machine Approach: A Tutorial",
+        "author": ["fred-b-schneider"],
+        "date": "December 1990",
+        "slug": "implementing-fault-tolerant-services",
+        "formats": ["pdf", "ext"],
+        "categories": ["cryptography"],
+        "doctype": "essay",
+        "external": "https://www.cs.cornell.edu/fbs/fullist.htm"
     }]
 }
