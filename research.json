@@ -55,5 +55,16 @@
         "categories": ["cryptography"],
         "doctype": "essay",
         "external": "http://tr.eecs.ucf.edu/78/"
+    },
+    {
+        "id": 6,
+        "title": "Revisiting Conceptions of Commodity and Scarcity in Light of Bitcoin",
+        "author": ["konrad-s-graf"],
+        "date": "March 17, 2014",
+        "slug": "commodity-and-scarcity-in-light-of-bitcoin",
+        "formats": ["pdf", "ext"],
+        "categories": ["economics", "cryptography"],
+        "doctype": "essay",
+        "external": "http://konradsgraf.com/bitcoin-theory/"
     }
 ]
