@@ -30,6 +30,7 @@ Doc.query.delete()
 ResearchDoc.query.delete()
 BlogPost.query.delete()
 Skeptic.query.delete()
+Episode.query.delete()
 
 #db.drop_all()
 #db.create_all()
@@ -195,6 +196,22 @@ for i in range(0,len(skeptics['skeptics'])):
 		waybacklink = skeptics['skeptics'][i]['waybacklink'],
 		slug = skeptics['skeptics'][i]['slug']+'-'+str(parser.parse(skeptics['skeptics'][i]['date']))[0:10])
 	db.session.add(skeptic)
+	db.session.commit()
+
+with open('./episodes.json') as data_file:
+	episodes = json.load(data_file)
+
+for i in range(0,len(episodes)):
+	episode = Episode(
+		id=episodes[i]['id'],
+		title=episodes[i]['title'],
+		date=parser.parse(episodes[i]['date']),
+		duration=episodes[i]['duration'],
+		subtitle=episodes[i]['subtitle'],
+		summary=episodes[i]['summary'],
+		slug=episodes[i]['slug'],
+		youtube=episodes[i]['youtube'])
+	db.session.add(episode)
 	db.session.commit()
 
 #with open('./addresses/addresses.csv') as csvfile:

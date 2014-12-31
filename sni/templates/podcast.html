@@ -1,0 +1,38 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block title %}
+The Crypto-Mises Podcast | Satoshi Nakamoto Institute
+{% endblock %}
+
+{% block content %}
+<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+
+  <div class="row">
+    <div class="text-center">
+      <h1>The Crypto-Mises Podcast</h1>
+      <p>
+        The official podcast of SNI<br>
+        <a href="#">Feed</a>
+      </p>
+    </div>
+  </div>
+
+      {% for ep in episodes %}
+      <hr>
+      <h3>
+        <a href="#">
+          {{ep.title}}
+        </a>
+        <p>
+        <small>
+          {{ep.date.strftime('%B %d, %Y')}}
+        </small>
+        </p>
+      </h3>
+        <p>
+          {{ep.subtitle}}
+        </p>
+      {% endfor %}
+</div>
+{% endblock %}

@@ -400,6 +400,13 @@ def atomfeed():
     return feed.get_response()
 
 @cache.cached(timeout=900)
+@app.route('/podcast/', methods=["GET"])
+def podcast():
+    episodes = Episode.query.order_by(desc(Episode.date)).all()
+    app.logger.info(str(request.remote_addr) + ', podcast')
+    return render_template('podcast.html', episodes=episodes)
+
+@cache.cached(timeout=900)
 @app.route('/the-skeptics/')
 def skeptics():
     skeptics = Skeptic.query.order_by(Skeptic.date).all()
