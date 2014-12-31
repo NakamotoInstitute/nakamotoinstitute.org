@@ -7,7 +7,7 @@
 
 from sni import app, db, cache
 from models import Post, Email, Doc, ResearchDoc, Author, Format, Category,\
-                   BlogPost, Skeptic, DonationAddress
+                   BlogPost, Skeptic, DonationAddress, Episode
 from flask import render_template, json, url_for, redirect, request
 from sqlalchemy import desc
 from werkzeug.contrib.atom import AtomFeed

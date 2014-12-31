@@ -155,6 +155,21 @@ class Skeptic(db.Model):
 	waybacklink = db.Column(db.String())
 	slug = db.Column(db.String())
 
+	def __repr__(self):
+ 		return '<Skeptic %r>' % (self.name)
+
+class Episode(db.Model):
+	id = db.Column(db.Integer, primary_key = True)
+	title = db.Column(db.String())
+	date = db.Column(db.Date())
+	duration = db.Column(db.String())
+	subtitle = db.Column(db.String())
+	summary = db.Column(db.String())
+	slug = db.Column(db.String())
+	youtube = db.Column(db.String())
+
+	def __repr__(self):
+		return '<Episode %r>' % (self.title)
 
 class DonationAddress(db.Model):
     address = db.Column(db.String, primary_key = True)
