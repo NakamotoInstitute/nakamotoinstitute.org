@@ -407,6 +407,17 @@ def podcast():
     return render_template('podcast.html', episodes=episodes)
 
 @cache.cached(timeout=900)
+@app.route('/podcast/<string:slug>/', methods=["GET"])
+def episode(slug):
+    ep = Episode.query.filter_by(slug=slug).order_by(desc(Episode.date)).first()
+    if(ep != None):
+        app.logger.info(str(request.remote_addr) + ', podcast, ' + slug)
+        return render_template('%s.html' % slug, ep=ep)
+    else:
+        return redirect(url_for("podcast"))
+
+
+@cache.cached(timeout=900)
 @app.route('/the-skeptics/')
 def skeptics():
     skeptics = Skeptic.query.order_by(Skeptic.date).all()

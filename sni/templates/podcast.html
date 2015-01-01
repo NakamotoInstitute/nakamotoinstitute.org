@@ -12,7 +12,7 @@ The Crypto-Mises Podcast | Satoshi Nakamoto Institute
     <div class="text-center">
       <h1>The Crypto-Mises Podcast</h1>
       <p>
-        The official podcast of SNI<br>
+        The official podcast of the Satoshi Nakamoto Institute<br>
         <a href="#">Feed</a>
       </p>
     </div>
@@ -21,7 +21,7 @@ The Crypto-Mises Podcast | Satoshi Nakamoto Institute
       {% for ep in episodes %}
       <hr>
       <h3>
-        <a href="#">
+        <a href="{{url_for('episode', slug=ep.slug)}}">
           {{ep.title}}
         </a>
         <p>
