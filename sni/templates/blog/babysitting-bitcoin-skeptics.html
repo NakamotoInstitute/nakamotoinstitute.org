@@ -1,4 +1,22 @@
-
+<!-- extend base layout -->
+{% extends "blogpost.html" %}
+{% block post %}
+<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+	<div class="page-header">
+		<h1 class="text-center">
+			Babysitting Bitcoin Skeptics: A Response to Krugman and Gobry
+			<br>
+			<small>
+				Daniel Krawisz
+			</small>
+		</h1>
+		<h4 class="text-center">
+			(DATE HERE!!!!)
+		</h4>
+		<p>
+			(IMAGE HERE!!!!!!!!!!!)
+		</p>
+	</div>
 
 	<p>
 		In 1977, Joan and Richard Sweeny wrote an article called "<a href="http://cda.morris.umn.edu/~kildegac/Courses/M&amp;B/Sweeney%20&amp;%20Sweeney.pdf">Monetary Theory and the Great Capitol Hill Baby Sitting Co-op Crisis</a>" which describes the economic woes of a certain babysitting co-op whose members traded scrip between them in exchange for babysitting one anothers' children. In 1998, Paul Krugman wrote a commentary on it called "<a href="http://www.slate.com/articles/business/the_dismal_science/1998/08/babysitting_the_economy.html">Baby-Sitting the Economy</a>." He interpreted the events it describes as a microcosm for the economy as a whole, and he analyzed it according to his Keynesian framework. Finally, in 2014, Pascal-Emmanuel Gobry confidently predicted Bitcoin's failure based on his <a href="http://www.forbes.com/sites/pascalemmanuelgobry/2013/04/05/krugman-baby-sitting-co-op-bitcoin/">application</a> of Krugman's analysis to Bitcoin.
@@ -13,7 +31,7 @@
 	</p>
 
 	<p>
-		Of course, the number of available babysitters did not always match up with the number of people who wanted to go out in a given evening. The Sweenys describe periods of both chronically too many babysitters and too few. These imbalances were caused by the way people valued the scrip. Within the co-op, the value of having a balance of scrip is flexibility. One can go out several times at one's leisure without worrying about replenishing the supply immediately if one does not have time to provide care for other children. Everyone desires a certain flexibility, so there is a need for a certain amount of scrip per capita to be issued. Clearly it would be very inconvenient if one unit of scrip were available\[LongDash]no one could babysit or go out twice in a row and no two couples could go out at the same time. Everyone would want more scrip, and the one holding it would not be very willing to spend it\[LongDash]this is what is known as a <em>liquidity trap</em>. On the other hand, if there is too much scrip per capita, then everyone feels flexible enough and would prefer to go out rather than try to accumulate more.
+		Of course, the number of available babysitters did not always match up with the number of people who wanted to go out in a given evening. The Sweenys describe periods of both chronically too many babysitters and too few. These imbalances were caused by the way people valued the scrip. Within the co-op, the value of having a balance of scrip is flexibility. One can go out several times at one's leisure without worrying about replenishing the supply immediately if one does not have time to provide care for other children. Everyone desires a certain flexibility, so there is a need for a certain amount of scrip per capita to be issued. Clearly it would be very inconvenient if one unit of scrip were available\[LongDash]no one could babysit or go out twice in a row and no two couples could go out at the same time. Everyone would want more scrip, and the one holding it would not be very willing to spend it&mdash;this is what is known as a <em>liquidity trap</em>. On the other hand, if there is too much scrip per capita, then everyone feels flexible enough and would prefer to go out rather than try to accumulate more.
 	</p>
 
 	<p>
@@ -25,11 +43,11 @@ The scrip was created and destroyed according to various provisions in the co-op
 	</p>
 
 	<p>
-		<strong>There at least two possible ways of dealing with a suboptimal supply of scrip:</strong> the supply of scrip per capita could be adjusted or the price of the scrip could be adjusted. If everyone has ten units of scrip worth an hour of babysitting, that is the same as if everyone had twenty units each worth half an hour. Thus, if people felt as if they had accumulated enough scrip and preferred to spend rather than save it, the co-op board could require everyone to turn in some scrip or declare that each unit is worth less babysitting time. There is not necessarily a single ideal supply of scrip that would work permanently because people will have different babysitting needs at different times, so there would have to be continual adjustments.
+		There at least two possible ways of dealing with a suboptimal supply of scrip: the supply of scrip per capita could be adjusted or the price of the scrip could be adjusted. If everyone has ten units of scrip worth an hour of babysitting, that is the same as if everyone had twenty units each worth half an hour. Thus, if people felt as if they had accumulated enough scrip and preferred to spend rather than save it, the co-op board could require everyone to turn in some scrip or declare that each unit is worth less babysitting time. There is not necessarily a single ideal supply of scrip that would work permanently because people will have different babysitting needs at different times, so there would have to be continual adjustments.
 	</p>
 
 	<p>
-		The co-op, of course, operates as a centrally planned arrangement characterized by strict price controls. As long as the price is fixed, then the central board must meet to adjust the price as needed. Yet although the Sweenys clearly and repeatedly identify price controls as being fundamental to the co-op's problems, <strong>Krugman does not mention that his interpretation of the events is very different from the Sweenys and does not present price changes as a possible cause of the co-op's problems.</strong>[1] He assumes that a change to the supply of scrip is the only possible solution, and in fact, the word <em>price</em> does not appear in his article even once! This is rather odd because the Sweenys explain all of the co-op's economic woes in terms of price controls, so Krugman clearly should have responded to this in order to establish his own interpretation of the events.
+		The co-op, of course, operates as a centrally planned arrangement characterized by strict price controls. As long as the price is fixed, then the central board must meet to adjust the price as needed. Yet although the Sweenys clearly and repeatedly identify price controls as being fundamental to the co-op's problems, Krugman does not mention that his interpretation of the events is very different from the Sweenys and does not present price changes as a possible cause of the co-op's problems.<sup><a href="#fn1" id="ref1">1</a></sup> He assumes that a change to the supply of scrip is the only possible solution, and in fact, the word <em>price</em> does not appear in his article even once! This is rather odd because the Sweenys explain all of the co-op's economic woes in terms of price controls, so Krugman clearly should have responded to this in order to establish his own interpretation of the events.
 	</p>
 
 	<p>
@@ -86,6 +104,16 @@ However, he has utterly failed to show that the co-op is analogous to the Americ
 		Thus, a babysitting co-op is very different from a money economy (Bitcoin or otherwise). It is different for reasons that have been noted neither by the Sweenys, nor Krugman, nor Gobry. However, both Krugman's and Gobry's arguments depend on an invalid analogy between the two, whereas the Sweenys' do not. Krugman misrepresented or misunderstood the original article and failed to discuss the price control imposed by the co-op, which means that he fails to show that the co-op's situation has anything to do with the American economy. Finally, Gobry has merely repeated Krugman's claims without showing any relevance to Bitcoin, and failed to deal cogently with the evidence that Bitcoin is not at risk of a liquidity trap.
 	</p>
 
-	<p>
-		<strong>[1] </strong>I suspect that Krugman did not go back and review the original article when he wrote his 1998 column because he makes a few errors that he probably would otherwise have caught. For example, he says that one unit of scrip was worth an hour of babysitting time, when it was really worth one half-hour. He also cites the article incorrectly and gives its year of publication as 1978 instead of 1977. He does not quote from the original article to support his case or note that his interpretation of the events differs somewhat from that of the authors. None of that has any necessary effect on the logic of his position, but I think these observations suggest that his column may be strongly colored by his own preconceptions without a fresh look at the original piece. Gobry also shows no evidence of having read the original article.
-	</p>
+	<h2 id="footnotes">
+		Footnotes
+	</h2>
+
+  <ol>
+    <li id="fn1">
+      <p>
+        I suspect that Krugman did not go back and review the original article when he wrote his 1998 column because he makes a few errors that he probably would otherwise have caught. For example, he says that one unit of scrip was worth an hour of babysitting time, when it was really worth one half-hour. He also cites the article incorrectly and gives its year of publication as 1978 instead of 1977. He does not quote from the original article to support his case or note that his interpretation of the events differs somewhat from that of the authors. None of that has any necessary effect on the logic of his position, but I think these observations suggest that his column may be strongly colored by his own preconceptions without a fresh look at the original piece. Gobry also shows no evidence of having read the original article.<a href="#ref1">↩</a>
+      </p>
+  </ol>
+
+</div>
+{%endblock%}
