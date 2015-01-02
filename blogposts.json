@@ -1,6 +1,15 @@
 {
   "blogposts": [
     {
+        "title": "The Two Ideologies in Bitcoin",
+        "author": "daniel-krawisz",
+        "date": "October 4, 2014",
+        "added": "January 2, 2015",
+        "slug": "the-two-ideologies-in-bitcoin",
+        "excerpt": "There are two ideologies in the Bitcoin world. They are not political ideologies; they are different visions of Bitcoin’s place in the world and how adoption will happen.",
+        "languages": "en"
+    },
+    {
         "title": "Meditations on Cypherpunk Nightmares",
         "author": "michael-goldstein",
         "date": "December 24, 2014",
