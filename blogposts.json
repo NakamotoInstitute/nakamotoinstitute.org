@@ -1,6 +1,15 @@
 {
   "blogposts": [
     {
+        "title": "Don’t Panic",
+        "author": "daniel-krawisz",
+        "date": "November 22, 2014",
+        "added": "January 3, 2015",
+        "slug": "dont-panic",
+        "excerpt": "Working in the Bitcoin world is like working for a drug addict with bipolar disorder.",
+        "languages": "en"
+    },
+    {
         "title": "The Two Ideologies in Bitcoin",
         "author": "daniel-krawisz",
         "date": "October 4, 2014",
