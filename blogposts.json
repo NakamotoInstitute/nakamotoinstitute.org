@@ -1,6 +1,15 @@
 {
   "blogposts": [
     {
+        "title": "Babysitting Bitcoin Skeptics: A Response to Krugman and Gobry",
+        "author": "daniel-krawisz",
+        "date": "November 30, 2014",
+        "added": "January 4, 2015",
+        "slug": "babysitting-bitcoin-skeptics",
+        "excerpt": "Krugman’s article and Gobry’s follow-up are confused, do not establish their case, and say nothing about Bitcoin.",
+        "languages": "en"
+    },
+    {
         "title": "Don’t Panic",
         "author": "daniel-krawisz",
         "date": "November 22, 2014",
