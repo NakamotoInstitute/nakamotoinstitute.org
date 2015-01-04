@@ -376,7 +376,7 @@ def blogposttrans(slug, lang):
         if(lang == 'en' or all(lang != l for l in languages)):
             return redirect(url_for("blogpost", slug=slug))
         else:
-            app.logger.info(str(request.remote_addr) + ', mempool, ' + slug+'-lang')
+            app.logger.info(str(request.remote_addr) + ', mempool, ' + slug+'-'+lang)
             return render_template('%s-%s.html' % (slug, lang), bp=bp, lang=lang)
     else:
         return redirect(url_for("blog"))

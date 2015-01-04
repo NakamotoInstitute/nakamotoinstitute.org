@@ -1,6 +1,24 @@
 {
   "blogposts": [
     {
+        "title": "Don’t Panic",
+        "author": "daniel-krawisz",
+        "date": "November 22, 2014",
+        "added": "January 3, 2015",
+        "slug": "dont-panic",
+        "excerpt": "Working in the Bitcoin world is like working for a drug addict with bipolar disorder.",
+        "languages": "en"
+    },
+    {
+        "title": "The Two Ideologies in Bitcoin",
+        "author": "daniel-krawisz",
+        "date": "October 4, 2014",
+        "added": "January 2, 2015",
+        "slug": "the-two-ideologies-in-bitcoin",
+        "excerpt": "There are two ideologies in the Bitcoin world. They are not political ideologies; they are different visions of Bitcoin’s place in the world and how adoption will happen.",
+        "languages": "en"
+    },
+    {
         "title": "Meditations on Cypherpunk Nightmares",
         "author": "michael-goldstein",
         "date": "December 24, 2014",
@@ -115,7 +133,7 @@
         "added": "May 10, 2014",
         "slug": "bitcoin-is-the-best-unit-of-account",
         "excerpt":"Someone still lost in the dollar world looks at Bitcoin and sees wild and extreme volatility, whereas someone in Bitcoin looking back at the dollar sees the worst and longest economic crash in history.",
-        "languages": "en"
+        "languages": "en, es"
     },
     {
         "title": "How We Know Bitcoin Is Not a Bubble",
