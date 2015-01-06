@@ -1,13 +1,49 @@
 {
   "blogposts": [
     {
+        "title": "Bitcoin’s Compound Rewards",
+        "author": "daniel-krawisz",
+        "date": "October 25, 2014",
+        "added": "January 5, 2015",
+        "slug": "bitcoins-compound-rewards",
+        "excerpt": "The difference between Bitcoin and a Ponzi scheme is that in a Ponzi scheme, the early adopters benefit by cashing out. With Bitcoin, there is no reason ever to cash out.",
+        "languages": "en"
+    },
+    {
+        "title": "Babysitting Bitcoin Skeptics: A Response to Krugman and Gobry",
+        "author": "daniel-krawisz",
+        "date": "November 30, 2014",
+        "added": "January 4, 2015",
+        "slug": "babysitting-bitcoin-skeptics",
+        "excerpt": "Krugman’s article and Gobry’s follow-up are confused, do not establish their case, and say nothing about Bitcoin.",
+        "languages": "en"
+    },
+    {
+        "title": "Don’t Panic",
+        "author": "daniel-krawisz",
+        "date": "November 22, 2014",
+        "added": "January 3, 2015",
+        "slug": "dont-panic",
+        "excerpt": "Working in the Bitcoin world is like working for a drug addict with bipolar disorder.",
+        "languages": "en"
+    },
+    {
+        "title": "The Two Ideologies in Bitcoin",
+        "author": "daniel-krawisz",
+        "date": "October 4, 2014",
+        "added": "January 2, 2015",
+        "slug": "the-two-ideologies-in-bitcoin",
+        "excerpt": "There are two ideologies in the Bitcoin world. They are not political ideologies; they are different visions of Bitcoin’s place in the world and how adoption will happen.",
+        "languages": "en"
+    },
+    {
         "title": "Meditations on Cypherpunk Nightmares",
         "author": "michael-goldstein",
         "date": "December 24, 2014",
         "added": "December 24, 2014",
         "slug": "meditations-on-cypherpunk-nightmares",
         "excerpt": "Protecting ourselves from the dangers of crypto-anarchy requires embracing it even more fully and internalizing and practicing the virtues that have helped great men weather the storms of life since antiquity.",
-        "languages": "en"
+        "languages": "en, zh"
     },
     {
         "title": "The Legacy of the Dread Pirate Roberts",
@@ -115,7 +151,7 @@
         "added": "May 10, 2014",
         "slug": "bitcoin-is-the-best-unit-of-account",
         "excerpt":"Someone still lost in the dollar world looks at Bitcoin and sees wild and extreme volatility, whereas someone in Bitcoin looking back at the dollar sees the worst and longest economic crash in history.",
-        "languages": "en"
+        "languages": "en, es"
     },
     {
         "title": "How We Know Bitcoin Is Not a Bubble",
