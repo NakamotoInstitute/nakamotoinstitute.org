@@ -167,6 +167,7 @@ class Episode(db.Model):
 	summary = db.Column(db.String())
 	slug = db.Column(db.String())
 	youtube = db.Column(db.String())
+	address = db.Column(db.String())
 
 	def __repr__(self):
 		return '<Episode %r>' % (self.title)

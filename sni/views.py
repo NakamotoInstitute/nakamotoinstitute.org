@@ -8,7 +8,7 @@
 from sni import app, db, cache
 from models import Post, Email, Doc, ResearchDoc, Author, Format, Category,\
                    BlogPost, Skeptic, DonationAddress, Episode
-from flask import render_template, json, url_for, redirect, request
+from flask import render_template, json, url_for, redirect, request, Response
 from sqlalchemy import desc
 from werkzeug.contrib.atom import AtomFeed
 from datetime import datetime
@@ -415,6 +415,11 @@ def episode(slug):
         return render_template('%s.html' % slug, ep=ep)
     else:
         return redirect(url_for("podcast"))
+
+@cache.cached(timeout=900)
+@app.route('/podcast/feed/', methods=["GET"])
+def podcastfeed():
+    return Response(render_template('feed.xml'), mimetype='text/xml')
 
 
 @cache.cached(timeout=900)

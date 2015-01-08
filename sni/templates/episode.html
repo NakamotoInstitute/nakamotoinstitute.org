@@ -24,28 +24,19 @@
     <iframe width="640" height="360" src="//www.youtube.com/embed/{{ep.youtube}}" frameborder="0" allowfullscreen></iframe>
   </div>
 
-  <p>
-  <audio controls>
-    <source src="/static/cryptomises/{{ep.slug}}.ogg" type="audio/ogg">
-    <source src="/static/cryptomises/{{ep.slug}}.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-</p>
+  <div class="text-center">
+    <a type="button" class="btn btn-default" href="/static/cryptomises/{{ep.slug}}.mp3">
+      Download .mp3
+    </a>
+    <hr>
+    <a href="#" target="itunes_store"><img style="display:inline-block;margin-left:auto;margin-right:auto;height:40px" src="https://linkmaker.itunes.apple.com/htmlResources/assets/en_us//images/web/linkmaker/badge_subscribe-lrg.png" /></a>
+    <a href="{{url_for('podcastfeed')}}"><img style="display:inline-block;margin-left:auto;margin-right:auto;height:40px" src="/static/img/cryptomises/rss.png" /></a>
+  </div>
 
-  <p>
-
-  <a type="button" class="btn btn-default" href="/static/cryptomises/{{ep.slug}}.mp3">
-    Download .mp3
-  </a>
-
-  <a type="button" class="btn btn-default" href="/static/cryptomises/{{ep.slug}}.ogg">
-    Download .ogg
-  </a>
-
-</p>
-
+  <hr>
   <p class="text-center">
-    Enjoy this episode? Show your support by <a href="bitcoin:{{donation_address()}}">donating bitcoins to SNI</a>.
+    Enjoy this episode? Show your support by donating:</br>
+    <a href="bitcoin:{{ep.address}}">{{ep.address}}</a>
   </p>
   
   <br>

@@ -210,7 +210,8 @@ for i in range(0,len(episodes)):
 		subtitle=episodes[i]['subtitle'],
 		summary=episodes[i]['summary'],
 		slug=episodes[i]['slug'],
-		youtube=episodes[i]['youtube'])
+		youtube=episodes[i]['youtube'],
+		address=episodes[i]['address'])
 	db.session.add(episode)
 	db.session.commit()
 
