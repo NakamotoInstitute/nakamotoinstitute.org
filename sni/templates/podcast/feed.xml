@@ -1,0 +1,47 @@
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>The Crypto-Mises Podcast</title>
+    <link>http://nakamotoinstitute.org/podcast/feed/</link>
+    <description>The official podcast of the Satoshi Nakamoto Institute</description>
+    <atom:link href="http://nakamotoinstitute.org/podcast/feed/" rel="self"/>
+    <copyright>cc-by-sa</copyright>
+    <docs>http://www.rssboard.org/rss-specification</docs>
+    <generator>python-feedgen</generator>
+    <image>
+      <url>http://nakamotoinstitute.org/static/img/cryptomises/cmpodcast_144.jpg</url>
+      <title>The Crypto-Mises Podcast</title>
+      <link>http://nakamotoinstitute.org/podcast/feed/</link>
+    </image>
+    <language>en</language>
+    <lastBuildDate>Fri, 09 Jan 2015 04:02:52 +0000</lastBuildDate>
+    <itunes:author>Satoshi Nakamoto Institute</itunes:author>
+    <itunes:image href="http://nakamotoinstitute.org/static/img/cryptomises/cmpodcast_1440.jpg"/>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:complete>no</itunes:complete>
+    <itunes:owner>
+      <itunes:name>Michael Goldstein</itunes:name>
+      <itunes:email>michael@bitstein.org</itunes:email>
+    </itunes:owner>
+    <itunes:summary>Michael Goldstein and Daniel Krawisz of the Satoshi Namaoto Institute discuss Bitcoin, economics, and cryptography.</itunes:summary>
+    <item>
+      <title>Monetary Stability</title>
+      <guid isPermaLink="false">http://nakamotoinstitute/podcast/01-07-15-monetary-stability/</guid>
+      <enclosure url="http://nakamotoinstitute/static/cryptomises/01-07-15-monetary-stability.mp3" length="0" type="audio/mpeg"/>
+      <pubDate>Wed, 07 Jan 2015 05:00:00 -0600</pubDate>
+      <itunes:author>Satoshi Nakamoto Institute</itunes:author>
+      <itunes:duration>17:09</itunes:duration>
+      <itunes:subtitle>Daniel Krawisz and Michael Goldstein discuss why the desire for monetary stability is based on economic fallacies.</itunes:subtitle>
+      <itunes:summary>Daniel Krawisz and Michael Goldstein discuss why the desire for monetary stability is based on economic fallacies. Visit the website for show notes and related links. http://nakamotoinstitute.org/podcast/01-08-15-monetary-stability/ If you enjoyed this episode, show your support by donating to SNI: 19F2KHQmf1MGt5foShsrytzwRiTmQRPK9m</itunes:summary>
+    </item>
+    <item>
+      <title>Appcoins and Bitcoin Maximalism</title>
+      <guid isPermaLink="false">http://nakamotoinstitute/podcast/12-22-14-appcoins-and-bitcoin-maximalism/</guid>
+      <enclosure url="http://nakamotoinstitute/static/cryptomises/12-22-14-appcoins-and-bitcoin-maximalism.mp3" length="0" type="audio/mpeg"/>
+      <pubDate>Mon, 22 Dec 2014 05:00:00 -0600</pubDate>
+      <itunes:author>Satoshi Nakamoto Institute</itunes:author>
+      <itunes:duration>38:30</itunes:duration>
+      <itunes:subtitle>Daniel Krawisz and Michael Goldstein discuss appcoins and Vitalik Buterin's critique of "Bitcoin maximalism".</itunes:subtitle>
+      <itunes:summary>Daniel Krawisz and Michael Goldstein discuss appcoins and Vitalik Buterin's critique of "Bitcoin maximalism". Visit the website for show notes and related links. http://nakamotoinstitute.org/podcast/12-22-14-appcoins-and-bitcoin-maximalism/ If you enjoyed this episode, show your support by donating to SNI: 16Bahm2TaPS4xgWzsXH5n47QnKHD1Z5H7R</itunes:summary>
+    </item>
+  </channel>
+</rss>

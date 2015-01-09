@@ -48,3 +48,5 @@ nosetests.xml
 *.sublime-project
 *.sublime-workspace
 venv/*
+
+*.mp3

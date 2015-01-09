@@ -20,7 +20,8 @@ my_loader = jinja2.ChoiceLoader([
     app.jinja_loader,
     jinja2.FileSystemLoader(['sni/templates/',
     						 'sni/templates/blog/',
-    						 'sni/templates/docs/']),
+    						 'sni/templates/docs/',
+                             'sni/templates/podcast/']),
 ])
 app.jinja_loader = my_loader
 

@@ -7,8 +7,8 @@
 
 from sni import app, db, cache
 from models import Post, Email, Doc, ResearchDoc, Author, Format, Category,\
-                   BlogPost, Skeptic, DonationAddress
-from flask import render_template, json, url_for, redirect, request
+                   BlogPost, Skeptic, DonationAddress, Episode
+from flask import render_template, json, url_for, redirect, request, Response
 from sqlalchemy import desc
 from werkzeug.contrib.atom import AtomFeed
 from datetime import datetime
@@ -398,6 +398,29 @@ def atomfeed():
                  published=article.date)
     app.logger.info(str(request.remote_addr) + ', atomfeed')
     return feed.get_response()
+
+@cache.cached(timeout=900)
+@app.route('/podcast/', methods=["GET"])
+def podcast():
+    episodes = Episode.query.order_by(desc(Episode.date)).all()
+    app.logger.info(str(request.remote_addr) + ', podcast')
+    return render_template('podcast.html', episodes=episodes)
+
+@cache.cached(timeout=900)
+@app.route('/podcast/<string:slug>/', methods=["GET"])
+def episode(slug):
+    ep = Episode.query.filter_by(slug=slug).order_by(desc(Episode.date)).first()
+    if(ep != None):
+        app.logger.info(str(request.remote_addr) + ', podcast, ' + slug)
+        return render_template('%s.html' % slug, ep=ep)
+    else:
+        return redirect(url_for("podcast"))
+
+@cache.cached(timeout=900)
+@app.route('/podcast/feed/', methods=["GET"])
+def podcastfeed():
+    return Response(render_template('feed.xml'), mimetype='text/xml')
+
 
 @cache.cached(timeout=900)
 @app.route('/the-skeptics/')
