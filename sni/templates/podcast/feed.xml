@@ -13,8 +13,11 @@
       <link>http://nakamotoinstitute.org/podcast/feed/</link>
     </image>
     <language>en</language>
-    <lastBuildDate>Fri, 09 Jan 2015 04:02:52 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 09 Jan 2015 04:22:29 +0000</lastBuildDate>
     <itunes:author>Satoshi Nakamoto Institute</itunes:author>
+    <itunes:category text="Technology">
+      <itunes:category text="Tech News"/>
+    </itunes:category>
     <itunes:image href="http://nakamotoinstitute.org/static/img/cryptomises/cmpodcast_1440.jpg"/>
     <itunes:explicit>no</itunes:explicit>
     <itunes:complete>no</itunes:complete>

@@ -23,6 +23,9 @@ fg.podcast.itunes_explicit('no')
 fg.podcast.itunes_complete('no')
 fg.image('http://nakamotoinstitute.org/static/img/cryptomises/cmpodcast_144.jpg')
 fg.podcast.itunes_image('http://nakamotoinstitute.org/static/img/cryptomises/cmpodcast_1440.jpg')
+fg.podcast.itunes_category('Science & Medicine', 'Social Sciences')
+fg.podcast.itunes_category('Technology', 'Tech News')
+
 
 eps = Episode.query.order_by(desc(Episode.date)).all()
 
