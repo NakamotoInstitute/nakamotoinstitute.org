@@ -50,3 +50,4 @@ nosetests.xml
 venv/*
 
 *.mp3
+feed.xml
