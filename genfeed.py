@@ -20,10 +20,8 @@ fg.podcast.itunes_summary('Michael Goldstein and Daniel Krawisz of the Satoshi N
 fg.podcast.itunes_owner('Michael Goldstein', 'michael@bitstein.org')
 fg.link( href='http://nakamotoinstitute.org/podcast/feed/', rel='self' )
 fg.podcast.itunes_explicit('no')
-fg.podcast.itunes_complete('no')
 fg.image('http://nakamotoinstitute.org/static/img/cryptomises/cmpodcast_144.jpg')
 fg.podcast.itunes_image('http://nakamotoinstitute.org/static/img/cryptomises/cmpodcast_1440.jpg')
-fg.podcast.itunes_category('Science & Medicine', 'Social Sciences')
 fg.podcast.itunes_category('Technology', 'Tech News')
 
 
@@ -36,7 +34,7 @@ for ep in eps:
   fe.podcast.itunes_summary(ep.summary + ' If you enjoyed this episode, show your support by donating to SNI: ' + ep.address)
   fe.podcast.itunes_subtitle(ep.subtitle)
   fe.podcast.itunes_author('Satoshi Nakamoto Institute')
-  fe.enclosure('http://nakamotoinstitute/static/cryptomises/'+ep.slug+'.mp3', 0, 'audio/mpeg')
+  fe.enclosure('http://nakamotoinstitute.org/static/cryptomises/'+ep.slug+'.mp3', 0, 'audio/mpeg')
   fe.podcast.itunes_duration(ep.duration)
   fe.pubdate(ep.time)
 
