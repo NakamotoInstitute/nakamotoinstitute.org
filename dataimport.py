@@ -211,7 +211,8 @@ for i in range(0,len(episodes)):
 		summary=episodes[i]['summary'],
 		slug=episodes[i]['slug'],
 		youtube=episodes[i]['youtube'],
-		address=episodes[i]['address'])
+		address=episodes[i]['address'],
+		time=parser.parse(episodes[i]['time']))
 	db.session.add(episode)
 	db.session.commit()
 

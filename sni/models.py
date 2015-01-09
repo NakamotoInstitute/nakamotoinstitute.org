@@ -168,6 +168,8 @@ class Episode(db.Model):
 	slug = db.Column(db.String())
 	youtube = db.Column(db.String())
 	address = db.Column(db.String())
+	length = db.Column(db.String())
+	time = db.Column(db.DateTime(timezone=True))
 
 	def __repr__(self):
 		return '<Episode %r>' % (self.title)
