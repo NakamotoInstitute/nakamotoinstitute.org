@@ -34,7 +34,7 @@ for ep in eps:
   fe.podcast.itunes_summary(ep.summary + ' If you enjoyed this episode, show your support by donating to SNI: ' + ep.address)
   fe.podcast.itunes_subtitle(ep.subtitle)
   fe.podcast.itunes_author('Satoshi Nakamoto Institute')
-  fe.enclosure('http://nakamotoinstitute.org/static/cryptomises/'+ep.slug+'.mp3', 0, 'audio/mpeg')
+  fe.enclosure('https://s3.amazonaws.com/nakamotoinstitute/cryptomises/'+ep.slug+'.mp3', 0, 'audio/mpeg')
   fe.podcast.itunes_duration(ep.duration)
   fe.pubdate(ep.time)
 
