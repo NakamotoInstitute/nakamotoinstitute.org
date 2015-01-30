@@ -327,7 +327,7 @@ def slugview(slug):
             formats += [form.name]
         if('html' in formats):
             app.logger.info(str(request.remote_addr) + ', slugview, ' + slug)
-            return render_template("%s.html" % slug, doc=doc)
+            return render_template("%s.html" % slug, doc=doc, is_lit=True)
         else:
             return redirect('literature')
     else:
