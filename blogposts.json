@@ -1,6 +1,15 @@
 {
   "blogposts": [
     {
+        "title": "Who Controls Bitcoin?",
+        "author": "daniel-krawisz",
+        "date": "February 8, 2015",
+        "added": "February 8, 2015",
+        "slug": "who-controls-bitcoin",
+        "excerpt": "Bitcoin upgrades must be a clear improvement to Bitcoin as an investment or else they face a sharp uphill battle to adoption.",
+        "languages": "en"
+    },
+    {
         "title": "Bitcoin as a Store of Value, Unit of Account, and Medium of Exchange",
         "author": "daniel-krawisz",
         "date": "January 12, 2015",
