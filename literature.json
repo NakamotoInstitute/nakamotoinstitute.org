@@ -673,5 +673,16 @@
         "categories": ["cryptography"],
         "doctype": "essay",
         "external": "https://www.cs.cornell.edu/fbs/fullist.htm"
+    },
+    {
+        "id": 67,
+        "title": "Intrapolynomial Cryptography",
+        "author": ["nick-szabo"],
+        "date": "1999",
+        "slug": "intrapolynomial-cryptography",
+        "formats": ["html"],
+        "categories": ["cryptography"],
+        "doctype": "essay",
+        "external": "http://szabo.best.vwh.net/intrapoly.html"
     }]
 }
