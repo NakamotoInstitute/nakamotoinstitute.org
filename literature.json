@@ -684,5 +684,16 @@
         "categories": ["cryptography"],
         "doctype": "essay",
         "external": "http://szabo.best.vwh.net/intrapoly.html"
+    },
+    {
+        "id": 68,
+        "title": "RPOW - Reusable Proofs of Work",
+        "author": ["hal-finney"],
+        "date": "August 15, 2004",
+        "slug": "rpow",
+        "formats": ["html"],
+        "categories": ["cryptography"],
+        "doctype": "email",
+        "external": "http://cryptome.org/rpow.htm"
     }]
 }
