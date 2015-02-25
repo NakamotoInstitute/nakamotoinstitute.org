@@ -680,7 +680,7 @@
         "author": ["nick-szabo"],
         "date": "1999",
         "slug": "intrapolynomial-cryptography",
-        "formats": ["html"],
+        "formats": ["html", "ext"],
         "categories": ["cryptography"],
         "doctype": "essay",
         "external": "http://szabo.best.vwh.net/intrapoly.html"
@@ -691,9 +691,20 @@
         "author": ["hal-finney"],
         "date": "August 15, 2004",
         "slug": "rpow",
-        "formats": ["html"],
+        "formats": ["html", "ext"],
         "categories": ["cryptography"],
         "doctype": "email",
         "external": "http://cryptome.org/rpow.htm"
+    },
+    {
+        "id": 69,
+        "title": "On Digital Cash-like Payment Systems",
+        "author": ["daniel-a-nagy"],
+        "date": "2005",
+        "slug": "on-digital-cash-like-payment-systems",
+        "formats": ["pdf", "ext"],
+        "categories": ["cryptography"],
+        "doctype": "journal",
+        "external": "http://www.epointsystem.org/~nagydani/ICETE2005.pdf"
     }]
 }
