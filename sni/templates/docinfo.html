@@ -69,28 +69,16 @@
           </br>
         {% endif %}
         {% if 'pdf' in forms %}
-          {% if is_lit %}
-          <a href="{{url_for('docview', slug=doc['slug'], format='pdf')}}">
+          <a href="{{url_for('static', filename='docs/' + doc.slug + '.pdf')}}">
             PDF
           </a>
-          {% else %}
-          <a href="{{url_for('researchdocview', slug=doc['slug'], format='pdf')}}">
-            PDF
-          </a>
-          {% endif %}
           </br>
         {% endif %}
         {% if 'txt' in forms %}
-          {% if is_lit %}
-          <a href="{{url_for('docview', slug=doc['slug'], format='txt')}}">
+          <a href="{{url_for('static', filename='docs/' + doc.slug + '.txt')}}">
             txt
           </a>
-          {% else %}
-          <a href="{{url_for('researchdocview', slug=doc['slug'], format='txt')}}">
-            txt
-          </a>
-          {% endif %}
-        </br>
+          </br>
         {% endif %}
         {% if 'ext' in forms %}
           <a href="{{doc.external}}">
