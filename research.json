@@ -69,7 +69,7 @@
     },
     {
         "id": 7,
-        "titles": "On Stake and Consensus",
+        "title": "On Stake and Consensus",
         "author": ["andrew-poelstra"],
         "date": "March 22, 2015",
         "slug": "on-stake-and-consensus",
