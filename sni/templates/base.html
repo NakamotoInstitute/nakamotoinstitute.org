@@ -11,7 +11,7 @@ subject to other licenses.-->
     <link href="{{ url_for('static', filename = 'css/bootstrap-theme.min.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename = 'css/main.css') }}" rel="stylesheet" media="screen">
     <link href="{{ url_for('atomfeed') }}" rel="alternate" title="Mempool" type="application/atom+xml">
-    
+
   </head>
   <body>
   <div class="navbar" role="navigation">
@@ -72,11 +72,13 @@ subject to other licenses.-->
             &nbsp;&ndash;
             <a href="bitcoin:{{donation_address()}}" target="_blank">
               Donate BTC
-            </a> 
+            </a>
             &nbsp;&ndash;
             <a href="{{url_for('atomfeed')}}">Atom feed</a>
             &nbsp;&ndash;
-            Keep reading, keep coding, and <a href="https://twitter.com/NakamotoInst">follow us on Twitter</a>.
+            <a href="https://github.com/NakamotoInstitute/nakamotoinstitute.org">GitHub</a>
+            &nbsp;&ndash;
+            <a href="https://twitter.com/nakamotoinst">Twitter</a>
           <br>
           <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Satoshi Nakamoto Institute</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. Some works may be subject to other licenses.
           </small>
