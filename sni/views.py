@@ -177,7 +177,7 @@ def docinfoid(docid):
         doc = ResearchDoc.query.filter_by(lit_id=docid).first()
         if (doc != None):
             return redirect(url_for('researchdocinfo', slug=doc.slug))
-    
+
     return redirect('literature')
 
 @cache.cached(timeout=900)
@@ -199,7 +199,7 @@ def docview(slug, format):
         doc = ResearchDoc.query.filter_by(slug=slug).first()
         if (doc != None):
             return redirect(url_for('researchdocview', slug=slug))
-    
+
     return redirect('literature')
 
 @cache.cached(timeout=900)
@@ -427,6 +427,11 @@ def skeptics():
     skeptics = Skeptic.query.order_by(Skeptic.date).all()
     app.logger.info(str(request.remote_addr) + ', the-skeptics')
     return render_template('the-skeptics.html', skeptics=skeptics)
+
+@app.route('/crash-course/', methods=["GET"])
+def crash_course():
+    app.logger.info(str(request.remote_addr) + ', Crash Course')
+    return render_template("crash-course.html")
 
 # Redirect old links
 @cache.cached(timeout=900)
