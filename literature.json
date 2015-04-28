@@ -1,6 +1,6 @@
 {
   "docs": [
-    { 
+    {
         "id": 1,
         "title": "Bitcoin: A Peer-to-Peer Electronic Cash System",
         "author": ["satoshi-nakamoto"],
@@ -706,5 +706,16 @@
         "categories": ["cryptography"],
         "doctype": "journal",
         "external": "http://www.epointsystem.org/~nagydani/ICETE2005.pdf"
+    },
+    {
+        "id": 70,
+        "title": "Reflections on Trusting Trust",
+        "author": ["ken-thompson"],
+        "date": "August 1984",
+        "slug": "reflections-on-trusting-trust",
+        "formats": ["pdf", "ext"],
+        "categories": ["computing"],
+        "doctype": "journal",
+        "external": "https://dl.acm.org/citation.cfm?id=358210"
     }]
 }
