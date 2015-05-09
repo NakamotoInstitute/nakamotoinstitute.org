@@ -10,9 +10,9 @@
     | <a href="{{url_for('emailview',emnum=email['id']+1)}}">Next</a>
     {% endif %}
   </div>
-  <div class="page-header"><h3>{{email['subject']}}
+  <span id="CONTENT"><div><div class="page-header"><h3>{{email['subject']}}
   <small><em>{{email['date']}} UTC</em></small></h3></div>
-  <div class="email-text-monospace">{{email['text']|replace("\n", "<br />")|safe}}</div>
+  <div class="email-text-monospace">{{email['text']|replace("\n", "<br />")|safe}}</div></div></span>
   <br>
   <div class="text-center">{% if prev != None %}
     <a href="{{url_for('emailview',emnum=email['id']-1)}}">Previous</a> |

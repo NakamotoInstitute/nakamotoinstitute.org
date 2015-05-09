@@ -12,14 +12,14 @@
   	{% if next != None %}
   	| <a href="{{url_for('postview',postnum=post['id']+1,source=post['source'])}}">Next</a>
   	{% endif %}</div>
-	<h3>{{post['name']}}</h3>
+	<span id="CONTENT"><div><h3>{{post['name']}}</h3>
   {% if post['source'] == "bitcointalk" %}
   <h4>Bitcointalk</h4>
   {% elif post['source'] == "p2pfoundation" %}
   <h4>P2P Foundation</h4>
   {% endif %}
 	<h5><em>{{post['date']}} UTC</em> - <a href="{{post['url']}}">Original Post</a></h5>
-  {{post['text']|safe}}
+  {{post['text']|safe}}</div></span>
 	<br><br>
 	<div class="text-center">{% if prev != None %}
   	<a href="{{url_for('postview',postnum=post['id']-1,source=post['source'])}}">Previous</a> |
