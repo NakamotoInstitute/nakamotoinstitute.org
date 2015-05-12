@@ -717,5 +717,16 @@
         "categories": ["computing"],
         "doctype": "journal",
         "external": "https://dl.acm.org/citation.cfm?id=358210"
+    },
+    {
+        "id": 71,
+        "title": "Negative Reputation",
+        "author": ["nick-szabo"],
+        "date": "1996",
+        "slug": "negative-reputation",
+        "formats": ["html", "ext"],
+        "categories": ["cryptography"],
+        "doctype": "essay",
+        "external": "http://szabo.best.vwh.net/negative_rep.html"
     }]
 }
