@@ -728,5 +728,16 @@
         "categories": ["cryptography"],
         "doctype": "essay",
         "external": "http://szabo.best.vwh.net/negative_rep.html"
+    },
+    {
+        "id": 72,
+        "title": "The Sybil Attack",
+        "author": ["john-r-douceur"],
+        "date": "2002",
+        "slug": "the-sybil-attack",
+        "formats": ["pdf", "ext"],
+        "categories": ["cryptography"],
+        "doctype": "journal",
+        "external": "http://research.microsoft.com/apps/pubs/default.aspx?id=74220"
     }]
 }
