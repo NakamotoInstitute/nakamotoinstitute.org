@@ -7,18 +7,14 @@
     {{doc['title']}}
     <br/>
     <small>
-      {% if doc['author']|length == 3 %}
-        <a href="{{url_for('author', authslug=doc['author'][0].slug)}}">
-          {{doc['author'][0].first}} {{doc['author'][0].middle}} {{doc['author'][0].last}}
-        </a>,
-
-        <a href="{{url_for('author', authslug=doc['author'][1].slug)}}">
-          {{doc['author'][1].first}} {{doc['author'][1].middle}} {{doc['author'][1].last}}
-        </a>, and
-
-        <a href="{{url_for('author', authslug=doc['author'][2].slug)}}">
-          {{doc['author'][2].first}} {{doc['author'][2].middle}} {{doc['author'][2].last}}
-        </a>
+      {% if doc['author']|length >= 3 %}
+        {% for auth in doc['author'] %}
+          {% if loop.last %}
+            and <a href="{{url_for('author', authslug=auth.slug)}}">{{auth.first}} {{auth.middle}} {{auth.last}}</a>
+          {% else %}
+            <a href="{{url_for('author', authslug=auth.slug)}}">{{auth.first}} {{auth.middle}} {{auth.last}}</a>,
+          {% endif %}
+        {% endfor %}
 
       {% elif doc['author']|length == 2 %}
 
@@ -89,7 +85,7 @@
     </dl>
 
       {% endif %}
-  
+
 
   <div class = "text-center">
     {% if is_lit %}

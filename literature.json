@@ -739,5 +739,16 @@
         "categories": ["cryptography"],
         "doctype": "journal",
         "external": "http://research.microsoft.com/apps/pubs/default.aspx?id=74220"
+    },
+    {
+        "id": 73,
+        "title": "Improving Time Stamping Schemes: A Distributed Point of View",
+        "author": ["alexis-bonnecaze", "pierre-liardet", "alban-gabillon", "kaouther-blibech"],
+        "date": "2002",
+        "slug": "improving-time-stamping-schemes",
+        "formats": ["pdf", "ext"],
+        "categories": ["cryptography"],
+        "doctype": "journal",
+        "external": "http://pages.upf.pf/Alban.Gabillon/articles/AnnalTelecom.pdf"
     }]
 }

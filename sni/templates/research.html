@@ -4,18 +4,18 @@
 <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
     <div class="row">
       <div class="text-center">
-        
+
         <h2>
           Research
         </h2>
-        
+
         <p>
           Bitcoin exists. Now what?
         </p>
-        
+
       </div>
     </div>
-    
+
   <div class="row">
     <table class="table">
       <thead>
@@ -53,8 +53,14 @@
               {%endif%}
             </td>
             <td>
-              {% if doc['author']|length == 3 %}
-                <a href="{{url_for('author', authslug=doc['author'][0].slug)}}">{{doc['author'][0].first}} {{doc['author'][0].middle}} {{doc['author'][0].last}}</a>, <a href="{{url_for('author', authslug=doc['author'][1].slug)}}">{{doc['author'][1].first}} {{doc['author'][1].middle}} {{doc['author'][1].last}}</a>, and <a href="{{url_for('author', authslug=doc['author'][2].slug)}}">{{doc['author'][2].first}} {{doc['author'][2].middle}} {{doc['author'][2].last}}</a>
+              {% if doc['author']|length >= 3 %}
+                {% for auth in doc['author'] %}
+                  {% if loop.last %}
+                    and <a href="{{url_for('author', authslug=auth.slug)}}">{{auth.first}} {{auth.middle}} {{auth.last}}</a>
+                  {% else %}
+                    <a href="{{url_for('author', authslug=auth.slug)}}">{{auth.first}} {{auth.middle}} {{auth.last}}</a>,
+                  {% endif %}
+                {% endfor %}
               {% elif doc['author']|length == 2 %}
                 <a href="{{url_for('author', authslug=doc['author'][0].slug)}}">{{doc['author'][0].first}} {{doc['author'][0].middle}} {{doc['author'][0].last}}</a> and <a href="{{url_for('author', authslug=doc['author'][1].slug)}}">{{doc['author'][1].first}} {{doc['author'][1].middle}} {{doc['author'][1].last}}</a>
               {% else %}

@@ -383,5 +383,29 @@
 		"middle": "R.",
 		"last": "Douceur",
 		"slug": "john-r-douceur"
+	},
+	{
+		"first": "Alexis",
+		"middle": "",
+		"last": "Bonnecaze",
+		"slug": "alexis-bonnecaze"
+	},
+	{
+		"first": "Pierre",
+		"middle": "",
+		"last": "Liardet",
+		"slug": "pierre-liardet"
+	},
+	{
+		"first": "Alban",
+		"middle": "",
+		"last": "Gabillon",
+		"slug": "alban-gabillon"
+	},
+	{
+		"first": "Kaouther",
+		"middle": "",
+		"last": "Blibech",
+		"slug": "kaouther-blibech"
 	}]
 }
