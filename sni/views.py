@@ -97,6 +97,11 @@ def postview(postnum,source):
         return redirect('posts')
 
 @cache.cached(timeout=900)
+@app.route('/code/', subdomain="satoshi")
+def code():
+    return render_template("code.html")
+
+@cache.cached(timeout=900)
 @app.route('/authors/', methods=["GET"])
 def authors():
     authors = Author.query.order_by(Author.last).all()
