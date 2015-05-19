@@ -1,6 +1,6 @@
 <!-- extend base layout -->
 {% extends "base.html" %}
-{% from "helpers.html" import print_authors %}
+{% import "helpers.html" as helpers %}
 {% block content %}
 <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
 <div class="page-header">
@@ -8,7 +8,7 @@
     {{doc['title']}}
     <br/>
     <small>
-      {{ print_authors(doc['author']) }}
+      {{ helpers.print_authors(doc['author']) }}
     </small>
   </h1>
 </div>
@@ -24,8 +24,8 @@
         {% set search = doc['title'].lower().split(" ")|join('+')|replace('.','')|replace(',','') %}
         {% set query = 'https://www.google.com/search?q=' ~ search ~ '+pdf' %}
         <p>
-          <a href="{{query}}">
-            {{query}}
+          <a href="{{ query }}">
+            {{ query }}
           </a>
         </p>
 
@@ -33,29 +33,7 @@
 
   		<dt>Formats:</dt>
   		<dd>
-        {% if 'html' in forms %}
-          <a href="{{url_for('slugview', slug=doc['slug'])}}">
-            HTML
-          </a>
-          </br>
-        {% endif %}
-        {% if 'pdf' in forms %}
-          <a href="{{url_for('static', filename='docs/' + doc.slug + '.pdf')}}">
-            PDF
-          </a>
-          </br>
-        {% endif %}
-        {% if 'txt' in forms %}
-          <a href="{{url_for('static', filename='docs/' + doc.slug + '.txt')}}">
-            txt
-          </a>
-          </br>
-        {% endif %}
-        {% if 'ext' in forms %}
-          <a href="{{doc.external}}">
-            External link
-          </a>
-        {% endif %}
+        {{ helpers.doctypes(doc, forms, index=False) }}
       </dd>
     </dl>
 

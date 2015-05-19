@@ -17,3 +17,22 @@
     {{print_author(authors[0])}}
   {% endif %}
 {%- endmacro %}
+
+{% macro doctypes(doc, formats, index) -%}
+  {% if 'html' in formats %}
+    <a href="{{url_for('slugview', slug=doc.slug)}}">HTML</a><br>
+  {%endif%}
+  {% if 'pdf' in formats %}
+    <a href="{{url_for('static', filename='docs/' + doc.slug + '.pdf')}}">PDF</a><br>
+  {%endif%}
+  {% if 'txt' in formats %}
+    <a href="{{url_for('static', filename='docs/' + doc.slug + '.txt')}}">txt</a><br>
+  {%endif%}
+  {% if 'ext' in formats %}
+    {% if index %}
+      <a href="{{doc.external}}">Link</a>
+    {% else %}
+      <a href="{{doc.external}}">External link</a>
+    {% endif %}
+  {%endif%}
+{%- endmacro %}
