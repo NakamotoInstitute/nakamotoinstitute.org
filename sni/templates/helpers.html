@@ -1,0 +1,19 @@
+{% macro print_author(author) -%}
+  <a href="{{url_for('author', authslug=author.slug)}}">{{author.first}} {{author.middle}} {{author.last}}</a>
+{%- endmacro %}
+
+{% macro print_authors(authors) -%}
+  {% if authors|length >= 3 %}
+    {% for author in authors %}
+      {% if loop.last %}
+        and {{print_author(author)}}
+      {% else %}
+        {{print_author(author)}},
+      {% endif %}
+    {% endfor %}
+  {% elif authors|length == 2 %}
+    {{print_author(authors[0])}} and {{print_author(authors[1])}}
+  {% else %}
+    {{print_author(authors[0])}}
+  {% endif %}
+{%- endmacro %}
