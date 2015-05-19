@@ -99,6 +99,7 @@ def postview(postnum,source):
 @cache.cached(timeout=900)
 @app.route('/code/', subdomain="satoshi")
 def code():
+    app.logger.info(str(request.remote_addr) + ', Code')
     return render_template("code.html")
 
 @cache.cached(timeout=900)
