@@ -97,17 +97,29 @@
     "slug": "robert-mcmillan"
   },
 	{
-		"name": "Justin Wolfers",
-		"title": "Economist, Brookings Institution",
-		"article": "",
-		"date": "April 11, 2013",
-		"source": "Twitter",
-		"excerpt": "",
-		"price": "$84.46",
-		"link": "https://twitter.com/justinwolfers/status/322432361155424259, https://twitter.com/justinwolfers/status/322440315397107712, https://twitter.com/justinwolfers/status/322453007168045057",
-		"waybacklink": "",
-		"slug": "justin-wolfers"
+		"name": "Ian Bremmer",
+		"title": "Founder and President, Eurasia Group",
+		"article": "Strategist predicts end of Bitcoin",
+		"date": "May 14, 2013",
+		"source": "CNN Money",
+		"excerpt": "\"I would be very surprised if Bitcoin is still around in 10 years,\" said Bremmer, the founder and CEO of Eurasia Group, the world's largest risk consulting firm. He thinks that bigger players will enter the field and improve upon Bitcoin's weaknesses.",
+		"price": "$115.01",
+		"link": "http://money.cnn.com/2013/05/14/investing/bremmer-bitcoin/index.html",
+		"waybacklink": "https://web.archive.org/web/20130514135230/http://money.cnn.com/2013/05/14/investing/bremmer-bitcoin/index.html",
+		"slug": "ian-bremmer"
 	},
+  {
+    "name": "Justin Wolfers",
+    "title": "Economist, Brookings Institution",
+    "article": "",
+    "date": "April 11, 2013",
+    "source": "Twitter",
+    "excerpt": "",
+    "price": "$84.46",
+    "link": "https://twitter.com/justinwolfers/status/322432361155424259, https://twitter.com/justinwolfers/status/322440315397107712, https://twitter.com/justinwolfers/status/322453007168045057",
+    "waybacklink": "",
+    "slug": "justin-wolfers"
+  },
   {
     "name": "David S. Evans",
     "title": "Chairman of the Global Economics Group",
