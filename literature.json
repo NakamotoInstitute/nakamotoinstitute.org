@@ -757,7 +757,7 @@
         "author": ["hal-finney"],
         "date": "March 30, 1994",
         "slug": "pgp-web-of-trust-misconceptions",
-        "formats": ["html"],
+        "formats": ["html", "ext"],
         "categories": ["cryptography"],
         "doctype": "essay",
         "external": "https://web.archive.org/web/20130513043904/http://finney.org/~hal/web_of_trust.html"
