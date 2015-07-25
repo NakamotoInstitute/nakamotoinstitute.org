@@ -750,5 +750,16 @@
         "categories": ["cryptography"],
         "doctype": "journal",
         "external": "http://pages.upf.pf/Alban.Gabillon/articles/AnnalTelecom.pdf"
+    },
+    {
+        "id": 74,
+        "title": "PGP Web of Trust Misconceptions",
+        "author": ["hal-finney"],
+        "date": "March 30, 1994",
+        "slug": "pgp-web-of-trust-misconceptions",
+        "formats": ["html"],
+        "categories": ["cryptography"],
+        "doctype": "essay",
+        "external": "https://web.archive.org/web/20130513043904/http://finney.org/~hal/web_of_trust.html"
     }]
 }
