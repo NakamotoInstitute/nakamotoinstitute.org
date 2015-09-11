@@ -761,5 +761,16 @@
         "categories": ["cryptography"],
         "doctype": "essay",
         "external": "https://web.archive.org/web/20130513043904/http://finney.org/~hal/web_of_trust.html"
+    },
+    {
+        "id": 75,
+        "title": "The Geodesic Market",
+        "author": ["robert-hettinga"],
+        "date": "April 1998 - December 1999",
+        "slug": "the-geodesic-market",
+        "formats": ["html", "pdf", "ext"],
+        "categories": ["cryptography", "economics"],
+        "doctype": "essay",
+        "external": "http://www.ibuc.com/pdfs/Geoecon.pdf"
     }]
 }

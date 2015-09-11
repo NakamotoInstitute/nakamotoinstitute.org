@@ -1,0 +1,962 @@
+<!-- extend base layout -->
+{% extends "doc.html" %}
+{% block doc %}
+<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+  <div class="page-header">
+    <h1 class="text-center">
+      The Geodesic Market<br><small>Robert Hettinga</small>
+    </h1>
+    <h4 class="text-center">
+      Originally published from April 1998 through December 1999<br>
+    </h4>
+  </div>
+
+  <h2 id="contents">Table of Contents</h2>
+
+  <ul>
+    <li><a href="#digital-bearer-settlement">“Digital Bearer Settlement”</a> (April 1998)</li>
+    <li><a href="#the-geodesic-market">“The Geodesic Market”</a> (June 1998)</li>
+    <li><a href="#how-to-underwrite-a-digital-bearer-security">“How to Underwrite a Digital Bearer Security”</a> (July 1998)</li>
+    <li><a href="#digital-bearer-bonds">“‘All the bonds in Christendom’: Digital Bearer Bonds”</a> (September 1998)</li>
+    <li><a href="#digital-bearer-equity">“Russell’s Revenge: Digital Bearer Equity”</a> (October 1998)</li>
+    <li><a href="#digital-bearer-derivatives">“Digital Bearer Derivatives: Mathematics of Polite Fiction”</a> (November 1998)</li>
+  </ul>
+
+  <hr>
+
+  <h2 id="digital-bearer-settlement">
+    Digital Bearer Settlement<br><small>April 1998</small>
+  </h2>
+
+  <p>
+    <strong>Since the invention of the telegraph, financial transaction settlement has had a problem: how do you transact business at a distance when the simplest way to execute, clear and settle a transaction is with an exchange of bearer certificates?</strong>
+  </p>
+
+  <p>
+    Our current system of so-called ‘book-entry’ transaction settlement was invented in order to handle the problems caused by remote transaction execution and the subsequent need to physically exchange bearer certificates for settlement. We now have the means to return to ‘digitally encoded’ bearer settlement with a three orders of magnitude cost saving.
+  </p>
+
+  <p>
+    Soon enough, the era of book-entry settlement, our way of representing money as offsetting debits and credits exchanged between the two parties of a trade through a hierarchy of trusted intermediaries, will be over.
+  </p>
+
+  <p>
+    I think that the social and economic impact of the new alternative to book-entry settlement, digital bearer settlement, will be quite large, because, at the root of the status quo’s book-entry transaction protocols is the need to involve government and regulation at the most intimate levels. Essentially, ‘…and then you go to jail’ is the penultimate error-handling step in a book entry transaction.
+  </p>
+
+  <p>
+    In the old days, before telegraphy, most financial transactions were done by trading bearer certificates, or tokens, of one form or another. Exchanging cash for a bearer bond would be a good 19<sup>th</sup> century example. Even trading bearer forms of equity was trivial and instantaneous: the offer, the acceptance of the offer, and the settlement of the transaction occurred almost all in one operation.
+  </p>
+
+  <p>
+    With the advent of telegraphy and eventually telephony, it was possible to make the offer and accept the offer at a distance, but settlement had to wait until bearer certificates were physically relocated, sometimes over long distances and then exchanged. After all, you couldn’t very well send them over a wire.
+  </p>
+
+  <p>
+    The solution was to move all the certificates to a central trusted location, called a clearinghouse, and for the trading parties to swap debits and credits between themselves and the clearinghouse. It’s pretty apparent that having the certificates physically locked down in the clearinghouse’s vault becomes superfluous in such a scheme, because what really matters is the impartial arbitration of the clearinghouse in the case of a transaction dispute. All except for one thing. If someone lies or reneges on a book entry transaction, there isn’t much that the other two parties can do except bar them from trading, which, of course, works in bearer certificates, but not nearly as well in book-entry settlement.
+  </p>
+
+  <p>
+    So, we need several things to cope with nonrepudiation in book-entry settlement. First, we need the ability to determine who physically made what book-entry so we can find them and send them to jail for fraud if necessary. That’s because book entries are inherently unstable, insecure, digits sitting in a database somewhere. Many people in Asia are familiar with commodities and derivatives traders who were capable of hiding fraudulent book-entries for long enough periods of time to bring down their respective firms, for instance. In cryptography we call this an authentication problem.
+  </p>
+
+  <p>
+    So, besides authentication of the book-entries themselves, we need to secure the links between various charts of database accounts, first by authenticating the users of those electronic links, originally with passwords, then with cryptographic keys and signatures, and now with some combination of biometrics (finger or retinal prints, say) and digital signatures. And, second, by actually encrypting the links themselves so that no one can see what they are even if they can’t change the authenticated data without someone noticing.
+  </p>
+
+  <p>
+    Sorry for the long-winded explanation, but it’s long-winded stuff, as most people who clear trades on the net for a living will tell you. Anyway, for all intents and purposes, you now know everything there is to know about the guts of electronic commerce on the Internet. When you punch your credit card number into a secure web page, pretty much all of the above happens, plus or minus the retinal scan.
+  </p>
+
+  <p>
+    However, all this stuff about moving book-entries down encrypted pipes on the internet, including the much-heralded SET protocol for credit cards, is so much financial ‘shovelware’.
+  </p>
+
+  <p>
+    Fortunately, there is much more that can be done with financial cryptography. There’s a whole string of cryptographic protocols out there, beginning with David Chaum’s blind digital signature patent in the middle 1980’s. You can actually create unique digital objects which can’t be forged if you handle them right (if you only exchange them on-line, for instance). You can attach any arbitrary financial value you want to these cryptographically secure objects as long as everyone else agrees with you, and, most important, you honor your agreements concerning their exchangeability into some other financial instrument. So, I call these objects ‘digital bearer certificates’, after the paper bearer certificates of yore, which I claim these crypto-blobs behave like, more or less.
+  </p>
+
+  <p>
+    The fun part comes when you actually start to trade these things. The first thing you notice is that they settle instantly. I give you digital cash certificates, you give me digital bearer bond certificates. Trade over. Elapsed time, thousandths of a second. I can turn right around and take that bearer bond and sell it again, if I want. More to the point, I don’t have to wait for my broker work out how to move my money to your broker through the clearinghouse, for their banks to arrange to pay each other, all of which takes days and costs lots of money. The cost of your on-line Schwab or E-trade transaction could move from being measured in dollars to somewhere in the sub-penny range, and probably less over time.
+  </p>
+
+  <p>
+    Actually, these aren’t account based protocols at all. So there ain’t no Schwab, or Merrill Lynch, or Morgan Stanley, required. Well, not completely true. You still need financial intermediaries, no matter how small, to ‘rent’ reputation to a given transaction.
+  </p>
+
+  <p>
+    As far as non-repudiation goes, I know that what you gave me is real because I can test it with the issuer. You can do the same thing. It’s so trivial that I equate the act with the physical inspection each of us does, unconsciously or not, when we’re handed a piece of cash. If I don’t like what I ‘see’ (determined by the calculation of the cyptographic protocol, of course), I don’t trade with you. I’d say it’s much better than detecting fraud after the fact, finding who made the offending book-entry, and apprehending, trying, and jailing the miscreant. Frankly, I’d go one further and say book-entry settlement is so complicated and unwieldy that the only reason we have book-entry settlement now is because we couldn’t shove paper down a wire back when telegraphy was invented.
+  </p>
+
+  <p>
+    Finally, there’s no real recordkeeping of transaction logs with digital bearer settlement. Like a pile of cash, you count it up, and that’s what you have. There is no need for seven years of audit trails at up to six different transacting parties because you don’t have to hunt someone down and send them to jail for reneging on a trade before it settles, and more frequently, to prove you’re innocent should you be suspected of something untoward. You don’t need a lawyer or an accountant to keep you out of jail at tax time for making the wrong book entry somewhere.
+  </p>
+
+  <p>
+    In fact, you don’t care who gave you what money as long as they’re happy with what you gave them in exchange for it. Reputation becomes the most important thing there is, because damaging someone’s reputation is your only recourse in a world where your digital signature is your only identity. The threat of blackballing is in fact a very effective fraud deterrent, and once a digital reputation is trashed, it takes time and higher transaction risk premia to build a new one. To quote J. Pierpoint Morgan on the subject, ‘I wouldn’t buy anything from a man with no character if he offered me all the bonds in Christendom.’
+  </p>
+
+  <p>
+    Once we get to digital bearer bonds, stocks, and derivatives thereof, the world starts to change considerably. However, I still claim that reality is not optional. If you reduce the cost of settling a transaction to effectively zero (okay, past the last basis point but not zero), then the financial markets are going to figure out how to use the technology. Not only is it cheaper, but by being cheaper, it allows for smaller and smaller publically held entities. And automated financial intermediaries. The asset sizes of various trades could get much smaller, but, in addition, I claim, that because trading of financial instruments can happen so quickly, efficiently, and by so many self-interested actors, it’ll probably be the way money is raised for very large security issues and for very large projects. Maybe Intel’s inevitable $10 billion chip fab, for instance, will be floated into a market ‘swarm’ of financial intermediaries. Microintermediation, instead of disintermediation, in other words…
+  </p>
+
+  <p>
+    Okay. I’ve now walked you up the edge of the abyss, and pushed you over the cliff, and, you’ll notice, you didn’t get hurt at all. That’s important to think about, because sometimes being quantitatively cheaper has qualitative effects, but, for modern society at least, the future is no different from the past, except that we’ve figured out how to live better. I expect if we can blow the doors of the cost of financial services with digital bearer settlement, the world will be a much better place to live in, indeed.
+  </p>
+
+  <p>
+    <a href="#contents">Back to table of contents</a>
+  </p>
+
+  <hr>
+
+  <h2 id="the-geodesic-market">
+    The Geodesic Market<br><small>June 1998</small>
+  </h2>
+
+  <blockquote>
+    <p>
+      When I’m working on a problem, I never think about beauty. I think only how to solve the problem. But when I have finished, if the solution is not beautiful, I know it is wrong.
+    </p>
+    <footer>R Buckminster Fuller</footer>
+  </blockquote>
+
+  <p>
+    <strong>This is the first of a series of articles Duncan Goldie-Scot has commissioned me to write on the future of financial technology in an age of ubiquitous internetworks, Moore’s law, and strong financial cryptography.</strong>
+  </p>
+
+  <p>
+    I’m calling this series <em>The Geodesic Market</em>, in the spirit of a ‘popular’ book I’ve in the works named, oddly enough, <em>Beyond Civilization: Life in a Geodesic Society</em>. Actually, the core technology we’re going to talk about is a group of financial cryptographic protocols I have termed digital bearer transaction settlement, which is the title of another book I’m working on.
+  </p>
+
+  <p>
+    When I was a teenager in the 70’s, my best friend Jeff Blanton and I zealously devoured all of Stewart Brands’ Whole Earth ‘Domebooks’. Back in 1974, when capitalism was the farthest thing from our mildly drug-addled minds, who would have thought that ‘Bucky’, R Buckminster Fuller, the greatest designer since Leonardo, we thought, had discovered not just an easy way for freaks like us to build cheap housing and squat on someone else’s land, but that he had actually discovered the way that society, mapped as always to our communication topologies, would look in the not too distant future.
+  </p>
+
+  <p>
+    Buckminster Fuller, for all his latter-day attempts to solve global resource allocation by good old fashioned top-down hierarchical industrial centralism, might not have imagined that the economics of semiconductor switching on telephone networks would eventually create giant, decentralized, capital markets. Markets so powerful that they would make the most out-of-control, rapacious 19th century industrial trust look like the most bucolic feudal guild. On a feast day. With their feet up. Capital markets operating on a network topology almost identical to the geodesic structures my friend and I were all so enamored with back in the days of the Allman Brothers, Levi’s Big Bells, and ubiquitous low-yield psychochemicals.
+  </p>
+
+  <p>
+    Even more ironic, you and I are going to raucously cheer these new geodesic markets on, as they surfact large concentrations of financial information and capital into fractally smaller and smaller bits, microintermediating it all like so much grease in soapy dishwater, in an instantaneous transnational market for capital. We’re going to cheer these new markets on because they’re going to make us so damned much money.
+  </p>
+
+  <h4>
+    Economic inevitability
+  </h4>
+
+  <p>
+    These market will operate, finally, under the control of economics, instead of the confiscatory ‘policies’ of aristocrats or nation-states. Nation-states will eventually be as ceremonial as modern-day constitutional monarchs. Like the way physics and philosophy got out from under theology at the end of the dark ages, economics will no longer be the handmaiden of politics in a geodesic market.
+  </p>
+
+  <p>
+    The fun part is, it’s inevitable. It will come from the collapse of microprocessor prices, the 50% decline every 18 months that is Moore’s ‘Law’, more an observation of the human ability to learn than any physical law. The geodesic market will come from the ubiquitous geodesic internet those prices create, and, in a remarkable reversal of history, a reemergence of the kinds of transaction settlement methods thought to be killed by the telegraph, and, ironically, mainframe batch computing.
+  </p>
+
+  <p>
+    A geodesic market will use digital bearer transaction settlement protocols, perfect pseudonymity, and reputation sanction on ubiquitous public networks, instead of book-entry settlement, audit trails, and la, on the closed, private networks that we now have.
+  </p>
+
+  <p>
+    Stunning? Outrageous? Preposterous? Before you click away in disgust, remember we only have what we use now because it was cheaper than what we used to use. Hence you and I don’t go down to a bunch of merchants in the City to trade paper cash for paper shares anymore. I am perfectly serious. With financial cryptography and digital bearer transaction settlement, we can do perfectly safe, rational business on the internet without lawyers. Or, for that matter, cops.
+  </p>
+
+  <p>
+    In addition to transaction costs three orders of magnitude cheaper than book-entry settlement (yes, past the last basis point: it’s time to pick a new measurement unit), you will have perfect financial privacy as a happy accident of the same technology which drastically reduces transaction prices. Just like requiring the privacy-invading physical force of a nation-state in our very transaction clearing processes was an unhappy accident of book-entry settlement.
+  </p>
+
+  <p>
+    All of this will happen with more non-repudiation and more asset safety features, including seemingly impossible things like limited liability and shareholder voting.
+  </p>
+
+  <p>
+    The reason we have database marketing, book-entry taxes, (like income, capital gains, value added, and sales taxes), and book-entry regulations, (like, well, practically all regulation, these days), is because the book-entries are there.
+  </p>
+
+  <p>
+    We need those book-entries in order to prevent non-repudiation of transactions. And, to enforce rules against a transaction’s proven repudiation, we need the police. So, if you don’t need book-entries, you can’t have that other stuff, including, as Doug Barnes of C2NET likes to say ‘…and then you go to jail’ as the error handling step in your transactions protocol.
+  </p>
+
+  <p>
+    Impossible? If we can do digital bearer transactions, safely and anonymously over the internet for, say, 1000 times cheaper than book-entry settlement, what do you think will happen?
+  </p>
+
+  <h4>
+    Digital bearer settlement
+  </h4>
+
+  <p>
+    As a brief preview, let’s take a look at the things you can do with digital bearer settlement. Not surprising, it’s everything you can do with book-entry settlement, and more.
+  </p>
+
+  <p>
+    <em>Consumer Debt:</em> Instead of using a credit card, imagine issuing personal bearer bonds. Whole bond issues, actually. Microintermediated, by, you guessed it, a syndicate of micro-underwriters, living in the ubiquitous internet, all of whom, like under- writers always do, intermediate the market’s loan of money to you based upon your reputation for repayment.
+  </p>
+
+  <p>
+    <em>Digital Cash:</em> Since most people pay off their credit card purchases within a month after purchase, you will be relieved to know that instead of having to hassle with a credit card bill just to cover your normal monthly purchases, and the lack of privacy which goes with it, you will be able to use digital bearer cash, which will be as safe to use as checks or a credit cards are now, all without interest, or at least annual fees.
+  </p>
+
+  <p>
+    The main reason you’ll use digital bearer cash is, however, that eventually there’ll be no float on your checks or even your credit cards. Notice how debit cards are cheaper already to use than credit cards, and that merchants are starting to see the advantages of getting their money without chargebacks hanging over their head.
+  </p>
+
+  <p>
+    This is so fundamental a process that it should be a law of finance or something: the closer an electronic book-entry transaction system gets to instantaneous, the more digital bearer settlement becomes financially necessary. As a friend at a large IT consultancy in Cambridge (Massachusetts) likes to say, ‘Real-time gross settlement is digital bearer settlement.’
+  </p>
+
+  <p>
+    <em>Capital Markets:</em> Instead of purchasing a stock through a broker with limited, hierarchical, almost oligopolistic access to the capital markets, you’ll be able buy your digital bearer bonds or shares in public, or at least privately, using public networks. The internet is the equivalent of the old buttonwood tree on Wall Street, as I once wrote in Wired. I show up on the net with cash, you show up with your bearer shares, we exchange the two, and the trade is over. Execution, clearing and settlement, all in one step. Anonymously, because it’s cheaper. That’s the beauty of digital bearer settlement. You can do this for any financial instrument, debt, equity, or derivative.
+  </p>
+
+  <p>
+    <em>Internet Resource Allocation:</em> Also, there are the things you can do with digital bearer settlement that you just can’t do any other way. It’s easy to imagine very small packets of digital bearer cash ‘buying’ a message across the internet, with each router buying packet switching low, and selling it high. Look, Ma, no human hands: No ‘peering’ arrangements, probably no network ‘engineering’ either, in the long run, as the internet becomes, like any free market, a complex self-adaptive system. I joke about ‘picomoney as processor food’. ‘Micromoney mitochondria’. Auction markets for bandwidth, certainly. Maybe for the guts of the machine itself, memory and processing time. All you need is Moore’s Law, fast enough processors, and, of course, digital bearer financial cryptography protocols.
+  </p>
+
+  <p>
+    <em>Utilities:</em> But, wait, it gets worse. You can pay for electricity, in cash, as you use it, down, of course, the same wire you got the electricity from. You can pay for roads as you use them, perhaps every few hundred yards or at every intersection. Like you can on the internet, you can pick the cheapest or fastest route to your destination. So much for ‘public’ roads. Just about everything you think of as a ‘public service’, or a ‘natural monopoly’ may be reduced some day to a continuous cash-settled electronic auction between competing parties. Moore’ s law creates diseconomies of scale and geodesy. Hierarchy and economies of scale are a function of expensive (human) information switching.
+  </p>
+
+  <p>
+    <em>Geodesic Warfare?:</em> Even force can be auctioned off and sold, same as it ever was, only this time to the highest microbidder. Imagine your land covered with semiautonomous landmines, keyed to your digital signature, which only go off when you tell them to. No, don’t imagine them taking bribes to change sides. It’s real. Someone at the US Army War College wrote a paper on just such a scenario four years ago. Of course, whether we’ll need state-funded armies in a world where force has been disintermediated to such an extent or where taxes might be ‘optional’ is an entertaining proposition.
+  </p>
+
+  <h4>
+    Price deflation
+  </h4>
+
+  <p>
+    So, who knows what the future’s really going to look like. I may almost have my videophone now, but I have yet to see a (useable!) flying car, for instance. However, there’s one thing we can be certain of. Information and knowledge will be developed and sold in much cheaper and smaller bits than we do it now. The prices for industrial goods will fall in a geodesic economy just like agricultural goods and raw materials did in the industrial economy.
+  </p>
+
+  <p>
+    Just how far it goes is limited by Moore’s Law. Moore’s Law also enables the ubiquitous use of cryptographic financial protocols, like Chaum’s original blind signature algorithm for digital bearer certificates, or the one for Rivest’s MicroMint micropayment protocol.
+  </p>
+
+  <p>
+    This series of articles is about how those markets, well capital markets, will come to be, how they will operate, and what actors will probably succeed in those markets.
+  </p>
+
+  <p>
+    Next month I’ll discuss geodesic networks and why I think they create geodesic social institutions like geodesic markets, how trade and money, how human society itself looks when viewed historically through the lens of their communications architectures. Then, I’m going to talk in laymen’s terms about the financial cryptography underpinning digital bearer transaction settlement, and then survey some of the different kinds of digital bearer settlement protocols on the market and in the labs at the moment.
+  </p>
+
+  <p>
+    After that, I’m going to apply these different protocols to different pieces of the capital markets we now have, and show you what the world looks like in a geodesic market for capital.
+  </p>
+
+  <p>
+    <a href="#contents">Back to table of contents</a>
+  </p>
+
+  <hr>
+
+  <h2 id="how-to-underwrite-a-digital-bearer-security">
+    How to Underwrite a Digital Bearer Security<br><small>July 1998</small>
+  </h2>
+
+  <p>
+    <strong>In this second instalment of the Geodesic Market, I’m going to show how to underwrite digital bearer securities, using cash as an example.</strong>
+  </p>
+
+  <p>
+    The business model I’m using should be familiar to anyone who’s been in the securities business for more than 20 years, and especially to anyone who’s studied financial history. There’s no surprise in that. We have 5,000 years of experience with bearer transactions. There’s nothing new, except the cryptographic protocol, to worry about, and we’re not going to talk about cryptography here in any detail.
+  </p>
+
+  <p>
+    Another nice thing about this model as applied to cash is that it will be possible for people to convert their money to digital cash in and out of their own bank accounts, just like they can for paper cash. The underwriter, as I call the issuer of digital cash, becomes the internet equivalent of a third-party ATM machine, something everyone’s familiar with.
+  </p>
+
+  <p>
+    Because of this modular plug-and-play approach, it’s pretty simple to obey all the rules we currently have about handling cash, while dramatically reducing the cost of cash transactions in the process.
+  </p>
+
+  <p>
+    So, let’s get started with a look at the players in this market.
+  </p>
+
+  <h4>
+    Consumers and merchants
+  </h4>
+
+  <p>
+    A consumer is someone who buys a piece of digital cash from a financial intermediary, an underwriter, in exchange for some other kind of money, a change in a bank account balance in this case, in order to effect a transaction on the net.
+  </p>
+
+  <p>
+    A merchant is someone who accepts a digital bearer certificate in payment for something else.
+  </p>
+
+  <p>
+    Of course, I hate the use of the words consumer and merchant because they don’t describe geodesic peer-to-peer transactions very well, but the banking world understands them perfectly, like they do underwriter or trustee or custodian, so I use them here.
+  </p>
+
+  <h4>
+    Underwriter
+  </h4>
+
+  <p>
+    The underwriter issues digital bearer certificates, and is fiduciarily responsible for exchanging them into other forms of money, again a bank account balance change, held by a custodian in a reserve account. Someday, of course, the reserve assets collateralising an issue of digital cash could be some other digital bearer asset.
+  </p>
+
+  <p>
+    The second most important thing an underwriter does is to verify, at every transaction, that a given digital bearer cash certificate hasn’t been double spent, copied by someone and spent twice. After that, the underwriter issues a brand new signature- blinded certificate to the person accepting the cash in payment. If the exchange fails at any point, so does the transaction, and the person offering the cash is prevented from double spending it, thus preventing repudiation of the transaction at execution time. Cheques, credit cards, or any book-entry transaction can’t offer that security. Even with on-line validation for fraud, the merchant is still at risk of stopped checks or chargebacks.
+  </p>
+
+  <p>
+    Finally, the most important thing an underwriter does is to market its certificates to the world. Which, if you look at an underwriter in the capital markets, is exactly what they do for both primary and secondary transactions, and that’s why I use the label here.
+  </p>
+
+  <p>
+    The original DigiCash ecash mint at Mark Twain Bank was a used 486 machine, just to give you an example of the hardware cost of being an under- writer. Eventually underwriting may be automated to the point of processor husbandry in the same way that one tends a web or router farm today, but it should always be done by a separate financial entity other than the trustee.
+  </p>
+
+  <h4>
+    Trustee/custodian
+  </h4>
+
+  <p>
+    A trustee, or custodian, holds the money reserving an issue of digital cash, on behalf of the cash certificate holders, in a bank account, though someday the reserve assets could be held in bearer form under the trustee’s control. Like bond trustees or mutual fund custodians, the trustee operates according to an agreement, like a bond debenture, between the underwriter and the certificate holders. This agreement could specify fees and, most important in the early adoption process, reserve ratios.
+  </p>
+
+  <p>
+    So, while the underwriter is the direct financial intermediary, and keeps the interest which accrues on the reserve account, the trustee risks their reputation by holding the reserves, is compensated for it, and controls that risk by making sure that the reserve agreement is adhered to.
+  </p>
+
+  <p>
+    Put simply, there is no way to to get exchangeability of digital bearer securities into book-entry assets without a genuine, fully regulated trustee/custodial bank, which, in my opinion, is why we don’t have internet digital bearer settlement today.
+  </p>
+
+  <p>
+    The holders of the blind signature patent, and other protocol inventors, have a hard time understanding this. DigiCash, as the canonical example, will only license their patent to a single bank in a single country, and not to any one else, forcing the trustee and underwriter to be the same entity, creating a very brittle and not very robust network of financial entities. The result has been market failure, for the most part. Having a competitive, many-to-many, underwriter/trustee market system fixes that problem completely, as we’ll see in a bit.
+  </p>
+
+  <h4>
+    Inventors and developers
+  </h4>
+
+  <p>
+    For all intents and purposes, the consumer, merchant, underwriter and trustee are really all the financial entities necessary in a market for a digital bearer instrument.
+  </p>
+
+  <p>
+    There are other entities required to make this work, of course. There are developers of the software for that market and, most important, the inventors of the financial cryptography protocols, like David Chaum, Mark Manasse, Stephan Brands, Ron Rivest or Ian Goldberg.
+  </p>
+
+  <p>
+    Developers can either sell their software directly to customers or merchants, or they can sell servers to the underwriters and the underwriters can give away clients to their users.
+  </p>
+
+  <p>
+    Inventors can license their protocol to the market as a whole through the trustee. This way, trustees can take royalties out of a percentage of the underwriters’ interest earnings on the reserve account, or from the fees charged when some other asset is converted into the bearer instrument in question, or some combination of both.
+  </p>
+
+  <p>
+    With book-entry or bearer-collateralised trustees, this rewards innovation cheaply and easily. You don’t even need patents to do it. Even with bearer-collateralised trustees, the inventor of the protocol still gets paid, no matter who or where he is. This, among other things, is part of the judge role I was talking about above. The trustee, who’s in business to be fair and impartial, loses reputation capital otherwise.
+  </p>
+
+  <h4>
+    A market for digital cash
+  </h4>
+
+  <p>
+    The consumer buys, from a software developer, or is given, by an underwriter, a wallet: a client application which allows the storage and disbursement of digital bearer certificates. Wallets will probably be specific to the cash-protocol used, and not to the underwriter using the protocol.
+  </p>
+
+  <p>
+    With a wallet installed, maybe as a browser plug-in, the consumer goes to the underwriter’s secure web page. The consumer enters, either by swiping a card or emitting stored information on her hard drive, the account and PIN number for her bank account just like she would at an ATM. The consumer’s account information is probably blinded, so that not even the underwriter, or even the trustee, sees it as it goes through the trustee and onto the ATM network for authorisation.
+  </p>
+
+  <p>
+    The consumer’s bank sends an authorisation message back to the trustee, who notifies the underwriter of the reserve account change, who in turn disburses digital cash certificates to the customer in the amount of her request. With the exception of the issuance of digital bearer cash instead of paper cash, this is roughly what happens with a private ATM machine.
+  </p>
+
+  <p>
+    This is all done for whatever fee the underwriter charges, in the same way traveller’s checks are sold at a premium at the time of sale, or that a foreign ATM machine charges for non-customer transactions. In fact, redeeming it off the net at par like a traveller’s cheque, and exchanging it free for other digital bearer cash online is probably fundamental for merchant acceptance.
+  </p>
+
+  <h4>
+    Purchases on the net
+  </h4>
+
+  <p>
+    The consumer then uses the new cash to buy something from a merchant on the net. In theory, a merchant could do offline transactions, without involving a direct exchange and replacement of certificates from the underwriter, but they’re ridiculously insecure from the standpoint of double spending.
+  </p>
+
+  <p>
+    This exchange of certificates, this printing of new certificates at the time of each transaction, is still orders of magnitude cheaper than book-entry payment methods, and, since it’s blinded by cryptographic protocol, the transaction retains its bearer quality. That is, the asset changes hands anonymously (on the net at least), it exists in only one place at one time, and the only proof required for non-repudiation is the certificate itself. Just like dollar bills, only three orders of magnitude cheaper than an internet debit or a credit card transaction.
+  </p>
+
+  <p>
+    With the transaction over, the merchant can instantly spend his newly minted cash certificate somewhere else, this time for free, because the longer it stays on the net, the more interest it earns in the underwriter’s reserve account, all at minimal cost to the underwriter.
+  </p>
+
+  <p>
+    Or, the merchant can turn around and redeem the certificate at par through the underwriter, who in turn has the trustee clear the money through the ATM system to the merchant’s bank in the exact reverse of the process which got the money onto the net in the first place.
+  </p>
+
+  <p>
+    Notice, for the first time, it is technically possible to use the ATM system for a cash deposit from a foreign bank, in this case, from the trustee, on behalf of the underwriter, to the merchant’s bank account. Finally, notice that, since the wallets will probably be free, anyone can get paid in cash over the internet. They only need a bank account to put money on the net or take it off, important in the early stages, but not nearly so as time goes on.
+  </p>
+
+  <h4>
+    Observations on this market model
+  </h4>
+
+  <p>
+    It should be obvious by now that we’re looking at a classic case of Metcalfe’s Law. The more entities there are in this market’s network the more robust and valuable it is.
+  </p>
+
+  <p>
+    The model gives us a many-to-many universe of interdependent underwriters, trustees, software developers and protocols, all in competition with their peers to offer the best price, collateral, reputation, quality of execution, and so on. The idea is to create a ubiquitous geodesic capital market composed of efficient, instantaneously cash-settled auctions of fungible, non-branded, risk-graded, digital bearer financial instruments.
+  </p>
+
+  <p>
+    The other thing the model creates is something I call microintermediation. Because of the information processing diseconomies of scale in Moore’s law, we have lots of small, automated financial intermediaries, each one operating directly between a given buyer and seller. This, I believe, is the logical outcome of financial disintermediation, which, until now, has been about removing multiple intermediaries between a buyer and seller. As we’re starting to see in the internet search engine market, we’ll start to see a speciation of financial intermediaries, by financial instrument, risk, etcetera, all brought about by Moore’s law. After all, no single processor in a geodesic network can handle all the traffic.
+  </p>
+
+  <p>
+    Note also that everyone who puts money on to the net or takes it off is identified to the complete satisfaction of government regulators everywhere. Digital bearer cash is treated just like physical cash in the eyes of regulators, and is subject to the same regulations. There is no functional difference between a digital cash underwriter and an ATM machine. And, yet, on the net itself, transactions are perfectly anonymous.
+  </p>
+
+  <p>
+    This is the ultimate paradox of digital bearer settlement. The transaction protocols are so strong cryptographically that you don’t need identity to keep your trades from breaking. More to the point, you don’t even need biometric identity to prevent fraud. A digital signature is persistent enough to actually attach a reputation to.
+  </p>
+
+  <p>
+    We’ll talk more about this, and about digital bearer bonds, next month.
+  </p>
+
+  <p>
+    <a href="#contents">Back to table of contents</a>
+  </p>
+
+  <hr>
+
+  <h2 id="digital-bearer-bonds">
+    ‘All the bonds in Christendom’: Digital Bearer Bonds<br>
+    <small>
+      September 1998
+    </small>
+  </h2>
+
+  <p>
+    If you read the last instalment of The Geodesic Market, you now know how to put digital bearer cash on to the net. Of course, you can put every type of financial instrument into digital bearer form, and this month we’re going to look at debt, which is the simplest extension of the cash model I showed you last time.
+  </p>
+
+  <p>
+    Of course, to issue debt, the borrower (or any other market actor, of course, except secondary buyers and sellers) needs a good reputation, and we’re going to talk about that first.
+  </p>
+
+  <p>
+    With much fanfare, I now trot out my favourite quote from J Pierpoint Morgan, the last major denizen of the bearer-settled financial universe.
+  </p>
+
+  <p>
+    At the time he uttered this pearl of financial wisdom, Morgan was more or less on his deathbed, and was literally hauled in front of the US Congress to testify before he died.
+  </p>
+
+  <p>
+    So, imagine yourself there, in a congressional committee-room in 1913, (one year after 1912, the year libertarian columnist Vin Suprynowicz says was the high water mark in American liberty) and there you are, looking at the only man in history to refill Fort Knox with the proceeds of a typically-oversubscribed European bond issue on the strength of his signature alone, after this very same Congress had spent that treasury empty in the first place.
+  </p>
+
+  <p>
+    A man who single-handedly stopped several bank panics, one of them by while playing solitaire in one room of the Morgan Library, with a roomful of bank presidents arguing in the room across the hall, shuttling occasional proposals to him for his hoped-for approval over the course of a few days, all while Wall Street held its breath.
+  </p>
+
+  <p>
+    A very old man, now. An old man, being commanded, upon contempt of the best Congress money could ever buy before or since, to tell them the ultimate secret of banking. The most important thing a banker had to have to succeed.
+  </p>
+
+  <p>
+    Is it the right, um, ‘family background?’ they seem to ask this paradigm of New England WASPiness. The right school tie? Never mind that Morgan was tutored for the most part. The right secret society membership? Of course, Morgan wasn’t much of a joiner, except that he ran the board of trustees of his church, and that of the Metropolitan Museum of Art, like he did the rest of his enterprises, with an iron fist.
+  </p>
+
+  <p>
+    Morgan just scowls at them. His answer is very simple:
+  </p>
+  <p>
+    ‘Character.’
+  </p>
+
+  <p>
+    Our would-be congressional inquisitor was probably dumbstruck. He was surely some loutish turn-of-the-twentieth-century urban machine politician, or maybe a rural silver-shoes-on-yellow-goldbrick-road bimetal free-silver populist in extreme Dorothy-Gone-to-Oz Mode.
+  </p>
+
+  <p>
+    Whatever he was, he was almost certainly hoping for a financial conspiracy story of Bilderburg proportions to put into the next day’s muckraking headlines. And, I bet, this modern Torquemada couldn’t believe his ears.
+  </p>
+
+  <p>
+    ‘Character?’, he sputters. Like he’d never heard the word before.
+  </p>
+
+  <p>
+    Morgan puffs himself up to his full 5-foot-rotund-something, gives the man one of those famous withering glares over a rosacea-mangled nose.
+  </p>
+
+  <p>
+    ‘Sir, I wouldn’t buy anything from a man with no character if he offered me all the bonds in Christendom.’
+  </p>
+
+  <p>
+    Parsing that language to account for, um, ‘late nineteenth-century Episcopalian sexism’, we get as clear a definition of the enforcement power of reputation as has ever been stated this side of ‘Caveat Emptor’.
+  </p>
+
+  <p>
+    In other words, if you lie, I don’t do business with you again. Ever.
+  </p>
+
+  <p>
+    And, in the world Morgan found himself in, that kind of financial shunning was pretty much all anyone really could do.
+  </p>
+
+  <p>
+    It was really ever thus, throughout the history of money, much less finance. Sure, you could go to your friendly local force monopoly, be they monarchical, tyrannical, empirical (in the manner of Napoleon, not Hume), or oligarchal (or, even, democratic, on extremely rare occasions), and you could try to get them to beat up someone who ripped you off. But, usually, that was way too much work. Said regional force monopoly had to actually find this person, and then apprehend, try and convict him, and, frankly, more likely than not, he’s changed his name and venue and spent the cash you paid him for those bogus bearer bonds you’re now holding, and, well, so sorry, sir, but them’s the breaks.
+  </p>
+
+  <p>
+    And so, to sanitise and paraphrase the immortal Bluto Blutarski of ‘Animal House’ fame, it was actually you who screwed up: you trusted this brigand to begin with. You believed he had character, a good reputation, in other words, and it turned out that he didn’t, at all.
+  </p>
+
+  <p>
+    This was true up to and including J Pierpoint Morgan’s day, where, although you could use a telegraph to execute a trade on the New York Stock Exchange floor, you still had to bring in actual paper and swap it for some other actual paper to clear and settle the trade.
+  </p>
+
+  <p>
+    Yet, oddly enough, reputation sanction, plain old fashioned shunning, worked just fine for over 5,000 years. Marvellously well, in fact.
+  </p>
+
+  <p>
+    Though, we now know what happened to J Pierpoint Morgan’s tidy little financial universe of men with good character. Tabulators and comptometers begat computers, and, next thing we know, we’re all using wires and computers to move accounting entries around, my debits for your credits, and bang, financial transactions execute, clear and settle more or less electronically, modulo a tape swap and a batch job or two.
+  </p>
+
+  <p>
+    And, now, all I need to buy something over the internet is to give you a credit card account to take the money out of, and, maybe, but not necessarily, a cryptographic authentication (obviously, I hate the current misuse of ‘signature’, much less ‘certificate’) to prove that it was I who told you where the account with the money in it was.
+  </p>
+
+  <p>
+    Yet, there’s a little problem with book entry settlement and clearing, and it involves that force monopoly I was talking about.
+  </p>
+
+  <p>
+  	When we have to make copies of our transactions and give them to a ‘trusted’ third party to keep us from lying to each other, that’s pretty awful, and not only from the standpoint of simple privacy.
+  <p>
+
+  <p>
+  	More important, there’ s something particularly insidious to freedom itself about just shoving around debits and credits, instead of physical objects, or, now, digital objects, when you pay for things or convert one asset into another.
+  <p>
+
+  <p>
+  	With book entry settlement, you have to keep a virtually perpetual audit trail, so that on a ‘syntactic’ level, you can prove the trade happened some indeterminant date in the future, and so you can prevent the other party from denying (that famous legal double-negative, ‘non-repudiation’) the trade ever took place. And, once you’ve done that, it’s real easy to use those records to call a cop and send that person to jail. Actually, you’re forced to, for any of a number of reasons, not the least because the clearing/settlement lag is such that someone might have absconded before you knew what happened to your money, and giving the clearing house physical enforcement capabilities in meatspace would make cause undue competitive pressure on the sovereign’s monopoly on force.
+  <p>
+
+  <p>
+  	Now you can see why book-entry transaction settlement requires very strict biometric identification for anyone who changes the book-entries themselves, or even those who order book-entries to be changed. Everyone else (us customers, in other words) must deposit in advance of any significant financial activity, as sort of hostage capital to whatever transactions we execute.
+  <p>
+
+  <p>
+  	Everyone under the jurisdiction of the SEC has their fingerprints on file, for a reason, not to mention their current name and address. Enough information to drive a totalitarian tyranny through, frankly.
+  <p>
+
+  <p>
+  	And, so, the real reason governments have grown to control such an increasingly huge part of our lives, through book-entry taxes (sales, VAT , capital gains, income) and regulation (think of a regulation which doesn’t eventually rely on transaction audit trails), is because, we require government intervention in our economic processes, our very transactions themselves, or those selfsame transactions wouldn’t occur at all. Book-entry settlement and the ad baculum argument at the core of the very idea of the modern industrial nation-state are intimately related. A tax on income is easy to enforce because you need force to make the income transactions execute to begin with. One hand washes the other. Pay packets with paper cash cost too much to handle when you can just issue cheques for people to deposit into mainframe-enabled chequing accounts.
+  <p>
+
+  <p>
+  	Seen from a network perspective, a book-entry transaction is about shoving a very insecure piece of data, a positive or negative integer, a debit or credit, down a very secure pipe. And, to get access to that pipe, you have to be physically, um, obtainable, to law enforcement at any point in time before, during, and after the fact, should you lie about it.
+  <p>
+
+  <p>
+    With digital bearer settlement, we have turned that last paragraph completely on its head. With a blind signature cryptographic protocol, for instance, we can send a secure transaction, a strongly encrypted and cryptographically authenticated token (a digital bearer certificate, if you will), down an insecure pipe, the internet, in other words, and with the right software, that’s the end of the transaction.
+  </p>
+
+  <p>
+  	We don’t need biometrically authenticated access control to a proprietary secure network in order to shove an inherently insecure book entry back and forth out of someone’s database of transactions and, by extension, their chart of accounts. We actually don’t need to keep audit trails at all anymore, much less for years at at time, and, more dramatically, we don’t even need cops to hunt down miscreants who ‘break’ our trades, either in execution, settlement, or clearing.
+  </p>
+
+  <p>
+  	Instead, with a simple exchange of digital bearer certificates, we can execute, clear, and settle the transaction all at once, and the cryptographic financial protocol, executed in software, simply won’t operate unless all conditions are met for the transaction to occur.
+  </p>
+
+  <p>
+  	Which, oddly enough, is exactly the way a physical bearer certificate works: I show up with my cash, you show up with your paper bonds, we agree on a price, we inspect and swap our various pieces of paper, and we walk away. I know the bonds are good by inspecting them, you know the cash is good by inspecting that, and, frankly, we don’t care who each other is. Ever.
+  </p>
+
+  <p>
+  	Now, with digital bearer certificates, we can do exactly the same thing on the net. That ‘inspection’ step now occurs when we test and redeem our cash or bond certificates with their issuers online, and, if the certificates can’t be redeemed, the trade can’t even execute.
+  </p>
+
+  <p>
+  	It stops before it starts. Nobody gets burned, frankly, except the criminals who want to double spend the certificates. The only people who even need a reputation in the transaction itself are the issuers of the respective digital bearer certificates involved, and not the buyers and sellers of those certificates in the secondary markets.
+  </p>
+
+  <p>
+  	And, of course, that ‘reputation’ we’re talking about here is the past behaviour, on the net, of a public-private keypair used in the authentication and issuance of a given digital bearer certificate. Or in the sale of anything else, for that matter. Just by using the public key and the signature on the certificate, anyone in the market can validate that the certificate was issued by the entity issuing or underwriting it. And, in the course of a transaction, as we said, the issuer itself can validate the ‘semantic’ part of the transaction, that the certificate is in fact unique and exchangeable at no cost for another unique set of bits representing the same value.
+  </p>
+
+  <p>
+  	So, a digital bearer certificate is authenticated by the issuer of that certificate, in the same way that the intaglio printing, special paper, serial numbers and signatures on a given paper bearer bond make it unique and non-replicable.
+  </p>
+
+  <p>
+  	That makes not only for a more secure, and completely private, transaction, but it also makes for a radically cheaper transaction, which is really the whole point. As we all know by now, the reason we have book-entry settlement to begin with is because it’s radically cheaper than the physical delivery of paper bearer certificates, not so the government, or anyone else, can surveil us in our very grocery purchases.
+  </p>
+
+  <p>
+  	On the net, we talk about accumulating and quantifying reputation in some imaginary future denomination and we call that stuff ‘reputation capital’. Which immediately leads to the cypherpunk inside-joke about permanent shunning being ‘reputation capital punishment’. And, actually, that’s pretty understandable. Instead of going off to San Francisco in the 1850’s to change your name and venue after screwing up, you just delete your private/public key pair, and start a new reputation over from scratch. In a bearer settled world, of course, it happened all the time.
+  </p>
+
+  <p>
+  	I expect, like corporations today, reputations will be sold, and the variance between the market value of the assets controlled by that reputation, and the market value of the reputation itself will be our imaginary reputation ‘capital’, something we call ‘goodwill’ today.
+  </p>
+
+  <p>
+  	Now, to quote Bill Cosby, ‘I told you that story to tell you this one.’
+  </p>
+
+  <p>
+  	With digital bearer settlement, and the sanction of reputation against public keys which have bad character, as Morgan called it (reputation, to you and me) it is now possible to create digital bearer bonds.
+  </p>
+
+  <p>
+  	Actually, last time, in my underwriting model for digital cash, I cheated. When you think about it, a bank note, cash in other words, is an instantly callable, perpetually issued bond which pays no interest. It represents a claim, in the old days, at least, on some principal amount of a given debt, and not its interest, redeemable upon demand in the asset the note is reserved against and denominated in.
+  </p>
+
+  <p>
+  	So, to issue a digital bearer bond with a simple coupon, you just issue a digital bearer certificate for the principal amount, redeemable at the end of the life of the bond, and you bundle a bunch of coupons with that certificate for the redemption of principal, one for each interest period, and redeemable at the end of that interest period, and sell them all together as a unit.
+  </p>
+
+  <p>
+  	To do a zero-coupon bond, simply issue a certificate payable at expiration and sell it for the net present value of that amount given some fixed interest rate.
+  </p>
+
+  <p>
+  	Strips are just that. Strip the coupon certificates from the principal one and sell them all as individual certificates with their own prices. Notice that we bump into the old fixed income analysis chestnut about a bond being a series of options on cash flow, which, of course, I’ll muck around with a bit more, when we get to derivatives.
+  </p>
+
+  <p>
+  	Convertible bonds should be redeemable either in cash or stock. Bearer stock, of course, which we’ll talk about next time.
+  </p>
+
+  <p>
+  	Money market instruments, for the most part, are just bonds with extremely short lifespans.
+  </p>
+
+  <p>
+  	It’s even conceivable to have microbonds, issued by individuals. After all, the size of an individual underwriter, and the resulting syndicates of underwriters, to boot, is probably completely driven by Moore’s law. I joked in Wired a few years ago about a syndicate of microbond ‘bots’ loaning me the money for lunch, payable at the end of the month.
+  </p>
+
+  <p>
+    If you can have microbonds, macrobonds are also possible. I expect that digital bearer settlement will be a universal phenomenon, just like book-entry settlement is today.
+  </p>
+
+  <p>
+  	Secured bonds, like equipment mortgage bonds, can use various trusted entities to validate the worth of the assets securing the bond, just like a trustee/custodian does for a bond or cash issue.
+  </p>
+
+  <p>
+  	And, of course, you can add all kinds of call provisions, redemption exclusions, and anything else you can think of, to a digital bearer bond, only this time, you’re writing software, and not law, as the old cypherpunk mantra goes.
+  </p>
+
+  <p>
+  	Finally, any of the above bonds will be rated, just like bonds are today, yielding the same market we have now, with fungible graded commodities, in perfect competition, only, now the velocity of those markets can be greatly accelerated. After all, you are executing, settling, and clearing, instantly, and for cash.
+  </p>
+
+  <p>
+  	Notice several things here. First, the language of bearer settlement completely underlays our very discussion of bonds even today. The word ‘coupon’, for interest, ‘holding’ a bond, all of that. Digital bearer settlement makes it that more relevant. Back to the future, and all that. It says to me that we’re not going to have too much conceptual trouble thinking about a world of digital bearer settlement, which is one of the principal attractions, besides reducing transaction cost by three orders of magnitude, of course.
+  </p>
+
+  <p>
+  	Second, and probably more important, by creating actual digital financial objects, objects which make electrons behave in certain ways online, just like the mouseprint covering those huge paper bearer bonds of yore caused lawyers and judges to behave in certain ways in meatspace, you have freed finance from a huge chunk of legal cycle-time itself, and you get a genuine financial ecology on the net, on top of that geodesic economy I talk so much about. In fact, most of the time it seems to me that they’re part of the same thing. The geodesic network being the substrate upon which this bestiary of financial entities and objects are born, live, and die. It gets worse when I talk about the idea of ‘micromoney mitochondria’ at the end of this series, but I’ll soften you up a bit before we get that far out over the edge of the cliff, into cartoon physics, as it were.
+  </p>
+
+  <p>
+  	Anyway, in this new financial ecosystem, financial theory and practice become one and the same thing, the behaviour of financial software and digital bearer objects on a ubiquitous global internetwork. It may be that, after years of using mathematics and physical analogs to describe financial economics, the ultimate anathema to mathematical finance will occur, and finance will become an observational science again.
+  </p>
+
+  <p>
+  	Frankly, I think we’re looking at some combination of the two, where mathematical finance will propose, and the genetic behaviour of the market will dispose. Which, when you think about it, is exactly what happens today.
+  </p>
+
+  <h4>
+    Back to the future, and all that.
+  </h4>
+
+  <p>
+    Next month, we’ll talk about digital bearer stock, and, implicit in that, how to achieve limited liability in ‘cypherspace’.
+  </p>
+
+  <p>
+    <a href="#contents">Back to table of contents</a>
+  </p>
+
+  <hr>
+
+  <h2 id="digital-bearer-equity">
+    Russell’s Revenge: Digital Bearer Equity<br>
+    <small>
+      October 1998
+    </small>
+  </h2>
+
+  <p>
+    <strong>Since law attempts to be as logical as possible, and software is nothing but mathematics, I’m about to show you how to turn common law, or some of it, anyway, into software. We’re going to do it all, of course, by talking about digital bearer equity.</strong>
+  </p>
+
+  <p>
+  	One of my favourite people in philosophical history is Bertrand Russell. Most people familiar with the history of computational logic know that not only did Russell discover a paradox that eventually undermined the foundations of logic when Goedel solved it a few decades later, that consistent systems could never be complete and complete systems could never be consistent, but also that Russell and his partner Alfred North Whitehead quite literally broke their brains proving, logically, that 1+1 was 2 using symbolic logic alone, unifying maths and logic for the first time.
+  </p>
+
+  <p>
+  	The idea of joint control of an enterprise is as old as western civilisation. Before the time of the Greeks, hierarchy and property rights had gotten so evolved that everyone belonged to someone else. Ministers of the pharaohs used to routinely sign their correspondence to their superiors, ‘Your Slave’. Hydraulic monopoly has a weird effect on people that way. Certainly the Chinese, Brahmins, and, to a lesser degree, the Mesopotamians, refined hierarchical lifetime control of their subjects to a fine art.
+  </p>
+
+  <p>
+  	It’s questionable whether the Greeks were the sole inventors of democracy, small hunter-gatherer bands like the Australian aborigines had a more egalitarian society than most larger agricultural societies, for instance. Nonetheless, the Greeks are certainly the people we like to remember as the originators of the practice of voting as a ‘protocol’ for group decision-making. Especially since they actually had agriculture and actually kept written records of the votes they took.
+  </p>
+
+  <p>
+  	The Roman republic, literally, ‘re publica’, the public thing, abstracted direct voting up one level by electing representatives who in turn did the actual voting, proxies, if you will. This allowed a much greater span of control than a simple city state, Delian League or not. First ‘pecunia’, then ‘re publica’. Those Romans got to invent all the fun words, didn’t they?
+  </p>
+
+  <p>
+  	Notice that neither democracies or republics are necessarily stable or even representative. Greece and Rome, or any of their early modern replicas including the one I’m fond of, excluded most of their populations from actual voting control, but, as communication technology and industrial requirements for education increased in prevalence, suffrage tended to become universal, and, ironically, slavery itself has been shown to be a peculiarly agricultural institution, all of Marx’s protestations to the contrary.
+  </p>
+
+  <p>
+  	Another way to think about it comes from an old college logic professor of mine. We all have the same information and intelligence, and the future is uncertain, so we might as well vote about what to do next.
+  </p>
+
+  <p>
+  	Of course, joint ownership is not new either, and neither is proportional voting control of businesses, or anything else. The corporation, peculiar this time to industrialism and the modern nation-state, has direct antecedents in other common-law business forms not requiring the force of that nation-state for their very existence, something important to anyone trying to code up erst-corporate behaviour in software instead of law.
+  </p>
+
+  <p>
+  	You don’t even need the legal sanction of a nation state to have limited liability. Common law created limited partnership long before corporations. Britain had fully functioning non-corporate limited liability entities at least until the end of the nineteenth century. Lloyds not withstanding, of course.
+  </p>
+
+  <p>
+  	So, the point is, can you make all this fun stuff happen in software?
+  </p>
+
+  <p>
+  	Let’s look at the cryptography for a bit. For starters, you can store multiple ‘hashes’ of the same data in such a fashion that with any m of n pieces, you can reconstruct the whole dataset. That is useful for storing, say, your digital bearer bonds, in various blinded cryptographic storage areas all over the net, for a fee of course, but it also provides a pointer to controlling a business entity as well.
+  </p>
+
+  <p>
+  	Why? Remember that ‘identity’ directly maps to ‘key-pair’ in cypherspace. With an m-of-n reconstruction scheme, any m members of a board could vote to control the ‘root’ key of a virtual corporation, for instance, you could actually control that key. There’s considerable doubt whether hierarchies make sense in this context at all. In fact, most global name-space schemes based on key-management hierarchies bump right into Russell’s Paradox and Goedel’s Result as if their designers never took logic at all.
+  </p>
+
+  <p>
+  	Anyway, this form of m-of-n key-control works best for simple partnerships, but you still have the problem of voting control of larger entities, particularly if you want lots of shareholders. Fortunately, there are cryptographic protocols for anonymous voting, as well. I’ll spare you the gory cryptographic details, but there are ways to elect a board, and for boards to vote control of a key, which can then be used to authenticate the actions of as large a business entity that you want. The creation of voting proxies, in other words.
+  </p>
+
+  <p>
+  	So, we’ve taken care of common stock, and, because we know about digital bearer bonds, we can get a hint about how to do dividends: just present some token at the time of the dividend and collect cash. But, what kind of token do we use when all we have is a stock certificate? Clearly we don’t want to redeem that at dividend time, do we?
+  </p>
+
+  <p>
+    No, we don’t have to. There is yet another class of cryptographic protocol called, weirdly enough, zero-knowledge proofs of knowledge. Using these methods, it is possible to hash a given bit of information and use that hash to prove to someone that you have that information in its entirety. No, it’s not magic, it’s mathematics. Using zero knowledge proofs on a stock certificate, you can prove not only that you are entitled to vote, but that you are entitled to collect dividends as well. In fact, you can use it to prove that you are a preferred stockholder, or that you are a holder of Class B instead of A, or anything else. Finally, the issuer can use these proofs to show that you have already collected a dividend, voted a stock, whatever.
+  </p>
+
+  <p>
+  	Oh. One other thing. Want to authenticate the books of a corporation for a given price earnings ratio without seeing the entire set? Want to authenticate an actual cashflow or asset holding for a debtor? Use the same zero-knowledge proof cryptography. Eric Hughes even claims to have invented a way to publish completely ‘open’, publicly available files, cryptographically munged, of course, which, when, a business entity wanted to prove a certain figure or set of line-items was in that otherwise encrypted information, they could use their unique key pair and a zero knowledge proof to show that the expenditure was in fact there. This could even be audited by a trusted third party, whose signature would be on the encrypted data. It just keeps getting weirder.
+  </p>
+
+  <p>
+  	Frankly, the reason we don’t use zero knowledge proofs for bond payments is because bonds have finite duration. They all, with one exception proving the financial rule called a ‘perpetuity’, expire sooner or later. It’ll probably be cheaper to just issue all the digital bearer certificates, principal and interest, en masse. It’ll certainly be more financially reasonable from the standpoint of calculating the value of those certificates, as any student of fixed income mathematics will tell you. Simply issue all the certificates at once, and let them each be priced, and traded, accordingly.
+  </p>
+
+  <p>
+  	But getting back to equity, what about limited liability? Well, think about this for a minute. If, for instance, you have anonymous control of information, then the only thing you can do to the holder of that information in any meaningful sense is to discount the value of that information in the market. Remember, when we talked about reputation, we talked about reputation ‘capital punishment’, where a given cryptographic key pair is shunned, its economic value effectively zero.
+  </p>
+
+  <p>
+  	These days we do it with laws which say that a shareholder of a corporation is only liable for whatever money he invested into it, and, when the market says a stock is worthless, there isn’t anything such thing as negative value.
+  </p>
+
+  <p>
+    But, again, in cypherspace, we try to replace law with strong cryptographic software, and, most of the time, we get the same result. Funny how symbolic logic works that way. Call it Russell’s revenge.
+  </p>
+
+  <p>
+  	In other words, if a shareholder spends money on a digital bearer certificate signifying partial ownership in an enterprise, and that bearer certificate, for whatever reason, is worth nothing, that’s all the shareholder has lost. Since he’s holding a certificate normally, his key is completely blinded, and he is thus anonymous. Only if he double spends the certificate is he unmasked. So, on a ‘semantic’ level, there’s no other ‘recourse’ the market has but to the value of the equity certificates he holds. And, as any person who’s holding shares of a fraudulently accounted company can tell you, that penalty is a good enough proxy for limited liability.
+  </p>
+
+  <p>
+  	Issuing digital bearer equity, or debt and cash, of course, is different, in that the key issuing the certificate must be known to have a good reputation, and have proven asset value in the case of collateralised debt. The holders of the certificates, though, don’t need to be known at all for the system to work.
+  </p>
+
+  <p>
+  	Pretty cool, huh? With digital bearer equity, you can have publicly held business entities whose size limits are only driven by transaction cost, just as Coase’s theorem says it should be, and, the shareholders can be completely anonymous.
+  </p>
+
+  <p>
+  	And, of course, as we all know by now, I claim, at least three times before breakfast every day, that digital bearer settlement will drop transaction costs by at least three orders of magnitude, which is why you have anonymous shareholders, and not though any desire for privacy per se. The reason we have registered stock ownership, remember, is because we have book-entry settlement. If we could do digital bearer settled equity, there would be no need to register securities from an economic standpoint, and, as I’m also fond of saying, physics begets economics, which begets common law, which begets legislation and ‘policy’. You cannot run the causation movie backwards and get any money.
+  </p>
+
+  <p>
+  	So, no, I don’t think that absolute deregulation of equities markets will be the only component of that cost reduction, though it may one of the most interesting effects of that cost reduction, no matter what its magnitude.
+  </p>
+
+  <p>
+  	Next time, we’ll talk about digital bearer derivatives, but, after that, we’ll come back to equity, and Coase’s Theorem, and talk about micromoney, and its impact on the size of the firm. Stay tuned.
+  </p>
+
+  <p>
+    <a href="#contents">Back to table of contents</a>
+  </p>
+
+  <hr>
+
+  <h2 id="digital-bearer-derivatives">
+    Digital Bearer Derivatives: Mathematics of Polite Fiction<br>
+    <small>
+      November 1998
+    </small>
+  </h2>
+
+  <p>
+    <strong>Digital bearer derivatives are possible and, at the margin, digital bearer settlement is probably the technology most suited for the execution, clearing and settlement of derivatives.</strong>
+  </p>
+
+  <p>
+  	With the free-falling price of microprocessing, we’re going to get more, and more complicated, derivatives, whether we want them or not, and, with ubiquitous internetworks, they’re going to be digital bearer derivatives, because that’s going to be the cheapest way to do them.
+
+  </p>
+
+  <p>
+  	So, before we start, let’s review my (and Russell’s) mantra that reality starts with physics and economics and ends with law, ‘policy’, and philosophy. Trying to legislate economics and finance, for instance, is one of the sillier things any sovereign, much less any religion, can do.
+  </p>
+
+  <p>
+  	I say religion here because, at some point in Christian theology, probably in deference to the Temple money-changing episode, interest was declared immoral, and, from that now-curious beginning, we get modern derivative transactions.
+  </p>
+
+  <p>
+  	Christian monarchs, in trying to outlaw interest, found that, no matter how hard they tried, they just couldn’t, really. Eventually, in the late middle ages, they let religious undesirables, like Jews, be the money lenders and charge interest, but only after a ridiculous amount of creative denial.
+  </p>
+
+  <p>
+  	Muslim countries still outlaw interest today, for instance, and they go through an amazing amount of gyrations to keep their banks in business as a result. But, as Joe McCarthy used to say about communism, no one in, say, Saudi Arabia, dare call it ‘interest’, even today.
+  </p>
+
+  <p>
+  	Nonetheless, buried, deep in the glosses, palimpsests and marginalia, among all the shucks and jives that mediaeval sovereigns did to avoid the ‘i’ word, were some very interesting residents of the then-hand-illuminated financial bestiary. These critters really did look an awful lot like bonds, and, even, derivatives. Of course, they couldn’t possibly be those unholy chimera, because they would be, quite literally, an abomination, a sin unto God Himself.
+  </p>
+
+  <p>
+  	Yet, in England, for instance, there was the ever-ubiquitous tally-stick, which started out being a poor man’s depository receipt for taxes, with big notches for big money, and small notches for small, and split between the two counterparties to keep everyone honest. These sticks ended up, in rather short order, representing ‘fictitious’ transactions, and, more important, contingent claims, on some other asset, usually, bullion. The king would, instead of paying creditors in gold, pay them with tally-sticks, which would then ‘mature’ sometime later at the time of the bullion’s eventual arrival in the treasury. These discounts were, of course, representing the, um, opportunity cost, of the money involved. Certainly not interest. That would be evil, of course.
+  </p>
+
+  <p>
+    In fact, the considerable fortunes of the Knights Templar, and Hospitalar, too, were built on bills of exchange, issued to crusading nobility, who could, magically, deposit money in one place in Europe, and take it out of somewhere else upon their arrival in the Holy Land. ‘Of course, Sire. Interest would be a sin. We can, however, sell you this bill of exchange at a discount, if you would should desire it…’
+  </p>
+
+  <p>
+  	You can account for a multitude of risks, if not sins, in the discounted price of that bill of exchange, including the obvious one of said Sovereign getting lost, bill and all, at sea on occasion.
+  </p>
+
+  <p>
+  	Not to mention creating bills of exchange for assets which never leave a country at all, thus avoiding taxes, even for the sovereign, at least in countries like England where the sovereign was accountable, even marginally, to the law. Bills of exchange were even created representing assets which might never exist, except if some contingency occurred. Guess what <strong>those</strong> were?
+  </p>
+
+  <p>
+  	Of course, most reasonably clueful bond folks will gladly haul out a trusty Fabozzi book or two and show you that, yes, a bond is, in fact, an option on some future cashflow that the bond promises, or, more precisely, that a bond is a <strong>bundle</strong> of options (interest coupons, remember?) on that future cash-flow, the granularity of the option’s settlement date being either every quarter, if you feel discrete, or infinite, if you feel continuous and remember that most bonds are quite liquid assets. And this tide of financial calculus floats all boats, even a crusader’s fleet mired in the middle ages, modulo the occasional Mediterranean storm.
+  </p>
+
+  <p>
+  	So, just like quarks, it seems that options and other derivatives are the very conceptual building blocks of the financial universe, and to ignore or restrict them is to do so at one’s own economic peril, if not one’s mortal soul.
+  </p>
+
+  <p>
+  	Thought about in those terms, of course, derivatives become as old as civilisation itself. Thales of Meletes (who was the world’s first philosopher if you’re in a medieval mood, and believe in the infallibility of Aristotle), answered the world’s oldest taunt, ‘if you’re so smart, how come you aren’t rich’, by cornering the local olive oil-pressing futures market, monopolising those presses at harvest time. It not only made him rich, but famous, too, especially to everyone who’s taken the nickel tour at the Chicago Board of Trade and walked away dreaming of being latter-day Hunt Brothers. Doing that ill-fated silver corner <strong>right</strong>, of course...
+  </p>
+
+  <p>
+  	Even before Hellenic Asia Minor, the owners of various grain depositories in Egypt, and even Babylon, raked it in one haircut at a time, purchasing grain before it was even planted, and flipping that imaginary grain, over and over again, until the harvest actually came in.
+  </p>
+
+  <p>
+  	This kept people from dumping grain in the streets at harvest time, certainly, because the prices were too low then, which is exactly the apocryphal event precipitating modern futures exchanges in places like Chicago, sans hydraulic monopoly. Those who forget history, and so forth.
+  </p>
+
+  <p>
+    At the root of every derivative is a polite, and frequently mathematical, fiction. A fiction, which, if it turns to real prophecy, makes money. And, if you’ve ever listened to any entrepreneur in heat spouting his latest funding pitch, you’ll notice that predictions are pretty cheap to make. Moreover, an awful lot of of those predictions exist about any one event at any one point in time. Putting a value on that vast quantity of fiction might have been worth a Nobel Prize to some people who should now know better than to hang out with the likes of Mr Merriwether, but, more important, the process is driven by supply and demand. The initial price of futures, options, and other contingent claims, relative to the assets they make claims on, are, like talk, cheap for the most part.
+  </p>
+
+  <p>
+  	In addition, if the underlying asset of a class of contingent claims is volatile, it’s a very good idea to settle and clear the purchase and sale of those claims as soon as possible, so people won’t forget their sometimes large obligations, or can collect on their occasionally formidable returns. Which, oddly enough, is exactly what happens at options exchanges all over the world. Chicago, for instance, now has next day settlement, if I remember, and the trend has been towards even shorter settlement times, wherever possible.
+  </p>
+
+  <p>
+  	And digital bearer transactions settle fastest and cheapest.
+  </p>
+
+  <p>
+  	We need to look at something else about a derivative. All those conditions under which the contingent claim will be executed make things very complicated. You simply cannot have a modern derivative without computers and online real-time information. You need even more computational horsepower to model the damn things to see if they do what you want them to.
+  </p>
+
+  <p>
+  	This complexity, and the corresponding computational modelling requirements, has always been seen to be a bug. It’s really a feature, though. The more you automate the process the better it works, and now, it can be automated up to and including settlement, scaring the wits out even the hardiest of souls.
+  </p>
+
+  <p>
+  	Already I can hear quite a few disgusted ‘harumphs’ out there, particularly from those of you who have seen formerly boring equity exchanges go limit-down like some CBOT pork-belly pit. You’ve seen ‘portfolio insurance’ contracts blow up like so many World War I barrage balloons under the tracer bullets of illiquidity, causing markets to crash around the world.
+  </p>
+
+  <p>
+  	More to the point, we’ve seen countless portfolio managers who claimed to be using derivatives, but who were doing nothing but speculation with large amounts of other people’s money as if it were just another game of liar’s poker.
+  </p>
+
+  <p>
+  	So, what does digital bearer settlement bring to the party? For starters, increased automation, of course. You can build an actual object, which lives out there on the network all by itself, waiting for the proper market conditions to be met before it executes. Furthermore, because of those extremely reduced transaction costs, you can do transactions at extremely small sizes. Well, sizes considerably less than the hundred-million, or even billion, dollar transactions required to make institutional-scale money in derivatives today.
+  </p>
+
+  <p>
+    Because of this small transaction cost, you could actually create a bunch of micro-derivatives, set them loose, and see if they work. Nothing like small-scale working models to see what really works, certainly. You could even create, abomination of abominations, auto-mutating derivatives, following genetic algorithms, spawning slightly altered copies of themselves at settlement time with some of the proceeds. Fast, cheap, and out of control, indeed. It’s enough to send you scurrying back to the monastery, sandals flying every which way…
+  </p>
+
+  <p>
+  	Dragging us back to the human universe, with this kind of granularity you could also create a whole array of derivatives, representing a whole spectrum of possible positions, in smaller transaction sizes, allowing you much more flexibility in your financial plans. That’s why derivatives exist, after all, to hedge your purchase or sale of something else against the unforeseen. At the expense of Godless speculators, of course.
+  </p>
+
+  <p>
+  	But, the primary problem with modern derivatives is that nobody is there on the other side of a desired trade at crunch time. Nobody there in the specific volume desired, and so, most hedging transactions, like the limit orders they are, go unanswered until the price is much lower, defeating the purpose of the derivative in the first place. Being able to execute a score of smaller transactions, instead of one giant one, at some intermediate prices in an avalanche of continuously falling prices gives a portfolio manager at least some comfort of dollar-cost averaging on the way down. Frankly, I expect that it will tame volatility as a result. It is precisely these precipitous free-falls with no answering bid, which cause the volatility problem in the first place.
+  </p>
+
+  <p>
+  	Oh. Right. Before I forget, the transactions are all anonymous, of course.
+  </p>
+
+  <p>
+  	So, how do you do all this fun stuff? Well, if you couple some bit of autoexecutable code with a digital bearer instrument, or a bundle of digital bearer instruments, you can execute all the pricing, and other financial data, requirements you want. Certainly a bit of XML, or Java, done right and properly authenticated, could do the trick, but, like most problems in financial cryptography, that trick is usually harder than it looks.
+  </p>
+
+  <p>
+  	Fortunately, what looks like an initial solution to the problem was presented at the 1998 International Conference on Financial Cryptography, FC98 to its friends, held this past February in Anguilla.
+  </p>
+
+  <p>
+  	X-Cash, a new transaction protocol by Markus Jakobsson of Bell Labs and Ari Juels of RSA Labs, is a bundle of digital bearer instruments which look for the terms they want, and when those terms meet with an acceptable offer, they execute, clear, and settle the transaction, all at once. If you’re interested in this paper, and a whole bunch of others on the cutting edge of Financial Cryptography, you might want to look at the conference’s proceedings, which are now available from Springer-V erlag. See www.fc98.ai for details.
+  </p>
+
+  <p>
+  	Of course, figuring out how, and doing it, are two entirely different things, and, frankly, X-Cash is only the first of what will necessarily be many attempts at solving the problem of autoexecutable, digitable bearer, derivatives.
+  </p>
+
+  <p>
+  	It’s the same problem financial cryptographers fight every day: the problem of turning law and legal agreement into something much better: running software. Turning law, and apparently, thrill-addiction, into economic, literally physical, objects.
+  </p>
+
+  <p>
+  	Objects beyond the control of gamblers and, apparently, experts at liar’s poker.
+  </p>
+
+  <p>
+    <a href="#contents">Back to table of contents</a>
+  </p>
+
+</div>
+{% endblock %}
