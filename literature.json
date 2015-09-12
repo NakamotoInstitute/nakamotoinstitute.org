@@ -764,6 +764,17 @@
     },
     {
         "id": 75,
+        "title": "Scarce Objects",
+        "author": ["nick-szabo"],
+        "date": "2004",
+        "slug": "scarce-objects",
+        "formats": ["html", "ext"],
+        "categories": ["cryptography", "economics"],
+        "doctype": "essay",
+        "external": "http://szabo.best.vwh.net/scarce.html"
+    },
+    {
+        "id": 76,
         "title": "The Geodesic Market",
         "author": ["robert-hettinga"],
         "date": "April 1998 - December 1999",
