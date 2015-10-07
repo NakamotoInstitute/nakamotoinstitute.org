@@ -28,9 +28,10 @@
         "author": ["henri-massias", "xavier-serret-avila", "jean-jacques-quisquater"],
         "date": "May 1999",
         "slug": "secure-timestamping-service",
-        "formats": ["unavailable"],
+        "formats": ["pdf", "ext"],
         "categories": ["cryptography"],
-        "doctype": "journal"
+        "doctype": "journal",
+        "external": "http://www.uclouvain.be/crypto/publications/year/1999"
     },
     {
         "id": 6,
