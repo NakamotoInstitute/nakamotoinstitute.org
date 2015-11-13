@@ -7,9 +7,9 @@
 
 from sni import app, db, cache
 from models import Post, Email, Doc, ResearchDoc, Author, Format, Category,\
-                   BlogPost, Skeptic, DonationAddress, Episode
+                   BlogPost, Skeptic, DonationAddress, Episode, Quote, QuoteCategory
 from flask import render_template, json, url_for, redirect, request, Response
-from sqlalchemy import desc
+from sqlalchemy import asc, desc
 from werkzeug.contrib.atom import AtomFeed
 from datetime import datetime
 import re
@@ -51,7 +51,7 @@ def contact():
 @app.route('/emails/', subdomain="satoshi", methods = ["GET"])
 @app.route('/emails/cryptography/', subdomain="satoshi", methods = ["GET"])
 def emails():
-    emails = Email.query.order_by(Email.date)
+    emails = Email.query.order_by(Email.date).all()
     app.logger.info(str(request.remote_addr) + ', Emails')
     return render_template("emails.html", emails=emails)
 
@@ -101,6 +101,25 @@ def postview(postnum,source):
 def code():
     app.logger.info(str(request.remote_addr) + ', Code')
     return render_template("code.html")
+
+@cache.cached(timeout=900)
+@app.route('/quotes/', subdomain="satoshi")
+def quotes():
+    app.logger.info(str(request.remote_addr) + ', Quotes')
+    categories = QuoteCategory.query.order_by(QuoteCategory.slug).all()
+    return render_template("quotes.html", categories=categories)
+
+@cache.cached(timeout=900)
+@app.route('/quotes/<string:slug>/', subdomain="satoshi")
+def quotescategory(slug):
+    app.logger.info(str(request.remote_addr) + ', Quotes')
+    order = request.args.get('order')
+    if order == 'desc':
+        quotes = Quote.query.filter(Quote.categories.any(slug=slug)).order_by(desc(Quote.date)).all()
+    else:
+        quotes = Quote.query.filter(Quote.categories.any(slug=slug)).order_by(Quote.date).all()
+    category = QuoteCategory.query.filter_by(slug=slug).first()
+    return render_template("quotescategory.html", quotes=quotes, category=category, order=order)
 
 @cache.cached(timeout=900)
 @app.route('/authors/', methods=["GET"])
@@ -188,7 +207,7 @@ def docinfoid(docid):
 
 @cache.cached(timeout=900)
 @app.route('/literature/<string:slug>/<string:format>/', methods=["GET"])
-def docview(slug, format):
+def s(slug, format):
     doc = Doc.query.filter_by(slug=slug).first()
     if(doc!=None):
         formats = []

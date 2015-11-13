@@ -36,3 +36,17 @@
     {% endif %}
   {%endif%}
 {%- endmacro %}
+
+{% macro print_category(category) -%}
+  <a href="{{url_for('quotescategory', slug=category.slug)}}">{{category.name}}</a>
+{%- endmacro %}
+
+{% macro print_categories(categories) -%}
+  {% for category in categories %}
+    {% if loop.last %}
+      {{print_category(category)}}
+    {% else %}
+      {{print_category(category)}},
+    {% endif %}
+  {% endfor %}
+{%- endmacro %}

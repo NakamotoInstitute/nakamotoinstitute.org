@@ -52,7 +52,7 @@ class Quote(db.Model):
     post_id = db.Column(db.Integer, db.ForeignKey('post.id'))
     categories = db.relationship('QuoteCategory',
  		secondary = quote_categories,
- 		backref=db.backref('categories', lazy='dynamic'))
+ 		backref=db.backref('quotes', lazy='dynamic'))
 
     def __repr__(self):
  		return '<Quote %r>' % (self.id)
