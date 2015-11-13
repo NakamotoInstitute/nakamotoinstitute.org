@@ -12,25 +12,57 @@ from datetime import datetime
 from sni.models import *
 
 # Clear out database
+print "Begin deleting Quote"
+qs = Quote.query.all()
+for q in qs:
+    db.session.delete(q)
+    db.session.commit()
+print "Finish deleting Quote"
+print "Begin deleting QuoteCategory"
+qcs = QuoteCategory.query.all()
+for qc in qcs:
+    db.session.delete(qc)
+    db.session.commit()
+print "Finish deleting QuoteCategory"
+print "Begin deleting Email"
 Email.query.delete()
+print "Finish deleting Email"
+print "Begin deleting Post"
 Post.query.delete()
+print "Finish deleting Post"
+print "Begin deleting Category"
 cats = Category.query.all()
 for cat in cats:
 	db.session.delete(cat)
 	db.session.commit()
+print "Finish deleting Category"
+print "Begin deleting Format"
 forms = Format.query.all()
 for form in forms:
 	db.session.delete(form)
 	db.session.commit()
+print "Finish deleting Format"
+print "Begin deleting Author"
 auths = Author.query.all()
 for auth in auths:
 	db.session.delete(auth)
 	db.session.commit()
+print "Finish deleting Author"
+print "Begin deleting Doc"
 Doc.query.delete()
+print "Finish deleting Doc"
+print "Begin deleting ResearchDoc"
 ResearchDoc.query.delete()
+print "Finish deleting ResearchDoc"
+print "Begin deleting BlogPost"
 BlogPost.query.delete()
+print "Finish deleting BlogPost"
+print "Begin deleting Skeptic"
 Skeptic.query.delete()
+print "Finish deleting Skeptic"
+print "Begin deleting Episode"
 Episode.query.delete()
+print "Finish deleting Episode"
 
 #db.drop_all()
 #db.create_all()
@@ -49,6 +81,8 @@ def get_or_create(model, **kwargs):
         instance = model(**kwargs)
         return instance
 
+print "Begin importing Email"
+
 with open('./satoshiemails.json') as data_file:
 	emails = json.load(data_file)
 
@@ -63,6 +97,9 @@ for i in range(0,len(emails['emails'])):
 		source=emails['emails'][index]['Source'])
 	db.session.add(email)
 	db.session.commit()
+
+print "Finish importing Email"
+print "Begin importing Post"
 
 with open('./satoshiposts.json') as data_file:
 	posts = json.load(data_file)
@@ -79,6 +116,47 @@ for i in range(0,len(posts['posts'])):
 	db.session.add(post)
 	db.session.commit()
 
+print "Finish importing Post"
+print "Begin importing QuoteCategory"
+
+with open('./quotecategories.json') as data_file:
+	quotecategories = json.load(data_file)
+
+for qc in quotecategories:
+	quote_category = QuoteCategory(
+		slug=qc['slug'],
+		name=qc['name']
+	)
+	db.session.add(quote_category)
+	db.session.commit()
+
+print "Finish importing QuoteCategory"
+print "Begin importing Quote"
+
+with open('./quotes.json') as data_file:
+	quotes = json.load(data_file)
+
+for i, quote in enumerate(quotes):
+	q = Quote(
+		id = i+1,
+		text=quote['text'],
+	    date=parser.parse(quote['date']).date(),
+	    medium=quote['medium']
+	)
+	if 'email_id' in quote:
+		q.email_id = quote['email_id']
+	if 'post_id' in quote:
+		q.post_id = quote['post_id']
+	categories = []
+	for cat in quote['category'].split(', '):
+		categories += [get(QuoteCategory, slug=cat)]
+	q.categories = categories
+	db.session.add(q)
+	db.session.commit()
+
+print "Finish importing Quote"
+print "Begin importing Author"
+
 with open('./authors.json') as data_file:
 	authors = json.load(data_file)
 
@@ -91,6 +169,9 @@ for i in range(0, len(authors['authors'])):
 		slug=authors['authors'][i]['slug'])
 	db.session.add(author)
 	db.session.commit()
+
+print "Finish importing Author"
+print "Begin importing Doc"
 
 with open('./literature.json') as data_file:
 	docs = json.load(data_file)
@@ -124,6 +205,9 @@ for i in range(0, len(docs['docs'])):
 		external=ext)
 	db.session.add(doc)
 	db.session.commit()
+
+print "Finish importing Doc"
+print "Begin importing ResearchDoc"
 
 with open('./research.json') as data_file:
 	research = json.load(data_file)
@@ -163,6 +247,9 @@ for i in range(0, len(research)):
 	db.session.add(doc)
 	db.session.commit()
 
+print "Finish importing ResearchDoc"
+print "Begin importing BlogPost"
+
 with open('./blogposts.json') as data_file:
 	blogps = json.load(data_file)
 
@@ -178,6 +265,9 @@ for i in range(0,len(blogps['blogposts'])):
 		languages=blogps['blogposts'][i]['languages'])
 	db.session.add(blogpost)
 	db.session.commit()
+
+print "Finish importing ResearchDoc"
+print "Begin importing Skeptic"
 
 with open('./skeptics.json') as data_file:
 	skeptics = json.load(data_file)
@@ -198,6 +288,9 @@ for i in range(0,len(skeptics['skeptics'])):
 	db.session.add(skeptic)
 	db.session.commit()
 
+print "Finish importing Skeptic"
+print "Begin importing Episode"
+
 with open('./episodes.json') as data_file:
 	episodes = json.load(data_file)
 
@@ -215,6 +308,8 @@ for i in range(0,len(episodes)):
 		time=parser.parse(episodes[i]['time']))
 	db.session.add(episode)
 	db.session.commit()
+
+print "Finish importing Episode"
 
 #with open('./addresses/addresses.csv') as csvfile:
 #	addresses = csv.reader(csvfile)

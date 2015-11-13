@@ -14,6 +14,7 @@ class Email(db.Model):
  	date = db.Column(db.DateTime)
  	text = db.Column(db.String())
  	source = db.Column(db.String())
+ 	quotes = db.relationship("Quote", backref="email")
 
  	def __repr__(self):
  		return '<Email %r>' % (self.subject)
@@ -25,9 +26,37 @@ class Post(db.Model):
  	date = db.Column(db.DateTime)
  	text = db.Column(db.String())
  	source = db.Column(db.String())
+ 	quotes = db.relationship("Quote", backref="post")
 
  	def __repr__(self):
  		return '<Post %r>' % (self.name)
+
+quote_categories = db.Table('quote_categories',
+	db.Column('quote_id', db.Integer, db.ForeignKey('quote.id')),
+	db.Column('quote_category_id', db.Integer, db.ForeignKey('quote_category.id')))
+
+class QuoteCategory(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String())
+    slug = db.Column(db.String())
+
+    def __repr__(self):
+ 		return '<QuoteCategory %r>' % (self.slug)
+
+class Quote(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    text = db.Column(db.String())
+    date = db.Column(db.Date)
+    medium = db.Column(db.String())
+    email_id = db.Column(db.Integer, db.ForeignKey('email.id'))
+    post_id = db.Column(db.Integer, db.ForeignKey('post.id'))
+    categories = db.relationship('QuoteCategory',
+ 		secondary = quote_categories,
+ 		backref=db.backref('categories', lazy='dynamic'))
+
+    def __repr__(self):
+ 		return '<Quote %r>' % (self.id)
+
 
 authors = db.Table('authors',
 	db.Column('doc_id', db.Integer, db.ForeignKey('doc.id')),

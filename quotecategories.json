@@ -1,0 +1,98 @@
+[
+  {
+    "slug": "micropayments",
+    "name": "Micropayments"
+  },
+  {
+    "slug": "bitcoin-economics",
+    "name": "Bitcoin Economics"
+  },
+  {
+    "slug": "cryptocurrency",
+    "name": "Cryptocurrency"
+  },
+  {
+    "slug": "transactions",
+    "name": "Transactions"
+  },
+  {
+    "slug": "mining",
+    "name": "Mining"
+  },
+  {
+    "slug": "releases",
+    "name": "Releases"
+  },
+  {
+    "slug": "bitcoin-design",
+    "name": "Bitcoin Design"
+  },
+  {
+    "slug": "double-spending",
+    "name": "Double Spending"
+  },
+  {
+    "slug": "proof-of-work",
+    "name": "Proof-of-Work"
+  },
+  {
+    "slug": "motives",
+    "name": "Motives"
+  },
+  {
+    "slug": "difficulty",
+    "name": "Difficulty"
+  },
+  {
+    "slug": "fees",
+    "name": "Fees"
+  },
+  {
+    "slug": "government",
+    "name": "Government"
+  },
+  {
+    "slug": "p2p-networks",
+    "name": "P2P Networks"
+  },
+  {
+    "slug": "identity",
+    "name": "Identity"
+  },
+  {
+    "slug": "encryption",
+    "name": "Encryption"
+  },
+  {
+    "slug": "banks",
+    "name": "Banks"
+  },
+  {
+    "slug": "privacy",
+    "name": "Privacy"
+  },
+  {
+    "slug": "economics",
+    "name": "Economics"
+  },
+  {
+    "slug": "general",
+    "name": "General"
+  },
+  {
+    "slug": "scalability",
+    "name": "Scalability"
+  },
+  {
+    "slug": "trusted-third-parties",
+    "name": "Trusted Third Parties"
+  },
+  {
+    "slug": "nodes",
+    "name": "Nodes"
+  },
+  {
+    "slug": "addresses",
+    "name": "Addresses"
+  }
+]
