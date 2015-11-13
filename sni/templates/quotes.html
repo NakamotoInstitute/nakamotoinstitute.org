@@ -10,6 +10,11 @@ The Quotable Satoshi
   <div class="row">
     <div class="text-center page-header">
    	  <h1>The Quotable Satoshi</h1>
+        <p>
+          It's very attractive to the libertarian viewpoint if we can explain it properly.<br><em>I'm better with code than with words though.</em>
+        </p>
+        <a href="{{url_for('emailview', emnum=12)}}">Satoshi Nakamoto</a>, 11/14/2008
+      </blockquote>
     </div>
   </div>
 
@@ -25,6 +30,17 @@ The Quotable Satoshi
       </ul>
     </div>
     {%- endfor %}
+  </div>
+
+  <hr>
+
+  <div class="row text-center">
+    <p>
+      <em>Special thanks to <a href="https://www.buybitcoinworldwide.com/">Jordan Tuwiner</a> for indexing quotations.</em>
+    </p>
+    <p>
+      <em>If there is a quotation or category you would like to add, please <a href="{{url_for('contact')}}">contact us</a> or submit a pull request on <a href="https://github.com/NakamotoInstitute/nakamotoinstitute.org">GitHub</a>.</em>
+    </p>
   </div>
 </div>
 {% endblock %}
