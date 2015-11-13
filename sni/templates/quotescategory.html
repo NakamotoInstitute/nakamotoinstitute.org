@@ -1,0 +1,73 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+{% import "helpers.html" as helpers %}
+
+{% block title %}
+The Quotable Satoshi
+{% endblock %}
+
+{% block content %}
+<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+  <div class="row">
+    <div class="col-lg-6">
+      <a href="{{url_for('quotes')}}">Back to index</a>
+    </div>
+    <div class="col-lg-6 text-right">
+      {% if order == 'desc' %}
+        <a href="{{url_for('quotescategory', slug=category.slug)}}">Order Ascending</a>
+      {% else %}
+        <a href="?order=desc">Order Descending</a>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="text-center page-header">
+   	  <h1>The Quotable Satoshi</h1>
+      <h2>{{category.name}}</h2>
+    </div>
+  </div>
+
+  {% for quote in quotes %}
+    <div class="row">
+      {% if quote.post %}
+      <h4>
+        {{quote.post.name}}<br>
+        <small>{{quote.date}} - <a href="{{url_for('postview', postnum=quote.post.id, source=quote.medium)}}">Link</a></small>
+      </h4>
+      {% elif quote.email %}
+      <h4>
+        {{quote.email.subject}}<br>
+        <small>{{quote.date}} - <a href="{{url_for('emailview', emnum=quote.email.id)}}">Link</a></small>
+      </h4>
+      {% else %}
+      <h4>
+        Bitcoin: A Peer-to-Peer Electronic Cash System<br>
+        <small>{{quote.date}} - <a href="{{url_for('slugview', slug='bitcoin')}}">Link</a></small>
+      </h4>
+      {% endif %}
+      <p>
+        {{quote.text}}
+      </p>
+      <p>
+        <small>
+          {{ helpers.print_categories(quote.categories) }}
+        </small>
+      </p>
+      <hr>
+    </div>
+  {% endfor %}
+  <div class="row">
+    <div class="col-lg-6">
+      <a href="{{url_for('quotes')}}">Back to index</a>
+    </div>
+    <div class="col-lg-6 text-right">
+      {% if order == 'desc' %}
+        <a href="{{url_for('quotescategory', slug=category.slug)}}">Order Ascending</a>
+      {% else %}
+        <a href="?order=desc">Order Descending</a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

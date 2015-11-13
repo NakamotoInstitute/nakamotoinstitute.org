@@ -23,7 +23,7 @@
     {
         "category": "general",
         "medium": "bitcointalk",
-        "text": "I wish rather than deleting the article, they put a length restriction.  If something is not famous enough, there could at least be a stub article identifying what it is.  I often come across annoying red links of things that Wiki ought to at least have heard of. <br />The article could be as simple as something like: \"Bitcoin is a peer-to-peer decentralised /link/electronic currency/link/.\" <br />The more standard Wiki thing to do is that we should have a paragraph in one of the more general categories that we are an instance of, like Electronic Currency or Electronic Cash.  We can probably establish a paragraph there.  Again, keep it short.  Just identifying what it is.",
+        "text": "I wish rather than deleting the article, they put a length restriction.  If something is not famous enough, there could at least be a stub article identifying what it is.  I often come across annoying red links of things that Wiki ought to at least have heard of. \nThe article could be as simple as something like: \"Bitcoin is a peer-to-peer decentralised /link/electronic currency/link/.\" \nThe more standard Wiki thing to do is that we should have a paragraph in one of the more general categories that we are an instance of, like Electronic Currency or Electronic Cash.  We can probably establish a paragraph there.  Again, keep it short.  Just identifying what it is.",
         "post_id": "467",
         "date": "September 30, 2010"
     },
@@ -65,14 +65,14 @@
     {
         "category": "economics",
         "medium": "bitcointalk",
-        "text": "As a thought experiment, imagine there was a base metal as scarce as gold but with the following properties:<br />- boring grey in colour<br />- not a good conductor of electricity<br />- not particularly strong, but not ductile or easily malleable either<br />- not useful for any practical or ornamental purpose<br /><br />and one special, magical property:<br />- can be transported over a communications channel<br /><br />If it somehow acquired any value at all for whatever reason, then anyone wanting to transfer wealth over a long distance could buy some, transmit it, and have the recipient sell it.<br /><br />Maybe it could get an initial value circularly as you've suggested, by people foreseeing its potential usefulness for exchange.  (I would definitely want some)  Maybe collectors, any random reason could spark it.<br /><br />I think the traditional qualifications for money were written with the assumption that there are so many competing objects in the world that are scarce, an object with the automatic bootstrap of intrinsic value will surely win out over those without intrinsic value.  But if there were nothing in the world with intrinsic value that could be used as money, only scarce but no intrinsic value, I think people would still take up something.<br /><br />(I'm using the word scarce here to only mean limited potential supply)",
+        "text": "As a thought experiment, imagine there was a base metal as scarce as gold but with the following properties:\n- boring grey in colour\n- not a good conductor of electricity\n- not particularly strong, but not ductile or easily malleable either\n- not useful for any practical or ornamental purpose\n\nand one special, magical property:\n- can be transported over a communications channel\n\nIf it somehow acquired any value at all for whatever reason, then anyone wanting to transfer wealth over a long distance could buy some, transmit it, and have the recipient sell it.\n\nMaybe it could get an initial value circularly as you've suggested, by people foreseeing its potential usefulness for exchange.  (I would definitely want some)  Maybe collectors, any random reason could spark it.\n\nI think the traditional qualifications for money were written with the assumption that there are so many competing objects in the world that are scarce, an object with the automatic bootstrap of intrinsic value will surely win out over those without intrinsic value.  But if there were nothing in the world with intrinsic value that could be used as money, only scarce but no intrinsic value, I think people would still take up something.\n\n(I'm using the word scarce here to only mean limited potential supply)",
         "post_id": "428",
         "date": "August 27, 2010"
     },
     {
         "category": "bitcoin-economics",
         "medium": "bitcointalk",
-        "text": "Bitcoins have no dividend or potential future dividend, therefore not like a stock.<br /><br />More like a collectible or commodity.",
+        "text": "Bitcoins have no dividend or potential future dividend, therefore not like a stock.\n\nMore like a collectible or commodity.",
         "post_id": "427",
         "date": "August 27, 2010"
     },
@@ -86,28 +86,28 @@
     {
         "category": "mining",
         "medium": "bitcointalk",
-        "text": "Some places where generation will gravitate to: <br />1) places where it's cheapest or free<br />2) people who want to help for idealogical reasons<br />3) people who want to get some coins without the inconvenience of doing a transaction to buy them<br /><br />There are legitimate places where it's free.  Generation is basically free anywhere that has electric heat, since your computer's heat is offsetting your baseboard electric heating.  Many small flats have electric heat out of convenience.",
+        "text": "Some places where generation will gravitate to: \n1) places where it's cheapest or free\n2) people who want to help for idealogical reasons\n3) people who want to get some coins without the inconvenience of doing a transaction to buy them\n\nThere are legitimate places where it's free.  Generation is basically free anywhere that has electric heat, since your computer's heat is offsetting your baseboard electric heating.  Many small flats have electric heat out of convenience.",
         "post_id": "364",
         "date": "August 15, 2010"
     },
     {
         "category": "general",
         "medium": "bitcointalk",
-        "text": "Then you must also be against the common system of payment up front, where the customer loses.<br />Payment up front: customer loses, and the thief gets the money.<br />Simple escrow: customer loses, but the thief doesn't get the money either.<br />Are you guys saying payment up front is better, because at least the thief gets the money, so at least someone gets it?<br />Imagine someone stole something from you.  You can't get it back, but if you could, if it had a kill switch that could be remote triggered, would you do it?  Would it be a good thing for thieves to know that everything you own has a kill switch and if they steal it, it'll be useless to them, although you still lose it too?  If they give it back, you can re-activate it.<br />Imagine if gold turned to lead when stolen.  If the thief gives it back, it turns to gold again.<br />It still seems to me the problem may be one of presenting it the right way.  For one thing, not being so blunt about \"money burning\" for the purposes of game theory discussion.  The money is never truly burned.  You have the option to release it at any time forever.",
+        "text": "Then you must also be against the common system of payment up front, where the customer loses.\nPayment up front: customer loses, and the thief gets the money.\nSimple escrow: customer loses, but the thief doesn't get the money either.\nAre you guys saying payment up front is better, because at least the thief gets the money, so at least someone gets it?\nImagine someone stole something from you.  You can't get it back, but if you could, if it had a kill switch that could be remote triggered, would you do it?  Would it be a good thing for thieves to know that everything you own has a kill switch and if they steal it, it'll be useless to them, although you still lose it too?  If they give it back, you can re-activate it.\nImagine if gold turned to lead when stolen.  If the thief gives it back, it turns to gold again.\nIt still seems to me the problem may be one of presenting it the right way.  For one thing, not being so blunt about \"money burning\" for the purposes of game theory discussion.  The money is never truly burned.  You have the option to release it at any time forever.",
         "post_id": "340",
         "date": "August 11, 2010"
     },
     {
         "category": "mining",
         "medium": "bitcointalk",
-        "text": "The heat from your computer is not wasted if you need to heat your home.  If you're using electric heat where you live, then your computer's heat isn't a waste.  It's equal cost if you generate the heat with your computer. <br />If you have other cheaper heating than electric, then the waste is only the difference in cost.<br />If it's summer and you're using A/C, then it's twice. <br />Bitcoin generation should end up where it's cheapest.  Maybe that will be in cold climates where there's electric heat, where it would be essentially free.",
+        "text": "The heat from your computer is not wasted if you need to heat your home.  If you're using electric heat where you live, then your computer's heat isn't a waste.  It's equal cost if you generate the heat with your computer. \nIf you have other cheaper heating than electric, then the waste is only the difference in cost.\nIf it's summer and you're using A/C, then it's twice. \nBitcoin generation should end up where it's cheapest.  Maybe that will be in cold climates where there's electric heat, where it would be essentially free.",
         "post_id": "337",
         "date": "August 9, 2010"
     },
     {
         "category": "bitcoin-economics",
         "medium": "bitcointalk",
-        "text": "It's the same situation as gold and gold mining.  The marginal cost of gold mining tends to stay near the price of gold.  Gold mining is a waste, but that waste is far less than the utility of having gold available as a medium of exchange. <br />I think the case will be the same for Bitcoin.  The utility of the exchanges made possible by Bitcoin will far exceed the cost of electricity used.  Therefore, not having Bitcoin would be the net waste.",
+        "text": "It's the same situation as gold and gold mining.  The marginal cost of gold mining tends to stay near the price of gold.  Gold mining is a waste, but that waste is far less than the utility of having gold available as a medium of exchange. \nI think the case will be the same for Bitcoin.  The utility of the exchanges made possible by Bitcoin will far exceed the cost of electricity used.  Therefore, not having Bitcoin would be the net waste.",
         "post_id": "327",
         "date": "August 7, 2010"
     },
@@ -128,7 +128,7 @@
     {
         "category": "micropayments",
         "medium": "bitcointalk",
-        "text": "Bitcoin isn't currently practical for very small micropayments.  Not for things like pay per search or per page view without an aggregating mechanism, not things needing to pay less than 0.01.  The dust spam limit is a first try at intentionally trying to prevent overly small micropayments like that. <br />Bitcoin is practical for smaller transactions than are practical with existing payment methods.  Small enough to include what you might call the top of the micropayment range.  But it doesn't claim to be practical for arbitrarily small micropayments.",
+        "text": "Bitcoin isn't currently practical for very small micropayments.  Not for things like pay per search or per page view without an aggregating mechanism, not things needing to pay less than 0.01.  The dust spam limit is a first try at intentionally trying to prevent overly small micropayments like that. \nBitcoin is practical for smaller transactions than are practical with existing payment methods.  Small enough to include what you might call the top of the micropayment range.  But it doesn't claim to be practical for arbitrarily small micropayments.",
         "post_id": "317",
         "date": "August 4, 2010"
     },
@@ -149,21 +149,21 @@
     {
         "category": "general",
         "medium": "bitcointalk",
-        "text": "For future reference, here's my public key.  It's the same one that's been there since the bitcoin.org site first went up in 2008.  Grab it now in case you need it later. <br />htrusted-third-parties://www.bitcoin.org/Satoshi_Nakamoto.asc",
+        "text": "For future reference, here's my public key.  It's the same one that's been there since the bitcoin.org site first went up in 2008.  Grab it now in case you need it later. \nhtrusted-third-parties://www.bitcoin.org/Satoshi_Nakamoto.asc",
         "post_id": "276",
         "date": "July 25, 2010"
     },
     {
         "category": "bitcoin-design",
         "medium": "bitcointalk",
-        "text": "By making some adjustments to the database settings, I was able to make the initial block download about 5 times faster.  It downloads in about 30 minutes. <br /> <br />The database default had it writing each block to disk synchronously, which is not necessary.  I changed the settings to let it cache the changes in memory and write them out in a batch.  Blocks are still written transactionally, so either the complete change occurs or none of it does, in either case the data is left in a valid state. <br /> <br />I only enabled this change during the initial block download.  When you come within 2000 blocks of the latest block, these changes turn off and it slows down to the old way.",
+        "text": "By making some adjustments to the database settings, I was able to make the initial block download about 5 times faster.  It downloads in about 30 minutes. \n \nThe database default had it writing each block to disk synchronously, which is not necessary.  I changed the settings to let it cache the changes in memory and write them out in a batch.  Blocks are still written transactionally, so either the complete change occurs or none of it does, in either case the data is left in a valid state. \n \nI only enabled this change during the initial block download.  When you come within 2000 blocks of the latest block, these changes turn off and it slows down to the old way.",
         "post_id": "258",
         "date": "July 23, 2010"
     },
     {
         "category": "general",
         "medium": "bitcointalk",
-        "text": "The timing is strange, just as we are getting a rapid increase in 3rd party coverage after getting slashdotted.  I hope there's not a big hurry to wrap the discussion and decide.  How long does Wikipedia typically leave a question like that open for comment? <br />It would help to condense the article and make it less promotional sounding as soon as possible.  Just letting people know what it is, where it fits into the electronic money space, not trying to convince them that it's good.  They probably want something that just generally identifies what it is, not tries to explain all about how it works.",
+        "text": "The timing is strange, just as we are getting a rapid increase in 3rd party coverage after getting slashdotted.  I hope there's not a big hurry to wrap the discussion and decide.  How long does Wikipedia typically leave a question like that open for comment? \nIt would help to condense the article and make it less promotional sounding as soon as possible.  Just letting people know what it is, where it fits into the electronic money space, not trying to convince them that it's good.  They probably want something that just generally identifies what it is, not tries to explain all about how it works.",
         "post_id": "249",
         "date": "July 10, 2010"
     },
@@ -184,7 +184,7 @@
     {
         "category": "scalability, nodes",
         "medium": "bitcointalk",
-        "text": "The design outlines a lightweight client that does not need the full block chain.  In the design PDF it's called Simplified Payment Verification.  The lightweight client can send and receive transactions, it just can't generate blocks.  It does not need to trust a node to verify payments, it can still verify them itself. <br />The lightweight client is not implemented yet, but the plan is to implement it when it's needed.  For now, everyone just runs a full network node.",
+        "text": "The design outlines a lightweight client that does not need the full block chain.  In the design PDF it's called Simplified Payment Verification.  The lightweight client can send and receive transactions, it just can't generate blocks.  It does not need to trust a node to verify payments, it can still verify them itself. \nThe lightweight client is not implemented yet, but the plan is to implement it when it's needed.  For now, everyone just runs a full network node.",
         "post_id": "188",
         "date": "July 14, 2010"
     },
@@ -233,14 +233,14 @@
     {
         "category": "general",
         "medium": "bitcointalk",
-        "text": "Excellent choice of a first project, nice work.  I had planned to do this exact thing if someone else didn't do it, so when it gets too hard for mortals to generate 50BTC, new users could get some coins to play with right away.  Donations should be able to keep it filled.  The display showing the balance in the dispenser encourages people to top it up.<br /><br />You should put a donation bitcoin address on the page for those who want to add funds to it, which ideally should update to a new address whenever it receives something.",
+        "text": "Excellent choice of a first project, nice work.  I had planned to do this exact thing if someone else didn't do it, so when it gets too hard for mortals to generate 50BTC, new users could get some coins to play with right away.  Donations should be able to keep it filled.  The display showing the balance in the dispenser encourages people to top it up.\n\nYou should put a donation bitcoin address on the page for those who want to add funds to it, which ideally should update to a new address whenever it receives something.",
         "post_id": "129",
         "date": "June 18, 2010"
     },
     {
         "category": "bitcoin-design",
         "medium": "bitcointalk",
-        "text": "Since 2007.  At some point I became convinced there was a way to do this without any trust required at all and couldn't resist to keep thinking about it.  Much more of the work was designing than coding.<br /><br />Fortunately, so far all the issues raised have been things I previously considered and planned for.",
+        "text": "Since 2007.  At some point I became convinced there was a way to do this without any trust required at all and couldn't resist to keep thinking about it.  Much more of the work was designing than coding.\n\nFortunately, so far all the issues raised have been things I previously considered and planned for.",
         "post_id": "127",
         "date": "June 18, 2010"
     },
@@ -282,7 +282,7 @@
     {
         "category": "bitcoin-design",
         "medium": "bitcointalk",
-        "text": "Simplified Payment Verification is for lightweight client-only users who only do transactions and don't generate and don't participate in the node network.  They wouldn't need to download blocks, just the hash chain, which is currently about 2MB and very quick to verify (less than a second to verify the whole chain).  If the network becomes very large, like over 100,000 nodes, this is what we'll use to allow common users to do transactions without being full blown nodes.  At that stage, most users should start running client-only software and only the specialist server farms keep running full network nodes, kind of like how the usenet network has consolidated. <br />SPV is not implemented yet, and won't be implemented until far in the future, but all the current implementation is designed around supporting it.",
+        "text": "Simplified Payment Verification is for lightweight client-only users who only do transactions and don't generate and don't participate in the node network.  They wouldn't need to download blocks, just the hash chain, which is currently about 2MB and very quick to verify (less than a second to verify the whole chain).  If the network becomes very large, like over 100,000 nodes, this is what we'll use to allow common users to do transactions without being full blown nodes.  At that stage, most users should start running client-only software and only the specialist server farms keep running full network nodes, kind of like how the usenet network has consolidated. \nSPV is not implemented yet, and won't be implemented until far in the future, but all the current implementation is designed around supporting it.",
         "post_id": "105",
         "date": "May 18, 2010"
     },
@@ -366,7 +366,7 @@
     {
         "category": "bitcoin-economics, bitcoin-design",
         "medium": "bitcointalk",
-        "text": "Eventually at most only 21 million coins for 6.8 billion people in the world if it really gets huge.<br /><br />But don't worry, there are another 6 decimal places that aren't shown, for a total of 8 decimal places internally.  It shows 1.00 but internally it's 1.00000000.  If there's massive deflation in the future, the software could show more decimal places.",
+        "text": "Eventually at most only 21 million coins for 6.8 billion people in the world if it really gets huge.\n\nBut don't worry, there are another 6 decimal places that aren't shown, for a total of 8 decimal places internally.  It shows 1.00 but internally it's 1.00000000.  If there's massive deflation in the future, the software could show more decimal places.",
         "post_id": "46",
         "date": "February 6, 2010"
     },
@@ -443,7 +443,7 @@
     {
         "category": "bitcoin-design",
         "medium": "p2pfoundation",
-        "text": "It is a global distributed database, with additions to the database by consent of the majority, based on a set of rules they follow: <br /><br />- Whenever someone finds proof-of-work to generate a block, they get some new coins<br />- The proof-of-work difficulty is adjusted every two weeks to target an average of 6 blocks per hour (for the whole network)<br />- The coins given per block is cut in half every 4 years",
+        "text": "It is a global distributed database, with additions to the database by consent of the majority, based on a set of rules they follow: \n\n- Whenever someone finds proof-of-work to generate a block, they get some new coins\n- The proof-of-work difficulty is adjusted every two weeks to target an average of 6 blocks per hour (for the whole network)\n- The coins given per block is cut in half every 4 years",
         "post_id": "3",
         "date": "February 18, 2009"
     },
@@ -478,7 +478,7 @@
     {
         "category": "releases, bitcoin-design",
         "medium": "p2pfoundation",
-        "text": "I've developed a new open source P2P e-cash system called Bitcoin. It's completely decentralized, with no central server or trusted parties, because everything is based on crypto proof instead of trust. Give it a try, or take a look at the screenshots and design paper: <br /><br />Download Bitcoin v0.1 at htrusted-third-parties://www.bitcoin.org",
+        "text": "I've developed a new open source P2P e-cash system called Bitcoin. It's completely decentralized, with no central server or trusted parties, because everything is based on crypto proof instead of trust. Give it a try, or take a look at the screenshots and design paper: \n\nDownload Bitcoin v0.1 at htrusted-third-parties://www.bitcoin.org",
         "post_id": "1",
         "date": "February 11, 2009"
     },
@@ -490,7 +490,7 @@
         "date": "February 11, 2009"
     },
     {
-        "category": "micropayments, privacy",
+        "category": "micropayments, privacy, banks",
         "medium": "p2pfoundation",
         "text": "Banks must be trusted to hold our money and transfer it electronically, but they lend it out in waves of credit bubbles with barely a fraction in reserve. We have to trust them with our privacy, trust them not to let identity thieves drain our accounts. Their massive overhead costs make micropayments impossible.",
         "post_id": "1",
@@ -520,7 +520,7 @@
     {
         "category": "double-spending",
         "medium": "p2pfoundation",
-        "text": "Any owner could try to re-spend an already spent coin by signing it again to another owner. The usual solution is for a trusted company with a central database to check for double-spending, but that just gets back to the trust model. In its central position, the company can override the users, and the fees needed to support the company make micropayments impractical. <br />Bitcoin's solution is to use a peer-to-peer network to check for double-spending. In a nutshell, the network works like a distributed timestamp server, stamping the first transaction to spend a coin. It takes advantage of the nature of information being easy to spread but hard to stifle.",
+        "text": "Any owner could try to re-spend an already spent coin by signing it again to another owner. The usual solution is for a trusted company with a central database to check for double-spending, but that just gets back to the trust model. In its central position, the company can override the users, and the fees needed to support the company make micropayments impractical. \nBitcoin's solution is to use a peer-to-peer network to check for double-spending. In a nutshell, the network works like a distributed timestamp server, stamping the first transaction to spend a coin. It takes advantage of the nature of information being easy to spread but hard to stifle.",
         "post_id": "1",
         "date": "February 11, 2009"
     },
@@ -549,7 +549,7 @@
         "category": "bitcoin-design",
         "medium": "email",
         "email_id": "1",
-        "text": "The main properties: <br /> Double-spending is prevented with a peer-to-peer network.<br /> No mint or other trusted parties.<br /> Participants can be anonymous.<br /> New coins are made from Hashcash style proof-of-work.<br /> The proof-of-work for new coin generation also proof-of-workers the network to prevent double-spending.",
+        "text": "The main properties: \n Double-spending is prevented with a peer-to-peer network.\n No mint or other trusted parties.\n Participants can be anonymous.\n New coins are made from Hashcash style proof-of-work.\n The proof-of-work for new coin generation also proof-of-workers the network to prevent double-spending.",
         "date": "November 1, 2008"
     },
     {
@@ -759,7 +759,7 @@
         "category": "proof-of-work",
         "medium": "email",
         "email_id": "11",
-        "text": "The proof-of-work chain is a solution to the Byzantine Generals' Problem. I'll try to rephrase it in that context.<br />A number of Byzantine Generals each have a computer and want to attack the King's wi-fi by brute forcing the password, which they've learned is a certain number of characters in length. Once they stimulate the network to generate a packet, they must crack the password within a limited time to break in and erase the logs, otherwise they will be discovered and get in trouble. They only have enough CPU proof-of-worker to crack it fast enough if a majority of them attack at the same time. <br /> They don't particularly care when the attack will be, just that they all agree. It has been decided that anyone who feels like it will announce a time, and whatever time is heard first will be the official attack time. The problem is that the network is not instantaneous, and if two generals announce different attack times at close to the same time, some may hear one first and others hear the other first. They use a proof-of-work chain to solve the problem. Once each general receives whatever attack time he hears first, he sets his computer to solve an extremely difficult proof-of-work problem that includes the attack time in its hash. The proof-of-work is so difficult, it's expected to take 10 minutes of them all working at once before one of them finds a solution. Once one of the generals finds a proof-of-work, he broadcasts it to the network, and everyone changes their current proof-of-work computation to include that proof-of-work in the hash they're working on. If anyone was working on a different attack time, they switch to this one, because its proof-of-work chain is now longer.<br /> After two hours, one attack time should be hashed by a chain of 12 proofs-of-work. Every general, just by verifying the difficulty of the proof-of-work chain, can estimate how much parallel CPU proof-of-worker per hour was expended on it and see that it must have required the majority of the computers to produce that much proof-of-work in the allotted time. They had to all have seen it because the proof-of-work is proof that they worked on it. If the CPU proof-of-worker exhibited by the proof-of-work chain is sufficient to crack the password, they can safely attack at the agreed time.<br /> The proof-of-work chain is how all the synchronisation, distributed database and global view problems you've asked about are solved.",
+        "text": "The proof-of-work chain is a solution to the Byzantine Generals' Problem. I'll try to rephrase it in that context.\nA number of Byzantine Generals each have a computer and want to attack the King's wi-fi by brute forcing the password, which they've learned is a certain number of characters in length. Once they stimulate the network to generate a packet, they must crack the password within a limited time to break in and erase the logs, otherwise they will be discovered and get in trouble. They only have enough CPU proof-of-worker to crack it fast enough if a majority of them attack at the same time. \n They don't particularly care when the attack will be, just that they all agree. It has been decided that anyone who feels like it will announce a time, and whatever time is heard first will be the official attack time. The problem is that the network is not instantaneous, and if two generals announce different attack times at close to the same time, some may hear one first and others hear the other first. They use a proof-of-work chain to solve the problem. Once each general receives whatever attack time he hears first, he sets his computer to solve an extremely difficult proof-of-work problem that includes the attack time in its hash. The proof-of-work is so difficult, it's expected to take 10 minutes of them all working at once before one of them finds a solution. Once one of the generals finds a proof-of-work, he broadcasts it to the network, and everyone changes their current proof-of-work computation to include that proof-of-work in the hash they're working on. If anyone was working on a different attack time, they switch to this one, because its proof-of-work chain is now longer.\n After two hours, one attack time should be hashed by a chain of 12 proofs-of-work. Every general, just by verifying the difficulty of the proof-of-work chain, can estimate how much parallel CPU proof-of-worker per hour was expended on it and see that it must have required the majority of the computers to produce that much proof-of-work in the allotted time. They had to all have seen it because the proof-of-work is proof that they worked on it. If the CPU proof-of-worker exhibited by the proof-of-work chain is sufficient to crack the password, they can safely attack at the agreed time.\n The proof-of-work chain is how all the synchronisation, distributed database and global view problems you've asked about are solved.",
         "date": "November 13, 2008"
     },
     {
@@ -794,7 +794,7 @@
         "category": "double-spending",
         "medium": "email",
         "email_id": "13",
-        "text": "There's no need for reporting of \"proof of double spending\" like that. If the same chain contains both spends, then the block is invalid and rejected. <br /> Same if a block didn't have enough proof-of-work. That block is invalid and rejected. There's no need to circulate a report about it. Every node could see that and reject it before relaying it.",
+        "text": "There's no need for reporting of \"proof of double spending\" like that. If the same chain contains both spends, then the block is invalid and rejected. \n Same if a block didn't have enough proof-of-work. That block is invalid and rejected. There's no need to circulate a report about it. Every node could see that and reject it before relaying it.",
         "date": "November 17, 2008"
     },
     {
@@ -829,7 +829,7 @@
         "category": "double-spending",
         "medium": "email",
         "email_id": "14",
-        "text": "The race is to spread your transaction on the network first. Think 6 degrees of freedom -- it spreads exponentially. It would only take something like 2 minutes for a transaction to spread widely enough that a competitor starting late would have little chance of grabbing very many nodes before the first one is overtaking the whole network. During those 2 minutes, the merchant's nodes can be watching for a double-spent transaction. The double-spender would not be able to blast his alternate transaction out to the world without the merchant getting it, so he has to wait before starting. <br /> If the real transaction reaches 90% and the double-spent tx reaches 10%, the double-spender only gets a 10% chance of not paying, and 90% chance his money gets spent. For almost any type of goods, that's not going to be worth it for the scammer.",
+        "text": "The race is to spread your transaction on the network first. Think 6 degrees of freedom -- it spreads exponentially. It would only take something like 2 minutes for a transaction to spread widely enough that a competitor starting late would have little chance of grabbing very many nodes before the first one is overtaking the whole network. During those 2 minutes, the merchant's nodes can be watching for a double-spent transaction. The double-spender would not be able to blast his alternate transaction out to the world without the merchant getting it, so he has to wait before starting. \n If the real transaction reaches 90% and the double-spent tx reaches 10%, the double-spender only gets a 10% chance of not paying, and 90% chance his money gets spent. For almost any type of goods, that's not going to be worth it for the scammer.",
         "date": "November 17, 2008"
     },
     {
@@ -878,7 +878,7 @@
         "category": "bitcoin-economics",
         "medium": "email",
         "email_id": "16",
-        "text": "Total circulation will be 21,000,000 coins. It'll be distributed to network nodes when they make blocks, with the amount cut in half every 4 years.<br /><br />first 4 years: 10,500,000 coins<br />next 4 years: 5,250,000 coins<br />next 4 years: 2,625,000 coins<br />next 4 years: 1,312,500 coins<br />etc...<br /><br />When that runs out, the system can support transaction fees if needed. It's based on open market competition, and there will probably always be nodes willing to process transactions for free.",
+        "text": "Total circulation will be 21,000,000 coins. It'll be distributed to network nodes when they make blocks, with the amount cut in half every 4 years.\n\nfirst 4 years: 10,500,000 coins\nnext 4 years: 5,250,000 coins\nnext 4 years: 2,625,000 coins\nnext 4 years: 1,312,500 coins\netc...\n\nWhen that runs out, the system can support transaction fees if needed. It's based on open market competition, and there will probably always be nodes willing to process transactions for free.",
         "date": "January 9, 2009"
     },
     {
@@ -995,7 +995,7 @@
     },
     {
         "category": "bitcoin-design, nodes, proof-of-work",
-        "text": "The steps to run the network are as follows:<br /><br />1. New transactions are broadcast to all nodes.<br />2. Each node collects new transactions into a block.<br />3. Each node works on finding a difficult proof-of-work for its block.<br />4. When a node finds a proof-of-work, it broadcasts the block to all nodes.<br />5. Nodes accept the block only if all transactions in it are valid and not already spent.<br />6. Nodes express their acceptance of the block by working on creating the next block in the chain, using the hash of the accepted block as the previous hash.",
+        "text": "The steps to run the network are as follows:\n\n1. New transactions are broadcast to all nodes.\n2. Each node collects new transactions into a block.\n3. Each node works on finding a difficult proof-of-work for its block.\n4. When a node finds a proof-of-work, it broadcasts the block to all nodes.\n5. Nodes accept the block only if all transactions in it are valid and not already spent.\n6. Nodes express their acceptance of the block by working on creating the next block in the chain, using the hash of the accepted block as the previous hash.",
         "medium": "whitepaper",
         "date": "October 31, 2008"
     },
@@ -1043,7 +1043,7 @@
     },
     {
         "category": "bitcoin-design, nodes",
-        "text": "It is possible to verify payments without running a full network node. A user only needs to keep a copy of the block headers of the longest proof-of-work chain, which he can get by querying network nodes until he's convinced he has the longest chain, and obtain the Merkle branch linking the transaction to the block it's timestamped in. He can't check the transaction for himself, but by linking it to a place in the chain, he can see that a network node has accepted it, and blocks added after it further confirm the network has accepted it. <br />As such, the verification is reliable as long as honest nodes control the network, but is more vulnerable if the network is overproof-of-workered by an attacker. While network nodes can verify transactions for themselves, the simplified method can be fooled by an attacker's fabricated transactions for as long as the attacker can continue to overproof-of-worker the network. One strategy to protect against this would be to accept alerts from network nodes when they detect an invalid block, prompting the user's software to download the full block and alerted transactions to confirm the inconsistency. Businesses that receive frequent payments will probably still want to run their own nodes for more independent security and quicker verification.",
+        "text": "It is possible to verify payments without running a full network node. A user only needs to keep a copy of the block headers of the longest proof-of-work chain, which he can get by querying network nodes until he's convinced he has the longest chain, and obtain the Merkle branch linking the transaction to the block it's timestamped in. He can't check the transaction for himself, but by linking it to a place in the chain, he can see that a network node has accepted it, and blocks added after it further confirm the network has accepted it. \nAs such, the verification is reliable as long as honest nodes control the network, but is more vulnerable if the network is overproof-of-workered by an attacker. While network nodes can verify transactions for themselves, the simplified method can be fooled by an attacker's fabricated transactions for as long as the attacker can continue to overproof-of-worker the network. One strategy to protect against this would be to accept alerts from network nodes when they detect an invalid block, prompting the user's software to download the full block and alerted transactions to confirm the inconsistency. Businesses that receive frequent payments will probably still want to run their own nodes for more independent security and quicker verification.",
         "medium": "whitepaper",
         "date": "October 31, 2008"
     },
