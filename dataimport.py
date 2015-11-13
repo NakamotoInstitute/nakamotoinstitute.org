@@ -83,7 +83,7 @@ def get_or_create(model, **kwargs):
 
 print "Begin importing Email"
 
-with open('./satoshiemails.json') as data_file:
+with open('./data/satoshiemails.json') as data_file:
 	emails = json.load(data_file)
 
 for i in range(0,len(emails['emails'])):
@@ -101,7 +101,7 @@ for i in range(0,len(emails['emails'])):
 print "Finish importing Email"
 print "Begin importing Post"
 
-with open('./satoshiposts.json') as data_file:
+with open('./data/satoshiposts.json') as data_file:
 	posts = json.load(data_file)
 
 for i in range(0,len(posts['posts'])):
@@ -119,7 +119,7 @@ for i in range(0,len(posts['posts'])):
 print "Finish importing Post"
 print "Begin importing QuoteCategory"
 
-with open('./quotecategories.json') as data_file:
+with open('./data/quotecategories.json') as data_file:
 	quotecategories = json.load(data_file)
 
 for qc in quotecategories:
@@ -133,7 +133,7 @@ for qc in quotecategories:
 print "Finish importing QuoteCategory"
 print "Begin importing Quote"
 
-with open('./quotes.json') as data_file:
+with open('./data/quotes.json') as data_file:
 	quotes = json.load(data_file)
 
 for i, quote in enumerate(quotes):
@@ -157,7 +157,7 @@ for i, quote in enumerate(quotes):
 print "Finish importing Quote"
 print "Begin importing Author"
 
-with open('./authors.json') as data_file:
+with open('./data/authors.json') as data_file:
 	authors = json.load(data_file)
 
 for i in range(0, len(authors['authors'])):
@@ -173,7 +173,7 @@ for i in range(0, len(authors['authors'])):
 print "Finish importing Author"
 print "Begin importing Doc"
 
-with open('./literature.json') as data_file:
+with open('./data/literature.json') as data_file:
 	docs = json.load(data_file)
 
 for i in range(0, len(docs['docs'])):
@@ -209,7 +209,7 @@ for i in range(0, len(docs['docs'])):
 print "Finish importing Doc"
 print "Begin importing ResearchDoc"
 
-with open('./research.json') as data_file:
+with open('./data/research.json') as data_file:
 	research = json.load(data_file)
 
 for i in range(0, len(research)):
@@ -250,7 +250,7 @@ for i in range(0, len(research)):
 print "Finish importing ResearchDoc"
 print "Begin importing BlogPost"
 
-with open('./blogposts.json') as data_file:
+with open('./data/blogposts.json') as data_file:
 	blogps = json.load(data_file)
 
 for i in range(0,len(blogps['blogposts'])):
@@ -269,7 +269,7 @@ for i in range(0,len(blogps['blogposts'])):
 print "Finish importing ResearchDoc"
 print "Begin importing Skeptic"
 
-with open('./skeptics.json') as data_file:
+with open('./data/skeptics.json') as data_file:
 	skeptics = json.load(data_file)
 
 for i in range(0,len(skeptics['skeptics'])):
@@ -291,7 +291,7 @@ for i in range(0,len(skeptics['skeptics'])):
 print "Finish importing Skeptic"
 print "Begin importing Episode"
 
-with open('./episodes.json') as data_file:
+with open('./data/episodes.json') as data_file:
 	episodes = json.load(data_file)
 
 for i in range(0,len(episodes)):
@@ -311,7 +311,7 @@ for i in range(0,len(episodes)):
 
 print "Finish importing Episode"
 
-#with open('./addresses/addresses.csv') as csvfile:
+#with open('./data/addresses/addresses.csv') as csvfile:
 #	addresses = csv.reader(csvfile)
 #	now = datetime.now()
 #	for address in addresses:
