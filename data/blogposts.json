@@ -1,6 +1,15 @@
 {
   "blogposts": [
     {
+      "title": "Proof That Proof-of-Work is the Only Solution to the Byzantine Generals' Problem",
+      "author": "oleg-andreev",
+      "date": "May 23, 2014",
+      "added": "November 17, 2015",
+      "slug": "proof-that-proof-of-work-is-the-only-solution-to-the-byzantine-generals-problem",
+      "excerpt": "If achieving consensus in a non-trust manner is ever possible in practice, then it is only possible with a Proof-of-Work scheme and highly specialized expensive production chains.",
+      "languages": "en"
+    },
+    {
         "title": "Who Controls Bitcoin?",
         "author": "daniel-krawisz",
         "date": "February 8, 2015",
