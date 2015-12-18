@@ -28,7 +28,7 @@
         "date": "September 30, 2010"
     },
     {
-        "category": "general",
+        "category": "transactions",
         "medium": "bitcointalk",
         "text": "As you figured out, the root problem is we shouldn't be counting or spending transactions until they have at least 1 confirmation.  0/unconfirmed transactions are very much second class citizens.  At most, they are advice that something has been received, but counting them as balance or spending them is premature.",
         "post_id": "464",
