@@ -28,6 +28,13 @@
         "date": "September 30, 2010"
     },
     {
+        "category": "transactions",
+        "medium": "bitcointalk",
+        "text": "As you figured out, the root problem is we shouldn't be counting or spending transactions until they have at least 1 confirmation.  0/unconfirmed transactions are very much second class citizens.  At most, they are advice that something has been received, but counting them as balance or spending them is premature.",
+        "post_id": "464",
+        "date": "September 30, 2010"
+    },
+    {
         "category": "general",
         "medium": "bitcointalk",
         "text": "Bitcoin would be convenient for people who don't have a credit card or don't want to use the cards they have, either don't want the spouse to see it on the bill or don't trust giving their number to \"porn guys\", or afraid of recurring billing.",
