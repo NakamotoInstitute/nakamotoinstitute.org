@@ -54,7 +54,7 @@
         "formats": ["pdf", "ext"],
         "categories": ["cryptography"],
         "doctype": "essay",
-        "external": "http://tr.eecs.ucf.edu/78/"
+        "external": "https://socrates1024.s3.amazonaws.com/consensus.pdf"
     },
     {
         "id": 6,
