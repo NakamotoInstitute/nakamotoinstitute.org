@@ -542,8 +542,7 @@
         "slug": "online-cash-checks",
         "formats": ["html", "ext"],
         "categories": ["cryptography"],
-        "doctype": "essay",
-        "external": "http://www.chaum.com/articles/Online_Cash_Checks.htm"
+        "doctype": "essay"
     },
     {
         "id": 54,
