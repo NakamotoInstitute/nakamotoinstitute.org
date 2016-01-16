@@ -543,7 +543,7 @@
         "formats": ["html", "ext"],
         "categories": ["cryptography"],
         "doctype": "essay",
-        "external": "http://www.chaum.com/articles/Online_Cash_Checks.htm"
+        "external": "http://www.chaum.com/publications/Online_Cash_Checks.html"
     },
     {
         "id": 54,
