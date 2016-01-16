@@ -359,5 +359,17 @@
     "link": "http://fortune.com/2015/10/14/bitreserve-bitcoin-uphold/",
     "waybacklink": "https://web.archive.org/web/20151014131437/http://fortune.com/2015/10/14/bitreserve-bitcoin-uphold/",
     "slug": "anthony-watson-and-halsey-minor"
+  },
+  {
+    "name": "Mike Hearn",
+    "title": "Lead Platform Engineer, R3CV",
+    "article": "The resolution of the Bitcoin experiment",
+    "date": "January 14, 2016",
+    "source": "Medium",
+    "excerpt": "But despite knowing that Bitcoin could fail all along, the now inescapable conclusion that it has failed still saddens me greatly. The fundamentals are broken and whatever happens to the price in the short term, the long term trend should probably be downwards. I will no longer be taking part in Bitcoin development and have sold all my coins.",
+    "price": "$429.24",
+    "link": "https://medium.com/@octskyward/the-resolution-of-the-bitcoin-experiment-dabb30201f7",
+    "waybacklink": "https://web.archive.org/web/20160114214358/https://medium.com/@octskyward/the-resolution-of-the-bitcoin-experiment-dabb30201f7",
+    "slug": "mike-hearn"
   }]
 }
