@@ -1,0 +1,332 @@
+<html>
+<head>
+<title>
+RPOW - Building the Server
+</title>
+</head>
+<body>
+<font face="lucida grande, verdana, arial, helvetica, sans-serif" size="+1">
+<blockquote>
+<div align="center">
+<table border="2" width="100%" cellspacing="20" bgcolor="#99ffcc"
+	cellpadding="10"><tr align="center">
+
+<td width="10%" valign="top" bgcolor="#ffffff">
+<a href="index.html">
+<img src="rpow.gif" align="center" width="100" height="100" border="0"></img></a>
+<br><br>
+<a href="news.html">News</a><br><br>
+<a href="what.html">What Is This?</a><br><br>
+<a href="theory.html">Theory</a><br><br>
+<a href="security.html">Security</a><br><br>
+<a href="try.html">Try It Out!</a><br><br>
+<a href="faqs.html">FAQs</a><br><br>
+<a href="slides/slide001.html">Presentation</a><br><br>
+<a href="download.html">Download</a><br><br>
+<font size="-2">
+<a href="building.html">Building the Server</a><br><br>
+<a href="experiments.html">Software Experiments</a><br><br>
+</font>
+</td>
+
+
+<td width="90%" align="left" bgcolor="#ccffff">
+<h3 align="center">Building the Server</h3>
+<br><br>
+<h4>Overview</h4>
+<p>
+There are two potential reasons why you might be interested in
+building the RPOW server program.
+The first is that you may want to run your own RPOW server.
+You will need to acquire an IBM 4758-002 secure coprocessor card to do this,
+because that is the only architecture where the RPOW server will run.
+The second, and more common, purpose is to create a memory image file from the
+source code published for the RPOW server,
+which matches the memory image file distributed with the RPOW system.
+By hashing that file and comparing with the hash reported by the
+remote system,
+you can convince yourself that the source code is a true and accurate
+representation of the program running on the 4758 secure coprocessor.
+</p><p>
+The discussion here will be oriented towards this second goal,
+of successfully reproducing the memory image which was loaded into the
+4758.
+If you do have a 4758 of your own and want to build RPOW to run on it,
+the same steps will work for that purpose as well.
+</p><p>
+The build instructions are for building on a Linux system.
+The RPOW memory image was built using Linux GCC.
+It might be possible to run these tools on a Windows system,
+using Cygwin to let you run GCC,
+but there is no guarantee that this would work,
+and that the memory image that resulted would be the same.
+</p>
+<h4>Acquiring the tools</h4>
+<p>
+In order to build an exact copy of the RPOW memory image (executable program)
+loaded into the 4758,
+it will be necessary to use exactly the same development tools.
+A different version of the compiler, assembler, linker, or the IBM
+post-processing tools could produce a different result.
+Since it is necessary for the result to be 100% identical to that
+which was built and downloaded into the 4758 server,
+the same tools must be used.
+</p><p>
+The tools necessary are:
+<ul>
+<li>
+<a href="http://mirrors.kernel.org/gnu/gcc/gcc-2.95.3/gcc-core-2.95.3.tar.gz">GCC
+version 2.95.3</a>
+</li><li>
+<a href="http://mirrors.kernel.org/gnu/binutils/binutils-2.10.1.tar.gz">GNU
+binutils version 2.10.1</a>
+</li><li>
+<a href="http://www.alphaworks.ibm.com/tech/4758toolkit">IBM Alphaworks 4758 Coprocessor Toolkit</a>
+</li>
+</ul>
+</p><p>
+Unfortunately, as of early 2005 the free Alphaworks toolkit has
+been removed from the IBM web site.
+For now, please contact me for information on finding alternative
+sources for this resource.
+</p><p>
+There are two binary files, <b>lxscctk.tz</b> for Linux systems,
+and <b>winscctk.zip</b> for Windows NT and 2000.
+You need to download them both.
+Although we will be building on Linux,
+the Linux toolkit is missing two header files which are necessary
+for the build.
+They are present in the NT version.
+Follow the instructions below to copy the missing header files from
+the NT zip file.
+</p><p>
+The GNU tools are relatively old versions,
+but the IBM tools will not work with newer ones.
+There was a change in the linker output format around the time
+of GCC 3.0,
+and the IBM post-processing steps will not work with files
+produced by later GNU tools.
+</p><p>
+I will assume that you have a relatively modern Linux system with
+a different version of GCC installed.
+We will build a "cross-compiler" version of GCC which will reside
+in its own directory
+and be used only to build the RPOW memory image.
+It will not affect or harm your distribution's version of GCC in any way.
+</p><p>
+Note that the link for GCC above is just for the "core" version;
+there is no need for the entire toolkit just for this application.
+RPOW is written in C and only that language is needed.
+</p>
+<h4>Preparation</h4>
+<p>
+First, download the tools above, and unpack them into their own
+directories.
+(Note: for the <b>.zip</b> file, use the <b>-a</b> command to
+<b>unzip</b> so that
+text files get line endings approrpriate for a Linux file system.)
+I will assume that they are all unpacked into directories that
+are children of a single root directory that will be used
+throughout this process,
+which I will call <b>WD</b> (for Working Directory).
+Throughout this description I will refer to file names like
+<b>WD/scctk</b>.
+You should substitute for <b>WD</b> the name of your own directory where
+you unpacked the tools.
+</p><p>
+Unpacking the tools should produce four subdirectories:
+<ul>
+<li>gcc-2.95.3</li>
+<li>binutils-2.10.1</li>
+<li>scctk</li>
+<li>scctk-NT</li>
+</ul>
+</p><p>
+The first two are the GNU tools; the third is the Linux version of
+the coprocessor toolkit; and the fourth is the NT version of the
+coprocessor toolkit.
+IBM uses the letters <b>scc</b> to stand for Secure Cryptographic
+Corprocessor in their naming conventions,
+and I have followed that policy as well.
+</p><p>
+The next thing we will do is to build the cross compiler.  CD into
+the <b>WD</b> and follow these steps (remember to replace
+<b>WD</b> with your own working directory path):
+</p>
+<pre>
+mkdir cross
+mkdir build-binutils
+mkdir build-gcc
+export TARGET=i386-linux-gnu
+export PREFIX=WD/cross
+cd build-binutils
+../binutils-2.10.1/configure --target=$TARGET --prefix=$PREFIX --disable-nls
+make all install
+export PATH=$PATH:$PREFIX/bin:$PREFIX/$TARGET/bin
+cd ../build-gcc
+../gcc-2.95.3/configure --target=$TARGET --prefix=$PREFIX --disable-nls \
+	--enable-languages=c --without-headers --with-newlib
+make all-gcc install-gcc
+</pre>
+<p>
+These instructions assume you have an sh type shell like bash.
+If you have a csh type shell,
+you will need to replace the EXPORT commands with setenv, as in
+<pre>
+setenv TARGET i386-linux-gnu
+</pre>
+and similarly for the other environment variables.
+</p><p>
+This should create a GCC toolchain inside of <b>WD/cross/bin</b>.
+The files have the prefix i386-linux-gnu, as in i386-linux-gnu-gcc.
+</p><p>
+The next step is to copy the missing header files from scctk-NT
+to scctk:
+<pre>
+cp WD/scctk-NT/002/include/common/scc*oa.h WD/scctk/include/common
+</pre>
+This will copy two files: scc_oa.h and scc_mboa.h.
+The scctk-NT directory will not be used further.
+</p><p>
+Finally, edit the PATH to include the IBM development tools:
+<pre>
+export PATH=$PATH:WD/scctk/bin/linux
+</pre>
+</p><p>
+Those are all the preparatory steps necessary.
+</p>
+<h4>Building</h4>
+<p>
+Now we are ready to build the memory image.
+There are several steps, but they are all automated by the Makefile
+supplied with the RPOW source.
+Some editing of the Makefile is necessary before we begin.
+</p><p>
+Download the RPOW source from the
+<a href="download.html">download</a> page.
+The 4758 server source is in the <b>scc</b> subdirectory.
+Go to that subdirectory and edit the Makefile there as
+follows:
+</p><p>
+Set the <b>SCCTK_FS_ROOT</b> variable to <b>WD/scctk</b>,
+where again <b>WD</b> is the working directory where you downloaded
+and built the tools.
+</p><p>
+Set the <b>CC</b> variable to <b>WD/cross/bin/i386-linux-gnu-gcc</b>.
+</p><p>
+Those are the only edits needed to the Makefile.
+Now build the memory image file:
+<pre>
+make rpow.rod
+</pre>
+</p><p>
+This should compile the source code to <b>.o</b> files,
+link to produce <b>rpow.exe</b>,
+then run the IBM tools to produce first <b>rpow.xld</b>
+and then the memory image,
+<b>rpow.rod</b>.
+There is a final cleanup with a short perl script to reset
+the creation date within the <b>rpow.rod</b> file to a
+canonical date
+so that it will match the version installed in the RPOW server.
+</p><p>
+The installed <b>rpow.rod</b> file is supplied in the
+<b>installed</b> subdirectory.
+Comparing the file you just built with that one should produce
+no output, meaning that they are identical:
+<pre>
+cmp rpow.rod installed/rpow.rod
+</pre>
+</p><p>
+If all went well, skip on to the
+<a href="#verification">verification</a> section.
+Otherwise proceed to troubleshooting:
+</p>
+<a name="troubleshooting">
+<h4>Troubleshooting</h4>
+<p>
+The most common cause of trouble is that the IBM tools are
+built for older Linux systems,
+and some of the shared libraries are no longer present in those
+versions on new systems.
+Particularly the program <b>cpqxlt</b>, which turns the
+<b>.exe</b> file produced by GCC into a <b>.xld</b> file,
+uses some shared libraries.
+I was able to fix this by putting a symbolic link into
+/usr/lib for the old version of libstdc++, as follows:
+<pre>
+cd /usr/lib
+ln -s libstdc++-libc6.2-2.so.3 libstdc++-libc6.1-1.so.2
+</pre>
+You may need to add a similar link on your Linux system
+if this tool complains.
+</p><p>
+If you have problems building the GCC cross compiler and tool chain,
+there are a number of resources on the web.
+The <a href="http://www.sthoward.com/CrossGCC/FAQ-4.html">CrossGCC
+FAQ</a> is a good place to start.
+</p><p>
+In case the build succeeds but the <b>rpow.rod</b> file doesn't match the one
+in the <b>installed</b> directory,
+that directory also contains the other object files which are created
+in the build process.
+Comparing the <b>.o</b>, <b>rpow.exe</b>, and <b>rpow.xld</b> files with
+those in the <b>installed</b> directory may give a hint as to what is
+going wrong.
+Keep in mind that object files typically include headers based on the
+current date,
+so it is not expected that these files will compare byte-for-byte identically.
+One possible strategy is to use <b>hexdump</b> to convert a file to hex
+format,
+then to compare the files in that form.
+This may help to distinguish insiginificant differences in the headers from
+more meaningful differences in the compiled code.
+</p>
+<a name="verification">
+<h4>Verification</h4>
+<p>
+Congratulations!
+If you've gotten this far then you've successfully built the
+RPOW source code into an <b>rpow.rod</b> file that matches the
+one installed in the running RPOW server.
+Verification of this fact involves two more steps:
+</p><p>
+First, run <b>sha1sum</b> on the <b>rpow.rod</b> file you just produced,
+and note the hash it reports.
+Second, examine the source code of the RPOW client software, the
+<b>connio.c</b> module,
+and look at the variable <b>seg3okhash</b>.
+This should match the value output by <b>sha1sum</b>.
+Examining the client source code will show that it receives
+a signed data structure from the IBM 4758
+which includes the hash of the running memory,
+and that it compares against this value in the <b>seg3okhash</b>
+variable.
+Only if they match will the client accept the rest of the data and save
+it as a valid key for communicating with.
+</p><p>
+Together, these steps imply that the source code supplied for the
+RPOW server
+produces an executable file whose hash matches that reported by
+the running RPOW server system.
+This report is signed by a key which is validated ultimately by IBM's
+root signing key,
+as described on the
+<a href="security.html">security</a> page.
+Only a valid IBM 4758 can make such a certification,
+showing that this is in fact the code which is running on the RPOW server.
+</p><p>
+By further examining the RPOW server source code in the <b>scc</b>
+subdirectory,
+it is possible to verify that there are no back doors or loopholes
+and that the system will behave honestly in its simple task of issuing
+RPOW tokens.
+This verification is the foundation for the security of the RPOW system.
+</p>
+</td>
+</tr></table>
+
+</div>
+</blockquote>
+</body>
+</html>

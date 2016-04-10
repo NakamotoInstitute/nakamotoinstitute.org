@@ -1,0 +1,568 @@
+<html>
+<head>
+<title>
+World of RPOW
+</title>
+</head>
+<body>
+<font face="lucida grande, verdana, arial, helvetica, sans-serif" size="+1">
+<blockquote>
+<div align="center">
+<table border="2" width="100%" cellspacing="20" bgcolor="#99ffcc"
+	cellpadding="10"><tr align="center">
+
+<td width="10%" valign="top" bgcolor="#ffffff">
+<a href="index.html">
+<img src="rpow.gif" align="center" width="100" height="100" border="0"></img></a>
+<br><br>
+<a href="news.html">News</a><br><br>
+<a href="what.html">What Is This?</a><br><br>
+<a href="theory.html">Theory</a><br><br>
+<font size="-2">
+<a href="world.html">World of RPOW</a><br><br>
+</font>
+<a href="security.html">Security</a><br><br>
+<a href="try.html">Try It Out!</a><br><br>
+<a href="faqs.html">FAQs</a><br><br>
+<a href="slides/slide001.html">Presentation</a><br><br>
+<a href="download.html">Download</a><br><br>
+</td>
+
+
+<td width="90%" align="left" bgcolor="#ccffff">
+<h3 align="center">World of RPOW</h3>
+<h4>Visions of the Future</h4>
+<p>
+There is more to the RPOW system than the client software and the single
+host and server which are presently operating.
+RPOW is designed with the potential for future expansion.
+However, this has introduced some complexity to the design.
+</p><p>
+Unlike many experimental software projects,
+the RPOW server needs to be in a relatively mature and stable state
+before initial deployment.
+The reason is that any change to the RPOW server's source code will
+change its memory image.
+RPOW's
+<a href="security.html">security</a>
+depends on remote client software validating that the hash of the
+software running on the remote system matches that built into the
+client code.
+Any change to the RPOW server will cause the client codes to produce
+an error and refuse to talk to it.
+This is unfortunate, but it is a necessary condition
+for the RPOW security model to work.
+</p><p>
+Therefore it has been necessary to plan for
+all possible requirements for expansion and maintenance and to build
+these into the RPOW server even at the time of initial deployment.
+Key rollover, the addition of new RPOW server cards, and the operation
+and mutual cooperation of multiple RPOW servers located around the world,
+are all part of the RPOW design.
+These features as a whole comprise what I call the World of RPOW.
+</p>
+<h4>Key Rollover</h4>
+<p>
+Key rollover is the ability to periodically switch to a new set of
+keys in the RPOW server.
+There are several reasons for being able to do this.
+</p><p>
+One good reason is a general principle of cryptographic security.
+RPOW signing keys are 1024 bits,
+which provide plenty of strength against the best currently known
+methods of attack.
+However, if a key of this size were unchangeable throughout the lifetime
+of RPOW,
+it might nevertheless become an object of attack at some future date.
+Key rollover allows keys to be replaced by new ones, and the old ones
+can eventually be retired.
+In this way, the current RPOW key becomes a moving target,
+and even if future attack methods are eventually able to deal with
+1024 bit RSA keys,
+rollover could make it so that by the time a key was broken, it was
+no longer in use.
+</p><p>
+Another reason is specific to the RPOW system.
+RPOW needs to keep a record of every RPOW token that it has seen, that
+was created by a given key.
+This is necessary to keep people from exchanging the same RPOW token
+twice for a new one.
+Therefore, over time, the seen-RPOW database will grow indefinitely.
+Database access to a larger file will be slower,
+and eventually there might be limitations due to available disk space.
+While anticipated RPOW usage levels make it unlikely that the database
+will become too unwieldy in the near future,
+the design does allow for this possibility.
+</p><p>
+Rollover in an RPOW system takes place in two steps.
+The first step is the replacement of the current RPOW signing key
+with a new key, generated on-board the RPOW server exactly as the
+original RPOW signing key was created.
+At the same time, a new database file is begun, to record RPOW entries
+which are being created by the new signing key.
+The secret part of the old key is deleted,
+but the public portion is retained;
+and similarly, the old database file is retained as well.
+</p><p>
+During this phase, both keys are accepted as signers of RPOWs, but only
+the new key can be used to create new RPOWs.
+Each RPOW has built into its data structure a <b>keyid</b> which identifies
+the key that was used to create it.
+When an RPOW is offered for exchange, the <b>keyid</b> is checked against a
+list of known valid keys.
+This will include both the new key and the old key.
+Each key in the known-valid list also has a database file associated
+with it, which is used to check for reuse of RPOWs created with that
+key.
+This means that when an RPOW is offered for exchange, either the new or
+the old key is used to validate it, and likewise either the new or the
+old database file is used to check for reuse.
+Therefore the old database file will continue to grow during this phase,
+as RPOWs created using the old key are gradually offered for exchange.
+</p><p>
+The client software must update its keys when a rollover occurs.
+The rollover not only updates the RPOW signing key, it also updates the
+separate communication key which is used to encrypt messages between
+the RPOW server and client.
+When client programs try to communicate with the RPOW system after it
+has done a key rollover,
+they will get a communications error.
+This will be a sign that they should execute the <b>rekey</b> function,
+which will download new keys from the RPOW server
+and validate the certificate chain which certifies the keys,
+to make sure they are keys from a legitimate and unmodified RPOW server.
+</p><p>
+Once the client has successfully rekeyed and validated the new RPOW
+keys,
+it should go through and exchange all its existing RPOW tokens for new
+ones.
+This happens automatically with the <b>exchange</b> function, as the
+client software will use the latest RPOW keys to generate the new RPOW
+tokens that it receives from the server,
+while the server will accept both old and new tokens, as described above.
+</p><p>
+The RPOW server operator should also make some effort to notify RPOW client
+users that a key rollover has occured and they should update their keys.
+There is no functionality built into the RPOW system for this, but usual
+methods like press releases, web page updates,
+RSS feeds, and so on can be used to get the world out.
+</p><p>
+After a period of time has elapsed long enough that all active RPOW users
+have exchanged their old RPOW tokens,
+there is no longer any need to maintain the old database file.
+The RPOW server includes a command to disable keys on its list of known
+RPOW public keys.
+This should eventually be done to the old key,
+at which point any RPOWs which were created with that key will no longer
+be accepted.
+They will become worthless, in effect,
+which is why it is important to wait long enough to be confident that
+active users have exchanged their tokens.
+At this time the old RPOW database file can be archived and deleted,
+freeing disk space and setting the scene for another rollover at some
+future time.
+</p><p>
+RPOW never forgets old public keys,
+even though they can be disabled and made unusable.
+This is for security reasons, to prevent an attack where a previously
+used public key is offered as a new key,
+using the cooperative feature described below.
+If that were possible, old RPOW tokens might be re-deposited because
+RPOW would not know to use the old seen-rpow database.
+To prevent this, RPOW forever remembers old public keys and their
+database information.
+</p><p>
+This means that in principle, old public keys can be re-enabled.
+If someone showed up years later with some extremely valuable RPOW
+tokens for an old public key,
+it would be possible to retrieve the old seen-RPOW database from archival
+storage,
+re-enable the public key,
+and exchange those old tokens.
+As long as the old seen-RPOW database is saved in some recoverable form,
+this will always be a possibility, in case of emergency.
+</p>
+<h4>Clustering</h4>
+<p>
+RPOW servers also have the ability to cooperate with each other,
+as long as each one is running exactly the same version of the RPOW
+program,
+and all are executing on identically-architected IBM 4758 secure coprocessor
+boards.
+This has two main applications, one of which is clustering.
+</p><p>
+Clustering refers to the ability for a host system, or set of closely
+cooperating host systems,
+to run multiple RPOW servers.
+It is primarily intended as a performance enhancement.
+By running multiple servers,
+incoming RPOW exchange requests can be spread out among the servers,
+allowing the requests to be handled more rapidly.
+If RPOW should become a popular system and the single current RPOW
+server became a bottleneck for some use,
+it will be possible to add more servers to share the load.
+</p><p>
+As with other aspects of the RPOW system architecture,
+the main security condition remains the ability to resist "inflation"
+and to be sure that every RPOW was derived
+ultimately from a unique POW of equal value.
+This condition puts some very sharp constraints on how RPOW systems
+can work in a clustering and/or cooperative environment.
+</p><p>
+The main problem is the handling of the seen-rpow information.  It
+is crucial that a given POW or RPOW token cannot be successfully exchanged
+more than once.
+This means that once one RPOW server has seen a token,
+we must be 100% confident that no other server can accept that same one.
+</p><p>
+One theoretical way to achieve this,
+not used in the RPOW system,
+would be to have all of the RPOW servers share signing keys,
+and to use some kind of shared database so that when one updated
+it having seen an incoming token,
+all of the other servers would see the same update.
+The main problem with this approach is the creation of a shared database
+given that the RPOW servers do not actually hold the database;
+each one only holds a hash or fingerprint of the entire database,
+and special cryptographic techniques are used to let them validate
+the integrity of the database information returned to them by the host.
+(See the <a href="theory.html">theory</a> page for more details.)
+Extending this system to a database which could be updated by multiple
+RPOW servers, without each one having to be notified of every
+transaction (which would defeat the efficiency goal)
+would add tremendous complexity to the RPOW system.
+It also would be questionable to have all RPOW servers share the same
+key,
+require cooperation in rollovers,
+and generally increasing difficulty of design and operation.
+Further, such a scheme would not generalize to allow servers spread
+throughout the world to cooperate, as described below.
+Ultimately, this approach was considered and rejected.
+</p><p>
+Instead, RPOW adopts an approach where each RPOW server has its own
+copies of its seen-rpow database files, not shared with any other
+servers in a cluster or elsewhere.
+Given this architecture,
+the only way to make sure that a POW or RPOW token cannot be
+exchanged more than once
+is to require that there is only one server where a given token can
+be exchanged.
+</p><p>
+Every RPOW or POW token has a <b>cardid</b> field which identifies
+a single, unique RPOW server where it can be exchanged.
+Actually, <b>cardid</b> is something of a misnomer, because it does
+not just identify a single IBM 4758 coprocessor card,
+it is actually unique across all instantiations of the RPOW server.
+What that means is that if an RPOW server is running on a particular
+4758,
+and then that server is wiped, reset and restarted
+(as often happens during debugging or development),
+the new version gets a new <b>cardid</b>.
+But in normal use, once an RPOW server is installed, working and announced
+to the world,
+its <b>cardid</b> will never change.
+</p><p>
+It is important to understand the distinction between two similarly
+named concepts:
+<b>cardid</b> and the <b>keyid</b> described above.
+The <b>cardid</b> is unique to a particular RPOW server, and never
+changes through that server's lifetime.
+From the time the server is initialized, throughout its service
+lifetime, even though it may be powered off and on, or otherwise
+rebooted,
+the <b>cardid</b> remains the same.
+Only when the server gets its software reloaded or is commanded to
+wipe all its old keys and reinitialize itself from scratch does the
+<b>cardid</b> change.
+In particular, the <b>cardid</b> is unchanged across key rollover
+operations.
+</p><p>
+The <b>keyid</b>, on the other hand, is specific to a signing key,
+not to a server.
+Every RPOW signing key has associated with it a <b>keyid</b> (which
+is actually a hash of the signing key data).
+At any time, a given RPOW server has one <b>keyid</b> that it uses
+for its signatures.
+But when a key rollover occurs, a new key is generated, and the new
+key will have a new <b>keyid</b>.
+As described above, the card will retain the old key and still recognize
+RPOWs signed with the old <b>keyid</b>.
+</p><p>
+RPOW tokens have both <b>cardid</b>s and <b>keyid</b>s associated with
+them,
+which may be confusing.
+The <b>keyid</b> identifies the key which created the token.
+The <b>cardid</b> identifies the RPOW server where the token can be
+exchanged.
+Both of these values are chosen by the client software when the RPOW
+token is created;
+the <b>keyid</b> is determined by the signing key of the RPOW server
+where the client created the token by an exchange operation;
+and the <b>cardid</b> is chosen by the client software at exchange
+time and embedded in the newly created RPOW.
+In the simplest case, where there is only one RPOW server,
+it would be the <b>cardid</b> of the server which created the RPOW.
+</p><p>
+For a server to accept a POW or RPOW in an exchange, the <b>cardid</b>
+embedded within the token must match the <b>cardid</b> of the server.
+This is how we ensure that no token can be exchanged more than once at
+different servers.
+Further, for RPOW tokens, the <b>keyid</b> embedded in the token must
+match a key on the server's list of known-good signing keys.
+As described above, keys go onto that list when a rollover occurs,
+but there is another way as well:
+</p><p>
+In a cluster environment, where there are multiple RPOW servers,
+each one should know and trust the public keys of the other servers
+in the cluster.
+To allow this, servers accept an <b>addpub</b> command,
+to add a new public key to their trusted list.
+The public key is presented by the host as part of a certificate
+chain exactly the same as the certificate chain which RPOW servers
+present to clients to validate their keys.
+As described on the <a href="security.html">security</a> page,
+this certificate chain validates that the key is installed on an
+IBM 4758 secure crypto coprocessor card,
+and that the card is running the RPOW server program.
+When a new public key is added to an RPOW server,
+it applies essentially the same tests that the client code does.
+It requires that the key come from a "twin" 4758 running a program
+whose hash matches its own.
+If the proferred key passes the tests, the RPOW server adds it to
+its internal list of trusted public keys,
+the same list that its own keys go onto at the time of a key rollover.
+From then on, RPOW tokens signed by those keys will be accepted for
+exchange, as long as they are otherwise acceptable.
+</p><p>
+In an RPOW cluster, then, each RPOW server has a list of trusted
+public keys which includes all of the signing keys of the other
+servers in the cluster.
+Any RPOW token signed by another server in the cluster can be accepted.
+But it is also necessary that the <b>cardid</b> field in the RPOW token
+match the server to which it is presented.
+To make this work,
+the <b>cardid</b> of the server that the client wants to talk with
+is sent outside the encryption envelope in the message that goes
+to the untrusted RPOW host.
+No other information is revealed.
+This <b>cardid</b> value tells the host which card in the cluster to
+forward the message to.
+</p><p>
+In order to achieve load balancing, clients must be aware of how
+many nodes are in the cluster,
+and their individual <b>cardid</b>s.
+When a client receives an RPOW token, it must exchange it at the
+server identified by the <b>cardid</b> in that token.
+It can choose another server in the cluster, 
+if desired,
+for the <b>cardid</b> of the new RPOW token that results from the exchange.
+The client's job may be slightly simpler if most or all of its saved
+RPOW tokens have matching <b>cardid</b>s,
+as it will make it simpler to combine them
+(all of the RPOW tokens in a combine operation must have matching
+<b>cardid</b>s since all must be accepted by a single server).
+The client can arrange this simply by putting the same <b>cardid</b>
+in all of its newly created RPOWs.
+As along as different clients randomly choose an RPOW server for
+the one they will use,
+load balancing will be successful and the clustering will allow
+for improved responsiveness and performance.
+</p>
+<h4>Worldwide Sharing</h4>
+<p>
+The same basic mechanisms described above to support clustering,
+where all the RPOW servers are run by a single entity on
+closely coupled computers,
+will also support a wide scale RPOW network of multiple
+servers, run by multiple entities, on multiple computers all
+over the world.
+</p><p>
+As with clustering,
+each RPOW server will have a unique <b>cardid</b>.
+RPOW tokens embed a <b>cardid</b> which determines which one of
+the RPOW servers will accept it for an exchange.
+At the time of an exchange,
+clients control the <b>cardid</b> of the new RPOW
+(it need have no connection to the <b>cardid</b> of the old RPOW),
+which will be the server where the new one can be exchanged.
+Clients may prefer to keep their saved RPOWs associated with an
+RPOW server in geographical (or network) proximity to facilitate
+occasional RPOW combining operations.
+</p><p>
+It will also be necessary, again as with clustering,
+that every RPOW server in the world know and trust the public keys
+of all of the other RPOW servers.
+The same mechanism is used,
+of using the <b>addpub</b> command to pass in an RPOW certificate chain
+from a remote server.
+The certificate chain will be subject to the same tests as in the
+clustering case,
+and the server key will be accepted as a valid signer if it passes.
+</p><p>
+The unique feature of RPOW security is that it is based ultimately
+not on trust in the owner of the card (in fact, the owner is untrusted!),
+but on trust in the software itself,
+and in the integrity of the IBM 4758 secure crypto coprocessor card.
+Whenever an RPOW key is presented with a certificate chain which
+authenticates it as a key from a valid, twin RPOW program running on a 4758,
+an RPOW server will accept the key
+and honor tokens signed by that key as if they were its own.
+In this way, RPOW servers put their faith and confidence in the
+security of the system in the same way that clients are asked to do.
+</p><p>
+The only additional information necessary for support of mutually
+cooperating RPOW servers located around the world is to remember
+the Internet address of each server.
+When clustering, all servers are assumed to have the same address,
+but with remote systems the addresses will all be different.
+For the clients, this is a mapping from <b>cardid</b> to Internet
+address.
+Given this additional information,
+when a client receives an RPOW,
+it looks up its <b>cardid</b> and finds the Internet address of
+the server where it can be exchanged.
+It then exchanges the RPOW token at that server,
+specifying the <b>cardid</b> of the client's "home" RPOW server
+for the new RPOW which is created during the exchange.
+</p><p>
+A client which exchanged many RPOW tokens with distant peers
+might also choose to maintain tokens that could be exchanged
+at the preferred RPOW server of those peers,
+as a courtesy so that they could do the exchange more easily.
+Many such mechanisms will be possible as client software is enhanced
+and improved in the future.
+</p>
+<h4>Rollovers and Sharing</h4>
+<p>
+In an environment of multiple RPOW servers, either clustered or
+remotely sharing trust,
+key rollover is still an important requirement.
+The basic mechanism is the same, and the only new step needed is
+that the new rollover key be propagated to all the other RPOW
+servers in the system.
+The same <b>addpub</b> command is used for this as for adding
+initial public keys from other servers.
+Each RPOW server can incorporate the new public key and add it to its
+trusted-keys list.
+After a time, as described above in the description of rollover,
+the database files associated with old public keys from other
+servers can be archived and deleted,
+and those public keys marked as inactive.
+It would be most convenient for clients if this were done on a coordinated
+basis by all server operators,
+although that is not strictly necessary.
+</p><p>
+Coordination is relatively important for the actual rollover itself.
+Immediately after key rollover,
+an RPOW server will begin using the new key to issue its RPOW tokens.
+At that point, other servers may begin seeing those tokens as people
+offer them for exchange.
+It will be important for the new key to be propagated and installed
+expeditiously among all the RPOW servers in the system,
+once rollover occurs.
+Otherwise clients will get error messages
+and they may have to re-submit RPOWs for exchange at a later time,
+once the new rollover key is widely available.
+</p><p>
+This implies that the various operators of RPOW systems will want
+to cooperate and coordinate their activities.
+They might use a mailing list or IRC to make sure that everyone is
+up to date.
+</p>
+<h4>Recovery from Failure</h4>
+<p>
+Once RPOW servers become widespread,
+it is inevitable that some of them will fail or be taken
+out of service.
+What will be the impact of such events on users of the system?
+</p><p>
+Generally speaking, if an RPOW server stops operating,
+all RPOWs held by clients whose <b>cardid</b> fields match
+that server will become worthless.
+They cannot exchange these RPOWs at any other server,
+because the <b>cardid</b> fields won't match.
+Allowing RPOW servers to accept tokens for other <b>cardid</b>s
+would introduce potential security holes,
+and there are better solutions.
+</p><p>
+In the ideal situation, an RPOW server operator will be able to
+give notice to users that he intends to cease operations at some
+future date.
+In that case, RPOW clients will have no difficulty in exchanging
+any RPOW tokens they hold whose <b>cardid</b>s match the retiring
+server for new RPOW tokens with some other <b>cardid</b>.
+That is all that is necessary to escape any problems caused by the
+shutdown of the server.
+</p><p>
+The worst case occurs when a server shuts down without warning,
+as might happen for example in a hardware failure of a 4758,
+or, remote as the possibility may seem, a failure of the RPOW
+software causing some kind of unrecoverable crash of the 4758 card.
+The IBM 4758's tamper-sensitive features could be subject to false
+positives due to extremes of temperature, radiation, or power
+fluctuations.
+Someone who was running an RPOW server in a poorly conditioned
+environment might find his 4758 card falsely assuming it was under
+attack and resetting itself, clearing all sensitive information including
+the RPOW signing keys.
+</p><p>
+In any such scenario, as mentioned above, all RPOWs associated
+via <b>cardid</b> with the server in question are effectively lost.
+There is not much that clients can do to protect themselves against
+this,
+although they could choose to spread their RPOW <b>cardid</b>s among
+a variety of servers in order to minimize the impact if one goes down.
+As described above, this will make RPOW-combine operations a little
+more involved,
+requiring an extra exchange step so that all of the RPOWs being combined
+have matching <b>cardid</b>s.
+But the extra peace of mind gained from spreading out the risk of loss
+may be worthwhile.
+</p><p>
+Hopefully, by the time this problem becomes a realistic possibility,
+there will be enough RPOW servers in the system that the loss of
+one of them will represent a relatively small percentage of the total
+RPOW value of the system.
+</p><p>
+One other form of loss should be considered:
+the possibility that an RPOW server operator is somehow able to
+breach the security of the system and get his RPOW card to emit
+tokens without paying for them.
+As discussed in detail on the
+<a href="security.html">security</a>
+page,
+there are certain entities, such as IBM insiders,
+who in principle might have the power to commit such fraud.
+There are good reasons to expect this not to happen,
+but if it ever did,
+RPOW server operators do have the ability to disable RPOW public
+keys from other cards.
+If somehow it became known that a particulare RPOW card was creating
+bogus tokens,
+that card's public key could be disabled,
+and future public keys from the card could be kept out of the system.
+</p><p>
+However, it is strongly believed that such a failure mode is unlikely
+in the extreme,
+and it is presented here only for completeness.
+A more likely failure along these lines
+is some flaw in the design of the RPOW system
+that allows operators to misuse their cards.
+It is hoped that outside review of the RPOW source code will aid in
+identifying any such weaknesses
+before the system is too widely deployed,
+so that they can be fixed during the early testing phases of the system.
+By the time RPOW is in widespread use
+(if the project should progress to that point)
+there is good reason to expect that the system will be robust against
+attack by RPOW operators,
+and that clients of the system can be confident in the security provided
+by the RPOW system.
+</p>
+</td>
+</tr></table>
+
+</div>
+</blockquote>
+</body>
+</html>

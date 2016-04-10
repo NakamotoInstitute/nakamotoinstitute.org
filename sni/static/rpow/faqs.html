@@ -1,0 +1,343 @@
+<html>
+<head>
+<title>
+RPOW FAQs
+</title>
+</head>
+<body>
+<font face="lucida grande, verdana, arial, helvetica, sans-serif" size="+1">
+<blockquote>
+<div align="center">
+<table border="2" width="100%" cellspacing="20" bgcolor="#99ffcc"
+	cellpadding="10"><tr align="center">
+
+<td width="10%" valign="top" bgcolor="#ffffff">
+<a href="index.html">
+<img src="rpow.gif" align="center" width="100" height="100" border="0"></img></a>
+<br><br>
+<a href="news.html">News</a><br><br>
+<a href="what.html">What Is This?</a><br><br>
+<a href="theory.html">Theory</a><br><br>
+<a href="security.html">Security</a><br><br>
+<a href="try.html">Try It Out!</a><br><br>
+<a href="faqs.html">FAQs</a><br><br>
+<a href="slides/slide001.html">Presentation</a><br><br>
+<a href="download.html">Download</a><br><br>
+</td>
+
+
+<td width="90%" align="left" bgcolor="#ccffff">
+<h3 align="center">RPOW FAQs</h3>
+<br><br>
+<h4>Questions</h4>
+<p>
+<ol>
+
+<li>
+<a href="#whatis">
+What is the RPOW system?
+</a>
+</li><li>
+<a href="#pronounced">
+How is RPOW pronounced?
+</a>
+</li><li>
+<a href="#secure">
+How do I know the RPOW system is secure?
+</a>
+</li><li>
+<a href="#hashcash">
+What is the difference between RPOW and Hashcash?
+</a>
+</li><li>
+<a href="#ecash">
+What is the difference between RPOW and Ecash?
+</a>
+</li><li>
+<a href="#apps">
+What are some possible applications of the RPOW system?
+</a>
+</li><li>
+<a href="#speed">
+How fast is the server?
+</a>
+</li><li>
+<a href="#popular">
+If RPOW becomes popular, how could one server handle all the users?
+</a>
+</li><li>
+<a href="#inflation">
+Won't Moore's Law mean that tokens lose their value over time?
+</a>
+</li><li>
+<a href="#unserver">
+Why can't users pass RPOW tokens to each other without using a server?
+</a>
+</li><li>
+<a href="#space">
+Won't the RPOW server run out of disk space if it keeps track of all tokens it
+has ever seen?
+</a>
+</li><li>
+<a href="#changes">
+Are you going to make changes to the RPOW system?
+</a>
+</li><li>
+<a href="#ibm4758">
+Why did you choose the IBM4758 Secure Cryptographic Coprocessor as
+the platform for the RPOW server?
+</a>
+</li><li>
+<a href="#broken">
+Wasn't the IBM 4758 security broken a few years ago?
+</a>
+</li><li>
+<a href="#sha1">
+Hasn't the SHA-1 hash used in RPOW been broken?
+</a>
+</li>
+
+</ol
+
+<h4>Answers</h4>
+<ol>
+
+<p>
+<li>
+<a name="whatis"/>
+The RPOW system has three parts: client, host, and server.
+The client is a software library (plus a simple command-line driver
+for demonstration purposes)
+to allow generation and exchange of RPOW tokens.
+The host software runs on the PC which has the IBM 4758 cryptographic
+coprocessor card plugged into it.
+It acts as an intermediary, listening for connections from the net
+and passing data between client and server.
+It also assists the server with certain operations.
+The server runs on the IBM 4758 card and performs the secure cryptographic
+operations which implement the RPOW system.
+</li></p><p><li>
+<a name="pronounced"/>
+RPOW is pronounced <b>are-pow</b>.
+</li></p><p><li>
+<a name="secure"/>
+The security of the RPOW system ultimately depends on its design and
+its implementation.
+For the design, see the
+<a href="theory.html">theory</a> and
+<a href="security.html">security</a> pages.
+For the implementation, see the source code available from the
+<a href="download.html">download</a> page.
+The unique properties of the RPOW system design allow you to remotely
+verify that the program generated from the source code you download here is what is actually running on the
+RPOW server.
+If the design and implementation are sound,
+and that program is what is running on the server,
+you have a foundation for trust in the security of the system.
+</li></p><p><li>
+<a name="hashcash"/>
+RPOW uses hashcash for its <b>proof of work</b> (POW) tokens.
+Hashcash tokens are evidence that a certain substantial amount of
+computer effort was expended to create them.
+RPOW allows hashcash tokens to be exchanged for RPOW tokens of an
+equivalent value, which can then be further exchanged for new RPOW
+tokens.
+The effect is similar to being able to pass hashcash tokens from hand
+to hand while they retained their value,
+as if they were real physical objects that had an inherent rarity.
+</li></p><p><li>
+<a name="ecash"/>
+Ecash, or electronic cash,
+is a proposal to create tokens that would be a form of money.
+A number of ecash systems have been fielded over the years, although so far
+none have been commercially successful.
+RPOW uses some of the same technology as certain ecash systems,
+such as a central server which uses digital signatures to create tokens.
+However, RPOW tokens do not carry monetary value.
+And the RPOW system does not require the use of <b>blinding</b> technology
+in order to protect user privacy.
+Without blinding, conventional ecash systems would offer users little privacy.
+RPOW's unique transparency features allow end users to verify that the system
+will not record the details of their transactions and will protect their
+privacy,
+even without cryptographic blinding.
+See the
+<a href="security.html">security</a> page for more information on privacy.
+</li></p><p><li>
+<a name="apps"/>
+Possible uses for RPOW include anti-spam tokens,
+"play money" for use in online games and fun bets,
+an aid to load balancing in P2P and file-exchange systems,
+and more.
+Any system which would benefit from a form of token which can be cheaply
+passed from user to user, but which is expensive to create,
+might want to look into RPOW.
+</li></p><p><li>
+<a name="speed"/>
+The RPOW server can currently perform about 8 exchanges per second.
+The slowest steps are the RSA decryption of the incoming message,
+and the RSA signature of the outgoing RPOW tokens.
+</li></p><p><li>
+<a name="popular"/>
+RPOW at present is a proof of concept intended for experimental, non-commercial
+use.
+Nevertheless I intend to keep it running for an extended period if possible,
+in order to let people experiment with the system,
+and to have some confidence that the RPOW tokens they receive will retain
+their value.
+If the concept proves successful it will be possible to expand the system to
+allow multiple RPOW servers to exist and to share the load of performing
+the exchanges.
+See the
+<a href="world.html">World of RPOW</a> page
+for information on expanding RPOW to include multiple servers
+in a cluster or around the world.
+</li></p><p><li>
+<a name="inflation"/>
+If Moore's Law continues to hold true, the cost of creating a POW token
+will drop at a steady, exponential rate.
+This will mean that RPOW tokens will in fact lose value,
+in that an N bit token will be faster to compute today than it was
+in the past.
+However, the RPOW system is designed to handle tokens with a wide range of sizes,
+such that the most expensive token (50 bits) will take about a billion times longer
+to create than the least expensive one (20 bits).
+Further, many experts expect computer performance increases to begin falling off the
+Moore's Law curve (some say it has happened already).
+These factors should allow RPOW tokens to continue to be useful many years
+in the future.
+Keep in mind that this is not money and is not intended to be a stable store
+of value,
+but rather an easy-to-exchange representation of computer effort.
+</li></p><p><li>
+<a name="unserver"/>
+The RPOW server may appear to be a bottleneck in the design,
+but actually it is a crucial element.
+The problem with any digital datum as a representation of value
+is that it can be reproduced effortlessly.
+If users could pass RPOW tokens without going through the server,
+someone could create a single high-value token and then pass it around
+as many times as he wanted.
+The RPOW server keeps a record of all tokens which it has ever seen,
+and uses this to ensure that any created token is only exchanged once.
+Of course, after an exchange the new token can be exchanged again,
+and so on, but this is limited to sequential reuse.
+The result is similar to a physical object which is passed from person
+to person.
+</li></p><p><li>
+<a name="space"/>
+Given the size of disks available today,
+it would take many years before the seen-RPOW database
+would begin to fill a multi-gigabyte disk drive.
+And by then, bigger disks will be available.
+Nevertheless, in case it becomes necessary,
+the RPOW system does include a plan for rollover.
+The RPOW server can be commanded to create a new set of keys
+and start a new database.
+Old RPOW tokens can still be exchanged, but only new tokens will
+be created.
+The old database will still be used for the old tokens.
+Eventually there will be so few old tokens out there,
+tokens which their owners have not bothered to exchange in many
+months or years, that the old database can be erased and old tokens
+no longer honored.
+See the
+<a href="world.html">World of RPOW</a>
+page for more information on the key rollover design.
+</li></p><p><li>
+<a name="changes"/>
+Due to the nature of the security of the IBM 4758 board, and the
+architecture of the RPOW system,
+any changes to the RPOW server software will wipe the keys on the
+board.
+That would mean that all RPOW tokens out in the field would become
+worthless.
+Hence, I do not intend ever to change the RPOW server source code.
+I will attempt to keep the server running and unchanged for an
+indefinite period.
+The only exception will be if,
+through public review,
+someone finds a security weakness in the RPOW implementation
+which would defeat the security goals of the system.
+In that case it will be necessary to start over from scratch with
+new code,
+and new RPOW tokens will have to be created.
+I hope it won't be necessary.
+The RPOW server code is not all that complicated,
+so there is reason to expect that it does not have flaws sufficient
+to defeat its security.
+</li></p><p><li>
+<a name="ibm4758"/>
+The IBM 4758 coprocessor card has a number of desirable features for
+an RPOW server.
+For one, it is highly secure against physical attack,
+making it extremely unlikely that an RPOW operator could manipulate
+his server and make it misbehave, or steal the keys or other private
+information.
+But the most important feature of the IBM 4758 for this project is
+its support for what IBM calls Outbound Authentication.
+This capability, also known as Remote Attestation,
+allows the board to issue a signed certificate chain, using a private
+crypto key that never leaves the board,
+which attests to a cryptographic hash or fingerprint of the software
+running on the board.
+This certificate chain ultimately goes back to an IBM root key which
+is published on IBM's web servers and in the 4758 documentation.
+It is this capability which is the foundation for RPOW's security,
+the ability of remote users to validate that the published RPOW
+source code is actually running on the RPOW server that they are
+communicating with.
+No other secure hardware that I am aware of presently supports
+remote attestation based on a published key, as IBM does.
+This makes the IBM 4758 the only possible platform for RPOW servers.
+</li></p><p><li>
+<a name="sha1"/>
+In early 2005, a group of Chinese researchers
+<a href="http://www.schneier.com/blog/archives/2005/02/sha1_broken.html">announced
+an attack on the SHA-1 hash</a>
+which allows them to find collisions about 2000
+times faster than brute force search.
+This attack could have two potential impacts on RPOW.
+First, RPOW bases its value on hashcash, which uses the SHA-1 hash.
+However, hashcash does not depend on hash collisions.
+Technically it uses what are called partial pre-images of zero.
+At this point,
+cryptographers agree that the new techniques do not help to speed
+up searches for pre-images.
+This suggests that the new techniques will not affect the
+generation of hashcash.
+Second, the IBM 4758 uses SHA-1 in its attestation certificate
+structure.  This is the foundation for trusting that the source code
+published on the RPOW web site matches what is running in the RPOW
+server.
+The attack on SHA-1 is more serious in this context.
+In principle it would allow someone to create two versions of a
+software package which would both have the same hash but would work
+differently.
+However, RPOW users are protected against this attack in two ways.
+First, the RPOW server began operating in August, 2004, well before
+the SHA-1 attack was published.
+And second,
+to apply this technique it is necessary to include a block of
+random-looking "junk" data in the RPOW program image,
+which could be altered in the two versions.
+Since RPOW is designed to be built by anyone on the net,
+it is straightforward to examine the source code and see that there are no such
+meaningless blocks of random data in the source.
+All of the code and data is logical and necessary for the operation
+of the server.
+This shows that the new attacks are not being used and that the RPOW
+server source code does in fact build the RPOW memory image running
+on the server.
+</li></p>
+
+</ol>
+
+
+</td>
+</tr></table>
+
+</div>
+</blockquote>
+</body>
+</html>

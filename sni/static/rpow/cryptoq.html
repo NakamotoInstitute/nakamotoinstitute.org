@@ -1,0 +1,185 @@
+<html>
+<head>
+<title>
+RPOW Crypto Peculiarities
+</title>
+</head>
+<body>
+<font face="lucida grande, verdana, arial, helvetica, sans-serif" size="+1">
+<blockquote>
+<div align="center">
+<table border="2" width="100%" cellspacing="20" bgcolor="#99ffcc"
+	cellpadding="10"><tr align="center">
+
+<td width="10%" valign="top" bgcolor="#ffffff">
+<a href="index.html">
+<img src="rpow.gif" align="center" width="100" height="100" border="0"></img></a>
+<br><br>
+<a href="news.html">News</a><br><br>
+<a href="what.html">What Is This?</a><br><br>
+<a href="theory.html">Theory</a><br><br>
+<a href="security.html">Security</a><br><br>
+<font size="-2">
+<a href="secmodel.html">Security Model</a><br><br>
+<a href="cryptoq.html">Cryptographic Peculiarities</a><br><br>
+<a href="ibmsecurity.html">IBM Security</a><br><br>
+<a href="privacy.html">Privacy</a><br><br>
+</font>
+<a href="try.html">Try It Out!</a><br><br>
+<a href="faqs.html">FAQs</a><br><br>
+<a href="slides/slide001.html">Presentation</a><br><br>
+<a href="download.html">Download</a><br><br>
+</td>
+
+
+<td width="90%" align="left" bgcolor="#ccffff">
+<h3 align="center">RPOW Crypto Peculiarities</h3>
+<p>
+Because the 4758 was designed in the early 1990s,
+it uses some cryptographic formats and algorithms which
+are different from the ones which went on to become standards.
+The basic cryptographic algorithms are RSA, with 1024 bit keys,
+and triple DES, with 168 bit keys.
+These are adequate choices which are still considered strong today,
+although a new system would probably use larger RSA key sizes
+and would use AES in place of triple DES.
+</p>
+<h4>Certificate Format</h4>
+<p>
+The 4758's certificate format is ideosyncratic,
+designed specifically for its own needs.
+Today, X.509 certificates with custom extension fields would
+probably be used.
+But the important aspect of a certificate is not the details of the
+format,
+but what is certified,
+and the 4758's certificate formats are perfectly adequate for its
+(and our) needs.
+</p>
+<h4>Hash Padding</h4>
+<p>
+One choice which may raise some cryptographic eyebrows is the use
+of ISO 9796 as the hash padding mechanism within the RSA signatures
+used in the certificates.
+ISO 9796 is widely viewed as broken.
+However, the manner in which it is used in the IBM 4758 certificate
+is not affected by known attacks.
+Those attacks require varying the input to the ISO 9796 padding at
+will.
+IBM only uses the output of a SHA-1 hash function as input to the
+ISO 9796 padding function.
+This removes the ability of an attacker to control the inputs in the
+required manner,
+and allows ISO 9796 to be used securely.
+</p>
+<h4>Published Root Key Errors</h4>
+<p>
+Certifications made by the IBM 4758 start with IBM's root key.
+This is published on the
+<a href="http://www.ibm.com/security/cryptocards/html/faqcopvalidity.shtml">IBM
+web page</a>;
+unfortunately, that page has a typo.
+The RSA modulus published there has small divisors, including
+<font size=-1>3604209483533471833</font>,
+which a true RSA modulus would never have.
+The correct IBM root key is published in an appendix to
+the document
+<a href="http://www.ibm.com/security/cryptocards/html/library.shtml">Custom
+Software Interface Reference</a>, available from IBM.
+The modulus on the IBM web page has two digits transposed
+(the 6C at the end of the third-to-last line should be a C6).
+</p>
+<h4>Certificate Chain Details</h4>
+<p>
+4758 certification chains are a little more complicated than might
+be expected, but there are good reasons for the complexity.
+One might expect the IBM root key to sign the device key, which
+would then sign an attestation about the code which is running.
+Instead, it works like this:
+The IBM root key signs a "class key", of which there is one for each
+model of 4758 card.
+The class key then signs the public part of the card's device key.
+The private part of the device key, as mentioned above, is secret
+and never leaves the card.
+</p><p>
+The next part of the cert chain is rather interesting and
+surprising,
+and illustrates the careful thought which the IBM security engineers
+paid to the design of the card.
+</p><p>
+First a small digression.
+There are three main software components in the IBM 4758, identified
+by layer numbers.
+Layer 1 is the so-called Miniboot.
+This is analogous to the BIOS in a PC.
+It is held in flash ROM and almost never changes.
+The Miniboot is responsible for performing some power-on self-tests
+and for loading the other layers.
+Layer 2 is the operating system, which IBM calls CP/Q++.
+It is a fairly conventional real-time OS.
+(There has been some work done on porting Linux as the native OS
+on the 4758,
+but IBM has not yet made this code available.)
+Layer 3 is the application program; in our case,
+the RPOW server.
+</p><p>
+The security problem is caused by the fact that we want to securely
+hash each of these three components;
+but in fact it is the Miniboot (the 4758 "BIOS")
+which is responsible for doing the hashes.
+This means that, among other things,
+the Miniboot has to hash itself.
+The problem is that this isn't really persuasive
+from the security perspective.
+If somehow a bogus Miniboot got into the card,
+or someone found a bug in the Miniboot which they were able to
+exploit to make it misbehave,
+it could lie about its own hash.
+</p><p>
+IBM solves this by making sure that the first Miniboot loaded into
+the card by the factory is reliable,
+although not completely functional.
+Then, as the card is configured for use in the field,
+a new and more functional Miniboot image is loaded.
+Over time, a card may be updated with subsequent Miniboots
+as new ones are released by IBM.
+The key to making this work is that the load of a new Miniboot
+goes through a distinctive process.
+Each Miniboot hashes the next one before it loads,
+generates a new public/private key for the new Miniboot,
+certifies that key and its hash using the old Miniboot's
+secret key,
+and then permanently deletes the old secret key.
+The new Miniboot then takes over.
+</p><p>
+The result of this complex process is that instead of a single
+device key certificate,
+there is a chain of certificates corresponding to each version
+or revision of the Miniboot which has existed in the card.
+Each Miniboot has certified the next one before deleting the
+old private key.
+If at any time in this process a bogus or buggy Miniboot got
+loaded into the card,
+its hash will show up in the certificate chain,
+and the card can't hide that fact.
+The bad Miniboot got its hash taken by the earlier one, which
+was a good Miniboot.
+And the only certificate chain which goes back to IBM's root
+key includes that hash measurement.
+</p><p>
+In practice,
+my understanding is that none
+of the Miniboots which IBM has released so
+far have had the kind of problems which this mechanism was
+intended to defend against.
+The main impact is that the certificate chain includes two
+or more Miniboot certificates,
+the last one representing the current contents of the Miniboot.
+</p>
+</td>
+</tr></table>
+
+</div>
+</blockquote>
+</body>
+</html>

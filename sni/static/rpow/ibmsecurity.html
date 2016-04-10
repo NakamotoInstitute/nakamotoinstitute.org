@@ -1,0 +1,186 @@
+<html>
+<head>
+<title>
+RPOW - IBM Security
+</title>
+</head>
+<body>
+<font face="lucida grande, verdana, arial, helvetica, sans-serif" size="+1">
+<blockquote>
+<div align="center">
+<table border="2" width="100%" cellspacing="20" bgcolor="#99ffcc"
+	cellpadding="10"><tr align="center">
+
+<td width="10%" valign="top" bgcolor="#ffffff">
+<a href="index.html">
+<img src="rpow.gif" align="center" width="100" height="100" border="0"></img></a>
+<br><br>
+<a href="news.html">News</a><br><br>
+<a href="what.html">What Is This?</a><br><br>
+<a href="theory.html">Theory</a><br><br>
+<a href="security.html">Security</a><br><br>
+<font size="-2">
+<a href="secmodel.html">Security Model</a><br><br>
+<a href="cryptoq.html">Cryptographic Peculiarities</a><br><br>
+<a href="ibmsecurity.html">IBM Security</a><br><br>
+<a href="privacy.html">Privacy</a><br><br>
+</font>
+<a href="try.html">Try It Out!</a><br><br>
+<a href="faqs.html">FAQs</a><br><br>
+<a href="slides/slide001.html">Presentation</a><br><br>
+<a href="download.html">Download</a><br><br>
+</td>
+
+
+<td width="90%" align="left" bgcolor="#ccffff">
+<h3 align="center">IBM Security</h3>
+Ultimately it is necessary to depend on the integrity of
+IBM in order to trust the information provided by the 4758.
+There are several ways that IBM or its agents could misbehave.
+</p>
+<h4>IBM Insider Attacks</h4>
+<p>
+IBM is supposed to use its root key (and the class keys to which it
+delegates authority, which are also under IBM's control) only to
+certify genuine 4758 device keys as being such.
+Since genuine 4758 device private keys never leave the card,
+this is the basis for concluding that a given certification comes
+from a 4758 card.
+However, IBM could create certifications on non-4758 keys and claim
+that they are actually keys from a valid 4758.
+IBM, or whomever held those other keys, could then issue bogus
+certificates that would claim to be from a 4758 and claim to
+accurately describe the software configuration, but they could lie.
+This would bypass all of the architectural protections of the 4758
+because the falsely certified key would not even be in a 4758.
+</p><p>
+Similarly, IBM could create a weak or bogus 4758 card which did not
+defend its security in the manner specified and documented by IBM.
+Such a card could be attacked or manipulated by its owner to defeat
+the security provisions,
+and remote observers would not be aware of the falsification.
+</p><p>
+It's also possible that even if IBM as an institution would not violate
+its trust in this way,
+IBM employees or others who got access to the root keys
+could steal them or misuse them.
+IBM is supposed to exercise diligence and careful control over these
+valuable keys,
+but their procedures could be inadequate or could fail under some
+insider attack.
+This would allow the attacks above to go forward.
+</p><p>
+It is important for users of the RPOW system to be aware that ultimately
+they are trusting the integrity of IBM,
+and of the procedures and policies it has established to guard
+the security of the 4758 coprocessor cards and the root keys that
+authenticate them.
+However, in the context of the RPOW system,
+we gain the advantage that IBM is held to an extremely high level of
+diligence and care due to the fact that the cards are widely used
+for financial services.
+In those areas, the kinds of attacks described above could be
+devastatingly effective and damaging to the financial interests of
+the banks and other powerful institutions involved.
+Compared to the need for security in the financial sector,
+RPOW is small fry indeed.
+On this basis I think it is very safe to assume that IBM's level of
+diligence and care in maintaining the security of the 4758 and
+its attestations is more than sufficient for the needs of the
+RPOW system.
+</p>
+<h4>Development Tools</h4>
+<p>
+One of the principle goals of the RPOW system is to allow third parties
+to verify that the published source code of the RPOW server
+is what is running on the IBM 4758 card.
+This raises certain issues, some practical, and some related to
+security.
+</p><p>
+The main practical issue is the need to be using identical development
+tools as were used to build the memory image that was loaded into the
+IBM 4758 card and is presently running there.
+The RPOW server is built using the GNU C Compiler and the free Alphaworks
+development system from IBM.
+It will be necessary to make sure that the same version of GCC is used,
+and the same Alphaworks tool version.
+The Alphaworks tools do not work with present-day versions
+of GCC due to incompatibilities in the object file formats,
+but old versions are widely available.
+I built the actual memory image using GCC version 2.95.3.
+For more information on building a matching memory image, see the
+<a href="download.html">download</a> page.
+</p><p>
+The security issue relates to possible weaknesses in the Alphaworks
+tool suite.
+IBM allows the Alphaworks tools to be used for personal and non-commercial
+use.
+IBM Research ported them to run under Linux.
+This was done to facilitate experimentation with custom programming
+for the 4758,
+and to find novel applications for it.
+I think the RPOW project is a perfect example of a novel application
+for the 4758 and an ideal usage for the Alphaworks tools.
+</p><p>
+However, IBM views the Alphaworks version as for experimental use,
+and has not maintained or updated it recently (at the time of writing).
+The 4758 Operating System file shipped with the Alphaworks tools is
+version 2.31 and dates back to 2001.
+Meanwhile, IBM sells a commercial version of the toolkit which has
+gone through several subsequent revisions, and is now up to version
+2.41.
+The commercial version is very expensive and is not practical for an
+experimental, volunteer, private project like RPOW.
+So we are forced to use the free version, which is somewhat out of
+date.
+Therefore there is the danger that known bugs exist in version 2.31
+of the OS,
+which someone could use to defeat the security of the RPOW system.
+I have not yet found any information at IBM about errata or known bugs
+in the 2.31 release.
+</p><p>
+Another potential problem with the use of the free development tools
+relates to the security model enforced by the IBM 4758.
+This is relatively technical and is described further on the page on
+the 4758
+<a href="secmodel.html">security model</a>.
+The conclusion is that the RPOW server has several features designed
+to protect itself against the possibility that the owner of the card
+could reload a new software version while preserving secret information
+from the old version.
+If this were possible, it
+would allow the owner to extract the secret RPOW signing keys
+and other sensitive data,
+and then to masquerade as an RPOW server.
+In order to prevent this,
+the RPOW server encrypts all of its sensitive persistent data
+using a special "configuration" key provided by the operating system.
+The configuration key is guaranteed to have its private part deleted
+on any reload of any software component.
+This ensures that even the owner of the card will not be able to
+reload the application or the operating system and get access to
+the card's secrets.
+</p><p>
+Guarding against such attacks has been the primary consideration
+driving the architectural design of the RPOW server.
+Everything about the system is designed from the perspective that
+the card has to view the outside world,
+even its owner and operator, as well as the host computer where it
+resides,
+as an enemy.
+This is a controversial perspective
+in the context of end-users systems,
+where Digital Rights Management (DRM) and similar technologies also
+take the perspective that the owner is the enemy
+(although few companies are so honest as to say this publicly!).
+However, in the context of server systems like RPOW,
+this assumption of an untrusted owner/operator is crucial for
+adding to the security and privacy of end users.
+</p>
+</td>
+</tr></table>
+
+</div>
+</blockquote>
+</body>
+</html>
