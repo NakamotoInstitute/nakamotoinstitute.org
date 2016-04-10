@@ -1,0 +1,160 @@
+<html>
+<head>
+<title>
+RPOW - Reusable Proofs of Work
+</title>
+</head>
+<body bgcolor="#ccffff">
+<font face="lucida grande, verdana, arial, helvetica, sans-serif" size="+1">
+<blockquote>
+<div align="center">
+<p>
+<img src="rpow.gif" align="center"></img>
+<p>
+<h1>
+Reusable Proofs of Work
+</h1>
+<h5>
+by Hal Finney<br>
+(hal dot finney at gmail dot com)
+</h5>
+
+<table width="100%" cellspacing="10" border="0">
+<tr align="center">
+<td width="1%"></td>
+<td><a href="news.html">News</a></td>
+<td><a href="what.html">What Is This?</a></td>
+<td><a href="theory.html">Theory</a></td>
+<td><a href="security.html">Security</a></td>
+<td><a href="try.html">Try It Out!</a></td>
+<td><a href="faqs.html">FAQs</a></td>
+<td><a href="slides/slide001.html">Presentation</a></td>
+<td><a href="download.html">Download</a></td>
+<td width="1%"></td>
+</tr>
+<tr><td colspan="10">
+
+<br><br>
+<p>
+<b>(The RPOW project is now terminated. These pages are maintained for historical purposes.)</b>
+</p>
+<p>
+The RPOW system provides for proof of work (POW) tokens to be reused.
+A POW token is something that takes a relatively long time to compute
+but which can be checked quickly.
+RPOW uses <a href="http://www.hashcash.org">hashcash</a>, which are
+values whose SHA-1 hashes have many high bits of zeros.
+</p><p>
+Normally POW tokens can't be reused because that would allow them to
+be double-spent.
+But RPOW allows for a limited form of reuse: sequential reuse.
+This lets a POW token be used once, then exchanged for a new
+one, which can again be used once, then once more exchanged, etc.
+This approach makes POW tokens more practical for many purposes and allows
+the effective cost of a POW token to be raised while still allowing
+systems to use them effectively.
+</p>
+<h3 align="center">Security</h3>
+<p>
+This is useful functionality,
+but the unique feature of the RPOW system is its approach to security.
+RPOW is the first public implementation of a server designed to allow users throughout
+the world to verify its correctness and integrity in real time.
+</p><p>
+Based on principles similar to those proposed for so-called "Trusted Computing",
+RPOW allows third parties to dynamically and remotely verify what program is
+running on the RPOW server.
+The RPOW server is implemented on a high-quality secure processor,
+the
+<a href="http://www-03.ibm.com/security/cryptocards/pcicc.shtml">IBM
+4758 PCI Cryptographic Coprocessor</a>,
+which has been validated to the highest level of security publicly available, FIPS-140 level 4.
+The 4758 is a self-contained single-board computer which has its own device key,
+generated on-board,
+which never leaves the card.
+That key can issue cryptographically signed attestations which describe the
+software configuration running on the card,
+including the SHA-1 hash of the application program.
+</p><p>
+The source code to the RPOW server is available from the
+<a href="download.html">download</a> page.
+Using publicly available tools,
+anyone can build from this source code a memory image identical to that running
+on the RPOW server.
+If the SHA-1 hash of this file matches that being reported by the 4758 device
+key,
+the user can conclude that the supplied source code is what is actually running
+on the 4758.
+By inspecting the source code he can then make sure there are no "back doors"
+or loopholes that would allow the owner/operator or designer of the system to
+defeat its security, for example by creating RPOW tokens without doing the
+required work.
+</p><p>
+Allowing clients to dynamically validate the security of a server turns the
+concept of Trusted Computing on its head.
+Rather than a threat to individual privacy,
+the technology becomes a boon to privacy and an empowering force for end users
+on the net.
+</p>
+<h3 align="center">Applications</h3>
+<p>
+Security researcher
+<a href="http://szabo.best.vwh.net/">Nick Szabo</a> has coined the term
+<a href="http://szabo.best.vwh.net/shell.html">bit gold</a>
+for information objects which are provably costly to create.
+He suggests that these could even serve as the foundation for a sort of
+payment system,
+playing the role in the informational world of gold in the physical world.
+RPOW would facilitate the use of POW tokens as a form of bit gold by
+allowing the tokens to be passed and exchanged from person to person.
+</p><p>
+POW tokens have been proposed as a form of pseudo-payment in several
+applications.
+One example is email.
+An email message containing a POW token would be relatively costly to
+send in terms of computing power.
+A POW token
+could then be a sign that the message was not spam.
+</p><p>
+Using RPOW tokens for email would have advantages, as people could then
+reuse tokens from incoming email in outgoing email.
+Spammers will have
+no such advantages since almost all of their email is outgoing.
+Reuse allows the cost of the POW token to be much higher since most
+people won't have to generate them, making the system more effective
+as an anti spam measure.
+</p>
+<h3 align="center">Transparent Servers</h3>
+The RPOW system is just the first of what are planned as a series of systems
+which use this approach,
+which I call Transparent Servers.
+Such systems publish their source code for review and inspection,
+and use Trusted Computing-like features to prove that they are running
+the program generated by that code.
+This will provide an unprecedented level of transparency and visibility into
+the workings of network servers.
+</p><p>
+Perhaps most importantly, the use of transparency can actually increase end-user privacy.
+For the first time,
+users will be able to verify how network servers will handle sensitive information
+they provide.
+In the case of the RPOW server,
+users can see that the program makes no record of transactions
+and creates no linkage between the RPOW issued in one exchange with the
+same RPOW when it is later deposited,
+thereby protecting privacy.
+In addition, the basic security goal of the system,
+that it will never issue RPOWs without receiving a POW or RPOW of equal value,
+can be independently verified.
+Not even the owner of the RPOW server can break these rules.
+</p><p>
+For more information on the techniques used to provide these new and
+previously unavailable assurances,
+see the
+<a href="security.html">security</a> page.
+</p>
+
+</td></tr></table>
+</blockquote>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>
+RPOW - Try It Out!
+</title>
+</head>
+<body>
+<font face="lucida grande, verdana, arial, helvetica, sans-serif" size="+1">
+<blockquote>
+<div align="center">
+<table border="2" width="100%" cellspacing="20" bgcolor="#99ffcc"
+	cellpadding="10"><tr align="center">
+
+<td width="10%" valign="top" bgcolor="#ffffff">
+<a href="index.html">
+<img src="rpow.gif" align="center" width="100" height="100" border="0"></img></a>
+<br><br>
+<a href="what.html">What Is This?</a><br><br>
+<a href="theory.html">Theory</a><br><br>
+<a href="security.html">Security</a><br><br>
+<a href="try.html">Try It Out!</a><br><br>
+<font size="-2">
+<a href="http://rpow.net:1088/">Hashcash Minting</a><br><br>
+</font>
+<a href="faqs.html">FAQs</a><br><br>
+<a href="slides/slide001.html">Presentation</a><br><br>
+<a href="download.html">Download</a><br><br>
+</td>
+
+
+<td width="90%" align="left" bgcolor="#ccffff">
+<h3 align="center">RPOW - Try It Out!</h3>
+<p>
+Here's your chance to try out the RPOW system.
+</p><p>
+First, create a hashcash collision of from 20 to 50 bits.
+Use the <a href="http://www.hashcash.org">hashcash software</a>
+for this purpose,
+setting the hashcash resource string to
+<b>71672bc400000017-000003c2-0001.rpow.net</b>.
+You can also use my
+<a href="http://rpow.net:1088">hashcash minting page</a>
+to get a valid hashcash token.
+<p></p>
+(Note: RPOW's hashcash tokens use hashcash version 1.
+Many existing hashcash distributions at the time of writing are using
+version 0 tokens.
+Version 1 tokens start with the characters "1:".
+If the hashcash token you create starts with a different number,
+look for hashcash version 1 on the
+<a href="http://www.hashcash.org">hashcash web site</a>).
+<p></p>
+Copy and paste the resulting hashcash token into the box below.
+You can also paste in an RPOW token that you have received from
+someone or from using this page previously.
+</p>
+<form action="try1.cgi" method="get">
+<textarea name="hcin" cols="80" rows="5">
+</textarea>
+<p>
+Press the submit button to pass the token to the RPOW server:
+</p>
+<input type="submit" align="middle" value="Submit"/>
+</form>
+
+</td>
+</tr></table>
+
+</div>
+</blockquote>
+</body>
+</html>

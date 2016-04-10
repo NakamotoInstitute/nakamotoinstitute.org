@@ -1,0 +1,404 @@
+<html>
+<head>
+<title>
+RPOW Security
+</title>
+</head>
+<body>
+<font face="lucida grande, verdana, arial, helvetica, sans-serif" size="+1">
+<blockquote>
+<div align="center">
+<table border="2" width="100%" cellspacing="20" bgcolor="#99ffcc"
+	cellpadding="10"><tr align="center">
+
+<td width="10%" valign="top" bgcolor="#ffffff">
+<a href="index.html">
+<img src="rpow.gif" align="center" width="100" height="100" border="0"></img></a>
+<br><br>
+<a href="news.html">News</a><br><br>
+<a href="what.html">What Is This?</a><br><br>
+<a href="theory.html">Theory</a><br><br>
+<a href="security.html">Security</a><br><br>
+<font size="-2">
+<a href="secmodel.html">Security Model</a><br><br>
+<a href="cryptoq.html">Cryptographic Peculiarities</a><br><br>
+<a href="ibmsecurity.html">IBM Security</a><br><br>
+<a href="privacy.html">Privacy</a><br><br>
+</font>
+<a href="try.html">Try It Out!</a><br><br>
+<a href="faqs.html">FAQs</a><br><br>
+<a href="slides/slide001.html">Presentation</a><br><br>
+<a href="download.html">Download</a><br><br>
+</td>
+
+
+<td width="90%" align="left" bgcolor="#ccffff">
+<h3 align="center">RPOW Security</h3>
+<h4>Overview</h4>
+<p>
+The RPOW server is designed to provide security and reliability through
+an unprecedented degree of visibility and transparency in its operations.
+For the first time it will be possible for
+any user of the system, anywhere in the world,
+to know what code is running on the server and to
+inspect that code for loopholes or back doors.
+I have done my best to make this system secure even against my efforts
+as the owner, operator and designer of the system to compromise its operations.
+I welcome public scrutiny of the code and of the design.
+</p><p>
+The RPOW system represents a new kind of security model,
+and is therefore unusually challenging to present and to review.
+RPOW combines an exceptional degree of physical security with
+an unprecedented level of transparency and visibility into the
+workings of the RPOW server.
+This combination implements the design goal of RPOW as a
+"Transparent Server", a system whose security properties can
+be analyzed and evaluated from any system on the internet.
+</p><p>
+In operation, the RPOW system consists of three parts:
+the server, the host process, and the client library with
+its associated demo driver.
+We will consider each part in turn.
+</p>
+<h4>The RPOW Server</h4>
+<p>
+First is the RPOW server itself, which runs on an
+<a href="http://www-03.ibm.com/security/cryptocards/pcicc.shtml">IBM
+4758 Secure Cryptographic Coprocessor (SCC)</a>.
+The IBM 4758 is a single-board computer which plugs into a
+PCI expansion slot of an ordinary Intel compatible PC.
+Validated to FIPS-140 level 4, the 4758 is resistant to a wide
+range of physical attacks,
+including temperature variations,
+radiation,
+and electrical bursts.
+It is surrounded by a tamper-sensitive mesh which automatically
+and permanently zeroizes sensitive data if an attack is detected.
+</p><p>
+The 4758's physical security is overkill for this application,
+the system being designed for secure financial transactions
+where substantial sums of money are at risk.
+RPOW tokens carry no monetary value and represent only computer
+cycles.
+</p><p>
+However, the 4758 does have one property which,
+as far as I have been able to determine,
+is unique at this time,
+and which enables the RPOW security model to work.
+That is the ability of the 4758 to produce what it calls an
+Outbound Authentication.
+In other contexts this is known as Remote Attestation.
+What it means is that the card can securely report a hash or
+fingerprint of the software configuration which is running
+there.
+</p><p>
+This capability is the key to RPOW's security.
+It is what allows users to validate that the published source code
+is what is running on the 4758,
+and therefore that there are no "back doors" or secret commands
+which the operator can use to defeat the security of the system.
+</p><p>
+In order to implement the Outbound Authentication,
+the 4758 needs several components.
+One is a device private key,
+burned into the card at manufacture time
+and never changed or
+allowed to leave the card.
+Another necessary ingredient is a certificate,
+issued by IBM,
+which validates that the device public key is in fact a key
+whose private part resides in an authentic IBM 4758 device.
+And the third part is the certificate chain
+issued by the device private key,
+which attests to the hash(es) of the software loaded onto the card.
+</p><p>
+Because the 4758 was designed in the early 1990s,
+it uses some cryptographic formats and algorithms which
+are different from the ones which went on to become standards.
+Follow this link for more details on the 4758's
+<a href="cryptoq.html">cryptographic peculiarities</a>.
+Despite these quirks, the 4758's use of cryptography is fundamentally
+sound.
+The device is widely used by banks and other members of the
+financial services industry.
+</p><p>
+Using this certification chain,
+the 4758 provides a signed statement which attest to the software
+configuration of the card.
+Ultimately, however, it is necessary to depend on the integrity of
+IBM in order to trust the information provided by the 4758.
+See the
+<a href="ibmsecurity.html">IBM Security</a> page for discussion
+of the dependency of RPOW on the proper behavior of IBM and its agents.
+</p>
+<h4>RPOW Untrusted Host</h4>
+<p>
+The RPOW server runs on an IBM 4758 Secure Cryptographic Coprocessor
+card,
+which is a PCI card that can be installed on any ordinary PC.
+The 4758 does not have a direct connection to the outside world,
+but rather,
+software must run on the host computer to communicate with the card.
+In the case of RPOW, this host software listens for connections from
+the Internet
+and passes the data back and forth to the card.
+It also performs certain housekeeping functions, such as initializing
+the card for initial key generation,
+and managing key rollover and import of trusted keys from other
+cards,
+as described on the
+<a href="world.html">World of RPOW</a> page.
+</p><p>
+A key concept in the RPOW architecture is that the host computer is
+untrusted.
+It does not fall within the 4758 security boundary and there is
+no remote attestation or tamper resistance to allow RPOW clients to
+have any confidence about the software running on the host.
+The host software may misbehave in a variety of ways without RPOW users
+being able to detect it.
+For the purposes of the security analysis, we assume that the host
+software is actively hostile
+and will take every advantage available to it to attack the security
+goals of the RPOW system.
+</p><p>
+There is, however,
+one aspect of the RPOW system which is inherently vulnerable to the
+host's cooperation, and that is availability.
+Obviously a hostile host (or system owner) could take an RPOW server
+offline at any time.
+We can't do anything about that.
+One concern is that in the future, if a system like RPOW became popular,
+even though a system owner wasn't able to make the server cheat,
+he could blackmail users by threatening to shut down the server,
+which would prevent further RPOW exchanges.
+The best solution I have for that at this time is to diversify the system
+along the lines discussed in the
+<a href="world.html">World of RPOW</a> page.
+Once RPOW servers are in operation at a variety of sites all over the
+world,
+the leverage of any one operator over the system would be relatively
+small.
+And initially, it is certainly my intention to make the RPOW server as
+reliable and available as possible,
+in order to help people find uses for this new technology.
+</p><p>
+Assuming that availability is addressed,
+the host computer may have more subtle attacks in mind.
+It could try to get the RPOW server to create RPOW tokens without paying
+for them.
+It could try to eavesdrop on incoming RPOW exchange requests and divert
+the incoming or outgoing RPOWs to itself instead of to the proper owner.
+And it could try to impair users' privacy by correlating RPOW withdrawals
+and later deposits,
+in order to track patterns of RPOW transfers and build up a revealing database of
+who is communicating with whom.
+</p><p>
+These are the kinds of attacks that the RPOW design is directly
+intended to defend against.
+RPOW clients set up a secure communication channel to the server by using
+the RPOW communication key which is exported by the RPOW server within
+the certificate chain that is produced by the 4758.
+This certificate chain goes back to the IBM root key and proves that
+the keys involved come from a genuine IBM 4758 board and from the RPOW
+server program,
+as described above.
+No other entity than the genuine RPOW server program can create such
+a certificate chain,
+and this fact is verifiable by the RPOW client.
+By using the RPOW communications key to encrypt all traffic between the
+client and RPOW server,
+users are protected against the host eavesdropping on the message
+and learning any details about what POWs and/or RPOWs are being exchanged.
+See the <a href="privacy.html">Privacy</a> page for details
+on how RPOW protects private information from the untrusted host.
+</p><p>
+The impossibility of the host getting the RPOW server to create tokens
+without paying for them is another of the main security goals of the
+system.
+Study of the source code will show that there are no "back doors" which
+could allow any entity to get the RPOW server to sign tokens worth more
+than those which are being deposited.
+It is this feature which ultimately allows users to trust that RPOW tokens
+have value in the same sense that POW tokens do,
+that they are as rare and difficult to create as the POW token which
+they originally came from.
+</p>
+<h4>Seen-RPOW Database</h4>
+<p>
+The untrusted host plays one other important role in the RPOW system.
+It maintains the database of all POW and RPOW tokens which have been
+exchanged at the RPOW server in the life of the system.
+Such a database is necessary to ensure that no one can exchange a given
+POW or RPOW token more than once and get a new RPOW for it.
+This is part of the "no inflation" principle which requires every RPOW
+token in circulation to ultimately be traced back to a unique POW token.
+</p><p>
+Unfortunately, the memory capabilities of the IBM 4758 board are
+somewhat limited,
+about two megabytes of memory available.
+This is not enough to hold the seen-RPOW database for the expected lifetime
+of the system,
+if it should become heavily used.
+In order to hold information about all the POWs and RPOWs ever seen,
+the 4758 must rely on the untrusted host to hold the data.
+</p><p>
+It may seem paradoxical to speak of an untrusted host holding a database
+whose integrity is absolutely crucial if RPOW is to meet its security goals.
+If the host were able to alter the database,
+even to be able to roll back its state to an earlier but then-valid version,
+it could easily create multiple RPOWs from a POW and violate the RPOW security.
+It could simply deposit a POW or RPOW, perhaps a high-value one,
+and receive an RPOW in return.
+Then it could roll back the database to an earlier state,
+or perhaps simply refuse to record the entry of the deposited token,
+and exchange it again.
+Since the RPOW server is relying on the host to record the information
+about which tokens it has seen,
+the host could trivially create as many RPOWs as it wanted from a single
+POW or RPOW token.
+Such a capability would be devastating to the security of the RPOW system
+and make RPOWs be worthless as tokens of value.
+</p><p>
+The solution is to use techniques from the cryptographic community.
+There is an extensive literature on the concept of validating certain
+operations on a remote and untrusted host.
+As it happens, storing entries in a database is one of the simplest and
+most easily implemented tasks among those which have been studied.
+</p><p>
+The RPOW server stores the information about previously-seen tokens in
+a tree-structured database
+built around the data structure known as a B-tree.
+B-trees are "balanced" trees, meaning that the depth to every leaf node
+is the same.
+They are generally wide, with branching factors of hundreds or even
+thousands.
+This makes them well suited for storing large amounts of data on a disk,
+as only a small, essentially constant number of seeks and reads are necessary
+to find a data item.
+</p><p>
+In the case of RPOW, the B-tree has a branching factor of 100,
+and the data stored is a SHA-1 hash of the POW or RPOW token data.
+However, it is not a pure hash, but rather, a secret, constant 64-bit string is
+prefixed to the POW/RPOW token data before it is hashed.
+This hash operation is done on the 4758 RPOW server,
+which then passes the result to the untrusted host for a database query.
+By using the secret prefix, essentially no information is leaked to the
+host about the information in the token.
+(But see the page on <a href="privacy.html">Privacy</a> for an
+important caution about the extent of secrecy here.)
+</p><p>
+The method used to enforce correct behavior on the part of the untrusted
+host is a cryptographic concept called a Merkle hash tree.
+In a Merkle hash tree,
+every node in the tree has associated with it a hash value.
+(This hash value is another concept,
+distinct from the data stored in the tree.)
+The hash value of leaf nodes is the hash of all of their contents.
+In the case of the RPOW B-tree, leaf nodes hold 50 to 100 RPOW/POW token hashes,
+and the hash of all of these data items is the hash value of the leaf node.
+As you move up the tree, the hash value of an inner node is equal to the
+hash of the values of all of its children.
+Finally, at the root node, the hash of that node can be thought of
+as a hash of the entire tree,
+since the contents of every node were hashed in the process of
+calculating the root node hash.
+If you make a change to any node in the tree,
+its hash value will change, and the change will percolate upwards
+so that the hash value of every ancestor node will change,
+including the root node.
+</p><p>
+The powerful property of the Merkle hash tree is that it is possible to
+produce a relatively short proof that a given leaf node data structure
+is actually a member of the tree,
+to someone who only knows the hash of the root node.
+This is how the RPOW server validates the behavior of the untrusted host.
+The basic idea is to return the entire branch of the tree that includes
+the leaf node,
+that is, the leaf node and all of its ancestor nodes, back to the root node.
+RPOW uses a certain way of arranging data for the Merkle hash tree that makes
+this highly efficient.
+Each inner node stores pointers to its child nodes, and along with
+those pointers,
+it stores the Merkle hash value of those child nodes.
+By using this data storage,
+it turns out that every branch of the tree
+has all of the information necessary to fully calculate the
+root node hash from that branch alone.
+All of the necessary hash value information from side branches is stored in
+the branch nodes themselves.
+</p><p>
+All that is necessary for the RPOW server is to store in its memory the
+hash of the root node, and the depth of the B-tree.
+When the server needs to query if a particular POW/RPOW token has been
+seen before,
+it hashes it along with the secret prefix as described above, and then
+passes the result to the untrusted host,
+asking it to query the database and to add the item to the database if it
+is not already present.
+The host searches the tree (which is very fast since items in the tree are
+kept sorted)
+and finds the leaf node where the new item would be, or will go.
+It returns the entire branch of the tree back to the RPOW server.
+This is just a few K bytes, even for a tree which may be many megabytes in
+size.
+The host then adds the new data item to the leaf node if it is not already
+present,
+and bubbles the hash updates through the tree up to the root node,
+changing the root node's hash value.
+</p><p>
+The RPOW server validates this response from the host by
+calculating the hash root of the tree based on the supplied branch.
+It then compares that to its own stored record of what the hash root
+should be.
+If these match, it knows that the host has behaved correctly and has
+returned an accurate branch of the tree.
+This is the fundamental property of the Merkle hash chain.
+The RPOW server can then check whether the looked-for data item is
+in the returned leaf node,
+and if not,
+it mimics the host operations of adding the data item to the leaf and
+bubbling the results upward through the tree,
+to calculate a new hash root.
+Fortunately, only the branch data it already got from the host is needed
+to calculate the new root node hash.
+The RPOW server can then discard the data from the host, and it will be ready
+to make another query when necessary.
+</p><p>
+The use of a B-tree augmented with Merkle hashes allows the untrusted host
+to be used as a reliable place to store the seen-RPOW database.
+The data structure is efficient in terms of disk accesses, and the amount
+of data necessary to be communicated between host and RPOW server is small.
+The Merkle hash tree keeps the server honest and ensures that the seen-RPOW
+data is both accurate and up to date.
+</p>
+<h4>The RPOW Client Software</h4>
+<p>
+The RPOW client software is the third part of the RPOW system.
+This is the component which interacts with data from the RPOW server,
+validates RPOW certificate chains,
+creates and manages POWs and RPOWs.
+</p><p>
+It is important for the security of the RPOW system that the RPOW client
+be authentic and reliable.
+To this end, the <b>sha1sum</b> of the client is published on the
+<a href="download.html">Download</a> page,
+where you can also find an up-to-date version of the RPOW client software.
+</p><p>
+An attacker who delivered an altered version of the RPOW client could
+perform no end of mischief,
+from disabling the RPOW server hash and connecting to a bogus RPOW server,
+to stealing POW and RPOW tokens,
+or even worse.
+Users should acquire their RPOW clients from trusted sources,
+or even better,
+get them in open source form and verify that they perform the integrity
+checks that are described in the
+<a href="download.html">Download</a> page.
+</p>
+</td>
+</tr></table>
+
+</div>
+</blockquote>
+</body>
+</html>
