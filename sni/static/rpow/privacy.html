@@ -1,0 +1,209 @@
+<html>
+<head>
+<title>
+RPOW Privacy
+</title>
+</head>
+<body>
+<font face="lucida grande, verdana, arial, helvetica, sans-serif" size="+1">
+<blockquote>
+<div align="center">
+<table border="2" width="100%" cellspacing="20" bgcolor="#99ffcc"
+	cellpadding="10"><tr align="center">
+
+<td width="10%" valign="top" bgcolor="#ffffff">
+<a href="index.html">
+<img src="rpow.gif" align="center" width="100" height="100" border="0"></img></a>
+<br><br>
+<a href="news.html">News</a><br><br>
+<a href="what.html">What Is This?</a><br><br>
+<a href="theory.html">Theory</a><br><br>
+<a href="security.html">Security</a><br><br>
+<font size="-2">
+<a href="secmodel.html">Security Model</a><br><br>
+<a href="cryptoq.html">Cryptographic Peculiarities</a><br><br>
+<a href="ibmsecurity.html">IBM Security</a><br><br>
+<a href="privacy.html">Privacy</a><br><br>
+</font>
+<a href="try.html">Try It Out!</a><br><br>
+<a href="faqs.html">FAQs</a><br><br>
+<a href="slides/slide001.html">Presentation</a><br><br>
+<a href="download.html">Download</a><br><br>
+</td>
+
+
+<td width="90%" align="left" bgcolor="#ccffff">
+<h3 align="center">RPOW Privacy</h3>
+<h4>Privacy</h4>
+<p>
+A desirable feature of a centralized token-exchange system like RPOW
+is protection of user privacy.
+In this context, that means keeping the server from finding out and
+recording who is transferring RPOWs to whom.
+</p>
+<h4>Information Exposure</h4>
+<p>
+In normal use, the host does learn <i>some</i> information about
+the transaction.
+It sees what Internet address the client is connecting from,
+and of course it knows the time of the connection.
+RPOW now supports the use of the
+<a href="http://tor.eff.org/">Tor</a> anonymizing network
+to hide your Internet address from the RPOW server.
+See the <a href="#tor">Tor</a> section below for details on
+how to set up the RPOW client to use the Tor network.
+Without this protection,
+the RPOW host can eventually build a very detailed picture of which
+systems are using RPOW services, and their basic patterns of
+information.
+The host also sees the size of the data packets which go back and
+forth,
+and this may give some indication of whether a single POW or RPOW is
+being exchanged,
+versus a larger number of tokens being exchanged in a message.
+</p>
+<h4>Privacy Without Blinding</h4>
+<p>
+In the ecash world, user privacy is protected via "blinding".
+This is a way of getting a signature on an RPOW-like token by the
+RPOW server,
+without the server seeing what value it is signing.
+Blinding is a powerful and important technique but at the time of writing
+is patented in much of the world.
+</p><p>
+RPOW provides much the same protection without the use of blinding.
+As can be seen by inspection of the source code,
+the server records no information about the source or destination
+of any RPOW tokens.
+The communication link between client and server is encrypted,
+which keeps the host computer from seeing the details of the tokens
+as they travel back and forth.
+The RPOW server does rely on the untrusted host to keep a record of
+previously-seen RPOWs,
+but it uses a hidden hash prefix to hide the information in the RPOWs,
+so the host sees only a random jumble of characters.
+</p><p>
+Based on these properties,
+if a user creates some new RPOW tokens and sends them to another
+person,
+he can be confident that even if the recipient and the RPOW untrusted
+host worked together,
+they could not identify the earlier transaction when he had created
+those RPOW tokens.
+If he had sent the tokens anonymously,
+his anonymity would be fully protected.
+</p>
+<h4>Linkage Attacks</h4>
+<p>
+While the sender's privacy is protected,
+there is one possible usage mode where the recipient's privacy
+is exposed.
+If a sender intentionally double-uses an RPOW token, this fact will be
+recognized at exchange time by the untrusted host.
+Even though the RPOW server obfuscates the contents of RPOW tokens when
+it asks the untrusted host if they have been seen before,
+it is necessary for this hiding operation to be deterministic and repeatable.
+In other words, if the same RPOW token actually is presented for exchange
+a second time,
+it must map to the same obfuscated string,
+so that the host will find the matching value in the database.
+The result is that the untrusted host knows when someone is depositing a
+token which has been double-used;
+and it can know exactly when the earlier use was, as well.
+This is an inherent result of the fact that the host is maintaining the
+seen-RPOW database on behalf of the server.
+</p><p>
+There are two ways to solve this
+and give recipients the same privacy
+protection as senders.
+One is to use the <a href="#tor">Tor</a> anonymizer as described below,
+and the other is to use blinding technology.
+blinding will allow the recipient and sender to work together to create a new
+RPOW,
+in such a way that the sender never sees the true RPOW value.
+This will prevent the sender from double-exchanging the RPOW,
+because he never gets an RPOW that he can exchange.
+It will give recipients full protection of privacy.
+The blinding patent will begin to expire in 2005,
+and at that time it should be possible to distribute a new RPOW
+client which will optionally use the feature.
+No changes to the RPOW server will be necessary to add blinding
+protection.
+</p>
+<a name="tor"/>
+<h4>Tor Anonymizer</h4>
+<p>
+RPOW client software now has support for using a SOCKS V5 proxy for its
+network access.
+This gives RPOW users a new opportunity for protecting their privacy
+by accessing the RPOW server via an anonymizing network.
+</p><p>
+<a href="http://tor.eff.org">Tor</a> is a system for anonymizing network activities
+such as web browsing, IM, IRC, SSH and more.
+It consists of a network of volunteer-run anonymizing routers,
+along with client software that connects end users to the Tor network.
+These software components modify internet connection requests so
+that they travel along a path through several Tor routers before
+reaching their final destination.
+No Tor router sees details about who is connecting where,
+and the remote server does not learn where the client connection
+is coming from.
+Servers see connections that appear to come from the Tor network,
+protecting the privacy of client software users.
+</p><p>
+Tor client software works as a proxy,
+meaning that programs must be modified to access
+the net via the proxy rather than directly.
+RPOW has been modified to optionally use the SOCKS V5 proxy
+protocol to access the net,
+allowing it to work with the Tor anonymizing network
+for accessing the RPOW server.
+</p><p>
+To use RPOW in this mode,
+first download the
+<a href="http://tor.eff.org">Tor software</a> from that link,
+and get it running.
+It would be a good idea to test Tor by using it as a web
+browsing proxy,
+following the instructions in the Tor documentation.
+However, it's not necessary to use Tor as a web proxy
+in order to use it with RPOW.
+All the different Tor proxy functions can be enabled independently
+from each other.
+</p><p>
+With Tor running, modify the <b>config</b> file in the
+<b>.rpow</b> directory.
+(See the <a href="download.html">Download</a> page for details
+on setting up this file and directory.)
+Add a line of the form:
+</p><p>
+<pre>
+socks5 = localhost:9050
+</pre>
+</p><p>
+This tells RPOW to access the net via the SOCKS V5 proxy running
+on the same computer at port 9050.
+This is the port where Tor listens for connections which it will
+pass on to the network.
+</p><p>
+To test the server, try an <b>rpowcli</b> command which will connect
+to the RPOW server, such as an <b>exchange</b> or <b>gen</b> command.
+It would be a good idea to test with low-value RPOW tokens at first,
+of course.
+</p><p>
+The first connection via the Tor network sometimes takes several
+seconds to set up,
+but subsequent exchanges usually go more quickly.
+Access via Tor does take more time than direct access because of
+the need to forward your requests through several computers acting
+as Tor servers.
+This is what gives you anonymity,
+but the price you pay is a somewhat slower response time from the
+RPOW server.
+</p>
+</td>
+</tr></table>
+</div>
+</blockquote>
+</body>
+</html>

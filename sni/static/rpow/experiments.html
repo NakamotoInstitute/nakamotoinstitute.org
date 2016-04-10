@@ -1,0 +1,275 @@
+<html>
+<head>
+<title>
+RPOW - Software Experiments
+</title>
+</head>
+<body>
+<font face="lucida grande, verdana, arial, helvetica, sans-serif" size="+1">
+<blockquote>
+<div align="center">
+<table border="2" width="100%" cellspacing="20" bgcolor="#99ffcc"
+	cellpadding="10"><tr align="center">
+
+<td width="10%" valign="top" bgcolor="#ffffff">
+<a href="index.html">
+<img src="rpow.gif" align="center" width="100" height="100" border="0"></img></a>
+<br><br>
+<a href="news.html">News</a><br><br>
+<a href="what.html">What Is This?</a><br><br>
+<a href="theory.html">Theory</a><br><br>
+<a href="security.html">Security</a><br><br>
+<a href="try.html">Try It Out!</a><br><br>
+<a href="faqs.html">FAQs</a><br><br>
+<a href="slides/slide001.html">Presentation</a><br><br>
+<a href="download.html">Download</a><br><br>
+<font size="-2">
+<a href="building.html">Building the Server</a><br><br>
+<a href="experiments.html">Software Experiments</a><br><br>
+</font>
+</td>
+
+
+<td width="90%" align="left" bgcolor="#ccffff">
+<h3 align="center">Software Experiments</h3>
+<br><br>
+<h4>New Experimental Software</h4>
+<p>
+Here is where I will discuss some software experiments oriented towards
+demonstrating possible applications of RPOW.
+These are in a little rougher condition than the rest of the RPOW
+package but developers may find them useful as samples and examples of
+how RPOW can be used.
+</p>
+<h4>Python and Perl</h4>
+<p>
+RPOW can now be used with scripting languages such as
+<a href="http://www.python.org">Python</a> and
+<a href="http://www.perl.com">Perl</a>.
+This allows easy integration of RPOW into programs written in those
+languages.
+</p><p>
+This integration is made possible with the help of
+<a href="http://www.swig.org">SWIG</a>.
+SWIG takes a C or C++ language library, such as RPOW, and allows it
+to be called from a variety of scripting languages.
+It supports not only Python and Perl, but also
+Ruby, Java, PHP, Ocaml, Guile and others.
+Only Perl and Python are explicitly supported in the RPOW Makefile,
+but it would be straightforward to add support for the other languages.
+</p><p>
+To use these features,
+<a href="http://www.swig.org/survey.html">download SWIG</a>,
+build and install it.
+Make sure that the installed <b>swig</b> program is on your command path.
+You can now build the Python and Perl interfaces for RPOW, by using
+the appropriate <b>make</b> commmand.
+</p><p>
+SWIG has been tested with RPOW on Mac OS X and Linux systems, and <b>make</b>
+targets exist for these, for both Python and Perl:
+<b>make&nbsp;swig_python_osx</b>, <b>make&nbsp;swig_perl_osx</b>,
+<b>make&nbsp;swig_python_linux</b>, and <b>make&nbsp;swig_perl_linux</b>.
+Give whichever command is appropriate for your machine architecture and the
+language you want to support.
+The RPOW Makefile includes explicit path names for the
+development directories associated with these languages.
+These path names may differ for different versions and installation
+modes of the languages,
+so it may be necessary to change them slightly for your system.
+</p><p>
+No documentation yet exists for the full exported API available from
+the scripting languages.
+The <b>rpow.i</b> file is the input to SWIG and describes all of the
+functions that are available.
+The examples below will illustrate some of the functionality.
+</p>
+<h4>Python examples</h4>
+<pre>
+$ python
+Python 2.3 (#1, Sep 13 2003, 00:49:11) 
+[GCC 3.3 20030304 (Apple Computer, Inc. build 1495)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import rpow
+>>> rp1 = rpow.gen(20)
+>>> rp1.value
+20
+>>> str1 = rpow.to_string(rp1)
+>>> str1
+'AgAAABQAAABgMToyMDowNTAyMDk6NzE2NzJiYzQwMDAwMDAxNy0wMDAwMDNjMi0wMDAxLnJwb3cubmV
+ 0OjpKbEF0YWlFeTZMVGdtY3ZzOjAwMDAwMDAwMDAwMDAwMDAwMDAwMDA1MTJR'
+>>> rp2 = rpow.from_string(str1)
+>>> rp2.value
+20
+>>> rp3 = rpow.exchange(rp2)
+>>> rp3.value
+20
+>>> rpow.to_string(rp3)
+'AQAAABRNqy8bynSTlvgL3iB5oGoefXSB1yDHhFe465N2kGomBY2Yp2Xz/qHdcWcrxAAAABcAAAPCAAE
+ AAACAGiLJdbfoNZP9TdpTaBQA3Y98liP/xULDyHV9UGUlPTMKrecUXZOxHaIh7tIrbbn1VqoFeDByJU
+ F4ZSq7ZJghcGqE1qzPQDYhKR/uWO+mEpe5HDpodVsPNicOO2wLYTt7wsshWYsSFccd6v1KK0ATe+lRw
+ pj7yvTBlwiGtrkHazc='
+>>> rpow.countvals(20)
+1
+>>> rpow.store(rp3)
+0
+>>> rpow.countvals(20)
+2
+>>> rp4 = rpow.load(20)
+>>> rpow.to_string(rp4)
+'AQAAABRNqy8bynSTlvgL3iB5oGoefXSB1/4TjkqeZ1wnpjTC864pycC7Z140cWcrxAAAABcAAAPCAAE
+ AAACAJYWGN6+hxuTVBJs56LmUvKoLRv8JmMV+uz7ao17lFYLhD5hYmcJTWXDFtWQej/IAqC7ZOvMRsO
+ +CJAyMBW9t8qRhzlyYfNYQenNbv1WCzgn4jsJxKsgN2CJF0ejM6soxBpLEy3zUzxH5BOivtBZiLXwAU
+ JTY+K2ynmy7A2Uk2gM='
+>>> rpow.countvals(20)
+1
+>>> rpow.store(rp4)
+0
+</pre>
+<h4>Perl examples</h4>
+<pre>
+#! /usr/bin/perl
+
+use rpow;
+
+$val = $ARGV[0];
+$rp1 = rpowc::gen($val);
+print rpowc::to_string($rp1), "\n";
+
+
+
+#! /usr/bin/perl
+
+use rpow;
+
+# receive an rpow on stdin, exchange it, store it and return its value
+$strin = <>;
+if (!defined($strin)) {
+        print "Bad string\n";
+        exit (0);
+}
+$rp1 = rpowc::from_string($strin);
+if (!defined($rp1)) {
+        print "Bad string\n";
+        exit (0);
+}
+$rp2 = rpowc::exchange($rp1);
+if (!defined($rp2)) {
+        print "Exchange failed\n";
+        exit (0);
+}
+rpowc::store($rp2);
+$val = rpowc::rpow_value_get($rp2);
+print "Succeded with value $val\n";
+exit ($val);
+</pre>
+<h4>RPOW enabled BitTorrent</h4>
+<p>
+One of the most revolutionary programs to come out of the P2P
+(peer to peer) community is Bram Cohen's
+<a href="http://bittorrent.com/">BitTorrent</a>.
+BitTorrent has been spectacularly successful at using the power of
+peer oriented networking to accelerate the download of large files.
+By spreading around the network traffic load,
+even files with many people trying to download them can be handled
+efficiently, as each person uploads as well as downloads.
+This sharing mechanism means that the traffic capacity of the network
+scales as more users are added.
+</p><p>
+One of the cleverest features of BitTorrent is its "tit for tat" mechanism
+to encourage people to participate as uploaders rather than as "leeching"
+downloaders.
+Each node chooses who it will upload to based on a simple algorithm that
+gives greater priority to the nodes that are downloading generously to it.
+This policy encourages people to upload so that they can improve their
+download speeds.
+It is decentralized and efficient at accomplishing its task, and this is
+in large part why BitTorrent has been so successful
+</p><p>
+However, one area could seemingly use some improvement.
+Once someone has finished downloading their data, they no longer have any
+motivation to stay connected to the network and participate by uploading.
+Doing so would benefit the network and the peers, but there is no direct
+reward to the person who does so.
+An informal system of etiquette has arisen among BitTorrent users, with
+the rule being that you should leave your node connected until your upload
+total is at least as big as your download total.
+But there is no mechanism within BitTorrent to encourage people to follow
+this rule.
+</p><p>
+RPOW tokens could provide such a mechanism.
+Imagine a version of BitTorrent where nodes that have completed their
+downloading (called "seeders") could earn RPOWs by continuing to upload.
+And what could they do with those RPOWs?
+Imagine further that this version of BitTorrent allowed nodes to send
+RPOWs in order to get higher priority from other nodes which are downloading.
+Just such an
+<a href="btrp-0.1.tar.gz">experimental, RPOW-enhanced version of BitTorrent</a>
+is now available for download.
+</p><p>
+This program, BTRP (BitTorrent RPOW), is a patched version of the command line
+BitTorrent program, which is written in Python.
+It uses the SWIG Python interface described above to add features to BitTorrent
+to create, send, receive and exchange RPOWs.
+RPOW enabled nodes recognize each other and exchange information about what
+size RPOW they would like to receive per megabyte of uploaded traffic.
+If the request is acceptable, each node will send an RPOW of the
+appropriate size periodically.
+As long as a node is up to date on the RPOWs it has sent, it is given
+priority for uploads.
+BitTorrent nodes have a limited number of upload slots, and up to date RPOW
+nodes get priority for those slots.
+</p><p>
+This simple mechanism provides motivation for nodes to act as seeders and
+continue to upload in order to earn RPOWs,
+and rewards such nodes by allowing them to get priority on
+subsequent downloads.
+In this way nodes which act as seeders one day can be rewarded the
+next day when they download an entirely different file from a different
+group of peers.
+</p><p>
+For those who want to experiment with this capability, the download
+is available from the link above.  The details
+are in the
+<b>README.RPOW</b> file.
+BTRP will work compatibly with ordinary BT nodes when taking to them,
+and the special RPOW features will only be enabled when talking to other
+BTRP nodes.
+So for test purposes you will need to set up a private BitTorrent download
+network which is running multiple BTRP nodes in order to see the new
+features in operation.
+What you should see, if you have a mix of BTRP and ordinary BT nodes, is
+that the BTRP nodes pay each other RPOWs and acquire priority for downloads
+in that way.
+</p><p>
+Keep in mind that this is a simple experiment at this time.
+I don't intend to deploy this on a large scale, and it's not even clear
+that BitTorrent is the best target for an RPOW enhanced P2P file sharing
+program.
+Indeed, there are a number of issues which would have to be addressed
+before such a deployment,
+including questions of whether users could cheat and acquire RPOWs
+without downloading data.
+There could conceivably be negative effects on the efficiency of the BitTorrent
+network if people who had earned RPOWs could get higher priority than
+other users who were uploading freely,
+thereby failing to reward uploading.
+On the other hand, those uploaders would be
+motivated to continue in order to acquire RPOWs.
+The net effect is hard to predict.
+</p><p>
+These questions will all benefit from further study,
+but the BTRP program will hopefully serve as an example of how RPOW can
+be integrated into existing programs.
+I hope to provide further examples in the future,
+such as a version of
+<a href="http://spamassassin.apache.org/">spamassassin</a>
+enhanced to receive RPOWs in the
+message header as an indication that mail is not spam.
+</p>
+</td>
+</tr></table>
+
+</div>
+</blockquote>
+</body>
+</html>
