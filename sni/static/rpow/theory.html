@@ -1,0 +1,422 @@
+<html>
+<head>
+<title>
+RPOW Theory
+</title>
+</head>
+<body>
+<font face="lucida grande, verdana, arial, helvetica, sans-serif" size="+1">
+<blockquote>
+<div align="center">
+<table border="2" width="100%" cellspacing="20" bgcolor="#99ffcc"
+	cellpadding="10"><tr align="center">
+
+<td width="10%" valign="top" bgcolor="#ffffff">
+<a href="index.html">
+<img src="rpow.gif" align="center" width="100" height="100" border="0"></img></a>
+<br><br>
+<a href="news.html">News</a><br><br>
+<a href="what.html">What Is This?</a><br><br>
+<a href="theory.html">Theory</a><br><br>
+<font size="-2">
+<a href="world.html">World of RPOW</a><br><br>
+</font>
+<a href="security.html">Security</a><br><br>
+<a href="try.html">Try It Out!</a><br><br>
+<a href="faqs.html">FAQs</a><br><br>
+<a href="slides/slide001.html">Presentation</a><br><br>
+<a href="download.html">Download</a><br><br>
+</td>
+
+
+<td width="90%" align="left" bgcolor="#ccffff">
+<h3 align="center">RPOW Theory</h3>
+<h4>Tokens</h4>
+<p>
+Tokens in the RPOW system are of two types: proof of work (POW) tokens,
+and reusable proof of work (RPOW) tokens.
+The POW tokens used in the RPOW system are pieces of
+<a href="http://www.hashcash.org">hashcash</a>,
+invented by Adam Back and well described at that link.
+</p>
+<h4>Hashcash</h4>
+<p>
+Hashcash is a textual string in a particular format which has a special
+property:
+when run through the SHA-1 hash algorithm
+(the same algorithm used in the sha1sum utility often used to validate
+downloaded files)
+the result has the first N of its initial bits equal to zero, where N
+is typically around 20-30.
+The terminology used for hashcash describes the number of leading zero
+bits as the size of its "collision".
+Because of SHA-1's properties, the only way to find a string with a
+large collision size
+is by exhaustive search:
+trying one variation after another, until you get lucky.
+</p>
+<p>
+Here, for example, is a hashcash token with a 28 bit collision
+(or we might say it is "worth 28 bits"):
+</p>
+<p align="center">
+<font color="#ff3333" size="-1">
+1:28:040727:halmail1@finney.org::1c6a5020f5ef5c75:63cca52
+</font>
+</p>
+<p>
+And here is the SHA-1 hash of that text string:
+</p>
+<p align="center">
+<font color="#ff3333" size="-1">
+0000000a86d41df172f177f4e7ec3907d4634b58
+</font>
+</p>
+<p>
+See?
+It starts with 7 digits of 0, which in this hexadecimal representation
+means 7*4 or 28 bits.
+</p>
+<p>
+The chance of any bit being a zero is 1/2, so the chance of finding the
+first N bits being zero is one in two to the Nth power.
+This means that you must try, on the average, about one million test
+strings before finding one with a 20 bit collision;
+or about a billion test strings before finding a 30 bit collision.
+These calculations can take from seconds to hours on modern computers.
+In general, finding a one bit longer collision will take twice as long.
+</p><p>
+This means that if you think of a piece of hashcash as having a "value"
+which is the size of the bit collision,
+then a piece of hashcash with a value one higher is in effect twice as rare
+and twice as "valuable".
+A piece of hashcash with a value of 30 is actualy 1024 times more valuable
+(in terms of difficulty of creation) as one of value 20,
+because it is 10 bits higher value and 2 to the 10th power is 1024.
+</p><p>
+What makes hashcash useful is not just that it is relatively time-consuming
+to produce, but that it is quick to verify.
+Once a hashcash token is created, it can be verified by running the string
+through the SHA-1 algorithm and counting the leading zeros.
+This is almost instantaneous,
+despite the fact that it may have taken a long
+time to produce the hashcash.
+</p><p>
+Hashcash therefore provides a means by which someone can prove very easily
+and quickly that they spent (on average) some specified amount of computer
+cycles to create the token.
+In particular, it can be used to show that the sender spent a lot of time
+to create the token.
+Hashcash therefore serves as evidence of effort,
+and in many contexts can be used to demonstrate a level of importance or
+significance to a message or some other kind of data.
+</p>
+<h4>Reuse</h4>
+<p>
+One of the problems with hashcash tokens is that they cannot be reused.
+The risk is that someone could perform an extensive calculation and produce
+a high-value hashcash token, one with a large collision of, say, 36 bits.
+On my present-day laptop computer this would take about one day.
+But if, having created the token, they could use it as many times as they wanted,
+this would provide misleading evidence to the recipient of the attention that
+they were receiving.
+That one-day effort could be spread over thousands or millions of recipients,
+making the per-message effort negligible.
+Under these circumstances,
+users would have no way of knowing the true value of hashcash tokens, and
+they would not be useful.
+</p><p>
+To avoid this, hashcash tokens have embedded within them a "resource string".
+This is supposed to identify the particular use for which the token is intended,
+and should be sufficient to allow the recipient to make sure the token could
+not be used for any other purpose.
+For the case of email,
+the resource might be the email address of the recipient.
+When a hashcash token is received for such a purpose,
+the receiver (i.e. his software) must check the hashcash resource string
+and make sure it matches the expected value.
+</p><p>
+In addition, recipients of hashcash need to keep a local record of all of
+the hashcash tokens they have received recently,
+so that they can detect the case where someone tries to send them the same
+piece of hashcash more than once.
+In order to keep this local hashcash database from growing indefinitely,
+hashcash also embeds the time and date of its creation within the text
+string that gets hashed.
+This allows hashcash recipients to expire old values from their database
+and only keep the hashcash tokens they have seen within recent days.
+</p>
+<h4>RPOW Tokens</h4>
+<p>
+Reusable proof of work (RPOW) tokens extend on hashcash to provide a limited
+form of reuse.
+As explained above,
+allowing hashcash to be freely reused would make the tokens effectively worthless,
+as there would be no limits to how many times a given token could be shown.
+RPOW tokens provide a limited form of reuse called sequential reuse.
+In essence,
+once a POW token is created in the form of a piece of hashcash,
+it can be exchanged at an RPOW server for an RPOW token of equal value.
+The RPOW token can then be exchanged, sent, or otherwise used similarly to
+a hashcash token.
+However, rather than being effectively discarded after use,
+the RPOW token can be exchanged by the recipient
+at the RPOW server for a new,
+equal-value,
+RPOW token.
+This token can be used exactly like the first one.
+It can be sent to a recipient, who can verify and exchange it at
+an RPOW server,
+just as they might do for a POW token.
+And that new recipient can,
+after exchanging the RPOW token at the server and receiving a new
+one in exchange,
+retain the new RPOW token and use it again in the future.
+</p><p>
+In this way, a single POW token is the foundation for a chain of
+RPOW tokens.
+The effect is the same as if the POW token could be handed from person
+to person and retain its value at each step.
+</p><p>
+Security researcher
+<a href="http://szabo.best.vwh.net/">Nick Szabo</a> has coined the term
+<a href="http://szabo.best.vwh.net/shell.html">bit gold</a>
+to refer to a similar concept of tokens which inherently represent a
+certain level of effort.
+Nick's concept is more complex than the simple RPOW system,
+but his insight applies:
+in some ways, an RPOW token can be thought of as having the properties
+of a rare substance like gold.
+It takes effort and expense to mine and mint gold coins,
+making them inherently scarce.
+Gold coins can then be passed from person to person, and each recipient
+can verify the authenticity of the coinage.
+</p><p>
+In a similar way, RPOW tokens take a certain level of effort and expense
+to be created.
+They all start with a hashcash collision which, at the higher levels,
+will take hours or even days of computing time to create.
+RPOW tokens can be validated and verified upon receipt by exchanging them
+at the RPOW server for a new RPOW token.
+This allows them to be passed from person to person much like coins.
+</p><p>
+Most importantly, the RPOW system is architected with one overriding goal:
+to make it impossible for anyone,
+even the owner of the RPOW server,
+even the developer of the RPOW software,
+to be able to violate the system's rules and forge RPOW tokens.
+Without such a guarantee against forgeability,
+RPOW tokens would not credibly represent the work that was done to create them.
+Forgeable tokens would be more like paper money than bit gold.
+My goal in this project was to bring to life a simple realization which
+demonstrates the power of the bit gold concept.
+This requires resistance to forgeability,
+and this goal has dominated every part of the design.
+</p><p>
+See the
+<a href="security.html">security</a> page for more detail on how the
+system is designed to resist forgery, and the
+<a href="world.html">World of RPOW</a> page for information on the
+potential for a worldwide network of RPOW servers.
+</p>
+<h4>RPOW Format</h4>
+<p>
+An RPOW token is composed of several parts:
+</p>
+<ul>
+<li>value</li>
+<li>keyid</li>
+<li>id</li>
+<li>bignum</li>
+</ul>
+<p>
+The most important are the <b>id</b> and the <b>bignum</b>.
+The <b>id</b> contains 20 random bytes, along with some extra data to be
+described later.
+The <b>bignum</b> is an RSA signature on a value created by
+extending the <b>id</b> with repeated hashing to add redundancy:
+</p>
+<div align="center">
+<pre>
+___________________________________________________________________
+|  SHA1(id)  | 2 |  SHA1(bytes 0-20) | SHA1(bytes 0-40) |   ...    |
+--------------------------------------------------------------------
+ 0   -    19  20   21      -      40   41      -     59   ...   127
+Byte numbers (MSB first)
+</pre>
+</div>
+<p>
+This value is interpreted as a 1024 bit bignum value, and exponentiated
+with the secret exponent of an RSA signing key.  The result is the
+<b>bignum</b> field of the RPOW.
+The RPOW can be mathematically verified by raising the <b>bignum</b>
+value to the appropriate public exponent,
+and comparing the result to the extended <b>id</b> value,
+created using the pattern shown above.
+</p><p>
+RPOWs can be of different values, just as POWs can.
+The value of an RPOW is stored in its <b>value</b> field
+and is equivalent to the number of bits in a POW collision.
+Each RPOW value corresponds to a public exponent, according to the
+following rule.  The lowest RPOW value, which corresponds to a 20
+bit POW collision, is mapped to an RSA public exponent of 65537.
+Successively increasing values are then mapped to consecutive primes
+above 65537, leading to the following table:
+</p>
+<table align="center" width="70%"><tr valign="top"><td>
+<table border="1" cellpadding="2" align="center">
+<font size="-2">
+<tr align="center"><td><font size="-2">RPOW<br>Value</font></td><td><font size="-2">RSA<br>Exponent</font></td></tr>
+<tr align="center"><td><font size="-2">20</font></td><td><font size="-2">65537</font></td></tr>
+<tr align="center"><td><font size="-2">21</font></td><td><font size="-2">65539</font></td></tr>
+<tr align="center"><td><font size="-2">22</font></td><td><font size="-2">65543</font></td></tr>
+<tr align="center"><td><font size="-2">23</font></td><td><font size="-2">65551</font></td></tr>
+<tr align="center"><td><font size="-2">24</font></td><td><font size="-2">65557</font></td></tr>
+<tr align="center"><td><font size="-2">25</font></td><td><font size="-2">65563</font></td></tr>
+<tr align="center"><td><font size="-2">26</font></td><td><font size="-2">65579</font></td></tr>
+<tr align="center"><td><font size="-2">27</font></td><td><font size="-2">65581</font></td></tr>
+<tr align="center"><td><font size="-2">28</font></td><td><font size="-2">65587</font></td></tr>
+<tr align="center"><td><font size="-2">29</font></td><td><font size="-2">65599</font></td></tr>
+</font>
+</table>
+</td><td>
+<table border="1" cellpadding="2" align="center">
+<font size="-2">
+<tr align="center"><td><font size="-2">RPOW<br>Value</font></td><td><font size="-2">RSA<br>Exponent</font></td></tr>
+<tr align="center"><td><font size="-2">30</font></td><td><font size="-2">65609</font></td></tr>
+<tr align="center"><td><font size="-2">31</font></td><td><font size="-2">65617</font></td></tr>
+<tr align="center"><td><font size="-2">32</font></td><td><font size="-2">65629</font></td></tr>
+<tr align="center"><td><font size="-2">33</font></td><td><font size="-2">65633</font></td></tr>
+<tr align="center"><td><font size="-2">34</font></td><td><font size="-2">65647</font></td></tr>
+<tr align="center"><td><font size="-2">35</font></td><td><font size="-2">65651</font></td></tr>
+<tr align="center"><td><font size="-2">36</font></td><td><font size="-2">65657</font></td></tr>
+<tr align="center"><td><font size="-2">37</font></td><td><font size="-2">65677</font></td></tr>
+<tr align="center"><td><font size="-2">38</font></td><td><font size="-2">65687</font></td></tr>
+<tr align="center"><td><font size="-2">39</font></td><td><font size="-2">65699</font></td></tr>
+</font>
+</table>
+</td><td>
+<table border="1" cellpadding="2" align="center">
+<font size="-2">
+<tr align="center"><td><font size="-2">RPOW<br>Value</font></td><td><font size="-2">RSA<br>Exponent</font></td></tr>
+<tr align="center"><td><font size="-2">40</font></td><td><font size="-2">65701</font></td></tr>
+<tr align="center"><td><font size="-2">41</font></td><td><font size="-2">65707</font></td></tr>
+<tr align="center"><td><font size="-2">42</font></td><td><font size="-2">65713</font></td></tr>
+<tr align="center"><td><font size="-2">43</font></td><td><font size="-2">65717</font></td></tr>
+<tr align="center"><td><font size="-2">44</font></td><td><font size="-2">65719</font></td></tr>
+<tr align="center"><td><font size="-2">45</font></td><td><font size="-2">65729</font></td></tr>
+<tr align="center"><td><font size="-2">46</font></td><td><font size="-2">65731</font></td></tr>
+<tr align="center"><td><font size="-2">47</font></td><td><font size="-2">65761</font></td></tr>
+<tr align="center"><td><font size="-2">48</font></td><td><font size="-2">65777</font></td></tr>
+<tr align="center"><td><font size="-2">49</font></td><td><font size="-2">65789</font></td></tr>
+<tr align="center"><td><font size="-2">50</font></td><td><font size="-2">65809</font></td></tr>
+</font>
+</table>
+</td></tr></table>
+<p>
+The RSA key which signed the RPOW is indicated by the <b>keyid</b> field.
+The <b>keyid</b> is a SHA-1 hash of the RSA modulus and exponent, each preceded
+by a four-byte byte count field.
+Initially there is only one RPOW signing key and only one <b>keyid</b>,
+but over time there may be more RPOW signing keys created,
+as described on the
+<a href="world.html">World of RPOW</a> page.
+To verify an RPOW it is necessary to know which RSA key signed it.
+The <b>keyid</b> implicitly identifies the RSA modulus, and the
+<b>value</b> identifies the RSA exponent; together they define
+the RSA verification key.
+</p>
+<h4>No Inflation Principle</h4>
+<p>
+Unlike with POWs, it takes no longer to create high valued RPOWs than
+low valued ones.
+Nevertheless, RPOWs are considered to have the same value as equivalent
+POWs.
+The reason is that the only way that an RPOW server will sign a bignum
+with an exponent of a certain value,
+is if it receives in exchange an equal-value POW or RPOW token.
+The RPOW server thus enforces conservation of value,
+also called the no-inflation principle.
+RPOWs will only be created when POWs or RPOWs of equal value are exchanged
+for them.
+</p><p>
+To enforce the no-inflation rule, the RPOW server must make sure that no
+POW or RPOW can be used more than once as part of an exchange.
+Each one is created, and then exchanged at the server for a new RPOW,
+and after that, the old one can never be used again.
+The RPOW server enforces this rule primarily by keeping a
+record of all of the RPOWs
+and POWs that it has seen in the past.
+Whenever one is offered for exchange, the RPOW server compares it against
+this database of previously-seen RPOWs.
+If it is on the list, this is an attempt to reuse the POW or RPOW, and the
+exchange request is rejected.
+If the POW or RPOW is not on the list, it is added to the list,
+and then the RPOW server will sign the bignum value supplied as part
+of the exchange,
+creating a new RPOW.
+</p><p>
+Initially, a POW is created of a certain value, represented by the size of
+the hash collision (number of leading zeros in the hash value).
+This can then be exchanged for an RPOW whose signing exponent represents
+the same value.
+This RPOW can be transferred and further exchanged for equal value RPOWs.
+Each RPOW can only be used at one step, but as it is destroyed it
+allows a new RPOW of equal value to be created
+in the exchange operation.
+The result is as though the original POW could be handed from person to
+person
+while retaining its value.
+</p>
+<h4>Time to Split?</h4>
+<p>
+In addition to allowing straight one-for-one exchanges of equal value,
+the RPOW server allows exchanges where tokens are split or combined
+in various ways.
+The rule is that the combined value of the new RPOWs must equal the combined
+value of the incoming POWs and RPOWs which are being exchanged.
+</p><p>
+When calculating these values it is important to take into consideration
+the property of POWs described above, that one with a value of one greater
+is actually worth twice as much (in terms of expense to create).
+This means that you can, for example, exchange a single token worth 21
+for two with values of 20.
+Or you could go the other way and exchange two tokens worth 24 for a single
+one worth 25.
+The general formula is to add two to the power of the <b>value</b> field
+for each incoming POW and RPOW, and do the same thing with the requested
+outgoing RPOWs.
+Only if the results are equal will the RPOW server allow the exchange.
+</p><p>
+More examples of some legal exchanges would be two 24's, a 25, and two 29's
+for a 26 and a 30; or a 32 exchanged for a 31, a 30, a 29 and four 27's.
+Using these rules, an RPOW server will allow you to split or combine
+your existing RPOW tokens in a variety of ways.
+</p><p>
+This creates a great deal of flexibility in how RPOWs are used,
+as you don't have to calculate in advance the exact sizes or values you
+will need.
+You could keep a few relatively large RPOWs around and then split them into
+smaller values to give to someone else.
+Or if you receive a large number of RPOWs, you can combine them and store
+just a few higher valued ones.
+</p><p>
+It also means that you can generate large RPOWs in a more systematic way than
+simply trying to find a really large POW hashcash collision.
+You can create smaller collisions, exchange them for RPOWs, and combine them.
+Suppose you wanted to create, say, a 36 bit RPOW and on your machine that would
+take a day of compute time.
+Instead, you could create 30 bit RPOWs, each one taking only about half an hour
+on average,
+and then combine 64 (2 to the 6th power) of those to create your 36 bit RPOW.
+It's the same amount of compute time on average,
+but by splitting it up into smaller pieces you decrease the randomness and
+make the time to create a certain size RPOW more predictable.
+</p>
+</td>
+</tr></table>
+
+</div>
+</blockquote>
+</body>
+</html>

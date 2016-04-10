@@ -8,10 +8,12 @@
 from sni import app, db, cache
 from models import Post, Email, Doc, ResearchDoc, Author, Format, Category,\
                    BlogPost, Skeptic, DonationAddress, Episode, Quote, QuoteCategory
-from flask import render_template, json, url_for, redirect, request, Response
+from flask import render_template, json, url_for, redirect, request, Response,\
+                  send_from_directory
 from sqlalchemy import asc, desc
 from werkzeug.contrib.atom import AtomFeed
 from datetime import datetime
+import os
 import re
 
 from jinja2 import evalcontextfilter, Markup, escape
@@ -453,10 +455,28 @@ def skeptics():
     app.logger.info(str(request.remote_addr) + ', the-skeptics')
     return render_template('the-skeptics.html', skeptics=skeptics)
 
+@cache.cached(timeout=900)
 @app.route('/crash-course/', methods=["GET"])
 def crash_course():
     app.logger.info(str(request.remote_addr) + ', Crash Course')
     return render_template("crash-course.html")
+
+@cache.cached(timeout=900)
+@app.route('/finney/', methods=["GET"])
+def finney_index():
+    app.logger.info(str(request.remote_addr) + ', Finney')
+    docs = Author.query.filter_by(slug='hal-finney').first().docs.all()
+    return render_template("finney_index.html", docs=docs)
+
+@cache.cached(timeout=900)
+@app.route('/finney/rpow/', methods=["GET"])
+def rpow():
+    app.logger.info(str(request.remote_addr) + ', RPOW')
+    return render_template("rpow_index.html")
+
+@app.route('/finney/rpow/<path:path>')
+def rpow_site(path):
+  return app.send_static_file('rpow/' + path)
 
 # Redirect old links
 @cache.cached(timeout=900)

@@ -1,0 +1,427 @@
+<html>
+<head>
+<title>
+RPOW Download
+</title>
+</head>
+<body>
+<font face="lucida grande, verdana, arial, helvetica, sans-serif" size="+1">
+<blockquote>
+<div align="center">
+<table border="2" width="100%" cellspacing="20" bgcolor="#99ffcc"
+	cellpadding="10"><tr align="center">
+
+<td width="10%" valign="top" bgcolor="#ffffff">
+<a href="index.html">
+<img src="rpow.gif" align="center" width="100" height="100" border="0"></img></a>
+<br><br>
+<a href="news.html">News</a><br><br>
+<a href="what.html">What Is This?</a><br><br>
+<a href="theory.html">Theory</a><br><br>
+<a href="security.html">Security</a><br><br>
+<a href="try.html">Try It Out!</a><br><br>
+<a href="faqs.html">FAQs</a><br><br>
+<a href="slides/slide001.html">Presentation</a><br><br>
+<a href="download.html">Download</a><br><br>
+<font size="-2">
+<a href="building.html">Building the Server</a><br><br>
+<a href="experiments.html">Software Experiments</a><br><br>
+</font>
+</td>
+
+
+<td width="90%" align="left" bgcolor="#ccffff">
+<h3 align="center">RPOW Download</h3>
+<br><br>
+<h4>Components</h4>
+<p>
+There are three parts to the RPOW system:
+client, host and server.
+The source tarball available here includes all three.
+Each part is of different utility for different readers.
+</p><p>
+The client code is most generally useful.
+It builds a library which communicates with the RPOW server
+and maintains a local file of available RPOW tokens.
+There is also a command-line front end program which is intended
+as a demo of how to use the library.
+The code is released with an open source license and I encourage
+readers to add other front ends, such as a GUI, to make the
+system more functional and useful.
+</p><p>
+The server code is the core of the security of the RPOW system.
+The unique claim of RPOW is that anyone can build an exact copy
+of the program running on the RPOW server using this code,
+and remotely verify that this is in fact the software they are
+communicating with.
+See the page on
+<a href="building.html">Building the Server</a> for
+extensive instructions on building the RPOW server memory image.
+</p><p>
+The host code is of less general interest.
+This is the component that runs on the server where the RPOW
+secure coprocessor card is installed.
+Its main function is to listen for net connections and pass them
+to the card, returning the results.
+It also supports housekeeping functions for initialization, key rollover,
+etc.
+The host code will mostly be of interest to those who are thinking of
+acquiring an IBM 4758 card and running their own RPOW server.
+I will be happy to assist anyone who wants to undertake such a project.
+</p>
+<h4>Source code</h4>
+<p>
+Here is the tarball with the source code for the RPOW project:
+</p><p>
+<a href="https://github.com/NakamotoInstitute/RPOW/releases/tag/v1.2.0">rpow-1.2.0.tar.gz</a>
+</p><p>
+<pre>
+sha1sum: c16fbf594e64272879ade6892f00a743f6e05869  rpow-1.2.0.tar.gz
+</pre>
+</p>
+<h4>Building the client</h4>
+<p>
+Building the client requires two libraries.
+One is <b>hashcash</b>, available from
+<a href="http://www.hashcash.org">www.hashcash.org</a>.
+You need version 1.16 or later.
+However, there is a bug in version 1.16 which causes occasional errors
+on generating large hashcash tokens.
+Until this is fixed, I am making available a patched version as
+<a href="hashcash-1.16-patched.tgz">hashcash-1.16-patched.tgz</a>.
+</p><p>
+RPOW also depends on the
+<a href="http://www.openssl.org/">OpenSSL</a> library being
+available.
+This comes installed on all modern Linux systems,
+but on Windows you will have to download it and build it there.
+</p><p>
+When building hashcash, follow the instructions in the Makefile to
+use OpenSSL for the token generation.
+This is necessary for the hashcash library to be compatible with the
+RPOW code.
+</p><p>
+On Linux systems, go into the <b>client</b> subdirectory and type
+<b>make</b>.
+This will create the executable <b>rpowcli</b>.
+</p><p>
+The RPOW client Makefile assumes that the hashcash source is downloaded
+in a directory called <b>hashcash</b> which is a sibling of the main
+<b>rpow</b> directory.
+If you put your hashcash source elsewhere or call it something else
+than <b>hashcash</b>, create a symbolic link as a sibling of <b>rpow</b>
+called <b>hashcash</b> which points at your hashcash directory;
+or alter the RPOW client Makefile to point at your hashcash source.
+</p><p>
+For Windows I recomend the use of the <a href="http://www.mingw.org">MinGW</a>
+package, which allows building native Windows executables.
+You can build OpenSSL and hashcash using this package, and then
+build <b>rpowcli</b> to link to these.
+</p>
+<h4>Binaries</h4>
+<p>
+This is the pre-built client command line
+for Linux systems:
+</p><p>
+<a href="https://github.com/NakamotoInstitute/RPOW/releases/tag/v1.2.0">rpowcli.gz</a>
+</p><p>
+This is the pre-built client command line for Windows systems:
+</p><p>
+<a href="https://github.com/NakamotoInstitute/RPOW/releases/tag/v1.2.0">rpowcli.exe</a>
+</p><p>
+And this is the pre-built client command line for Mac OS X systems:
+</p><p>
+<a href="https://github.com/NakamotoInstitute/RPOW/releases/tag/v1.2.0">rpowcli_osx.gz</a>
+</p>
+<h4>Running the Client</h4>
+<p>
+The provided RPOW client is a command line based program intended
+to demonstrate the functionality of the system.
+The program is split into a command line driver program and a library,
+where the driver makes calls into the library to perform the needed
+functions.
+It is hoped that future development will result in more functional
+and attractive front ends which use the same library interface.
+</p><p>
+<b>rpowcli</b> maintains several files which on Linux go by default
+into a directory named <b>~/.rpow</b> (where <b>~</b> is the user's
+home directory).
+Users should create that directory before running the client.
+Windows users should set an environment variable named <b>RPOW_PATH</b>
+to be the directory where <b>rpowcli</b> will store its files.
+</p><p>
+In that directory the user should create a file called <b>config</b>
+which will contain directives read by the RPOW client.
+The only directive supported at present is <b>host</b>, which tells
+where to look for the RPOW server.  It should be set as follows,
+initially:
+</p><p>
+<pre>
+host = rpow.net:4902
+</pre>
+</p><p>
+Once the <b>~/.rpow/config</b> file (or corresponding one on Windows)
+is set up with this entry, you are ready to try the client.
+</p><p>
+(Note that RPOW now provides support for using the
+<a href="http://tor.eff.org">Tor</a> anonymizing system for access
+to the RPOW server.
+Users who want to take extra precautions to guard their privacy may
+wish to set up Tor and enable RPOW to use it even before their first
+access to the RPOW server.
+This way, the RPOW server will never see the Internet address where the
+requests are coming from.
+For details, see the <a href="privacy.html#tor">Privacy</a> page.)
+</p><p>
+<b>rpowcli</b> takes a first argument which is a command name, followed
+by arguments.  The various commands are as follows:
+</p><p>
+<dl>
+<p>
+<dt>getkeys</dt>
+<dd>
+This should be the first command run.
+It contacts the server identified in the <b>host</b> command in the
+config file,
+and downloads a certificate chain from that server which
+includes the keys for communicating with the server and for signing
+RPOWs.
+It then passes this certificate chain through a stringent validation
+test to be sure that it is in fact an RPOW server.
+See the <a href="security.html">security</a> page for more details
+of how the client validates the server.
+If the server passes the tests, the client extracts the server keys
+from the certificate chain and saves them in the <b>.rpow</b> directory.
+It also prints the name of the hashcash "resource string" that should
+be used with this particular RPOW server
+in case you want to use the <b>hashcash</b> program to generate (or "mint")
+values which will be acceptable by the RPOW server.
+This is a long string composed of three hexadecimal numbers separated
+by dashes, followed by ".rpow.net".
+Note that <b>getkeys</b> is intended to be used only with a fresh install
+and will wipe out any saved RPOW tokens in the <b>.rpow</b> directory.
+</dd>
+</p><p>
+<dt>rekey</dt>
+<dd>
+This works the same as the <b>getkeys</b> command except that it retains
+any saved RPOW tokens.
+It can be given at any time if you want to make sure you have valid keys
+for the server.
+If the server has gone through a key rollover (described in the
+<a href="world.html">World of RPOW</a> page),
+clients must use the <b>rekey</b> command to acquire the new keys from the
+server.
+Their old tokens will still be good, for a period of time,
+although they should be exchanged when convenient.
+This command can also be used to print out the hashcash resource string
+in case you want to use the <b>hashcash</b> program to create POW tokens
+as described below.
+</dd>
+</p><p>
+<dt>gen n</dt>
+<dd>
+This command generates an RPOW token worth n bits.
+n must be in the range from 20 to 50.
+This command is one of the main ways that you can receive RPOW tokens.
+It uses the <a href="www.hashcash.org">hashcash</a> library to
+generate a version 1 hashcash string worth n bits,
+then exchanges that POW token at the RPOW server for an equal-value
+RPOW token.
+See the <a href="theory.html">theory page</a> for how POW and RPOW
+tokens relate to each other.
+The received RPOW token is stored in a file in the <b>.rpow</b> directory
+named <b>rpows.dat</b>.
+</dd>
+</p><p>
+<dt>gencontin</dt>
+<dd>
+This command runs continually and generates RPOW tokens until
+it is interrupted.  It generates eight POW tokens and then exchanges
+them at the server for an RPOW token.
+The size of the tokens is adjusted dynamically so that it will take
+from ten minutes to one hour to generate the eight tokens.
+If you interrupt the program with control-C before it has generated
+eight tokens,
+they will not be exchanged and the last few minutes of calculation
+will be lost.
+That's not usually something to worry about;
+this command is designed to be run overnight or when the computer is
+not otherwise being used,
+to help build up a supply of RPOWs.
+</dd>
+</p><p>
+<dt>count</dt>
+<dd>
+Count how many RPOW tokens you have of different values in the
+<b>rpows.dat</b>
+file and display the counts.
+</dd>
+</p><p>
+<dt>out n</dt>
+<dd>
+Find an output token worth n bits in the <b>rpows.dat</b> file
+and output it to standard out,
+in base64 (text) format.
+Its intended use is for sending RPOWs to other people.
+If you don't have a token of n bits, but you do have larger ones,
+this command will perform exchanges at the server to break the
+larger RPOWs into smaller sizes so that it can output the requested
+size.
+</dd>
+</p><p>
+<dt>in</dt>
+<dd>
+Read an RPOW or POW token from standard in, in text format,
+and exchange it at the server
+for a new RPOW token, saving that in a file.
+This prints a message telling the value of the token received.
+It is intended to be used to receive RPOW tokens from other people.
+Exchanging the token at the server is the mechanism by which
+the RPOW client verifies that the incoming token is legal: properly
+formatted, and not used before.
+This command can also be used to receive POW tokens created by the
+<b>hashcash</b> program.  Run it as:
+<pre>
+hashcash -m -q -b bits -r rpow-resource | rpowcli in
+</pre>
+Get the correct <b>rpow-resource</b> from the string printed by the <b>rekey</b>
+command.  This value will not change for the life of the server.
+This command is equivalent to doing:
+<pre>
+rpowcli gen bits
+</pre>
+but the hashcash program may have optimizations which have not made it into
+the RPOW client, so it might be faster.
+</dd>
+</p><p>
+<dt>exchange inval ... 0 outval ...</dt>
+<dd>
+This exchanges RPOW tokens from your <b>rpows.dat</b> file
+for new RPOWs of equal value.
+List the values of the RPOW tokens you want to exchange,
+one after another on the command line.
+Then add a zero, and then list the values of the new RPOW tokens
+you want to create.
+The total value of the new RPOW tokens must equal the total value
+of the old ones,
+keeping in mind the rule that each RPOW token is worth twice the
+previous one.
+So you can, for example, exchange two RPOW tokens worth 20 for one
+worth 21;
+or exchange one worth 30 for three worth 28 and two worth 27.
+There is a limit in exchange operations of no more than eight input
+and/or output tokens per exchange.
+If you have more tokens than that you will have to do multiple exchange
+operations.
+This command is meant to be used to split or combine RPOW tokens as
+described in the <a href="theory.html">theory page</a>.
+It can also be used to replace all of your saved RPOW tokens when there
+has been a key rollover,
+as described in <a href="world.html">World of RPOW</a>.
+</p><p>
+<dt>consolidate</dt>
+<dd>
+This combines smaller RPOW tokens from your <b>rpows.dat</b> file
+into larger ones by doing exchanges at the server.
+The result will be that you will only have one RPOW token of any
+given size (since two of the same size can be combined to make
+one of the next larger size),
+up to the maximum size of 50.
+You could have more than one size-50 RPOW token but that would take
+a long time to generate (perhaps 50 year-2000-computer-years!).
+Note that the <b>out</b> command will break up RPOWs into smaller
+units if necessary.
+</p><p>
+<dt>status</dt>
+<dd>
+This receives and prints out an extensive block of information from the
+server with information about the IBM 4758 and the software running on it.
+Most of it is pretty technical and will not be of much interest unless
+you know a lot about the 4758.
+It does include some information about free memory on the system,
+and it lists how many keys the server presently knows about and trusts.
+(See the <a href="world.html">World of RPOW</a> page for information about
+how servers come to trust multiple RPOW signing keys.)
+</dd>
+</p>
+</dl>
+<p>
+Those are all of the <b>rpowcli</b> commands.  Here is a typical usage
+example:
+<pre>
+$ rpowcli rekey
+Retrieving certificate chain from server...
+Validating certificate chain...
+IBM root key signature on class key validated
+Class key signature on device key validated
+Device key signature on miniboot key validated
+Miniboot key signature on OS key validated
+OS key signature on application key validated
+Cert chain validates OK, checking hashes...
+Hash is acceptable!  Proceed...
+
+Successfully read keys for 71672bc400000017-000003c2-0001.rpow.net
+
+$ rpowcli gen 20
+$ rpowcli gen 20
+$ rpowcli count
+2 rpows in rpow data file /home/user/.rpow/rpows.dat:
+  value 20: 2
+$ rpowcli exchange 20 20 0 21
+$ rpowcli count
+1 rpows in rpow data file /home/user/.rpow/rpows.dat:
+  value 21: 1
+$ rpowcli exchange 21 0 20 20
+$ rpowcli count
+2 rpows in rpow data file /home/user/.rpow/rpows.dat:
+  value 20: 2
+$ rpowcli out 20 > rp20
+$ rpowcli count
+1 rpows in rpow data file /home/user/.rpow/rpows.dat:
+  value 20: 1
+$ cat rp20
+AQAAABSKLQ6BRhHTEyPNUhFHOS5Y289wmlnSfdxFI6H7Ydosoj/kogkG+pc9cWcrxAAAABcAAAOpAAEA
+AACAu5XQT24VcgiL/0vXIUG99JGK2lpoIS2ZFoL+9dxpTOXEfS8vqN31PRLgrKHExfDeDOxZPY44JsAN
+yYfjQHGw+63j5Fvcb3hNydvMg8A7EHNBqCm1OYiejoUpZXOxfolVGR0g0tDkR8w/E6hL6J7oUgODckug
+odFcFRzChlVTUKU=
+$ rpowcli in < rp20
+Received rpow item of value 20
+$ rpowcli count
+2 rpows in rpow data file /home/user/.rpow/rpows.dat:
+  value 20: 2
+$ rpowcli out 20 | rpowcli in
+Received rpow item of value 20
+$ rpowcli count
+2 rpows in rpow data file /home/user/.rpow/rpows.dat:
+  value 20: 2
+$ rpowcli consolidate
+$ rpowcli count
+1 rpows in rpow data file /home/user/.rpow/rpows.dat:
+  value 21: 1
+</pre>
+<h4>Troubleshooting</h4>
+<p>
+At this point
+the RPOW client is relatively immature
+and has not been built on many hosts.
+It is not a particularly complicated program, though, so hopefully
+it will be possible to easily fix up any portability problems.
+Please notify the author if you need to make any changes to get it to
+build on your host system.
+</p><p>
+If the server fails to respond, it may be down temporarily for maintenance,
+although at this point I am to provide a high degree of availability for the
+server.
+It is also possible that the server may become overloaded if
+many people try out the RPOW client at once.
+I aim to acquire additional IBM 4758 boards to experiment with,
+and I can make those available as RPOW servers if necessary.
+</p>
+</td>
+</tr></table>
+
+</div>
+</blockquote>
+</body>
+</html>

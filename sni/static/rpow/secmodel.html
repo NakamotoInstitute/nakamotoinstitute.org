@@ -1,0 +1,260 @@
+<html>
+<head>
+<title>
+RPOW - IBM 4758 Security Model
+</title>
+</head>
+<body>
+<font face="lucida grande, verdana, arial, helvetica, sans-serif" size="+1">
+<blockquote>
+<div align="center">
+<table border="2" width="100%" cellspacing="20" bgcolor="#99ffcc"
+	cellpadding="10"><tr align="center">
+
+<td width="10%" valign="top" bgcolor="#ffffff">
+<a href="index.html">
+<img src="rpow.gif" align="center" width="100" height="100" border="0"></img></a>
+<br><br>
+<a href="news.html">News</a><br><br>
+<a href="what.html">What Is This?</a><br><br>
+<a href="theory.html">Theory</a><br><br>
+<a href="security.html">Security</a><br><br>
+<font size="-2">
+<a href="secmodel.html">Security Model</a><br><br>
+<a href="cryptoq.html">Cryptographic Peculiarities</a><br><br>
+<a href="ibmsecurity.html">IBM Security</a><br><br>
+<a href="privacy.html">Privacy</a><br><br>
+</font>
+<a href="try.html">Try It Out!</a><br><br>
+<a href="faqs.html">FAQs</a><br><br>
+<a href="slides/slide001.html">Presentation</a><br><br>
+<a href="download.html">Download</a><br><br>
+</td>
+
+<td width="90%" align="left" bgcolor="#ccffff">
+<h3 align="center">IBM 4758 Security Model</h3>
+<p>
+The IBM 4758 secure cryptographic coprocessor
+provides an extraordinary degree of security against physical
+attack,
+having been validated to FIPS-140 level 4.
+In order to provide the benefits of this hardware security to users,
+the device implements a number of security features in the firmware
+and operating system.
+The resulting security model has complexities which impact the
+RPOW design.
+</p>
+<h4>Segments</h4>
+<p>
+The 4758 software is divided into three segments: Miniboot,
+operating system (OS), and application.
+(Actually the Miniboot itself has two parts, Miniboot0
+and Miniboot1, so by some counts the 4758 uses four segments.)
+Each has greater privileges than the next one.
+</p><p>
+The Miniboot is analogous to the BIOS in a PC.
+It runs as firmware in the flash memory and seldom changes.
+The function of the Miniboot is to do a power-on self test (POST)
+of the proper functioning of the 4758 hardware,
+and to load the other software segments, the OS and application.
+The Miniboot is also responsible for performing some cryptographic
+operations as described below.
+</p><p>
+The OS on the 4758 is called CP/Q++.
+It provides an interface to the various functional components
+on the 4758,
+including encryption and hashing engines,
+large integer calculations,
+persistent memory storage,
+and communications with the host computer.
+For development purposes, IBM also supplies a version of CP/Q++ which has
+debugging hooks to allow a host-resident debugger to examine memory
+and control the application program.
+The production version of CP/Q++ lacks these features and when it is
+loaded there is no way for an outsider to get access to the memory
+or program operation on the 4758.
+</p><p>
+The application, in this case, is the RPOW program itself.
+It uses the facilities provided by the OS to implement the
+RPOW token validation and signing functionality described
+in these pages.
+</p><p>
+Many operators of IBM 4758 systems do not use the custom programming features
+which allow the creation of programs like the RPOW server.
+Instead, they use one of two application programs provided by IBM which
+work in conjunction with library code that runs on the host computer.
+One of these modules implements a PKCS-11 interface, which is a standard
+smart-card API;
+the other implements IBM's CCA, the Common Cryptographic Architecture,
+an API used in a wide variety of IBM equipment.
+</p>
+<h4>Segment Ownership</h4>
+<p>
+The 4758 uses a concept of segment ownership for segments
+2 and 3, which are the OS and application.
+Segment owners are relatively small integers,
+and every segment has an owner ID associated with it.
+Along with the owner ID is an owner key, an RSA key which is
+certified by the IBM root key.
+When a program is loaded into segments 2 or 3, the owner ID and
+ownership key are set for that segment.
+</p><p>
+Segments start off in an unowned state,
+and ownership is granted by submitting a command to the card
+which is signed by the owner of the next lower segment.
+Taking ownership of segment 2 requires a command signed by IBM;
+and taking ownership of segment 3 requires a command signed by
+the owner of segment 2.
+Similarly, segment ownership can only be relinquished by issuing a command
+signed by that segment's owner, or by the owner of the next lower segment.
+</p><p>
+These ownership checks are enforced by the Miniboot cryptographically
+validating the signatures on the commands to take and relinquish ownership,
+as well as loading and reloading software.
+The Miniboot keeps track of the ownership data for segments 2 and 3
+and uses this information to validate commands which come from the host.
+</p>
+<h4>Segment Loads vs Reloads</h4>
+<p>
+The relevance of segment ownership for RPOW is its impact on how
+programs can be loaded or reloaded into the memory of the device.
+The 4758 defines two different operations which load a program into
+segment 2 or 3.
+The terms IBM use are EMBURN and REMBURN.
+An EMBURN is a segment load which fully re-initializes the segment
+and clears all of the memory.
+A REMBURN is a segment reload, which retains the persistent data in
+the segment.
+</p><p>
+The REMBURN command, which reloads a program into a segment,
+can only be issued by the owner of the segment, i.e. it must
+be signed by the key which is the current ownership key for the segment.
+EMBURN, which loads a program, can be issued to an unowned segment
+to take ownership of that segment.
+Although I am calling REMBURN a reload, that does not imply that it is the
+same program which is loaded.
+A new program can be loaded with a REMBURN.
+It is a reload in the sense that the owner is putting a new program
+into the same segment.
+</p>
+<h4>Preserving Memory</h4>
+<p>
+There are several classes of memory on the 4758.
+Ordinary DRAM is meant for data variables and is cleared on reboot.
+Programs are loaded into flash memory.
+There is also a region of flash memory set aside for programs to
+use for persistent data,
+that is, data which should be preserved across a reboot.
+Another class of memory is battery-backed up RAM (BBRAM), which is also
+preserved across reboot.
+</p><p>
+To aid in debugging and development,
+one of the features of the 4758 security model is that
+persistent data in flash and in BBRAM is preserved across
+a REMBURN command (a reload).
+This facilitates debugging of a program in a couple of ways.
+One option is to reload the OS, substituting the debugging OS
+for the production OS
+using a REMBURN for segment 2.
+The developer can then debug his program using the debugging OS,
+and anything which the program had stored in persistent memory will
+be preserved from the earlier runs.
+Another option would be for the developer to load a different
+application,
+with a REMBURN of segment 3,
+which could then dump out the contents of persistent memory,
+to help get an understanding of what might have gone wrong with
+the program under development.
+</p>
+<h4>RPOW Requirements</h4>
+<p>
+This ability to reload a program and retain persistent data,
+while useful in some contexts,
+is a problem for RPOW.
+The concept behind this security feature is that the developer
+and owner is trusted,
+and should have access to the secrets which the program retains
+for itself.
+However, that is the opposite of the security model used in RPOW.
+RPOW assumes that the owner, the operator, and the developer of
+the system are the enemies.
+In the RPOW design, only the software is trusted.
+It is crucial for RPOW security that no one gets access to the
+persistent memory of the program.
+</p><p>
+RPOW stores its token signing keys,
+among other sensitive data,
+in persistent memory.
+It has to be done that way, so that the RPOW server can continue to
+run after a power cycle or some other reboot or restart.
+A straightforward implementation would then give the owner of the
+board the power to reload the OS or the application and acquire the
+RPOW signing keys.
+This would destroy the security of the RPOW system.
+</p><p>
+The problem is even more acute because RPOW is being developed using
+the free development tools from IBM Research's Alphaworks web site.
+These use ownership keys for segment 3, the application, which are
+publicly available.
+This means that anyone can act as an owner of segment 3,
+and if the system were vulnerable to its owner,
+it would be vulnerable to everyone.
+</p>
+<h4>RPOW Persistence Countermeasures</h4>
+<p>
+Fortunately,
+the IBM 4758 does define one class of data which is not preserved
+across a REMBURN reload.
+These are RSA secret keys generated by the Outbound Authentication
+(OA) manager of a particular type, called "configuration" keys.
+OA configuration keys are guaranteed to have their private parts
+cleared on any change to the software configuration on the card,
+including REMBURN reloads of the OS in segment 2 or the application
+in segment 3.
+Unlike other persistent data, OA configuration keys are not preserved
+across a reload.
+</p><p>
+RPOW exploits this feature to protect its sensitive persistent data.
+At initialization time, RPOW generates an OA configuration key.
+It then uses this key to protect the private data which must persist
+across reboot.
+Before storing the data in flash memory,
+RPOW encrypts it with the OA configuration key.
+Then, if a reboot occurs,
+RPOW uses that same OA configuration key to decrypt the sensitive data
+in flash memory
+and gain access to its secrets,
+such as the RPOW signing key.
+</p><p>
+By encrypting its secrets with the OA configuration key,
+RPOW assures that this secret data will not be available to even
+the card owner.
+If the owner attempts to reload the OS or the application,
+that will clear the OA configuration private key,
+even though it preserves other encrypted data.
+Without the private key, there is no way the attacker can decrypt
+RPOW's sensitive secret data.
+In effect, that data is securely erased in the same way that the OA
+private key is, on a reload.
+</p>
+<h4>Summary</h4>
+<p>
+The IBM 4758 secure cryptographic coprocessor provides high security
+and a relatively complex security model for software developers.
+Fortunately, the design is flexible enough that even a system like
+RPOW,
+which has a rather different security perspective than most programs
+which use this device,
+can accommodate its needs.
+By using the Outbound Authentication manager to generate a key bound
+to the memory configuration,
+RPOW is able to protect its secrets against any attempt to reload
+software components and gain access to sensitive data.
+</p>
+</td>
+</tr></table>
+
+</div>
+</blockquote>
+</body>
+</html>
