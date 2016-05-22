@@ -1,0 +1,73 @@
+==================================================================
+https://keybase.io/bitstein
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://nakamotoinstitute.org
+  * I am bitstein (https://keybase.io/bitstein) on keybase.
+  * I have a public key with fingerprint 2CEA 8148 04FC F14D 9C1A  E8EA 1EA2 662D EB2F EFBE
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "010177dd979d5bd2d0feee5a7109b6f71d374d1d767d26b3fc9c938b6b9fa02e11540a",
+            "fingerprint": "2cea814804fcf14d9c1ae8ea1ea2662deb2fefbe",
+            "host": "keybase.io",
+            "key_id": "1ea2662deb2fefbe",
+            "kid": "010177dd979d5bd2d0feee5a7109b6f71d374d1d767d26b3fc9c938b6b9fa02e11540a",
+            "uid": "036e381b51f82b0368f45bcdf5eee200",
+            "username": "bitstein"
+        },
+        "revoke": {
+            "sig_ids": [
+                "89230b8c62dcd7ace072ed27621e37d643461ce7368b5ccf30e3f769c2962ea40f"
+            ]
+        },
+        "service": {
+            "hostname": "nakamotoinstitute.org",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1463938992,
+    "expire_in": 157680000,
+    "prev": "9c6f43310a54c346770c9fc277808945cbe00c669c01cf1f3084ce8b480294c0",
+    "seqno": 23,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+
+owGtkl1oHUUUx29aLekNajEhVdRSB6Wtxjgz+zG7F4tUTVGLED9q0dLezMeZmzHJ
+7nV3c5P0tqFiHxQ0mJooeS0tRdMSFESLthaFYk1Cxfrgg7QWFSsFTSGhKNY4G+ub
+j+7LMMP//M7//Pe8ccPyQrFhzQF936X7fzvRMP2LKGzbNLe+jkSshlCpjnpg6YBe
+BWlW7jEKlRAmmDCmVMhC5QlFFdYA4HFGcCh8zYhymKuIYj5T1BeOlqEMnUD4ItQc
+UyDEczFHbUibqAJJNTFRZrFUAg+IG2BXS01cFUrCIQBOgFPfpwoE1aAF2MLuOM0r
+rDnBU2g3sX2zl/KSvf/Q/8+++//BOT44AREe0QEV9hZo1xNSac9SKca5MIUk4n1g
+1cJkaQYmQnvaUAK1uAfyXFNTsaZTVNqOgpA6WATSOpeKcQmYUVCU+ZSAw5TvOq5P
+JDDbR3hSageDo5kfShr6FLiLNdph2bZjzcgleJ7Ste4R7+F9cRabKM1M1p9Be5xU
+rMFqYh9l3Gsl3VlWLaHjFpENVfOaARDla7SyMJGyP8tW1CBJTRyhErFKmZkcT1zf
+sUGFIW1DMFg1CZRNrvCYH2D75X2gZpGh9LXrOARzz5V2HsawDLWkjAU4CF1PCsBY
++nYoTOwO2BkDV0Ig7FLQ0JV5pCm8GMWoRB3rk1cs00YY8aw/AbSn+GrD7dcVGoqF
+Fdcvy9e4UFy56t/dHuluLFzYVXhn/dYxc2pq7fMnS+sOp/rMe/vmLndubf2WEv7Q
+u01HNzw9+tUXJyuv7z4wcXn5scf31Q/vbW65Wpsa3nzm/JPju+48/YTiZuaZuYET
+z3242D6244XOjoO7f3r/lpH6zs8f2L+39PHKWXW047vRDx68a+Tt2W8mhjrjhUN/
+zfd+708uLJjJQuWxU69Ufu1a9sjv061dk81rO4g5+MlYcu7mwa8bVy3Ojp49/XLf
+S3c/e25beT9JBj96bfXDM+NXvrx64bYjb8pLf2xZ0bzpqc9aHh3evnln701/zqyb
+Dry37ln88d7x6SKqN/6whn96tonfevHK/MYbOzfMDzcd/3lgYmrjscmWi61Huu44
+9Dc=
+=LrI6
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/bitstein
+
+==================================================================

@@ -490,3 +490,8 @@ def reroute(url_slug, format):
         if (doc != None):
             return redirect(url_for("researchdocview", slug=doc.slug, format=format))
     return redirect(url_for("index"))
+
+
+@app.route('/keybase.txt')
+def static_from_root():
+    return send_from_directory(app.static_folder, request.path[1:])
