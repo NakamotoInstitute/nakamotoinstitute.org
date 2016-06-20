@@ -63,11 +63,11 @@ hackMe[f] =
 </pre>
 
 	<p>
-		where <code>q</code> is a function that is supposed to fail if the attacker has no right to demand funds. The hacker can call this function within the execution of <em>his</em> function.
+		where <code>q</code> is a function that is supposed to fail if the attacker has no right to demand funds.
 	</p>
 
 	<p>
-		Now suppose that the hacker calls it, and provides an <code>f</code> of the form
+		Now suppose that the hacker calls <code>hackMe</code>, and provides an <code>f</code> of the form
 	</p>
 
 <pre>f[] = p[]; hackMe[f]</pre>
