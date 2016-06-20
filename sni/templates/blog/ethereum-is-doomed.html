@@ -34,12 +34,18 @@
 		Let’s say that A wants to send ethers to B. I will write <code>A-&gt;B</code> as the atomic operation which removes money from <code>A</code>'s balance and adds it to <code>B</code>’s. This operation fails if <code>A</code>'s balance is not big enough. To send money in Ethereum, it is as if we had a function that looked like this:
 	</p>
 
-<pre><code>send[f, x, y] =
+<pre>
+send[f, x, y] =
     If[
-        Try[ A -&gt; B; f[]; True, False], // Send funds to B and call f; roll back if an error is generated. 
-        x[],                               // Call this if no error was generated. 
-        y[]                                // Call this if an error was generated. 
-    ]</code></pre>
+        // Send funds to B and call f;
+        // roll back if an error is generated.
+        Try[ A -&gt; B; f[]; True, False],
+        // Call this if no error was generated.
+        x[],
+        // Call this if an error was generated.
+        y[]
+    ]
+</pre>
 
 	<p>
 		where <code>x</code> and <code>y</code> are functions provided by <code>A</code>, and f is a function provided by <code>B</code>. In other words, <code>A</code> sends the ethers to <code>B</code>, who immediately gets to call a function that does whatever he wants with the money. That function is <code>f</code>. If his function fails for some reason, the send is rolled back and function <code>y</code> is executed. Otherwise, <code>x</code> is executed. Anyone can provide <em>any</em> function to be executed upon receiving funds.<sup><a href="#fn1" id="ref1">1</a></sup>
@@ -49,25 +55,28 @@
 		This is already enough of a nightmare, but suppose you have a public function available to the hacker which is of the form
 	</p>
 
-<pre><code>hackMe[f] = 
-    If[q[],                      // Use q to check whether we owe the attacker money. 
-        send[f, x, y]]</code></pre>
+<pre>
+hackMe[f] =
+    // Use q to check whether we owe the attacker money.
+    If[q[],
+        send[f, x, y]]
+</pre>
 
 	<p>
-		where <code>q</code> is a function that is supposed to fail if the attacker has no right to demand funds. The hacker can call this function within the execution of <em>his</em> function. 
+		where <code>q</code> is a function that is supposed to fail if the attacker has no right to demand funds. The hacker can call this function within the execution of <em>his</em> function.
 	</p>
 
 	<p>
 		Now suppose that the hacker calls it, and provides an <code>f</code> of the form
 	</p>
 
-<pre><code>f[] = p[]; hackMe[f]</code></pre>
+<pre>f[] = p[]; hackMe[f]</pre>
 
 	<p>
 		This results in the following code being executed when <code>hackMe</code> is called:
 	</p>
 
-<pre><code>q[]; A -&gt; B; p[]; q[]; A -&gt; B; p[]; ... q[]; A -&gt; B; y[] ...</code></pre>
+<pre>q[]; A -&gt; B; p[]; q[]; A -&gt; B; p[]; ... q[]; A -&gt; B; y[] ...</pre>
 
 	<p>
 		If nothing else stops this execution, it will eventually stop when <code>A-&gt;B</code> fails as a result of A not having enough funds. Only the last execution of send will fail, however. All previous ones succeed, so the hacker gets everything.
