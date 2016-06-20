@@ -31,7 +31,7 @@
 	</p>
 
 	<p>
-		Let’s say that A wants to send ethers to B. I will write <code>A-&gt;B</code> as the atomic operation which removes money from <code>A</code>'s balance and adds it to <code>B</code>’s. This operation fails if <code>A</code>'s balance is not big enough. To send money in Ethereum, it is as if we had a function that looked like this:
+		Let’s say that A wants to send ethers to B. I will write <code>A&rarr;B</code> as the atomic operation which removes money from <code>A</code>'s balance and adds it to <code>B</code>’s. This operation fails if <code>A</code>'s balance is not big enough. To send money in Ethereum, it is as if we had a function that looked like this:
 	</p>
 
 <pre>
@@ -39,7 +39,7 @@ send[f, x, y] =
     If[
         // Send funds to B and call f;
         // roll back if an error is generated.
-        Try[ A -&gt; B; f[]; True, False],
+        Try[ A&rarr;B; f[]; True, False],
         // Call this if no error was generated.
         x[],
         // Call this if an error was generated.
@@ -48,7 +48,7 @@ send[f, x, y] =
 </pre>
 
 	<p>
-		where <code>x</code> and <code>y</code> are functions provided by <code>A</code>, and f is a function provided by <code>B</code>. In other words, <code>A</code> sends the ethers to <code>B</code>, who immediately gets to call a function that does whatever he wants with the money. That function is <code>f</code>. If his function fails for some reason, the send is rolled back and function <code>y</code> is executed. Otherwise, <code>x</code> is executed. Anyone can provide <em>any</em> function to be executed upon receiving funds.<sup><a href="#fn1" id="ref1">1</a></sup>
+		where <code>x</code> and <code>y</code> are functions provided by <code>A</code>, and f is a function provided by <code>B</code>. In other words, <code>A</code> sends the ethers to <code>B</code>, who immediately gets to call a function that does whatever he wants with the money. That function is <code>f</code>. If his function fails for some reason, <code>A&rarr;B</code> is rolled back and function <code>y</code> is executed. Otherwise, <code>x</code> is executed. Anyone can provide <em>any</em> function to be executed upon receiving funds.<sup><a href="#fn1" id="ref1">1</a></sup>
 	</p>
 
 	<p>
@@ -76,10 +76,10 @@ hackMe[f] =
 		This results in the following code being executed when <code>hackMe</code> is called:
 	</p>
 
-<pre>q[]; A -&gt; B; p[]; q[]; A -&gt; B; p[]; ... q[]; A -&gt; B; y[] ...</pre>
+<pre>q[]; A&rarr;B; p[]; q[]; A&rarr;B; p[]; ... q[]; A&rarr;B; y[] ...</pre>
 
 	<p>
-		If nothing else stops this execution, it will eventually stop when <code>A-&gt;B</code> fails as a result of A not having enough funds. It can also fail if the call stack fills up or if the computation runs out of <a href="https://www.cryptocompare.com/coins/guides/what-is-the-gas-in-ethereum/">gas</a>, but these are complications on top of the fundamental problem. A hacker can ensure that only the last send fails so as to end up with everything.
+		If nothing else stops this execution, it will eventually stop when <code>A&rarr;B</code> fails as a result of A not having enough funds. It can also fail if the call stack fills up or if the computation runs out of <a href="https://www.cryptocompare.com/coins/guides/what-is-the-gas-in-ethereum/">gas</a>, but these are complications on top of the fundamental problem. A hacker can ensure that only the last send fails so as to end up with everything.
 	</p>
 
 	<p>
