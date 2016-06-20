@@ -19,7 +19,7 @@
 	</div>
 
 	<p>
-		As <a href="https://twitter.com/jgarzik/status/736945669978525696">some have noted</a>, I did not understand Ethereum very well when I wrote my <a href="http://nakamotoinstitute.org/mempool/the-coming-demise-of-altcoins/">previous article</a> that touched on it. I dismissed Ethereum as just another altcoin with extra bells and whistles. However, there was a huge opportunity hiding in there, open to anyone who understood the system well enough. I wish I had examined it further and much more deeply because right now someone who did that, someone whom I now admire, is sitting on three million ethers.
+		As <a href="https://twitter.com/jgarzik/status/736945669978525696">some have noted</a>, I did not understand Ethereum very well when I wrote my <a href="http://nakamotoinstitute.org/mempool/the-coming-demise-of-altcoins/">previous article</a> that touched on it. I dismissed Ethereum as just another altcoin with extra bells and whistles. However, there was a huge opportunity hiding in there, open to anyone who understood the system well enough. I wish I had examined it further and much more deeply because right now someone who did that, <a href= "http://pastebin.com/CcGUBgDG">someone whom I now admire</a>, is sitting on three million ethers.
 	</p>
 
 	<p>
@@ -79,7 +79,7 @@ hackMe[f] =
 <pre>q[]; A -&gt; B; p[]; q[]; A -&gt; B; p[]; ... q[]; A -&gt; B; y[] ...</pre>
 
 	<p>
-		If nothing else stops this execution, it will eventually stop when <code>A-&gt;B</code> fails as a result of A not having enough funds. Only the last execution of send will fail, however. All previous ones succeed, so the hacker gets everything.
+		If nothing else stops this execution, it will eventually stop when <code>A-&gt;B</code> fails as a result of A not having enough funds. It can also fail if the call stack fills up or if the computation runs out of <a href="https://www.cryptocompare.com/coins/guides/what-is-the-gas-in-ethereum/">gas</a>, but these are complications on top of the fundamental problem. A hacker can ensure that only the last send fails so as to end up with everything.
 	</p>
 
 	<p>
