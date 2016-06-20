@@ -1,6 +1,15 @@
 {
   "blogposts": [
     {
+      "title": "Ethereum is Doomed",
+      "author": "daniel-krawisz",
+      "date": "June 20, 2016",
+      "added": "June 20, 2016",
+      "slug": "ethereum-is-doomed",
+      "excerpt": "I fully support the attacker’s actions and I wish I had thought of it first.",
+      "languages": "en"
+    },
+    {
       "title": "Proof That Proof-of-Work is the Only Solution to the Byzantine Generals' Problem",
       "author": "oleg-andreev",
       "date": "May 23, 2014",
