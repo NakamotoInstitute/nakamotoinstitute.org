@@ -37,17 +37,17 @@
 <pre><code>send[f, x, y] = If[ Try[ A -&gt; B; f[]; True, False], x[], y[]]</code></pre>
 
 	<p>
-		where <code>x</code> and <code>y</code> are functions provided by <code>A</code>, and f is a function provided by <code>B</code>. In other words, <code>A</code> sends the ethers to <code>B</code>, who immediately gets to call a function that does whatever he wants with the money. That function is <code>f</code>. If his function fails for some reason, the send is rolled back and function <code>y</code> is executed. Otherwise, <code>x</code> is executed. Thus, Ethereum forces you to run arbitrary code on your machine every time you send someone money.<sup><a href="#fn1" id="ref1">1</a></sup>
+		where <code>x</code> and <code>y</code> are functions provided by <code>A</code>, and f is a function provided by <code>B</code>. In other words, <code>A</code> sends the ethers to <code>B</code>, who immediately gets to call a function that does whatever he wants with the money. That function is <code>f</code>. If his function fails for some reason, the send is rolled back and function <code>y</code> is executed. Otherwise, <code>x</code> is executed. Anyone can provide <em>any</em> function to be executed upon receiving funds.<sup><a href="#fn1" id="ref1">1</a></sup>
 	</p>
 
 	<p>
-		This is already enough of a nightmare, but suppose you have a function which is available to the hacker which is of the form
+		This is already enough of a nightmare, but suppose you have a public function available to the hacker which is of the form
 	</p>
 
 <pre><code>hackMe[f] = If[q[], send[f, x, y]]</code></pre>
 
 	<p>
-		where <code>q</code> is a function that is supposed to fail if the attacker has no right to demand funds. This function <code>hackMe</code> is like a public function that the hacker can call at any time.
+		where <code>q</code> is a function that is supposed to fail if the attacker has no right to demand funds. The hacker can call this function within the execution of <em>his</em> function. 
 	</p>
 
 	<p>
@@ -92,19 +92,19 @@
 	</p>
 
 	<p>
-		A sign that no one is prepared to write smart contracts in Solidity is the fact that the Ethereum dev team, the people who designed the language and the DAO, could not even fix their own bug. They don’t have the ability to approach these bugs correctly, and neither, in my opinion, does anyone else. Solidity was simply not designed with security in mind. Ethereum is doomed.
+		A sign that no one is prepared to write smart contracts in Solidity is the fact that the Ethereum dev team, the people who designed the language and the DAO, could not even fix their own bug. They don’t have the ability to approach these bugs correctly, and neither, in my opinion, does anyone else. Solidity was simply not designed with security in mind and the dev team has no idea how to design for security. They can't fix this. Ethereum is doomed.
 	</p>
 
 	<p>
-		The legal implications of this hack are more interesting than the hack itself. Because the code of the DAO is a legally-binding contract, how can you argue so as to convince a judge that some behavior of the program is really a bug? The DAO provides nothing other than its own code to specify how it is supposed to work. For example, there is no specification in a formal language, or proofs as to its correctness. If the Ethereum team knew how to test software, they might have produced something like that, which also could have provided corroborating evidence that any bug was unintended.
+		The legal implications of this hack are more interesting than the hack itself. Because the code of the DAO is a legally-binding contract, how can you argue so as to convince a judge that some behavior of the program is really a bug? The DAO provides nothing other than its own code to specify how it is supposed to work. For example, there is <a href="https://www.reddit.com/r/ethereum/comments/4opjov/the_bug_which_the_dao_hacker_exploited_was_not/">no specification in a formal language</a>, or proofs as to its correctness. If the Ethereum team knew how to test software, they might have produced something like that, which also could have provided corroborating evidence that any bug was unintended.
 	</p>
 
 	<p>
-		I fully support the attacker’s actions and I wish I had thought of it first. His ethers may become worthless before he can sell them for Bitcoin, but he may also <a href="http://hackingdistributed.com/2016/06/18/analysis-of-the-dao-exploit/#step-3-the-big-short">made a huge short on ethers</a> just before executing the attack and made around $1 million that way so good for him!
+		I fully support the attacker’s actions and I wish I had thought of it first. His ethers may become worthless before he can sell them for Bitcoin, but he may also <a href="http://hackingdistributed.com/2016/06/18/analysis-of-the-dao-exploit/#step-3-the-big-short">made a huge short on ethers</a> just before executing the attack and made around $1 million that way.
 	</p>
 
 	<p>
-		For a final comment on the Ethereum team’s response, I quote from <a href="http://hackingdistributed.com/2016/06/17/thoughts-on-the-dao-hack/#what-s-a-hack-when-you-don-t-have-a-spec">Emin Gün Sirer</a>:
+		For a final comment on the Ethereum team’s response, I provide an insightful quote from <a href="http://hackingdistributed.com/2016/06/17/thoughts-on-the-dao-hack/#what-s-a-hack-when-you-don-t-have-a-spec">Emin Gün Sirer</a>:
 	</p>
 
 	<blockquote>
@@ -143,7 +143,7 @@
 
 	<div class = "text-center">
 		<p>
-			<a class="btn btn-primary" href="bitcoin:">
+			<a class="btn btn-primary" href="bitcoin:1B8LQR7kifTaKyTaTBCEo3LSVaeqrGPaVJ">
 				Donate to Daniel
 			</a>
 		</p>
