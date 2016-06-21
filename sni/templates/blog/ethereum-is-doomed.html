@@ -63,7 +63,7 @@ hackMe[f] =
 </pre>
 
 	<p>
-		where <code>q</code> is a function that is supposed to fail if the attacker has no right to demand funds. 
+		where <code>q</code> is a function that is supposed to fail if the attacker has no right to demand funds.
 	</p>
 
 	<p>
@@ -94,13 +94,13 @@ hackMe[f] =
 	<p>
 		A naive approach to this bug would be to write <code>q</code> so that it keeps track of how much is owed to <code>B</code> and fails if the money should already have been paid. However, this approach is not good enough because in the mean time, from function <code>p</code>, the attacker might run more code which you have made available to him which creates further liabilities. The fix which the Ethereum team released to upgrade DAO 1.0 to 1.1 takes this naive approach, as explained <a href="http://hackingdistributed.com/2016/06/18/analysis-of-the-dao-exploit/#was-1-1-vulnerable">here</a>.
 	</p>
-	
+
 	<p>
-		I've provided a scenario in which the result is to extract funds, but the issue is much more general than that. You can think of an Ethereum smart contract as being like a object in OO programming, with a set of public methods that any other contract can call. If you call another contract's public methods, he can call any of <em>your</em> public methods and attempt to screw with your internal state. There are different names for this depending on what the malicious contract does (such as <a href="https://blog.blockstack.org/solar-storm-a-serious-security-exploit-with-ethereum-not-just-the-dao-a03d797d98fa#.wpg35euyp">reentry and solar-storm</a>), but the problem really, is the same kind of problem you would have if you just allowed people to run whatever code you wanted on your own computer. 
+		I've provided a scenario in which the result is to extract funds, but the issue is much more general than that. You can think of an Ethereum smart contract as being like a object in object-oriented programming, with a set of public methods that any other contract can call. If you call another contract's public methods, he can call any of <em>your</em> public methods and attempt to screw with your internal state. There are different names for this depending on what the malicious contract does (such as <a href="https://blog.blockstack.org/solar-storm-a-serious-security-exploit-with-ethereum-not-just-the-dao-a03d797d98fa#.wpg35euyp">reentry and solar-storm</a>), but the problem is really the same kind of problem you would have if you just allowed people to run whatever code you wanted on your own computer.
 	</p>
 
 	<p>
-		This problem is so serious that it cannot be treated as a bug in the DAO. The problem is with Solidity itself, which is the scripting language used in Ethereum. Imagine a bright eyed and bushy-tailed new programmer writing his first big contract: &quot;Now let’s see here…” he thinks. “I’m using the send function. That means that I have to search for blocks of code that I’ve written which an attacker could attempt to run in an infinite loop until there is no money left. First of all, which possible blocks of code could be made to go in an infinite loop? It could be any part that calls send, intermixed with anything that the attacker wants to call in between… hmmm… &quot; You have to think this every time you send anyone money. It is totally ridiculous to expect anyone to do this reliably. The only difference is that a novice would fail every single time he tried to write a contract, whereas an expert wouldn't even bother trying. 
+		This problem is so serious that it cannot be treated as a bug in the DAO. The problem is with Solidity itself, which is the scripting language used in Ethereum. Imagine a bright eyed and bushy-tailed new programmer writing his first big contract: &quot;Now let’s see here…” he thinks. “I’m using the send function. That means that I have to search for blocks of code that I’ve written which an attacker could attempt to run in an infinite loop until there is no money left. First of all, which possible blocks of code could be made to go in an infinite loop? It could be any part that calls send, intermixed with anything that the attacker wants to call in between… hmmm… &quot; You have to think this every time you send anyone money. It is totally ridiculous to expect anyone to do this reliably. The only difference is that a novice would fail every single time he tried to write a contract, whereas an expert wouldn't even bother trying.
 	</p>
 
 	<p>
@@ -108,7 +108,7 @@ hackMe[f] =
 	</p>
 
 	<p>
-		The <a href="http://solidity.readthedocs.io/en/latest/">manual on Solidity</a> opens with “Solidity is a high-level language whose syntax is similar to that of JavaScript”, as if that were something to brag about. But apparently Solidity has much more than just a superficial resemblance to JavaScript. Solidity is like programming in JavaScript, except with your bank account accessible through the Document Object Model. Oh, and in the case of the DOM, it's like that except that you legally agreed that anything your computer does is legally binding. 
+		The <a href="http://solidity.readthedocs.io/en/latest/">manual on Solidity</a> opens with “Solidity is a high-level language whose syntax is similar to that of JavaScript”, as if that were something to brag about. But apparently Solidity has much more than just a superficial resemblance to JavaScript. Solidity is like programming in JavaScript, except with your bank account accessible through the Document Object Model.
 	</p>
 
 	<p>
