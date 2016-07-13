@@ -37,7 +37,6 @@
                 <em>{{bp.title}}</em><br>
                 {{bp.excerpt}}
             </p>
-
             <p>
                 <a class="btn btn-primary" href="{{url_for('blogpost',slug=bp.slug)}}" role="button">
                     Read more &raquo;
@@ -66,7 +65,6 @@
             <p>
                 You can help us achieve our goals by donating today. Bitcoins only.
             </p>
-            <br>
             <p>
              <a class="btn btn-primary" href="bitcoin:{{donation_address()}}">Donate &raquo;</a>
             </p>
