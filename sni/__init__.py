@@ -10,6 +10,7 @@ from flask.ext.script import Manager
 from flask.ext.migrate import Migrate, MigrateCommand
 from flask.ext.cache import Cache
 from flaskext.markdown import Markdown
+from flask_flatpages import FlatPages
 import jinja2
 from datetime import datetime
 
@@ -30,6 +31,7 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 Markdown(app, extensions=['footnotes'])
+pages = FlatPages(app)
 
 manager = Manager(app)
 manager.add_command('db', MigrateCommand)
