@@ -27,9 +27,9 @@ is a lot of money around, but don't exactly know where it's coming from.
 
 I don’t see that there is a lot of use for some kind of general “blockchain
 technology” outside of its application in Bitcoin. In Bitcoin, the blockchain
-is way of solving the [double-spending
+is a way of solving the [double-spending
 problem](http://nakamotoinstitute.org/detecting-double-spending/) without
-priveging any party as to the creation of new units or of establishing a
+privileging any party as to the creation of new units or of establishing a
 consistent history. This is an extremely costly and complicated way of
 maintaining an accounting ledger. How often do I really need to do my
 accountancy in this way? I would say that it is only a good idea when the game
