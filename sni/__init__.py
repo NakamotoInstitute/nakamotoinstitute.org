@@ -29,7 +29,7 @@ app.jinja_loader = my_loader
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
-Markdown(app)
+Markdown(app, extensions=['footnotes'])
 
 manager = Manager(app)
 manager.add_command('db', MigrateCommand)
