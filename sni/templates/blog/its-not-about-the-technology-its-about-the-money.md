@@ -372,8 +372,7 @@ Clearly, if two currencies are virtually identical, such as Bitcoin and
 Litecoin, then whichever currency is bigger has the advantage. Recently,
 Litecoin’s price has decoupled from Bitcoin’s somewhat, so maybe people have
 finally figured this out. Once Litecoin loses its shared hallucination, no
-amount of sloganeering will bring it back.  [Can we have a litecoin chart
-here?]
+amount of sloganeering will bring it back. 
 
 But what about something more elaborate? Let’s pretend for a moment that
 Ethereum [actually
