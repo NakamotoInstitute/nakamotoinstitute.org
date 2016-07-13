@@ -5,7 +5,7 @@
 # Licensed under GNU Affero GPL (https://github.com/pierrerochard/SNI-private/blob/master/LICENSE)
 #
 
-from sni import app, db, cache
+from sni import app, db, cache, pages
 from models import Post, Email, Doc, ResearchDoc, Author, Format, Category,\
                    BlogPost, Skeptic, DonationAddress, Episode, Quote, QuoteCategory
 from flask import render_template, json, url_for, redirect, request, Response,\
@@ -386,8 +386,11 @@ def blogpost(slug):
     if slug == "appcoins-are-fraudulent":
         return redirect(url_for("blogpost", slug="appcoins-are-snake-oil"))
     bp = BlogPost.query.filter_by(slug=slug).order_by(desc(BlogPost.date)).first()
-    if(bp != None):
+    if bp:
         app.logger.info(str(request.remote_addr) + ', mempool, ' + slug)
+        page = pages.get(slug)
+        if page:
+            return render_template('blogpost-md.html', bp=bp, page=page, lang='en')
         return render_template('%s.html' % slug, bp=bp, lang='en')
     else:
         return redirect(url_for("blog"))

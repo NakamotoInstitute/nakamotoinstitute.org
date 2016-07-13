@@ -1,24 +1,7 @@
-<!-- extend base layout -->
-{% extends "blogpost.html" %}
-{% block post %}
-<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-	<div class="page-header">
-		<h1 class="text-center">
-			It's Not About the Technology, It's About the Money
-			<br>
-			<small>
-				Daniel Krawisz
-			</small>
-		</h1>
-		<h4 class="text-center">
-			July 13, 2016
-		</h4>
-		<p>
-			<img class="img-responsive center-block img-rounded" alt="Lyle Lanley sells blockchain tech" src="/static/img/mempool/its-not-about-the-technology-its-about-the-money/lyle-lanley-blockchain-technology.png"/>
-		</p>
-	</div>
+image: lyle-lanley-blockchain-technology.png
+image_alt: Lyle Lanley sells blockchain tech
+btc_address: 16oJGq7v5XXtYa4q6HEQUNT9obG3rpkDxT
 
-{% filter markdown %}
 ## Blockchain Technology
 
 The Bitcoin world is full of people who know nothing about economics or cryptography; they only know that they could have made millions if they had not sold at the bottom. These people tell themselves that they are redeemable, that Bitcoin is just the MySpace of cryptocurrencies, that they will have another opportunity to get in early on some other revolution. These people can be dangerous, but most of them are easily preyed upon.
@@ -141,16 +124,3 @@ If someone says “blockchain tech” to you, you might as well walk away right 
 [^4]: In the US, it is really congress and the executive branch changing the rules, and the Federal Reserve changing the supply. This distinction doesn’t really matter for the purposes of this article, but some people think it’s important because the federal reserve is designated as a private institution, whereas congress is composed of elected representatives.
 
 [^5]: This includes [Hillary Clinton](http://www.coindesk.com/presidential-candidate-hillary-clinton-pledges-support-blockchain-tech/).
-
-{% endfilter %}
-
-	<div class = "text-center">
-		<p>
-			<a class="btn btn-primary" href="bitcoin:16oJGq7v5XXtYa4q6HEQUNT9obG3rpkDxT">
-				Donate to Daniel
-			</a>
-		</p>
-	</div>
-
-</div>
-{%endblock%}
