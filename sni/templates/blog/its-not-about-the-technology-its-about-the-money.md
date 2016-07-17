@@ -59,15 +59,15 @@ overwhelmingly important.
 ## Money as a Hallucination
 
 The foundational fallacy about money is to explain in physical terms what is
-really a sociological phenomenon. Money is about macroeconomics even if we're
-talking about a small currency like Bitcoin. Gold is not valuable because it
+really a sociological phenomenon.[^3] Gold is not valuable because it
 is durable, fungible, portable, and scarce; it is valuable because of a
 beneficial and self-sustaining tradition in which it has a special place. The
 physical properties of gold make such a tradition possible, but they do not
 determine that it will arise; other goods with similar properties may also
-become the traditionally established good. Bitcoin is the same way, of course.
-It could not run without the technology behind it, but its value is what makes
-it important.  People who think "blockchain technology" is important are
+become the traditionally established monetary good. Bitcoin is the same way, of course.
+It could not run without the technology behind it, but what makes it important
+is the fact that it is seen as having value, thus making it exchangable for
+goods and services.  People who think "blockchain technology" is important are
 making the same kind of mistake as the people who think gold has intrinsic
 value.
 
@@ -134,7 +134,7 @@ expect a single money to dominate.
 ## The Risk of Money
 
 Money is often explained in terms of the inconvenience of trading in a barter
-system.[^3] While bartering might well be inconvenient, that alone is not
+system.[^4] While bartering might well be inconvenient, that alone is not
 enough to explain the existence of money. It would certainly be nice if we
 could all settle on a good to use as money.  However, there is no guarantee
 that everyone will be nice enough to do that. It is possible to imagine a
@@ -418,7 +418,7 @@ understand it. Everyone is affected by them, but most people will not bother
 to learn to understand them. They manage the currency in the national
 interest, which is not always the same thing as _your_ interest. They can
 change the rules about how the currency can be spent you can use them or
-increase the government’s supply. [^4] It is usually not possible to predict
+increase the government’s supply. [^5] It is usually not possible to predict
 what they will do, at least over long time spans.
 
 This is not possible under Bitcoin’s [current
@@ -462,7 +462,7 @@ started to do the wave, and you can bet on whether the wave will eventually
 fill up the entire stadium.
 
 If someone says “blockchain tech” to you, you might as well walk away right
-there.[^5] They’re just trying to sell you on their new
+there.[^6] They’re just trying to sell you on their new
 [decentralized](https://bitcoinism.liberty.me/decentralized-applications-its-time-for-an-intervention/)
 crowdfunded blockchain tech internet of bitthings appscam. You _know_ that
 they’re lying because everyone who acts like them is a liar and someone who
@@ -485,15 +485,21 @@ money so that they can keep believing that they are brilliant entrepreneurs.
 [^2]: “[do one thing and do it
 well](http://www.catb.org/esr/writings/taoup/html/ch01s06.html)”
 
-[^3]: When Austrian economists say _barter system_ all they mean is an economy
+[^3]: The theory I am presenting in this article is the Austrian theory of money.
+To learn more about this idea, consult any standard Austrian tome, such
+as Murary Rothbard's
+_[Man, Economy, and State](https://mises.org/library/man-economy-and-state-power-and-market)_
+or Mises's _[Human Action](https://mises.org/library/human-action-0)_.  
+
+[^4]: When Austrian economists say _barter system_ all they mean is an economy
 in which no good is used as money, even though the term has much more specific
 connotations for many people.
 
-[^4]: In the US, it is really congress and the executive branch changing the
+[^5]: In the US, it is really congress and the executive branch changing the
 rules, and the Federal Reserve changing the supply. This distinction doesn’t
 really matter for the purposes of this article, but some people think it’s
 important because the federal reserve is designated as a private institution,
 whereas congress is composed of elected representatives.
 
-[^5]: This includes [Hillary
+[^6]: This includes [Hillary
 Clinton](http://www.coindesk.com/presidential-candidate-hillary-clinton-pledges-support-blockchain-tech/).
