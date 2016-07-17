@@ -19,7 +19,7 @@
 	</div>
 
 	<p>
-		As <a href="https://twitter.com/jgarzik/status/736945669978525696">some have noted</a>, I did not understand Ethereum very well when I wrote my <a href="http://nakamotoinstitute.org/mempool/the-coming-demise-of-altcoins/">previous article</a> that touched on it. I dismissed Ethereum as just another altcoin with extra bells and whistles. However, there was a huge opportunity hiding in there, open to anyone who understood the system well enough. I wish I had examined it further and much more deeply because right now someone who did that, <a href= "http://pastebin.com/CcGUBgDG">someone whom I now admire</a>, is sitting on three million ethers.
+		As <a href="https://twitter.com/jgarzik/status/736945669978525696">some have noted</a>, I did not understand Ethereum very well when I wrote my <a href="http://nakamotoinstitute.org/mempool/the-coming-demise-of-altcoins/">previous article</a> that touched on it. I dismissed Ethereum as just another altcoin with extra bells and whistles. However, there was a huge opportunity hiding in there, open to anyone who understood the system well enough. I wish I had examined it further and much more deeply because right now someone who did that, <a href= "http://pastebin.com/CcGUBgDG">someone whom I now admire</a>, is sitting on three million ethers. <em>Update:</em> the not is <a href="https://news.ycombinator.com/item?id=11927891">probably not</a> from the real hacker. I still agree with its argument.
 	</p>
 
 	<p>
@@ -100,7 +100,21 @@ hackMe[f] =
 	</p>
 
 	<p>
-		This problem is so serious that it cannot be treated as a bug in the DAO. The problem is with Solidity itself, which is the scripting language used in Ethereum. Imagine a bright eyed and bushy-tailed new programmer writing his first big contract: &quot;Now let’s see here…” he thinks. “I’m using the send function. That means that I have to search for blocks of code that I’ve written which an attacker could attempt to run in an infinite loop until there is no money left. First of all, which possible blocks of code could be made to go in an infinite loop? It could be any part that calls send, intermixed with anything that the attacker wants to call in between… hmmm… &quot; You have to think this every time you send anyone money. It is totally ridiculous to expect anyone to do this reliably. The only difference is that a novice would fail every single time he tried to write a contract, whereas an expert wouldn't even bother trying.
+		This problem is so serious that it cannot be treated as a bug in the DAO. The problem is with <s>Solidity itself, which is the scripting language used in Ethereum.</s> <em>Update:</em> The problem actually all the way down to the Ethereum virtual machine.  While reading the Solidity documentation, I noticed this: 
+	</p>
+	
+	<blockquote>
+		<p>
+			If <code>x</code> is a contract address, its code (more specifically: its fallback function, if present) will be executed together with the <code>send</code> call (this is a limitation of the EVM and cannot be prevented).
+		</p>
+	</blockquote>
+	
+	<p>
+		This means the same issue exists in <a href="https://mc2-umd.github.io/ethereumlab/docs/serpent_tutorial.pdf">Serpent</a>, another Ethereum scripting language, and every other one they might come up with.  
+	</p>
+	
+	<p>
+		Imagine a bright eyed and bushy-tailed new programmer writing his first big contract: &quot;Now let’s see here…” he thinks. “I’m using the send function. That means that I have to search for blocks of code that I’ve written which an attacker could attempt to run in an infinite loop until there is no money left. First of all, which possible blocks of code could be made to go in an infinite loop? It could be any part that calls send, intermixed with anything that the attacker wants to call in between… hmmm… &quot; You have to think this every time you send anyone money. It is totally ridiculous to expect anyone to do this reliably. The only difference is that a novice would fail every single time he tried to write a contract, whereas an expert wouldn't even bother trying.
 	</p>
 
 	<p>
