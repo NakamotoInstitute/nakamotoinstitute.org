@@ -374,10 +374,10 @@ Litecoin’s price has decoupled from Bitcoin’s somewhat, so maybe people have
 finally figured this out. Once Litecoin loses its shared hallucination, no
 amount of sloganeering will bring it back.
 
-<p class="text-center">
+<div class="article-image">
 	<img class="img-responsive center-block img-rounded" src="/static/img/mempool/its-not-about-the-technology-its-about-the-money/litecoin-prices-all-time.png">
-	<em>Litecoin prices, all-time (via <a href="http://coinmarketcap.com/currencies/litecoin/">CoinMarketCap</a>)</em>
-</p>
+	<p><em>Litecoin prices, all-time (via <a href="http://coinmarketcap.com/currencies/litecoin/">CoinMarketCap</a>)</em></p>
+</div>
 
 But what about something more elaborate? Let’s pretend for a moment that
 Ethereum [actually

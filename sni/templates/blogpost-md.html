@@ -16,6 +16,7 @@
 		</p>
 	</div>
   {{ page.html|safe }}
+	{% if page.meta.btc_address %}
   <div class = "text-center">
     <p>
       <a class="btn btn-primary" href="bitcoin:{{page.meta.btc_address}}">
@@ -23,6 +24,7 @@
       </a>
     </p>
   </div>
+	{% endif %}
 
 </div>
 {%endblock%}
