@@ -487,9 +487,9 @@ well](http://www.catb.org/esr/writings/taoup/html/ch01s06.html)”
 
 [^3]: The theory I am presenting in this article is the Austrian theory of money.
 To learn more about this idea, consult any standard Austrian tome, such
-as Murary Rothbard's 
-<a href="https://mises.org/library/man-economy-and-state-power-and-market">Man, Economy, and State</a> 
-or Mises's <a href="https://mises.org/library/human-action-0">Human Action</a>.  
+as Murary Rothbard's
+_[Man, Economy, and State](https://mises.org/library/man-economy-and-state-power-and-market)_
+or Mises's _[Human Action](https://mises.org/library/human-action-0)_.  
 
 [^4]: When Austrian economists say _barter system_ all they mean is an economy
 in which no good is used as money, even though the term has much more specific
