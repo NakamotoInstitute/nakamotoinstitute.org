@@ -25,9 +25,9 @@ because the price will rapidly tend to zero.
 
 A stock is a contract between owners of an enterprise which grants its bearers
 the right to a portion of the liquidation value of the company and to any
-dividends that it offers. Consequently, there is a logical connection between
-the growth of the company and the value of the stock. The higher the
-probability that a company will increase the value of its net assets, the
+dividends that it offers. Consequently, there is a reason expect growth of the 
+company to increase the price of its stock. The higher the probability that a 
+company will increase the value of its net assets, the
 higher the expected price of its stock, and vice versa. Hence, a stock can be
 a perfectly legitimate investment if the company issuing it is not fraudulent.
 
