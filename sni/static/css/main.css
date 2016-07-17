@@ -69,6 +69,12 @@ body {
     margin-top: 0px;
 }
 
+.article-image {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
 /** Responsive YouTube embedding **/
 
 .flex-video {
@@ -79,10 +85,10 @@ body {
   margin-bottom: 16px;
   overflow: hidden;
 }
- 
+
 .flex-video.widescreen { padding-bottom: 57.25%; }
 .flex-video.vimeo { padding-top: 0; }
- 
+
 .flex-video iframe,
 .flex-video object,
 .flex-video embed {
