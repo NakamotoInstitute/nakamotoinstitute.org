@@ -406,6 +406,9 @@ def blogposttrans(slug, lang):
             return redirect(url_for("blogpost", slug=slug))
         else:
             app.logger.info(str(request.remote_addr) + ', mempool, ' + slug+'-'+lang)
+            page = pages.get('%s-%s' % (slug, lang))
+            if page:
+                return render_template('blogpost-md.html', bp=bp, page=page, lang=lang)
             return render_template('%s-%s.html' % (slug, lang), bp=bp, lang=lang)
     else:
         return redirect(url_for("blog"))
