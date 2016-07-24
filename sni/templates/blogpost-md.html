@@ -10,10 +10,12 @@
 			<small>{{bp.author[0].first}} {{bp.author[0].middle}} {{bp.author[0].last}}</small>
 		</h1>
     <h4 class="text-center">{{bp.date.strftime('%B %d, %Y')}}</h4>
+		{% if page.meta.image %}
     <br>
 		<p>
 			<img class="img-responsive center-block img-rounded" alt="{{page.meta.image_alt}}" src="/static/img/mempool/{{bp.slug}}/{{page.meta.image}}"/>
 		</p>
+		{% endif %}
 	</div>
   {{ page.html|safe }}
 	{% if page.meta.btc_address %}
