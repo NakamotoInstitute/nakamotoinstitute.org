@@ -784,5 +784,16 @@
         "categories": ["cryptography", "economics"],
         "doctype": "essay",
         "external": "http://www.ibuc.com/pdfs/Geoecon.pdf"
+    },
+    {
+        "id": 77,
+        "title": "Bitcoin, the end of the Taboo on Money",
+        "author": ["jaromil"],
+        "date": "2013",
+        "slug": "end-of-taboo",
+        "formats": ["pdf", "ext"],
+        "categories":["Cypherpunk", "social sciences"],
+        "doctype": "essay",
+        "external": "https://files.dyne.org/readers/Bitcoin_end_of_taboo_on_money.pdf"
     }]
 }
