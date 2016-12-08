@@ -784,5 +784,16 @@
         "categories": ["cryptography", "economics"],
         "doctype": "essay",
         "external": "http://www.ibuc.com/pdfs/Geoecon.pdf"
+    },
+    {
+        "id": 77,
+        "title": "A Declaration of the Independence of Cyberspace",
+        "author": ["john-perry-barlow"],
+        "date": "February 8, 1996",
+        "slug": "cyberspace-independence",
+        "formats": ["html", "ext"],
+        "categories": ["cryptography"],
+        "doctype": "essay",
+        "external": "https://www.eff.org/cyberspace-independence"
     }]
 }
