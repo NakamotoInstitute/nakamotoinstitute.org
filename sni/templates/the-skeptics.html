@@ -33,11 +33,11 @@ The Skeptics: A Tribute to Bold Assertions | Satoshi Nakamoto Institute
       </p>
       <ul>
         {% for link in skeptic.link.split(", ") %}
-          <li><a href="{{link}}">{{link}}</a></li>
+          <li><a href="{{link}}" target="_blank">{{link}}</a></li>
         {%endfor%}
       </ul>
     {% else %}
-      <h4><a href="{{skeptic.link}}">{{skeptic.article}}</a> (<em>{{skeptic.source}}</em>)</h4>
+      <h4><a href="{{skeptic.link}}" target="_blank">{{skeptic.article}}</a> (<em>{{skeptic.source}}</em>)</h4>
       {% if skeptic.excerpt %}
       <p>
         <em>{{skeptic.excerpt|safe}}</em><br>
@@ -45,7 +45,7 @@ The Skeptics: A Tribute to Bold Assertions | Satoshi Nakamoto Institute
       {% endif %}
       {% if skeptic.waybacklink %}
       <p>
-        <a href="{{skeptic.waybacklink}}">Archive Link</a>
+        <a href="{{skeptic.waybacklink}}" target="_blank">Archive Link</a>
       </p>
       {% endif %}
     {% endif %}
