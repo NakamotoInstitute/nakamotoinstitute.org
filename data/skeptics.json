@@ -395,5 +395,17 @@
 		"link": "https://www.washingtonpost.com/news/innovations/wp/2016/01/19/r-i-p-bitcoin-its-time-to-move-on/",
 		"waybacklink": "http://archive.is/sN9w4",
 		"slug": "vivek-wadhwa"
+	},
+	{
+		"name": "Dan McCrum",
+		"title": "Editor, Financial Times",
+		"article": "Bitcoin passes $1,000 but only number that matters is zero",
+		"date": "January 3, 2017",
+		"source": "Financial Times",
+		"excerpt": "As a phenomenon bitcoin has all the attributes of a pyramid scheme, requiring a constant influx of converts to push up the price, based on the promise of its use by future converts. So the ultimate value for bitcoin will be the same as all pyramid schemes: zero.",
+		"price": "$1034.34",
+		"link": "https://www.ft.com/content/b5d66ed8-d1b3-11e6-b06b-680c49b4b4c0",
+		"waybacklink": "https://archive.is/ERZIq",
+		"slug": "dan-mccrum"
 	}]
 }
