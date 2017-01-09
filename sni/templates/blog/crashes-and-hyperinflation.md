@@ -252,9 +252,10 @@ more immediate need to reduce risk from investments rather than from
 demonetization. There is even a natural price for money. It is not like an
 ordinary price, which is the ratio by which two goods are exchanged. But you
 can think of the price of money as being the ratio of the total supply of
-money to some measure of the value of all investments in the economy. [In the
+money to some measure of the value of all investments in the economy. (In the
 real world, there are many different numbers that one could use to represent
-this price.  ...]
+this price because people can disagree about how to correctly measure each of
+these.)
 
 ## Changes to the Supply of Money
 
