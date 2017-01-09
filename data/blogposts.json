@@ -1,6 +1,15 @@
 {
   "blogposts": [
     {
+      "title": "Crashes and Hyperinflation",
+      "author": "daniel-krawisz",
+      "date": "January 8, 2017",
+      "added": "January 8, 2017",
+      "slug": "crashes-and-hyperinflation",
+      "excerpt": "This article is about how money interacts with the rest of the economy after it has matured and about how mismanagement by an issuer can cause it to fail.",
+      "languages": "en"
+    },
+    {
       "title": "Who Controls Ethereum?",
       "author": "daniel-krawisz",
       "date": "August 7, 2016",
