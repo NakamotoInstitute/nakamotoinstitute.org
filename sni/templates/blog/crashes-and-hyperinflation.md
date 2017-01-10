@@ -87,11 +87,11 @@ One thing that confused people a lot about Bitcoin in the very early days was
 how could it possibly be valuable, given that it’s nothing but a bunch of
 numbers in computers. It’s not that people were foolish to think that Bitcoin
 wasn’t valuable back then; actually they were foolish for not asking the same
-question about _all_ forms of money. For already at that time paying real
-dollars for numbers in a computer (World of Warcraft gold or Farmville
-upgrades), and most real dollars were by that time _also_ nothing more than
-numbers in a computer. Thus, there was nothing special about Bitcoin as a form
-of money.
+question about _all_ forms of money. For already at that time people were
+paying real dollars for numbers in a computer (World of Warcraft gold or
+Farmville upgrades), and most real dollars were by that time _also_ nothing
+more than numbers in a computer. Thus, there was nothing special about Bitcoin
+as a form of money.
 
 What prevents us all from just throwing our dollar bills on the ground and
 saying, “These were all just pieces of paper all along! Why did I ever think
@@ -112,13 +112,14 @@ it.
 In order for the value of money to go up, people have to want to hold more of
 it at a time or hold it for longer periods of time. In other words, the value
 of money is caused by its demand for use as savings instead. Someone can live
-hand-to-mouth have only an amount of money they need on hand for the immediate
-future. Other people can have a large savings but still spend roughly same
-amount that they earn. Other people can spend less or more than what they earn
-in order to increase or decrease their savings. The value of money can be
-understood in terms of the reasons that make people want a lot of savings or a
-little, and changes to the value of money, both slow and rapid, can be
-explained in terms of reasons that change how much people value their savings.
+hand-to-mouth and have only an amount of money they need on hand for the
+immediate future. Other people can have a large savings but still spend
+roughly same amount that they earn. Other people can spend less or more than
+what they earn in order to increase or decrease their savings. The value of
+money can be understood in terms of the reasons that make people want a lot of
+savings or a little, and changes to the value of money, both slow and rapid,
+can be explained in terms of reasons that change how much people value their
+savings.
 
 ## A Function of Savings
 
@@ -286,14 +287,17 @@ investors cannot because they have reduced their savings. The inflator cannot
 because prices have risen and production cannot be diverted as easily as
 before. Thus, although the inflator appears, to the rest of the economy, like
 an investor with a lot of cash on hand, the economy is not safe. It is
-overinvested.  ## Failure to Remain a Safe Haven A crash occurs when an
-unstable market sustains an error that spreads throughout like a row of
-dominos and investors flee back into cash. In order for a demonetization event
-to occur, the currency risk must remain greater than the stock market risk,
-even as more and more investors pile into stocks.  The scenario I described
-above is possible, but it is kind of weird because it describes a
-demonetization event with no cause other than one lone investor with very
-infectious paranoia.
+overinvested.
+
+## Failure to Remain a Safe Haven
+
+A crash occurs when an unstable market sustains an error that spreads
+throughout like a row of dominos and investors flee back into cash. In order
+for a demonetization event to occur, the currency risk must remain greater
+than the stock market risk, even as more and more investors pile into stocks.
+The scenario I described above is possible, but it is kind of weird because it
+describes a demonetization event with no cause other than one lone investor
+with very infectious paranoia.
 
 However, with the right inflation schedule, an inflator can cause this to
 happen. The greater the rate of inflation, the more will investors prefer the
