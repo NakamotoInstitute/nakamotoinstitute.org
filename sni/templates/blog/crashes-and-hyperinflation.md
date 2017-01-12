@@ -143,7 +143,8 @@ its future production. It is difficult to maintain the right balance because
 circumstances are constantly changing and uncertain, so even fundamentally
 sound businesses sometimes end up in an immediate need for cash. When that
 happens the business’s stock price goes down because their risk of insolvency
-goes up. They may also be willing to take out a loan at a very favorable rate.
+goes up. They may also be willing to take out a loan at a very favorable rate
+for the lender. 
 An investor with cash on hand can help an otherwise worthwhile business
 survive by taking care of their immediate expenses and in return can buy the
 stock at a good value or earn a good rate of interest off a bond.
