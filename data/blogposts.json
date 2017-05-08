@@ -1,6 +1,15 @@
 {
   "blogposts": [
     {
+      "title": "Why the Bitcoin Dominance Index is Deceiving",
+      "author": "jimmy-song",
+      "date": "May 8, 2017",
+      "added": "May 8, 2017",
+      "slug": "why-the-bitcoin-dominance-index-is-deceiving",
+      "excerpt": "Like with most things, Bitcoin Dominance is a very crude metric and one that’s unfortunately very easy to manipulate. The recent enthusiasm for ICOs has made the manipulation even worse and continues to hide the fact that Bitcoin is doing really well.",
+      "languages": "en"
+    },
+    {
       "title": "Crashes and Hyperinflation",
       "author": "daniel-krawisz",
       "date": "January 8, 2017",
