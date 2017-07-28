@@ -373,18 +373,6 @@
     "slug": "anthony-watson-and-halsey-minor"
   },
   {
-    "name": "Jamie Dimon",
-    "title": "Chairman & CEO, JPMorgan Chase",
-    "article": "JPMorgan Chase Chairman & CEO Jamie Dimon Live from Davos on CNBC's "Squawk on the Street" Today",
-    "date": "January 20, 2016",
-    "source": "CNBC",
-    "excerpt": "Bitcoin, the currency, I think is going to go nowhere....There is nothing behind a Bitcoin.",
-    "price": "$394.69",
-    "link": "http://www.cnbc.com/2016/01/20/cnbc-transcript-jpmorgan-chase-chairman-ceo-jamie-dimon-live-from-davos-on-cnbcs-squawk-on-the-street-today.html",
-    "waybacklink": "https://web.archive.org/web/20160817061928/http://www.cnbc.com/2016/01/20/cnbc-transcript-jpmorgan-chase-chairman-ceo-jamie-dimon-live-from-davos-on-cnbcs-squawk-on-the-street-today.html",
-    "slug": "jamie-dimon"
-  },
-  {
     "name": "Mike Hearn",
     "title": "Lead Platform Engineer, R3CV",
     "article": "The resolution of the Bitcoin experiment",
@@ -422,7 +410,7 @@
 	},
 	{
 		"name": "Timothy B. Lee",
-		"title": "Senior correspondent, technology and economics, Lead writer for "New Money", Vox Media",
+		"title": "Senior correspondent, technology and economics, Lead writer for \"New Money\", Vox Media",
 		"article": "Bitcoin was supposed to change the world. What happened?",
 		"date": "November 21, 2016",
 		"source": "Vox Media",
@@ -430,7 +418,7 @@
 		"price": "$736.72",
 		"link": "https://www.vox.com/new-money/2016/11/21/13669662/bitcoin-ethereum-future-explained",
 		"waybacklink": "https://web.archive.org/web/20170207210258/http://www.vox.com/new-money/2016/11/21/13669662/bitcoin-ethereum-future-explained",
-		"slug": "tim-lee"
+		"slug": "timothy-b-lee"
 	},
 	{
 		"name": "Dan McCrum",
