@@ -11,7 +11,7 @@
 		"link": "https://www.youtube.com/watch?v=DoK8HXMSsNg",
 		"waybacklink": "",
 		"slug": "niels-van-der-linden"
-	},
+	},	
   {
     "name": "Peter Schiff",
     "title": "CEO, Euro Pacific Capital, Inc.",
@@ -373,6 +373,18 @@
     "slug": "anthony-watson-and-halsey-minor"
   },
   {
+    "name": "Jamie Dimon",
+    "title": "Chairman & CEO, JPMorgan Chase",
+    "article": "JPMorgan Chase Chairman & CEO Jamie Dimon Live from Davos on CNBC's "Squawk on the Street" Today",
+    "date": "January 20, 2016",
+    "source": "CNBC",
+    "excerpt": "Bitcoin, the currency, I think is going to go nowhere....There is nothing behind a Bitcoin.",
+    "price": "$394.69",
+    "link": "http://www.cnbc.com/2016/01/20/cnbc-transcript-jpmorgan-chase-chairman-ceo-jamie-dimon-live-from-davos-on-cnbcs-squawk-on-the-street-today.html",
+    "waybacklink": "https://web.archive.org/web/20160817061928/http://www.cnbc.com/2016/01/20/cnbc-transcript-jpmorgan-chase-chairman-ceo-jamie-dimon-live-from-davos-on-cnbcs-squawk-on-the-street-today.html",
+    "slug": "jamie-dimon"
+  },
+  {
     "name": "Mike Hearn",
     "title": "Lead Platform Engineer, R3CV",
     "article": "The resolution of the Bitcoin experiment",
@@ -409,6 +421,18 @@
 		"slug": "jeremy-allaire"
 	},
 	{
+		"name": "Timothy B. Lee",
+		"title": "Senior correspondent, technology and economics, Lead writer for "New Money", Vox Media",
+		"article": "Bitcoin was supposed to change the world. What happened?",
+		"date": "November 21, 2016",
+		"source": "Vox Media",
+		"excerpt": "What went wrong? The Bitcoin community has been hampered by a dysfunctional culture that has grown increasingly hostile toward experimentation. That has made it difficult for the Bitcoin network to keep up with changing market demands...Bitcoin's larger problem may be that it just doesn’t solve any problems normal people have.",
+		"price": "$736.72",
+		"link": "https://www.vox.com/new-money/2016/11/21/13669662/bitcoin-ethereum-future-explained",
+		"waybacklink": "https://web.archive.org/web/20170207210258/http://www.vox.com/new-money/2016/11/21/13669662/bitcoin-ethereum-future-explained",
+		"slug": "tim-lee"
+	},
+	{
 		"name": "Dan McCrum",
 		"title": "Editor, Financial Times",
 		"article": "Bitcoin passes $1,000 but only number that matters is zero",
@@ -419,5 +443,18 @@
 		"link": "https://www.ft.com/content/b5d66ed8-d1b3-11e6-b06b-680c49b4b4c0",
 		"waybacklink": "https://archive.is/ERZIq",
 		"slug": "dan-mccrum"
-	}]
+	},
+	{
+		"name": "Howard Marks",
+		"title": "Co-chairman, Oaktree Capital",
+		"article": "Billionaire investor Marks, who called the dotcom bubble, says bitcoin is a 'pyramid scheme'",
+		"date": "July 26, 2017",
+		"source": "CNBC",
+		"excerpt": "In my view, digital currencies are nothing but an unfounded fad (or perhaps even a pyramid scheme), based on a willingness to ascribe value to something that has little or none beyond what people will pay for it.",
+		"price": "$2522.70",
+		"link": "http://www.cnbc.com/2017/07/26/billionaire-investor-marks-who-called-the-dotcom-bubble-says-bitcoin-is-a-pyramid-scheme.html",
+		"waybacklink": "https://web.archive.org/web/20170727003853/http://www.cnbc.com/2017/07/26/billionaire-investor-marks-who-called-the-dotcom-bubble-says-bitcoin-is-a-pyramid-scheme.html",
+		"slug": "howard-marks"
+	}
+	]
 }
