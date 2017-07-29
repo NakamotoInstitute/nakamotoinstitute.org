@@ -1,6 +1,15 @@
 {
   "blogposts": [
     {
+      "title": "Against the Minimum Majority Measure",
+      "author": "david-a-harding",
+      "date": "July 28, 2017",
+      "added": "July 29, 2017",
+      "slug": "against-the-minimum-majority-measure",
+      "excerpt": "I personally suspect that Bitcoin’s steadily improving privacy will prevent us from ever measuring decentralization in a truly objective way. Losing easy quantification but gaining stronger privacy seems like a good tradeoff to me.",
+      "languages": "en"
+    },
+    {
       "title": "Why the Bitcoin Dominance Index is Deceiving",
       "author": "jimmy-song",
       "date": "May 8, 2017",
