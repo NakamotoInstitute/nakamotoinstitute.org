@@ -44,9 +44,11 @@ Given that we will hopefully work towards making these things harder to measure 
 
 ## 3\. Not objective
 
-One of the touted advantages of the minimum majority measure is that it’s objective—but it’s not. Given that things such as miner names, full node versions, developer commit listings, full node IP addresses, and exchange volume can be faked, one needs to _subjectively_ adjust for that possible faking.
+Given that things such as miner names, full node versions, developer commit listings, full node IP addresses, and exchange volume can be faked, one needs to _subjectively_ adjust for that possible faking. This makes measurements more arbitrary and comparisons more difficult.
 
-For example, 21’s own bitnodes node monitoring service, which is used as the source for two of the measurements, only counts nodes that accept receiving connections. By some [measurements](http://luke.dashjr.org/programs/bitcoin/files/charts/software.html), this represents less that 5% of the total node count—but that alternative measurement [has its own problems](https://twitter.com/hrdng/status/884507512862593025) which need to be corrected for.
+For example, 21’s own [bitnodes](https://bitnodes.21.co/) node monitoring service, which is used as the source for two of the measurements, only counts nodes that accept receiving connections. By some [measurements](http://luke.dashjr.org/programs/bitcoin/files/charts/software.html), this represents less that 5% of the total node count—but that alternative measurement [has its own problems](https://twitter.com/hrdng/status/884507512862593025) which need to be corrected for.
+
+_Edit: This section was slightly rephrased to address a [concern](https://twitter.com/balajis/status/891438172248223744) from the original authors about the phrase “objective”. ([diff](https://dtrt.org/aux/minimum-majority-measure-diff1.html))_
 
 ## 4\. Why we need decentralization (the main point)
 
