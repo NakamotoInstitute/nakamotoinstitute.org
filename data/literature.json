@@ -795,5 +795,16 @@
         "categories": ["cryptography"],
         "doctype": "essay",
         "external": "https://www.eff.org/cyberspace-independence"
+    },
+    {
+        "id": 78,
+        "title": "Smart Contracts Glossary",
+        "author": ["nick-szabo"],
+        "date": "1995",
+        "slug": "smart-contracts-glossary",
+        "formats": ["html", "ext"],
+        "categories": ["cryptography", "economics", "law"],
+        "doctype": "essay",
+        "external": "http://web.archive.org/web/20160620184813/http://szabo.best.vwh.net/smart_contracts_glossary.html"
     }]
 }
