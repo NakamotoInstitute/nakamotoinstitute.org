@@ -456,7 +456,6 @@
 		"waybacklink": "https://web.archive.org/web/20170727003853/http://www.cnbc.com/2017/07/26/billionaire-investor-marks-who-called-the-dotcom-bubble-says-bitcoin-is-a-pyramid-scheme.html",
 		"slug": "howard-marks"
 	},
-    
 	{
 		"name": "Kenneth Rogoff",
 		"title": "Professor of Economics and Public Policy, Harvard University; Former Chief Economist, IMF",
@@ -469,17 +468,17 @@
 		"waybacklink": "http://web.archive.org/web/20171009143553/https://www.theguardian.com/technology/news-blog/2017/oct/09/bitcoin-price-bubble-government-cryptocurrency",
 		"slug": "kenneth-rogoff"
 	},
-      {
-        "name": "Al-Waleed Bin Talal bin Abdulaziz al Saud",
-        "title": "Citigroup shareholder",
-        "article": "Prince Alwaleed says bitcoin will implode: 'Enron in the making'",
-        "date": "October 23, 2017",
-        "source": "CNBC",
-        "excerpt": "I just don't believe in this bitcoin thing. I think it's just going to implode one day. I think this is Enron in the making.",
-        "price": "$6018.02",
-        "link": "http://fortune.com/2017/10/23/bitcoin-price-enron-saudi-prince/",
-        "waybacklink": "http://web.archive.org/web/20171023122414/https://www.cnbc.com/2017/10/23/prince-alwaleed-says-bitcoin-will-implode-enron-in-the-making.html",
-        "slug": "al-waleed"
-      }
+	{
+		"name": "Al-Waleed Bin Talal bin Abdulaziz al Saud",
+		"title": "Citigroup shareholder",
+		"article": "Prince Alwaleed says bitcoin will implode: 'Enron in the making'",
+		"date": "October 23, 2017",
+		"source": "CNBC",
+		"excerpt": "I just don't believe in this bitcoin thing. I think it's just going to implode one day. I think this is Enron in the making.",
+		"price": "$6018.02",
+		"link": "http://fortune.com/2017/10/23/bitcoin-price-enron-saudi-prince/",
+		"waybacklink": "http://web.archive.org/web/20171023122414/https://www.cnbc.com/2017/10/23/prince-alwaleed-says-bitcoin-will-implode-enron-in-the-making.html",
+		"slug": "al-waleed"
+	}
 	]
 }
