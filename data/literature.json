@@ -817,5 +817,16 @@
         "categories": ["cryptography", "economics"],
         "doctype": "essay",
         "external": "http://web.archive.org/web/20140306124328/finney.org/~hal/pay_remail.html"
+    },
+    {
+        "id": 80,
+        "title": "Politics vs Technology",
+        "author": ["hal-finney"],
+        "date": "January 2, 1994",
+        "slug": "politics-vs-technology",
+        "formats": ["html", "ext"],
+        "categories": ["cryptography", "economics", "politics"],
+        "doctype": "essay",
+        "external": "http://web.archive.org/web/20130513043046/http://finney.org/~hal/pol_v_tech.html"
     }]
 }
