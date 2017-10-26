@@ -806,5 +806,16 @@
         "categories": ["cryptography", "economics", "law"],
         "doctype": "essay",
         "external": "http://web.archive.org/web/20160620184813/http://szabo.best.vwh.net/smart_contracts_glossary.html"
+    },
+    {
+        "id": 79,
+        "title": "For-Pay Remailers",
+        "author": ["hal-finney"],
+        "date": "October 28, 1994",
+        "slug": "for-pay-remailers",
+        "formats": ["html", "ext"],
+        "categories": ["cryptography", "economics"],
+        "doctype": "essay",
+        "external": "http://web.archive.org/web/20140306124328/finney.org/~hal/pay_remail.html"
     }]
 }
