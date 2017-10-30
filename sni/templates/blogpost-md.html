@@ -5,11 +5,11 @@
 <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
 	<div class="page-header">
 		<h1 class="text-center">
-      {{ bp.title }}
+      {{ page.meta.translated_title or bp.title }}
 			<br>
 			<small>{{bp.author[0].first}} {{bp.author[0].middle}} {{bp.author[0].last}}</small>
 		</h1>
-    <h4 class="text-center">{{bp.date.strftime('%B %d, %Y')}}</h4>
+    <h4 class="text-center">{{page.meta.translated_date or bp.date.strftime('%B %d, %Y')}}</h4>
 		{% if page.meta.original_link %}
 		<p class="text-center">
       <em>First published on <a href="{{ page.meta.original_link }}">{{ page.meta.original_site }}</a></em>

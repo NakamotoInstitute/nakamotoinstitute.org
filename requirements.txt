@@ -15,11 +15,10 @@ lxml==3.4.1
 Mako==0.9.1
 Markdown==2.6.1
 MarkupSafe==0.19
-psycopg2==2.5.2
+psycopg2==2.7.3.1
 python-dateutil==2.2
 pytz==2014.10
 PyYAML==3.11
 six==1.5.2
 SQLAlchemy==0.9.3
 Werkzeug==0.9.4
-wheel==0.24.0
