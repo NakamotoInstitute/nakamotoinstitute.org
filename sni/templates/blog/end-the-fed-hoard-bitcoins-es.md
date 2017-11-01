@@ -1,9 +1,11 @@
+translated_title: "Eliminar la Fed: Acaparar Bitcoins"
+translated_date: 19 de febrero de 2013
 image: bitcoin.png
 image_alt: Bitcoin
 
-La estrategia libertaria para socavar las [monedas fiat] (https://es.wikipedia.org/wiki/Dinero_fiduciario) o fiduciarias siempre se ha enfocado en [hacer viables las alternativas del oro y la plata](http://constitution.org/mon/greenspan_gold.htm). Este esfuerzo ha fracasado porque es imposible competirle a una moneda digital (como el dólar) con un “commodity” físico, debido a los altos costos de transacción que se asocian a éstos últimos. La única forma en que los metales preciosos podrían triunfar es si el fiat fracasa. Aunque pueda ocurrir que las monedas fiat inevitablemente colapsen en el largo plazo, esperar que esta posibilidad ocurra es algo inaceptable considerando la magnitud del daño que los bancos centrales están infligiendo a la [acumulación de capital de la humanidad](http://mises.org/efandi/ch4.asp).
+La estrategia libertaria para socavar las [monedas fiat](https://es.wikipedia.org/wiki/Dinero_fiduciario) o fiduciarias siempre se ha enfocado en [hacer viables las alternativas del oro y la plata](http://constitution.org/mon/greenspan_gold.htm). Este esfuerzo ha fracasado porque es imposible competirle a una moneda digital (como el dólar) con un “commodity” físico, debido a los altos costos de transacción que se asocian a éstos últimos. La única forma en que los metales preciosos podrían triunfar es si el fiat fracasa. Aunque pueda ocurrir que las monedas fiat inevitablemente colapsen en el largo plazo, esperar que esta posibilidad ocurra es algo inaceptable considerando la magnitud del daño que los bancos centrales están infligiendo a la [acumulación de capital de la humanidad](http://mises.org/efandi/ch4.asp).
 
-El mantra de aprobar [una legislación para auditar a la Reserva Federal de los Estados Unidos](http://en.wikipedia.org/wiki/Federal_Reserve_Transparency_Act), enlodándola en escándalo, y “[legalizando la competencia de monedas](http://www.freedomworks.org/blog/jborowski/legalize-competing-currencies)”, ignora [la economía de la elección pública](http://es.wikipedia.org/wiki/Teor%C3%ADa_de_la_elecci%C3%B3n_p%C3%BAblica), como también ignora el hecho de que las monedas fiat digitales ya ganaron la competencia contra los metales preciosos, y lo volverían a hacer. No necesitamos otra solución política a un problema económico. Lo que necesitamos es una moneda más competitiva en el mercado. Aparece [Bitcoin](http://es.wikipedia.org/wiki/Bitcoin). 
+El mantra de aprobar [una legislación para auditar a la Reserva Federal de los Estados Unidos](http://en.wikipedia.org/wiki/Federal_Reserve_Transparency_Act), enlodándola en escándalo, y “[legalizando la competencia de monedas](http://www.freedomworks.org/blog/jborowski/legalize-competing-currencies)”, ignora [la economía de la elección pública](http://es.wikipedia.org/wiki/Teor%C3%ADa_de_la_elecci%C3%B3n_p%C3%BAblica), como también ignora el hecho de que las monedas fiat digitales ya ganaron la competencia contra los metales preciosos, y lo volverían a hacer. No necesitamos otra solución política a un problema económico. Lo que necesitamos es una moneda más competitiva en el mercado. Aparece [Bitcoin](http://es.wikipedia.org/wiki/Bitcoin).
 
 Los bajos costos de transacción convierten a Bitcoin en el medio de intercambio más competitivo en la historia de la humanidad, y puede que una moneda con costos de transacción aún más bajos sea algo teóricamente imposible. Para aprender más sobre los bitcoins les recomiendo nuestra excelente [selección de textos](http://themisescircle.org/blog/2013/01/25/a-bitcoin-reader/).
 
@@ -20,7 +22,7 @@ Bitcoin está reemplazando lentamente a los medios de intercambio fiat y metáli
 Esta transición es acelerada por los nuevos intermediarios, como [Coinbase](https://coinbase.com/about), que están disminuyendo el costo de vender monedas fiat por bitcoins. Al mismo tiempo que la demanda aumenta, la inflación de bitcoin se reduce considerablemente debido a [la reducción a la mitad de la recompensa del bloque](http://bitcoinmagazine.com/block-reward-halving-a-guide/):
 
 <div class="article-image">
-  <img class="img-responsive center-block" alt="Bitcoin Inflation" src="/static/img/mempool/end-the-fed-hoard-bitcoins/Bitcoin-Inflation.jpg"/>
+  <img class="img-responsive center-block" alt="Bitcoin Inflation" src="/static/img/mempool/end-the-fed-hoard-bitcoins/Bitcoin-Inflation.png"/>
 </div>
 
 El valor en dólares de todos los bitcoins en existencia ahora [excede los $300 millones](https://blockchain.info/charts/market-cap):
@@ -40,4 +42,3 @@ Si tienes un interés en eliminar a los bancos centrales te recomendaría que ac
 </div>
 
 Diagrama de flujo basado en la [publicación](https://bitcointalk.org/index.php?topic=144911.0) de Zangelbert Bingledack.
-
