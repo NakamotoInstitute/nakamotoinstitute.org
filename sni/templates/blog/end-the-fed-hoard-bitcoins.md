@@ -20,7 +20,7 @@ Bitcoin is slowly supplanting metallic and fiat mediums of exchange. It is curre
 This transition is accelerated by new intermediaries, like [Coinbase](https://coinbase.com/about), that are driving down the cost of selling fiat money for bitcoins. At the same time as demand is increasing, bitcoin inflation slowed considerably due to the [block reward halving](http://bitcoinmagazine.com/block-reward-halving-a-guide/):
 
 <div class="article-image">
-  <img class="img-responsive center-block" alt="Bitcoin Inflation" src="/static/img/mempool/end-the-fed-hoard-bitcoins/Bitcoin-Inflation.jpg"/>
+  <img class="img-responsive center-block" alt="Bitcoin Inflation" src="/static/img/mempool/end-the-fed-hoard-bitcoins/Bitcoin-Inflation.png"/>
 </div>
 
 The dollar value of all bitcoins in existence now [exceeds $300 million](https://blockchain.info/charts/market-cap):
