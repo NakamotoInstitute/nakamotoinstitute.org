@@ -14,10 +14,22 @@ NakamotoInstitute.org was written in Flask.
 
 ````
 import os
+
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 SERVER_NAME = 'sni:5000'
-SQLALCHEMY_DATABASE_URI = "postgresql://[username]:[password]@sni/[database]"
+
+POSTGRES_USERNAME = os.environ['PGUSER']
+POSTGRES_PASSWORD = os.environ['PGPASSWORD']
+POSTGRES_HOST = os.environ['PGHOST']
+POSTGRES_PORT = os.environ['PGPORT']
+
+SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://{0}:{1}@{2}:{3}/[database]'.format(
+    POSTGRES_USERNAME,
+    POSTGRES_PASSWORD,
+    POSTGRES_HOST,
+    POSTGRES_PORT)
+
 SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
 
 DEBUG = False
@@ -25,11 +37,11 @@ CSRF_ENABLED = True
 ````
 
 4. Update your /etc/hosts file:
-
-    127.0.0.1     localhost <br />
-    127.0.0.1     sni <br />
-    127.0.0.1     satoshi.sni <br />
-
+<pre>
+127.0.0.1     localhost
+127.0.0.1     sni
+127.0.0.1     satoshi.sni
+</pre>
 5. Update config.py if you would like to change "sni" in step 4 to a different [domain]
 
 
@@ -39,7 +51,7 @@ CSRF_ENABLED = True
 
 8. Install the dependencies using <code>pip install -r requirements.txt</code>.
 
-9. Run <code>createdb.py</code>
+9. Run <code>mkdir tmp && python createdb.py</code>
 
 10. Run <code>python dataimport.py</code>. The db will be cleared and re-populated each time you do this.
 

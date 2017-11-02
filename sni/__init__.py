@@ -44,6 +44,8 @@ from models import DonationAddress
 def utility_processor():
     def donation_address():
         address = DonationAddress.query.order_by(DonationAddress.lastseen).first()
+        if address is None:
+            return ''
         address.lastseen = datetime.now()
         db.session.commit()
         address = address.address
