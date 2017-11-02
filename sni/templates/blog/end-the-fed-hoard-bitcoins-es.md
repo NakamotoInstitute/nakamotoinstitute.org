@@ -1,4 +1,4 @@
-translated_title: "Eliminar la Fed: Acaparar Bitcoins"
+translated_title: "Elimina la Fed: Acapara Bitcoins”
 translated_date: 19 de febrero de 2013
 image: bitcoin.png
 image_alt: Bitcoin
@@ -13,7 +13,7 @@ Los bajos costos de transacción convierten a Bitcoin en el medio de intercambio
   <img class="img-responsive center-block" alt="Transaction Costs" src="/static/img/mempool/end-the-fed-hoard-bitcoins/transactioncosts.jpg"/>
 </div>
 
-Bitcoin está reemplazando lentamente a los medios de intercambio fiat y metálicos. Actualmente está transitando desde [la fase de los “innovadores” a la de la “adopción temprana”:] (http://en.wikipedia.org/wiki/Technology_adoption_lifecycle)
+Bitcoin está reemplazando lentamente a los medios de intercambio fiat y metálicos. Actualmente está transitando desde [la fase de los “innovadores” a la de la “adopción temprana”:](http://en.wikipedia.org/wiki/Technology_adoption_lifecycle)
 
 <div class="article-image">
   <img class="img-responsive center-block" alt="Innovation Curve" src="/static/img/mempool/end-the-fed-hoard-bitcoins/innovationcurve.jpg"/>
