@@ -42,3 +42,7 @@ Si tienes un interés en eliminar a los bancos centrales te recomendaría que ac
 </div>
 
 Diagrama de flujo basado en la [publicación](https://bitcointalk.org/index.php?topic=144911.0) de Zangelbert Bingledack.
+
+Translation by [bitman](https://twitter.com/0xBitman)
+
+Read in [English](http://nakamotoinstitute.org/mempool/end-the-fed-hoard-bitcoins)
