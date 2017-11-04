@@ -68,3 +68,4 @@ if not app.debug:
 
 
 from sni import views, models
+from sni.util import filters

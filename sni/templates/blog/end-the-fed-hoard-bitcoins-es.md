@@ -1,5 +1,4 @@
 translated_title: "Eliminar la Fed: Acaparar Bitcoins"
-translated_date: 19 de febrero de 2013
 image: bitcoin.png
 image_alt: Bitcoin
 
