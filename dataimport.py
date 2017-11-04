@@ -4,9 +4,9 @@
 # Licensed under GNU Affero GPL (https://github.com/pierrerochard/SNI-private/blob/master/LICENSE)
 #
 
-import json
 import datetime
 import csv
+import yaml
 from dateutil import parser
 from datetime import datetime
 from sni.models import *
@@ -83,44 +83,53 @@ def get_or_create(model, **kwargs):
 
 print "Begin importing Email"
 
-with open('./data/satoshiemails.json') as data_file:
-	emails = json.load(data_file)
+with open('./data/satoshiemails.yaml') as data_file:
+    try:
+    	emails = yaml.load(data_file)
+    except yaml.YAMLError as exc:
+        print(exc)
 
-for i in range(0,len(emails['emails'])):
-	index = len(emails['emails'])-1-i
+for i in range(0,len(emails)):
+	index = len(emails)-1-i
 	email = Email(
 		id=i+1,
-		subject=emails['emails'][index]['Subject'],
-		sent_from=emails['emails'][index]['From'],
-		date=parser.parse(emails['emails'][index]['Date']),
-		text=emails['emails'][index]['Text'],
-		source=emails['emails'][index]['Source'])
+		subject=emails[index]['Subject'],
+		sent_from=emails[index]['From'],
+		date=parser.parse(emails[index]['Date']),
+		text=emails[index]['Text'],
+		source=emails[index]['Source'])
 	db.session.add(email)
 	db.session.commit()
 
 print "Finish importing Email"
 print "Begin importing Post"
 
-with open('./data/satoshiposts.json') as data_file:
-	posts = json.load(data_file)
+with open('./data/satoshiposts.yaml') as data_file:
+    try:
+    	posts = yaml.load(data_file)
+    except yaml.YAMLError as exc:
+        print(exc)
 
-for i in range(0,len(posts['posts'])):
-	index = len(posts['posts'])-1-i
+for i in range(0,len(posts)):
+	index = len(posts)-1-i
 	post = Post(
 		id=i+1,
-		url=posts['posts'][index]['url'],
-		name=posts['posts'][index]['name'],
-		date=parser.parse(posts['posts'][index]['date']),
-		text=posts['posts'][index]['post'],
-		source=posts['posts'][index]['source'])
+		url=posts[index]['url'],
+		name=posts[index]['name'],
+		date=parser.parse(posts[index]['date']),
+		text=posts[index]['post'],
+		source=posts[index]['source'])
 	db.session.add(post)
 	db.session.commit()
 
 print "Finish importing Post"
 print "Begin importing QuoteCategory"
 
-with open('./data/quotecategories.json') as data_file:
-	quotecategories = json.load(data_file)
+with open('./data/quotecategories.yaml') as data_file:
+    try:
+    	quotecategories = yaml.load(data_file)
+    except yaml.YAMLError as exc:
+        print(exc)
 
 for qc in quotecategories:
 	quote_category = QuoteCategory(
@@ -133,8 +142,11 @@ for qc in quotecategories:
 print "Finish importing QuoteCategory"
 print "Begin importing Quote"
 
-with open('./data/quotes.json') as data_file:
-	quotes = json.load(data_file)
+with open('./data/quotes.yaml') as data_file:
+    try:
+    	quotes = yaml.load(data_file)
+    except yam{l.YAMLError as exc:
+        print(exc)
 
 for i, quote in enumerate(quotes):
 	q = Quote(
@@ -157,51 +169,57 @@ for i, quote in enumerate(quotes):
 print "Finish importing Quote"
 print "Begin importing Author"
 
-with open('./data/authors.json') as data_file:
-	authors = json.load(data_file)
+with open('./data/authors.yaml') as data_file:
+    try:
+    	authors = yaml.load(data_file)
+    except yaml.YAMLError as exc:
+        print(exc)
 
-for i in range(0, len(authors['authors'])):
+for i in range(0, len(authors)):
 	author = Author(
 		id=i+1,
-		first=authors['authors'][i]['first'],
-		middle=authors['authors'][i]['middle'],
-		last=authors['authors'][i]['last'],
-		slug=authors['authors'][i]['slug'])
+		first=authors[i]['first'],
+		middle=authors[i]['middle'],
+		last=authors[i]['last'],
+		slug=authors[i]['slug'])
 	db.session.add(author)
 	db.session.commit()
 
 print "Finish importing Author"
 print "Begin importing Doc"
 
-with open('./data/literature.json') as data_file:
-	docs = json.load(data_file)
+with open('./data/literature.yaml') as data_file:
+    try:
+    	docs = yaml.load(data_file)
+    except yaml.YAMLError as exc:
+        print(exc)
 
-for i in range(0, len(docs['docs'])):
-	authorlist = docs['docs'][i]['author']
+for i in range(0, len(docs)):
+	authorlist = docs[i]['author']
 	dbauthor = []
 	for auth in authorlist:
 		dbauthor += [get(Author, slug=auth)]
-	formlist = docs['docs'][i]['formats']
+	formlist = docs[i]['formats']
 	dbformat = []
 	for form in formlist:
 		dbformat += [get_or_create(Format, name=form)]
-	catlist = docs['docs'][i]['categories']
+	catlist = docs[i]['categories']
 	dbcat = []
 	for cat in catlist:
 		dbcat += [get_or_create(Category, name=cat)]
-	if 'external' in docs['docs'][i]:
-		ext = docs['docs'][i]['external']
+	if 'external' in docs[i]:
+		ext = docs[i]['external']
 	else:
 		ext = None
 	doc = Doc(
-		id=docs['docs'][i]['id'],
-		title=docs['docs'][i]['title'],
+		id=docs[i]['id'],
+		title=docs[i]['title'],
 		author=dbauthor,
-		date=docs['docs'][i]['date'],
-		slug=docs['docs'][i]['slug'],
+		date=docs[i]['date'],
+		slug=docs[i]['slug'],
 		formats=dbformat,
 		categories=dbcat,
-		doctype=docs['docs'][i]['doctype'],
+		doctype=docs[i]['doctype'],
 		external=ext)
 	db.session.add(doc)
 	db.session.commit()
@@ -209,8 +227,11 @@ for i in range(0, len(docs['docs'])):
 print "Finish importing Doc"
 print "Begin importing ResearchDoc"
 
-with open('./data/research.json') as data_file:
-	research = json.load(data_file)
+with open('./data/research.yaml') as data_file:
+    try:
+    	research = yaml.load(data_file)
+    except yaml.YAMLError as exc:
+        print(exc)
 
 for i in range(0, len(research)):
 	authorlist = research[i]['author']
@@ -250,53 +271,61 @@ for i in range(0, len(research)):
 print "Finish importing ResearchDoc"
 print "Begin importing BlogPost"
 
-with open('./data/blogposts.json') as data_file:
-	blogps = json.load(data_file)
+with open('./data/blogposts.yaml') as data_file:
+    try:
+    	blogps = yaml.load(data_file)
+    except yaml.YAMLError as exc:
+        print(exc)
 
-for i in range(0,len(blogps['blogposts'])):
+for i in range(0,len(blogps)):
 	blogpost = BlogPost(
 		id=i+1,
-		title=blogps['blogposts'][i]['title'],
-		author=[get(Author,slug=blogps['blogposts'][i]['author'])],
-		date=parser.parse(blogps['blogposts'][i]['date']),
-		added=parser.parse(blogps['blogposts'][i]['added']),
-		slug=blogps['blogposts'][i]['slug'],
-		excerpt=blogps['blogposts'][i]['excerpt'],
-		languages=blogps['blogposts'][i]['languages'])
+		title=blogps[i]['title'],
+		author=[get(Author,slug=blogps[i]['author'])],
+		date=parser.parse(blogps[i]['date']),
+		added=parser.parse(blogps[i]['added']),
+		slug=blogps[i]['slug'],
+		excerpt=blogps[i]['excerpt'],
+		languages=blogps[i]['languages'])
 	db.session.add(blogpost)
 	db.session.commit()
 
 print "Finish importing ResearchDoc"
 print "Begin importing Skeptic"
 
-with open('./data/skeptics.json') as data_file:
-	skeptics = json.load(data_file)
+with open('./data/skeptics.yaml') as data_file:
+    try:
+    	skeptics = yaml.load(data_file)
+    except yaml.YAMLError as exc:
+        print(exc)
 
-for i in range(0,len(skeptics['skeptics'])):
+for i in range(0,len(skeptics)):
 	skeptic = Skeptic(
 		id = i + 1,
-		name = skeptics['skeptics'][i]['name'],
-		title = skeptics['skeptics'][i]['title'],
-		article = skeptics['skeptics'][i]['article'],
-		date = parser.parse(skeptics['skeptics'][i]['date']),
-		source = skeptics['skeptics'][i]['source'],
-		excerpt = skeptics['skeptics'][i]['excerpt'],
-		price = skeptics['skeptics'][i]['price'],
-		link = skeptics['skeptics'][i]['link'],
-		waybacklink = skeptics['skeptics'][i]['waybacklink'],
-		slug = skeptics['skeptics'][i]['slug']+'-'+str(parser.parse(skeptics['skeptics'][i]['date']))[0:10])
+		name = skeptics[i]['name'],
+		title = skeptics[i]['title'],
+		article = skeptics[i]['article'],
+		date = parser.parse(skeptics[i]['date']),
+		source = skeptics[i]['source'],
+		excerpt = skeptics[i]['excerpt'],
+		price = skeptics[i]['price'],
+		link = skeptics[i]['link'],
+		waybacklink = skeptics[i]['waybacklink'],
+		slug = skeptics[i]['slug']+'-'+str(parser.parse(skeptics[i]['date']))[0:10])
 	db.session.add(skeptic)
 	db.session.commit()
 
 print "Finish importing Skeptic"
 print "Begin importing Episode"
 
-with open('./data/episodes.json') as data_file:
-	episodes = json.load(data_file)
+with open('./data/episodes.yaml') as data_file:
+    try:
+    	episodes = yaml.load(data_file)
+    except yaml.YAMLError as exc:
+        print(exc)
 
 for i in range(0,len(episodes)):
 	episode = Episode(
-		id=episodes[i]['id'],
 		title=episodes[i]['title'],
 		date=parser.parse(episodes[i]['date']),
 		duration=episodes[i]['duration'],
