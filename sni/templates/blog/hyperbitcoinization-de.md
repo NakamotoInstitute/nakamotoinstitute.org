@@ -1,5 +1,4 @@
 translated_title: Hyperbitcoinization
-translated_date: 29. März 2014
 image: BitcoinFace.png
 image_alt: BitcoinFace
 
