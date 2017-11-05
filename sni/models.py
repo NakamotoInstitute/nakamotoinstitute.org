@@ -8,32 +8,36 @@ from sni import db, app
 
 
 class Email(db.Model):
- 	id = db.Column(db.Integer, primary_key = True)
- 	subject = db.Column(db.String())
- 	sent_from = db.Column(db.String())
- 	date = db.Column(db.DateTime)
- 	text = db.Column(db.String())
- 	source = db.Column(db.String())
- 	quotes = db.relationship("Quote", backref="email")
+    id = db.Column(db.Integer, primary_key=True)
+    subject = db.Column(db.String())
+    sent_from = db.Column(db.String())
+    date = db.Column(db.DateTime)
+    text = db.Column(db.String())
+    source = db.Column(db.String())
+    quotes = db.relationship("Quote", backref="email")
 
- 	def __repr__(self):
- 		return '<Email %r>' % (self.subject)
+    def __repr__(self):
+        return '<Email %r>' % (self.subject)
+
 
 class Post(db.Model):
- 	id = db.Column(db.Integer, primary_key = True)
- 	url = db.Column(db.String())
- 	name = db.Column(db.String())
- 	date = db.Column(db.DateTime)
- 	text = db.Column(db.String())
- 	source = db.Column(db.String())
- 	quotes = db.relationship("Quote", backref="post")
+    id = db.Column(db.Integer, primary_key=True)
+    url = db.Column(db.String())
+    name = db.Column(db.String())
+    date = db.Column(db.DateTime)
+    text = db.Column(db.String())
+    source = db.Column(db.String())
+    quotes = db.relationship("Quote", backref="post")
 
- 	def __repr__(self):
- 		return '<Post %r>' % (self.name)
+    def __repr__(self):
+        return '<Post %r>' % (self.name)
 
-quote_categories = db.Table('quote_categories',
-	db.Column('quote_id', db.Integer, db.ForeignKey('quote.id')),
-	db.Column('quote_category_id', db.Integer, db.ForeignKey('quote_category.id')))
+quote_categories = db.Table(
+    'quote_categories',
+    db.Column('quote_id', db.Integer, db.ForeignKey('quote.id')),
+    db.Column('quote_category_id', db.Integer, db.ForeignKey('quote_category.id'))
+)
+
 
 class QuoteCategory(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -41,7 +45,8 @@ class QuoteCategory(db.Model):
     slug = db.Column(db.String())
 
     def __repr__(self):
- 		return '<QuoteCategory %r>' % (self.slug)
+        return '<QuoteCategory %r>' % (self.slug)
+
 
 class Quote(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -51,158 +56,174 @@ class Quote(db.Model):
     email_id = db.Column(db.Integer, db.ForeignKey('email.id'))
     post_id = db.Column(db.Integer, db.ForeignKey('post.id'))
     categories = db.relationship('QuoteCategory',
- 		secondary = quote_categories,
- 		backref=db.backref('quotes', lazy='dynamic'))
+                                 secondary=quote_categories,
+                                 backref=db.backref('quotes', lazy='dynamic'))
 
     def __repr__(self):
- 		return '<Quote %r>' % (self.id)
+        return '<Quote %r>' % (self.id)
 
 
-authors = db.Table('authors',
-	db.Column('doc_id', db.Integer, db.ForeignKey('doc.id')),
-	db.Column('author_id', db.Integer, db.ForeignKey('author.id'))
+authors = db.Table(
+    'authors',
+    db.Column('doc_id', db.Integer, db.ForeignKey('doc.id')),
+    db.Column('author_id', db.Integer, db.ForeignKey('author.id'))
 )
 
-blogauthors = db.Table('blogauthors',
-	db.Column('blog_post_id', db.Integer, db.ForeignKey('blog_post.id')),
-	db.Column('author_id', db.Integer, db.ForeignKey('author.id'))
+blogauthors = db.Table(
+    'blogauthors',
+    db.Column('blog_post_id', db.Integer, db.ForeignKey('blog_post.id')),
+    db.Column('author_id', db.Integer, db.ForeignKey('author.id'))
 )
 
-researchauthors = db.Table('researchauthors',
-	db.Column('research_doc_id', db.Integer, db.ForeignKey('research_doc.id')),
-	db.Column('author_id', db.Integer, db.ForeignKey('author.id'))
+researchauthors = db.Table(
+    'researchauthors',
+    db.Column('research_doc_id', db.Integer, db.ForeignKey('research_doc.id')),
+    db.Column('author_id', db.Integer, db.ForeignKey('author.id'))
 )
+
 
 class Author(db.Model):
-	id = db.Column(db.Integer, primary_key = True)
-	first = db.Column(db.String())
-	middle = db.Column(db.String())
-	last = db.Column(db.String())
-	slug = db.Column(db.String())
+    id = db.Column(db.Integer, primary_key=True)
+    first = db.Column(db.String())
+    middle = db.Column(db.String())
+    last = db.Column(db.String())
+    slug = db.Column(db.String())
 
-	def __repr__(self):
- 		return '<Author %r>' % (self.slug)
+    def __repr__(self):
+        return '<Author %r>' % (self.slug)
 
-formats = db.Table('formats',
-	db.Column('doc_id', db.Integer, db.ForeignKey('doc.id')),
-	db.Column('format_id', db.Integer, db.ForeignKey('format.id'))
+formats = db.Table(
+    'formats',
+    db.Column('doc_id', db.Integer, db.ForeignKey('doc.id')),
+    db.Column('format_id', db.Integer, db.ForeignKey('format.id'))
 )
 
-researchformats = db.Table('researchformats',
-	db.Column('research_doc_id', db.Integer, db.ForeignKey('research_doc.id')),
-	db.Column('format_id', db.Integer, db.ForeignKey('format.id'))
+researchformats = db.Table(
+    'researchformats',
+    db.Column('research_doc_id', db.Integer, db.ForeignKey('research_doc.id')),
+    db.Column('format_id', db.Integer, db.ForeignKey('format.id'))
 )
+
 
 class Format(db.Model):
-	id = db.Column(db.Integer, primary_key = True)
-	name = db.Column(db.String())
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String())
 
-	def __repr__(self):
- 		return '<Format %r>' % (self.name)
+    def __repr__(self):
+        return '<Format %r>' % (self.name)
 
-categories = db.Table('categories',
-	db.Column('doc_id', db.Integer, db.ForeignKey('doc.id')),
-	db.Column('category_id', db.Integer, db.ForeignKey('category.id')))
+categories = db.Table(
+    'categories',
+    db.Column('doc_id', db.Integer, db.ForeignKey('doc.id')),
+    db.Column('category_id', db.Integer, db.ForeignKey('category.id')))
 
-researchcategories = db.Table('researchcategories',
-	db.Column('research_doc_id', db.Integer, db.ForeignKey('research_doc.id')),
-	db.Column('category_id', db.Integer, db.ForeignKey('category.id')))
+researchcategories = db.Table(
+    'researchcategories',
+    db.Column('research_doc_id', db.Integer, db.ForeignKey('research_doc.id')),
+    db.Column('category_id', db.Integer, db.ForeignKey('category.id')))
+
 
 class Category(db.Model):
-	id = db.Column(db.Integer, primary_key = True)
-	name = db.Column(db.String())
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String())
 
-	def __repr__(self):
- 		return '<Category %r>' % (self.name)
+    def __repr__(self):
+        return '<Category %r>' % (self.name)
+
 
 class Doc(db.Model):
- 	id = db.Column(db.Integer, primary_key = True)
- 	title = db.Column(db.String())
- 	author = db.relationship('Author',
- 		secondary = authors,
- 		backref=db.backref('docs', lazy='dynamic'))
- 	date = db.Column(db.String())
- 	slug = db.Column(db.String())
- 	formats = db.relationship('Format',
- 		secondary = formats,
- 		backref=db.backref('docs', lazy='dynamic'))
- 	categories = db.relationship('Category',
- 		secondary = categories,
- 		backref=db.backref('docs', lazy='dynamic'))
- 	doctype = db.Column(db.String())
- 	external = db.Column(db.String())
+    id = db.Column(db.Integer, primary_key = True)
+    title = db.Column(db.String())
+    author = db.relationship('Author',
+                             secondary=authors,
+                             backref=db.backref('docs', lazy='dynamic'))
+    date = db.Column(db.String())
+    slug = db.Column(db.String())
+    formats = db.relationship('Format',
+                              secondary=formats,
+                              backref=db.backref('docs', lazy='dynamic'))
+    categories = db.relationship('Category',
+                                 secondary=categories,
+                                 backref=db.backref('docs', lazy='dynamic'))
+    doctype = db.Column(db.String())
+    external = db.Column(db.String())
 
- 	def __repr__(self):
- 		return '<Doc %r>' % (self.title)
+    def __repr__(self):
+        return '<Doc %r>' % (self.title)
+
 
 class ResearchDoc(db.Model):
- 	id = db.Column(db.Integer, primary_key = True)
- 	title = db.Column(db.String())
- 	author = db.relationship('Author',
- 		secondary = researchauthors,
- 		backref=db.backref('researchdocs', lazy='dynamic'))
- 	date = db.Column(db.String())
- 	slug = db.Column(db.String())
- 	formats = db.relationship('Format',
- 		secondary = researchformats,
- 		backref=db.backref('researchdocs', lazy='dynamic'))
- 	categories = db.relationship('Category',
- 		secondary = researchcategories,
- 		backref=db.backref('researchdocs', lazy='dynamic'))
- 	doctype = db.Column(db.String())
- 	external = db.Column(db.String())
- 	lit_id = db.Column(db.Integer)
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String())
+    author = db.relationship('Author',
+                             secondary=researchauthors,
+                             backref=db.backref('researchdocs', lazy='dynamic'))
+    date = db.Column(db.String())
+    slug = db.Column(db.String())
+    formats = db.relationship('Format',
+                              secondary=researchformats,
+                              backref=db.backref('researchdocs', lazy='dynamic'))
+    categories = db.relationship('Category',
+                                 secondary=researchcategories,
+                                 backref=db.backref('researchdocs', lazy='dynamic'))
+    doctype = db.Column(db.String())
+    external = db.Column(db.String())
+    lit_id = db.Column(db.Integer)
 
- 	def __repr__(self):
- 		return '<ResearchDoc %r>' % (self.title)
+    def __repr__(self):
+        return '<ResearchDoc %r>' % (self.title)
+
 
 class BlogPost(db.Model):
-	id = db.Column(db.Integer, primary_key = True)
-	title = db.Column(db.String())
-	author = db.relationship('Author',
- 		secondary = blogauthors,
- 		backref=db.backref('blogposts', lazy='dynamic'))
-	date = db.Column(db.Date)
-	added = db.Column(db.Date)
-	slug = db.Column(db.String())
-	excerpt = db.Column(db.String())
-	languages = db.Column(db.String())
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String())
+    author = db.relationship('Author',
+                             secondary=blogauthors,
+                             backref=db.backref('blogposts', lazy='dynamic'))
+    date = db.Column(db.Date)
+    added = db.Column(db.Date)
+    slug = db.Column(db.String())
+    excerpt = db.Column(db.String())
+    languages = db.Column(db.String())
 
-	def __repr__(self):
- 		return '<BlogPost %r>' % (self.title)
+    def __repr__(self):
+        return '<BlogPost %r>' % (self.title)
+
 
 class Skeptic(db.Model):
-	id = db.Column(db.Integer, primary_key = True)
-	name = db.Column(db.String())
-	title = db.Column(db.String())
-	article = db.Column(db.String())
-	date = db.Column(db.Date)
-	source = db.Column(db.String())
-	excerpt = db.Column(db.String())
-	price = db.Column(db.String())
-	link = db.Column(db.String())
-	waybacklink = db.Column(db.String())
-	slug = db.Column(db.String())
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String())
+    title = db.Column(db.String())
+    article = db.Column(db.String())
+    date = db.Column(db.Date)
+    source = db.Column(db.String())
+    excerpt = db.Column(db.String())
+    price = db.Column(db.String())
+    link = db.Column(db.String())
+    waybacklink = db.Column(db.String())
+    slug = db.Column(db.String())
 
-	def __repr__(self):
- 		return '<Skeptic %r>' % (self.name)
+    def __repr__(self):
+        return '<Skeptic %r>' % (self.name)
+
 
 class Episode(db.Model):
-	id = db.Column(db.Integer, primary_key = True)
-	title = db.Column(db.String())
-	date = db.Column(db.Date())
-	duration = db.Column(db.String())
-	subtitle = db.Column(db.String())
-	summary = db.Column(db.String())
-	slug = db.Column(db.String())
-	youtube = db.Column(db.String())
-	address = db.Column(db.String())
-	length = db.Column(db.String())
-	time = db.Column(db.DateTime(timezone=True))
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String())
+    date = db.Column(db.Date())
+    duration = db.Column(db.String())
+    subtitle = db.Column(db.String())
+    summary = db.Column(db.String())
+    slug = db.Column(db.String())
+    youtube = db.Column(db.String())
+    address = db.Column(db.String())
+    length = db.Column(db.String())
+    time = db.Column(db.DateTime(timezone=True))
 
-	def __repr__(self):
-		return '<Episode %r>' % (self.title)
+    def __repr__(self):
+        return '<Episode %r>' % (self.title)
+
 
 class DonationAddress(db.Model):
-    address = db.Column(db.String, primary_key = True)
+    address = db.Column(db.String, primary_key=True)
     lastseen = db.Column(db.DateTime)

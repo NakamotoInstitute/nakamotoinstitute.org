@@ -21,8 +21,8 @@ app.config.from_object('config')
 my_loader = jinja2.ChoiceLoader([
     app.jinja_loader,
     jinja2.FileSystemLoader(['sni/templates/',
-    						 'sni/templates/blog/',
-    						 'sni/templates/docs/',
+                             'sni/templates/blog/',
+                             'sni/templates/docs/',
                              'sni/templates/podcast/']),
 ])
 app.jinja_loader = my_loader
@@ -36,9 +36,10 @@ pages = FlatPages(app)
 manager = Manager(app)
 manager.add_command('db', MigrateCommand)
 
-cache = Cache(app,config={'CACHE_TYPE': 'simple'})
+cache = Cache(app, config={'CACHE_TYPE': 'simple'})
 
 from models import DonationAddress
+
 
 @app.context_processor
 def utility_processor():
@@ -56,9 +57,9 @@ if not app.debug:
     import logging
     from logging.handlers import RotatingFileHandler
     file_handler = RotatingFileHandler('tmp/snilog.csv',
-                                      'a',
-                                      10 * 1024 * 1024,
-                                      100)
+                                       'a',
+                                       10 * 1024 * 1024,
+                                       100)
 
     file_handler.setFormatter(logging.Formatter('%(asctime)s, %(levelname)s, %(message)s'))
     app.logger.setLevel(logging.INFO)
