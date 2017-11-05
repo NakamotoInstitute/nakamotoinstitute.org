@@ -13,10 +13,11 @@ from sni import db
 # Clear out database
 DonationAddress.query.delete()
 
-# return object
 
+# return object
 def get(model, **kwargs):
-	return db.session.query(model).filter_by(**kwargs).first()
+    return db.session.query(model).filter_by(**kwargs).first()
+
 
 # See if object already exists for uniqueness
 def get_or_create(model, **kwargs):
@@ -28,9 +29,9 @@ def get_or_create(model, **kwargs):
         return instance
 
 with open('./addresses/addresses.csv') as csvfile:
-	addresses = csv.reader(csvfile)
-	now = datetime.now()
-	for address in addresses:
-		record = DonationAddress(address=address[0], lastseen=now)
-		db.session.add(record)
-		db.session.commit()
+    addresses = csv.reader(csvfile)
+    now = datetime.now()
+    for address in addresses:
+        record = DonationAddress(address=address[0], lastseen=now)
+        db.session.add(record)
+        db.session.commit()
