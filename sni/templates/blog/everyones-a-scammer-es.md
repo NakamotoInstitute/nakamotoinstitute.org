@@ -1,10 +1,6 @@
-# Todos son estafadores
-
-Michael Goldstein
-
-11 de Septiembre de 2014
-
-![Eastwood Scowl](http://nakamotoinstitute.org/static/img/mempool/everyones-a-scammer/eastwood.jpg)
+translated_title: Todos son estafadores
+image: eastwood.jpg
+image_alt: Eastwood Scowl
 
 *[Música sugerida para escuchar con la lectura](https://www.youtube.com/watch?v=dJLWLJgWYqQ)*
 
@@ -18,7 +14,9 @@ Y está funcionando. Bitcoin está destinado a un crecimiento exponencial y, por
 
 Bitcoin es un lugar peligroso. Hay una [lista interminable de hackers, estafas y robos](https://bitcointalk.org/index.php?topic=576337). Bitcoin promete una red con confianza distribuida. ¿Sabes por qué? Porque existen más bitcoiners.
 
-![Noose](http://nakamotoinstitute.org/static/img/mempool/everyones-a-scammer/noose.jpg)
+<div class="article-image">
+  <img class="img-responsive center-block img-rounded" alt="Noose" src="/static/img/mempool/everyones-a-scammer/noose.jpg"/>
+</div>
 
 No todo estafador de Bitcoins es un simple inversionista u hombres de negocios inescrupuloso. Muchos son derechamente fraudes y artistas del engaño. Cuando compras una alfombra en Overstock, al menos obtienes una alfombra. Cuando envías dinero a Ethereum, podrías obtener un token ether sin valor. ¿Sabes qué cosa probablemente nunca obtendrás? Tu pre-orden de Butterfly Labs o tus *Goxbucks*.
 
@@ -40,7 +38,9 @@ Por fin Newegg acepta Bitcoins, junto con Overstock.com, TigerDirect, Dell.com, 
 
 Los comercios tienen todas las razones del mundo para aceptar Bitcoin. BitPay recientemente eliminó todas las comisiones al procesar pagos, incluyendo las comisiones por cambio entre monedas. No sólo los comercios pueden recibir pagos sin comisiones, sino que hay, por supuesto, un sinfín de otros beneficios, desde la imposibilidad de un fraude o de la cancelación de un pago hasta pagos internacionales más convenientes. Ellos podrían transmitir estos menores costos a sus clientes, o aumentar su margen de utilidades. También podrían, y deberían, almacenar sus bitcoins tanto como su contabilidad lo permita, y así recibir ganancias por futuros aumentos en su precio. Después de todo, si Bitcoin aumenta su adopción como medio de pago, y hay una cantidad limitada de unidades dando vueltas, cada una será más valiosa.
 
-![Noose](http://nakamotoinstitute.org/static/img/mempool/everyones-a-scammer/my-mule.jpg)
+<div class="article-image">
+  <img class="img-responsive center-block img-rounded" alt="My mule" src="/static/img/mempool/everyones-a-scammer/my-mule.jpg"/>
+</div>
 
 Por lo tanto los comercios están en una excelente posición. Pueden disminuir costos de operación y pueden intentar comprar bitcoins con bienes de retail, tal y como muchos los compran con dólares o euros. Si yo fuera un comerciante, seguramente alentaría a las personas a comprar en mi tienda usando Bitcoin. Incluso quizás intentaría convencerlos, a pesar del razonamiento económico falaz, que gastar sus bitcoins en mi tienda es algo bueno para Bitcoin - ciertamente más que ahorrarlos y especular en su valor. Después de todo, "podrían volverse sin valor de un momento a otro" y "su futuro depende de que se gasten" (porque yo lo digo). Incluso podría intentar decir cosas como:
 
@@ -68,7 +68,9 @@ Bitcoin es apasionante. Mirar un archivo de billetera y su balance no lo es. Qui
 
 Todos ellos son estafas.
 
-![Noose](http://nakamotoinstitute.org/static/img/mempool/everyones-a-scammer/rifle.jpg)
+<div class="article-image">
+  <img class="img-responsive center-block img-rounded" alt="Rifle" src="/static/img/mempool/everyones-a-scammer/rifle.jpg"/>
+</div>
 
 Sin importar las capacidades que puedan tener para cumplir con sus promesas, todos ellos fallan en un test muy simple: ¿es el retorno de la inversión positivo? Si estás pegado en un esquema mental fiat, podrías pensar que harías dinero rápido, pero dado el extraordinario crecimiento esperado de Bitcoin, ¿puedes realmente esperar estar mejor que ahorrando tus bitcoins? Los inversionistas de largo plazo deben usar Bitcoin como su unidad de contabilidad, y cada una de las inversiones deberían ser comparadas con los retornos esperados de Bitcoin.
 
@@ -84,13 +86,15 @@ Si un ahorrador de bitcoins quiere reinvertir sus ganancias, no necesita nada m�
 
 Ponte a escribir código. Cada nuevo [*commit* *git*](http://git-scm.com/book) son buenas noticias para Bitcoin.
 
-### Los ahorradores son estafadores...
+### Los ahorradores son estafadores...[^1]
 
 El ahorrador en Bitcoin está en una constante batalla consigo mismo para disminuir su preferencia temporal tanto como sea humanamente posible: esta es la única manera de optimizar los ahorros en Bitcoin. Con mis amigos bromeamos con morir de hambre debido a una deflación intensa, pero no puedo decir que no he mirado atrás y no he deseado haberme saltado un par de almuerzos en la horrible cafetería universitaria para comprar 10 dólares en Bitcoins cuando tuve la oportunidad.
 
 Los ahorradores de bitcoins se emocionan con las alzas de precio, pero también se emocionan cuando el precio va a la baja. Coinbase hace unos meses estaba dispuesto a darme un bitcoin por $1200 dólares, y ahora sólo está pidiendo $475. Cualquiera que sea el precio, el ahorrador de bitcoins piensa para sí mismo "Perdedores".
 
-![Noose](http://nakamotoinstitute.org/static/img/mempool/everyones-a-scammer/eastwood-cigar.jpg)
+<div class="article-image">
+  <img class="img-responsive center-block img-rounded" alt="Eastwood cigar" src="/static/img/mempool/everyones-a-scammer/eastwood-cigar.jpg"/>
+</div>
 
 Los ahorradores de bitcoins están en esto en el largo plazo. Su estrategia no es comprar bajo y vender alto, sino comprar todo lo que puedan y vender sólo un poco a un mayor precio. Ellos harán lo que sea para poder hacerse de más satoshis, y no hay nada que los haga más felices que un imbécil cediendo su riqueza luego de ser convencido que sus bitcoins sólo valen $[x < moon]. Esos vendedores se han ofrecido como [voluntarios para cargar la bolsa de mierda fiat](http://trilema.com/2014/people-us-dollars-are-not-worth-a-fifth-of-a-bitcent-stop-selling), y los ahorradores no los ayudarán tan rápidamente a deshacerse del hedor.
 
@@ -102,7 +106,10 @@ En efecto, los ahorradores de bitcoins son probablemente los estafadores más pe
 
 Ahorrar es lo que da valor al dinero. Y no, [tu no puedes tener ninguno](http://nakamotoinstitute.org/mempool/im-hoarding-bitcoins-and-no-you-cant-have-any).
 
-![Noose](http://nakamotoinstitute.org/static/img/mempool/everyones-a-scammer/bitcoinfeedbackloops.jpg)
+
+<div class="article-image">
+  <img class="img-responsive center-block img-rounded" alt="Bitcoin feedback loops" src="/static/img/mempool/everyones-a-scammer/bitcoinfeedbackloops.jpg"/>
+</div>
 
 ¡Excelentes noticias para Bitcoin!
 
@@ -110,7 +117,9 @@ Ahorrar es lo que da valor al dinero. Y no, [tu no puedes tener ninguno](http://
 
 En efecto, las estafas en Bitcoin nunca terminarán. Las estafas basadas en el mercado (es decir, aquellas que no requiren fraude) disminuirán en tanto Bitcoin absorbe la oferta de dinero real de las demás monedas, cuando la demanda por efectivo comience a desacelerar y eventualmente se estabilice. Sin embargo, otros estafadores estarán siempre buscando nuevas maneras para quitarle sus bitcoins a otros.
 
-![Noose](http://nakamotoinstitute.org/static/img/mempool/everyones-a-scammer/cornered.jpg)
+<div class="article-image">
+  <img class="img-responsive center-block img-rounded" alt="Cornered" src="/static/img/mempool/everyones-a-scammer/cornered.jpg"/>
+</div>
 
 La única manera en que esto podrá resolverse es si se desarrollan redes confiables. Como se ha dicho anteriomente, [Bitcoin es maravilloso, pero no arreglará nuestros cerebros de mono](http://nakamotoinstitute.org/mempool/bitcoin-is-great-but-it-wont-fix-our-monkey-brains). Mientras Bitcoin ofrece una moneda sin la necesidad de confiar en un tercero, lo puede hacer sólo porque el libro contable es auto-referencial. Los humanos usando Bitcoin deben siempre estar en un estado mental de extrema precaución cuando lo usen. Mientras tanto, los usuarios pueden mitigar el riesgo de participar en diversas formas de comercio a través de [protocolos de pago](https://github.com/bitcoin/bips/blob/master/bip-0070.mediawiki), [redes de confianza](http://bitcoin-otc.com), [contratos inteligentes](https://en.bitcoin.it/wiki/Contracts), [contratos GPG](http://nakamotoinstitute.org/gpg-contracts) y [pozos de votación](http://bitcoinism.blogspot.com/2013/12/voting-pools-how-to-stop-plague-of.html).
 
@@ -118,11 +127,18 @@ La única manera en que esto podrá resolverse es si se desarrollan redes confia
 
 Vivimos en un estado de guerra total. Todos quienes poseen bitcoin están tratando de tener más estafando a otros o convenciéndolos de que no vale la pena involucrarse. Todos quienes no tienen bitcoins fueron o bien desvalijados de ellos o engañados para no involucrarse. Tener bitcoins requiere el conocimiento y la voluntad de conocer y desear su futuro, mientras que no tenerlos o gastarlos es no contar con uno o el otro. Si tienes bitcoins, debes respirar profundamente cada vez que desees enviar cualquier cantidad a otra persona. Pregúntate a ti mismo si esa persona realmente merece cantidades inimaginables de riqueza por simplemente invitarte a una cerveza. Quizás con esto encuentras la voluntad para seguir ahorrándolos.
 
-![Noose](http://nakamotoinstitute.org/static/img/mempool/everyones-a-scammer/body-armor.gif)
+<div class="article-image">
+  <img class="img-responsive center-block img-rounded" alt="Body armor" src="/static/img/mempool/everyones-a-scammer/body-armor.gif"/>
+</div>
 
 La hiperbitcoinización será una fuerza con la cual no se debe jugar. Incluso una posesión marginal en bitcoins hoy representará una mayoría significativa en el portafolio de un bitcoiner y una vez que suceda no habrá vuelta atrás. Un día, probablemente tu saldo en bitcoins nunca vea el punto decimal moverse a la derecha nuevamente. Bitcoin no se detendrá por nadie en su carrera desde la servidumbre a la dominación (¿liberación?) global. No le cedas tu asiento a alguien más.
 
 *"Estafador" es una heurística, no una acusación*
 
-Revisado el 7 de octubre de 2014 - Agregado un párrafo describiendo la incapacidad de discriminar escepticismo Bitcoin de manipulación psicológica para obtener más.
+***
 
+Translation by [Camilo Flores](https://medium.com/@llekn)
+
+Read in <a href="/mempool/everyones-a-scammer/">English</a>
+
+[^1]: Revisado el 7 de octubre de 2014 - Agregado un párrafo describiendo la incapacidad de discriminar escepticismo Bitcoin de manipulación psicológica para obtener más.
