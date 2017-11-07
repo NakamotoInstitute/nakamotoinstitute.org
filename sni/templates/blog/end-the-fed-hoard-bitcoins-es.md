@@ -1,4 +1,4 @@
-translated_title: "Eliminar la Fed: Acaparar Bitcoins"
+translated_title: "Elimina la Fed: Acapara Bitcoins"
 image: bitcoin.png
 image_alt: Bitcoin
 
