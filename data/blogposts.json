@@ -1,6 +1,15 @@
 {
   "blogposts": [
     {
+      "title": "Economics of Bitcoin as a Settlement Network",
+      "author": "saifedean-ammous",
+      "date": "May 19, 2017",
+      "added": "November 8, 2017",
+      "slug": "economics-of-bitcoin-as-a-settlement-network",
+      "excerpt": "From the settlement layer view, the growing adoption of Bitcoin is increasing its liquidity internationally, allowing it to compete with global reserve currencies for increasingly more valuable transactions, causing transaction fees to rise.",
+      "languages": "en, es"
+    },
+    {
       "title": "Against the Minimum Majority Measure",
       "author": "david-a-harding",
       "date": "July 28, 2017",
