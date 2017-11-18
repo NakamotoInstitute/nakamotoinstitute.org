@@ -63,4 +63,4 @@ Sobald diese vorbei ist, wird es unvorstellbar sein wie wir mit dem alten System
 
 Translation by J.O.G.
 
-Read in <a href="http://nakamotoinstitute.org/mempool/hyperbitcoinization/">English</a> and <a href="http://nakamotoinstitute.org/mempool/hyperbitcoinization/es/">Spanish</a>
+Read in <a href="http://nakamotoinstitute.org/mempool/hyperbitcoinization/">English</a>, <a href="http://nakamotoinstitute.org/mempool/hyperbitcoinization/es/">Spanish</a> and <a href="http://nakamotoinstitute.org/mempool/hyperbitcoinization/ru/">Russian</a>
