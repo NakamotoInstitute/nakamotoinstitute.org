@@ -30,7 +30,7 @@ Die Anpassung daran ist eher einer Reihe von unternehmerischen Handlungen einzel
 
 
 
-Whoops, du wurdest gebitcoin-ed!
+## Whoops, du wurdest gebitcoin-ed!
 
 Ausgehend von diesen zwei Unterschieden mache ich zwei Voraussagen über eine (mögliche) Hyperbitcoinization:
 
