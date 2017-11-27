@@ -1,11 +1,7 @@
-{% extends "blogpost.html" %} {% block post %}
+translated_title: Estoy acumulando bitcoins y no voy a darte ni un Satoshi
+image: uncle-scrooge.jpg
+image_alt: Uncle Scrooge
 
-# Estoy acumulando bitcoins y no voy a darte ni un Satoshi  
-Daniel Krawisz
-
-#### 12 de febrero de 2014
-
-  
 ¡Esos malditos acaparadores! Sabes a quienes me refiero. Ellos no van a usar sus bitcoins porque piensan que en el futuro van a valer mucho más. Pero ¿cómo podemos convencer a las empresas de que acepten bitcoins si nadie está dispuesto a gastarlos? ¡Tenemos que hacer que los acaparadores se sientan culpables para que gasten sus bitcoins y así apoyen a los comerciantes! Este artículo trata de explicar por qué esta línea de razonamiento es completamente errónea.
 
 ## Si vendes bitcoins, no estás “vendiendo” Bitcoin
@@ -17,6 +13,11 @@ Pensemos un minuto en eso. Lo que estás haciendo en el fondo, es decirle al com
 En cambio, ¿por qué no pruebas esto?: dile a los comerciantes de tu localidad que te gustaría poder pagar en sus tiendas con dinero en efectivo, y recibir el cambio en bitcoins. Ese es el tipo de tienda donde me gustaría comprar. Y cuando más adelante algún comerciante te diga: “No lo haré más. ¡Ahora quiero que me pagues en bitcoins!”, sabrás que se ha convertido en un verdadero acaparador.
 
 ## Los acaparadores le dan valor a Bitcoin
+
+<div class="article-image">
+  <img class="img-responsive center-block img-rounded" alt="Gold Bars" src="/static/img/mempool/im-hoarding-bitcoins-and-no-you-cant-have-any/gold-bars.jpg"/>
+</div>
+
 El precio inicial de un bitcoin es el resultado de las personas que quieren conservarlo, no de las que quieren gastarlo. Es más, cada paso subsiguiente en su crecimiento debe comenzar con más acumuladores de bitcoins, no con más gastadores. El volumen de negocios que Bitcoin puede absorber está limitado por su capitalización de mercado. Con una capitalización de mercado de dos o tres mil millones de dólares, Bitcoin puede absorber muchas pequeñas empresas, pero no podría ser usado para el comercio internacional de petróleo. Tendría que ser decenas de veces más caro para lograr eso, y eso sólo podría ocurrir si el deseo de la gente de acumular bitcoins continúa aumentando más rápido que su deseo de gastarlos. Por lo tanto, el que quiera que Bitcoin llegue a ser adoptado masivamente no debería desear nunca que su precio baje. Por el contrario, debería anhelar un suministro creciente de acaparadores.
 
 Es verdad que el precio de Bitcoin puede ocasional y temporalmente sobrepasar su crecimiento en términos reales, pero esto es solamente un subproducto de su éxito fenomenal. Un activo que aumente de precio tan rápidamente como Bitcoin es esperable que experimente caídas y manías en su camino ascendente, porque es difícil distinguir entre un aumento de precio sostenible y una especulación de corto plazo. Sin embargo, ¿hace realmente sentido preferir una historia alternativa para Bitcoin según la cual su precio hubiese aumentado de manera lo suficientemente apacible como para nunca haber producido manías de ningún tipo? No veo como eso podría ser mejor. Mientras más rápido sea el crecimiento de Bitcoin, más completas y decisivas serán sus victorias y más difícil será para sus enemigos naturales reaccionar contra él.
@@ -30,6 +31,10 @@ Los acaparadores son más importantes que los comerciantes. Si un restaurante de
 A no ser que esté ofreciendo algo que no pueda ser comprado con dólares, o al menos ofreciendo un descuento, un comerciante sólo beneficiaría a Bitcoin en la medida que estimule mayor acumulación. Si él convierte de inmediato en dólares los bitcoins que recibe como pago, y si sus clientes sólo compran bitcoins para gastarlos en su tienda poco después, entonces ninguno tendría algún efecto directo sobre la demanda de bitcoins. El verdadero héroe aquí es el acaparador quien, detrás de escena, le compra los bitcoins al comerciante y le permite convertir sus pagos en dólares.
 
 ## La codicia es tu amiga
+
+<div class="article-image">
+  <img class="img-responsive center-block img-rounded" alt="Dragon" src="/static/img/mempool/im-hoarding-bitcoins-and-no-you-cant-have-any/dragon.jpg">
+</div>
 
 No puede haber un gasto de bitcoins sin comprarlos previamente, y por lo tanto todo uso de los bitcoins como medio de intercambio depende de alguien que haya querido aumentar su tenencia, es decir, de un acaparador. Sin ellos no habría, literalmente, comercio en bitcoins. Incluso sería contraproducente intentar convertir a los acaparadores en gastadores. Realmente no hay ninguna buena razón para que alguno deba gastar bitcoins en un futuro cercano. Si todo el mundo estuviera acumulando, eso sólo haría que el precio suba hasta que finalmente alguien no pueda evitar gastar un poco.
 
@@ -45,11 +50,8 @@ Se siente bien ¿verdad? La economía de Bitcoin te lo agradecerá.
 
 Concluyo con una salvedad: dar pequeñas cantidades de bitcoins puede ser muy eficaz para ayudar a las personas a acostumbrarse a tenerlos. Sin embargo, la razón por la cual esto funciona es que ayuda a propagar la avaricia.
 
+***
 
-[Clave pública de Daniel](http://pgp.mit.edu/pks/lookup?op=get&search=0x101BBC10F86C4A64)
+Translation [bitman](https://twitter.com/0xBitman) y [majamalu](http://elbitcoin.org/si-estoy-acumulando-bitcoins-y-voy-darte-ni-un-satoshi/)
 
-  
-
-Traducido al español por [bitman](https://twitter.com/0xBitman) y [majamalu](http://elbitcoin.org/si-estoy-acumulando-bitcoins-y-voy-darte-ni-un-satoshi/)
-
-{%endblock%}
+Read in [English](/mempool/im-hoarding-bitcoins-and-no-you-cant-have-any/)
