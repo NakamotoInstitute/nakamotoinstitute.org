@@ -52,6 +52,4 @@ Concluyo con una salvedad: dar pequeñas cantidades de bitcoins puede ser muy ef
 
 Traducido al español por [bitman](https://twitter.com/0xBitman) y [majamalu](http://elbitcoin.org/si-estoy-acumulando-bitcoins-y-voy-darte-ni-un-satoshi/)
 
-[Traducción italiana](http://ilporticodipinto.it/content/metto-da-parte-bitcoin-e-no-non-ne-do-nessuno) de Portico Dipinto!
-
 {%endblock%}
