@@ -828,5 +828,16 @@
         "categories": ["cryptography", "economics", "politics"],
         "doctype": "essay",
         "external": "http://web.archive.org/web/20130513043046/http://finney.org/~hal/pol_v_tech.html"
+    },
+    {
+        "id": 81,
+        "title": "The Case for Privacy",
+        "author": ["david-d-friedman"],
+        "date": "2005",
+        "slug": "the-case-for-privacy",
+        "formats": ["html", "ext"],
+        "categories": ["cryptography", "economics", "law"],
+        "doctype": "essay",
+        "external": "http://www.daviddfriedman.com/Academic/privacy_chapter/privacy.htm"
     }]
 }
