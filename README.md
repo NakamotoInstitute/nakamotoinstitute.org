@@ -32,6 +32,10 @@ SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://{0}:{1}@{2}:{3}/[database]'.for
 
 SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
 
+FLATPAGES_ROOT = 'templates/blog'
+FLATPAGES_MARKDOWN_EXTENSIONS = ['footnotes', 'extra']
+FLATPAGES_EXTENSION = '.md'
+
 DEBUG = False
 CSRF_ENABLED = True
 ````
