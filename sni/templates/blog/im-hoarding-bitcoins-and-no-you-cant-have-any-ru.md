@@ -49,4 +49,8 @@ image: uncle-scrooge.jpg
 
 Я заключаю с одной оговоркой: может быть очень эффективно отдавать небольшие количества биткоинов просто для того, чтобы люди приучались иметь их. Однако, причина эффективности такого акта в том, что это помогает распространять алчность.
 
+***
+
 Translation by <a href="https://keybase.io/ievdokimov">Ilya Evdokimov</a>
+
+Read in [English](/mempool/im-hoarding-bitcoins-and-no-you-cant-have-any/) and [Spanish](/mempool/im-hoarding-bitcoins-and-no-you-cant-have-any/es/)

@@ -54,4 +54,4 @@ Concluyo con una salvedad: dar pequeñas cantidades de bitcoins puede ser muy ef
 
 Translation [bitman](https://twitter.com/0xBitman) y [majamalu](http://elbitcoin.org/si-estoy-acumulando-bitcoins-y-voy-darte-ni-un-satoshi/)
 
-Read in [English](/mempool/im-hoarding-bitcoins-and-no-you-cant-have-any/)
+Read in [English](/mempool/im-hoarding-bitcoins-and-no-you-cant-have-any/) and [Russian](/mempool/im-hoarding-bitcoins-and-no-you-cant-have-any/ru/)
