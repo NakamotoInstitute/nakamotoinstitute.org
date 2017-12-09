@@ -13,7 +13,8 @@ There are two essential differences between hyperinflation and hyperbitcoinizati
 
 The second is that in a hyperinflation, the government expands the money supply to outpace people's inflation expectations. Demonetization occurs as a result of their destructive interaction. Whereas a hyperbitcoinization event need not be accompanied by any change in the supply of either currency.
 
-As the government forms a habit of inflating the money supply, its people form a habit of anticipating rising prices. This prevents the government from gaining as much each time it inflates. Thus, to get the same kick, the government must inflate more. The money loses value once people anticipate such heavy inflation that they can't spend it fast enough and it no longer functions as a currency.                
+As the government forms a habit of inflating the money supply, its people form a habit of anticipating rising prices. This prevents the government from gaining as much each time it inflates. Thus, to get the same kick, the government must inflate more. The money loses value once people anticipate such heavy inflation that they can't spend it fast enough and it no longer functions as a currency.          
+
 Hyperinflation is an entrepreneurial act on the part of government, in the sense that it involves a continually changing intervention that prevents an equilibrium from forming. The government must continually alter its own behavior to stay ahead of its people's. The moment they begin to anticipate its future policy, the government must change the policy by increasing the rate of inflation.
 
 Hyperbitcoinization is a voluntary transition from an inferior currency to a superior one, and its adoption is a series of individual acts of entrepreneurship rather than a single monopolist that games the system.
@@ -37,3 +38,11 @@ Hyperbitcoinization will probably be a confusing time for everyone, like a secon
 </p>
 
 Read in [Arabic](/mempool/hyperbitcoinization/ar/), [German](/mempool/hyperbitcoinization/de/), [Russian](/mempool/hyperbitcoinization/ru/) and [Spanish](/mempool/hyperbitcoinization/es/)
+
+<div class = "text-center">
+    <p>
+        <a href="http://pgp.mit.edu/pks/lookup?op=get&search=0x101BBC10F86C4A64" type="button" class="btn btn-info">
+        Daniel's Public Key
+        </a>
+    </p>
+</div>
