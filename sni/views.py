@@ -460,8 +460,11 @@ def blogposttrans(slug, lang):
         else:
             app.logger.info(str(request.remote_addr) + ', mempool, ' + slug+'-' + lang)
             page = pages.get('%s-%s' % (slug, lang))
+            rtl = False
+            if lang in ['ar', 'fa']:
+                rtl = True
             if page:
-                return render_template('blogpost-md.html', bp=bp, page=page, lang=lang)
+                return render_template('blogpost-md.html', bp=bp, page=page, lang=lang, rtl=rtl)
             return render_template('%s-%s.html' % (slug, lang), bp=bp, lang=lang)
     else:
         return redirect(url_for("blog"))

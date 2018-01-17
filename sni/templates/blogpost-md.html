@@ -29,7 +29,13 @@
 		</p>
 		{% endif %}
 	</div>
+	{% if rtl %}
+	<div dir="rtl">
+	{% endif %}
   {{ page.html|safe }}
+	{% if rtl %}
+	</div>
+	{% endif %}
 	{% if page.meta.btc_address %}
   <div class = "text-center">
     <p>
