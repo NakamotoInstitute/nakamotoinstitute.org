@@ -1,4 +1,4 @@
-translated_title: البتكنة المتسارعة
+translated_title: ابربتکوینی شدن
 image: BitcoinFace.png
 image_alt: BitcoinFace
 
