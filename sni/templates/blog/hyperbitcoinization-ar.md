@@ -2,7 +2,6 @@ translated_title: البتكنة المتسارعة
 image: BitcoinFace.png
 image_alt: BitcoinFace
 
-<div markdown="1" class="text-right">
 ## بطلان العملة بسبب البتكوين
 
 هذا المقال يتحدث عن احتمالية بطلان العملات المركزية بسبب البتكوين (البتكنة المتسارعة) وهي مايمكن أن يحدث لأي عملة تقف في وجه البتكوين التي في طريقها إلى السيطرة الكاملة. في حال حدوث هذا الاحتمال ستفقد العملة قيمتها بشكل متسارع معوضا قيمتها البتكوين. ماهي حيثيات هذا الحدث في حال حدوثه؟ وكيف باستطاعتنا فهمها من ناحية اقتصادية؟
@@ -30,7 +29,6 @@ image_alt: BitcoinFace
 الثانية: التعطل الاقتصادي المترتب على البتكنة سيكون أقل بكثير من التعطل بسبب التضخم المتسارع. العملة هي أداة لتقسيم العمل والعمال، والتضخم المتسارع يجعل العملة غير مجدية مما يجعل الناس يستخدمون وسائل أخرى أقل فعالية. أما في حالة  البتكنة فسيستخدم الناس عملة أكثر قوة وسيكون التحول سريع بسبب قوتها وليس كما في حالة التضخم المتسارع حيث يستبدل الناس عملتهم فقط عندما تصبح أسوأ من أي عملة أخرى بديلة مثل الذهب أو صابون الغسيل. لذلك نستنتج أنه ستقابل البتكنة زيادة في الإنتاجية والثراء.
 
 فترة البتكنة ستكون فترة محيرة (كفترة مراهقة أخرى). لكن، عندما تنتهي الفترة وتنجلي الرؤية سيصعب تخيل كيف استطعنا التعايش مع النظام السابق.
-</div>
 
 <div class="article-image">
   <img class="img-responsive center-block img-rounded" alt="Bitcoinbody" src="/static/img/mempool/hyperbitcoinization/Bitcoinbody.png"/>
@@ -40,6 +38,8 @@ image_alt: BitcoinFace
 	(العمل الفني الأصلي من قبل المؤلف)
 </p>
 
+<div markdown="1" dir="ltr">
 Translation by <a href="https://twitter.com/MAlashiekh">Mohammed AlShiekh</a>
 
-Read in [English](/mempool/hyperbitcoinization/), [German](/mempool/hyperbitcoinization/de/), [Russian](/mempool/hyperbitcoinization/ru/), and [Spanish](/mempool/hyperbitcoinization/es/)
+Read in [English](/mempool/hyperbitcoinization/), [German](/mempool/hyperbitcoinization/de/), [Persian](/mempool/hyperbitcoinization/fa/), [Russian](/mempool/hyperbitcoinization/ru/), and [Spanish](/mempool/hyperbitcoinization/es/)
+</div>
