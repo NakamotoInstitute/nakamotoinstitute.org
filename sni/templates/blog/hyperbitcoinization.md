@@ -37,7 +37,7 @@ Hyperbitcoinization will probably be a confusing time for everyone, like a secon
 	(Original artwork by the author)
 </p>
 
-Read in [Arabic](/mempool/hyperbitcoinization/ar/), [German](/mempool/hyperbitcoinization/de/), [Russian](/mempool/hyperbitcoinization/ru/) and [Spanish](/mempool/hyperbitcoinization/es/)
+Read in [Arabic](/mempool/hyperbitcoinization/ar/), [German](/mempool/hyperbitcoinization/de/), [Persian](/mempool/hyperbitcoinization/fa/), [Russian](/mempool/hyperbitcoinization/ru/) and [Spanish](/mempool/hyperbitcoinization/es/)
 
 <br>
 <div class="text-center">

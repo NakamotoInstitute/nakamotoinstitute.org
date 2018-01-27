@@ -41,5 +41,5 @@ image_alt: BitcoinFace
 <div markdown="1" dir="ltr">
 Translation by <a href="https://twitter.com/MAlashiekh">Mohammed AlShiekh</a>
 
-Read in [English](/mempool/hyperbitcoinization/), [German](/mempool/hyperbitcoinization/de/), [Persian](/mempool/hyperbitcoinization/fa/), [Russian](/mempool/hyperbitcoinization/ru/), and [Spanish](/mempool/hyperbitcoinization/es/)
+Read in [English](/mempool/hyperbitcoinization/), [German](/mempool/hyperbitcoinization/de/), [Persian](/mempool/hyperbitcoinization/fa/), [Russian](/mempool/hyperbitcoinization/ru/) and [Spanish](/mempool/hyperbitcoinization/es/)
 </div>

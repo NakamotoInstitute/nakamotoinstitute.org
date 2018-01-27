@@ -40,4 +40,4 @@ image_alt: BitcoinFace
 
 Translation by [Ilya Evdokimov](https://keybase.io/ievdokimov)
 
-Read in [English](/mempool/hyperbitcoinization/), [Arabic](/mempool/hyperbitcoinization/ar/), [German](/mempool/hyperbitcoinization/de/), [Persian](/mempool/hyperbitcoinization/fa/), and [Spanish](/mempool/hyperbitcoinization/es/)
+Read in [Arabic](/mempool/hyperbitcoinization/ar/), [English](/mempool/hyperbitcoinization/), [German](/mempool/hyperbitcoinization/de/), [Persian](/mempool/hyperbitcoinization/fa/) and [Spanish](/mempool/hyperbitcoinization/es/)
