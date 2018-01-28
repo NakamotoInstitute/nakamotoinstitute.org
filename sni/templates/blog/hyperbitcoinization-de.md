@@ -63,4 +63,4 @@ Sobald diese vorbei ist, wird es unvorstellbar sein wie wir mit dem alten System
 
 Translation by J.O.G.
 
-Read in [Arabic](/mempool/hyperbitcoinization/ar/), [English](/mempool/hyperbitcoinization/), [Persian](/mempool/hyperbitcoinization/fa/), [Russian](/mempool/hyperbitcoinization/ru/) and [Spanish](/mempool/hyperbitcoinization/es/)
+Read in [English](/mempool/hyperbitcoinization/), [Arabic](/mempool/hyperbitcoinization/ar/), [Persian](/mempool/hyperbitcoinization/fa/), [Russian](/mempool/hyperbitcoinization/ru/) and [Spanish](/mempool/hyperbitcoinization/es/)

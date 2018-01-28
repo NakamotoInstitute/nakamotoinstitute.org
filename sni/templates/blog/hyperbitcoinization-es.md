@@ -40,4 +40,4 @@ La hiperbitcoinización probablemente será una etapa confusa, como una segunda 
 
 [Translation](http://elbitcoin.org/hiperbitcoinizacion/) by Majamalu of [ElBitcoin.org](http://elbitcoin.org)
 
-Read in [Arabic](/mempool/hyperbitcoinization/ar/), [English](/mempool/hyperbitcoinization/), [German](/mempool/hyperbitcoinization/de/), [Persian](/mempool/hyperbitcoinization/fa/), and [Russian](/mempool/hyperbitcoinization/ru/)
+Read in [English](/mempool/hyperbitcoinization/), [Arabic](/mempool/hyperbitcoinization/ar/), [German](/mempool/hyperbitcoinization/de/), [Persian](/mempool/hyperbitcoinization/fa/) and [Russian](/mempool/hyperbitcoinization/ru/)
