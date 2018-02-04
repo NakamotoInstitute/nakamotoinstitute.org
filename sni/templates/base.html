@@ -11,7 +11,13 @@ subject to other licenses.-->
     <link href="{{ url_for('static', filename = 'css/bootstrap-theme.min.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename = 'css/main.css') }}" rel="stylesheet" media="screen">
     <link href="{{ url_for('atomfeed') }}" rel="alternate" title="Mempool" type="application/atom+xml">
-
+    <script>
+    if( navigator.doNotTrack != "yes" && navigator.doNotTrack != "1" && window.doNotTrack != "1" && navigator.msDoNotTrack != "1" ){
+      var script = document.createElement('script');
+      script.src = "{{ url_for('static', filename = 'js/analytics.js') }}"
+      document.getElementsByTagName("head")[0].appendChild(script);
+    }
+    </script>
   </head>
   <body>
   <div class="navbar" role="navigation">
