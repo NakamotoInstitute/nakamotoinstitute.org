@@ -839,5 +839,16 @@
         "categories": ["cryptography", "economics", "law"],
         "doctype": "essay",
         "external": "http://www.daviddfriedman.com/Academic/privacy_chapter/privacy.htm"
+    },
+    {
+        "id": 82,
+        "title": "Computer Systems Established, Maintained, and Trusted by Mutually Suspicious Groups",
+        "author": ["david-chaum"],
+        "date": "June 1982",
+        "slug": "computer-systems-by-mutually-suspicious-groups",
+        "formats": ["pdf", "ext"],
+        "categories": ["cryptography"],
+        "doctype": "dissertation",
+        "external": "https://www.chaum.com/publications/research_chaum_2.pdf"
     }]
 }
