@@ -57,6 +57,12 @@ def contact():
     return render_template("contact.html")
 
 
+@app.route('/events/', methods=["GET"])
+def events():
+    app.logger.info(str(request.remote_addr) + ', Events')
+    return render_template("events.html")
+
+
 @cache.cached(timeout=900)
 @app.route('/emails/', subdomain="satoshi", methods=["GET"])
 @app.route('/emails/cryptography/', subdomain="satoshi", methods=["GET"])
