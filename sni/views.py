@@ -65,7 +65,6 @@ def events():
 
 @cache.cached(timeout=900)
 @app.route('/emails/', subdomain="satoshi", methods=["GET"])
-@app.route('/emails/cryptography/', subdomain="satoshi", methods=["GET"])
 def emails():
     emails = Email.query.order_by(Email.date).all()
     app.logger.info(str(request.remote_addr) + ', Emails')
@@ -73,9 +72,17 @@ def emails():
 
 
 @cache.cached(timeout=900)
-@app.route('/emails/cryptography/<int:emnum>/', subdomain="satoshi", methods=["GET"])
-def emailview(emnum):
-    email = Email.query.filter_by(id=emnum).first()
+@app.route('/emails/<string:source>/', subdomain="satoshi", methods=["GET"])
+def emailssource(source):
+    emails = Email.query.filter_by(source=source).order_by(Email.date).all()
+    app.logger.info(str(request.remote_addr) + ', emails, ' + source)
+    return render_template("emails.html", emails=emails, source=source)
+
+
+@cache.cached(timeout=900)
+@app.route('/emails/<string:source>/<int:emnum>/', subdomain="satoshi", methods=["GET"])
+def emailview(source, emnum):
+    email = Email.query.filter_by(source=source, id=emnum).first()
     prev = Email.query.filter_by(id=emnum-1).first()
     next = Email.query.filter_by(id=emnum+1).first()
     if email is not None:

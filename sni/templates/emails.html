@@ -2,11 +2,23 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-  <h2 class="text-center">Cryptography Mailing List Emails</h2>
+  <div class="text-center">
+    {% if source=="cryptography" %}
+    <h2>Cryptography Mailing List Emails</h2>
+    <a href="{{url_for('emails')}}">All Emails</a> | <a href="{{url_for('emailssource', source='bitcoin-list')}}">bitcoin-list</a>
+    {% elif source=="bitcoin-list" %}
+    <h2>bitcoin-list Emails</h2>
+    <a href="{{url_for('emails')}}">All Emails</a> | <a href="{{url_for('emailssource', source='cryptography')}}">Cryptography</a>
+    {% else %}
+    <h2>Emails</h2>
+    <a href="{{url_for('emailssource', source='bitcoin-list')}}">bitcoin-list</a> | <a href="{{url_for('emailssource', source='cryptography')}}">Cryptography</a>
+    {% endif %}
+  </div>
+  <br />
   <ol>
-  {%for email in emails %}
-    <li><a href="{{url_for('emailview', emnum=email['id'])}}">{{email['subject']}}</a> <em>({{email['date']}} UTC)</em></li>
-  {%endfor%}
+  {% for email in emails %}
+    <li><a href="{{url_for('emailview', source=email['source'], emnum=email['id'])}}">{{email['subject']}}</a> <em>({{email['date']}} UTC)</em></li>
+  {% endfor %}
   </ol>
 </div>
 {%endblock%}
