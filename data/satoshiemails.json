@@ -1,6 +1,118 @@
 {
   "emails": [
     {
+      "Subject": "[bitcoin-list] Bitcoin 0.3.19 is released",
+      "From": "Satoshi Nakamoto",
+      "Date": "2010-12-13 16:12:09",
+      "Text": "This is a minor release to add some DoS protection.\n\nChanges:\n- Added some DoS limits, though it's still far from DoS resistant.\n- Removed \"safe mode\" alerts.\n\nhttp://www.bitcoin.org/smf/index.php?topic=2228.0\n\nDownload:\nhttp://sourceforge.net/projects/bitcoin/files/Bitcoin/bitcoin-0.3.19/\n\n\n",
+      "Source": "bitcoin-list"
+    },
+    {
+      "Subject": "[bitcoin-list] Bitcoin 0.3.18 is released",
+      "From": "Satoshi Nakamoto",
+      "Date": "2010-12-08 23:11:55",
+      "Text": "Version 0.3.18 is now available.\n\nChanges:\n- Fixed a wallet.dat compatibility problem if you downgraded from 0.3.17 \nand then upgraded again\n- IsStandard() check to only include known transaction types in blocks\n- Jgarzik's optimisation to speed up the initial block download a little\n\nThe main addition in this release is the Accounts-based JSON-RPC \ncommands that Gavin's been working on (more details at \nhttp://www.bitcoin.org/smf/index.php?topic=1886.0).\n- getaccountaddress\n- sendfrom\n- move\n- getbalance\n- listtransactions\n\nDownload:\nhttp://sourceforge.net/projects/bitcoin/files/Bitcoin/bitcoin-0.3.18/\n\n\n\n\n\n",
+      "Source": "bitcoin-list"
+    },
+    {
+      "Subject": "[bitcoin-list] ALERT - we are investigating a problem",
+      "From": "Satoshi Nakamoto",
+      "Date": "2010-08-15 20:38:33",
+      "Text": "*** WARNING ***  We are investigating a problem.  DO NOT TRUST ANY \nTRANSACTIONS THAT HAPPENED AFTER 15.08.2010 17:05 UTC (block 74638) \nuntil the issue is resolved.\n\n\n",
+      "Source": "bitcoin-list"
+    },
+    {
+      "Subject": "[bitcoin-list] Alert: upgrade to bitcoin 0.3.6",
+      "From": "Satoshi Nakamoto",
+      "Date": "2010-07-30 06:02:38",
+      "Text": "Please upgrade to 0.3.6 ASAP to get an important bugfix.\n\nSee the bitcoin.org homepage for download links.\n\n\n\n",
+      "Source": "bitcoin-list"
+    },
+    {
+      "Subject": "[bitcoin-list] Bitcoin 0.3 released!",
+      "From": "Satoshi Nakamoto",
+      "Date": "2010-07-06 21:53:53",
+      "Text": "Announcing version 0.3 of Bitcoin, the P2P cryptocurrency!  Bitcoin is a \ndigital currency using cryptography and a distributed network to replace \nthe need for a trusted central server.  Escape the arbitrary inflation \nrisk of centrally managed currencies!  Bitcoin's total circulation is \nlimited to 21 million coins.  The coins are gradually released to the \nnetwork's nodes based on the CPU power they contribute, so you can get a \nshare of them by contributing your idle CPU time.\n\nWhat's new:\n- Command line and JSON-RPC control\n- Includes a daemon version without GUI\n- Transaction filter tabs\n- 20% faster hashing\n- Hashmeter performance display\n- Mac OS X version (thanks to Laszlo)\n- German, Dutch and Italian translations (thanks to DataWraith, Xunie \nand Joozero)\n\nGet it at http://www.bitcoin.org, and read the forum to find out more.\n\n\n\n",
+      "Source": "bitcoin-list"
+    },
+    {
+      "Subject": "[bitcoin-list] Bitcoin 0.2 released",
+      "From": "Satoshi Nakamoto",
+      "Date": "2009-12-17 06:52:09",
+      "Text": "Bitcoin 0.2 is here!\n\nDownload (Windows, and now Linux version available)\nhttp://sourceforge.net/projects/bitcoin/files/\n\nNew Features\n\nMartti Malmi\n  - Minimize to system tray option\n  - Autostart on boot option so you can keep it running in the \nbackground automatically\n  - New options dialog layout for future expansion\n  - Setup program for Windows\n  - Linux version (tested on Ubuntu)\nSatoshi Nakamoto\n  - Multi-processor support for coin generation\n  - Proxy support for use with TOR\n  - Fixed some slowdowns in the initial block download\n\nWe also have a new forum at http://www.bitcoin.org/smf/\n\nMany thanks to Martti (sirius-m) for all his development work, and to \nNew Liberty Standard for his help with testing the Linux version.\n\nSatoshi Nakamoto\n\n\n",
+      "Source": "bitcoin-list"
+    },
+    {
+      "Subject": "Re: [bitcoin-list] Does Bitcoin Crash in Windows?",
+      "From": "Satoshi Nakamoto",
+      "Date": "2009-10-23 23:57:51",
+      "Text": "Liberty Standard wrote:\n>  Do you Windows users experience occasional Bitcoin crashes?\n> Lately Bitcoin running in wine-1.0.1 has been crashing frequently. I was\n> just wondering whether this is a Wine issue or a Bitcoin issue. \n\nI haven't had any reports of crashes in v0.1.5.  It's been rock solid \nfor me on Windows.  I think it must be Wine related.  If you get another \ncrash in Wine and it prints anything on the terminal, e-mail me and I \nmay be able to figure out what happened, maybe something I can work \naround.  Martti and I have been working on a new version to release soon \nand it would be nice to get any Wine fixes in there.\n\n> The following four lines print from the terminal when I start Bitcoin.\n> fixme:toolhelp:CreateToolhelp32Snapshot Unimplemented: heap list snapshot\n> fixme:toolhelp:Heap32ListFirst : stub\n> fixme:toolhelp:CreateToolhelp32Snapshot Unimplemented: heap list snapshot\n> fixme:toolhelp:Heap32ListFirst : stub\n\nThose don't look like anything to worry about.  Probably functions \nunimplemented by Wine that are harmlessly stubbed out.\n\n> I previously wasn't starting Bitcoin from the terminal, so I don't know what\n> gets printed out when it crashes, but I'll reply with the results the next\n> time it crashes.\n> \n> While Bitcoin first downloads previously completed blocks, the file\n> debug.log grows grows to 17.4 MB and then stops growing. I imagine it will\n> continue to grow as more bitcoins are completed.\n\nYou can delete debug.log occasionally if you don't want to take the disk \nspace.  It's just status messages that help with debugging.\n\nbitcoin.sourceforge.net looks fine now.  Maybe sourceforge was doing \nsome maintenance.\n\nSatoshi\n\n\n",
+      "Source": "bitcoin-list"
+    },
+    {
+      "Subject": "Re: [bitcoin-list] Bitcoin v0.1.5 released",
+      "From": "Satoshi Nakamoto",
+      "Date": "2009-03-04 16:59:12",
+      "Text": "Hal Finney wrote:\n> That sounds good. I'd also like to be able to run multiple coin/block\n> generators on multiple machines, all behind a single NAT address. I\n> haven't tried this yet so I don't know if it works on the current\n> software.\n\nThe current version will work fine.  They'll each connect over the\nInternet, while incoming connections only come to the host that\nport 8333 is routed to. \n\nAs an optimisation, I'll make a switch \"-connect=1.2.3.4\" to make\nit only connect to a specific address.  You could make your extra\nnodes connect to your primary, and only the primary connects over\nthe Internet.  It doesn't really matter for now, since the network\nwould have to get huge before the bandwidth is anything more than\ntrivial.\n\n\n> BTW I don't remember if we talked about this, but the other day some\n> people were mentioning secure timestamping. You want to be able to\n> prove that a certain document existed at a certain time in the past.\n> Seems to me that bitcoin's stack of blocks would be perfect for this.\n\nIndeed, Bitcoin is a distributed secure timestamp server for\ntransactions.  A few lines of code could create a transaction with\nan extra hash in it of anything that needs to be timestamped.  \nI should add a command to timestamp a file that way.\n\n\n> > > Later I want to add interfaces to make it really easy to integrate\n> > > into websites from any server side language.\n>\n> Right, and I'd like to see more of a library interface that could be\n> called from programming or scripting languages, on the client side as\n> well.\n \nExactly.\n\n \nSatoshi Nakamoto\n\nhttp://www.bitcoin.org\n\n\n\n",
+      "Source": "bitcoin-list"
+    },
+    {
+      "Subject": "Re: [bitcoin-list] Bitcoin v0.1.5 released",
+      "From": "Satoshi Nakamoto",
+      "Date": "2009-02-22 17:47:52",
+      "Text": "> What's next?\n\nThe next thing for v0.1.6 is to take advantage of multiple\nprocessors to generate blocks.  Currently it only starts one\nthread.  If you have a multi-core processor like a Core Duo or\nQuad this will double or quadruple your production.\n\nLater I want to add interfaces to make it really easy to integrate\ninto websites from any server side language.\n\nSatoshi\n\nhttp://www.bitcoin.org\n\n\n\n\n",
+      "Source": "bitcoin-list"
+    },
+    {
+      "Subject": "[bitcoin-list] Bitcoin v0.1.5 released",
+      "From": "Satoshi Nakamoto",
+      "Date": "2009-02-04 19:46:04",
+      "Text": "Version 0.1.5 is now available.  It includes the fix for the problem\nNicholas had, checking for disk full and changes to try to improve\nthings that were confusing.\n\nSpecial thanks to Nicholas and Dustin for all their help and feedback!\n\nDownload link:\nhttp://sourceforge.net/project/showfiles.php?group_id=244765&package_id=298441\n\nChanges:\n- disk full warning\n- fixed a bug that could occur if dns lookup failed\n- prevent entering your own address in the address book,\n    which confusingly changed the label for your own address\n- moved change address button to menu under options\n- tweaks to make it get connected faster\n- close sockets on exit\n- created minimum fee for transactions less than 1 cent\n- hid the transaction-type selection box that only had one choice\n- cleaned up ParseMoney a little\n- slightly cleaner reformatting of message text\n- changed the font in transaction details dialog\n- added some explanation text to transaction details for generated coins\n- reworded the description for transactions received with bitcoin address\n\nSatoshi Nakamoto\nhttp://www.bitcoin.org\n\n\n\n\n\n",
+      "Source": "bitcoin-list"
+    },
+    {
+      "Subject": "Re: [bitcoin-list] Problems",
+      "From": "Satoshi Nakamoto",
+      "Date": "2009-01-25 16:45:25",
+      "Text": "From: Nicholas Bohm 2009-01-25 10:17\n> I have had a couple of problems running bitcoin: is this an appropriate\n> list for reporting them (with about 70kb of attachments)?\n\nWhat's the problem you're having?\n\nIf you send me your debug.log file directly (best not to send attachments\nto the list), I can take a look at what's happening.\n\nSatoshi Nakamoto\nbitcoin-help at vistomail dot com\n\n\n\n\n",
+      "Source": "bitcoin-list"
+    },
+    {
+      "Subject": "Re: [bitcoin-list] Bitcoin v0.1 released",
+      "From": "Satoshi Nakamoto",
+      "Date": "2009-01-16 18:35:32",
+      "Text": "> Dustin D. Trammell wrote:\n> > Satoshi Nakamoto wrote:\n> > You know, I think there were a lot more people interested in the 90's,\n> > but after more than a decade of failed Trusted Third Party based systems\n> > (Digicash, etc), they see it as a lost cause. I hope they can make the\n> > distinction that this is the first time I know of that we're trying a\n> > non-trust-based system.\n>\n> Yea, that was the primary feature that caught my eye. The real trick\n> will be to get people to actually value the BitCoins so that they become\n> currency.\n \nI would be surprised if 10 years from now we're not using\nelectronic currency in some way, now that we know a way to do it\nthat won't inevitably get dumbed down when the trusted third party\ngets cold feet.\n\nIt could get started in a narrow niche like reward points,\ndonation tokens, currency for a game or micropayments for adult\nsites.  Initially it can be used in proof-of-work applications\nfor services that could almost be free but not quite.\n\nIt can already be used for pay-to-send e-mail.  The send dialog is\nresizeable and you can enter as long of a message as you like.\nIt's sent directly when it connects.  The recipient doubleclicks\non the transaction to see the full message.  If someone famous is\ngetting more e-mail than they can read, but would still like to\nhave a way for fans to contact them, they could set up Bitcoin and\ngive out the IP address on their website.  \"Send X bitcoins to my\npriority hotline at this IP and I'll read the message personally.\"\n\nSubscription sites that need some extra proof-of-work for their\nfree trial so it doesn't cannibalize subscriptions could charge\nbitcoins for the trial.\n\nIt might make sense just to get some in case it catches on.  If\nenough people think the same way, that becomes a self fulfilling\nprophecy.  Once it gets bootstrapped, there are so many\napplications if you could effortlessly pay a few cents to a\nwebsite as easily as dropping coins in a vending machine.  \n\nSatoshi Nakamoto\nhttp://www.bitcoin.org\n\n\n\n\n",
+      "Source": "bitcoin-list"
+    },
+    {
+      "Subject": "[bitcoin-list] Bitcoin v0.1.3",
+      "From": "Satoshi Nakamoto",
+      "Date": "2009-01-12 22:48:23",
+      "Text": "It looks like we're through with the worst of the Internet\nconnection issues.  0.1.3 fixed a problem where your node's\ncommunications could go dead after a while.  The network is\nrunning much more smoothly now with this version. \n\nIf you've successfully generated a block, you've seen it has a\nmaturation countdown before you can spend it.  Once it matures,\nthe Credit column will change from 0.00 to 50.00.  For a block to\nbe valid, it has to be broadcasted to the network and get into the\nblock chain, which is why Generate does not run if you're not\nconnected.  If you generated a block without being connected, the\nnetwork wouldn't know about it and would continue building the\nchain without it, leaving it behind, and the maturation countdown\nwould change to \"(not accepted)\" when your node sees that it\nwasn't used.  If you subtract 1 from the status column, that's how\nmany blocks have been chained after yours.\n\nSatoshi Nakamoto\n\n\n\n\n",
+      "Source": "bitcoin-list"
+    },
+    {
+      "Subject": "[bitcoin-list] Bitcoin v0.1 Alpha release notes",
+      "From": "Satoshi Nakamoto",
+      "Date": "2009-01-12 20:20:47",
+      "Text": "Release notes for Bitcoin v0.1 Alpha\n\nBitcoin is a new electronic cash system that uses a peer-to-peer \nnetwork to prevent double-spending.  It's completely decentralized\nwith no server or central authority.\n \nYou can find screenshots and the download link at:\nhttp://www.bitcoin.org\n \nWindows only for now.  Open source C++ code is included.\n\n- Unpack the files into a directory\n- Run BITCOIN.EXE\n- It automatically connects to other nodes\n\nIf you can keep a node running that accepts incoming connections,\nyou'll really be helping the network a lot.  Port 8333 on your\nfirewall needs to be open to receive incoming connections.\n\nThe software is still alpha and experimental.  There's no guarantee\nthe system's state won't have to be restarted at some point if it\nbecomes necessary, although I've done everything I can to build in\nextensibility and versioning.\n\nYou can get coins by getting someone to send you some, or turn on\nOptions->Generate Coins to run a node and generate blocks.  I made\nthe proof-of-work difficulty ridiculously easy to start with, so\nfor a little while in the beginning a typical PC will be able to\ngenerate coins in just a few hours.  It'll get a lot harder when\ncompetition makes the automatic adjustment drive up the difficulty.\nGenerated coins must wait 120 blocks to mature before they can be\nspent.\n\nThere are two ways to send money.  If the recipient is online, you\ncan enter their IP address and it will connect, get a new public\nkey and send the transaction with comments.  If the recipient is\nnot online, it is possible to send to their Bitcoin address, which\nis a hash of their public key that they give you.  They'll receive\nthe transaction the next time they connect and get the block it's\nin.  This method has the disadvantage that no comment information\nis sent, and a bit of privacy may be lost if the address is used\nmultiple times, but it is a useful alternative if both users can't\nbe online at the same time or the recipient can't receive incoming\nconnections.\n\nTotal circulation will be 21,000,000 coins.  It'll be distributed\nto network nodes when they make blocks, with the amount cut in half\nevery 4 years.\n\nfirst 4 years: 10,500,000 coins\nnext 4 years: 5,250,000 coins\nnext 4 years: 2,625,000 coins\nnext 4 years: 1,312,500 coins\netc...\n\nWhen that runs out, the system can support transaction fees if\nneeded.  It's based on open market competition, and there will\nprobably always be nodes willing to process transactions for free.\n\nSatoshi Nakamoto\n\n\n\n\n",
+      "Source": "bitcoin-list"
+    },
+    {
+      "Subject": "[bitcoin-list] Bitcoin v0.1.2 now available",
+      "From": "Satoshi Nakamoto",
+      "Date": "2009-01-11 22:32:18",
+      "Text": "Bitcoin v0.1.2 is now available for download.\n\nSee http://www.bitcoin.org for the download link.\n\nAll the problems I've been finding are in the code that\nautomatically finds and connects to other nodes, since I wasn't\nable to test it in the wild until now.  There are many more ways\nfor connections to get screwed up on the real Internet.\n\nBugs fixed:\n- Fixed various problems that were making it hard for new nodes to\nsee other nodes to connect to.\n- If you're behind a firewall, it could only receive one\nconnection, and the second connection would constantly disconnect\nand reconnect.\n\nThese problems are kind of screwing up the network and will get\nworse as more users arrive, so please make sure to upgrade.\n\nSatoshi Nakamoto\n\n\n\n\n",
+      "Source": "bitcoin-list"
+    },
+    {
+      "Subject": "[bitcoin-list] Welcome",
+      "From": "Satoshi Nakamoto",
+      "Date": "2008-12-10 17:00:23",
+      "Text": "Welcome to the Bitcoin mailing list!\n\n\n\n",
+      "Source": "bitcoin-list"
+    },
+    {
       "Subject": "Re: Bitcoin v0.1 released",
       "From": "Satoshi Nakamoto",
       "Date": "2009-01-25T08:34:34-0800",

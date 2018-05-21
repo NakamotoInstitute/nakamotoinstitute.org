@@ -2,24 +2,26 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-  <div class="text-center">{% if prev != None %}
-    <a href="{{url_for('emailview',emnum=email['id']-1)}}">Previous</a> |
+  <div class="text-center">
+    {% if prev != None %}
+    <a href="{{url_for('emailview',source=prev['source'],emnum=prev['id'])}}">Previous</a> |
     {% endif %}
     <a href="{{url_for('emails')}}">Index</a>
     {% if next != None %}
-    | <a href="{{url_for('emailview',emnum=email['id']+1)}}">Next</a>
+    | <a href="{{url_for('emailview',source=next['source'],emnum=next['id'])}}">Next</a>
     {% endif %}
   </div>
   <span id="CONTENT"><div><div class="page-header"><h3>{{email['subject']}}
   <small><em>{{email['date']}} UTC</em></small></h3></div>
   <div class="email-text-monospace">{{email['text']|replace("\n", "<br />")|safe}}</div></div></span>
   <br>
-  <div class="text-center">{% if prev != None %}
-    <a href="{{url_for('emailview',emnum=email['id']-1)}}">Previous</a> |
+  <div class="text-center">
+    {% if prev != None %}
+    <a href="{{url_for('emailview',source=prev['source'],emnum=prev['id'])}}">Previous</a> |
     {% endif %}
     <a href="{{url_for('emails')}}">Index</a>
     {% if next != None %}
-    | <a href="{{url_for('emailview',emnum=email['id']+1)}}">Next</a>
+    | <a href="{{url_for('emailview',source=next['source'],emnum=next['id'])}}">Next</a>
     {% endif %}
   </div>
 </div>
