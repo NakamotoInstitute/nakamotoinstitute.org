@@ -154,8 +154,11 @@ def quotescategory(slug):
             Quote.categories.any(slug=slug)
         ).order_by(Quote.date).all()
     category = QuoteCategory.query.filter_by(slug=slug).first()
-    return render_template("quotescategory.html", quotes=quotes,
-                           category=category, order=order)
+    if category is not None:
+        return render_template("quotescategory.html", quotes=quotes,
+                               category=category, order=order)
+    else:
+        return redirect('quotes')
 
 
 @cache.cached(timeout=900)
