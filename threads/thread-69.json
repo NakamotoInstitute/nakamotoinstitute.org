@@ -1,0 +1,62 @@
+[
+    {
+        "thread_id": 69,
+        "name": "Gavin Andresen",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=224",
+        "subject": "Transactions and Scripts: DUP HASH160 ... EQUALVERIFY CHECKSIG",
+        "url": "https://bitcointalk.org/index.php?topic=195.msg1606#msg1606",
+        "date": "June 17, 2010, 11:38:31 AM",
+        "content": "<div class=\"post\">So I'm writing a little tool that dissects the Bitcoin wallet.dat, mainly because I want to understand better exactly how Bitcoin works.<br/><br/>And I see that the outputs of transactions have a value (number of bitcoins) and a bunch of bytes that are run through the little Forth-like scripting language built in to bitcoin.\u00a0 E.g.:<br/>['TxOut: value: 100.00 Script: DUP HASH160 6fad...ab90 EQUALVERIFY CHECKSIG']<br/><br/>First: it make me a little nervous that bitcoin has a scripting language in it, even though it is a really simple scripting language (no loops, no pointers, nothing but math and crypto).\u00a0 It makes me nervous because it is more complicated, and complication is the enemy of security.\u00a0 It also makes it harder to create a second, compatible implementation.\u00a0 But I think I can get over that.<br/><br/>Looking at the code, new transactions are verified by pushing the signature an then public key on the interpreter's stack and then running the TxOut script (did I get that right?).<br/><br/>Could I write code to create transactions with any valid script in the TxOut?<br/>E.g. could I create a TxOut with a script of:\u00a0 \u00a0OP_2DROP OP_TRUE<br/>... to create a coin that could be spent by anybody?<br/><br/>And is flexibility in the types of coins created the reason it is coded this way?<br/></div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 69,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Transactions and Scripts: DUP HASH160 ... EQUALVERIFY CHECKSIG",
+        "url": "https://bitcointalk.org/index.php?topic=195.msg1611#msg1611",
+        "date": "June 17, 2010, 06:46:08 PM",
+        "content": "<div class=\"post\">The nature of Bitcoin is such that once version 0.1 was released, the core design was set in stone for the rest of its lifetime.\u00a0 Because of that, I wanted to design it to support every possible transaction type I could think of.\u00a0 The problem was, each thing required special support code and data fields whether it was used or not, and only covered one special case at a time.\u00a0 It would have been an explosion of special cases.\u00a0 The solution was script, which generalizes the problem so transacting parties can describe their transaction as a predicate that the node network evaluates.\u00a0 The nodes only need to understand the transaction to the extent of evaluating whether the sender's conditions are met.<br/><br/>The script is actually a predicate.\u00a0 It's just an equation that evaluates to true or false.\u00a0 Predicate is a long and unfamiliar word so I called it script.<br/><br/>The receiver of a payment does a template match on the script.\u00a0 Currently, receivers only accept two templates: direct payment and bitcoin address.\u00a0 Future versions can add templates for more transaction types and nodes running that version or higher will be able to receive them.\u00a0 All versions of nodes in the network can verify and process any new transactions into blocks, even though they may not know how to read them.<br/><br/>The design supports a tremendous variety of possible transaction types that I designed years ago.\u00a0 Escrow transactions, bonded contracts, third party arbitration, multi-party signature, etc.\u00a0 If Bitcoin catches on in a big way, these are things we'll want to explore in the future, but they all had to be designed at the beginning to make sure they would be possible later.<br/><br/>I don't believe a second, compatible implementation of Bitcoin will ever be a good idea.\u00a0 So much of the design depends on all nodes getting exactly identical results in lockstep that a second implementation would be a menace to the network.\u00a0 The MIT license is compatible with all other licenses and commercial uses, so there is no need to rewrite it from a licensing standpoint.</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 69,
+        "name": "laszlo",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=143",
+        "subject": "Re: Transactions and Scripts: DUP HASH160 ... EQUALVERIFY CHECKSIG",
+        "url": "https://bitcointalk.org/index.php?topic=195.msg1612#msg1612",
+        "date": "June 17, 2010, 06:50:31 PM",
+        "content": "<div class=\"post\">How long have you been working on this design Satoshi?\u00a0 It seems very well thought out, not the kind of thing you just sit down and code up without doing a lot of brainstorming and discussion on it first.\u00a0 Everyone has the obvious questions looking for holes in it but it is holding up well <img alt=\"Smiley\" border=\"0\" src=\"https://bitcointalk.org/Smileys/default/smiley.gif\"/></div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 69,
+        "name": "Gavin Andresen",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=224",
+        "subject": "Re: Transactions and Scripts: DUP HASH160 ... EQUALVERIFY CHECKSIG",
+        "url": "https://bitcointalk.org/index.php?topic=195.msg1613#msg1613",
+        "date": "June 17, 2010, 07:58:14 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=195.msg1611#msg1611\">Quote from: satoshi on June 17, 2010, 06:46:08 PM</a></div><div class=\"quote\">I don't believe a second, compatible implementation of Bitcoin will ever be a good idea.\u00a0 So much of the design depends on all nodes getting exactly identical results in lockstep that a second implementation would be a menace to the network.\u00a0 The MIT license is compatible with all other licenses and commercial uses, so there is no need to rewrite it from a licensing standpoint.<br/></div>Good idea or not, SOMEBODY will try to mess up the network (or co-opt it for their own use) sooner or later.\u00a0 They'll either hack the existing code or write their own version, and will be a menace to the network.<br/><br/>I admire the flexibility of the scripts-in-a-transaction scheme, but my evil little mind immediately starts to think of ways I might abuse it.\u00a0 I could encode all sorts of interesting information in the TxOut script, and if non-hacked clients validated-and-then-ignored those transactions it would be a useful covert broadcast communication channel.<br/><br/>That's a cool feature until it gets popular and somebody decides it would be fun to flood the payment network with millions of transactions to transfer the latest Lady Gaga video to all their friends...<br/></div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 69,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Transactions and Scripts: DUP HASH160 ... EQUALVERIFY CHECKSIG",
+        "url": "https://bitcointalk.org/index.php?topic=195.msg1617#msg1617",
+        "date": "June 18, 2010, 04:17:14 PM",
+        "content": "<div class=\"post\">A second version would be a massive development and maintenance hassle for me. \u00a0It's hard enough maintaining backward compatibility while upgrading the network without a second version locking things in. \u00a0If the second version screwed up, the user experience would reflect badly on both, although it would at least reinforce to users the importance of staying with the official version. \u00a0If someone was getting ready to fork a second version, I would have to air a lot of disclaimers about the risks of using a minority version. \u00a0This is a design where the majority version wins if there's any disagreement, and that can be pretty ugly for the minority version and I'd rather not go into it, and I don't have to as long as there's only one version.<br/><br/>I know, most developers don't like their software forked, but I have real technical reasons in this case.<br/><br/><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=195.msg1613#msg1613\">Quote from: gavinandresen on June 17, 2010, 07:58:14 PM</a></div><div class=\"quote\">I admire the flexibility of the scripts-in-a-transaction scheme, but my evil little mind immediately starts to think of ways I might abuse it. \u00a0I could encode all sorts of interesting information in the TxOut script, and if non-hacked clients validated-and-then-ignored those transactions it would be a useful covert broadcast communication channel.<br/><br/>That's a cool feature until it gets popular and somebody decides it would be fun to flood the payment network with millions of transactions to transfer the latest Lady Gaga video to all their friends...<br/></div>That's one of the reasons for transaction fees. \u00a0There are other things we can do if necessary.<br/><br/><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=195.msg1612#msg1612\">Quote from: laszlo on June 17, 2010, 06:50:31 PM</a></div><div class=\"quote\">How long have you been working on this design Satoshi? \u00a0It seems very well thought out, not the kind of thing you just sit down and code up without doing a lot of brainstorming and discussion on it first. \u00a0Everyone has the obvious questions looking for holes in it but it is holding up well <img alt=\"Smiley\" border=\"0\" src=\"https://bitcointalk.org/Smileys/default/smiley.gif\"/><br/></div>Since 2007. \u00a0At some point I became convinced there was a way to do this without any trust required at all and couldn't resist to keep thinking about it. \u00a0Much more of the work was designing than coding.<br/><br/>Fortunately, so far all the issues raised have been things I previously considered and planned for.</div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

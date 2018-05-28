@@ -1,0 +1,98 @@
+[
+    {
+        "thread_id": 183,
+        "name": "chromicant",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=777",
+        "subject": "Big endinan code problems",
+        "url": "https://bitcointalk.org/index.php?topic=816.msg9280#msg9280",
+        "date": "August 14, 2010, 10:08:00 PM",
+        "content": "<div class=\"post\">I've seen a lot of messages about some big-endian \"issues\" (ok, no worky) with the bitcoin client. Before I sit and try to analyze all the source code, are there any known \"bad bits\" of the code that assume LE?<br/><br/>I have some idle G4 and Sparc machines that can happily be put to use...plus an old decrepit Alpha that needs to be tested to see if it still boots...</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 183,
+        "name": "teknohog",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=575",
+        "subject": "Re: Big endinan code problems",
+        "url": "https://bitcointalk.org/index.php?topic=816.msg9290#msg9290",
+        "date": "August 14, 2010, 11:07:54 PM",
+        "content": "<div class=\"post\">I also have a couple of G4 machines, but I think this issue is about much more than getting these old(ish) machines to good use. It is something like the Y2038 problem that some people are already discussing; will everyone keep using x86 all those decades, or should we drop the assumption of that particular architecture?<br/><br/>It is a nice fact that bitcoin happens to compile and run on ARM, one of the most serious contenders of the x86 monopoly, at least in the mobile and embedded space. Nevertheless, a digital currency is too important to be limited in computing architectures. Don't banks tend to use big iron?</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 183,
+        "name": "MoonShadow",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=643",
+        "subject": "Re: Big endinan code problems",
+        "url": "https://bitcointalk.org/index.php?topic=816.msg9303#msg9303",
+        "date": "August 15, 2010, 12:10:04 AM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=816.msg9280#msg9280\">Quote from: chromicant on August 14, 2010, 10:08:00 PM</a></div><div class=\"quote\">I've seen a lot of messages about some big-endian \"issues\" (ok, no worky) with the bitcoin client. Before I sit and try to analyze all the source code, are there any known \"bad bits\" of the code that assume LE?<br/><br/>I have some idle G4 and Sparc machines that can happily be put to use...plus an old decrepit Alpha that needs to be tested to see if it still boots...<br/></div><br/>Do you think that you might have replaced them sometime in the next 28 years?</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 183,
+        "name": "teknohog",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=575",
+        "subject": "Re: Big endinan code problems",
+        "url": "https://bitcointalk.org/index.php?topic=816.msg11521#msg11521",
+        "date": "August 28, 2010, 06:10:50 PM",
+        "content": "<div class=\"post\">I have been thinking about an interim solution, inspired by the fact that many architectures can run in either endianness. AFAIK, Virtual PC used this feature of the PowerPC to run Windows on a Mac. Apparently, Linux also supports running little-endian PPC binaries on an otherwise big-endian system.<br/><br/>It will not be as simple as compiling with -mlittle-endian, as the libraries should likely have the same endianness. It might be possible to cross-compile a little-endian system, compile a static binary in the chroot, and run the resulting binary in the usual big-endian system. Or it could be running in the chroot, if that is easier to accomplish.<br/><br/>So far, I have not managed to build such a system, but it might be possible with a suitable cross-compiler. I already use Gentoo and Crossdev for such things, but I have not found a suitable target machine type for this.</div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 183,
+        "name": "Gespenster",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=714",
+        "subject": "Re: Big endinan code problems",
+        "url": "https://bitcointalk.org/index.php?topic=816.msg11583#msg11583",
+        "date": "August 29, 2010, 11:35:19 AM",
+        "content": "<div class=\"post\">The ByteReverse macro should probably be skipped before doing SHA-256 transforms.</div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 183,
+        "name": "lfm",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=466",
+        "subject": "Re: Big endinan code problems",
+        "url": "https://bitcointalk.org/index.php?topic=816.msg11593#msg11593",
+        "date": "August 29, 2010, 04:41:10 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=816.msg11583#msg11583\">Quote from: Gespenster on August 29, 2010, 11:35:19 AM</a></div><div class=\"quote\">The ByteReverse macro should probably be skipped before doing SHA-256 transforms.<br/></div><br/>before and after? theres several ByteReverse calls that probably need removal for the nonce ant the timestamp also.<br/><br/>in fact you may be able to do away completely with the temp block header thats mostly just there so it can be ByteReversed.<br/><br/></div>",
+        "post_num": 6,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 183,
+        "name": "Gespenster",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=714",
+        "subject": "Re: Big endinan code problems",
+        "url": "https://bitcointalk.org/index.php?topic=816.msg11595#msg11595",
+        "date": "August 29, 2010, 05:18:16 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=816.msg11593#msg11593\">Quote from: lfm on August 29, 2010, 04:41:10 PM</a></div><div class=\"quote\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=816.msg11583#msg11583\">Quote from: Gespenster on August 29, 2010, 11:35:19 AM</a></div><div class=\"quote\">The ByteReverse macro should probably be skipped before doing SHA-256 transforms.<br/></div><br/>before and after? theres several ByteReverse calls that probably need removal for the nonce ant the timestamp also.<br/><br/>in fact you may be able to do away completely with the temp block header thats mostly just there so it can be ByteReversed.<br/><br/><br/></div><br/>I think all of them can go away since SHA-256 expects it's bytestream to be big-endian. The fastest way to find out I think is to run the code through a debugger on both a BE and LE machine at the same time and compare results at every step. </div>",
+        "post_num": 7,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 183,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Big endian code problems",
+        "url": "https://bitcointalk.org/index.php?topic=816.msg11610#msg11610",
+        "date": "August 29, 2010, 10:14:36 PM",
+        "content": "<div class=\"post\">The code assumes little-endian throughout and was written with the intention of never being ported to big-endian. \u00a0Every integer that is sent over the network would have to be byte swapped, in addition to many dozens of other places in code. \u00a0It would not be worth the extra sourcecode bloat.<br/><br/>Big-endian is on its way out anyway.</div>",
+        "post_num": 8,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

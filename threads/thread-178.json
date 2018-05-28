@@ -1,0 +1,50 @@
+[
+    {
+        "thread_id": 178,
+        "name": "dkaparis",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=192",
+        "subject": "BSD detection",
+        "url": "https://bitcointalk.org/index.php?topic=790.msg8807#msg8807",
+        "date": "August 11, 2010, 11:00:16 PM",
+        "content": "<div class=\"post\">There is this piece of code in headers.h:<br/><tt><br/>#ifdef __WXMAC_OSX__<br/>#define __WXMAC__ 1<br/>#define __WXOSX__ 1<br/>#define __BSD__ 1<br/>#endif<br/>#endif<br/></tt><br/><br/>In my testing it's not caught on FreeBSD 8.1<br/><br/>I propose it be changed to:<br/><tt><br/>#if (defined(__unix__) || defined(unix)) &amp;&amp; !defined(USG)<br/>#include &lt;sys/param.h&gt;<br/>#endif<br/></tt><br/><br/>And then checks for BSD should be<br/><tt>#ifdef BSD</tt><br/>This is the recommended way of detecting BSD in the <a href=\"http://www.freebsd.org/doc/en/books/porters-handbook/porting-versions.html\">FreeBSD Porter's Handbook</a>.<br/><br/>This change is already done in my CMake tree.</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 178,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: BSD detection",
+        "url": "https://bitcointalk.org/index.php?topic=790.msg8814#msg8814",
+        "date": "August 12, 2010, 12:02:06 AM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=790.msg8807#msg8807\">Quote from: dkaparis on August 11, 2010, 11:00:16 PM</a></div><div class=\"quote\">There is this piece of code in headers.h:<br/><tt><br/>#ifdef __WXMAC_OSX__<br/>#define __WXMAC__ 1<br/>#define __WXOSX__ 1<br/>#define __BSD__ 1<br/>#endif<br/>#endif<br/></tt><br/></div>That code was a bad idea anyway, I'm deleting it.\u00a0 Any Mac code should only use __WXMAC_OSX__, not __WXMAC__ or __WXOSX__, and we should stop using __BSD__.<br/><br/><div class=\"quoteheader\">Quote</div><div class=\"quote\"><tt><br/>#if (defined(__unix__) || defined(unix)) &amp;&amp; !defined(USG)<br/>#include &lt;sys/param.h&gt;<br/>#endif<br/></tt><br/></div>Will that definitely cause BSD to be defined on Mac?<br/></div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 178,
+        "name": "dkaparis",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=192",
+        "subject": "Re: BSD detection",
+        "url": "https://bitcointalk.org/index.php?topic=790.msg8861#msg8861",
+        "date": "August 12, 2010, 08:24:37 AM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=790.msg8814#msg8814\">Quote from: satoshi on August 12, 2010, 12:02:06 AM</a></div><div class=\"quote\"><div class=\"quoteheader\">Quote</div><div class=\"quote\"><tt><br/>#if (defined(__unix__) || defined(unix)) &amp;&amp; !defined(USG)<br/>#include &lt;sys/param.h&gt;<br/>#endif<br/></tt><br/></div>Will that definitely cause BSD to be defined on Mac?<br/><br/></div><br/>Don't know if Mac OS X is technically a BSD and I don't have access to a Mac, maybe someone else may test it.<br/>If there are other Mac (and not BSD) specialties, then we'd need to check both for __WXMAC_OSX__ and BSD or detect these in some other way altogether.<br/></div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 178,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: BSD detection",
+        "url": "https://bitcointalk.org/index.php?topic=790.msg8919#msg8919",
+        "date": "August 12, 2010, 09:14:20 PM",
+        "content": "<div class=\"post\">This is in SVN rev 130. \u00a0Check that it compiles right.<br/><br/><div class=\"codeheader\">Code:</div><div class=\"code\">#if (defined(__unix__) || defined(unix)) &amp;&amp; !defined(USG)<br/>#include &lt;sys/param.h&gt; \u00a0// to get BSD define<br/>#endif<br/>#ifdef __WXMAC_OSX__<br/>#ifndef BSD<br/>#define BSD 1<br/>#endif<br/>#endif<br/></div></div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

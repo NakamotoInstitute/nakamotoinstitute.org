@@ -1,0 +1,26 @@
+[
+    {
+        "thread_id": 3,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Repost: Bitcoin Maturation",
+        "url": "https://bitcointalk.org/index.php?topic=6.msg29#msg29",
+        "date": "November 22, 2009, 06:31:44 PM",
+        "content": "<div class=\"post\">--------------------<br/>bitcoinbitcoin:<br/>Bitcoin Maturation<br/>Posted:Thu 01 of Oct, 2009 (14:12 UTC)<br/><br/>From the user's perspective the bitcoin maturation process can be broken down into 8 stages.<br/><br/>1. The initial network transaction that occurs when you first click Generate Coins.<br/>2. The time between that initial network transaction and when the bitcoin entry is ready to appear in the All Transactions list.<br/>3. The change of the bitcoin entry from outside the All Transaction field to inside it.<br/>4. The time between when the bitcoin appears in the All Transfers list and when the Description is ready to change to Generated (50.00 matures in x more blocks).<br/>5. The change of the Description to Generated (50.00 matures in x more blocks).<br/>6. The time between when the Description says Generated (50.00 matures in x more blocks) to when it is ready to change to Generated.<br/>7 The change of the Description to Generated.<br/>8. The time after the Description has changed to Generated.<br/><br/>Which stages require network connectivity, significant local CPU usage and or significant remote CPU usage? Do any of these stages have names?<br/><br/>--------------------<br/>sirius-m:<br/>Re: Bitcoin Maturation<br/>Posted:Thu 22 of Oct, 2009 (02:36 UTC)<br/><br/>As far as I know, there's no network transaction when you click Generate Coins - your computer just starts calculating the next proof-of-work.\u00a0 The CPU usage is 100% when you're generating coins.<br/><br/>In this example, the network connection is used when you broadcast the information about the proof-of-work block you've created (that which entitles you to the new coin). Generating coins successfully requires constant connectivity, so that you can start working on the next block when someone gets the current block before you.<br/></div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 3,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Repost: Bitcoin Maturation",
+        "url": "https://bitcointalk.org/index.php?topic=6.msg31#msg31",
+        "date": "November 22, 2009, 06:34:21 PM",
+        "content": "<div class=\"post\">It's important to have network connectivity while you're trying to generate a coin (block) and at the moment it is successfully generated.<br/><br/>1) During generation (when the status bar says \"Generating\" and you're using CPU to find a proof-of-work), you must constantly keep in contact with the network to receive the latest block. If your block does not link to the latest block, it may not be accepted.<br/><br/>2) When you successfully generate a block, it is immediately broadcast to the network.\u00a0 Other nodes must receive it and link to it for it to be accepted as the new latest block.<br/><br/>Think of it as a cooperative effort to make a chain.\u00a0 When you add a link, you must first find the current end of the chain.\u00a0 If you were to locate the last link, then go off for an hour and forge your link, come back and link it to the link that was the end an hour ago, others may have added several links since then and they're not going to want to use your link that now branches off the middle.<br/><br/>After a block is created, the maturation time of 120 blocks is to make absolutely sure the block is part of the main chain before it can be spent.\u00a0 Your node isn't doing anything with the block during that time, just waiting for other blocks to be added after yours.\u00a0 You don't have to be online during that time.</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

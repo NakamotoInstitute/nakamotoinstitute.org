@@ -1,0 +1,98 @@
+[
+    {
+        "thread_id": 74,
+        "name": "Gavin Andresen",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=224",
+        "subject": "Bitcoin Faucet changes",
+        "url": "https://bitcointalk.org/index.php?topic=206.msg1711#msg1711",
+        "date": "June 23, 2010, 02:23:46 PM",
+        "content": "<div class=\"post\">So I've been watching the IP addresses of people getting 5 free bitcoins from the Bitcoin Faucet ( <a href=\"https://freebitcoins.appspot.com/\">https://freebitcoins.appspot.com/</a> ).<br/><br/>And I see some... uh, <i>interesting</i> patterns.\u00a0 Like these successful requests for coins:<br/><br/><div class=\"codeheader\">Code:</div><div class=\"code\">79.117.152.158 - - [21/Jun/2010:12:17:02 -0700] \"POST / HTTP/1.1\" 200 1234 <br/>79.117.159.197 - - [21/Jun/2010:12:16:24 -0700] \"POST / HTTP/1.1\" 200 1234 <br/>79.117.135.236 - - [21/Jun/2010:12:10:23 -0700] \"POST / HTTP/1.1\" 200 1234<br/>79.117.163.238 - - [21/Jun/2010:12:08:50 -0700] \"POST / HTTP/1.1\" 200 1234<br/>79.117.155.23 - - [21/Jun/2010:12:08:07 -0700] \"POST / HTTP/1.1\" 200 1234 <br/></div><br/>My apologies if there actually are a bunch of new bitcoin users using IP addresses in the 79.117 range...\u00a0 but I'm guessing somebody there is getting more than their fair share of free bitcoins.<br/><br/>There are several suspicious requests from the 192.38.95.* address block, too.<br/><br/>So I've made some changes to the Faucet.\u00a0 You won't notice them unless you try to cheat; if you do try to cheat, you'll have to solve a CAPTCHA to get coins.<br/><br/>If that doesn't discourage cheating, I'll modify the code so that if it think you're trying to cheat it requires a CAPTCHA and only gives out a bitcoin nickel (0.05 bitcoins)...<br/></div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 74,
+        "name": "Xunie",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=10",
+        "subject": "Re: Bitcoin Faucet changes",
+        "url": "https://bitcointalk.org/index.php?topic=206.msg1744#msg1744",
+        "date": "June 24, 2010, 10:51:01 AM",
+        "content": "<div class=\"post\">Lol, bitnickel!<br/><br/>Anyhow, I was expecting this.<br/>And what about those using proxies?<br/>I don't wanna be an #@!%!#% here, but ehh... I think the \"5 BTC for FREE!\" thing, is kinda... flawed...</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 74,
+        "name": "Gavin Andresen",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=224",
+        "subject": "Re: Bitcoin Faucet changes",
+        "url": "https://bitcointalk.org/index.php?topic=206.msg1749#msg1749",
+        "date": "June 24, 2010, 06:17:36 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=206.msg1744#msg1744\">Quote from: Xunie on June 24, 2010, 10:51:01 AM</a></div><div class=\"quote\">I don't wanna be an #@!%!#% here, but ehh... I think the \"5 BTC for FREE!\" thing, is kinda... flawed...<br/></div>\"flawed\" ??<br/><br/>I've been telling people it is a half-baked, I've-lost-my-friggin-mind idea!<br/><br/>So far, I count it as a big success-- I've learned a lot that will help me with my next Bitcoin-related project, I've made a bunch of people a teeny-tiny bit happier, and I've personally invested just under $1.00 worth of bitcoins over the last two weeks.<br/><br/>I did throw in the towel today and turned on reCAPTCHA for everybody getting bitcoins (it looks like somebody DID bother to write a robot to harvest coins through proxies).\u00a0 It was fun trying to come up with new, creative ways of detecting cheating, but I have more important things to work on.<br/></div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 74,
+        "name": "sirius",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=4",
+        "subject": "Re: Bitcoin Faucet changes",
+        "url": "https://bitcointalk.org/index.php?topic=206.msg1754#msg1754",
+        "date": "June 24, 2010, 09:37:39 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=206.msg1751#msg1751\">Quote from: davidonpda on June 24, 2010, 09:19:22 PM</a></div><div class=\"quote\"><a href=\"http://www.decaptcher.com/\">http://www.decaptcher.com/</a><br/><br/><br/>It costs someone $2 per 1000 captchas. So, they could suck out 5000 bitcoins for $2. lol. <img alt=\"Smiley\" border=\"0\" src=\"https://bitcointalk.org/Smileys/default/smiley.gif\"/><br/><br/>But, that should help stop most people <img alt=\"Smiley\" border=\"0\" src=\"https://bitcointalk.org/Smileys/default/smiley.gif\"/><br/></div><br/>I guess that's why the forum still gets those annoying spam user registrations despite the captcha.</div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 74,
+        "name": "virtualcoin",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=267",
+        "subject": "Re: Bitcoin Faucet changes",
+        "url": "https://bitcointalk.org/index.php?topic=206.msg1755#msg1755",
+        "date": "June 24, 2010, 10:07:30 PM",
+        "content": "<div class=\"post\">Gavin, why don't you just block all served Bitcoin addresses?<br/>Would it be easy to generate them automatically?</div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 74,
+        "name": "Gavin Andresen",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=224",
+        "subject": "Re: Bitcoin Faucet changes",
+        "url": "https://bitcointalk.org/index.php?topic=206.msg1757#msg1757",
+        "date": "June 24, 2010, 11:13:45 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=206.msg1755#msg1755\">Quote from: virtualcoin on June 24, 2010, 10:07:30 PM</a></div><div class=\"quote\">Gavin, why don't you just block all served Bitcoin addresses?<br/>Would it be easy to generate them automatically?<br/></div>It is easy to generate them automatically (it is easy to write code that asks the Bitcoin program to generate and return a new address).<br/></div>",
+        "post_num": 6,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 74,
+        "name": "llama",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=270",
+        "subject": "Re: Bitcoin Faucet changes",
+        "url": "https://bitcointalk.org/index.php?topic=206.msg1761#msg1761",
+        "date": "June 25, 2010, 04:25:48 AM",
+        "content": "<div class=\"post\">Funny how on this forum the same people play both sides of the table--on the one hand, trying to come up with ways to preserve absolute anonymity (e.g. the heroin store thread), and then coming here and trying to do sort of the opposite to protect BTC Faucet.\u00a0 <br/><br/>I love it\u00a0 <img alt=\"Grin\" border=\"0\" src=\"https://bitcointalk.org/Smileys/default/grin.gif\"/></div>",
+        "post_num": 7,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 74,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Bitcoin Faucet changes",
+        "url": "https://bitcointalk.org/index.php?topic=206.msg1816#msg1816",
+        "date": "June 26, 2010, 09:39:52 PM",
+        "content": "<div class=\"post\">Many big ISPs give you a new IP every time you connect, usually in the same class B (a.b.?.?). \u00a0Maybe you should have a minimum time between payments per class-B.<br/><br/>If you can't solve the problem, you can always keep lowering the amount of bitcoins given until it's manageable, and always require captcha.</div>",
+        "post_num": 8,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

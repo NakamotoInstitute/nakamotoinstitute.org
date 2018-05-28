@@ -1,0 +1,62 @@
+[
+    {
+        "thread_id": 104,
+        "name": "Anonymous",
+        "poster_url": null,
+        "subject": "[Bitcoin 0.3.0] Runtime error",
+        "url": "https://bitcointalk.org/index.php?topic=373.msg3118#msg3118",
+        "date": "July 15, 2010, 09:11:26 AM",
+        "content": "<div class=\"post\">Installed Bitcoin 0.3.0 on disk \"D\". When I try to start it i get these errors:<br/><br/><img alt=\"\" border=\"0\" class=\"userimg\" src=\"https://ip.bitcointalk.org/?u=http%3A%2F%2Fimg197.imageshack.us%2Fimg197%2F2007%2F15071a.png&amp;t=589&amp;c=DGO96sJZz4fL8g\"/><br/><br/><img alt=\"\" border=\"0\" class=\"userimg\" src=\"https://ip.bitcointalk.org/?u=http%3A%2F%2Fimg441.imageshack.us%2Fimg441%2F3341%2F15072.png&amp;t=589&amp;c=qD4JSUc9tmSugg\"/><br/><br/><img alt=\"\" border=\"0\" class=\"userimg\" src=\"https://ip.bitcointalk.org/?u=http%3A%2F%2Fimg196.imageshack.us%2Fimg196%2F6972%2F15073.png&amp;t=589&amp;c=s1gCpWf0-yCUtg\"/><br/><br/>What am I doing wrong?</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 104,
+        "name": "knightmb",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=345",
+        "subject": "Re: [Bitcoin 0.3.0] Runtime error",
+        "url": "https://bitcointalk.org/index.php?topic=373.msg3132#msg3132",
+        "date": "July 15, 2010, 10:33:15 AM",
+        "content": "<div class=\"post\">You are using Windows I can tell, but what version, arch (32 or 64 bit) ,etc?</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 104,
+        "name": "Anonymous",
+        "poster_url": null,
+        "subject": "Re: [Bitcoin 0.3.0] Runtime error",
+        "url": "https://bitcointalk.org/index.php?topic=373.msg3136#msg3136",
+        "date": "July 15, 2010, 10:52:35 AM",
+        "content": "<div class=\"post\">I'm using Microsoft Windows XP Professional Service Pack 3, 32 bit.</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 104,
+        "name": "SmokeTooMuch",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=13",
+        "subject": "Re: [Bitcoin 0.3.0] Runtime error",
+        "url": "https://bitcointalk.org/index.php?topic=373.msg3144#msg3144",
+        "date": "July 15, 2010, 12:25:16 PM",
+        "content": "<div class=\"post\"><a href=\"http://bitcointalk.org/index.php?topic=316.0\">http://bitcointalk.org/index.php?topic=316.0</a><br/><br/>Maybe that thread helps.</div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 104,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: [Bitcoin 0.3.0] Runtime error",
+        "url": "https://bitcointalk.org/index.php?topic=373.msg3150#msg3150",
+        "date": "July 15, 2010, 02:05:20 PM",
+        "content": "<div class=\"post\">More directly, this:<br/><a href=\"http://bitcointalk.org/index.php?topic=246.0\">http://bitcointalk.org/index.php?topic=246.0</a><br/><br/>I will be posting release candidate of 0.3.1 with this fix shortly.\u00a0 Please try that and let me know if it fixes the problem.</div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

@@ -101,7 +101,7 @@ def emailview(source, emnum):
 @cache.cached(timeout=900)
 @app.route('/posts/', subdomain="satoshi", methods=["GET"])
 def posts():
-    posts = Post.query.order_by(Post.date).all()
+    posts = Post.query.filter(Post.satoshi_id.isnot(None)).order_by(Post.date).all()
     app.logger.info(str(request.remote_addr) + ', posts')
     return render_template("posts.html", posts=posts, source=None)
 
@@ -109,7 +109,9 @@ def posts():
 @cache.cached(timeout=900)
 @app.route('/posts/<string:source>/', subdomain="satoshi", methods=["GET"])
 def forumposts(source):
-    posts = Post.query.filter_by(source=source).order_by(Post.date).all()
+    posts = Post.query.filter(Post.satoshi_id.isnot(None)) \
+                       .join(Post.thread, aliased=True) \
+                       .filter_by(source=source).order_by(Post.date).all()
     if len(posts) != 0:
         app.logger.info(str(request.remote_addr) + ', posts, ' + source)
         return render_template("posts.html", posts=posts, source=source)
@@ -120,9 +122,9 @@ def forumposts(source):
 @cache.cached(timeout=900)
 @app.route('/posts/<string:source>/<int:postnum>/', subdomain="satoshi", methods=["GET"])
 def postview(postnum, source):
-    post = Post.query.filter_by(id=postnum, source=source).first()
-    prev = Post.query.filter_by(id=postnum-1, source=source).first()
-    next = Post.query.filter_by(id=postnum+1, source=source).first()
+    post = Post.query.filter_by(satoshi_id=postnum).join(Post.thread, aliased=True).filter_by(source=source).first()
+    prev = Post.query.filter_by(satoshi_id=postnum-1).join(Post.thread, aliased=True).filter_by(source=source).first()
+    next = Post.query.filter_by(satoshi_id=postnum+1).join(Post.thread, aliased=True).filter_by(source=source).first()
     if post is not None:
         app.logger.info(str(request.remote_addr) + ', posts ,' + source + ', ' + str(postnum))
         return render_template("postview.html", post=post, prev=prev,

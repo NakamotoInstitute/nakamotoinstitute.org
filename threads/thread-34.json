@@ -1,0 +1,86 @@
+[
+    {
+        "thread_id": 34,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "UI improvements",
+        "url": "https://bitcointalk.org/index.php?topic=60.msg426#msg426",
+        "date": "February 21, 2010, 09:48:01 PM",
+        "content": "<div class=\"post\">Uploaded some UI changes to SVN as version 0.2.5.<br/><br/>Instead of View-&gt;Show Generated, we now have tabs:<br/>- All Transactions<br/>- Sent/Received<br/>- Sent<br/>- Received<br/><br/>Makes it a lot easier to flip to received and check for payments.<br/><br/>Moved the \"Your Addresses\" book inside the main address book.\u00a0 It was confusing having two address books.<br/><br/>I found the \"To:\" in \"From: unknown, To: (one of your bitcoin addresses)\" still confusing, so I changed it to \"From: unknown, Received with:\".\u00a0 The bitcoin address is abbreviated so you can see the label that you set in the Receiving tab of the address book.<br/><br/>Fixed a few UI glitches from the upgrade to wxWidgets 2.9.0.<br/><br/>I haven't forgotten about you people who want non-UI, but I had to do some fun stuff before more build bashing.<br/></div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 34,
+        "name": "Sabunir",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=28",
+        "subject": "Re: UI improvements",
+        "url": "https://bitcointalk.org/index.php?topic=60.msg427#msg427",
+        "date": "February 21, 2010, 10:00:09 PM",
+        "content": "<div class=\"post\">These improvements sound good. Thank you for your continued development of the application. As a suggestion, you could consider shortening \"From: unknown, Received with:\" to \"From: unknown, Paid to:\"</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 34,
+        "name": "giik",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=29",
+        "subject": "Re: UI improvements",
+        "url": "https://bitcointalk.org/index.php?topic=60.msg432#msg432",
+        "date": "February 22, 2010, 08:04:42 PM",
+        "content": "<div class=\"post\">When you merged the \"your addresses\" and \"the other addresses\", how can you see the difference between them? Perhaps it is better to build version 0.2.5 myself, but does anyone have a guide to build it on Mac OS X 10.6?</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 34,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: UI improvements",
+        "url": "https://bitcointalk.org/index.php?topic=60.msg434#msg434",
+        "date": "February 23, 2010, 01:16:28 AM",
+        "content": "<div class=\"post\">There are now \"Sending\" and \"Receiving\" tabs in the Address Book.\u00a0 Your addresses are referred to as \"receiving addresses\".<br/><br/>madhatter was working on building it on Mac.\u00a0 He had errors probably caused by UTF-16 wxWidgets 2.8.\u00a0 Should have better luck now with 2.9.0.\u00a0 wxWidgets 2.9.0 is UTF-8 and wouldn't have that problem.<br/><br/>I think he had it working on FreeBSD, but he wanted a non-UI version.<br/><br/>I have the command line and JSON-RPC daemon version working now.\u00a0 Will SVN it in a day or two.<br/><br/>I disabled gdm on my Ubuntu system so it boots into command line.\u00a0 I hope I will be able to get it enabled again with rcconf.</div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 34,
+        "name": "sirius",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=4",
+        "subject": "Re: UI improvements",
+        "url": "https://bitcointalk.org/index.php?topic=60.msg438#msg438",
+        "date": "February 23, 2010, 12:09:58 PM",
+        "content": "<div class=\"post\">In Ubuntu you can also switch to a non-graphical login screen by pressing ctrl + alt + F[1-8].</div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 34,
+        "name": "Xunie",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=10",
+        "subject": "Re: UI improvements",
+        "url": "https://bitcointalk.org/index.php?topic=60.msg439#msg439",
+        "date": "February 23, 2010, 12:28:27 PM",
+        "content": "<div class=\"post\">And you can login to one of the TTY1-8 (what sirius-m was talking about) and execute <i>/etc/init.d/gdm start</i> and it will start gdm!</div>",
+        "post_num": 6,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 34,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: UI improvements",
+        "url": "https://bitcointalk.org/index.php?topic=60.msg446#msg446",
+        "date": "February 23, 2010, 04:53:27 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=60.msg439#msg439\">Quote from: Xunie on February 23, 2010, 12:28:27 PM</a></div><div class=\"quote\"><i>/etc/init.d/gdm start</i> and it will start gdm!<br/></div>Ah yes, there we go, back to normal again.<br/><br/>The ctrl+alt+F[1-8] thing never worked on this computer.\u00a0 The screen just goes haywire.</div>",
+        "post_num": 7,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

@@ -1,0 +1,74 @@
+[
+    {
+        "thread_id": 226,
+        "name": "Marko",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=1674",
+        "subject": "Remote RPC access",
+        "url": "https://bitcointalk.org/index.php?topic=1291.msg14263#msg14263",
+        "date": "September 27, 2010, 04:50:25 PM",
+        "content": "<div class=\"post\">Hello,<br/><br/>I'm have a client that calls getinfo over the rpc interface. Everything works fine when host=localhost.<br/>However, when trying to get bitcoin at another host i cannot.<br/>I read the wiki and it says the interface only accepts requests from 127.0.0.1. Is this still the case? Is there a setting to override this?<br/><br/>If not, i'm probably going to have to write a 'proxy' app that i would deploy to each machine running bitcoin. Would prefer not to do this <img alt=\"Sad\" border=\"0\" src=\"https://bitcointalk.org/Smileys/default/sad.gif\"/><br/><br/>Thanks,<br/>Marko</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 226,
+        "name": "doublec",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=1567",
+        "subject": "Re: Remote RPC access",
+        "url": "https://bitcointalk.org/index.php?topic=1291.msg14352#msg14352",
+        "date": "September 28, 2010, 12:51:22 AM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=1291.msg14263#msg14263\">Quote from: Marko on September 27, 2010, 04:50:25 PM</a></div><div class=\"quote\">I read the wiki and it says the interface only accepts requests from 127.0.0.1. Is this still the case? Is there a setting to override this?<br/></div><br/>This is still the case and I don't believe there is a setting to override it. It's hardcoded in the source. Instead of writing a 'proxy' app you can use SSH to tunnel. For example, if your bitcoin instance is running on 'example.com' and that machine is running an ssh server, you can tunnel to it from another machine with:<br/><br/>ssh -N example.com -L\u00a0 9481:localhost:9481<br/><br/>Now you can use the RPC interface on your local machine to port 9481 and it will be tunnelled over an encrypted SSH session to the machine running the bitcoin RPC server.<br/><br/>You want to encrypt the connection because the JSON-RPC password is sent in clear text (it's actually base 64 encoded but basically it's the equivalent of clear text).</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 226,
+        "name": "nelisky",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=601",
+        "subject": "Re: Remote RPC access",
+        "url": "https://bitcointalk.org/index.php?topic=1291.msg14353#msg14353",
+        "date": "September 28, 2010, 12:55:29 AM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=1291.msg14352#msg14352\">Quote from: doublec on September 28, 2010, 12:51:22 AM</a></div><div class=\"quote\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=1291.msg14263#msg14263\">Quote from: Marko on September 27, 2010, 04:50:25 PM</a></div><div class=\"quote\">I read the wiki and it says the interface only accepts requests from 127.0.0.1. Is this still the case? Is there a setting to override this?<br/></div><br/>This is still the case and I don't believe there is a setting to override it. It's hardcoded in the source. Instead of writing a 'proxy' app you can use SSH to tunnel. For example, if your bitcoin instance is running on 'example.com' and that machine is running an ssh server, you can tunnel to it from another machine with:<br/><br/>ssh -N example.com -L\u00a0 9481:localhost:9481<br/><br/>Now you can use the RPC interface on your local machine to port 9481 and it will be tunnelled over an encrypted SSH session to the machine running the bitcoin RPC server.<br/><br/>You want to encrypt the connection because the JSON-RPC password is sent in clear text (it's actually base 64 encoded but basically it's the equivalent of clear text).<br/></div><br/>Can you compile your own bitcoin? The latest svn has an option to allow binding to other interfaces, not just localhost. If not the next version (0.3.13) is supposed to have that.</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 226,
+        "name": "theymos",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=35",
+        "subject": "Re: Remote RPC access",
+        "url": "https://bitcointalk.org/index.php?topic=1291.msg14355#msg14355",
+        "date": "September 28, 2010, 12:58:54 AM",
+        "content": "<div class=\"post\">There's an \"-rpcallowip=\" switch in SVN, which allows you to access RPC from the specified IP addresses. This is not safe from MITM attacks, however.</div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 226,
+        "name": "Marko",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=1674",
+        "subject": "Re: Remote RPC access",
+        "url": "https://bitcointalk.org/index.php?topic=1291.msg14395#msg14395",
+        "date": "September 28, 2010, 01:58:51 PM",
+        "content": "<div class=\"post\">Hey all...Thanks for all the feedback<br/><br/>The ssh method is great. However, all the machines are windows machines so i'd have to do an install on all of them. Better than writing a proxy app for sure though...<br/><br/>I saw the entry from a few weeks ago about the -rpcallowip switch. I'll compile my own version if i have to. That said, i'd prefer to have an official release. Anyone have an idea when the next version would be posted? <br/><br/>As far as the MITM attack possibility, this only presents a problem if the network i'm exposing to is not trusted. Or is there some other effect i'm missing?</div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 226,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Remote RPC access",
+        "url": "https://bitcointalk.org/index.php?topic=1291.msg14736#msg14736",
+        "date": "September 30, 2010, 06:27:41 PM",
+        "content": "<div class=\"post\">It can be safe if you're using it over your own LAN, like if you have multiple servers at a location that talk to each other.<br/><br/>0.3.13 RC1 is available for Windows:<br/><a href=\"http://www.bitcoin.org/download/bitcoin-0.3.13-rc1-win32-setup.exe\">http://www.bitcoin.org/download/bitcoin-0.3.13-rc1-win32-setup.exe</a><br/></div>",
+        "post_num": 6,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

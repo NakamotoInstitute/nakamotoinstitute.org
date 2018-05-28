@@ -1,0 +1,122 @@
+[
+    {
+        "thread_id": 213,
+        "name": "jgarzik",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=541",
+        "subject": "Always pay transaction fee?",
+        "url": "https://bitcointalk.org/index.php?topic=994.msg12145#msg12145",
+        "date": "September 07, 2010, 03:17:34 AM",
+        "content": "<div class=\"post\"><br/>To accurately reflect that processing a transaction has certain resource costs across the network, I propose that tx fee be required for <i>every</i> transaction after X datetime (where X is a few months in the future).<br/><br/></div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 213,
+        "name": "MoonShadow",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=643",
+        "subject": "Re: Always pay transaction fee?",
+        "url": "https://bitcointalk.org/index.php?topic=994.msg12147#msg12147",
+        "date": "September 07, 2010, 04:10:39 AM",
+        "content": "<div class=\"post\">I propose that that number of months be 1440.</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 213,
+        "name": "caveden",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=704",
+        "subject": "Re: Always pay transaction fee?",
+        "url": "https://bitcointalk.org/index.php?topic=994.msg12152#msg12152",
+        "date": "September 07, 2010, 07:19:01 AM",
+        "content": "<div class=\"post\">That will probably happen spontaneously if someone make a client (or add the option to the current one) that allows the user to charge transaction fees for the blocks it generates.</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 213,
+        "name": "FreeMoney",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=381",
+        "subject": "Re: Always pay transaction fee?",
+        "url": "https://bitcointalk.org/index.php?topic=994.msg12155#msg12155",
+        "date": "September 07, 2010, 08:04:49 AM",
+        "content": "<div class=\"post\">The correct fee is so small right now that the psychological detriment far outweighs the benefits of charging it imo. It's like that damn place that charges me a quarter a tiny cup of water when I buy a $9 meal. Yes, I know there are costs to pressing the button, but now I don't like you anyway. <br/><br/>I expect it will be a long time before a high % of nodes require a fee for normal transactions. This means most users will not attach a fee, being willing to wait 4 blocks on average or whatever. So for a good while charging a fee simply means not putting transactions in blocks, this will make bitcoin slightly less appealing and slightly reduce use which will slightly reduce the value of coins. So anyone who has coins can self interestedly include transactions for free.<br/><br/>Jgarzik, do you have a guess as to the resource costs of a normal transaction?</div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 213,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Always pay transaction fee?",
+        "url": "https://bitcointalk.org/index.php?topic=994.msg12168#msg12168",
+        "date": "September 07, 2010, 04:32:21 PM",
+        "content": "<div class=\"post\">Another option is to reduce the number of free transactions allowed per block before transaction fees are required. \u00a0Nodes only take so many KB of free transactions per block before they start requiring at least 0.01 transaction fee.<br/><br/>The threshold should probably be lower than it currently is.<br/><br/>I don't think the threshold should ever be 0. \u00a0We should always allow at least some free transactions.<br/></div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 213,
+        "name": "lfm",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=466",
+        "subject": "Re: Always pay transaction fee?",
+        "url": "https://bitcointalk.org/index.php?topic=994.msg12171#msg12171",
+        "date": "September 07, 2010, 05:36:22 PM",
+        "content": "<div class=\"post\">If you WANT to start paying the transaction fees now you can with the -paytxfee=0.01<br/>\u00a0(beta?) command line switch. If more people use this switch then it might help discourage others from requiring compulsory fees.<br/></div>",
+        "post_num": 6,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 213,
+        "name": "MoonShadow",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=643",
+        "subject": "Re: Always pay transaction fee?",
+        "url": "https://bitcointalk.org/index.php?topic=994.msg12182#msg12182",
+        "date": "September 07, 2010, 07:20:29 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=994.msg12168#msg12168\">Quote from: satoshi on September 07, 2010, 04:32:21 PM</a></div><div class=\"quote\">Another option is to reduce the number of free transactions allowed per block before transaction fees are required. \u00a0Nodes only take so many KB of free transactions per block before they start requiring at least 0.01 transaction fee.<br/><br/>The threshold should probably be lower than it currently is.<br/><br/>I don't think the threshold should ever be 0. \u00a0We should always allow at least some free transactions.<br/><br/></div><br/>What is the current threshold, and how does a client know to pay for this in advance?</div>",
+        "post_num": 7,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 213,
+        "name": "theymos",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=35",
+        "subject": "Re: Always pay transaction fee?",
+        "url": "https://bitcointalk.org/index.php?topic=994.msg12199#msg12199",
+        "date": "September 07, 2010, 11:29:33 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=994.msg12182#msg12182\">Quote from: creighto on September 07, 2010, 07:20:29 PM</a></div><div class=\"quote\">What is the current threshold, and how does a client know to pay for this in advance?<br/></div><br/><a href=\"http://www.bitcoin.org/wiki/doku.php?id=transaction_fee\">http://www.bitcoin.org/wiki/doku.php?id=transaction_fee</a></div>",
+        "post_num": 8,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 213,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Always pay transaction fee?",
+        "url": "https://bitcointalk.org/index.php?topic=994.msg12237#msg12237",
+        "date": "September 08, 2010, 05:30:14 PM",
+        "content": "<div class=\"post\">Currently, paying a fee is controlled manually with the -paytxfee switch.\u00a0 It would be very easy to make the software automatically check the size of recent blocks to see if it should pay a fee.\u00a0 We're so far from reaching the threshold, we don't need that yet.\u00a0 It's a good idea to see how things go with controlling it manually first anyway.<br/><br/>It's not a big deal if we reach the threshold.\u00a0 Free transactions would just take longer to get into a block.<br/><br/>I did a rough tally of 4000 blocks from around 74000-78000.\u00a0 This is excluding the block reward transactions:<br/><br/>There were average 2 transactions per block, 17 transactions per hour, 400 transactions per day.<br/><br/>Average transaction bytes per block was 428 bytes, or 214 bytes per transaction.<br/><br/>The current threshold is 200KB per block, or about 1000 transactions per block.\u00a0 I think it should be lowered to 50KB per block.\u00a0 That would still be more than 100 times the average transactions per block.<br/><br/>The threshold can easily be changed in the future.\u00a0 We can decide to increase it when the time comes.\u00a0 It's a good idea to keep it lower as a circuit breaker and increase it as needed.\u00a0 If we hit the threshold now, it would almost certainly be some kind of flood and not actual use.\u00a0 Keeping the threshold lower would help limit the amount of wasted disk space in that event.<br/></div>",
+        "post_num": 9,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 213,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Always pay transaction fee?",
+        "url": "https://bitcointalk.org/index.php?topic=994.msg13829#msg13829",
+        "date": "September 23, 2010, 04:08:35 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=994.msg12237#msg12237\">Quote from: satoshi on September 08, 2010, 05:30:14 PM</a></div><div class=\"quote\">The current threshold is 200KB per block, or about 1000 transactions per block. \u00a0I think it should be lowered to 50KB per block. \u00a0That would still be more than 100 times the average transactions per block.<br/></div>I implemented this change in SVN rev 157.<br/><br/>The reason I previously made it so high was to allow very large transactions without hitting the transaction fee. \u00a0The threshold was around 26,000 BTC for transactions made of 50 BTC generated coins. \u00a0Even though it was 100 times easier to generate back then, only a few people ever encountered the fee at that level. \u00a0The new threshold puts it at around 11,000 BTC for sending generated coins. \u00a0It would mostly only be reached with generated bitcoins. \u00a0If you bought your bitcoins, they'll be denominated in larger transactions and won't be anywhere near the fee limit, unless you bought them in several hundred separate transactions. \u00a0Even if you do reach the fee level, you only have to pay it once to bundle your little transactions together.</div>",
+        "post_num": 10,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

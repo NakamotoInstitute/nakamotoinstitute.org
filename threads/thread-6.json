@@ -1,0 +1,26 @@
+[
+    {
+        "thread_id": 6,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Repost: Linux/UNIX compile",
+        "url": "https://bitcointalk.org/index.php?topic=9.msg36#msg36",
+        "date": "November 27, 2009, 05:17:22 PM",
+        "content": "<div class=\"post\">--------------------<br/>scott:<br/>Linux/UNIX compile<br/>Posted:Thu 08 of Oct, 2009 (05:49 UTC)<br/><br/>Can we get instructions or modifications to compile and install BitCoin on Linux? A command line version would be great.</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 6,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Repost: Linux/UNIX compile",
+        "url": "https://bitcointalk.org/index.php?topic=9.msg37#msg37",
+        "date": "November 27, 2009, 05:27:09 PM",
+        "content": "<div class=\"post\">The Linux version is on its way.\u00a0 Martti's Linux port was merged into the main code branch and New Liberty Standard has been testing it.\u00a0 It'll be in the next release, version 0.2.<br/><br/>Command line is on the to-do list after 0.2.</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

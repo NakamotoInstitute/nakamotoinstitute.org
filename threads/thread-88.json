@@ -1,0 +1,74 @@
+[
+    {
+        "thread_id": 88,
+        "name": "Gavin Andresen",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=224",
+        "subject": "Donations to freebitcoins.appspot.com needed!",
+        "url": "https://bitcointalk.org/index.php?topic=295.msg2365#msg2365",
+        "date": "July 12, 2010, 07:15:46 PM",
+        "content": "<div class=\"post\">The Bitcoin Faucet is handling the slashdotting really well... except that I'm running out of coins to give away. \u00a0over 5,000 have flowed out of the Faucet since I refilled it last night.<br/><br/>Any of you early adopters who generated tens of thousands of coins back in the early days, are you willing to send a few to the Faucet to be given away so more people can try out Bitcoin? \u00a0I know that most of them are likely to be lost (I suspect there a lot of slashdot lookey-loos who won't stick around long enough to spend their 5 bitcoins), but if that's the case then that'll just increase the value of your other bitcoins, anyway...<br/><br/>Fountain donation address is: \u00a0<del>15VjRaDX9zpbA8LVnbrCAFzrVzN7ixHNsC</del><br/><br/>Depending on donations and how long the slashdotting lasts, I might have to start giving away bitnickels...</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 88,
+        "name": "Gavin Andresen",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=224",
+        "subject": "Re: Donations to freebitcoins.appspot.com needed!",
+        "url": "https://bitcointalk.org/index.php?topic=295.msg2453#msg2453",
+        "date": "July 13, 2010, 01:57:24 AM",
+        "content": "<div class=\"post\">Thanks for the donations... whoever you are who donated!<br/><br/>The Faucet has about 2,000 coins in it at the moment; I just deployed a new version that will automatically start giving out bit-nickels if the balance falls below 500 (but allows anybody who gets a bit-nickel to come back later and get the 5 bitcoins \"they deserve\" if/when the Faucet is refilled).<br/></div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 88,
+        "name": "XaviorPenguin",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=366",
+        "subject": "Re: Donations to freebitcoins.appspot.com needed!",
+        "url": "https://bitcointalk.org/index.php?topic=295.msg2705#msg2705",
+        "date": "July 14, 2010, 01:05:41 AM",
+        "content": "<div class=\"post\">You can have the 5 you gave me back.\u00a0 I just wanted to see how this all works and all and hopefully, I will have some coins popping up every couple of days.\u00a0 <img alt=\"Smiley\" border=\"0\" src=\"https://bitcointalk.org/Smileys/default/smiley.gif\"/><br/><br/>Thank you for running a great program/incentive!\u00a0 I appreciate it!</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 88,
+        "name": "Gavin Andresen",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=224",
+        "subject": "Re: Donations to freebitcoins.appspot.com needed!",
+        "url": "https://bitcointalk.org/index.php?topic=295.msg2817#msg2817",
+        "date": "July 14, 2010, 01:04:32 PM",
+        "content": "<div class=\"post\">Thanks Xavier!<br/><br/>To everyone else:\u00a0 the Faucet is now giving out bit-nickels; it just went under 500 BTC.\u00a0 I've got just under 2,000 BTC left to refill it, but I think I'll start letting it drain a nickel-at-a-time and keep it above zero for as long as I can (refilling it to just under 500 if it gets near zero).<br/></div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 88,
+        "name": "BitLex",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=292",
+        "subject": "Re: Donations to freebitcoins.appspot.com needed!",
+        "url": "https://bitcointalk.org/index.php?topic=295.msg2847#msg2847",
+        "date": "July 14, 2010, 03:30:03 PM",
+        "content": "<div class=\"post\">i send my 5 coins back right after i got them,<br/>was a great way to check our system and still is a great way for new \"potential customers\", to test us.<br/><br/>regrettably i havent been around back in those early days, but i'll gladly send all incoming 5coin credits back to you.\u00a0 <img alt=\"Cool\" border=\"0\" src=\"https://bitcointalk.org/Smileys/default/cool.gif\"/></div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 88,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Donations to freebitcoins.appspot.com needed!",
+        "url": "https://bitcointalk.org/index.php?topic=295.msg3350#msg3350",
+        "date": "July 16, 2010, 02:02:07 AM",
+        "content": "<div class=\"post\">5 BTC seems like a lot these days, maybe the normal amount should be 1 or 2 BTC.<br/><br/>This is an important service so new users can at least get something if generating is too hard.</div>",
+        "post_num": 6,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

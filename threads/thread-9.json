@@ -1,0 +1,50 @@
+[
+    {
+        "thread_id": 9,
+        "name": "SmokeTooMuch",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=13",
+        "subject": "Questions about Bitcoin",
+        "url": "https://bitcointalk.org/index.php?topic=13.msg43#msg43",
+        "date": "December 10, 2009, 01:13:51 PM",
+        "content": "<div class=\"post\">Hi, yesterday I stumbled upon this great payment option.<br/><br/>I read my way through many sites but now I have some questions that couldn't get answered.<br/><br/>1. Is Bitcoin really anonymous? I mean totally and completely? Is my ISP able to detect, that I have sent or received a Bitcoin payment? Maybe he is even able to see that I am running Bitcoin right now?<br/><br/>2. If I understood this correctly, my payment partners are not able to see who I am. Does this mean, they can not see my real IP adress? Only the Bitcoin-adress? Even if they monitors their network connections and stuff?<br/><br/>3. If there is a way for my ISP to tell that I am running Bitcoin or for my payment partners to find out my IP, would it be more safe to tunnel the network traffic through a VPN (payed with Paysafecard for example)? Could this be dangerous, because the VPN provider will be able to capture my payment?<br/><br/>4. What files need to be backed up for not losing my \"money\"? Only the wallet.dat or the whole Bitcoin AppData directory ?<br/><br/>5. Isn`t it possible to multiply a wallet and use it on different machines? This way you would double your money without doing anything for it.<br/>Are there security measures for this case?<br/><br/>6. When someone loses his wallet, will there be a way to recreate the lost coins in the system ? Else the 21 million maximum will not be correct.<br/>(I mean not to recover the lost coins for one person, but if all the 21mio coins were created, and someone loses his wallet with 1mio coins, will the the others be able to create these 1mio coins now or are they totally lost for the bitcoin network?)<br/><br/>7. I have read that there currently are about 130k blocks out there. At my pc it only shows me about 24k. Is there something wrong or is this a normal behaviour ?<br/><br/>8. I`m afraid I didn`t understand everything about the bitcoin creation. How many coins are created by a machine in 24h in average?<br/><br/>9. I know that port 8333 should be forwarded to the bitcoin-running machine. Now I ask myself if this goes for the TCP or the UDP.<br/>And is this port required for generating coins? Or only for payment transactions?<br/><br/>10. I`ve seen that the source code for bitcoin is open for everybody. Can this be an actual danger? If the code is manipulated people can create more bitcoins than others, can`t they? This would be a massive leak of security.<br/><br/>11. I`ve seen a formular to clalculate the coins that will be created in a certain amount of time. It had something to do with the maximum cpu speed and the availabe. Can`t find it anymore, so I`m asking you to explain me the coin creating. Do slow machines produce as much coins as high-end ones?<br/><br/>12. Are there any other exchanging systems or potential payment partners except for new liberty standard?<br/><br/>13. What happens when my system crashes? Is the wallet saved automatically or only when bitcoin gets closed manually? (Maybe even real-time saving when a coint is created or payment is made?)<br/><br/>14. Is there a way to see how many bitcoins have been generated this far? And how old is Bitcoin already?<br/><br/>I know .... Many many questions but I am really interested in your service and want to know everything before I start using it more frequently.<br/><br/><br/>(Sorry for my bad English...)<br/><br/><b>EDIT 2014-10-31:</b> grammar and typos</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 9,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Questions about Bitcoin",
+        "url": "https://bitcointalk.org/index.php?topic=13.msg46#msg46",
+        "date": "December 10, 2009, 08:49:02 PM",
+        "content": "<div class=\"post\">1-3:<br/>For that level of anonymity you need to connect through TOR, which will be possible with version 0.2, which is only a few weeks away. \u00a0I'll post TOR instructions at that time.<br/><br/>4:<br/>Version 0.1.5: backup the whole %appdata%\\Bitcoin directory.<br/>Version 0.2: you can backup just wallet.dat.<br/><br/>5:<br/>Nope. \u00a0The whole design is all about preventing that from working.<br/><br/>6:<br/>Those coins can never be recovered, and the total circulation is less. \u00a0Since the effective circulation is reduced, all the remaining coins are worth slightly more. \u00a0It's the opposite of when a government prints money and the value of existing money goes down.<br/><br/>7:<br/>It's currently 29,296 blocks. \u00a0The circulation is the number of blocks times 50, so the current circulation is 1,464,800 bc. \u00a0<br/><br/>If you only have 24k blocks, it must not have finished the initial block download. \u00a0Exit bitcoin and start it again. \u00a0Version 0.2 is better/faster at the initial block download.<br/><br/>8:<br/>Typically a few hundred right now. \u00a0It's easy now but it'll get harder as the network grows.<br/><br/>9:<br/>Good question, it's TCP. \u00a0The website needs to be updated to say TCP port 8333.<br/><br/>The port forwarding is so other nodes can connect to you, so it helps you stay connected because you are able to be connected with more nodes. \u00a0You also need it to receive payments by IP address.<br/><br/>10:<br/>No, the other nodes won't accept that.<br/><br/>Being open source means anyone can independently review the code. \u00a0If it was closed source, nobody could verify the security. \u00a0I think it's essential for a program of this nature to be open source.<br/><br/>11:<br/>Slower machines produce fewer coins. \u00a0It's proportional to CPU speed.<br/><br/>12:<br/>There are more coming.<br/><br/>13:<br/>It uses a transactional database called Berkeley DB. \u00a0It will not lose data in a system crash. \u00a0Transactions are written to the database immediately when they're received.<br/><br/>14:<br/>For now, you can just multiply the total blocks by 50. \u00a0The Bitcoin network has been running for almost a year now. \u00a0The design and coding started in 2007.</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 9,
+        "name": "SmokeTooMuch",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=13",
+        "subject": "Re: Questions about Bitcoin",
+        "url": "https://bitcointalk.org/index.php?topic=13.msg48#msg48",
+        "date": "December 11, 2009, 05:20:29 PM",
+        "content": "<div class=\"post\">Wow, thanks alot for these detailed answers.<br/><br/>But today another question came to my mind.<br/><br/>Lets say we know, that our neighbar uses Bitcoin, and we also know that he will receive a payment soon (maybe because he owns an internet shop and accepts bitcoin as payment option).<br/><br/>Also, we know that he uses WLAN and his network is unsecured or weak protected. Same goes for router configuration.<br/><br/>We now could log into his router configuration, change the ip adresses for the forwarded port 8333 to our system ip.<br/>Now every payment would be received by our bitcoin client.<br/><br/>Is this actually going to work ?<br/><br/>I know this is highly criminal and the scenario is .. well, lets call it \"uncommon\", but in theory it should work, right ?<br/>(Not that I have an interest in harming people, but I know that criminal people will try many ways to get some money.)<br/><br/>BTW: same should work when you are on a LAN party with unprotected router config.<br/><br/><br/><br/>Edit: Or are these scenarios totally impossible because no matter which ip adress uses the port, the payment will go to the bitcoin or ip adress that was defined from the payer ?</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 9,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Questions about Bitcoin",
+        "url": "https://bitcointalk.org/index.php?topic=13.msg49#msg49",
+        "date": "December 11, 2009, 05:58:57 PM",
+        "content": "<div class=\"post\">That's true, with the send-to-IP option, you are sending to whoever answers that IP.\u00a0 Sending to a bitcoin address doesn't have that problem.<br/><br/>The plan is to implement an IP + bitcoin address option that would have the benefits of both.\u00a0 It would still use a different address for each transaction, but the receiver would sign the one-time-use address with the given bitcoin address to prove it belongs to the intended receiver.<br/></div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

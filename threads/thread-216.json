@@ -1,0 +1,110 @@
+[
+    {
+        "thread_id": 216,
+        "name": "Anonymous",
+        "poster_url": null,
+        "subject": "adg",
+        "url": "https://bitcointalk.org/index.php?topic=1013.msg12309#msg12309",
+        "date": "September 09, 2010, 01:56:54 PM",
+        "content": "<div class=\"post\">adg</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 216,
+        "name": "theymos",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=35",
+        "subject": "Re: Won't let me send coins because it requires a transaction fee?",
+        "url": "https://bitcointalk.org/index.php?topic=1013.msg12310#msg12310",
+        "date": "September 09, 2010, 02:05:11 PM",
+        "content": "<div class=\"post\">If you send your entire balance, then you won't have enough left to pay any fee. You could send 49.99.<br/><br/>I don't know why that's happening. There shouldn't be a fee for any non-combined transaction.</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 216,
+        "name": "theymos",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=35",
+        "subject": "Re: Won't let me send coins because it requires a transaction fee?",
+        "url": "https://bitcointalk.org/index.php?topic=1013.msg12329#msg12329",
+        "date": "September 09, 2010, 06:43:13 PM",
+        "content": "<div class=\"post\">0.3.12 contains some changes to transaction fees. Are you using that?</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 216,
+        "name": "TTBit",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=844",
+        "subject": "Re: Won't let me send coins because it requires a transaction fee?",
+        "url": "https://bitcointalk.org/index.php?topic=1013.msg12339#msg12339",
+        "date": "September 09, 2010, 08:10:24 PM",
+        "content": "<div class=\"post\">Rounding error? Have you received bitcoins from the faucet, then paid 0.0495 btc to someone. Ever done anything in the 3rd decimal or beyond? I have 0.01 at TAABL that I can't withdraw due to rounding error. Still, +50.00 is +50.00, and should be able to withdraw that.<br/><br/>Fresh blocks take something like 100 blocks to confirm. I assume you waited.</div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 216,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Won't let me send coins because it requires a transaction fee?",
+        "url": "https://bitcointalk.org/index.php?topic=1013.msg12341#msg12341",
+        "date": "September 10, 2010, 12:23:24 AM",
+        "content": "<div class=\"post\">What version is the one where this happened?\u00a0 Release build, or built it yourself?\u00a0 Which operating system?\u00a0 <br/><br/>Were you sending by IP or by Bitcoin Address?<br/><br/>When you sent 49.99, did it prompt you to pay a 0.01 fee?<br/><br/>There was a change in GetMinFee, but I can't see how it would cause this. \u00a0It only starts to apply when a block gets huge. <br/><br/>The reason for the difference in block number is the number displayed was reduced by 1 in 0.3.11 because it made more sense that way.</div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 216,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Won't let me send coins because it requires a transaction fee?",
+        "url": "https://bitcointalk.org/index.php?topic=1013.msg12342#msg12342",
+        "date": "September 10, 2010, 12:46:37 AM",
+        "content": "<div class=\"post\">I think I know what happened. \u00a0Doubleclick on the generated transaction. \u00a0It probably has a sub-0.01 transaction fee in it.<br/><br/>Someone has been paying a 0.00000010 transaction fee. \u00a0I don't think you can even set that with -paytxfee, I think you'd have to modify the code to do it. \u00a0Your generated block is worth 50.00000010, so when you try to send the whole thing you have 0.00000010 left over for the change, which triggers the dust spam 0.01 fee.<br/><br/>It would normally be harmless except in this corner case. \u00a0I should add a special case to CreateTransaction to handle this.</div>",
+        "post_num": 6,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 216,
+        "name": "nelisky",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=601",
+        "subject": "Re: Won't let me send coins because it requires a transaction fee?",
+        "url": "https://bitcointalk.org/index.php?topic=1013.msg12363#msg12363",
+        "date": "September 10, 2010, 02:02:36 PM",
+        "content": "<div class=\"post\">I'm really puzzled with all this. I also generated a block and transferred it out on the spot. Looking at the transaction:<br/><br/>\u00a0 \u00a0 \u00a0\"address\" : \"1LCSXSx8sjcZKHFXbyasBsuEdJtBVRaco7\",<br/>\u00a0 \u00a0 \u00a0 \u00a0 \"label\" : \"\",<br/>\u00a0 \u00a0 \u00a0 \u00a0 \"txid\" : \"1249190d1a13b03b51c27ded2e8441d446a8ae6ef90f90db31a8267da0845685\",<br/>\u00a0 \u00a0 \u00a0 \u00a0 \"txtime\" : 1283997623,<br/>\u00a0 \u00a0 \u00a0 \u00a0 \"category\" : \"debit\",<br/>\u00a0 \u00a0 \u00a0 \u00a0 \"amount\" : 50.01000000,<br/>\u00a0 \u00a0 \u00a0 \u00a0 \"confirmations\" : 228<br/>\u00a0 \u00a0 },<br/><br/>it seems I paid the fee too. Why would that be? A block that had too many tx, the value coming from multiple small value purses (but the client should see one purse that satisfies the whole transaction, right?) or what else?</div>",
+        "post_num": 7,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 216,
+        "name": "theymos",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=35",
+        "subject": "Re: Won't let me send coins because it requires a transaction fee?",
+        "url": "https://bitcointalk.org/index.php?topic=1013.msg12364#msg12364",
+        "date": "September 10, 2010, 02:31:12 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=1013.msg12362#msg12362\">Quote from: davidonpda on September 10, 2010, 01:45:58 PM</a></div><div class=\"quote\">So I lost a penny in it. My question then, that transaction fee, then goes to the next block? Or the one before the one I generated?<br/></div><br/>You didn't pay a transaction fee. You have .01000010 in your balance; you just can't spend it. The network would accept it if you sent the entire 0.01000010 to another address (you can't break it apart), but the Bitcoin interface doesn't support such high precision.<br/><br/><div class=\"quoteheader\">Quote</div><div class=\"quote\">Since fees apply to transactions less than 0.01, adding a transaction fee should be at least 0.01 right?</div> <br/><br/>That's not network-enforced. Transaction fees are not \"outs\", so they're not subject to the \"dust spam\" restriction.<br/><br/><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=1013.msg12363#msg12363\">Quote from: nelisky on September 10, 2010, 02:02:36 PM</a></div><div class=\"quote\">it seems I paid the fee too. Why would that be? A block that had too many tx, the value coming from multiple small value purses (but the client should see one purse that satisfies the whole transaction, right?) or what else?<br/></div><br/>You received a fee of 0.01. You didn't pay one.</div>",
+        "post_num": 8,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 216,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Won't let me send coins because it requires a transaction fee?",
+        "url": "https://bitcointalk.org/index.php?topic=1013.msg12368#msg12368",
+        "date": "September 10, 2010, 05:12:33 PM",
+        "content": "<div class=\"post\">The fix is in SVN rev 151.<br/><br/>You will be able to send your stuck 0.01 (actually 0.01000010) when you next upgrade.<br/></div>",
+        "post_num": 9,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

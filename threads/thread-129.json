@@ -1,0 +1,98 @@
+[
+    {
+        "thread_id": 129,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Faster initial block download (5x faster)",
+        "url": "https://bitcointalk.org/index.php?topic=550.msg5349#msg5349",
+        "date": "July 23, 2010, 06:24:56 PM",
+        "content": "<div class=\"post\">By making some adjustments to the database settings, I was able to make the initial block download about 5 times faster. \u00a0It downloads in about 30 minutes.<br/><br/>The database default had it writing each block to disk synchronously, which is not necessary. \u00a0I changed the settings to let it cache the changes in memory and write them out in a batch. \u00a0Blocks are still written transactionally, so either the complete change occurs or none of it does, in either case the data is left in a valid state.<br/><br/>I only enabled this change during the initial block download. \u00a0When you come within 2000 blocks of the latest block, these changes turn off and it slows down to the old way.<br/><br/>I built a test build if you'd like to start using it:<br/><br/><a href=\"http://www.bitcoin.org/download/bitcoin-0.3.2.5-win32.zip\">http://www.bitcoin.org/download/bitcoin-0.3.2.5-win32.zip</a><br/><a href=\"http://www.bitcoin.org/download/bitcoin-0.3.2.5-linux.tar.gz\">http://www.bitcoin.org/download/bitcoin-0.3.2.5-linux.tar.gz</a><br/><br/>These binaries also include Gavin Andresen's JSON-RPC HTTP authentication feature and the other important security improvements from 0.3.2.<br/><br/>I've been running a test over the last 24 hours that kills and restarts it randomly every 2-60 seconds (poor thing) while it's trying to do an initial block download and it's been fine.<br/><br/>There are no changes to the way it handles wallet.dat. \u00a0This change is only for blk*.dat and the non-critical addr.dat. \u00a0You can always delete blk*.dat if it gets screwed up and let it re-download.<br/></div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 129,
+        "name": "knightmb",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=345",
+        "subject": "Re: Faster initial block download",
+        "url": "https://bitcointalk.org/index.php?topic=550.msg5350#msg5350",
+        "date": "July 23, 2010, 06:27:50 PM",
+        "content": "<div class=\"post\">Are these for use with the test network you have setup or the current public network?</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 129,
+        "name": "NewLibertyStandard",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=26",
+        "subject": "Re: Faster initial block download",
+        "url": "https://bitcointalk.org/index.php?topic=550.msg5353#msg5353",
+        "date": "July 23, 2010, 06:42:25 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=550.msg5350#msg5350\">Quote from: knightmb on July 23, 2010, 06:27:50 PM</a></div><div class=\"quote\">Are these for use with the test network you have setup or the current public network?<br/></div>This is for the regular network. The test network doesn't have enough blocks to test it effectively. From what I can tell, satoshi's builds are always for the live network unless he specifies otherwise.</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 129,
+        "name": "knightmb",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=345",
+        "subject": "Re: Faster initial block download",
+        "url": "https://bitcointalk.org/index.php?topic=550.msg5356#msg5356",
+        "date": "July 23, 2010, 06:50:05 PM",
+        "content": "<div class=\"post\">Awesome, got some extra slow machines to wipe/test with then. Will be curious to see what it does on faster machines as well.\u00a0 <img alt=\"Smiley\" border=\"0\" src=\"https://bitcointalk.org/Smileys/default/smiley.gif\"/></div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 129,
+        "name": "knightmb",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=345",
+        "subject": "Re: Faster initial block download",
+        "url": "https://bitcointalk.org/index.php?topic=550.msg5359#msg5359",
+        "date": "July 23, 2010, 07:01:50 PM",
+        "content": "<div class=\"post\">So far, awesome increase for the Windows client. Doing about 500 blocks / second using a private node. After the timer is done, I'll try it on a wild node out on the Internet to see if the speed is just as good.</div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 129,
+        "name": "knightmb",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=345",
+        "subject": "Re: Faster initial block download",
+        "url": "https://bitcointalk.org/index.php?topic=550.msg5369#msg5369",
+        "date": "July 23, 2010, 07:32:58 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=550.msg5349#msg5349\">Quote from: satoshi on July 23, 2010, 06:24:56 PM</a></div><div class=\"quote\">By making some adjustments to the database settings, I was able to make the initial block download about 5 times faster. \u00a0It downloads in about 30 minutes.<br/><br/>The database default had it writing each block to disk synchronously, which is not necessary. \u00a0I changed the settings to let it cache the changes in memory and write them out in a batch. \u00a0Blocks are still written transactionally, so either the complete change occurs or none of it does, in either case the data is left in a valid state.<br/><br/>I only enabled this change during the initial block download. \u00a0When you come within 2000 blocks of the latest block, these changes turn off and it slows down to the old way.<br/></div>The first part of the 70k downloaded in about 20 minutes, the rest of the remaining 2000 blocks in about 7 minutes, so only 27 minutes from 0 to 100%, very nice! Is there a safety reason to stop within the last 2000 blocks or can it be tweaked to stop at remaining 500 blocks for example?<br/><br/>In case anyone was curious, average download speed was around 3 Mbps for each burst of download.</div>",
+        "post_num": 6,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 129,
+        "name": "knightmb",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=345",
+        "subject": "Re: Faster initial block download",
+        "url": "https://bitcointalk.org/index.php?topic=550.msg5376#msg5376",
+        "date": "July 23, 2010, 08:04:26 PM",
+        "content": "<div class=\"post\">Blocks download just as fast in the wild (about 3 Mbps), so a big thumbs up, this will certainly get new users up and running much quicker.</div>",
+        "post_num": 7,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 129,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Faster initial block download",
+        "url": "https://bitcointalk.org/index.php?topic=550.msg5378#msg5378",
+        "date": "July 23, 2010, 08:13:27 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=550.msg5369#msg5369\">Quote from: knightmb on July 23, 2010, 07:32:58 PM</a></div><div class=\"quote\">Is there a safety reason to stop within the last 2000 blocks or can it be tweaked to stop at remaining 500 blocks for example?<br/></div>Not really.\u00a0 I'll change it to 1000 next time.</div>",
+        "post_num": 8,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

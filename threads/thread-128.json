@@ -1,0 +1,98 @@
+[
+    {
+        "thread_id": 128,
+        "name": "mtgox",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=489",
+        "subject": "bitcoind not responding to RPC",
+        "url": "https://bitcointalk.org/index.php?topic=548.msg5248#msg5248",
+        "date": "July 23, 2010, 12:29:48 PM",
+        "content": "<div class=\"post\">Occasionally bitcoind will not respond to RPC I'm calling it from php and I get this error:<br/><br/>Warning: fopen(<a href=\"http://127.0.0.1:8332\">http://127.0.0.1:8332</a>) [function.fopen]: failed to open stream: HTTP request failed! HTTP/1.1 500 Internal Server Error <br/><br/>It happens a lot locally on my windows machine and less frequently on my linux server.<br/><br/>Anyone else have this problem? </div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 128,
+        "name": "The Madhatter",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=14",
+        "subject": "Re: bitcoind not responding to RPC",
+        "url": "https://bitcointalk.org/index.php?topic=548.msg5319#msg5319",
+        "date": "July 23, 2010, 04:23:16 PM",
+        "content": "<div class=\"post\">Try taking the \"http://\" out of your fsockopen(). The JSON-RPC server isn't really HTTP.<br/><br/>I've had the best luck with the curl+json php extensions, myself.<br/><br/></div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 128,
+        "name": "mtgox",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=489",
+        "subject": "Re: bitcoind not responding to RPC",
+        "url": "https://bitcointalk.org/index.php?topic=548.msg5320#msg5320",
+        "date": "July 23, 2010, 04:25:59 PM",
+        "content": "<div class=\"post\">Well it works 95% of the time which is what is weird</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 128,
+        "name": "The Madhatter",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=14",
+        "subject": "Re: bitcoind not responding to RPC",
+        "url": "https://bitcointalk.org/index.php?topic=548.msg5325#msg5325",
+        "date": "July 23, 2010, 04:39:00 PM",
+        "content": "<div class=\"post\">Strange. I use my bitcoind almost every day from PHP, and I haven't encountered that.</div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 128,
+        "name": "mtgox",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=489",
+        "subject": "Re: bitcoind not responding to RPC",
+        "url": "https://bitcointalk.org/index.php?topic=548.msg5331#msg5331",
+        "date": "July 23, 2010, 04:47:36 PM",
+        "content": "<div class=\"post\">I also get it anytime I send an invalid bitcoin address. Which is weird since it doesn't seem like that would effect the connecting.</div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 128,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: bitcoind not responding to RPC",
+        "url": "https://bitcointalk.org/index.php?topic=548.msg5339#msg5339",
+        "date": "July 23, 2010, 05:23:47 PM",
+        "content": "<div class=\"post\">If I recall correctly, 500 is the prescribed status code for JSON-RPC error responses.\u00a0 There is still a JSON response in the body of the reply telling the explanation of the error, which could be something like {\"result\":\"\",\"error\":\"bitcoin address not found\",\"id\":\"1\"}.</div>",
+        "post_num": 6,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 128,
+        "name": "mtgox",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=489",
+        "subject": "Re: bitcoind not responding to RPC",
+        "url": "https://bitcointalk.org/index.php?topic=548.msg5347#msg5347",
+        "date": "July 23, 2010, 06:14:48 PM",
+        "content": "<div class=\"post\">Weird I guess fopen() in php dies if the response is 500?<br/><br/>It seems like errors such as invalid address should just be normal replies just not \"sent\" so we can just check the reply string. I think of 500 errors as the server itself having an error.<br/></div>",
+        "post_num": 7,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 128,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: bitcoind not responding to RPC",
+        "url": "https://bitcointalk.org/index.php?topic=548.msg5419#msg5419",
+        "date": "July 24, 2010, 01:15:58 AM",
+        "content": "<div class=\"post\">Can anyone confirm if JSON-RPC over HTTP is supposed to use status 500 if the reply is an error reply?\u00a0 I can't remember where I picked that up, maybe it's wrong.\u00a0 It seems like 200 would make more sense unless there's something wrong with the mechanics of the HTTP request itself.\u00a0 (and maybe that's what it said and I forgot and spread 500 to all error responses)</div>",
+        "post_num": 8,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

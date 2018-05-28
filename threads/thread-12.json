@@ -1,0 +1,62 @@
+[
+    {
+        "thread_id": 12,
+        "name": "The Madhatter",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=14",
+        "subject": "64bit support",
+        "url": "https://bitcointalk.org/index.php?topic=18.msg87#msg87",
+        "date": "January 11, 2010, 04:13:20 PM",
+        "content": "<div class=\"post\"><br/>Can bitcoin be compiled to run on 64 bit systems yet? -m64 seems to break the compile.<br/><br/>(Not trying to nag or anything).<br/><br/>On a side node: I have noticed that the network is about 3x larger than normal now. I see more nodes! <img alt=\"Smiley\" border=\"0\" src=\"https://bitcointalk.org/Smileys/default/smiley.gif\"/><br/></div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 12,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: 64bit support",
+        "url": "https://bitcointalk.org/index.php?topic=18.msg97#msg97",
+        "date": "January 14, 2010, 08:17:20 PM",
+        "content": "<div class=\"post\">I haven't tried compiling 64-bit yet. 64-bit wouldn't make it any faster, since it uses 64-bit numbers in only a few places and SHA-256 is a 32-bit algorithm, but it may be convenient for those running a 64-bit OS. If I get a chance I'll try -m64 and see what the problem is.<br/><br/>You can run the 32-bit version on 64-bit Linux by installing ia32-libs. \u00a0(sudo apt-get install ia32-libs) \u00a0If we made a Debian package, it could automatically pull that in as a dependency.</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 12,
+        "name": "The Madhatter",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=14",
+        "subject": "Re: 64bit support",
+        "url": "https://bitcointalk.org/index.php?topic=18.msg103#msg103",
+        "date": "January 16, 2010, 11:16:56 PM",
+        "content": "<div class=\"post\">All modern computers are amd64/EM64T. It should be able to be compiled on either platform. It is a hassle to compile all of the dependancies in 32-bit mode just to run one program. I know the 32-bit/64-bit stuff is seamless on windows platforms but on *NIX platforms it is a major pain since they are usually either one or the other by default. <img alt=\"Wink\" border=\"0\" src=\"https://bitcointalk.org/Smileys/default/wink.gif\"/><br/><br/>As a workaround I am in the process of compiling FreeBSD 32-bit jails (aka virtual server images) just for running bitcoin on our network. It should make it easier for me to deploy more nodes as they can simply be zipped up / scp'd / extracted / launched. After I have a working system image based on FreeBSD-8.0 I may post a link for download.<br/><br/>Thanks and keep up the good work. I can't wait to see how many exchangers are willing to trade BT. The stability of the exchangers and their longevity is everything. If the exchangers stick around big businesses may use this system to get around service fees / chargebacks / and the general faults caused by the credit card industry.<br/><br/>Keep up the great work! <img alt=\"Smiley\" border=\"0\" src=\"https://bitcointalk.org/Smileys/default/smiley.gif\"/><br/></div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 12,
+        "name": "Sabunir",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=28",
+        "subject": "Re: 64bit support",
+        "url": "https://bitcointalk.org/index.php?topic=18.msg127#msg127",
+        "date": "January 25, 2010, 05:13:23 AM",
+        "content": "<div class=\"post\">I second the request for 64-bit support, even if it wouldn't make the app run faster. I'm no expert, but I can't see any harm in it. On the other hand, it's a good way to embrace the future.</div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 12,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: 64bit support",
+        "url": "https://bitcointalk.org/index.php?topic=18.msg174#msg174",
+        "date": "January 29, 2010, 12:42:49 AM",
+        "content": "<div class=\"post\">I committed a fix for 64-bit compile and some fixes to support wxWidgets 2.9.0.<br/><br/>There was one compile error in serialize.h with min(sizeof()) that I fixed for 64-bit.\u00a0 The rest of the 64-bit compile errors I was getting were in wxWidgets 2.8.9, so I started working on supporting wxWidgets 2.9.0.<br/><br/>wxWidgets 2.9.0 is UTF-8.\u00a0 We've been using the ANSI version of wxWidgets 2.8.9 in anticipation of wxWidgets UTF-8 support.<br/><br/>I compiled and ran on 64-bit Ubuntu 9.10 Karmic.<br/><br/>I think the only bug left is where the status number is mashed up.\u00a0 I'm not sure why, I have to suspect it's a UTF-8 thing, but no idea how that could happen.\u00a0 Haven't looked into it.<br/><br/>build-unix.txt is updated and two makefiles on SVN:<br/>makefile.unix.wx2.8<br/>makefile.unix.wx2.9<br/><br/>Unfortunately there's still no debian package for either version of wxWidgets we use.\u00a0 They only have the wchar (\"unicode\") version of wxWidgets 2.8, which is a disaster because wchar wxString doesn't convert to std::string.\u00a0 We use either ANSI wxWidgets 2.8, or wxWidgets 2.9.\u00a0 So you still have to get it and build it yourself.<br/></div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

@@ -1,0 +1,62 @@
+[
+    {
+        "thread_id": 28,
+        "name": "nphyx",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=36",
+        "subject": "DEB Package?",
+        "url": "https://bitcointalk.org/index.php?topic=49.msg314#msg314",
+        "date": "February 12, 2010, 12:31:35 AM",
+        "content": "<div class=\"post\">I am having 0 luck attempting to compile w/wxWidgets. Trying to compile wx from source was a no-go (various syntax errors I didn't really delve into), downloaded latest precompiled wx packages for ubuntu karmic, but they do not match up to your static links far as I can tell. I guess what I'm getting at is, rather than try to sort out these issues, I'd really love a .deb &lt;.&lt; I'd like to participate - as an agorist and a fan of cryptoanarchic theory this is sort of a fantasy of mine, but there is frankly no way I will dual boot windows or run this in as insecure an environment as a VM. <br/><br/>DEB isn't a bad route, you'll hit the vast majority of desktop linux users, most of whom won't be buggered to try compiling in the first place, so I don't think it's entirely unreasonable. Alternatively if you are interested in helping me work out compilation issues I would be happy to provide x86_64 binaries for ubuntu as long as I am compiling them. I haven't done .debs before but I am sure I can figure that out. Let me know <img alt=\"Smiley\" border=\"0\" src=\"https://bitcointalk.org/Smileys/default/smiley.gif\"/></div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 28,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: DEB Package?",
+        "url": "https://bitcointalk.org/index.php?topic=49.msg315#msg315",
+        "date": "February 12, 2010, 02:33:02 AM",
+        "content": "<div class=\"post\">Are you just trying to run the program or do you really need to compile it?\u00a0 There's a 32-bit linux binary that can be run on 64-bit ubuntu if you \"sudo apt-get ia32-libs\".<br/><a href=\"http://sourceforge.net/projects/bitcoin/files/Bitcoin/bitcoin-0.2.0-linux.tar.gz/download\">http://sourceforge.net/projects/bitcoin/files/Bitcoin/bitcoin-0.2.0-linux.tar.gz/download</a><br/><br/>I recently updated the SVN for building on 64-bit Karmic with wxWidgets 2.9.0.\u00a0 This was after the 0.2.0 release.\u00a0 The 0.2.0 release did not build on 64-bit yet.<br/><br/>Unfortunately there currently isn't a -dev deb package of either of the versions of wxWidgets that we can use.\u00a0 On Karmic they only have the UTF-16 version.\u00a0 We need either the ANSI (libwxgtk2.8-ansi-dev) version or the UTF-8 (wxWidgets 2.9.0) version.\u00a0 We're moving towards 2.9.0.<br/><br/>I know you said you didn't want VM, but as a last resort, last I checked the Windows version runs fine in Wine.</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 28,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: DEB Package?",
+        "url": "https://bitcointalk.org/index.php?topic=49.msg322#msg322",
+        "date": "February 12, 2010, 03:57:37 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=49.msg321#msg321\">Quote from: soultcer on February 12, 2010, 02:31:50 PM</a></div><div class=\"quote\">If you want, I can provide you with a precompiled binary.<br/></div><br/>Am I missing something?\u00a0 Is there something wrong with the 32-bit linux precompiled binary on bitcoin.org?<br/><br/>The bitcoin binary in the distribution static links the wxWidgets library, and its shared links (openssl and GTK) are included in Ubuntu, so it can run without needing to be a .deb to pull down dependencies.<br/><br/>Since we're upgrading to wxWidgets 2.9.0 for UTF-8, which doesn't have a DEB package yet, we'll continue to need to static link it.</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 28,
+        "name": "nphyx",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=36",
+        "subject": "Re: DEB Package?",
+        "url": "https://bitcointalk.org/index.php?topic=49.msg325#msg325",
+        "date": "February 13, 2010, 12:25:04 AM",
+        "content": "<div class=\"post\">Sorry, I should have mentioned more clearly that I am running AMD64. I was trying to compile with 0.2.0, so that would explain a lot of my issues. I *would* like to have a native 64 bit binary, but it sounds like that isn't going to happen right now. I have ia32-lib already, I'll try running what you've supplied, and failing that Wine might be an option. Thanks for the help. I don't remember coming across SVN links on the download page, but once you get up to wxWidgets2.9 I may try again. I could *not* get 2.8.10 to compile for me, I'm sure I probably was overlooking something, but it sounds like 2.9 at least resolves the utf-8/ansi issue <img alt=\"Smiley\" border=\"0\" src=\"https://bitcointalk.org/Smileys/default/smiley.gif\"/></div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 28,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: DEB Package?",
+        "url": "https://bitcointalk.org/index.php?topic=49.msg326#msg326",
+        "date": "February 13, 2010, 01:38:37 AM",
+        "content": "<div class=\"post\">I couldn't get wxWidgets 2.8.9 to compile on Karmic 64-bit either.<br/><br/>I have been compiling the latest SVN on Karmic 64-bit with wxWidgets 2.9.0, which compiles fine on 64-bit. \u00a0Read build-unix.txt and use the given ../configure parameters on wxWidgets so you can use the makefile.unix.wx2.9 as supplied. \u00a0(--enable-debug --disable-shared --enable-monolithic)<br/><br/><del>There's one cosmetic bug with 2.9.0 I still need to fix where the status number display is bunched up for some reason.</del>\u00a0 -- fixed<br/><br/>The download link on the homepage is to the sourceforge tar.gz archive which contains the 32-bit binary and the 0.2.0 sources, which were not yet buildable on 64-bit at the time.<br/><br/>The SVN was first buildable on 64-bit with wx2.9.0 on 28 January 2010.<br/><br/>Hopefully they'll have a wxWidgets 2.9.0 debian package someday.</div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

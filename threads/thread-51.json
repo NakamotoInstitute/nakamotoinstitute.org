@@ -1,0 +1,62 @@
+[
+    {
+        "thread_id": 51,
+        "name": "Minsc",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=147",
+        "subject": "Could the bitcoin network be destroyed by someone generating endless bitcoin add",
+        "url": "https://bitcointalk.org/index.php?topic=130.msg1092#msg1092",
+        "date": "May 09, 2010, 04:45:11 AM",
+        "content": "<div class=\"post\">Could the bitcoin network be destroyed by someone generating endless bitcoin addresses nonstop? \u00a0I mean it sounds like it would do something really bad to it.<br/><br/>I'm pretty sure at some point a website will take payments in bitcoins and will decide to generate a new bitcoin address for each payment and end up endlessly generating new addresses like mad and do something bad to the network.\u00a0 Then more will start in.</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 51,
+        "name": "theymos",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=35",
+        "subject": "Re: Could the bitcoin network be destroyed by someone generating endless bitcoin add",
+        "url": "https://bitcointalk.org/index.php?topic=130.msg1093#msg1093",
+        "date": "May 09, 2010, 05:34:57 AM",
+        "content": "<div class=\"post\">Generating addresses is CPU-intensive, and you don't touch the network when you generate a new address. It could only cause damage if a non-unique address was created, but this is so unlikely that it's not even worth considering.</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 51,
+        "name": "dsg",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=97",
+        "subject": "Re: Could the bitcoin network be destroyed by someone generating endless bitcoin add",
+        "url": "https://bitcointalk.org/index.php?topic=130.msg1095#msg1095",
+        "date": "May 09, 2010, 04:12:02 PM",
+        "content": "<div class=\"post\">Yes.<br/><br/>Also, generating a new address for each payment is the best way to do it. Maximum anonymity because of least re-use of addresses. The keyspace is large enough that we don't need to worry about exhausting it.</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 51,
+        "name": "dwdollar",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=24",
+        "subject": "Re: Could the bitcoin network be destroyed by someone generating endless bitcoin add",
+        "url": "https://bitcointalk.org/index.php?topic=130.msg1099#msg1099",
+        "date": "May 09, 2010, 06:47:08 PM",
+        "content": "<div class=\"post\">If you're generating a new Bitcoin Address for each transaction, people may accidentally send to old ones. \u00a0They will have that BA in their Transaction history and may think it's good for multiple uses. \u00a0Just something to think about.<br/><br/>The possibility of accidentally sending to a random BA is insanely small though.</div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 51,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Could the bitcoin network be destroyed by someone generating endless bitcoin add",
+        "url": "https://bitcointalk.org/index.php?topic=130.msg1130#msg1130",
+        "date": "May 16, 2010, 09:01:44 PM",
+        "content": "<div class=\"post\">When you generate a new bitcoin address, it only takes disk space on your own computer (like 500 bytes).\u00a0 It's like generating a new PGP private key, but less CPU intensive because it's ECC.\u00a0 The address space is effectively unlimited.\u00a0 It doesn't hurt anyone, so generate all you want.</div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

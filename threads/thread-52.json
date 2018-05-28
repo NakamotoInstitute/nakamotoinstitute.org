@@ -1,0 +1,26 @@
+[
+    {
+        "thread_id": 52,
+        "name": "bitcoin2paysafe",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=88",
+        "subject": "Exception: 9key_error error",
+        "url": "https://bitcointalk.org/index.php?topic=135.msg1122#msg1122",
+        "date": "May 14, 2010, 06:07:50 PM",
+        "content": "<div class=\"post\">Today, I've got an error message:<br/><br/>Exception: 9key_error<br/>CKey::CKey(); EC:KEY_new_by_curve_name failed<br/>bitcoin in ThreadBitcoinMiner()<br/><br/>Console:<br/><br/>terminate called after throwing an instance of 'key_error'<br/>\u00a0\u00a0what(): \u00a0CKey::CKey() : EC_KEY_new_by_curve_name failed<br/>Aborted<br/><br/><br/>I hope that isn't a buffer overflow. Have anybody this error message too?<br/><br/>OS: linux</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 52,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Exception: 9key_error error",
+        "url": "https://bitcointalk.org/index.php?topic=135.msg1133#msg1133",
+        "date": "May 16, 2010, 10:53:59 PM",
+        "content": "<div class=\"post\">Does it happen every time you run it, or just happened once at some random time?<br/><br/>I've never seen that fail before.\u00a0 It's a call to OpenSSL that I assumed would never fail, but I put an error check there just in case.\u00a0 I can't imagine how it would fail.\u00a0 Out of memory maybe.<br/><br/>The code is:<br/><br/>key.h:<br/>\u00a0 \u00a0 EC_KEY* pkey;<br/><br/>\u00a0 \u00a0 \u00a0 \u00a0 pkey = EC_KEY_new_by_curve_name(NID_secp256k1);<br/>\u00a0 \u00a0 \u00a0 \u00a0 if (pkey == NULL)<br/>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 throw key_error(\"CKey::CKey() : EC_KEY_new_by_curve_name failed\");<br/><br/>NID_secp256k1 is a constant.</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

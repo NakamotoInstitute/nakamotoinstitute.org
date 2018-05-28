@@ -32,13 +32,13 @@ The Quotable Satoshi
     <div class="row">
       {% if quote.post %}
       <h4>
-        {{quote.post.name}}<br>
-        <small>{{quote.date}} - <a href="{{url_for('postview', postnum=quote.post.id, source=quote.medium)}}">Link</a></small>
+        {{quote.post.subject}}<br>
+        <small>{{quote.date}} - <a href="{{url_for('postview', postnum=quote.post.satoshi_id, source=quote.medium)}}">Link</a></small>
       </h4>
       {% elif quote.email %}
       <h4>
         {{quote.email.subject}}<br>
-        <small>{{quote.date}} - <a href="{{url_for('emailview', source=quote.source, emnum=quote.email.id)}}">Link</a></small>
+        <small>{{quote.date}} - <a href="{{url_for('emailview', source=quote.email.source, emnum=quote.email.id)}}">Link</a></small>
       </h4>
       {% else %}
       <h4>

@@ -1,0 +1,38 @@
+[
+    {
+        "thread_id": 90,
+        "name": "Nagilum",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=349",
+        "subject": "Building Bitcoin 0.3",
+        "url": "https://bitcointalk.org/index.php?topic=298.msg2366#msg2366",
+        "date": "July 12, 2010, 07:20:51 PM",
+        "content": "<div class=\"post\">I tried building it myself but it didn't compile.<br/>Which ports did you use?<br/>I tried with wxgtk28-unicode and db42-4.2.52_5 &amp; db50-5.0.21.0<br/>Here the latest attempt:<br/>nagilum@cakebox ~/src &gt; uname -a<br/>FreeBSD cakebox.tis 8.1-PRERELEASE FreeBSD 8.1-PRERELEASE #0: Tue Jun 29 22:25:46 CEST 2010\u00a0 \u00a0 \u00a0root@cakebox.tis:/usr/obj/export/src/sys/net5501\u00a0 i386<br/>nagilum@cakebox ~/src &gt; gmake -f makefile.unix<br/>g++45 -c -O2 -Wno-invalid-offsetof -Wformat -g -D__WXDEBUG__ -D__WXGTK__ -DNOPCH -I\"/usr/include\" -I\"/usr/local/include\" -I\"/usr/local/include/wx-2.8\" -I\"/usr/local/lib/wx/include/gtk2-unicode-release-2.8\" -I\"/usr/local/include/db50\" -o headers.h.gch headers.h<br/>In file included from headers.h:108:0:<br/>ui.h:13:142: error: default argument for 'const wxString&amp; caption' has type 'const char [8]'<br/>ui.h: In function 'int MyMessageBox(const wxString&amp;, const wxString&amp;, int, wxWindow*, int, int)':<br/>ui.h:19:51: error: no matching function for call to 'std::basic_string&lt;char&gt;::basic_string(const wxString&amp;)'<br/>/usr/local/lib/gcc45/include/c++/bits/basic_string.tcc:219:5: note: candidates are: std::basic_string&lt;_CharT, _Traits, _Alloc&gt;::basic_string(std::basic_string&lt;_CharT, _Traits, _Alloc&gt;::size_type, _CharT, const _Alloc&amp;) [with _CharT = char, _Traits = std::char_traits&lt;char&gt;, _Alloc = std::allocator&lt;char&gt;, std::basic_string&lt;_CharT, _Traits, _Alloc&gt;::size_type = unsigned int]<br/>/usr/local/lib/gcc45/include/c++/bits/basic_string.tcc:212:5: note:\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0std::basic_string&lt;_CharT, _Traits, _Alloc&gt;::basic_string(const _CharT*, const _Alloc&amp;) [with _CharT = char, _Traits = std::char_traits&lt;char&gt;, _Alloc = std::allocator&lt;char&gt;]<br/>...<br/></div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 90,
+        "name": "laszlo",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=143",
+        "subject": "Re: Building Bitcoin 0.3",
+        "url": "https://bitcointalk.org/index.php?topic=298.msg2374#msg2374",
+        "date": "July 12, 2010, 08:42:10 PM",
+        "content": "<div class=\"post\">Looks like your wxWidgets and STL - you should compile your own wxWidgets from the 2.9 release.<br/><br/>Use something like this to configure it and adjust the reference paths in your makefile.unix<br/><br/><div class=\"quoteheader\">Quote</div><div class=\"quote\">mkdir buildgtk<br/>cd buildgtk<br/>../configure --prefix=/home/my_user/bitcoin/deps \\<br/>--with-gtk \\<br/>--disable-shared \\<br/>--disable-debug_flag \\<br/>--enable-stl \\<br/>--enable-utf8 \\<br/>--with-libjpeg=builtin \\<br/>--with-libpng=builtin \\<br/>--withregex=builtin \\<br/>--with-libtiff=builtin \\<br/>--with-zlib=builtin \\<br/>--withexpat=builtin<br/><br/></div></div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 90,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Building Bitcoin 0.3",
+        "url": "https://bitcointalk.org/index.php?topic=298.msg2885#msg2885",
+        "date": "July 14, 2010, 05:34:50 PM",
+        "content": "<div class=\"post\">It doesn't work with wxWidgets 2.8, it needs wxWidgets 2.9.\u00a0 Unfortunately, there isn't a Debian package of wxWidgets 2.9 yet.<br/></div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

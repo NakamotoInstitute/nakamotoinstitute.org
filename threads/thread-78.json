@@ -1,0 +1,86 @@
+[
+    {
+        "thread_id": 78,
+        "name": "lachesis",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=237",
+        "subject": "Feature Request: Limiting Connections",
+        "url": "https://bitcointalk.org/index.php?topic=223.msg1859#msg1859",
+        "date": "June 29, 2010, 12:41:52 AM",
+        "content": "<div class=\"post\">I'd like to see an option (with an RPC interface as well) to limit the number of connections that a Bitcoin client accepts. My home client is connected to 70 different nodes and my poor wimpy router just can't keep up. It's starting to slow my network down, to the point where I'll need to force Bitcoin to ignore connection requests (with -connect=&lt;a node&gt;) if this keeps up.<br/><br/>A connection limiting option would be a great alternative.</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 78,
+        "name": "Vasiliev",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=235",
+        "subject": "Re: Feature Request: Limiting Connections",
+        "url": "https://bitcointalk.org/index.php?topic=223.msg1864#msg1864",
+        "date": "June 29, 2010, 01:19:51 AM",
+        "content": "<div class=\"post\">Unforward port 8333 <img alt=\"Tongue\" border=\"0\" src=\"https://bitcointalk.org/Smileys/default/tongue.gif\"/><br/>It'll limit it to 15 and still work fine.</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 78,
+        "name": "lachesis",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=237",
+        "subject": "Re: Feature Request: Limiting Connections",
+        "url": "https://bitcointalk.org/index.php?topic=223.msg1865#msg1865",
+        "date": "June 29, 2010, 01:52:47 AM",
+        "content": "<div class=\"post\">Alright. Thanks.<br/><br/>Would still be a nice feature. I don't mind people connecting to me to bootstrap or something, and I'd probably leave it at 40 rather than 15.</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 78,
+        "name": "BitcoinFX",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=30",
+        "subject": "Re: Feature Request: Limiting Connections",
+        "url": "https://bitcointalk.org/index.php?topic=223.msg1883#msg1883",
+        "date": "June 30, 2010, 01:54:04 AM",
+        "content": "<div class=\"post\">Might I 2nd this request as a 'standard' GUI feature.<br/><br/>I've recently tested bitcoin through various socks proxies / providers and the ability to limit connections below 10 would be really useful.\u00a0 \u00a0</div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 78,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Feature Request: Limiting Connections",
+        "url": "https://bitcointalk.org/index.php?topic=223.msg1924#msg1924",
+        "date": "July 02, 2010, 07:21:36 PM",
+        "content": "<div class=\"post\">Thanks for the feedback on this.<br/><br/>One thing we could do is lower the outbound connections from 15 to 10 or maybe even 5. \u00a0The choice of 15 was arbitrary. \u00a0It just needs to be enough for redundancy and fast exponential propagation of messages. \u00a010 would still be plenty. \u00a05 should be fine. \u00a010 is good as a nice round number so users can see that it stopped intentionally.<br/><br/>It would help to implement UPnP so there would be more inbound accepting nodes. \u00a0Your number of connections is the ratio of inbound accepting nodes to out-only times 15. \u00a0We need to encourage more people to accept inbound connections.<br/><br/>I will implement a feature to stop accepting inbound connections once you hit a certain number.<br/><br/>Which version are you running?<br/><br/>Anyone know how many connections typical P2P software like BitTorrent can get up to?<br/><br/></div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 78,
+        "name": "laszlo",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=143",
+        "subject": "Re: Feature Request: Limiting Connections",
+        "url": "https://bitcointalk.org/index.php?topic=223.msg1925#msg1925",
+        "date": "July 02, 2010, 07:33:24 PM",
+        "content": "<div class=\"post\">BitTorrent clients can do hundreds of connections easily - this is why they end up killing those little embedded routers.\u00a0 It should be no problem for a regular IP router but the little embedded things are doing NAT so they're tracking state on all those connections and run out of memory.. also they're very slow SoC style computers so everything going through them suffers.<br/><br/>Torrent clients generally have options for configuring a global maximum number of connections, maximum inbound and maximum outbound connections.<br/><br/>I think it would be good to allow configuration of unlimited inbound/outbound connections for those who have the capability to do it, and provide a conservative default for those who are using NAT, tor, proxies, etc.</div>",
+        "post_num": 6,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 78,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Feature Request: Limiting Connections",
+        "url": "https://bitcointalk.org/index.php?topic=223.msg1929#msg1929",
+        "date": "July 02, 2010, 10:20:20 PM",
+        "content": "<div class=\"post\">I reduced max outbound connections from 15 to 8 in RC4.<br/><br/>15 was way more than we needed for redundancy. \u00a08 is still plenty of redundancy.<br/><br/>As the nodes upgrade to this version, this will cut in half the number of connections that inbound accepting nodes get.<br/><br/>If anyone wants more than 8 connections, they can open port 8333 on their firewall.</div>",
+        "post_num": 7,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

@@ -1,0 +1,98 @@
+[
+    {
+        "thread_id": 181,
+        "name": "Gavin Andresen",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=224",
+        "subject": "Proposed change to sendtoaddress API call",
+        "url": "https://bitcointalk.org/index.php?topic=807.msg9073#msg9073",
+        "date": "August 13, 2010, 07:28:23 PM",
+        "content": "<div class=\"post\">I'm proposing one small change to Bitcoin's JSON-RPC api:\u00a0 return a transaction ID when Bitcoins are successfully sent.<br/><br/>Why?\u00a0 Because I want to keep a complete audit trail for any coins going into or coming out of my application's wallet; I want to keep track of the particular transactions in the bitcoin network that correspond to actions my application takes.\u00a0 The alternative is to call sendtoaddress and then call listtransactions, but that won't work properly if two similar transactions (same amount to same address) occur at about the same time.<br/><br/>So I propose doing the simplest thing possible: modify the JSON-RPC sendtoaddress call so it returns the string 'sent:' followed by the 256-bit-hexadecimal transactions id.<br/><br/>This could break any applications that look for exactly the string 'sent' (which is what sendtoaddress does now).\u00a0 The fix would be to modify the apps to see if the string began with 'sent'.<br/><br/>Alternatives I thought about but think I don't like:<br/>\u00a0+ make it a new api call so old apps do not break (sendtoaddress2 ? yuck)<br/>\u00a0+ return just the transaction id on successful send instead of 'sent:...'<br/>\u00a0+ return an array with more information (maybe [ \"tx_id\": \"...\", \"fee\" : 0.0 ] )<br/><br/>Comments/criticisms?<br/></div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 181,
+        "name": "jgarzik",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=541",
+        "subject": "Re: Proposed change to sendtoaddress API call",
+        "url": "https://bitcointalk.org/index.php?topic=807.msg9075#msg9075",
+        "date": "August 13, 2010, 07:40:20 PM",
+        "content": "<div class=\"post\"><br/>100% agreed with your suggestion, about the need for txn_id association.<br/><br/>However, it seems better to avoid API breakage, because this API is so heavily used.\u00a0 It is almost guaranteed that anyone automating bitcoins is using sendtoaddress.<br/><br/>Either create a \"send2\" RPC call, or add an \"[extended-JSON=0]\" parameter to the existing sendtoaddress RPC call, or something similar that preserves existing application data flows.<br/><br/><br/></div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 181,
+        "name": "knightmb",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=345",
+        "subject": "Re: Proposed change to sendtoaddress API call",
+        "url": "https://bitcointalk.org/index.php?topic=807.msg9076#msg9076",
+        "date": "August 13, 2010, 07:41:14 PM",
+        "content": "<div class=\"post\">Just add a flag (like true/false) to the function with the default \"false\" so it works with older uses of the function call.<br/><br/>Like <br/><br/>sendtoaddress &lt;bitcoinaddress&gt; &lt;amount&gt; [comment] [comment-to] [return transaction ID, default false]<br/><br/>So<br/>sendtoaddress 1FtDzyajiHKa9QbXiNxqztB 1.00 \"Blah Comment\" \"Blah From\" true<br/>returns<br/>sent XYZ....<br/><br/>But<br/>sendtoaddress 1FtDzyajiHKa9QbXiNxqztB 1.00 \"Blah Comment\" \"Blah From\"<br/>returns<br/>sent<br/>Also without having to break compatibility.<br/><br/>I think it would be a handy addition.</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 181,
+        "name": "Gavin Andresen",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=224",
+        "subject": "Re: Proposed change to sendtoaddress API call",
+        "url": "https://bitcointalk.org/index.php?topic=807.msg9086#msg9086",
+        "date": "August 13, 2010, 08:01:17 PM",
+        "content": "<div class=\"post\">RE: adding a flag:\u00a0 great idea!<br/><br/>If you set the flag, I don't see any reason to prepend 'sent' to the transaction ID; better to just return the transaction ID on successful send.<br/><br/>Patches:<br/><div class=\"codeheader\">Code:</div><div class=\"code\">diff --git a/rpc.cpp b/rpc.cpp<br/>index 920fe90..8714b7e 100644<br/>--- a/rpc.cpp<br/>+++ b/rpc.cpp<br/>@@ -342,10 +342,11 @@ Value getaddressesbylabel(const Array&amp; params, bool fHelp)<br/>\u00a0<br/>\u00a0Value sendtoaddress(const Array&amp; params, bool fHelp)<br/>\u00a0{<br/>-\u00a0 \u00a0 if (fHelp || params.size() &lt; 2 || params.size() &gt; 4)<br/>+\u00a0 \u00a0 if (fHelp || params.size() &lt; 2 || params.size() &gt; 5)<br/>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0throw runtime_error(<br/>-\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"sendtoaddress &lt;bitcoinaddress&gt; &lt;amount&gt; [comment] [comment-to]\\n\"<br/>-\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"&lt;amount&gt; is a real and is rounded to the nearest 0.01\");<br/>+\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"sendtoaddress &lt;bitcoinaddress&gt; &lt;amount&gt; [comment] [comment-to] [return-tx-id-flag]\\n\"<br/>+\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"&lt;amount&gt; is a real and is rounded to the nearest 0.01\\n\"<br/>+\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"returns string 'sent' if return-tx-id-flag is false (default), otherwise returns transaction id.\");<br/>\u00a0<br/>\u00a0 \u00a0 \u00a0string strAddress = params[0].get_str();<br/>\u00a0<br/>@@ -361,9 +362,15 @@ Value sendtoaddress(const Array&amp; params, bool fHelp)<br/>\u00a0 \u00a0 \u00a0if (params.size() &gt; 3 &amp;&amp; params[3].type() != null_type &amp;&amp; !params[3].get_str().empty())<br/>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0wtx.mapValue[\"to\"]\u00a0 \u00a0 \u00a0 = params[3].get_str();<br/>\u00a0<br/>+\u00a0 \u00a0 bool fReturnTxID = false;<br/>+\u00a0 \u00a0 if (params.size() &gt; 4)<br/>+\u00a0 \u00a0 \u00a0 \u00a0 fReturnTxID = params[4].get_bool();<br/>+<br/>\u00a0 \u00a0 \u00a0string strError = SendMoneyToBitcoinAddress(strAddress, nAmount, wtx);<br/>\u00a0 \u00a0 \u00a0if (strError != \"\")<br/>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0throw runtime_error(strError);<br/>+\u00a0 \u00a0 if (fReturnTxID)<br/>+\u00a0 \u00a0 \u00a0 \u00a0 return wtx.GetHash().ToString();<br/>\u00a0 \u00a0 \u00a0return \"sent\";<br/>\u00a0}<br/>\u00a0<br/>@@ -1103,6 +1110,7 @@ int CommandLineRPC(int argc, char *argv[])<br/>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0if (strMethod == \"setgenerate\"\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 &amp;&amp; n &gt; 0) ConvertTo&lt;bool&gt;(params[0]);<br/>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0if (strMethod == \"setgenerate\"\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 &amp;&amp; n &gt; 1) ConvertTo&lt;boost::int64_t&gt;(params[1]);<br/>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0if (strMethod == \"sendtoaddress\"\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 &amp;&amp; n &gt; 1) ConvertTo&lt;double&gt;(params[1]);<br/>+\u00a0 \u00a0 \u00a0 \u00a0 if (strMethod == \"sendtoaddress\"\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 &amp;&amp; n &gt; 4) ConvertTo&lt;bool&gt;(params[4]);<br/>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0if (strMethod == \"listtransactions\"\u00a0 \u00a0 \u00a0 \u00a0&amp;&amp; n &gt; 0) ConvertTo&lt;boost::int64_t&gt;(params[0]);<br/>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0if (strMethod == \"listtransactions\"\u00a0 \u00a0 \u00a0 \u00a0&amp;&amp; n &gt; 1) ConvertTo&lt;bool&gt;(params[1]);<br/>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0if (strMethod == \"getamountreceived\"\u00a0 \u00a0 \u00a0 &amp;&amp; n &gt; 1) ConvertTo&lt;boost::int64_t&gt;(params[1]); // deprecated<br/></div></div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 181,
+        "name": "jgarzik",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=541",
+        "subject": "Re: Proposed change to sendtoaddress API call",
+        "url": "https://bitcointalk.org/index.php?topic=807.msg9090#msg9090",
+        "date": "August 13, 2010, 08:13:30 PM",
+        "content": "<div class=\"post\"><br/>What happens when we desire to return additional information, beyond tx-id?<br/><br/>For the sake of future compatibility, it seems like the flag should present a choice between returning (a) just the current 'sent', or (b) a JSON map containing tx-id, and perhaps other things.<br/><br/></div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 181,
+        "name": "Gavin Andresen",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=224",
+        "subject": "Re: Proposed change to sendtoaddress API call",
+        "url": "https://bitcointalk.org/index.php?topic=807.msg9096#msg9096",
+        "date": "August 13, 2010, 08:26:06 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=807.msg9090#msg9090\">Quote from: jgarzik on August 13, 2010, 08:13:30 PM</a></div><div class=\"quote\">What happens when we desire to return additional information, beyond tx-id?<br/><br/>For the sake of future compatibility, it seems like the flag should present a choice between returning (a) just the current 'sent', or (b) a JSON map containing tx-id, and perhaps other things.<br/></div>A 'gettransaction tx_id' API call is on my short list.<br/><br/>What do other folks think; should sendtoaddress .... true\u00a0 \u00a0return just the tx_id, and you have to make another API call to get details if you need them?<br/>Or should it return an Array?<br/></div>",
+        "post_num": 6,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 181,
+        "name": "jgarzik",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=541",
+        "subject": "Re: Proposed change to sendtoaddress API call",
+        "url": "https://bitcointalk.org/index.php?topic=807.msg9126#msg9126",
+        "date": "August 13, 2010, 11:01:14 PM",
+        "content": "<div class=\"post\"><br/>Do you need 'gettransaction', given the existence of 'getblock'?<br/><br/></div>",
+        "post_num": 7,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 181,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Proposed change to sendtoaddress API call",
+        "url": "https://bitcointalk.org/index.php?topic=807.msg9134#msg9134",
+        "date": "August 13, 2010, 11:39:14 PM",
+        "content": "<div class=\"post\">It's too soon to start junking up the API for backward compatibility at all costs.<br/><br/>Just return \"&lt;txid&gt;\".</div>",
+        "post_num": 8,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

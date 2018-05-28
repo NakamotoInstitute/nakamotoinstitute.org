@@ -1,0 +1,50 @@
+[
+    {
+        "thread_id": 202,
+        "name": "jgarzik",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=541",
+        "subject": "RFC: remove DB_PRIVATE flag",
+        "url": "https://bitcointalk.org/index.php?topic=920.msg11087#msg11087",
+        "date": "August 25, 2010, 01:03:13 AM",
+        "content": "<div class=\"post\">Wallet backups and other DB examination are easily possible in a safe, atomic, transactional fashion... \u00a0 if and only if DB_PRIVATE flag is removed.<br/><br/><div class=\"codeheader\">Code:</div><div class=\"code\">--- a/db.cpp<br/>+++ b/db.cpp<br/>@@ -77,7 +77,6 @@ CDB::CDB(const char* pszFile, const char* pszMode) : pdb(NULL)<br/>\u00a0\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0DB_INIT_MPOOL |<br/>\u00a0\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0DB_INIT_TXN \u00a0 |<br/>\u00a0\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0DB_THREAD \u00a0 \u00a0 |<br/>- \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 DB_PRIVATE \u00a0 \u00a0|<br/>\u00a0\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0DB_RECOVER,<br/>\u00a0\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0S_IRUSR | S_IWUSR);<br/></div><br/><br/>What, if any, problems arise from doing this?\u00a0 Obviously, this does not cover the non-db4 databases such as the block data file.</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 202,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: RFC: remove DB_PRIVATE flag",
+        "url": "https://bitcointalk.org/index.php?topic=920.msg11224#msg11224",
+        "date": "August 26, 2010, 12:33:28 AM",
+        "content": "<div class=\"post\">Can you provide more details about what removing DB_PRIVATE does?<br/><br/>I can't remember if I had a specific reason for DB_PRIVATE, or if I just copied the flags from some example code.\u00a0 Does removing DB_PRIVATE make it safe for other processes to open the database simultaneously?\u00a0 That may be an improvement, depending what the side effects are.\u00a0 Does it substantially reduce performance by making it have to write out every change immediately or do other coordination?\u00a0 Are there additional locking or coordination files then?\u00a0 What else changes?\u00a0 You could test by timing an initial block download with and without DB_PRIVATE, preferably -connect-ing to a local machine so network isn't a factor.<br/><br/>Apparently, DB_PRIVATE doesn't do what you would hope it would do, which is prevent other processes from being able to open the database.\u00a0 It still lets them, it just screws up if they do.\u00a0 Another option, if there's a way, would be to make it lock the database files so they can't be accessed by other processes.</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 202,
+        "name": "jgarzik",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=541",
+        "subject": "Re: RFC: remove DB_PRIVATE flag",
+        "url": "https://bitcointalk.org/index.php?topic=920.msg11225#msg11225",
+        "date": "August 26, 2010, 12:39:24 AM",
+        "content": "<div class=\"post\"><br/>DB_PRIVATE enables a few optimizations by making the assumption that only one process will access the db4 database.\u00a0 Notably, this flag enables db4 to use pthreads-style mutex locking rather than heavy, operating-system-provided flock and shared memory.\u00a0 Ref: <a href=\"http://pybsddb.sourceforge.net/api_c/env_open.html\">DB_ENV-&gt;open documentation</a>.<br/><br/>The general motivation is that db4 databases can be safely accessed in parallel with bitcoin client, assuming (a) DB_PRIVATE is removed and (b) bitcoin properly uses db4 transactions.\u00a0 db4 transactions may even be employed to wrap around non-db4 data such as blk0001.dat, if the code is properly architected.<br/><br/></div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 202,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: RFC: remove DB_PRIVATE flag",
+        "url": "https://bitcointalk.org/index.php?topic=920.msg12484#msg12484",
+        "date": "September 12, 2010, 06:00:39 PM",
+        "content": "<div class=\"post\">Trying it without the DB_PRIVATE flag in rev 153. \u00a0We need to keep an eye on what's different.<br/><br/>On Windows at least, it creates six __db.001 - __db.006 files with sizes from 24K to 4MB. \u00a0It doesn't delete them on exit, it just leaves them behind.<br/><br/>The docs say it uses memory mapped files. \u00a0I assume they have the same file permissions as the database files, so the same user access restrictions apply.<br/><br/>Tests on Windows private LAN download of 78500 blocks:<br/>with DB_PRIVATE \u00a0 \u00a0 20 minutes 51 seconds<br/>without DB_PRIVATE \u00a0 20 minutes 51 seconds<br/><br/>I wasn't expecting them to come out exactly the same.</div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

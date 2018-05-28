@@ -1,0 +1,26 @@
+[
+    {
+        "thread_id": 120,
+        "name": "dkaparis",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=192",
+        "subject": "Faster SHA-256, MSVC build ",
+        "url": "https://bitcointalk.org/index.php?topic=453.msg3986#msg3986",
+        "date": "July 18, 2010, 01:28:50 PM",
+        "content": "<div class=\"post\">I've managed to set up dependencies and build bitcoin with MS Visual C++ 2008 Express Edition. I'll give 2010 a try at some time.<br/><br/>There is a custom allocator class in serialize.h, secure_allocator, that fails to build with non-debug runtime selected. It is my understanding allocator classes require a template copy constructor, I've attached a small patch that solves the problem.<br/><br/>As Satoshi noted elsewhere, the MSVC build is indeed significantly slower khash/s-wise (more than twice) than the prebuilt one (MinGW?), even though I enabled the highest optimization level options and also global optimization with link-time code generation. I find that result strange, since MSVC is not known to have significantly worse optimizer than GCC's. Most probably the problem can be traced to the sha module that is extracted from Crypto++. I find in Crypto++ SVN there are revised versions of the module, including x86/x64 assembly for SHA-256. Using the newer versions would involve reintegrating their dependencies, though. On that note, why aren't we using OpenSSL's SHA-2 hashing functions instead? Since we already use OpenSSL, this would be a better solution than to manually support a SHA module from another library.</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 120,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: MSVC build & SHA-256",
+        "url": "https://bitcointalk.org/index.php?topic=453.msg4068#msg4068",
+        "date": "July 18, 2010, 09:24:09 PM",
+        "content": "<div class=\"post\">OpenSSL doesn't have any interface for doing just the low level raw block hash part of SHA256. \u00a0SHA256 begins by wrapping your data in a specially formatted buffer. \u00a0Setting up the buffer takes an order of magnitude longer than the actual hashing if you're only hashing one or two blocks like we do. \u00a0It's intended that the time is amortised if you were hashing many KB or MB of data. \u00a0In BitcoinMiner, we format the buffer once and keep reusing it.<br/><br/>If you can find SHA256 code that's faster (with MinGW/GCC) than what we've got, that would be really great! \u00a0(although, keep licensing in mind) \u00a0The one we have is the only one I tried, so there's significant chance for improvement. <br/><br/>When I wrote it more than 2 years ago, there were screaming hot SHA1 implementations but minimal attention to SHA256. \u00a0That's a lot of time for them to come up with better stuff. \u00a0SHA256 was a lot slower than the fastest SHA1 at the time than I thought it should be. \u00a0Obviously SHA256 should be slower than SHA1 by a certain amount, but not by as much as I saw.<br/><br/>(hope you don't mind I renamed your thread, SHA-256 optimisation is something important that I keep forgetting about)</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

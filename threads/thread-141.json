@@ -1,0 +1,26 @@
+[
+    {
+        "thread_id": 141,
+        "name": "Gavin Andresen",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=224",
+        "subject": "Build error SVN r115 on my Mac: workaround",
+        "url": "https://bitcointalk.org/index.php?topic=604.msg6206#msg6206",
+        "date": "July 28, 2010, 03:18:25 PM",
+        "content": "<div class=\"post\">I get:<br/><div class=\"codeheader\">Code:</div><div class=\"code\">/var/folders/n7/n7Do3Krz2RWPeE+1YxvhUU+++TM/-Tmp-//cc8PgHsQ.s:879:suffix or operands invalid for `call'<br/></div>... compiling cryptopp/sha.cpp (latest SVN source) on my Mac (gcc version 4.2.1).<br/><br/>I fixed it by adding -DCRYPTOPP_DISABLE_ASM\u00a0 to my makefile; perhaps somebody with more experience compiling C++ on a Mac can figure out a better fix.<br/></div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 141,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Build error SVN r115 on my Mac: workaround",
+        "url": "https://bitcointalk.org/index.php?topic=604.msg6273#msg6273",
+        "date": "July 28, 2010, 09:23:23 PM",
+        "content": "<div class=\"post\">Was that the only thing I broke in the OSX build?! \u00a0Does it actually work after just that one change?<br/><br/>I had to do that for makefile.vc also. \u00a0It compiled, but SHA-256 didn't work correctly; it returned the same incorrect hash each time.<br/><br/>We'll disable it now, and if anyone figures out how to fix it, we can re-enable it then. \u00a0It's still 1.7x faster from the midstate optimisation.<br/><br/>The Crypto++ ASM SHA-256 works with GCC on Linux and Windows (MinGW).<br/><br/>I uploaded this makefile.osx change to SVN. \u00a0(let me know if that compiles now)</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

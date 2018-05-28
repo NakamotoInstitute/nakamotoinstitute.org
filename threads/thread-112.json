@@ -1,0 +1,14 @@
+[
+    {
+        "thread_id": 112,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Sample account system using JSON-RPC needed",
+        "url": "https://bitcointalk.org/index.php?topic=417.msg3579#msg3579",
+        "date": "July 16, 2010, 07:45:10 PM",
+        "content": "<div class=\"post\">We need someone to write sample code, preferably Python or Java, showing the recommended way to use the JSON-RPC interface to create an account system.\u00a0 Most sites that sell things will need something like this.\u00a0 Someone who's kept up on the JSON-RPC threads here should have some idea how it should work.<br/><br/>When a user is logged in to their account, you show the bitcoin address they can send to to add funds.\u00a0 Before showing it, you check if it's been used, if it has then you replace it with a new one (getnewaddress &lt;username&gt;).\u00a0 You only need to keep the latest bitcoin address for the account in your database.\u00a0 (I posted a sample code fragment for this in an earlier thread somewhere, search on getnewaddress)<br/><br/>You use getreceivedbylabel &lt;username&gt; with the username as the label to get the \"credit\" amount of the account.\u00a0 You need to keep a \"debit\" amount in your database.\u00a0 The current balance of the account is (credit - debit).\u00a0 When the user spends money, you increase debit.<br/><br/>If you're requiring more than 0 confirmations, it's nice if you show the current balance (0 confirmations) and the available balance (1 or more confirmations), so they can immediately see that their payment is acknowledged.\u00a0 Not all sites need to wait for confirmations, so the dual current &amp; available should be optional.\u00a0 Most sites selling digital goods are fine to accept 0 confirmations. <br/><br/>A nice sample app for this would be a simple bank site, which would have the above, plus the option to send a payment to a bitcoin address.\u00a0 The sample code should be the simplest possible with the minimum extra stuff to make it a working site.<br/><br/>vekja.net is an example of a site like this.<br/></div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

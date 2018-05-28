@@ -1,0 +1,38 @@
+[
+    {
+        "thread_id": 214,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Version 0.3.12",
+        "url": "https://bitcointalk.org/index.php?topic=999.msg12181#msg12181",
+        "date": "September 07, 2010, 07:17:55 PM",
+        "content": "<div class=\"post\">Version 0.3.12 is now available.<br/><br/>Features:<br/>- json-rpc errors return a more standard error object. (thanks to Gavin Andresen)<br/>- json-rpc command line returns exit codes.<br/>- json-rpc \"backupwallet\" command.<br/>- Recovers and continues if an exception is caused by a message you received. \u00a0Other nodes shouldn't be able to cause an exception, and it hasn't happened before, but if a way is found to cause an exception, this would keep it from being used to stop network nodes.<br/><br/>If you have json-rpc code that checks the contents of the error string, you need to change it to expect error objects of the form {\"code\":&lt;number&gt;,\"message\":&lt;string&gt;}, which is the standard. \u00a0See this thread:<br/><a href=\"http://bitcointalk.org/index.php?topic=969.0\">http://bitcointalk.org/index.php?topic=969.0</a><br/><br/>Download:<br/><a href=\"http://sourceforge.net/projects/bitcoin/files/Bitcoin/bitcoin-0.3.12/\">http://sourceforge.net/projects/bitcoin/files/Bitcoin/bitcoin-0.3.12/</a><br/></div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 214,
+        "name": "theymos",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=35",
+        "subject": "Re: Version 0.3.12",
+        "url": "https://bitcointalk.org/index.php?topic=999.msg12202#msg12202",
+        "date": "September 08, 2010, 12:25:04 AM",
+        "content": "<div class=\"post\">What does the prohibition of \"nonstandard\" transactions do?<br/><br/><div class=\"codeheader\">Code:</div><div class=\"code\">main.cpp:506<br/>// Rather not work on nonstandard transactions<br/>if (GetSigOpCount() &gt; 2 || ::GetSerializeSize(*this, SER_NETWORK) &lt; 100)<br/>\u00a0\u00a0return error(\"AcceptToMemoryPool() : nonstandard transaction\"); </div>What is included in \"GetSigOpCount\", and what does \"GetSerializeSize\" measure?<br/><br/>This is \"lightly\" enforced by the network:<br/><div class=\"codeheader\">Code:</div><div class=\"code\">main.cpp:1425<br/>// Check that it's not full of nonstandard transactions<br/>if (nHeight &gt; 79400 &amp;&amp; GetSigOpCount() &gt; MAX_BLOCK_SIGOPS)<br/>\u00a0\u00a0return error(\"AcceptBlock() : too many nonstandard transactions\"); </div></div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 214,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Version 0.3.12",
+        "url": "https://bitcointalk.org/index.php?topic=999.msg12240#msg12240",
+        "date": "September 08, 2010, 06:06:04 PM",
+        "content": "<div class=\"post\">Bitcoin clients currently only create and recognize transactions that match two possible templates.\u00a0 <br/><br/>Those are some quick tests that loosely check if transactions fit some general metrics that those standard transactions fit.\u00a0 Nodes will only work on adding those transactions to their block.<br/><br/>In the future, if we add more templates to the existing 2 types of transactions, we can change the \"rather not work on nonstandard transactions\" test to accept them.<br/></div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

@@ -1,0 +1,122 @@
+[
+    {
+        "thread_id": 57,
+        "name": "HostFat",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=203",
+        "subject": "Share database blocks ?",
+        "url": "https://bitcointalk.org/index.php?topic=153.msg1223#msg1223",
+        "date": "May 24, 2010, 06:43:49 PM",
+        "content": "<div class=\"post\">I have a question.<br/>I saw that everyone need to get blocks before starting to get coins.<br/>Does it mean that these blocks are the same for everyone?<br/>Is there a database with all of them?<br/>So ... can I share this database with someone else to make him able to generate coins after few seconds?<br/>I'm not sure if I have understood correctly how everything works<br/>If I'm right ... can we share an always updated database of blocks somewhere on the official website?</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 57,
+        "name": "Xunie",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=10",
+        "subject": "Re: Share database blocks ?",
+        "url": "https://bitcointalk.org/index.php?topic=153.msg1224#msg1224",
+        "date": "May 24, 2010, 07:49:00 PM",
+        "content": "<div class=\"post\">Well, what if the main website gets hacked and the blocks you are downloading are not the original blocks?<br/>I mean, this makes the network a hell of a lot of insecure.</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 57,
+        "name": "HostFat",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=203",
+        "subject": "Re: Share database blocks ?",
+        "url": "https://bitcointalk.org/index.php?topic=153.msg1225#msg1225",
+        "date": "May 24, 2010, 07:55:54 PM",
+        "content": "<div class=\"post\">I think that probably they won't be accepted by the majority of the network, that they have a different database/hash ... is it right?</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 57,
+        "name": "Dynotor",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=197",
+        "subject": "Re: Share database blocks ?",
+        "url": "https://bitcointalk.org/index.php?topic=153.msg1228#msg1228",
+        "date": "May 24, 2010, 09:30:39 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=153.msg1223#msg1223\">Quote from: Joozero on May 24, 2010, 06:43:49 PM</a></div><div class=\"quote\">I have a question.<br/>I saw that everyone need to get blocks before starting to get coins.<br/>Does it mean that these blocks are the same for everyone?<br/>Is there a database with all of them?<br/>So ... can I share this database with someone else to make him able to generate coins after few seconds?<br/>I'm not sure if I have understood correctly how everything works<br/>If I'm right ... can we share an always updated database of blocks somewhere on the official website?<br/></div><br/>I'll defer to others on whether having a central database is a good idea, but if you're creating multiple directories with the -datadir command line option, you can safely bootstrap that directory by copying \"blkindex.dat\" and \"blk0001.dat\" from an already established data directory into your new one.\u00a0 </div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 57,
+        "name": "molybdenum",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=208",
+        "subject": "Re: Share database blocks ?",
+        "url": "https://bitcointalk.org/index.php?topic=153.msg1229#msg1229",
+        "date": "May 25, 2010, 03:40:57 AM",
+        "content": "<div class=\"post\">While a central database, or at least a partially-completed centralized copy of a certain number of blocks would speed things up, but then, so would mass-transfer between clients (requests for 500 blocks or so instead of one blocks at a time) and the latter would implement it within the confines of the network, without needing web hosting for a copy of the block database.<br/><br/>Currently, I believe one could grab a copy of someone else's blk*.dat files and speed the process up that way, but it really shouldn't be needed when the same thing can be done with a few snippets of code.<br/><br/>A draft standard for the bitcoin wire protocol would possibly be a help here, in that it would be possible for someone C++-illiterate to see what actually is possible in the current system ;-)<br/><br/>EDIT: if I understand correctly, a complete false start that wouldn't disappear as soon as a client connected to the network at large would require generating as many blocks as were currently in the network, so, one individual would have to generate 57525 blocks to do major harm to the network.<br/><br/>It could give someone a head start in forging a block, but not really. Having a rouge starter set of blocks would be just like having each new node started from that set of blocks be a rouge node, so it should be similarly impractical to forge anything.</div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 57,
+        "name": "NewLibertyStandard",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=26",
+        "subject": "Re: Share database blocks ?",
+        "url": "https://bitcointalk.org/index.php?topic=153.msg1230#msg1230",
+        "date": "May 25, 2010, 04:44:05 AM",
+        "content": "<div class=\"post\">Most of the slowness results from the blocks needing to be verified one at a time in order, not from network delays. At least according to, if I'm not mistaken, satoshi, the Bitcoin author, in another thread. There has been some talk about a lightweight client, which doesn't verify all the blocks, but instead only broadcasts transactions. I'm not familiar with the algorithm, but if it's possible, I think it would be best to just alter the regular client so that when it starts up the first time, it grabs the most current block and verifies blocks in reverse order while also continuing to verify new blocks. That way Bitcoin could start generating blocks immediately.</div>",
+        "post_num": 6,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 57,
+        "name": "Xunie",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=10",
+        "subject": "Re: Share database blocks ?",
+        "url": "https://bitcointalk.org/index.php?topic=153.msg1231#msg1231",
+        "date": "May 25, 2010, 07:18:25 AM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=153.msg1230#msg1230\">Quote from: NewLibertyStandard on May 25, 2010, 04:44:05 AM</a></div><div class=\"quote\">I'm not familiar with the algorithm, but if it's possible, I think it would be best to just alter the regular client so that when it starts up the first time, it grabs the most current block and verifies blocks in reverse order while also continuing to verify new blocks. That way Bitcoin could start generating blocks immediately.<br/></div><br/>Good idea, but we would need some form of indicator it did that to the user, and warn the user about the potential hazards.<br/>(Atleast, that's my idea.)</div>",
+        "post_num": 7,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 57,
+        "name": "laszlo",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=143",
+        "subject": "Re: Share database blocks ?",
+        "url": "https://bitcointalk.org/index.php?topic=153.msg1232#msg1232",
+        "date": "May 25, 2010, 12:14:23 PM",
+        "content": "<div class=\"post\">It only verifies the last few as it is, to speed things up, but it doesn't work backwards.<br/><br/>Satoshi has mentioned a simplified payment verification system that he is planning to implement, which would allow payment only clients which do not have to verify all the blocks - he just hasn't written it yet.<br/><br/>I think even if you could just have someone 'click here to install instantly' it wouldn't do any good because they wouldn't have any bitcoins and they wouldn't know what a bitcoin is <img alt=\"Smiley\" border=\"0\" src=\"https://bitcointalk.org/Smileys/default/smiley.gif\"/></div>",
+        "post_num": 8,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 57,
+        "name": "NewLibertyStandard",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=26",
+        "subject": "Re: Share database blocks ?",
+        "url": "https://bitcointalk.org/index.php?topic=153.msg1235#msg1235",
+        "date": "May 25, 2010, 08:17:50 PM",
+        "content": "<div class=\"post\">Although I'm not familiar with the specifics of the algorithm implementation in C++, I am familiar with how the verification works in general. Although the algorithm would have to be re-written, it really should be possible to verify blocks in both directions at the same time. Each block contains the hash of the previous block, but the first block contains a genesis hash, which isn't the hash of a previous block. The first time bitcoins starts, it would treat a recent hash, perhaps a one day old hash as a temporary genesis hash and quickly verify the roughly 144 blocks up to the most recent block and it would continue to verify and optionally generate new hashes. Another thread would grab a previous hash, perhaps a two day old hash and treat it as the new temporary genesis hash. It would quickly verify the roughly 144 blocks, and verify that the last hash matches the previous genesis hash. The second thread would continue verifying previous blocks until it reached the real genesis block, which I believe is defined within Bitcoin itself. As you can see, blocks are always being verified in forward direction, but the beginning point is just pushed back until it reaches the real beginning. There could even be a third thread which would start at the real genesis hash and verify blocks from there so that they meet in the middle. All three of those threads could be grouped into another thread which would be run for each different chain of blocks which it is told about from other Bitcoin peers. If more than one chain is verified as authentic, Bitcoin would calculate and compare the total amount of computing power required to create the chain and keep only the strongest chain. Off the top of my head, an easy way to calculate the strongest chain, would be to find the largest sum of the inverses of the numeric value of each hash.</div>",
+        "post_num": 9,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 57,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Share database blocks ?",
+        "url": "https://bitcointalk.org/index.php?topic=153.msg1258#msg1258",
+        "date": "May 26, 2010, 08:34:34 PM",
+        "content": "<div class=\"post\">It does in fact download 500 blocks at a time, then the counter counts one at a time as it verifies the blocks.<br/><br/>The advantage of letting bitcoin download and verify the blocks is that you do not have to trust the person you're downloading them from. \u00a0If you downloaded the blk*.dat files from some site, you would have to trust that site, since you would be accepting the data without verifying it yourself. \u00a0If you're copying blk*.dat from another computer of yours, that should be fine.<br/><br/>How long is the initial block download taking for you?</div>",
+        "post_num": 10,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

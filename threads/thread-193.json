@@ -1,0 +1,86 @@
+[
+    {
+        "thread_id": 193,
+        "name": "Ground Loop",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=382",
+        "subject": "Difficulty: More nodes active, or faster nodes?",
+        "url": "https://bitcointalk.org/index.php?topic=846.msg9942#msg9942",
+        "date": "August 17, 2010, 07:25:38 PM",
+        "content": "<div class=\"post\">The recent upticks in difficulty have been remarkable.\u00a0 At 511.77, I've even stopped off those machines where I don't pay for marginal power consumption.\u00a0 My calculation is that the wear/tear from elevated temperatures and full-speed fans has more risk and cost than the BTC value.\u00a0 \u00a0(You can question my math.)<br/><br/><br/>But my question is this: Are we seeing the rise of mega-power machines, or just an exponential increase in the number of nodes?\u00a0 That is, are the top-producing machines making leaps in power (over average), or are my machines still about average, just dwarfed by the number of participating machines?\u00a0 Is there any way to tell? (node counts?)<br/><br/>I totally understand that difficulty reflects the state-of-the-art in client khash improvements, but it's clear that my own computers also represent a rapidly diminishing part of the total network generation rate.\u00a0 As the network gets larger, my chance of finding The Block every 10 minutes shrinks.\u00a0 I'm thrilled, not bitter <img alt=\"Smiley\" border=\"0\" src=\"https://bitcointalk.org/Smileys/default/smiley.gif\"/> , but I'm curious to understand what has transpired over the past three weeks to make it so dramatic.<br/><br/>Cheers.<br/></div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 193,
+        "name": "lfm",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=466",
+        "subject": "Re: Difficulty: More nodes active, or faster nodes?",
+        "url": "https://bitcointalk.org/index.php?topic=846.msg9952#msg9952",
+        "date": "August 17, 2010, 07:56:12 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=846.msg9942#msg9942\">Quote from: Ground Loop on August 17, 2010, 07:25:38 PM</a></div><div class=\"quote\">The recent upticks in difficulty have been remarkable.\u00a0 At 511.77, I've even stopped off those machines where I don't pay for marginal power consumption.\u00a0 My calculation is that the wear/tear from elevated temperatures and full-speed fans has more risk and cost than the BTC value.\u00a0 \u00a0(You can question my math.)</div><br/>This is just what one should naturally expect. Some people have more tolerance for the cost of mining than others.<br/><br/><div class=\"quoteheader\">Quote</div><div class=\"quote\">But my question is this: Are we seeing the rise of mega-power machines, or just an exponential increase in the number of nodes?\u00a0 That is, are the top-producing machines making leaps in power (over average), or are my machines still about average, just dwarfed by the number of participating machines?\u00a0 Is there any way to tell? (node counts?)</div><br/>I'd guess both. There is Art with his GPUs who claims to have about %10 of the generating power.<br/><br/>Then I see about 850 connections to the IRC channel. Not sure what its been like historically.<br/></div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 193,
+        "name": "MoonShadow",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=643",
+        "subject": "Re: Difficulty: More nodes active, or faster nodes?",
+        "url": "https://bitcointalk.org/index.php?topic=846.msg9973#msg9973",
+        "date": "August 17, 2010, 08:51:11 PM",
+        "content": "<div class=\"post\">I would be willing to bet that someone used one of these...<br/><br/><a href=\"http://en.wikipedia.org/wiki/Field-programmable_gate_array\">http://en.wikipedia.org/wiki/Field-programmable_gate_array</a><br/><br/>to do this...<br/><br/><a href=\"http://www.springerlink.com/content/765kta4qr92daea8/\">http://www.springerlink.com/content/765kta4qr92daea8/</a><br/><br/><br/>which is something that I, myself, obviously has considered.\u00a0 Whoever is doing it is probably representing a great deal of the current hash percentage, and hogging a pretty good amount of the new bitcoins.\u00a0 Considering that up to four of these programmable arrays are used by modern ham radios for this...<br/><br/><a href=\"http://www.dsptools.com/Radio.htm\">http://www.dsptools.com/Radio.htm</a><br/><br/>and this...<br/><br/><a href=\"http://www.softrockradio.org/\">http://www.softrockradio.org/</a><br/><br/><br/>The successful coding of the sha-256 algorithim into a fpga and recoding of the bitcoin client's generation function to use one or more such fpga's would produce a khash per second rate that no desktop could match.\u00a0 It would look like a super-computer from our perspectives.\u00a0 As a ham radio operator myself, I was aware of these devices, but I don't presently own any.\u00a0 Even connected to my netbook over USB2, the khas/sec rate would be sick.\u00a0 The program for these things are normally kept on the master computer's harddisk, and only take a few seconds to swap out; so a ham could use his software radio whenever he wants to, and then rewrite all of his FPGA's with the sha-256 algorithim before going to bed, and make money while he sleeps.<br/><br/>Another possibilty is that someone owned or bought one of these...<br/><br/><a href=\"http://www.via.com.tw/en/initiatives/padlock/features.jsp\">http://www.via.com.tw/en/initiatives/padlock/features.jsp</a><br/><br/><br/>or some other cryptographic coproccesor on a daughtercard.<br/><br/><br/>I'm sure once Bitcoin takes off, anyone with enough of the coins to have a deep personal interest in the strength of the currency will be running clients with hardware exceleration for the sha-256 has function.<br/><br/>That also makes me wonder if there are PCI daughtercards with FPGA's on them yet.\u00a0 The last time that I looked into them, they were only available as external setups.</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 193,
+        "name": "superbitcoin",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=639",
+        "subject": "Re: Difficulty: More nodes active, or faster nodes?",
+        "url": "https://bitcointalk.org/index.php?topic=846.msg9980#msg9980",
+        "date": "August 17, 2010, 09:28:28 PM",
+        "content": "<div class=\"post\">block generation on the VIA C7:<br/><br/><a href=\"http://bitcointalk.org/index.php?topic=758.0\">http://bitcointalk.org/index.php?topic=758.0</a></div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 193,
+        "name": "lfm",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=466",
+        "subject": "Re: Difficulty: More nodes active, or faster nodes?",
+        "url": "https://bitcointalk.org/index.php?topic=846.msg9981#msg9981",
+        "date": "August 17, 2010, 09:33:14 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=846.msg9973#msg9973\">Quote from: creighto on August 17, 2010, 08:51:11 PM</a></div><div class=\"quote\">I would be willing to bet that someone used one of these Field-programmable gate array to do this...<br/><br/><a href=\"http://www.springerlink.com/content/765kta4qr92daea8/\">http://www.springerlink.com/content/765kta4qr92daea8/</a><br/><br/>which is something that I, myself, obviously has considered. \u00a0Whoever is doing it is probably representing a great deal of the current hash percentage, and hogging a pretty good amount of the new bitcoins.</div><br/>...<br/><br/><div class=\"quoteheader\">Quote</div><div class=\"quote\">The successful coding of the sha-256 algorithim into a fpga and recoding of the bitcoin client's generation function to use one or more such fpga's would produce a khash per second rate that no desktop could match. \u00a0It would look like a super-computer from our perspectives.</div><br/>A lot of hand waving there. For some concrete numbers it quotes 53 MB/s and since we only hash 192 bytes at a time, you might think it would do 0.27 mhash/s (but it probably would be less) which is actually within the range of a desktop.<br/><br/><div class=\"quoteheader\">Quote</div><div class=\"quote\">Another possibility is that someone owned or bought one of these...<br/><br/><a href=\"http://www.via.com.tw/en/initiatives/padlock/features.jsp\">http://www.via.com.tw/en/initiatives/padlock/features.jsp</a><br/></div><br/>Ya, someone might! They measure out about 1.5 mhash/s. There are many ordinary Intel or AMD CPUs can do much better than that (with a little more electric power input tho).<br/></div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 193,
+        "name": "MoonShadow",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=643",
+        "subject": "Re: Difficulty: More nodes active, or faster nodes?",
+        "url": "https://bitcointalk.org/index.php?topic=846.msg9983#msg9983",
+        "date": "August 17, 2010, 09:52:06 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=846.msg9981#msg9981\">Quote from: lfm on August 17, 2010, 09:33:14 PM</a></div><div class=\"quote\"><br/><div class=\"quoteheader\">Quote</div><div class=\"quote\">The successful coding of the sha-256 algorithim into a fpga and recoding of the bitcoin client's generation function to use one or more such fpga's would produce a khash per second rate that no desktop could match.\u00a0 It would look like a super-computer from our perspectives.</div><br/>A lot of hand waving there. For some concrete numbers it quotes 53 MB/s and since we only hash 192 bytes at a time, you might think it would do 27 mhash/s (but it probably would be less) which I beleive is actually within the range of a desktop with a couple GPUs.<br/><br/></div><br/><br/>Yes, but there are two points that you overlooked.\u00a0 First, the software transceiver ususally requires four of these chips.\u00a0 (two for receive and two for transmit, one does digital signal processing and the other does digital filtering of the raw signal.\u00a0 Said another way, one is the virtual mike/speaker and the other is a virtual tuner.\u00a0 Not all such software radio setups need four, however)\u00a0 So if a ham has four of these, all four could be programmed to this end.\u00a0 The other point is one that I didn't explicitly mention, one FPGA does not equal only one sha-256 processor.\u00a0 It is possible, even likely, that more than one such processor could be programmed into a single FPGA chip.\u00a0 These chips are fairly large so that they can 'virtualize' some pretty complex logic circuts, and a talented programmer could program one chip to be several sha-256 processors running in parrallel.\u00a0 All this, and his main CPU and GPU are still available if still more Kh/s are desired.\u00a0 Any hacker with the skills to program one or more GPU's in the same system to crunch hashes is already elite, and doing multiple sha-256 cores on a single FPGA would be child's play.\u00a0 And we already know that there is some elite talent within the Bitcoin community, some who desire to run it, and some who desire to break it.</div>",
+        "post_num": 6,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 193,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Difficulty: More nodes active, or faster nodes?",
+        "url": "https://bitcointalk.org/index.php?topic=846.msg10076#msg10076",
+        "date": "August 18, 2010, 06:01:40 PM",
+        "content": "<div class=\"post\">The performance numbers posted from a VIA C7's hardware SHA-256 weren't astronomical.\u00a0 Only in the 1500 khash/s range.\u00a0 If you think about it, just because it's implemented in hardware doesn't mean it's crazy fast.\u00a0 It still has to do all the steps.\u00a0 It's only if simplifying it down to single-purpose hardware makes it small enough to fit many in parallel.\u00a0 That's not necessarily easy or a given.<br/><br/></div>",
+        "post_num": 7,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

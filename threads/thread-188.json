@@ -1,0 +1,50 @@
+[
+    {
+        "thread_id": 188,
+        "name": "bdonlan",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=359",
+        "subject": "[PATCH] Automatic block validation",
+        "url": "https://bitcointalk.org/index.php?topic=832.msg9654#msg9654",
+        "date": "August 16, 2010, 02:57:55 AM",
+        "content": "<div class=\"post\">I've written a patch to help automatically validate cached blocks after validation fixes such as the one that was pushed out today. You can find it at<br/><br/><a href=\"http://fushizen.net/~bd/blockverify.patch\">http://fushizen.net/~bd/blockverify.patch</a><br/><br/>or<br/><br/><a href=\"http://github.com/bdonlan/bitcoin/commit/b205251959448ca99123f2bc95b088bf06d4ef3b\">http://github.com/bdonlan/bitcoin/commit/b205251959448ca99123f2bc95b088bf06d4ef3b</a><br/><br/>Upon first run with this patch, all blocks will be verified, and any invalid blocks, as well as blocks orphaned by removal of such blocks, will be removed from the block index. A version stamp<br/>(BLOCK_VERIFY_TOKEN in db.cpp) will be then written to the db; this will cause the next run to skip the verification pass. Any future validation fixes can then simply bump BLOCK_VERIFY_TOKEN to force a revalidation of the block chain.<br/><br/>Note that I may be missing some important steps when deleting the old blocks - in particular, no attempt is made to update the wallet, or to prune stored uncommitted transactions. Review would be helpful.</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 188,
+        "name": "bdonlan",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=359",
+        "subject": "Re: [PATCH] Automatic block validation",
+        "url": "https://bitcointalk.org/index.php?topic=832.msg9673#msg9673",
+        "date": "August 16, 2010, 04:33:10 AM",
+        "content": "<div class=\"post\">Hmm, it seems I am missing something important - disconnecting transactions which are no longer part of the accepted block chain. I'm going to have to work on this a bit - the naive approach of simply blasting away all TXNs, then reconnecting things is far too slow, and hits the transaction memory limit.</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 188,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: [PATCH] Automatic block validation",
+        "url": "https://bitcointalk.org/index.php?topic=832.msg9754#msg9754",
+        "date": "August 16, 2010, 03:25:54 PM",
+        "content": "<div class=\"post\">That's a difficult approach.<br/><br/>We need to cause a reorg, which will disconnect the invalid chain.<br/><br/>This is code that will rarely ever get tested, and is fairly intricate, so something simple and safe is best.<br/><br/>Here's what I was thinking of. \u00a0(I haven't tested this yet) \u00a0It checks all the blocks in the main chain. \u00a0If it finds a bad one, it sets all that chain's bnChainWork to 0 so it can't win best chain again, and it reduces best chain work to the fork level so any new block after the fork will cause a reorg. \u00a0(It can't change pindexBest without actually doing a reorg)<br/><br/>This isn't perfect yet. \u00a0It still needs to receive one valid block to trigger the reorg. \u00a0<br/><br/>It would probably be possible to initiate an AddToBlockIndex or Reorganize after the check, but it would require a lot more careful attention. \u00a0I probably should break out part of AddToBlockIndex that sets the new best block. \u00a0I'll probably end up doing that instead of the code below.<br/><br/><div class=\"codeheader\">Code:</div><div class=\"code\">bool CTxDB::LoadBlockIndex()<br/>{<br/>\u00a0\u00a0 \u00a0...<br/><br/>\u00a0\u00a0 \u00a0// Verify blocks in the main chain<br/>\u00a0\u00a0 \u00a0vector&lt;CBlockIndex*&gt; vChain;<br/>\u00a0\u00a0 \u00a0for (CBlockIndex* pindex = pindexBest; pindex &amp;&amp; pindex-&gt;pprev; pindex = pindex-&gt;pprev)<br/>\u00a0\u00a0 \u00a0{<br/>\u00a0\u00a0 \u00a0 \u00a0 \u00a0vChain.push_back(pindex);<br/>\u00a0\u00a0 \u00a0 \u00a0 \u00a0CBlock block;<br/>\u00a0\u00a0 \u00a0 \u00a0 \u00a0if (!block.ReadFromDisk(pindex))<br/>\u00a0\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0return error(\"LoadBlockIndex() : block.ReadFromDisk failed\");<br/>\u00a0\u00a0 \u00a0 \u00a0 \u00a0if (!block.CheckBlock())<br/>\u00a0\u00a0 \u00a0 \u00a0 \u00a0{<br/>\u00a0\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0bnBestChainWork = pindex-&gt;pprev-&gt;bnChainWork;<br/>\u00a0\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0foreach(CBlockIndex* pindex2, vChain)<br/>\u00a0\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0pindex2-&gt;bnChainWork = 0;<br/>\u00a0\u00a0 \u00a0 \u00a0 \u00a0}<br/>\u00a0\u00a0 \u00a0}<br/><br/>\u00a0\u00a0 \u00a0return true;<br/>}<br/></div></div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 188,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: [PATCH] Automatic block validation",
+        "url": "https://bitcointalk.org/index.php?topic=832.msg9775#msg9775",
+        "date": "August 16, 2010, 05:08:02 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=832.msg9754#msg9754\">Quote from: satoshi on August 16, 2010, 03:25:54 PM</a></div><div class=\"quote\">It would probably be possible to initiate an AddToBlockIndex or Reorganize after the check, but it would require a lot more careful attention. \u00a0I probably should break out part of AddToBlockIndex that sets the new best block. \u00a0I'll probably end up doing that instead of the code below.<br/></div>This is what I ended up doing in SVN rev 139.<br/><br/>Instead of deleting the bad chain, I added an extra CheckBlock to ConnectBlock so bad blocks can't get back into the best chain once they're kicked out.</div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

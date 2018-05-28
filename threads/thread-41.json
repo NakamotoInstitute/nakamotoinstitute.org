@@ -1,0 +1,86 @@
+[
+    {
+        "thread_id": 41,
+        "name": "fergalish",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=39",
+        "subject": "bitcoin auto-renice-ing",
+        "url": "https://bitcointalk.org/index.php?topic=72.msg673#msg673",
+        "date": "March 08, 2010, 09:29:56 AM",
+        "content": "<div class=\"post\">Hi, I run bitcoin at a nice level of 20 so as not to interfere with other tasks.\u00a0 Every now and then, however, it seems to auto-adjust itself to nice level 2, or even 0.\u00a0 It this by design?\u00a0 Frankly, such a thing should be illegal for a linux application... it's a bit odd to say the least.</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 41,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: bitcoin auto-renice-ing",
+        "url": "https://bitcointalk.org/index.php?topic=72.msg717#msg717",
+        "date": "March 15, 2010, 06:44:12 PM",
+        "content": "<div class=\"post\">It sets different priorities for each thread. \u00a0The generate threads run at PRIO_MIN. \u00a0The other threads rarely take any CPU and run at normal.<br/><br/>#define THREAD_PRIORITY_LOWEST \u00a0 \u00a0 \u00a0 \u00a0 \u00a0PRIO_MIN<br/>#define THREAD_PRIORITY_BELOW_NORMAL \u00a0 \u00a02<br/>#define THREAD_PRIORITY_NORMAL \u00a0 \u00a0 \u00a0 \u00a0 \u00a00<br/><br/>The priorities converted from Windows priorities were probably from a table like this:<br/><br/>\u00a0\u00a0 \"The following table shows the mapping between nice values and Win32 priorities. Refer to the Win32 documentation for SetThreadPriority() for more information on Win32 priority issues.<br/><br/>nice value \u00a0\u00a0\u00a0Win32 Priority<br/>-20 to -16 \u00a0\u00a0\u00a0THREAD_PRIORITY_HIGHEST<br/>-15 to -6 \u00a0\u00a0\u00a0THREAD_PRIORITY_ABOVE_NORMAL<br/>-5 to +4 \u00a0\u00a0\u00a0THREAD_PRIORITY_NORMAL<br/>+5 to +14 \u00a0\u00a0\u00a0THREAD_PRIORITY_BELOW_NORMAL<br/>+15 to +19 \u00a0\u00a0\u00a0THREAD_PRIORITY_LOWEST\"<br/><br/>If you have better values, suggestions welcome.<br/><br/>Also, there was some advice on the web that PRIO_PROCESS is used on Linux because threads are processes. \u00a0If that's not true, maybe it accounts for unexpectedly setting the priority of the whole app.<br/><br/>\u00a0\u00a0 \u00a0// threads are processes on linux, so PRIO_PROCESS affects just the one thread<br/>\u00a0\u00a0 \u00a0setpriority(PRIO_PROCESS, getpid(), nPriority);<br/></div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 41,
+        "name": "asdfman",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=327",
+        "subject": "Re: bitcoin auto-renice-ing",
+        "url": "https://bitcointalk.org/index.php?topic=72.msg2268#msg2268",
+        "date": "July 12, 2010, 08:05:57 AM",
+        "content": "<div class=\"post\">Hello,<br/><br/>This same behavior was bugging me too.. I would renice all the threads to 19, as it was interrupting system responsiveness since bitcoind was taking priority, but every so often the program would automatically reset the priority to something that would disrupt system responsiveness ..<br/>so what I did was just edit util.h <br/>and change the function that manipulates the priority:<br/><br/>inline void SetThreadPriority(int nPriority)<br/>{<br/>\u00a0\u00a0 \u00a0printf(\"No, were not changing any damn priority\\n\");<br/>}<br/><br/>and then recompiled bitcoind <br/><br/>now I just renice all the threads once, and they are stuck at what I set them to until program exit (NI column staying at 19):<br/><br/><div class=\"codeheader\">Code:</div><div class=\"code\"> \u00a0 1 \u00a0[||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||100.0%] \u00a0 \u00a0 Time: 03:59:40<br/>\u00a0\u00a02 \u00a0[||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||100.0%] \u00a0 \u00a0 Uptime: 253 days(!), 01:12:27<br/>\u00a0\u00a0Mem[||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||501/1255MB] \u00a0 \u00a0 Load: 4.01<br/>\u00a0\u00a0Swp[|||||||||||||||||||||||||||||||||||||||||||||||||||||| \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0501/1004MB] \u00a0 \u00a0 Load average: 4.01 4.15 3.49<br/>\u00a0\u00a0 \u00a0 \u00a0 \u00a0 __ \u00a0 __ \u00a0 \u00a0 \u00a0 \u00a0 __ \u00a0 __ \u00a0 \u00a0 \u00a0 \u00a0__ \u00a0__ \u00a0 __ \u00a0 \u00a0 \u00a0 \u00a0 __ \u00a0 __ \u00a0 \u00a0 \u00a0 \u00a0 __ \u00a0 __ \u00a0 \u00a0 \u00a0 \u00a0 __ \u00a0 __ \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 __ \u00a0__ \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0__<br/>\u00a0\u00a0 \u00a0 \u00a0 \u00a0| \u00a0| |__ \u00a0 \u00a0 \u00a0 \u00a0 __| |__ \u00a0 \u00a0 \u00a0 |__||__ \u00a0|__| \u00a0 \u00a0 \u00a0 | \u00a0| | \u00a0| \u00a0 \u00a0 \u00a0 | \u00a0| | \u00a0| \u00a0 \u00a0 \u00a0 | \u00a0| | \u00a0| \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0__| __| \u00a0 | \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 |<br/>\u00a0\u00a0Avg: \u00a0|__|.|__|% sy: \u00a0|__ . __|% ni: \u00a0__||__|.|__|% hi: \u00a0|__|.|__|% si: \u00a0|__|.|__|% wa: \u00a0|__|.|__|% \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Tasks: \u00a0__| __| \u00a0 | total, \u00a0 \u00a0| running<br/><br/>\u00a0\u00a0PID USER \u00a0 \u00a0 PRI \u00a0NI \u00a0VIRT \u00a0 RES \u00a0 SHR S CPU% MEM% \u00a0 TIME+ \u00a0Command<br/><br/>\u00a04523 root \u00a0 \u00a0 \u00a039 \u00a019 \u00a0126M 46280 \u00a03424 S \u00a00.0 \u00a03.6 \u00a00:00.66 \u00a0`- bitcoind -gen -daemon<br/>\u00a04534 root \u00a0 \u00a0 \u00a039 \u00a019 \u00a0126M 46280 \u00a03424 R 90.0 \u00a03.6 12:43.73 \u00a0| \u00a0 `- bitcoind -gen -daemon<br/>\u00a04533 root \u00a0 \u00a0 \u00a039 \u00a019 \u00a0126M 46280 \u00a03424 R 45.0 \u00a03.6 10:49.02 \u00a0| \u00a0 `- bitcoind -gen -daemon<br/>\u00a04532 root \u00a0 \u00a0 \u00a039 \u00a019 \u00a0126M 46280 \u00a03424 R 46.0 \u00a03.6 10:05.83 \u00a0| \u00a0 `- bitcoind -gen -daemon<br/>\u00a04531 root \u00a0 \u00a0 \u00a039 \u00a019 \u00a0126M 46280 \u00a03424 S \u00a00.0 \u00a03.6 \u00a00:00.03 \u00a0| \u00a0 `- bitcoind -gen -daemon<br/>\u00a04530 root \u00a0 \u00a0 \u00a039 \u00a019 \u00a0126M 46280 \u00a03424 S \u00a01.0 \u00a03.6 \u00a00:15.53 \u00a0| \u00a0 `- bitcoind -gen -daemon<br/>\u00a04529 root \u00a0 \u00a0 \u00a039 \u00a019 \u00a0126M 46280 \u00a03424 S \u00a00.0 \u00a03.6 \u00a00:00.72 \u00a0| \u00a0 `- bitcoind -gen -daemon<br/>\u00a04527 root \u00a0 \u00a0 \u00a039 \u00a019 \u00a0126M 46280 \u00a03424 S \u00a00.0 \u00a03.6 \u00a00:00.02 \u00a0| \u00a0 `- bitcoind -gen -daemon<br/>\u00a04526 root \u00a0 \u00a0 \u00a039 \u00a019 \u00a0126M 46280 \u00a03424 S \u00a00.0 \u00a03.6 \u00a00:00.03 \u00a0| \u00a0 `- bitcoind -gen -daemon<br/>\u00a04525 root \u00a0 \u00a0 \u00a039 \u00a019 \u00a0126M 46280 \u00a03424 S \u00a00.0 \u00a03.6 \u00a00:00.06 \u00a0| \u00a0 `- bitcoind -gen -daemon<br/></div>in my debug.log: <br/><br/>[root@raidserv] (~/.bitcoin)# grep \"No,\" debug.log<br/>No, were not changing any damn priority<br/>No, were not changing any damn priority<br/>No, were not changing any damn priority<br/>No, were not changing any damn priority<br/>...<br/><br/>So now I can leave bitcoind running all day long without me noticing much...<br/><br/><br/></div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 41,
+        "name": "asdfman",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=327",
+        "subject": "Re: bitcoin auto-renice-ing",
+        "url": "https://bitcointalk.org/index.php?topic=72.msg2272#msg2272",
+        "date": "July 12, 2010, 08:21:14 AM",
+        "content": "<div class=\"post\">I think that this might be a bug... <a href=\"http://bitcointalk.org/index.php?topic=285.0\">http://bitcointalk.org/index.php?topic=285.0</a></div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 41,
+        "name": "lachesis",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=237",
+        "subject": "Re: bitcoin auto-renice-ing",
+        "url": "https://bitcointalk.org/index.php?topic=72.msg2413#msg2413",
+        "date": "July 12, 2010, 11:02:48 PM",
+        "content": "<div class=\"post\">Asdfman, what program is generating that output? I like it <img alt=\"Cheesy\" border=\"0\" src=\"https://bitcointalk.org/Smileys/default/cheesy.gif\"/></div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 41,
+        "name": "asdfman",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=327",
+        "subject": "Re: bitcoin auto-renice-ing",
+        "url": "https://bitcointalk.org/index.php?topic=72.msg2416#msg2416",
+        "date": "July 12, 2010, 11:11:24 PM",
+        "content": "<div class=\"post\">lachesis - htop <br/>its awesome.. has ANSI colors, you can fully configure it to display all threads, tree view, etc ,etc</div>",
+        "post_num": 6,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 41,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: bitcoin auto-renice-ing",
+        "url": "https://bitcointalk.org/index.php?topic=72.msg2886#msg2886",
+        "date": "July 14, 2010, 05:38:31 PM",
+        "content": "<div class=\"post\">Laszlo corrected this, but unfortunately it was too late to make it into 0.3.0. \u00a0There will probably be a 0.3.1 soon though.<br/><br/>The problem is I used PRIO_MIN, I should have used PRIO_MAX for the lowest priority. \u00a0The OS isn't supposed to let you increase priority, so the PRIO_MIN ought to leave it at priority 0.</div>",
+        "post_num": 7,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

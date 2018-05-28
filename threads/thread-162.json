@@ -1,0 +1,110 @@
+[
+    {
+        "thread_id": 162,
+        "name": "MoonShadow",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=643",
+        "subject": "Bitcoin Watchdog Service",
+        "url": "https://bitcointalk.org/index.php?topic=691.msg7283#msg7283",
+        "date": "August 03, 2010, 05:53:51 PM",
+        "content": "<div class=\"post\"><br/>Another thread that asked what would happen if the bitcoin network were to split over a period of time and reconnect got me thinking....<br/><br/><br/>One way to protect against such an unlikey event would be to have a watchdog process that kept track of the average time between blocks since the last change in difficulty, and alert the owner if the time between blocks were to jump significantly and uncharacteristicly over one or more consecutive blocks.\u00a0 This would also help protect a vendor from a double-spending scam if the theives involved were talented enough to be able to spoof his client's connections to delay another spend event from reaching him.<br/><br/>But then I realized that a server running a modified client on another machine, without a hard connection limit, could do the above for a collection of vendors, while monitoring the vendor's client by maintaining a connection to it and notifying the vendor by other means if the connection is lost.\u00a0 Also, if a war, internet virus, or other were to divide the bitcoin network for an extended time; the watchdog would be able to deterimine *where* the problem on the Internet actually is by analysis of it's customers' connections that were lost, and notify all customers in the affected zone that, presumedly, they are on the wrong side of the split.<br/><br/>The watchdog would also work quite well as a rapid annouce clearinghouse, improving the odds for it's customers that if they are subjects of a double-spending scam, that it's less likely that they are those left holding the raw deal.<br/><br/>Any talented programmers willing to take this up?<br/><br/></div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 162,
+        "name": "jgarzik",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=541",
+        "subject": "Re: Bitcoin Watchdog Service",
+        "url": "https://bitcointalk.org/index.php?topic=691.msg7290#msg7290",
+        "date": "August 03, 2010, 06:12:28 PM",
+        "content": "<div class=\"post\">A good way to prevent long-chain takeover is to store the signature of the last-known \"good\" block in each bitcoin release binary.<br/></div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 162,
+        "name": "nelisky",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=601",
+        "subject": "Re: Bitcoin Watchdog Service",
+        "url": "https://bitcointalk.org/index.php?topic=691.msg7301#msg7301",
+        "date": "August 03, 2010, 06:59:58 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=691.msg7290#msg7290\">Quote from: jgarzik on August 03, 2010, 06:12:28 PM</a></div><div class=\"quote\">A good way to prevent long-chain takeover is to store the signature of the last-known \"good\" block in each bitcoin release binary.<br/><br/></div><br/>But that is only as good as the trust you have in the distribution channels, which are being discussed in other threads. If a compromised client was to be served as an upgrade, and most running clients would be using this version, then a new chain would replace the old one. What would happen when, after some time, the attack was disclosed and new clients with the real block chain signatures were run? Would the old (real) chain still be alive and replace the bogus one?</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 162,
+        "name": "throughput",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=574",
+        "subject": "Re: Bitcoin Watchdog Service",
+        "url": "https://bitcointalk.org/index.php?topic=691.msg8897#msg8897",
+        "date": "August 12, 2010, 03:28:43 PM",
+        "content": "<div class=\"post\">Definitively, we need some overall network hps meter in every node.<br/><br/>And at last I've found that article:<br/><a href=\"http://www.informit.com/articles/article.aspx?p=1237179\">http://www.informit.com/articles/article.aspx?p=1237179</a><br/><br/>Network splits are easier to produce, and happen more often, than many users on this forum think.<br/>You don't really need to cut any cable, nor hack into ISP's router to plug that ISP off Internet.<br/>You don't need to hack his peers either. All you need is BGP router in any AS (and some unwary BGP peers).<br/>I have one\u00a0 <img alt=\"Grin\" border=\"0\" src=\"https://bitcointalk.org/Smileys/default/grin.gif\"/><br/><br/>So, it is possible to talk about a short (1 - 3 hours) and controlled network split.<br/>Not just split in half, but split into ASes. After an hour or three-four most of ISPs will recover, but that<br/>really depends on work hours. Weekend attack may have more prolonged effect.<br/>Perhaps in the future that will be fixed and no BGP router will be vulnerable, but<br/>anyway, nobody should count on Internet stability and persistent connectivity.</div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 162,
+        "name": "jgarzik",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=541",
+        "subject": "Re: Bitcoin Watchdog Service",
+        "url": "https://bitcointalk.org/index.php?topic=691.msg8902#msg8902",
+        "date": "August 12, 2010, 04:14:11 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=691.msg7301#msg7301\">Quote from: nelisky on August 03, 2010, 06:59:58 PM</a></div><div class=\"quote\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=691.msg7290#msg7290\">Quote from: jgarzik on August 03, 2010, 06:12:28 PM</a></div><div class=\"quote\">A good way to prevent long-chain takeover is to store the signature of the last-known \"good\" block in each bitcoin release binary.<br/><br/></div><br/>But that is only as good as the trust you have in the distribution channels, which are being discussed in other threads. If a compromised client was to be served as an upgrade, and most running clients would be using this version, then a new chain would replace the old one. What would happen when, after some time, the attack was disclosed and new clients with the real block chain signatures were run? Would the old (real) chain still be alive and replace the bogus one?<br/></div><br/>We could convince satoshi to always post SHA1 signatures of uploads inside a PGP-signed blocks...\u00a0 establish a chain of trust for both source code and official binaries.<br/></div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 162,
+        "name": "aceat64",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=430",
+        "subject": "Re: Bitcoin Watchdog Service",
+        "url": "https://bitcointalk.org/index.php?topic=691.msg8906#msg8906",
+        "date": "August 12, 2010, 05:02:43 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=691.msg8897#msg8897\">Quote from: throughput on August 12, 2010, 03:28:43 PM</a></div><div class=\"quote\">Definitively, we need some overall network hps meter in every node.<br/><br/>And at last I've found that article:<br/><a href=\"http://www.informit.com/articles/article.aspx?p=1237179\">http://www.informit.com/articles/article.aspx?p=1237179</a><br/><br/>Network splits are easier to produce, and happen more often, than many users on this forum think.<br/>You don't really need to cut any cable, nor hack into ISP's router to plug that ISP off Internet.<br/>You don't need to hack his peers either. All you need is BGP router in any AS (and some unwary BGP peers).<br/>I have one\u00a0 <img alt=\"Grin\" border=\"0\" src=\"https://bitcointalk.org/Smileys/default/grin.gif\"/><br/><br/>So, it is possible to talk about a short (1 - 3 hours) and controlled network split.<br/>Not just split in half, but split into ASes. After an hour or three-four most of ISPs will recover, but that<br/>really depends on work hours. Weekend attack may have more prolonged effect.<br/>Perhaps in the future that will be fixed and no BGP router will be vulnerable, but<br/>anyway, nobody should count on Internet stability and persistent connectivity.<br/></div><br/>How would an attacker connect to both sides during this split in order to spend the coins? And if the attacker can do it, the likelihood that one or more honest nodes could bridge the divide is pretty good.</div>",
+        "post_num": 6,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 162,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Bitcoin Watchdog Service",
+        "url": "https://bitcointalk.org/index.php?topic=691.msg8922#msg8922",
+        "date": "August 12, 2010, 09:34:44 PM",
+        "content": "<div class=\"post\">True, there would probably be someone with a dial-up modem or satellite dish internet.\u00a0 Rarer would be someone who has both that and the wired internet that has the outage, but if it's a big enough segment to matter, out of a million people there's bound to be a multi-home geek.<br/><br/>ISP network cuts are just your local area. \u00a0If you still have communication with the rest of your area, it would probably be something like 1/1000 of the world or less. \u00a0Block generation in the segment would take several hours per block.<br/><br/>I favour the plan to monitor if the frequency of blocks received drops too slow. \u00a0That covers a large range of possibilities.</div>",
+        "post_num": 7,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 162,
+        "name": "throughput",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=574",
+        "subject": "Re: Bitcoin Watchdog Service",
+        "url": "https://bitcointalk.org/index.php?topic=691.msg8978#msg8978",
+        "date": "August 13, 2010, 06:45:50 AM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=691.msg8906#msg8906\">Quote from: aceat64 on August 12, 2010, 05:02:43 PM</a></div><div class=\"quote\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=691.msg8897#msg8897\">Quote from: throughput on August 12, 2010, 03:28:43 PM</a></div><div class=\"quote\">Definitively, we need some overall network hps meter in every node.<br/><br/>And at last I've found that article:<br/><a href=\"http://www.informit.com/articles/article.aspx?p=1237179\">http://www.informit.com/articles/article.aspx?p=1237179</a><br/><br/>Network splits are easier to produce, and happen more often, than many users on this forum think.<br/>You don't really need to cut any cable, nor hack into ISP's router to plug that ISP off Internet.<br/>You don't need to hack his peers either. All you need is BGP router in any AS (and some unwary BGP peers).<br/>I have one\u00a0 <img alt=\"Grin\" border=\"0\" src=\"https://bitcointalk.org/Smileys/default/grin.gif\"/><br/><br/>So, it is possible to talk about a short (1 - 3 hours) and controlled network split.<br/>Not just split in half, but split into ASes. After an hour or three-four most of ISPs will recover, but that<br/>really depends on work hours. Weekend attack may have more prolonged effect.<br/>Perhaps in the future that will be fixed and no BGP router will be vulnerable, but<br/>anyway, nobody should count on Internet stability and persistent connectivity.<br/></div>How would an attacker connect to both sides during this split in order to spend the coins? And if the attacker can do it, the likelihood that one or more honest nodes could bridge the divide is pretty good.<br/></div>1. Why an attacker is forced to be a single person with a single PC?<br/>Copy the wallet on another PC and use it anywhere!<br/><br/>2. Why should network isolation only be used for double spending?<br/>Can't it be used to slow down block generation? Will that affect difficulty adjustment?<br/><br/><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=691.msg8922#msg8922\">Quote from: satoshi on August 12, 2010, 09:34:44 PM</a></div><div class=\"quote\">True, there would probably be someone with a dial-up modem or satellite dish internet.\u00a0 Rarer would be someone who has both that and the wired internet that has the outage, but if it's a big enough segment to matter, out of a million people there's bound to be a multi-home geek.<br/></div>But there will be no irc server to bootsrap from.</div>",
+        "post_num": 8,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 162,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Bitcoin Watchdog Service",
+        "url": "https://bitcointalk.org/index.php?topic=691.msg9041#msg9041",
+        "date": "August 13, 2010, 05:09:27 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\">Quote</div><div class=\"quote\">But there will be no irc server to bootstrap from.<br/></div>Which doesn't matter because you can't access sourceforge to download the software either.<br/><br/>If you've ever been connected before, you don't need IRC to bootstrap anymore. \u00a0Even if you haven't, you can bootstrap from seed nodes. \u00a0IRC is completely redundant since 0.3.0.</div>",
+        "post_num": 9,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

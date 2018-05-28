@@ -1,0 +1,14 @@
+[
+    {
+        "thread_id": 2,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Welcome to the new Bitcoin forum!",
+        "url": "https://bitcointalk.org/index.php?topic=5.msg28#msg28",
+        "date": "November 22, 2009, 06:04:28 PM",
+        "content": "<div class=\"post\">Welcome to the new Bitcoin forum!<br/><br/>The old forum can still be reached here:<br/><a href=\"http://bitcoin.sourceforge.net/boards/index.php\">http://bitcoin.sourceforge.net/boards/index.php</a><br/><br/>I'll repost some selected threads here and add updated answers to questions where I can.<br/><br/>FAQ<br/><a href=\"http://bitcoin.sourceforge.net/wiki/index.php?page=FAQ\">http://bitcoin.sourceforge.net/wiki/index.php?page=FAQ</a><br/><br/>Download<br/><a href=\"http://sourceforge.net/projects/bitcoin/files/\">http://sourceforge.net/projects/bitcoin/files/</a><br/><br/></div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

@@ -17,7 +17,7 @@
   <br>
   <ul>
   {%for post in posts %}
-    <li><a href="{{url_for('postview', postnum=post['id'],source=post['source'])}}">{{post['name']}}</a> <em>({{post['date']}} UTC)</em></li>
+    <li><a href="{{url_for('postview', postnum=post['satoshi_id'],source=post.thread['source'])}}">{{post['subject']}}</a> <em>({{post['date']}} UTC)</em></li>
   {%endfor%}
   </ul>
   <div class="text-center">

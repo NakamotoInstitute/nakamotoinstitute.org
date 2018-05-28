@@ -1,0 +1,38 @@
+[
+    {
+        "thread_id": 156,
+        "name": "ArrowJ",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=605",
+        "subject": "Mac Client Problems Outlined...",
+        "url": "https://bitcointalk.org/index.php?topic=660.msg6875#msg6875",
+        "date": "August 01, 2010, 01:52:47 AM",
+        "content": "<div class=\"post\"><span style=\"text-decoration: underline;\">Hardware</span><br/>MacBook Pro 2.4 GHz Intel Core 2 Duo (Model 4,1)<br/>2 GB 667 MHz DDR2 SDRAM<br/><br/><span style=\"text-decoration: underline;\">Software</span><br/>Mac OS X 10.6.4 Snow Leopard<br/>Bitcoin 0.3.7 (according to Bitcoin &gt;&gt; About)<br/><br/><span style=\"text-decoration: underline;\">Problems</span><br/><i>Preferences:</i> the preferences I have tried all have zero effect as far as I can tell. \"Minimize to the tray instead of the taskbar\" &amp; \"Minimize to the tray on close\" do nothing (including effecting the cpu usage...see below). Start Bitcoin on system startup is grayed out although I have added it manually to my login items. I have not tried \"Limit coin generation to 'x' processors\" or \"Connect through socks4 proxy:\", but I can only guess that these options are not working either.<br/><br/><del><i>CPU Usage:</i> when generating coins top shows Bitcoin at ~187% CPU...this seems extreme?</del> A friend just explained what a \"nice process\" is. Sorry.<br/><br/><i>Crash On Close:</i> about ever other time I attempt to close Bitcoin using Bitcoin &gt;&gt; Quit the app crashes rather than closing like a friendly app should.<br/><i><br/>Coin Generation:</i> frankly I am trusting that this is NOT a bug, but just bad luck. I have been running the app for a few weeks now with zero generation. Again, I assume this is bad luck, but considering the other problems I wanted to mention it in case others were noticing this that were using my setup as well.<br/><br/>-----------<br/>If there are any known solution to these problems or if there is anything I can do to help sort them out please let me know. Thanks!<br/><br/></div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 156,
+        "name": "andrew",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=547",
+        "subject": "Re: Mac Client Problems Outlined...",
+        "url": "https://bitcointalk.org/index.php?topic=660.msg6956#msg6956",
+        "date": "August 02, 2010, 02:33:38 AM",
+        "content": "<div class=\"post\">The first 5 minutes I used bitcoin about a three weeks ago I generated a block straight away and haven't generated another since. I think it's purely based on luck. Using the OSX client here.</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 156,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Mac Client Problems Outlined...",
+        "url": "https://bitcointalk.org/index.php?topic=660.msg7068#msg7068",
+        "date": "August 02, 2010, 06:02:20 PM",
+        "content": "<div class=\"post\">\"Minimize to the tray instead of the taskbar\" &amp; \"Minimize to the tray on close\" must not be implemented yet on the Mac.\u00a0 We should grey them out in the next version.<br/></div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]
