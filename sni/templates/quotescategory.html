@@ -38,7 +38,7 @@ The Quotable Satoshi
       {% elif quote.email %}
       <h4>
         {{quote.email.subject}}<br>
-        <small>{{quote.date}} - <a href="{{url_for('emailview', source=quote.source, emnum=quote.email.id)}}">Link</a></small>
+        <small>{{quote.date}} - <a href="{{url_for('emailview', source=quote.email.source, emnum=quote.email.id)}}">Link</a></small>
       </h4>
       {% else %}
       <h4>
