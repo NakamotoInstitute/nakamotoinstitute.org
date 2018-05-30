@@ -4,14 +4,26 @@
 <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
   <div class="text-center">
   	{% if source=="p2pfoundation" %}
-  	<h2>P2P Foundation Posts</h2>
-  	<a href="{{url_for('posts')}}">All Posts</a> | <a href="{{url_for('forumposts', source='bitcointalk')}}">Bitcointalk</a>
+    	<h2>P2P Foundation Posts</h2>
+      <a href="{{url_for('threads', source='p2pfoundation')}}">View threads</a><br>
+    	<a href="{{url_for('posts')}}">All Posts</a>
+      (<a href="{{url_for('posts', view='threads')}}">Threads</a>) |
+      <a href="{{url_for('forumposts', source='bitcointalk')}}">Bitcointalk</a>
+      (<a href="{{url_for('threads', source='bitcointalk')}}">Threads</a>)
   	{% elif source=="bitcointalk" %}
-  	<h2>Bitcointalk Posts</h2>
-  	<a href="{{url_for('posts')}}">All Posts</a> | <a href="{{url_for('forumposts', source='p2pfoundation')}}">P2P Foundation</a>
+    	<h2>Bitcointalk Posts</h2>
+      <a href="{{url_for('threads', source='bitcointalk')}}">View threads</a><br>
+    	<a href="{{url_for('posts')}}">All Posts</a>
+      (<a href="{{url_for('posts', view='threads')}}">Threads</a>) |
+      <a href="{{url_for('forumposts', source='p2pfoundation')}}">P2P Foundation</a>
+      (<a href="{{url_for('threads', source='p2pfoundation')}}">Threads</a>)
   	{% else %}
-  	<h2>Forum Posts</h2>
-  	<a href="{{url_for('forumposts', source='p2pfoundation')}}">P2P Foundation</a> | <a href="{{url_for('forumposts', source='bitcointalk')}}">Bitcointalk</a>
+    	<h2>Forum Posts</h2>
+      <a href="{{url_for('posts', view='threads')}}">View threads</a><br>
+    	<a href="{{url_for('forumposts', source='p2pfoundation')}}">P2P Foundation</a>
+      (<a href="{{url_for('threads', source='p2pfoundation')}}">Threads</a>) |
+      <a href="{{url_for('forumposts', source='bitcointalk')}}">Bitcointalk</a>
+      (<a href="{{url_for('threads', source='bitcointalk')}}">Threads</a>)
   	{% endif %}
   </div>
   <br>
@@ -21,15 +33,27 @@
   {%endfor%}
   </ul>
   <div class="text-center">
-  	{% if source=="p2pfoundation" %}
-  	<a href="{{url_for('posts')}}">All Posts</a> | <a href="{{url_for('forumposts', source='bitcointalk')}}">Bitcointalk</a>
+    {% if source=="p2pfoundation" %}
+    	<a href="{{url_for('posts')}}">All Posts</a>
+      (<a href="{{url_for('posts', view='threads')}}">Threads</a>) |
+      <a href="{{url_for('forumposts', source='bitcointalk')}}">Bitcointalk</a>
+      (<a href="{{url_for('threads', source='bitcointalk')}}">Threads</a>)<br>
+      <a href="{{url_for('threads', source='p2pfoundation')}}">View threads</a>
   	{% elif source=="bitcointalk" %}
-  	<a href="{{url_for('posts')}}">All Posts</a> | <a href="{{url_for('forumposts', source='p2pfoundation')}}">P2P Foundation</a>
+    	<a href="{{url_for('posts')}}">All Posts</a>
+      (<a href="{{url_for('posts', view='threads')}}">Threads</a>) |
+      <a href="{{url_for('forumposts', source='p2pfoundation')}}">P2P Foundation</a>
+      (<a href="{{url_for('threads', source='p2pfoundation')}}">Threads</a>)<br>
+      <a href="{{url_for('threads', source='bitcointalk')}}">View threads</a>
   	{% else %}
-  	<a href="{{url_for('forumposts', source='p2pfoundation')}}">P2P Foundation</a> | <a href="{{url_for('forumposts', source='bitcointalk')}}">Bitcointalk</a>
+    	<a href="{{url_for('forumposts', source='p2pfoundation')}}">P2P Foundation</a>
+      (<a href="{{url_for('threads', source='p2pfoundation')}}">Threads</a>) |
+      <a href="{{url_for('forumposts', source='bitcointalk')}}">Bitcointalk</a>
+      (<a href="{{url_for('threads', source='bitcointalk')}}">Threads</a>)<br>
+      <a href="{{url_for('posts', view='threads')}}">View threads</a>
   	{% endif %}
   </div>
   <br>
-  <a href="{{url_for('satoshi_index')}}">Back</a>
+  <a href="{{url_for('satoshi_index')}}">Main index</a>
 </div>
 {% endblock %}

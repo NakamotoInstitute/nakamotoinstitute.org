@@ -8,7 +8,7 @@
 from sni import app, db, cache, pages
 from models import Post, Email, Doc, ResearchDoc, Author, Format, Category,\
                    BlogPost, Skeptic, DonationAddress, Episode, Quote,\
-                   QuoteCategory
+                   QuoteCategory, Thread
 from flask import render_template, json, url_for, redirect, request, Response,\
                   send_from_directory
 from sqlalchemy import asc, desc
@@ -101,6 +101,14 @@ def emailview(source, emnum):
 @cache.cached(timeout=900)
 @app.route('/posts/', subdomain="satoshi", methods=["GET"])
 def posts():
+    view_query = request.args.get('view')
+    if view_query == 'threads':
+        threads = Thread.query.all()
+        p2pfoundation_threads = [threads[0]]
+        bitcointalk_threads = threads[1:]
+        return render_template(
+            "threads.html", threads=threads, p2pfoundation_threads=p2pfoundation_threads,
+            bitcointalk_threads=bitcointalk_threads, source=None)
     posts = Post.query.filter(Post.satoshi_id.isnot(None)).order_by(Post.date).all()
     app.logger.info(str(request.remote_addr) + ', posts')
     return render_template("posts.html", posts=posts, source=None)
@@ -131,6 +139,24 @@ def postview(postnum, source):
                                next=next)
     else:
         return redirect('posts')
+
+
+@cache.cached(timeout=900)
+@app.route('/posts/<string:source>/threads/', subdomain="satoshi", methods=["GET"])
+def threads(source):
+    threads = Thread.query.filter_by(source=source).order_by(Thread.id).all()
+    if len(threads) != 0:
+        return render_template("threads.html", threads=threads, source=source)
+    else:
+        return redirect(url_for('posts'))
+
+
+@cache.cached(timeout=900)
+@app.route('/posts/<string:source>/threads/<int:thread_id>/', subdomain="satoshi", methods=["GET"])
+def threadview(source, thread_id):
+    thread = Thread.query.filter_by(id=thread_id).first()
+    if thread is not None:
+        return render_template("threadview.html", thread=thread)
 
 
 @cache.cached(timeout=900)
