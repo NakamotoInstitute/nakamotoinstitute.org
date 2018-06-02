@@ -2,8 +2,27 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-  {% for post in thread.posts %}
-    {{post.subject}}
+  <h2>{{posts[0].thread.title}}</h2>
+  {% for post in posts %}
+    <div class="post-container {% if post.satoshi_id %}highlight{% endif %}" id="{{post.post_num}}">
+      <div class="poster-info">
+        <a href="{{post.poster_url}}">{{post.poster_name}}</a>
+      </div>
+      <div class="post-body">
+        <div class="post-header">
+          {{post.subject}}
+          <a href="#{{post.post_num}}">{{post.post_num}}</a>
+          <a href="{{post.url}}">External link</a>
+          {% if post.satoshi_id %}
+          <a href="{{url_for('postview', postnum=post['satoshi_id'],source=post.thread['source'])}}">Permalink</a>
+          {% endif %}
+        </div>
+        <div class="post-content">
+          {{post.text|safe}}
+        </div>
+      </div>
+    </div>
+    <hr>
   {% endfor %}
 </div>
 {% endblock %}

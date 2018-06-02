@@ -154,9 +154,18 @@ def threads(source):
 @cache.cached(timeout=900)
 @app.route('/posts/<string:source>/threads/<int:thread_id>/', subdomain="satoshi", methods=["GET"])
 def threadview(source, thread_id):
-    thread = Thread.query.filter_by(id=thread_id).first()
-    if thread is not None:
-        return render_template("threadview.html", thread=thread)
+    view_query = request.args.get('view')
+    # thread = Thread.query.filter_by(id=thread_id).first()
+    posts = Post.query.filter_by(thread_id=thread_id)
+    if posts:
+        thread = posts[0].thread
+        if thread.source != source:
+            return redirect(url_for('threadview', source=thread.source, thread_id=thread_id))
+    if view_query == 'satoshi':
+        posts = posts.filter(Post.satoshi_id.isnot(None))
+    posts = posts.all()
+    if posts:
+        return render_template("threadview.html", posts=posts)
 
 
 @cache.cached(timeout=900)

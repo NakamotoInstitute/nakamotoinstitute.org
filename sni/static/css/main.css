@@ -101,3 +101,18 @@ body {
 @media only screen and (max-device-width: 800px), only screen and (device-width: 1024px) and (device-height: 600px), only screen and (width: 1280px) and (orientation: landscape), only screen and (device-width: 800px), only screen and (max-width: 767px) {
   .flex-video { padding-top: 0; }
 }
+
+.post-container {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+.post-container.highlight {
+  background-color: #f5f5f5;
+}
+.post-container > div {
+  display: table-cell;
+}
+.post-container .poster-info {
+  width: 125px;
+}
