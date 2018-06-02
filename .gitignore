@@ -51,3 +51,6 @@ venv/*
 
 *.mp3
 feed.xml
+
+.webassets-cache
+sni/static/css/main.css
