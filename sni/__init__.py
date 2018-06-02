@@ -55,7 +55,6 @@ assets = Environment(app)
 assets.url_expire = True
 assets.auto_build = True
 
-assets.url = app.static_url_path
 scss = Bundle('scss/__main__.scss', filters='pyscss', output='css/main.css',  depends=['scss/*.scss'])
 assets.register('scss_all', scss)
 
