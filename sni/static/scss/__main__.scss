@@ -4,6 +4,30 @@
  * Licensed under GNU Affero GPL (https://github.com/pierrerochard/SNI-private/blob/master/LICENSE)
  */
 
+ @mixin table() {
+  & {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+  }
+  &>* {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+@mixin word-wrap() {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
 .quoteheader {
   padding: 5px 20px;
   font-size: 95%;
@@ -126,17 +150,67 @@ body {
   .flex-video { padding-top: 0; }
 }
 
+$post-padding: 12px;
+$post-padding-half: calc(#{$post-padding} / 2);
+$post-highlight: #f5f5f5;
+$post-border: #bebebe;
+$post-sectional: #d3d3d3;
+$post-inner-border: 1px solid $post-sectional;
+
 .post-container {
-  display: table;
-  table-layout: fixed;
-  width: 100%;
-}
-.post-container.highlight {
-  background-color: #f5f5f5;
-}
-.post-container > div {
-  display: table-cell;
-}
-.post-container .poster-info {
-  width: 125px;
+  border: 2px solid $post-border;
+  &.highlight {
+    background-color: $post-highlight;
+  }
+  &:not(:last-child) {
+    border-bottom: none;
+  }
+  & > .header {
+    & > .poster-info {
+      @include table();
+      border-bottom: $post-inner-border;
+      padding: $post-padding-half $post-padding;
+      & > *:nth-child(2) {
+        width: 50px;
+        text-align: right;
+      }
+    }
+    & > .post-info {
+      padding: $post-padding-half $post-padding;
+      h5 {
+        margin: 0 0 $post-padding-half;
+      }
+    }
+  }
+  & > .body {
+    border-top: $post-inner-border;
+    border-bottom: $post-inner-border;
+    padding: $post-padding;
+    a {
+        white-space: pre-wrap; /* css-3 */
+        white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+        white-space: -pre-wrap; /* Opera 4-6 */
+        white-space: -o-pre-wrap; /* Opera 7 */
+        word-wrap: break-word; /* Internet Explorer 5.5+ */
+    }
+    .codeheader, .code {
+      border: 1px solid $post-sectional;
+      padding: 0 $post-padding-half;
+    }
+    .codeheader {
+      font-weight: bold;
+    }
+    .code {
+      border-top: none;
+      white-space: pre-wrap;
+      font-family: monospace;
+    }
+  }
+  & > .footer {
+    @include table();
+    padding: $post-padding-half $post-padding;
+    & > *:nth-child(2) {
+      text-align: right;
+    }
+  }
 }

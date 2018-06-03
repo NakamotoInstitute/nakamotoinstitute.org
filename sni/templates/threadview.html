@@ -1,28 +1,33 @@
 <!-- extend base layout -->
 {% extends "base.html" %}
 {% block content %}
-<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-  <h2>{{posts[0].thread.title}}</h2>
+<div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+  <div class="text-center">
+    <h2>{{posts[0].thread.title}}</h2>
+    <p><a href="{{posts[0].thread.url}}">External link</a></p>
+  </div>
   {% for post in posts %}
     <div class="post-container {% if post.satoshi_id %}highlight{% endif %}" id="{{post.post_num}}">
-      <div class="poster-info">
-        <a href="{{post.poster_url}}">{{post.poster_name}}</a>
+      <div class="header">
+        <div class="poster-info">
+          <a href="{{post.poster_url}}"><strong>{{post.poster_name}}</strong></a>
+          <a href="#{{post.post_num}}">#{{post.post_num}}</a>
+        </div>
+        <div class="post-info">
+          <h5>{{post.subject}}</h5>
+          <span>{{post.date.strftime('%B %m, %Y, %I:%M:%S %p')}}</span>
+        </div>
       </div>
-      <div class="post-body">
-        <div class="post-header">
-          {{post.subject}}
-          <a href="#{{post.post_num}}">{{post.post_num}}</a>
-          <a href="{{post.url}}">External link</a>
-          {% if post.satoshi_id %}
-          <a href="{{url_for('postview', postnum=post['satoshi_id'],source=post.thread['source'])}}">Permalink</a>
-          {% endif %}
-        </div>
-        <div class="post-content">
-          {{post.text|safe}}
-        </div>
+      <div class="body">
+        {{post.text|safe}}
+      </div>
+      <div class="footer">
+        <a href="{{post.url}}">External link</a>
+        {% if post.satoshi_id %}
+        <a href="{{url_for('postview', postnum=post['satoshi_id'],source=post.thread['source'])}}">Permalink</a>
+        {% endif %}
       </div>
     </div>
-    <hr>
   {% endfor %}
 </div>
 {% endblock %}
