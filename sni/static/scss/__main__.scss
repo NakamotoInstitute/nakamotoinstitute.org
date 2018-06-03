@@ -34,6 +34,30 @@ body {
   height: 100px;
   background-color: #f5f5f5;
 }
+@media (max-width: 478px) {
+  body {
+    margin-bottom: 140px;
+  }
+  #footer {
+    height: 120px;
+  }
+}
+@media (max-width: 469px) {
+  body {
+    margin-bottom: 160px;
+  }
+  #footer {
+    height: 140px;
+  }
+}
+@media (max-width: 322px) {
+  body {
+    margin-bottom: 180px;
+  }
+  #footer {
+    height: 160px;
+  }
+}
 
 
 /* Custom page CSS
