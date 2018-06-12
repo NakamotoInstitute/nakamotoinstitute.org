@@ -18,7 +18,7 @@
       Preliminary Draft from 2002<br>
     </h4>
   </div>
-  <!-- 
+  <!--
   <hr>
   <strong>Nick Szabo</strong> is a computer scientist and economist living in Menlo Park, California.
   -->
@@ -74,7 +74,7 @@ negotiation --> contract --> performance
 </pre>
 
   <p>
-    Performance of the contract, i.e. its reification as a smart contract, can thus be seen as (hypothetical, at this point) execution of a program written in our language. Furthermore, our language incorporates a wide variety of contractual terms, not just abstract monetary terms and their derivatives. These two characteristics make our language very different from special purpose financial contract languages such as<sup><a href="#fn4" id="ref4">[4]</a></sup>. While we use several financial contract examples to introduce our language and demonstrate its flexibility, its scope both in functionality and the kinds of contracts and transaction protocols it can represent is far broader. 
+    Performance of the contract, i.e. its reification as a smart contract, can thus be seen as (hypothetical, at this point) execution of a program written in our language. Furthermore, our language incorporates a wide variety of contractual terms, not just abstract monetary terms and their derivatives. These two characteristics make our language very different from special purpose financial contract languages such as<sup><a href="#fn4" id="ref4">[4]</a></sup>. While we use several financial contract examples to introduce our language and demonstrate its flexibility, its scope both in functionality and the kinds of contracts and transaction protocols it can represent is far broader.
   </p>
 
   <h2>Semantics</h2>
@@ -102,12 +102,12 @@ negotiation --> contract --> performance
   </p>
 
 <pre class="snippet">
-future(rightA="1 round lot pork bellies", 
-       rightB="$1,500.00", 
-       p = "for delivery in July 2002") = 
-  
-    when withinPeriod(p) 
-        to Holder rightA   with   to Counterparty rightB 
+future(rightA="1 round lot pork bellies",
+       rightB="$1,500.00",
+       p = "for delivery in July 2002") =
+
+    when withinPeriod(p)
+        to Holder rightA   with   to Counterparty rightB
     then terminate
 </pre>
 
@@ -189,8 +189,8 @@ with to Holder right2
   </p>
 
 <pre class="snippet">
-<strong>when withinPeriod(p)</strong> 
-    to Holder rightA   with   to Counterparty rightB 
+<strong>when withinPeriod(p)</strong>
+    to Holder rightA   with   to Counterparty rightB
 then terminate
 </pre>
 
@@ -199,8 +199,8 @@ then terminate
   </p>
 
 <pre class="snippet">
-when withinPeriod(p) 
-    <strong>to Holder rightA   with   to Counterparty rightB</strong> 
+when withinPeriod(p)
+    <strong>to Holder rightA   with   to Counterparty rightB</strong>
 then terminate
 </pre>
 
@@ -209,7 +209,7 @@ then terminate
   </p>
 
 <pre class="snippet">
-when withinPeriod(p) 
+when withinPeriod(p)
     to Holder rightA   with   to Counterparty rightB
 then <strong>terminate</strong>
 </pre>
@@ -219,9 +219,9 @@ then <strong>terminate</strong>
   </p>
 
 <pre class="snippet">
-future(rightA, rightB, p) = 
-    when withinPeriod(p) 
-        to Holder rightA   with   to Counterparty rightB 
+future(rightA, rightB, p) =
+    when withinPeriod(p)
+        to Holder rightA   with   to Counterparty rightB
     then terminate
 </pre>
 
@@ -236,13 +236,13 @@ future(rightA, rightB, p) =
   </p>
 
 <pre class="snippet">
-callOptionAmerican (rightA="1 round lot XYZ Corp.", 
-                    rightB="$2,000/lot", 
+callOptionAmerican (rightA="1 round lot XYZ Corp.",
+                    rightB="$2,000/lot",
                     time="end of trading on last trading day of August") =
-    when beforeTime(time) 
-        when choiceOf(Holder) 
+    when beforeTime(time)
+        when choiceOf(Holder)
             to Holder rightA with to Counterparty rightB
-    when afterTime(time) 
+    when afterTime(time)
         terminate
 </pre>
 
@@ -283,7 +283,7 @@ when beforeTime(time)
     <strong>when choiceOf(Holder)</strong>
         to Holder rightA with to Counterparty rightB
 <strong>when afterTime(time)</strong>
-    terminate 
+    terminate
 </pre>
 
   <p>
@@ -298,8 +298,8 @@ when beforeTime(time)
 when beforeTime(time)
     when choiceOf(Holder)
         <strong>to Holder rightA with to Counterparty rightB</strong>
-<strong>when afterTime(time)</strong> 
-    terminate 
+<strong>when afterTime(time)</strong>
+    terminate
 </pre>
 
   <p>
@@ -316,12 +316,12 @@ when beforeTime(time)
   </p>
 
 <pre class="snippet">
-callOptionAmerican(rightA, rightB, time) = 
+callOptionAmerican(rightA, rightB, time) =
     when beforeTime(time)
-        when choiceOf(Holder) 
+        when choiceOf(Holder)
             to Holder rightA   with   to Counterparty rightB
-    when afterTime(time) 
-        terminate 
+    when afterTime(time)
+        terminate
 </pre>
 -->
 
@@ -338,13 +338,13 @@ callOptionAmerican(rightA, rightB, time) =
   </p>
 
 <pre class="snippet">
-bond(coupon, principal, schedule) = 
-    for schedule 
-        when withinPeriod(schedule.next) 
+bond(coupon, principal, schedule) =
+    for schedule
+        when withinPeriod(schedule.next)
             to Holder coupon
     then
-    when withinPeriod(schedule.next) 
-        to Holder principal 
+    when withinPeriod(schedule.next)
+        to Holder principal
 </pre>
 
   <p>
@@ -381,7 +381,7 @@ loanPayments(principal, interest, schedule) =
         constant payment.amount = computeInterest(principal, schedule, interest)
                 # normal computational function goes here
         then for schedule
-                when beforeTime(schedule.next) 
+                when beforeTime(schedule.next)
                         payment
 </pre>
 
@@ -399,7 +399,7 @@ variable payment.amount = computeInterest(principal, schedule, interest)
     # normal computational function goes here
 loanPayments(principal, schedule, interest) =
     for schedule
-        when beforeTime(schedule.next)  
+        when beforeTime(schedule.next)
             if (payment.amount == computeInterest(principal, schedule, interest))
             payment
   -->
@@ -410,8 +410,8 @@ loanPayments(principal, schedule, interest) =
 
 <pre class="snippet">
 carPurchase(car, downPayment, monthlyPayment, schedule)  =
-    to Holder downPayment 
-    then to Counterparty getTitle(car) 
+    to Holder downPayment
+    then to Counterparty getTitle(car)
     then to Holder loanPayments(monthlyPayment, schedule)
 </pre>
 
@@ -438,24 +438,24 @@ carPurchase(car, downPayment, monthlyPayment, schedule)  =
 <pre class="snippet">
     counterpartySecurity =  pledge(allGoods(Counterparty))
     also cosignerSecurity = pledge(allGoods(co-signer))
-    then  
-payment1() =  
+    then
+payment1() =
     when beforeTime("Kalends of September 1275")
         to Holder in Byzantium "53 hyperpers"
         terminate
-payment2() =  
+payment2() =
     when breachedPerformance(payment1)
         to Holder in Genoa "53*11 = 583 shillings"
         terminate
-payment3() =  
+payment3() =
     when breachedPerformance(payment2)
         to Holder in Genoa "2*583 shillings"
         terminate
-payment3() =  
-    when breachedPerformance(payment3) 
+payment3() =
+    when breachedPerformance(payment3)
         when choiceOf(Holder)
             to Holder in Genoa foreclose(counterpartySecurity, penalty)
-            terminate 
+            terminate
         when choiceOf(Holder)
             to Holder in Genoa foreclose(cosignerSecurity, penalty)
             terminate
@@ -471,7 +471,7 @@ payment3() =
   </p>
 
   <p>
-    Modern derivatives traders do this all the time, creating synthetic assets or combinations that mimic the financial functionality of some other contract while avoiding its legal limitations. Our language is ideal for drafting and analyzing such contracts. 
+    Modern derivatives traders do this all the time, creating synthetic assets or combinations that mimic the financial functionality of some other contract while avoiding its legal limitations. Our language is ideal for drafting and analyzing such contracts.
   </p>
 
   <h2>Insurance</h2>
@@ -483,7 +483,7 @@ payment3() =
 <pre class="snippet">
 loan(goods, principal, penalty, t1, t2) =
     counterpartySecurity =  pledge(allGoods(Counterparty))
-    with to Counterparty getTitle(goods) 
+    with to Counterparty getTitle(goods)
     loanPayment(principal, t1, t2)
     with when breachedPerformance(loanPayment)
         to Holder foreclose(counterpartySecurity, penalty)
@@ -500,7 +500,7 @@ loanPayment(principal, t1, t2) =
 <pre class="snippet">
 insureGoods(goodsPremium, principal, penalty, t1, t2, goodsInsured) =
     counterpartySecurity =  pledge(allGoods(Counterparty))
-    with to Counterparty getTitle(goodsPremium) 
+    with to Counterparty getTitle(goodsPremium)
     insurancePayment(goodsInsured, principal, t1, t2)
     with when breachedPerformance(insurancePayment)
         to Holder foreclose(counterpartySecurity, penalty)
@@ -530,12 +530,12 @@ insurancePayment(goodsInsured, principal, t1, t2) =
   </p>
 
 <pre class="snippet">
-insureGoods(goodsPremium="a certain amount of goods", 
+insureGoods(goodsPremium="a certain amount of goods",
       principal="100 fl + 50 fl + 7*100 fl",
       penalty=2*principal,
       t1="5 months from now",
       t2="1 year after [legal] time limit has expired"
-      goodsInsured="that amount of goods, property, 
+      goodsInsured="that amount of goods, property,
           and merchandise which was loaded")
 </pre>
 
@@ -543,7 +543,7 @@ insureGoods(goodsPremium="a certain amount of goods",
     This contract was still, legally speaking, a loan. This had at least two interesting consequences on what we now call the insurance premium. Firstly, the premium was treated as goods purchases by the insurer on credit. Secondly, even at this late date, contracts were coy about the actual value of such goods. Leaving the value of those goods unspecified made usury difficult to prove in this "loan".
   </p>
 
-  <!-- 
+  <!--
   <p>
     Let's call <b>damages</b> the amount of damages to said goods, and maxDamages the maximium amount payable. Then we can draft the following contract:
   </p>
@@ -556,14 +556,14 @@ insureGoods(goodsPremium="a certain amount of goods",
   </p>
 
 <pre class="snippet">
-when 
+when
     "there is a promise"
     P "has relied on that promise"
     D "should reasonably expect P would rely on that promise"  and
     "injustice can only be remedied by enforcing the promise"
-then 
+then
     "the promise will be enforced"
-else  
+else
     "the promise will not be enforced"
 </pre>
 
@@ -648,7 +648,7 @@ lifeEstateRemainder(Property, Grantee, Remainderman) =
 
 <pre class="snippet">
 feeSimpleDeterminable(Property, Grantee, Condition) =
-    to Grantee Property 
+    to Grantee Property
     then when Condtion(Property) to Grantor Property
 </pre>
 
@@ -658,7 +658,7 @@ feeSimpleDeterminable(Property, Grantee, Condition) =
 
 <pre class="snippet">
 feeSimpleSubjectToExecutoryLimitation(Property, Grantee, Condition, Remainderman) =
-    to Grantee Property 
+    to Grantee Property
     then when Condtion(Property) to Remainderman Property
 </pre>
 
@@ -668,7 +668,7 @@ feeSimpleSubjectToExecutoryLimitation(Property, Grantee, Condition, Remainderman
 
 <pre class="snippet">
 feeSimpleSubjectToConditionSubsequent(Property, Grantee, Condition, Enters) =
-    to Grantee Property 
+    to Grantee Property
     then when Condtion(Property)
         when Enters(Grantor, Property) to Grantor Property
 </pre>
@@ -698,11 +698,11 @@ escrowRight(right, escrow, newHolder, currentHolder,
         to currentHolder right then terminate
 
 
-writeCallOptionAmerican(rightA, rightB, rightX, time) = 
-    escrowRight(rightA, Holder, Counterparty, 
+writeCallOptionAmerican(rightA, rightB, rightX, time) =
+    escrowRight(rightA, Holder, Counterparty,
             (optionExercised), (optionExpired))
-    then 
-            to Counterparty callOptionAmercian(rightA, rightB, time) 
+    then
+            to Counterparty callOptionAmercian(rightA, rightB, time)
             with to Holder rightX
 </pre>
 
@@ -711,14 +711,14 @@ writeCallOptionAmerican(rightA, rightB, rightX, time) =
   </p>
 
 <pre class="snippet">
-callOptionAmerican(escrowRight, rightB, time) = 
-    when beforeTime(time) 
-        when choiceOf(Holder) 
-            { throw optionExercised at escrowRight } 
-            with to Counterparty rightB 
+callOptionAmerican(escrowRight, rightB, time) =
+    when beforeTime(time)
+        when choiceOf(Holder)
+            { throw optionExercised at escrowRight }
+            with to Counterparty rightB
             then terminate
-    when afterTime(time) 
-        throw optionExpired at escrowRight 
+    when afterTime(time)
+        throw optionExpired at escrowRight
         then terminate
 </pre>
 
@@ -742,24 +742,24 @@ callOptionAmerican(escrowRight, rightB, time) =
 
 <pre class="snippet">
 sellCandy(candyPrice = $0.90) =
-    variable moneyAmount = $0.00 
-    then 
+    variable moneyAmount = $0.00
+    then
         # coins also fall into a temporary till tempTill
-    when (nickel)  
-        add(moneyAmount, $0.05) 
-    when (dime)    
-        add(moneyAmount, $0.10) 
-    when (quarter) 
+    when (nickel)
+        add(moneyAmount, $0.05)
+    when (dime)
+        add(moneyAmount, $0.10)
+    when (quarter)
         add(moneyAmount, $0.25)
-    when (moneyReturn)  
-        dropCoins(tempTill, returnTill) 
+    when (moneyReturn)
+        dropCoins(tempTill, returnTill)
         with moneyAmount = $0.00
-    when threshold(moneyAmount, candyPrice) 
-        when (nickel | dime | quarter) 
+    when threshold(moneyAmount, candyPrice)
+        when (nickel | dime | quarter)
             redirectNewCoinsTo(returnTill)
         also display("ready to dispense -- please select candy")
-        then when (candySelection) 
-          dropCandy(candyRacks, candySelection) 
+        then when (candySelection)
+          dropCandy(candyRacks, candySelection)
           with dropCoins(tempTill, permTill)
           with moneyAmount = $0.00
     continue
@@ -799,31 +799,31 @@ sellCandy(candyPrice = $0.90) =
 
 <pre class="snippet">
 sellCandy(candyPrice = $0.90) =
-    variable moneyAmount = $0.00 
-    then 
+    variable moneyAmount = $0.00
+    then
         # coins also fall into a temporary till tempTill
-    when choiceOf(Counterparty, nickel)   
-        to TempTill nickel 
-        then to Counterparty add(moneyAmount, $0.05) 
+    when choiceOf(Counterparty, nickel)
+        to TempTill nickel
+        then to Counterparty add(moneyAmount, $0.05)
         then to Counterparty display(moneyAmount)
-    when choiceOf(Counterparty, dime) 
+    when choiceOf(Counterparty, dime)
         to TempTill dime
-        then to Counterparty add(moneyAmount, $0.10) 
+        then to Counterparty add(moneyAmount, $0.10)
         then to Counterparty display(moneyAmount)
-    when choiceOf(Counterparty, quarter) 
-        to TempTill quarter 
-        then to Counterparty add(moneyAmount, $0.25) 
+    when choiceOf(Counterparty, quarter)
+        to TempTill quarter
+        then to Counterparty add(moneyAmount, $0.25)
         then to Counterparty display(moneyAmount)
     when choiceOf(Counterparty, moneyReturn)
         to Counterparty dropCoins(tempTill, returnTill)
-        with moneyAmount = $0.00 
+        with moneyAmount = $0.00
         then to Counterparty display(moneyAmount)
-    when threshold(moneyAmount, candyPrice) 
-        to Holder (nickel | dime | quarter) 
+    when threshold(moneyAmount, candyPrice)
+        to Holder (nickel | dime | quarter)
             to CounterParty redirectNewCoinsTo(returnTill)
         also display("ready to dispense -- please select candy")
-        then when (candySelection) 
-            to Counterparty dropCandy(candyRacks, candySelection) 
+        then when (candySelection)
+            to Counterparty dropCandy(candyRacks, candySelection)
             with to PermanentTill dropCoins(TempTill)
             with moneyAmount = $0.00
     continue
@@ -843,14 +843,14 @@ sellCandy(candyPrice = $0.90) =
 
 <pre class="snippet">
 loan(payment, schedule) =
-    for schedule 
-        when withinPeriod(schedule.next) 
-            payment 
+    for schedule
+        when withinPeriod(schedule.next)
+            payment
 carPurchase(car, downPayment, monthlyPayment, schedule)  =
-    to Counterparty getTitle(car)  with  to Holder downPayment 
+    to Counterparty getTitle(car)  with  to Holder downPayment
     then
     to Holder loan(monthlyPayment, schedule)
-    when breachedPerformance(loan) 
+    when breachedPerformance(loan)
         to Holder getTitle(car)
 </pre>
 
@@ -861,17 +861,17 @@ carPurchase(car, downPayment, monthlyPayment, schedule)  =
   </p>
 
   <p>
-    The idea is for a security system to protect a building. Our hypothetical device learns who the buildings owner is from a public title database (see article securetitle.html). Lacking such a service it could have the owner or security service reprogrammed into it specifically by a new owner (but we don't show that design). Our system looks up which security service the owner has hired, and notifies them of the security event. If the property is sold, the software automatically figures out, from <strong>getTitle()</strong>, who the new owner is, and which security service is their authorized agent for handling security events. <strong>passEvent()</strong> passes on the event information as it was received by the current event. 
+    The idea is for a security system to protect a building. Our hypothetical device learns who the buildings owner is from a public title database (see article securetitle.html). Lacking such a service it could have the owner or security service reprogrammed into it specifically by a new owner (but we don't show that design). Our system looks up which security service the owner has hired, and notifies them of the security event. If the property is sold, the software automatically figures out, from <strong>getTitle()</strong>, who the new owner is, and which security service is their authorized agent for handling security events. <strong>passEvent()</strong> passes on the event information as it was received by the current event.
   </p>
 
 <pre class="snippet">
-buildingSecurity = 
-    when(glassBreak) { 
-        aimCamera(glassBreak.location) 
+buildingSecurity =
+    when(glassBreak) {
+        aimCamera(glassBreak.location)
         with passEvent(securityService(getTitle(property).Owner))
     }
-    when(laserPerimeterBreach) { 
-        aimCamera(lasterPerimeterBreach.location) 
+    when(laserPerimeterBreach) {
+        aimCamera(lasterPerimeterBreach.location)
         with passEvent(securityService(getTitle(property).Owner))
     }
 </pre>
@@ -882,18 +882,18 @@ buildingSecurity =
 
 <pre class="snippet">
 buildingSecurity =
-    securityService = securityService(getTitle(property).Owner)) 
+    securityService = securityService(getTitle(property).Owner))
     then
-    when(glassBreak) { 
-        aimCamera(glassBreak.location) 
+    when(glassBreak) {
+        aimCamera(glassBreak.location)
         with passEvent(securityService)
     }
-    when(laserPerimeterBreach) { 
-        aimCamera(lasterPerimeterBreach.location) 
+    when(laserPerimeterBreach) {
+        aimCamera(lasterPerimeterBreach.location)
         with passEvent(securityService)
     }
-    when(titleTransfer OR newSecurityService) 
-        securityService = securityService(getTitle(property).Owner)) 
+    when(titleTransfer OR newSecurityService)
+        securityService = securityService(getTitle(property).Owner))
     }
 </pre>
 
@@ -915,7 +915,7 @@ agent = Holder | Counterparty
 </p><p>
 period = (startTime,finishTime)
 # period is the window within which the performance must be
-# executed, e.g. a European option must be exercised 
+# executed, e.g. a European option must be exercised
 # between the start to finish of the business day on which
 # it expires.
 </p><p>
@@ -926,7 +926,7 @@ period = (startTime,finishTime)
 # a natural order while other kinds of events can occur in any order.
 # each periodIterator.next generates an event which is caught by
 # the next tempral event (withinPeriod() if the iterator generates
-# periods, aftertime() or beforeTime() if it generates times) 
+# periods, aftertime() or beforeTime() if it generates times)
 # *down* from the *for*. The implicit "throw" occurs at periodIterator.next
 # so we can still view it, just barely, as propagating up from
 # the "throw".
@@ -935,7 +935,7 @@ period = (startTime,finishTime)
 # and rewrite the schedule iterator code above?  but it confuses
 # me &amp;  perhaps the comuter to put it *outside* the loop.
 </p><p>
-event = choiceOf(agent) | withinPeriod(period) |  
+event = choiceOf(agent) | withinPeriod(period) |
     performed(right)  | breachedPerformance(right) |
     threshold(amount,threshold) | afterTime(time) | beforeTime(time)
 </p><p>
@@ -957,7 +957,7 @@ right = getTitle(property)
 right = null
 </p><p>
 right = [ when event "{" right "}" ]*
-    ## envision an "instruction pointer" that 
+    ## envision an "instruction pointer" that
     ## follows nesting and events as they occur.
     ## there can be more than one instruction pointer
     ## if there is an "also" or two events occur at
@@ -979,8 +979,8 @@ right = [ when event "{" right "}" ]*
     ## alternative design being considered: continue where left off
     ## unless an explicit "terminate" in the when
 </p><p>
-right = functionPerformance     
-    ## functional specification of a specific 
+right = functionPerformance
+    ## functional specification of a specific
     ## service goes here
     ## function sig, pre-, post-conditions
 </p><p>
@@ -1001,13 +1001,13 @@ obligation = [ when event "{" obligation "}" ]*
     ## alternative design being considered: continue where left off
     ## unless an explicit "terminate" in the when
 </p><p>
-obligation = functionPerformance     
-  ## functional specification of a specific 
+obligation = functionPerformance
+  ## functional specification of a specific
   ## service goes here
   ## function sig, pre-, post-conditions
 </p><p>
 contract = agent [right | obligation] ["with" agent [right | obligation]]*
-    ## "with" allows composing Holder and Counterparty 
+    ## "with" allows composing Holder and Counterparty
     ## rights vs. each other
 </p><p>
 contract = [ when event "{" contract "}" ]*
@@ -1017,23 +1017,23 @@ contract = [ when event "{" contract "}" ]*
 
 <pre class="snippet">
 <p>
-doOn(right, period) = 
+doOn(right, period) =
     when withinPeriod(p) { right }
 # must perform "right" within (period)
 # = zero-coupon bond = coupon
 #
 </p><p>
-doOnDemand(right) = 
+doOnDemand(right) =
     when choiceOf(Holder) { right }
 # must perform "right" anytime/on demand
 #
 </p><p>
-doOn(contract, period) = 
+doOn(contract, period) =
     when withinPeriod(p) { contract }
 # must perform "contract" within (period)
 #
 </p><p>
-doOnDemand(contract) = 
+doOnDemand(contract) =
     when choiceOf(Holder) { contract }
 # must perform "contract" anytime/on demand
 #
@@ -1041,50 +1041,50 @@ doOnDemand(contract) =
 
   <h2>More Examples</h2>
 <pre class="snippet">
-future(rightA, rightB, p) = 
+future(rightA, rightB, p) =
     Holder doOn(rightA, p)   with   Counterparty doOn(rightB, p)
 #
 # [additional constraint p=p is not mere algebraic composition]
 #
-callOptionAmerican(rightA, rightB, t) = 
+callOptionAmerican(rightA, rightB, t) =
     when withinPeriod(whenWritten, t)
-        when choiceOf(Holder) 
-          Holder rightA  with  Counterparty rightB 
+        when choiceOf(Holder)
+          Holder rightA  with  Counterparty rightB
 #
-callOptionEuro(rightA, rightB, p) =  
-      when choiceOf(Holder) 
-   	      Holder doOn(rightA, p)  
+callOptionEuro(rightA, rightB, p) =
+      when choiceOf(Holder)
+   	      Holder doOn(rightA, p)
               with Counterparty doOn(rightB, p))
 #
-putOptionAmerican(rightA,rightB,t) = 
+putOptionAmerican(rightA,rightB,t) =
     when withinPeriod(whenWritten, t)
-        when choiceOf(Holder) 
-		        Holder rightA   with   Counterparty rightB 
-   
+        when choiceOf(Holder)
+		        Holder rightA   with   Counterparty rightB
+
 # event semantics need to store the choiceOf even
 # by waiting for the next when.
-putOptionEuro(rightA,rightB,p) = 
-    when choiceOf(Holder) 
-   	    Holder doOn(rightB, p) 
+putOptionEuro(rightA,rightB,p) =
+    when choiceOf(Holder)
+   	    Holder doOn(rightB, p)
             with Counterparty doOn(rightA, p))
 #
-note(right) = demandDeposit(right) = 
+note(right) = demandDeposit(right) =
     Holder doOnDemand(right)
-# [distinction of bearer vs. account holder has not 
+# [distinction of bearer vs. account holder has not
 # been introduced]
 #
 zeroCouponBond(right,p) = doOn(right, p)
 #
-callableZeroCouponBond(right,p) = 
+callableZeroCouponBond(right,p) =
     when choiceOf(Holder) { right }
     when withinPeriod(p) { right }
 #
-bond(coupon, principal, schedule) = 
+bond(coupon, principal, schedule) =
     for schedule {
         doOn(coupon, schedule.next)
     } then
     doOn(principal, schedule.next)
-bond(coupon, principal, schedule) = 
+bond(coupon, principal, schedule) =
     for schedule {
       doOn(coupon, schedule.next)
     } then
@@ -1116,7 +1116,7 @@ bond(coupon, principal, schedule) =
 
   <p>
     A: This is the most important question to ask of any novel scheme! I have identified at least the following:
-  
+
     <ol>
       <li>
         I'm assuming away, for the moment, issues of the protection and enforcement of performance, which I've addressed elsewhere (http://szabo.vwh.best.com/ has many essays that focus on this topic). An eventual goal is to create protocols to enforce the language's atoms and then to compose these atoms maintaining the enforceability.
@@ -1222,7 +1222,7 @@ nested prior asynchronous calls.</li>
 
   <hr>
   <p>
-    Please send your comments to nszabo (at) law (dot) gwu (dot) edu 
+    Please send your comments to nszabo (at) law (dot) gwu (dot) edu
   </p>
 
   <p>
@@ -1231,7 +1231,7 @@ nested prior asynchronous calls.</li>
   </p>
   <hr>
   <p>
-    <em>Editor's note: The source file contains comments with additional notes and thoughts by the author. Some links may be broken.</em>
+    <em>Editor's note: Some links may be broken.</em>
   </p>
 </div>
 {% endblock %}

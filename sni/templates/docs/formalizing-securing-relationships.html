@@ -21,7 +21,7 @@
     </h4>
   </div>
 
-  <!-- begin commented section -->
+  <!--
   <h2 class="text-muted">Abstract</h2>
 
   <p class="text-muted">
@@ -29,9 +29,10 @@
       Smart contracts combine protocols with user interfaces to formalize and secure relationships over computer networks. Objectives and principles for the design of these systems are derived from legal principles, economic theory, and theories of reliable and secure protocols. Similarities and differences between smart contracts and traditional business procedures based on written contracts, controls, and static forms are discussed. By using cryptographic and other security mechanisms, we can secure many algorithmically specifiable relationships from breach by principals, and from eavesdropping or malicious interference by third parties, up to considerations of time, user interface, and completeness of the algorithmic specification. This article discusses protocols with application in important contracting areas, including credit, content rights management, payment systems, and contracts with bearer.
     </em>
   </p>
+  -->
 
   <h2>Contents</h2>
-  
+
   <ul class="contents">
     <li><a href="#introduction">Introduction</a>
     <li><a href="#contracts-embedded-in-the-world">Contracts Embedded in the World</a>
@@ -156,12 +157,12 @@
   </p>
 
 <pre>
-(1) A lock to selectively let in the owner and 
+(1) A lock to selectively let in the owner and
     exlude third parties;
 (2) A back door to let in the creditor;
-(3a) Creditor back door switched on only upon nonpayment 
+(3a) Creditor back door switched on only upon nonpayment
      for a certain period of time; and
-(3b) The final electronic payment permanently switches 
+(3b) The final electronic payment permanently switches
      off the back door.</pre>
 
   <p>
@@ -348,31 +349,31 @@ Ex-Post
   </p>
 
 <pre>
-EDI                   commitment, performance 
+EDI                   commitment, performance
 Contract drafting     negotiations
 Web surfing           search
 Payment                       performance
 Online exchange       search, negotiation, commitment
-"I agree" button              commitment 
+"I agree" button              commitment
 </pre>
 
 
 <p>Smart contracts often involve trusted third parties, exemplified by
 an intermediary, who is involved in the performance, and an adjudicator,
 who is invoked to resolve disputes arising out of performance (or lack
-thereof).  
+thereof).
 Intermediaries can operate during search, negotiation, commitment,
-and/or performance. Hidden knowledge, or adverse selection, 
+and/or performance. Hidden knowledge, or adverse selection,
 occurs ex-ante; hidden actions (moral hazards) occur ex-post.
 
 </p><p>Here are some examples of contemporary electronic commerce
 activities and the phases of contracting they deal with:
-</p><pre>EDI			commitment, performance 
+</p><pre>EDI			commitment, performance
 Contract drafting 	negotiations
 Web surfing 		search
 Payment 			performance
 Online exchange		search, negotiation, commitment
-"I agree" button		commitment 
+"I agree" button		commitment
 </pre>
 
   <p>
@@ -429,12 +430,12 @@ Proactive
 Reactive
     Deterrence
     - reputation
-    - physical enforcement 
+    - physical enforcement
           third parties: tort law
     Damage Recovery
     - secured transaction
     - reputation
-    - physical enforcement 
+    - physical enforcement
           principals: contract law
           third parties: tort law
 </pre>
@@ -495,7 +496,7 @@ Reactive
 
 <pre>
 self-enforcing:  Alice <--> Bob,
-mediated:   Alice <--> intermediary <--> Bob  
+mediated:   Alice <--> intermediary <--> Bob
 adjudicated:  (Alice <--> Bob) --> [evidence] --> adjudicator
 </pre>
 
@@ -510,13 +511,13 @@ adjudicated:  (Alice <--> Bob) --> [evidence] --> adjudicator
   </p>
 
 <pre>
--- pseudorandom function families --> 
+-- pseudorandom function families -->
         secret key encryption, hash, MAC, ...
 
--- trapdoor one-way functions --> 
+-- trapdoor one-way functions -->
         public key encryption
 
--- pseudorandom bit generators --> 
+-- pseudorandom bit generators -->
         generate keys, padding, cookies
 
 -- information-theoretic/unconditional -->
@@ -1020,14 +1021,9 @@ adjudicated:  (Alice <--> Bob) --> [evidence] --> adjudicator
   </ol>
 
 
-<hr>
-  <p>
-    Please send your comments to nszabo (at) law (dot) gwu (dot) edu 
-  </p>
-
   <hr>
-  <p class="text-muted">
-    <em>Editor's note: muted text indicates the text was commented out in the source file.</em>
+  <p>
+    Please send your comments to nszabo (at) law (dot) gwu (dot) edu
   </p>
 
 </div>

@@ -17,7 +17,7 @@
 	<p>
 		"Digital bearer certificate" is a broad term developed by this author<sup><a href="#fn1" id="ref1">[1]</a></sup> incorporating at least two emerging technologies: digital cash and distributed capabilities (secure distributed object references). I will first describe the Chaumian protocol and its innovative privacy feature. I will then discuss how these ideas map to the world of capabilities in the section on generic vs. specific rights. I have altered digital cash terminology from digital cash to bearer certificate or token, from mint to issuer or transfer agent, and so on to reflect the ability of Chaum's protocols to generalize. Chaumian bearer certificates implement standardized rights transferable regardless of the identity of the holder. Each kind of contract (for example, each denomination of "coin" in digital cash) corresponds to a digital signature, just as each issue of Federal Reserve Notes or stock certificates corresponds to a particular plate.
 	</p>
- 
+
 	<p>
 		In the most straightforward Chaumian protocol, the issuer and transfer agent (the same entity, for our purposes, though they can easily be unbundled) create a serial number (really a large unguessable random number, rather than a sequence), and append it to a list of issued certificates. The transfer agent clears a transfer (i.e., redeems the certificate) by checking the signature to identify the class of bearer contract and verify that it was made, then looking on that contract's issued list to make sure the serial number is there, then removing the serial number. Alternatively, the issuer can let the issuee make up the serial number, then, when cleared, check the signature and put the number on the list of cleared certificates. The signature provides the assurance that the certificate is indeed the the particular kind of contract with bearer, while the serial number assures that the same instance of that contract is not cleared or redeemed more than once. In these simple versions, the transfer agent can link the transferee to the transferor for all transfers. To implement the privacy characteristics of coins and physical bearer certificates, we need to add unlinkability features.
 	</p>
@@ -77,7 +77,7 @@ f(x)= xk<sup>e</sup>
 	<h2>Unlinkable Transfers </h2>
 
 	<p>
-		Distinguish between either a counter or third party tracing one person's true name, via lack of or weak communications mix, and a third party linking two entities (whether nyms, use-more-than-once-addresses, account numbers, or true names) as being involved in the same transaction. By unlinkability herein we mean the latter. The goal where true names are used (this occurs, for example, when using true name accounts or not using good communications mixes), is to prevent third party linking of two people doing business with each other.  Where nyms are used the goal is to minimize the release of traffic information, to prevent the unwanted accumulation of unique behavior patterns, which could be used to link nyms (including to their true names), or could augment other means of breaching privacy. Blinding especially helps where rights holders want to keep third party or public accounts denominated in generic rights. In that case a communications mix doesn't even in principle give us what blinding does. 
+		Distinguish between either a counter or third party tracing one person's true name, via lack of or weak communications mix, and a third party linking two entities (whether nyms, use-more-than-once-addresses, account numbers, or true names) as being involved in the same transaction. By unlinkability herein we mean the latter. The goal where true names are used (this occurs, for example, when using true name accounts or not using good communications mixes), is to prevent third party linking of two people doing business with each other.  Where nyms are used the goal is to minimize the release of traffic information, to prevent the unwanted accumulation of unique behavior patterns, which could be used to link nyms (including to their true names), or could augment other means of breaching privacy. Blinding especially helps where rights holders want to keep third party or public accounts denominated in generic rights. In that case a communications mix doesn't even in principle give us what blinding does.
 	</p>
 
 	<p>
@@ -85,19 +85,19 @@ f(x)= xk<sup>e</sup>
 	</p>
 
 	<p>
-		Unlinkability can be provided by combining a list of cleared certificates with blind signatures and a delay-mixing effect. Enough instances of a standardized contract are issued over a period of time to create a mix. Between the issuing and clearing of a certificate, many other certificates with the same signature will be cleared, making it highly improbable that a particular clearing can be linked to a particular issue via the signature. There is a tradeoff between the mixing effect and the exposure to the theft of a "plate" for a particular issue: the smaller the issue, the smaller the exposure but the greater the linkability; a larger issue has both greater exposure and greater confidentiality. 
+		Unlinkability can be provided by combining a list of cleared certificates with blind signatures and a delay-mixing effect. Enough instances of a standardized contract are issued over a period of time to create a mix. Between the issuing and clearing of a certificate, many other certificates with the same signature will be cleared, making it highly improbable that a particular clearing can be linked to a particular issue via the signature. There is a tradeoff between the mixing effect and the exposure to the theft of a "plate" for a particular issue: the smaller the issue, the smaller the exposure but the greater the linkability; a larger issue has both greater exposure and greater confidentiality.
 	</p>
 
 	<p>
-		Blind signatures can be used to make certificate transfers unlinkable via serial number. Privacy from the transfer agent can take the form of transferee-unlinkability, transferor-unlinkability, or "double blinded" where both transferor and transferee are unlinkable by the transfer agent or a collusion of a transfer agent and counterparty. 
+		Blind signatures can be used to make certificate transfers unlinkable via serial number. Privacy from the transfer agent can take the form of transferee-unlinkability, transferor-unlinkability, or "double blinded" where both transferor and transferee are unlinkable by the transfer agent or a collusion of a transfer agent and counterparty.
 	</p>
 
 	<p>
-		A use-once-address communications mix plus foreswearing any reputation gain from keeping accounts, in theory also buys us unlinkability, but a communications mix is weak and very expensive. 
+		A use-once-address communications mix plus foreswearing any reputation gain from keeping accounts, in theory also buys us unlinkability, but a communications mix is weak and very expensive.
 	</p>
 
 	<p>
-		Bearer certificates come in an "online" variety, cleared during every transfer, and thus both verifiable and observable, and an "offline" variety, which can be transferred without being cleared, but is only verifiable when finally cleared, by revealing any the clearing name of any intermediate holder who transferred the object multiple times (a breach of contract). 
+		Bearer certificates come in an "online" variety, cleared during every transfer, and thus both verifiable and observable, and an "offline" variety, which can be transferred without being cleared, but is only verifiable when finally cleared, by revealing any the clearing name of any intermediate holder who transferred the object multiple times (a breach of contract).
 	</p>
 
 	<p>
@@ -105,7 +105,7 @@ f(x)= xk<sup>e</sup>
 	</p>
 
 	<p>
-		When confronting an attempted clearing of a cleared serial number, we face an error-or-fraud dilemma similar to the one we encountered above in double entry bookkeeping. The ecash&#0153; protocol from DigiCash actually takes advantage of on purpose to recover from a network failure. When certificates are lost over the net it is not clear to the transferor whether they have been received and cleared by the transferee or not. Second-transferring directly with the transfer agent resolves the ambiguity. This only works with the online protocol. The issue of distinguishing error from fraud is urgent in the offline protocol, but there is as yet no highly satisfactory solution. This problem is often intractable due to the subjectivity of intent. 
+		When confronting an attempted clearing of a cleared serial number, we face an error-or-fraud dilemma similar to the one we encountered above in double entry bookkeeping. The ecash&#0153; protocol from DigiCash actually takes advantage of on purpose to recover from a network failure. When certificates are lost over the net it is not clear to the transferor whether they have been received and cleared by the transferee or not. Second-transferring directly with the transfer agent resolves the ambiguity. This only works with the online protocol. The issue of distinguishing error from fraud is urgent in the offline protocol, but there is as yet no highly satisfactory solution. This problem is often intractable due to the subjectivity of intent.
 	</p>
 
 	<p>
@@ -115,14 +115,14 @@ f(x)= xk<sup>e</sup>
 	<h2>Conserved Objects</h2>
 
 	<p>
-		Issuance and cleared transfer of references to a distributed object conserves the usage of that object. This object becomes "scarce" in economic terms, just as use of physical objects is finite. Conserved objects provide the basis for a software economics that more closely resembles economics of scarce physical objects. Conserved objects can be used to selectively exclude not only scarce physical resources (such as CPU time, network bandwidth and response time, etc.), but also fruits of intellectual labor &ndash; as long as one is willing to pay the price to interact with that information over the network rather than locally (cf. content rights management). Conservation immunizes objects and the resources they encapsulate to denial of service attacks. Bearer certificate protocols can be used to transfer references to a particular instance or set of instances of an object, just as they can be used to transfer other kinds of standardized rights. 
+		Issuance and cleared transfer of references to a distributed object conserves the usage of that object. This object becomes "scarce" in economic terms, just as use of physical objects is finite. Conserved objects provide the basis for a software economics that more closely resembles economics of scarce physical objects. Conserved objects can be used to selectively exclude not only scarce physical resources (such as CPU time, network bandwidth and response time, etc.), but also fruits of intellectual labor &ndash; as long as one is willing to pay the price to interact with that information over the network rather than locally (cf. content rights management). Conservation immunizes objects and the resources they encapsulate to denial of service attacks. Bearer certificate protocols can be used to transfer references to a particular instance or set of instances of an object, just as they can be used to transfer other kinds of standardized rights.
 	</p>
 
 	<p>
 		To implement a full transaction of payment for services, we often need need more than just the digital cash protocol; we need a protocol that guarantees that service will be rendered if payment is made, and vice versa. Current commercial systems use a wide variety of techniques to accomplish this, such as certified mail, face to face exchange, reliance on credit history and collection agencies to extend credit, etc. I discuss such issues in my article on  <a href="http://nakamotoinstitute.org/formalizing-securing-relationships.html">smart contracts</a>.
 	</p>
 
-	<!-- Begin commented out section -->
+	<!--
 	<h4 class="text-muted">Credentials</h4>
 
 	<p class="text-muted">
@@ -132,7 +132,7 @@ f(x)= xk<sup>e</sup>
 	<p class="text-muted">
 		A Chaumian credential is a cryptographic protocol for proving that one's pseudonym (for example, the identification number one uses in a health care system) possesses credentials issued to one's other pseudonyms, without revealing linkages between these pseudonyms or between pseudonym and true name. It's based around the is-a-person credential the true name credential, used to prove, without revealing, the linkage between pseudonyms, and to prevent the transfer of pseudonyms between parties.
 	</p>
-	<!-- End commented out section -->
+	-->
 
 	<h4>Generic vs. Specific Rights</h4>
 
@@ -145,7 +145,7 @@ f(x)= xk<sup>e</sup>
 	</p>
 
 	<p>
-		Rights can also be exclusive or non-exlusive. Any object which must be conserved, or finally allocated to a specific user, is "exclusive". 
+		Rights can also be exclusive or non-exlusive. Any object which must be conserved, or finally allocated to a specific user, is "exclusive".
 	</p>
 
 	<p>
@@ -189,7 +189,7 @@ f(x)= xk<sup>e</sup>
 	</p>
 
 	<p>
-		Here is another example of a generic right, or class of fungible objects: "A queriable SQL database with up to 10 MB of storage, and certain standard response time guarantees".   
+		Here is another example of a generic right, or class of fungible objects: "A queriable SQL database with up to 10 MB of storage, and certain standard response time guarantees".
 	</p>
 
 	<p>
@@ -229,10 +229,11 @@ f(x)= xk<sup>e</sup>
 			<p>
 				The first public references to this idea can be found <a href="http://www.i-m.com/archives/9412/0179.html">here</a>, <a href="http://szabo.best.vwh.net/smart.contracts.html">here</a>. I also referred to this idea during this period in many personal communications, using the phrases "digital bearer instrument", "digital bearer certificate", "scarce object", and "conserved object". The idea of digital bearer certificates as a serious proposal for the financial industry has been popularized, with many intruiging additional ideas, by Bob Hettinga.
 			</p>
-
+			<!--
 			<p class="text-muted">
 				The phrases "digital bearer certificate" and "digital bearer settlement(DBS)" were soon thereafter popularized by a correspondent of mine, Robert Hettinga, as referring to a legal/institutional idea of instant, irrevocable settlement made possible by both the instant clearing and privacy features of this technology.&nbsp;<a href="#ref1">↩</a>
 			</p>
+			-->
 		</li>
 
 		<li id="fn2">
@@ -264,11 +265,6 @@ f(x)= xk<sup>e</sup>
 	<p>
 		Copyright &copy; 1997, 1999 by Nick Szabo<br>
 		Permission to redistribute without alteration hereby granted
-	</p>
-
-	<hr>
-	<p class="text-muted">
-		<em>Editor's note: muted text indicates the text was commented out in the source file.</em>
 	</p>
 
 </div>
