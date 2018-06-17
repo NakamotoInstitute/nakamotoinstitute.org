@@ -42,13 +42,13 @@
     {% if post.thread.source == 'p2pfoundation' %}
       {% set nested_level = 'nested-' + post.nested_level|string -%}
       {% if prev_level != post.nested_level %}
-      <div class="post-container {{nested_level}} first {% if post.satoshi_id %}highlight{% endif %}" id="{{post.post_num}}">
+      <div class="post-container {{loop.cycle('', 'gray')}} {{nested_level}} first {% if post.satoshi_id and not only_satoshi %}highlight{% endif %}" id="{{post.post_num}}">
       {% else %}
-      <div class="post-container {{nested_level}} {% if post.satoshi_id %}highlight{% endif %}" id="{{post.post_num}}">
+      <div class="post-container {{loop.cycle('', 'gray')}} {{nested_level}} {% if post.satoshi_id and not only_satoshi %}highlight{% endif %}" id="{{post.post_num}}">
       {% endif %}
       {% set prev_level = post.nested_level -%}
     {% else %}
-      <div class="post-container {% if post.satoshi_id %}highlight{% endif %}" id="{{post.post_num}}">
+      <div class="post-container {{loop.cycle('', 'gray')}}  {% if post.satoshi_id and not only_satoshi %}highlight{% endif %}" id="{{post.post_num}}">
     {% endif %}
       <div class="header">
         <div class="poster-info">
