@@ -36,9 +36,20 @@
     </p>
     <p><a href="{{posts[0].thread.url}}">External link</a></p>
   </div>
-  <div>
+  <div class="thread {% if posts[0].thread.source == 'p2pfoundation' %}nested{% endif %}">
+  {% set prev_level = posts[0].nested_level -%}
   {% for post in posts %}
-    <div class="post-container {% if post.satoshi_id %}highlight{% endif %}" id="{{post.post_num}}">
+    {% if post.thread.source == 'p2pfoundation' %}
+      {% set nested_level = 'nested-' + post.nested_level|string -%}
+      {% if prev_level != post.nested_level %}
+      <div class="post-container {{nested_level}} first {% if post.satoshi_id %}highlight{% endif %}" id="{{post.post_num}}">
+      {% else %}
+      <div class="post-container {{nested_level}} {% if post.satoshi_id %}highlight{% endif %}" id="{{post.post_num}}">
+      {% endif %}
+      {% set prev_level = post.nested_level -%}
+    {% else %}
+      <div class="post-container {% if post.satoshi_id %}highlight{% endif %}" id="{{post.post_num}}">
+    {% endif %}
       <div class="header">
         <div class="poster-info">
           <a href="{{post.poster_url}}"><strong>{{post.poster_name}}</strong></a>

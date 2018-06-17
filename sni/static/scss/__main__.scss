@@ -174,51 +174,75 @@ $post-inner-border: 1px solid $post-sectional;
   margin-bottom: $post-padding;
 }
 
-.post-container {
-  border: 2px solid $post-border;
-  &.highlight {
-    background-color: $post-highlight;
-  }
-  &:not(:last-child) {
-    border-bottom: none;
-  }
-  & > .header {
-    & > .poster-info {
-      @include table();
+.thread {
+  .post-container {
+    border: 2px solid $post-border;
+    &.highlight {
+      background-color: $post-highlight;
+    }
+    &:not(:last-child) {
+      border-bottom: none;
+    }
+    & > .header {
+      & > .poster-info {
+        @include table();
+        border-bottom: $post-inner-border;
+        padding: $post-padding-half $post-padding;
+        & > *:nth-child(2) {
+          width: 50px;
+          text-align: right;
+        }
+      }
+      & > .post-info {
+        padding: $post-padding-half $post-padding;
+        h5 {
+          margin: 0 0 $post-padding-half;
+        }
+      }
+    }
+    & > .body {
+      border-top: $post-inner-border;
       border-bottom: $post-inner-border;
+      padding: $post-padding;
+      a {
+          white-space: pre-wrap; /* css-3 */
+          white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+          white-space: -pre-wrap; /* Opera 4-6 */
+          white-space: -o-pre-wrap; /* Opera 7 */
+          word-wrap: break-word; /* Internet Explorer 5.5+ */
+      }
+      img {
+        max-width: 100%;
+      }
+    }
+    & > .footer {
+      @include table();
       padding: $post-padding-half $post-padding;
       & > *:nth-child(2) {
-        width: 50px;
         text-align: right;
       }
     }
-    & > .post-info {
-      padding: $post-padding-half $post-padding;
-      h5 {
-        margin: 0 0 $post-padding-half;
+  }
+  &.nested {
+    .post-container {
+      margin-bottom: 12px;
+      border: 2px solid $post-border;
+      &.nested-1 {
+        margin-left: 24px;
+        &.first:before {
+          content: '\021B3';
+          position: absolute;
+          left: 14px;
+        }
       }
-    }
-  }
-  & > .body {
-    border-top: $post-inner-border;
-    border-bottom: $post-inner-border;
-    padding: $post-padding;
-    a {
-        white-space: pre-wrap; /* css-3 */
-        white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
-        white-space: -pre-wrap; /* Opera 4-6 */
-        white-space: -o-pre-wrap; /* Opera 7 */
-        word-wrap: break-word; /* Internet Explorer 5.5+ */
-    }
-    img {
-      max-width: 100%;
-    }
-  }
-  & > .footer {
-    @include table();
-    padding: $post-padding-half $post-padding;
-    & > *:nth-child(2) {
-      text-align: right;
+      &.nested-2 {
+        margin-left: 48px;
+        &.first:before {
+          content: '\021B3';
+          position: absolute;
+          left: 38px;
+        }
+      }
     }
   }
 }
