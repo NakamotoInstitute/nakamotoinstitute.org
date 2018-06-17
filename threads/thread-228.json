@@ -1,0 +1,74 @@
+[
+    {
+        "thread_id": 228,
+        "name": "jgarzik",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=541",
+        "subject": "Prioritized transactions, and tx fees",
+        "url": "https://bitcointalk.org/index.php?topic=1314.msg14616#msg14616",
+        "date": "September 29, 2010, 08:13:30 PM",
+        "content": "<div class=\"post\">As noted in <a href=\"http://www.bitcoin.org/wiki/doku.php?id=transaction_fee\">this wiki page</a> and in <a href=\"http://bitcointalk.org/index.php?topic=795.msg8960#msg8960\">this satoshi post</a>, the -paytxfee switch may be employed give your sent transactions \"priority.\"<br/><br/>Prioritized transactions appear to be defined as increasing the likelihood that a transaction will be included in a block, even if that block is very large (byte-wise or tx-wise).<br/><br/>Considering that 99.9% of blocks are outside the range that will incur tx fees, it can be said that tx fees are largely useless today.\u00a0 But it makes me curious...<br/><br/>Are there any other areas of the bitcoin client or network that could somehow prioritize transactions based on tx fees?\u00a0 Examples:<br/><ul style=\"margin-top: 0; margin-bottom: 0;\"><li>if you have a list of transactions to send out to the network, send prioritized ones to more connected nodes</li><li>restart mining work immediately if priority tx arrives, but continue working on existing block for a while, if free tx arrives</li></ul><br/>And with my businessman's cap on, I would think it prudent practice for any bitcoin business to use -paytxfee=0.02 by default, just to be safe, guaranteeing priority on the existing network and existing clients, in cases of extreme network load.<br/><br/>Other comments about how to use tx fees welcome...\u00a0 I strongly believe that a healthy tx fee structure is important to the long term health of the bitcoin P2P network.</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 228,
+        "name": "theymos",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=35",
+        "subject": "Re: Prioritized transactions, and tx fees",
+        "url": "https://bitcointalk.org/index.php?topic=1314.msg14624#msg14624",
+        "date": "September 29, 2010, 09:11:16 PM",
+        "content": "<div class=\"post\">As far as I can tell, transactions are not prioritized according to fee size. Paytxfee just ensures that you will meet the fee requirements (and it isn't guaranteed to do that). This does seem to be contrary to what Satoshi and sirius-m have implied, but I can't find any prioritization in the code.</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 228,
+        "name": "wscott",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=1682",
+        "subject": "Re: Prioritized transactions, and tx fees",
+        "url": "https://bitcointalk.org/index.php?topic=1314.msg14683#msg14683",
+        "date": "September 30, 2010, 09:40:21 AM",
+        "content": "<div class=\"post\">The fees are a function of total transaction volume.<br/>Right now the volume is pretty tiny so all fees are zero.<br/>Later when the volume is high only some of the current transactions will be included in each<br/>block so you either pay a fee to make sure your transaction is desirable to be in each block<br/>or wait until the trading volume drops.<br/><br/>-Wayne</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 228,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Prioritized transactions, and tx fees",
+        "url": "https://bitcointalk.org/index.php?topic=1314.msg14732#msg14732",
+        "date": "September 30, 2010, 06:11:56 PM",
+        "content": "<div class=\"post\">It ramps up the fee requirement as the block fills up:<br/><br/>&lt;50KB \u00a0free<br/>50KB \u00a0 0.01<br/>250KB \u00a00.02<br/>333KB \u00a00.03<br/>375KB \u00a00.04<br/>etc.<br/><br/>It's a typical pricing mechanism. \u00a0After the first 50KB sells out, the price is raised to 0.01. \u00a0After 250KB is sold, it goes up to 0.02. \u00a0At some price, you can pretty much always get in if you're willing to outbid the other customers.<br/><br/>Just including the minimum 0.01 goes a long way.</div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 228,
+        "name": "theymos",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=35",
+        "subject": "Re: Prioritized transactions, and tx fees",
+        "url": "https://bitcointalk.org/index.php?topic=1314.msg14733#msg14733",
+        "date": "September 30, 2010, 06:16:36 PM",
+        "content": "<div class=\"post\">That's cost per kilobyte, though, and a kilobyte can only hold ~9 TxIns, so 0.01 is not guaranteed to meet the requirement.</div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 228,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Prioritized transactions, and tx fees",
+        "url": "https://bitcointalk.org/index.php?topic=1314.msg14734#msg14734",
+        "date": "September 30, 2010, 06:22:22 PM",
+        "content": "<div class=\"post\">True, the switch should be something more dynamic that pays per KB.\u00a0 It's harder to think of how to explain it.</div>",
+        "post_num": 6,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

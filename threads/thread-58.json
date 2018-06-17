@@ -1,0 +1,74 @@
+[
+    {
+        "thread_id": 58,
+        "name": "Dynotor",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=197",
+        "subject": "Tracing a coin's lineage",
+        "url": "https://bitcointalk.org/index.php?topic=154.msg1234#msg1234",
+        "date": "May 25, 2010, 06:27:19 PM",
+        "content": "<div class=\"post\">Assuming a goal of bitcoin is to introduce anonymity to online transactions, one of the things that concerns me most is the traceability of coins to previous transactions.\u00a0 I've read a lot of discussion about this in the forums, but there's still some open questions for me.\u00a0 <br/><br/>So first, let me state what I do understand:<br/><br/>1) All transactions are public in their amounts and public key identities as follows:<br/>\u00a0 a) In a transaction, you can see the public key of the person who spent the money<br/>\u00a0 b) In a transaction, I *think* but am not completely sure you can see the public key of the person who gets the money.\u00a0 (If you can't, you'll see it when they spend the money later, so this isn't that important.<br/><br/>2) Keeping your public keys from being associated with your identity is required if you don't want your transactions to be attributable to you.<br/><br/>We need to better educate users on how to do #2.\u00a0 I have an information security background, and it's not even immediately obvious to me what the best ways of handling bitcoins are to maximize your privacy.<br/><br/>I have these specific questions or comments regarding this topic:<br/><br/>1) Are one-time public keys disposed of when they are no longer required?<br/><br/>For example, I've read that a one-time-use private key is created when I generate a bitcoin block.\u00a0 When I spend these coins and I've signed them to someone else, I shouldn't need that private key anymore.\u00a0 The same thing goes for a key created for taking a payment-by-IP.\u00a0 Keeping keys around after they are no longer necessary may make a user vulnerable to later having their wallet seized and used to prove that they originated a transaction.<br/><br/>2) Reusable keys (those created inside the GUI) should be able to be similarly deleted when they are no longer required.\u00a0 This is a bit more dangerous, because once you delete the key you won't be able to get payments sent to that key, so the user really needs to understand what's going on in this case.\u00a0 Keys with coins stored under them obviously shouldn't be deleted.\u00a0 <br/><br/>3) We really need to make it possible to track coin bundle's lineage to enable the user to know their risk regarding spending specific coins.\u00a0 I think it should be possible, within the GUI, to see all the public keys associated with each coin bundle.\u00a0 It would also be nice to be able to tag keys that are associated with you with comments to aid you in determining which coins to send to someone.\u00a0 That way you could realize that another bitcoin user has seen you use a specific key, and to restrict other coins that are also associated with that key to a similar purpose and not something else that would link the two identities.<br/><br/>4) In addition to making it possible to track a coin bundle's lineage, we also need to be able to choose which coin bundles to include in a payment.<br/><br/><br/>The important thing here is that we need to make the information that is possible to acquire through digital forensics to be easily accessible by the end user.\u00a0 Only by making this information accessible to the end user will people be able to make good security decisions regarding the spending of bitcoins in sensitive environments.<br/><br/>One more thing that is important: Once these features are available, exchangers need to have clear data retention policies.\u00a0 For example, if I was an exchanger, I might keep track of the public keys of the people that I am doing active trades with.\u00a0 I'd probably retain this information until I had traded out the coins I had acquired through a trade, but would dispose of this information once the coins had left my possession.\u00a0 I would also have a policy to not share that information with third parties unless required to by a court order.\u00a0 If I was trading with an exchanger, I would want to know what their policies were and how they differed from my expectations.\u00a0 <br/><br/><br/><br/><br/></div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 58,
+        "name": "Xunie",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=10",
+        "subject": "Re: Tracing a coin's lineage",
+        "url": "https://bitcointalk.org/index.php?topic=154.msg1238#msg1238",
+        "date": "May 25, 2010, 09:12:51 PM",
+        "content": "<div class=\"post\">The points you mentioned are of high concern to me (and should be to the rest of the community.)<br/>Your suggestion of making the information that can found with/through digital forensics available to the user seems very good in securing Bitcoin.<br/>Maybe build a \"paranoid mode\" switch in Bitcoin that will immediately show all that info to the user!<br/>Also what seems like a good idea is to show that switch in a \"first run dialog\", but some people find that annoying. (I would too a business environment!)<br/>Maybe distribute a \"Home\" and \"Business\" binary that has the \"first run dialog\" and one without it, ofcourse in that order.<br/><br/>But, as this data is available, and people will trust Bitcoin (sometimes blindly), we'll have to warn users about pitfalls.<br/>Have proper documentation documenting everything, even for the \"paranoid users\".<br/>Users <span style=\"text-decoration: underline;\">will have to learn</span> how to make safe transactions, etc...<br/><br/><br/><span style=\"text-decoration: underline;\">If someone screws up and gets screwed over by the justice system because he trusted Bitcoin blindly, he'll speak about it and Bitcoin will get a bad name.</span><br/><br/>My conclusion: <b>the Bitcoin community needs to watch out for the <del>losers</del> <del>dumb users</del> <span style=\"text-decoration: underline;\">lusers</span>!</b></div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 58,
+        "name": "D\u0489ataWraith",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=155",
+        "subject": "Re: Tracing a coin's lineage",
+        "url": "https://bitcointalk.org/index.php?topic=154.msg1240#msg1240",
+        "date": "May 25, 2010, 09:29:05 PM",
+        "content": "<div class=\"post\">It's good that someone is thinking along the lines of how security/anonymity could be compromised. <br/><br/>Yes, you know both sender and recipient of a payment. The recipient's key is always included, and from there you can trace the coin back to the previous recipient, i.e. the current sender.<br/><br/>My 2\u0e3f worth of thoughts:<br/><br/>Ideally the Bitcoin wallet should be encrypted, and future versions will implement that. Now, leaving malware out of the picture (which would probably just send all bitcoins to the hacker in question instead of tracing transactions back), when both your computer is confiscated and you are forced to reveal the password, you're probably already in big trouble... you'd have to already have screwed up other than by using bitcoin in an unsafe manner. Personally I don't worry about this, but it is good that somebody does. <br/><br/>As an aside: Bitcoin can be used over the TOR network, so one can hide one's IP address. There are also the web-based wallet services, which might make it harder to trace a transaction that went through them. On the other hand, they could do some tracing of their own... The deciding factor here is which coins are chosen for which transactions.<br/><br/>As for coin lineage, yeah, that might be a problem. Currently it is a best practice to give out a different address to every sender, and only give it to them. An outside observer you can't know if the next recipient (or rather crypographic key) the coin is sent to is one of your aliases or someone else entirely. Bitcoin Currency Exchanges (or any high-volume user) might be a problem here, but otherwise one probably doesn't have enough data to infer much about the transfers, it just becomes untractable if every person has a lot of different addresses. One additional point here is that old transactions expire after a while, and the space is reclaimed -- that wouldn't stop a serious attacker, but it's helping a little.</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 58,
+        "name": "Xunie",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=10",
+        "subject": "Re: Tracing a coin's lineage",
+        "url": "https://bitcointalk.org/index.php?topic=154.msg1242#msg1242",
+        "date": "May 26, 2010, 12:50:04 AM",
+        "content": "<div class=\"post\">Can't we force a user to use a new address for receiving payments?<br/>Every time a payment is received display another Bitcoin address in the address bar. (only transactions via Bitcoin addresses, NOT IPs of course, since that'd be useless, right?)<br/>The actual key would still be kept to ensure that the user would still receive payments of people sending to the same address. (We wanna minimize \"lost\" Bitcoins, right?)<br/><br/>This yields a couple of questions:<br/><ul style=\"margin-top: 0; margin-bottom: 0;\"><li>Is this technologically possible? (Probably.)</li><li>Is this bad to force it upon users? (Probably.)</li><li>Should we implement such a feature? (I don't know, I wouldn't unless we don't have a choice, better half a defense than none!)</li></ul><br/>So, are there any alternatives to combat \"coin lineage\"?</div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 58,
+        "name": "theymos",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=35",
+        "subject": "Re: Tracing a coin's lineage",
+        "url": "https://bitcointalk.org/index.php?topic=154.msg1244#msg1244",
+        "date": "May 26, 2010, 03:39:50 AM",
+        "content": "<div class=\"post\">BitCoin could automatically send random coins to a new address at random times. This would make knowing a coin's lineage useless to an attacker, since any of these new addresses could be actual people.</div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 58,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Tracing a coin's lineage",
+        "url": "https://bitcointalk.org/index.php?topic=154.msg1254#msg1254",
+        "date": "May 26, 2010, 06:51:04 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=154.msg1242#msg1242\">Quote from: Xunie on May 26, 2010, 12:50:04 AM</a></div><div class=\"quote\">Can't we force a user to use a new address for receiving payments?<br/>Every time a payment is received display another Bitcoin address in the address bar. (only transactions via Bitcoin addresses, NOT IPs of course, since that'd be useless, right?)<br/>The actual key would still be kept to ensure that the user would still receive payments of people sending to the same address.<br/></div>This is on my list.\u00a0 I will soon make the \"Your Bitcoin Address:\" window automatically change whenever you receive anything to the address displayed.<br/><br/>I'm also recommending this approach for the implementation of web apps.\u00a0 I just posted some sample code showing a suggested way of implementing this.<br/><br/>Versions on SVN since 0.2.4 already have a \"New...\" button next to the address bar to encourage changing it manually too.<br/><br/>@theymos: If nothing else, we can fall back on that solution in the future.</div>",
+        "post_num": 6,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

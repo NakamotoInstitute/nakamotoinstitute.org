@@ -1,0 +1,86 @@
+[
+    {
+        "thread_id": 23,
+        "name": "BlueSky",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=34",
+        "subject": "How divisible are bitcoins and other market/economic questions",
+        "url": "https://bitcointalk.org/index.php?topic=44.msg252#msg252",
+        "date": "February 06, 2010, 09:36:45 AM",
+        "content": "<div class=\"post\">How divisible are bitcoins? Can I divide a bitcoin? as in could I spend 0.5 or 0.01 of a bitcoin?<br/><br/>I ask this question as practically the production of new bitcoins is finite &amp; will become too expensive in terms of time &amp; power in the future and if the system becomes more popular there will be more goods than BC's.<br/><br/>What about dwindling supply?<br/>The current supply will eventually begin to dwindle as people lose their wallet's(removing coins from the system) &amp; governments attempt to drain coins out (either by scamming or creating coins themselves and simply hoarding them)of the system. This is inevitable (government action against BC) as no government worldwide will allow the existence of such an anonymous currency system out of their control or supervision.<br/><br/>What about the need for banks?<br/>Actually I don't think there would be a need for banks to get interest on savings, simply holding onto BC's they will increase in value as more users come into the system. So technically you'll get interest just for keeping them under your bed.<br/><br/>How are BC's valued(this is more of a question for NewLibertyStandard)?<br/><br/>As I see it(thusfar) the value of bitcoins(as in their exchange rate or the goods they can buy) is not in how much energy/time it takes to create them (this simply ensures a limited supply) but that they are accepted for goods &amp; services. <br/><br/>The more goods &amp; services that can be bought with BC the less coins it will require per good.<br/><br/>For example there are 2 Million BC in existence, and only one person accepts BC, &amp; is willing to sell a single t-shirt. Then the BC value of that shirt is 2Million BC, if it we're 2 t-shirts then each shirt would cost 1Million and so forth.<br/><br/>Of coarse this may never happen exactly like this, a person would look at the electricity cost of making 2Million BC's(in lets say US$) and the cost of buying the t-shirt(again in US$). If it costs $100 of electricity to make 2Million BC's then of coarse the customer will just use US$ and pay $10 for the t-shirt.<br/><br/><br/>\u00a0<br/></div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 23,
+        "name": "NewLibertyStandard",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=26",
+        "subject": "Re: How divisible are bitcoins and other market/economic questions",
+        "url": "https://bitcointalk.org/index.php?topic=44.msg254#msg254",
+        "date": "February 06, 2010, 12:21:07 PM",
+        "content": "<div class=\"post\">Bitcoins are divisible by 100. So when you generate \u0e3f50.00, you are getting 5000 bitcoin cents.<br/><br/>The <a href=\"http://newlibertystandard.wetpaint.com/page/Exchange+Rate\">New Liberty Standard Exchange Rate</a> includes an explanation of how it is calculated. BlueSky, how much are you willing to sell your bitcoins for and how much are you willing to pay for someone else's bitcoins?<br/><br/>Bitcoins can be lost, but for the foreseeable future there will continue to be more than enough bitcoins available to keep playing the game.<br/><br/>Each person is their own bank. Although I suppose that if a friend of mine wanted to buy some bitcoins and didn't have a computer or Internet, I wouldn't mind keeping track of their balance.</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 23,
+        "name": "BlueSky",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=34",
+        "subject": "Re: How divisible are bitcoins and other market/economic questions",
+        "url": "https://bitcointalk.org/index.php?topic=44.msg255#msg255",
+        "date": "February 06, 2010, 01:26:39 PM",
+        "content": "<div class=\"post\">That is pretty divisible(enough for the moment), which means that \u0e3f serves all the functions of money- \"Money is a matter of functions four, a medium, a measure, a standard, a store.\" That is, money functions as a medium of exchange, a unit of account, a standard of deferred payment, and a store of value.\"-wikipedia<br/><br/>I must thank Satoshi for his work (although the groundwork was done during the 80's, algorythms etc. this is the first useful implementation and it's effects are profound). <br/><br/>I live in PRChina, combining Freenet, Tor, I2P there is the framework for free,anonymous discussion and transfer of information(something that is prevented here, sometimes with serious penalties). Add to this BitCoin and we now have an underground market free from the tyrany and scrutinising eye of the state. This will allow an alternative, free China to develope under the nose of the state machinery.<br/><br/>My understanding is that Bitcoin cannot be suppressed without suppressing the internet as a whole, is this correct?<br/><br/>I would like to give Satoshi a donation, but sadly R&amp;B(ReminBi, literally \"The Peoples Money\") is not a world traded currency and sending a payment in a foreign currency is expensive &amp; complicated. If I could give a gift, to a value of R&amp;B500(about $70US)? Or if wished open a currency exchange for \u0e3f/R&amp;B?<br/><br/>One thing I will do is have some computer science students translate the application to Chinese, after Spring Festival.<br/><br/>NewLiberty- <br/>The lazy way would be for me to peg my exchange rate to yours and let you do the calculations. Otherwise I would need to know the total amount of \u0e3f in circulation and the amount of goods that can be purchased with it(this is a Austrian economist view of measuring the value I think?), just what is the amount in circulation?<br/><br/>What do you mean \"keep playing the game\"?<br/><br/>Also, what do you sell more, \u0e3f or $US? <br/><br/></div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 23,
+        "name": "BitcoinFX",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=30",
+        "subject": "Re: How divisible are bitcoins and other market/economic questions",
+        "url": "https://bitcointalk.org/index.php?topic=44.msg257#msg257",
+        "date": "February 06, 2010, 03:12:15 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=44.msg255#msg255\">Quote from: BlueSky on February 06, 2010, 01:26:39 PM</a></div><div class=\"quote\">...Otherwise I would need to know the total amount of \u0e3f in circulation and the amount of goods that can be purchased with it(this is a Austrian economist view of measuring the value I think?), just what is the amount in circulation? ...<br/></div><br/>From the FAQ:<br/><br/>How are new Bitcoins created?<br/><br/>New coins are generated by a network node each time it finds the solution to a certain calculational problem (i.e. creates a new block), for which an average solution time can be calculated. The difficulty of the problem is adjusted so that in the first 4 years of the Bitcoin network, 10,500,000 coins will be created. The amount is halved each 4 years, so it will be 5,250,000 in years 4-8, 2,625,000 in years 8-12 and so on. Thus the total number of coins will approach 21,000,000 over time.<br/><br/>What's the current total amount of Bitcoins in existence?<br/><br/>The number of blocks times the coin value of a block. The coin value is 50 bc per block for the first 210,000 blocks, 25 bc for the next 210,000 blocks, then 12.5 bc, 7.25 bc and so on.<br/><br/>As of October 30th 2009, there are about 26,000 blocks in the block chain, which means 26,000 * 50 bc = 1,300,000 bitcoins in existence. You can see the up-to-date number of blocks in the status bar of the Bitcoin main window.<br/><br/>Current Block count as of 06th Feb. 2010 - 3.15 PM - GMT is 38,660 blocks. You can do the math <img alt=\"Cool\" border=\"0\" src=\"https://bitcointalk.org/Smileys/default/cool.gif\"/></div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 23,
+        "name": "Suggester",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=31",
+        "subject": "Re: How divisible are bitcoins and other market/economic questions",
+        "url": "https://bitcointalk.org/index.php?topic=44.msg260#msg260",
+        "date": "February 06, 2010, 06:25:15 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=44.msg252#msg252\">Quote from: BlueSky on February 06, 2010, 09:36:45 AM</a></div><div class=\"quote\">What about dwindling supply?<br/>The current supply will eventually begin to dwindle as people lose their wallet's(removing coins from the system) &amp; governments attempt to drain coins out (either by scamming or creating coins themselves and simply hoarding them)of the system. This is inevitable (government action against BC) as no government worldwide will allow the existence of such an anonymous currency system out of their control or supervision.<br/></div><br/>That's an excellent point. If this occurs, it might be a good idea to remove or extend the 21M million limit in later versions and freeze the difficulty of generating new coins (by not making it exceedingly difficult to make new ones). Granted, BTC will not be an excellent investment as it is now (because currently we expect its price to multiply in the future), but then again if it turned out to be that popular, the \"investment\" incentive will not be the main reason people are rushing to use it.</div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 23,
+        "name": "BlueSky",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=34",
+        "subject": "Re: How divisible are bitcoins and other market/economic questions",
+        "url": "https://bitcointalk.org/index.php?topic=44.msg263#msg263",
+        "date": "February 06, 2010, 07:08:31 PM",
+        "content": "<div class=\"post\">Removing or extending the 21M limit would be a disaster, it's the finite supply of this digital cash that makes it useful as money.<br/><br/>Allowing for the currency to be further divided would solve that issue. No one loses the value of any of their currency held(devaluation or debasing), while at the same time being able to break off smaller pieces of a \u0e3f to trade.<br/><br/>Besides, the whole point is that there is no (central)control over the supply, this would allow it to be extinguished by governments or abused by a central authority (like today's central banks &amp; governments)<br/><br/>I am wondering Satoshi, what would be the technical difficulty of implementing\u00a0 \u0e3f as 0.000(or more zeroes) instead of 0.00?<br/><br/>This is not a request since there is no need for it yet, but may wish to acommadate a larger user base in the future.</div>",
+        "post_num": 6,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 23,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: How divisible are bitcoins and other market/economic questions",
+        "url": "https://bitcointalk.org/index.php?topic=44.msg267#msg267",
+        "date": "February 06, 2010, 11:25:53 PM",
+        "content": "<div class=\"post\">Eventually at most only 21 million coins for 6.8 billion people in the world if it really gets huge.<br/><br/>But don't worry, there are another 6 decimal places that aren't shown, for a total of 8 decimal places internally.\u00a0 It shows 1.00 but internally it's 1.00000000.\u00a0 If there's massive deflation in the future, the software could show more decimal places.<br/><br/>If it gets tiresome working with small numbers, we could change where the display shows the decimal point.\u00a0 Same amount of money, just different convention for where the \",\"'s and \".\"'s go.\u00a0 e.g. moving the decimal place 3 places would mean if you had 1.00000 before, now it shows it as 1,000.00.</div>",
+        "post_num": 7,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

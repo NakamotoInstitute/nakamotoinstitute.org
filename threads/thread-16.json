@@ -1,0 +1,62 @@
+[
+    {
+        "thread_id": 16,
+        "name": "riX",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=27",
+        "subject": "Bitcoin crash when sending coins",
+        "url": "https://bitcointalk.org/index.php?topic=27.msg135#msg135",
+        "date": "January 25, 2010, 11:07:16 PM",
+        "content": "<div class=\"post\">Lately when I've been trying to send coins, the following popups twice, then the application terminates.<br/><br/><div class=\"codeheader\">Code:</div><div class=\"code\">EXCEPTION: St13runtime_error<br/>SendMoney() : wtxNew.AcceptTransaction() failed<br/><br/>c:\\Documents and Settings\\username\\bitcoin-0.2.0\\bitcoin.exe in<br/>CMyApp::OnExceptionInMainLoop()</div><br/>When i restart bitcoin.exe, the transaction is showing as 0/unconfirmed. The status do not change even when the total block count increases.<br/><br/>I'm running two instances of bitcoin in my home LAN, one at my desktop computer, and one in a virtual machine on my laptop, with the switch -connect=192.168.0.2 (ip of desktop computer).<br/><br/>This occurs when I send to my own bitcoin address, to my other computers bitcoin address and to an other bitcoin address not currently active anywhere. I'm not sending by ip.<br/><br/>I've been moving wallets and index-files back and forth, could this have something to do with this?</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 16,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Bitcoin crash when sending coins",
+        "url": "https://bitcointalk.org/index.php?topic=27.msg156#msg156",
+        "date": "January 27, 2010, 09:52:27 PM",
+        "content": "<div class=\"post\">That is what happens if you copy wallet files around.\u00a0 If you copy your wallet file to a second computer, then they both think the money in the wallet is theirs.\u00a0 If one spends any of it, the other doesn't know those coins are already spent and would try to spend them again, and that's the error you would hit.<br/><br/>Now that it's clear this is a key error message, it ought to be something more like \"the money appears to be already spent...\u00a0 this could happen if you used a copy of your wallet file on another computer.\" <br/><br/>You can move or backup your wallet file, but it needs to have only one \"lineage\" and only used in one place at a time.\u00a0 Any time you transfer money out of it, then you must no longer use any previous copies.<br/><br/>This brings up a good point.\u00a0 In the case of restoring a backup that may be from before you spent some coins, we need to add functionality to resync it to discover which coins have already been spent.\u00a0 This would not be hard to do, it just hasn't been implemented yet.\u00a0 I'll add it to the list.\u00a0 This would make it mostly repair the situation instead of giving that error message.</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 16,
+        "name": "riX",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=27",
+        "subject": "Re: Bitcoin crash when sending coins",
+        "url": "https://bitcointalk.org/index.php?topic=27.msg157#msg157",
+        "date": "January 27, 2010, 10:14:20 PM",
+        "content": "<div class=\"post\">Yes, I thought it had something to do with that.<br/><br/>It would be nice if there was a wallet tool for merging wallet files, removing unused bitcoin addresses and as you say resyncing. (I tried to just re-download all the blocks, but as you know the transactions stayed anyway.)<br/>What about resyncing in the future when the Merkle-tree is pruned?</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 16,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Bitcoin crash when sending coins",
+        "url": "https://bitcointalk.org/index.php?topic=27.msg170#msg170",
+        "date": "January 28, 2010, 11:08:02 PM",
+        "content": "<div class=\"post\">The resync idea would go through your wallet and check it against the block index to find any transactions that your current computer doesn't realize are already spent.\u00a0 That could happen if they were spent on another computer with a copy of the wallet file, or you had to restore the wallet to a backup from before they were spent.\u00a0 Currently, the software just assumes it always knows whether its transactions are spent because it marks them spent in wallet.dat when it spends them.<br/><br/>A wallet merge tool is possible to implement but much less in demand once resync solves most of the problem.\u00a0 With resync, you could do about the same thing by sending all the money from one wallet to the other.\u00a0 The receiver would resync and discover all its overlapping coins were spent, then receive them in the new transaction.</div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 16,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Bitcoin crash when sending coins",
+        "url": "https://bitcointalk.org/index.php?topic=27.msg219#msg219",
+        "date": "February 03, 2010, 11:29:57 PM",
+        "content": "<div class=\"post\">I uploaded this fix to the SVN.\u00a0 It watches for spent coins and updates your wallet on load and also continuously as blocks come in.\u00a0 I also put a better error message, but it should never hit it because it always finds spent coins ahead of time, unless you spent the same money at the same time on two computers at once.<br/><br/>If you want to try it, PM or e-mail me your e-mail address where I can send it as an attachment and also what OS (win, linux 32-bit, linux 64-bit).</div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

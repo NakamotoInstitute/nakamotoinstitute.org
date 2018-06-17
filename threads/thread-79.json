@@ -1,0 +1,74 @@
+[
+    {
+        "thread_id": 79,
+        "name": "teppy",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=206",
+        "subject": "Slashdot Submission for 1.0",
+        "url": "https://bitcointalk.org/index.php?topic=234.msg1967#msg1967",
+        "date": "July 05, 2010, 04:07:52 PM",
+        "content": "<div class=\"post\">Unless anyone else knows a Slashdot editor, I'd be willing to submit this when 1.0 is released. (More people submitting their own versions will improve the chances of hitting the front page.)<br/><br/>(Technology Section)<br/>Headline: Bitcoin releases Version 0.3<br/>Tag: Encryption<br/>Body: How's this for a disruptive technology? Bitcoin is a peer-to-peer network based digital currency with no central bank, and no transaction fees. Using a proof-of-work concept, nodes burn CPU cycles searching for bundles of coins, broadcasting their findings to the network. Analysis of energy usage indicates that the market value of Bitcoins is already above the value of the energy needed to generate them, indicating healthy demand. The community is hopeful the currency will remain outside the reach of any government.<br/><br/>Comments?<br/><br/>[Edited the \"energy backed\" language.]<br/>[Eliminated the 21M number, as db suggested. Mentioning subdividing would be too wordy.]<br/>[Incorporated some of amall's suggestions, including eliminating the passive voice in the final sentence.]<br/>[Integrated satoshi's suggestions, eliminating the word \"anonymous\", mention of Hashcash, and the \"developers expect\" taunt.]<br/>[Changed the closing sentence to dwdollar's \"...community is hopeful...\" language. Satoshi, are you OK with that?]<br/></div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 79,
+        "name": "llama",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=270",
+        "subject": "Re: Slashdot Submission for 1.0",
+        "url": "https://bitcointalk.org/index.php?topic=234.msg1968#msg1968",
+        "date": "July 05, 2010, 05:05:08 PM",
+        "content": "<div class=\"post\">I wouldn't call bitcoin \"energy backed\". \u00a0There has been ample discussion on this and varying opinions, but I think most people would say that the bitcoin's value determines the amount of energy required to generate them, and not the other way around.<br/><br/>In the short run, the energy cost of generation may ensure a baseline value, but in the long run the value will be solely based on human behavior.<br/><br/>Thanks for pushing for a slashdot feature, bitcoin could <i>really</i> use some publicity to help it grow.</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 79,
+        "name": "Timo Y",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=271",
+        "subject": "Re: Slashdot Submission for 1.0",
+        "url": "https://bitcointalk.org/index.php?topic=234.msg1969#msg1969",
+        "date": "July 05, 2010, 05:21:02 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=234.msg1967#msg1967\">Quote from: teppy on July 05, 2010, 04:07:52 PM</a></div><div class=\"quote\">Unless anyone else knows a Slashdot editor, I'd be willing to submit this when 1.0 is released. (More people submitting their own versions will improve the chances of hitting the front page.)<br/><br/>(Technology Section)<br/>Headline: Bitcoin releases Version 1.0<br/>Body: How's this for a disruptive technology? Bitcoin is a buyer-anonymous, seller-anonymous cryptocurrency with no central bank, and no transaction fees. Using a concept similar to Hashcash, clients burn CPU cycles attempting to discover some of the 21,000,000 Bitcoins that will eventually be found. It is expected that over time, the market value of Bitcoins will reach parity with the energy needed to generate them, resulting in an energy-backed currency outside the reach of any government.<br/><br/>Comments?<br/></div><br/>1) I like the first two sentences.<br/><br/>2) Not sure whether I would include the \"similar to Hashcash\" phrase. I doubt that the majority of slashdot users has ever heard of Hashcash.<br/><br/>3) I have a problem with the \"energy-backed\" claim. It's misleading. Just because you need to invest energy to generate Bitcoins doesn't make them energy-backed. They would only be energy-backed if there was some sort of guarantee that they could be traded back into energy. Which there isn't. The generation of Bitcoins is irreversible. If the software was hardcoded so that you could buy other users' CPU cycles with Bitcoins, then maybe we could call them energy-backed. <br/><br/></div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 79,
+        "name": "db",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=295",
+        "subject": "Re: Slashdot Submission for 1.0",
+        "url": "https://bitcointalk.org/index.php?topic=234.msg1972#msg1972",
+        "date": "July 05, 2010, 06:58:36 PM",
+        "content": "<div class=\"post\">Mentioning the 21 000 000 bitcoins but not that they can be divided in 100 000 000 pieces each is confusing. It doesn't sound like a practical currency.<br/></div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 79,
+        "name": "llama",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=270",
+        "subject": "Re: Slashdot Submission for 1.0",
+        "url": "https://bitcointalk.org/index.php?topic=234.msg1973#msg1973",
+        "date": "July 05, 2010, 07:24:56 PM",
+        "content": "<div class=\"post\">Good revisions so far. <br/><br/>More suggestions:<br/><br/>1) How about mentioning bittorrent instead of hashcash?\u00a0 Bittorrent is a huge buzz word and could grab some attention.\u00a0 As a completely distributed and anonymous network, I'd say that Bitcoin is similar enough to justify the comparison.<br/><br/>2) \"...clients burn CPU cycles...\" --&gt; \"...nodes burn CPU cycles...\"<br/><br/>3)\u00a0 Throw in \"decentralized\" and \"proof-of-work based\" somewhere<br/><br/>4) Personally, I'm still not fully satisfied with the mention of energy-backing.\u00a0 Maybe you could replace it with something about the time-stamped transaction history being voted on / secured by the majority of CPU power?\u00a0 <br/><br/>5) Not to be a smartass, but watch out for passive voice (e.g. \"It is expected that over time...\").\u00a0 Headlines and news articles usually try to grab readers' attention by using the more exciting active voice.<br/><br/>Feel free to take all, none, or somewhere in between.\u00a0 We're critical because we care\u00a0 <img alt=\"Wink\" border=\"0\" src=\"https://bitcointalk.org/Smileys/default/wink.gif\"/></div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 79,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Slashdot Submission for 1.0",
+        "url": "https://bitcointalk.org/index.php?topic=234.msg1976#msg1976",
+        "date": "July 05, 2010, 09:31:14 PM",
+        "content": "<div class=\"post\">BTW, I did come to my senses after that brief bout with 1.3, this release is still going to be 0.3 beta not 1.0.<br/><br/>I really appreciate the effort, but there are a lot of problems.<br/><br/>We don't want to lead with \"anonymous\". \u00a0(I've been meaning to edit the homepage)<br/><br/>\"The developers expect that this will result in a stable-with-respect-to-energy currency outside the reach of any government.\" -- I am definitely not making an such taunt or assertion. <br/><br/>It's not stable-with-respect-to-energy. \u00a0There was a discussion on this. \u00a0It's not tied to the cost of energy. \u00a0NLS's estimate based on energy was a good estimated starting point, but market forces will increasingly dominate. <br/><br/>Sorry to be a wet blanket. \u00a0Writing a description for this thing for general audiences is bloody hard. \u00a0There's nothing to relate it to.</div>",
+        "post_num": 6,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

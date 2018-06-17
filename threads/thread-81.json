@@ -1,0 +1,50 @@
+[
+    {
+        "thread_id": 81,
+        "name": "Bitcoiner",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=269",
+        "subject": "Security",
+        "url": "https://bitcointalk.org/index.php?topic=240.msg2022#msg2022",
+        "date": "July 07, 2010, 02:53:00 PM",
+        "content": "<div class=\"post\">Has there been a concerted effort to attack, subvert, or break Bitcoin? One way to test that it is secure from attack would be to actually try to undermine it, by double-spending coins, creating fake coins, posting false transactions, etc... and if flaws are found, better that they are found now than later, when the bitcoin economy is potentially larger and there is more to lose.</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 81,
+        "name": "Gavin Andresen",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=224",
+        "subject": "Re: Security",
+        "url": "https://bitcointalk.org/index.php?topic=240.msg2104#msg2104",
+        "date": "July 09, 2010, 06:11:27 PM",
+        "content": "<div class=\"post\">It's a bad idea to try to break the \"in-production\" bitcoin network.<br/><br/>If anybody is starting serious work on either extending Bitcoin or developing compatible implementations or trying to break it by creating bad transactions, I think creating a \"parallel universe\" test network with its own block chain, data directory, etc makes sense.<br/><br/>Satoshi:\u00a0 would you be open to a --testnetwork (or something) flag to bitcoin that swapped to an alternate genesis block, data directory, listen port and IRC channel?\u00a0 Maybe with a really short average block generation time, too (like once per minute instead of once per 10 minutes) so everything happens ten times a fast to make testing quicker.<br/>\u00a0</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 81,
+        "name": "llama",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=270",
+        "subject": "Re: Security",
+        "url": "https://bitcointalk.org/index.php?topic=240.msg2105#msg2105",
+        "date": "July 09, 2010, 08:13:27 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=240.msg2104#msg2104\">Quote from: gavinandresen on July 09, 2010, 06:11:27 PM</a></div><div class=\"quote\"><br/>Satoshi:\u00a0 would you be open to a --testnetwork (or something) flag to bitcoin that swapped to an alternate genesis block, data directory, listen port and IRC channel?\u00a0 Maybe with a really short average block generation time, too (like once per minute instead of once per 10 minutes) so everything happens ten times a fast to make testing quicker.<br/>\u00a0<br/></div><br/>I second this, however I don't think block generation time should be changed.\u00a0 I think it should be identical to the production network.\u00a0 This, for example, would allow testers to try to subvert the system by creating nodes with particularly low latency, and keep the results applicable to the real network.<br/><br/>Great idea Gavin!</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 81,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Security",
+        "url": "https://bitcointalk.org/index.php?topic=240.msg2132#msg2132",
+        "date": "July 10, 2010, 12:58:02 PM",
+        "content": "<div class=\"post\">I'll start thinking about how to do this.<br/><br/>At the moment, you can kind of use -connect.\u00a0 You can use -connect to make it connect to local computers on your LAN, like -connect=192.168.0.100.\u00a0 If you start it out blank and don't let it connect to the main network, the difficulty is still at the original low difficulty.\u00a0 If you've port-forwarded though, then outside nodes might still connect inward to you.<br/><br/>With -connect it still uses IRC, do you think it shouldn't get on IRC when you're telling it to only connect to specific nodes with -connect?\u00a0 The main scenario for -connect is where you have a server farm, with two connected to the network and the rest connected to the first two.\u00a0 In that case, you wouldn't want the -connect computers on IRC.<br/><br/>void ThreadIRCSeed(void* parg)<br/>{<br/>\u00a0 \u00a0 if (mapArgs.count(\"-connect\"))<br/>\u00a0 \u00a0 \u00a0 \u00a0 return;<br/></div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

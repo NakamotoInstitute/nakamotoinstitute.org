@@ -1,0 +1,26 @@
+[
+    {
+        "thread_id": 5,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Repost: How anonymous are bitcoins?",
+        "url": "https://bitcointalk.org/index.php?topic=8.msg33#msg33",
+        "date": "November 25, 2009, 06:15:57 PM",
+        "content": "<div class=\"post\">--------------------<br/>bitcoinbitcoin:<br/>How anonymous are bitcoins?<br/><br/>Can nodes on the network tell from which and or to which bitcoin address coins are being sent? Do blocks contain a history of where bitcoins have been transfered to and from? Can nodes tell which bitcoin addresses belong to which IP addresses? Is there a command line option to enable the sock proxy the first time that bitcoin starts? What happens if you send bitcoins to an IP address that has multiple clients connected through network address translation (NAT)?<br/></div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 5,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Repost: How anonymous are bitcoins?",
+        "url": "https://bitcointalk.org/index.php?topic=8.msg34#msg34",
+        "date": "November 25, 2009, 06:17:23 PM",
+        "content": "<div class=\"post\">&gt; Can nodes on the network tell from which and or to which bitcoin <br/>&gt; address coins are being sent? Do blocks contain a history of where <br/>&gt; bitcoins have been transfered to and from?<br/><br/>Bitcoins are sent to and from bitcoin addresses, which are essentially random numbers with no identifying information.<br/><br/>When you send to an IP address, the transaction is still written to a bitcoin address.\u00a0 The IP address is only used to connect to the recipient's computer to request a fresh bitcoin address, give the transaction directly to the recipient and get a confirmation. <br/><br/>Blocks contain a history of the bitcoin addresses that a coin has been transferred to.\u00a0 If the identities of the people using the bitcoin addresses are not known and each address is used only once, then this information only reveals that some unknown person transferred some amount to someone else.<br/><br/>The possibility to be anonymous or pseudonymous relies on you not revealing any identifying information about yourself in connection with the bitcoin addresses you use.\u00a0 If you post your bitcoin address on the web, then you're associating that address and any transactions with it with the name you posted under.\u00a0 If you posted under a handle that you haven't associated with your real identity, then you're still pseudonymous.<br/><br/>For greater privacy, it's best to use bitcoin addresses only once.\u00a0 You can change addresses as often as you want using Options-&gt;Change Your Address.\u00a0 Transfers by IP address automatically use a new bitcoin address each time.<br/><br/>&gt; Can nodes tell which bitcoin addresses belong to which IP addresses?<br/><br/>No.<br/><br/>&gt; Is there a command line option to enable the sock proxy the first<br/>&gt; time that bitcoin starts?<br/><br/>In the next release (version 0.2), the command line to run it through a proxy from the first time is:<br/>bitcoin -proxy=127.0.0.1:9050<br/><br/>The problem for TOR is that the IRC server which Bitcoin uses to initially discover other nodes bans the TOR exit nodes, as all IRC servers do.\u00a0 If you've already connected once before then you're already seeded, but for the first time, you'd need to provide the address of a node as such:<br/>bitcoin -proxy=127.0.0.1:9050 -addnode=&lt;someipaddress&gt;<br/><br/>If someone running a node with a static IP address that can accept incoming connections could post their IP to use for -addnode, that would be great.<br/><br/>&gt; What happens if you send bitcoins to an IP address that has multiple<br/>&gt; clients connected through network address translation (NAT)?<br/><br/>Whichever one you've set your NAT to forward port 8333 to will receive it.\u00a0 If your router can change the port number when it forwards, you could allow more than one client to receive.\u00a0 For instance, if port 8334 forwards to a computer's port 8333, then senders could send to \"x.x.x.x:8334\" <br/><br/>If your NAT can't translate port numbers, there currently isn't a command line option to change the incoming port that bitcoin binds to, but I'll look into it.<br/></div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

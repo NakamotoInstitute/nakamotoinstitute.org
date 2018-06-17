@@ -1,0 +1,38 @@
+[
+    {
+        "thread_id": 163,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Please upgrade to 0.3.8!",
+        "url": "https://bitcointalk.org/index.php?topic=696.msg7364#msg7364",
+        "date": "August 03, 2010, 11:40:18 PM",
+        "content": "<div class=\"post\">Version 0.3.8 adds an important security improvement.\u00a0 Everyone should upgrade to get this change.<br/><br/>The new safety feature displays a warning message in the status bar and locks down RPC if it detects a problem that may require an upgrade.<br/><br/>If it sees a longer chain, but it can't process it, then it knows something is wrong.\u00a0 It displays \"WARNING: Displayed transactions may not be correct!\u00a0 You may need to upgrade.\" and makes most RPC commands return an error.\u00a0 It still keeps generating as normal, which is necessary for the stability of the network.<br/><br/>There were important security updates in the versions before this too, so if you haven't upgraded recently, it's extremely important that you upgrade now!<br/><br/>Also, don't forget, we recently added 2.4x faster generating thanks to tcatm's mid-state caching optimisation and BlackEye's help getting ASM SHA-256 working.<br/><br/>Download:<br/><a href=\"http://sourceforge.net/projects/bitcoin/files/Bitcoin/bitcoin-0.3.8/\">http://sourceforge.net/projects/bitcoin/files/Bitcoin/bitcoin-0.3.8/</a></div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 163,
+        "name": "FreeMoney",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=381",
+        "subject": "Re: Please upgrade to 0.3.8!",
+        "url": "https://bitcointalk.org/index.php?topic=696.msg7371#msg7371",
+        "date": "August 04, 2010, 12:08:05 AM",
+        "content": "<div class=\"post\">Link takes me to 3.7</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 163,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Please upgrade to 0.3.8!",
+        "url": "https://bitcointalk.org/index.php?topic=696.msg7381#msg7381",
+        "date": "August 04, 2010, 12:29:37 AM",
+        "content": "<div class=\"post\">I guess SourceForge hasn't updated its mirrors yet. \u00a0The files are there on the admin side, but not on the user side. \u00a0I have no idea how long that will take. \u00a0It's always been immediate in the past.<br/><br/>Edit: SourceForge is updated now.</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

@@ -20,17 +20,42 @@ class Email(db.Model):
         return '<Email %r>' % (self.subject)
 
 
-class Post(db.Model):
+class Thread(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String())
     url = db.Column(db.String())
-    name = db.Column(db.String())
-    date = db.Column(db.DateTime)
-    text = db.Column(db.String())
     source = db.Column(db.String())
-    quotes = db.relationship("Quote", backref="post")
+    posts = db.relationship('Post', backref='thread', lazy=True)
+
+    def source_to_string(self):
+        if self.source == 'bitcointalk':
+            return 'BitcoinTalk'
+        elif self.source == 'p2pfoundation':
+            return 'P2P Foundation'
+        else:
+            return self.source
 
     def __repr__(self):
-        return '<Post %r>' % (self.name)
+        return '<Thread %r>' % (self.title)
+
+
+class Post(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    satoshi_id = db.Column(db.Integer)
+    url = db.Column(db.String())
+    subject = db.Column(db.String())
+    poster_name = db.Column(db.String())
+    poster_url = db.Column(db.String())
+    post_num = db.Column(db.Integer)  # Post number in thread
+    is_displayed = db.Column(db.Boolean)
+    nested_level = db.Column(db.Integer)
+    date = db.Column(db.DateTime)
+    text = db.Column(db.String())
+    quotes = db.relationship("Quote", backref="post")
+    thread_id = db.Column(db.Integer, db.ForeignKey('thread.id'))
+
+    def __repr__(self):
+        return '<Post %r>' % (self.subject)
 
 quote_categories = db.Table(
     'quote_categories',
@@ -54,7 +79,7 @@ class Quote(db.Model):
     date = db.Column(db.Date)
     medium = db.Column(db.String())
     email_id = db.Column(db.Integer, db.ForeignKey('email.id'))
-    post_id = db.Column(db.Integer, db.ForeignKey('post.id'))
+    post_id = db.Column(db.Integer, db.ForeignKey('post.satoshi_id'))
     categories = db.relationship('QuoteCategory',
                                  secondary=quote_categories,
                                  backref=db.backref('quotes', lazy='dynamic'))

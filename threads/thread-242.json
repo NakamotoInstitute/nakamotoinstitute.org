@@ -1,0 +1,14 @@
+[
+    {
+        "thread_id": 242,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Version 0.3.15",
+        "url": "https://bitcointalk.org/index.php?topic=1780.msg21897#msg21897",
+        "date": "November 13, 2010, 11:26:40 PM",
+        "content": "<div class=\"post\">Version 0.3.15 is now available.<br/><br/>Changes:<br/>- paytxfee switch is now per KB, so it adds the correct fee for large transactions<br/>- sending avoids using coins with less than 6 confirmations if it can<br/>- BitcoinMiner processes transactions in priority order based on age of dependencies<br/>- make sure generation doesn't start before block 74000 downloaded<br/>- bugfixes by Dean Gores<br/>- testnet, keypoololdest and paytxfee added to getinfo<br/></div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

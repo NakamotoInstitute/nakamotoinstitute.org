@@ -1,0 +1,14 @@
+[
+    {
+        "thread_id": 236,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Version 0.3.14",
+        "url": "https://bitcointalk.org/index.php?topic=1528.msg17924#msg17924",
+        "date": "October 21, 2010, 04:39:27 PM",
+        "content": "<div class=\"post\">Version 0.3.14 is now available<br/><a href=\"http://sourceforge.net/projects/bitcoin/files/Bitcoin/bitcoin-0.3.14/\">http://sourceforge.net/projects/bitcoin/files/Bitcoin/bitcoin-0.3.14/</a><br/><br/>Changes:<br/>- Key pool feature for safer wallet backup<br/>Gavin Andresen:<br/>- TEST network mode with switch -testnet<br/>- Option to use SSL for JSON-RPC connections on unix/osx<br/>- validateaddress RPC command<br/>eurekafag:<br/>- Russian translation<br/></div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

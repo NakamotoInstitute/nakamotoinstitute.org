@@ -6,29 +6,27 @@
     <a href="{{url_for('posts')}}">All Posts</a>
     <br>
     {% if prev != None %}
-  	<a href="{{url_for('postview',postnum=post['id']-1,source=post['source'])}}">Previous</a> |
+  	<a href="{{url_for('postview',postnum=prev['satoshi_id'],source=prev.thread['source'])}}">Previous</a> |
   	{% endif %}
-  	<a href="{{url_for('forumposts', source=post['source'])}}">Back</a>
+  	<a href="{{url_for('forumposts', source=post.thread['source'])}}">Back</a>
   	{% if next != None %}
-  	| <a href="{{url_for('postview',postnum=post['id']+1,source=post['source'])}}">Next</a>
+  	| <a href="{{url_for('postview',postnum=next['satoshi_id'],source=next.thread['source'])}}">Next</a>
   	{% endif %}</div>
 	<span id="CONTENT"><div><h3>{{post['name']}}</h3>
-  {% if post['source'] == "bitcointalk" %}
-  <h4>Bitcointalk</h4>
-  {% elif post['source'] == "p2pfoundation" %}
-  <h4>P2P Foundation</h4>
-  {% endif %}
+  <h5>{{post.thread.source_to_string()}}</h5>
+	<h4>{{post.subject}}</h4>
 	<h5><em>{{post['date']}} UTC</em> - <a href="{{post['url']}}">Original Post</a></h5>
   {{post['text']|safe}}</div></span>
 	<br><br>
-	<div class="text-center">{% if prev != None %}
-  	<a href="{{url_for('postview',postnum=post['id']-1,source=post['source'])}}">Previous</a> |
+	<div class="text-center">
+		{% if prev != None %}
+  	<a href="{{url_for('postview',postnum=prev['satoshi_id'],source=prev.thread['source'])}}">Previous</a> |
   	{% endif %}
-  	<a href="{{url_for('posts')}}">Back</a>
+  	<a href="{{url_for('forumposts', source=post.thread['source'])}}">Back</a>
   	{% if next != None %}
-  	| <a href="{{url_for('postview',postnum=post['id']+1,source=post['source'])}}">Next</a>
-        {% endif %}
-    <br>
+  	| <a href="{{url_for('postview',postnum=next['satoshi_id'],source=next.thread['source'])}}">Next</a>
+    {% endif %}
+		<br>
     <a href="{{url_for('posts')}}">All Posts</a>
   </div>
 </div>

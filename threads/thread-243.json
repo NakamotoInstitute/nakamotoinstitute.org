@@ -1,0 +1,74 @@
+[
+    {
+        "thread_id": 243,
+        "name": "ByteCoin",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=490",
+        "subject": "Need OP_BLOCKNUMBER to allow \"time\" limited transactions",
+        "url": "https://bitcointalk.org/index.php?topic=1786.msg21998#msg21998",
+        "date": "November 15, 2010, 01:17:03 AM",
+        "content": "<div class=\"post\">At the moment, if you make a payment to someone but they've wiped their wallet then the coins are irretrievably lost.<br/>Similarly, if the network is flooded with 0.01 fee transactions and you make an urgent payment but forget to include a higher fee then you can't reissue that payment backed by the same coins but with a fee.<br/><br/>If you could cause the current block number to be pushed on the stack and do some maths with it then you could implement a payment that must be spent by the recipient before a certain block number is reached or else the script would allow it to be spent again by the sender for example. <br/><br/>I suspect that this would be a very popular transaction mechanic.<br/><br/>ByteCoin</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 243,
+        "name": "theymos",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=35",
+        "subject": "Re: Need OP_BLOCKNUMBER to allow \"time\" limited transactions",
+        "url": "https://bitcointalk.org/index.php?topic=1786.msg22003#msg22003",
+        "date": "November 15, 2010, 01:49:59 AM",
+        "content": "<div class=\"post\">That would be useful, but it's probably best to keep scripts stateless. Since different nodes might have different ideas about what the current blockcount is, a situation could develop where half the network considers a transaction valid and half considers it invalid. This is not good for the network.</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 243,
+        "name": "ByteCoin",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=490",
+        "subject": "Re: Need OP_BLOCKNUMBER to allow \"time\" limited transactions",
+        "url": "https://bitcointalk.org/index.php?topic=1786.msg22014#msg22014",
+        "date": "November 15, 2010, 02:47:30 AM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=1786.msg22003#msg22003\">Quote from: theymos on November 15, 2010, 01:49:59 AM</a></div><div class=\"quote\">That would be useful, but it's probably best to keep scripts stateless. Since different nodes might have different ideas about what the current blockcount is, a situation could develop where half the network considers a transaction valid and half considers it invalid. This is not good for the network.<br/></div><br/>Hmm.. If clients disagree about what the current block count is then they already disagree about whether certain transactions are valid or not and therefore the problem you mention exists already without my proposal.<br/>Please go into more detail about why this is not good for the network.<br/><br/>ByteCoin</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 243,
+        "name": "theymos",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=35",
+        "subject": "Re: Need OP_BLOCKNUMBER to allow \"time\" limited transactions",
+        "url": "https://bitcointalk.org/index.php?topic=1786.msg22021#msg22021",
+        "date": "November 15, 2010, 03:53:09 AM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=1786.msg22014#msg22014\">Quote from: ByteCoin on November 15, 2010, 02:47:30 AM</a></div><div class=\"quote\">Hmm.. If clients disagree about what the current block count is then they already disagree about whether certain transactions are valid or not and therefore the problem you mention exists already without my proposal.<br/>Please go into more detail about why this is not good for the network.<br/></div><br/>You may be right about this. Bitcoin's segmentation-fixing mechanisms would seem to keep everything in order.<br/><br/>A similar feature seems to already be planned. Every transaction has the currently-unused \"nLockTime\" field, and this bit of code exists for the UI (the text would appear in the same place as \"x confirmations\"):<br/><div class=\"codeheader\">Code:</div><div class=\"code\">\u00a0 \u00a0 if (!wtx.IsFinal())<br/>\u00a0 \u00a0 {<br/>\u00a0 \u00a0 \u00a0 \u00a0 if (wtx.nLockTime &lt; 500000000)<br/>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 return strprintf(_(\"Open for %d blocks\"), nBestHeight - wtx.nLockTime);<br/>\u00a0 \u00a0 \u00a0 \u00a0 else<br/>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 return strprintf(_(\"Open until %s\"), DateTimeStr(wtx.nLockTime).c_str());<br/>\u00a0 \u00a0 }</div><br/>Sounds very much like what you're thinking of.</div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 243,
+        "name": "theymos",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=35",
+        "subject": "Re: Need OP_BLOCKNUMBER to allow \"time\" limited transactions",
+        "url": "https://bitcointalk.org/index.php?topic=1786.msg22024#msg22024",
+        "date": "November 15, 2010, 04:16:16 AM",
+        "content": "<div class=\"post\">After investigating some more, I found that nLockTime requires in-memory transaction replacement to be re-activated for it to be useful.<br/><br/><div class=\"codeheader\">Code:</div><div class=\"code\">if (mapNextTx.count(outpoint))<br/>\u00a0 \u00a0 \u00a0 \u00a0 {<br/>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 // Disable replacement feature for now<br/>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 return false;<br/><br/>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 // Allow replacing with a newer version of the same transaction<br/>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 if (i != 0)<br/>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 return false;<br/>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 ptxOld = mapNextTx[outpoint].ptx;<br/>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 if (!IsNewerThan(*ptxOld))<br/>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 return false;<br/>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 for (int i = 0; i &lt; vin.size(); i++)<br/>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 {<br/>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 COutPoint outpoint = vin[i].prevout;<br/>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 if (!mapNextTx.count(outpoint) || mapNextTx[outpoint].ptx != ptxOld)<br/>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 return false;<br/>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 }<br/>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 break;</div></div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 243,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Need OP_BLOCKNUMBER to allow \"time\" limited transactions",
+        "url": "https://bitcointalk.org/index.php?topic=1786.msg22119#msg22119",
+        "date": "November 15, 2010, 06:37:44 PM",
+        "content": "<div class=\"post\">We can't safely do OP_BLOCKNUMBER. \u00a0In the event of a block chain reorg after a segmentation, transactions need to be able to get into the chain in a later block. \u00a0The OP_BLOCKNUMBER transaction and all its dependants would become invalid. \u00a0This wouldn't be fair to later owners of the coins who weren't involved in the time limited transaction.<br/><br/>nTimeLock does the reverse. \u00a0It's an open transaction that can be replaced with new versions until the deadline. \u00a0It can't be recorded until it locks. \u00a0The highest version when the deadline hits gets recorded. \u00a0It could be used, for example, to write an escrow transaction that will automatically permanently lock and go through unless it is revoked before the deadline. \u00a0The feature isn't enabled or used yet, but the support is there so it could be implemented later.<br/></div>",
+        "post_num": 6,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

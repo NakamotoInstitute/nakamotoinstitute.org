@@ -1,0 +1,26 @@
+[
+    {
+        "thread_id": 116,
+        "name": "The Madhatter",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=14",
+        "subject": "BUG Report: Rounding glitch",
+        "url": "https://bitcointalk.org/index.php?topic=432.msg3748#msg3748",
+        "date": "July 17, 2010, 02:10:03 PM",
+        "content": "<div class=\"post\">Check this out...<br/><br/>I just installed 0.3.1 on two different machines and moved one bitpenny (0.01):<br/><br/><b>-= Before the transfer =-</b><br/><br/>[bitcoind@box1 ~]$ ~/bin/bitcoind getinfo<br/>{<br/>\u00a0\u00a0 \u00a0\"balance\" : 1.150000000000,<br/>\u00a0\u00a0 \u00a0\"blocks\" : 68717,<br/>\u00a0\u00a0 \u00a0\"connections\" : 6,<br/>\u00a0\u00a0 \u00a0\"proxy\" : \"\",<br/>\u00a0\u00a0 \u00a0\"generate\" : false,<br/>\u00a0\u00a0 \u00a0\"genproclimit\" : -1,<br/>\u00a0\u00a0 \u00a0\"difficulty\" : 181.5432893640505<br/>}<br/><br/>[bitcoind@box2 ~]$ ~/bin/bitcoind getinfo<br/>{<br/>\u00a0\u00a0 \u00a0\"balance\" : 0.000000000000,<br/>\u00a0\u00a0 \u00a0\"blocks\" : 68717,<br/>\u00a0\u00a0 \u00a0\"connections\" : 22,<br/>\u00a0\u00a0 \u00a0\"proxy\" : \"\",<br/>\u00a0\u00a0 \u00a0\"generate\" : false,<br/>\u00a0\u00a0 \u00a0\"genproclimit\" : -1,<br/>\u00a0\u00a0 \u00a0\"difficulty\" : 181.5432893640505<br/>}<br/><br/><b>-= AFTER the transfer =-</b><br/><br/>[bitcoind@box1 ~]$ ~/bin/bitcoind getinfo<br/>{<br/>\u00a0\u00a0 \u00a0\"balance\" : <b>1.139999999999</b>,<br/>\u00a0\u00a0 \u00a0\"blocks\" : 68717,<br/>\u00a0\u00a0 \u00a0\"connections\" : 10,<br/>\u00a0\u00a0 \u00a0\"proxy\" : \"\",<br/>\u00a0\u00a0 \u00a0\"generate\" : false,<br/>\u00a0\u00a0 \u00a0\"genproclimit\" : -1,<br/>\u00a0\u00a0 \u00a0\"difficulty\" : 181.5432893640505<br/>}<br/><br/>[bitcoind@box2 ~]$ ~/bin/bitcoind getinfo<br/>{<br/>\u00a0\u00a0 \u00a0\"balance\" : <b>0.010000000000</b>,<br/>\u00a0\u00a0 \u00a0\"blocks\" : 68717,<br/>\u00a0\u00a0 \u00a0\"connections\" : 20,<br/>\u00a0\u00a0 \u00a0\"proxy\" : \"\",<br/>\u00a0\u00a0 \u00a0\"generate\" : false,<br/>\u00a0\u00a0 \u00a0\"genproclimit\" : -1,<br/>\u00a0\u00a0 \u00a0\"difficulty\" : 181.5432893640505<br/>}<br/><br/>I personally think it is a display problem, but I can't be sure.. strange, no?<br/><br/>Both machines are running FreeBSD 7.2/amd64.<br/></div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 116,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: BUG Report: Rounding glitch",
+        "url": "https://bitcointalk.org/index.php?topic=432.msg3769#msg3769",
+        "date": "July 17, 2010, 04:06:12 PM",
+        "content": "<div class=\"post\">It must be a rounding error when getinfo converts to floating point to return the JSON-RPC result.\u00a0 The only place where it uses floating point to represent money is returning a value in JSON-RPC.<br/><br/>1.139999999999 is longer than bitcoin can internally represent.<br/><br/>internally, it could only be:<br/>1.13999999 or<br/>1.14000000<br/><br/>1.139999999999 is much much closer to 1.14000000 than 1.13999999, so it must be 1.14000000.<br/><br/>The code is this:<br/>(double)GetBalance() / (double)COIN.<br/><br/>(I can't think of an easy way to fix it at the moment)</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

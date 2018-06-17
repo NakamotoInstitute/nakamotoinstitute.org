@@ -1,0 +1,110 @@
+[
+    {
+        "thread_id": 196,
+        "name": "mizerydearia",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=338",
+        "subject": "Convert Bitcoin to GTK: Yes?  No?  wx is better?",
+        "url": "https://bitcointalk.org/index.php?topic=867.msg10216#msg10216",
+        "date": "August 19, 2010, 07:23:53 AM",
+        "content": "<div class=\"post\">Who is skilled enough to convert official Linux Bitcoin client to use GTK instead of wx?<br/><br/>Is this development worthy or desirable enough to pursue or is wx acceptable?<br/><br/>q: let me get this straight. You're asking if someone will put up a bounty for a conversion that you want? (bounty idea dismissed due to seeming weird/strange to some)<br/>a: I don't want it. Is GTK better than QT or anytihng else? \u00a0I'm not familiar.<br/><br/>\"I would like it if Bitcoin used GTK instead of wxWidgets but I won't pretend that I have a clue about how hard or easy that change might be\"<br/><br/>someone: wx seems to work now as far as I can tell<br/>someone else: wx is an utter nightmare<br/><br/>q: why \"convert\" Satoshi's front end? Why not just build a new one that uses the rpc calls?<br/><br/>there actually isn't much that needs to be done to make bitcoind's methods useful enough to do the same things the GUI does:<br/>in particular:<br/>\u00a0* list sending addresses<br/>\u00a0* show unaccepted blocks in listtransactions (maybe)<br/>\u00a0* select a range of transactions to show</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 196,
+        "name": "sirius",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=4",
+        "subject": "Re: Convert Bitcoin to GTK (BTC Bounty Anyone?)",
+        "url": "https://bitcointalk.org/index.php?topic=867.msg10218#msg10218",
+        "date": "August 19, 2010, 07:30:57 AM",
+        "content": "<div class=\"post\">Hmm... would it run on Maemo with the same code then? Any other advantages?</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 196,
+        "name": "theymos",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=35",
+        "subject": "Re: Convert Bitcoin to GTK: Yes?  No?  wx is better?",
+        "url": "https://bitcointalk.org/index.php?topic=867.msg10219#msg10219",
+        "date": "August 19, 2010, 07:34:48 AM",
+        "content": "<div class=\"post\">bitcoind's commands should be expanded and binaries for it should be released so that third-party UI development can be made easier. Like Tor.</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 196,
+        "name": "mizerydearia",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=338",
+        "subject": "Re: Convert Bitcoin to GTK: Yes?  No?  wx is better?",
+        "url": "https://bitcointalk.org/index.php?topic=867.msg10220#msg10220",
+        "date": "August 19, 2010, 07:39:06 AM",
+        "content": "<div class=\"post\">It would be interesting for bitcoin to be designed in a way that an ncurses ui could be designed.<br/>\u00a0\"you certainly can build a ncurses front end to the deamon now. Its not a problem for bitcoin\"</div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 196,
+        "name": "Olipro",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=526",
+        "subject": "Re: Convert Bitcoin to GTK: Yes?  No?  wx is better?",
+        "url": "https://bitcointalk.org/index.php?topic=867.msg10223#msg10223",
+        "date": "August 19, 2010, 07:51:13 AM",
+        "content": "<div class=\"post\">Yeah, my opinion on this is that the GUI should be separated from the underlying code. BUT... there's no need to throw the baby out with the bathwater and I firmly believe that the current wxWidgets interface should be maintained until such a time as something superior comes along.<br/><br/>My personal feeling is that whilst separate daemon/GUI binaries can work, it also tends to be messy, I'd be far more in favour of having the core code and then separate source that you compile with it according to your target OS, that way everything is still a single binary and can be integrated as idealistically as possible.<br/><br/>To put this in practice, imagine 3 SVN trunks; the first is BitCoin core, the other two are LINGUI and WINGUI - the latter two being dependant on code from the first.</div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 196,
+        "name": "BioMike",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=464",
+        "subject": "Re: Convert Bitcoin to GTK: Yes?  No?  wx is better?",
+        "url": "https://bitcointalk.org/index.php?topic=867.msg10226#msg10226",
+        "date": "August 19, 2010, 08:05:18 AM",
+        "content": "<div class=\"post\">WxWidgets is not really a problem. My problem is the version that is used (2.9), which is considered unstable by many distro packagers (although the WxWidgets devs say it isn't). On the other side, as far as I know WxWidgets uses gtk under Linux for drawing the whole stuff and makes it for the bitcoins devs easy to make things cross platform.<br/><br/>I think I would go with theymos in that the gui and daemon should be separated (or put the whole protocols and stuff in a library with bindings for different languages for that matter). I've already gotten my own \"client\" running (see <a href=\"http://bitcointalk.org/index.php?topic=851.0\">http://bitcointalk.org/index.php?topic=851.0</a>) with the daemon (who doesn't need WxWidgets anymore) and it works very nicely. So, in my case I don't have any dependency on WxWidgets any more.</div>",
+        "post_num": 6,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 196,
+        "name": "lfm",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=466",
+        "subject": "Re: Convert Bitcoin to GTK: Yes?  No?  wx is better?",
+        "url": "https://bitcointalk.org/index.php?topic=867.msg10228#msg10228",
+        "date": "August 19, 2010, 10:28:19 AM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=867.msg10226#msg10226\">Quote from: BioMike on August 19, 2010, 08:05:18 AM</a></div><div class=\"quote\">I think I would go with theymos in that the gui and daemon should be separated (or put the whole protocols and stuff in a library with bindings for different languages for that matter). I've already gotten my own \"client\" running (see <a href=\"http://bitcointalk.org/index.php?topic=851.0\">http://bitcointalk.org/index.php?topic=851.0</a>) with the daemon ...</div><br/>So what do you mean the gui and the daemon should be separated? They already are. You can build the separate daemon. Do you need a separate build of only the gui? I can't see why.</div>",
+        "post_num": 7,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 196,
+        "name": "teknohog",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=575",
+        "subject": "Re: Convert Bitcoin to GTK: Yes?  No?  wx is better?",
+        "url": "https://bitcointalk.org/index.php?topic=867.msg10250#msg10250",
+        "date": "August 19, 2010, 02:59:59 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=867.msg10228#msg10228\">Quote from: lfm on August 19, 2010, 10:28:19 AM</a></div><div class=\"quote\">So what do you mean the gui and the daemon should be separated? They already are. You can build the separate daemon. Do you need a separate build of only the gui? I can't see why.<br/></div><br/>Bitcoin is a P2P network, so the program should be running all the time. However, I don't need to be looking at a GUI all that time, so it makes sense to have a daemon. Currently, you have to stop the daemon when you want to start the GUI version, which breaks the network for a moment.<br/><br/>Some P2P applications like aMule do this properly. The daemon is running all the time, and when you want to interact with it, you start the separate GUI, which connects to the daemon. Most importantly, the GUI can run on a different machine from the daemon.<br/><br/>Such a setup would be great for mobile Bitcoin usage. You run the daemon on your \"server\" machine, and you connect to it with a GUI on your mobile device. I think this has been already discussed in a different context, but the same mechanism applies.<br/><br/>However, you can already use the JSON-RPC mechanism to build a separate GUI, so there is no immediate need to change the mainline client. </div>",
+        "post_num": 8,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 196,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Convert Bitcoin to GTK: Yes?  No?  wx is better?",
+        "url": "https://bitcointalk.org/index.php?topic=867.msg10272#msg10272",
+        "date": "August 19, 2010, 06:44:36 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=867.msg10226#msg10226\">Quote from: BioMike on August 19, 2010, 08:05:18 AM</a></div><div class=\"quote\">WxWidgets is not really a problem. My problem is the version that is used (2.9), which is considered unstable by many distro packagers (although the WxWidgets devs say it isn't). On the other side, as far as I know WxWidgets uses gtk under Linux for drawing the whole stuff and makes it for the bitcoins devs easy to make things cross platform.<br/></div>wxWidgets 2.9 is their first UTF-8 version.\u00a0 We are UTF-8 on all platforms including Windows.<br/><br/>The distro packages of 2.8 are UTF-16, so they just trip people up.\u00a0 People had endless build problems with 2.8 and its wxString UTF-16/ANSI conditional build options until we standardized on 2.9.\u00a0 Also, to use 2.8, we were using ANSI, which was just a temporary stopgap until wxWidgets supported UTF-8.<br/><br/>This is a problem that will solve itself.\u00a0 With time, 2.9 will become a more mainline release.</div>",
+        "post_num": 9,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

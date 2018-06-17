@@ -1,0 +1,50 @@
+[
+    {
+        "thread_id": 35,
+        "name": "m0mchil",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=33",
+        "subject": "generation slowed down dramatically",
+        "url": "https://bitcointalk.org/index.php?topic=61.msg428#msg428",
+        "date": "February 22, 2010, 01:22:37 PM",
+        "content": "<div class=\"post\">Am I the only one seeing minuscule generation lately? It was decent until around 20:00 GMT February 21st, but after that my machine (4 core I7) produced only one block for entire &gt;12 hours. And there isn't even a clue for new difficulty hike in the debug log.<br/><br/>Here are my possible scenarios:<br/><br/>1. Some big BC bot came along.<br/><br/>2. Someone is trying some kind of DoSing the system.<br/><br/>3. Someone built a bitcoin mod with GPGPU (CUDA or sorts) support.<br/><br/>4. Some kind of growth problem (i.g. we reached first of a kind network size and there is problem with that).<br/><br/>Ideas?</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 35,
+        "name": "Sabunir",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=28",
+        "subject": "Re: generation slowed down dramatically",
+        "url": "https://bitcointalk.org/index.php?topic=61.msg429#msg429",
+        "date": "February 22, 2010, 02:39:40 PM",
+        "content": "<div class=\"post\">Ideas? I would want a copy of this hypothetical CUDA-enabled client. However, I doubt that GPGPU acceleration would affect generation speeds very much. Only the most expensive of modern graphics cards have a clock speed of over 1 Ghz, after all.</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 35,
+        "name": "NewLibertyStandard",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=26",
+        "subject": "Re: generation slowed down dramatically",
+        "url": "https://bitcointalk.org/index.php?topic=61.msg431#msg431",
+        "date": "February 22, 2010, 07:33:53 PM",
+        "content": "<div class=\"post\">No problem here. Other clients just happened to generate those blocks before you.</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 35,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: generation slowed down dramatically",
+        "url": "https://bitcointalk.org/index.php?topic=61.msg433#msg433",
+        "date": "February 23, 2010, 12:49:56 AM",
+        "content": "<div class=\"post\">Just a random streak of bad luck.\u00a0 It looks steady to me.<br/><br/>Competition doesn't have an effect until the next automatic retarget adjustment, and we haven't reached the next one yet.<br/><br/>The adjustments are every 2016 blocks.\u00a0 To calculate our progress towards the next one, divide the block total by 2016.\u00a0 The fractional part is how far we are to the next one.\u00a0 <br/><br/>My back-of-the-envelope projection: 42032 blocks/2016 = 20.85 = 85% of the way.\u00a0 About 1.5 days to go until the next one.\u00a0 That'll only be about 10 days since the last one, the target is 14 days, so 14/10 = 1.4 = around 40% difficulty increase.<br/></div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

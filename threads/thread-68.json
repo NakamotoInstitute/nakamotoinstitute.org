@@ -1,0 +1,74 @@
+[
+    {
+        "thread_id": 68,
+        "name": "lachesis",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=237",
+        "subject": "Dealing with SHA-256 Collisions",
+        "url": "https://bitcointalk.org/index.php?topic=191.msg1555#msg1555",
+        "date": "June 14, 2010, 01:01:11 AM",
+        "content": "<div class=\"post\">A mathematician friend of mine pointed out that there are very few if any hash protocols that have survived for 10 years or more. What would Bitcoin's solution be if SHA256 were to be cracked tomorrow?</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 68,
+        "name": "theymos",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=35",
+        "subject": "Re: Dealing with SHA-256 Collisions",
+        "url": "https://bitcointalk.org/index.php?topic=191.msg1559#msg1559",
+        "date": "June 14, 2010, 02:34:57 AM",
+        "content": "<div class=\"post\">I don't think that broken cryptography could ever be the end of BitCoin if it becomes popular. Since the block chain can be forked without losing too much data, modifications to all aspects of BitCoin are possible. If SHA-256 was broken, a new version of BitCoin would be released that would switch to a stronger hash function for addresses. Changing the hash function used for blocks might not be necessary if the weakness still required some non-trivial amount of computation. The new version would ignore SHA-256 blocks after a certain point in time, but most old transactions would survive.<br/><br/>In case the weakening of SHA-256 is gradual instead of sudden (much more likely, IMO), BitCoin could stretch the process of switching to a different hash algorithm over a long time. First accept SHA-512 (or whatever) in addition to SHA-256, then use SHA-512 by default, and finally stop accepting SHA-256 for new blocks.</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 68,
+        "name": "Xunie",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=10",
+        "subject": "Re: Dealing with SHA-256 Collisions",
+        "url": "https://bitcointalk.org/index.php?topic=191.msg1566#msg1566",
+        "date": "June 14, 2010, 04:30:41 AM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=191.msg1559#msg1559\">Quote from: theymos on June 14, 2010, 02:34:57 AM</a></div><div class=\"quote\">In case the weakening of SHA-256 is gradual instead of sudden (much more likely, IMO), BitCoin could stretch the process of switching to a different hash algorithm over a long time. First accept SHA-512 (or whatever) in addition to SHA-256, then use SHA-512 by default, and finally stop accepting SHA-256 for new blocks.<br/></div><br/>Wouldn't the users lose their coins?</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 68,
+        "name": "lachesis",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=237",
+        "subject": "Re: Dealing with SHA-256 Collisions",
+        "url": "https://bitcointalk.org/index.php?topic=191.msg1567#msg1567",
+        "date": "June 14, 2010, 04:31:14 AM",
+        "content": "<div class=\"post\">So it's possible to switch \"on the fly\" to a new hash function? Wouldn't all the old transactions then be compromised (because they could be trivially recomputed)?<br/><br/>SHA-256 has already been weakened by a factor of 16 (according to my friend. I can't find documentation on that, but I trust him). That's 16 out of 2^256, so not a huge deal, but still.</div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 68,
+        "name": "theymos",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=35",
+        "subject": "Re: Dealing with SHA-256 Collisions",
+        "url": "https://bitcointalk.org/index.php?topic=191.msg1568#msg1568",
+        "date": "June 14, 2010, 06:09:58 AM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\">Quote from: lachesis</div><div class=\"quote\">Wouldn't all the old transactions then be compromised (because they could be trivially recomputed)?</div><br/>After thinking about this some more, I've realized that breaking the hash function used in blocks would be more disastrous than I had originally thought. But it should still be possible to change the hash function \"on-the-fly\" by including secure hashes of each real block in the old chain with the new BitCoin release. Some mechanism of doing this (hopefully more elegant) would also have to be used for a gradual hash change.<br/><br/><div class=\"quoteheader\">Quote from: Xunie</div><div class=\"quote\">Wouldn't the users lose their coins?</div><br/>Everyone's balance is publicly available, so it should always be possible to preserve this data, no matter what changes are made to BitCoin.</div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 68,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Dealing with SHA-256 Collisions",
+        "url": "https://bitcointalk.org/index.php?topic=191.msg1585#msg1585",
+        "date": "June 14, 2010, 08:39:50 PM",
+        "content": "<div class=\"post\">SHA-256 is very strong.\u00a0 It's not like the incremental step from MD5 to SHA1.\u00a0 It can last several decades unless there's some massive breakthrough attack.<br/><br/>If SHA-256 became completely broken, I think we could come to some agreement about what the honest block chain was before the trouble started, lock that in and continue from there with a new hash function.<br/><br/>If the hash breakdown came gradually, we could transition to a new hash in an orderly way.\u00a0 The software would be programmed to start using a new hash after a certain block number.\u00a0 Everyone would have to upgrade by that time.\u00a0 The software could save the new hash of all the old blocks to make sure a different block with the same old hash can't be used. </div>",
+        "post_num": 6,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

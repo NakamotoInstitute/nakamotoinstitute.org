@@ -8,7 +8,7 @@
 from sni import app, db, cache, pages
 from models import Post, Email, Doc, ResearchDoc, Author, Format, Category,\
                    BlogPost, Skeptic, DonationAddress, Episode, Quote,\
-                   QuoteCategory
+                   QuoteCategory, Thread
 from flask import render_template, json, url_for, redirect, request, Response,\
                   send_from_directory
 from sqlalchemy import asc, desc
@@ -102,7 +102,16 @@ def emailview(source, emnum):
 @cache.cached(timeout=900)
 @app.route('/posts/', subdomain="satoshi", methods=["GET"])
 def posts():
-    posts = Post.query.order_by(Post.date).all()
+    view_query = request.args.get('view')
+    if view_query == 'threads':
+        threads = Thread.query.all()
+        p2pfoundation_threads = [threads[0]]
+        bitcointalk_threads = threads[1:]
+        app.logger.info(str(request.remote_addr) + ', threads')
+        return render_template(
+            "threads.html", threads=threads, p2pfoundation_threads=p2pfoundation_threads,
+            bitcointalk_threads=bitcointalk_threads, source=None)
+    posts = Post.query.filter(Post.satoshi_id.isnot(None)).order_by(Post.date).all()
     app.logger.info(str(request.remote_addr) + ', posts')
     return render_template("posts.html", posts=posts, source=None)
 
@@ -110,7 +119,9 @@ def posts():
 @cache.cached(timeout=900)
 @app.route('/posts/<string:source>/', subdomain="satoshi", methods=["GET"])
 def forumposts(source):
-    posts = Post.query.filter_by(source=source).order_by(Post.date).all()
+    posts = Post.query.filter(Post.satoshi_id.isnot(None)) \
+                       .join(Post.thread, aliased=True) \
+                       .filter_by(source=source).order_by(Post.date).all()
     if len(posts) != 0:
         app.logger.info(str(request.remote_addr) + ', posts, ' + source)
         return render_template("posts.html", posts=posts, source=source)
@@ -121,15 +132,46 @@ def forumposts(source):
 @cache.cached(timeout=900)
 @app.route('/posts/<string:source>/<int:postnum>/', subdomain="satoshi", methods=["GET"])
 def postview(postnum, source):
-    post = Post.query.filter_by(id=postnum, source=source).first()
-    prev = Post.query.filter_by(id=postnum-1, source=source).first()
-    next = Post.query.filter_by(id=postnum+1, source=source).first()
+    post = Post.query.filter_by(satoshi_id=postnum).join(Post.thread, aliased=True).filter_by(source=source).first()
+    prev = Post.query.filter_by(satoshi_id=postnum-1).join(Post.thread, aliased=True).first()
+    next = Post.query.filter_by(satoshi_id=postnum+1).join(Post.thread, aliased=True).first()
     if post is not None:
         app.logger.info(str(request.remote_addr) + ', posts ,' + source + ', ' + str(postnum))
         return render_template("postview.html", post=post, prev=prev,
                                next=next)
     else:
         return redirect('posts')
+
+
+@cache.cached(timeout=900)
+@app.route('/posts/<string:source>/threads/', subdomain="satoshi", methods=["GET"])
+def threads(source):
+    threads = Thread.query.filter_by(source=source).order_by(Thread.id).all()
+    if len(threads) != 0:
+        app.logger.info(str(request.remote_addr) + ', threads ,' + source)
+        return render_template("threads.html", threads=threads, source=source)
+    else:
+        return redirect(url_for('posts', view='threads'))
+
+
+@cache.cached(timeout=900)
+@app.route('/posts/<string:source>/threads/<int:thread_id>/', subdomain="satoshi", methods=["GET"])
+def threadview(source, thread_id):
+    view_query = request.args.get('view')
+    posts = Post.query.filter_by(thread_id=thread_id)
+    if len(posts.all()) > 0:
+        thread = posts[0].thread
+        if thread.source != source:
+            return redirect(url_for('threadview', source=thread.source, thread_id=thread_id))
+    else:
+        return redirect(url_for('posts', view='threads'))
+    if view_query == 'satoshi':
+        posts = posts.filter(Post.satoshi_id.isnot(None))
+    posts = posts.all()
+    prev = Thread.query.filter_by(id=thread_id-1).first()
+    next = Thread.query.filter_by(id=thread_id+1).first()
+    app.logger.info(str(request.remote_addr) + ', threads ,' + source + ', ' + str(thread_id))
+    return render_template("threadview.html", posts=posts, prev=prev, next=next)
 
 
 @cache.cached(timeout=900)

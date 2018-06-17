@@ -1,0 +1,62 @@
+[
+    {
+        "thread_id": 101,
+        "name": "devnull791101",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=419",
+        "subject": "stopped prodicing coins",
+        "url": "https://bitcointalk.org/index.php?topic=343.msg2785#msg2785",
+        "date": "July 14, 2010, 09:12:39 AM",
+        "content": "<div class=\"post\">Hi<br/><br/>im using the 64bit linux version. i installed two days ago and produced three lots of 50 coins. yesterday i produced 50 coins within two hours of the last lots completing and have had no others even starting since then. the last lots completed 8:51 am yesterday and its now 10am the next morning and ive got no transactions working at all. have i been snubbed for completing the last two too quickly? if so how long does this last?</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 101,
+        "name": "joechip",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=397",
+        "subject": "Re: stopped prodicing coins",
+        "url": "https://bitcointalk.org/index.php?topic=343.msg2798#msg2798",
+        "date": "July 14, 2010, 11:19:24 AM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=343.msg2785#msg2785\">Quote from: devnull791101 on July 14, 2010, 09:12:39 AM</a></div><div class=\"quote\">Hi<br/><br/>im using the 64bit linux version. i installed two days ago and produced three lots of 50 coins. yesterday i produced 50 coins within two hours of the last lots completing and have had no others even starting since then. the last lots completed 8:51 am yesterday and its now 10am the next morning and ive got no transactions working at all. have i been snubbed for completing the last two too quickly? if so how long does this last?<br/></div><br/>I've been generating for nearly two days straight and have not produced a single coin.\u00a0 It seems distribution is completely random.<br/></div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 101,
+        "name": "SmokeTooMuch",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=13",
+        "subject": "Re: stopped prodicing coins",
+        "url": "https://bitcointalk.org/index.php?topic=343.msg2803#msg2803",
+        "date": "July 14, 2010, 11:34:52 AM",
+        "content": "<div class=\"post\">The production rate depends on your hashs per second and the probability of 1 hash to be the right one.<br/><br/>so basically khash/s * luck factor = generaterd bitcoins.</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 101,
+        "name": "joechip",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=397",
+        "subject": "Re: stopped prodicing coins",
+        "url": "https://bitcointalk.org/index.php?topic=343.msg2805#msg2805",
+        "date": "July 14, 2010, 11:42:26 AM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=343.msg2803#msg2803\">Quote from: SmokeTooMuch on July 14, 2010, 11:34:52 AM</a></div><div class=\"quote\">The production rate depends on your hashs per second and the probability of 1 hash to be the right one.<br/><br/>so basically khash/s * luck factor = generaterd bitcoins.<br/></div><br/>Given the current jump in 'difficulty' at around 875 khash/s I should be generating a block every 2.8 days.<br/><br/>So, no complaints.... yet.\u00a0 \u00a0<img alt=\"Grin\" border=\"0\" src=\"https://bitcointalk.org/Smileys/default/grin.gif\"/><br/><br/><a href=\"http://www.alloscomp.com/bitcoin/calculator.php\">http://www.alloscomp.com/bitcoin/calculator.php</a></div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 101,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: stopped prodicing coins",
+        "url": "https://bitcointalk.org/index.php?topic=343.msg2880#msg2880",
+        "date": "July 14, 2010, 05:04:02 PM",
+        "content": "<div class=\"post\">Thanks for making that calculator.<br/><br/>The difficulty doubled a day or two ago, plus it's just random and you can have surprisingly long dry spells.</div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

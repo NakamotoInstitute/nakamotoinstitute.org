@@ -1,0 +1,122 @@
+[
+    {
+        "thread_id": 99,
+        "name": "fernly",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=414",
+        "subject": "wiki registration email?",
+        "url": "https://bitcointalk.org/index.php?topic=338.msg2743#msg2743",
+        "date": "July 14, 2010, 04:09:21 AM",
+        "content": "<div class=\"post\">I tried to register with the wiki, it said \"The user has been created and the password sent by email,\" but no email has arrived. Then I went thru the registration process again, same username and email, and it didn't object to the duplication (nor sent an email).</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 99,
+        "name": "sirius",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=4",
+        "subject": "Re: wiki registration email?",
+        "url": "https://bitcointalk.org/index.php?topic=338.msg2748#msg2748",
+        "date": "July 14, 2010, 04:36:08 AM",
+        "content": "<div class=\"post\">Have you checked your spam folder?</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 99,
+        "name": "RHorning",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=344",
+        "subject": "Re: wiki registration email?",
+        "url": "https://bitcointalk.org/index.php?topic=338.msg5418#msg5418",
+        "date": "July 24, 2010, 01:11:58 AM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=338.msg2748#msg2748\">Quote from: sirius-m on July 14, 2010, 04:36:08 AM</a></div><div class=\"quote\">Have you checked your spam folder?<br/></div><br/>I'm having the same problems.<br/><br/>Yes, I checked my spam folder.\u00a0 I've even created a second account in case the first one I made a mistake on with the e-mail address.\u00a0 Neither are working.</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 99,
+        "name": "FreeMoney",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=381",
+        "subject": "Re: wiki registration email?",
+        "url": "https://bitcointalk.org/index.php?topic=338.msg5422#msg5422",
+        "date": "July 24, 2010, 01:23:16 AM",
+        "content": "<div class=\"post\">I eventually got the email, very slow though.</div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 99,
+        "name": "RHorning",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=344",
+        "subject": "Re: wiki registration email?",
+        "url": "https://bitcointalk.org/index.php?topic=338.msg5664#msg5664",
+        "date": "July 25, 2010, 08:52:04 AM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=338.msg5422#msg5422\">Quote from: FreeMoney on July 24, 2010, 01:23:16 AM</a></div><div class=\"quote\">I eventually got the email, very slow though.<br/></div><br/>How long is that supposed to take?\u00a0 Weeks?\u00a0 Months?</div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 99,
+        "name": "FreeMoney",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=381",
+        "subject": "Re: wiki registration email?",
+        "url": "https://bitcointalk.org/index.php?topic=338.msg5677#msg5677",
+        "date": "July 25, 2010, 10:57:55 AM",
+        "content": "<div class=\"post\">12 hours? Not sure exactly because I went to bed and when I next checked it was there.</div>",
+        "post_num": 6,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 99,
+        "name": "RHorning",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=344",
+        "subject": "Re: wiki registration email?",
+        "url": "https://bitcointalk.org/index.php?topic=338.msg5689#msg5689",
+        "date": "July 25, 2010, 02:02:17 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=338.msg5677#msg5677\">Quote from: FreeMoney on July 25, 2010, 10:57:55 AM</a></div><div class=\"quote\">12 hours? Not sure exactly because I went to bed and when I next checked it was there.<br/></div><br/>It has now been more than four days for me.... this time with three different accounts that I've used to apply.\u00a0 I'm going to try another mail ISP just in case the host for bitcoins has somehow been blocked by the main ISP I'm using.</div>",
+        "post_num": 7,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 99,
+        "name": "RHorning",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=344",
+        "subject": "Re: wiki registration email?",
+        "url": "https://bitcointalk.org/index.php?topic=338.msg5849#msg5849",
+        "date": "July 26, 2010, 12:56:01 PM",
+        "content": "<div class=\"post\">As a follow-up, switching to a completely different ISP (I just created a new \"throw away\" e-mail account to see what was going on here) I was able to get the registration to be completed.\u00a0 Still, bitcoins.org is on some kind of e-mail blackhole list or at least the ISP that hosts the e-mail server for registration is on one of those lists.</div>",
+        "post_num": 8,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 99,
+        "name": "theymos",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=35",
+        "subject": "Re: wiki registration email?",
+        "url": "https://bitcointalk.org/index.php?topic=338.msg5884#msg5884",
+        "date": "July 26, 2010, 03:30:54 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=338.msg5849#msg5849\">Quote from: RHorning on July 26, 2010, 12:56:01 PM</a></div><div class=\"quote\">As a follow-up, switching to a completely different ISP (I just created a new \"throw away\" e-mail account to see what was going on here) I was able to get the registration to be completed.\u00a0 Still, bitcoins.org is on some kind of e-mail blackhole list or at least the ISP that hosts the e-mail server for registration is on one of those lists.<br/></div><br/>Looks like bitcoin.org is <a href=\"http://www.spamhaus.org/pbl/query/PBL340779\">listed</a> on the PBL.</div>",
+        "post_num": 9,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 99,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: wiki registration email?",
+        "url": "https://bitcointalk.org/index.php?topic=338.msg6307#msg6307",
+        "date": "July 29, 2010, 02:10:46 AM",
+        "content": "<div class=\"post\">WTF?\u00a0 How did we get on that?\u00a0 AFAIK, the only e-mail is if you tell the forum to do notifications, and I guess the wiki registration.\u00a0 I'd consider turning off the forum notification e-mails, I don't know why we have that. </div>",
+        "post_num": 10,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

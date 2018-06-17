@@ -1,0 +1,86 @@
+[
+    {
+        "thread_id": 177,
+        "name": "throughput",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=574",
+        "subject": "Where is the separate discussion devoted to possible Bitcoin weaknesses.",
+        "url": "https://bitcointalk.org/index.php?topic=788.msg8757#msg8757",
+        "date": "August 11, 2010, 03:45:42 PM",
+        "content": "<div class=\"post\">Just to be able to ask \"What if ...?\" and have all ideas collected in one place.<br/><br/>For example.<br/><br/>It seems, that a generating node does not need to receive all that transactions at all.<br/>The only data it needs is the previous block hash.<br/>Right?<br/><br/>Next.<br/>It is possible to connect to almost every publicly accessible node, right?<br/>We can collect their addresses and establish connections to almost all of them.<br/>And send them all the data we want.<br/>Like fake (or not so) transactions in huge volumes.<br/>What if it is possible to throttle their generating capability by forcing them to receive and verify<br/>very large amounts of (possibly invalid) transactions (or perhaps another trash)?<br/><br/>If that is true, then we can lower the difficulty, right?<br/>Just do this for a long period of time.<br/>When it lowers to an acceptable for our supercomputer (botnet) value,<br/>we may connect it to the network, but not directly.<br/>Connect it via special node, that does forward messages in a special way, to filter the trash data we are still flooding.<br/>So, the supercomputer will receive the blocks and will participate in generation, the others will be flooded and will get<br/>only a small portion of generated BTCs.<br/><br/>Then, if we are not interested in generated BTCs, we may start generating a blockchain fork.<br/>Immediately after the difficulty drops, we start to generate alternative version of blockchain in a isolated environment.<br/>Since difficulty does not change immediately, we can try to outperform the rest of the network, while they are chewing our<br/>trash data. Fast enough we present everybody with the longest chain, but then the difficulty raises back.<br/>By doing this\u00a0 it is possible to wipe our previous spend transactions, if they are made after the blockchain fork.<br/>So, is it possible that we recover them and get back unspent transactions? And spend them again?<br/>How will previous transactions incorporate into the new blockchain if they were \"respent\" in that manner?<br/><br/>And then it can be repeated.<br/>If I'm wrong, just say: \"you are wrong\".<br/>But you may also give me a hint why.</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 177,
+        "name": "Gavin Andresen",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=224",
+        "subject": "Re: Where is the separate discussion devoted to possible Bitcoin weaknesses.",
+        "url": "https://bitcointalk.org/index.php?topic=788.msg8761#msg8761",
+        "date": "August 11, 2010, 04:10:56 PM",
+        "content": "<div class=\"post\">Bitcoin's p2p network is subject to various kinds of denial of service attacks.<br/><br/>There, I said it.<br/><br/>Do you have constructive suggestions for how to fix it, or are you the kind of person who just enjoys breaking things because you can?<br/><br/>Ideas that have been bouncing around my head that may or may not work:<br/><br/>+ have clients tell each other how many transactions per unit of time they're willing to accept.\u00a0 If a client sends you more (within some fuzz factor), drop it.\u00a0 Compile in a default that's based on estimated number of transactions for a typical user and estimate on the number of current users.<br/><br/>+ require some proof-of-work as part of the client-to-client connection process (helps prevent 'Sybil' attacks).<br/><br/>This is an active area of research; see, for example: <a href=\"http://scholar.google.com/scholar?q=ddos+attacks+by+subverting+membership\">http://scholar.google.com/scholar?q=ddos+attacks+by+subverting+membership</a></div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 177,
+        "name": "Red",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=525",
+        "subject": "Re: Where is the separate discussion devoted to possible Bitcoin weaknesses.",
+        "url": "https://bitcointalk.org/index.php?topic=788.msg8762#msg8762",
+        "date": "August 11, 2010, 04:17:11 PM",
+        "content": "<div class=\"post\">Knightmb said increasing connections and bandwidth had little effect on khash speed.<br/><br/>Game over. Try again?<br/></div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 177,
+        "name": "Gavin Andresen",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=224",
+        "subject": "Re: Where is the separate discussion devoted to possible Bitcoin weaknesses.",
+        "url": "https://bitcointalk.org/index.php?topic=788.msg8765#msg8765",
+        "date": "August 11, 2010, 04:40:07 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=788.msg8764#msg8764\">Quote from: davidonpda on August 11, 2010, 04:19:43 PM</a></div><div class=\"quote\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=788.msg8761#msg8761\">Quote from: gavinandresen on August 11, 2010, 04:10:56 PM</a></div><div class=\"quote\">+ require some proof-of-work as part of the client-to-client connection process (helps prevent 'Sybil' attacks).<br/></div><br/>Isn't that a brilliant idea? Like hashcash? <br/><br/>You would be required to hash the string of the transaction, with a proof of work, that would say, take 5 seconds to calculate on a modern PC. Checking the POW just like in bitcoin would be easy and very quick for the receiving machines, but would stop a flood attack of random data without the attacker having limitless CPU power. <br/></div><br/>I was actually thinking of a minute or three of proof-of-work on initial connection, not when submitting a transaction, but requiring some proof-of-work for every transaction submitted into the network IS a very interesting idea!\u00a0 Should be straightforward to implement, too (add a nonce and either a full or partial hash to the transaction)...<br/></div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 177,
+        "name": "lachesis",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=237",
+        "subject": "Re: Where is the separate discussion devoted to possible Bitcoin weaknesses.",
+        "url": "https://bitcointalk.org/index.php?topic=788.msg8776#msg8776",
+        "date": "August 11, 2010, 06:07:12 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=788.msg8765#msg8765\">Quote from: gavinandresen on August 11, 2010, 04:40:07 PM</a></div><div class=\"quote\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=788.msg8764#msg8764\">Quote from: davidonpda on August 11, 2010, 04:19:43 PM</a></div><div class=\"quote\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=788.msg8761#msg8761\">Quote from: gavinandresen on August 11, 2010, 04:10:56 PM</a></div><div class=\"quote\">+ require some proof-of-work as part of the client-to-client connection process (helps prevent 'Sybil' attacks).<br/></div><br/>Isn't that a brilliant idea? Like hashcash? <br/><br/>You would be required to hash the string of the transaction, with a proof of work, that would say, take 5 seconds to calculate on a modern PC. Checking the POW just like in bitcoin would be easy and very quick for the receiving machines, but would stop a flood attack of random data without the attacker having limitless CPU power. <br/></div><br/>I was actually thinking of a minute or three of proof-of-work on initial connection, not when submitting a transaction, but requiring some proof-of-work for every transaction submitted into the network IS a very interesting idea!\u00a0 Should be straightforward to implement, too (add a nonce and either a full or partial hash to the transaction)...<br/><br/></div>Unfortunately, as simple to implement as it is, in order to be effective it would have to be a breaking change.<br/><br/>Older clients won't send the proof of work because they don't know to. So an attacker could just claim that their client version was, say, 308 - too old for the protection. So your node would have to choose between dropping support for older clients and being secure against this sort of attack or continuing to support older clients and being insecure against this.<br/><br/>I'm not saying we shouldn't do it, but I think we ought to get a list of important breaking changes together before we make one. Users really don't like being told that they have to upgrade every other day.<br/><br/>Also, I don't know how the message relay protocol works. I guess each node could just relay that Tx with the same nonce and hash that the first one gave it. There's no danger of \"reusing\" a hash since a duplicate transaction is by nature invalid (although it could still harass the nodes).<br/><br/>Some detection and blacklisting code would be useful too. If an IP sends you a certain number of invalid transactions within a certain time, disconnect and refuse to accept connections from them for a certain period of time. If they do it again upon reconnecting, block them for longer... etc.</div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 177,
+        "name": "Red",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=525",
+        "subject": "Re: Where is the separate discussion devoted to possible Bitcoin weaknesses.",
+        "url": "https://bitcointalk.org/index.php?topic=788.msg8782#msg8782",
+        "date": "August 11, 2010, 06:46:25 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=788.msg8761#msg8761\">Quote from: gavinandresen on August 11, 2010, 04:10:56 PM</a></div><div class=\"quote\">+ have clients tell each other how many transactions per unit of time they're willing to accept.\u00a0 If a client sends you more (within some fuzz factor), drop it.\u00a0 Compile in a default that's based on estimated number of transactions for a typical user and estimate on the number of current users.<br/><br/>+ require some proof-of-work as part of the client-to-client connection process (helps prevent 'Sybil' attacks).<br/></div><br/>I agree that eventually the latter will have to be done. It's for the reasons you pointed out that my DHT solution has flaws. Curiously it's all a side effect of not being able to implement the former constraint.<br/><br/>If you allow validating nodes to arbitrarily ignore transactions you risk breaking the key requirement that all validating nodes receive and record all transactions. The current presumption is that all validators try to receive and record all transactions. If a transaction is non-uniformly delayed and missed by the node who completes the block, it is presumed that statistically the transaction would be recorded in a subsequent block. However, that requires continually rebroadcasting the transaction to assure it gets through.<br/><br/>Let's say throughput was right and there was an advantage to a node saying, \"I'm only willing to take 5 transactions a 10 block period.\" in that case it still generates blocks that can't be rejected by others, but an increasing number of unrecorded transactions backlogs with each minimal block. This causes additional retransmissions exacerbating the bandwidth problem.<br/><br/>In effect you rely on unrestricted nodes to compensate for a problem caused by restricted nodes. So if the restricted nodes are causing problems and doing less validation and recording work than other nodes, why should they be rewarded equally for generating blocks? That seems counter productive.<br/><br/>It would be better to say, \"record all transactions or you can't be a validator!\" Less validators means less bandwidth usage overall. It also becomes easier to spot abusers.<br/><br/>----ps----<br/><br/>An zero knowledge proof-of-completeness would be for competing validators to reject a proof-of-work block if it didn't contain 99% of the known outstanding transactions.<br/>\u00a0</div>",
+        "post_num": 6,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 177,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Where is the separate discussion devoted to possible Bitcoin weaknesses.",
+        "url": "https://bitcointalk.org/index.php?topic=788.msg8804#msg8804",
+        "date": "August 11, 2010, 10:40:25 PM",
+        "content": "<div class=\"post\">It doesn't have to be such a breaking change.\u00a0 New nodes could accept old transactions for a long time until most nodes have already upgraded before starting to refuse transactions without PoW.\u00a0 Or, they could always accept old transactions, but only a limited number per time period.<br/><br/>I've thought about PoW on transactions many times, but usually I end up thinking a 0.01 transaction fee is essentially similar and better.\u00a0 0.01 is basically a proof of work, but not wasted.\u00a0 But if the problem is validating loads of transactions, then PoW could be checked faster.<br/><br/>A more general umbrella partial solution would be to implement the idea where an unlikely dropoff in blocks received is detected.\u00a0 Then an attacker would still need a substantial portion of the network's power to benefit from a DoS attack.<br/><br/><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=788.msg8761#msg8761\">Quote from: gavinandresen on August 11, 2010, 04:10:56 PM</a></div><div class=\"quote\">Bitcoin's p2p network is subject to various kinds of denial of service attacks.<br/><br/>There, I said it.<br/></div>+1<br/><br/>Any demonstration tests at this point would only show what we already know, and divert dev time from strengthening the system to operational fire fighting.<br/></div>",
+        "post_num": 7,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

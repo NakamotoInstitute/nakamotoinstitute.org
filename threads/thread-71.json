@@ -1,0 +1,86 @@
+[
+    {
+        "thread_id": 71,
+        "name": "virtualcoin",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=267",
+        "subject": "Dying bitcoins",
+        "url": "https://bitcointalk.org/index.php?topic=198.msg1638#msg1638",
+        "date": "June 21, 2010, 01:22:35 PM",
+        "content": "<div class=\"post\">Hello,<br/><br/>if somebody's loosing his wallet (e.g. due to disk crash) he's not able to get back his coins, is he?<br/>So every time a person looses coins, they're lost forever? So the bitcoin network will slowly shrink over time? (Because there will always be people who loose wallets!)<br/><br/>TIA<br/>virtualcoin<br/><br/>edit: Forgot to mention the coins of users that are try out bitcoin and then never use it again.</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 71,
+        "name": "laszlo",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=143",
+        "subject": "Re: Dying bitcoins",
+        "url": "https://bitcointalk.org/index.php?topic=198.msg1640#msg1640",
+        "date": "June 21, 2010, 01:54:29 PM",
+        "content": "<div class=\"post\">They are lost for good.\u00a0 Think of it like someone losing their wallet in the ocean.\u00a0 It seems like it would be a problem but it's really not that significant.\u00a0 People lose their gold jewelry all the time but it doesn't make much of a difference to the value of gold.<br/><br/>I wonder though, is there a point where the difficulty of generating a new coinbase is so high that it would make more sense to try to recover keys for lost coins or steal other people's coins instead?\u00a0 The difficulty of that is really high so for now it makes a lot more sense to generate but I just wonder what the real figures are.. would that ever become more productive?\u00a0 Maybe Satoshi can address this..</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 71,
+        "name": "virtualcoin",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=267",
+        "subject": "Re: Dying bitcoins",
+        "url": "https://bitcointalk.org/index.php?topic=198.msg1641#msg1641",
+        "date": "June 21, 2010, 02:33:31 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=198.msg1640#msg1640\">Quote from: laszlo on June 21, 2010, 01:54:29 PM</a></div><div class=\"quote\">They are lost for good. \u00a0Think of it like someone losing their wallet in the ocean. \u00a0It seems like it would be a problem but it's really not that significant. \u00a0People lose their gold jewelry all the time but it doesn't make much of a difference to the value of gold.</div><br/>But loosing 1 bitcoin in the ocean of a maximum of 21.000.000 coins seems significant to me, so not comparable to gold and jewelry.<br/>So only 21000 losses of 1000 coins can happen. That's not much!</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 71,
+        "name": "Gavin Andresen",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=224",
+        "subject": "Re: Dying bitcoins",
+        "url": "https://bitcointalk.org/index.php?topic=198.msg1642#msg1642",
+        "date": "June 21, 2010, 03:01:44 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=198.msg1641#msg1641\">Quote from: virtualcoin on June 21, 2010, 02:33:31 PM</a></div><div class=\"quote\">But loosing 1 bitcoin in the ocean of a maximum of 21.000.000 coins seems significant to me, so not comparable to gold and jewelry.<br/>So only 21000 losses of 1000 coins can happen. That's not much!<br/></div>But remember that each bitcoins can be divided into 100 million pieces, as needed.<br/><br/>And the more valuable they become, the more careful people will be not to lose them.<br/></div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 71,
+        "name": "virtualcoin",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=267",
+        "subject": "Re: Dying bitcoins",
+        "url": "https://bitcointalk.org/index.php?topic=198.msg1644#msg1644",
+        "date": "June 21, 2010, 03:54:43 PM",
+        "content": "<div class=\"post\">So how am I able to transfer less than BC0.01 without getting the message \"error in amount\" from the bitcoin program?</div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 71,
+        "name": "laszlo",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=143",
+        "subject": "Re: Dying bitcoins",
+        "url": "https://bitcointalk.org/index.php?topic=198.msg1645#msg1645",
+        "date": "June 21, 2010, 04:33:00 PM",
+        "content": "<div class=\"post\">The current user interface doesn't support smaller than 0.01 increments but it is possible to support it in a future revision.</div>",
+        "post_num": 6,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 71,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Dying bitcoins",
+        "url": "https://bitcointalk.org/index.php?topic=198.msg1647#msg1647",
+        "date": "June 21, 2010, 05:48:26 PM",
+        "content": "<div class=\"post\">Lost coins only make everyone else's coins worth slightly more.\u00a0 Think of it as a donation to everyone.<br/><br/><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=198.msg1640#msg1640\">Quote from: laszlo on June 21, 2010, 01:54:29 PM</a></div><div class=\"quote\">I wonder though, is there a point where the difficulty of generating a new coinbase is so high that it would make more sense to try to recover keys for lost coins or steal other people's coins instead?\u00a0 The difficulty of that is really high so for now it makes a lot more sense to generate but I just wonder what the real figures are.. would that ever become more productive?\u00a0 Maybe Satoshi can address this..<br/></div>Computers have to get about 2^200 times faster before that starts to be a problem.\u00a0 Someone with lots of compute power could make more money by generating than by trying to steal.</div>",
+        "post_num": 7,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

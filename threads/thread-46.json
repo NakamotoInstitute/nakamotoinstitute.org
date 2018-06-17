@@ -1,0 +1,38 @@
+[
+    {
+        "thread_id": 46,
+        "name": "SheriffWoody",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=55",
+        "subject": "removing bitcoin addresses",
+        "url": "https://bitcointalk.org/index.php?topic=101.msg873#msg873",
+        "date": "April 08, 2010, 02:56:25 PM",
+        "content": "<div class=\"post\">Is there any way to remove bitcoin addresses that you have generated for yourself? What about if you have received payments to those addresses? Are they needed to show ownership for the coins after they have been transferred?</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 46,
+        "name": "sirius",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=4",
+        "subject": "Re: removing bitcoin addresses",
+        "url": "https://bitcointalk.org/index.php?topic=101.msg888#msg888",
+        "date": "April 10, 2010, 06:12:31 AM",
+        "content": "<div class=\"post\">A question to Satoshi: have you tested the program with thousands of own addresses in the wallet? If I make a new address for each automated transaction, it's going to be a big amount. Or maybe I could reuse the addresses, given a big enough pool.</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 46,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: removing bitcoin addresses",
+        "url": "https://bitcointalk.org/index.php?topic=101.msg1134#msg1134",
+        "date": "May 16, 2010, 11:34:40 PM",
+        "content": "<div class=\"post\">SheriffWoody:<br/>Bitcoin addresses you generate are kept forever. \u00a0A bitcoin address must be kept to show ownership of anything sent to it. \u00a0If you were able to delete a bitcoin address and someone sent to it, the money would be lost. \u00a0They're only about 500 bytes.<br/><br/>sirius-m:<br/>Thousands of own addresses should not be any problem at all.\u00a0 If you've generated 50000 BTC, then you already have 1000 own addresses, one for each 50 generated.\u00a0 Those are hidden, they're not shown in the UI.<br/><br/>It would be a good idea to add a little code that keeps giving the same address to the same IP. \u00a0Here's what I did in C++ to keep giving the same key (aka bitcoin address) until they use it:<br/><br/>\u00a0\u00a0 \u00a0// Keep giving the same key to the same ip until they use it<br/>\u00a0\u00a0 \u00a0if (!mapReuseKey.count(pfrom-&gt;addr.ip))<br/>\u00a0\u00a0 \u00a0 \u00a0 \u00a0mapReuseKey[pfrom-&gt;addr.ip] = GenerateNewKey();<br/>\u00a0\u00a0 \u00a0<br/>\u00a0\u00a0 \u00a0...sends the key mapReuseKey[pfrom-&gt;addr.ip]<br/><br/>...later...<br/><br/>\u00a0\u00a0 \u00a0// Received something with this key<br/>\u00a0\u00a0 \u00a0mapReuseKey.erase(pfrom-&gt;addr.ip);<br/><br/>If it's not convenient to know when you've received, just clear the cached keys every 20 minutes.<br/><br/>I want to add a parameter to getnewaddress for number of days to expire if nothing is received with the address.<br/></div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

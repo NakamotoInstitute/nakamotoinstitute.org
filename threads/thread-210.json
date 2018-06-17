@@ -1,0 +1,38 @@
+[
+    {
+        "thread_id": 210,
+        "name": "Gavin Andresen",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=224",
+        "subject": "HTTP status codes from the JSON-RPC api",
+        "url": "https://bitcointalk.org/index.php?topic=969.msg11884#msg11884",
+        "date": "September 01, 2010, 08:28:15 PM",
+        "content": "<div class=\"post\">I just submitted a patch to Satoshi to make bitcoin follow the <a href=\"http://groups.google.com/group/json-rpc/web/json-rpc-over-http\">JSON RPC over HTTP spec,</a> and to use the standardized error codes from the JSON-RPC 1.1/2.0 specs.<br/><br/>If you talk directly to bitcoin via JSON-RPC calls, you might need to change your code to recognize the new HTTP status codes and the new format for the 'error' member of the JSON response. \u00a0For example:<br/><br/>BEFORE, send {\"id\":\"123\", \"method\": \"nosuchmethod\", \"params\": [] } , get response:<br/><div class=\"codeheader\">Code:</div><div class=\"code\">HTTP/1.1 500 Internal Server Error<br/>...<br/><br/>{\"result\":null,\"error\":\"Method not found.\",\"id\":\"123\"}</div>AFTER:<div class=\"codeheader\">Code:</div><div class=\"code\">HTTP/1.1 404 <br/>...<br/><br/>{\"result\":null,\"error\":{\"code\":-32601,\"message\":\"Method not found\"},\"id\":\"123\"}<br/></div><br/>I also removed the broken 'Batch' support, to simplify the code. \u00a0I had JSON-RPC-2.0 batch support working properly, but backed those changes out because JSON-RPC 2.0 is way too cutting-edge for bitcoin to support right now (none of the JSON-RPC glue libraries support it yet, and the spec is still changing a bit).<br/></div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 210,
+        "name": "Gavin Andresen",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=224",
+        "subject": "Re: HTTP status codes from the JSON-RPC api",
+        "url": "https://bitcointalk.org/index.php?topic=969.msg12125#msg12125",
+        "date": "September 06, 2010, 07:18:04 PM",
+        "content": "<div class=\"post\">Speak now about this change or forever hold your peace...\u00a0 Satoshi will be including this functionality in the next version of Bitcoin (0.3.12).<br/><br/>If you use the JSON-RPC api, you should check your error-condition-handling code; again, the changes are that the error member will be an Object (with 'code' and 'message' fields) instead of a String, and the HTTP status code may be 404 instead of 500 for method-not-found.<br/></div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 210,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: HTTP status codes from the JSON-RPC api",
+        "url": "https://bitcointalk.org/index.php?topic=969.msg12130#msg12130",
+        "date": "September 06, 2010, 09:21:21 PM",
+        "content": "<div class=\"post\">This is in SVN rev 147.<br/><br/>This is more standard, and although json-rpc 1.0 didn't specify the format of error objects, it did specify that they would be <i>objects</i> not strings or other values, so we needed to change this to be correct.\u00a0 The code/message members have become standard in later json-rpc specs.<br/><br/>If you have code that checks the error and expects a string, you'll need to change it.\u00a0 When there is an error, the error member is now an object not a string.<br/><br/>Also in SVN rev 147:<br/>- The command line json-rpc returns the error code as its exit code.\u00a0 Exit codes can only be 0-255 on unix, so it's abs(code)%256.<br/>- The \"backupwallet &lt;destination&gt;\" command that was discussed in another thread.\u00a0 It locks the wallet and copies it, so you can be sure you get a correct copy.<br/></div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

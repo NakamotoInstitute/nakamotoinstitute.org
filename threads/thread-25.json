@@ -1,0 +1,26 @@
+[
+    {
+        "thread_id": 25,
+        "name": "BlueSky",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=34",
+        "subject": "Simple to implement feature requests",
+        "url": "https://bitcointalk.org/index.php?topic=46.msg281#msg281",
+        "date": "February 08, 2010, 09:00:02 AM",
+        "content": "<div class=\"post\">First request:<br/>Optional connect to IP dialog.<br/><br/>Explanation:<br/>BitCoin connects to the network(of peers) by getting one of a number of IP's from IRC at present, once connected to a single peer other connections can be made, so if only 1 IP on the list are available then you can connect to the network &amp; make connections to other IP's(this is my assumption, please correct me if I am wrong).<br/><br/>This is somewhat similar to how Tor works, when you first start it up it attempts to connect to a public list of IP's(public bridge nodes). This list being public is accessible to organisations that want to prevent the use of Tor(for example the Chinese or Iranian government). And so as a consequence these IP's are blocked, and you cannot connect from these countries.<br/><br/>However there is the option to connect to the ip of a bridge (if you know one, a friend in a free country running Tor in bridge mode perhaps) and so this circumvents regime blocking attempts and is very robust.<br/><br/>Adding this feature will allow Bitcoin to function despite regime efforts to prevent it.</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 25,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Simple to implement feature requests",
+        "url": "https://bitcointalk.org/index.php?topic=46.msg284#msg284",
+        "date": "February 08, 2010, 04:37:24 PM",
+        "content": "<div class=\"post\">There are command line options:<br/><br/>bitcoin -addnode=1.2.3.4\u00a0 \u00a0 to tell bitcoin about a node to connect to<br/>bitcoin -connect=1.2.3.4\u00a0 \u00a0 connect only to the specified node(s)<br/><br/>You can use more than one of these, for instance<br/>bitcoin -connect=(first to try) -connect=(next to try) ...<br/><br/>You can specify non-routable IPs with -connect like 192.168.x.x, so if you had a server farm and you wanted one server to connect to the world and the rest to connect to the one server, you could do that.<br/><br/>In particular, -addnode is needed if you're always going to connect through TOR, since the IRC server blocks all the TOR exit nodes.\u00a0 To connect through TOR, you could use:<br/><br/>bitcoin -proxy=127.0.0.1:9050 -addnode=212.159.72.216</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

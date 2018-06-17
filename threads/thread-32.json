@@ -1,0 +1,26 @@
+[
+    {
+        "thread_id": 32,
+        "name": "sirius",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=4",
+        "subject": "Number of connections",
+        "url": "https://bitcointalk.org/index.php?topic=58.msg403#msg403",
+        "date": "February 19, 2010, 12:12:56 AM",
+        "content": "<div class=\"post\">Is there some hard-coded maximum limit for the amount of connections? I see 45 connections atm. It's been growing nicely in the last months. Just can't get that many coins anymore...</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 32,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Number of connections",
+        "url": "https://bitcointalk.org/index.php?topic=58.msg413#msg413",
+        "date": "February 21, 2010, 03:43:48 AM",
+        "content": "<div class=\"post\">Nodes stop trying to initiate connections once they have 15.\u00a0 If you can accept incoming connections, then you can get well above that from nodes connecting to you, otherwise you max out at 15.<br/><br/>I don't know if there's any reason to have 15 connections.\u00a0 Maybe it should be 10.<br/><br/>Since nodes that can only connect out are probably at or near 15 most of the time now, you should level off to an equilibrium.\u00a0 45 suggests a ratio of 3 out-only nodes to every 1 in-accepting node.<br/><br/>The number of connections won't be a good gauge of the size of the network any more.\u00a0 Someone should periodically IRC to the bitcoin channel on chat.freenode.net and count the number of users.\u00a0 That gives you the total count of network nodes (except TOR nodes).<br/><br/>Block generation is again running ahead of pace.\u00a0 We're in for another big step up in difficulty at the next adjustment in about 5 days.</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

@@ -1,0 +1,74 @@
+[
+    {
+        "thread_id": 180,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Version 0.3.9 rc1, please test",
+        "url": "https://bitcointalk.org/index.php?topic=806.msg9046#msg9046",
+        "date": "August 13, 2010, 05:40:00 PM",
+        "content": "<div class=\"post\">Here's a test build if you'd like to help test before 0.3.9 is released.<br/>(or if you'd rather get upgrading out of the way now instead of waiting)<br/><br/>Downloads: \u00a0(binaries only)<br/><a href=\"http://www.bitcoin.org/download/bitcoin-0.3.9.rc1-win32.zip\">http://www.bitcoin.org/download/bitcoin-0.3.9.rc1-win32.zip</a><br/>(<a href=\"http://www.bitcoin.org/download/bitcoin-0.3.9.rc1-linux.tar.gz\">http://www.bitcoin.org/download/bitcoin-0.3.9.rc1-linux.tar.gz</a>)<br/><br/>SHA1 a36ea00cce27b4b083755df73a3d1e5e5729884e bitcoin-0.3.9.rc1-win32.zip<br/>SHA1 bbb333b0ea57302740ad1bb9948520d00f884f9d bitcoin-0.3.9.rc1-linux.tar.gz<br/><br/>Edit:<br/>Linux please test rc2 instead.\u00a0 This adds a -4way switch for tcatm's 4-way SSE2.\u00a0 This will only be for Linux:<br/><a href=\"http://www.bitcoin.org/download/bitcoin-0.3.9.rc2-linux.tar.gz\">http://www.bitcoin.org/download/bitcoin-0.3.9.rc2-linux.tar.gz</a><br/><br/>SHA1 47d9998f7d15fe81234a5c89a542da9d0664df40 bitcoin-0.3.9.rc2-linux.tar.gz<br/><br/>Please report back your results<br/><a href=\"http://bitcointalk.org/index.php?topic=820\">http://bitcointalk.org/index.php?topic=820</a></div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 180,
+        "name": "lachesis",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=237",
+        "subject": "Re: Version 0.3.9 rc1, please test",
+        "url": "https://bitcointalk.org/index.php?topic=806.msg9100#msg9100",
+        "date": "August 13, 2010, 08:49:14 PM",
+        "content": "<div class=\"post\">What's new? Do we have an official changelog yet?</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 180,
+        "name": "Tilka",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=687",
+        "subject": "Re: Version 0.3.9 rc1, please test",
+        "url": "https://bitcointalk.org/index.php?topic=806.msg9439#msg9439",
+        "date": "August 15, 2010, 02:11:20 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=806.msg9100#msg9100\">Quote from: lachesis on August 13, 2010, 08:49:14 PM</a></div><div class=\"quote\">What's new? Do we have an official changelog yet?<br/></div>Unfortunately we don't have an official changelog yet (except for the SVN revision descriptions).<br/><br/>Here is my unofficial changelog:<br/><ul style=\"margin-top: 0; margin-bottom: 0;\"><li>fix: makefile.osx</li><li>change: enable SSE2 in 64 bit builds</li><li>change: connection rules<br/>- always make 8 outbound connections<br/>- only one connection per a.b.*.* range</li><li>add: switch \"-maxconnections=#\" (discussed <a href=\"http://bitcointalk.org/index.php?topic=766.0\">here</a>)</li><li>change: JSON-RPC API prints floats with 8 decimal places</li><li>change: \"bitcoind help &lt;command&gt;\" instead of \"bitcoind &lt;command&gt; -?\" (based on a <a href=\"http://bitcointalk.org/index.php?topic=637.0\">patch by jgarzik</a>)</li><li>add: JSON-RPC \"gethashespersec\" (based on a <a href=\"http://bitcointalk.org/index.php?topic=609.0\">patch by lachesis</a>)</li><li>add: \"version\" and \"hashespersec\" fields in JSON-RPC \"getinfo\"</li><li>fix: \"-datadir=&lt;path&gt;\" with relative path (bug described <a href=\"http://bitcointalk.org/index.php?topic=601.0\">here</a>)</li><li>change: autostart disabled by default except on Windows (requested <a href=\"http://bitcointalk.org/index.php?topic=720.0\">here</a>)</li><li>fix: occasional \"vector iterator not dereferencable\" assertion when compiled with msvc</li><li>fix: readlink compile warning on Linux build</li><li>fix: BSD detection (bug described <a href=\"http://bitcointalk.org/index.php?topic=790.0\">here</a>)</li><li>add: \"-paytxfee=#\" switch (explained <a href=\"http://bitcointalk.org/index.php?topic=795.0\">here</a>)</li></ul><br/>Please tell me if you know of any other forum threads discussing the bugs/changes so I can add them to the list.</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 180,
+        "name": "lachesis",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=237",
+        "subject": "Re: Version 0.3.9 rc1, please test",
+        "url": "https://bitcointalk.org/index.php?topic=806.msg9464#msg9464",
+        "date": "August 15, 2010, 05:32:57 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=806.msg9439#msg9439\">Quote from: Tilka on August 15, 2010, 02:11:20 PM</a></div><div class=\"quote\">Unfortunately we don't have an official changelog yet (except for the SVN revision descriptions).<br/>...<br/>Please tell me if you know of any other forum threads discussing the bugs/changes so I can add them to the list.<br/></div>That's a <i>great</i> changelog. I sent you \u0e3f2 for your trouble. <img alt=\"Smiley\" border=\"0\" src=\"https://bitcointalk.org/Smileys/default/smiley.gif\"/></div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 180,
+        "name": "jgarzik",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=541",
+        "subject": "Re: Version 0.3.9 rc1, please test",
+        "url": "https://bitcointalk.org/index.php?topic=806.msg9467#msg9467",
+        "date": "August 15, 2010, 05:46:27 PM",
+        "content": "<div class=\"post\">Don't wanna take credit where it's not due <img alt=\"Smiley\" border=\"0\" src=\"https://bitcointalk.org/Smileys/default/smiley.gif\"/><br/><br/>the hashes/sec patch was from lachesis, and the extended-help might have been based on my idea, but the code was somewhat different.<br/></div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 180,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Version 0.3.9 rc1, please test",
+        "url": "https://bitcointalk.org/index.php?topic=806.msg9475#msg9475",
+        "date": "August 15, 2010, 06:11:41 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=806.msg9467#msg9467\">Quote from: jgarzik on August 15, 2010, 05:46:27 PM</a></div><div class=\"quote\">the extended-help might have been based on my idea, but the code was somewhat different.<br/></div>The idea was the main part.\u00a0 When you posted your patch, I realized it should have been done that way instead of \"-?\".\u00a0 I always had reservations about \"-?\" because it intrudes on the possible parameter values, and the help response is based on the version of the caller instead of the server.</div>",
+        "post_num": 6,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

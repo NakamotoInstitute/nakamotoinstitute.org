@@ -1,0 +1,74 @@
+[
+    {
+        "thread_id": 132,
+        "name": "lfm",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=466",
+        "subject": "a simple traffic load test run",
+        "url": "https://bitcointalk.org/index.php?topic=567.msg5685#msg5685",
+        "date": "July 25, 2010, 01:02:28 PM",
+        "content": "<div class=\"post\">I have seen some speculation about scalability and denial of service by spam transactions in the IRC channel so I thought it would be a good idea to try a test.<br/><br/>I set up a stupid little bitcoind script on a couple of my linux machines to send 1000 tiny transaction to a third machine as quickly as they would run.<br/><br/>I asked on IRC for any obvious reasons why I shouldn't do it and got one supporting response thinking it was a good idea to try and one reserved response saying I should ask here first. I brashly decided to go ahead with it.<br/><br/>The scripts just printed a countdown of the number of remaining steps in the loop and the output of the bitcoind sendtoaddress command, normally just \"sent\".<br/><br/>They both started out quickly till there was something like 600 transactions submitted then both senders started to slow down perceptibly. One was quite a bit faster than the other, 3 or 4 times faster, due I think to a faster CPU. I thought at first it was the clients throtteling me to save the net from overload or something but that was just speculation. We later figured maybe it was the databases getting a bit slow on my old disks.<br/><br/>Then one of my machines suddenly seemed to speed up. But it wasn't really. It was an error, the bitcoind daemon had died. A little bit of investigation found the .bitcoin drive was full so you can't fault the program for giving up there! grin<br/><br/>The other machine was grinding pretty slow by then down to maybe 5 sec per transaction or so just judging by eye. It eventually finished after about 50 minutes. no errors at all.<br/><br/>The machine that crashed after I gave it some more disk space started right back up and showed it had only sent 424 transactions so there is an initial benchmark then - 1424 transactions in 50 minutes. It should be easy to get more.<br/><br/>I think the main thing slowing them down was the .bitcoin/database directory. They seemed to get a lot of data written to them some 184MB on the one that ran outa disk space and 1341 MB on the one that did the full 1000 transactions.<br/><br/>It seems another test with more people more distributed around the net might be in order to try to shake down any potential problems.<br/><br/>The net seemed to shrug it off as if nothing special happened anyway so that is a positive result. The clients mostly did just what they were told and expected except for a possible performance problem with the database.<br/><br/>Thats all I can think of for now.<br/></div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 132,
+        "name": "lfm",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=466",
+        "subject": "Re: a simple traffic load test run",
+        "url": "https://bitcointalk.org/index.php?topic=567.msg5686#msg5686",
+        "date": "July 25, 2010, 01:09:05 PM",
+        "content": "<div class=\"post\">I was able to run IRC and discus the progress of the test thruout so I don't think I was anywhere near saturating any network resources.<br/><br/></div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 132,
+        "name": "theymos",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=35",
+        "subject": "Re: a simple traffic load test run",
+        "url": "https://bitcointalk.org/index.php?topic=567.msg5687#msg5687",
+        "date": "July 25, 2010, 01:13:16 PM",
+        "content": "<div class=\"post\">There was a lot of slowdown in the rate of transactions during the second half of the test. If this was a problem with the network, then I would be very worried about future denial of service attacks. Hopefully a bigger test can be organized later.<br/><br/>Here is a packet capture of the event (from an \"edge\" computer with only one connection) if anyone is interested in exact times and stuff.<br/><a href=\"http://www.freefilehostingnow.com/filedownload.aspx?code=6bb2dbeea18e6a419daaadda5798bb05ec6b\">http://www.freefilehostingnow.com/filedownload.aspx?code=6bb2dbeea18e6a419daaadda5798bb05ec6b</a></div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 132,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: a simple traffic load test run",
+        "url": "https://bitcointalk.org/index.php?topic=567.msg5694#msg5694",
+        "date": "July 25, 2010, 02:46:33 PM",
+        "content": "<div class=\"post\">Was that on the test network?<br/><a href=\"http://bitcointalk.org/index.php?topic=363.0\">http://bitcointalk.org/index.php?topic=363.0</a></div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 132,
+        "name": "theymos",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=35",
+        "subject": "Re: a simple traffic load test run",
+        "url": "https://bitcointalk.org/index.php?topic=567.msg5696#msg5696",
+        "date": "July 25, 2010, 03:00:43 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=567.msg5694#msg5694\">Quote from: satoshi on July 25, 2010, 02:46:33 PM</a></div><div class=\"quote\">Was that on the test network?<br/><a href=\"http://bitcointalk.org/index.php?topic=363.0\">http://bitcointalk.org/index.php?topic=363.0</a><br/></div><br/>No.</div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 132,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: a simple traffic load test run",
+        "url": "https://bitcointalk.org/index.php?topic=567.msg5698#msg5698",
+        "date": "July 25, 2010, 03:29:52 PM",
+        "content": "<div class=\"post\">Please do these tests on the test network.\u00a0 That's what it's for. \u00a0Thanks.</div>",
+        "post_num": 6,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

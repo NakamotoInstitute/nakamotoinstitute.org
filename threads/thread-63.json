@@ -1,0 +1,62 @@
+[
+    {
+        "thread_id": 63,
+        "name": "Cdecker",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=49",
+        "subject": "Building BitCoin Client completely Headless",
+        "url": "https://bitcointalk.org/index.php?topic=171.msg1412#msg1412",
+        "date": "June 08, 2010, 04:51:55 PM",
+        "content": "<div class=\"post\">Hi all,<br/><br/>I'm currently trying to get the openSuse Build Service to build bitcoin binaries for all the major distros, but wxWidgets is giving me a headache, as the development branch 2.9.0 is in not a single repository, and I'm having huge problems building it myself.<br/><br/>So I was wondering whether it is possible at all to compile everything without any depencies on wxWidgets?<br/><br/>Once wxWidgets 2.9.0 starts appearing in the default repos I'll create packages for the GUI version too, but a CLI version is better than nothing for the moment.<br/><br/>Regards,<br/>Chris<br/><br/>P.S.: If you're interested at peeking, please take a look here: <a href=\"https://build.opensuse.org/project/show?project=home%3Acdecker%3Abitcoin\">https://build.opensuse.org/project/show?project=home%3Acdecker%3Abitcoin</a></div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 63,
+        "name": "laszlo",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=143",
+        "subject": "Re: Building BitCoin Client completely Headless",
+        "url": "https://bitcointalk.org/index.php?topic=171.msg1414#msg1414",
+        "date": "June 08, 2010, 04:58:46 PM",
+        "content": "<div class=\"post\"><br/><a href=\"http://heliacal.net/~solar/bitcoin/bitcoin-linuxbuild.pdf\">http://heliacal.net/~solar/bitcoin/bitcoin-linuxbuild.pdf</a><br/><br/>If you follow these instructions and build 'bitcoind' it's all linked statically to wxWidgets, boost, openssl and libdb.. for me it looks like this:<br/><br/><div class=\"codeheader\">Code:</div><div class=\"code\">$ ldd bitcoind<br/>\u00a0 \u00a0 \u00a0 \u00a0 linux-vdso.so.1 =&gt;\u00a0 (0x00007fff31dff000)<br/>\u00a0 \u00a0 \u00a0 \u00a0 libdl.so.2 =&gt; /lib/libdl.so.2 (0x00007ff1a0a78000)<br/>\u00a0 \u00a0 \u00a0 \u00a0 libstdc++.so.6 =&gt; /usr/lib/libstdc++.so.6 (0x00007ff1a0768000)<br/>\u00a0 \u00a0 \u00a0 \u00a0 libm.so.6 =&gt; /lib/libm.so.6 (0x00007ff1a04e4000)<br/>\u00a0 \u00a0 \u00a0 \u00a0 libgcc_s.so.1 =&gt; /lib/libgcc_s.so.1 (0x00007ff1a02cd000)<br/>\u00a0 \u00a0 \u00a0 \u00a0 libpthread.so.0 =&gt; /lib/libpthread.so.0 (0x00007ff1a00b1000)<br/>\u00a0 \u00a0 \u00a0 \u00a0 libc.so.6 =&gt; /lib/libc.so.6 (0x00007ff19fd41000)<br/>\u00a0 \u00a0 \u00a0 \u00a0 /lib64/ld-linux-x86-64.so.2 (0x00007ff1a0c7c000)<br/></div></div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 63,
+        "name": "jago25_98",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=277",
+        "subject": "Re: Building BitCoin Client completely Headless",
+        "url": "https://bitcointalk.org/index.php?topic=171.msg1810#msg1810",
+        "date": "June 26, 2010, 08:11:15 PM",
+        "content": "<div class=\"post\">I need headless cli to run on my server (don't own my own computer, just a root shell &amp; a borrowed laptop from work). <br/><br/>How to compile? I recommend including a cli binary. FAQ?<br/><br/>Good work by the way, thanks<br/><br/><br/>update: checked out thr trunk by svn, tried a make after installing g++, no joy:<br/><br/><div class=\"codeheader\">Code:</div><div class=\"code\">usr/include/c++/4.3/bits/stl_vector.h:150:\u00a0 \u00a0instantiated from \u00e2void std::_Vector_base&lt;_Tp, _Alloc&gt;::_M_deallocate(_Tp*, size_t) [with _Tp = unsigned char, _Alloc = secure_allocator&lt;unsigned char&gt;]\u00e2<br/>/usr/include/c++/4.3/bits/stl_vector.h:136:\u00a0 \u00a0instantiated from \u00e2std::_Vector_base&lt;_Tp, _Alloc&gt;::~_Vector_base() [with _Tp = unsigned char, _Alloc = secure_allocator&lt;unsigned char&gt;]\u00e2<br/>/usr/include/c++/4.3/bits/stl_vector.h:235:\u00a0 \u00a0instantiated from \u00e2std::vector&lt;_Tp, _Alloc&gt;::vector(size_t, const _Tp&amp;, const _Alloc&amp;) [with _Tp = unsigned char, _Alloc = secure_allocator&lt;unsigned char&gt;]\u00e2<br/>key.h:105:\u00a0 \u00a0instantiated from here<br/>serialize.h:684: error: \u00e2memset\u00e2 was not declared in this scope<br/>make: *** [headers.h.gch] Error 1</div>...amongst other errors (don't know what I'm doing with multiplatform...<br/><br/><br/><br/></div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 63,
+        "name": "lachesis",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=237",
+        "subject": "Re: Building BitCoin Client completely Headless",
+        "url": "https://bitcointalk.org/index.php?topic=171.msg1811#msg1811",
+        "date": "June 26, 2010, 08:45:18 PM",
+        "content": "<div class=\"post\">Jago, do you have all the proper dependencies installed?</div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 63,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Building BitCoin Client completely Headless",
+        "url": "https://bitcointalk.org/index.php?topic=171.msg1815#msg1815",
+        "date": "June 26, 2010, 09:06:06 PM",
+        "content": "<div class=\"post\">The linux release candidate in the \"1.3 almost ready\" thread contains prebuilt bitcoind.</div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

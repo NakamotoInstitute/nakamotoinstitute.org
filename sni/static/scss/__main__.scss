@@ -1,0 +1,249 @@
+/*!
+ * Satoshi Nakamoto Institute (http://nakamotoinstitute.org)
+ * Copyright 2013 Satoshi Nakamoto Institute
+ * Licensed under GNU Affero GPL (https://github.com/pierrerochard/SNI-private/blob/master/LICENSE)
+ */
+
+ @mixin table() {
+  & {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+  }
+  &>* {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+@mixin word-wrap() {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+// .quoteheader {
+//   padding: 5px 20px;
+//   font-size: 95%;
+//   border-left: 5px solid #eeeeee;
+// }
+// .quote {
+//   padding: 10px 20px;
+//   margin: 0 0 20px;
+//   font-size: 95%;
+//   border-left: 5px solid #eeeeee;
+// }
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 120px;
+}
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 100px;
+  background-color: #f5f5f5;
+}
+@media (max-width: 478px) {
+  body {
+    margin-bottom: 140px;
+  }
+  #footer {
+    height: 120px;
+  }
+}
+@media (max-width: 469px) {
+  body {
+    margin-bottom: 160px;
+  }
+  #footer {
+    height: 140px;
+  }
+}
+@media (max-width: 322px) {
+  body {
+    margin-bottom: 180px;
+  }
+  #footer {
+    height: 160px;
+  }
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 14px;
+}
+.container .text-muted {
+  margin: 14px 0;
+}
+
+.navbar {
+  font-size: 85%;
+}
+
+.navbar-toggle > .icon-bar {
+  background-color: #428bca;
+}
+
+.email-text-monospace {
+  font-family: monospace;
+  font-size: 1em;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.dropdown-menu {
+    margin-top: 0px;
+}
+
+.article-image {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/** Responsive YouTube embedding **/
+
+.flex-video {
+  position: relative;
+  padding-top: 25px;
+  padding-bottom: 67.5%;
+  height: 0;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.flex-video.widescreen { padding-bottom: 57.25%; }
+.flex-video.vimeo { padding-top: 0; }
+
+.flex-video iframe,
+.flex-video object,
+.flex-video embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+@media only screen and (max-device-width: 800px), only screen and (device-width: 1024px) and (device-height: 600px), only screen and (width: 1280px) and (orientation: landscape), only screen and (device-width: 800px), only screen and (max-width: 767px) {
+  .flex-video { padding-top: 0; }
+}
+
+$post-padding: 12px;
+$post-padding-half: calc(#{$post-padding} / 2);
+$post-gray: #f5f5f5;
+$post-highlight: #ffff99;
+$post-border: #bebebe;
+$post-sectional: #d3d3d3;
+$post-inner-border: 1px solid $post-sectional;
+
+.codeheader, .code, .quoteheader, .quote {
+  border: 1px solid $post-sectional;
+  padding: $post-padding-half;
+}
+.codeheader, .quoteheader {
+  font-weight: bold;
+}
+.code {
+  border-top: none;
+  white-space: pre-wrap;
+  font-family: monospace;
+}
+.quote {
+  border-top: none;
+  margin-bottom: $post-padding;
+}
+
+.thread {
+  .post-container {
+    border: 2px solid $post-border;
+    margin-bottom: $post-padding;
+    &.gray {
+      background-color: $post-gray;
+    }
+    &.highlight {
+      background-color: $post-highlight;
+    }
+    & > .header {
+      & > .poster-info {
+        @include table();
+        border-bottom: $post-inner-border;
+        padding: $post-padding-half $post-padding;
+        & > *:nth-child(2) {
+          width: 50px;
+          text-align: right;
+        }
+      }
+      & > .post-info {
+        padding: $post-padding-half $post-padding;
+        h5 {
+          margin: 0 0 $post-padding-half;
+        }
+      }
+    }
+    & > .body {
+      border-top: $post-inner-border;
+      border-bottom: $post-inner-border;
+      padding: $post-padding;
+      a {
+          white-space: pre-wrap; /* css-3 */
+          white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+          white-space: -pre-wrap; /* Opera 4-6 */
+          white-space: -o-pre-wrap; /* Opera 7 */
+          word-wrap: break-word; /* Internet Explorer 5.5+ */
+      }
+      img {
+        max-width: 100%;
+      }
+    }
+    & > .footer {
+      @include table();
+      padding: $post-padding-half $post-padding;
+      & > *:nth-child(2) {
+        text-align: right;
+      }
+    }
+  }
+  &.nested {
+    .post-container {
+      border: 2px solid $post-border;
+      &.nested-1 {
+        margin-left: 24px;
+        &.first:before {
+          content: '\021B3';
+          position: absolute;
+          left: 14px;
+        }
+      }
+      &.nested-2 {
+        margin-left: 48px;
+        &.first:before {
+          content: '\021B3';
+          position: absolute;
+          left: 38px;
+        }
+      }
+    }
+  }
+}

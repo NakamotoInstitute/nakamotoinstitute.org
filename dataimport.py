@@ -24,6 +24,12 @@ for qc in qcs:
     db.session.delete(qc)
     db.session.commit()
 print "Finish deleting QuoteCategory"
+print "Begin deleting Thread"
+ts = Thread.query.all()
+for t in ts:
+    db.session.delete(t)
+    db.session.commit()
+print "Finish deleting Thread"
 print "Begin deleting Email"
 Email.query.delete()
 print "Finish deleting Email"
@@ -99,22 +105,50 @@ for i in range(0,len(emails['emails'])):
 	db.session.commit()
 
 print "Finish importing Email"
+print "Begin importing Thread"
+
+with open('data/threads.json') as data_file:
+    threads = json.load(data_file)
+
+for thread in threads:
+    new_thread = Thread(
+        id=thread['id'],
+        title=thread['title'],
+        url=thread['url'],
+        source=thread['source']
+    )
+    db.session.add(new_thread)
+    db.session.commit()
+
+print "Finish importing Thread"
 print "Begin importing Post"
 
-with open('./data/satoshiposts.json') as data_file:
+with open('data/posts.json') as data_file:
 	posts = json.load(data_file)
 
-for i in range(0,len(posts['posts'])):
-	index = len(posts['posts'])-1-i
-	post = Post(
-		id=i+1,
-		url=posts['posts'][index]['url'],
-		name=posts['posts'][index]['name'],
-		date=parser.parse(posts['posts'][index]['date']),
-		text=posts['posts'][index]['post'],
-		source=posts['posts'][index]['source'])
-	db.session.add(post)
-	db.session.commit()
+for i, p in enumerate(posts):
+
+    # quotes = db.relationship("Quote", backref="post")
+    # thread_id = db.Column(db.Integer, db.ForeignKey('thread.id'))
+    satoshi_id = None
+    if 'satoshi_id' in p.keys():
+        satoshi_id = p['satoshi_id']
+    post = Post(
+        id=i+1,
+        satoshi_id=satoshi_id,
+        url=p['url'],
+        subject=p['subject'],
+        poster_name=p['name'],
+        poster_url=p['poster_url'],
+        post_num=p['post_num'],
+        is_displayed=p['is_displayed'],
+        nested_level=p['nested_level'],
+        date=parser.parse(p['date']),
+        text=p['content'],
+        thread_id=p['thread_id']
+    )
+    db.session.add(post)
+    db.session.commit()
 
 print "Finish importing Post"
 print "Begin importing QuoteCategory"

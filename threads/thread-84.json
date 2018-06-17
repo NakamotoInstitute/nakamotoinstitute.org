@@ -1,0 +1,50 @@
+[
+    {
+        "thread_id": 84,
+        "name": "m0mchil",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=33",
+        "subject": "bitcoin 0.3 win64 - broken access to APPDATA if non-latin characters in username",
+        "url": "https://bitcointalk.org/index.php?topic=246.msg2052#msg2052",
+        "date": "July 08, 2010, 09:33:16 AM",
+        "content": "<div class=\"post\">I know it's not the smartest move to name my user account using non-latin characters. Anyway, 0.2 has no problems with this.<br/><br/>Verified as follows... created a 'normal' new user and 0.3 opened the data folder. Created <b>new, fresh data folder</b> and copied it to the non-standard user - 0.3 fails with DB_RUN_RECOVERY.</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 84,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: bitcoin 0.3 win64 - broken access to APPDATA if non-latin characters in username",
+        "url": "https://bitcointalk.org/index.php?topic=246.msg2068#msg2068",
+        "date": "July 08, 2010, 06:24:19 PM",
+        "content": "<div class=\"post\">Thanks for finding that.\u00a0 We switched from ANSI in 0.2 to UTF-8 in version 0.3, so it must be related to that.<br/><br/>Just to confirm, if you log in with the non-latin character username, not having an appdata/Bitcoin directory yet, and run Bitcoin and let it create the database from scratch, does it work or not?</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 84,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: bitcoin 0.3 win64 - broken access to APPDATA if non-latin characters in username",
+        "url": "https://bitcointalk.org/index.php?topic=246.msg2077#msg2077",
+        "date": "July 09, 2010, 03:01:35 AM",
+        "content": "<div class=\"post\">I think I see where the problem is.\u00a0 Coincidentally, I recently coded a replacement for the function in question which should fix it.\u00a0 It's not enabled yet, but in the SVN version it prints a debug message in debug.log showing the new directory value and old value for comparison.</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 84,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: bitcoin 0.3 win64 - broken access to APPDATA if non-latin characters in username",
+        "url": "https://bitcointalk.org/index.php?topic=246.msg2092#msg2092",
+        "date": "July 09, 2010, 03:37:05 PM",
+        "content": "<div class=\"post\">I tested this with a non-lower-ASCII account name on XP and confirmed the bug, then tested that the new GetDefaultDataDir fixed it. \u00a0This change is revision 102 of the SVN.</div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

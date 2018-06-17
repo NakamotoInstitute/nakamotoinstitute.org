@@ -1,0 +1,122 @@
+[
+    {
+        "thread_id": 48,
+        "name": "Anonymous",
+        "poster_url": null,
+        "subject": "dasg",
+        "url": "https://bitcointalk.org/index.php?topic=125.msg1049#msg1049",
+        "date": "May 03, 2010, 12:33:35 AM",
+        "content": "<div class=\"post\">adgadg</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 48,
+        "name": "theymos",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=35",
+        "subject": "Re: Ummmm... where did my bitcoins go?",
+        "url": "https://bitcointalk.org/index.php?topic=125.msg1050#msg1050",
+        "date": "May 03, 2010, 01:18:23 AM",
+        "content": "<div class=\"post\">Did your new installation finish downloading all of the blocks (currently about 54,200)? The transaction probably won't appear until it does.</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 48,
+        "name": "NewLibertyStandard",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=26",
+        "subject": "Re: Ummmm... where did my bitcoins go?",
+        "url": "https://bitcointalk.org/index.php?topic=125.msg1054#msg1054",
+        "date": "May 03, 2010, 10:17:55 AM",
+        "content": "<div class=\"post\">The blocks are currently about 34 MB. I'm sure future versions will improve the download process. Including them with the installation would not be correct way of speeding up the initial download. But a trusted source could certainly host the majority of the blocks as a separate download. That would definitely speed up the process, although I think that Bitcoin double checks each block that it downloads and it probably wouldn't double check each block if you just added the file to the bitcoin user folder.</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 48,
+        "name": "NewLibertyStandard",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=26",
+        "subject": "Re: Ummmm... where did my bitcoins go?",
+        "url": "https://bitcointalk.org/index.php?topic=125.msg1056#msg1056",
+        "date": "May 03, 2010, 03:27:01 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=125.msg1055#msg1055\">Quote from: davidonpda on May 03, 2010, 02:40:35 PM</a></div><div class=\"quote\">34 MB... on a fast DSL plan, that should take a couple of minutes. Not 3 hours.... <br/></div>Downloading the blocks as a single file would only take a few minutes but Bitcoin doesn't download the blocks as a single file. Try comparing the time it takes to copy a 50 GB file from one hard drive to another versus copying 50 GB of 1 KB files from one hard drive to another. The 50 GB of 1 KB files will take an eternity to copy. Try to do the same test over the Internet and the 50 GB of 1 KB files will take infinite eternities to finish. I believe Bitcoin already has a few small optimizations for how it downloads blocks but there is still a lot of room for improvement. On the bright side, Bitcoin only has to download old blocks once, after which it stays continuously up to date.</div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 48,
+        "name": "theymos",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=35",
+        "subject": "Re: Ummmm... where did my bitcoins go?",
+        "url": "https://bitcointalk.org/index.php?topic=125.msg1057#msg1057",
+        "date": "May 03, 2010, 06:19:19 PM",
+        "content": "<div class=\"post\">The BitCoin paper mentions \"simplified payment verification\" that could be used to accept payments without downloading all of the blocks. I don't know if this is implemented yet. It might only be enabled for clients that have \"generate BitCoins\" turned off.</div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 48,
+        "name": "NewLibertyStandard",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=26",
+        "subject": "Re: Ummmm... where did my bitcoins go?",
+        "url": "https://bitcointalk.org/index.php?topic=125.msg1060#msg1060",
+        "date": "May 04, 2010, 01:51:12 AM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=125.msg1057#msg1057\">Quote from: theymos on May 03, 2010, 06:19:19 PM</a></div><div class=\"quote\">The BitCoin paper mentions \"simplified payment verification\" that could be used to accept payments without downloading all of the blocks. I don't know if this is implemented yet. It might only be enabled for clients that have \"generate BitCoins\" turned off.<br/></div>Is that referring to sending bitcoins by IP address rather than by bitcoin address?<br/>-----<br/>Full Member! Woot Woot! <img alt=\"Cheesy\" border=\"0\" src=\"https://bitcointalk.org/Smileys/default/cheesy.gif\"/></div>",
+        "post_num": 6,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 48,
+        "name": "theymos",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=35",
+        "subject": "Re: Ummmm... where did my bitcoins go?",
+        "url": "https://bitcointalk.org/index.php?topic=125.msg1061#msg1061",
+        "date": "May 04, 2010, 02:16:16 AM",
+        "content": "<div class=\"post\">No.<br/><br/><div class=\"quoteheader\">Quote from: BitCoin paper</div><div class=\"quote\">It is possible to verify payments without running a full network node. \u00a0A user only needs to keep a copy of the block headers of the longest proof-of-work chain, which he can get by querying network nodes until he's convinced he has the longest chain, and obtain the Merkle branch linking the transaction to the block it's timestamped in. He can't check the transaction for himself, but by linking it to a place in the chain, he can see that a network node has accepted it, and blocks added after it further confirm the network has accepted it.</div><br/>So you would only download the most recent 200 or so blocks and then new blocks as they come in, relying on the network to verify the blocks for you. It would be a really lightweight way to use BitCoin. It would even be useful for \"full network nodes\" as they are downloading the whole block chain.<br/><br/>Congrats on 100 posts!\u00a0 <img alt=\"Smiley\" border=\"0\" src=\"https://bitcointalk.org/Smileys/default/smiley.gif\"/></div>",
+        "post_num": 7,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 48,
+        "name": "The Madhatter",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=14",
+        "subject": "Re: Ummmm... where did my bitcoins go?",
+        "url": "https://bitcointalk.org/index.php?topic=125.msg1073#msg1073",
+        "date": "May 06, 2010, 10:09:45 AM",
+        "content": "<div class=\"post\">We should bundle a snapshot of the block chain with each release of the Bitcoin software to save the user from having to download the entire chain upon a new install.<br/><br/>In terms of trust: The user is already trusting bitcoin.org's download to be valid. Combining the zip/exe installer with a snapshot of the block chain is not a big deal in my opinion. They can publish hashes and signatures to ensure file integrity, etc.<br/><br/>Even in a worst case scenario where the block chain snapshot was compromised nothing bad will happen. The longest block chain always wins. The client would download a new copy from the P2P network. (Besides, if the block chain was compromised we have bigger problems such as the software itself being trojaned, but this is another topic).<br/><br/>It's ++good!<br/><br/><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=125.msg1055#msg1055\">Quote from: davidonpda on May 03, 2010, 02:40:35 PM</a></div><div class=\"quote\">34 MB... on a fast DSL plan, that should take a couple of minutes. Not 3 hours.... <br/></div></div>",
+        "post_num": 8,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 48,
+        "name": "laszlo",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=143",
+        "subject": "Re: Ummmm... where did my bitcoins go?",
+        "url": "https://bitcointalk.org/index.php?topic=125.msg1075#msg1075",
+        "date": "May 06, 2010, 02:11:41 PM",
+        "content": "<div class=\"post\">Really from a purist stance, people should audit the code and build it themselves.<br/><br/>However this would exclude most people except dorks like us.. so you just have to trust that you got it from a reputable source.\u00a0 I distribute a Mac OS X binary version but if you don't trust me you shouldn't be using it.\u00a0 Similarly, I can make a password manager tool or a PayPal assistant tool and I can make it send your passwords and money to me.\u00a0 You have to trust someone I guess unless you are willing to audit the code yourself.\u00a0 The network itself has some protections from non-cooperative nodes but the users are obviously targets for scamming.\u00a0 Kind of reminds me of the card skimmers people install on ATMs too.. they think they're using a trustworthy machine but it's been modified to capture their information.</div>",
+        "post_num": 9,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 48,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Ummmm... where did my bitcoins go?",
+        "url": "https://bitcointalk.org/index.php?topic=125.msg1149#msg1149",
+        "date": "May 18, 2010, 08:06:46 PM",
+        "content": "<div class=\"post\">It's not the download so much as verifying all the signatures in all the blocks as it downloads that takes a long time.<br/><br/>How long is the initial block download typically taking?\u00a0 Does it slow down half way through or is about the same speed the whole way?<br/><br/>I've thought about ways to do a more cursory check of most of the chain up to the last few thousand blocks.\u00a0 It is possible, but it's a lot of work, and there are a lot of other higher priority things to work on.<br/><br/>Simplified Payment Verification is for lightweight client-only users who only do transactions and don't generate and don't participate in the node network.\u00a0 They wouldn't need to download blocks, just the hash chain, which is currently about 2MB and very quick to verify (less than a second to verify the whole chain).\u00a0 If the network becomes very large, like over 100,000 nodes, this is what we'll use to allow common users to do transactions without being full blown nodes.\u00a0 At that stage, most users should start running client-only software and only the specialist server farms keep running full network nodes, kind of like how the usenet network has consolidated.<br/><br/>SPV is not implemented yet, and won't be implemented until far in the future, but all the current implementation is designed around supporting it.<br/><br/>In the meantime, sites like <a href=\"http://vekja.net\">vekja.net</a> and <a href=\"http://www.mybitcoin.com\">www.mybitcoin.com</a> have been experimenting with account-based sites.\u00a0 You create an account on a website and hold your bitcoins on account there and transfer in and out.\u00a0 Creating an account on a website is a lot easier than installing and learning to use software, and a more familiar way of doing it for most people.\u00a0 The only disadvantage is that you have to trust the site, but that's fine for pocket change amounts for micropayments and misc expenses.\u00a0 It's an easy way to get started and if you get larger amounts then you can upgrade to the actual bitcoin software.</div>",
+        "post_num": 10,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

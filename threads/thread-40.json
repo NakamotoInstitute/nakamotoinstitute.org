@@ -1,0 +1,122 @@
+[
+    {
+        "thread_id": 40,
+        "name": "NewLibertyStandard",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=26",
+        "subject": "Money Transfer Regulations",
+        "url": "https://bitcointalk.org/index.php?topic=69.msg592#msg592",
+        "date": "March 02, 2010, 07:22:10 AM",
+        "content": "<div class=\"post\">Does anyone happen to know what kinds of regulations are in place for people who buy and sell unofficial digital currencies such as Bitcoin? I'm particularly interested in United States regulations, but please mention any regulations of which you are aware.<br/><br/>Registering a business or non-profit organization gives <a href=\"http://en.wikipedia.org/wiki/Doing_business_as\">the advantage of being able to do transactions in the name of the business</a> and <a href=\"http://en.wikipedia.org/wiki/Limited_liability_company\">forming a corporation limits liability</a>. But it seems like it would be more trouble than it's worth to incorporate or register a business until the profits are large enough to hire employees.<br/><br/>I noticed that in the United States, financial institutions are required to submit a <a href=\"http://en.wikipedia.org/wiki/Currency_Transaction_Report\">currency transaction report</a> for all transactions over $10,000 and a <a href=\"http://en.wikipedia.org/wiki/Suspicious_activity_report\">suspicious activity report</a> for suspicious transactions. I don't think a private citizen would be required to submit either type of report. In any case, so long as the official currency part of the transaction is passing through a registered financial institution, the institution would already be submitting those reports for such transactions.<br/><br/>I have read about <a href=\"http://en.wikipedia.org/wiki/Money_laundering\">money laundering</a> and it seems that so long as a person is not knowingly laundering money, then the person is not committing the crime.<br/><br/>Profits would need to be tracked for tax purposes but that can be accomplished easily enough using accounting software such as <a href=\"http://www.gnucash.org/\">GnuCash</a>.<br/><br/>Am I missing anything? Are there any regulations prohibiting me from sending money to and receiving money from random strangers who may be criminals unbeknownst to me?</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 40,
+        "name": "theymos",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=35",
+        "subject": "Re: Money Transfer Regulations",
+        "url": "https://bitcointalk.org/index.php?topic=69.msg593#msg593",
+        "date": "March 02, 2010, 07:46:03 AM",
+        "content": "<div class=\"post\"><a href=\"http://en.wikipedia.org/wiki/E-gold\">http://en.wikipedia.org/wiki/E-gold</a><br/><br/><div class=\"quoteheader\">Quote</div><div class=\"quote\">In 2007 the proprietors of the e-gold service were indicted by the United States Department of Justice on four counts of violating money laundering regulations. In July 2008 the company and its three directors pled guilty to charges of \"conspiracy to engage in money laundering\" and the \"operation of an unlicensed money transmitting business\" in the U.S. District Court for D.C.\u00a0 The company faces fines of $3.7 million.</div><br/>Running an exchange seems very dangerous. I would never do it without talking to a lawyer and setting up a LLC.</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 40,
+        "name": "NewLibertyStandard",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=26",
+        "subject": "Re: Money Transfer Regulations",
+        "url": "https://bitcointalk.org/index.php?topic=69.msg597#msg597",
+        "date": "March 02, 2010, 09:01:53 AM",
+        "content": "<div class=\"post\">Thanks for the reply. I agree that running an exchange does seem dangerous. I have started extremely small and limited my service so that if I am doing something wrong it will hopefully be so minor that I won't be prosecuted and so that if I am convicted of something the fines will be small enough to hopefully not bankrupt me.<br/><br/>I've looked at that E-gold article before but this time I read it, I thought to look up some terms mentioned in it which turned up some interesting regulations concerning <a href=\"http://www.law.cornell.edu/uscode/31/usc_sec_31_00005330----000-.html\">registration of money transmitting businesses</a> and <a href=\"http://www.law.cornell.edu/uscode/18/1960.html\">prohibition of unlicensed money transmitting businesses</a>. I don't know whether my tiny service qualifies as an unlicensed money transmitting business, but if it does, I'll stop until I can get it registered. Although if there's a large non-refundable application fee, I'll have to re-evaluate whether it's worth the cost since I'm currently not trying to earn a profit.</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 40,
+        "name": "ihrhase",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=45",
+        "subject": "Re: Money Transfer Regulations",
+        "url": "https://bitcointalk.org/index.php?topic=69.msg599#msg599",
+        "date": "March 02, 2010, 02:13:58 PM",
+        "content": "<div class=\"post\">NLS, there is no \"legal\" way to do what you are looking to do on a large scale, knowledge is not necessary for indictment...<br/><br/>You are providing a tax shelter, you should automatically factor in illicit to your \"hobby\"</div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 40,
+        "name": "The Madhatter",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=14",
+        "subject": "Re: Money Transfer Regulations",
+        "url": "https://bitcointalk.org/index.php?topic=69.msg601#msg601",
+        "date": "March 02, 2010, 03:39:01 PM",
+        "content": "<div class=\"post\">Nah.. you guys have it wrong.<br/><br/>It isn't the written law that you should be concerned with.<br/><br/>You need to rely on your courts to make the 'fair and just' decisions. That is the real problem. I wouldn't dream of running any sort of \"money transmitting business\" (their term) or currency exchange in the USA. (See e-gold and liberty dollar.)<br/><br/>It is probably best to run your exchanger from a different country than the one in which you reside. That would involve a corporation or trustee.<br/><br/>($10,000 OR any \"suspicious\" transaction. That is subject to OPINION.. very open-ended if you ask me. So a court proceeding on failure to report based on suspicion would boil down to \"he who can afford to put forth the most motions in court\"... lol)<br/><br/>Another option is an estoppel. (Again, you need to really know what you are doing.)<br/><br/>Cheers! <img alt=\"Tongue\" border=\"0\" src=\"https://bitcointalk.org/Smileys/default/tongue.gif\"/><br/></div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 40,
+        "name": "NewLibertyStandard",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=26",
+        "subject": "Re: Money Transfer Regulations",
+        "url": "https://bitcointalk.org/index.php?topic=69.msg609#msg609",
+        "date": "March 02, 2010, 09:52:57 PM",
+        "content": "<div class=\"post\">Here's the legal definition of currency, <a href=\"http://www.fdic.gov/regulations/laws/rules/8000-1400.html#fdic8483\">31 C.F.R. \u00a7 103.11(h)</a> and the legal definition of a currency dealer or exchanger, <a href=\"http://www.fdic.gov/regulations/laws/rules/8000-1400.html#fdic8486\">31 C.F.R. \u00a7 103.11(uu)(1)</a> (both links take you slightly above the definitions). My lawyer friend indicated that that my service seems legal, but that's absolutely not legal advice for you folks. I'm running my little service as honestly and as legally as I know how, so until I find out that I'm doing something wrong, I'm not going to stop.</div>",
+        "post_num": 6,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 40,
+        "name": "The Madhatter",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=14",
+        "subject": "Re: Money Transfer Regulations",
+        "url": "https://bitcointalk.org/index.php?topic=69.msg610#msg610",
+        "date": "March 03, 2010, 02:25:22 AM",
+        "content": "<div class=\"post\">Don't forget to look at state money transmitting licenses. That's what killed Goldage. (They were one of the largest e-gold exchangers). They were unlicensed because that thought that digital gold was outside the jurisdiction (not legal tender) of the state/federal governments. The state laws were vague enough, and law enforcement was ignorant enough, that they were prosecuted by the state of New York.<br/><br/>(See: <a href=\"http://en.wikipedia.org/wiki/Goldage\">http://en.wikipedia.org/wiki/Goldage</a>)<br/><br/>Lots of people speculate that they were prosecuted for political reasons and not for \"legal\" ones. The central banks (and therefore the governments under their economic debt rule) do not want competing currencies. This isn't because it is competition (e-gold was soooo small compared to the FRN paper game). They didn't want e-gold to open up people's mind to the idea of alternate currencies. That is a far bigger threat.<br/><br/>Remember that a license is an act of privilege that can be revoked/regulated. I firmly believe that any action that you can purchase a license for is fundamentally lawful. (Ex: you can't buy a license to commit a crime. No \"license to kill\", Bond. <img alt=\"Tongue\" border=\"0\" src=\"https://bitcointalk.org/Smileys/default/tongue.gif\"/>).<br/><br/>It is possible to claim lawful excuse to operate unlicensed. (By pronouncement or claim by right of notary.. again, you need to know what you are doing.)<br/><br/>Peace!<br/></div>",
+        "post_num": 7,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 40,
+        "name": "ihrhase",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=45",
+        "subject": "Re: Money Transfer Regulations",
+        "url": "https://bitcointalk.org/index.php?topic=69.msg611#msg611",
+        "date": "March 03, 2010, 03:15:31 AM",
+        "content": "<div class=\"post\">Remember NLS<br/><br/>There are two types of law...<br/><br/>The Law you can read, and the one the government chooses to apply to you...<br/><br/>Your Lawyer friends may be right, but so were joe stack's and he got prosecuted...</div>",
+        "post_num": 8,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 40,
+        "name": "I-am-not-anonymous",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=41",
+        "subject": "Re: Money Transfer Regulations",
+        "url": "https://bitcointalk.org/index.php?topic=69.msg612#msg612",
+        "date": "March 03, 2010, 03:48:33 AM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=69.msg611#msg611\">Quote from: ihrhase on March 03, 2010, 03:15:31 AM</a></div><div class=\"quote\">Remember NLS<br/><br/>There are two types of law...<br/><br/>The Law you can read, and the one the government chooses to apply to you...<br/><br/>Your Lawyer friends may be right, but so were joe stack's and he got prosecuted...<br/></div><br/>How encouraging...you've just told the poor fellow that even if he does everything right he could still go to jail--you're making him feel like an ethnic minority!<br/><br/>In most cases though, if a lawyer tells you you won't go to jail, you probably will not go to jail.\u00a0 Newlibertstandard uses paypal, which already practices know-your-customer and he is operating in amounts less than $10,000 which is what the money laundering and tax cheat police sniff out for.\u00a0 This means he is unlikely to be doing anything that is wrong OR anything that will attract the attention of Law Enforcement.<br/><br/>However---<br/><br/>Thinking ahead to bitcoin's future--money changing services that operate on a large scale and don't practice know-your customer would indeed be illegal and would thus have to operate within the onionverse, changing bitcoin to money services other than paypal (perhaps offshore based like pecunix).<br/><br/>Another idea would be for some future crypto-preneur to set up a Mom and Pop shop called \"Grandpa Joe's envelopes stuffed with cash\" and only accept bitcoin as payment.\u00a0 lol.<br/></div>",
+        "post_num": 9,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 40,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Money Transfer Regulations",
+        "url": "https://bitcointalk.org/index.php?topic=69.msg614#msg614",
+        "date": "March 03, 2010, 04:28:56 AM",
+        "content": "<div class=\"post\">When there's enough scale, maybe there can be an exchange site that doesn't do transfers, just matches up buyers and sellers to exchange with each other directly, similar to how e-bay works.<br/><br/>To make it safer, the exchange site could act as an escrow for the bitcoin side of the payment. \u00a0The seller puts the bitcoin payment in escrow, and the buyer sends the conventional payment directly to the seller. \u00a0The exchange service doesn't handle any real world money.<br/><br/>This would be a step better than e-bay. \u00a0E-bay manages to work fine even though shipped goods can't be recovered if payment falls through.</div>",
+        "post_num": 10,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

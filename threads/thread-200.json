@@ -1,0 +1,26 @@
+[
+    {
+        "thread_id": 200,
+        "name": "zooko",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=904",
+        "subject": "integrating digital payments into p2p protocols",
+        "url": "https://bitcointalk.org/index.php?topic=890.msg10593#msg10593",
+        "date": "August 21, 2010, 02:13:27 PM",
+        "content": "<div class=\"post\">Folks:<br/><br/>I just posted this note over on the Trade forum:<br/><br/><a href=\"http://bitcointalk.org/index.php?topic=30.msg10592#msg10592\">http://bitcointalk.org/index.php?topic=30.msg10592#msg10592</a><br/><br/>There are a few hackers who would be pretty interested in contributing patches to integrate BitCoin payments directly into the Tahoe-LAFS storage protocol. It would be a big job! It would probably take a year of effort before we would be ready to deploy it in a new stable release. Of course, the more people pitch in the faster the work goes.<br/><br/>Regards,<br/><br/>Zooko<br/><br/>community organizer, Tahoe-LAFS project</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 200,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: integrating digital payments into p2p protocols",
+        "url": "https://bitcointalk.org/index.php?topic=890.msg10723#msg10723",
+        "date": "August 22, 2010, 11:57:32 PM",
+        "content": "<div class=\"post\">Hey Zooko!<br/><br/>I wanted to thank you for posting about Bitcoin on your blog a year or two ago, back when I announced it on the Cryptography mailing list.</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

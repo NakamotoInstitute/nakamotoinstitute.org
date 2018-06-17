@@ -9,7 +9,9 @@ subject to other licenses.-->
     <title>{% block title %}Satoshi Nakamoto Institute{% endblock %}</title>
     <link href="{{ url_for('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet" media="screen">
     <link href="{{ url_for('static', filename = 'css/bootstrap-theme.min.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename = 'css/main.css') }}" rel="stylesheet" media="screen">
+    {% assets "scss_all" %}
+      <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}" media="screen">
+    {% endassets %}
     <link href="{{ url_for('atomfeed') }}" rel="alternate" title="Mempool" type="application/atom+xml">
     <script>
     if( navigator.doNotTrack != "yes" && navigator.doNotTrack != "1" && window.doNotTrack != "1" && navigator.msDoNotTrack != "1" ){

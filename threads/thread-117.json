@@ -1,0 +1,38 @@
+[
+    {
+        "thread_id": 117,
+        "name": "Gavin Andresen",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=224",
+        "subject": "Privacy versus Safety: handling change",
+        "url": "https://bitcointalk.org/index.php?topic=434.msg3750#msg3750",
+        "date": "July 17, 2010, 02:13:46 PM",
+        "content": "<div class=\"post\">Here's how you can lose coins by backing up and restoring your wallet file:<br/><br/>Lets say you have one shiny 1,000 Bitcoin coin in your wallet (it's actually just a transaction for 1,000 bitcoins paid to a public key that's stored in your wallet).<br/><br/>You backup that file.<br/><br/>Now you spend 1 Bitcoin.\u00a0 Your shiny 1,000 BTC coin is broken into 1BTC, plus 999BTC in change.\u00a0 That change is <b>given a new, different public key.</b><br/><br/>Now if you restore your wallet file, Bitcoin sees that the 1,000BTC coin has been spent-- 1BTC was sent somewhere, and the other 999BTC was sent somewhere else.\u00a0 Because you don't have the key for the 999BTC, it has no idea that those coins belong to you.<br/><br/>So they're lost.<br/><br/>Trying out alternative policies for handling change on the TEST network would be a good idea, in my opinion.<br/><br/>Maybe change transactions should always get signed with the same public key, so you wouldn't lose coins when restoring your wallet... although that would give you less privacy because it would tend to tie all your transactions together.<br/><br/>Maybe your wallet should get initially populated with 100 \"change\" addresses, with one randomly chosen as needed.\u00a0 And some super-geeky way of replacing them with another, new, 100 addresses.<br/><br/>Maybe there's an even better way of handling the \"I lost BTC when I restored my wallet\" problem; ideas?<br/></div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 117,
+        "name": "Insti",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=336",
+        "subject": "Re: Privacy versus Safety: handling change",
+        "url": "https://bitcointalk.org/index.php?topic=434.msg3755#msg3755",
+        "date": "July 17, 2010, 02:25:28 PM",
+        "content": "<div class=\"post\">Isn't this just a result of restoring to an out of date backup?<br/><br/>That aside, <br/><br/>Simple possible change return methods:<br/><br/>a) change gets returned to the address it came from.<br/>b) change gets returned to a newly generated bitcoin address.<br/><br/>Most people wont care and will expect the a) behavior, so make this the default.<br/>Those who care about the privacy of their transactions can enable b) through some option setting in the client.<br/></div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 117,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Privacy versus Safety: handling change",
+        "url": "https://bitcointalk.org/index.php?topic=434.msg3770#msg3770",
+        "date": "July 17, 2010, 04:27:39 PM",
+        "content": "<div class=\"post\">We should queue up a supply of pre-made addresses in the wallet to use when a new address is needed.\u00a0 They aren't very big, so it wouldn't hurt to have a lot of them.\u00a0 This would more generally cover the case also where someone backs up, then requests a new address and receives a big payment with it.\u00a0 Maybe there should be separate queues so one type of demand on addresses doesn't deplete it for the others.<br/><br/>The addresses would be created and stored in the normal place, but also listed on a separate list of created-but-never-used addresses.\u00a0 When an address is requested, the address at the front of the never-used queue is handed out, and a new address is created and added to the back.<br/><br/>There's some kind of rescan in the block loading code that was made to repair the case where someone copied their wallet.dat.\u00a0 I would need to check that the rescan handles the case of rediscovering received payments in blocks that were already received, but are forgotten because the wallet was restored.</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

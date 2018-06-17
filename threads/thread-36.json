@@ -1,0 +1,86 @@
+[
+    {
+        "thread_id": 36,
+        "name": "NewLibertyStandard",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=26",
+        "subject": "Bitcoin Address Collisions",
+        "url": "https://bitcointalk.org/index.php?topic=62.msg435#msg435",
+        "date": "February 23, 2010, 03:46:44 AM",
+        "content": "<div class=\"post\">Although extremely unlikely, what would happen if two Bitcoin clients generated the same Bitcoin address? Would payments be delivered to whichever client encountered the payment first? If there is a mechanism in place to prevent such collisions, please explain it.</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 36,
+        "name": "ec",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=42",
+        "subject": "Re: Bitcoin Address Collisions",
+        "url": "https://bitcointalk.org/index.php?topic=62.msg436#msg436",
+        "date": "February 23, 2010, 08:25:17 AM",
+        "content": "<div class=\"post\">For two addresses to be equal, two identical private/public elliptical curve (ec <img alt=\"Smiley\" border=\"0\" src=\"https://bitcointalk.org/Smileys/default/smiley.gif\"/>) keys have to be generated. Without looking at the source code, let's assume the probability for this is 2^(-128) for a keyspace of 128 bits. See <a href=\"http://en.wikipedia.org/wiki/Universally_Unique_Identifier#Random_UUID_probability_of_duplicates\">here</a> for a perspective on how probable it is with a 122 bit collision.<br/><br/>However, if something similar to the <a href=\"http://lwn.net/Articles/282230/\">Debian ssl-scandal happens</a>, similar keys could indeed be generated. The effect of an individual generating an existing key, is (if I understand it correctly) in effect to make a copy of wallet.dat. Not good at all, but not devastating for all the members of the p2p network.</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 36,
+        "name": "NewLibertyStandard",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=26",
+        "subject": "Re: Bitcoin Address Collisions",
+        "url": "https://bitcointalk.org/index.php?topic=62.msg437#msg437",
+        "date": "February 23, 2010, 09:22:47 AM",
+        "content": "<div class=\"post\">Are you referring to the private key which is generated the first time a person runs Bitcoin? If someone were to successfully duplicate someone else's key then after they downloaded all the blocks, they would have the same balance as the person with the original key. That's what you're saying, right?<br/><br/>I was referring to the custom Bitcoin addresses which you can label with the name of the person who is going to send you bitcoins so that you know from whom the payment came. I think these addresses are generated from the private key mentioned previously. I'm wondering about collisions because although they are very unique, they are easily generated over and over again by all by all bitcoin clients.</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 36,
+        "name": "ec",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=42",
+        "subject": "Re: Bitcoin Address Collisions",
+        "url": "https://bitcointalk.org/index.php?topic=62.msg442#msg442",
+        "date": "February 23, 2010, 04:17:56 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=62.msg437#msg437\">Quote from: NewLibertyStandard on February 23, 2010, 09:22:47 AM</a></div><div class=\"quote\">Are you referring to the private key which is generated the first time a person runs Bitcoin? If someone were to successfully duplicate someone else's key then after they downloaded all the blocks, they would have the same balance as the person with the original key. That's what you're saying, right?<br/></div><br/>Yes, that is correct. They would share the wallet, and it becomes a race on spending the money first.<br/><br/><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=62.msg437#msg437\">Quote from: NewLibertyStandard on February 23, 2010, 09:22:47 AM</a></div><div class=\"quote\">I was referring to the custom Bitcoin addresses which you can label with the name of the person who is going to send you bitcoins so that you know from whom the payment came. I think these addresses are generated from the private key mentioned previously. I'm wondering about collisions because although they are very unique, they are easily generated over and over again by all by all bitcoin clients.<br/></div><br/>If I read the source code correctly, keys are always made in pairs. That means, every address has an associated private key. When you click \"New Address\", you call GenerateKey in main.cpp, which generates a new key pair. So the duplicate address is ultimately a duplicate public key. Which is <i>very</i> unlikely. <br/><br/>While keys still are \"easily generated\", you should have to generate a whole lot of keys before a collision. While I am not certain, it seems that the keys generated have a space of 256 bits, which is a lot more than the 122 bits put in perspective in the wikipedia article on uuids. Remember, 123 bits have half the probability of collision as 122 bit, 124 half of that again etc.</div>",
+        "post_num": 4,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 36,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Bitcoin Address Collisions",
+        "url": "https://bitcointalk.org/index.php?topic=62.msg443#msg443",
+        "date": "February 23, 2010, 04:26:09 PM",
+        "content": "<div class=\"post\">There's a separate public/private keypair for every bitcoin address.\u00a0 You don't have a single private key that unlocks everything.\u00a0 Bitcoin addresses are a 160-bit hash of the public key, everything else in the system is 256-bit.<br/><br/>If there was a collision, the collider could spend any money sent to that address.\u00a0 Just money sent to that address, not the whole wallet.<br/><br/>If you were to intentionally try to make a collision, it would currently take 2^126 times longer to generate a colliding bitcoin address than to generate a block.\u00a0 You could have got a lot more money by generating blocks.<br/><br/>The random seed is very thorough.\u00a0 On Windows, it uses all the performance monitor data that measures every bit of disk performance, network card metrics, cpu time, paging etc. since your computer started.\u00a0 Linux has a built-in entropy collector.\u00a0 Adding to that, every time you move your mouse inside the Bitcoin window you're generating entropy, and entropy is captured from the timing of disk ops.</div>",
+        "post_num": 5,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 36,
+        "name": "NewLibertyStandard",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=26",
+        "subject": "Re: Bitcoin Address Collisions",
+        "url": "https://bitcointalk.org/index.php?topic=62.msg450#msg450",
+        "date": "February 23, 2010, 07:04:47 PM",
+        "content": "<div class=\"post\">Thanks for the explanation. I think it all makes sense.<br/><br/>Are generated bitcoins encrypted with whichever address is currently displayed in the main Bitcoin window? I may have mentioned this in an email message quite a while ago, but it would be cool for some very future version to allow people to see which of their bitcoins are encrypted with which of their addresses.</div>",
+        "post_num": 6,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 36,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Bitcoin Address Collisions",
+        "url": "https://bitcointalk.org/index.php?topic=62.msg453#msg453",
+        "date": "February 23, 2010, 10:24:00 PM",
+        "content": "<div class=\"post\"><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=62.msg450#msg450\">Quote from: NewLibertyStandard on February 23, 2010, 07:04:47 PM</a></div><div class=\"quote\">Are generated bitcoins encrypted with whichever address is currently displayed in the main Bitcoin window?<br/></div>No, each generated transaction uses a new, single-use address.<br/><br/>Nothing uses the address in the main window, it's just there for convenience for you to copy.\u00a0 0.2.5 has a \"New...\" button next to it to make it easy to change each time you use it.</div>",
+        "post_num": 7,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

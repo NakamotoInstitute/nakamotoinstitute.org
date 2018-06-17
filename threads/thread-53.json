@@ -1,0 +1,38 @@
+[
+    {
+        "thread_id": 53,
+        "name": "dkaparis",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=192",
+        "subject": "Odd amount of generated coins",
+        "url": "https://bitcointalk.org/index.php?topic=141.msg1165#msg1165",
+        "date": "May 20, 2010, 09:38:53 AM",
+        "content": "<div class=\"post\">Greetings,<br/><br/>How is the amount of bitcoins generated per block determined? It was my understanding that is is currently fixed to 50, however a few days ago I happened to generate amount of 52.64:<br/><br/>Status: 729 blocks<br/>Date: 05/15/10 08:38<br/>Source: Generated<br/>Credit: 52.64<br/>Net amount: +52.64<br/><br/>How comes?<br/><br/>Regards,<br/>Dimitri<br/></div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 53,
+        "name": "NewLibertyStandard",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=26",
+        "subject": "Re: Odd amount of generated coins",
+        "url": "https://bitcointalk.org/index.php?topic=141.msg1168#msg1168",
+        "date": "May 20, 2010, 09:03:55 PM",
+        "content": "<div class=\"post\">Internally, bitcoins are bundled into packs of 50.00 or however many get sent over the network. Bitcoins usually have to be re-bundled each time they get sent. If a certain very large number of bitcoin bundles have to be re-bundled, there is a very small fee which the sender has to pay. The fee goes to the bitcoin client (yours in this case) which verifies the large re-bundling. It's not a well known behavior and I hope that future versions will display a warning or confirmation before such a fee is charged.<br/><br/>There is a post somewhere with more specific details. I'll look for it for a few minutes and I'll edit this post if I happen to find it. As always, the source code, which is open source, will reveal the exact behavior. I haven't examined the code and my description of the behavior is based on my poor memory, so it might not be exactly correct.<br/><br/>Edit: <a href=\"http://bitcointalk.org/index.php?topic=48.msg327#msg327\">Here's the explanation I mentioned</a>. It seems that if more than 500 bundles of bitcoins are re-bundled, there's roughly a 0.002% fee. So during that ten minute period, one or more people each re-bundled 500 bundles of bitcoins, totaling roughly 132,000 bitcoins.<br/><br/>Since the sender pays the fee, I'd like to know what happens when a person sends all their bitcoins. I would expect that if there weren't enough bitcoins to cover the fee, then the amount of the fee which can not be paid would be subtracted from the payment. If this is not the case, then the fee could be avoided by sending all your coins to yourself before sending a large payment.<br/><br/><div class=\"quoteheader\"><a href=\"https://bitcointalk.org/index.php?topic=48.msg327#msg327\">Quote from: satoshi on February 14, 2010, 06:28:03 AM</a></div><div class=\"quote\">A transaction over the size limit can still be sent if a small fee is added.<br/></div>This makes it sound like a payment wouldn't send successfully if there were insufficient funds for the fee.</div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 53,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Odd amount of generated coins",
+        "url": "https://bitcointalk.org/index.php?topic=141.msg1260#msg1260",
+        "date": "May 26, 2010, 09:34:32 PM",
+        "content": "<div class=\"post\">In the SVN version, if a transaction requires a transaction fee, it says<br/>\"This transaction is over the size limit.\u00a0 You can still send it for a fee of #,<br/>which goes to the nodes that process your transaction and helps to support the network.<br/>Do you want to pay the fee?\"<br/><br/>If you don't have enough money with the fee added, it says<br/>\"Total exceeds your balance when the # transaction fee is included\u00a0 \"</div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]

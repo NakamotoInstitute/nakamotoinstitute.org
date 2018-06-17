@@ -1,0 +1,38 @@
+[
+    {
+        "thread_id": 191,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Checking the block chain on load",
+        "url": "https://bitcointalk.org/index.php?topic=841.msg9813#msg9813",
+        "date": "August 16, 2010, 08:07:46 PM",
+        "content": "<div class=\"post\">SVN rev 139 does a basic check of the block chain after loading.<br/><br/>With this we wouldn't have needed to delete blk*.dat, it would have automatically done a reorg back to the fork.\u00a0 There wasn't time to do a careful implementation of this at the time.<br/><br/>It might take longer than we want, since it has to load all the blocks.\u00a0 If it's too slow, we could have it only go back to a certain block number.</div>",
+        "post_num": 1,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 191,
+        "name": "Insti",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=336",
+        "subject": "Re: Checking the block chain on load",
+        "url": "https://bitcointalk.org/index.php?topic=841.msg9820#msg9820",
+        "date": "August 16, 2010, 08:43:19 PM",
+        "content": "<div class=\"post\">I assume it will take more than 1 second to do.<br/>Do we have to do this every time it starts up <img alt=\"Sad\" border=\"0\" src=\"https://bitcointalk.org/Smileys/default/sad.gif\"/><br/><br/>Can we make a menu option for it, to fire it off manually?<br/>And make a counter so that it reminds you to check every n loads/days. <br/>or whenever you update the software.<br/><br/>It just seems that needing to recheck the entire block chain will be a very rare event, so rechecking the block chain all the time is overkill.<br/><br/></div>",
+        "post_num": 2,
+        "is_displayed": true,
+        "nested_level": 0
+    },
+    {
+        "thread_id": 191,
+        "name": "satoshi",
+        "poster_url": "https://bitcointalk.org/index.php?action=profile;u=3",
+        "subject": "Re: Checking the block chain on load",
+        "url": "https://bitcointalk.org/index.php?topic=841.msg10082#msg10082",
+        "date": "August 18, 2010, 06:28:28 PM",
+        "content": "<div class=\"post\">In the next SVN rev, I'll make it only go back to the last checkpoint at block 74000.\u00a0 If we need to correct a problem in the future, we can always make sure it goes back at least as far back as the problem.\u00a0 Also, I'm adding code to verify the block index, which means the proof-of-work chain is checked.<br/><br/>Still, the system won't be entirely secure against your blk*.dat files.\u00a0 You are trusting someone if you use a copy of their blk files.<br/></div>",
+        "post_num": 3,
+        "is_displayed": true,
+        "nested_level": 0
+    }
+]
