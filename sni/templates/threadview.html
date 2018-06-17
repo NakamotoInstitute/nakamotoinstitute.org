@@ -1,14 +1,42 @@
 <!-- extend base layout -->
 {% extends "base.html" %}
 {% block content %}
+{% set only_satoshi = request.args.get('view') == 'satoshi' -%}
 <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+  <div class="text-center">
+    <a href="{{url_for('posts', view='threads')}}">All Threads</a>
+    <br>
+    {% if prev != None %}
+      {% if only_satoshi %}
+      <a href="{{url_for('threadview',thread_id=prev['id'],source=prev['source'],view='satoshi')}}">Previous</a> |
+      {% else %}
+      <a href="{{url_for('threadview',thread_id=prev['id'],source=prev['source'])}}">Previous</a> |
+      {% endif %}
+    {% endif %}
+    <a href="{{url_for('threads', source=posts[0].thread['source'])}}">Back</a>
+    {% if next != None %}
+      {% if only_satoshi %}
+      | <a href="{{url_for('threadview',thread_id=next['id'],source=next['source'],view='satoshi')}}">Next</a>
+      {% else %}
+      | <a href="{{url_for('threadview',thread_id=next['id'],source=next['source'])}}">Next</a>
+      {% endif %}
+    {% endif %}
+  </div>
   <div class="text-center">
     <h2>
       <small>{{posts[0].thread.source_to_string()}}</small></br>
       {{posts[0].thread.title}}
     </h2>
+    <p>
+      {% if only_satoshi %}
+      <a href=".">View all posts</a>
+      {% else %}
+      <a href="?view=satoshi">View only Satoshi</a>
+      {% endif %}
+    </p>
     <p><a href="{{posts[0].thread.url}}">External link</a></p>
   </div>
+  <div>
   {% for post in posts %}
     <div class="post-container {% if post.satoshi_id %}highlight{% endif %}" id="{{post.post_num}}">
       <div class="header">
@@ -32,5 +60,26 @@
       </div>
     </div>
   {% endfor %}
+  </div>
+  <br>
+  <div class="text-center">
+    {% if prev != None %}
+      {% if only_satoshi %}
+      <a href="{{url_for('threadview',thread_id=prev['id'],source=prev['source'],view='satoshi')}}">Previous</a> |
+      {% else %}
+      <a href="{{url_for('threadview',thread_id=prev['id'],source=prev['source'])}}">Previous</a> |
+      {% endif %}
+    {% endif %}
+    <a href="{{url_for('threads', source=posts[0].thread['source'])}}">Back</a>
+    {% if next != None %}
+      {% if only_satoshi %}
+      | <a href="{{url_for('threadview',thread_id=next['id'],source=next['source'],view='satoshi')}}">Next</a>
+      {% else %}
+      | <a href="{{url_for('threadview',thread_id=next['id'],source=next['source'])}}">Next</a>
+      {% endif %}
+    {% endif %}
+    <br>
+    <a href="{{url_for('posts', view='threads')}}">All Threads</a>
+  </div>
 </div>
 {% endblock %}

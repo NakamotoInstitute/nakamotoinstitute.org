@@ -46,7 +46,7 @@ class Post(db.Model):
     subject = db.Column(db.String())
     poster_name = db.Column(db.String())
     poster_url = db.Column(db.String())
-    post_num = db.Column(db.Integer) # Post number in thread
+    post_num = db.Column(db.Integer)  # Post number in thread
     is_displayed = db.Column(db.Boolean)
     nested_level = db.Column(db.Integer)
     date = db.Column(db.DateTime)
