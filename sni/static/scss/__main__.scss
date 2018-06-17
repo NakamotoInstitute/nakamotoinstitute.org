@@ -182,7 +182,7 @@ $post-inner-border: 1px solid $post-sectional;
     &.gray {
       background-color: $post-gray;
     }
-    &.highlight {
+    &.highlight > .header {
       background-color: $post-highlight;
     }
     & > .header {
