@@ -28,17 +28,17 @@
   hyphens: auto;
 }
 
-.quoteheader {
-  padding: 5px 20px;
-  font-size: 95%;
-  border-left: 5px solid #eeeeee;
-}
-.quote {
-  padding: 10px 20px;
-  margin: 0 0 20px;
-  font-size: 95%;
-  border-left: 5px solid #eeeeee;
-}
+// .quoteheader {
+//   padding: 5px 20px;
+//   font-size: 95%;
+//   border-left: 5px solid #eeeeee;
+// }
+// .quote {
+//   padding: 10px 20px;
+//   margin: 0 0 20px;
+//   font-size: 95%;
+//   border-left: 5px solid #eeeeee;
+// }
 
 /* Sticky footer styles
 -------------------------------------------------- */
@@ -157,6 +157,23 @@ $post-border: #bebebe;
 $post-sectional: #d3d3d3;
 $post-inner-border: 1px solid $post-sectional;
 
+.codeheader, .code, .quoteheader, .quote {
+  border: 1px solid $post-sectional;
+  padding: $post-padding-half;
+}
+.codeheader, .quoteheader {
+  font-weight: bold;
+}
+.code {
+  border-top: none;
+  white-space: pre-wrap;
+  font-family: monospace;
+}
+.quote {
+  border-top: none;
+  margin-bottom: $post-padding;
+}
+
 .post-container {
   border: 2px solid $post-border;
   &.highlight {
@@ -192,18 +209,6 @@ $post-inner-border: 1px solid $post-sectional;
         white-space: -pre-wrap; /* Opera 4-6 */
         white-space: -o-pre-wrap; /* Opera 7 */
         word-wrap: break-word; /* Internet Explorer 5.5+ */
-    }
-    .codeheader, .code {
-      border: 1px solid $post-sectional;
-      padding: 0 $post-padding-half;
-    }
-    .codeheader {
-      font-weight: bold;
-    }
-    .code {
-      border-top: none;
-      white-space: pre-wrap;
-      font-family: monospace;
     }
   }
   & > .footer {
