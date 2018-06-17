@@ -106,6 +106,7 @@ def posts():
         threads = Thread.query.all()
         p2pfoundation_threads = [threads[0]]
         bitcointalk_threads = threads[1:]
+        app.logger.info(str(request.remote_addr) + ', threads')
         return render_template(
             "threads.html", threads=threads, p2pfoundation_threads=p2pfoundation_threads,
             bitcointalk_threads=bitcointalk_threads, source=None)
@@ -146,9 +147,10 @@ def postview(postnum, source):
 def threads(source):
     threads = Thread.query.filter_by(source=source).order_by(Thread.id).all()
     if len(threads) != 0:
+        app.logger.info(str(request.remote_addr) + ', threads ,' + source)
         return render_template("threads.html", threads=threads, source=source)
     else:
-        return redirect(url_for('posts'))
+        return redirect(url_for('posts', view='threads'))
 
 
 @cache.cached(timeout=900)
@@ -156,17 +158,19 @@ def threads(source):
 def threadview(source, thread_id):
     view_query = request.args.get('view')
     posts = Post.query.filter_by(thread_id=thread_id)
-    if posts:
+    if len(posts.all()) > 0:
         thread = posts[0].thread
         if thread.source != source:
             return redirect(url_for('threadview', source=thread.source, thread_id=thread_id))
+    else:
+        return redirect(url_for('posts', view='threads'))
     if view_query == 'satoshi':
         posts = posts.filter(Post.satoshi_id.isnot(None))
     posts = posts.all()
     prev = Thread.query.filter_by(id=thread_id-1).first()
     next = Thread.query.filter_by(id=thread_id+1).first()
-    if posts:
-        return render_template("threadview.html", posts=posts, prev=prev, next=next)
+    app.logger.info(str(request.remote_addr) + ', threads ,' + source + ', ' + str(thread_id))
+    return render_template("threadview.html", posts=posts, prev=prev, next=next)
 
 
 @cache.cached(timeout=900)
