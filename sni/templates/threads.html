@@ -31,19 +31,30 @@
     <h3>P2P Foundation</h3>
     <ul>
       {% for thread in p2pfoundation_threads %}
-      <li><a href="{{url_for('threadview', source=thread['source'], thread_id=thread['id'])}}">{{thread['title']}}</a> <em>({{thread.posts[0]['date']}} UTC)</em></li>
+      <li>
+        <a href="{{url_for('threadview', source=thread['source'], thread_id=thread['id'])}}">{{thread['title']}}</a>
+        [<a href="{{url_for('threadview', source=thread['source'], thread_id=thread['id'], view='satoshi')}}">Satoshi only</a>]
+        <em>({{thread.posts[0]['date']}} UTC)</em>
+      </li>
       {% endfor %}
     </ul>
     <h3>BitcoinTalk</h3>
     <ul>
       {% for thread in bitcointalk_threads %}
-      <li><a href="{{url_for('threadview', source=thread['source'], thread_id=thread['id'])}}">{{thread['title']}}</a> <em>({{thread.posts[0]['date']}} UTC)</em></li>
+      <li>
+        <a href="{{url_for('threadview', source=thread['source'], thread_id=thread['id'])}}">{{thread['title']}}</a>
+        [<a href="{{url_for('threadview', source=thread['source'], thread_id=thread['id'], view='satoshi')}}">Satoshi only</a>]
+        <em>({{thread.posts[0]['date']}} UTC)</em>
+      </li>
       {% endfor %}
     </ul>
   {% else %}
     <ul>
     {% for thread in threads %}
-      <li><a href="{{url_for('threadview', source=thread['source'], thread_id=thread['id'])}}">{{thread['title']}}</a> <em>({{thread.posts[0]['date']}} UTC)</em></li>
+      <li>
+        <a href="{{url_for('threadview', source=thread['source'], thread_id=thread['id'])}}">{{thread['title']}}</a>
+        [<a href="{{url_for('threadview', source=thread['source'], thread_id=thread['id'], view='satoshi')}}">Satoshi only</a>]
+        <em>({{thread.posts[0]['date']}} UTC)</em></li>
     {% endfor %}
     </ul>
   {% endif %}
