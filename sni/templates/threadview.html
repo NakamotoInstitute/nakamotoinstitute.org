@@ -3,7 +3,10 @@
 {% block content %}
 <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
   <div class="text-center">
-    <h2>{{posts[0].thread.title}}</h2>
+    <h2>
+      <small>{{posts[0].thread.source_to_string()}}</small></br>
+      {{posts[0].thread.title}}
+    </h2>
     <p><a href="{{posts[0].thread.url}}">External link</a></p>
   </div>
   {% for post in posts %}

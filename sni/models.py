@@ -27,6 +27,14 @@ class Thread(db.Model):
     source = db.Column(db.String())
     posts = db.relationship('Post', backref='thread', lazy=True)
 
+    def source_to_string(self):
+        if self.source == 'bitcointalk':
+            return 'BitcoinTalk'
+        elif self.source == 'p2pfoundation':
+            return 'P2P Foundation'
+        else:
+            return self.source
+
     def __repr__(self):
         return '<Thread %r>' % (self.title)
 

@@ -8,10 +8,10 @@
       <a href="{{url_for('forumposts', source='p2pfoundation')}}">View posts</a><br>
       <a href="{{url_for('posts', view='threads')}}">All Threads</a>
       (<a href="{{url_for('posts')}}">Posts</a>) |
-      <a href="{{url_for('threads', source='bitcointalk')}}">Bitcointalk</a>
+      <a href="{{url_for('threads', source='bitcointalk')}}">BitcoinTalk</a>
       (<a href="{{url_for('forumposts', source='bitcointalk')}}">Posts</a>)
     {% elif source=="bitcointalk" %}
-      <h2>Bitcointalk Threads</h2>
+      <h2>BitcoinTalk Threads</h2>
       <a href="{{url_for('forumposts', source='bitcointalk')}}">View posts</a><br>
       <a href="{{url_for('posts', view='threads')}}">All Threads</a>
       (<a href="{{url_for('posts')}}">Posts</a>) |
@@ -22,7 +22,7 @@
       <a href="{{url_for('posts')}}">View posts</a><br>
       <a href="{{url_for('threads', source='p2pfoundation')}}">P2P Foundation</a>
       (<a href="{{url_for('forumposts', source='p2pfoundation')}}">Posts</a>) |
-      <a href="{{url_for('threads', source='bitcointalk')}}">Bitcointalk</a>
+      <a href="{{url_for('threads', source='bitcointalk')}}">BitcoinTalk</a>
       (<a href="{{url_for('forumposts', source='bitcointalk')}}">Posts</a>)
     {% endif %}
   </div>
@@ -34,7 +34,7 @@
       <li><a href="{{url_for('threadview', source=thread['source'], thread_id=thread['id'])}}">{{thread['title']}}</a> <em>({{thread.posts[0]['date']}} UTC)</em></li>
       {% endfor %}
     </ul>
-    <h3>Bitcointalk</h3>
+    <h3>BitcoinTalk</h3>
     <ul>
       {% for thread in bitcointalk_threads %}
       <li><a href="{{url_for('threadview', source=thread['source'], thread_id=thread['id'])}}">{{thread['title']}}</a> <em>({{thread.posts[0]['date']}} UTC)</em></li>
@@ -51,7 +51,7 @@
     {% if source=="p2pfoundation" %}
       <a href="{{url_for('posts', view='threads')}}">All Threads</a>
       (<a href="{{url_for('posts')}}">Posts</a>) |
-      <a href="{{url_for('threads', source='bitcointalk')}}">Bitcointalk</a>
+      <a href="{{url_for('threads', source='bitcointalk')}}">BitcoinTalk</a>
       (<a href="{{url_for('forumposts', source='bitcointalk')}}">Posts</a>)<br>
       <a href="{{url_for('forumposts', source='p2pfoundation')}}">View posts</a>
     {% elif source=="bitcointalk" %}
@@ -63,7 +63,7 @@
     {% else %}
       <a href="{{url_for('threads', source='p2pfoundation')}}">P2P Foundation</a>
       (<a href="{{url_for('forumposts', source='p2pfoundation')}}">Posts</a>) |
-      <a href="{{url_for('threads', source='bitcointalk')}}">Bitcointalk</a>
+      <a href="{{url_for('threads', source='bitcointalk')}}">BitcoinTalk</a>
       (<a href="{{url_for('forumposts', source='bitcointalk')}}">Posts</a>)<br>
       <a href="{{url_for('posts')}}">View posts</a>
     {% endif %}

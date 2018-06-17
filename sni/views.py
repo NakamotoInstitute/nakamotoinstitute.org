@@ -131,8 +131,8 @@ def forumposts(source):
 @app.route('/posts/<string:source>/<int:postnum>/', subdomain="satoshi", methods=["GET"])
 def postview(postnum, source):
     post = Post.query.filter_by(satoshi_id=postnum).join(Post.thread, aliased=True).filter_by(source=source).first()
-    prev = Post.query.filter_by(satoshi_id=postnum-1).join(Post.thread, aliased=True).filter_by(source=source).first()
-    next = Post.query.filter_by(satoshi_id=postnum+1).join(Post.thread, aliased=True).filter_by(source=source).first()
+    prev = Post.query.filter_by(satoshi_id=postnum-1).join(Post.thread, aliased=True).first()
+    next = Post.query.filter_by(satoshi_id=postnum+1).join(Post.thread, aliased=True).first()
     if post is not None:
         app.logger.info(str(request.remote_addr) + ', posts ,' + source + ', ' + str(postnum))
         return render_template("postview.html", post=post, prev=prev,
