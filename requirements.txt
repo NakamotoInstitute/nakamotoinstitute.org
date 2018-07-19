@@ -10,7 +10,7 @@ Flask-Markdown==0.3
 Flask-Migrate==1.2.0
 Flask-Script==0.6.7
 Flask-SQLAlchemy==1.0
-gunicorn==18.0
+gunicorn==19.9.0
 itsdangerous==0.23
 Jinja2==2.7.2
 lxml==3.4.1
