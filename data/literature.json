@@ -850,5 +850,16 @@
         "categories": ["cryptography"],
         "doctype": "dissertation",
         "external": "https://www.chaum.com/publications/research_chaum_2.pdf"
+    },
+    {
+        "id": 83,
+        "title": "Money, Blockchains, and Social Scalability",
+        "author": ["nick-szabo"],
+        "date": "February 9, 2017",
+        "slug": "money-blockchains-and-social-scalability",
+        "formats": ["html", "ext"],
+        "categories": ["economics", "cryptography"],
+        "doctype": "essay",
+        "external": "http://unenumerated.blogspot.com/2017/02/money-blockchains-and-social-scalability.html"
     }]
 }
