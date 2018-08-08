@@ -247,8 +247,3 @@ class Episode(db.Model):
 
     def __repr__(self):
         return '<Episode %r>' % (self.title)
-
-
-class DonationAddress(db.Model):
-    address = db.Column(db.String, primary_key=True)
-    lastseen = db.Column(db.DateTime)

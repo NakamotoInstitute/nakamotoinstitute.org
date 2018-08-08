@@ -344,11 +344,3 @@ for i in range(0,len(episodes)):
 	db.session.commit()
 
 print "Finish importing Episode"
-
-#with open('./data/addresses/addresses.csv') as csvfile:
-#	addresses = csv.reader(csvfile)
-#	now = datetime.now()
-#	for address in addresses:
-#		record = DonationAddress(address=address[0], lastseen=now)
-#		db.session.add(record)
-#		db.session.commit()
