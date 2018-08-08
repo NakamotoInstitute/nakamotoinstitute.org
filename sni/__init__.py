@@ -63,21 +63,6 @@ app.config['ASSETS_DEBUG'] = False
 
 cache = Cache(app, config={'CACHE_TYPE': 'simple'})
 
-from models import DonationAddress
-
-
-@app.context_processor
-def utility_processor():
-    def donation_address():
-        address = DonationAddress.query.order_by(DonationAddress.lastseen).first()
-        if address is None:
-            return ''
-        address.lastseen = datetime.now()
-        db.session.commit()
-        address = address.address
-        return address
-    return dict(donation_address=donation_address)
-
 if not app.debug:
     import logging
     from logging.handlers import RotatingFileHandler

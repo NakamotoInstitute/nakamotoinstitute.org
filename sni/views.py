@@ -7,8 +7,7 @@
 
 from sni import app, db, cache, pages
 from models import Post, Email, Doc, ResearchDoc, Author, Format, Category,\
-                   BlogPost, Skeptic, DonationAddress, Episode, Quote,\
-                   QuoteCategory, Thread
+                   BlogPost, Skeptic, Episode, Quote, QuoteCategory, Thread
 from flask import render_template, json, url_for, redirect, request, Response,\
                   send_from_directory
 from sqlalchemy import asc, desc
@@ -68,6 +67,12 @@ def contact():
 def events():
     app.logger.info(str(request.remote_addr) + ', Events')
     return render_template("events.html")
+
+
+@app.route('/donate/', methods=["GET"])
+def donate():
+    app.logger.info(str(request.remote_addr) + ', Donate')
+    return render_template("donate.html")
 
 
 @cache.cached(timeout=900)

@@ -247,3 +247,12 @@ $post-inner-border: 1px solid $post-sectional;
     }
   }
 }
+
+.donation-buttons {
+  line-height: 46px;
+  letter-spacing: 12px;
+  margin-bottom: 24px;
+  & > form {
+    display: inline;
+  }
+}
