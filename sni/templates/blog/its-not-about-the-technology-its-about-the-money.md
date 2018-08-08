@@ -1,6 +1,5 @@
 image: lyle-lanley-blockchain-technology.png
 image_alt: Lyle Lanley sells blockchain tech
-btc_address: 16oJGq7v5XXtYa4q6HEQUNT9obG3rpkDxT
 
 ## Blockchain Technology
 
