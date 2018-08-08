@@ -20,10 +20,36 @@ Donate | Satoshi Nakamoto Institute
       <hr>
       <br>
       <br>
-      <form method="POST" action="https://btcpay.nakamotoinstitute.org/apps/HbP8R9997Pi16JmW2sPjNDhLXaTMp4PJDG4FKdy5s9oP/pos">
+			<div class="donation-buttons">
+				<form method="POST" action="https://btcpay.nakamotoinstitute.org/apps/HbP8R9997Pi16JmW2sPjNDhLXaTMp4PJDG4FKdy5s9oP/pos">
+				  <input type="hidden" name="redirectUrl" value="{{url_for('index', _external=True)}}" />
+				  <button class="btn btn-primary"  type="submit" name="choiceKey" value="100 BTC">100 BTC</button>
+				</form>
+				<form method="POST" action="https://btcpay.nakamotoinstitute.org/apps/HbP8R9997Pi16JmW2sPjNDhLXaTMp4PJDG4FKdy5s9oP/pos">
+				  <input type="hidden" name="redirectUrl" value="{{url_for('index', _external=True)}}" />
+				  <button class="btn btn-primary"  type="submit" name="choiceKey" value="10 BTC">10 BTC</button>
+				</form>
+				<form method="POST" action="https://btcpay.nakamotoinstitute.org/apps/HbP8R9997Pi16JmW2sPjNDhLXaTMp4PJDG4FKdy5s9oP/pos">
+				  <input type="hidden" name="redirectUrl" value="{{url_for('index', _external=True)}}" />
+				  <button class="btn btn-primary"  type="submit" name="choiceKey" value="1 BTC">1 BTC</button>
+				</form>
+				<form method="POST" action="https://btcpay.nakamotoinstitute.org/apps/HbP8R9997Pi16JmW2sPjNDhLXaTMp4PJDG4FKdy5s9oP/pos">
+				  <input type="hidden" name="redirectUrl" value="{{url_for('index', _external=True)}}" />
+				  <button class="btn btn-primary"  type="submit" name="choiceKey" value="0.1 BTC">0.1 BTC</button>
+				</form>
+				<form method="POST" action="https://btcpay.nakamotoinstitute.org/apps/HbP8R9997Pi16JmW2sPjNDhLXaTMp4PJDG4FKdy5s9oP/pos">
+				  <input type="hidden" name="redirectUrl" value="{{url_for('index', _external=True)}}" />
+				  <button class="btn btn-primary"  type="submit" name="choiceKey" value="0.01 BTC">0.01 BTC</button>
+				</form>
+				<form method="POST" action="https://btcpay.nakamotoinstitute.org/apps/HbP8R9997Pi16JmW2sPjNDhLXaTMp4PJDG4FKdy5s9oP/pos">
+				  <input type="hidden" name="redirectUrl" value="{{url_for('index', _external=True)}}" />
+				  <button class="btn btn-primary" type="submit" name="choiceKey" value="0.001 BTC">0.001 BTC</button>
+				</form>
+			</div>
+      <form name="custom_amount" method="POST" action="https://btcpay.nakamotoinstitute.org/apps/HbP8R9997Pi16JmW2sPjNDhLXaTMp4PJDG4FKdy5s9oP/pos">
         <div class="input-group">
           <span class="input-group-addon">฿</span>
-          <input class="form-control" value="0.005" type="number" min="0" step="1E-08" name="amount" placeholder="amount">
+          <input class="form-control" placeholder="Other amount" required type="number" min="0" step="1E-08" name="amount" placeholder="amount" pattern="^\d+(?:\.\d)?$">
           <div class="input-group-btn">
             <button class="btn btn-primary" type="submit">Donate</button>
           </div>
