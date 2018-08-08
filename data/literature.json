@@ -861,5 +861,16 @@
         "categories": ["economics", "cryptography"],
         "doctype": "essay",
         "external": "http://unenumerated.blogspot.com/2017/02/money-blockchains-and-social-scalability.html"
+    },
+    {
+        "id": 84,
+        "title": "The Idea of Smart Contracts",
+        "author": ["nick-szabo"],
+        "date": "1997",
+        "slug": "the-idea-of-smart-contracts",
+        "formats": ["html", "ext"],
+        "categories": ["economics", "cryptography", "law"],
+        "doctype": "essay",
+        "external": "http://web.archive.org/web/20140406003401/szabo.best.vwh.net/idea.html"
     }]
 }
