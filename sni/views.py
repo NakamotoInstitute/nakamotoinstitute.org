@@ -6,7 +6,7 @@
 #
 
 from sni import app, db, cache, pages
-from models import Post, Email, Doc, ResearchDoc, Author, Format, Category,\
+from sni.models import Post, Email, Doc, ResearchDoc, Author, Format, Category,\
                    BlogPost, Skeptic, Episode, Quote, QuoteCategory, Thread
 from flask import render_template, json, url_for, redirect, request, Response,\
                   send_from_directory
