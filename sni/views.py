@@ -6,8 +6,9 @@
 #
 
 from sni import app, db, cache, pages
-from sni.models import Post, Email, Doc, ResearchDoc, Author, Format, Category,\
-                   BlogPost, Skeptic, Episode, Quote, QuoteCategory, Thread
+from sni.models import Post, Email, Doc, ResearchDoc, Author, Format, \
+                   Category, BlogPost, Skeptic, Episode, Quote, \
+                   QuoteCategory, Thread
 from flask import render_template, json, url_for, redirect, request, Response,\
                   send_from_directory
 from sqlalchemy import asc, desc
