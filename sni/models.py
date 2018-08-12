@@ -224,6 +224,9 @@ class BlogSeries(db.Model):
     slug = db.Column(db.String())
     blogposts = db.relationship("BlogPost", backref=db.backref('series'))
 
+    def __str__(self):
+        return self.title
+
     def __repr__(self):
         return '<BlogSeries %r>' % (self.title)
 

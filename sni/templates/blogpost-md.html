@@ -2,15 +2,22 @@
 {% extends "blogpost.html" %}
 
 {% block title %}
+{% if bp.series %}
+Chapter {{bp.series_index}}: {{ page.meta.translated_title or bp.title }} | {{ bp.series }} | Satoshi Nakamoto Institute
+{% else %}
 {{ page.meta.translated_title or bp.title }} | Satoshi Nakamoto Institute
+{% endif %}
 {% endblock %}
 
 {% import "helpers.html" as helpers %}
 {% block post %}
-<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+<div class="blogpost col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
 	<div class="page-header">
 		<h1 class="text-center">
-      {{ page.meta.translated_title or bp.title }}
+			{% if bp.series %}
+				<div class="series-title">{{bp.series}}</div>
+				Chapter {{bp.series_index}}: {% endif %}
+	    {{ page.meta.translated_title or bp.title }}
 			<br>
 			<small>{{bp.author[0].first}} {{bp.author[0].middle}} {{bp.author[0].last}}</small>
 		</h1>
