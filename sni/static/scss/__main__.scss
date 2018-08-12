@@ -123,6 +123,24 @@ body {
     text-align: center;
 }
 
+.mempool {
+  h4 {
+    color: #777;
+    margin-bottom: 0;
+  }
+  .series {
+    margin-top: 10px;
+  }
+}
+
+.blogpost {
+  .series-title {
+    color: #777;
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+}
+
 /** Responsive YouTube embedding **/
 
 .flex-video {

@@ -117,6 +117,7 @@ class Author(db.Model):
     def __repr__(self):
         return '<Author %r>' % (self.slug)
 
+
 formats = db.Table(
     'formats',
     db.Column('doc_id', db.Integer, db.ForeignKey('doc.id')),
@@ -157,7 +158,7 @@ class Category(db.Model):
 
 
 class Doc(db.Model):
-    id = db.Column(db.Integer, primary_key = True)
+    id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String())
     author = db.relationship('Author',
                              secondary=authors,
@@ -210,9 +211,24 @@ class BlogPost(db.Model):
     slug = db.Column(db.String())
     excerpt = db.Column(db.String())
     languages = db.Column(db.String())
+    series_id = db.Column(db.Integer, db.ForeignKey('blog_series.id'))
+    series_index = db.Column(db.Integer)
 
     def __repr__(self):
         return '<BlogPost %r>' % (self.title)
+
+
+class BlogSeries(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String())
+    slug = db.Column(db.String())
+    blogposts = db.relationship("BlogPost", backref=db.backref('series'))
+
+    def __str__(self):
+        return self.title
+
+    def __repr__(self):
+        return '<BlogSeries %r>' % (self.title)
 
 
 class Skeptic(db.Model):

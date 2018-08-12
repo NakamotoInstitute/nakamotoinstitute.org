@@ -361,40 +361,48 @@
         "languages": "en"
     },
     {
-        "title": "Crypto-Anarchy and Libertarian Entrepreneurship - Chapter 4: The Risk from the Software Industry",
+        "title": "The Risk from the Software Industry",
         "author": "daniel-krawisz",
         "date": "June 5, 2013",
         "added": "June 5, 2013",
         "slug": "crypto-anarchy-and-libertarian-entrepreneurship-4",
         "excerpt":"Stay one step ahead of the government and don’t get embroiled in politics.",
-        "languages": "en"
+        "languages": "en",
+        "series": "crypto-anarchy-and-libertarian-entrepreneurship",
+        "series_index": 4
     },
     {
-        "title": "Crypto-Anarchy and Libertarian Entrepreneurship - Chapter 3: The Killer App of Liberty",
+        "title": "The Killer App of Liberty",
         "author": "daniel-krawisz",
         "date": "May 29, 2013",
         "added": "May 29, 2013",
         "slug": "crypto-anarchy-and-libertarian-entrepreneurship-3",
         "excerpt":"If Bitcoin becomes money, the government’s control of money will have ended.",
-        "languages": "en"
+        "languages": "en",
+        "series": "crypto-anarchy-and-libertarian-entrepreneurship",
+        "series_index": 3
     },
     {
-        "title": "Crypto-Anarchy and Libertarian Entrepreneurship - Chapter 2: Public-Key Cryptography",
+        "title": "Public-Key Cryptography",
         "author": "daniel-krawisz",
         "date": "May 24, 2013",
         "added": "May 24, 2013",
         "slug": "crypto-anarchy-and-libertarian-entrepreneurship-2",
         "excerpt":"Public-key cryptography is the greatest tool of liberty ever devised.",
-        "languages": "en"
+        "languages": "en",
+        "series": "crypto-anarchy-and-libertarian-entrepreneurship",
+        "series_index": 2
     },
     {
-        "title": "Crypto-Anarchy and Libertarian Entrepreneurship - Chapter 1: The Strategy",
+        "title": "The Strategy",
         "author": "daniel-krawisz",
         "date": "May 22, 2013",
         "added": "May 22, 2013",
         "slug": "crypto-anarchy-and-libertarian-entrepreneurship-1",
         "excerpt":"With cryptography, one libertarian inventor can create an entire libertarian society.",
-        "languages": "en"
+        "languages": "en",
+        "series": "crypto-anarchy-and-libertarian-entrepreneurship",
+        "series_index": 1
     },
     {
         "title": "Fractional Reserve Banking is Obsolete",
