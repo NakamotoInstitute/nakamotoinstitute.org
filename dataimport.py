@@ -60,6 +60,9 @@ print("Finish deleting Doc")
 print("Begin deleting ResearchDoc")
 ResearchDoc.query.delete()
 print("Finish deleting ResearchDoc")
+print("Begin deleting BlogSeries")
+BlogSeries.query.delete()
+print("Finish deleting BlogSeries")
 print("Begin deleting BlogPost")
 BlogPost.query.delete()
 print("Finish deleting BlogPost")
@@ -283,21 +286,40 @@ for i in range(0, len(research)):
     db.session.commit()
 
 print("Finish importing ResearchDoc")
+print("Begin importing BlogSeries")
+with open('./data/blogseries.json') as data_file:
+    blogss = json.load(data_file)
+
+for i in range(0, len(blogss)):
+    blogseries = BlogSeries(
+        id=i+1,
+        title=blogss[i]['title'],
+        slug=blogss[i]['slug'],
+    )
+    db.session.add(blogseries)
+    db.session.commit()
+print("Finish importing BlogSeries")
 print("Begin importing BlogPost")
 
 with open('./data/blogposts.json') as data_file:
     blogps = json.load(data_file)
 
 for i in range(0, len(blogps['blogposts'])):
+    bp = blogps['blogposts'][i]
     blogpost = BlogPost(
         id=i+1,
-        title=blogps['blogposts'][i]['title'],
-        author=[get(Author, slug=blogps['blogposts'][i]['author'])],
-        date=parser.parse(blogps['blogposts'][i]['date']),
-        added=parser.parse(blogps['blogposts'][i]['added']),
-        slug=blogps['blogposts'][i]['slug'],
-        excerpt=blogps['blogposts'][i]['excerpt'],
-        languages=blogps['blogposts'][i]['languages'])
+        title=bp['title'],
+        author=[get(Author, slug=bp['author'])],
+        date=parser.parse(bp['date']),
+        added=parser.parse(bp['added']),
+        slug=bp['slug'],
+        excerpt=bp['excerpt'],
+        languages=bp['languages'])
+    try:
+        blogpost.series = get(BlogSeries, slug=bp['series'])
+        blogpost.series_index = bp['series_index']
+    except KeyError:
+        pass
     db.session.add(blogpost)
     db.session.commit()
 
