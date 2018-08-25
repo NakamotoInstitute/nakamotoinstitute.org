@@ -872,5 +872,17 @@
         "categories": ["economics", "cryptography", "law"],
         "doctype": "essay",
         "external": "http://web.archive.org/web/20140406003401/szabo.best.vwh.net/idea.html"
-    }]
+    },
+    {
+        "id": 85,
+        "title": "Secrecy, Authentication, and Public Key Systems",
+        "author": ["ralph-merkle"],
+        "date": "June 1979",
+        "slug": "secrecy-authentication-and-public-key-systems",
+        "formats": ["pdf", "ext"],
+        "categories": ["cryptography"],
+        "doctype": "essay",
+        "external": "http://www.merkle.com/papers/Thesis1979.pdf"
+    }
+  ]
 }
