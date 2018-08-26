@@ -876,7 +876,7 @@
     {
         "id": 85,
         "title": "Secrecy, Authentication, and Public Key Systems",
-        "author": ["ralph-merkle"],
+        "author": ["ralph-c-merkle"],
         "date": "June 1979",
         "slug": "secrecy-authentication-and-public-key-systems",
         "formats": ["pdf", "ext"],
