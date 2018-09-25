@@ -8,7 +8,7 @@
 from sni import app, db, cache, pages
 from sni.models import Post, Email, Doc, ResearchDoc, Author, Format, \
                    Category, BlogPost, Skeptic, Episode, Quote, \
-                   QuoteCategory, Thread
+                   QuoteCategory, ForumThread
 from flask import render_template, json, url_for, redirect, request, Response,\
                   send_from_directory
 from sqlalchemy import asc, desc
@@ -110,7 +110,7 @@ def emailview(source, emnum):
 def posts():
     view_query = request.args.get('view')
     if view_query == 'threads':
-        threads = Thread.query.all()
+        threads = ForumThread.query.all()
         p2pfoundation_threads = [threads[0]]
         bitcointalk_threads = threads[1:]
         app.logger.info(str(request.remote_addr) + ', threads')
@@ -126,7 +126,7 @@ def posts():
 @app.route('/posts/<string:source>/', subdomain="satoshi", methods=["GET"])
 def forumposts(source):
     posts = Post.query.filter(Post.satoshi_id.isnot(None)) \
-                       .join(Post.thread, aliased=True) \
+                       .join(Post.forum_thread, aliased=True) \
                        .filter_by(source=source).order_by(Post.date).all()
     if len(posts) != 0:
         app.logger.info(str(request.remote_addr) + ', posts, ' + source)
@@ -138,9 +138,9 @@ def forumposts(source):
 @cache.cached(timeout=900)
 @app.route('/posts/<string:source>/<int:postnum>/', subdomain="satoshi", methods=["GET"])
 def postview(postnum, source):
-    post = Post.query.filter_by(satoshi_id=postnum).join(Post.thread, aliased=True).filter_by(source=source).first()
-    prev = Post.query.filter_by(satoshi_id=postnum-1).join(Post.thread, aliased=True).first()
-    next = Post.query.filter_by(satoshi_id=postnum+1).join(Post.thread, aliased=True).first()
+    post = Post.query.filter_by(satoshi_id=postnum).join(Post.forum_thread, aliased=True).filter_by(source=source).first()
+    prev = Post.query.filter_by(satoshi_id=postnum-1).join(Post.forum_thread, aliased=True).first()
+    next = Post.query.filter_by(satoshi_id=postnum+1).join(Post.forum_thread, aliased=True).first()
     if post is not None:
         app.logger.info(str(request.remote_addr) + ', posts ,' + source + ', ' + str(postnum))
         return render_template("postview.html", post=post, prev=prev,
@@ -152,7 +152,7 @@ def postview(postnum, source):
 @cache.cached(timeout=900)
 @app.route('/posts/<string:source>/threads/', subdomain="satoshi", methods=["GET"])
 def threads(source):
-    threads = Thread.query.filter_by(source=source).order_by(Thread.id).all()
+    threads = ForumThread.query.filter_by(source=source).order_by(ForumThread.id).all()
     if len(threads) != 0:
         app.logger.info(str(request.remote_addr) + ', threads ,' + source)
         return render_template("threads.html", threads=threads, source=source)
@@ -166,7 +166,7 @@ def threadview(source, thread_id):
     view_query = request.args.get('view')
     posts = Post.query.filter_by(thread_id=thread_id)
     if len(posts.all()) > 0:
-        thread = posts[0].thread
+        thread = posts[0].forum_thread
         if thread.source != source:
             return redirect(url_for('threadview', source=thread.source, thread_id=thread_id))
     else:
@@ -174,8 +174,8 @@ def threadview(source, thread_id):
     if view_query == 'satoshi':
         posts = posts.filter(Post.satoshi_id.isnot(None))
     posts = posts.all()
-    prev = Thread.query.filter_by(id=thread_id-1).first()
-    next = Thread.query.filter_by(id=thread_id+1).first()
+    prev = ForumThread.query.filter_by(id=thread_id-1).first()
+    next = ForumThread.query.filter_by(id=thread_id+1).first()
     app.logger.info(str(request.remote_addr) + ', threads ,' + source + ', ' + str(thread_id))
     return render_template("threadview.html", posts=posts, prev=prev, next=next)
 

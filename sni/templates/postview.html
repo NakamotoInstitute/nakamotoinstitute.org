@@ -6,25 +6,25 @@
     <a href="{{url_for('posts')}}">All Posts</a>
     <br>
     {% if prev != None %}
-  	<a href="{{url_for('postview',postnum=prev['satoshi_id'],source=prev.thread['source'])}}">Previous</a> |
+  	<a href="{{url_for('postview',postnum=prev['satoshi_id'],source=prev.forum_thread['source'])}}">Previous</a> |
   	{% endif %}
-  	<a href="{{url_for('forumposts', source=post.thread['source'])}}">Back</a>
+  	<a href="{{url_for('forumposts', source=post.forum_thread['source'])}}">Back</a>
   	{% if next != None %}
-  	| <a href="{{url_for('postview',postnum=next['satoshi_id'],source=next.thread['source'])}}">Next</a>
+  	| <a href="{{url_for('postview',postnum=next['satoshi_id'],source=next.forum_thread['source'])}}">Next</a>
   	{% endif %}</div>
 	<span id="CONTENT"><div><h3>{{post['name']}}</h3>
-  <h5>{{post.thread.source_to_string()}}</h5>
+  <h5>{{post.forum_thread.source_to_string()}}</h5>
 	<h4>{{post.subject}}</h4>
 	<h5><em>{{post['date']}} UTC</em> - <a href="{{post['url']}}">Original Post</a></h5>
   {{post['text']|safe}}</div></span>
 	<br><br>
 	<div class="text-center">
 		{% if prev != None %}
-  	<a href="{{url_for('postview',postnum=prev['satoshi_id'],source=prev.thread['source'])}}">Previous</a> |
+  	<a href="{{url_for('postview',postnum=prev['satoshi_id'],source=prev.forum_thread['source'])}}">Previous</a> |
   	{% endif %}
-  	<a href="{{url_for('forumposts', source=post.thread['source'])}}">Back</a>
+  	<a href="{{url_for('forumposts', source=post.forum_thread['source'])}}">Back</a>
   	{% if next != None %}
-  	| <a href="{{url_for('postview',postnum=next['satoshi_id'],source=next.thread['source'])}}">Next</a>
+  	| <a href="{{url_for('postview',postnum=next['satoshi_id'],source=next.forum_thread['source'])}}">Next</a>
     {% endif %}
 		<br>
     <a href="{{url_for('posts')}}">All Posts</a>
