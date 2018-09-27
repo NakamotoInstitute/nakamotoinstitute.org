@@ -1,0 +1,67 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+{% block content %}
+{% set only_satoshi = request.args.get('view') == 'satoshi' -%}
+<div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+  <div class="text-center">
+    <a href="{{url_for('emails', view='threads')}}">All Email Threads</a>
+    <br>
+    {% if prev != None %}
+      {% if only_satoshi %}
+      <a href="{{url_for('emailthreadview',thread_id=prev['id'],source=prev['source'],view='satoshi')}}">Previous</a> |
+      {% else %}
+      <a href="{{url_for('emailthreadview',thread_id=prev['id'],source=prev['source'])}}">Previous</a> |
+      {% endif %}
+    {% endif %}
+    <a href="{{url_for('threads', source=emails[0].email_thread['source'])}}">Back</a>
+    {% if next != None %}
+      {% if only_satoshi %}
+      | <a href="{{url_for('emailthreadview',thread_id=next['id'],source=next['source'],view='satoshi')}}">Next</a>
+      {% else %}
+      | <a href="{{url_for('emailthreadview',thread_id=next['id'],source=next['source'])}}">Next</a>
+      {% endif %}
+    {% endif %}
+  </div>
+  <div class="text-center">
+    <h2>
+      <small>{{emails[0].email_thread.source_to_string()}}</small></br>
+      {{emails[0].email_thread.title}}
+    </h2>
+    <p>
+      {% if only_satoshi %}
+      <a href=".">View all emails</a>
+      {% else %}
+      <a href="?view=satoshi">View Satoshi only</a>
+      {% endif %}
+    </p>
+    <p><a href="{{emails[0].email_thread.url}}">External link</a></p>
+  </div>
+  <div class="thread">
+  {% for email in emails %}
+    <div class="email-container {{loop.cycle('', 'gray')}}  {% if email.satoshi_id and not only_satoshi %}highlight{% endif %}">
+      {{email.sent_from}}
+    </div>
+  {% endfor %}
+  </div>
+  <br>
+  <div class="text-center">
+    {% if prev != None %}
+      {% if only_satoshi %}
+      <a href="{{url_for('emailthreadview',thread_id=prev['id'],source=prev['source'],view='satoshi')}}">Previous</a> |
+      {% else %}
+      <a href="{{url_for('emailthreadview',thread_id=prev['id'],source=prev['source'])}}">Previous</a> |
+      {% endif %}
+    {% endif %}
+    <a href="{{url_for('emails', source=emails[0].email_thread['source'])}}">Back</a>
+    {% if next != None %}
+      {% if only_satoshi %}
+      | <a href="{{url_for('emailthreadview',thread_id=next['id'],source=next['source'],view='satoshi')}}">Next</a>
+      {% else %}
+      | <a href="{{url_for('emailthreadview',thread_id=next['id'],source=next['source'])}}">Next</a>
+      {% endif %}
+    {% endif %}
+    <br>
+    <a href="{{url_for('emails', view='threads')}}">All Threads</a>
+  </div>
+</div>
+{% endblock %}

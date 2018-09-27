@@ -8,7 +8,7 @@
 from sni import app, db, cache, pages
 from sni.models import Post, Email, Doc, ResearchDoc, Author, Format, \
                    Category, BlogPost, Skeptic, Episode, Quote, \
-                   QuoteCategory, ForumThread
+                   QuoteCategory, EmailThread, ForumThread
 from flask import render_template, json, url_for, redirect, request, Response,\
                   send_from_directory
 from sqlalchemy import asc, desc
@@ -79,7 +79,16 @@ def donate():
 @cache.cached(timeout=900)
 @app.route('/emails/', subdomain="satoshi", methods=["GET"])
 def emails():
-    emails = Email.query.order_by(Email.date).all()
+    view_query = request.args.get('view')
+    if view_query == 'threads':
+        threads = EmailThread.query.all()
+        cryptography_threads = threads[0:2]
+        bitcoin_list_threads = threads[2:]
+        app.logger.info(str(request.remote_addr) + ', threads')
+        return render_template(
+            "threads_emails.html", threads=threads, cryptography_threads=cryptography_threads,
+            bitcoin_list_threads=bitcoin_list_threads, source=None)
+    emails = Email.query.filter(Email.satoshi_id.isnot(None)).order_by(Email.date).all()
     app.logger.info(str(request.remote_addr) + ', Emails')
     return render_template("emails.html", emails=emails)
 
@@ -87,22 +96,58 @@ def emails():
 @cache.cached(timeout=900)
 @app.route('/emails/<string:source>/', subdomain="satoshi", methods=["GET"])
 def emailssource(source):
-    emails = Email.query.filter_by(source=source).order_by(Email.date).all()
-    app.logger.info(str(request.remote_addr) + ', emails, ' + source)
-    return render_template("emails.html", emails=emails, source=source)
+    emails = Email.query.filter(Email.satoshi_id.isnot(None)) \
+                         .join(Email.email_thread, aliased=True) \
+                         .filter_by(source=source).order_by(Email.date).all()
+    if len(emails) != 0:
+        app.logger.info(str(request.remote_addr) + ', emails, ' + source)
+        return render_template("emails.html", emails=emails, source=source)
+    else:
+        return redirect(url_for('emails'))
 
 
 @cache.cached(timeout=900)
 @app.route('/emails/<string:source>/<int:emnum>/', subdomain="satoshi", methods=["GET"])
 def emailview(source, emnum):
-    email = Email.query.filter_by(source=source, id=emnum).first()
-    prev = Email.query.filter_by(id=emnum-1).first()
-    next = Email.query.filter_by(id=emnum+1).first()
+    email = Email.query.filter_by(satoshi_id=emnum).join(Email.email_thread, aliased=True).filter_by(source=source).first()
+    prev = Email.query.filter_by(satoshi_id=emnum-1).join(Email.email_thread, aliased=True).first()
+    next = Email.query.filter_by(satoshi_id=emnum+1).join(Email.email_thread, aliased=True).first()
     if email is not None:
         app.logger.info(str(request.remote_addr) + ', Emails, ' + str(emnum))
         return render_template("emailview.html", email=email, prev=prev, next=next)
     else:
         return redirect('emails')
+
+
+@cache.cached(timeout=900)
+@app.route('/emails/<string:source>/threads/', subdomain="satoshi", methods=["GET"])
+def emailthreads(source):
+    threads = EmailThread.query.filter_by(source=source).order_by(EmailThread.id).all()
+    if len(threads) != 0:
+        app.logger.info(str(request.remote_addr) + ', threads, ' + source)
+        return render_template("threads_emails.html", threads=threads, source=source)
+    else:
+        return redirect(url_for('emails', view='threads'))
+
+
+@cache.cached(timeout=900)
+@app.route('/emails/<string:source>/threads/<int:thread_id>/', subdomain="satoshi", methods=["GET"])
+def emailthreadview(source, thread_id):
+    view_query = request.args.get('view')
+    emails = Email.query.filter_by(thread_id=thread_id)
+    if len(emails.all()) > 0:
+        thread = emails[0].email_thread
+        if thread.source != source:
+            return redirect(url_for('emailthreadview', source=thread.source, thread_id=thread_id))
+    else:
+        return redirect(url_for('emails', view='threads'))
+    if view_query == 'satoshi':
+        emails = emails.filter(Email.satoshi_id.isnot(None))
+    emails = emails.all()
+    prev = EmailThread.query.filter_by(id=thread_id-1).first()
+    next = EmailThread.query.filter_by(id=thread_id+1).first()
+    app.logger.info(str(request.remote_addr) + ', emailthreads ,' + source + ', ' + str(thread_id))
+    return render_template("threadview_emails.html", emails=emails, prev=prev, next=next)
 
 
 @cache.cached(timeout=900)

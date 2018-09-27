@@ -31,7 +31,7 @@ Posts | Satoshi Nakamoto Institute
       (<a href="{{url_for('threads', source='bitcointalk')}}">Threads</a>)
   	{% endif %}
   </div>
-  <br>
+  <br />
   <ul>
   {%for post in posts %}
     <li><a href="{{url_for('postview', postnum=post['satoshi_id'],source=post.forum_thread['source'])}}">{{post['subject']}}</a> <em>({{post['date']}} UTC)</em></li>
@@ -58,7 +58,7 @@ Posts | Satoshi Nakamoto Institute
       <a href="{{url_for('posts', view='threads')}}">View threads</a>
   	{% endif %}
   </div>
-  <br>
+  <br />
   <a href="{{url_for('satoshi_index')}}">Main index</a>
 </div>
 {% endblock %}
