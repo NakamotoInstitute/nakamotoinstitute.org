@@ -52,8 +52,12 @@
     {% endif %}
       <div class="header">
         <div class="poster-info">
-          <a href="{{post.poster_url}}"><strong>{{post.poster_name}}</strong></a>
-          <a href="#{{post.post_num}}">#{{post.post_num}}</a>
+          <div>
+            <a href="{{post.poster_url}}"><strong>{{post.poster_name}}</strong></a>
+          </div>
+          <div>
+            <a href="#{{post.post_num}}">#{{post.post_num}}</a>
+          </div>
         </div>
         <div class="post-info">
           <h5>{{post.subject}}</h5>
@@ -64,9 +68,13 @@
         {{post.text|safe}}
       </div>
       <div class="footer">
-        <a href="{{post.url}}">External link</a>
+        <div>
+          <a href="{{post.url}}">External link</a>
+        </div>
         {% if post.satoshi_id %}
-        <a href="{{url_for('postview', postnum=post['satoshi_id'],source=post.forum_thread['source'])}}">Permalink</a>
+        <div>
+          <a href="{{url_for('postview', postnum=post['satoshi_id'],source=post.forum_thread['source'])}}">Permalink</a>
+        </div>
         {% endif %}
       </div>
     </div>
