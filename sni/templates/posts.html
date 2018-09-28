@@ -33,9 +33,9 @@ Posts | Satoshi Nakamoto Institute
   </div>
   <br />
   <ul>
-  {%for post in posts %}
+  {% for post in posts %}
     <li><a href="{{url_for('postview', postnum=post['satoshi_id'],source=post.forum_thread['source'])}}">{{post['subject']}}</a> <em>({{post['date']}} UTC)</em></li>
-  {%endfor%}
+  {% endfor %}
   </ul>
   <div class="text-center">
     {% if source=="p2pfoundation" %}

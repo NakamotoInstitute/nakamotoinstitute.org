@@ -27,14 +27,14 @@ Emails | Satoshi Nakamoto Institute
       <a href="{{url_for('emails', view='threads')}}">View threads</a><br>
     	<a href="{{url_for('emailssource', source='cryptography')}}">Cryptography</a>
       (<a href="{{url_for('emailthreads', source='cryptography')}}">Threads</a>) |
-      <a href="{{url_for('forumposts', source='bitcoin-list')}}">bitcoin-list</a>
+      <a href="{{url_for('emailssource', source='bitcoin-list')}}">bitcoin-list</a>
       (<a href="{{url_for('emailthreads', source='bitcoin-list')}}">Threads</a>)
   	{% endif %}
   </div>
   <br />
   <ul>
   {% for email in emails %}
-    <li><a href="{{url_for('emailview', source=email['source'], emnum=email['id'])}}">{{email['subject']}}</a> <em>({{email['date']}} UTC)</em></li>
+    <li><a href="{{url_for('emailview', source=email['source'], emnum=email['satoshi_id'])}}">{{email['subject']}}</a> <em>({{email['date']}} UTC)</em></li>
   {% endfor %}
   </ul>
   <div class="text-center">
