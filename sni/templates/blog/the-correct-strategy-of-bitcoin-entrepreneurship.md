@@ -1,3 +1,4 @@
+
 ## We're All in This Together
 
 Bitcoin entrepreneurs have yet to appreciate fully collaborative nature of the Bitcoin economy and its implications for entrepreneurial strategy. Every successful entrepreneurial act improves the Bitcoin economy and attracts more people in, thus raising the value of the coins. Each new service benefits everyone else who is already invested. Consequently, Bitcoin businesses do not necessarily need to see themselves as competitors to one another. Even if they have the same business model, they both have more to gain from the influx of new users from outside than by taking customers from one another.

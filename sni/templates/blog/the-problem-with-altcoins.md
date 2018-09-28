@@ -1,8 +1,7 @@
 image: elvis-impersonators.jpg
 image_alt: Elvis Impersonators
 
-Why no altcoin can succeed
---------------------------
+## Why no altcoin can succeed
 
 New ideas attract not only visionaries and pioneers but also charlatans and fools. The former group understands the nature and potential of the new idea and attempts to extend it in new ways. The latter observes the success of the former and expects similar results through blind imitation and empty hope, rather like the Melanesian [cargo cults](http://en.wikipedia.org/wiki/Cargo_cult) which arose after World War II when the American military abandoned its airports there.
 

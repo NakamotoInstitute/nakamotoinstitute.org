@@ -1,3 +1,4 @@
+
 In an [earlier article](/mempool/i-love-bitcoins-volatility/), I conceded too
 much and suggested that Bitcoin doesn’t _need_ to be a unit of account.
 What I should have said is that Bitcoin is a great unit of account—much
