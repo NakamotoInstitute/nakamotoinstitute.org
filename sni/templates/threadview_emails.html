@@ -38,8 +38,41 @@
   </div>
   <div class="thread">
   {% for email in emails %}
-    <div class="email-container {{loop.cycle('', 'gray')}}  {% if email.satoshi_id and not only_satoshi %}highlight{% endif %}">
-      {{email.sent_from}}
+    <div class="post-container {{loop.cycle('', 'gray')}}  {% if email.satoshi_id and not only_satoshi %}highlight{% endif %}">
+      <div class="header">
+        <div class="poster-info">
+          <strong>From: {{email.sent_from}}</strong>
+          <a href="#{{email.source_id}}">#{{email.source_id}}</a>
+        </div>
+        <div class="post-info">
+          <h5>{{email.subject}}</h5>
+          <span>{{email.date.strftime('%B %d, %Y, %I:%M:%S %p')}}</span>
+          <div>
+            {% if email.parent %}
+            <div>
+              Replying to: <a href="">&gt;&gt;{{email.parent.source_id}}</a>
+            </div>
+            {% endif %}
+            {% if email.replies.all %}
+            <div>
+              Replies:
+              {% for reply in email.replies.all() %}
+              <a href="">&gt;&gt;{{reply.source_id}}</a>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="body">
+        <div class="email-text-monospace">{{email.text|replace("\n", "<br />")|safe}}</div>
+      </div>
+      <div class="footer">
+        <a href="{{email.url}}">External link</a>
+        {% if email.satoshi_id %}
+        <a href="{{url_for('emailview', emnum=email['satoshi_id'],source=email.email_thread['source'])}}">Permalink</a>
+        {% endif %}
+      </div>
     </div>
   {% endfor %}
   </div>
