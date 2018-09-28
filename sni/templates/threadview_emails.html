@@ -38,7 +38,7 @@
   </div>
   <div class="thread">
   {% for email in emails %}
-    <div class="post-container {{loop.cycle('', 'gray')}}  {% if email.satoshi_id and not only_satoshi %}highlight{% endif %}">
+    <div class="post-container {{loop.cycle('', 'gray')}}  {% if email.satoshi_id and not only_satoshi %}highlight{% endif %}" id="{{email.source_id}}">
       <div class="header">
         <div class="poster-info">
           <strong>From: {{email.sent_from}}</strong>
@@ -47,22 +47,24 @@
         <div class="post-info">
           <h5>{{email.subject}}</h5>
           <span>{{email.date.strftime('%B %d, %Y, %I:%M:%S %p')}}</span>
-          <div>
-            {% if email.parent %}
-            <div>
-              Replying to: <a href="">&gt;&gt;{{email.parent.source_id}}</a>
-            </div>
-            {% endif %}
-            {% if email.replies.all %}
-            <div>
-              Replies:
-              {% for reply in email.replies.all() %}
-              <a href="">&gt;&gt;{{reply.source_id}}</a>
-              {% endfor %}
-            </div>
-            {% endif %}
-          </div>
         </div>
+        {% if not only_satoshi %}
+        <div class="email-replies-links">
+          {% if email.parent %}
+          <div>
+            Replying to: <a href="#{{email.parent.source_id}}">&gt;&gt;{{email.parent.source_id}}</a>
+          </div>
+          {% endif %}
+          {% if email.replies.all() %}
+          <div>
+            Replies:
+            {% for reply in email.replies.all() %}
+            <a href="#{{reply.source_id}}">&gt;&gt;{{reply.source_id}}</a>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+        {% endif %}
       </div>
       <div class="body">
         <div class="email-text-monospace">{{email.text|replace("\n", "<br />")|safe}}</div>
