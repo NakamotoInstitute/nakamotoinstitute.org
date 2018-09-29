@@ -209,7 +209,6 @@ $post-inner-border: 1px solid $post-sectional;
         border-bottom: $post-inner-border;
         padding: $post-padding-half $post-padding;
         & > *:nth-child(2) {
-          width: 50px;
           text-align: right;
         }
       }
