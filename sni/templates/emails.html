@@ -14,7 +14,7 @@ Emails | Satoshi Nakamoto Institute
     	<a href="{{url_for('emails')}}">All Emails</a>
       (<a href="{{url_for('emails', view='threads')}}">Threads</a>) |
       <a href="{{url_for('emailssource', source='bitcoin-list')}}">bitcoin-list</a>
-      (<a href="{{url_for('threads', source='bitcointalk')}}">Threads</a>)
+      (<a href="{{url_for('emailthreads', source='bitcoin-list')}}">Threads</a>)
   	{% elif source=="bitcoin-list" %}
     	<h2>bitcoin-list Emails</h2>
       <a href="{{url_for('emailthreads', source='bitcoin-list')}}">View threads</a><br>
@@ -42,7 +42,7 @@ Emails | Satoshi Nakamoto Institute
     	<a href="{{url_for('emails')}}">All Emails</a>
       (<a href="{{url_for('emails', view='threads')}}">Threads</a>) |
       <a href="{{url_for('emailssource', source='bitcoin-list')}}">bitcoin-list</a>
-      (<a href="{{url_for('threads', source='bitcointalk')}}">Threads</a>)<br>
+      (<a href="{{url_for('emailthreads', source='bitcoin-list')}}">Threads</a>)<br>
       <a href="{{url_for('emailthreads', source='cryptography')}}">View threads</a>
   	{% elif source=="bitcoin-list" %}
     	<a href="{{url_for('emails')}}">All Emails</a>
@@ -53,7 +53,7 @@ Emails | Satoshi Nakamoto Institute
   	{% else %}
     	<a href="{{url_for('emailssource', source='cryptography')}}">Cryptography</a>
       (<a href="{{url_for('emailthreads', source='cryptography')}}">Threads</a>) |
-      <a href="{{url_for('forumposts', source='bitcoin-list')}}">bitcoin-list</a>
+      <a href="{{url_for('emailssource', source='bitcoin-list')}}">bitcoin-list</a>
       (<a href="{{url_for('emailthreads', source='bitcoin-list')}}">Threads</a>)<br>
       <a href="{{url_for('emails', view='threads')}}">View threads</a>
   	{% endif %}
