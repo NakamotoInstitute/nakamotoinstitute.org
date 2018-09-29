@@ -1,5 +1,10 @@
 <!-- extend base layout -->
 {% extends "base.html" %}
+
+{% block title %}
+{{email.subject}} | Satoshi Nakamoto Institute
+{% endblock %}
+
 {% block content %}
 <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
   <div class="text-center">
@@ -15,7 +20,13 @@
     <div>
       <h5>{{email.email_thread.source_to_string()}}</h5>
       <h4>{{email.subject}}</h4>
-      <h5><em>{{email['date']}} UTC</em> - <a href="{{email['url']}}">Original Email</a></h5>
+      {% set email_source = email.email_thread.source %}
+      {% set thread_id = email.email_thread.id %}
+      <h5>
+        <em>{{email['date']}} UTC</em>
+        - <a href="{{email['url']}}">Original Email</a>
+        - <a href="{{url_for('emailthreadview',source=email_source,thread_id=thread_id)}}#{{email.source_id}}">View in Thread</a>
+      </h5>
       <div class="email-text-monospace">{{email['text']|replace("\n", "<br />")|safe}}</div>
 		</div>
 	</span>
