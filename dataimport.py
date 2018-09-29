@@ -24,15 +24,21 @@ for qc in qcs:
     db.session.delete(qc)
     db.session.commit()
 print("Finish deleting QuoteCategory")
-print("Begin deleting Thread")
-ts = Thread.query.all()
-for t in ts:
-    db.session.delete(t)
+print("Begin deleting EmailThread")
+ets = EmailThread.query.all()
+for et in ets:
+    db.session.delete(et)
     db.session.commit()
-print("Finish deleting Thread")
+print("Finish deleting EmailThread")
 print("Begin deleting Email")
 Email.query.delete()
 print("Finish deleting Email")
+print("Begin deleting ForumThread")
+fts = ForumThread.query.all()
+for ft in fts:
+    db.session.delete(ft)
+    db.session.commit()
+print("Finish deleting ForumThread")
 print("Begin deleting Post")
 Post.query.delete()
 print("Finish deleting Post")
@@ -91,31 +97,57 @@ def get_or_create(model, **kwargs):
         return instance
 
 
-print("Begin importing Email")
+print("Begin importing EmailThread")
 
-with open('./data/satoshiemails.json') as data_file:
-    emails = json.load(data_file)
-
-for i in range(0, len(emails['emails'])):
-    index = len(emails['emails'])-1-i
-    email = Email(
-        id=i+1,
-        subject=emails['emails'][index]['Subject'],
-        sent_from=emails['emails'][index]['From'],
-        date=parser.parse(emails['emails'][index]['Date']),
-        text=emails['emails'][index]['Text'],
-        source=emails['emails'][index]['Source'])
-    db.session.add(email)
-    db.session.commit()
-
-print("Finish importing Email")
-print("Begin importing Thread")
-
-with open('data/threads.json') as data_file:
+with open('data/threads_emails.json') as data_file:
     threads = json.load(data_file)
 
 for thread in threads:
-    new_thread = Thread(
+    new_thread = EmailThread(
+        id=thread['id'],
+        title=thread['title'],
+        source=thread['source']
+    )
+    db.session.add(new_thread)
+    db.session.commit()
+
+print("Finish importing ForumThread")
+print("Begin importing Email")
+
+with open('./data/emails.json') as data_file:
+    emails = json.load(data_file)
+
+for e in emails:
+    satoshi_id = None
+    if 'satoshi_id' in e.keys():
+        satoshi_id = e['satoshi_id']
+    parent = None
+    if 'parent' in e.keys():
+        parent = Email.query.get(e['parent'])
+    new_email = Email(
+        id=e['id'],
+        satoshi_id=satoshi_id,
+        url=e['url'],
+        subject=e['subject'],
+        sent_from=e['sender'],
+        date=parser.parse(e['date']),
+        text=e['text'],
+        source=e['source'],
+        source_id=e['source_id'],
+        thread_id=e['thread_id'])
+    if parent:
+        new_email.parent = parent
+    db.session.add(new_email)
+    db.session.commit()
+
+print("Finish importing Email")
+print("Begin importing ForumThread")
+
+with open('data/threads_forums.json') as data_file:
+    threads = json.load(data_file)
+
+for thread in threads:
+    new_thread = ForumThread(
         id=thread['id'],
         title=thread['title'],
         url=thread['url'],
@@ -124,7 +156,7 @@ for thread in threads:
     db.session.add(new_thread)
     db.session.commit()
 
-print("Finish importing Thread")
+print("Finish importing ForumThread")
 print("Begin importing Post")
 
 with open('data/posts.json') as data_file:

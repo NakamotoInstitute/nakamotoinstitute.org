@@ -9,21 +9,56 @@ Emails | Satoshi Nakamoto Institute
 <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
   <div class="text-center">
     {% if source=="cryptography" %}
-    <h2>Cryptography Mailing List Emails</h2>
-    <a href="{{url_for('emails')}}">All Emails</a> | <a href="{{url_for('emailssource', source='bitcoin-list')}}">bitcoin-list</a>
-    {% elif source=="bitcoin-list" %}
-    <h2>bitcoin-list Emails</h2>
-    <a href="{{url_for('emails')}}">All Emails</a> | <a href="{{url_for('emailssource', source='cryptography')}}">Cryptography</a>
-    {% else %}
-    <h2>Emails</h2>
-    <a href="{{url_for('emailssource', source='bitcoin-list')}}">bitcoin-list</a> | <a href="{{url_for('emailssource', source='cryptography')}}">Cryptography</a>
-    {% endif %}
+    	<h2>Cryptography Mailing List Emails</h2>
+      <a href="{{url_for('emailthreads', source='cryptography')}}">View threads</a><br>
+    	<a href="{{url_for('emails')}}">All Emails</a>
+      (<a href="{{url_for('emails', view='threads')}}">Threads</a>) |
+      <a href="{{url_for('emailssource', source='bitcoin-list')}}">bitcoin-list</a>
+      (<a href="{{url_for('threads', source='bitcointalk')}}">Threads</a>)
+  	{% elif source=="bitcoin-list" %}
+    	<h2>bitcoin-list Emails</h2>
+      <a href="{{url_for('emailthreads', source='bitcoin-list')}}">View threads</a><br>
+    	<a href="{{url_for('emails')}}">All Emails</a>
+      (<a href="{{url_for('emails', view='threads')}}">Threads</a>) |
+      <a href="{{url_for('emailssource', source='cryptography')}}">Cryptography</a>
+      (<a href="{{url_for('emailthreads', source='cryptography')}}">Threads</a>)
+  	{% else %}
+    	<h2>Emails</h2>
+      <a href="{{url_for('emails', view='threads')}}">View threads</a><br>
+    	<a href="{{url_for('emailssource', source='cryptography')}}">Cryptography</a>
+      (<a href="{{url_for('emailthreads', source='cryptography')}}">Threads</a>) |
+      <a href="{{url_for('emailssource', source='bitcoin-list')}}">bitcoin-list</a>
+      (<a href="{{url_for('emailthreads', source='bitcoin-list')}}">Threads</a>)
+  	{% endif %}
   </div>
   <br />
-  <ol>
+  <ul>
   {% for email in emails %}
-    <li><a href="{{url_for('emailview', source=email['source'], emnum=email['id'])}}">{{email['subject']}}</a> <em>({{email['date']}} UTC)</em></li>
+    <li><a href="{{url_for('emailview', source=email['source'], emnum=email['satoshi_id'])}}">{{email['subject']}}</a> <em>({{email['date']}} UTC)</em></li>
   {% endfor %}
-  </ol>
+  </ul>
+  <div class="text-center">
+    {% if source=="cryptography" %}
+    	<a href="{{url_for('emails')}}">All Emails</a>
+      (<a href="{{url_for('emails', view='threads')}}">Threads</a>) |
+      <a href="{{url_for('emailssource', source='bitcoin-list')}}">bitcoin-list</a>
+      (<a href="{{url_for('threads', source='bitcointalk')}}">Threads</a>)<br>
+      <a href="{{url_for('emailthreads', source='cryptography')}}">View threads</a>
+  	{% elif source=="bitcoin-list" %}
+    	<a href="{{url_for('emails')}}">All Emails</a>
+      (<a href="{{url_for('emails', view='threads')}}">Threads</a>) |
+      <a href="{{url_for('emailssource', source='cryptography')}}">Cryptography</a>
+      (<a href="{{url_for('emailthreads', source='cryptography')}}">Threads</a>)<br>
+      <a href="{{url_for('emailthreads', source='bitcoin-list')}}">View threads</a>
+  	{% else %}
+    	<a href="{{url_for('emailssource', source='cryptography')}}">Cryptography</a>
+      (<a href="{{url_for('emailthreads', source='cryptography')}}">Threads</a>) |
+      <a href="{{url_for('forumposts', source='bitcoin-list')}}">bitcoin-list</a>
+      (<a href="{{url_for('emailthreads', source='bitcoin-list')}}">Threads</a>)<br>
+      <a href="{{url_for('emails', view='threads')}}">View threads</a>
+  	{% endif %}
+  </div>
+  <br />
+  <a href="{{url_for('satoshi_index')}}">Main index</a>
 </div>
 {%endblock%}

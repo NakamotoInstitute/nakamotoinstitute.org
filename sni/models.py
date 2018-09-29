@@ -7,25 +7,49 @@
 from sni import db, app
 
 
+class EmailThread(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String())
+    source = db.Column(db.String())
+    emails = db.relationship('Email', backref='email_thread', lazy=True)
+
+    def source_to_string(self):
+        if self.source == 'cryptography':
+            return 'Cryptography Mailing List'
+        else:
+            return self.source
+
+    def __repr__(self):
+        return '<EmailThread %r>' % (self.title)
+
+
 class Email(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    satoshi_id = db.Column(db.Integer)
+    url = db.Column(db.String())
     subject = db.Column(db.String())
     sent_from = db.Column(db.String())
     date = db.Column(db.DateTime)
     text = db.Column(db.String())
     source = db.Column(db.String())
+    source_id = db.Column(db.String())
     quotes = db.relationship("Quote", backref="email")
+    parent_id = db.Column(db.Integer, db.ForeignKey('email.id'))
+    replies = db.relationship(
+        'Email', backref=db.backref('parent', remote_side=[id]),
+        lazy='dynamic')
+    thread_id = db.Column(db.Integer, db.ForeignKey('email_thread.id'))
 
     def __repr__(self):
-        return '<Email %r>' % (self.subject)
+        return '<Email %r - %r>' % (self.subject, self.source_id)
 
 
-class Thread(db.Model):
+class ForumThread(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String())
     url = db.Column(db.String())
     source = db.Column(db.String())
-    posts = db.relationship('Post', backref='thread', lazy=True)
+    posts = db.relationship('Post', backref='forum_thread', lazy=True)
 
     def source_to_string(self):
         if self.source == 'bitcointalk':
@@ -36,7 +60,7 @@ class Thread(db.Model):
             return self.source
 
     def __repr__(self):
-        return '<Thread %r>' % (self.title)
+        return '<ForumThread %r>' % (self.title)
 
 
 class Post(db.Model):
@@ -52,7 +76,7 @@ class Post(db.Model):
     date = db.Column(db.DateTime)
     text = db.Column(db.String())
     quotes = db.relationship("Quote", backref="post")
-    thread_id = db.Column(db.Integer, db.ForeignKey('thread.id'))
+    thread_id = db.Column(db.Integer, db.ForeignKey('forum_thread.id'))
 
     def __repr__(self):
         return '<Post %r>' % (self.subject)

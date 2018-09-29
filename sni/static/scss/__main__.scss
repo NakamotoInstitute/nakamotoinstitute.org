@@ -219,6 +219,10 @@ $post-inner-border: 1px solid $post-sectional;
           margin: 0 0 $post-padding-half;
         }
       }
+      & > .email-replies-links {
+        border-top: $post-inner-border;
+        padding: $post-padding-half $post-padding;
+      }
     }
     & > .body {
       border-top: $post-inner-border;

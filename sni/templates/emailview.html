@@ -1,27 +1,43 @@
 <!-- extend base layout -->
 {% extends "base.html" %}
+
+{% block title %}
+{{email.subject}} | Satoshi Nakamoto Institute
+{% endblock %}
+
 {% block content %}
 <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
   <div class="text-center">
     {% if prev != None %}
-    <a href="{{url_for('emailview',source=prev['source'],emnum=prev['id'])}}">Previous</a> |
+    <a href="{{url_for('emailview',source=prev['source'],emnum=prev['satoshi_id'])}}">Previous</a> |
     {% endif %}
     <a href="{{url_for('emails')}}">Index</a>
     {% if next != None %}
-    | <a href="{{url_for('emailview',source=next['source'],emnum=next['id'])}}">Next</a>
+    | <a href="{{url_for('emailview',source=next['source'],emnum=next['satoshi_id'])}}">Next</a>
     {% endif %}
   </div>
-  <span id="CONTENT"><div><div class="page-header"><h3>{{email['subject']}}
-  <small><em>{{email['date']}} UTC</em></small></h3></div>
-  <div class="email-text-monospace">{{email['text']|replace("\n", "<br />")|safe}}</div></div></span>
+  <span id="CONTENT">
+    <div>
+      <h5>{{email.email_thread.source_to_string()}}</h5>
+      <h4>{{email.subject}}</h4>
+      {% set email_source = email.email_thread.source %}
+      {% set thread_id = email.email_thread.id %}
+      <h5>
+        <em>{{email['date']}} UTC</em>
+        - <a href="{{email['url']}}">Original Email</a>
+        - <a href="{{url_for('emailthreadview',source=email_source,thread_id=thread_id)}}#{{email.source_id}}">View in Thread</a>
+      </h5>
+      <div class="email-text-monospace">{{email['text']|replace("\n", "<br />")|safe}}</div>
+		</div>
+	</span>
   <br>
   <div class="text-center">
     {% if prev != None %}
-    <a href="{{url_for('emailview',source=prev['source'],emnum=prev['id'])}}">Previous</a> |
+    <a href="{{url_for('emailview',source=prev['source'],emnum=prev['satoshi_id'])}}">Previous</a> |
     {% endif %}
     <a href="{{url_for('emails')}}">Index</a>
     {% if next != None %}
-    | <a href="{{url_for('emailview',source=next['source'],emnum=next['id'])}}">Next</a>
+    | <a href="{{url_for('emailview',source=next['source'],emnum=next['satoshi_id'])}}">Next</a>
     {% endif %}
   </div>
 </div>

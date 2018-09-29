@@ -2,7 +2,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-Posts | Satoshi Nakamoto Institute
+Forum Posts | Satoshi Nakamoto Institute
 {% endblock %}
 
 {% block content %}
@@ -31,11 +31,11 @@ Posts | Satoshi Nakamoto Institute
       (<a href="{{url_for('threads', source='bitcointalk')}}">Threads</a>)
   	{% endif %}
   </div>
-  <br>
+  <br />
   <ul>
-  {%for post in posts %}
-    <li><a href="{{url_for('postview', postnum=post['satoshi_id'],source=post.thread['source'])}}">{{post['subject']}}</a> <em>({{post['date']}} UTC)</em></li>
-  {%endfor%}
+  {% for post in posts %}
+    <li><a href="{{url_for('postview', postnum=post['satoshi_id'],source=post.forum_thread['source'])}}">{{post['subject']}}</a> <em>({{post['date']}} UTC)</em></li>
+  {% endfor %}
   </ul>
   <div class="text-center">
     {% if source=="p2pfoundation" %}
@@ -58,7 +58,7 @@ Posts | Satoshi Nakamoto Institute
       <a href="{{url_for('posts', view='threads')}}">View threads</a>
   	{% endif %}
   </div>
-  <br>
+  <br />
   <a href="{{url_for('satoshi_index')}}">Main index</a>
 </div>
 {% endblock %}
