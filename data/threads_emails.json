@@ -1,82 +1,82 @@
 [
-    {
-        "id": 1,
-        "title": "Bitcoin P2P e-cash paper",
-        "source": "cryptography"
-    },
-    {
-        "id": 2,
-        "title": "Bitcoin v0.1 released",
-        "source": "cryptography"
-    },
-    {
-        "id": 3,
-        "title": "[bitcoin-list] Welcome",
-        "source": "bitcoin-list"
-    },
-    {
-        "id": 4,
-        "title": "[bitcoin-list] Bitcoin v0.1 released",
-        "source": "bitcoin-list"
-    },
-    {
-        "id": 5,
-        "title": "[bitcoin-list] Bitcoin v0.1.2 now available",
-        "source": "bitcoin-list"
-    },
-    {
-        "id": 6,
-        "title": "[bitcoin-list] Bitcoin v0.1 Alpha release notes",
-        "source": "bitcoin-list"
-    },
-    {
-        "id": 7,
-        "title": "[bitcoin-list] Bitcoin v0.1.3",
-        "source": "bitcoin-list"
-    },
-    {
-        "id": 8,
-        "title": "[bitcoin-list] Problems",
-        "source": "bitcoin-list"
-    },
-    {
-        "id": 9,
-        "title": "[bitcoin-list] Bitcoin v0.1.5 released",
-        "source": "bitcoin-list"
-    },
-    {
-        "id": 10,
-        "title": "[bitcoin-list] Does Bitcoin Crash in Windows?",
-        "source": "bitcoin-list"
-    },
-    {
-        "id": 11,
-        "title": "[bitcoin-list] Bitcoin 0.2 released",
-        "source": "bitcoin-list"
-    },
-    {
-        "id": 12,
-        "title": "[bitcoin-list] Bitcoin 0.3 released!",
-        "source": "bitcoin-list"
-    },
-    {
-        "id": 13,
-        "title": "[bitcoin-list] Alert: upgrade to bitcoin 0.3.6",
-        "source": "bitcoin-list"
-    },
-    {
-        "id": 14,
-        "title": "[bitcoin-list] ALERT - we are investigating a problem",
-        "source": "bitcoin-list"
-    },
-    {
-        "id": 15,
-        "title": "[bitcoin-list] Bitcoin 0.3.18 is released",
-        "source": "bitcoin-list"
-    },
-    {
-        "id": 16,
-        "title": "[bitcoin-list] Bitcoin 0.3.19 is released",
-        "source": "bitcoin-list"
-    }
+  {
+    "id": 1,
+    "title": "Bitcoin P2P e-cash paper",
+    "source": "cryptography"
+  },
+  {
+    "id": 2,
+    "title": "Bitcoin v0.1 released",
+    "source": "cryptography"
+  },
+  {
+    "id": 3,
+    "title": "[bitcoin-list] Welcome",
+    "source": "bitcoin-list"
+  },
+  {
+    "id": 4,
+    "title": "[bitcoin-list] Bitcoin v0.1 released",
+    "source": "bitcoin-list"
+  },
+  {
+    "id": 5,
+    "title": "[bitcoin-list] Bitcoin v0.1.2 now available",
+    "source": "bitcoin-list"
+  },
+  {
+    "id": 6,
+    "title": "[bitcoin-list] Bitcoin v0.1 Alpha release notes",
+    "source": "bitcoin-list"
+  },
+  {
+    "id": 7,
+    "title": "[bitcoin-list] Bitcoin v0.1.3",
+    "source": "bitcoin-list"
+  },
+  {
+    "id": 8,
+    "title": "[bitcoin-list] Problems",
+    "source": "bitcoin-list"
+  },
+  {
+    "id": 9,
+    "title": "[bitcoin-list] Bitcoin v0.1.5 released",
+    "source": "bitcoin-list"
+  },
+  {
+    "id": 10,
+    "title": "[bitcoin-list] Does Bitcoin Crash in Windows?",
+    "source": "bitcoin-list"
+  },
+  {
+    "id": 11,
+    "title": "[bitcoin-list] Bitcoin 0.2 released",
+    "source": "bitcoin-list"
+  },
+  {
+    "id": 12,
+    "title": "[bitcoin-list] Bitcoin 0.3 released!",
+    "source": "bitcoin-list"
+  },
+  {
+    "id": 13,
+    "title": "[bitcoin-list] Alert: upgrade to bitcoin 0.3.6",
+    "source": "bitcoin-list"
+  },
+  {
+    "id": 14,
+    "title": "[bitcoin-list] ALERT - we are investigating a problem",
+    "source": "bitcoin-list"
+  },
+  {
+    "id": 15,
+    "title": "[bitcoin-list] Bitcoin 0.3.18 is released",
+    "source": "bitcoin-list"
+  },
+  {
+    "id": 16,
+    "title": "[bitcoin-list] Bitcoin 0.3.19 is released",
+    "source": "bitcoin-list"
+  }
 ]
