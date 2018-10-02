@@ -162,15 +162,12 @@ print("Begin importing Post")
 with open('data/posts.json') as data_file:
     posts = json.load(data_file)
 
-for i, p in enumerate(posts):
-
-    # quotes = db.relationship("Quote", backref="post")
-    # thread_id = db.Column(db.Integer, db.ForeignKey('thread.id'))
+for i, p in enumerate(posts, start=1):
     satoshi_id = None
     if 'satoshi_id' in p.keys():
         satoshi_id = p['satoshi_id']
     post = Post(
-        id=i+1,
+        id=i,
         satoshi_id=satoshi_id,
         url=p['url'],
         subject=p['subject'],
@@ -206,9 +203,9 @@ print("Begin importing Quote")
 with open('./data/quotes.json') as data_file:
     quotes = json.load(data_file)
 
-for i, quote in enumerate(quotes):
+for i, quote in enumerate(quotes, start=1):
     q = Quote(
-        id=i+1,
+        id=i,
         text=quote['text'],
         date=parser.parse(quote['date']).date(),
         medium=quote['medium']
@@ -230,13 +227,13 @@ print("Begin importing Author")
 with open('./data/authors.json') as data_file:
     authors = json.load(data_file)
 
-for i in range(0, len(authors['authors'])):
+for i, author in enumerate(authors, start=1):
     author = Author(
-        id=i+1,
-        first=authors['authors'][i]['first'],
-        middle=authors['authors'][i]['middle'],
-        last=authors['authors'][i]['last'],
-        slug=authors['authors'][i]['slug'])
+        id=i,
+        first=author['first'],
+        middle=author['middle'],
+        last=author['last'],
+        slug=author['slug'])
     db.session.add(author)
     db.session.commit()
 
@@ -246,32 +243,32 @@ print("Begin importing Doc")
 with open('./data/literature.json') as data_file:
     docs = json.load(data_file)
 
-for i in range(0, len(docs['docs'])):
-    authorlist = docs['docs'][i]['author']
+for doc in docs:
+    authorlist = doc['author']
     dbauthor = []
     for auth in authorlist:
         dbauthor += [get(Author, slug=auth)]
-    formlist = docs['docs'][i]['formats']
+    formlist = doc['formats']
     dbformat = []
     for form in formlist:
         dbformat += [get_or_create(Format, name=form)]
-    catlist = docs['docs'][i]['categories']
+    catlist = doc['categories']
     dbcat = []
     for cat in catlist:
         dbcat += [get_or_create(Category, name=cat)]
-    if 'external' in docs['docs'][i]:
-        ext = docs['docs'][i]['external']
+    if 'external' in doc:
+        ext = doc['external']
     else:
         ext = None
     doc = Doc(
-        id=docs['docs'][i]['id'],
-        title=docs['docs'][i]['title'],
+        id=doc['id'],
+        title=doc['title'],
         author=dbauthor,
-        date=docs['docs'][i]['date'],
-        slug=docs['docs'][i]['slug'],
+        date=doc['date'],
+        slug=doc['slug'],
         formats=dbformat,
         categories=dbcat,
-        doctype=docs['docs'][i]['doctype'],
+        doctype=doc['doctype'],
         external=ext)
     db.session.add(doc)
     db.session.commit()
@@ -280,38 +277,38 @@ print("Finish importing Doc")
 print("Begin importing ResearchDoc")
 
 with open('./data/research.json') as data_file:
-    research = json.load(data_file)
+    docs = json.load(data_file)
 
-for i in range(0, len(research)):
-    authorlist = research[i]['author']
+for doc in docs:
+    authorlist = doc['author']
     dbauthor = []
     for auth in authorlist:
         dbauthor += [get(Author, slug=auth)]
-    formlist = research[i]['formats']
+    formlist = doc['formats']
     dbformat = []
     for form in formlist:
         dbformat += [get_or_create(Format, name=form)]
-    catlist = research[i]['categories']
+    catlist = doc['categories']
     dbcat = []
     for cat in catlist:
         dbcat += [get_or_create(Category, name=cat)]
-    if 'external' in research[i]:
-        ext = research[i]['external']
+    if 'external' in doc:
+        ext = doc['external']
     else:
         ext = None
-    if 'lit_id' in research[i]:
-        lit = research[i]['lit_id']
+    if 'lit_id' in doc:
+        lit = doc['lit_id']
     else:
         lit_id = None
     doc = ResearchDoc(
-        id=research[i]['id'],
-        title=research[i]['title'],
+        id=doc['id'],
+        title=doc['title'],
         author=dbauthor,
-        date=research[i]['date'],
-        slug=research[i]['slug'],
+        date=doc['date'],
+        slug=doc['slug'],
         formats=dbformat,
         categories=dbcat,
-        doctype=research[i]['doctype'],
+        doctype=doc['doctype'],
         external=ext,
         lit_id=lit)
     db.session.add(doc)
@@ -322,24 +319,23 @@ print("Begin importing BlogSeries")
 with open('./data/blogseries.json') as data_file:
     blogss = json.load(data_file)
 
-for i in range(0, len(blogss)):
-    blogseries = BlogSeries(
-        id=i+1,
-        title=blogss[i]['title'],
-        slug=blogss[i]['slug'],
+for i, blogs in enumerate(blogss, start=1):
+    blog_series = BlogSeries(
+        id=i,
+        title=blogs['title'],
+        slug=blogs['slug'],
     )
-    db.session.add(blogseries)
+    db.session.add(blog_series)
     db.session.commit()
 print("Finish importing BlogSeries")
 print("Begin importing BlogPost")
 
 with open('./data/blogposts.json') as data_file:
-    blogps = json.load(data_file)
+    blogposts = json.load(data_file)
 
-for i in range(0, len(blogps['blogposts'])):
-    bp = blogps['blogposts'][i]
+for i, bp in enumerate(blogposts, start=1):
     blogpost = BlogPost(
-        id=i+1,
+        id=i,
         title=bp['title'],
         author=[get(Author, slug=bp['author'])],
         date=parser.parse(bp['date']),
@@ -361,20 +357,20 @@ print("Begin importing Skeptic")
 with open('./data/skeptics.json') as data_file:
     skeptics = json.load(data_file)
 
-for i in range(0, len(skeptics['skeptics'])):
-    slug_date = str(parser.parse(skeptics['skeptics'][i]['date']))[0:10]
+for i, skeptic in enumerate(skeptics, start=1):
+    slug_date = datetime.strftime(parser.parse(skeptic['date']), '%Y-%m-%d')
     skeptic = Skeptic(
-        id=i+1,
-        name=skeptics['skeptics'][i]['name'],
-        title=skeptics['skeptics'][i]['title'],
-        article=skeptics['skeptics'][i]['article'],
-        date=parser.parse(skeptics['skeptics'][i]['date']),
-        source=skeptics['skeptics'][i]['source'],
-        excerpt=skeptics['skeptics'][i]['excerpt'],
-        price=skeptics['skeptics'][i]['price'],
-        link=skeptics['skeptics'][i]['link'],
-        waybacklink=skeptics['skeptics'][i]['waybacklink'],
-        slug='{}-{}'.format(skeptics['skeptics'][i]['slug'], slug_date)
+        id=i,
+        name=skeptic['name'],
+        title=skeptic['title'],
+        article=skeptic['article'],
+        date=parser.parse(skeptic['date']),
+        source=skeptic['source'],
+        excerpt=skeptic['excerpt'],
+        price=skeptic['price'],
+        link=skeptic['link'],
+        waybacklink=skeptic['waybacklink'],
+        slug='{}-{}'.format(skeptic['slug'], slug_date)
     )
     db.session.add(skeptic)
     db.session.commit()
@@ -385,18 +381,18 @@ print("Begin importing Episode")
 with open('./data/episodes.json') as data_file:
     episodes = json.load(data_file)
 
-for i in range(0, len(episodes)):
+for ep in episodes:
     episode = Episode(
-        id=episodes[i]['id'],
-        title=episodes[i]['title'],
-        date=parser.parse(episodes[i]['date']),
-        duration=episodes[i]['duration'],
-        subtitle=episodes[i]['subtitle'],
-        summary=episodes[i]['summary'],
-        slug=episodes[i]['slug'],
-        youtube=episodes[i]['youtube'],
-        address=episodes[i]['address'],
-        time=parser.parse(episodes[i]['time']))
+        id=ep['id'],
+        title=ep['title'],
+        date=parser.parse(ep['date']),
+        duration=ep['duration'],
+        subtitle=ep['subtitle'],
+        summary=ep['summary'],
+        slug=ep['slug'],
+        youtube=ep['youtube'],
+        address=ep['address'],
+        time=parser.parse(ep['time']))
     db.session.add(episode)
     db.session.commit()
 
