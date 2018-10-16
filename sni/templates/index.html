@@ -3,73 +3,45 @@
 {% block content %}
 
 <div class="container">
-
-    <div class="jumbotron">
-        <div class="row">
-            <div class="text-center">
-                <img class="center img-responsive" src="/static/img/about/blockchain.png" style="margin: 0 auto;" />
-            </div>
+  <div class="jumbotron">
+    <div class="col">
+      <div class="row">
+        <div class="mx-auto">
+          <img class="img-fluid mx-1" src="/static/img/about/blockchain.png">
         </div>
-        <p class="lead">
-            <em>
-                I've been working on a new electronic cash system that's fully peer-to-peer, with no trusted third party...
-            </em>
-            <br>
-        </p>
-        <p>
-            <center>
-                <a class="btn btn-lg btn-success" href="{{url_for('slugview',slug='bitcoin')}}" role="button">
-                    Read Satoshi's White Paper
-                </a>
-            </center>
-        </p>
+      </div>
+      <div class="row text-center">
+        <p class="lead"><em>I've been working on a new electronic cash system that's fully peer-to-peer, with no trusted third party...</em><br></p>
+        <a class="btn btn-success mx-auto" href="{{url_for('slugview',slug='bitcoin')}}" role="button">Read Satoshi's White Paper</a>
+      </div>
     </div>
-
-    <div class="alert alert-warning text-center" role="alert">Check out the original code and website for Hal Finney's <strong><a href="{{url_for('rpow')}}">Reusable Proofs of Work</a></strong></div>
-    <div class="alert alert-warning text-center" role="alert">Pay respect to visionary prognosticators at <strong><a href="{{url_for('skeptics')}}">The Skeptics: A Tribute to Bold Assertions</a></strong></div>
-    <div class="alert alert-warning text-center" role="alert">Read the <strong><a href="{{url_for('crash_course')}}">Crash Course in Bitcoin Political Economy</a></strong></div>
-
-    <div class="row">
-        <div class="col-sm-4">
-            <h2>
-                Mempool
-            </h2>
-            <p>
-                <em>{{bp.title}}</em><br>
-                {{bp.excerpt}}
-            </p>
-            <p>
-                <a class="btn btn-primary" href="{{url_for('blogpost',slug=bp.slug)}}" role="button">
-                    Read more &raquo;
-                </a>
-            </p>
-        </div>
-
-        <div class="col-sm-4">
-            <h2>
-                Podcast
-            </h2>
-            <p>
-                The Crypto-Mises Podcast offers commentary on Bitcoin, economics, cryptography, and current events.
-            </p>
-            <p>
-                <a class="btn btn-primary" href="{{url_for('podcast')}}" role="button">
-                    See episodes &raquo;
-                </a>
-            </p>
-        </div>
-
-        <div class="col-sm-4">
-            <h2>
-                Support
-            </h2>
-            <p>
-                You can help us achieve our goals by donating today. Bitcoins only.
-            </p>
-            <p>
-             <a class="btn btn-primary" href="{{url_for('donate')}}">Donate &raquo;</a>
-            </p>
-        </div>
+  </div>
+  <div class="alert alert-warning text-center" role="alert">
+    Check out the original code and website for Hal Finney's <strong><a href="{{url_for('rpow')}}">Reusable Proofs of Work</a></strong>
+  </div>
+  <div class="alert alert-warning text-center" role="alert">
+    Pay respect to visionary prognosticators at <strong><a href="{{url_for('skeptics')}}">The Skeptics: A Tribute to Bold Assertions</a></strong>
+  </div>
+  <div class="alert alert-warning text-center" role="alert">
+    Read the <strong><a href="{{url_for('crash_course')}}">Crash Course in Bitcoin Political Economy</a></strong>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <h2>Mempool</h2>
+      <p><em>{{bp.title}}</em><br>
+      {{bp.excerpt}}</p>
+      <p><a class="btn btn-primary" href="{{url_for('blogpost',slug=bp.slug)}}" role="button">Read more &raquo;</a></p>
     </div>
+    <div class="col-sm-4">
+      <h2>Podcast</h2>
+      <p>The Crypto-Mises Podcast offers commentary on Bitcoin, economics, cryptography, and current events.</p>
+      <p><a class="btn btn-primary" href="{{url_for('podcast')}}" role="button">See episodes &raquo;</a></p>
+    </div>
+    <div class="col-sm-4">
+      <h2>Support</h2>
+      <p>You can help us achieve our goals by donating today. Bitcoins only.</p>
+      <p><a class="btn btn-primary" href="{{url_for('donate')}}">Donate &raquo;</a></p>
+    </div>
+  </div>
 </div>
 {% endblock %}
