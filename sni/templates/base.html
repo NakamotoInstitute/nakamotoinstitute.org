@@ -5,7 +5,8 @@ subject to other licenses.-->
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{% block title %}Satoshi Nakamoto Institute{% endblock %}</title>
     <link href="{{ url_for('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet" media="screen">
     {% assets "scss_all" %}
@@ -21,43 +22,7 @@ subject to other licenses.-->
     </script>
   </head>
   <body>
-  <div class="navbar" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a href="{{url_for('index')}}" class="navbar-brand">Satoshi Nakamoto Institute</a>
-    </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <a href="{{url_for('satoshi_index')}}">
-                The Complete Satoshi
-              </a>
-            </li>
-            <li>
-              <a href="{{url_for('literature')}}">
-                Literature
-              </a>
-            </li>
-            <li>
-              <a href="{{url_for('research')}}">
-                Research
-              </a>
-            </li>
-            <li>
-              <a href="{{url_for('blog')}}">
-                Mempool
-              </a>
-            </li>
-          </ul>
-        </div>
-    </div>
-  </div>
+  {% include 'fragments/navbar.html' %}
   <div class="container-fluid">
   {% block content %}{% endblock %}
   </div>
