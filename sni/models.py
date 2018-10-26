@@ -25,7 +25,7 @@ class EmailThread(db.Model):
 
 class Email(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    satoshi_id = db.Column(db.Integer)
+    satoshi_id = db.Column(db.Integer, unique=True)
     url = db.Column(db.String())
     subject = db.Column(db.String())
     sent_from = db.Column(db.String())
@@ -65,7 +65,7 @@ class ForumThread(db.Model):
 
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    satoshi_id = db.Column(db.Integer)
+    satoshi_id = db.Column(db.Integer, unique=True)
     url = db.Column(db.String())
     subject = db.Column(db.String())
     poster_name = db.Column(db.String())
