@@ -133,5 +133,44 @@
     ],
     "doctype": "essay",
     "external": "https://download.wpsoftware.net/bitcoin/pos.pdf"
+  },
+  {
+    "id": 8,
+    "title": "The Bitcoin Lightning Network: Scalable Off-Chain Instant Payments (DRAFT Version 0.5.9.2)",
+    "author": [
+      "joseph-poon",
+      "thaddeus-dryja"
+    ],
+    "date": "January 14, 2016",
+    "slug": "lightning-network",
+    "formats": [
+      "pdf",
+      "ext"
+    ],
+    "categories": [
+      "cryptography"
+    ],
+    "doctype": "essay",
+    "external": "https://lightning.network/lightning-network-paper.pdf"
+  },
+  {
+    "id": 9,
+    "title": "Scalable Funding of Bitcoin Micropayment Channel Networks",
+    "author": [
+      "conrad-burchert",
+      "christian-decker",
+      "roger-wattenhofer"
+    ],
+    "date": "November 2017",
+    "slug": "scalable-funding-of-bitcoin-micropayment-channel-networks",
+    "formats": [
+      "pdf",
+      "ext"
+    ],
+    "categories": [
+      "cryptography"
+    ],
+    "doctype": "essay",
+    "external": "https://www.tik.ee.ethz.ch/file/a20a865ce40d40c8f942cf206a7cba96/Scalable_Funding_Of_Blockchain_Micropayment_Networks%20(1).pdf"
   }
 ]
