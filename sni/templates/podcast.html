@@ -6,33 +6,19 @@ The Crypto-Mises Podcast | Satoshi Nakamoto Institute
 {% endblock %}
 
 {% block content %}
-<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-
-  <div class="row">
-    <div class="text-center">
-      <p>
-        <img class="img-responsive center-block img-rounded" src="/static/img/cryptomises/cmpodcast-banner.png" />
-      </p>
-      <a href="https://itunes.apple.com/us/podcast/the-crypto-mises-podcast/id957258848?mt=2&uo=4" target="itunes_store"><img style="display:inline-block;margin-left:auto;margin-right:auto;height:40px" src="https://linkmaker.itunes.apple.com/htmlResources/assets/en_us//images/web/linkmaker/badge_subscribe-lrg.png" /></a>
-      <a href="http://feeds.feedburner.com/cryptomises"><img style="display:inline-block;margin-left:auto;margin-right:auto;height:40px" src="/static/img/cryptomises/rss.png" /></a>
-    </div>
+<div class="container">
+  <img class="img-fluid rounded d-block mx-auto" src="/static/img/cryptomises/cmpodcast-banner.png" />
+  <div class="text-center mt-3">
+    <a class="align-middle" href="https://itunes.apple.com/us/podcast/the-crypto-mises-podcast/id957258848?mt=2&app=podcast" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/assets/shared/badges/en-us/podcast-lrg.svg) no-repeat;width:133px;height:34px;"></a>
+    <a class="align-middle" href="http://feeds.feedburner.com/cryptomises"><img style="display:inline-block;margin-left:auto;margin-right:auto;height:40px" src="/static/img/cryptomises/rss.png" /></a>
   </div>
-
-      {% for ep in episodes %}
-      <hr>
-      <h3>
-        <a href="{{url_for('episode', slug=ep.slug)}}">
-          {{ep.title}}
-        </a>
-        <p>
-        <small>
-          {{ep.date.strftime('%B %d, %Y')}}
-        </small>
-        </p>
-      </h3>
-        <p>
-          {{ep.subtitle}}
-        </p>
-      {% endfor %}
+  {% for ep in episodes %}
+  <hr>
+  <h3>
+    <a href="{{url_for('episode', slug=ep.slug)}}">{{ep.title}}</a>
+  </h3>
+  <h5>{{ep.date.strftime('%B %d, %Y')}}</h5>
+  <p>{{ep.subtitle}}</p>
+  {% endfor %}
 </div>
 {% endblock %}
