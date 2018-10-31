@@ -7,56 +7,38 @@ Literature | Satoshi Nakamoto Institute
 {% endblock %}
 
 {% block content %}
-<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-  	<div class="row">
-  		<div class="text-center">
-
-        <h2>
-          Literature
-        </h2>
-
-        <p>
-          Bitcoin was not forged in a vacuum. These works serve to contextualize Bitcoin into the broader story of cryptography and freedom.
-        </p>
-
-  		</div>
-  	</div>
-
-  <div class="row">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Formats</th>
-          <th>Author</th>
-          <th>Date</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for doc in docs %}
-          <tr>
-            <td>
-            	<a href="{{url_for('docinfo', slug=doc['slug'])}}">
-            	{% if doc['doctype']=="book" %}
-            		<em>{{doc['title']}}</em>
-            	{% else %}
-            		"{{doc['title']}}"
-            	{% endif %}
-            	</a>
-            </td>
-            <td>
-              {{ helpers.doctypes(doc, formats[doc.slug], index=True) }}
-            </td>
-            <td>
-            	{{ helpers.print_authors(doc['author']) }}
-            </td>
-            <td>
-            	{{ doc['date'] }}
-            </td>
-          </tr>
-        {%endfor%}
-        </tbody>
-        </table>
+<div class="container">
+  <div class="text-center">
+    <h2>Literature</h2>
+    <p>Bitcoin was not forged in a vacuum. These works serve to contextualize Bitcoin into the broader story of cryptography and freedom.</p>
   </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Formats</th>
+        <th scope="col">Author</th>
+        <th scope="col">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for doc in docs %}
+      <tr>
+        <td>
+        	<a href="{{url_for('docinfo', slug=doc['slug'])}}">{% if doc['doctype']=="book" %}<em>{{doc['title']}}</em>{% else %}"{{doc['title']}}"{% endif %}</a>
+        </td>
+        <td>
+          {{ helpers.doctypes(doc, formats[doc.slug], index=True) }}
+        </td>
+        <td>
+        	{{ helpers.print_authors(doc['author']) }}
+        </td>
+        <td>
+        	{{ doc['date'] }}
+        </td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
 </div>
 {% endblock %}
