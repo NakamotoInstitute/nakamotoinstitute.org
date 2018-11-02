@@ -170,16 +170,18 @@
     "author": [
       "timothy-c-may"
     ],
-    "date": "November 22, 1992",
+    "date": "1988",
     "slug": "crypto-anarchist-manifesto",
     "formats": [
-      "html"
+      "html",
+      "ext"
     ],
     "categories": [
       "cryptography",
       "Cypherpunk"
     ],
-    "doctype": "essay"
+    "doctype": "essay",
+    "external": "https://activism.net/cypherpunk/crypto-anarchy.html"
   },
   {
     "id": 13,
