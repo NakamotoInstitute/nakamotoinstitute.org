@@ -8,7 +8,7 @@ New ideas attract not only visionaries and pioneers but also charlatans and fool
 <div class="article-image">
   <img class="img-responsive center-block img-rounded" alt="The litecoiners of aeronautics" src="/static/img/mempool/the-problem-with-altcoins/cargo-cult.jpg" />
 	<p>
-		<em>The litcoiners of aeronautics</em>
+		<em>The litecoiners of aeronautics</em>
 	</p>
 </div>
 
