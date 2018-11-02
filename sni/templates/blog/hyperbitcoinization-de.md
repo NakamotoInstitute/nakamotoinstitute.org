@@ -53,8 +53,8 @@ Ausgehend von diesen zwei Unterschieden mache ich zwei Voraussagen über eine (m
 Hyperbitcoinization wird wahrscheinlich für manchen verwirrend sein, wie eine zweite Jugend.
 Sobald diese vorbei ist, wird es unvorstellbar sein wie wir mit dem alten System haben leben können.
 
-<div class="article-image">
-  <img class="img-responsive center-block img-rounded" alt="Bitcoinbody" src="/static/img/mempool/hyperbitcoinization/Bitcoinbody.png"/>
+<div class="my-4 text-center">
+  <img class="img-fluid rounded d-block mx-auto" alt="Bitcoinbody" src="/static/img/mempool/hyperbitcoinization/Bitcoinbody.png"/>
 </div>
 
 <p class="text-muted text-center">

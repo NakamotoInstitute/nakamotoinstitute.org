@@ -5,7 +5,7 @@ image_alt: Distributed
 
 Liberty is an ideology for everyone. It benefits all people and groups whose goals do not inherently require oppression. All objections to liberty have simply stimulated more thought into what is possible with voluntary organizations and shown more clearly how much better they are at providing services originally thought to be possible by government. Movements once believed to be wholly incompatible with libertarianism, such as feminism and environmentalism,[^1] now have their own branches of libertarian thought. Liberty is a universal [acid](http://en.wikipedia.org/wiki/Acid).
 
-<div class="article-image">
+<div class="my-4 text-center">
   <img class="img-responsive center-block" alt="Napster" src="/static/img/mempool/crypto-anarchy-and-libertarian-entrepreneurship-1/napster.jpg"/>
 </div>
 
@@ -15,7 +15,7 @@ The goal of the libertarian entrepreneur is to give others that taste, not by in
 
 For example, suppose the people in a community came to adore a company whose services require that they give up control of their land or their weapons to it. Such a system could, in theory, remain completely voluntary, but only a fool would think it likely. Such a company would be easily corrupted, either by transforming itself into a government or by collusion with an existing government. There is no basis to criticize such a company strictly on libertarian grounds, but by the time it begins to behave coercively, it may be too late. Whereas the libertarian entrepreneur should oppose it form the start and urgently develop an alternative business model to compete with it.
 
-<div class="article-image">
+<div class="my-4 text-center">
   <img class="img-responsive center-block" alt="Apple Products" src="/static/img/mempool/crypto-anarchy-and-libertarian-entrepreneurship-1/apple-products.jpg"/>
 </div>
 
@@ -27,7 +27,7 @@ The strategy, therefore, is to promote decentralization by enabling people to co
 
 ## Crypto-Anarchy
 
-<div class="article-image">
+<div class="my-4 text-center">
   <img class="img-responsive center-block" alt="Crypto-Anarchy" src="/static/img/mempool/crypto-anarchy-and-libertarian-entrepreneurship-1/cryptoanarchy.jpeg"/>
 </div>
 

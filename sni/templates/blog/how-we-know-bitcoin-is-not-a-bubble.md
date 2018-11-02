@@ -27,7 +27,7 @@ Metcalfe’s law must be adjusted slightly to apply to media of exchange because
 
 A striking test of Metcalfe’s law in Bitcoin recently appeared on the [Bitcointalk forums](https://bitcointalk.org/index.php?topic=366214.msg5919365#msg5919365), created by Peter R. I have made my own chart here.
 
-<div class="article-image">
+<div class="my-4 text-center">
   <img class="img-responsive center-block" alt="Metcalfe's Law" src="/static/img/mempool/how-we-know-bitcoin-is-not-a-bubble/MetcalfeGraph.png" />
 </div>
 

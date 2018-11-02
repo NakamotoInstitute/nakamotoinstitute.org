@@ -10,7 +10,7 @@ However, a better physical metaphor might be the formation of crystals. A liquid
 
 By this metaphor, the supercooled liquid is the world as of a few years ago, ripe for a monetary revolution, and the seed is the initial bitcoin purchase. The fact that Bitcoin successfully transformed into something with value seems like a miracle. However, it was no miracle. It was a result of the dedication and faith of its community, whose members will not let go of the beautiful vision of a Bitcoin future. It might be better to use a word like “crystallization” to describe the formation of the initial “seed” of Bitcoin trading rather than a metaphor like “bootstrapping”, which depicts a physical paradox.[^1]
 
-<div class="article-image">
+<div class="my-4 text-center">
   <img class="img-responsive center-block" src="/static/img/mempool/why-bitcoin-will-continue-to-grow/breaking-bad.jpg">
 </div> 
 
@@ -36,7 +36,7 @@ It might be argued that Bitcoin could retain its uses on illegal markets, but th
 
 All things being equal, a larger network is better than a smaller one. This puts Bitcoin at a disadvantage with respect to national currencies. One would therefore expect Bitcoin to decline relative to dollars or euros. The fact that this is not the case tells us that all things are not equal. It shows us that Bitcoin is still good enough compared to the national currencies. It can grow anyway despite their advantages over it. The network effect means that the bigger Bitcoin gets, the better its prospects. The fact that Bitcoin has grown in the immediate past is strong evidence that it will continue to grow in the immediate future.
 
-<div class="article-image">
+<div class="my-4 text-center">
   <img class="img-responsive center-block" src="/static/img/mempool/why-bitcoin-will-continue-to-grow/chart.png">
 </div>
 

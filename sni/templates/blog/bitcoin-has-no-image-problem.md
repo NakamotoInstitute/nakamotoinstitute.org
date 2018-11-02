@@ -26,15 +26,15 @@ First look at this [log
 chart](https://en.wikipedia.org/wiki/Logarithmic_scale) of Bitcoin’s market
 cap.
 
-<div class="article-image">
-	<img class="img-responsive center-block img-rounded" src="/static/img/mempool/bitcoin-has-no-image-problem/marketcap-chart.png">
+<div class="my-4 text-center">
+	<img class="img-fluid rounded d-block mx-auto" src="/static/img/mempool/bitcoin-has-no-image-problem/marketcap-chart.png">
 </div>
 
 Now take a look at the number of MyWallet users over the past two years. This
 is also a log chart.
 
-<div class="article-image">
-	<img class="img-responsive center-block img-rounded" src="/static/img/mempool/bitcoin-has-no-image-problem/mywallet-chart.png">
+<div class="my-4 text-center">
+	<img class="img-fluid rounded d-block mx-auto" src="/static/img/mempool/bitcoin-has-no-image-problem/mywallet-chart.png">
 </div>
 
 That’s an increase of like 500 times in two years. Ooo, I’m so terrified
@@ -108,7 +108,7 @@ were sitting on a swamp made out of crude oil and worrying that people won’t
 accept it because it’s too ugly and gross, so they try to convince people that
 it’s a pretty shiny pink and tastes like cherries.
 
-<div class="article-image"> <img class="img-responsive center-block img-rounded" src="/static/img/mempool/bitcoin-has-no-image-problem/narcissism.jpg">
+<div class="my-4 text-center"> <img class="img-fluid rounded d-block mx-auto" src="/static/img/mempool/bitcoin-has-no-image-problem/narcissism.jpg">
 	<p>
 		<em>Oh Narcissus, you’ll never understand Bitcoin.</em>
 	</p>
@@ -153,8 +153,8 @@ if it gives us a little extra time—however brief—to buy more. Every time
 someone figures out how great Bitcoin really is, he makes Bitcoin even _more_
 great by joining in.
 
-<div class="article-image">
-	<img class="img-responsive center-block img-rounded" src="/static/img/mempool/bitcoin-has-no-image-problem/miss-sunshine.jpg">
+<div class="my-4 text-center">
+	<img class="img-fluid rounded d-block mx-auto" src="/static/img/mempool/bitcoin-has-no-image-problem/miss-sunshine.jpg">
 	<p>
 		<em>When you’re an immortal distributed system that can’t be controlled,
 		you don’t have to care what other people think.</em>

@@ -66,7 +66,7 @@ Less than a majority can also reorganize the chain to invalidate a previous tran
 
 Here’s a quick plot I made back when the block reward was 25 BTC per block and transaction fees were negligible (so I could ignore them and Bitcoin Core’s anti-fee-sniping):
 
-<div class="article-image">
+<div class="my-4 text-center">
   <img class="img-responsive center-block" src="/static/img/mempool/against-the-minimum-majority-measure/en-confirmed-double-spend-cost.png" />
 </div>
 

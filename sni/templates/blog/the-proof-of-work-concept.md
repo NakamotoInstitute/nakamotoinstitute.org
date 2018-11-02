@@ -13,13 +13,13 @@ All the blocks in the Bitcoin block chain have a short string of meaningless dat
 
 The procedure, remember, is totally arbitrary. It is simply an added complication, like a ritual, so as to make blocks more difficult to generate. Really anything else would do, as long as it was computationally difficult. Other crypto-currencies use other hash algorithms. There is no special condition from number theory which only someone like [Shinichi Mochizuki](http://www.kurims.kyoto-u.ac.jp/~motizuki/top-english.html) could understand.[^3]
 
-<div class="article-image">
+<div class="my-4 text-center">
   <img class="img-responsive center-block" alt="Bitcoin Mining" src="/static/img/mempool/the-proof-of-work-concept/mining.jpg" />
 </div>
 
 Although the purpose of the mining computers is to do the accounting for the block chain, most of the work they actually do is to search for good nonces, rather than anything to do with accounting. The energy used to find the nonces is lost forever. The energy does not "back" the value of bitcoins in the way that gold backs an honest bank note, as some have supposed. Of the vast computing power that goes into bitcoin mining, all but a tiny fraction is apparently purposeless.
 
-<div class="article-image">
+<div class="my-4 text-center">
   <img class="img-responsive center-block" alt="ASIC Mining" src="/static/img/mempool/the-proof-of-work-concept/asicminer.jpg" />
 </div>
 
@@ -39,7 +39,7 @@ The general rule is that the first block mined is not self-interested because no
 
 ## The Handicap Principle
 
-<div class="article-image">
+<div class="my-4 text-center">
   <img class="img-responsive center-block" alt="The Handicap Principle" src="/static/img/mempool/the-proof-of-work-concept/handicap.jpg" />
 </div>
 

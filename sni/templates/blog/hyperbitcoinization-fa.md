@@ -29,8 +29,8 @@ image_alt: BitcoinFace
 
 ابربتکوینی شدن احتمالا برای همگان گیج کننده خواهد بود. انگار که دوره ی نوجوانی دوم یک انسان باشد. با این حال، وقتی انجام شود، آن چنان خوب و آسان خواهد بود که همگان با تعجب فکر می کنند که ما چگونه با سیستم پیشین می توانستیم کار کنیم.
 
-<div class="article-image">
-  <img class="img-responsive center-block img-rounded" alt="Bitcoinbody" src="/static/img/mempool/hyperbitcoinization/Bitcoinbody.png"/>
+<div class="my-4 text-center">
+  <img class="img-fluid rounded d-block mx-auto" alt="Bitcoinbody" src="/static/img/mempool/hyperbitcoinization/Bitcoinbody.png"/>
 </div>
 
 <p class="text-muted text-center">

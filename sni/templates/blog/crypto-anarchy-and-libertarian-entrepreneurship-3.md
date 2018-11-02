@@ -17,7 +17,7 @@ The history of all Bitcoin transactions are stored in a publicly available datab
 
 Thus, cryptography ensures that bitcoin behave like physically scarce commodities even though they are simply magnitudes in a computer. No new bitcoin can be created because it cannot be traced to any valid history in the block chain. Transactions cannot be spoofed because they require a digital signature by the wallet which spends them.
 
-<div class="article-image">
+<div class="my-4 text-center">
   <img class="img-responsive center-block" alt="" src="/static/img/bitcoin/transactions.svg"/>
 </div>
 
@@ -41,7 +41,7 @@ This is the world we live in. Bitcoin is a game-changer. It challenges the statu
 
 The Bitcoin network provides us with an example of libertarian legislation. The Bitcoin protocol is a law that anyone who interacts with the Bitcoin network must adhere to. Otherwise, the network will not accept him. Its author is not an elected representative, but an anonymous genius who simply left his proposal for us to adopt.
 
-<div class="article-image">
+<div class="my-4 text-center">
   <img class="img-responsive center-block" alt="The Blockchain" src="/static/img/mempool/crypto-anarchy-and-libertarian-entrepreneurship-3/blockchain.png"/>
 </div>
 

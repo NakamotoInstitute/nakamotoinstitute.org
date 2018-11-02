@@ -373,8 +373,8 @@ Litecoin’s price has decoupled from Bitcoin’s somewhat, so maybe people have
 finally figured this out. Once Litecoin loses its shared hallucination, no
 amount of sloganeering will bring it back.
 
-<div class="article-image">
-	<img class="img-responsive center-block img-rounded" src="/static/img/mempool/its-not-about-the-technology-its-about-the-money/litecoin-prices-all-time.png">
+<div class="my-4 text-center">
+	<img class="img-fluid rounded d-block mx-auto" src="/static/img/mempool/its-not-about-the-technology-its-about-the-money/litecoin-prices-all-time.png">
 	<p><em>Litecoin prices, all-time (via <a href="http://coinmarketcap.com/currencies/litecoin/">CoinMarketCap</a>)</em></p>
 </div>
 

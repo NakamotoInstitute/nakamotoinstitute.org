@@ -5,8 +5,8 @@ image_alt: Elvis Impersonators
 
 New ideas attract not only visionaries and pioneers but also charlatans and fools. The former group understands the nature and potential of the new idea and attempts to extend it in new ways. The latter observes the success of the former and expects similar results through blind imitation and empty hope, rather like the Melanesian [cargo cults](http://en.wikipedia.org/wiki/Cargo_cult) which arose after World War II when the American military abandoned its airports there.
 
-<div class="article-image">
-  <img class="img-responsive center-block img-rounded" alt="The litecoiners of aeronautics" src="/static/img/mempool/the-problem-with-altcoins/cargo-cult.jpg" />
+<div class="my-4 text-center">
+  <img class="img-fluid rounded d-block mx-auto" alt="The litecoiners of aeronautics" src="/static/img/mempool/the-problem-with-altcoins/cargo-cult.jpg" />
 	<p>
 		<em>The litecoiners of aeronautics</em>
 	</p>
@@ -22,8 +22,8 @@ The Bitcoin community is not just overwhelmingly larger but of overwhelmingly be
 
 ## Motivated reasoning
 
-<div class="article-image">
-  <img class="img-responsive center-block img-rounded" alt="Altcoiners obsessing over Cryptsy's exchange rates" src="/static/img/mempool/the-problem-with-altcoins/altcoiners.png" />
+<div class="my-4 text-center">
+  <img class="img-fluid rounded d-block mx-auto" alt="Altcoiners obsessing over Cryptsy's exchange rates" src="/static/img/mempool/the-problem-with-altcoins/altcoiners.png" />
 	<p>
 		<em>Altcoiners obsessing over Cryptsy's exchange rates</em>
 	</p>
@@ -81,8 +81,8 @@ There is a class of very similar cryptocurrencies that rely on an algorithm call
 
 When Bitcoin first came out, it was possible for anyone to mine coins with his CPU. Once software was developed that mined using GPUs, then CPU mining quickly became obsolete. GPU mining remained profitable for some time thereafter because the price of Bitcoin continued to increase as more people became miners. This could not persist indefinitely, and eventually there began work into the development of FPGA and ASIC mining. Once these technologies were developed, GPU mining would become obsolete as well.
 
-<div class="article-image">
-  <img class="img-responsive center-block img-rounded" alt="The Golden Age of mining, according to altcoiners" src="/static/img/mempool/the-problem-with-altcoins/mining.jpg" />
+<div class="my-4 text-center">
+  <img class="img-fluid rounded d-block mx-auto" alt="The Golden Age of mining, according to altcoiners" src="/static/img/mempool/the-problem-with-altcoins/mining.jpg" />
 	<p>
 		<em>The Golden Age of mining, according to altcoiners</em>
 	</p>

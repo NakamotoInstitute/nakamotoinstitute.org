@@ -60,7 +60,7 @@ more business for them. I do not see how investors in the appcoin could expect
 to prevent this. That should eliminate the expectation that any appcoin could
 ever be a good investment.
 
-<div class="article-image">
+<div class="my-4 text-center">
   <img class="img-responsive center-block" src="/static/img/mempool/appcoins-are-snake-oil/underpants-gnomes.png" />
 </div>
 
@@ -117,7 +117,7 @@ Appcoins are pump-and-dump scams disguised as [Rube Goldberg
 machines](http://en.wikipedia.org/wiki/Rube_Goldberg_machine), so don't get
 fooled.
 
-<div class="article-image">
+<div class="my-4 text-center">
   <img class="img-responsive center-block" width="60%" src="/static/img/mempool/appcoins-are-snake-oil/inconvenience-store.jpg" />
 </div>
 
