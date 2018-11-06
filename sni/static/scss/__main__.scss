@@ -248,15 +248,12 @@ $post-inner-border: 1px solid $post-sectional;
 }
 
 .donation-buttons {
-  line-height: 46px;
-  margin-bottom: 24px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 0 -0.5em 24px;
-  align-items: center;
+  line-height: 48px;
+  margin-left: -0.5em;
+  margin-right: -0.5em;
   button {
-    margin: 0 0.5em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
   }
   & > form {
     display: inline;

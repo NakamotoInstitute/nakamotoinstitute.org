@@ -10,7 +10,7 @@ Donate | Satoshi Nakamoto Institute
 	<h1 class="text-center">Donate</h1>
   <p class="text-center">Support the efforts of the Satoshi Nakamoto Institute by donating bitcoins.</p>
   <hr>
-	<div class="donation-buttons my-5">
+	<div class="donation-buttons my-5 d-flex flex-wrap align-content-center justify-content-around">
 		<form method="POST" action="https://btcpay.nakamotoinstitute.org/apps/HbP8R9997Pi16JmW2sPjNDhLXaTMp4PJDG4FKdy5s9oP/pos">
 		  <input type="hidden" name="redirectUrl" value="{{url_for('index', _external=True)}}" />
 		  <button class="btn btn-primary"  type="submit" name="choiceKey" value="100 BTC">100 BTC</button>
