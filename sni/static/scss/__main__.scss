@@ -40,39 +40,23 @@
 //   border-left: 5px solid #eeeeee;
 // }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
-}
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 #footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 100px;
+  margin-top: auto;
   background-color: #f5f5f5;
   font-size: 85%;
-}
-@media (max-width: 549px) {
-  body {
-    margin-bottom: 180px;
-  }
-  #footer {
-    height: 160px;
-  }
-}
-@media (max-width: 303px) {
-  body {
-    margin-bottom: 220px;
-  }
-  #footer {
-    height: 200px;
+  ul {
+    font-weight: 500;
+    line-height: 30px;
+    margin: 0 -0.5em;
+    li {
+      margin: 0 0.5em;
+      min
+    }
   }
 }
 
