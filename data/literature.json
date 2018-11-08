@@ -1522,5 +1522,24 @@
     ],
     "doctype": "essay",
     "external": "https://groups.csail.mit.edu/mac/classes/6.805/articles/crypto/cypherpunks/may-pushing-limits.txt"
+  },
+  {
+    "id": 87,
+    "title": "The Ethics of Money Production",
+    "author": [
+      "jorg-guido-hulsmann"
+    ],
+    "date": "2008",
+    "slug": "the-ethics-of-money-production",
+    "formats": [
+      "pdf",
+      "epub",
+      "ext"
+    ],
+    "categories": [
+      "economics"
+    ],
+    "doctype": "book",
+    "external": "https://mises.org/library/ethics-money-production"
   }
 ]
