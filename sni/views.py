@@ -294,9 +294,7 @@ def literature():
     docs = Doc.query.order_by('id').all()
     formats = {}
     for doc in docs:
-        formlist = []
-        for format in doc.formats:
-            formlist += [format.name]
+        formlist = [format.name for format in doc.formats]
         formats[doc.slug] = formlist
     app.logger.info(str(request.remote_addr) + ', literature')
     return render_template("literature.html", docs=docs, formats=formats)
@@ -307,18 +305,7 @@ def literature():
 def docinfo(slug):
     doc = Doc.query.filter_by(slug=slug).first()
     if doc is not None:
-        forms = []
-        for form in doc.formats:
-            if form.name == 'html':
-                forms += ['html']
-            if form.name == 'pdf':
-                forms += ['pdf']
-            if form.name == 'txt':
-                forms += ['txt']
-            if form.name == 'unavailable':
-                forms += ['una']
-            if form.name == 'ext':
-                forms += ['ext']
+        forms = [form.name for form in doc.formats]
         app.logger.info(str(request.remote_addr) + ', literature, ' + slug)
         return render_template("docinfo.html", doc=doc, forms=forms,
                                is_lit=True)
@@ -333,16 +320,6 @@ def docinfo(slug):
 def docinfoid(docid):
     doc = Doc.query.filter_by(id=docid).first()
     if doc is not None:
-        forms = []
-        for form in doc.formats:
-            if form.name == 'html':
-                forms += ['html']
-            if form.name == 'pdf':
-                forms += ['pdf']
-            if form.name == 'txt':
-                forms += ['txt']
-            if form.name == 'unavailable':
-                forms += ['una']
         return redirect(url_for('docinfo', slug=doc.slug))
     else:
         doc = ResearchDoc.query.filter_by(lit_id=docid).first()
@@ -356,9 +333,7 @@ def docinfoid(docid):
 def docview(slug, format):
     doc = Doc.query.filter_by(slug=slug).first()
     if doc is not None:
-        formats = []
-        for form in doc.formats:
-            formats += [form.name]
+        formats = [form.name for form in doc.formats]
         if format in formats:
             if format == 'html':
                 return redirect(url_for('slugview', slug=slug))
@@ -382,9 +357,7 @@ def docview(slug, format):
 def docviewid(docid, format):
     doc = Doc.query.filter_by(id=docid).first()
     if doc is not None:
-        formats = []
-        for form in doc.formats:
-            formats += [form.name]
+        formats = [form.name for form in doc.formats]
         slug = doc.slug
         if format in formats:
             if format == 'html':
@@ -410,9 +383,7 @@ def research():
     docs = ResearchDoc.query.order_by('id').all()
     formats = {}
     for doc in docs:
-        formlist = []
-        for format in doc.formats:
-            formlist += [format.name]
+        formlist = [format.name for format in doc.formats]
         formats[doc.slug] = formlist
     app.logger.info(str(request.remote_addr) + ', research')
     return render_template('research.html', docs=docs, formats=formats)
@@ -423,18 +394,7 @@ def research():
 def researchdocinfo(slug):
     res = ResearchDoc.query.filter_by(slug=slug).first()
     if res is not None:
-        forms = []
-        for form in res.formats:
-            if form.name == 'html':
-                forms += ['html']
-            if form.name == 'pdf':
-                forms += ['pdf']
-            if form.name == 'txt':
-                forms += ['txt']
-            if form.name == 'unavailable':
-                forms += ['una']
-            if form.name == 'ext':
-                forms += ['ext']
+        forms = [form.name for form in res.formats]
         app.logger.info(str(request.remote_addr) + ', research, ' + slug)
         return render_template("docinfo.html", doc=res, forms=forms,
                                is_lit=False)
@@ -447,16 +407,6 @@ def researchdocinfo(slug):
 def researchdocinfoid(resid):
     res = ResearchDoc.query.filter_by(id=resid).first()
     if res is not None:
-        forms = []
-        for form in res.formats:
-            if form.name == 'html':
-                forms += ['html']
-            if form.name == 'pdf':
-                forms += ['pdf']
-            if form.name == 'txt':
-                forms += ['txt']
-            if form.name == 'unavailable':
-                forms += ['una']
         return redirect(url_for('researchdocinfo', slug=res.slug))
     else:
         return redirect('research')
@@ -467,9 +417,7 @@ def researchdocinfoid(resid):
 def researchdocview(slug, format):
     doc = ResearchDoc.query.filter_by(slug=slug).first()
     if doc is not None:
-        formats = []
-        for form in doc.formats:
-            formats += [form.name]
+        formats = [form.name for form in doc.formats]
         if format in formats:
             if format == 'html':
                 return redirect(url_for('slugview', slug=slug))
@@ -489,9 +437,7 @@ def researchdocview(slug, format):
 def researchdocviewid(docid, format):
     doc = ResearchDoc.query.filter_by(id=resid).first()
     if doc is not None:
-        formats = []
-        for form in doc.formats:
-            formats += [form.name]
+        formats = [form.name for form in doc.formats]
         slug = doc.slug
         if format in formats:
             if format == 'html':
@@ -513,9 +459,7 @@ def slugview(slug):
     doc = Doc.query.filter_by(slug=slug).first()
     if doc is not None:
         docid = doc.id
-        formats = []
-        for form in doc.formats:
-            formats += [form.name]
+        formats = [form.name for form in doc.formats]
         if('html' in formats):
             app.logger.info(str(request.remote_addr) + ', slugview, ' + slug)
             return render_template("%s.html" % slug, doc=doc, is_lit=True)
@@ -525,9 +469,7 @@ def slugview(slug):
         doc = ResearchDoc.query.filter_by(slug=slug).first()
         if doc is not None:
             docid = doc.id
-            formats = []
-            for form in doc.formats:
-                formats += [form.name]
+            formats = [form.name for form in doc.formats]
             if('html' in formats):
                 app.logger.info(str(request.remote_addr) + ', slugview, ' + slug)
                 return render_template("%s.html" % slug, doc=doc)
