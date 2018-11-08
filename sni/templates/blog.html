@@ -6,50 +6,36 @@ The Memory Pool | Satoshi Nakamoto Institute
 {% endblock %}
 
 {% block content %}
-<div class="mempool col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-
-  <div class="row">
-    <div class="text-center">
-      <h1>The Memory Pool</h1>
-      <p>
-        Where ideas wait to be mined into the block chain of the collective conscience<br>
-        <em>Some transactions may be invalid</em><br>
-        <a href="{{url_for('atomfeed')}}">Atom Feed</a>
-      </p>
-    </div>
+<div class="mempool container">
+  <div class="text-center mb-4">
+    <h1>The Memory Pool</h1>
+    <p>Where ideas wait to be mined into the block chain of the collective conscience<br><em>Some transactions may be invalid</em><br><a href="{{url_for('atomfeed')}}">Atom Feed</a></p>
   </div>
 
-      {% for bp in bps %}
-      <hr>
-      {% if bp.series %}
-        <h4>{{bp.series}}</h4>
-      {% endif %}
-      <h3 class="{% if bp.series %}series{% endif %}">
-        <a href="{{url_for('blogpost', slug=bp.slug)}}">
-          {% if bp.series %}
-            Chapter {{bp.series_index}}:
-          {% endif %}
-          {{bp.title}}
-        </a>
-        <p>
-        <small>
-          <a href="{{url_for('author', authslug=bp['author'][0].slug)}}">{{bp.author[0].first}} {{bp.author[0].middle}} {{bp.author[0].last}}</a> - {{bp.added.strftime('%B %d, %Y')}}
-          {% if bp.date != bp.added %}(Originally published {{bp.date.strftime('%B %d, %Y')}}){% endif %}
-        </small>
-        </p>
-      </h3>
-        <p>
-          {{bp.excerpt}}
-        </p>
-        {% set langs = bp.languages.split(',') %}
-        {% if langs|length > 1 %}
-        <p>
-          Also available in:
-          {% for l in langs[1:] %}
-            <a href="{{url_for('blogposttrans', slug=bp.slug, lang=l.strip())}}">{{l}}</a>{% if not loop.last %},{% endif %}
-          {% endfor %}
-        </p>
-        {% endif %}
+  {% for bp in bps %}
+  <hr>
+  {% if bp.series %}
+    <h5 class="text-muted">{{bp.series}}</h5>
+  {% endif %}
+  <h4 class="{% if bp.series %}series{% endif %}">
+    <a href="{{url_for('blogpost', slug=bp.slug)}}">{% if bp.series %}Chapter {{bp.series_index}}: {% endif %}{{bp.title}}</a>
+  </h4>
+  <p class="text-muted">
+    <a href="{{url_for('author', authslug=bp['author'][0].slug)}}">{{bp.author[0].first}} {{bp.author[0].middle}} {{bp.author[0].last}}</a> - {{bp.added.strftime('%B %d, %Y')}}
+      {% if bp.date != bp.added %}(Originally published {{bp.date.strftime('%B %d, %Y')}}){% endif %}
+  </p>
+    <p>
+      {{bp.excerpt}}
+    </p>
+    {% set langs = bp.languages.split(',') %}
+    {% if langs|length > 1 %}
+    <p>
+      Also available in:
+      {% for l in langs[1:] %}
+        <a href="{{url_for('blogposttrans', slug=bp.slug, lang=l.strip())}}">{{l}}</a>{% if not loop.last %},{% endif %}
       {% endfor %}
+    </p>
+    {% endif %}
+  {% endfor %}
 </div>
 {% endblock %}
