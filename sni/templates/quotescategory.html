@@ -7,7 +7,7 @@ The Quotable Satoshi
 {% endblock %}
 
 {% block content %}
-<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+<div class="container">
   <div class="row">
     <div class="col-lg-6">
       <a href="{{url_for('quotes')}}">Back to index</a>
@@ -21,43 +21,28 @@ The Quotable Satoshi
     </div>
   </div>
 
-  <div class="row">
-    <div class="text-center page-header">
-   	  <h1>The Quotable Satoshi</h1>
-      <h2>{{category.name}}</h2>
-    </div>
+  <div class="border-bottom my-2 pb-2 text-center">
+ 	  <h1>The Quotable Satoshi</h1>
+    <h2>{{category.name}}</h2>
   </div>
 
   {% for quote in quotes %}
-    <div class="row">
+    <div class="border-bottom my-2">
       {% if quote.post %}
-      <h4>
-        {{quote.post.subject}}<br>
-        <small>{{quote.date}} - <a href="{{url_for('postview', postnum=quote.post.satoshi_id, source=quote.medium)}}">Link</a></small>
-      </h4>
+      <h4>{{quote.post.subject}}</h4>
+      <h5>{{quote.date}} - <a href="{{url_for('postview', postnum=quote.post.satoshi_id, source=quote.medium)}}">Link</a></h5>
       {% elif quote.email %}
-      <h4>
-        {{quote.email.subject}}<br>
-        <small>{{quote.date}} - <a href="{{url_for('emailview', source=quote.email.source, emnum=quote.email.id)}}">Link</a></small>
-      </h4>
+      <h4>{{quote.email.subject}}</h4>
+      <h5>{{quote.date}} - <a href="{{url_for('emailview', source=quote.email.source, emnum=quote.email.id)}}">Link</a></h5>
       {% else %}
-      <h4>
-        Bitcoin: A Peer-to-Peer Electronic Cash System<br>
-        <small>{{quote.date}} - <a href="{{url_for('slugview', slug='bitcoin')}}">Link</a></small>
-      </h4>
+      <h4>Bitcoin: A Peer-to-Peer Electronic Cash System</h4>
+      <h5>{{quote.date}} - <a href="{{url_for('slugview', slug='bitcoin')}}">Link</a></h5>
       {% endif %}
-      <p>
-        {{quote.text}}
-      </p>
-      <p>
-        <small>
-          {{ helpers.print_categories(quote.categories) }}
-        </small>
-      </p>
-      <hr>
+      <p>{{quote.text}}</p>
+      <p><small>{{ helpers.print_categories(quote.categories) }}</small></p>
     </div>
   {% endfor %}
-  <div class="row">
+  <div class="row mt-4">
     <div class="col-lg-6">
       <a href="{{url_for('quotes')}}">Back to index</a>
     </div>
