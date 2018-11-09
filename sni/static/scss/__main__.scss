@@ -86,6 +86,10 @@ body {
   font-size: 1em;
 }
 
+.text-wrap {
+  @include word-wrap;
+}
+
 .dropdown:hover .dropdown-menu {
     display: block;
 }
