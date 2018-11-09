@@ -17,11 +17,7 @@ Chapter {{bp.series_index}}: {{ page.meta.translated_title or bp.title }} | {{ b
 		{% if bp.series %}
 		<h3 class="text-black-50">{{bp.series}}</h3>
 		{% endif %}
-		<h1>
-			{% if bp.series %}
-				Chapter {{bp.series_index}}: {% endif %}
-	    {{ page.meta.translated_title or bp.title }}
-		</h1>
+		<h1>{% if bp.series %}Chapter {{bp.series_index}}: {% endif %}{{ page.meta.translated_title or bp.title }}</h1>
 		<h2 class="text-muted">{{bp.author[0].first}} {{bp.author[0].middle}} {{bp.author[0].last}}</h2>
     <h4>{{bp.date|dateformat(lang=lang)}}</h4>
 		{% if page.meta.original_link %}
