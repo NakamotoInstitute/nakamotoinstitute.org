@@ -7,19 +7,14 @@
 
 {% block content %}
 
-<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-  <div class="page-header">
-    <h1 class="text-center">
-        {{ep.title}}
-        <br>
-        <small>
-          {{ep.date.strftime('%B %d, %Y')}}
-        </small>
-      </h1>
+<div class="container">
+  <div class="border-bottom mb-3 pb-2 text-center">
+    <h1>{{ep.title}}</h1>
+    <h4 class="text-muted">{{ep.date.strftime('%B %d, %Y')}}</h4>
   </div>
 
   {% block episode %}{% endblock %}
-  
+
   <div class="flex-video widescreen">
     <iframe width="640" height="360" src="//www.youtube.com/embed/{{ep.youtube}}" frameborder="0" allowfullscreen></iframe>
   </div>
@@ -29,25 +24,23 @@
       Download .mp3
     </a>
     <hr>
-    <a href="https://itunes.apple.com/us/podcast/the-crypto-mises-podcast/id957258848?mt=2&uo=4" target="itunes_store"><img style="display:inline-block;margin-left:auto;margin-right:auto;height:40px" src="https://linkmaker.itunes.apple.com/htmlResources/assets/en_us//images/web/linkmaker/badge_subscribe-lrg.png" /></a>
-    <a href="http://feeds.feedburner.com/cryptomises"><img style="display:inline-block;margin-left:auto;margin-right:auto;height:40px" src="/static/img/cryptomises/rss.png" /></a>
+    <div class="text-center mt-3">
+      <a class="align-middle" href="https://itunes.apple.com/us/podcast/the-crypto-mises-podcast/id957258848?mt=2&app=podcast" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/assets/shared/badges/en-us/podcast-lrg.svg) no-repeat;width:133px;height:34px;"></a>
+      <a class="align-middle" href="http://feeds.feedburner.com/cryptomises"><img style="display:inline-block;margin-left:auto;margin-right:auto;height:40px" src="/static/img/cryptomises/rss.png" /></a>
+    </div>
   </div>
 
   <hr>
   <p class="text-center">
-    Enjoy this episode? Show your support by donating:</br>
+    Enjoy this episode? Show your support by donating:<br>
     <a href="bitcoin:{{ep.address}}">{{ep.address}}</a>
   </p>
-  
-  <br>
-  <div class = "text-center">
-    <a type="button" class="btn btn-default" href="{{url_for('podcast')}}">
+
+  <div class="text-center my-4">
+    <a type="button" class="btn btn-light" href="{{url_for('podcast')}}">
       Back to Index
     </a>
   </div>
-  <br>
-  <br>
-  <br>
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
