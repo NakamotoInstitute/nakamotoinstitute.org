@@ -537,7 +537,7 @@ def atomfeed():
     for article in articles:
         articleurl = url_for('blogpost', slug=article.slug, _external=True)
         content = article.excerpt + "<br><br><a href='"+articleurl+"'>Read more...</a>"
-        feed.add(article.title, unicode(content),
+        feed.add(article.title, content,
                  content_type='html',
                  author=article.author[0].first + ' ' + article.author[0].last,
                  url=articleurl,
