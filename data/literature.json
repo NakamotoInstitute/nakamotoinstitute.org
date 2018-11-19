@@ -1541,5 +1541,24 @@
     ],
     "doctype": "book",
     "external": "https://mises.org/library/ethics-money-production"
+  },
+  {
+    "id": 88,
+    "title": "On the Origins of Money",
+    "author": [
+      "carl-menger"
+    ],
+    "date": "1982",
+    "slug": "on-the-origins-of-money",
+    "formats": [
+      "pdf",
+      "epub",
+      "ext"
+    ],
+    "categories": [
+      "economics"
+    ],
+    "doctype": "book",
+    "external": "https://mises.org/library/origins-money-0"
   }
 ]
