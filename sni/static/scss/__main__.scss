@@ -90,6 +90,12 @@ body {
   @include word-wrap;
 }
 
+blockquote.blockquote {
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
 .dropdown:hover .dropdown-menu {
     display: block;
 }
