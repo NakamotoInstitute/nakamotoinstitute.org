@@ -6,24 +6,24 @@ Email Threads | Satoshi Nakamoto Institute
 {% endblock %}
 
 {% block content %}
-<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-  <div class="text-center">
+<div class="container">
+  <div class="text-center mb-4">
     {% if source=="cryptography" %}
-      <h2>Cryptography Mailing List Threads</h2>
+      <h1>Cryptography Mailing List Threads</h1>
       <a href="{{url_for('emailssource', source='cryptography')}}">View emails</a><br>
       <a href="{{url_for('emails', view='threads')}}">All Threads</a>
       (<a href="{{url_for('emails')}}">Emails</a>) |
       <a href="{{url_for('emailthreads', source='bitcoin-list')}}">bitcoin-list</a>
       (<a href="{{url_for('emailssource', source='bitcoin-list')}}">Emails</a>)
     {% elif source=="bitcoin-list" %}
-      <h2>bitcoin-list Threads</h2>
+      <h1>bitcoin-list Threads</h1>
       <a href="{{url_for('emailssource', source='bitcoin-list')}}">View posts</a><br>
       <a href="{{url_for('emails', view='threads')}}">All Threads</a>
       (<a href="{{url_for('emails')}}">Emails</a>) |
       <a href="{{url_for('emailthreads', source='cryptography')}}">Cryptography</a>
       (<a href="{{url_for('emailssource', source='cryptography')}}">Emails</a>)
     {% else %}
-      <h2>Email Threads</h2>
+      <h1>Email Threads</h1>
       <a href="{{url_for('emails')}}">View emails</a><br>
       <a href="{{url_for('emails', source='cryptography')}}">Cryptography</a>
       (<a href="{{url_for('emailssource', source='cryptography')}}">Emails</a>) |
@@ -31,7 +31,6 @@ Email Threads | Satoshi Nakamoto Institute
       (<a href="{{url_for('emailssource', source='bitcoin-list')}}">Emails</a>)
     {% endif %}
   </div>
-  <br>
   {% if not source %}
     <h3>Cryptography Mailing List</h3>
     <ul>
@@ -63,7 +62,7 @@ Email Threads | Satoshi Nakamoto Institute
     {% endfor %}
     </ul>
   {% endif %}
-  <div class="text-center">
+  <div class="text-center mb-4">
     {% if source=="cryptography" %}
       <a href="{{url_for('emails', view='threads')}}">All Threads</a>
       (<a href="{{url_for('emails')}}">Emails</a>) |
@@ -84,7 +83,6 @@ Email Threads | Satoshi Nakamoto Institute
       <a href="{{url_for('emails')}}">View emails</a>
     {% endif %}
   </div>
-  <br>
   <a href="{{url_for('satoshi_index')}}">Main index</a>
 </div>
 {% endblock %}

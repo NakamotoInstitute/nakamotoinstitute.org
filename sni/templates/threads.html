@@ -6,24 +6,24 @@ Forum Threads | Satoshi Nakamoto Institute
 {% endblock %}
 
 {% block content %}
-<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-  <div class="text-center">
+<div class="container">
+  <div class="text-center mb-4">
     {% if source=="p2pfoundation" %}
-      <h2>P2P Foundation Threads</h2>
+      <h1>P2P Foundation Threads</h1>
       <a href="{{url_for('forumposts', source='p2pfoundation')}}">View posts</a><br>
       <a href="{{url_for('posts', view='threads')}}">All Threads</a>
       (<a href="{{url_for('posts')}}">Posts</a>) |
       <a href="{{url_for('threads', source='bitcointalk')}}">BitcoinTalk</a>
       (<a href="{{url_for('forumposts', source='bitcointalk')}}">Posts</a>)
     {% elif source=="bitcointalk" %}
-      <h2>BitcoinTalk Threads</h2>
+      <h1>BitcoinTalk Threads</h1>
       <a href="{{url_for('forumposts', source='bitcointalk')}}">View posts</a><br>
       <a href="{{url_for('posts', view='threads')}}">All Threads</a>
       (<a href="{{url_for('posts')}}">Posts</a>) |
       <a href="{{url_for('threads', source='p2pfoundation')}}">P2P Foundation</a>
       (<a href="{{url_for('forumposts', source='p2pfoundation')}}">Posts</a>)
     {% else %}
-      <h2>Forum Threads</h2>
+      <h1>Forum Threads</h1>
       <a href="{{url_for('posts')}}">View posts</a><br>
       <a href="{{url_for('threads', source='p2pfoundation')}}">P2P Foundation</a>
       (<a href="{{url_for('forumposts', source='p2pfoundation')}}">Posts</a>) |
@@ -31,9 +31,8 @@ Forum Threads | Satoshi Nakamoto Institute
       (<a href="{{url_for('forumposts', source='bitcointalk')}}">Posts</a>)
     {% endif %}
   </div>
-  <br>
   {% if not source %}
-    <h3>P2P Foundation</h3>
+    <h2>P2P Foundation</h2>
     <ul>
       {% for thread in p2pfoundation_threads %}
       <li>
@@ -43,7 +42,7 @@ Forum Threads | Satoshi Nakamoto Institute
       </li>
       {% endfor %}
     </ul>
-    <h3>BitcoinTalk</h3>
+    <h2>BitcoinTalk</h2>
     <ul>
       {% for thread in bitcointalk_threads %}
       <li>
@@ -63,7 +62,7 @@ Forum Threads | Satoshi Nakamoto Institute
     {% endfor %}
     </ul>
   {% endif %}
-  <div class="text-center">
+  <div class="text-center mb-4">
     {% if source=="p2pfoundation" %}
       <a href="{{url_for('posts', view='threads')}}">All Threads</a>
       (<a href="{{url_for('posts')}}">Posts</a>) |
@@ -84,7 +83,6 @@ Forum Threads | Satoshi Nakamoto Institute
       <a href="{{url_for('posts')}}">View posts</a>
     {% endif %}
   </div>
-  <br>
   <a href="{{url_for('satoshi_index')}}">Main index</a>
 </div>
 {% endblock %}
