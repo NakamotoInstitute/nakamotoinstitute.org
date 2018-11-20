@@ -103,6 +103,17 @@ blockquote.blockquote {
     margin-top: 0px;
 }
 
+.doc-content {
+  .contents, .references{
+    list-style: none;
+    padding: 0;
+  }
+
+  h2 > a, h2 > a:focus, h2 > a:hover, h2 > a:active, h2 > a:visited {
+  	color: inherit;
+  }
+}
+
 /** Responsive YouTube embedding **/
 
 .flex-video {

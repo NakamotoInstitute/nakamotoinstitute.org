@@ -15,7 +15,7 @@
 		{% block doc_image %}{% endblock %}
 		{% block doc_original_post %}{% endblock %}
 	</div>
-	<span id="CONTENT">{% block doc %}{% endblock %}</span>
+	<span id="CONTENT" class="doc-content">{% block doc %}{% endblock %}</span>
 	<div class="text-center">
     {% if is_lit %}
 		<a href="{{url_for('docinfo', slug=doc.slug)}}">Back</a> | <a href="{{url_for('literature')}}">Index</a>
