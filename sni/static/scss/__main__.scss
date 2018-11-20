@@ -71,6 +71,12 @@ body {
   padding: 0 14px;
 }
 
+.container-wide {
+  width: auto;
+  max-width: 800px;
+  padding: 0;
+}
+
 .navbar {
   font-size: 85%;
   .navbar-toggler {
