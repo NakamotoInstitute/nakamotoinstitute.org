@@ -1560,5 +1560,24 @@
     ],
     "doctype": "book",
     "external": "https://mises.org/library/origins-money-0"
+  },
+  {
+    "id": 89,
+    "title": "What Has Government Done to Our Money?",
+    "author": [
+      "murray-n-rothbard"
+    ],
+    "date": "1963",
+    "slug": "what-has-government-done-to-our-money",
+    "formats": [
+      "pdf",
+      "epub",
+      "ext"
+    ],
+    "categories": [
+      "economics"
+    ],
+    "doctype": "book",
+    "external": "https://mises.org/library/what-has-government-done-our-money"
   }
 ]
