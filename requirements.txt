@@ -1,4 +1,5 @@
 Babel==2.6.0
+Click==7.0
 dateutils==0.6.6
 feedgen==0.3.0
 Flask==0.10.1

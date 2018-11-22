@@ -25,9 +25,9 @@ NakamotoInstitute.org was written in Flask.
 
 8. Run `mkdir tmp`
 
-9. Run `python dataimport.py`. The db will be cleared and re-populated each time you do this.
+9. Run `./dataimport.py`. The db will be cleared and re-populated each time you do this.
 
-10. Run `python run.py runserver` and navigate to `sni:5000` in your browser.
+10. Run `./run.py runserver` and navigate to `sni:5000` in your browser.
 
 ## How You Can Help
 
