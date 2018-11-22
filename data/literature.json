@@ -1584,5 +1584,24 @@
     ],
     "doctype": "book",
     "external": "https://mises.org/library/what-has-government-done-our-money"
+  },
+  {
+    "id": 90,
+    "title": "Human Action: A Treatise on Economics",
+    "author": [
+      "ludwig-von-mises"
+    ],
+    "date": "1949",
+    "slug": "human-action",
+    "formats": [
+      "pdf",
+      "epub",
+      "ext"
+    ],
+    "categories": [
+      "economics"
+    ],
+    "doctype": "book",
+    "external": "https://mises.org/library/human-action-0"
   }
 ]
