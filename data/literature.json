@@ -676,17 +676,18 @@
     "author": [
       "n-stephan-kinsella"
     ],
-    "date": "2001",
+    "date": "2008",
     "slug": "against-ip",
     "formats": [
       "pdf",
+      "epub",
       "ext"
     ],
     "categories": [
       "law"
     ],
-    "doctype": "journal",
-    "external": "https://mises.org/document/3582/Against-Intellectual-Property"
+    "doctype": "book",
+    "external": "https://mises.org/library/against-intellectual-property-0"
   },
   {
     "id": 41,
