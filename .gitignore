@@ -1,5 +1,4 @@
 *.py[cod]
-config.py
 .DS_Store
 
 tmp/*
@@ -56,3 +55,5 @@ feed.xml
 
 .webassets-cache
 sni/static/css/main.css
+sni/static/templates/docs/*.epub
+sni/static/templates/docs/*.pdf
