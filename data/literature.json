@@ -662,13 +662,14 @@
     "slug": "denationalisation",
     "formats": [
       "pdf",
+      "epub",
       "ext"
     ],
     "categories": [
       "economics"
     ],
     "doctype": "book",
-    "external": "https://mises.org/document/3970/Denationalisation-of-Money-The-Argument-Refined"
+    "external": "https://mises.org/library/denationalisation-money-argument-refined"
   },
   {
     "id": 40,
