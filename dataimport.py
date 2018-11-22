@@ -102,8 +102,7 @@ def get_or_create(model, **kwargs):
         return instance
 
 
-print("Begin importing EmailThread")
-
+print('Importing EmailThread...', end='', flush=True)
 with open('data/threads_emails.json') as data_file:
     threads = json.load(data_file)
 
@@ -115,10 +114,9 @@ for thread in threads:
     )
     db.session.add(new_thread)
     db.session.commit()
+print('Done')
 
-print("Finish importing ForumThread")
-print("Begin importing Email")
-
+print('Importing Email...', end='', flush=True)
 with open('./data/emails.json') as data_file:
     emails = json.load(data_file)
 
@@ -144,10 +142,9 @@ for e in emails:
         new_email.parent = parent
     db.session.add(new_email)
     db.session.commit()
+print('Done')
 
-print("Finish importing Email")
-print("Begin importing ForumThread")
-
+print('Importing ForumThread...', end='', flush=True)
 with open('data/threads_forums.json') as data_file:
     threads = json.load(data_file)
 
@@ -160,10 +157,9 @@ for thread in threads:
     )
     db.session.add(new_thread)
     db.session.commit()
+print('Done')
 
-print("Finish importing ForumThread")
-print("Begin importing Post")
-
+print('Importing Post...', end='', flush=True)
 with open('data/posts.json') as data_file:
     posts = json.load(data_file)
 
@@ -187,10 +183,9 @@ for i, p in enumerate(posts, start=1):
     )
     db.session.add(post)
     db.session.commit()
+print('Done')
 
-print("Finish importing Post")
-print("Begin importing QuoteCategory")
-
+print('Importing QuoteCategory...', end='', flush=True)
 with open('./data/quotecategories.json') as data_file:
     quotecategories = json.load(data_file)
 
@@ -201,10 +196,9 @@ for qc in quotecategories:
     )
     db.session.add(quote_category)
     db.session.commit()
+print('Done')
 
-print("Finish importing QuoteCategory")
-print("Begin importing Quote")
-
+print('Importing Quote...', end='', flush=True)
 with open('./data/quotes.json') as data_file:
     quotes = json.load(data_file)
 
@@ -225,10 +219,9 @@ for i, quote in enumerate(quotes, start=1):
     q.categories = categories
     db.session.add(q)
     db.session.commit()
+print('Done')
 
-print("Finish importing Quote")
-print("Begin importing Author")
-
+print('Importing Author...', end='', flush=True)
 with open('./data/authors.json') as data_file:
     authors = json.load(data_file)
 
@@ -241,10 +234,9 @@ for i, author in enumerate(authors, start=1):
         slug=author['slug'])
     db.session.add(author)
     db.session.commit()
+print('Done')
 
-print("Finish importing Author")
-print("Begin importing Doc")
-
+print('Importing Doc...', end='', flush=True)
 with open('./data/literature.json') as data_file:
     docs = json.load(data_file)
 
@@ -277,10 +269,9 @@ for doc in docs:
         external=ext)
     db.session.add(doc)
     db.session.commit()
+print('Done')
 
-print("Finish importing Doc")
-print("Begin importing ResearchDoc")
-
+print('Importing ResearchDoc...', end='', flush=True)
 with open('./data/research.json') as data_file:
     docs = json.load(data_file)
 
@@ -318,9 +309,9 @@ for doc in docs:
         lit_id=lit)
     db.session.add(doc)
     db.session.commit()
+print('Done')
 
-print("Finish importing ResearchDoc")
-print("Begin importing BlogSeries")
+print('Importing BlogSeries...', end='', flush=True)
 with open('./data/blogseries.json') as data_file:
     blogss = json.load(data_file)
 
@@ -332,9 +323,9 @@ for i, blogs in enumerate(blogss, start=1):
     )
     db.session.add(blog_series)
     db.session.commit()
-print("Finish importing BlogSeries")
-print("Begin importing BlogPost")
+print('Done')
 
+print('Importing BlogPost...', end='', flush=True)
 with open('./data/blogposts.json') as data_file:
     blogposts = json.load(data_file)
 
@@ -355,10 +346,9 @@ for i, bp in enumerate(blogposts, start=1):
         pass
     db.session.add(blogpost)
     db.session.commit()
+print('Done')
 
-print("Finish importing ResearchDoc")
-print("Begin importing Skeptic")
-
+print('Importing Skeptic...', end='', flush=True)
 with open('./data/skeptics.json') as data_file:
     skeptics = json.load(data_file)
 
@@ -379,10 +369,9 @@ for i, skeptic in enumerate(skeptics, start=1):
     )
     db.session.add(skeptic)
     db.session.commit()
+print('Done')
 
-print("Finish importing Skeptic")
-print("Begin importing Episode")
-
+print('Importing Episode...', end='', flush=True)
 with open('./data/episodes.json') as data_file:
     episodes = json.load(data_file)
 
@@ -400,5 +389,4 @@ for ep in episodes:
         time=parser.parse(ep['time']))
     db.session.add(episode)
     db.session.commit()
-
-print("Finish importing Episode")
+print('Done')
