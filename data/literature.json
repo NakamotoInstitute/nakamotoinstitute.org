@@ -626,13 +626,14 @@
     "slug": "deflation-and-liberty",
     "formats": [
       "pdf",
+      "epub",
       "ext"
     ],
     "categories": [
       "economics"
     ],
     "doctype": "book",
-    "external": "https://mises.org/document/3726/Deflation-and-Liberty"
+    "external": "https://mises.org/library/deflation-and-liberty-1"
   },
   {
     "id": 38,
