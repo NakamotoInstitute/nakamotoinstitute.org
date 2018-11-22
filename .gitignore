@@ -49,6 +49,8 @@ nosetests.xml
 *.sublime-workspace
 venv/*
 
+app.db
+
 *.mp3
 feed.xml
 

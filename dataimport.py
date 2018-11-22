@@ -9,7 +9,12 @@ import datetime
 import csv
 from dateutil import parser
 from datetime import datetime
+
+from sni import db
 from sni.models import *
+
+db.drop_all()
+db.create_all()
 
 # Clear out database
 print("Begin deleting Quote")
