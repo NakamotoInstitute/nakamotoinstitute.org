@@ -644,13 +644,14 @@
     "slug": "economic-cycles",
     "formats": [
       "pdf",
+      "epub",
       "ext"
     ],
     "categories": [
       "economics"
     ],
     "doctype": "book",
-    "external": "https://mises.org/document/2745/Money-Bank-Credit-and-Economic-Cycles"
+    "external": "https://mises.org/library/money-bank-credit-and-economic-cycles"
   },
   {
     "id": 39,
