@@ -608,13 +608,14 @@
     "slug": "theory-money-credit",
     "formats": [
       "pdf",
+      "epub",
       "ext"
     ],
     "categories": [
       "economics"
     ],
     "doctype": "book",
-    "external": "https://mises.org/document/194/The-Theory-of-Money-and-Credit"
+    "external": "https://mises.org/library/theory-money-and-credit"
   },
   {
     "id": 37,
