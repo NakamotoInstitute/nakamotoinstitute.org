@@ -13,8 +13,10 @@ from datetime import datetime
 from sni import db
 from sni.models import *
 
+print('Iniitalizing database...', end='', flush=True)
 db.drop_all()
 db.create_all()
+print('Done')
 
 
 def get(model, **kwargs):
