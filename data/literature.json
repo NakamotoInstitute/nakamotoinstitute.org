@@ -1603,5 +1603,23 @@
     ],
     "doctype": "book",
     "external": "https://mises.org/library/human-action-0"
+  },
+  {
+    "id": 91,
+    "title": "Confidential Auditing",
+    "author": [
+      "nick-szabo"
+    ],
+    "date": "1998",
+    "slug": "confidential-auditing",
+    "formats": [
+      "html",
+      "ext"
+    ],
+    "categories": [
+      "economics"
+    ],
+    "doctype": "essay",
+    "external": "https://web.archive.org/web/20160319150321/http://szabo.best.vwh.net/confidential.html"
   }
 ]
