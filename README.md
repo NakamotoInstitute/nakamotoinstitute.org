@@ -19,7 +19,7 @@ NakamotoInstitute.org was written in Flask.
 
 5. Download the PDFs and txts [here](https://nakamotoinstitute.org/static/docs/sni-docs.zip) and place them in `/static/templates/docs`
 
-6. Set up a virtualenv with `virtualenv --no-site-packages venv` and `. venv/bin/activate`
+6. Set up a virtualenv with `virtualenv -p python3 --no-site-packages venv` and `. venv/bin/activate`
 
 7. Install the dependencies using `pip install -r requirements.txt`.
 
