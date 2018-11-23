@@ -49,6 +49,7 @@ nosetests.xml
 venv/*
 
 app.db
+app.db-journal
 
 *.mp3
 feed.xml
