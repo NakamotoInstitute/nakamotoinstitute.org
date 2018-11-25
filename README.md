@@ -6,7 +6,7 @@ NakamotoInstitute.org was written in Flask.
 
 ## Guide to Installing SNI Locally
 
-1. Install [SQLite](https://www.sqlite.org/index.html), [python3](https://www.python.org/), and [virtualenv](https://virtualenv.pypa.io/en/latest/)
+1. Install [python3](https://www.python.org/) and [virtualenv](https://virtualenv.pypa.io/en/latest/)
 
 2. Update your /etc/hosts file:
   ```
@@ -17,7 +17,7 @@ NakamotoInstitute.org was written in Flask.
 
 3. Update the domain assigned to `SERVER_NAME` in `config.py` if you would like to change "sni"
 
-5. Download the PDFs and txts [here](https://nakamotoinstitute.org/static/docs/sni-docs.zip) and place them in `/static/templates/docs`
+5. Download the PDFs and txts [here](https://nakamotoinstitute.org/static/docs/sni-docs.zip) and place them in `sni/static/docs`
 
 6. Set up a virtualenv with `virtualenv -p python3 --no-site-packages venv` and `. venv/bin/activate`
 
