@@ -1621,5 +1621,24 @@
     ],
     "doctype": "essay",
     "external": "https://web.archive.org/web/20160319150321/http://szabo.best.vwh.net/confidential.html"
+  },
+  {
+    "id": 92,
+    "title": "The Mystery of Banking",
+    "author": [
+      "murray-n-rothbard"
+    ],
+    "date": "1983",
+    "slug": "the-mystery-of-banking",
+    "formats": [
+      "pdf",
+      "epub",
+      "ext"
+    ],
+    "categories": [
+      "economics"
+    ],
+    "doctype": "book",
+    "external": "https://mises.org/library/mystery-banking"
   }
 ]
