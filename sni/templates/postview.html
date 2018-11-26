@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+<div class="container container-wide">
 	<div class="text-center">
     <a href="{{url_for('posts')}}">All Posts</a>
     <br>
@@ -18,9 +18,8 @@
   	| <a href="{{url_for('postview',postnum=next['satoshi_id'],source=next.forum_thread['source'])}}">Next</a>
 		{% endif %}
 	</div>
-	<br>
 	<span id="CONTENT">
-		<div>
+		<div class="my-4">
 			<h5>{{post.forum_thread.source_to_string()}}</h5>
 			<h4>{{post.subject}}</h4>
 			{% set post_source = post.forum_thread.source %}
@@ -33,7 +32,6 @@
 			{{post['text']|safe}}
 		</div>
 	</span>
-	<br><br>
 	<div class="text-center">
 		{% if prev != None %}
   	<a href="{{url_for('postview',postnum=prev['satoshi_id'],source=prev.forum_thread['source'])}}">Previous</a> |
