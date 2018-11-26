@@ -6,63 +6,28 @@ NakamotoInstitute.org was written in Flask.
 
 ## Guide to Installing SNI Locally
 
-1. Install [PostgreSQL](http://www.postgresql.org/)
+1. Install [python3](https://www.python.org/) and [virtualenv](https://virtualenv.pypa.io/en/latest/)
 
-2. Create a user and a new database ([Instructions](http://killtheyak.com/use-postgresql-with-django-flask/))
+2. Update your /etc/hosts file:
+  ```
+  127.0.0.1     localhost
+  127.0.0.1     sni
+  127.0.0.1     satoshi.sni
+  ```
 
-3. Create file in the project's root folder called <code>config.py</code>:
+3. Update the domain assigned to `SERVER_NAME` in `config.py` if you would like to change "sni"
 
-````
-import os
+5. Download the PDFs and txts [here](https://nakamotoinstitute.org/static/docs/sni-docs.zip) and place them in `sni/static/docs`
 
-basedir = os.path.abspath(os.path.dirname(__file__))
+6. Set up a virtualenv with `virtualenv -p python3 --no-site-packages venv` and `. venv/bin/activate`
 
-SERVER_NAME = 'sni:5000'
+7. Install the dependencies using `pip install -r requirements.txt`.
 
-POSTGRES_USERNAME = os.environ['PGUSER']
-POSTGRES_PASSWORD = os.environ['PGPASSWORD']
-POSTGRES_HOST = os.environ['PGHOST']
-POSTGRES_PORT = os.environ['PGPORT']
+8. Run `mkdir tmp`
 
-SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://{0}:{1}@{2}:{3}/[database]'.format(
-    POSTGRES_USERNAME,
-    POSTGRES_PASSWORD,
-    POSTGRES_HOST,
-    POSTGRES_PORT)
+9. Run `./dataimport.py update`. The db will be cleared and re-populated each time you do this. You can use the flags `--blogpost`, `--literature`, and `--skeptic` to repopulate only models associated with the blog, the docs and research docs, or skeptics, respectively.
 
-SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
-
-FLATPAGES_ROOT = 'templates/blog'
-FLATPAGES_MARKDOWN_EXTENSIONS = ['footnotes', 'extra']
-FLATPAGES_EXTENSION = '.md'
-
-DEBUG = False
-CSRF_ENABLED = True
-````
-
-4. Update your /etc/hosts file:
-<pre>
-127.0.0.1     localhost
-127.0.0.1     sni
-127.0.0.1     satoshi.sni
-</pre>
-5. Update config.py if you would like to change "sni" in step 4 to a different [domain]
-
-
-6. Download the PDFs and txts [here](http://nakamotoinstitute.org/static/docs/sni-docs.zip) and place them in /static/templates/docs
-
-7. Set up a virtualenv with <code>virtualenv --no-site-packages venv</code> and <code>. venv/bin/activate </code>
-
-8. Install the dependencies using <code>pip install -r requirements.txt</code>.
-
-9. Run <code>mkdir tmp && python createdb.py</code>
-
-10. Run <code>python dataimport.py</code>. The db will be cleared and re-populated each time you do this.
-
-11. [Generate new addresses](http://pacio.li/bitcoind/2014/10/31/how-to-connect-to-bitcoin-cores-json-rpc-api-with-python.html) and import them with <code>python importaddresses.py</code>
-
-12. Run <code>python run.py runserver</code> and navigate to sni:5000 in your browser.
-
+10. Run `./run.py runserver` and navigate to `sni:5000` in your browser.
 
 ## How You Can Help
 
@@ -70,6 +35,6 @@ CSRF_ENABLED = True
 * Adjust the CSS and HTML to improve readability and navigation
 * Write tests for the Python code
 
---
+***
 
 NakamotoInstitute.org is under the GNU Affero License.

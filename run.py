@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 #
 # Satoshi Nakamoto Institute (http://nakamotoinstitute.org)
 # Copyright 2013 Satoshi Nakamoto Institute

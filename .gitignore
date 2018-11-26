@@ -1,5 +1,4 @@
 *.py[cod]
-config.py
 .DS_Store
 
 tmp/*
@@ -10,8 +9,6 @@ addresses/*
 
 # C extensions
 *.so
-
-config.py
 
 # Packages
 *.egg
@@ -49,8 +46,13 @@ nosetests.xml
 *.sublime-workspace
 venv/*
 
+app.db
+app.db-journal
+
 *.mp3
 feed.xml
 
 .webassets-cache
 sni/static/css/main.css
+sni/static/templates/docs/*.epub
+sni/static/templates/docs/*.pdf
