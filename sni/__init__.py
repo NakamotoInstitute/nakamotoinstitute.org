@@ -54,8 +54,11 @@ manager.add_command('db', MigrateCommand)
 assets = Environment(app)
 assets.url_expire = True
 assets.auto_build = True
+assets.append_path('sni/assets')
+assets.cache = 'sni/assets/.webassets-cache'
 
-scss = Bundle('scss/__main__.scss', filters='pyscss', output='css/main.css',  depends=['scss/*.scss'])
+scss = Bundle('scss/__main__.scss', filters='pyscss', output='css/main.css',
+              depends=['scss/*.scss'])
 assets.register('scss_all', scss)
 
 assets.debug = False
