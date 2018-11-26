@@ -201,21 +201,19 @@ $post-inner-border: 1px solid $post-sectional;
   &.nested {
     .post-container {
       border: 2px solid $post-border;
-      &.nested-1 {
-        margin-left: 24px;
+      &.nested-1, &.nested-2 {
+        position: relative;
         &.first:before {
           content: '\021B3';
           position: absolute;
-          left: 14px;
+          left: -26px;
         }
+      }
+      &.nested-1 {
+        margin-left: 24px;
       }
       &.nested-2 {
         margin-left: 48px;
-        &.first:before {
-          content: '\021B3';
-          position: absolute;
-          left: 38px;
-        }
       }
     }
   }
