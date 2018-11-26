@@ -31,4 +31,6 @@ An eye-opening article called _[Sinkhole of Bureaucracy](http://www.washingtonpo
 
 Will the federal government be able to adapt to Bitcoin? This would require building an a system not just for the one department, but for the entire organization, and it would have to be built properly—it must distribute decisions enough so that bitcoins cannot be stolen easily by employees. After reading that article, I think it is reasonable to think that the government may not be up to such a task at all.
 
-<div class="flex-video widescreen"><iframe width="640" height="360" src="//www.youtube.com/embed/mu1iND6vtcE" frameborder="0" allowfullscreen=""></iframe></div>
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/mu1iND6vtcE?rel=0" allowfullscreen></iframe>
+</div>

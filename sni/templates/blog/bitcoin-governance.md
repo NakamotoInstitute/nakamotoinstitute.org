@@ -78,4 +78,6 @@ I think it’s impossible to establish a causal relationship. The price is much 
 
 This post is based on my speech at the Chain-In conference:
 
-<div class="flex-video widescreen"><iframe width="560" height="315" src="https://www.youtube.com/embed/yzQ4OPjPPP0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/yzQ4OPjPPP0?rel=0" allowfullscreen></iframe>
+</div>
