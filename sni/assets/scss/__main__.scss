@@ -4,18 +4,6 @@
  * Licensed under GNU Affero GPL (https://github.com/pierrerochard/SNI-private/blob/master/LICENSE)
  */
 
- @mixin table() {
-  & {
-    display: table;
-    table-layout: fixed;
-    width: 100%;
-  }
-  &>* {
-    display: table-cell;
-    vertical-align: middle;
-  }
-}
-
 @mixin word-wrap() {
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -144,12 +132,8 @@ $post-inner-border: 1px solid $post-sectional;
     }
     & > .header {
       & > .poster-info {
-        @include table();
         border-bottom: $post-inner-border;
         padding: $post-padding-half $post-padding;
-        & > *:nth-child(2) {
-          text-align: right;
-        }
       }
       & > .post-info {
         padding: $post-padding-half $post-padding;
@@ -178,11 +162,7 @@ $post-inner-border: 1px solid $post-sectional;
       }
     }
     & > .footer {
-      @include table();
       padding: $post-padding-half $post-padding;
-      & > *:nth-child(2) {
-        text-align: right;
-      }
     }
   }
   &.nested {
