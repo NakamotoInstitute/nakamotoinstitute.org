@@ -75,7 +75,7 @@ body {
 
 .email-text-monospace {
   font-family: monospace;
-  font-size: 1em;
+  font-size: 0.9em;
 }
 
 .text-wrap {
@@ -135,6 +135,7 @@ $post-inner-border: 1px solid $post-sectional;
   .post-container {
     border: 2px solid $post-border;
     margin-bottom: $post-padding;
+    font-size: 0.9em;
     &.gray {
       background-color: $post-gray;
     }

@@ -24,8 +24,10 @@
       {% set thread_id = email.email_thread.id %}
       <h5>
         <em>{{email['date']}} UTC</em>
-        - <a href="{{email['url']}}">Original Email</a>
-        - <a href="{{url_for('emailthreadview',source=email_source,thread_id=thread_id)}}#{{email.source_id}}">View in Thread</a>
+        <small>
+          - <a href="{{email['url']}}">Original Email</a>
+          - <a href="{{url_for('emailthreadview',source=email_source,thread_id=thread_id)}}#{{email.source_id}}">View in Thread</a>
+        </small>
       </h5>
       <div class="email-text-monospace">{{email['text']|replace("\n", "<br />")|safe}}</div>
 		</div>

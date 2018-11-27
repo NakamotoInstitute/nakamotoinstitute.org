@@ -26,9 +26,11 @@
       {% set thread_id = post.forum_thread.id %}
 			<h5>
         <em>{{post['date']}} UTC</em>
-        - <a href="{{post['url']}}">Original Post</a>
-        - <a href="{{url_for('threadview',source=post_source,thread_id=thread_id)}}#{{post.post_num}}">View in Thread</a>
-      </h5>
+				<small>
+	        - <a href="{{post['url']}}">Original Post</a>
+	        - <a href="{{url_for('threadview',source=post_source,thread_id=thread_id)}}#{{post.post_num}}">View in Thread</a>
+				</small>
+			</h5>
 			{{post['text']|safe}}
 		</div>
 	</span>
