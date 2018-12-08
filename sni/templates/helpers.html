@@ -31,6 +31,9 @@
   {% if 'epub' in formats %}
     <a href="{{url_for('static', filename='docs/' + doc.slug + '.epub')}}">ePub</a><br>
   {%endif%}
+  {% if 'mobi' in formats %}
+    <a href="{{url_for('static', filename='docs/' + doc.slug + '.mobi')}}">mobi</a><br>
+  {%endif%}
   {% if 'ext' in formats %}
     {% if index %}
       <a href="{{doc.external}}">Link</a>

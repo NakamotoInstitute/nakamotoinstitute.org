@@ -1640,5 +1640,25 @@
     ],
     "doctype": "book",
     "external": "https://mises.org/library/mystery-banking"
+  },
+  {
+    "id": 93,
+    "title": "The Machinery of Freedom (2nd Edition)",
+    "author": [
+      "david-d-friedman"
+    ],
+    "date": "1989",
+    "slug": "the-machinery-of-freedom",
+    "formats": [
+      "pdf",
+      "epub",
+      "mobi",
+      "ext"
+    ],
+    "categories": [
+      "economics"
+    ],
+    "doctype": "book",
+    "external": "http://daviddfriedman.com/"
   }
 ]
