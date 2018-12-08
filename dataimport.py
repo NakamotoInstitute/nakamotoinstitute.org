@@ -366,15 +366,13 @@ def cli():
 
 
 @cli.command()
-@click.option('--blogpost/--no-blogpost', default=False,
-              help='Update blogpost related tables')
-@click.option('--literature/--no-literature', default=False,
-              help='Update literature related tables')
+@click.option('--content/--no-content', default=False,
+              help='Update literature and mempool related tables')
 @click.option('--skeptic/--no-skeptic', default=False,
               help='Update skeptic related tables')
-def update(blogpost, literature, skeptic):
+def update(content, skeptic):
     """Script to initialize and/or update database."""
-    if blogpost or literature:
+    if content:
         click.echo('Deleting Category...', nl=False)
         cats = Category.query.all()
         for cat in cats:
@@ -394,16 +392,6 @@ def update(blogpost, literature, skeptic):
         db.session.commit()
         click.echo(DONE)
         import_author()
-    if blogpost:
-        click.echo('Deleting BlogPost...', nl=False)
-        BlogPost.query.delete()
-        click.echo(DONE)
-        click.echo('Deleting BlogSeries...', nl=False)
-        BlogSeries.query.delete()
-        click.echo(DONE)
-        import_blog_series()
-        import_blog_post()
-    if literature:
         click.echo('Deleting Doc...', nl=False)
         Doc.query.delete()
         click.echo(DONE)
@@ -412,12 +400,20 @@ def update(blogpost, literature, skeptic):
         click.echo(DONE)
         import_doc()
         import_research_doc()
+        click.echo('Deleting BlogPost...', nl=False)
+        BlogPost.query.delete()
+        click.echo(DONE)
+        click.echo('Deleting BlogSeries...', nl=False)
+        BlogSeries.query.delete()
+        click.echo(DONE)
+        import_blog_series()
+        import_blog_post()
     if skeptic:
         click.echo('Deleting Skeptic...', nl=False)
         Skeptic.query.delete()
         click.echo(DONE)
         import_skeptic()
-    if not blogpost and not literature and not skeptic:
+    if not content and not skeptic:
         flush_db()
         import_email_thread()
         import_email()
