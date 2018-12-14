@@ -28,7 +28,7 @@ Metcalfe’s law must be adjusted slightly to apply to media of exchange because
 A striking test of Metcalfe’s law in Bitcoin recently appeared on the [Bitcointalk forums](https://bitcointalk.org/index.php?topic=366214.msg5919365#msg5919365), created by Peter R. I have made my own chart here.
 
 <div class="my-4 text-center">
-  <img class="img-responsive center-block" alt="Metcalfe's Law" src="/static/img/mempool/how-we-know-bitcoin-is-not-a-bubble/MetcalfeGraph.png" />
+  <img class="img-fluid rounded d-block mx-auto" alt="Metcalfe's Law" src="/static/img/mempool/how-we-know-bitcoin-is-not-a-bubble/MetcalfeGraph.png" />
 </div>
 
 This chart plots the market cap in blue and the square of the transaction volume excluding popular addresses in green. The axis on the left is the price in dollars. Exactly as Metcalfe’s law predicts, the transaction volume increases very neatly as the square root of the size of the network. The correspondence is beautiful. I wish I had thought to make it first!

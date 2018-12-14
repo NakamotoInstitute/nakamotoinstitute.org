@@ -14,13 +14,13 @@ All the blocks in the Bitcoin block chain have a short string of meaningless dat
 The procedure, remember, is totally arbitrary. It is simply an added complication, like a ritual, so as to make blocks more difficult to generate. Really anything else would do, as long as it was computationally difficult. Other crypto-currencies use other hash algorithms. There is no special condition from number theory which only someone like [Shinichi Mochizuki](http://www.kurims.kyoto-u.ac.jp/~motizuki/top-english.html) could understand.[^3]
 
 <div class="my-4 text-center">
-  <img class="img-responsive center-block" alt="Bitcoin Mining" src="/static/img/mempool/the-proof-of-work-concept/mining.jpg" />
+  <img class="img-fluid rounded d-block mx-auto" alt="Bitcoin Mining" src="/static/img/mempool/the-proof-of-work-concept/mining.jpg" />
 </div>
 
 Although the purpose of the mining computers is to do the accounting for the block chain, most of the work they actually do is to search for good nonces, rather than anything to do with accounting. The energy used to find the nonces is lost forever. The energy does not "back" the value of bitcoins in the way that gold backs an honest bank note, as some have supposed. Of the vast computing power that goes into bitcoin mining, all but a tiny fraction is apparently purposeless.
 
 <div class="my-4 text-center">
-  <img class="img-responsive center-block" alt="ASIC Mining" src="/static/img/mempool/the-proof-of-work-concept/asicminer.jpg" />
+  <img class="img-fluid rounded d-block mx-auto" alt="ASIC Mining" src="/static/img/mempool/the-proof-of-work-concept/asicminer.jpg" />
 </div>
 
 When a person upgrades their mining computer, they mine at a faster rate and therefore earn more bitcoins. However, when everyone upgrades, the mining does not become more efficient as a whole. There is only supposed to be one new block every ten minutes regardless of how hard the network is working. Instead, the network [updates the difficulty](http://bitcoindifficulty.com/) to require more stringent conditions for future blocks. All miners may work harder, but none is better off. It is rather like a forest, in which every tree tries to grow as tall as possible so as to capture more light than its fellows, with the end result that most of the solar energy is used to grow long, dead trunks.
@@ -40,7 +40,7 @@ The general rule is that the first block mined is not self-interested because no
 ## The Handicap Principle
 
 <div class="my-4 text-center">
-  <img class="img-responsive center-block" alt="The Handicap Principle" src="/static/img/mempool/the-proof-of-work-concept/handicap.jpg" />
+  <img class="img-fluid rounded d-block mx-auto" alt="The Handicap Principle" src="/static/img/mempool/the-proof-of-work-concept/handicap.jpg" />
 </div>
 
 There is an idea from biology called the [Handicap Principle](https://en.wikipedia.org/wiki/Handicap_principle) which sheds light on this process.[^5] It says that when two animals have an incentive to cooperate they must communicate good intentions to one another in a believable way. In order to make lying implausible, the signal must impose a cost on the signaler that would make it very costly to cheat. In other words, the signal itself must be a handicap.

@@ -179,7 +179,7 @@ will continue to influence its evolution in the future. I would then have to
 consider it the strongest Bitcoin competitor yet.
 
 <div class="my-4 text-center">
-  <img class="img-responsive center-block" width="70%" src="/static/img/mempool/who-controls-ethereum/devs-cant-control-ethereum.png" />
+  <img class="img-fluid rounded d-block mx-auto" width="70%" src="/static/img/mempool/who-controls-ethereum/devs-cant-control-ethereum.png" />
   <p>
     <em>Artwork by the author.</em>
   </p>

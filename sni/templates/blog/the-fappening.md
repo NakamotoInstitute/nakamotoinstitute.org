@@ -12,7 +12,7 @@ The first photos were leaked more than a week ago, but they were censored. Peopl
 The interesting thing that needs to be explained about the Fappening is why there were apparently many different people all leaking at the same time. The theory that has emerged on 4chan is that there was a secret group of people who had been trading nude celebrity photos for years (sort of like what the NSA does to [normal people](http://arstechnica.com/tech-policy/2014/07/snowden-nsa-employees-routinely-pass-around-intercepted-nude-photos/)). It was a small group that valued secrecy, and one could only get in by having a new celebrity photo. Because people grew their collections by trading photos for photos, not everyone had the same collection, and the photos were not distributed among all members. The original leaker was a member who no longer valued secrecy like the rest of the group. A Daily Mail [article](http://www.dailymail.co.uk/news/article-2740387/New-wave-leaks-plague-celebrities-authorities-prove-unable-stop-spread-suggest-naked-photos-passed-users-online-CLUB-months.html) reports on the theory in a little more detail.
 
 <div class="my-4 text-center">
-  <a href="/static/img/mempool/the-fappening/vnd0H9J.jpg"><img class="img-responsive center-block" src="/static/img/mempool/the-fappening/vnd0H9J.jpg"></a>
+  <a href="/static/img/mempool/the-fappening/vnd0H9J.jpg"><img class="img-fluid rounded d-block mx-auto" src="/static/img/mempool/the-fappening/vnd0H9J.jpg"></a>
   <p>
     <em>4chan screenshot summarizing the theory. Click for larger image.</em>
   </p>
