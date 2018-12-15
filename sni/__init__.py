@@ -5,10 +5,9 @@
 #
 
 from flask import Flask
-from flask.ext.sqlalchemy import SQLAlchemy
-from flask.ext.script import Manager
-from flask.ext.migrate import Migrate, MigrateCommand
-from flask.ext.cache import Cache
+from flask_sqlalchemy import SQLAlchemy
+from flask_script import Manager
+from flask_caching import Cache
 from flask_assets import Environment, Bundle
 from flaskext.markdown import Markdown
 from flask_flatpages import FlatPages
@@ -42,13 +41,11 @@ my_loader = jinja2.ChoiceLoader([
 app.jinja_loader = my_loader
 
 db = SQLAlchemy(app)
-migrate = Migrate(app, db)
 
 Markdown(app, extensions=['footnotes'])
 pages = FlatPages(app)
 
 manager = Manager(app)
-manager.add_command('db', MigrateCommand)
 
 # Scss
 assets = Environment(app)
