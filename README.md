@@ -27,7 +27,7 @@ NakamotoInstitute.org was written in Flask.
 
 8. Run `mkdir tmp`
 
-9. Run `./dataimport.py update`. The db will be cleared and re-populated each time you do this. You can use the flags `--blogpost`, `--literature`, and `--skeptic` to repopulate only models associated with the blog, the docs and research docs, or skeptics, respectively.
+9. Run `./dataimport.py update`. The db will be cleared and re-populated each time you do this. You can use the flags `--content`, and `--skeptic` to repopulate only models associated with the blog, the docs, and research docs, or skeptics, respectively.
 
 10. Run `./run.py runserver` and navigate to `sni:5000` in your browser.
 
