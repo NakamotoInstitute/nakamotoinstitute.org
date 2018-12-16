@@ -12,24 +12,26 @@ NakamotoInstitute.org was written in Flask.
 
 3. Update the domain assigned to `SERVER_NAME` in `config.py` if you would like to change "sni"
 
-4. Update your /etc/hosts file (replace `sni` with the value from step 3 if you changed it):
+4. If you are running the app locally, change `FLASK_DEBUG` in `config.py` to `True` in order to enable reloading of the server on code changes.
+
+5. Update your /etc/hosts file (replace `sni` with the value from step 3 if you changed it):
   ```
   127.0.0.1     localhost
   127.0.0.1     sni
   127.0.0.1     satoshi.sni
   ```
 
-5. Download the PDFs and txts [here](https://nakamotoinstitute.org/static/docs/sni-docs.zip) and place them in `sni/static/docs`
+6. Download the PDFs and txts [here](https://nakamotoinstitute.org/static/docs/sni-docs.zip) and place them in `sni/static/docs`
 
-6. Set up a virtualenv with `virtualenv -p python3 --no-site-packages venv` and `. venv/bin/activate`
+7. Set up a virtualenv with `virtualenv -p python3 --no-site-packages venv` and `. venv/bin/activate`
 
-7. Install the dependencies using `pip install -r requirements.txt`.
+8. Install the dependencies using `pip install -r requirements.txt`.
 
-8. Run `mkdir tmp`
+9. Run `mkdir tmp`
 
-9. Run `./dataimport.py update`. The db will be cleared and re-populated each time you do this. You can use the flags `--content`, and `--skeptic` to repopulate only models associated with the blog, the docs, and research docs, or skeptics, respectively.
+10. Run `./dataimport.py update`. The db will be cleared and re-populated each time you do this. You can use the flags `--content`, and `--skeptic` to repopulate only models associated with the blog, the docs, and research docs, or skeptics, respectively.
 
-10. Run `./run.py runserver` and navigate to `sni:5000` in your browser.
+11. Run `./run.py runserver` and navigate to `sni:5000` in your browser.
 
 ## How You Can Help
 
