@@ -117,7 +117,9 @@ def emailssource(source):
 @cache.cached(timeout=900)
 @app.route('/emails/<string:source>/<int:emnum>/', subdomain="satoshi", methods=["GET"])
 def emailview(source, emnum):
-    email = Email.query.filter_by(satoshi_id=emnum).join(Email.email_thread, aliased=True).filter_by(source=source).first()
+    email = Email.query.filter_by(satoshi_id=emnum) \
+                       .join(Email.email_thread, aliased=True) \
+                       .filter_by(source=source).first()
     prev = Email.query.filter_by(satoshi_id=emnum-1).join(Email.email_thread, aliased=True).first()
     next = Email.query.filter_by(satoshi_id=emnum+1).join(Email.email_thread, aliased=True).first()
     if email is not None:
@@ -191,7 +193,9 @@ def forumposts(source):
 @cache.cached(timeout=900)
 @app.route('/posts/<string:source>/<int:postnum>/', subdomain="satoshi", methods=["GET"])
 def postview(postnum, source):
-    post = Post.query.filter_by(satoshi_id=postnum).join(Post.forum_thread, aliased=True).filter_by(source=source).first()
+    post = Post.query.filter_by(satoshi_id=postnum) \
+                     .join(Post.forum_thread, aliased=True) \
+                     .filter_by(source=source).first()
     prev = Post.query.filter_by(satoshi_id=postnum-1).join(Post.forum_thread, aliased=True).first()
     next = Post.query.filter_by(satoshi_id=postnum+1).join(Post.forum_thread, aliased=True).first()
     if post is not None:
