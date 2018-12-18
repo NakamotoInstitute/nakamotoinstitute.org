@@ -11,6 +11,7 @@ from sni.models import Post, Email, Doc, ResearchDoc, Author, Format, \
                    QuoteCategory, EmailThread, ForumThread
 from flask import render_template, json, url_for, redirect, request, Response,\
                   send_from_directory
+from pytz import timezone
 from sqlalchemy import asc, desc
 from werkzeug.contrib.atom import AtomFeed
 from datetime import datetime
@@ -18,6 +19,13 @@ import os
 import re
 
 from jinja2 import evalcontextfilter, Markup, escape
+
+TIMEZONE = timezone('US/Central')
+
+
+def date_to_localized_datetime(date):
+    time = datetime(year=date.year, month=date.month, day=date.day)
+    return TIMEZONE.localize(time)
 
 
 @app.errorhandler(404)
@@ -536,8 +544,8 @@ def atomfeed():
                  content_type='html',
                  author=article.author[0].first + ' ' + article.author[0].last,
                  url=articleurl,
-                 updated=article.added,
-                 published=article.date)
+                 updated=date_to_localized_datetime(article.added),
+                 published=date_to_localized_datetime(article.date))
     app.logger.info(str(request.remote_addr) + ', atomfeed')
     return feed.get_response()
 
