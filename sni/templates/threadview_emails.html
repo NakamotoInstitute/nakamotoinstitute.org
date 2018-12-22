@@ -7,7 +7,7 @@
 
 {% block content %}
 {% set only_satoshi = request.args.get('view') == 'satoshi' -%}
-<div class="container container-wide">
+<div class="container">
   <div class="text-center">
     <a href="{{url_for('emails', view='threads')}}">All Email Threads</a>
     <br>
