@@ -45,6 +45,21 @@ def flush_db():
     click.echo(DONE)
 
 
+def import_language():
+    click.echo('Importing Language...', nl=False)
+    with open('data/languages.json') as data_file:
+        languages = json.load(data_file)
+
+    for language in languages:
+        new_language = Language(
+            name=language['name'],
+            ietf=language['ietf']
+        )
+        db.session.add(new_language)
+        db.session.commit()
+    click.echo(DONE)
+
+
 def import_email_thread():
     click.echo('Importing EmailThread...', nl=False)
     with open('data/threads_emails.json') as data_file:
@@ -383,11 +398,16 @@ def cli():
 def update(content, skeptic):
     """Script to initialize and/or update database."""
     if content:
+        click.echo('Deleting Language...', nl=False)
+        langs = Language.query.all()
+        for lang in langs:
+            db.session.delete(lang)
+        db.session.commit()
         click.echo('Deleting Category...', nl=False)
         cats = Category.query.all()
         for cat in cats:
             db.session.delete(cat)
-            db.session.commit()
+        db.session.commit()
         click.echo(DONE)
         click.echo('Deleting Format...', nl=False)
         forms = Format.query.all()
@@ -425,6 +445,7 @@ def update(content, skeptic):
         import_skeptic()
     if not content and not skeptic:
         flush_db()
+        import_language()
         import_email_thread()
         import_email()
         import_forum_thread()

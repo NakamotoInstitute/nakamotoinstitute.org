@@ -7,6 +7,15 @@
 from sni import db, app
 
 
+class Language(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String())
+    ietf = db.Column(db.String())
+
+    def __repr__(self):
+        return '<Language %r>' % (self.ietf)
+
+
 class EmailThread(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String())

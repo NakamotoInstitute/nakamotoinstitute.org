@@ -1,0 +1,30 @@
+[
+  {
+    "name": "English",
+    "ietf": "en"
+  },
+  {
+    "name": "Arabic",
+    "ietf": "ar"
+  },
+  {
+    "name": "Chinese",
+    "ietf": "zh"
+  },
+  {
+    "name": "German",
+    "ietf": "de"
+  },
+  {
+    "name": "Persian",
+    "ietf": "fa"
+  },
+  {
+    "name": "Russian",
+    "ietf": "ru"
+  },
+  {
+    "name": "Spanish",
+    "ietf": "es"
+  }
+]
