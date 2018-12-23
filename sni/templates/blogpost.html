@@ -33,7 +33,7 @@ Chapter {{bp.series_index}}: {{ page.meta.translated_title or bp.title }} | {{ b
 		{% endif %}
 	</div>
 	{% if rtl %}
-	<div dir="rtl">
+	<div class="text-right" dir="rtl">
 	{% endif %}
   <span id="CONTENT">{{ page.html|safe }}</span>
 	{% if rtl %}
