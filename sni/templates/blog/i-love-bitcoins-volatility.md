@@ -23,8 +23,8 @@ A currency can be volatile and still be liquid. It is liquid if one person can b
 
 ## The Right Price
 
-<div class="article-image">
-	<img class="img-responsive center-block img-rounded" img-alt="Biohazard" src="/static/img/mempool/i-love-bitcoins-volatility/biohazard.jpg">
+<div class="my-4 text-center">
+	<img class="img-fluid rounded d-block mx-auto" img-alt="Biohazard" src="/static/img/mempool/i-love-bitcoins-volatility/biohazard.jpg">
 	<p>
 		<em>Warning: volatile commodity</em>
 	</p>

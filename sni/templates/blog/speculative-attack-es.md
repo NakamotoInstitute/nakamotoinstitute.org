@@ -70,8 +70,8 @@ Pero hay un gran problema con la subida de tipos por parte del banco central ind
 
 ¿Qué países son los más vulnerables a una crisis monetaria? Business Insider provee una lista de candidatos [aquí](http://www.businessinsider.com/countries-most-vulnerable-to-crisis-2013-11). Los bitcoins tendrán que alcanzar un cierto umbral de liquidez – lo que vendrá indicado por la presencia de un sitio de intercambio sólido en cada centro financiero y una oferta monetaria real (o “capitalización de mercado”) equivalente a no menos de 50 mil millones de dólares – antes de poder ser usados como instrumento de un ataque especulativo. Esto coincidirá con una crisis monetaria, o bien será su desencadenante.
 
-<div class="article-image">
-  <img class="img-responsive center-block" alt="Europe's crisis contagion" src="/static/img/mempool/speculative-attack/europes-crisis-contagion.jpg" />
+<div class="my-4 text-center">
+  <img class="img-fluid rounded d-block mx-auto" alt="Europe's crisis contagion" src="/static/img/mempool/speculative-attack/europes-crisis-contagion.jpg" />
 </div>
 
 ## 3\. Hiperbitcoinización

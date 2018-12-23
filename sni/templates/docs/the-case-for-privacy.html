@@ -1,15 +1,10 @@
 <!-- extend base layout -->
 {% extends "doc.html" %}
+
 {% block doc %}
-<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-  <div class="page-header">
-    <h1 class="text-center">
-      The Case For Privacy<br><small>David D. Friedman</small>
-    </h1>
-    <h4 class="text-center">2005</h4>
-  </div>
 
 {% filter markdown %}
+
 An old science fiction novel features a device that surrounds its bearer with an impenetrable bubble of force. The inventor rapidly discovers that every government and political faction on the planet wants what he has and is prepared to use any means, from persuasion to brute force, to get it. Our hero spends most of the book alternately listening to arguments, trying to decide who are the good guys and using his invention to help him escape attempts to capture him.
 
 After about a hundred and fifty pages he realizes that he has been asking the wrong question. The answer to "what faction can be trusted with a monopoly over the shield" is "no." The right question is how the shield will affect the world—how it will alter the balance between freedom and oppression, individual and state, small and big. The answer to that is easy. A world where the random individual is armored against anything short of an atomic explosion will be, on net, a better and freer world than the one he is currently living in. He writes out an explanation of how the shield works and spends two days distributing the information to people all over the world. By the time Military Security—the most formidable of his pursuers—catches up with him, it is too late. The cat is out of the bag.
@@ -28,8 +23,10 @@ In some contexts I am willing to let other people know things about me. In other
 
 ## Privacy and Government
 
-> Government is not reason. It is not eloquence. It is a force, like fire: a dangerous servant and a terrible master.
-> <footer>George Washington</footer>
+<blockquote class="blockquote">
+  <p>Government is not reason. It is not eloquence. It is a force, like fire: a dangerous servant and a terrible master.</p>
+  <footer class="blockquote-footer">George Washington</footer>
+</blockquote>
 
 Privacy includes the ability to keep things secret from the government. The better I can do that, the less able government is to help me—I might be keeping secret my weakness for alcohol, or heroin, or gambling or pornography and so preventing the government from stepping in to protect me from myself. And the better other people can keep secrets from the government, the harder it is for the government to protect me from them. If you view government as a benevolent super being watching over you—a wise and kindly uncle with a long white beard—you will and should reject much of what I am saying.
 
@@ -208,7 +205,7 @@ Ellen Frankel Paul, Fred D. Miller, Jr., & Jeffrey Paul (Eds). (2000) _The Right
 ***
 
 David Friedman is a professor of law at Santa Clara University; his specialty is the economic analysis of law and his current interests include the effect of technology on the world over the next few decades. His most recent book is _Law's Order: What Economics has to do with Law and Why It Matters_. You can learn more than you want to know about both him and his ideas at [www.daviddfriedman.com](www.daviddfriedman.com).
+
 {% endfilter %}
 
-</div>
 {% endblock %}

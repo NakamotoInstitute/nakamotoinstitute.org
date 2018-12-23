@@ -5,8 +5,8 @@ image_alt: Distributed
 
 Liberty is an ideology for everyone. It benefits all people and groups whose goals do not inherently require oppression. All objections to liberty have simply stimulated more thought into what is possible with voluntary organizations and shown more clearly how much better they are at providing services originally thought to be possible by government. Movements once believed to be wholly incompatible with libertarianism, such as feminism and environmentalism,[^1] now have their own branches of libertarian thought. Liberty is a universal [acid](http://en.wikipedia.org/wiki/Acid).
 
-<div class="article-image">
-  <img class="img-responsive center-block" alt="Napster" src="/static/img/mempool/crypto-anarchy-and-libertarian-entrepreneurship-1/napster.jpg"/>
+<div class="my-4 text-center">
+  <img class="img-fluid rounded d-block mx-auto" alt="Napster" src="/static/img/mempool/crypto-anarchy-and-libertarian-entrepreneurship-1/napster.jpg"/>
 </div>
 
 And yet people do not listen. The ideal of liberty is too abstract for them: most people need to experience liberty before they will desire it. For example, when Napster was invented, suddenly people around the world could ignore the oppression of copyright. They tasted freedom and the taste was sweet. Once they had experienced it, they would not give it up.
@@ -15,8 +15,8 @@ The goal of the libertarian entrepreneur is to give others that taste, not by in
 
 For example, suppose the people in a community came to adore a company whose services require that they give up control of their land or their weapons to it. Such a system could, in theory, remain completely voluntary, but only a fool would think it likely. Such a company would be easily corrupted, either by transforming itself into a government or by collusion with an existing government. There is no basis to criticize such a company strictly on libertarian grounds, but by the time it begins to behave coercively, it may be too late. Whereas the libertarian entrepreneur should oppose it form the start and urgently develop an alternative business model to compete with it.
 
-<div class="article-image">
-  <img class="img-responsive center-block" alt="Apple Products" src="/static/img/mempool/crypto-anarchy-and-libertarian-entrepreneurship-1/apple-products.jpg"/>
+<div class="my-4 text-center">
+  <img class="img-fluid rounded d-block mx-auto" alt="Apple Products" src="/static/img/mempool/crypto-anarchy-and-libertarian-entrepreneurship-1/apple-products.jpg"/>
 </div>
 
 The libertarian entrepreneur should identify those industries with the greatest level of risk and attempt to transform them into something less risky. There are three ways an industry can be at risk. First, if the government would particularly benefit from controlling it. There are some industries that the government likes more than others: police, education, and transportation are particularly risky. Second, if the industry is particularly centralized. The government has only to collude with its largest players in order to take it over. Third, if the industry works in a way to promote customers' dependence. If it is too inconvenient to switch from one company to another, then people will be inclined to stay dependent upon it even after it becomes corrupted.
@@ -27,8 +27,8 @@ The strategy, therefore, is to promote decentralization by enabling people to co
 
 ## Crypto-Anarchy
 
-<div class="article-image">
-  <img class="img-responsive center-block" alt="Crypto-Anarchy" src="/static/img/mempool/crypto-anarchy-and-libertarian-entrepreneurship-1/cryptoanarchy.jpeg"/>
+<div class="my-4 text-center">
+  <img class="img-fluid rounded d-block mx-auto" alt="Crypto-Anarchy" src="/static/img/mempool/crypto-anarchy-and-libertarian-entrepreneurship-1/cryptoanarchy.jpeg"/>
 </div>
 
 The crypto-anarchy movement,[^3] which from the beginning drew upon anarcho-capitalist theory,[^4] may be summed up by the observation that cryptography gives us an enormous opportunity to spread the taste of liberty. Crypto-anarchy is not a branch of libertarian theory. It is a libertarian strategy. It is a framework for action. The cryptographic tools we have today are cheap, powerful, and profoundly individualistic. No one can hold a gun to an equation. Cryptographic software will function according to the rules of mathematics, regardless of government directives. As long as it is possible to distribute software, then cryptographic software can show people liberty.

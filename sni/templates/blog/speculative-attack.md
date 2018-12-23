@@ -70,8 +70,8 @@ There's a huge problem with the Indian central bank raising interest rates: bitc
 
 Which countries are most vulnerable to a currency crisis? Business Insider provides a helpful list [here](http://www.businessinsider.com/countries-most-vulnerable-to-crisis-2013-11). Bitcoins will have to reach certain threshold of liquidity, indicated by a solid exchange in every financial center and a real money supply – i.e. market cap – of at least $50 billion, before they can be used as an instrument in a speculative attack. This will either coincide with or cause a currency crisis.
 
-<div class="article-image">
-  <img class="img-responsive center-block" alt="Europe's crisis contagion" src="/static/img/mempool/speculative-attack/europes-crisis-contagion.jpg" />
+<div class="my-4 text-center">
+  <img class="img-fluid rounded d-block mx-auto" alt="Europe's crisis contagion" src="/static/img/mempool/speculative-attack/europes-crisis-contagion.jpg" />
 </div>
 
 ## 3\. Hyperbitcoinization

@@ -7,7 +7,7 @@
 
 {% block content %}
 {% set only_satoshi = request.args.get('view') == 'satoshi' -%}
-<div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+<div class="container container-wide">
   <div class="text-center">
     <a href="{{url_for('posts', view='threads')}}">All Threads</a>
     <br>
@@ -29,7 +29,7 @@
   </div>
   <div class="text-center">
     <h2>
-      <small>{{posts[0].forum_thread.source_to_string()}}</small></br>
+      <small>{{posts[0].forum_thread.source_to_string()}}</small><br>
       {{posts[0].forum_thread.title}}
     </h2>
     <p>
@@ -41,7 +41,7 @@
     </p>
     <p><a href="{{posts[0].forum_thread.url}}">External link</a></p>
   </div>
-  <div class="thread {% if posts[0].forum_thread.source == 'p2pfoundation' %}nested{% endif %}">
+  <div class="thread {% if posts[0].forum_thread.source == 'p2pfoundation' %}nested{% endif %} mb-4">
   {% set prev_level = posts[0].nested_level -%}
   {% for post in posts %}
     {% if post.forum_thread.source == 'p2pfoundation' %}
@@ -56,11 +56,11 @@
       <div class="post-container {{loop.cycle('', 'gray')}}  {% if post.satoshi_id and not only_satoshi %}highlight{% endif %}" id="{{post.post_num}}">
     {% endif %}
       <div class="header">
-        <div class="poster-info">
-          <div>
+        <div class="poster-info d-flex">
+          <div class="mr-auto text-truncate">
             <a href="{{post.poster_url}}"><strong>{{post.poster_name}}</strong></a>
           </div>
-          <div>
+          <div class="ml-auto">
             <a href="#{{post.post_num}}">#{{post.post_num}}</a>
           </div>
         </div>
@@ -72,12 +72,12 @@
       <div class="body">
         {{post.text|safe}}
       </div>
-      <div class="footer">
-        <div>
+      <div class="footer d-flex">
+        <div class="mr-auto">
           <a href="{{post.url}}">External link</a>
         </div>
         {% if post.satoshi_id %}
-        <div>
+        <div class="ml-auto">
           <a href="{{url_for('postview', postnum=post['satoshi_id'],source=post.forum_thread['source'])}}">Permalink</a>
         </div>
         {% endif %}
@@ -85,7 +85,6 @@
     </div>
   {% endfor %}
   </div>
-  <br>
   <div class="text-center">
     {% if prev != None %}
       {% if only_satoshi %}

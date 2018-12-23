@@ -66,8 +66,8 @@ Less than a majority can also reorganize the chain to invalidate a previous tran
 
 Here’s a quick plot I made back when the block reward was 25 BTC per block and transaction fees were negligible (so I could ignore them and Bitcoin Core’s anti-fee-sniping):
 
-<div class="article-image">
-  <img class="img-responsive center-block" src="/static/img/mempool/against-the-minimum-majority-measure/en-confirmed-double-spend-cost.png" />
+<div class="my-4 text-center">
+  <img class="img-fluid rounded d-block mx-auto" src="/static/img/mempool/against-the-minimum-majority-measure/en-confirmed-double-spend-cost.png" />
 </div>
 
 If no miner controls more than 1% of hashrate, then once-confirmed transactions are pretty safe against attacking miners (though not accidental conflicting blocks). If no miner controls more than 10% of hashrate, then six-confirmed transactions are quite safe.

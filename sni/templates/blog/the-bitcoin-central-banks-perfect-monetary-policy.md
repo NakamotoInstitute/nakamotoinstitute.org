@@ -3,8 +3,8 @@ The following post provides an analytical framework so that critics and proponen
 
 Bitcoin has a central bank called the “Bitcoin network,” which we will refer to as the Bitcoin Central Bank (BCB). This central bank issues a currency called “bitcoins” and processes the transfer of bitcoins between accounts. The BCB’s rule-based monetary policy was set at its creation and its independence is secured by the distributed nature of the underlying network. This non-discretionary monetary policy can best be described as asymptotic money supply targeting (AMST).
 
-<div class="article-image">
-  <img class="img-responsive center-block" alt="AMST" src="/static/img/mempool/the-bitcoin-central-banks-perfect-monetary-policy/amst.jpg" />
+<div class="my-4 text-center">
+  <img class="img-fluid rounded d-block mx-auto" alt="AMST" src="/static/img/mempool/the-bitcoin-central-banks-perfect-monetary-policy/amst.jpg" />
 </div>
 
 The BCB issues bitcoins to a network of sub-contractors called “miners” who perform the [proof-of-work calculations](/mempool/the-proof-of-work-concept/ "The Proof-of-Work Concept") that secure the BCB’s independence and process payments. The [seigniorage](http://en.wikipedia.org/wiki/Seigniorage) subsidizes the payment system instead of benefiting the issuer or the seller/recipient of bonds transacted in [open market operations](http://en.wikipedia.org/wiki/Open_market_operation). Proof-of-work seigniorage (PoWS) and AMST work synergistically to cause three monetary phenomena:
@@ -15,8 +15,8 @@ The BCB issues bitcoins to a network of sub-contractors called “miners” who 
 
 First, it is rational for economic agents to hold as many bitcoins as they can afford to lose (i.e. without materially impairing their ability to consume or invest). The BCB can offer lower transaction costs than any competitor by orders of magnitude because of the PoWS subsidy. This deep competitive advantage gives economic agents the expectation that it will be adopted as a method of payment and that its exchange rate liquidity will increase. This expectation has repeatedly proven to be true so the desire to hold bitcoins has increased, as indicated by the [exchange rate](https://blockchain.info/charts/market-price) and [Internet search volume](http://www.google.com/trends/explore#q=buy%20bitcoin&cmpt=q).
 
-<div class="article-image">
-  <img class="img-responsive center-block" alt="Transaction Costs" src="/static/img/mempool/the-bitcoin-central-banks-perfect-monetary-policy/transactioncosts.jpg" />
+<div class="my-4 text-center">
+  <img class="img-fluid rounded d-block mx-auto" alt="Transaction Costs" src="/static/img/mempool/the-bitcoin-central-banks-perfect-monetary-policy/transactioncosts.jpg" />
 </div>
 
 ## The Market Sets Exchange Rates and Interest Rates
@@ -25,8 +25,8 @@ The exchange rate volatility is a byproduct of the BCB choosing independent mone
 
 Bitcoin’s interest rates are based on the arbitrage between the expected return of holding bitcoins versus the expected return of lending them out. The expected return of holding bitcoins is completely tied to its expected future exchange rate because bitcoins are currently a pure [vehicle currency](http://www.encyclo.co.uk/define/Vehicle%20currency). The heterogeneous expectations of bitcoin holders regarding the exchange rate has led to the development of marginal [lending](https://btcjam.com/) [operations](http://www.reddit.com/r/bitcoinstocks). However, the vast majority of bitcoin holders expect exchange rate appreciation at rates far greater than any borrower is willing to pay. Bitcoins will continue to be hoarded and bitcoin-denominated credit markets will continue to be under-developed until either the expectations of bitcoin-holders adjust downward or are met. The BCB does not need to take action to break the current equilibrium state since the hoarders’ expectations will be met given Bitcoin’s proven superiority to legacy payment networks and stores of value.
 
-<div class="article-image">
-  <img class="img-responsive center-block" alt="Feedback Loops" src="/static/img/mempool/the-bitcoin-central-banks-perfect-monetary-policy/bitcoinfeedbackloops.jpg" />
+<div class="my-4 text-center">
+  <img class="img-fluid rounded d-block mx-auto" alt="Feedback Loops" src="/static/img/mempool/the-bitcoin-central-banks-perfect-monetary-policy/bitcoinfeedbackloops.jpg" />
 </div>
 
 ## Fractional Reserve Banking Cannot Develop

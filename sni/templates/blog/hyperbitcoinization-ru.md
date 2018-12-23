@@ -30,8 +30,8 @@ image_alt: BitcoinFace
 
 Гипербиткоинизация возможно будет смутным временем для каждого, как второе отрочество. Однако, как только она закончится, никто не сможет себе представить, как мы жили со старой системой.
 
-<div class="article-image">
-  <img class="img-responsive center-block img-rounded" alt="Bitcoinbody" src="/static/img/mempool/hyperbitcoinization/Bitcoinbody.png"/>
+<div class="my-4 text-center">
+  <img class="img-fluid rounded d-block mx-auto" alt="Bitcoinbody" src="/static/img/mempool/hyperbitcoinization/Bitcoinbody.png"/>
 </div>
 
 <p class="text-muted text-center">

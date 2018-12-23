@@ -141,6 +141,9 @@ class Author(db.Model):
     def __repr__(self):
         return '<Author %r>' % (self.slug)
 
+    def __str__(self):
+        return '{} {} {}'.format(self.first, self.middle, self.last)
+
 
 formats = db.Table(
     'formats',
@@ -181,6 +184,19 @@ class Category(db.Model):
         return '<Category %r>' % (self.name)
 
 
+def get_authors_string(obj):
+    if len(obj.author) is 1:
+        return str(obj.author[0])
+    elif len(obj.author) is 2:
+        return '{} and {}'.format(obj.author[0], obj.author[1])
+    else:
+        author_string = ''
+        for author in obj.author[:-1]:
+            author_string += '{}, '.format(author)
+        author_string += 'and {}'.format(author[-1])
+        return author_string
+
+
 class Doc(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String())
@@ -200,6 +216,10 @@ class Doc(db.Model):
 
     def __repr__(self):
         return '<Doc %r>' % (self.title)
+
+    @property
+    def authors_string(self):
+        return get_authors_string(self)
 
 
 class ResearchDoc(db.Model):
@@ -222,6 +242,10 @@ class ResearchDoc(db.Model):
 
     def __repr__(self):
         return '<ResearchDoc %r>' % (self.title)
+
+    @property
+    def authors_string(self):
+        return get_authors_string(self)
 
 
 class BlogPost(db.Model):

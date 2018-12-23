@@ -410,8 +410,8 @@ investments instead.
 That is what I think of money. Now, for the good of society, earn as many
 bitcoins as you can!
 
-<div class="article-image">
-  <img class="img-responsive center-block" src="/static/img/mempool/crashes-and-hyperinflation/they-live-money.png" />
+<div class="my-4 text-center">
+  <img class="img-fluid rounded d-block mx-auto" src="/static/img/mempool/crashes-and-hyperinflation/they-live-money.png" />
 </div>
 
 ## Further Reading

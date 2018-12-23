@@ -19,8 +19,8 @@ JHBYEUXRBLPDWJXOBELNEHNTBFYDJHBWDCYUWJWLNUUWZBDJXLYERWRJRWEIBBCWEGJHBWDOYEBXWEJH
 
 Two things to note here. First, this algorithm is insecure. Regardless of how the letters are replaced, it would be easy to decipher, especially with a computer. We will need something much more complicated to make a message that is secret enough. More importantly, however, is that knowing the sequence of letter replacements is sufficient both to decrypt and to encrypt a message. It is, in fact, impossible to know how to encrypt a message without simultaneously knowing how to decrypt it.
 
-<div class="article-image">
-  <img class="img-responsive center-block" alt="Symmetric Key" src="/static/img/mempool/crypto-anarchy-and-libertarian-entrepreneurship-2/symmetric.jpg"/>
+<div class="my-4 text-center">
+  <img class="img-fluid rounded d-block mx-auto" alt="Symmetric Key" src="/static/img/mempool/crypto-anarchy-and-libertarian-entrepreneurship-2/symmetric.jpg"/>
 </div>
 
 This is the essence of symmetric-key cryptography: it is impossible to know how to encrypt a message without knowing how to decrypt it, and vice versa. This is a real problem. If, for example, my enemy got ahold of one of my secret messages and managed to decipher it, he would not only be able to read the rest of my messages but make new ones, perhaps to trick me and my friends.
@@ -41,8 +41,8 @@ For example, suppose you could design an algorithm that can run in a fraction of
 
 However, there is an upgrade to this idea that makes it useful. Suppose there are two algorithms which are inverses of one another. Both are fast to do forward and very slow to reverse. One algorithm can be used to encrypt and the other to decrypt. I keep the decryption algorithm secret but let my friends see the encryption algorithm. Now they can send me messages but only I can read them, and I have not given away any secrets that I cannot afford to have compromised. In fact, I can let my enemies see the encryption algorithm too. They can do nothing with it but make their own messages to me.
 
-<div class="article-image">
-  <img class="img-responsive center-block" alt="Public Key" src="/static/img/mempool/crypto-anarchy-and-libertarian-entrepreneurship-2/public-key.jpg"/>
+<div class="my-4 text-center">
+  <img class="img-fluid rounded d-block mx-auto" alt="Public Key" src="/static/img/mempool/crypto-anarchy-and-libertarian-entrepreneurship-2/public-key.jpg"/>
 </div>
 
 The final upgrade is that everyone has two algorithms. Everyone keeps one algorithm secret and publicizes the other. How can we discover so many algorithms? Typically there is a class of algorithms, each of which is specified by a number, or key. So we each have a public key and a private key. This is public-key encryption.

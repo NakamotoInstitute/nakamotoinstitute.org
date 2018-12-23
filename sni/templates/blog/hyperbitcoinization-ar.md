@@ -30,8 +30,8 @@ image_alt: BitcoinFace
 
 فترة البتكنة ستكون فترة محيرة (كفترة مراهقة أخرى). لكن، عندما تنتهي الفترة وتنجلي الرؤية سيصعب تخيل كيف استطعنا التعايش مع النظام السابق.
 
-<div class="article-image">
-  <img class="img-responsive center-block img-rounded" alt="Bitcoinbody" src="/static/img/mempool/hyperbitcoinization/Bitcoinbody.png"/>
+<div class="my-4 text-center">
+  <img class="img-fluid rounded d-block mx-auto" alt="Bitcoinbody" src="/static/img/mempool/hyperbitcoinization/Bitcoinbody.png"/>
 </div>
 
 <p class="text-muted text-center">

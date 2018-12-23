@@ -6,18 +6,12 @@ Authors | Satoshi Nakamoto Institute
 {% endblock %}
 
 {% block content %}
-<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-  <div class="row">
-    <div class="text-center">
-      <h1>Authors</h1>
-    </div>
-  </div>
+<div class="container text-center">
+  <h1>Authors</h1>
   {% for auth in authors %}
-    <p class="text-center">
-      <a href="{{url_for('author', authslug=auth.slug)}}">
-        {{auth.first}} {{auth.middle}} {{auth.last}}
-      </a>
-    </p>
+  <p>
+    <a href="{{url_for('author', authslug=auth.slug)}}">{{auth.first}} {{auth.middle}} {{auth.last}}</a>
+  </p>
   {%endfor%}
 </div>
 {% endblock %}

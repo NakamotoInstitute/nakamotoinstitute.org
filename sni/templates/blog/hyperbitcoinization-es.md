@@ -30,8 +30,8 @@ Sobre la base de esas dos diferencias, predigo lo siguiente:
 
 La hiperbitcoinización probablemente será una etapa confusa, como una segunda adolescencia. Sin embargo, una vez concluida nadie va a ser capaz de entender cómo es que logramos sobrevivir al sistema anterior.
 
-<div class="article-image">
-  <img class="img-responsive center-block img-rounded" alt="Bitcoinbody" src="/static/img/mempool/hyperbitcoinization/Bitcoinbody.png"/>
+<div class="my-4 text-center">
+  <img class="img-fluid rounded d-block mx-auto" alt="Bitcoinbody" src="/static/img/mempool/hyperbitcoinization/Bitcoinbody.png"/>
 </div>
 
 <p class="text-muted text-center">

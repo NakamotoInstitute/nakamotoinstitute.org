@@ -80,8 +80,8 @@ fills up or if the computation runs out of
 but these are complications on top of the fundamental problem. A hacker can
 try to ensure that only the last send fails so as to end up with everything.
 
-<div class="article-image">
-  <img class="img-responsive center-block img-rounded" src="/static/img/mempool/ethereum-is-doomed/the-dao-is-empty.png">
+<div class="my-4 text-center">
+  <img class="img-fluid rounded d-block mx-auto" src="/static/img/mempool/ethereum-is-doomed/the-dao-is-empty.png">
   <p>
     <em>via <a href="https://twitter.com/KonradSGraf/status/743843080961409025">Twitter</a></em>
   </p>
@@ -187,8 +187,8 @@ Sirer](http://hackingdistributed.com/2016/06/17/thoughts-on-the-dao-hack/#what-s
 > coins from The DAO, the only consistent response is to call it a job well
 > done.
 
-<div class="article-image">
-  <img class="img-responsive center-block img-rounded" src="/static/img/mempool/ethereum-is-doomed/vitalik-rai-stones.jpg">
+<div class="my-4 text-center">
+  <img class="img-fluid rounded d-block mx-auto" src="/static/img/mempool/ethereum-is-doomed/vitalik-rai-stones.jpg">
   <p>
     <em>Artwork by <a href="https://twitter.com/BigLambda/status/891148584334245888">Big λ</a></em>
   </p>

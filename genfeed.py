@@ -1,14 +1,15 @@
 from feedgen.feed import FeedGenerator
-from sni.models import *
+from pytz import timezone
 from sqlalchemy import desc
 
+from sni.models import *
 
-def print_enc(s):
-    '''
-    Print function compatible with both python2 and python3 accepting strings
-    and byte arrays.
-    '''
-    print(s.decode('utf-8') if type(s) == type(b'') else s)
+TIMEZONE = timezone('US/Central')
+
+
+def localize_time(time):
+    return TIMEZONE.localize(time)
+
 
 fg = FeedGenerator()
 fg.load_extension('podcast')
@@ -38,10 +39,6 @@ for ep in eps:
     fe.podcast.itunes_author('Satoshi Nakamoto Institute')
     fe.enclosure('https://s3.amazonaws.com/nakamotoinstitute/cryptomises/'+ep.slug+'.mp3', 0, 'audio/mpeg')
     fe.podcast.itunes_duration(ep.duration)
-    fe.pubdate(ep.time)
+    fe.pubDate(localize_time(ep.time))
 
-print_enc(fg.rss_str(pretty=True))
-
-# with open("./sni/templates/podcast/feed.xml", "w") as f:
-#     f.write(fg.rss_str(pretty=True))
 fg.rss_file('./sni/templates/podcast/feed.xml', pretty=True)

@@ -6,31 +6,21 @@ The Skeptics: A Tribute to Bold Assertions | Satoshi Nakamoto Institute
 {% endblock %}
 
 {% block content %}
-<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-
-  <div class="row">
-    <div class="text-center">
-   	  <h1>The Skeptics</h1>
-      <h3>A Tribute to Bold Assertions</h3>
-      <p>
-        <em>"We propose a global and morally mandatory heuristic that anyone involved in an action which can possibly generate harm for others, even probabilistically, should be required to be exposed to some damage, regardless of context."</em><br>
-        N.N. Taleb & C. Sandis, <a href="http://ssrn.com/abstract=2298292">"The Skin in the Game Heuristic for Protection Against Tail Events"</a>
-      </p>
-    </div>
+<div class="container">
+  <div class="text-center">
+ 	  <h1>The Skeptics</h1>
+    <h3>A Tribute to Bold Assertions</h3>
+    <p><em>"We propose a global and morally mandatory heuristic that anyone involved in an action which can possibly generate harm for others, even probabilistically, should be required to be exposed to some damage, regardless of context."</em><br>N.N. Taleb & C. Sandis, <a href="http://ssrn.com/abstract=2298292">"The Skin in the Game Heuristic for Protection Against Tail Events"</a></p>
+    <p class="text-center mt-3">Submit a link via <a href="https://github.com/NakamotoInstitute/nakamotoinstitute.org">GitHub</a></p>
   </div>
-
-  <p class="text-center">
-    Submit a link via <a href="https://github.com/NakamotoInstitute/nakamotoinstitute.org">GitHub</a>
-  </p>
-
   {% for skeptic in skeptics %}
     <hr>
-    <h3 id="{{skeptic.slug}}"><a href="#{{skeptic.slug}}"><span class="glyphicon glyphicon-link btn-lg"></span></a>{{skeptic.name}} - {{skeptic.date.strftime('%B %d, %Y')}} ({{skeptic.price}})</h3>
+    <h3 id="{{skeptic.slug}}"><a class="mx-3" href="#{{skeptic.slug}}"><i class="fas fa-link fa-sm"></i></a>{{skeptic.name}} - {{skeptic.date.strftime('%B %d, %Y')}} ({{skeptic.price}})</h3>
     <p><em>{{skeptic.title}}</em></p>
     {% if skeptic.source == "Twitter" %}
-      <p>
-        <img class="img-responsive center-block" src="/static/img/the-skeptics/{{skeptic.slug}}.jpg">
-      </p>
+      <div class="text-center">
+        <img class="img-fluid d-block mx-auto" src="/static/img/the-skeptics/{{skeptic.slug}}.jpg">
+      </div>
       <ul>
         {% for link in skeptic.link.split(", ") %}
           <li><a href="{{link}}" target="_blank">{{link}}</a></li>

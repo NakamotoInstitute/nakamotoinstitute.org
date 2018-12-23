@@ -1,24 +1,49 @@
 <!-- extend base layout -->
 {% extends "base.html" %}
+{% import "helpers.html" as helpers %}
 
 {% block title %}
-{{ bp.title }} | Satoshi Nakamoto Institute
+{% if bp.series %}
+Chapter {{bp.series_index}}: {{ page.meta.translated_title or bp.title }} | {{ bp.series }} | Satoshi Nakamoto Institute
+{% else %}
+{{ page.meta.translated_title or bp.title }} | Satoshi Nakamoto Institute
+{% endif %}
 {% endblock %}
 
 {% block content %}
 
-<span id="CONTENT">{% block post %}{% endblock %}</span>
-
-<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-	<br>
-	<div class = "text-center">
-		<a type="button" class="btn btn-default" href="{{url_for('blog')}}">
+<div class="container">
+	<div class="border-bottom mb-3 pb-4 text-center">
+		{% if bp.series %}
+		<h3 class="text-black-50">{{bp.series}}</h3>
+		{% endif %}
+		<h1>{% if bp.series %}Chapter {{bp.series_index}}: {% endif %}{{ page.meta.translated_title or bp.title }}</h1>
+		<h2 class="text-muted">{{bp.author[0].first}} {{bp.author[0].middle}} {{bp.author[0].last}}</h2>
+    <h4>{{bp.date|dateformat(lang=lang)}}</h4>
+		{% if page.meta.original_link %}
+		<p>
+      <em>First published on <a href="{{ page.meta.original_link }}">{{ page.meta.original_site }}</a></em>
+    </p>
+		{% endif %}
+		{% if page.meta.image %}
+			{% if not page.meta.original %}
+			<br>
+			{% endif %}
+			<img class="img-fluid rounded d-block mx-auto" alt="{{page.meta.image_alt}}" src="/static/img/mempool/{{bp.slug}}/{{page.meta.image}}"/>
+		{% endif %}
+	</div>
+	{% if rtl %}
+	<div dir="rtl">
+	{% endif %}
+  <span id="CONTENT">{{ page.html|safe }}</span>
+	{% if rtl %}
+	</div>
+	{% endif %}
+	<div class="text-center my-4">
+		<a type="button" class="btn btn-light" href="{{url_for('blog')}}">
 			Back to the Memory Pool
 		</a>
 	</div>
-	<br>
-	<br>
-	<br>
 	<div id="disqus_thread"></div>
 	<script type="text/javascript">
 		/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
