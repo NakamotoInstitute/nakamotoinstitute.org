@@ -12,7 +12,7 @@ By this metaphor, the supercooled liquid is the world as of a few years ago, rip
 
 <div class="my-4 text-center">
   <img class="img-fluid rounded d-block mx-auto" src="/static/img/mempool/why-bitcoin-will-continue-to-grow/breaking-bad.jpg">
-</div> 
+</div>
 
 Thus, when people dismiss Bitcoin as valueless and call every upward price movement a bubble, they are really missing the point. An investment in bitcoins is an investment in the Bitcoin community. It was in late 2012 that I came to realize just how wonderfully fanatical this community was, and this was what convinced me to treat my bitcoins not as simply an utter speculation, but as something with very real prospects.
 

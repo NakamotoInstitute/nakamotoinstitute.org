@@ -114,6 +114,7 @@ virtual machine. While reading the Solidity documentation, I noticed this:
 > If `x` is a contract address, its code (more specifically: its fallback
 > function, if present) will be executed together with the `send` call (this
 > is a limitation of the EVM and cannot be prevented).
+{: .blockquote}
 
 This means the same issue exists in
 [Serpent](https://mc2-umd.github.io/ethereumlab/docs/serpent_tutorial.pdf),
@@ -186,6 +187,7 @@ Sirer](http://hackingdistributed.com/2016/06/17/thoughts-on-the-dao-hack/#what-s
 > brave new world of programmatic money flows.” When he instead emptied out
 > coins from The DAO, the only consistent response is to call it a job well
 > done.
+{: .blockquote}
 
 <div class="my-4 text-center">
   <img class="img-fluid rounded d-block mx-auto" src="/static/img/mempool/ethereum-is-doomed/vitalik-rai-stones.jpg">
@@ -201,6 +203,7 @@ Sirer](http://hackingdistributed.com/2016/06/17/thoughts-on-the-dao-hack/#what-s
     > To have a contract send Ether to some other address, the most
     > straightforward way is to use the send keyword. This acts like a method
     > that’s defined for every “address” object.
+		{: .blockquote}
 
     I love how he says this in such a matter-of-fact way, like that's no big
     deal.
@@ -222,3 +225,4 @@ Sirer](http://hackingdistributed.com/2016/06/17/thoughts-on-the-dao-hack/#what-s
     > money to a contract, and developers seem to expect it to ‘just work’
     > like in Bitcoin or other digital currencies, perhaps with a transaction
     > fee attached.
+		{: .blockquote}

@@ -108,7 +108,8 @@ were sitting on a swamp made out of crude oil and worrying that people won’t
 accept it because it’s too ugly and gross, so they try to convince people that
 it’s a pretty shiny pink and tastes like cherries.
 
-<div class="my-4 text-center"> <img class="img-fluid rounded d-block mx-auto" src="/static/img/mempool/bitcoin-has-no-image-problem/narcissism.jpg">
+<div class="my-4 text-center">
+	<img class="img-fluid rounded d-block mx-auto" src="/static/img/mempool/bitcoin-has-no-image-problem/narcissism.jpg">
 	<p>
 		<em>Oh Narcissus, you’ll never understand Bitcoin.</em>
 	</p>

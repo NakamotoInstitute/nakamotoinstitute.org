@@ -12,30 +12,36 @@ Nietzsche’s rejection of the moral distinction between good and evil[^6] is al
 Given this, Bitcoin calls us to action, forcing us to choose the noble morality of pride, strength, and honour or the slave morality of kindness, humility, and pity.
 
 > While every noble morality develops from a triumphant affirmation of itself, slave morality from the outset says No to what is “outside,” what is “different,” what is “not itself”; and this No is its creative deed.
+{: .blockquote}
 
 In [#bitcoin-assets](http://bitcoinpete.com/2014/03/17/irc-yeshiva/ "IRC Yeshiva"), we’re choosing the noble morality, that which is vilified[^7] by the most powerful and longest-lasting businesses in the world: states and [religions](http://bitcoinpete.com/2014/03/09/what-is-business-the-roman-catholic-church-for-one/ "What Is Business? The Roman Catholic Church, For One"). But no amount of name calling can diminish our life-affirming quest.
 
-> Meaning and morality of One’s life come from within oneself. Healthy, strong individuals seek self expansion by experimenting and by living dangerously. Life consists of an infinite number of possibilities and the healthy person explores as many of them as posible. Religions that teach pity, self-contempt, humility, self-restraint and guilt are incorrect. The good life is ever changing, challenging, devoid of regret, intense, creative and risky.
+> Meaning and morality of One’s life come from within oneself. Healthy, strong individuals seek self expansion by experimenting and by living dangerously. Life consists of an infinite number of possibilities and the healthy person explores as many of them as possible. Religions that teach pity, self-contempt, humility, self-restraint and guilt are incorrect. The good life is ever changing, challenging, devoid of regret, intense, creative and risky.
+{: .blockquote}
 
 It is the softness of the “common good” that Bitcoin rejects. It is greatness that it embraces.
 
 > “One must shed the bad taste of wanting to agree with many. “Good” is no longer good when one’s neighbour mouths it. And how should there be a “common good”! The term contradicts itself: whatever can be common always has little value. In the end it must be as it is and always has been: great things remain for the great, abysses for the profound, nuances and shudders for the refined, and, in brief, all that is rare for the rare.”
+{: .blockquote}
 
 For Bitcoin is a great thing, and thus attracts the great.
 
 > All great things must first wear terrifying and monstrous masks, in order to inscribe themselves on the hearts of humanity.
+{: .blockquote}
 
 Bitcoin terrifies the common [Fiaters](http://bitcoinpete.com/2014/04/18/ishmael/ "Ishmael"), including those of “the community” who impose their Fiat ideology on Bitcoin. For them, they who would do no pain,[^8] must be on the receiving end. Bitcoin will hurt. Bitcoin will be hard. Bitcoin will make them suffer.
 
 > Who can attain to anything great if he does not feel in himself the force and will to inflict great pain? The ability to suffer is a small matter: in that line, weak women and even slaves often attain masterliness. But not to perish from internal distress and doubt when one inflicts great suffering and hears the cry of it — that is great, that belongs to greatness.
+{: .blockquote}
 
 Those who oppose the suffering to come, those nihilists awash in self-loathing, will suffer the most. For long enough, nihilism, the Apollonian philosophy of utilitarianism and scientific rationalism descended from Plato and Socrates, has repressed the aesthetic considerations of Dionysian philosophy – that which treasures life, beauty, and art. This 2,000-year-old revolt against the balance between creation and destruction is based on nothing but scientific “truth,” and the notion that science is, and will be, the panacea for all social problems. This is everywhere evident, from discussions of artificial intelligence and technological transcendence to automated cars and phablets. The world stagnates in this sea of golden calves.
 
 This is what Bitcoin struggles against: the Greek God Apollo. This is what greatness struggles against.
 
 > “The individual has always had to struggle to keep from being overwhelmed by the tribe. If you try it, you will be lonely often, and sometimes frightened. But no price is too high to pay for the privilege of owning yourself.”
+{: .blockquote}
 
-Bitcoin will win, crushing nihilism and fulfilling Nietzsche’s vision of _Übermensch._ Only Bitcoin can restore the necessary balance between the Gods.
+Bitcoin will win, crushing nihilism and fulfilling Nietzsche’s vision of _Übermensch_. Only Bitcoin can restore the necessary balance between the Gods.
 
 Only Bitcoin can give us life.
 

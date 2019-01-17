@@ -17,6 +17,7 @@ With this level of perfect security and complete convenience there is no reason 
 
 As Bitcoin adoption increases we will finally be able to “empirically validate" what Austrians have been arguing for decades: 100% reserve banking with a scarce medium of exchange prevents speculative manias, financial crises, and economic depressions.
 
-> What is needed for a sound expansion of production is additional capital goods, not money or fiduciary media. The credit boom is built on the sands of banknotes and deposits. It must collapse.
->
-> <footer>Ludwig von Mises</footer>
+<blockquote class="blockquote">
+  <p>What is needed for a sound expansion of production is additional capital goods, not money or fiduciary media. The credit boom is built on the sands of banknotes and deposits. It must collapse.</p>
+  <footer class="blockquote-footer">Ludwig von Mises</footer>
+</blockquote>

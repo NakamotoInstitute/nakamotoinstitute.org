@@ -1,9 +1,10 @@
 image: celebs-yell-at-clouds.jpg
 image_alt: Celebs Yell at Clouds
 
-> Combined with the emerging information markets, crypto anarchy will create a liquid market for any and all material which can be put into words and pictures.  
->
-> <footer>Timothy C. May, _[“The Crypto Anarchist Manifesto”](http://nakamotoinstitute.org/crypto-anarchist-manifesto/)_</footer>
+<blockquote>
+  <p>Combined with the emerging information markets, crypto anarchy will create a liquid market for any and all material which can be put into words and pictures.</p>
+  <footer class="blockquote-footer">Timothy C. May, <a href="http://nakamotoinstitute.org/crypto-anarchist-manifesto/">“The Crypto Anarchist Manifesto”</a></footer>
+</blockquote>
 
 Just when things had got about as boring as they could possibly get, the celebrity nude photo leaks came along to give the world an inkling of the new world that Bitcoin ushers in. After speaking to an informant who watched the Fappening unfold on 4chan, I can report a theory which some 4chan anons believe explains what happened and which I agree seems to be the most likely possibility, given the facts now available. If it is true, then it is far more interesting than the media realizes and Bitcoin is at the center of it.
 

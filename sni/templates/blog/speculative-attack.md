@@ -28,9 +28,10 @@ A few of the criticisms mentioned earlier are correct, yet they are complete [no
 
 ## Thiers' Law: Good Money Drives Out Bad
 
-> Historically, it has been good, strong currencies that have driven out bad, weak currencies. Over the span of several millennia, strong currencies have dominated and driven out weak in international competition. The [Persian daric](http://en.wikipedia.org/wiki/Persian_daric), the [Greek tetradrachma](http://en.wikipedia.org/wiki/Tetradrachm), the [Macedonian stater](http://en.wikipedia.org/wiki/Stater), and the [Roman denarius](http://en.wikipedia.org/wiki/Denarius) did not become dominant currencies of the ancient world because they were "bad" or "weak." The [florins](http://en.wikipedia.org/wiki/Florins), [ducats](http://en.wikipedia.org/wiki/Ducats#Gold_ducat_of_Venice) and [sequins](http://en.wikipedia.org/wiki/Sequin_%28coin%29) of the Italian city-states did not become the "dollars of the Middle Ages" because they were bad coins; they were among the best coins ever made. The [pound sterling](http://en.wikipedia.org/wiki/Pound_sterling#Gold_standard) in the 19th century and the [dollar](http://en.wikipedia.org/wiki/Dollar_hegemony) in the 20th century did not become the dominant currencies of their time because they were weak. Consistency, stability and high quality have been the attributes of great currencies that have won the competition for use as international money.
->
-> <footer>[Robert Mundell](http://en.wikipedia.org/wiki/Robert_Mundell), ["Uses and Abuses of Gresham's Law in the History of Money"](http://www.columbia.edu/~ram15/grash.html)</footer>
+<blockquote class="blockquote">
+  <p>Historically, it has been good, strong currencies that have driven out bad, weak currencies. Over the span of several millennia, strong currencies have dominated and driven out weak in international competition. The <a href="http://en.wikipedia.org/wiki/Persian_daric">Persian daric</a>, the <a href="http://en.wikipedia.org/wiki/Tetradrachm">Greek tetradrachma</a>, the <a href="http://en.wikipedia.org/wiki/Stater">Macedonian stater</a>, and the <a href="http://en.wikipedia.org/wiki/Denarius">Roman denarius</a> did not become dominant currencies of the ancient world because they were "bad" or "weak." The <a href="http://en.wikipedia.org/wiki/Florins">florins</a>, <a href="http://en.wikipedia.org/wiki/Ducats#Gold_ducat_of_Venice">ducats</a> and <a href="http://en.wikipedia.org/wiki/Sequin_%28coin%29">sequins</a> of the Italian city-states did not become the "dollars of the Middle Ages" because they were bad coins; they were among the best coins ever made. The <a href="http://en.wikipedia.org/wiki/Pound_sterling#Gold_standard">pound sterling</a> in the 19th century and the <a href="http://en.wikipedia.org/wiki/Dollar_hegemony">dollar</a> in the 20th century did not become the dominant currencies of their time because they were weak. Consistency, stability and high quality have been the attributes of great currencies that have won the competition for use as international money.</p>
+  <footer class="blockquote-footer"><a href="http://en.wikipedia.org/wiki/Robert_Mundell">Robert Mundell</a>, <a href="http://www.columbia.edu/~ram15/grash.html">"Uses and Abuses of Gresham's Law in the History of Money"</a></footer>
+</blockquote>
 
 Bitcoins are not just good money, they are the best money.[^5] The Bitcoin network has the best monetary policy[^6] and the best brand.[^7] We should therefore expect that bitcoins will drive out bad, weak currencies.[^8] By what process will bitcoins become the dominant currency? Which fiat currencies will be the first to disappear? These are the interesting questions of the day, as the necessary premises for these questions are already established truths.[^9]
 
@@ -54,9 +55,10 @@ My own prediction is that slow bleed has been [accelerating](http://www.google.c
 
 ## 2\. Currency Crises
 
-> It might make sense just to get some in case it catches on. If enough people think the same way, that becomes a self fulfilling prophecy. Once it gets bootstrapped, there are so many applications if you could effortlessly pay a few cents to a website as easily as dropping coins in a vending machine.
->
-> <footer>[Satoshi Nakamoto](http://satoshi.nakamotoinstitute.org/emails/cryptography/17/), 1/17/2009</footer>
+<blockquote class="blockquote">
+  <p>It might make sense just to get some in case it catches on. If enough people think the same way, that becomes a self fulfilling prophecy. Once it gets bootstrapped, there are so many applications if you could effortlessly pay a few cents to a website as easily as dropping coins in a vending machine.</p>
+  <footer class="blockquote-footer"><a href="http://satoshi.nakamotoinstitute.org/emails/cryptography/17/">Satoshi Nakamoto</a>, 1/17/2009</footer>
+</blockquote>
 
 Slow bleed leads to currency crisis as the expected value of bitcoins solidifies in people's minds. At first they are conservative, they invest "what they can afford to lose". After 12-18 months, their small stash of bitcoins has dramatically increased in value. They see no reason why this long term trend should reverse: the fundamentals have improved and yet adoption remains low. Their confidence increases. They buy more bitcoins. They rationalize: "well, it's only \[1 -5%\] of my investments". They see the price crash a few times, due to bubbles bursting or just garden-variety panic sales – it entices them to buy more, "a bargain". Bitcoin grows on the asset side of their balance sheet.
 

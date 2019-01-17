@@ -45,6 +45,7 @@ Los comercios tienen todas las razones del mundo para aceptar Bitcoin. BitPay re
 Por lo tanto los comercios están en una excelente posición. Pueden disminuir costos de operación y pueden intentar comprar bitcoins con bienes de retail, tal y como muchos los compran con dólares o euros. Si yo fuera un comerciante, seguramente alentaría a las personas a comprar en mi tienda usando Bitcoin. Incluso quizás intentaría convencerlos, a pesar del razonamiento económico falaz, que gastar sus bitcoins en mi tienda es algo bueno para Bitcoin - ciertamente más que ahorrarlos y especular en su valor. Después de todo, "podrían volverse sin valor de un momento a otro" y "su futuro depende de que se gasten" (porque yo lo digo). Incluso podría intentar decir cosas como:
 
 > [Mis] clientes están dentro de la primera oleada de usuarios de Bitcoin, y estamos encantados de aceptar la criptomoneda como forma de pago. Tal como tú, también creemos que Bitcoin puede ser el futuro del dinero digital. Pero si estás ahorrándolos y esperando que algún día te harán rico, será mejor que los gastes si quieres que sean exitosos.
+{: .blockquote}
 
 Por "mí" me refiero a Newegg. Su reciente post se llama [“Why Saving Your Bitcoin is Not a Good Idea”](http://blog.newegg.com/saving-bitcoin-good-idea/) (por qué ahorrar tus bitcoins no es una buena idea). ¿La razón? Porque significa que no los estás gastando en Newegg.
 

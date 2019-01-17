@@ -57,6 +57,7 @@ When there was too little scrip,
 > months. The thinking was that some members were shirking, not going out
 > enough, displaying the antisocial ways and bad morals that were destroying
 > the co-op.
+{: .blockquote}
 
 And when there was too much (which was the case at the time the article was
 written),
@@ -65,6 +66,7 @@ written),
 > for every one-half hour of baby sitting. Hence, this system of price
 > controls means the inflationary pressure does not drive up the scrip-price
 > of baby sitting, inflation is suppressed, and shortages are found.
+{: .blockquote}
 
 The scrip was created and destroyed according to various provisions in the
 co-op’s rules. The co-op managers seem to have had little inkling that there
@@ -107,6 +109,7 @@ Of the babysitting co-op’s story, Krugman says:
 > worth of Wall Street Journal editorials. And if you are willing to really
 > wrap your mind around the co-op’s story, to play with it and draw out its
 > implications, it will change the way you think about the world.
+{: .blockquote}
 
 However, he has utterly failed to show that the co-op is analogous to the
 American economy and, granting that it is a valid analogy, has failed to draw

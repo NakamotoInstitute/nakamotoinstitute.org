@@ -1,17 +1,19 @@
 image: landscape-with-the-colosseum-and-the-monument-to-marcus-aurelius.jpg
 
-> Some things are in our control and others not.
-> <footer>Epictetus, <em>The Enchiridion</em></footer>
+<blockquote class="blockquote">
+  <p>Some things are in our control and others not.</p>
+  <footer class="blockquote-footer">Epictetus, <em>The Enchiridion</em></footer>
+</blockquote>
 
 ## Crypto Anarchy Spreads
 
 In his classic [“Crypto Anarchist Manifesto,”](/crypto-anarchist-manifesto/) Timothy C. May offered a vision of the future that offers society plenty of challenges to grapple with, thanks to public-key cryptography. A particularly interesting challenge is the anonymous information market:
 
-> The State will of course try to slow or halt the spread of this technology, citing national security concerns, use of the technology by drug dealers and tax evaders, and fears of societal disintegration. Many of these concerns will be valid; crypto anarchy will allow national secrets to be trade freely and will allow illicit and stolen materials to be traded. An anonymous computerized market will even make possible abhorrent markets for assassinations and extortion. Various criminal and foreign elements will be active users of CryptoNet. **But this will not halt the spread of crypto anarchy.**
->
-> Just as the technology of printing altered and reduced the power of medieval guilds and the social power structure, so too will cryptologic methods fundamentally alter the nature of corporations and of government interference in economic transactions. **Combined with emerging information markets, crypto anarchy will create a liquid market for any and all material which can be put into words and pictures.** And just as a seemingly minor invention like barbed wire made possible the fencing-off of vast ranches and farms, thus altering forever the concepts of land and property rights in the frontier West, so too will the seemingly minor discovery out of an arcane branch of mathematics come to be the wire clippers which dismantle the barbed wire around intellectual property.
->
-> \[Emphasis mine\]
+<blockquote class="blockquote">
+  <p>The State will of course try to slow or halt the spread of this technology, citing national security concerns, use of the technology by drug dealers and tax evaders, and fears of societal disintegration. Many of these concerns will be valid; crypto anarchy will allow national secrets to be trade freely and will allow illicit and stolen materials to be traded. An anonymous computerized market will even make possible abhorrent markets for assassinations and extortion. Various criminal and foreign elements will be active users of CryptoNet. <strong>But this will not halt the spread of crypto anarchy.</strong></p>
+  <p>Just as the technology of printing altered and reduced the power of medieval guilds and the social power structure, so too will cryptologic methods fundamentally alter the nature of corporations and of government interference in economic transactions. <strong>Combined with emerging information markets, crypto anarchy will create a liquid market for any and all material which can be put into words and pictures.</strong> And just as a seemingly minor invention like barbed wire made possible the fencing-off of vast ranches and farms, thus altering forever the concepts of land and property rights in the frontier West, so too will the seemingly minor discovery out of an arcane branch of mathematics come to be the wire clippers which dismantle the barbed wire around intellectual property.</p>
+  <p>[Emphasis mine]</p>
+</blockquote>
 
 Two lessons here:
 
@@ -25,6 +27,7 @@ We have already seen [WikiLeaks](https://wikileaks.org/) and [Edward Snowden](ht
 And now a website promoted by WikiLeaks’s Twitter account wants to take it to the next level. [Slur.io](http://slur.io/) promises to be WikiLeaks 2.0:
 
 > Slur is an open source, decentralized and anonymous marketplace for the selling of secret information in exchange for bitcoin. Slur is written in C and operates over the Tor network with bitcoin transactions through libbitcoin. Both buyers and sellers are fully anonymous and there are no restrictions on the data that is auctioned. There is no charge to buy or sell on the Slur marketplace except in the case of a dispute, where a token sum is paid to volunteers.
+{: .blockquote}
 
 For everything from trade secrets to State secrets to zero-day exploits to “the complete databases of social media sites like facebook,” there will be a price in Bitcoin.
 
@@ -36,9 +39,10 @@ Coping with this idea is not easy, as we all have said something in the past we 
 
 ### On change
 
-> The universe is change: life is judgement.
->
-> <footer>Marcus Aurelius, _Mediations_ (Book IV, 3.4)</footer>
+<blockquote class="blockquote">
+  <p>The universe is change: life is judgement.</p>
+  <footer class="blockquote-footer">Marcus Aurelius, _Mediations_ (Book IV, 3.4)</footer>
+</blockquote>
 
 If we take Tim May’s words, and empirical data, seriously, crypto-anarchy as he describes it is happening and continues to happen. Technology is a double-edged sword in that everyone from criminals to people of virtue get to employ it to suit their ends. However, this should just be taken as a fact of nature, as wishing for a way to stop it is utopian at best and totalitarian at worst. When Cody Wilson and [Defense Distributed](https://defdist.org/) gave the world the Liberator, we were forced to face the fact that technology is not democratic. There was no vote for whether 3D printed guns, public-key cryptography, Bitcoin, or BitTorrent should exist. Each was just the product of entrepreneurship by Cody Wilson, Whitfield Diffie & Martin Hellman, Satoshi Nakamoto, and Bram Cohen. They came into existence, and we must deal with the consequences. If bad people can use these technologies, we must use them even better.
 
@@ -46,9 +50,10 @@ The world changes, and that is not good or bad. Only our perceptions and reactio
 
 ### On Maintaining a Virtuous Mind
 
-> \[I\]n the sequence of your thoughts you must avoid all that is casual or aimless, and most particularly anything prying or malicious. Train yourself to think only those thoughts such that in answer to the sudden question “What is in your mind now?” you could say with immediate frankness whatever it is, this or that: and so your answer can agive direct evidence that all your thoughts are straightforward and kindly, the thoughts of a social being who has no regard for the fancies of pleasure or wider indulgence, for rivalry, malice, suspicion, or anything else that one would blush to admit was in one’s mind.
->
-> <footer>Marcus Aurelius, _Meditations_ (Book III, 4.2)</footer>
+<blockquote class="blockquote">
+  <p>[I]n the sequence of your thoughts you must avoid all that is casual or aimless, and most particularly anything prying or malicious. Train yourself to think only those thoughts such that in answer to the sudden question “What is in your mind now?” you could say with immediate frankness whatever it is, this or that: and so your answer can give direct evidence that all your thoughts are straightforward and kindly, the thoughts of a social being who has no regard for the fancies of pleasure or wider indulgence, for rivalry, malice, suspicion, or anything else that one would blush to admit was in one’s mind.</p>
+  <footer class="blockquote-footer">Marcus Aurelius, _Meditations_ (Book III, 4.2)</footer>
+</blockquote>
 
 Strong cryptography is great at protecting information from prying eyes, but using cryptography is a matter of risk management rather than finding panaceas. Expecting even encrypted or anonymized information to remain in that state forever, even if likely, is problematic if not only for tricking us into cultivating bad habits and being too risky with where we let our minds and actions take us. Unencrypted communication is like sending a postcard, as Phil Zimmermann described it, completely readable to anyone it passes.
 
@@ -56,9 +61,10 @@ A solution to this is to aim to be virtuous in thought and action in the first p
 
 ### On Friendships and Trust
 
-> \[I\]f you consider any man a friend whom you do not trust as you trust yourself, you are mightily mistaken and you do not sufficiently understand what true friendship means. Indeed, I would have you discuss everything with a friend; but first of all discuss the man himself. When friendship is settled, you must trust; before friendship is formed, you must pass judgment. Those persons indeed put last first and confound their duties, who, violating the rules of Theophrastus, judge a man after they have made him their friend, instead of making him their friend after they have judged him. Ponder for a long time whether you shall admit a given person to your friendship; but when you have decided to admit him, welcome him with all your heart and soul. Speak as boldly with him as with yourself.
->
-> <footer>Seneca, [“On True and False Friendship”](https://en.wikisource.org/wiki/Moral_letters_to_Lucilius/Letter_3)</footer>
+<blockquote class="blockquote">
+  <p>[I]f you consider any man a friend whom you do not trust as you trust yourself, you are mightily mistaken and you do not sufficiently understand what true friendship means. Indeed, I would have you discuss everything with a friend; but first of all discuss the man himself. When friendship is settled, you must trust; before friendship is formed, you must pass judgment. Those persons indeed put last first and confound their duties, who, violating the rules of Theophrastus, judge a man after they have made him their friend, instead of making him their friend after they have judged him. Ponder for a long time whether you shall admit a given person to your friendship; but when you have decided to admit him, welcome him with all your heart and soul. Speak as boldly with him as with yourself.</p>
+  <footer class="blockquote-footer">Seneca, [“On True and False Friendship”](https://en.wikisource.org/wiki/Moral_letters_to_Lucilius/Letter_3)</footer>
+</blockquote>
 
 As I said above, [strong cryptography is not a panacea](/mempool/bitcoin-is-great-but-it-wont-fix-our-monkey-brains/). Even the strongest end-to-end encryption does not protect you from information leaking from the other end. It is therefore important to know and trust who you are communicating, both on virtue and on security capabilities. To trust in cryptographic communication should be to have confidence in your peer and to understand their vulnerabilities. Nice people can be hacked, too.
 
