@@ -44,7 +44,6 @@ Merchants have absolutely every reason to accept Bitcoin. BitPay recently remove
 So merchants are in a good position. They can save money on their business, and they can try to purchase bitcoins with retail goods, just as many purchase them with dollars or euros. If I were a merchant, I would most certainly encourage people to shop at my store in Bitcoin. I might even try to convince them, despite its fallacious economic reasoning, that spending bitcoins at my store is actually good for Bitcoin—certainly more than you saving and speculating on them. After all, “it could become worthless overnight” and “Its future depends on it” (because I say so). I might even say things like:
 
 > [My] shoppers are among the first wave of Bitcoin users and we’re thrilled to accept the cryptocurrency as a form of payment. Just like you, we also believe Bitcoin can be the future of digital currency. But if you’ve been saving it and hoping it will make you rich one day, you’re better off spending it if you want it to succeed.
-{: .blockquote}
 
 By me, I mean Newegg. Their recent blog post is called, [“Why Saving Your Bitcoin is Not a Good Idea”](http://blog.newegg.com/saving-bitcoin-good-idea/). The reason? It means you aren’t spending at Newegg.
 

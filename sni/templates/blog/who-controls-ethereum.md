@@ -33,7 +33,6 @@ It is helpful to think of Ethereum as being both ETH and ETC together rather tha
 The conflict between ETC and ETH is about whether the devs can neuter their own creature in order to protect themselves from it. It is not about fixing a bug or about whether the DAO hacker deserves to keep his money. It is about whether the developers exist for the benefit of Ethereum, or Ethereum for the benefit of the developers. I want to draw the reader’s attention to a quote [from Emin Gün Sirer](http://hackingdistributed.com/2016/06/17/thoughts-on-the-dao-hack/#what-s-a-hack-when-you-don-t-have-a-spec) which I also used in my previous article on Ethereum:
 
 > Had the attacker lost money by mistake, I am sure the devs would have had no difficulty appropriating his funds and saying “this is what happens in the brave new world of programmatic money flows.”
-{: .blockquote}
 
 In other words, if the developers have the ability rewrite history in order to fix bugs in any random script that someone uploads, then they have a level of discretion over what Ethereum does. For any bug that might happen in the future, they might well give many reasons not to fix it. They might say that it is not severe enough to risk a hard fork. They might say that it is not their responsibility to patch up every contract that was written incorrectly. Or they might be nice and agree to rewrite history for someone important enough. It is also not always objective that any behavior which a program exhibits actually is a bug. If the developers could have provided plausible arguments either way, then they can manipulate the system to their own benefit.
 
@@ -59,7 +58,6 @@ The process will tend to benefit the Bitcoin network because investors will gain
 [^1]: I noticed the page setting forth the terms of the DAO has disappeared and I had to link to it through the Wayback Machine. If I wrote something like this, I’d be embarrassed too, but jeez guys, don’t make the _1984_ comparisons so easy. Let me just quote the opening paragraph in full so that people don’t forget:
 
     > The terms of The DAO Creation are set forth in the smart contract code existing on the Ethereum blockchain at 0xbb9bc244d798123fde783fcc1c72d3bb8c189413. Nothing in this explanation of terms or in any other document or communication may modify or add any additional obligations or guarantees beyond those set forth in The DAO’s code. Any and all explanatory terms or descriptions are merely offered for educational purposes and do not supercede or modify the express terms of The DAO’s code set forth on the blockchain; to the extent you believe there to be any conflict or discrepancy between the descriptions offered here and the functionality of The DAO’s code at 0xbb9bc244d798123fde783fcc1c72d3bb8c189413, The DAO’s code controls and sets forth all terms of The DAO Creation.
-    {: .blockquote}
 
     This is why the DAO exploit was legal. If a bunch of computer code is a contract and there’s nothing else to explain what it is intended to do, then you can’t just point to some behavior it exhibits and pretend it never happened just because you call it a bug.
 

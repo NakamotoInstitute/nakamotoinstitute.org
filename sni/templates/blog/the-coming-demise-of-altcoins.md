@@ -1,15 +1,13 @@
 image: wanderer-sea-of-fog.jpg
 image_alt: Wanderer Sea of Fog
 
-<blockquote class="blockquote">
-  <p>O my brethren, am I then cruel? But I say: What falleth, that shall one also push!<br>
-  Everything of to-day—it falleth, it decayeth; who would preserve it! But I—I wish also to push it!<br>
-  Know ye the delight which rolleth stones into precipitous depths?—Those men of to-day, see just how they roll into my depths!<br>
-  A prelude am I to better players, O my brethren! An example! DO according to mine example!<br>
-  And him whom ye do not teach to fly, teach I pray you—TO FALL FASTER!—</p>
-  <footer class="blockquote-footer">Friedrich Nietzsche, <a href="http://www.gutenberg.org/ebooks/1998" target="\_blank"><em>Thus Spake Zarathustra</em> </a>
-  </footer>
-</blockquote>
+> O my brethren, am I then cruel? But I say: What falleth, that shall one also push!  
+> Everything of to-day—it falleth, it decayeth; who would preserve it! But I—I wish also to push it!  
+> Know ye the delight which rolleth stones into precipitous depths?—Those men of to-day, see just how they roll into my depths!  
+> A prelude am I to better players, O my brethren! An example! DO according to mine example!  
+> And him whom ye do not teach to fly, teach I pray you—TO FALL FASTER!—
+>
+> <footer class="blockquote-footer">Friedrich Nietzsche, [_Thus Spake Zarathustra_](http://www.gutenberg.org/ebooks/1998)</footer>
 
 ## Introduction
 
@@ -52,12 +50,10 @@ A new altcoin cannot survive with only a fraction of the cryptocurrency pie. It 
 The above discussion explains why [Vitalik Buterin’s objection](http://bitcoinmagazine.com/6926/in-defense-of-alternative-cryptocurrencies/) to my earlier article completely misses the point. He first downplays the network effect for currencies on the basis of switching costs.
 
 > Making the switch from fiat currency to Bitcoin is quite difficult, and creating bridge services that work between the two is a multi-million dollar affair involving placating established banking partners and complying with a large body of regulation. The path from one cryptocurrency to another is much simpler. Anyone can set up an anonymous exchange over Tor, and it may even be possible to make trust-free decentralized exchanges between currencies using Bitcoin’s underlying cryptography directly.
-{: .blockquote}
 
 He then argues that merchants can easily accept as many cryptocurrencies as they wish.
 
 > For a merchant accepting Bitcoin, if alternative currencies gather any popularity at all then switching to Litecoin or Primecoin will be a simple matter of downloading a patch. It is even possible for a merchant to accept every cryptocurrency at the same time.
-{: .blockquote}
 
 These arguments entirely misconstrue the nature of the network effect for currencies. Merchants are totally irrelevant and so is anyone who uses the coins only for the purpose of transferring funds. What matters are the investors, the people who hold the coins long-term. For them, there is an enormous difference between the different coins, and switching costs are largely irrelevant. Investors will prefer to hold the coin that has the best prospects, thereby necessarily improving it relative to its competitors.
 

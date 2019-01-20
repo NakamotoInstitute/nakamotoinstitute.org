@@ -28,10 +28,9 @@ Algunas de las críticas mencionadas son correctas, si bien auténticos [non seq
 
 ## La ley de Thier: el buen dinero desaloja al mal dinero
 
-<blockquote class="blockquote">
-  <p>Históricamente han sido buenas monedas las que han desalojado a las monedas malas y débiles. Durante milenios, las monedas fuertes han dominado y expulsado a las débiles en todo el mundo. El ‘daric’ persa, el ‘tetradracma’ griego, el ‘stater’ macedonio y el denario romano no se conviertieron en monedas dominantes en el pasado porque fuesen “malas” o “débiles”. Los florines, ducados y cequís de las ciudades-estado italianas no se conviertieron en “dólares de la edad media” porque fuesen malos; eran unas de las mejores monedas jamás acuñadas. La libra esterlina en el siglo XIX y el dólar en el siglo XX no se convirtieron en el dinero dominante de su tiempo porque fuesen débiles. Consistencia, estabilidad y alta calidad han sido siempre los atributos de las grandes monedas que han ganado la competencia para su uso como dinero internacional.</p>
-  <footer class="blockquote-footer"><a href="http://en.wikipedia.org/wiki/Robert_Mundell">Robert Mundell</a>, <a href="http://www.columbia.edu/~ram15/grash.html">"Uses and Abuses of Gresham's Law in the History of Money"</a></footer>
-</blockquote>
+> Históricamente han sido buenas monedas las que han desalojado a las monedas malas y débiles. Durante milenios, las monedas fuertes han dominado y expulsado a las débiles en todo el mundo. El ‘daric’ persa, el ‘tetradracma’ griego, el ‘stater’ macedonio y el denario romano no se conviertieron en monedas dominantes en el pasado porque fuesen “malas” o “débiles”. Los florines, ducados y cequís de las ciudades-estado italianas no se conviertieron en “dólares de la edad media” porque fuesen malos; eran unas de las mejores monedas jamás acuñadas. La libra esterlina en el siglo XIX y el dólar en el siglo XX no se convirtieron en el dinero dominante de su tiempo porque fuesen débiles. Consistencia, estabilidad y alta calidad han sido siempre los atributos de las grandes monedas que han ganado la competencia para su uso como dinero internacional.
+>
+> <footer class="blockquote-footer">[Robert Mundell](http://en.wikipedia.org/wiki/Robert_Mundell), ["Uses and Abuses of Gresham's Law in the History of Money"](http://www.columbia.edu/~ram15/grash.html)</footer>
 
 Bitcoin no es sólo buen dinero; es el mejor dinero.[^5] TLa red Bitcoin tiene la mejor política monetaria[^6] y la mejor marca.[^7] Deberíamos entonces esperar que los bitcoins desalojen a las monedas malas y débiles.[^8] ¿Según qué proceso Bitcoin se convertirá en el dinero dominante? ¿Qué monedas fiduciarias serán las primeras en desaparecer? Estas son las preguntas interesantes del momento, puesto que las premisas subyacentes a estas preguntas ya son verdades establecidas.[^9]
 
@@ -55,10 +54,9 @@ Mi predicción es que el sangrado lento ha estado [acelerándose](http://www.goo
 
 ## 2\. Crisis monetarias
 
-<blockquote class="blockquote">
-  <p>Puede que tenga sentido comprar algunos por si \[Bitcoin\] se hace popular. Si suficientes personas piensan igual, se convierte en una profecía autocumplida. Una vez salga a flote son muchísimas las aplicaciones posibles si resulta que puedes pagar un par de centavos a un sitio web con tanta facilidad como metes monedas en una máquina expendedora.</p>
-  <footer class="blockquote-footer">[Satoshi Nakamoto](http://satoshi.nakamotoinstitute.org/emails/cryptography/17/), 17/1/2009</footer>
-</blockquote>
+> Puede que tenga sentido comprar algunos por si \[Bitcoin\] se hace popular. Si suficientes personas piensan igual, se convierte en una profecía autocumplida. Una vez salga a flote son muchísimas las aplicaciones posibles si resulta que puedes pagar un par de centavos a un sitio web con tanta facilidad como metes monedas en una máquina expendedora.</p>
+>
+> <footer class="blockquote-footer">[Satoshi Nakamoto](http://satoshi.nakamotoinstitute.org/emails/cryptography/17/), 17/1/2009</footer>
 
 El sangrado lento de dinero fiat conduce a la crisis monetaria toda vez que el valor esperado del bitcoin se solidifica en las mentes de la gente. Al principio son conservadores e invierten “lo que pueden permitirse perder”. Después de 12-18 meses encuentran que su pequeño alijo de bitcoins ha incrementado su valor dramáticamente. No ven cómo esta tendencia iría a invertirse: las bases siguen fortaleciéndose y, sin embargo, la adopción sigue siendo baja. Su confianza se incrementa; compran más bitcoins. Lo racionalizan: “Bueno, sólo es 1-5% de mis inversiones”. Ven el precio estrellarse varias veces, debido a burbujas que estallan o a ventas inducidas por pánico; esto les incita a comprar más – “una ganga”. Bitcoin crece en el lado de los activos de su balance.
 

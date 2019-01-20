@@ -9,17 +9,17 @@ Cypherpunk movement started as a mailing list in 1992. In 1993 Eric Hughes publi
 
 Here’s an excerpt from the FAQ:
 
-<blockquote class="blockquote">
-  <p>2.3. “What’s the ‘Big Picture’?”</p>
-  <p>Strong crypto is here. It is widely available. It implies many changes in the way the world works. Private channels between parties who have never met and who never will meet are possible. Totally anonymous, unsinkable, untraceable communications and exchanges are possible.</p>
-  <p>Transactions can only be voluntary, since the parties are untraceable and unknown and can withdraw at any time. This has profound implications for the conventional approach of using the threat of force, directed against parties by governments or by others. In particular, threats of force will fail.</p>
-  <p>What emerges from this is unclear, but I think it will be a form of anarcho-capitalist market system I call “crypto anarchy.” (Voluntary communications only, with no third parties butting in.)</p>
-</blockquote>
+> 2.3. “What’s the ‘Big Picture’?”
+>
+> Strong crypto is here. It is widely available. It implies many changes in the way the world works. Private channels between parties who have never met and who never will meet are possible. Totally anonymous, unsinkable, untraceable communications and exchanges are possible.
+>
+> Transactions can only be voluntary, since the parties are untraceable and unknown and can withdraw at any time. This has profound implications for the conventional approach of using the threat of force, directed against parties by governments or by others. In particular, threats of force will fail.
+>
+> What emerges from this is unclear, but I think it will be a form of anarcho-capitalist market system I call “crypto anarchy.” (Voluntary communications only, with no third parties butting in.)
 
 In 1998 Wei Dai publishes a proposal of [“b-money”](/b-money/), a practical way to enforce contractual agreements between anonymous actors. He captured the essence of the movement in an immortal quote:
 
 > I am fascinated by Tim May’s crypto-anarchy. Unlike the communities traditionally associated with the word “anarchy”, in a crypto-anarchy the government is not temporarily destroyed but permanently forbidden and permanently unnecessary. It’s a community where the threat of violence is impotent because violence is impossible, and violence is impossible because its participants cannot be linked to their true names or physical locations.
-{: .blockquote}
 
 In 2005 Nick Szabo publishes a proposal for [“Bit gold”](/bit-gold/), a purely digital collectible based on a proof-of-work algorithm borrowing ideas from [RPOW server](/finney/rpow/) (“Reusable proof of work”) by Hal Finney. Proposal does not mention contract enforcement mechanism, but Nick Szabo himself already proposed several [ideas about smart contracts](http://www.fon.hum.uva.nl/rob/Courses/InformationInSpeech/CDROM/Literature/LOTwinterschool2006/szabo.best.vwh.net/idea.html) back in the nineties.
 
