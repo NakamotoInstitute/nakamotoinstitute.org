@@ -10,7 +10,7 @@ from sni.models import Post, Email, Doc, ResearchDoc, Author, Format, \
                    Category, BlogPost, Skeptic, Episode, Quote, \
                    QuoteCategory, EmailThread, ForumThread
 from flask import render_template, json, url_for, redirect, request, Response,\
-                  send_from_directory
+                  send_from_directory, escape
 from pytz import timezone
 from sqlalchemy import asc, desc
 from werkzeug.contrib.atom import AtomFeed
@@ -543,7 +543,8 @@ def atomfeed():
     articles = BlogPost.query.order_by(desc(BlogPost.added)).all()
     for article in articles:
         articleurl = url_for('blogpost', slug=article.slug, _external=True)
-        content = article.excerpt + "<br><br><a href='"+articleurl+"'>Read more...</a>"
+        page = pages.get(article.slug)
+        content = escape(page.html)
         feed.add(article.title, content,
                  content_type='html',
                  author=article.author[0].first + ' ' + article.author[0].last,
