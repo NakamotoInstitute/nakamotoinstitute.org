@@ -97,7 +97,7 @@ Read in [English]({{url_for('blogpost', slug='speculative-attack')}}) and [Russi
 
 [^3]: ביטקוין עכשיו ב[ספטמבר שלא נגמר] (https://he.wikipedia.org/wiki/%D7%A1%D7%A4%D7%98%D7%9E%D7%91%D7%A8_%D7%A9%D7%9C%D7%90_%D7%A0%D7%92%D7%9E%D7%A8) כאשר כל אדם חדש שנחשף לביטקוין חושב שיש לו הבנה ייחודית של ביטקוין ושכולם צריכים לשמוע אותה. יש שטף בלתי פוסק של ניובים ש'דואגים' מפני 'בעיה' כזו או אחרת עם ביטקוין. קהילת הביטקוין עושה טעות כשהיא מתייחסת למגיעים החדשים האלה ברצינות במקום פשוט להגיד להם 'קרא המשך'.
 
-[^4]: [Bitcoin is the Best Unit of Account] (/mempool/bitcoin-is-the-best-unit-of-account) by Daniel Krawisz
+[^4]: [Bitcoin is the Best Unit of Account](/mempool/bitcoin-is-the-best-unit-of-account) by Daniel Krawisz
 
 [^5]: [The Bitcoin Central Bank’s Perfect Monetary Policy](/mempool/the-bitcoin-central-banks-perfect-monetary-policy/) by Pierre Rochard
 
