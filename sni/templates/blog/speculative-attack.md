@@ -84,7 +84,7 @@ Bitcoin will become mainstream. The Bitcoin skeptics don't understand this due t
 
 * * *
 
-Read in [Spanish](/mempool/speculative-attack/es/) and [Russian](/mempool/speculative-attack/ru/)
+Read in [Hebrew](/mempool/speculative-attack/he/), [Spanish](/mempool/speculative-attack/es/), and [Russian](/mempool/speculative-attack/ru/)
 
 [^1]: No, seriously, there are people on the Internet spending a non-trivial amount of time writing about a currency they think is going to fail yet continues to succeed beyond anyone's expectations. I get schadenfreude from their lack of schadenfreude. Granted, a few of them are being paid to write controversial click bait and/or just [concern trolling](http://www.urbandictionary.com/define.php?term=concern+troll) – both activities that I respect and understand.
 

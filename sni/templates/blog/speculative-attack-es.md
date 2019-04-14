@@ -86,7 +86,7 @@ Bitcoin se convertirá en una moneda dominante. Los escépticos no entienden est
 
 [Traducción](http://elbitcoin.org/ataque-especulativo-como-triunfa-el-buen-dinero/) por Majamalu de [ElBitcoin.org](http://elbitcoin.org/)
 
-Read in [English]({{url_for('blogpost', slug='speculative-attack')}}) and [Russian]({{url_for('blogposttrans', slug='speculative-attack', lang='ru')}})
+Read in [English](/mempool/speculative-attack/), [Hebrew](/mempool/speculative-attack/he/), and [Russian](/mempool/speculative-attack/ru/)
 
 [^1]: ¡En serio! Hay gente en internet que pasa un tiempo nada despreciable escribiendo sobre una moneda que creen que va a fallar, y que sin embargo continúa sobrepasando todas las expectativas. Su alegría malsana me da alegría malsana. Concedido, a algunos de ellos les pagan para escribir cebos de clics controversiales y/o [trolling disfrazado](http://www.urbandictionary.com/define.php?term=concern+troll) de “preocupación” – ambas actividades que respeto y entiendo.
 
