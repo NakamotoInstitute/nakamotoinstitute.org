@@ -108,4 +108,4 @@ image_alt: Джокер демонетизирует доллар
 
 Translation by [Ekaterina Tarasova](http://blockchainwriter.tilda.ws) of [BitNovosti](https://bitnovosti.com/2014/08/31/kak-ruhnet-koloss/)
 
-Read in [English](/mempool/speculative-attack/) and [Spanish](/mempool/speculative-attack/es/)
+Read in [English](/mempool/speculative-attack/), [Hebrew](/mempool/speculative-attack/he/), and [Spanish](/mempool/speculative-attack/es/)

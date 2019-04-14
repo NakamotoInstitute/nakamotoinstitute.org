@@ -528,7 +528,7 @@ def blogposttrans(slug, lang):
             app.logger.info(str(request.remote_addr) + ', mempool, ' + slug+'-' + lang)
             page = pages.get('%s-%s' % (slug, lang))
             rtl = False
-            if lang in ['ar', 'fa']:
+            if lang in ['ar', 'fa', 'he']:
                 rtl = True
             return render_template('blogpost.html', bp=bp, page=page, lang=lang, rtl=rtl)
     else:
