@@ -1660,5 +1660,24 @@
     ],
     "doctype": "book",
     "external": "http://daviddfriedman.com/"
+  },
+  {
+    "id": 94,
+    "title": "Proplets: Devices for Controlling Property",
+    "author": [
+      "nick-szabo"
+    ],
+    "date": "2001",
+    "slug": "proplets-devices-for-controlling-property",
+    "formats": [
+      "html",
+      "ext"
+    ],
+    "categories": [
+      "cryptography",
+      "property"
+    ],
+    "doctype": "essay",
+    "external": "http://web.archive.org/web/20160806221938/http://szabo.best.vwh.net/proplets.html"
   }
 ]
