@@ -21,8 +21,8 @@ The Memory Pool | Satoshi Nakamoto Institute
     <a href="{{url_for('blogpost', slug=bp.slug)}}">{% if bp.series %}Chapter {{bp.series_index}}: {% endif %}{{bp.title}}</a>
   </h4>
   <p class="text-muted">
-    <a href="{{url_for('author', authslug=bp['author'][0].slug)}}">{{bp.author[0].first}} {{bp.author[0].middle}} {{bp.author[0].last}}</a> - {{bp.added.strftime('%B %d, %Y')}}
-      {% if bp.date != bp.added %}(Originally published {{bp.date.strftime('%B %d, %Y')}}){% endif %}
+    <a href="{{url_for('author', authslug=bp['author'][0].slug)}}">{{bp.author[0].first}} {{bp.author[0].middle}} {{bp.author[0].last}}</a> - {{bp.added.strftime('%B %-d, %Y')}}
+      {% if bp.date != bp.added %}(Originally published {{bp.date.strftime('%B %-d, %Y')}}){% endif %}
   </p>
     <p>
       {{bp.excerpt}}
