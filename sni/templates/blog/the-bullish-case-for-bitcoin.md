@@ -1,3 +1,5 @@
+original_link: https://medium.com/@vijayboyapati/the-bullish-case-for-bitcoin-6ecc8bdecc1
+original_site: Vijay Boyapati's Medium blog
 
 With the price of a bitcoin surging to new highs in 2017, the bullish case for investors might seem so obvious it does not need stating. Alternatively it may seem foolish to invest in a digital asset that isn’t backed by any commodity or government and whose price rise has prompted some to compare it to the tulip mania or the dot-com bubble. Neither is true; the bullish case for Bitcoin is compelling but far from obvious. There are significant risks to investing in Bitcoin, but, as I will argue, there is still an immense opportunity.
 
