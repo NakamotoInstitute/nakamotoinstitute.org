@@ -289,6 +289,8 @@ class Skeptic(db.Model):
     excerpt = db.Column(db.String())
     price = db.Column(db.String())
     link = db.Column(db.String())
+    twitter_embed = db.Column(db.String())
+    twitter_screenshot = db.Column(db.Boolean)
     waybacklink = db.Column(db.String())
     slug = db.Column(db.String())
 

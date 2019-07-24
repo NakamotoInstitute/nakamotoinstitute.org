@@ -18,9 +18,13 @@ The Skeptics: A Tribute to Bold Assertions | Satoshi Nakamoto Institute
     <h3 id="{{skeptic.slug}}"><a class="mx-3" href="#{{skeptic.slug}}"><i class="fas fa-link fa-sm"></i></a>{{skeptic.name}} - {{skeptic.date.strftime('%B %d, %Y')}} ({{skeptic.price}})</h3>
     <p><em>{{skeptic.title}}</em></p>
     {% if skeptic.source == "Twitter" %}
+      {% if skeptic.twitter_embed %}
+      {{skeptic.twitter_embed|safe}}
+      {% elif skeptic.twitter_screenshot %}
       <div class="text-center">
         <img class="img-fluid d-block mx-auto" src="/static/img/the-skeptics/{{skeptic.slug}}.jpg">
       </div>
+      {% endif %}
       <ul>
         {% for link in skeptic.link.split(", ") %}
           <li><a href="{{link}}" target="_blank">{{link}}</a></li>
@@ -28,16 +32,16 @@ The Skeptics: A Tribute to Bold Assertions | Satoshi Nakamoto Institute
       </ul>
     {% else %}
       <h4><a href="{{skeptic.link}}" target="_blank">{{skeptic.article}}</a> (<em>{{skeptic.source}}</em>)</h4>
-      {% if skeptic.excerpt %}
-      <p>
-        <em>{{skeptic.excerpt|safe}}</em><br>
-      </p>
-      {% endif %}
-      {% if skeptic.waybacklink %}
-      <p>
-        <a href="{{skeptic.waybacklink}}" target="_blank">Archive Link</a>
-      </p>
-      {% endif %}
+    {% endif %}
+    {% if skeptic.excerpt %}
+    <p>
+      <em>{{skeptic.excerpt|safe}}</em><br>
+    </p>
+    {% endif %}
+    {% if skeptic.waybacklink %}
+    <p>
+      <a href="{{skeptic.waybacklink}}" target="_blank">Archive Link</a>
+    </p>
     {% endif %}
   {% endfor %}
 </div>

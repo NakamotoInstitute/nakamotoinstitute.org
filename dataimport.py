@@ -320,6 +320,14 @@ def import_skeptic():
 
     for i, skeptic in enumerate(skeptics, start=1):
         slug_date = datetime.strftime(parser.parse(skeptic['date']), '%Y-%m-%d')
+        try:
+            twitter_embed = skeptic['twitter_embed']
+        except KeyError:
+            twitter_embed = ''
+        try:
+            twitter_screenshot = skeptic['twitter_screenshot']
+        except KeyError:
+            twitter_screenshot = False
         skeptic = Skeptic(
             id=i,
             name=skeptic['name'],
@@ -331,6 +339,8 @@ def import_skeptic():
             price=skeptic['price'],
             link=skeptic['link'],
             waybacklink=skeptic['waybacklink'],
+            twitter_embed=twitter_embed,
+            twitter_screenshot=twitter_screenshot,
             slug='{}-{}'.format(skeptic['slug'], slug_date)
         )
         db.session.add(skeptic)

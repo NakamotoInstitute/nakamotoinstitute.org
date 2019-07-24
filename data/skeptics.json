@@ -129,6 +129,7 @@
     "price": "$84.46",
     "link": "https://twitter.com/justinwolfers/status/322432361155424259, https://twitter.com/justinwolfers/status/322440315397107712, https://twitter.com/justinwolfers/status/322453007168045057",
     "waybacklink": "",
+		"twitter_screenshot": true,
     "slug": "justin-wolfers"
   },
   {
@@ -153,6 +154,7 @@
     "price": "$214.13",
     "link": "https://twitter.com/el33th4xor/status/397219415025934336, https://twitter.com/el33th4xor/status/397419061019443200, https://twitter.com/el33th4xor/status/397419072658604032",
     "waybacklink": "",
+		"twitter_screenshot": true,
     "slug": "emin-gun-sirer"
   },
 	{
@@ -177,6 +179,7 @@
     "price": "$330.01",
     "link": "https://twitter.com/kevinrose/status/398865551730036736",
     "waybacklink": "",
+		"twitter_screenshot": true,
     "slug": "kevin-rose"
 	},
 	{
@@ -345,6 +348,7 @@
     "price": "$637.38",
     "link": "https://twitter.com/Nouriel/statuses/442721938054868992, https://twitter.com/Nouriel/statuses/442723134693969920, https://twitter.com/Nouriel/statuses/442724222239277057, https://twitter.com/Nouriel/statuses/442725037289005056, https://twitter.com/Nouriel/statuses/442725510423248897, https://twitter.com/Nouriel/statuses/442754188192538624",
     "waybacklink": "",
+		"twitter_screenshot": true,
     "slug": "nouriel-roubini"
   },
   {
@@ -502,5 +506,18 @@
 		"link": "https://www.pbs.org/newshour/economy/making-sense/why-a-nobel-laureate-in-economics-thinks-bitcoin-is-toast",
 		"waybacklink": "https://web.archive.org/web/20181129111135/https://www.pbs.org/newshour/economy/making-sense/why-a-nobel-laureate-in-economics-thinks-bitcoin-is-toast",
 		"slug": "robert-c-merton"
-	}
+	},
+	{
+    "name": "Steven Mnuchin",
+    "title": "United States Secretary of the Treasury",
+    "article": "",
+    "date": "July 24, 2019",
+    "source": "Twitter",
+    "excerpt": "I won't be talking about Bitcoin in 10 years, I can assure you that. […] I would bet in even 5 or 6 years I'm no longer talking about Bitcoin as Treasury Secretary. […] I can assure you I will personally not be loaded up on Bitcoin.",
+    "price": "$9,725.66",
+    "link": "https://twitter.com/SquawkCNBC/status/1154004308947591168",
+    "waybacklink": "https://archive.org/details/squawkboxmbitcoin10yearsmnuchin",
+		"twitter_embed": "<blockquote class=\"twitter-tweet tw-align-center\" data-dnt=\"true\"><p lang=\"en\" dir=\"ltr\">&quot;I can assure you I will personally not be loaded up on bitcoin&quot; in 10 years, says Treasury Secretary Mnuchin <a href=\"https://twitter.com/hashtag/bitcoin?src=hash&amp;ref_src=twsrc%5Etfw\">#bitcoin</a> <a href=\"https://t.co/0J5acWQwRO\">pic.twitter.com/0J5acWQwRO</a></p>&mdash; Squawk Box (@SquawkCNBC) <a href=\"https://twitter.com/SquawkCNBC/status/1154004308947591168?ref_src=twsrc%5Etfw\">July 24, 2019</a></blockquote> <script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script> ",
+    "slug": "steven-mnuchin"
+  }
 ]
