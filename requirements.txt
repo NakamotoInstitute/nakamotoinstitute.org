@@ -24,4 +24,4 @@ PyYAML==3.13
 six==1.5.2
 SQLAlchemy==0.9.3
 webassets==0.12.1
-Werkzeug==0.14.1
+Werkzeug==0.15.3
