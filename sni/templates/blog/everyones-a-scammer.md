@@ -135,6 +135,6 @@ _"Scammer" is a heuristic, not an accusation._
 
 ***
 
-Read in [Spanish](/mempool/everyones-a-scammer/es/)
+Read in [German](/mempool/everyones-a-scammer/de/) and [Spanish](/mempool/everyones-a-scammer/es/)
 
 [^1]: Revised October 7, 2014 - Added a paragraph describing inability to discern Bitcoin skepticism from hoarding psyop.
