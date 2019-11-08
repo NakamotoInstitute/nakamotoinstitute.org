@@ -316,8 +316,8 @@ def import_blog_post():
             date=parser.parse(bp['date']),
             added=parser.parse(bp['added']),
             slug=bp['slug'],
-            excerpt=bp['excerpt'],
-            languages=bp['languages'])
+            excerpt=bp['excerpt']
+        )
         try:
             blogpost.series = get(BlogSeries, slug=bp['series'])
             blogpost.series_index = bp['series_index']
@@ -325,6 +325,13 @@ def import_blog_post():
             pass
         db.session.add(blogpost)
         db.session.commit()
+        for lang in bp['languages']:
+            blog_translation = BlogPostTranslation(
+                language=get(Language, ietf=lang)
+            )
+            blogpost.translations.append(blog_translation)
+            db.session.add(blogpost)
+            db.session.commit()
     click.echo(DONE)
 
 

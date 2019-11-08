@@ -11,6 +11,7 @@ class Language(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String())
     ietf = db.Column(db.String())
+    blog_posts = db.relationship("BlogPostTranslation", back_populates="language")
 
     def __repr__(self):
         return '<Language %r>' % (self.ietf)
@@ -257,6 +258,19 @@ class ResearchDoc(db.Model):
         return get_authors_string(self)
 
 
+class BlogPostTranslation(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    blog_post_id = db.Column(db.Integer, db.ForeignKey('blog_post.id'))
+    language_id = db.Column(db.Integer, db.ForeignKey('language.id'))
+    blog_post = db.relationship("BlogPost", back_populates="translations")
+    language = db.relationship("Language", back_populates="blog_posts")
+    name = db.Column(db.String())
+    url = db.Column(db.String())
+
+    def __repr__(self):
+        return '<BlogPostTranslation {} - {}>'.format(self.blog_post.slug, self.language.ietf)
+
+
 class BlogPost(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String())
@@ -267,7 +281,7 @@ class BlogPost(db.Model):
     added = db.Column(db.Date)
     slug = db.Column(db.String())
     excerpt = db.Column(db.String())
-    languages = db.Column(db.String())
+    translations = db.relationship("BlogPostTranslation", back_populates="blog_post")
     series_id = db.Column(db.Integer, db.ForeignKey('blog_series.id'))
     series_index = db.Column(db.Integer)
 

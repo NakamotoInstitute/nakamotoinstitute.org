@@ -6,7 +6,7 @@
 #
 
 from sni import app, db, cache, pages
-from sni.models import Post, Email, Doc, ResearchDoc, Author, Format, \
+from sni.models import Language, Post, Email, Doc, ResearchDoc, Author, Format, \
                    Category, BlogPost, Skeptic, Episode, Quote, \
                    QuoteCategory, EmailThread, ForumThread
 from flask import render_template, json, url_for, redirect, request, Response,\
@@ -505,10 +505,11 @@ def blogpost(slug):
     if slug == "appcoins-are-fraudulent":
         return redirect(url_for("blogpost", slug="appcoins-are-snake-oil"))
     bp = BlogPost.query.filter_by(slug=slug).order_by(desc(BlogPost.date)).first()
+    lang = Language.query.filter_by(ietf="en").first()
     if bp:
         app.logger.info(str(request.remote_addr) + ', mempool, ' + slug)
         page = pages.get(slug)
-        return render_template('blogpost.html', bp=bp, page=page, lang='en')
+        return render_template('blogpost.html', bp=bp, page=page, lang=lang)
     else:
         return redirect(url_for("blog"))
 
@@ -519,18 +520,22 @@ def blogposttrans(slug, lang):
     bp = BlogPost.query.filter_by(slug=slug).order_by(
         desc(BlogPost.date)
     ).first()
-    lang = lang.lower()
+    lang_lower = lang.lower()
     if bp is not None:
-        languages = bp.languages.split(', ')
-        if(lang == 'en' or all(lang != l for l in languages)):
+        if lang_lower == 'en':
+            return redirect(url_for("blogpost", slug=slug))
+        elif lang != lang_lower:
+            return redirect(url_for("blogposttrans", slug=slug, lang=lang_lower))
+        post_lang = Language.query.filter_by(ietf=lang_lower).first()
+        if post_lang not in [translation.language for translation in bp.translations]:
             return redirect(url_for("blogpost", slug=slug))
         else:
-            app.logger.info(str(request.remote_addr) + ', mempool, ' + slug+'-' + lang)
+            app.logger.info(str(request.remote_addr) + ', mempool, ' + slug + '-' + lang_lower)
             page = pages.get('%s-%s' % (slug, lang))
             rtl = False
             if lang in ['ar', 'fa', 'he']:
                 rtl = True
-            return render_template('blogpost.html', bp=bp, page=page, lang=lang, rtl=rtl)
+            return render_template('blogpost.html', bp=bp, page=page, lang=post_lang, rtl=rtl)
     else:
         return redirect(url_for("blog"))
 

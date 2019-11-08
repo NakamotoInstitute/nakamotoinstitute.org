@@ -27,12 +27,11 @@ The Memory Pool | Satoshi Nakamoto Institute
     <p>
       {{bp.excerpt}}
     </p>
-    {% set langs = bp.languages.split(',') %}
-    {% if langs|length > 1 %}
+    {% if bp.translations|length > 1 %}
     <p>
       Also available in:
-      {% for l in langs[1:] %}
-        <a href="{{url_for('blogposttrans', slug=bp.slug, lang=l.strip())}}">{{l}}</a>{% if not loop.last %},{% endif %}
+      {% for t in bp.translations[1:] %}
+        <a href="{{url_for('blogposttrans', slug=bp.slug, lang=t.language.ietf)}}">{{t.language.ietf}}</a>{% if not loop.last %},{% endif %}
       {% endfor %}
     </p>
     {% endif %}
