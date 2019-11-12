@@ -258,10 +258,20 @@ class ResearchDoc(db.Model):
         return get_authors_string(self)
 
 
+blog_post_translators = db.Table(
+    'blog_post_translators',
+    db.Column('translator_id', db.Integer, db.ForeignKey('translator.id')),
+    db.Column('blog_post_translation_id', db.Integer, db.ForeignKey('blog_post_translation.id')))
+
+
 class Translator(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String())
     url = db.Column(db.String())
+    blog_posts = db.relationship(
+        "BlogPostTranslation",
+        secondary=blog_post_translators,
+        back_populates="translators")
 
     def __repr__(self):
         return '<Translator {}>'.format(self.name)
@@ -275,7 +285,10 @@ class BlogPostTranslation(db.Model):
     language = db.relationship("Language", back_populates="blog_posts")
     original_url = db.Column(db.String())
     original_publication = db.Column(db.String())
-    translator = db.relationship("Translator", back_populates="blog_posts")
+    translators = db.relationship(
+        "Translator",
+        secondary=blog_post_translators,
+        back_populates="blog_posts")
 
     def __repr__(self):
         return '<BlogPostTranslation {} - {}>'.format(self.blog_post.slug, self.language.ietf)
