@@ -60,6 +60,21 @@ def import_language():
     click.echo(DONE)
 
 
+def import_translator():
+    click.echo('Importing Translator...', nl=False)
+    with open('data/translators.json') as data_file:
+        translators = json.load(data_file)
+
+    for translator in translators:
+        new_translator = Translator(
+            name=translator['name'],
+            url=translator['url']
+        )
+        db.session.add(new_translator)
+        db.session.commit()
+    click.echo(DONE)
+
+
 def import_email_thread():
     click.echo('Importing EmailThread...', nl=False)
     with open('data/threads_emails.json') as data_file:
@@ -325,9 +340,14 @@ def import_blog_post():
             pass
         db.session.add(blogpost)
         db.session.commit()
-        for lang in bp['languages']:
+        for lang in bp['translations']:
+            translators = bp['translations'][lang]
+            dbtranslator = []
+            for translator in translators:
+                dbtranslator += [get(Translator, name=translator)]
             blog_translation = BlogPostTranslation(
-                language=get(Language, ietf=lang)
+                language=get(Language, ietf=lang),
+                translators=dbtranslator,
             )
             blogpost.translations.append(blog_translation)
             db.session.add(blogpost)
@@ -453,6 +473,7 @@ def update(content, skeptic):
     if not content and not skeptic:
         flush_db()
         import_language()
+        import_translator()
         import_email_thread()
         import_email()
         import_forum_thread()
