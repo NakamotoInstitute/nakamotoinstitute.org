@@ -283,8 +283,6 @@ class BlogPostTranslation(db.Model):
     language_id = db.Column(db.Integer, db.ForeignKey('language.id'))
     blog_post = db.relationship("BlogPost", back_populates="translations")
     language = db.relationship("Language", back_populates="blog_posts")
-    original_url = db.Column(db.String())
-    original_publication = db.Column(db.String())
     translators = db.relationship(
         "Translator",
         secondary=blog_post_translators,
