@@ -509,7 +509,8 @@ def blogpost(slug):
     if bp:
         app.logger.info(str(request.remote_addr) + ', mempool, ' + slug)
         page = pages.get(slug)
-        return render_template('blogpost.html', bp=bp, page=page, lang=lang)
+        translations = [translation.language for translation in bp.translations]
+        return render_template('blogpost.html', bp=bp, page=page, lang=lang, translations=translations)
     else:
         return redirect(url_for("blog"))
 
@@ -535,7 +536,13 @@ def blogposttrans(slug, lang):
             rtl = False
             if lang in ['ar', 'fa', 'he']:
                 rtl = True
-            return render_template('blogpost.html', bp=bp, page=page, lang=post_lang, rtl=rtl)
+            translations = [
+                translation.language
+                for translation in bp.translations
+                if translation.language.ietf != lang_lower
+            ]
+            return render_template('blogpost.html', bp=bp, page=page, lang=post_lang, rtl=rtl,
+                                   translations=translations)
     else:
         return redirect(url_for("blog"))
 

@@ -52,5 +52,3 @@ image: uncle-scrooge.jpg
 ***
 
 Translation by <a href="https://keybase.io/ievdokimov">Ilya Evdokimov</a>
-
-Read in [English](/mempool/im-hoarding-bitcoins-and-no-you-cant-have-any/) and [Spanish](/mempool/im-hoarding-bitcoins-and-no-you-cant-have-any/es/)

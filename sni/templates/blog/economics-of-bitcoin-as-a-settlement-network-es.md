@@ -49,5 +49,3 @@ Desde el punto de vista de la capa de la red de liquidaciones, la creciente adop
 ***
 
 [Translation](http://queesbitcoin.es/los-economics-bitcoin-una-red-liquidacion/) by [@acrual](https://twitter.com/acrual)
-
-Read in [English](/mempool/economics-of-bitcoin-as-a-settlement-network/)

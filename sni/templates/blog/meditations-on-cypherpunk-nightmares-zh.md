@@ -67,5 +67,3 @@ _生活在2014年的任何人不仅应该假设他们的秘密将被泄露，还
 * * *
 
 [Translation](http://www.8btc.com/meditations-on-cypherpunk-meditations) by 少平 (Shao-ping) of [8btc.com](http://www.8btc.com/)
-
-Read in [English](/mempool/meditations-on-cypherpunk-nightmares/)

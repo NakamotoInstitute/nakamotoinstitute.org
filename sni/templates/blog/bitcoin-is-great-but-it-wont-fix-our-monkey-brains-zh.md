@@ -47,5 +47,3 @@ I我要指出一点：这种对系统的概览有些粗糙，没有对其中的�
 * * *
 
 [Translation](http://www.8btc.com/bitcoin-is-great-but-it-wont-fix-our-monkey-brains) by 屈爽 (Qu Shuang) of [8btc.com](http://www.8btc.com/)
-
-Read in [English](/mempool/bitcoin-is-great-but-it-wont-fix-our-monkey-brains/)

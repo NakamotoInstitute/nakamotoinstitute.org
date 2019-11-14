@@ -15,5 +15,3 @@ He experimentado un cambio psicológico sutil en los últimos meses. Cuando pago
 * * *
 
 [Translation](http://elbitcoin.org/bitcoin-la-mejor-unidad-de-cuenta/) by Majamalu of [ElBitcoin.org](http://elbitcoin.org/)
-
-Read in [English](/mempool/bitcoin-is-the-best-unit-of-account/)

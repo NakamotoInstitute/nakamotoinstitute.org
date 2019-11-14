@@ -45,5 +45,3 @@ Diagrama de flujo basado en la [publicación](https://bitcointalk.org/index.php?
 * * *
 
 Translation by [bitman](https://twitter.com/0xBitman)
-
-Read in [English](http://nakamotoinstitute.org/mempool/end-the-fed-hoard-bitcoins)

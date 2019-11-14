@@ -42,7 +42,3 @@ Bitcoin was therefore birthed onto fertile ground and was recognized by those th
 ***
 
 Learn more about Ross Ulbricht at [freeross.org](https://freeross.org/). You can sign his petition for clemency [here](https://freeross.org/petition).
-
-***
-
-Read in [Russian](/mempool/bitcoin-equals-freedom/ru/)

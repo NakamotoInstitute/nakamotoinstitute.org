@@ -26,5 +26,9 @@
   {
     "name": "Spanish",
     "ietf": "es"
+  },
+  {
+    "name": "Hebrew",
+    "ietf": "he"
   }
 ]

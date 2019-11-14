@@ -42,5 +42,3 @@ image: godfather-puppet.jpg
 ***
 
 Translation by <a href="https://keybase.io/ievdokimov">Ilya Evdokimov</a>
-
-Read in [English](/mempool/who-controls-bitcoin/)

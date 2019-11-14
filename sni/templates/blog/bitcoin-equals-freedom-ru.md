@@ -47,5 +47,3 @@ Learn more about Ross Ulbricht at [freeross.org](https://freeross.org/). You can
 ***
 
 [Translation](https://medium.com/@Tony_B/%D0%B1%D0%B8%D1%82%D0%BA%D0%BE%D0%B8%D0%BD-%D1%81%D0%B2%D0%BE%D0%B1%D0%BE%D0%B4%D0%B0-d1e06369f258) by [Tony ₿](https://twitter.com/TonyCrusoe)
-
-Read in [English](/mempool/bitcoin-equals-freedom/)

@@ -115,7 +115,3 @@ Everything you read is probably a lie. Keep your signal to noise ratio as high a
 
 * [_Trust Me, I’m Lying_](http://amzn.com/1591846285) by Ryan Holiday
 * [_Fooled by Randomness_](http://amzn.com/0812975219) by Nassim Nicholas Taleb
-
-* * *
-
-Read in [Chinese](/mempool/meditations-on-cypherpunk-nightmares/zh/)

@@ -36,14 +36,3 @@ Hyperbitcoinization will probably be a confusing time for everyone, like a secon
 <p class="text-muted text-center">
 	(Original artwork by the author)
 </p>
-
-Read in [Arabic](/mempool/hyperbitcoinization/ar/), [German](/mempool/hyperbitcoinization/de/), [Persian](/mempool/hyperbitcoinization/fa/), [Russian](/mempool/hyperbitcoinization/ru/) and [Spanish](/mempool/hyperbitcoinization/es/)
-
-<br>
-<div class="text-center">
-    <p>
-        <a href="http://pgp.mit.edu/pks/lookup?op=get&search=0x101BBC10F86C4A64" type="button" class="btn btn-info">
-        Daniel's Public Key
-        </a>
-    </p>
-</div>

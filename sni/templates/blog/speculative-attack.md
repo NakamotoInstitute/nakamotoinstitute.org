@@ -82,10 +82,6 @@ A speculative attack that seems isolated to one or a few weak currencies, but ca
 
 Bitcoin will become mainstream. The Bitcoin skeptics don't understand this due to their biases and lack of financial knowledge. First, they are in as strong an echo chamber as Bitcoiners.[^10] They [rabidly search](http://www.reddit.com/r/buttcoin) for evidence that confirms their view of Bitcoin. Second, they misunderstand how strong currencies like bitcoin overtake weak currencies like the dollar: it is through speculative attacks and currency crises caused by [investors](http://en.wikipedia.org/wiki/George_Soros#Currency_speculation), not through the careful evaluation of tech journalists and 'mainstream consumers'. To honor these soon to be extinct skeptics, the Nakamoto Institute has launched [A Tribute to Bold Assertions](/mempool/the-skeptics/).
 
-* * *
-
-Read in [Hebrew](/mempool/speculative-attack/he/), [Spanish](/mempool/speculative-attack/es/), and [Russian](/mempool/speculative-attack/ru/)
-
 [^1]: No, seriously, there are people on the Internet spending a non-trivial amount of time writing about a currency they think is going to fail yet continues to succeed beyond anyone's expectations. I get schadenfreude from their lack of schadenfreude. Granted, a few of them are being paid to write controversial click bait and/or just [concern trolling](http://www.urbandictionary.com/define.php?term=concern+troll) – both activities that I respect and understand.
 
 [^2]: This is generally stated by people who are in the 'out-group' and fantasize about being in the 'in-group' through politics/pedigree rather than economic/meritocratic processes. Demographically, they probably overlap with fans of [The Secret](http://en.wikipedia.org/wiki/The_Secret_%28book%29). Economically, they are without exception [bezzlers](http://trilema.com/2014/the-bezzle-usd-and-the-tide-usd/#footnote_1_53585).

@@ -139,6 +139,4 @@ La hiperbitcoinización será una fuerza con la cual no se debe jugar. Incluso u
 
 Translation by [Camilo Flores](https://medium.com/@llekn)
 
-Read in [English](/mempool/everyones-a-scammer/) and [German](/mempool/everyones-a-scammer/de/)
-
 [^1]: Revisado el 7 de octubre de 2014 - Agregado un párrafo describiendo la incapacidad de discriminar escepticismo Bitcoin de manipulación psicológica para obtener más.

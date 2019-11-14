@@ -36,7 +36,3 @@ A [Web of Trust](http://wiki.bitcoin-otc.com/wiki/OTC_Rating_System) reputation 
 I should note that this thousand-foot view of the #bitcoin-assets world is hardly adequate to convey its many nuances. For now, the basic presentation is instructive as an example of a community that applies the revolutionary tools of Bitcoin in a manner that plays to the strengths of our human nature. In sacrificing the marginal benefits that pure “decentralization” could provide, IRC Bitcoin investors gain the assurance of tacit personal knowledge and communal reputation management. While it is unclear how this model could scale, it provides a good indicator of trends to come.
 
 Political imperialism locked in our options, political stagnation closes the door to reform. Bitcoin provides us alternatives to compelled trust in monopolies but it can never obviate the need for trusted human connections. Nor can it protect us from our own pesky brain bugs’ ambiguous filters on perceived reality. Trying to supplant our nature with technology is a losing prospect that gets it completely backwards. Early path dependencies look to be converging on a reinvigoration of the status quo, so distributed options currently look like a viable alternative. However, future Bitcoin fortunes will favor proven competency advertised through earned trust. Consider it an upgrade.
-
-* * *
-
-Read in [Chinese](/mempool/bitcoin-is-great-but-it-wont-fix-our-monkey-brains/zh/)

@@ -87,7 +87,3 @@ skeptical. The more people start to compare everything in terms of Bitcoin,
 the more they'll start to demand something that's actually useful. "Yes, but
 is it really going to beat Bitcoin?" is the question everyone should ask first
 about any investment in the Bitcoin world.
-
-***
-
-Read in [Spanish](/mempool/bitcoin-is-the-best-unit-of-account/es/)

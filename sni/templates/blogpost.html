@@ -39,6 +39,8 @@ Chapter {{bp.series_index}}: {{ page.meta.translated_title or bp.title }} | {{ b
 	{% if rtl %}
 	</div>
 	{% endif %}
+	<hr>
+	{{ helpers.print_translation_links(bp, lang, translations) }}
 	<div class="text-center my-4">
 		<a type="button" class="btn btn-light" href="{{url_for('blog')}}">
 			Back to the Memory Pool

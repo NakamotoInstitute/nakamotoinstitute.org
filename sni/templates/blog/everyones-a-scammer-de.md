@@ -139,5 +139,3 @@ _"Scammer" ist eine Heuristik, keine Anschuldigung_
 ***
 
 Translation by [Volker Herminghaus](https://twitter.com/Herminghaus)
-
-Read in [English](/mempool/everyones-a-scammer/) and [Spanish](/mempool/everyones-a-scammer/es/)

@@ -48,9 +48,3 @@ Let out your inner hoarder. Don’t deny your urges. Let him out and come to ter
 Now didn’t that feel good? The Bitcoin economy will thank you in the end!
 
 I conclude with one proviso: it can be very effective to give out small amounts of bitcoins just to help accustom people to having them. However, the reason this is effective is that it helps spread avarice around.
-
-* * *   
-
-Read in [Russian](/mempool/im-hoarding-bitcoins-and-no-you-cant-have-any/ru/) and [Spanish](/mempool/im-hoarding-bitcoins-and-no-you-cant-have-any/es/)
-
-[Italian translation](http://ilporticodipinto.it/content/metto-da-parte-bitcoin-e-no-non-ne-do-nessuno) by Portico Dipinto!

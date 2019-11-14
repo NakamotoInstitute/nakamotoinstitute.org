@@ -40,7 +40,3 @@ If you're interested in getting rid of central banking I would recommend hoardin
 </div>
 
 (Flow chart based on Zangelbert Bingledack's [post](https://bitcointalk.org/index.php?topic=144911.0).)
-
-* * *
-
-Read in [Spanish](http://nakamotoinstitute.org/mempool/end-the-fed-hoard-bitcoins/es/)
