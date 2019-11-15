@@ -510,6 +510,7 @@ def blogpost(slug):
         app.logger.info(str(request.remote_addr) + ', mempool, ' + slug)
         page = pages.get(slug)
         translations = [translation.language for translation in bp.translations]
+        translations.sort(key=lambda x: x.name)
         return render_template('blogpost.html', bp=bp, page=page, lang=lang, translations=translations)
     else:
         return redirect(url_for("blog"))
@@ -538,7 +539,9 @@ def blogposttrans(slug, lang):
                 rtl = True
             translations = [Language.query.get(1)]
             translators = None
-            for translation in bp.translations:
+            bp_translations = bp.translations
+            bp_translations.sort(key=lambda x: x.language.name)
+            for translation in bp_translations:
                 if translation.language.ietf != lang_lower:
                     translations.append(translation.language)
                 else:
