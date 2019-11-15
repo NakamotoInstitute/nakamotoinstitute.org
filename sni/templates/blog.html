@@ -30,8 +30,8 @@ The Memory Pool | Satoshi Nakamoto Institute
     {% if bp.translations|length > 0 %}
     <p>
       Also available in:
-      {% for t in bp.translations %}
-        <a href="{{url_for('blogposttrans', slug=bp.slug, lang=t.language.ietf)}}">{{t.language.ietf}}</a>{% if not loop.last %},{% endif %}
+      {% for t in bp.translations|sort(attribute='language.name') %}
+        <a href="{{url_for('blogposttrans', slug=bp.slug, lang=t.language.ietf)}}">{{t.language.name}}</a>{% if not loop.last %},{% endif %}
       {% endfor %}
     </p>
     {% endif %}
