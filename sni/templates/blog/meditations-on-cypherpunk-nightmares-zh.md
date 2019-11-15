@@ -1,5 +1,8 @@
 translated_title: 对密码朋克梦靥的沉思
 image: landscape-with-the-colosseum-and-the-monument-to-marcus-aurelius.jpg
+translation_url: http://www.8btc.com/meditations-on-cypherpunk-meditations
+translation_publication: 8btc.com
+translation_publication_url: http://www.8btc.com/
 
 > Some things are in our control and others not.
 >
@@ -63,7 +66,3 @@ _生活在2014年的任何人不仅应该假设他们的秘密将被泄露，还
 ## 结论
 
 从来没有像隐私这样的事情。互联网知识使得这一事实明确化。隐私能够和应该被保护，但是它将总不完美。为了保护自己免于加密无政府主义的危险，我们需要完全拥抱它，内化和练习是曾帮助古人度过人生难关的美德。
-
-* * *
-
-[Translation](http://www.8btc.com/meditations-on-cypherpunk-meditations) by 少平 (Shao-ping) of [8btc.com](http://www.8btc.com/)

@@ -135,7 +135,3 @@ Wir leben in einem Zustand des totalen Krieges. Jeder, der Bitcoin hat, versucht
 Hyperbitcoinisierung ist keine Kleinigkeit. Auch ein zum jetzigen Zeitpunkt kleines Bitcoin Guthaben wird wird künftig eine sehr signifikante Mehrheit im Portfolio eine Bitcoiners ausmachen. Wenn das passiert, gibt es kein zurück mehr. Eines Tages wird dein Bitcoin Guthaben wahrscheinlich nie wieder den Dezimalpunkt nach rechts rutschen sehen. Bitcoin bremst für niemanden in seinem Rennen auf dem Weg aus der Knechtschaft und zu globaler Dominanz (befreiung?). Überlasse deinen Sitz niemand anderem.
 
 _"Scammer" ist eine Heuristik, keine Anschuldigung_
-
-***
-
-Translation by [Volker Herminghaus](https://twitter.com/Herminghaus)

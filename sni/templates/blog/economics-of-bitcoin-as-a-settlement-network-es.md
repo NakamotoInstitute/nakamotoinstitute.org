@@ -1,6 +1,7 @@
 original_link: https://thesaifhouse.wordpress.com/2017/05/19/economics-of-bitcoin-as-a-settlement-network/
 original_site: The Saif House
 translated_title: Los economics de Bitcoin como una red de liquidación
+translation_url: http://queesbitcoin.es/los-economics-bitcoin-una-red-liquidacion/
 
 Mientras la popularidad de Bitcoin sigue aumentando, sus comisiones por transacción siguen subiendo, animando al habitual coro de agoreros todavía anclados en la fase 1 de lidiar con el rechazo a bitcoin:
 
@@ -45,7 +46,3 @@ Si la visión de Bitcoin como solución a pequeños pagos fuese correcta, el aum
 Desde el punto de vista de la capa de la red de liquidaciones, la creciente adopción de Bitcoin está incrementando su liquidez internacionalmente, permitiéndole competir con divisas globales de reserva para transacciones cada vez con más valor, provocando que las comisiones sigan aumentando. Mientras este proceso siga en el futuro, las comisiones seguirán creciendo y cada vez será más fácil entender Bitcoin como una red de liquidaciones global.
 
 \* **El autor es un ferviente defensor de las dietas bajas en hidratos de carbono y azúcar**
-
-***
-
-[Translation](http://queesbitcoin.es/los-economics-bitcoin-una-red-liquidacion/) by [@acrual](https://twitter.com/acrual)

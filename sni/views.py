@@ -536,7 +536,7 @@ def blogposttrans(slug, lang):
             rtl = False
             if lang in ['ar', 'fa', 'he']:
                 rtl = True
-            translations = []
+            translations = [Language.query.get(1)]
             translators = None
             for translation in bp.translations:
                 if translation.language.ietf != lang_lower:

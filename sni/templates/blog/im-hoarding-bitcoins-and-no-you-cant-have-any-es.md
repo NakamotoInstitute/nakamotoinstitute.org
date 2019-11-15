@@ -49,7 +49,3 @@ Deja salir a tu acaparador interior. No niegues tus ansias. Déjalo salir y enti
 Se siente bien ¿verdad? La economía de Bitcoin te lo agradecerá.
 
 Concluyo con una salvedad: dar pequeñas cantidades de bitcoins puede ser muy eficaz para ayudar a las personas a acostumbrarse a tenerlos. Sin embargo, la razón por la cual esto funciona es que ayuda a propagar la avaricia.
-
-***
-
-Translation [bitman](https://twitter.com/0xBitman) y [majamalu](http://elbitcoin.org/si-estoy-acumulando-bitcoins-y-voy-darte-ni-un-satoshi/)

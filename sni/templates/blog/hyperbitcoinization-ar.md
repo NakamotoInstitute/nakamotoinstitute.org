@@ -37,7 +37,3 @@ image_alt: BitcoinFace
 <p class="text-muted text-center">
 	(العمل الفني الأصلي من قبل المؤلف)
 </p>
-
-<div markdown="1" dir="ltr">
-Translation by <a href="https://twitter.com/MAlashiekh">Mohammed AlShiekh</a>
-</div>

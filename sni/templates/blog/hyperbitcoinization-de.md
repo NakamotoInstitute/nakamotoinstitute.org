@@ -60,5 +60,3 @@ Sobald diese vorbei ist, wird es unvorstellbar sein wie wir mit dem alten System
 <p class="text-muted text-center">
 	(Originalvorlage des Autors)
 </p>
-
-Translation by J.O.G.

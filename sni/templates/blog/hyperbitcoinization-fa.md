@@ -37,10 +37,6 @@ image_alt: BitcoinFace
 	(العمل الفني الأصلي من قبل المؤلف)
 </p>
 
-<div markdown="1" dir="ltr">
-Translation by <a href="https://twitter.com/janeygak">Janey</a>
-</div>
-
 [^1]: معادلی که برای Hyperbitcoinization در فارسی انتخاب شده، ابربتکوینی شدن، به معنای بتکوینی شدنِ بسیار زیاد و بیش از اندازه است. این معادل به پیروی از معادلِ Hyperinflation که ویکیپدیا آن را ابرتورم ها ذکر کرده، توسطِ این مترجم پیشنهاد شده است.
 
 [^2]:

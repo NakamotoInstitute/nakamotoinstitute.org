@@ -1,6 +1,9 @@
 translated_title: Ataque especulativo
 image: joker-burning-money.jpg
 image_alt: The Joker demonetizing the USD
+translation_url: http://elbitcoin.org/ataque-especulativo-como-triunfa-el-buen-dinero/
+translation_publication: ElBitcoin.org
+translation_publication_url: http://elbitcoin.org
 
 ## Introducción
 
@@ -81,10 +84,6 @@ Un ataque especulativo que parezca limitado a una o más monedas, pero que haga 
 ## Conclusión
 
 Bitcoin se convertirá en una moneda dominante. Los escépticos no entienden esto debido a sus sesgos y a su falta de conocimientos financieros. En primer lugar, están en una cámara de ecos tan fuerte como la de los bitcoiners.[^10] y [buscan rabiosamente](http://www.reddit.com/r/buttcoin) cualquier tipo de información que les confirme su visión de Bitcoin. En segundo lugar, no entienden la manera en que las monedas fuertes como el bitcoin desalojan a las monedas débiles como el dólar: es a través de ataques especulativos y crisis monetarias causadas por [inversores](http://en.wikipedia.org/wiki/George_Soros#Currency_speculation), no de la cuidadosa evaluación por parte de “periodistas especializados en tecnología” y consumidores mainstream. Para honrar a los escépticos de Bitcoin, esa especie destinada a extinguirse, el Instituto Nakamoto ha lanzado [un Tribute to Bold Assertions](/the-skeptics/) (homenaje a sus afirmaciones audaces).
-
-* * *
-
-[Traducción](http://elbitcoin.org/ataque-especulativo-como-triunfa-el-buen-dinero/) por Majamalu de [ElBitcoin.org](http://elbitcoin.org/)
 
 [^1]: ¡En serio! Hay gente en internet que pasa un tiempo nada despreciable escribiendo sobre una moneda que creen que va a fallar, y que sin embargo continúa sobrepasando todas las expectativas. Su alegría malsana me da alegría malsana. Concedido, a algunos de ellos les pagan para escribir cebos de clics controversiales y/o [trolling disfrazado](http://www.urbandictionary.com/define.php?term=concern+troll) de “preocupación” – ambas actividades que respeto y entiendo.
 

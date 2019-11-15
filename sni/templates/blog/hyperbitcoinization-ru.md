@@ -37,5 +37,3 @@ image_alt: BitcoinFace
 <p class="text-muted text-center">
 	(Оригинальное произведение автора)
 </p>
-
-Translation by [Ilya Evdokimov](https://keybase.io/ievdokimov)

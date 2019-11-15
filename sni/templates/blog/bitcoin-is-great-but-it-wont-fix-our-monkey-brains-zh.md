@@ -3,6 +3,9 @@ image_alt: The Archaeologists (1927) Giorgio de Chirico
 original_link: http://theumlaut.com/2014/06/10/bitcoin-is-great-but-it-wont-fix-our-monkey-brains/
 original_site: The Ümlaut
 translated_title: 比特币很伟大，但它修不好我们古板的脑袋
+translation_url: http://www.8btc.com/bitcoin-is-great-but-it-wont-fix-our-monkey-brains
+translation_publication: 8btc.com
+translation_publication_url: http://www.8btc.com/
 
 译者按：
 
@@ -43,7 +46,3 @@ translated_title: 比特币很伟大，但它修不好我们古板的脑袋
 I我要指出一点：这种对系统的概览有些粗糙，没有对其中的细节进行分析。目前看，这个系统基本上形成可供参考的社区形式，它可以把比特币系统和人类的自身优势结合起来。IRC频道的投资者们牺牲了纯去中心化的边际收益，得到了个人和社区声誉的管理体系。目前，还不知道这种模式能否推广，但它提供了一个很好的样本。
 
 政治的帝国主义限制了我们的选择，政治的保守主义又关闭了改革的大门。我们原本不得不信任垄断势力，比特币给我们提供了另一种选择。然而，它永远无法消除我们心底信任他人的需求，它也无法消除我们大脑里的Bug——选择性地接受现实，想用技术取代我们的天性只会适得其反。比特币的早期发展看上去像是一针强心剂。它让趋同的帝国政治倾向，有一个可行的分布式替代方案。当然，未来的比特币系统将对那些建立起自身信誉的人更有益。这算是比特币系统的另一种升级。
-
-* * *
-
-[Translation](http://www.8btc.com/bitcoin-is-great-but-it-wont-fix-our-monkey-brains) by 屈爽 (Qu Shuang) of [8btc.com](http://www.8btc.com/)

@@ -91,16 +91,23 @@
   {% endif %}
 {%- endmacro %}
 
+{% macro print_language(language, blogpost) -%}
+  <a href="/mempool/{{blogpost.slug}}/{% if language.ietf != 'en' %}{{language.ietf}}/{% endif %}">{{language.name}}</a>
+{%- endmacro %}
+
 {% macro print_translation_links(blogpost, lang, translations) -%}
   Read in
-  {% if lang.ietf != 'en' %}
-    <a href="/mempool/{{blogpost.slug}}/">English</a>{% if translations|length > 1 %},{% elif translations %} and {% endif %}
+  {% if translations|length >= 3 %}
+    {% for translation in translations %}
+      {% if loop.last %}
+        and {{print_language(translation, blogpost)}}
+      {% else %}
+        {{print_language(translation, blogpost)}},
+      {% endif %}
+    {% endfor %}
+  {% elif translations|length == 2 %}
+    {{print_language(translations[0], blogpost)}} and {{print_language(translations[1], blogpost)}}
+  {% else %}
+    {{print_language(translations[0], blogpost)}}
   {% endif %}
-  {% for translation in translations %}
-    {% if loop.last %}
-      {% if loop.index != 1 %}and {% endif %}<a href="/mempool/{{blogpost.slug}}/{{translation.ietf}}/">{{translation.name}}</a>
-    {% else %}
-      <a href="/mempool/{{blogpost.slug}}/{{translation.ietf}}/">{{translation.name}}</a>{% if translations|length != 2 %},{% endif %}
-    {% endif %}
-  {% endfor %}
 {%- endmacro %}

@@ -1,6 +1,9 @@
 translated_title: Спекулятивная Атака
 image: joker-burning-money.jpg
 image_alt: Джокер демонетизирует доллар
+translation_url: https://bitnovosti.com/2014/08/31/kak-ruhnet-koloss/
+translation_publication: BitNovosti
+translation_publication_url: https://bitnovosti.com
 
 ## Введение
 
