@@ -57,16 +57,50 @@
   {% endfor %}
 {%- endmacro %}
 
+{% macro print_translator(translator) -%}
+  {% if translator.url %}
+    <a href="{{translator.url}}">{{translator.name}}</a>
+  {% else %}
+    {{translator.name}}
+  {% endif %}
+{%- endmacro %}
+
+{% macro print_translators(translators) -%}
+  {% if translators|length >= 3 %}
+    {% for translator in translators %}
+      {% if loop.last %}
+        and {{print_translator(translator)}}
+      {% else %}
+        {{print_translator(translator)}},
+      {% endif %}
+    {% endfor %}
+  {% elif translators|length == 2 %}
+    {{print_translator(translators[0])}} and {{print_translator(translators[1])}}
+  {% else %}
+    {{print_translator(translators[0])}}
+  {% endif %}
+{%- endmacro %}
+
+{% macro print_translation_info(page, translators) -%}
+  {% if page.translation_url %}<a href="{{page.translation_url}}">Translation</a>
+  {% else %}Translation
+  {% endif %}
+  by {{print_translators(translators)}}
+  {% if page.translation_publication %}
+    of <a href="{{page.translation_publication_url}}">{{page.translation_publication}}</a>
+  {% endif %}
+{%- endmacro %}
+
 {% macro print_translation_links(blogpost, lang, translations) -%}
   Read in
   {% if lang.ietf != 'en' %}
-    <a href="/mempool/{{blogpost.slug}}/">English</a>{% if translations %},{% endif %}
+    <a href="/mempool/{{blogpost.slug}}/">English</a>{% if translations|length > 1 %},{% elif translations %} and {% endif %}
   {% endif %}
-    {% for translation in translations %}
+  {% for translation in translations %}
     {% if loop.last %}
       {% if loop.index != 1 %}and {% endif %}<a href="/mempool/{{blogpost.slug}}/{{translation.ietf}}/">{{translation.name}}</a>
     {% else %}
-      <a href="/mempool/{{blogpost.slug}}/{{translation.ietf}}/">{{translation.name}}</a>,
+      <a href="/mempool/{{blogpost.slug}}/{{translation.ietf}}/">{{translation.name}}</a>{% if translations|length != 2 %},{% endif %}
     {% endif %}
   {% endfor %}
 {%- endmacro %}

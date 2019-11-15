@@ -536,13 +536,15 @@ def blogposttrans(slug, lang):
             rtl = False
             if lang in ['ar', 'fa', 'he']:
                 rtl = True
-            translations = [
-                translation.language
-                for translation in bp.translations
-                if translation.language.ietf != lang_lower
-            ]
+            translations = []
+            translators = None
+            for translation in bp.translations:
+                if translation.language.ietf != lang_lower:
+                    translations.append(translation.language)
+                else:
+                    translators = translation.translators
             return render_template('blogpost.html', bp=bp, page=page, lang=post_lang, rtl=rtl,
-                                   translations=translations)
+                                   translations=translations, translators=translators)
     else:
         return redirect(url_for("blog"))
 
