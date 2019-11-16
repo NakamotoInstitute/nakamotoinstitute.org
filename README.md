@@ -3,7 +3,6 @@ Satoshi Nakamoto Institute
 
 NakamotoInstitute.org was written in Flask.
 
-
 ## Guide to Installing SNI Locally
 
 1. Install [python3](https://www.python.org/) and [virtualenv](https://virtualenv.pypa.io/en/latest/)
@@ -33,11 +32,32 @@ NakamotoInstitute.org was written in Flask.
 
 11. Run `./run.py runserver` and navigate to `sni:5000` in your browser.
 
+## Adding Mempool Transations
+
+1. Add proper markdown front matter:
+```
+translated_title: # Name of title in local language
+translation_url: # Original URL for translation (optional)
+translation_publication: # Name of original publication hosting translation (optional)
+translation_publication_url: # URL of original publication hosting translation (optional)
+```
+2. Place the markdown file in `sni/templates/blog` with the filename `<slug>-<language ietf code>.md` (e.g. `speculative-attack-es.md`).
+3. If you are a new translator, add your name and URL (i.e. website, Twitter, etc.) to `data/translators.json`.
+4. Update `data/blogposts.json`:
+```
+"translations": {
+  "<local language code>": ["<translator name"]
+}
+```
+Note: the name must match that in `translators.json` exactly.
+5. If you are submitting a new language, add it to `data/languages.json`.
+
 ## How You Can Help
 
 * Format the HTML literature templates
 * Adjust the CSS and HTML to improve readability and navigation
 * Write tests for the Python code
+* Submit translations of website content (literature translations coming soon!)
 
 ***
 
