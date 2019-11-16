@@ -35,7 +35,9 @@
     "added": "November 1, 2018",
     "slug": "bitcoin-governance",
     "excerpt": "Compromising on trustlessness could help the Bitcoin price find a local maximum, at the expense of finding a much higher global maximum.",
-    "translations": {}
+    "translations": {
+      "ru": ["Tony ₿"]
+    }
   },
   {
     "title": "Economics of Bitcoin as a Settlement Network",
