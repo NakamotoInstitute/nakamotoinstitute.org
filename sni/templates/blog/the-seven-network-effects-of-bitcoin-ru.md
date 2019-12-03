@@ -1,4 +1,4 @@
-translated_title: Управление Биткоином
+translated_title: Семь сетевых эффектов Биткоина
 original_link: https://www.weusecoins.com/the-seven-network-effects-of-bitcoin/
 original_site: WeUseCoins
 translation_url: https://bitcoin-translated.ru/sources/nakamoto-institute/seven-network-effects-of-bitcoin/
