@@ -314,6 +314,7 @@ class BlogSeries(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String())
     slug = db.Column(db.String())
+    chapter_title = db.Column(db.Boolean)
     blogposts = db.relationship("BlogPost", backref=db.backref('series'))
 
     def __str__(self):

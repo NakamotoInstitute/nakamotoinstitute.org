@@ -35,15 +35,14 @@
   {% for me in mem %}
   <hr>
   {% if me.series %}
-  <h5 class="text-muted">{{me.series}}</h5>
+  <h5 class="text-muted">{{me.series}} {% if not me.series.chapter_title %}(#{{me.series_index}}){% endif %}</h5>
   {% endif %}
   <h4>
     <a href="{{url_for('blogpost', slug=me.slug)}}">
-      {% if me.series %}
+      {% if me.series and me.series.chapter_title %}
       Chapter {{me.series_index}}:
       {% endif %}
-      {{me.title}}</a> - {{me.date.strftime('%B %d, %Y')}}
-  </h4>
+      {{me.title}}</a> - {{me.date.strftime('%B %d, %Y')}}</h4>
   <p><em>{{me.excerpt}}</em></p>
   {% endfor %}
   <div class="my-3 text-center">

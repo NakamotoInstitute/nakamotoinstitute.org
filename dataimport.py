@@ -312,6 +312,7 @@ def import_blog_series():
             id=i,
             title=blogs['title'],
             slug=blogs['slug'],
+            chapter_title=blogs['chapter_title'],
         )
         db.session.add(blog_series)
         db.session.commit()
