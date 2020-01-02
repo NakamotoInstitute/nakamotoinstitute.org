@@ -519,5 +519,17 @@
     "waybacklink": "https://archive.org/details/squawkboxmbitcoin10yearsmnuchin",
 		"twitter_embed": "<blockquote class=\"twitter-tweet tw-align-center\" data-dnt=\"true\"><p lang=\"en\" dir=\"ltr\">&quot;I can assure you I will personally not be loaded up on bitcoin&quot; in 10 years, says Treasury Secretary Mnuchin <a href=\"https://twitter.com/hashtag/bitcoin?src=hash&amp;ref_src=twsrc%5Etfw\">#bitcoin</a> <a href=\"https://t.co/0J5acWQwRO\">pic.twitter.com/0J5acWQwRO</a></p>&mdash; Squawk Box (@SquawkCNBC) <a href=\"https://twitter.com/SquawkCNBC/status/1154004308947591168?ref_src=twsrc%5Etfw\">July 24, 2019</a></blockquote> <script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script> ",
     "slug": "steven-mnuchin"
-  }
+  },
+	{
+		"name": "Tendayi Kapfidze",
+    "title": "Chief Economist, LendingTree",
+    "article": "Bitcoin is a pyramid scheme, economist says",
+    "date": "January 1, 2020",
+    "source": "Yahoo Finance",
+    "excerpt": "“It’s a pyramid scheme,” LendingTree Chief Economist Tendayi Kapfidze tells Yahoo Finance. “You only make money based on people who enter after you. It has no real utility in the world.<br /><br />“They’ve been trying to create a utility for it for ten years now. It’s a solution in search of a problem and it still hasn’t found a problem to solve.”",
+    "price": "$7,170.63",
+    "link": "https://finance.yahoo.com/news/economist-bitcoin-is-a-pyramid-scheme-204217615.html",
+    "waybacklink": "http://web.archive.org/web/20200102060643/https://finance.yahoo.com/news/economist-bitcoin-is-a-pyramid-scheme-204217615.html",
+		"slug": "tendayi-kapfidze"
+	}
 ]
