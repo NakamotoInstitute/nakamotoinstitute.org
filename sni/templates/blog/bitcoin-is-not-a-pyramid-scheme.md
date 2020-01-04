@@ -3,7 +3,6 @@ original_site: Unchained Capital Blog
 
 A few years ago, I received an email from a friend asking for my opinion about an investment opportunity that a mutual contact of ours was considering. After a quick search on the internet and after having watched a few videos, I explained that it looked like a pyramid scheme. This was my shorthand for “avoid at all cost.” The information was forwarded along to our mutual contact and the reply back was not what I was expecting: “Are all pyramid schemes bad?” Some pyramid schemes are harder to identify than others, but even those that are easy to identify find prey in unassuming victims. A good rule of thumb is to run, not walk, away from anything that even hints of being a pyramid scheme. Thankfully, bitcoin is not one of them. While it may seem obvious, not everyone understands what a pyramid scheme actually is, what the warning signs may be, or why such schemes always fail.
 
-
 <div class="my-4 text-center">
   <img class="img-fluid rounded d-block mx-auto" alt="SEC definition of pyramid scheme" src="/static/img/mempool/bitcoin-is-not-a-pyramid-scheme/SEC-definition-pyramid-scheme.png"/>
   <p>
