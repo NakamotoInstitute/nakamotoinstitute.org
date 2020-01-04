@@ -112,4 +112,6 @@ The real competition for bitcoin has and will remain the legacy monetary network
 
 To learn more, I suggest reading, [_The Bitcoin Standard_](https://saifedean.com/the-book/) (Saifedean Ammous), [_Inventing Bitcoin_](https://www.amazon.com/Inventing-Bitcoin-Technology-Decentralized-Explained-ebook/dp/B07MWXRWNB) (Yan Pritzker) and [_Mastering Bitcoin_](https://www.amazon.com/Mastering-Bitcoin-Unlocking-Digital-Cryptocurrencies/dp/1449374042) (Andreas Antonopolous), probably in that order.
 
+***
+
 _Thanks to Will Cole, Phil Geiger and Adam Tzagournis for reviewing and providing valuable feedback. Also thanks to Saif, Yan and Andreas for their books which are incredible resources._

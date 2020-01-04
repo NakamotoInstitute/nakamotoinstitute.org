@@ -30,5 +30,3 @@ Hayek writes about the price mechanism as the greatest distribution system of kn
 > Establishment economists deride the fact that bitcoin is volatile as if you can go from something that didn’t exist to a stable form of money overnight, it’s completely ludicrous.
 >
 > <footer class="blockquote-footer">[Vijay Boyapati](https://twitter.com/real_vijay) on [SLP](https://stephanlivera.com/episode/2/)</footer>
-
-**Next week:** Copying Bitcoin, the audacity of trying to print your own money.

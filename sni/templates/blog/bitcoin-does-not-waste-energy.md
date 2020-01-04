@@ -100,6 +100,6 @@ Bitcoin represents a backup switch to the current architecture of the global fin
 
 Bitcoin will consume any and all energy resources necessary to secure its monetary network, which is inherently driven by the base demand to hold it as a currency. The more people that value the long-term stability it provides, the more energy it will consume. In the end, this consumption will ensure all other derivatives of energy consumption will continue to be fulfilled, which is why there is no more important long-term use of energy than securing the bitcoin network. Put a price on economic stability and the economic freedom a stable monetary system provides; that is the true justification for the amount of energy bitcoin should and will consume. Everything else is a distraction.
 
-**Next Week:** Bitcoin is not too slow
+***
 
 _Views are expressly my own and not those of Unchained Capital or my colleagues. Thanks for Will Cole and Phil Geiger for reviewing this version of_ Gradually, Then Suddenly _and providing valuable feedback.

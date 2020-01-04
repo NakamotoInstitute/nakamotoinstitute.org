@@ -105,6 +105,6 @@ Ultimately, bitcoin’s lack of a price stability mandate and fixed supply will 
 
 > _“The risk that the economy has entered a substantial downturn appears to have diminished over the past month or so.” – June 9, 2008_
 
-**_Next week:_** Bitcoin does not consume too much energy.
+***
 
 _Views are expressly my own and not those of Unchained Capital or my colleagues. Thanks to Will Cole, Phil Geiger, Adam Tzagournis and Ethan Packard who have reviewed past and present releases of_ Gradually, Then Suddenly _and provided valuable feedback._

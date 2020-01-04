@@ -94,6 +94,6 @@ The approach to scaling bitcoin is a slow and conservative process. Bitcoin is t
 
 It’s a little ridiculous to contemplate the problem bitcoin has already solved and then immediately pivot to a “but why not mass payments today” line of thinking. Especially when considering that bitcoin, in its clearing function, is already faster and more reliable than comparable mechanisms for final settlement of dollars, euros, yen or gold. Then, when understanding that the fundamental use case for bitcoin _today_ is as a long-term savings mechanism (not to fulfill payments), it becomes more clear that not only is the problem misdiagnosed but also that the desired solutions can wait. We will need the ability to fulfill payments in the future, but we have time before we get there. In due time, we’re going to have our cake and eat it too.
 
-**Next week:** The Jackson Hole Dilemma and Negative Interest Rates
+***
 
 _Views presented are expressly my own and not those of Unchained Capital or my colleagues. Thanks to Will Cole and Phil Geiger for continuing to review my rambling thoughts and for providing valuable feedback._

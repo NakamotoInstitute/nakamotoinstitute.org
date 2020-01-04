@@ -52,6 +52,6 @@ The empirical evidence (price mechanism & value) demonstrates that the market co
 >
 > <footer class="blockquote-footer">Eric Schmidt (Former Google CEO)</footer>
 
-**Next Week:** Bitcoin is not too volatile to be a currency
+***
 
 _Views presented are expressly my own and not those of Unchained Capital or my colleagues._

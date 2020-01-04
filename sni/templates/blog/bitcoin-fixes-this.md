@@ -89,6 +89,6 @@ Bitcoin may be the sly round about way around the Fed’s economic system, but i
 > “I don’t believe we shall ever have a good money again before we take the thing out of the hands of government, that is, we can’t take them violently out of the hands of government, all we can do is by some sly roundabout way introduce something that they can’t stop.”
 > <footer class="blockquote-footer">F. A. Hayek</footer>
 
-**Next week**: Bitcoin is better than gold and digital gold
+***
 
 _Views presented are expressly my own and not those of Unchained Capital or my colleagues. Special thanks to Phil Geiger, Adam Tzagournis and Will Cole for reviewing and for providing valuable feedback. If interested in reading more about quantitative easing and the financial crisis, I wrote a longer research piece in 2017 on the subject ([see here](https://www.unchained-capital.com/blog/enders-game/))._
