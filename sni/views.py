@@ -7,7 +7,7 @@
 
 from sni import app, db, cache, pages
 from sni.models import Language, Post, Email, Doc, ResearchDoc, Author, Format, \
-                   Category, BlogPost, Skeptic, Episode, Quote, \
+                   Category, BlogPost, BlogSeries, Skeptic, Episode, Quote, \
                    QuoteCategory, EmailThread, ForumThread
 from flask import render_template, json, url_for, redirect, request, Response,\
                   send_from_directory, escape
@@ -511,7 +511,14 @@ def blogpost(slug):
         page = pages.get(slug)
         translations = [translation.language for translation in bp.translations]
         translations.sort(key=lambda x: x.name)
-        return render_template('blogpost.html', bp=bp, page=page, lang=lang, translations=translations)
+        prev = next = None
+        if bp.series:
+            prev = BlogPost.query.filter_by(
+                series=bp.series, series_index=bp.series_index-1).first()
+            next = BlogPost.query.filter_by(
+                series=bp.series, series_index=bp.series_index+1).first()
+        return render_template('blogpost.html', bp=bp, page=page, lang=lang,
+                               translations=translations, prev=prev, next=next)
     else:
         return redirect(url_for("blog"))
 
@@ -550,6 +557,25 @@ def blogposttrans(slug, lang):
                                    translations=translations, translators=translators)
     else:
         return redirect(url_for("blog"))
+
+
+@cache.cached(timeout=900)
+@app.route('/mempool/series/')
+def blogseriesindex():
+    series = BlogSeries.query.order_by(desc(BlogSeries.id)).all()
+    app.logger.info(str(request.remote_addr) + ', Mempool Series')
+    return render_template('blogseriesindex.html', series=series)
+
+
+@cache.cached(timeout=900)
+@app.route('/mempool/series/<string:slug>/')
+def blogseries(slug):
+    series = BlogSeries.query.filter_by(slug=slug).first()
+    if series:
+        app.logger.info(str(request.remote_addr) + ', Mempool Series' + ', ' + slug)
+        return render_template('blogseries.html', series=series)
+    else:
+        return redirect(url_for('blogseriesindex'))
 
 
 @cache.cached(timeout=900)

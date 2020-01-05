@@ -15,7 +15,7 @@
 <div class="container">
 	<div class="border-bottom mb-3 pb-4 text-center">
 		{% if bp.series %}
-		<h3 class="text-black-50">{{bp.series}} {% if not bp.series.chapter_title %}(#{{bp.series_index}}){% endif %}</h3>
+		<h3><a href="{{url_for('blogseries', slug=bp.series.slug)}}">{{bp.series}}</a>{% if not bp.series.chapter_title %} (#{{bp.series_index}}){% endif %}</h3>
 		{% endif %}
 		<h1>{% if bp.series and bp.series.chapter_title %}Chapter {{bp.series_index}}: {% endif %}{{ page.meta.translated_title or bp.title }}</h1>
 		<h2 class="text-muted">{{bp.author[0].first}} {{bp.author[0].middle}} {{bp.author[0].last}}</h2>
@@ -45,6 +45,17 @@
 		<p>{{ helpers.print_translation_info(page, translators) }}</p>
 		{% endif %}
 		<p>{{ helpers.print_translation_links(bp, lang, translations) }}</p>
+	{% endif %}
+	{% if bp.series %}
+	<div class="d-flex justify-content-between">
+		{% if prev %}<span class="mr-4">&larr;&nbsp<a href="{{url_for('blogpost', slug=prev.slug)}}">{{prev.title}}</a></span>{% endif %}
+		{% if next %}<span><a href="{{url_for('blogpost', slug=next.slug)}}">{{next.title}}</a>&nbsp;&rarr;</span>{% endif %}
+	</div>
+	<div class="text-center my-4">
+		<a type="button" class="btn btn-light" href="{{url_for('blogseries', slug=bp.series.slug)}}">
+			Back to <em>{{bp.series.title}}</em>
+		</a>
+	</div>
 	{% endif %}
 	<div class="text-center my-4">
 		<a type="button" class="btn btn-light" href="{{url_for('blog')}}">

@@ -15,7 +15,7 @@ The Memory Pool | Satoshi Nakamoto Institute
   {% for bp in bps %}
   <hr>
   {% if bp.series %}
-    <h5 class="text-muted">{{bp.series}} {% if not bp.series.chapter_title %}(#{{bp.series_index}}){% endif %}</h5>
+    <h5 class="text-muted"><a href="{{url_for('blogseries', slug=bp.series.slug)}}">{{bp.series}}</a> {% if not bp.series.chapter_title %}(#{{bp.series_index}}){% endif %}</h5>
   {% endif %}
   <h4 class="{% if bp.series %}series{% endif %}">
     <a href="{{url_for('blogpost', slug=bp.slug)}}">{% if bp.series and bp.series.chapter_title %}Chapter {{bp.series_index}}: {% endif %}{{bp.title}}</a>
