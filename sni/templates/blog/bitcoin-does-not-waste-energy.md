@@ -102,4 +102,4 @@ Bitcoin will consume any and all energy resources necessary to secure its moneta
 
 ***
 
-_Views are expressly my own and not those of Unchained Capital or my colleagues. Thanks for Will Cole and Phil Geiger for reviewing this version of_ Gradually, Then Suddenly _and providing valuable feedback.
+_Views are expressly my own and not those of Unchained Capital or my colleagues. Thanks for Will Cole and Phil Geiger for reviewing this version of_ Gradually, Then Suddenly _and providing valuable feedback._
