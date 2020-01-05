@@ -49,10 +49,10 @@
 	{% if bp.series %}
 	<div class="d-flex justify-content-between">
 		{% if prev %}<span class="mr-4">&larr;&nbsp<a href="{{url_for('blogpost', slug=prev.slug)}}">{{prev.title}}</a></span>{% endif %}
-		{% if next %}<span><a href="{{url_for('blogpost', slug=next.slug)}}">{{next.title}}</a>&nbsp;&rarr;</span>{% endif %}
+		{% if next %}<span class="ml-auto"><a href="{{url_for('blogpost', slug=next.slug)}}">{{next.title}}</a>&nbsp;&rarr;</span>{% endif %}
 	</div>
 	<div class="text-center my-4">
-		<a type="button" class="btn btn-light" href="{{url_for('blogseries', slug=bp.series.slug)}}">
+		<a type="button" class="btn btn-light" href="{{url_for('blogseries', slug=bp.series.slug)}}" style="white-space:normal;">
 			Back to <em>{{bp.series.title}}</em>
 		</a>
 	</div>
