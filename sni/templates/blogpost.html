@@ -66,14 +66,14 @@
 	<script type="text/javascript">
 		/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 	   	var disqus_shortname = 'nakamotoinstitute'; // required: replace example with your forum shortname
-	   	{% if lang == 'en' %}
+	   	{% if lang.ietf == 'en' %}
 	   		var disqus_identifier = '{{bp.slug}}';
 	   		var disqus_title = '{{bp.title}}';
 	   		var disqus_url = "http://nakamotoinstitute.org/mempool/{{bp.slug}}/";
 	   	{% else %}
-	   		var disqus_identifier = '{{bp.slug}}-{{lang}}';
-	   		var disqus_title = '{{bp.title}} ({{lang}})'
-	   		var disqus_url = "http://nakamotoinstitute.org/mempool/{{bp.slug}}/{{lang}}/";
+	   		var disqus_identifier = '{{bp.slug}}-{{lang.ietf}}';
+	   		var disqus_title = '{{bp.title}} ({{lang.ietf}})'
+	   		var disqus_url = "http://nakamotoinstitute.org/mempool/{{bp.slug}}/{{lang.ietf}}/";
 	   	{% endif %}
 
 		/* * * DON'T EDIT BELOW THIS LINE * * */
