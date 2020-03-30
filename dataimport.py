@@ -56,7 +56,7 @@ def import_language():
             ietf=language['ietf']
         )
         db.session.add(new_language)
-        db.session.commit()
+    db.session.commit()
     click.echo(DONE)
 
 
@@ -71,7 +71,7 @@ def import_translator():
             url=translator['url']
         )
         db.session.add(new_translator)
-        db.session.commit()
+    db.session.commit()
     click.echo(DONE)
 
 
@@ -87,7 +87,7 @@ def import_email_thread():
             source=thread['source']
         )
         db.session.add(new_thread)
-        db.session.commit()
+    db.session.commit()
     click.echo(DONE)
 
 
@@ -117,7 +117,7 @@ def import_email():
         if parent:
             new_email.parent = parent
         db.session.add(new_email)
-        db.session.commit()
+    db.session.commit()
     click.echo(DONE)
 
 
@@ -134,7 +134,7 @@ def import_forum_thread():
             source=thread['source']
         )
         db.session.add(new_thread)
-        db.session.commit()
+    db.session.commit()
     click.echo(DONE)
 
 
@@ -162,7 +162,7 @@ def import_post():
             thread_id=p['thread_id']
         )
         db.session.add(post)
-        db.session.commit()
+    db.session.commit()
     click.echo(DONE)
 
 
@@ -177,7 +177,7 @@ def import_quote_category():
             name=qc['name']
         )
         db.session.add(quote_category)
-        db.session.commit()
+    db.session.commit()
     click.echo(DONE)
 
 
@@ -202,7 +202,7 @@ def import_quote():
             categories += [get(QuoteCategory, slug=cat)]
         q.categories = categories
         db.session.add(q)
-        db.session.commit()
+    db.session.commit()
     click.echo(DONE)
 
 
@@ -219,7 +219,7 @@ def import_author():
             last=author['last'],
             slug=author['slug'])
         db.session.add(author)
-        db.session.commit()
+    db.session.commit()
     click.echo(DONE)
 
 
@@ -256,7 +256,7 @@ def import_doc():
             doctype=doc['doctype'],
             external=ext)
         db.session.add(doc)
-        db.session.commit()
+    db.session.commit()
     click.echo(DONE)
 
 
@@ -298,7 +298,7 @@ def import_research_doc():
             external=ext,
             lit_id=lit)
         db.session.add(doc)
-        db.session.commit()
+    db.session.commit()
     click.echo(DONE)
 
 
@@ -315,7 +315,7 @@ def import_blog_series():
             chapter_title=blogs['chapter_title'],
         )
         db.session.add(blog_series)
-        db.session.commit()
+    db.session.commit()
     click.echo(DONE)
 
 
@@ -340,7 +340,6 @@ def import_blog_post():
         except KeyError:
             pass
         db.session.add(blogpost)
-        db.session.commit()
         for lang in bp['translations']:
             translators = bp['translations'][lang]
             dbtranslator = []
@@ -352,7 +351,7 @@ def import_blog_post():
             )
             blogpost.translations.append(blog_translation)
             db.session.add(blogpost)
-            db.session.commit()
+    db.session.commit()
     click.echo(DONE)
 
 
@@ -387,7 +386,7 @@ def import_skeptic():
             slug='{}-{}'.format(skeptic['slug'], slug_date)
         )
         db.session.add(skeptic)
-        db.session.commit()
+    db.session.commit()
     click.echo(DONE)
 
 
@@ -409,7 +408,7 @@ def import_episode():
             address=ep['address'],
             time=parser.parse(ep['time']))
         db.session.add(episode)
-        db.session.commit()
+    db.session.commit()
     click.echo(DONE)
 
 
