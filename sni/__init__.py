@@ -61,7 +61,11 @@ assets.register('scss_all', scss)
 assets.debug = False
 app.config['ASSETS_DEBUG'] = False
 
-cache = Cache(app, config={'CACHE_TYPE': 'simple'})
+cache = Cache(app, config={
+    'CACHE_TYPE': 'filesystem',
+    'CACHE_DIR': 'cache',
+    'CACHE_DEFAULT_TIMEOUT': 1800,
+})
 
 if not app.debug:
     import logging

@@ -5,7 +5,7 @@ feedgen==0.7.0
 Flask==1.0.2
 Flask-Assets==0.12
 Flask-Babel==0.11.2
-Flask-Caching==1.4.0
+Flask-Caching==1.8.0
 Flask-FlatPages==0.6
 Flask-Markdown==0.3
 Flask-Script==2.0.6

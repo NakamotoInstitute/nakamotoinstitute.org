@@ -55,6 +55,7 @@ app.db-journal
 feed.xml
 
 .webassets-cache/*
+cache/
 sni/static/css/main.css
 sni/static/templates/docs/*.epub
 sni/static/templates/docs/*.pdf
