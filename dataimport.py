@@ -5,16 +5,19 @@
 # Licensed under GNU Affero GPL (https://github.com/pierrerochard/SNI-private/blob/master/LICENSE)
 #
 
-import json
-import datetime
 import csv
+import json
+import os.path
 from dateutil import parser
 from datetime import datetime
 
+import click
+import requests
+from flask_sqlalchemy import SQLAlchemy
+
+from fetch_prices import update_skeptics
 from sni import db
 from sni.models import *
-
-import click
 
 
 def color_text(text, color='green'):
@@ -22,6 +25,11 @@ def color_text(text, color='green'):
 
 
 DONE = color_text('Done!')
+
+
+def model_exists(model_class):
+    engine = db.get_engine()
+    return model_class.metadata.tables[model_class.__tablename__].exists(engine)
 
 
 def get(model, **kwargs):
@@ -42,6 +50,49 @@ def flush_db():
     click.echo('Iniitalizing database...', nl=False)
     db.drop_all()
     db.create_all()
+    click.echo(DONE)
+
+
+def export_prices():
+    if not model_exists(Price):
+        return
+    click.echo('Exporting Prices...', nl=False)
+    prices = Price.query.all()
+    serialized_prices = [price.serialize() for price in prices]
+    with open('data/prices.json', 'w') as f:
+        json.dump(serialized_prices, f, indent=4)
+    click.echo(DONE)
+
+
+def import_prices():
+    click.echo('Importing Prices...', nl=False)
+    prices = []
+    fname = 'data/prices.json'
+    if os.path.isfile(fname):
+        with open('data/prices.json') as data_file:
+            prices = json.load(data_file)
+
+    if not prices:
+        URL = 'https://community-api.coinmetrics.io/v2/assets/btc/metricdata?metrics=PriceUSD'
+
+        resp = requests.get(URL).json()
+        series = resp['metricData']['series']
+        for se in series:
+            date = parser.parse(se['time'])
+            price = se['values'][0]
+            new_price = Price(
+                date=date,
+                price=price,
+            )
+            db.session.add(new_price)
+    else:
+        for price in prices:
+            new_price = Price(
+                date=parser.parse(price['date']),
+                price=price['price'],
+            )
+            db.session.add(new_price)
+    db.session.commit()
     click.echo(DONE)
 
 
@@ -388,6 +439,9 @@ def import_skeptic():
         db.session.add(skeptic)
     db.session.commit()
     click.echo(DONE)
+    click.echo('Adding Skeptic price data...', nl=False)
+    update_skeptics()
+    click.echo(DONE)
 
 
 def import_episode():
@@ -471,6 +525,7 @@ def update(content, skeptic):
         click.echo(DONE)
         import_skeptic()
     if not content and not skeptic:
+        export_prices()
         flush_db()
         import_language()
         import_translator()
@@ -485,6 +540,7 @@ def update(content, skeptic):
         import_research_doc()
         import_blog_series()
         import_blog_post()
+        import_prices()
         import_skeptic()
         import_episode()
     click.echo(color_text('Finished importing data!'))

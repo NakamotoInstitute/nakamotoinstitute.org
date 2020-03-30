@@ -8,7 +8,7 @@
 from sni import app, db, cache, pages
 from sni.models import Language, Post, Email, Doc, ResearchDoc, Author, Format, \
                    Category, BlogPost, BlogSeries, Skeptic, Episode, Quote, \
-                   QuoteCategory, EmailThread, ForumThread
+                   QuoteCategory, EmailThread, ForumThread, Price
 from flask import render_template, json, url_for, redirect, request, Response,\
                   send_from_directory, escape
 from pytz import timezone
@@ -632,8 +632,9 @@ def podcastfeed():
 @cache.cached()
 def skeptics():
     skeptics = Skeptic.query.order_by(Skeptic.date).all()
+    latest_price = Price.query.all()[-1]
     app.logger.info(str(request.remote_addr) + ', the-skeptics')
-    return render_template('the-skeptics.html', skeptics=skeptics)
+    return render_template('the-skeptics.html', skeptics=skeptics, updated=latest_price)
 
 
 @app.route('/crash-course/', methods=["GET"])

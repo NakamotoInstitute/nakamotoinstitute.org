@@ -195,6 +195,17 @@ $post-inner-border: 1px solid $post-sectional;
   }
 }
 
+.skeptic-stats {
+  font-size: 1rem;
+  font-weight: 400;
+  & > div > div {
+    flex-basis: 50%;
+  }
+}
+.skeptic-stats-border {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
 .donation-buttons {
   line-height: 48px;
   margin-left: -0.5em;
