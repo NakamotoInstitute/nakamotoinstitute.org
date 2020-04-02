@@ -338,6 +338,19 @@
 		"waybacklink": "http://web.archive.org/web/20140301165850/http://www.nytimes.com/2014/03/02/business/in-search-of-a-stable-electronic-currency.html",
 		"slug": "robert-j-shiller"
 	},
+	{
+		"name": "Mark Cuban",
+		"title": "TV Actor, Shark Tank",
+		"article": "Mark Cuban says Cyber Dust app keeps you in control",
+		"date": "March 9, 2014",
+		"source": "USA Today",
+		"excerpt": "I think as an encryption technology, [Bitcoin’s] great. I think as a transport mechanism, accounting of a transport mechanism, that it's unique and has a great opportunity in the future. I think it has no shot as a long term digital currency. [Would you buy any?] Yeah, I mean I'd look at it, but more as fun, you know? It's almost like buying and selling baseball cards, but there's definitely risk involved if you're looking at it to be a long term currency.",
+		"price": "$640.58",
+		"link": "https://www.usatoday.com/videos/tech/2014/03/09/6232985/",
+		"waybacklink": "http://web.archive.org/web/20140313120701/http://www.usatoday.com/videos/tech/2014/03/09/6232985/",
+		"media_embed": "<iframe class=\"embed-responsive-item\" src=\"https://archive.org/embed/mark-cuban-says-cyber-dust-app-keeps-you-in-control\" width=\"640\" height=\"480\" frameborder=\"0\" webkitallowfullscreen=\"true\" mozallowfullscreen=\"true\" allowfullscreen></iframe>",
+		"slug": "mark-cuban"
+	},
   {
     "name": "Nouriel Roubini",
     "title": "Professor of Economics, New York University",
@@ -517,7 +530,7 @@
     "price": "$9,725.66",
     "link": "https://twitter.com/SquawkCNBC/status/1154004308947591168",
     "waybacklink": "https://archive.org/details/squawkboxmbitcoin10yearsmnuchin",
-		"twitter_embed": "<blockquote class=\"twitter-tweet tw-align-center\" data-dnt=\"true\"><p lang=\"en\" dir=\"ltr\">&quot;I can assure you I will personally not be loaded up on bitcoin&quot; in 10 years, says Treasury Secretary Mnuchin <a href=\"https://twitter.com/hashtag/bitcoin?src=hash&amp;ref_src=twsrc%5Etfw\">#bitcoin</a> <a href=\"https://t.co/0J5acWQwRO\">pic.twitter.com/0J5acWQwRO</a></p>&mdash; Squawk Box (@SquawkCNBC) <a href=\"https://twitter.com/SquawkCNBC/status/1154004308947591168?ref_src=twsrc%5Etfw\">July 24, 2019</a></blockquote> <script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script> ",
+		"media_embed": "<blockquote class=\"twitter-tweet tw-align-center\" data-dnt=\"true\"><p lang=\"en\" dir=\"ltr\">&quot;I can assure you I will personally not be loaded up on bitcoin&quot; in 10 years, says Treasury Secretary Mnuchin <a href=\"https://twitter.com/hashtag/bitcoin?src=hash&amp;ref_src=twsrc%5Etfw\">#bitcoin</a> <a href=\"https://t.co/0J5acWQwRO\">pic.twitter.com/0J5acWQwRO</a></p>&mdash; Squawk Box (@SquawkCNBC) <a href=\"https://twitter.com/SquawkCNBC/status/1154004308947591168?ref_src=twsrc%5Etfw\">July 24, 2019</a></blockquote> <script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script> ",
     "slug": "steven-mnuchin"
   },
 	{

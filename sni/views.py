@@ -629,7 +629,7 @@ def podcastfeed():
 
 
 @app.route('/the-skeptics/')
-@cache.cached()
+#@cache.cached()
 def skeptics():
     skeptics = Skeptic.query.order_by(Skeptic.date).all()
     latest_price = Price.query.all()[-1]

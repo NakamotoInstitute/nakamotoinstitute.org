@@ -46,8 +46,8 @@ The Skeptics: A Tribute to Bold Assertions | Satoshi Nakamoto Institute
     </div>
     <hr class="skeptic-stats-border mb-3 my-1">
     {% if skeptic.source == "Twitter" %}
-      {% if skeptic.twitter_embed %}
-      {{skeptic.twitter_embed|safe}}
+      {% if skeptic.media_embed %}
+      {{skeptic.media_embed|safe}}
       {% elif skeptic.twitter_screenshot %}
       <div class="text-center">
         <img class="img-fluid d-block mx-auto" src="/static/img/the-skeptics/{{skeptic.slug}}.jpg">
@@ -65,6 +65,11 @@ The Skeptics: A Tribute to Bold Assertions | Satoshi Nakamoto Institute
     <p>
       <em>{{skeptic.excerpt|safe}}</em><br>
     </p>
+    {% endif %}
+    {% if not skeptic.source == "Twitter" and skeptic.media_embed %}
+    <div class="embed-responsive embed-responsive-16by9 text-center">
+      {{skeptic.media_embed|safe}}
+    </div>
     {% endif %}
     {% if skeptic.waybacklink %}
     <p>
