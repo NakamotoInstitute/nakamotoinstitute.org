@@ -11,6 +11,18 @@
 		"waybacklink": "https://archive.org/details/DontBuyBitcoins",
 		"slug": "niels-van-der-linden"
 	},
+	{
+		"name": "Avery Pennarun",
+		"title": "Software engineer",
+		"article": "Why bitcoin will fail",
+		"date": "May 8, 2011",
+		"source": "apenwarr",
+		"excerpt": "See, a bitcoin rant is almost too over-the-top for me. Asking why I think bitcoin won't work is like asking why the sky isn't red. I mean, wait, you think it </em>is<em> red? You actually took that seriously? Oh boy. Where do I even start?",
+		"price": "$3.84",
+		"link": "https://apenwarr.ca/log/?m=201105",
+		"waybacklink": "http://web.archive.org/web/20190202044429/https://apenwarr.ca/log/?m=201105",
+		"slug": "avery-pennarun"
+	},
   {
     "name": "Peter Schiff",
     "title": "CEO, Euro Pacific Capital, Inc.",
