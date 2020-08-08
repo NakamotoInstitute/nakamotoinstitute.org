@@ -32,7 +32,7 @@ NakamotoInstitute.org was written in Flask.
 
 11. Run `./run.py runserver` and navigate to `sni:5000` in your browser.
 
-## Adding Mempool Transations
+## Adding Mempool Translations
 
 1. Add proper markdown front matter:
 ```
