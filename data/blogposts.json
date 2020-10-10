@@ -1,5 +1,16 @@
 [
   {
+    "title": "Bitcoin is One for All",
+    "author": "parker-lewis",
+    "date": "August 27, 2020",
+    "added": "October 10, 2020",
+    "slug": "bitcoin-is-one-for-all",
+    "excerpt": "Whereas the dollar (and other fiat currencies) are one for a few in the short-term and all for none in the long-term, bitcoin is one for all, now and in the future, because it fixes the economic foundation for everyone.",
+    "translations": {},
+    "series": "gradually-then-suddenly",
+    "series_index": 15
+  },
+  {
     "title": "Bitcoin is Common Sense",
     "author": "parker-lewis",
     "date": "May 1, 2020",
@@ -270,392 +281,392 @@
     "translations": {}
   },
   {
-      "title": "Who Controls Bitcoin?",
-      "author": "daniel-krawisz",
-      "date": "February 8, 2015",
-      "added": "February 8, 2015",
-      "slug": "who-controls-bitcoin",
-      "excerpt": "Bitcoin upgrades must be a clear improvement to Bitcoin as an investment or else they face a sharp uphill battle to adoption.",
-      "translations": {
-        "ru": ["Ilya Evdokimov"]
-      }
+    "title": "Who Controls Bitcoin?",
+    "author": "daniel-krawisz",
+    "date": "February 8, 2015",
+    "added": "February 8, 2015",
+    "slug": "who-controls-bitcoin",
+    "excerpt": "Bitcoin upgrades must be a clear improvement to Bitcoin as an investment or else they face a sharp uphill battle to adoption.",
+    "translations": {
+      "ru": ["Ilya Evdokimov"]
+    }
   },
   {
-      "title": "Bitcoin as a Store of Value, Unit of Account, and Medium of Exchange",
-      "author": "daniel-krawisz",
-      "date": "January 12, 2015",
-      "added": "January 12, 2015",
-      "slug": "bitcoin-as-a-store-of-value-unit-of-account-and-medium-of-exchange",
-      "excerpt": "Bitcoin has the right properties for the world’s money, and the more the world comes to terms with this, the more stable it will become.",
-      "translations": {}
+    "title": "Bitcoin as a Store of Value, Unit of Account, and Medium of Exchange",
+    "author": "daniel-krawisz",
+    "date": "January 12, 2015",
+    "added": "January 12, 2015",
+    "slug": "bitcoin-as-a-store-of-value-unit-of-account-and-medium-of-exchange",
+    "excerpt": "Bitcoin has the right properties for the world’s money, and the more the world comes to terms with this, the more stable it will become.",
+    "translations": {}
   },
   {
-      "title": "The Fappening — Brought to You By The Information Marketplace",
-      "author": "daniel-krawisz",
-      "date": "September 3, 2014",
-      "added": "January 6, 2015",
-      "slug": "the-fappening",
-      "excerpt": "Bitcoin makes conspiratorial group cohesion more difficult. If the Fappening took place as I described, then this effect is right at the center. The possibility of getting bitcoins by releasing secrets caused the group to fall apart.",
-      "translations": {}
+    "title": "The Fappening — Brought to You By The Information Marketplace",
+    "author": "daniel-krawisz",
+    "date": "September 3, 2014",
+    "added": "January 6, 2015",
+    "slug": "the-fappening",
+    "excerpt": "Bitcoin makes conspiratorial group cohesion more difficult. If the Fappening took place as I described, then this effect is right at the center. The possibility of getting bitcoins by releasing secrets caused the group to fall apart.",
+    "translations": {}
   },
   {
-      "title": "Bitcoin’s Compound Rewards",
-      "author": "daniel-krawisz",
-      "date": "October 25, 2014",
-      "added": "January 5, 2015",
-      "slug": "bitcoins-compound-rewards",
-      "excerpt": "The difference between Bitcoin and a Ponzi scheme is that in a Ponzi scheme, the early adopters benefit by cashing out. With Bitcoin, there is no reason ever to cash out.",
-      "translations": {}
+    "title": "Bitcoin’s Compound Rewards",
+    "author": "daniel-krawisz",
+    "date": "October 25, 2014",
+    "added": "January 5, 2015",
+    "slug": "bitcoins-compound-rewards",
+    "excerpt": "The difference between Bitcoin and a Ponzi scheme is that in a Ponzi scheme, the early adopters benefit by cashing out. With Bitcoin, there is no reason ever to cash out.",
+    "translations": {}
   },
   {
-      "title": "Babysitting Bitcoin Skeptics: A Response to Krugman and Gobry",
-      "author": "daniel-krawisz",
-      "date": "November 30, 2014",
-      "added": "January 4, 2015",
-      "slug": "babysitting-bitcoin-skeptics",
-      "excerpt": "Krugman’s article and Gobry’s follow-up are confused, do not establish their case, and say nothing about Bitcoin.",
-      "translations": {}
+    "title": "Babysitting Bitcoin Skeptics: A Response to Krugman and Gobry",
+    "author": "daniel-krawisz",
+    "date": "November 30, 2014",
+    "added": "January 4, 2015",
+    "slug": "babysitting-bitcoin-skeptics",
+    "excerpt": "Krugman’s article and Gobry’s follow-up are confused, do not establish their case, and say nothing about Bitcoin.",
+    "translations": {}
   },
   {
-      "title": "Don’t Panic",
-      "author": "daniel-krawisz",
-      "date": "November 22, 2014",
-      "added": "January 3, 2015",
-      "slug": "dont-panic",
-      "excerpt": "Working in the Bitcoin world is like working for a drug addict with bipolar disorder.",
-      "translations": {}
+    "title": "Don’t Panic",
+    "author": "daniel-krawisz",
+    "date": "November 22, 2014",
+    "added": "January 3, 2015",
+    "slug": "dont-panic",
+    "excerpt": "Working in the Bitcoin world is like working for a drug addict with bipolar disorder.",
+    "translations": {}
   },
   {
-      "title": "The Two Ideologies in Bitcoin",
-      "author": "daniel-krawisz",
-      "date": "October 4, 2014",
-      "added": "January 2, 2015",
-      "slug": "the-two-ideologies-in-bitcoin",
-      "excerpt": "There are two ideologies in the Bitcoin world. They are not political ideologies; they are different visions of Bitcoin’s place in the world and how adoption will happen.",
-      "translations": {}
+    "title": "The Two Ideologies in Bitcoin",
+    "author": "daniel-krawisz",
+    "date": "October 4, 2014",
+    "added": "January 2, 2015",
+    "slug": "the-two-ideologies-in-bitcoin",
+    "excerpt": "There are two ideologies in the Bitcoin world. They are not political ideologies; they are different visions of Bitcoin’s place in the world and how adoption will happen.",
+    "translations": {}
   },
   {
-      "title": "Meditations on Cypherpunk Nightmares",
-      "author": "michael-goldstein",
-      "date": "December 24, 2014",
-      "added": "December 24, 2014",
-      "slug": "meditations-on-cypherpunk-nightmares",
-      "excerpt": "Protecting ourselves from the dangers of crypto-anarchy requires embracing it even more fully and internalizing and practicing the virtues that have helped great men weather the storms of life since antiquity.",
-      "translations": {
-        "zh": ["少平 (Shao-ping)"]
-      }
+    "title": "Meditations on Cypherpunk Nightmares",
+    "author": "michael-goldstein",
+    "date": "December 24, 2014",
+    "added": "December 24, 2014",
+    "slug": "meditations-on-cypherpunk-nightmares",
+    "excerpt": "Protecting ourselves from the dangers of crypto-anarchy requires embracing it even more fully and internalizing and practicing the virtues that have helped great men weather the storms of life since antiquity.",
+    "translations": {
+      "zh": ["少平 (Shao-ping)"]
+    }
   },
   {
-      "title": "The Legacy of the Dread Pirate Roberts",
-      "author": "daniel-krawisz",
-      "date": "July 10, 2014",
-      "added": "November 8, 2014",
-      "slug": "the-legacy-of-the-dread-pirate-roberts",
-      "excerpt": "All Bitcoin entrepreneurs today build on top of the success of the Silk Road. Their work was made possible by his.",
-      "translations": {}
+    "title": "The Legacy of the Dread Pirate Roberts",
+    "author": "daniel-krawisz",
+    "date": "July 10, 2014",
+    "added": "November 8, 2014",
+    "slug": "the-legacy-of-the-dread-pirate-roberts",
+    "excerpt": "All Bitcoin entrepreneurs today build on top of the success of the Silk Road. Their work was made possible by his.",
+    "translations": {}
   },
   {
-      "title": "Real Crypto-Anarchy Without Anonymity",
-      "author": "oleg-andreev",
-      "date": "December 28, 2013",
-      "added": "October 2, 2014",
-      "slug": "real-crypto-anarchy-without-anonymity",
-      "excerpt": "Bitcoin raises the cost of many kinds of attacks, going far beyond protecting against central banks meddling with money supply.",
-      "translations": {}
+    "title": "Real Crypto-Anarchy Without Anonymity",
+    "author": "oleg-andreev",
+    "date": "December 28, 2013",
+    "added": "October 2, 2014",
+    "slug": "real-crypto-anarchy-without-anonymity",
+    "excerpt": "Bitcoin raises the cost of many kinds of attacks, going far beyond protecting against central banks meddling with money supply.",
+    "translations": {}
   },
   {
-      "title": "Bitcoin Is Great, But It Won’t Fix Our Monkey Brains",
-      "author": "andrea-castillo",
-      "date": "June 10, 2014",
-      "added": "September 30, 2014",
-      "slug": "bitcoin-is-great-but-it-wont-fix-our-monkey-brains",
-      "excerpt": "Bitcoin provides us alternatives to compelled trust in monopolies but it can never obviate the need for trusted human connections. Nor can it protect us from our own pesky brain bugs’ ambiguous filters on perceived reality.",
-      "translations": {
-        "zh": ["屈爽 (Qu Shuang)"]
-      }
+    "title": "Bitcoin Is Great, But It Won’t Fix Our Monkey Brains",
+    "author": "andrea-castillo",
+    "date": "June 10, 2014",
+    "added": "September 30, 2014",
+    "slug": "bitcoin-is-great-but-it-wont-fix-our-monkey-brains",
+    "excerpt": "Bitcoin provides us alternatives to compelled trust in monopolies but it can never obviate the need for trusted human connections. Nor can it protect us from our own pesky brain bugs’ ambiguous filters on perceived reality.",
+    "translations": {
+      "zh": ["屈爽 (Qu Shuang)"]
+    }
   },
   {
-      "title": "Everyone's a Scammer",
-      "author": "michael-goldstein",
-      "date": "September 11, 2014",
-      "added": "September 11, 2014",
-      "slug": "everyones-a-scammer",
-      "excerpt": "There is a war going on for your bitcoins, and willpower is your only defense.",
-      "translations": {
-        "de": ["Volker Herminghaus"],
-        "es": ["Camilo Flores"],
-        "fi": ["Thomas Brand"]
-      }
+    "title": "Everyone's a Scammer",
+    "author": "michael-goldstein",
+    "date": "September 11, 2014",
+    "added": "September 11, 2014",
+    "slug": "everyones-a-scammer",
+    "excerpt": "There is a war going on for your bitcoins, and willpower is your only defense.",
+    "translations": {
+      "de": ["Volker Herminghaus"],
+      "es": ["Camilo Flores"],
+      "fi": ["Thomas Brand"]
+    }
   },
   {
-      "title": "Bitcoin: Killer of Nietzschean Nihilism",
-      "author": "peter-dushenski",
-      "date": "April 29, 2014",
-      "added": "July 4, 2014",
-      "slug": "bitcoin-killer-of-nietzschean-nihilism",
-      "excerpt": "Only Bitcoin can restore the necessary balance between the Gods. Only Bitcoin can give us life.",
-      "translations": {}
+    "title": "Bitcoin: Killer of Nietzschean Nihilism",
+    "author": "peter-dushenski",
+    "date": "April 29, 2014",
+    "added": "July 4, 2014",
+    "slug": "bitcoin-killer-of-nietzschean-nihilism",
+    "excerpt": "Only Bitcoin can restore the necessary balance between the Gods. Only Bitcoin can give us life.",
+    "translations": {}
   },
   {
-      "title": "Speculative Attack",
-      "author": "pierre-rochard",
-      "date": "July 4, 2014",
-      "added": "July 4, 2014",
-      "slug": "speculative-attack",
-      "excerpt": "Bitcoin will overtake weak currencies like the dollar through speculative attacks and currency crises, not through the careful evaluation of tech journalists and 'mainstream consumers'.",
-      "translations": {
-        "es": ["Majamalu"],
-        "he": ["factotum-b"],
-        "ru": ["Ekaterina Tarasova"]
-      }
+    "title": "Speculative Attack",
+    "author": "pierre-rochard",
+    "date": "July 4, 2014",
+    "added": "July 4, 2014",
+    "slug": "speculative-attack",
+    "excerpt": "Bitcoin will overtake weak currencies like the dollar through speculative attacks and currency crises, not through the careful evaluation of tech journalists and 'mainstream consumers'.",
+    "translations": {
+      "es": ["Majamalu"],
+      "he": ["factotum-b"],
+      "ru": ["Ekaterina Tarasova"]
+    }
   },
   {
-      "title": "Bitcoin's Shroud of Subtlety and Allure",
-      "author": "daniel-krawisz",
-      "date": "June 29, 2014",
-      "added": "June 29, 2014",
-      "slug": "bitcoins-shroud-of-subtlety-and-allure",
-      "excerpt": "Potential Bitcoin attackers are in a Prisoner's Dilemma. In the same way that the people cannot easily rebel against the king owing to a lack of coordination on their part, governments cannot rebel against Bitcoin for the same reason. The government puts the people in a Prisoner's Dilemma against one another, and Bitcoin does the same to government agents.",
-      "translations": {}
+    "title": "Bitcoin's Shroud of Subtlety and Allure",
+    "author": "daniel-krawisz",
+    "date": "June 29, 2014",
+    "added": "June 29, 2014",
+    "slug": "bitcoins-shroud-of-subtlety-and-allure",
+    "excerpt": "Potential Bitcoin attackers are in a Prisoner's Dilemma. In the same way that the people cannot easily rebel against the king owing to a lack of coordination on their part, governments cannot rebel against Bitcoin for the same reason. The government puts the people in a Prisoner's Dilemma against one another, and Bitcoin does the same to government agents.",
+    "translations": {}
   },
   {
-      "title": "Bitcoin's Rugged Individualism",
-      "author": "daniel-krawisz",
-      "date": "June 29, 2014",
-      "added": "June 29, 2014",
-      "slug": "bitcoins-rugged-individualism",
-      "excerpt": "There is a fundamental agency problem with Bitcoin: agents can disappear or simulate a heist upon themselves. They cannot rationally be trusted without extreme costs being imposed on them which are more stringent than traditional banks.",
-      "translations": {}
+    "title": "Bitcoin's Rugged Individualism",
+    "author": "daniel-krawisz",
+    "date": "June 29, 2014",
+    "added": "June 29, 2014",
+    "slug": "bitcoins-rugged-individualism",
+    "excerpt": "There is a fundamental agency problem with Bitcoin: agents can disappear or simulate a heist upon themselves. They cannot rationally be trusted without extreme costs being imposed on them which are more stringent than traditional banks.",
+    "translations": {}
   },
   {
-      "title": "Appcoins Are Snake Oil",
-      "author": "daniel-krawisz",
-      "date": "May 24, 2014",
-      "added": "May 24, 2014",
-      "slug": "appcoins-are-snake-oil",
-      "excerpt": "Appcoins are a terrible idea.",
-      "translations": {}
+    "title": "Appcoins Are Snake Oil",
+    "author": "daniel-krawisz",
+    "date": "May 24, 2014",
+    "added": "May 24, 2014",
+    "slug": "appcoins-are-snake-oil",
+    "excerpt": "Appcoins are a terrible idea.",
+    "translations": {}
   },
   {
-      "title": "The Correct Strategy of Bitcoin Entrepreneurship",
-      "author": "daniel-krawisz",
-      "date": "May 16, 2014",
-      "added": "May 16, 2014",
-      "slug": "the-correct-strategy-of-bitcoin-entrepreneurship",
-      "excerpt": "Don't be a venture capitalist—be a speculative philanthropist.",
-      "translations": {}
+    "title": "The Correct Strategy of Bitcoin Entrepreneurship",
+    "author": "daniel-krawisz",
+    "date": "May 16, 2014",
+    "added": "May 16, 2014",
+    "slug": "the-correct-strategy-of-bitcoin-entrepreneurship",
+    "excerpt": "Don't be a venture capitalist—be a speculative philanthropist.",
+    "translations": {}
   },
   {
-      "title": "Bitcoin is the Best Unit of Account",
-      "author": "daniel-krawisz",
-      "date": "May 10, 2014",
-      "added": "May 10, 2014",
-      "slug": "bitcoin-is-the-best-unit-of-account",
-      "excerpt":"Someone still lost in the dollar world looks at Bitcoin and sees wild and extreme volatility, whereas someone in Bitcoin looking back at the dollar sees the worst and longest economic crash in history.",
-      "translations": {
-        "es": ["Majamalu"]
-      }
+    "title": "Bitcoin is the Best Unit of Account",
+    "author": "daniel-krawisz",
+    "date": "May 10, 2014",
+    "added": "May 10, 2014",
+    "slug": "bitcoin-is-the-best-unit-of-account",
+    "excerpt": "Someone still lost in the dollar world looks at Bitcoin and sees wild and extreme volatility, whereas someone in Bitcoin looking back at the dollar sees the worst and longest economic crash in history.",
+    "translations": {
+      "es": ["Majamalu"]
+    }
   },
   {
-      "title": "How We Know Bitcoin Is Not a Bubble",
-      "author": "daniel-krawisz",
-      "date": "May 3, 2014",
-      "added": "May 3, 2014",
-      "slug": "how-we-know-bitcoin-is-not-a-bubble",
-      "excerpt":"The difference between money and a bubble is that a commodity whose price is a bubble actually has some underlying value.",
-      "translations": {}
+    "title": "How We Know Bitcoin Is Not a Bubble",
+    "author": "daniel-krawisz",
+    "date": "May 3, 2014",
+    "added": "May 3, 2014",
+    "slug": "how-we-know-bitcoin-is-not-a-bubble",
+    "excerpt": "The difference between money and a bubble is that a commodity whose price is a bubble actually has some underlying value.",
+    "translations": {}
   },
   {
-      "title": "How to Market Bitcoin",
-      "author": "daniel-krawisz",
-      "date": "April 26, 2014",
-      "added": "April 26, 2014",
-      "slug": "how-to-market-bitcoin",
-      "excerpt":"Does Bitcoin need to be sanitized and separated from its anarchist, black-market roots in order to become acceptable to the general population? Absolutely not!",
-      "translations": {}
+    "title": "How to Market Bitcoin",
+    "author": "daniel-krawisz",
+    "date": "April 26, 2014",
+    "added": "April 26, 2014",
+    "slug": "how-to-market-bitcoin",
+    "excerpt": "Does Bitcoin need to be sanitized and separated from its anarchist, black-market roots in order to become acceptable to the general population? Absolutely not!",
+    "translations": {}
   },
   {
-      "title": "Hyperbitcoinization",
-      "author": "daniel-krawisz",
-      "date": "March 29, 2014",
-      "added": "March 29, 2014",
-      "slug": "hyperbitcoinization",
-      "excerpt":"Government currencies will rapidly lose value as Bitcoin supplants it. What will such an event be like and how can it be understood economically?",
-      "translations": {
-        "ar": ["Mohammed AlShiekh"],
-        "de": ["J.O.G."],
-        "es": ["Majamalu"],
-        "fa": ["Janey"],
-        "ru": ["Ilya Evdokimov"]
-      }
+    "title": "Hyperbitcoinization",
+    "author": "daniel-krawisz",
+    "date": "March 29, 2014",
+    "added": "March 29, 2014",
+    "slug": "hyperbitcoinization",
+    "excerpt": "Government currencies will rapidly lose value as Bitcoin supplants it. What will such an event be like and how can it be understood economically?",
+    "translations": {
+      "ar": ["Mohammed AlShiekh"],
+      "de": ["J.O.G."],
+      "es": ["Majamalu"],
+      "fa": ["Janey"],
+      "ru": ["Ilya Evdokimov"]
+    }
   },
   {
-      "title": "The Coming Demise of the Altcoins (And What You Can Do to Hasten It)",
-      "author": "daniel-krawisz",
-      "date": "March 14, 2014",
-      "added": "March 14, 2014",
-      "slug": "the-coming-demise-of-altcoins",
-      "excerpt":"What falleth, that shall one also push!",
-      "translations": {}
+    "title": "The Coming Demise of the Altcoins (And What You Can Do to Hasten It)",
+    "author": "daniel-krawisz",
+    "date": "March 14, 2014",
+    "added": "March 14, 2014",
+    "slug": "the-coming-demise-of-altcoins",
+    "excerpt": "What falleth, that shall one also push!",
+    "translations": {}
   },
   {
-      "title": "Bitcoin Has No Image Problem",
-      "author": "daniel-krawisz",
-      "date": "February 25, 2014",
-      "added": "February 25, 2014",
-      "slug": "bitcoin-has-no-image-problem",
-      "excerpt":"The best way to improve Bitcoin’s image is simply to improve the Bitcoin economy.",
-      "translations": {}
+    "title": "Bitcoin Has No Image Problem",
+    "author": "daniel-krawisz",
+    "date": "February 25, 2014",
+    "added": "February 25, 2014",
+    "slug": "bitcoin-has-no-image-problem",
+    "excerpt": "The best way to improve Bitcoin’s image is simply to improve the Bitcoin economy.",
+    "translations": {}
   },
   {
-      "title": "I'm Hoarding Bitcoins, and No You Can't Have Any",
-      "author": "daniel-krawisz",
-      "date": "February 12, 2014",
-      "added": "February 12, 2014",
-      "slug": "im-hoarding-bitcoins-and-no-you-cant-have-any",
-      "excerpt":"The real hero is the hoarder.",
-      "translations": {
-        "es": ["bitman", "Majamalu"],
-        "it": ["Il portico dipinto"],
-        "ru": ["Ilya Evdokimov"]
-      }
+    "title": "I'm Hoarding Bitcoins, and No You Can't Have Any",
+    "author": "daniel-krawisz",
+    "date": "February 12, 2014",
+    "added": "February 12, 2014",
+    "slug": "im-hoarding-bitcoins-and-no-you-cant-have-any",
+    "excerpt": "The real hero is the hoarder.",
+    "translations": {
+      "es": ["bitman", "Majamalu"],
+      "it": ["Il portico dipinto"],
+      "ru": ["Ilya Evdokimov"]
+    }
   },
   {
-      "title": "Why Bitcoin Will Continue to Grow",
-      "author": "daniel-krawisz",
-      "date": "February 1, 2014",
-      "added": "February 1, 2014",
-      "slug": "why-bitcoin-will-continue-to-grow",
-      "excerpt":"For now at least, Bitcoin’s present trend is self-reinforcing with no equilibrium in sight.",
-      "translations": {}
+    "title": "Why Bitcoin Will Continue to Grow",
+    "author": "daniel-krawisz",
+    "date": "February 1, 2014",
+    "added": "February 1, 2014",
+    "slug": "why-bitcoin-will-continue-to-grow",
+    "excerpt": "For now at least, Bitcoin’s present trend is self-reinforcing with no equilibrium in sight.",
+    "translations": {}
   },
   {
-      "title": "I Love Bitcoin's Volatility",
-      "author": "daniel-krawisz",
-      "date": "January 28, 2014",
-      "added": "January 28, 2014",
-      "slug": "i-love-bitcoins-volatility",
-      "excerpt": "Those who worry about Bitcoin’s volatility fail to understand what it actually means for Bitcoin.",
-      "translations": {}
+    "title": "I Love Bitcoin's Volatility",
+    "author": "daniel-krawisz",
+    "date": "January 28, 2014",
+    "added": "January 28, 2014",
+    "slug": "i-love-bitcoins-volatility",
+    "excerpt": "Those who worry about Bitcoin’s volatility fail to understand what it actually means for Bitcoin.",
+    "translations": {}
   },
   {
-      "title": "Mastercoin is a Nightmare of Insanity",
-      "author": "daniel-krawisz",
-      "date": "December 20, 2013",
-      "added": "December 20, 2013",
-      "slug": "mastercoin-is-a-nightmare-of-insanity",
-      "excerpt":"No one should ever use Mastercoin under any circumstances or appraise their value as anything above zero.",
-      "translations": {}
+    "title": "Mastercoin is a Nightmare of Insanity",
+    "author": "daniel-krawisz",
+    "date": "December 20, 2013",
+    "added": "December 20, 2013",
+    "slug": "mastercoin-is-a-nightmare-of-insanity",
+    "excerpt": "No one should ever use Mastercoin under any circumstances or appraise their value as anything above zero.",
+    "translations": {}
   },
   {
-      "title": "The Bitcoin Central Bank's Perfect Monetary Policy",
-      "author": "pierre-rochard",
-      "date": "December 15, 2013",
-      "added": "December 15, 2013",
-      "slug": "the-bitcoin-central-banks-perfect-monetary-policy",
-      "excerpt":"The Bitcoin Central Bank will be the longest lasting institution of its kind thanks to the anti-fragile independent monetary policy it has set in stone.",
-      "translations": {
-        "de": ["Volker Herminghaus"]
-      }
+    "title": "The Bitcoin Central Bank's Perfect Monetary Policy",
+    "author": "pierre-rochard",
+    "date": "December 15, 2013",
+    "added": "December 15, 2013",
+    "slug": "the-bitcoin-central-banks-perfect-monetary-policy",
+    "excerpt": "The Bitcoin Central Bank will be the longest lasting institution of its kind thanks to the anti-fragile independent monetary policy it has set in stone.",
+    "translations": {
+      "de": ["Volker Herminghaus"]
+    }
   },
   {
-      "title": "The Problem with Altcoins",
-      "author": "daniel-krawisz",
-      "date": "August 22, 2013",
-      "added": "August 22, 2013",
-      "slug": "the-problem-with-altcoins",
-      "excerpt":"In short, the altcoin phenomenon is the product of greed and bounded rationality.",
-      "translations": {}
+    "title": "The Problem with Altcoins",
+    "author": "daniel-krawisz",
+    "date": "August 22, 2013",
+    "added": "August 22, 2013",
+    "slug": "the-problem-with-altcoins",
+    "excerpt": "In short, the altcoin phenomenon is the product of greed and bounded rationality.",
+    "translations": {}
   },
   {
-      "title": "The Original Value of Bitcoins",
-      "author": "daniel-krawisz",
-      "date": "July 2, 2013",
-      "added": "July 2, 2013",
-      "slug": "the-original-value-of-bitcoins",
-      "excerpt":"Once it was known that bitcoin could be sold, even for a pittance, new possibilities opened up.",
-      "translations": {}
+    "title": "The Original Value of Bitcoins",
+    "author": "daniel-krawisz",
+    "date": "July 2, 2013",
+    "added": "July 2, 2013",
+    "slug": "the-original-value-of-bitcoins",
+    "excerpt": "Once it was known that bitcoin could be sold, even for a pittance, new possibilities opened up.",
+    "translations": {}
   },
   {
-      "title": "The Proof-of-Work Concept",
-      "author": "daniel-krawisz",
-      "date": "June 24, 2013",
-      "added": "June 24, 2013",
-      "slug": "the-proof-of-work-concept",
-      "excerpt":"Proof-of-work should not be seen as a mysterious or wasteful system, but as something functional, natural, and potentially of value for the design of any communication protocol.",
-      "translations": {}
+    "title": "The Proof-of-Work Concept",
+    "author": "daniel-krawisz",
+    "date": "June 24, 2013",
+    "added": "June 24, 2013",
+    "slug": "the-proof-of-work-concept",
+    "excerpt": "Proof-of-work should not be seen as a mysterious or wasteful system, but as something functional, natural, and potentially of value for the design of any communication protocol.",
+    "translations": {}
   },
   {
-      "title": "The Risk from the Software Industry",
-      "author": "daniel-krawisz",
-      "date": "June 5, 2013",
-      "added": "June 5, 2013",
-      "slug": "crypto-anarchy-and-libertarian-entrepreneurship-4",
-      "excerpt":"Stay one step ahead of the government and don’t get embroiled in politics.",
-      "translations": {},
-      "series": "crypto-anarchy-and-libertarian-entrepreneurship",
-      "series_index": 4
+    "title": "The Risk from the Software Industry",
+    "author": "daniel-krawisz",
+    "date": "June 5, 2013",
+    "added": "June 5, 2013",
+    "slug": "crypto-anarchy-and-libertarian-entrepreneurship-4",
+    "excerpt": "Stay one step ahead of the government and don’t get embroiled in politics.",
+    "translations": {},
+    "series": "crypto-anarchy-and-libertarian-entrepreneurship",
+    "series_index": 4
   },
   {
-      "title": "The Killer App of Liberty",
-      "author": "daniel-krawisz",
-      "date": "May 29, 2013",
-      "added": "May 29, 2013",
-      "slug": "crypto-anarchy-and-libertarian-entrepreneurship-3",
-      "excerpt":"If Bitcoin becomes money, the government’s control of money will have ended.",
-      "translations": {},
-      "series": "crypto-anarchy-and-libertarian-entrepreneurship",
-      "series_index": 3
+    "title": "The Killer App of Liberty",
+    "author": "daniel-krawisz",
+    "date": "May 29, 2013",
+    "added": "May 29, 2013",
+    "slug": "crypto-anarchy-and-libertarian-entrepreneurship-3",
+    "excerpt": "If Bitcoin becomes money, the government’s control of money will have ended.",
+    "translations": {},
+    "series": "crypto-anarchy-and-libertarian-entrepreneurship",
+    "series_index": 3
   },
   {
-      "title": "Public-Key Cryptography",
-      "author": "daniel-krawisz",
-      "date": "May 24, 2013",
-      "added": "May 24, 2013",
-      "slug": "crypto-anarchy-and-libertarian-entrepreneurship-2",
-      "excerpt":"Public-key cryptography is the greatest tool of liberty ever devised.",
-      "translations": {},
-      "series": "crypto-anarchy-and-libertarian-entrepreneurship",
-      "series_index": 2
+    "title": "Public-Key Cryptography",
+    "author": "daniel-krawisz",
+    "date": "May 24, 2013",
+    "added": "May 24, 2013",
+    "slug": "crypto-anarchy-and-libertarian-entrepreneurship-2",
+    "excerpt": "Public-key cryptography is the greatest tool of liberty ever devised.",
+    "translations": {},
+    "series": "crypto-anarchy-and-libertarian-entrepreneurship",
+    "series_index": 2
   },
   {
-      "title": "The Strategy",
-      "author": "daniel-krawisz",
-      "date": "May 22, 2013",
-      "added": "May 22, 2013",
-      "slug": "crypto-anarchy-and-libertarian-entrepreneurship-1",
-      "excerpt":"With cryptography, one libertarian inventor can create an entire libertarian society.",
-      "translations": {},
-      "series": "crypto-anarchy-and-libertarian-entrepreneurship",
-      "series_index": 1
+    "title": "The Strategy",
+    "author": "daniel-krawisz",
+    "date": "May 22, 2013",
+    "added": "May 22, 2013",
+    "slug": "crypto-anarchy-and-libertarian-entrepreneurship-1",
+    "excerpt": "With cryptography, one libertarian inventor can create an entire libertarian society.",
+    "translations": {},
+    "series": "crypto-anarchy-and-libertarian-entrepreneurship",
+    "series_index": 1
   },
   {
-      "title": "Fractional Reserve Banking is Obsolete",
-      "author": "pierre-rochard",
-      "date": "February 22, 2013",
-      "added": "February 22, 2013",
-      "slug": "fractional-reserve-banking-is-obsolete",
-      "excerpt":"There is no reason to deposit your money with a 3rd party. Bitcoin makes fractional reserve banking an obsolete technology.",
-      "translations": {}
+    "title": "Fractional Reserve Banking is Obsolete",
+    "author": "pierre-rochard",
+    "date": "February 22, 2013",
+    "added": "February 22, 2013",
+    "slug": "fractional-reserve-banking-is-obsolete",
+    "excerpt": "There is no reason to deposit your money with a 3rd party. Bitcoin makes fractional reserve banking an obsolete technology.",
+    "translations": {}
   },
   {
-      "title": "End the Fed: Hoard Bitcoins",
-      "author": "pierre-rochard",
-      "date": "February 19, 2013",
-      "added": "February 19, 2013",
-      "slug": "end-the-fed-hoard-bitcoins",
-      "excerpt":"Low transaction costs make Bitcoin the most competitive medium of exchange in humanity’s history, and it may be the case that a currency with even lower transaction costs is theoretically impossible.",
-      "translations": {
-        "es": ["bitman"]
-      }
+    "title": "End the Fed: Hoard Bitcoins",
+    "author": "pierre-rochard",
+    "date": "February 19, 2013",
+    "added": "February 19, 2013",
+    "slug": "end-the-fed-hoard-bitcoins",
+    "excerpt": "Low transaction costs make Bitcoin the most competitive medium of exchange in humanity’s history, and it may be the case that a currency with even lower transaction costs is theoretically impossible.",
+    "translations": {
+      "es": ["bitman"]
+    }
   },
   {
-      "title": "Working and Saving are Revolutionary Acts",
-      "author": "pierre-rochard",
-      "date": "December 24, 2012",
-      "added": "December 24, 2012",
-      "slug": "working-and-saving-are-revolutionary-acts",
-      "excerpt":"New capital formation is the impetus for two trends that push the equilibrium of all industries towards decentralized markets: increasing technological sophistication and a deepening of the division of labor.",
-      "translations": {}
+    "title": "Working and Saving are Revolutionary Acts",
+    "author": "pierre-rochard",
+    "date": "December 24, 2012",
+    "added": "December 24, 2012",
+    "slug": "working-and-saving-are-revolutionary-acts",
+    "excerpt": "New capital formation is the impetus for two trends that push the equilibrium of all industries towards decentralized markets: increasing technological sophistication and a deepening of the division of labor.",
+    "translations": {}
   }
 ]
