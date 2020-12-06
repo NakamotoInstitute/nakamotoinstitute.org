@@ -23,18 +23,18 @@
 		"waybacklink": "http://web.archive.org/web/20190202044429/https://apenwarr.ca/log/?m=201105",
 		"slug": "avery-pennarun"
 	},
-  {
-    "name": "Peter Schiff",
-    "title": "CEO, Euro Pacific Capital, Inc.",
-    "article": "Peter Schiff Radio Show with Bitcoin",
-    "date": "June 20, 2011",
-    "source": "YouTube",
-    "excerpt": "What [bitcoins] lack is their own fundamental intrinsic value. You can’t do anything with a bitcoin, other than trade it for something you want. So, intrinsically, the bitcoin itself has no value. It only has value as a medium of exchange so long as people are willing to accept it.",
-    "price": "$17.50",
-    "link": "https://www.youtube.com/watch?v=vTr_hTC90oQ",
-    "waybacklink": "",
-    "slug": "peter-schiff"
-  },
+	{
+		"name": "Peter Schiff",
+		"title": "CEO, Euro Pacific Capital, Inc.",
+		"article": "Peter Schiff Radio Show with Bitcoin",
+		"date": "June 20, 2011",
+		"source": "YouTube",
+		"excerpt": "What [bitcoins] lack is their own fundamental intrinsic value. You can’t do anything with a bitcoin, other than trade it for something you want. So, intrinsically, the bitcoin itself has no value. It only has value as a medium of exchange so long as people are willing to accept it.",
+		"price": "$17.50",
+		"link": "https://www.youtube.com/watch?v=vTr_hTC90oQ",
+		"waybacklink": "",
+		"slug": "peter-schiff"
+	},
 	{
 		"name": "Adrian Covert",
 		"title": "Journalist",
@@ -47,6 +47,18 @@
 		"waybacklink": "https://web.archive.org/web/20120331165346/http://www.gizmodo.com.au/2011/08/the-bitcoin-is-dying-whatever/",
 		"slug": "adrian-covert"
 	},
+	{
+		"name": "Paul Krugman",
+		"title": "Nobel Prize-winning Economist",
+		"article": "Golden Cyberfetters",
+		"date": "September 7, 2011",
+		"source": "The New York Times",
+		"excerpt": "So to the extent that the [Bitcoin] experiment tells us anything about monetary regimes, it reinforces the case against anything like a new gold standard – because it shows just how vulnerable such a standard would be to money-hoarding, deflation, and depression.",
+		"price": "$7.16",
+		"link": "https://krugman.blogs.nytimes.com/2011/09/07/golden-cyberfetters/",
+		"waybacklink": "https://web.archive.org/web/20110909021607/https://krugman.blogs.nytimes.com/2011/09/07/golden-cyberfetters/",
+		"slug": "paul-krugman"
+	 },
 	{
 		"name": "Michael Calore",
 		"title": "Journalist",
@@ -290,18 +302,6 @@
     "waybacklink": "https://web.archive.org/web/20140411101406/http://equitablegrowth.org/2013/12/28/watching-bitcoin-dogecoin-etc/",
     "slug": "brad-delong"
   },
-  {
-  	"name": "Paul Krugman",
-  	"title": "Nobel Prize-winning Economist",
-  	"article": "Bitcoin is Evil",
-  	"date": "December 28, 2013",
-  	"source": "The New York Times",
-  	"excerpt": "So far almost all of the Bitcoin discussion has been positive economics — can this actually work? And I have to say that I’m still deeply unconvinced. To be successful, money must be both a medium of exchange and a reasonably stable store of value. And it remains completely unclear why BitCoin should be a stable store of value.",
-  	"price": "$717.51",
-  	"link": "http://krugman.blogs.nytimes.com/2013/12/28/bitcoin-is-evil/",
-  	"waybacklink": "https://web.archive.org/web/20131228193758/http://krugman.blogs.nytimes.com/2013/12/28/bitcoin-is-evil/",
-  	"slug": "paul-krugman"
-   },
 	{
 		"name": "Lisa Kramer",
 		"title": "\"Serious Economist\"",
