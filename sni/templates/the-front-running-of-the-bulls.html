@@ -1,0 +1,80 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block title %}
+The Front Running Of The Bulls: A Tribute to Early Positions | Satoshi Nakamoto Institute
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="text-center">
+ 	  <h1>The Front Running Of The Bulls</h1>
+    <h3>A Tribute to Early Positions</h3>
+    <p class="text-center mt-3">Submit a link via <a href="https://github.com/NakamotoInstitute/nakamotoinstitute.org">GitHub</a></p>
+    <p class="text-center mb-0">Price data by <a href="https://coinmetrics.io/">CoinMetrics.io</a></p>
+    <p class="text-center mt-0"><em>Last updated: {{updated.date|dateformat()}}</em></p>
+  </div>
+  {% for frontrunner in frontrunners %}
+    <hr class="my-4">
+    <h3 id="{{frontrunner.slug}}"><a class="mx-3" href="#{{frontrunner.slug}}"><i class="fas fa-link fa-sm"></i></a>{{frontrunner.name}} - {{frontrunner.date.strftime('%B %d, %Y')}} ({{frontrunner.price}})</h3>
+    <p><em>{{frontrunner.title}}</em></p>
+    <hr class="skeptic-stats-border my-1">
+    <div class="skeptic-stats d-flex justify-content-between flex-wrap flex-column flex-md-row">
+      <div class="d-flex flex-row flex-md-column text-nowrap text-md-center">
+        <div class="font-weight-bold">Daily Buy</div>
+        <div>$1</div>
+      </div>
+      <div class="d-flex flex-row flex-md-column text-nowrap text-md-center">
+        <div class="font-weight-bold">Total Invested</div>
+        <div>${{frontrunner.usd_invested|commafy}}</div>
+      </div>
+      <div class="d-flex flex-row flex-md-column text-nowrap text-md-center">
+        <div class="font-weight-bold">BTC Balance</div>
+        <div>{{frontrunner.btc_balance|commafy}}</div>
+      </div>
+      <div class="d-flex flex-row flex-md-column text-nowrap text-md-center">
+        <div class="font-weight-bold">Current Value</div>
+        <div>${{frontrunner.usd_value|commafy}}</div>
+      </div>
+      {% set perc = frontrunner.percent_change | float %}
+      {% set positive = perc > 0 %}
+      <div class="d-flex flex-row flex-md-column text-nowrap text-md-center">
+        <div class="font-weight-bold">Percent Change</div>
+        <div class="{% if perc > 0 %}text-success{% elif perc < 0 %}text-danger{% endif %}">{% if perc >= 0 %}+{% endif %}{{frontrunner.percent_change|commafy}}%</div>
+      </div>
+    </div>
+    <hr class="skeptic-stats-border mb-3 my-1">
+    {% if frontrunner.source == "Twitter" %}
+      {% if frontrunner.media_embed %}
+      {{frontrunner.media_embed|safe}}
+      {% elif frontrunner.twitter_screenshot %}
+      <div class="text-center">
+        <img class="img-fluid d-block mx-auto" src="/static/img/the-skeptics/{{skeptic.slug}}.jpg">
+      </div>
+      {% endif %}
+      <ul>
+        {% for link in frontrunner.link.split(", ") %}
+          <li><a href="{{link}}" target="_blank">{{link}}</a></li>
+        {%endfor%}
+      </ul>
+    {% else %}
+      <h4><a href="{{frontrunner.link}}" target="_blank">{{frontrunner.article}}</a> (<em>{{frontrunner.source}}</em>)</h4>
+    {% endif %}
+    {% if frontrunner.excerpt %}
+    <p>
+      <em>{{frontrunner.excerpt|safe}}</em><br>
+    </p>
+    {% endif %}
+    {% if not frontrunner.source == "Twitter" and frontrunner.media_embed %}
+    <div class="embed-responsive embed-responsive-16by9 text-center">
+      {{frontrunner.media_embed|safe}}
+    </div>
+    {% endif %}
+    {% if frontrunner.waybacklink %}
+    <p>
+      <a href="{{frontrunner.waybacklink}}" target="_blank">Archive Link</a>
+    </p>
+    {% endif %}
+  {% endfor %}
+</div>
+{% endblock %}

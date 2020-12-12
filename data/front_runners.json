@@ -1,0 +1,50 @@
+[
+	{
+		"name": "Hal Finney",
+		"title": "Runner of Bitcoin",
+		"article": "Re: Bitcoin v0.1 released",
+		"date": "January 11, 2009",
+		"source": "mail-archive",
+		"excerpt": "",
+		"price": "$0.00",
+		"link": "https://www.mail-archive.com/cryptography@metzdowd.com/msg10152.html",
+		"waybacklink": "https://web.archive.org/web/20190712071421/https://www.mail-archive.com/cryptography@metzdowd.com/msg10152.html",
+		"slug": "hal-finney"
+	},
+	{
+		"name": "Satoshi Nakamoto",
+		"title": "Creator of Bitcoin",
+		"article": "Bitcoin v0.1 released",
+		"date": "January 16, 2009",
+		"source": "mail-archive",
+		"excerpt": "It might make sense just to get some in case it catches on. If enough people think the same way, that becomes a self fulfilling prophecy.",
+		"price": "$0.00",
+		"link": "https://satoshi.nakamotoinstitute.org/emails/cryptography/threads/2/#015014",
+		"waybacklink": "",
+		"slug": "satoshi-nakamoto"
+	},
+	{
+		"name": "Chamath Palihapitiya",
+		"title": "SocialCapital Founder and CEO",
+		"article": "Chamath Palihapitiya, former facebook executive speaks about Bitcoin.",
+		"date": "August 29, 2013",
+		"source": "YouTube",
+		"excerpt": "",
+		"price": "$122.31",
+		"link": "https://www.youtube.com/watch?v=GZDfpXm8hOQ",
+		"waybacklink": "",
+		"slug": "chamath-palihapitiya"
+	},
+	{
+		"name": "Michael Saylor",
+		"title": "MicroStrategy $MSTR Founder, Chairman & CEO",
+		"article": "MicroStrategy Adopts Bitcoin as Primary Treasury Reserve Asset",
+		"date": "August 11, 2020",
+		"source": "businesswire.com",
+		"excerpt": "Our investment in Bitcoin is part of our new capital allocation strategy, which seeks to maximize long-term value for our shareholders",
+		"price": "$11426.34",
+		"link": "https://www.businesswire.com/news/home/20200811005331/en/",
+		"waybacklink": "",
+		"slug": "michael-saylor"
+	}
+]

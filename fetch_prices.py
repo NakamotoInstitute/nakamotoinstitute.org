@@ -7,7 +7,7 @@ from datetime import timedelta
 from dateutil import parser
 
 from sni import db
-from sni.models import Price, Skeptic
+from sni.models import Price, Skeptic, FrontRunner
 
 
 def update_skeptics():
@@ -31,6 +31,29 @@ def update_skeptics():
         skeptic._percent_change = str(percent_change)
 
         db.session.add(skeptic)
+    db.session.commit()
+
+def update_front_runners():
+    front_runners = FrontRunner.query.all()
+    prices = Price.query.all()
+    price_query = db.session.query(Price)
+
+    for front_runner in front_runners:
+        date_diff = (prices[-1].date - front_runner.date).days + 1  # Include first day
+        filtered_prices = price_query.filter(Price.date >= front_runner.date).all()
+        total_btc = Decimal('0')
+        for price_data in filtered_prices:
+            btc = round(Decimal('1') / Decimal(price_data.price), 8)
+            total_btc += btc
+        usd_value = round(total_btc * Decimal(prices[-1].price), 2)
+        percent_change = round(
+            ((Decimal(usd_value) - Decimal(date_diff)) / Decimal(date_diff)) * 100, 2)
+        front_runner._btc_balance = str(total_btc)
+        front_runner._usd_invested = date_diff
+        front_runner._usd_value = str(usd_value)
+        front_runner._percent_change = str(percent_change)
+
+        db.session.add(front_runner)
     db.session.commit()
 
 

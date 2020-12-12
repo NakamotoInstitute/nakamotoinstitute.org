@@ -365,6 +365,44 @@ class Skeptic(db.Model):
         return '<Skeptic %r>' % (self.name)
 
 
+class FrontRunner(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String())
+    title = db.Column(db.String())
+    article = db.Column(db.String())
+    date = db.Column(db.Date)
+    source = db.Column(db.String())
+    excerpt = db.Column(db.String())
+    price = db.Column(db.String())
+    link = db.Column(db.String())
+    media_embed = db.Column(db.String())
+    twitter_screenshot = db.Column(db.Boolean)
+    waybacklink = db.Column(db.String())
+    slug = db.Column(db.String())
+    _btc_balance = db.Column(db.String())
+    _usd_invested = db.Column(db.Integer)
+    _usd_value = db.Column(db.String())
+    _percent_change = db.Column(db.String())
+
+    @property
+    def btc_balance(self):
+        return Decimal(self._btc_balance)
+
+    @property
+    def usd_invested(self):
+        return Decimal(self._usd_invested)
+
+    @property
+    def usd_value(self):
+        return Decimal(self._usd_value)
+
+    @property
+    def percent_change(self):
+        return Decimal(self._percent_change)
+
+    def __repr__(self):
+        return '<FrontRunner %r>' % (self.name)
+
 class Episode(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String())

@@ -7,7 +7,7 @@
 
 from sni import app, db, cache, pages
 from sni.models import Language, Post, Email, Doc, ResearchDoc, Author, Format, \
-                   Category, BlogPost, BlogSeries, Skeptic, Episode, Quote, \
+                   Category, BlogPost, BlogSeries, Skeptic, FrontRunner, Episode, Quote, \
                    QuoteCategory, EmailThread, ForumThread, Price
 from flask import render_template, json, url_for, redirect, request, Response,\
                   send_from_directory, escape
@@ -635,6 +635,14 @@ def skeptics():
     latest_price = Price.query.all()[-1]
     app.logger.info(str(request.remote_addr) + ', the-skeptics')
     return render_template('the-skeptics.html', skeptics=skeptics, updated=latest_price)
+
+@app.route('/the-front-running-of-the-bulls/')
+#@cache.cached()
+def frontrunners():
+    frontRunners = FrontRunner.query.order_by(FrontRunner.date).all()
+    latest_price = Price.query.all()[-1]
+    app.logger.info(str(request.remote_addr) + ', the-front-running-of-the-bulls')
+    return render_template('the-front-running-of-the-bulls.html', frontrunners=frontRunners, updated=latest_price)
 
 
 @app.route('/crash-course/', methods=["GET"])
