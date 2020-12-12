@@ -636,13 +636,13 @@ def skeptics():
     app.logger.info(str(request.remote_addr) + ', the-skeptics')
     return render_template('the-skeptics.html', skeptics=skeptics, updated=latest_price)
 
-@app.route('/the-front-running-of-the-bulls/')
+@app.route('/the-front-runners/')
 #@cache.cached()
 def frontrunners():
     frontRunners = FrontRunner.query.order_by(FrontRunner.date).all()
     latest_price = Price.query.all()[-1]
-    app.logger.info(str(request.remote_addr) + ', the-front-running-of-the-bulls')
-    return render_template('the-front-running-of-the-bulls.html', frontrunners=frontRunners, updated=latest_price)
+    app.logger.info(str(request.remote_addr) + ', the-front-runners')
+    return render_template('the-front-runners.html', frontrunners=frontRunners, updated=latest_price)
 
 
 @app.route('/crash-course/', methods=["GET"])

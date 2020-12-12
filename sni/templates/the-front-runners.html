@@ -2,14 +2,18 @@
 {% extends "base.html" %}
 
 {% block title %}
-The Front Running Of The Bulls: A Tribute to Early Positions | Satoshi Nakamoto Institute
+The Front Runners: A Tribute to Early Positions | Satoshi Nakamoto Institute
 {% endblock %}
 
 {% block content %}
 <div class="container">
   <div class="text-center">
- 	  <h1>The Front Running Of The Bulls</h1>
+ 	  <h1>The Front Runners</h1>
     <h3>A Tribute to Early Positions</h3>
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/nJeddv1QbeQ?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    
     <p class="text-center mt-3">Submit a link via <a href="https://github.com/NakamotoInstitute/nakamotoinstitute.org">GitHub</a></p>
     <p class="text-center mb-0">Price data by <a href="https://coinmetrics.io/">CoinMetrics.io</a></p>
     <p class="text-center mt-0"><em>Last updated: {{updated.date|dateformat()}}</em></p>
