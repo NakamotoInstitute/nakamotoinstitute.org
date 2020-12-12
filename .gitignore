@@ -47,6 +47,8 @@ nosetests.xml
 *.sublime-workspace
 venv/*
 
+.python-version
+
 app.db
 app.db-journal
 
