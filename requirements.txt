@@ -16,7 +16,7 @@ gunicorn==19.9.0
 idna==2.9
 itsdangerous==1.1.0
 Jinja2==2.10.1
-lxml==4.2.5
+lxml==4.6.2
 Mako==0.9.1
 Markdown==2.6.1
 MarkupSafe==1.1.0
