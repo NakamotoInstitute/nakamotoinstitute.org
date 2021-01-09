@@ -18,8 +18,8 @@
     <span class="text-muted">{% if not bp.series.chapter_title %}#{{bp.series_index}} – {% endif %}</span><a href="{{url_for('blogpost', slug=bp.slug)}}">{% if bp.series and bp.series.chapter_title %}Chapter {{bp.series_index}}: {% endif %}{{bp.title}}</a>
   </h4>
   <p class="text-muted">
-    {{bp.added.strftime('%B %-d, %Y')}}
-    {% if bp.date != bp.added %}(Originally published {{bp.date.strftime('%B %-d, %Y')}}){% endif %}
+    {{bp.date.strftime('%B %-d, %Y')}}
+    {% if bp.date != bp.added %}(Added {{bp.added.strftime('%B %-d, %Y')}}){% endif %}
   </p>
     <p>
       {{bp.excerpt}}

@@ -4,6 +4,8 @@
 # Licensed under GNU Affero GPL (https://github.com/pierrerochard/SNI-private/blob/master/LICENSE)
 #
 
+from decimal import Decimal
+
 from sni import db, app
 
 
@@ -334,10 +336,30 @@ class Skeptic(db.Model):
     excerpt = db.Column(db.String())
     price = db.Column(db.String())
     link = db.Column(db.String())
-    twitter_embed = db.Column(db.String())
+    media_embed = db.Column(db.String())
     twitter_screenshot = db.Column(db.Boolean)
     waybacklink = db.Column(db.String())
     slug = db.Column(db.String())
+    _btc_balance = db.Column(db.String())
+    _usd_invested = db.Column(db.Integer)
+    _usd_value = db.Column(db.String())
+    _percent_change = db.Column(db.String())
+
+    @property
+    def btc_balance(self):
+        return Decimal(self._btc_balance)
+
+    @property
+    def usd_invested(self):
+        return Decimal(self._usd_invested)
+
+    @property
+    def usd_value(self):
+        return Decimal(self._usd_value)
+
+    @property
+    def percent_change(self):
+        return Decimal(self._percent_change)
 
     def __repr__(self):
         return '<Skeptic %r>' % (self.name)
@@ -358,3 +380,19 @@ class Episode(db.Model):
 
     def __repr__(self):
         return '<Episode %r>' % (self.title)
+
+
+class Price(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    date = db.Column(db.Date)
+    price = db.Column(db.String())
+
+    def __repr__(self):
+        return '<Price %r>' % (self.date)
+
+    def serialize(self):
+        return {
+            'id': self.id,
+            'date': str(self.date),
+            'price': self.price,
+        }

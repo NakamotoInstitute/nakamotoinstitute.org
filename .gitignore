@@ -19,7 +19,6 @@ dist
 build
 eggs
 parts
-bin
 var
 sdist
 develop-eggs
@@ -48,13 +47,16 @@ nosetests.xml
 *.sublime-workspace
 venv/*
 
+.python-version
+
 app.db
 app.db-journal
 
 *.mp3
 feed.xml
-
 .webassets-cache/*
+cache/
+data/prices.json
 sni/static/css/main.css
 sni/static/templates/docs/*.epub
 sni/static/templates/docs/*.pdf

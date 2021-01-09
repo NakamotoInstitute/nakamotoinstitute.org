@@ -5,16 +5,19 @@
 # Licensed under GNU Affero GPL (https://github.com/pierrerochard/SNI-private/blob/master/LICENSE)
 #
 
-import json
-import datetime
 import csv
+import json
+import os.path
 from dateutil import parser
 from datetime import datetime
 
+import click
+import requests
+from flask_sqlalchemy import SQLAlchemy
+
+from fetch_prices import update_skeptics
 from sni import db
 from sni.models import *
-
-import click
 
 
 def color_text(text, color='green'):
@@ -22,6 +25,11 @@ def color_text(text, color='green'):
 
 
 DONE = color_text('Done!')
+
+
+def model_exists(model_class):
+    engine = db.get_engine()
+    return model_class.metadata.tables[model_class.__tablename__].exists(engine)
 
 
 def get(model, **kwargs):
@@ -45,6 +53,49 @@ def flush_db():
     click.echo(DONE)
 
 
+def export_prices():
+    if not model_exists(Price):
+        return
+    click.echo('Exporting Prices...', nl=False)
+    prices = Price.query.all()
+    serialized_prices = [price.serialize() for price in prices]
+    with open('data/prices.json', 'w') as f:
+        json.dump(serialized_prices, f, indent=4)
+    click.echo(DONE)
+
+
+def import_prices():
+    click.echo('Importing Prices...', nl=False)
+    prices = []
+    fname = 'data/prices.json'
+    if os.path.isfile(fname):
+        with open('data/prices.json') as data_file:
+            prices = json.load(data_file)
+
+    if not prices:
+        URL = 'https://community-api.coinmetrics.io/v2/assets/btc/metricdata?metrics=PriceUSD'
+
+        resp = requests.get(URL).json()
+        series = resp['metricData']['series']
+        for se in series:
+            date = parser.parse(se['time'])
+            price = se['values'][0]
+            new_price = Price(
+                date=date,
+                price=price,
+            )
+            db.session.add(new_price)
+    else:
+        for price in prices:
+            new_price = Price(
+                date=parser.parse(price['date']),
+                price=price['price'],
+            )
+            db.session.add(new_price)
+    db.session.commit()
+    click.echo(DONE)
+
+
 def import_language():
     click.echo('Importing Language...', nl=False)
     with open('data/languages.json') as data_file:
@@ -56,7 +107,7 @@ def import_language():
             ietf=language['ietf']
         )
         db.session.add(new_language)
-        db.session.commit()
+    db.session.commit()
     click.echo(DONE)
 
 
@@ -71,7 +122,7 @@ def import_translator():
             url=translator['url']
         )
         db.session.add(new_translator)
-        db.session.commit()
+    db.session.commit()
     click.echo(DONE)
 
 
@@ -87,7 +138,7 @@ def import_email_thread():
             source=thread['source']
         )
         db.session.add(new_thread)
-        db.session.commit()
+    db.session.commit()
     click.echo(DONE)
 
 
@@ -117,7 +168,7 @@ def import_email():
         if parent:
             new_email.parent = parent
         db.session.add(new_email)
-        db.session.commit()
+    db.session.commit()
     click.echo(DONE)
 
 
@@ -134,7 +185,7 @@ def import_forum_thread():
             source=thread['source']
         )
         db.session.add(new_thread)
-        db.session.commit()
+    db.session.commit()
     click.echo(DONE)
 
 
@@ -162,7 +213,7 @@ def import_post():
             thread_id=p['thread_id']
         )
         db.session.add(post)
-        db.session.commit()
+    db.session.commit()
     click.echo(DONE)
 
 
@@ -177,7 +228,7 @@ def import_quote_category():
             name=qc['name']
         )
         db.session.add(quote_category)
-        db.session.commit()
+    db.session.commit()
     click.echo(DONE)
 
 
@@ -202,7 +253,7 @@ def import_quote():
             categories += [get(QuoteCategory, slug=cat)]
         q.categories = categories
         db.session.add(q)
-        db.session.commit()
+    db.session.commit()
     click.echo(DONE)
 
 
@@ -219,7 +270,7 @@ def import_author():
             last=author['last'],
             slug=author['slug'])
         db.session.add(author)
-        db.session.commit()
+    db.session.commit()
     click.echo(DONE)
 
 
@@ -256,7 +307,7 @@ def import_doc():
             doctype=doc['doctype'],
             external=ext)
         db.session.add(doc)
-        db.session.commit()
+    db.session.commit()
     click.echo(DONE)
 
 
@@ -298,7 +349,7 @@ def import_research_doc():
             external=ext,
             lit_id=lit)
         db.session.add(doc)
-        db.session.commit()
+    db.session.commit()
     click.echo(DONE)
 
 
@@ -315,7 +366,7 @@ def import_blog_series():
             chapter_title=blogs['chapter_title'],
         )
         db.session.add(blog_series)
-        db.session.commit()
+    db.session.commit()
     click.echo(DONE)
 
 
@@ -340,7 +391,6 @@ def import_blog_post():
         except KeyError:
             pass
         db.session.add(blogpost)
-        db.session.commit()
         for lang in bp['translations']:
             translators = bp['translations'][lang]
             dbtranslator = []
@@ -352,7 +402,7 @@ def import_blog_post():
             )
             blogpost.translations.append(blog_translation)
             db.session.add(blogpost)
-            db.session.commit()
+    db.session.commit()
     click.echo(DONE)
 
 
@@ -364,9 +414,9 @@ def import_skeptic():
     for i, skeptic in enumerate(skeptics, start=1):
         slug_date = datetime.strftime(parser.parse(skeptic['date']), '%Y-%m-%d')
         try:
-            twitter_embed = skeptic['twitter_embed']
+            media_embed = skeptic['media_embed']
         except KeyError:
-            twitter_embed = ''
+            media_embed = ''
         try:
             twitter_screenshot = skeptic['twitter_screenshot']
         except KeyError:
@@ -382,12 +432,15 @@ def import_skeptic():
             price=skeptic['price'],
             link=skeptic['link'],
             waybacklink=skeptic['waybacklink'],
-            twitter_embed=twitter_embed,
+            media_embed=media_embed,
             twitter_screenshot=twitter_screenshot,
             slug='{}-{}'.format(skeptic['slug'], slug_date)
         )
         db.session.add(skeptic)
-        db.session.commit()
+    db.session.commit()
+    click.echo(DONE)
+    click.echo('Adding Skeptic price data...', nl=False)
+    update_skeptics()
     click.echo(DONE)
 
 
@@ -409,7 +462,7 @@ def import_episode():
             address=ep['address'],
             time=parser.parse(ep['time']))
         db.session.add(episode)
-        db.session.commit()
+    db.session.commit()
     click.echo(DONE)
 
 
@@ -472,6 +525,7 @@ def update(content, skeptic):
         click.echo(DONE)
         import_skeptic()
     if not content and not skeptic:
+        export_prices()
         flush_db()
         import_language()
         import_translator()
@@ -486,6 +540,7 @@ def update(content, skeptic):
         import_research_doc()
         import_blog_series()
         import_blog_post()
+        import_prices()
         import_skeptic()
         import_episode()
     click.echo(color_text('Finished importing data!'))

@@ -12,14 +12,42 @@ The Skeptics: A Tribute to Bold Assertions | Satoshi Nakamoto Institute
     <h3>A Tribute to Bold Assertions</h3>
     <p><em>"We propose a global and morally mandatory heuristic that anyone involved in an action which can possibly generate harm for others, even probabilistically, should be required to be exposed to some damage, regardless of context."</em><br>N.N. Taleb & C. Sandis, <a href="http://ssrn.com/abstract=2298292">"The Skin in the Game Heuristic for Protection Against Tail Events"</a></p>
     <p class="text-center mt-3">Submit a link via <a href="https://github.com/NakamotoInstitute/nakamotoinstitute.org">GitHub</a></p>
+    <p class="text-center mb-0">Price data by <a href="https://coinmetrics.io/">CoinMetrics.io</a></p>
+    <p class="text-center mt-0"><em>Last updated: {{updated.date|dateformat()}}</em></p>
   </div>
   {% for skeptic in skeptics %}
-    <hr>
+    <hr class="my-4">
     <h3 id="{{skeptic.slug}}"><a class="mx-3" href="#{{skeptic.slug}}"><i class="fas fa-link fa-sm"></i></a>{{skeptic.name}} - {{skeptic.date.strftime('%B %d, %Y')}} ({{skeptic.price}})</h3>
     <p><em>{{skeptic.title}}</em></p>
+    <hr class="skeptic-stats-border my-1">
+    <div class="skeptic-stats d-flex justify-content-between flex-wrap flex-column flex-md-row">
+      <div class="d-flex flex-row flex-md-column text-nowrap text-md-center">
+        <div class="font-weight-bold">Daily Buy</div>
+        <div>$1</div>
+      </div>
+      <div class="d-flex flex-row flex-md-column text-nowrap text-md-center">
+        <div class="font-weight-bold">Total Invested</div>
+        <div>${{skeptic.usd_invested|commafy}}</div>
+      </div>
+      <div class="d-flex flex-row flex-md-column text-nowrap text-md-center">
+        <div class="font-weight-bold">BTC Balance</div>
+        <div>{{skeptic.btc_balance|commafy}}</div>
+      </div>
+      <div class="d-flex flex-row flex-md-column text-nowrap text-md-center">
+        <div class="font-weight-bold">Current Value</div>
+        <div>${{skeptic.usd_value|commafy}}</div>
+      </div>
+      {% set perc = skeptic.percent_change | float %}
+      {% set positive = perc > 0 %}
+      <div class="d-flex flex-row flex-md-column text-nowrap text-md-center">
+        <div class="font-weight-bold">Percent Change</div>
+        <div class="{% if perc > 0 %}text-success{% elif perc < 0 %}text-danger{% endif %}">{% if perc >= 0 %}+{% endif %}{{skeptic.percent_change|commafy}}%</div>
+      </div>
+    </div>
+    <hr class="skeptic-stats-border mb-3 my-1">
     {% if skeptic.source == "Twitter" %}
-      {% if skeptic.twitter_embed %}
-      {{skeptic.twitter_embed|safe}}
+      {% if skeptic.media_embed %}
+      {{skeptic.media_embed|safe}}
       {% elif skeptic.twitter_screenshot %}
       <div class="text-center">
         <img class="img-fluid d-block mx-auto" src="/static/img/the-skeptics/{{skeptic.slug}}.jpg">
@@ -37,6 +65,11 @@ The Skeptics: A Tribute to Bold Assertions | Satoshi Nakamoto Institute
     <p>
       <em>{{skeptic.excerpt|safe}}</em><br>
     </p>
+    {% endif %}
+    {% if not skeptic.source == "Twitter" and skeptic.media_embed %}
+    <div class="embed-responsive embed-responsive-16by9 text-center">
+      {{skeptic.media_embed|safe}}
+    </div>
     {% endif %}
     {% if skeptic.waybacklink %}
     <p>

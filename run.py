@@ -6,7 +6,7 @@
 #
 
 from sni import app, manager
-from werkzeug.contrib.fixers import ProxyFix
+from werkzeug.middleware.proxy_fix import ProxyFix
 
 app.wsgi_app = ProxyFix(app.wsgi_app)
 

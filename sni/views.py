@@ -8,7 +8,7 @@
 from sni import app, db, cache, pages
 from sni.models import Language, Post, Email, Doc, ResearchDoc, Author, Format, \
                    Category, BlogPost, BlogSeries, Skeptic, Episode, Quote, \
-                   QuoteCategory, EmailThread, ForumThread
+                   QuoteCategory, EmailThread, ForumThread, Price
 from flask import render_template, json, url_for, redirect, request, Response,\
                   send_from_directory, escape
 from pytz import timezone
@@ -54,6 +54,7 @@ def satoshi_index():
 
 
 @app.route('/')
+@cache.cached()
 def index():
     bp = BlogPost.query.order_by(desc(BlogPost.added)).first()
     app.logger.info(str(request.remote_addr) + ', Index')
@@ -61,31 +62,35 @@ def index():
 
 
 @app.route('/about/', methods=["GET"])
+@cache.cached()
 def about():
     app.logger.info(str(request.remote_addr) + ', About')
     return render_template("about.html")
 
 
 @app.route('/contact/', methods=["GET"])
+@cache.cached()
 def contact():
     app.logger.info(str(request.remote_addr) + ', Contact')
     return render_template("contact.html")
 
 
 @app.route('/events/', methods=["GET"])
+@cache.cached()
 def events():
     app.logger.info(str(request.remote_addr) + ', Events')
     return render_template("events.html")
 
 
 @app.route('/donate/', methods=["GET"])
+@cache.cached()
 def donate():
     app.logger.info(str(request.remote_addr) + ', Donate')
     return render_template("donate.html")
 
 
-@cache.cached(timeout=900)
 @app.route('/emails/', subdomain="satoshi", methods=["GET"])
+@cache.cached()
 def emails():
     view_query = request.args.get('view')
     if view_query == 'threads':
@@ -101,8 +106,8 @@ def emails():
     return render_template("emails.html", emails=emails)
 
 
-@cache.cached(timeout=900)
 @app.route('/emails/<string:source>/', subdomain="satoshi", methods=["GET"])
+@cache.cached()
 def emailssource(source):
     emails = Email.query.filter(Email.satoshi_id.isnot(None)) \
                          .join(Email.email_thread, aliased=True) \
@@ -114,8 +119,8 @@ def emailssource(source):
         return redirect(url_for('emails'))
 
 
-@cache.cached(timeout=900)
 @app.route('/emails/<string:source>/<int:emnum>/', subdomain="satoshi", methods=["GET"])
+@cache.cached()
 def emailview(source, emnum):
     email = Email.query.filter_by(satoshi_id=emnum) \
                        .join(Email.email_thread, aliased=True) \
@@ -129,8 +134,8 @@ def emailview(source, emnum):
         return redirect('emails')
 
 
-@cache.cached(timeout=900)
 @app.route('/emails/<string:source>/threads/', subdomain="satoshi", methods=["GET"])
+@cache.cached()
 def emailthreads(source):
     threads = EmailThread.query.filter_by(source=source).order_by(EmailThread.id).all()
     if len(threads) != 0:
@@ -140,8 +145,8 @@ def emailthreads(source):
         return redirect(url_for('emails', view='threads'))
 
 
-@cache.cached(timeout=900)
 @app.route('/emails/<string:source>/threads/<int:thread_id>/', subdomain="satoshi", methods=["GET"])
+@cache.cached()
 def emailthreadview(source, thread_id):
     view_query = request.args.get('view')
     emails = Email.query.filter_by(thread_id=thread_id)
@@ -160,8 +165,8 @@ def emailthreadview(source, thread_id):
     return render_template("threadview_emails.html", emails=emails, prev=prev, next=next)
 
 
-@cache.cached(timeout=900)
 @app.route('/posts/', subdomain="satoshi", methods=["GET"])
+@cache.cached()
 def posts():
     view_query = request.args.get('view')
     if view_query == 'threads':
@@ -177,8 +182,8 @@ def posts():
     return render_template("posts.html", posts=posts, source=None)
 
 
-@cache.cached(timeout=900)
 @app.route('/posts/<string:source>/', subdomain="satoshi", methods=["GET"])
+@cache.cached()
 def forumposts(source):
     posts = Post.query.filter(Post.satoshi_id.isnot(None)) \
                        .join(Post.forum_thread, aliased=True) \
@@ -190,8 +195,8 @@ def forumposts(source):
         return redirect(url_for('posts'))
 
 
-@cache.cached(timeout=900)
 @app.route('/posts/<string:source>/<int:postnum>/', subdomain="satoshi", methods=["GET"])
+@cache.cached()
 def postview(postnum, source):
     post = Post.query.filter_by(satoshi_id=postnum) \
                      .join(Post.forum_thread, aliased=True) \
@@ -206,8 +211,8 @@ def postview(postnum, source):
         return redirect('posts')
 
 
-@cache.cached(timeout=900)
 @app.route('/posts/<string:source>/threads/', subdomain="satoshi", methods=["GET"])
+@cache.cached()
 def threads(source):
     threads = ForumThread.query.filter_by(source=source).order_by(ForumThread.id).all()
     if len(threads) != 0:
@@ -217,8 +222,8 @@ def threads(source):
         return redirect(url_for('posts', view='threads'))
 
 
-@cache.cached(timeout=900)
 @app.route('/posts/<string:source>/threads/<int:thread_id>/', subdomain="satoshi", methods=["GET"])
+@cache.cached()
 def threadview(source, thread_id):
     view_query = request.args.get('view')
     posts = Post.query.filter_by(thread_id=thread_id)
@@ -237,23 +242,23 @@ def threadview(source, thread_id):
     return render_template("threadview.html", posts=posts, prev=prev, next=next)
 
 
-@cache.cached(timeout=900)
 @app.route('/code/', subdomain="satoshi")
+@cache.cached()
 def code():
     app.logger.info(str(request.remote_addr) + ', Code')
     return render_template("code.html")
 
 
-@cache.cached(timeout=900)
 @app.route('/quotes/', subdomain="satoshi")
+@cache.cached()
 def quotes():
     app.logger.info(str(request.remote_addr) + ', Quotes')
     categories = QuoteCategory.query.order_by(QuoteCategory.slug).all()
     return render_template("quotes.html", categories=categories)
 
 
-@cache.cached(timeout=900)
 @app.route('/quotes/<string:slug>/', subdomain="satoshi")
+@cache.cached()
 def quotescategory(slug):
     app.logger.info(str(request.remote_addr) + ', Quotes')
     order = request.args.get('order')
@@ -273,16 +278,16 @@ def quotescategory(slug):
         return redirect('quotes')
 
 
-@cache.cached(timeout=900)
 @app.route('/authors/', methods=["GET"])
+@cache.cached()
 def authors():
     authors = Author.query.order_by(Author.last).all()
     app.logger.info(str(request.remote_addr) + ', authors')
     return render_template("authors.html", authors=authors)
 
 
-@cache.cached(timeout=900)
 @app.route('/authors/<string:authslug>/', methods=["GET"])
+@cache.cached()
 def author(authslug):
     if authslug.lower() == 'satoshi-nakamoto':
         return redirect(url_for('satoshi_index'))
@@ -300,8 +305,8 @@ def author(authslug):
         return redirect(url_for('authors'))
 
 
-@cache.cached(timeout=900)
 @app.route('/literature/', methods=["GET"])
+@cache.cached()
 def literature():
     docs = Doc.query.order_by('id').all()
     formats = {}
@@ -312,8 +317,8 @@ def literature():
     return render_template("literature.html", docs=docs, formats=formats)
 
 
-@cache.cached(timeout=900)
 @app.route('/literature/<string:slug>/', methods=["GET"])
+@cache.cached()
 def docinfo(slug):
     doc = Doc.query.filter_by(slug=slug).first()
     if doc is not None:
@@ -327,7 +332,7 @@ def docinfo(slug):
         return redirect('literature')
 
 
-@cache.cached(timeout=900)
+@cache.cached()
 @app.route('/literature/<int:docid>/', methods=["GET"])
 def docinfoid(docid):
     doc = Doc.query.filter_by(id=docid).first()
@@ -340,7 +345,7 @@ def docinfoid(docid):
     return redirect('literature')
 
 
-@cache.cached(timeout=900)
+@cache.cached()
 @app.route('/literature/<string:slug>/<string:format>/', methods=["GET"])
 def docview(slug, format):
     doc = Doc.query.filter_by(slug=slug).first()
@@ -364,7 +369,7 @@ def docview(slug, format):
     return redirect('literature')
 
 
-@cache.cached(timeout=900)
+@cache.cached()
 @app.route('/literature/<int:docid>/<string:format>/', methods=["GET"])
 def docviewid(docid, format):
     doc = Doc.query.filter_by(id=docid).first()
@@ -389,8 +394,8 @@ def docviewid(docid, format):
     return redirect('literature')
 
 
-@cache.cached(timeout=900)
 @app.route('/research/', methods=["GET"])
+@cache.cached()
 def research():
     docs = ResearchDoc.query.order_by('id').all()
     formats = {}
@@ -401,8 +406,8 @@ def research():
     return render_template('research.html', docs=docs, formats=formats)
 
 
-@cache.cached(timeout=900)
 @app.route('/research/<string:slug>/', methods=["GET"])
+@cache.cached()
 def researchdocinfo(slug):
     res = ResearchDoc.query.filter_by(slug=slug).first()
     if res is not None:
@@ -414,8 +419,8 @@ def researchdocinfo(slug):
         return redirect('research')
 
 
-@cache.cached(timeout=900)
 @app.route('/research/<int:resid>/', methods=["GET"])
+@cache.cached()
 def researchdocinfoid(resid):
     res = ResearchDoc.query.filter_by(id=resid).first()
     if res is not None:
@@ -424,8 +429,8 @@ def researchdocinfoid(resid):
         return redirect('research')
 
 
-@cache.cached(timeout=900)
 @app.route('/research/<string:slug>/<string:format>/', methods=["GET"])
+@cache.cached()
 def researchdocview(slug, format):
     doc = ResearchDoc.query.filter_by(slug=slug).first()
     if doc is not None:
@@ -444,8 +449,8 @@ def researchdocview(slug, format):
         return redirect('literature')
 
 
-@cache.cached(timeout=900)
 @app.route('/research/<int:resid>/<string:format>/', methods=["GET"])
+@cache.cached()
 def researchdocviewid(docid, format):
     doc = ResearchDoc.query.filter_by(id=resid).first()
     if doc is not None:
@@ -465,8 +470,8 @@ def researchdocviewid(docid, format):
         return redirect('literature')
 
 
-@cache.cached(timeout=900)
 @app.route('/<string:slug>/', methods=["GET"])
+@cache.cached()
 def slugview(slug):
     doc = Doc.query.filter_by(slug=slug).first()
     if doc is not None:
@@ -490,16 +495,16 @@ def slugview(slug):
     return redirect('literature')
 
 
-@cache.cached(timeout=900)
 @app.route('/mempool/', methods=["GET"])
+@cache.cached()
 def blog():
     bps = BlogPost.query.order_by(desc(BlogPost.added)).all()
     app.logger.info(str(request.remote_addr) + ', mempool')
     return render_template('blog.html', bps=bps)
 
 
-@cache.cached(timeout=900)
 @app.route('/mempool/<string:slug>/', methods=["GET"])
+@cache.cached()
 def blogpost(slug):
     # Redirect for new appcoin slug
     if slug == "appcoins-are-fraudulent":
@@ -523,7 +528,7 @@ def blogpost(slug):
         return redirect(url_for("blog"))
 
 
-@cache.cached(timeout=900)
+@cache.cached()
 @app.route('/mempool/<string:slug>/<string:lang>/', methods=["GET"])
 def blogposttrans(slug, lang):
     bp = BlogPost.query.filter_by(slug=slug).order_by(
@@ -559,16 +564,16 @@ def blogposttrans(slug, lang):
         return redirect(url_for("blog"))
 
 
-@cache.cached(timeout=900)
 @app.route('/mempool/series/')
+@cache.cached()
 def blogseriesindex():
     series = BlogSeries.query.order_by(desc(BlogSeries.id)).all()
     app.logger.info(str(request.remote_addr) + ', Mempool Series')
     return render_template('blogseriesindex.html', series=series)
 
 
-@cache.cached(timeout=900)
 @app.route('/mempool/series/<string:slug>/')
+@cache.cached()
 def blogseries(slug):
     series = BlogSeries.query.filter_by(slug=slug).first()
     if series:
@@ -578,8 +583,8 @@ def blogseries(slug):
         return redirect(url_for('blogseriesindex'))
 
 
-@cache.cached(timeout=900)
 @app.route('/mempool/feed/')
+@cache.cached()
 def atomfeed():
     feed = AtomFeed('Mempool | Satoshi Nakamoto Institute',
                     feed_url=request.url, url=request.url_root)
@@ -598,16 +603,16 @@ def atomfeed():
     return feed.get_response()
 
 
-@cache.cached(timeout=900)
 @app.route('/podcast/', methods=["GET"])
+@cache.cached()
 def podcast():
     episodes = Episode.query.order_by(desc(Episode.date)).all()
     app.logger.info(str(request.remote_addr) + ', podcast')
     return render_template('podcast.html', episodes=episodes)
 
 
-@cache.cached(timeout=900)
 @app.route('/podcast/<string:slug>/', methods=["GET"])
+@cache.cached()
 def episode(slug):
     ep = Episode.query.filter_by(slug=slug).order_by(desc(Episode.date)).first()
     if ep is not None:
@@ -617,50 +622,52 @@ def episode(slug):
         return redirect(url_for("podcast"))
 
 
-@cache.cached(timeout=900)
 @app.route('/podcast/feed/', methods=["GET"])
+@cache.cached()
 def podcastfeed():
     return Response(render_template('feed.xml'), mimetype='text/xml')
 
 
-@cache.cached(timeout=900)
 @app.route('/the-skeptics/')
+#@cache.cached()
 def skeptics():
     skeptics = Skeptic.query.order_by(Skeptic.date).all()
+    latest_price = Price.query.all()[-1]
     app.logger.info(str(request.remote_addr) + ', the-skeptics')
-    return render_template('the-skeptics.html', skeptics=skeptics)
+    return render_template('the-skeptics.html', skeptics=skeptics, updated=latest_price)
 
 
-@cache.cached(timeout=900)
 @app.route('/crash-course/', methods=["GET"])
+@cache.cached()
 def crash_course():
     app.logger.info(str(request.remote_addr) + ', Crash Course')
     return render_template("crash-course.html")
 
 
-@cache.cached(timeout=900)
 @app.route('/finney/', methods=["GET"])
+@cache.cached()
 def finney_index():
     app.logger.info(str(request.remote_addr) + ', Finney')
     docs = Author.query.filter_by(slug='hal-finney').first().docs.all()
     return render_template("finney_index.html", docs=docs)
 
 
-@cache.cached(timeout=900)
 @app.route('/finney/rpow/', methods=["GET"])
+@cache.cached()
 def rpow():
     app.logger.info(str(request.remote_addr) + ', RPOW')
     return render_template("rpow_index.html")
 
 
 @app.route('/finney/rpow/<path:path>')
+@cache.cached()
 def rpow_site(path):
     return app.send_static_file('rpow/' + path)
 
 
 # Redirect old links
-@cache.cached(timeout=900)
 @app.route('/<string:url_slug>.<string:format>/')
+@cache.cached()
 def reroute(url_slug, format):
     doc = Doc.query.filter_by(slug=url_slug).first()
     if doc is not None:
@@ -674,5 +681,6 @@ def reroute(url_slug, format):
 
 
 @app.route('/keybase.txt')
+@cache.cached()
 def static_from_root():
     return send_from_directory(app.static_folder, request.path[1:])
