@@ -556,5 +556,18 @@
     "link": "https://finance.yahoo.com/news/economist-bitcoin-is-a-pyramid-scheme-204217615.html",
     "waybacklink": "http://web.archive.org/web/20200102060643/https://finance.yahoo.com/news/economist-bitcoin-is-a-pyramid-scheme-204217615.html",
 		"slug": "tendayi-kapfidze"
+	},
+	{
+		"name": "Nassim Nicholas Taleb",
+   		"title": "Flaneur, or something like that",
+    	"article": "",
+    	"date": "February 12, 2021",
+    	"source": "Twitter",
+    	"excerpt": "",
+    	"price": "$47,525.21",
+    	"link": "https://twitter.com/nntaleb/status/1360276917992230919, https://twitter.com/nntaleb/status/1360458636921823235, https://twitter.com/nntaleb/status/1360480666509533185",
+    	"waybacklink": "https://web.archive.org/web/20210214123023/https://twitter.com/nntaleb/status/1360276917992230919",
+		"twitter_screenshot": true,
+    	"slug": "nassim-taleb"
 	}
 ]
