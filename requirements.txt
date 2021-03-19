@@ -15,7 +15,7 @@ Flask-SQLAlchemy==2.4.1
 gunicorn==19.9.0
 idna==2.9
 itsdangerous==1.1.0
-Jinja2==2.10.1
+Jinja2==2.11.3
 lxml==4.6.2
 Mako==0.9.1
 Markdown==2.6.1
