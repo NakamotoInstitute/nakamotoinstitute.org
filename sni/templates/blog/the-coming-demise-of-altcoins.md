@@ -1,10 +1,10 @@
 image: wanderer-sea-of-fog.jpg
 image_alt: Wanderer Sea of Fog
 
-> O my brethren, am I then cruel? But I say: What falleth, that shall one also push!  
-> Everything of to-day—it falleth, it decayeth; who would preserve it! But I—I wish also to push it!  
-> Know ye the delight which rolleth stones into precipitous depths?—Those men of to-day, see just how they roll into my depths!  
-> A prelude am I to better players, O my brethren! An example! DO according to mine example!  
+> O my brethren, am I then cruel? But I say: What falleth, that shall one also push!
+> Everything of to-day—it falleth, it decayeth; who would preserve it! But I—I wish also to push it!
+> Know ye the delight which rolleth stones into precipitous depths?—Those men of to-day, see just how they roll into my depths!
+> A prelude am I to better players, O my brethren! An example! DO according to mine example!
 > And him whom ye do not teach to fly, teach I pray you—TO FALL FASTER!—
 >
 > <footer class="blockquote-footer">Friedrich Nietzsche, [_Thus Spake Zarathustra_](http://www.gutenberg.org/ebooks/1998)</footer>
@@ -29,7 +29,7 @@ Any disruption in the balance of buyers and sellers would affect a currency’s 
 
 A more liquid currency has an advantage over a less liquid one because it can support more trade. Furthermore, liquidity in a currency is self-reinforcing. The more that people buy a currency, the more liquid it becomes. This naturally tends to promote the success of a single currency over all the rest.
 
-Consider the hypothetical example of an economy that uses exactly two currencies, Acoin and Bcoin, which are equally preferred by holders. For whatever reason, Acoin develops a very slight advantage over Bcoin. Consequently a few people exchange Bcoin for Acoin, thus very slightly increasing the market cap and liquidity of Acoin and slightly decreasing that of Bcoin.
+Consider the hypothetical example of an economy that uses exactly two currencies, Acoin and Bcoin, which are equally preferred by holders. For whatever reason, Acoin develops a very slight advantage over Bcoin. Consequently, a few people exchange Bcoin for Acoin, thus very slightly increasing the market cap and liquidity of Acoin and slightly decreasing that of Bcoin.
 
 Now, _in addition_ to its initial slight advantage over Bcoin, Acoin has the advantage of becoming more liquid. As a result, _more_ people will tend to sell Bcoin for Acoin. Thus, Acoin’s initial advantage is self-reinforcing, and as the disparity between Acoin and Bcoin increases, its superiority becomes more and more evident.
 
