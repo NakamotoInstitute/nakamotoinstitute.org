@@ -15,7 +15,7 @@ import click
 import requests
 from flask_sqlalchemy import SQLAlchemy
 
-from fetch_prices import update_skeptics
+from fetch_prices import update_skeptics, update_front_runners
 from sni import db
 from sni.models import *
 
@@ -443,6 +443,42 @@ def import_skeptic():
     update_skeptics()
     click.echo(DONE)
 
+def import_front_runner():
+    click.echo('Importing Front Runners...', nl=False)
+    with open('./data/front_runners.json') as data_file:
+        front_runners = json.load(data_file)
+
+    for i, front_runner in enumerate(front_runners, start=1):
+        slug_date = datetime.strftime(parser.parse(front_runner['date']), '%Y-%m-%d')
+        try:
+            media_embed = front_runner['media_embed']
+        except KeyError:
+            media_embed = ''
+        try:
+            twitter_screenshot = front_runner['twitter_screenshot']
+        except KeyError:
+            twitter_screenshot = False
+        frontRunner = FrontRunner(
+            id=i,
+            name=front_runner['name'],
+            title=front_runner['title'],
+            article=front_runner['article'],
+            date=parser.parse(front_runner['date']),
+            source=front_runner['source'],
+            excerpt=front_runner['excerpt'],
+            price=front_runner['price'],
+            link=front_runner['link'],
+            waybacklink=front_runner['waybacklink'],
+            media_embed=media_embed,
+            twitter_screenshot=twitter_screenshot,
+            slug='{}-{}'.format(front_runner['slug'], slug_date)
+        )
+        db.session.add(frontRunner)
+    db.session.commit()
+    click.echo(DONE)
+    click.echo('Adding front_runner price data...', nl=False)
+    update_front_runners()
+    click.echo(DONE)
 
 def import_episode():
     click.echo('Importing Episode...', nl=False)
@@ -542,6 +578,7 @@ def update(content, skeptic):
         import_blog_post()
         import_prices()
         import_skeptic()
+        import_front_runner()
         import_episode()
     click.echo(color_text('Finished importing data!'))
 
