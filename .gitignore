@@ -10,8 +10,6 @@ addresses/*
 # C extensions
 *.so
 
-config.py
-
 # Packages
 *.egg
 *.egg-info
@@ -52,11 +50,16 @@ venv/*
 app.db
 app.db-journal
 
+.env
+
 *.mp3
-feed.xml
 .webassets-cache/*
 cache/
+logs/
 data/prices.json
 sni/static/css/main.css
-sni/static/templates/docs/*.epub
-sni/static/templates/docs/*.pdf
+app/static/docs/*.epub
+app/static/docs/*.mobi
+app/static/docs/*.zip
+
+.vscode

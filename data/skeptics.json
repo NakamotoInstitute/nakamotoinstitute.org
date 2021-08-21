@@ -1,101 +1,101 @@
 [
-	{
-		"name": "Niels van der Linden",
-		"title": "Amateur economist, VforVoluntary.com",
-		"article": "Don't Buy Bitcoins",
-		"date": "April 22, 2011",
-		"source": "YouTube",
-		"excerpt": "",
-		"price": "$0.77",
-		"link": "https://www.youtube.com/watch?v=DoK8HXMSsNg",
-		"waybacklink": "https://archive.org/details/DontBuyBitcoins",
-		"slug": "niels-van-der-linden"
-	},
-	{
-		"name": "Avery Pennarun",
-		"title": "Software engineer",
-		"article": "Why bitcoin will fail",
-		"date": "May 8, 2011",
-		"source": "apenwarr",
-		"excerpt": "See, a bitcoin rant is almost too over-the-top for me. Asking why I think bitcoin won't work is like asking why the sky isn't red. I mean, wait, you think it </em>is<em> red? You actually took that seriously? Oh boy. Where do I even start?",
-		"price": "$3.84",
-		"link": "https://apenwarr.ca/log/?m=201105",
-		"waybacklink": "http://web.archive.org/web/20190202044429/https://apenwarr.ca/log/?m=201105",
-		"slug": "avery-pennarun"
-	},
-	{
-		"name": "Peter Schiff",
-		"title": "CEO, Euro Pacific Capital, Inc.",
-		"article": "Peter Schiff Radio Show with Bitcoin",
-		"date": "June 20, 2011",
-		"source": "YouTube",
-		"excerpt": "What [bitcoins] lack is their own fundamental intrinsic value. You can’t do anything with a bitcoin, other than trade it for something you want. So, intrinsically, the bitcoin itself has no value. It only has value as a medium of exchange so long as people are willing to accept it.",
-		"price": "$17.50",
-		"link": "https://www.youtube.com/watch?v=vTr_hTC90oQ",
-		"waybacklink": "",
-		"slug": "peter-schiff"
-	},
-	{
-		"name": "Adrian Covert",
-		"title": "Journalist",
-		"article": "The Bitcoin Is Dying",
-		"date": "August 9, 2011",
-		"source": "Gizmodo Australia",
-		"excerpt": "The lulz were abundant. But frankly, it’s time for you to go. Farewell.",
-		"price": "$8.02",
-		"link": "http://www.gizmodo.com.au/2011/08/the-bitcoin-is-dying-whatever/",
-		"waybacklink": "https://web.archive.org/web/20120331165346/http://www.gizmodo.com.au/2011/08/the-bitcoin-is-dying-whatever/",
-		"slug": "adrian-covert"
-	},
-	{
-		"name": "Paul Krugman",
-		"title": "Nobel Prize-winning Economist",
-		"article": "Golden Cyberfetters",
-		"date": "September 7, 2011",
-		"source": "The New York Times",
-		"excerpt": "So to the extent that the [Bitcoin] experiment tells us anything about monetary regimes, it reinforces the case against anything like a new gold standard – because it shows just how vulnerable such a standard would be to money-hoarding, deflation, and depression.",
-		"price": "$7.16",
-		"link": "https://krugman.blogs.nytimes.com/2011/09/07/golden-cyberfetters/",
-		"waybacklink": "https://web.archive.org/web/20110909021607/https://krugman.blogs.nytimes.com/2011/09/07/golden-cyberfetters/",
-		"slug": "paul-krugman"
-	 },
-	{
-		"name": "Michael Calore",
-		"title": "Journalist",
-		"article": "Wired, Tired, Expired for 2012: From Stellar to Suck",
-		"date": "December 24, 2012",
-		"source": "Wired",
-		"excerpt": "Then came the malware, the black market, the legal ambiguities and The Man. Today, you can't even use it to buy Facebook stock",
-		"price": "$13.27",
-		"link": "http://www.wired.com/2012/12/wired-tired-expired/",
-		"waybacklink": "https://web.archive.org/web/20140408141723/http://www.wired.com/2012/12/wired-tired-expired/",
-		"slug": "michael-calore"
-	},
-	{
-		"name": "Tim Worstall",
-		"title": "Journalist",
-		"article": "So, That's the End of Bitcoin Then",
-		"date": "June 20, 2011",
-		"source": "Forbes",
-		"excerpt": "It’s difficult to see what the currency has going for it.",
-		"price": "$17.26",
-		"link": "http://www.forbes.com/sites/timworstall/2011/06/20/so-thats-the-end-of-bitcoin-then/",
-		"waybacklink": "https://web.archive.org/web/20110811144818/http://www.forbes.com/sites/timworstall/2011/06/20/so-thats-the-end-of-bitcoin-then/",
-		"slug": "tim-worstall"
-	},
-	{
-		"name": "Patrik Korda",
-		"title": "Amateur trader",
-		"article": "Bitcoin Bubble 2.0",
-		"date": "March 5, 2013",
-		"source": "Seeking Alpha",
-		"excerpt": "Thus, we have an answer before us: bitcoins are fiduciary media, or more specifically token money. From a monetary standpoint, as devised and formulated by Ludwig von Mises, they are on a par with the stuff you find at Chuck E. Cheese's.",
-		"price": "$34.00",
-		"link": "http://seekingalpha.com/instablog/7761841-patrik-korda/1616371-bitcoin-bubble-2_0",
-		"waybacklink": "https://web.archive.org/web/20130308142846/http://seekingalpha.com/instablog/7761841-patrik-korda/1616371-bitcoin-bubble-2-0",
-		"slug": "patrik-korda"
-	},
-	{
+  {
+    "name": "Niels van der Linden",
+    "title": "Amateur economist, VforVoluntary.com",
+    "article": "Don't Buy Bitcoins",
+    "date": "April 22, 2011",
+    "source": "YouTube",
+    "excerpt": "",
+    "price": "$0.77",
+    "link": "https://www.youtube.com/watch?v=DoK8HXMSsNg",
+    "waybacklink": "https://archive.org/details/DontBuyBitcoins",
+    "slug": "niels-van-der-linden"
+  },
+  {
+    "name": "Avery Pennarun",
+    "title": "Software engineer",
+    "article": "Why bitcoin will fail",
+    "date": "May 8, 2011",
+    "source": "apenwarr",
+    "excerpt": "See, a bitcoin rant is almost too over-the-top for me. Asking why I think bitcoin won't work is like asking why the sky isn't red. I mean, wait, you think it </em>is<em> red? You actually took that seriously? Oh boy. Where do I even start?",
+    "price": "$3.84",
+    "link": "https://apenwarr.ca/log/?m=201105",
+    "waybacklink": "http://web.archive.org/web/20190202044429/https://apenwarr.ca/log/?m=201105",
+    "slug": "avery-pennarun"
+  },
+  {
+    "name": "Peter Schiff",
+    "title": "CEO, Euro Pacific Capital, Inc.",
+    "article": "Peter Schiff Radio Show with Bitcoin",
+    "date": "June 20, 2011",
+    "source": "YouTube",
+    "excerpt": "What [bitcoins] lack is their own fundamental intrinsic value. You can’t do anything with a bitcoin, other than trade it for something you want. So, intrinsically, the bitcoin itself has no value. It only has value as a medium of exchange so long as people are willing to accept it.",
+    "price": "$17.50",
+    "link": "https://www.youtube.com/watch?v=vTr_hTC90oQ",
+    "waybacklink": "",
+    "slug": "peter-schiff"
+  },
+  {
+    "name": "Adrian Covert",
+    "title": "Journalist",
+    "article": "The Bitcoin Is Dying",
+    "date": "August 9, 2011",
+    "source": "Gizmodo Australia",
+    "excerpt": "The lulz were abundant. But frankly, it’s time for you to go. Farewell.",
+    "price": "$8.02",
+    "link": "http://www.gizmodo.com.au/2011/08/the-bitcoin-is-dying-whatever/",
+    "waybacklink": "https://web.archive.org/web/20120331165346/http://www.gizmodo.com.au/2011/08/the-bitcoin-is-dying-whatever/",
+    "slug": "adrian-covert"
+  },
+  {
+    "name": "Paul Krugman",
+    "title": "Nobel Prize-winning Economist",
+    "article": "Golden Cyberfetters",
+    "date": "September 7, 2011",
+    "source": "The New York Times",
+    "excerpt": "So to the extent that the [Bitcoin] experiment tells us anything about monetary regimes, it reinforces the case against anything like a new gold standard – because it shows just how vulnerable such a standard would be to money-hoarding, deflation, and depression.",
+    "price": "$7.16",
+    "link": "https://krugman.blogs.nytimes.com/2011/09/07/golden-cyberfetters/",
+    "waybacklink": "https://web.archive.org/web/20110909021607/https://krugman.blogs.nytimes.com/2011/09/07/golden-cyberfetters/",
+    "slug": "paul-krugman"
+  },
+  {
+    "name": "Michael Calore",
+    "title": "Journalist",
+    "article": "Wired, Tired, Expired for 2012: From Stellar to Suck",
+    "date": "December 24, 2012",
+    "source": "Wired",
+    "excerpt": "Then came the malware, the black market, the legal ambiguities and The Man. Today, you can't even use it to buy Facebook stock",
+    "price": "$13.27",
+    "link": "http://www.wired.com/2012/12/wired-tired-expired/",
+    "waybacklink": "https://web.archive.org/web/20140408141723/http://www.wired.com/2012/12/wired-tired-expired/",
+    "slug": "michael-calore"
+  },
+  {
+    "name": "Tim Worstall",
+    "title": "Journalist",
+    "article": "So, That's the End of Bitcoin Then",
+    "date": "June 20, 2011",
+    "source": "Forbes",
+    "excerpt": "It’s difficult to see what the currency has going for it.",
+    "price": "$17.26",
+    "link": "http://www.forbes.com/sites/timworstall/2011/06/20/so-thats-the-end-of-bitcoin-then/",
+    "waybacklink": "https://web.archive.org/web/20110811144818/http://www.forbes.com/sites/timworstall/2011/06/20/so-thats-the-end-of-bitcoin-then/",
+    "slug": "tim-worstall"
+  },
+  {
+    "name": "Patrik Korda",
+    "title": "Amateur trader",
+    "article": "Bitcoin Bubble 2.0",
+    "date": "March 5, 2013",
+    "source": "Seeking Alpha",
+    "excerpt": "Thus, we have an answer before us: bitcoins are fiduciary media, or more specifically token money. From a monetary standpoint, as devised and formulated by Ludwig von Mises, they are on a par with the stuff you find at Chuck E. Cheese's.",
+    "price": "$34.00",
+    "link": "http://seekingalpha.com/instablog/7761841-patrik-korda/1616371-bitcoin-bubble-2_0",
+    "waybacklink": "https://web.archive.org/web/20130308142846/http://seekingalpha.com/instablog/7761841-patrik-korda/1616371-bitcoin-bubble-2-0",
+    "slug": "patrik-korda"
+  },
+  {
     "name": "Heidi Moore",
     "title": "Finance and Economics Editor, The Guardian US",
     "article": "Confused about Bitcoin? It's 'the Harlem Shake of currency'",
@@ -105,7 +105,7 @@
     "price": "$115.09",
     "link": "http://www.theguardian.com/commentisfree/2013/apr/03/bitcoin-currency-bubble-crash-not-rocking-financial-markets",
     "waybacklink": "https://web.archive.org/web/20131030110314/http://www.theguardian.com/commentisfree/2013/apr/03/bitcoin-currency-bubble-crash-not-rocking-financial-markets",
-		"slug": "heidi-moore"
+    "slug": "heidi-moore"
   },
   {
     "name": "Robert McMillan",
@@ -119,30 +119,30 @@
     "waybacklink": "https://web.archive.org/web/20140708202012/http://www.wired.com/2013/05/butterfly_live/",
     "slug": "robert-mcmillan"
   },
-	{
-		"name": "Ian Bremmer",
-		"title": "Founder and President, Eurasia Group",
-		"article": "Strategist predicts end of Bitcoin",
-		"date": "May 14, 2013",
-		"source": "CNN Money",
-		"excerpt": "\"I would be very surprised if Bitcoin is still around in 10 years,\" said Bremmer, the founder and CEO of Eurasia Group, the world's largest risk consulting firm. He thinks that bigger players will enter the field and improve upon Bitcoin's weaknesses.",
-		"price": "$115.01",
-		"link": "http://money.cnn.com/2013/05/14/investing/bremmer-bitcoin/index.html",
-		"waybacklink": "https://web.archive.org/web/20130514135230/http://money.cnn.com/2013/05/14/investing/bremmer-bitcoin/index.html",
-		"slug": "ian-bremmer"
-	},
-	{
-		"name": "Kurt Eichenwald",
-		"title": "Contributing editor, Vanity Fair",
-		"article": "The Logic Problems That Will Eventually Pop the Bitcoin Bubble",
-		"date": "April 9, 2013",
-		"source": "Vanity Fair",
-		"excerpt": "So, anyone out there buying Bitcoins at ridiculously inflated prices, please recognize the risk you are taking. You will likely lose everything.",
-		"price": "$239.98",
-		"link": "http://www.vanityfair.com/news/politics/2013/04/logic-problems-bitcoin-bubble",
-		"waybacklink": "https://web.archive.org/web/20160413064101/http://www.vanityfair.com/news/politics/2013/04/logic-problems-bitcoin-bubble",
-		"slug": "kurt-eichenwald"
-	},
+  {
+    "name": "Ian Bremmer",
+    "title": "Founder and President, Eurasia Group",
+    "article": "Strategist predicts end of Bitcoin",
+    "date": "May 14, 2013",
+    "source": "CNN Money",
+    "excerpt": "\"I would be very surprised if Bitcoin is still around in 10 years,\" said Bremmer, the founder and CEO of Eurasia Group, the world's largest risk consulting firm. He thinks that bigger players will enter the field and improve upon Bitcoin's weaknesses.",
+    "price": "$115.01",
+    "link": "http://money.cnn.com/2013/05/14/investing/bremmer-bitcoin/index.html",
+    "waybacklink": "https://web.archive.org/web/20130514135230/http://money.cnn.com/2013/05/14/investing/bremmer-bitcoin/index.html",
+    "slug": "ian-bremmer"
+  },
+  {
+    "name": "Kurt Eichenwald",
+    "title": "Contributing editor, Vanity Fair",
+    "article": "The Logic Problems That Will Eventually Pop the Bitcoin Bubble",
+    "date": "April 9, 2013",
+    "source": "Vanity Fair",
+    "excerpt": "So, anyone out there buying Bitcoins at ridiculously inflated prices, please recognize the risk you are taking. You will likely lose everything.",
+    "price": "$239.98",
+    "link": "http://www.vanityfair.com/news/politics/2013/04/logic-problems-bitcoin-bubble",
+    "waybacklink": "https://web.archive.org/web/20160413064101/http://www.vanityfair.com/news/politics/2013/04/logic-problems-bitcoin-bubble",
+    "slug": "kurt-eichenwald"
+  },
   {
     "name": "Justin Wolfers",
     "title": "Economist, Brookings Institution",
@@ -153,7 +153,7 @@
     "price": "$84.46",
     "link": "https://twitter.com/justinwolfers/status/322432361155424259, https://twitter.com/justinwolfers/status/322440315397107712, https://twitter.com/justinwolfers/status/322453007168045057",
     "waybacklink": "",
-		"twitter_screenshot": true,
+    "twitter_screenshot": true,
     "slug": "justin-wolfers"
   },
   {
@@ -168,7 +168,7 @@
     "waybacklink": "https://web.archive.org/web/20140708192152/http://www.pymnts.com/uncategorized/2013/bitcoin-is-a-remarkable-innovation-here-s-why-it-will-fail/",
     "slug": "david-s-evans"
   },
-	{
+  {
     "name": "Emin Gün Sirer",
     "title": "Professor, Cornell University",
     "article": "",
@@ -178,10 +178,10 @@
     "price": "$214.13",
     "link": "https://twitter.com/el33th4xor/status/397219415025934336, https://twitter.com/el33th4xor/status/397419061019443200, https://twitter.com/el33th4xor/status/397419072658604032",
     "waybacklink": "",
-		"twitter_screenshot": true,
+    "twitter_screenshot": true,
     "slug": "emin-gun-sirer"
   },
-	{
+  {
     "name": "Joseph Weisenthal",
     "title": "Executive Editor, Business Insider",
     "article": "Bitcoin Is A Joke",
@@ -191,10 +191,10 @@
     "price": "$264.61",
     "link": "http://www.businessinsider.com/bitcoin-is-a-currency-for-clowns-2013-11",
     "waybacklink": "https://web.archive.org/web/20131107165522/http://www.businessinsider.com/bitcoin-is-a-currency-for-clowns-2013-11",
-		"slug": "joseph-weisenthal"
+    "slug": "joseph-weisenthal"
   },
-	{
-		"name": "Kevin Rose",
+  {
+    "name": "Kevin Rose",
     "title": "Co-founder, Digg",
     "article": "",
     "date": "November 8, 2013",
@@ -203,21 +203,21 @@
     "price": "$330.01",
     "link": "https://twitter.com/kevinrose/status/398865551730036736",
     "waybacklink": "",
-		"twitter_screenshot": true,
+    "twitter_screenshot": true,
     "slug": "kevin-rose"
-	},
-	{
-		"name": "Matthew O'Brien",
-		"title": "Journalist",
-		"article": "Bitcoin Is the Segway of Currency",
-		"date": "November 21, 2013",
-		"source": "The Atlantic",
-		"excerpt": "In other words, Bitcoin is a Ponzi scheme libertarians use to make money off each other—because gold wasn't enough of one for them.",
-		"price": "$589.24",
-		"link": "http://www.theatlantic.com/business/archive/2013/11/bitcoin-is-the-segway-of-currency/281625/",
-		"waybacklink": "https://web.archive.org/web/20131122075218/http://www.theatlantic.com/business/archive/2013/11/bitcoin-is-the-segway-of-currency/281625/",
-		"slug": "matthew-obrien"
-	},
+  },
+  {
+    "name": "Matthew O'Brien",
+    "title": "Journalist",
+    "article": "Bitcoin Is the Segway of Currency",
+    "date": "November 21, 2013",
+    "source": "The Atlantic",
+    "excerpt": "In other words, Bitcoin is a Ponzi scheme libertarians use to make money off each other—because gold wasn't enough of one for them.",
+    "price": "$589.24",
+    "link": "http://www.theatlantic.com/business/archive/2013/11/bitcoin-is-the-segway-of-currency/281625/",
+    "waybacklink": "https://web.archive.org/web/20131122075218/http://www.theatlantic.com/business/archive/2013/11/bitcoin-is-the-segway-of-currency/281625/",
+    "slug": "matthew-obrien"
+  },
   {
     "name": "Gary North",
     "title": "Economist",
@@ -230,31 +230,31 @@
     "waybacklink": "https://web.archive.org/web/20131201174014/http://www.garynorth.com/public/11828.cfm",
     "slug": "gary-north"
   },
-	{
-		"name": "Matthew Yglesias",
-		"title": "Executive Editor, Vox",
-		"article": "Why I Haven't Changed My Mind About Bitcoin",
-		"date": "December 2, 2013",
-		"source": "Slate",
-		"excerpt": "My primary interest in Bitcoin is that I think it's a great platform for making jokes.",
-		"price": "$1,000.49",
-		"link": "http://www.slate.com/blogs/moneybox/2013/12/02/bitcoin_my_mind_hasn_t_changed.html",
-		"waybacklink": "https://web.archive.org/web/20131203075449/http://www.slate.com/blogs/moneybox/2013/12/02/bitcoin_my_mind_hasn_t_changed.html",
-		"slug": "matthew-yglesias"
-	},
-	{
-		"name": "Mark T. Williams",
-		"title": "Finance Professor, Boston University",
-		"article": "Beware of Bitcoin",
-		"date": "December 5, 2013",
-		"source": "Cognoscenti from WBUR Boston NPR",
-		"excerpt": "Once sellers outnumber buyers, prices will eventually drop below $10, erasing all gains. This price collapse will occur by the first half of 2014.",
-		"price": "$1,083.40",
-		"link": "http://cognoscenti.wbur.org/2013/12/05/bitcoin-currency-mark-t-williams",
-		"waybacklink": "https://web.archive.org/web/20131207140332/http://cognoscenti.wbur.org/2013/12/05/bitcoin-currency-mark-t-williams",
-		"slug": "mark-t-williams"
-	},
-	{
+  {
+    "name": "Matthew Yglesias",
+    "title": "Executive Editor, Vox",
+    "article": "Why I Haven't Changed My Mind About Bitcoin",
+    "date": "December 2, 2013",
+    "source": "Slate",
+    "excerpt": "My primary interest in Bitcoin is that I think it's a great platform for making jokes.",
+    "price": "$1,000.49",
+    "link": "http://www.slate.com/blogs/moneybox/2013/12/02/bitcoin_my_mind_hasn_t_changed.html",
+    "waybacklink": "https://web.archive.org/web/20131203075449/http://www.slate.com/blogs/moneybox/2013/12/02/bitcoin_my_mind_hasn_t_changed.html",
+    "slug": "matthew-yglesias"
+  },
+  {
+    "name": "Mark T. Williams",
+    "title": "Finance Professor, Boston University",
+    "article": "Beware of Bitcoin",
+    "date": "December 5, 2013",
+    "source": "Cognoscenti from WBUR Boston NPR",
+    "excerpt": "Once sellers outnumber buyers, prices will eventually drop below $10, erasing all gains. This price collapse will occur by the first half of 2014.",
+    "price": "$1,083.40",
+    "link": "http://cognoscenti.wbur.org/2013/12/05/bitcoin-currency-mark-t-williams",
+    "waybacklink": "https://web.archive.org/web/20131207140332/http://cognoscenti.wbur.org/2013/12/05/bitcoin-currency-mark-t-williams",
+    "slug": "mark-t-williams"
+  },
+  {
     "name": "Alex Payne",
     "title": "Developer and Angel Investor",
     "article": "Bitcoin, Magical Thinking, and Political Ideology",
@@ -264,7 +264,7 @@
     "price": "$527.76",
     "link": "https://al3x.net/2013/12/18/bitcoin.html",
     "waybacklink": "https://web.archive.org/web/20131218231221/https://al3x.net/2013/12/18/bitcoin.html",
-		"slug": "alex-payne"
+    "slug": "alex-payne"
   },
   {
     "name": "Charlie Stross",
@@ -276,7 +276,7 @@
     "price": "$527.76",
     "link": "http://www.antipope.org/charlie/blog-static/2013/12/why-i-want-bitcoin-to-die-in-a.html",
     "waybacklink": "https://web.archive.org/web/20131219092133/http://www.antipope.org/charlie/blog-static/2013/12/why-i-want-bitcoin-to-die-in-a.html",
-		"slug": "charlie-stross"
+    "slug": "charlie-stross"
   },
   {
     "name": "Edward Hadas",
@@ -290,7 +290,7 @@
     "waybacklink": "https://web.archive.org/web/20131218172143/http://dealbook.nytimes.com/2013/12/18/bitcoin-mania-heads-into-the-endgame/",
     "slug": "edward-hadas"
   },
-	{
+  {
     "name": "Brad DeLong",
     "title": "Professor of Economics, U.C. Berkeley",
     "article": "Watching Bitcoin, Dogecoin, Etc...",
@@ -302,18 +302,18 @@
     "waybacklink": "https://web.archive.org/web/20140411101406/http://equitablegrowth.org/2013/12/28/watching-bitcoin-dogecoin-etc/",
     "slug": "brad-delong"
   },
-	{
-		"name": "Lisa Kramer",
-		"title": "\"Serious Economist\"",
-		"article": "Bursting the bitcoin bubble",
-		"date": "January 15, 2014",
-		"source": "The Globe and Mail",
-		"excerpt": "As a Serious Economist, I had been happily ignoring the recent bitcoin frenzy, safe in the smug knowledge shared by all Serious Economists that the surge in bitcoin value is a bubble that will soon pop.",
-		"price": "$830.47",
-		"link": "http://www.theglobeandmail.com/report-on-business/economy/economy-lab/bursting-the-bitcoin-bubble/article16327155/",
-		"waybacklink": "https://web.archive.org/web/20140117082757/http://www.theglobeandmail.com/try-it-now/?articleId=16327155",
-		"slug": "lisa-kramer"
-	},
+  {
+    "name": "Lisa Kramer",
+    "title": "\"Serious Economist\"",
+    "article": "Bursting the bitcoin bubble",
+    "date": "January 15, 2014",
+    "source": "The Globe and Mail",
+    "excerpt": "As a Serious Economist, I had been happily ignoring the recent bitcoin frenzy, safe in the smug knowledge shared by all Serious Economists that the surge in bitcoin value is a bubble that will soon pop.",
+    "price": "$830.47",
+    "link": "http://www.theglobeandmail.com/report-on-business/economy/economy-lab/bursting-the-bitcoin-bubble/article16327155/",
+    "waybacklink": "https://web.archive.org/web/20140117082757/http://www.theglobeandmail.com/try-it-now/?articleId=16327155",
+    "slug": "lisa-kramer"
+  },
   {
     "name": "Jamie Dimon",
     "title": "President & CEO, JPMorgan Chase",
@@ -338,31 +338,31 @@
     "waybacklink": "https://web.archive.org/web/20140130133956/http://www.cnbc.com/id/101370047",
     "slug": "paul-singer"
   },
-	{
-		"name": "Robert J. Shiller",
-		"title": "Nobel Prize-winning Economist",
-		"article": "In Search of a Stable Electronic Currency",
-		"date": "March 1, 2014",
-		"source": "The New York Times",
-		"excerpt": "The Bitcoin phenomenon seems to fit the basic definition of a speculative bubble — that is, a special kind of fad, a mania for holding an asset in expectation of its appreciation.",
-		"price": "$560.18",
-		"link": "http://www.nytimes.com/2014/03/02/business/in-search-of-a-stable-electronic-currency.html",
-		"waybacklink": "http://web.archive.org/web/20140301165850/http://www.nytimes.com/2014/03/02/business/in-search-of-a-stable-electronic-currency.html",
-		"slug": "robert-j-shiller"
-	},
-	{
-		"name": "Mark Cuban",
-		"title": "TV Actor, Shark Tank",
-		"article": "Mark Cuban says Cyber Dust app keeps you in control",
-		"date": "March 9, 2014",
-		"source": "USA Today",
-		"excerpt": "I think as an encryption technology, [Bitcoin’s] great. I think as a transport mechanism, accounting of a transport mechanism, that it's unique and has a great opportunity in the future. I think it has no shot as a long term digital currency. [Would you buy any?] Yeah, I mean I'd look at it, but more as fun, you know? It's almost like buying and selling baseball cards, but there's definitely risk involved if you're looking at it to be a long term currency.",
-		"price": "$640.58",
-		"link": "https://www.usatoday.com/videos/tech/2014/03/09/6232985/",
-		"waybacklink": "http://web.archive.org/web/20140313120701/http://www.usatoday.com/videos/tech/2014/03/09/6232985/",
-		"media_embed": "<iframe class=\"embed-responsive-item\" src=\"https://archive.org/embed/mark-cuban-says-cyber-dust-app-keeps-you-in-control\" width=\"640\" height=\"480\" frameborder=\"0\" webkitallowfullscreen=\"true\" mozallowfullscreen=\"true\" allowfullscreen></iframe>",
-		"slug": "mark-cuban"
-	},
+  {
+    "name": "Robert J. Shiller",
+    "title": "Nobel Prize-winning Economist",
+    "article": "In Search of a Stable Electronic Currency",
+    "date": "March 1, 2014",
+    "source": "The New York Times",
+    "excerpt": "The Bitcoin phenomenon seems to fit the basic definition of a speculative bubble — that is, a special kind of fad, a mania for holding an asset in expectation of its appreciation.",
+    "price": "$560.18",
+    "link": "http://www.nytimes.com/2014/03/02/business/in-search-of-a-stable-electronic-currency.html",
+    "waybacklink": "http://web.archive.org/web/20140301165850/http://www.nytimes.com/2014/03/02/business/in-search-of-a-stable-electronic-currency.html",
+    "slug": "robert-j-shiller"
+  },
+  {
+    "name": "Mark Cuban",
+    "title": "TV Actor, Shark Tank",
+    "article": "Mark Cuban says Cyber Dust app keeps you in control",
+    "date": "March 9, 2014",
+    "source": "USA Today",
+    "excerpt": "I think as an encryption technology, [Bitcoin’s] great. I think as a transport mechanism, accounting of a transport mechanism, that it's unique and has a great opportunity in the future. I think it has no shot as a long term digital currency. [Would you buy any?] Yeah, I mean I'd look at it, but more as fun, you know? It's almost like buying and selling baseball cards, but there's definitely risk involved if you're looking at it to be a long term currency.",
+    "price": "$640.58",
+    "link": "https://www.usatoday.com/videos/tech/2014/03/09/6232985/",
+    "waybacklink": "http://web.archive.org/web/20140313120701/http://www.usatoday.com/videos/tech/2014/03/09/6232985/",
+    "media_embed": "<iframe class=\"embed-responsive-item\" src=\"https://archive.org/embed/mark-cuban-says-cyber-dust-app-keeps-you-in-control\" width=\"640\" height=\"480\" frameborder=\"0\" webkitallowfullscreen=\"true\" mozallowfullscreen=\"true\" allowfullscreen></iframe>",
+    "slug": "mark-cuban"
+  },
   {
     "name": "Nouriel Roubini",
     "title": "Professor of Economics, New York University",
@@ -373,7 +373,7 @@
     "price": "$637.38",
     "link": "https://twitter.com/Nouriel/statuses/442721938054868992, https://twitter.com/Nouriel/statuses/442723134693969920, https://twitter.com/Nouriel/statuses/442724222239277057, https://twitter.com/Nouriel/statuses/442725037289005056, https://twitter.com/Nouriel/statuses/442725510423248897, https://twitter.com/Nouriel/statuses/442754188192538624",
     "waybacklink": "",
-		"twitter_screenshot": true,
+    "twitter_screenshot": true,
     "slug": "nouriel-roubini"
   },
   {
@@ -412,127 +412,127 @@
     "waybacklink": "https://web.archive.org/web/20160114214358/https://medium.com/@octskyward/the-resolution-of-the-bitcoin-experiment-dabb30201f7",
     "slug": "mike-hearn"
   },
-	{
-		"name": "Vivek Wadhwa",
-		"title": "Contributor, The Washington Post; Tryhard",
-		"article": "R.I.P., Bitcoin. It’s time to move on.",
-		"date": "January 19, 2016",
-		"source": "The Washington Post",
-		"excerpt": "Bitcoin did have great potential, but it is damaged beyond repair. A replacement is badly needed.",
-		"price": "$385.51",
-		"link": "https://www.washingtonpost.com/news/innovations/wp/2016/01/19/r-i-p-bitcoin-its-time-to-move-on/",
-		"waybacklink": "http://archive.is/sN9w4",
-		"slug": "vivek-wadhwa"
-	},
-	{
-		"name": "Jeremy Allaire",
-		"title": "CEO, Circle",
-		"article": "Circle CEO Allaire: It’s Highly Unlikely We’ll Be Using Bitcoin in 5 or 10 Years",
-		"date": "November 17, 2016",
-		"source": "Coin Journal",
-		"excerpt": "“Our view is that we’re still in the really early stages of the technology and its development,” said Allaire. “It’s highly unlikely that any of us will be using Bitcoin in five or ten years. In the same way that — how many of us use NCSA Mosaic or Netscape Navigator?”",
-		"price": "$744.86",
-		"link": "http://coinjournal.net/circle-ceo-allaire-highly-unlikely-well-using-bitcoin-5-10-years/",
-		"waybacklink": "https://web.archive.org/web/20170104155322/http://coinjournal.net/circle-ceo-allaire-highly-unlikely-well-using-bitcoin-5-10-years/",
-		"slug": "jeremy-allaire"
-	},
-	{
-		"name": "Timothy B. Lee",
-		"title": "Senior correspondent, technology and economics, Lead writer for \"New Money\", Vox Media",
-		"article": "Bitcoin was supposed to change the world. What happened?",
-		"date": "November 21, 2016",
-		"source": "Vox Media",
-		"excerpt": "What went wrong? The Bitcoin community has been hampered by a dysfunctional culture that has grown increasingly hostile toward experimentation. That has made it difficult for the Bitcoin network to keep up with changing market demands...Bitcoin's larger problem may be that it just doesn’t solve any problems normal people have.",
-		"price": "$736.72",
-		"link": "https://www.vox.com/new-money/2016/11/21/13669662/bitcoin-ethereum-future-explained",
-		"waybacklink": "https://web.archive.org/web/20170207210258/http://www.vox.com/new-money/2016/11/21/13669662/bitcoin-ethereum-future-explained",
-		"slug": "timothy-b-lee"
-	},
-	{
-		"name": "Dan McCrum",
-		"title": "Editor, Financial Times",
-		"article": "Bitcoin passes $1,000 but only number that matters is zero",
-		"date": "January 3, 2017",
-		"source": "Financial Times",
-		"excerpt": "As a phenomenon bitcoin has all the attributes of a pyramid scheme, requiring a constant influx of converts to push up the price, based on the promise of its use by future converts. So the ultimate value for bitcoin will be the same as all pyramid schemes: zero.",
-		"price": "$1,034.34",
-		"link": "https://www.ft.com/content/b5d66ed8-d1b3-11e6-b06b-680c49b4b4c0",
-		"waybacklink": "https://archive.is/ERZIq",
-		"slug": "dan-mccrum"
-	},
-	{
-		"name": "Raoul Pal",
-		"title": "Macro Strategist, GMI",
-		"article": "Bitcoin Is Mania, Not a Store of Value… I Sold-Out Last Week",
-		"date": "June 2, 2017",
-		"source": "Mauldin Economics",
-		"excerpt": "Bitcoin was supposed to be a store of value, you couldn’t mess with the formula… and now they are talking about a ‘hard fork’ changing it? Even if they don’t change the formula, the fact that they could? That’s enough to say it’s not a long-term store of value.",
-		"price": "$2,519.80",
-		"link": "http://www.mauldineconomics.com/editorial/raoul-pal-bitcoin-is-mania-and-not-a-store-of-value-i-sold-out-last-week",
-		"waybacklink": "https://web.archive.org/web/20170614022441/http://www.mauldineconomics.com/editorial/raoul-pal-bitcoin-is-mania-and-not-a-store-of-value-i-sold-out-last-week",
-		"slug": "raoul-pal"
-	},
-	{
-		"name": "Howard Marks",
-		"title": "Co-chairman, Oaktree Capital",
-		"article": "Billionaire investor Marks, who called the dotcom bubble, says bitcoin is a 'pyramid scheme'",
-		"date": "July 26, 2017",
-		"source": "CNBC",
-		"excerpt": "In my view, digital currencies are nothing but an unfounded fad (or perhaps even a pyramid scheme), based on a willingness to ascribe value to something that has little or none beyond what people will pay for it.",
-		"price": "$2,522.70",
-		"link": "http://www.cnbc.com/2017/07/26/billionaire-investor-marks-who-called-the-dotcom-bubble-says-bitcoin-is-a-pyramid-scheme.html",
-		"waybacklink": "https://web.archive.org/web/20170727003853/http://www.cnbc.com/2017/07/26/billionaire-investor-marks-who-called-the-dotcom-bubble-says-bitcoin-is-a-pyramid-scheme.html",
-		"slug": "howard-marks"
-	},
-	{
-		"name": "Kenneth Rogoff",
-		"title": "Professor of Economics and Public Policy, Harvard University; Former Chief Economist, IMF",
-		"article": "Bitcoin's price bubble will burst under government pressure",
-		"date": "October 9, 2017",
-		"source": "The Guardian",
-		"excerpt": "My best guess is that in the long run, the technology will thrive, but that the price of bitcoin will collapse.",
-		"price": "$4,808.73",
-		"link": "https://www.theguardian.com/technology/news-blog/2017/oct/09/bitcoin-price-bubble-government-cryptocurrency",
-		"waybacklink": "http://web.archive.org/web/20171009143553/https://www.theguardian.com/technology/news-blog/2017/oct/09/bitcoin-price-bubble-government-cryptocurrency",
-		"slug": "kenneth-rogoff"
-	},
-	{
-		"name": "Al-Waleed Bin Talal bin Abdulaziz al Saud",
-		"title": "Citigroup shareholder",
-		"article": "Prince Alwaleed says bitcoin will implode: 'Enron in the making'",
-		"date": "October 23, 2017",
-		"source": "CNBC",
-		"excerpt": "I just don't believe in this bitcoin thing. I think it's just going to implode one day. I think this is Enron in the making.",
-		"price": "$6,018.02",
-		"link": "http://fortune.com/2017/10/23/bitcoin-price-enron-saudi-prince/",
-		"waybacklink": "http://web.archive.org/web/20171023122414/https://www.cnbc.com/2017/10/23/prince-alwaleed-says-bitcoin-will-implode-enron-in-the-making.html",
-		"slug": "al-waleed"
-	},
-	{
-		"name": "Bill Harris",
-		"title": "Founder & CEO, Personal Capital; Former CEO of PayPal and Intuit",
-		"article": "Bitcoin is the greatest scam in history",
-		"date": "April 24, 2018",
-		"source": "Recode",
-		"excerpt": "In my opinion, [Bitcoin’s] a colossal pump-and-dump scheme, the likes of which the world has never seen.",
-		"price": "$9,333.95",
-		"link": "https://www.recode.net/2018/4/24/17275202/bitcoin-scam-cryptocurrency-mining-pump-dump-fraud-ico-value",
-		"waybacklink": "http://web.archive.org/web/20180425000109/https://www.recode.net/2018/4/24/17275202/bitcoin-scam-cryptocurrency-mining-pump-dump-fraud-ico-value",
-		"slug": "bill-harris"
-	},
-	{
-		"name": "Robert C. Merton",
-		"title": "Nobel Prize-winning Economist; Failed and bailed out co-founder, Long-Term Capital Management",
-		"article": "Why a Nobel laureate in economics thinks bitcoin is toast",
-		"date": "November 28, 2018",
-		"source": "PBS NewsHour",
-		"excerpt": "The problem with bitcoin at the moment, despite Ohio, is just what its champions decry: It is not a government-controlled currency. And therefore, asks Merton, who is responsible for the value of our currency if tomorrow morning all the bitcoin screens go dark?",
-		"price": "$3,771.01",
-		"link": "https://www.pbs.org/newshour/economy/making-sense/why-a-nobel-laureate-in-economics-thinks-bitcoin-is-toast",
-		"waybacklink": "https://web.archive.org/web/20181129111135/https://www.pbs.org/newshour/economy/making-sense/why-a-nobel-laureate-in-economics-thinks-bitcoin-is-toast",
-		"slug": "robert-c-merton"
-	},
-	{
+  {
+    "name": "Vivek Wadhwa",
+    "title": "Contributor, The Washington Post; Tryhard",
+    "article": "R.I.P., Bitcoin. It’s time to move on.",
+    "date": "January 19, 2016",
+    "source": "The Washington Post",
+    "excerpt": "Bitcoin did have great potential, but it is damaged beyond repair. A replacement is badly needed.",
+    "price": "$385.51",
+    "link": "https://www.washingtonpost.com/news/innovations/wp/2016/01/19/r-i-p-bitcoin-its-time-to-move-on/",
+    "waybacklink": "http://archive.is/sN9w4",
+    "slug": "vivek-wadhwa"
+  },
+  {
+    "name": "Jeremy Allaire",
+    "title": "CEO, Circle",
+    "article": "Circle CEO Allaire: It’s Highly Unlikely We’ll Be Using Bitcoin in 5 or 10 Years",
+    "date": "November 17, 2016",
+    "source": "Coin Journal",
+    "excerpt": "“Our view is that we’re still in the really early stages of the technology and its development,” said Allaire. “It’s highly unlikely that any of us will be using Bitcoin in five or ten years. In the same way that — how many of us use NCSA Mosaic or Netscape Navigator?”",
+    "price": "$744.86",
+    "link": "http://coinjournal.net/circle-ceo-allaire-highly-unlikely-well-using-bitcoin-5-10-years/",
+    "waybacklink": "https://web.archive.org/web/20170104155322/http://coinjournal.net/circle-ceo-allaire-highly-unlikely-well-using-bitcoin-5-10-years/",
+    "slug": "jeremy-allaire"
+  },
+  {
+    "name": "Timothy B. Lee",
+    "title": "Senior correspondent, technology and economics, Lead writer for \"New Money\", Vox Media",
+    "article": "Bitcoin was supposed to change the world. What happened?",
+    "date": "November 21, 2016",
+    "source": "Vox Media",
+    "excerpt": "What went wrong? The Bitcoin community has been hampered by a dysfunctional culture that has grown increasingly hostile toward experimentation. That has made it difficult for the Bitcoin network to keep up with changing market demands...Bitcoin's larger problem may be that it just doesn’t solve any problems normal people have.",
+    "price": "$736.72",
+    "link": "https://www.vox.com/new-money/2016/11/21/13669662/bitcoin-ethereum-future-explained",
+    "waybacklink": "https://web.archive.org/web/20170207210258/http://www.vox.com/new-money/2016/11/21/13669662/bitcoin-ethereum-future-explained",
+    "slug": "timothy-b-lee"
+  },
+  {
+    "name": "Dan McCrum",
+    "title": "Editor, Financial Times",
+    "article": "Bitcoin passes $1,000 but only number that matters is zero",
+    "date": "January 3, 2017",
+    "source": "Financial Times",
+    "excerpt": "As a phenomenon bitcoin has all the attributes of a pyramid scheme, requiring a constant influx of converts to push up the price, based on the promise of its use by future converts. So the ultimate value for bitcoin will be the same as all pyramid schemes: zero.",
+    "price": "$1,034.34",
+    "link": "https://www.ft.com/content/b5d66ed8-d1b3-11e6-b06b-680c49b4b4c0",
+    "waybacklink": "https://archive.is/ERZIq",
+    "slug": "dan-mccrum"
+  },
+  {
+    "name": "Raoul Pal",
+    "title": "Macro Strategist, GMI",
+    "article": "Bitcoin Is Mania, Not a Store of Value… I Sold-Out Last Week",
+    "date": "June 2, 2017",
+    "source": "Mauldin Economics",
+    "excerpt": "Bitcoin was supposed to be a store of value, you couldn’t mess with the formula… and now they are talking about a ‘hard fork’ changing it? Even if they don’t change the formula, the fact that they could? That’s enough to say it’s not a long-term store of value.",
+    "price": "$2,519.80",
+    "link": "http://www.mauldineconomics.com/editorial/raoul-pal-bitcoin-is-mania-and-not-a-store-of-value-i-sold-out-last-week",
+    "waybacklink": "https://web.archive.org/web/20170614022441/http://www.mauldineconomics.com/editorial/raoul-pal-bitcoin-is-mania-and-not-a-store-of-value-i-sold-out-last-week",
+    "slug": "raoul-pal"
+  },
+  {
+    "name": "Howard Marks",
+    "title": "Co-chairman, Oaktree Capital",
+    "article": "Billionaire investor Marks, who called the dotcom bubble, says bitcoin is a 'pyramid scheme'",
+    "date": "July 26, 2017",
+    "source": "CNBC",
+    "excerpt": "In my view, digital currencies are nothing but an unfounded fad (or perhaps even a pyramid scheme), based on a willingness to ascribe value to something that has little or none beyond what people will pay for it.",
+    "price": "$2,522.70",
+    "link": "http://www.cnbc.com/2017/07/26/billionaire-investor-marks-who-called-the-dotcom-bubble-says-bitcoin-is-a-pyramid-scheme.html",
+    "waybacklink": "https://web.archive.org/web/20170727003853/http://www.cnbc.com/2017/07/26/billionaire-investor-marks-who-called-the-dotcom-bubble-says-bitcoin-is-a-pyramid-scheme.html",
+    "slug": "howard-marks"
+  },
+  {
+    "name": "Kenneth Rogoff",
+    "title": "Professor of Economics and Public Policy, Harvard University; Former Chief Economist, IMF",
+    "article": "Bitcoin's price bubble will burst under government pressure",
+    "date": "October 9, 2017",
+    "source": "The Guardian",
+    "excerpt": "My best guess is that in the long run, the technology will thrive, but that the price of bitcoin will collapse.",
+    "price": "$4,808.73",
+    "link": "https://www.theguardian.com/technology/news-blog/2017/oct/09/bitcoin-price-bubble-government-cryptocurrency",
+    "waybacklink": "http://web.archive.org/web/20171009143553/https://www.theguardian.com/technology/news-blog/2017/oct/09/bitcoin-price-bubble-government-cryptocurrency",
+    "slug": "kenneth-rogoff"
+  },
+  {
+    "name": "Al-Waleed Bin Talal bin Abdulaziz al Saud",
+    "title": "Citigroup shareholder",
+    "article": "Prince Alwaleed says bitcoin will implode: 'Enron in the making'",
+    "date": "October 23, 2017",
+    "source": "CNBC",
+    "excerpt": "I just don't believe in this bitcoin thing. I think it's just going to implode one day. I think this is Enron in the making.",
+    "price": "$6,018.02",
+    "link": "http://fortune.com/2017/10/23/bitcoin-price-enron-saudi-prince/",
+    "waybacklink": "http://web.archive.org/web/20171023122414/https://www.cnbc.com/2017/10/23/prince-alwaleed-says-bitcoin-will-implode-enron-in-the-making.html",
+    "slug": "al-waleed"
+  },
+  {
+    "name": "Bill Harris",
+    "title": "Founder & CEO, Personal Capital; Former CEO of PayPal and Intuit",
+    "article": "Bitcoin is the greatest scam in history",
+    "date": "April 24, 2018",
+    "source": "Recode",
+    "excerpt": "In my opinion, [Bitcoin’s] a colossal pump-and-dump scheme, the likes of which the world has never seen.",
+    "price": "$9,333.95",
+    "link": "https://www.recode.net/2018/4/24/17275202/bitcoin-scam-cryptocurrency-mining-pump-dump-fraud-ico-value",
+    "waybacklink": "http://web.archive.org/web/20180425000109/https://www.recode.net/2018/4/24/17275202/bitcoin-scam-cryptocurrency-mining-pump-dump-fraud-ico-value",
+    "slug": "bill-harris"
+  },
+  {
+    "name": "Robert C. Merton",
+    "title": "Nobel Prize-winning Economist; Failed and bailed out co-founder, Long-Term Capital Management",
+    "article": "Why a Nobel laureate in economics thinks bitcoin is toast",
+    "date": "November 28, 2018",
+    "source": "PBS NewsHour",
+    "excerpt": "The problem with bitcoin at the moment, despite Ohio, is just what its champions decry: It is not a government-controlled currency. And therefore, asks Merton, who is responsible for the value of our currency if tomorrow morning all the bitcoin screens go dark?",
+    "price": "$3,771.01",
+    "link": "https://www.pbs.org/newshour/economy/making-sense/why-a-nobel-laureate-in-economics-thinks-bitcoin-is-toast",
+    "waybacklink": "https://web.archive.org/web/20181129111135/https://www.pbs.org/newshour/economy/making-sense/why-a-nobel-laureate-in-economics-thinks-bitcoin-is-toast",
+    "slug": "robert-c-merton"
+  },
+  {
     "name": "Steven Mnuchin",
     "title": "United States Secretary of the Treasury",
     "article": "",
@@ -542,11 +542,11 @@
     "price": "$9,725.66",
     "link": "https://twitter.com/SquawkCNBC/status/1154004308947591168",
     "waybacklink": "https://archive.org/details/squawkboxmbitcoin10yearsmnuchin",
-		"media_embed": "<blockquote class=\"twitter-tweet tw-align-center\" data-dnt=\"true\"><p lang=\"en\" dir=\"ltr\">&quot;I can assure you I will personally not be loaded up on bitcoin&quot; in 10 years, says Treasury Secretary Mnuchin <a href=\"https://twitter.com/hashtag/bitcoin?src=hash&amp;ref_src=twsrc%5Etfw\">#bitcoin</a> <a href=\"https://t.co/0J5acWQwRO\">pic.twitter.com/0J5acWQwRO</a></p>&mdash; Squawk Box (@SquawkCNBC) <a href=\"https://twitter.com/SquawkCNBC/status/1154004308947591168?ref_src=twsrc%5Etfw\">July 24, 2019</a></blockquote> <script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script> ",
+    "media_embed": "<blockquote class=\"twitter-tweet tw-align-center\" data-dnt=\"true\"><p lang=\"en\" dir=\"ltr\">&quot;I can assure you I will personally not be loaded up on bitcoin&quot; in 10 years, says Treasury Secretary Mnuchin <a href=\"https://twitter.com/hashtag/bitcoin?src=hash&amp;ref_src=twsrc%5Etfw\">#bitcoin</a> <a href=\"https://t.co/0J5acWQwRO\">pic.twitter.com/0J5acWQwRO</a></p>&mdash; Squawk Box (@SquawkCNBC) <a href=\"https://twitter.com/SquawkCNBC/status/1154004308947591168?ref_src=twsrc%5Etfw\">July 24, 2019</a></blockquote> <script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script> ",
     "slug": "steven-mnuchin"
   },
-	{
-		"name": "Tendayi Kapfidze",
+  {
+    "name": "Tendayi Kapfidze",
     "title": "Chief Economist, LendingTree",
     "article": "Bitcoin is a pyramid scheme, economist says",
     "date": "January 1, 2020",
@@ -555,19 +555,19 @@
     "price": "$7,170.63",
     "link": "https://finance.yahoo.com/news/economist-bitcoin-is-a-pyramid-scheme-204217615.html",
     "waybacklink": "http://web.archive.org/web/20200102060643/https://finance.yahoo.com/news/economist-bitcoin-is-a-pyramid-scheme-204217615.html",
-		"slug": "tendayi-kapfidze"
-	},
-	{
-		"name": "Nassim Nicholas Taleb",
-   		"title": "Flaneur, or something like that",
-    	"article": "",
-    	"date": "February 12, 2021",
-    	"source": "Twitter",
-    	"excerpt": "",
-    	"price": "$47,525.21",
-    	"link": "https://twitter.com/nntaleb/status/1360276917992230919, https://twitter.com/nntaleb/status/1360458636921823235, https://twitter.com/nntaleb/status/1360480666509533185",
-    	"waybacklink": "https://web.archive.org/web/20210214123023/https://twitter.com/nntaleb/status/1360276917992230919",
-		"twitter_screenshot": true,
-    	"slug": "nassim-taleb"
-	}
+    "slug": "tendayi-kapfidze"
+  },
+  {
+    "name": "Nassim Nicholas Taleb",
+    "title": "Flaneur, or something like that",
+    "article": "",
+    "date": "February 12, 2021",
+    "source": "Twitter",
+    "excerpt": "",
+    "price": "$47,525.21",
+    "link": "https://twitter.com/nntaleb/status/1360276917992230919, https://twitter.com/nntaleb/status/1360458636921823235, https://twitter.com/nntaleb/status/1360480666509533185",
+    "waybacklink": "https://web.archive.org/web/20210214123023/https://twitter.com/nntaleb/status/1360276917992230919",
+    "twitter_screenshot": true,
+    "slug": "nassim-taleb"
+  }
 ]

@@ -1,506 +1,506 @@
 [
-	{
-		"first": "Mark",
-		"middle": "S.",
-		"last": "Miller",
-		"slug": "mark-s-miller"
-	},
-	{
-		"first": "Chip",
-		"middle": "",
-		"last": "Morningstar",
-		"slug": "chip-morningstar"
-	},
-	{
-		"first": "Bill",
-		"middle": "",
-		"last": "Frantz",
-		"slug": "bill-frantz"
-	},
-	{
-		"first": "Oleg",
-		"middle": "",
-		"last": "Andreev",
-		"slug": "oleg-andreev"
-	},
-	{
-		"first": "Andrea",
-		"middle": "",
-		"last": "Castillo",
-		"slug": "andrea-castillo"
-	},
-	{
-		"first": "Mircea",
-		"middle": "",
-		"last": "Popescu",
-		"slug": "mircea-popescu"
-	},
-	{
-		"first": "Peter",
-		"middle": "",
-		"last": "Dushenski",
-		"slug": "peter-dushenski"
-	},
-	{
-		"first": "Satoshi",
-		"middle": "",
-		"last": "Nakamoto",
-		"slug": "satoshi-nakamoto"
-	},
-	{
-		"first": "Peter",
-		"middle": "",
-		"last": "Šurda",
-		"slug": "peter-surda"
-	},
-	{
-		"first": "Konrad",
-		"middle": "S.",
-		"last": "Graf",
-		"slug": "konrad-s-graf"
-	},
-	{
-		"first": "Wei",
-		"middle": "",
-		"last": "Dai",
-		"slug": "wei-dai"
-	},
-	{
-		"first": "Henri",
-		"middle": "",
-		"last": "Massias",
-		"slug": "henri-massias"
-	},
-	{
-		"first": "Xavier",
-		"middle": "",
-		"last": "Serret-Avila",
-		"slug": "xavier-serret-avila"
-	},
-	{
-		"first": "Jean-Jacques",
-		"middle": "",
-		"last": "Quisquater",
-		"slug": "jean-jacques-quisquater"
-	},
-	{
-		"first": "Stuart",
-		"middle": "",
-		"last": "Haber",
-		"slug": "stuart-haber"
-	},
-	{
-		"first": "W.",
-		"middle": "Scott",
-		"last": "Stornetta",
-		"slug": "w-scott-stornetta"
-	},
-	{
-		"first": "Dave",
-		"middle": "",
-		"last": "Bayer",
-		"slug": "dave-bayer"
-	},
-	{
-		"first": "Adam",
-		"middle": "",
-		"last": "Back",
-		"slug": "adam-back"
-	},
-	{
-		"first": "Ralph",
-		"middle": "C.",
-		"last": "Merkle",
-		"slug": "ralph-c-merkle"
-	},
-	{
-		"first": "William",
-		"middle": "",
-		"last": "Feller",
-		"slug": "william-feller"
-	},
-	{
-		"first": "Timothy",
-		"middle": "C.",
-		"last": "May",
-		"slug": "timothy-c-may"
-	},
-	{
-		"first": "Nick",
-		"middle": "",
-		"last": "Szabo",
-		"slug": "nick-szabo"
-	},
-	{
-		"first": "David",
-		"middle": "",
-		"last": "Chaum",
-		"slug": "david-chaum"
-	},
-	{
-		"first": "Hal",
-		"middle": "",
-		"last": "Finney",
-		"slug": "hal-finney"
-	},
-	{
-		"first": "Whitfield",
-		"middle": "",
-		"last": "Diffie",
-		"slug": "whitfield-diffie"
-	},
-	{
-		"first": "Martin",
-		"middle": "E.",
-		"last": "Hellman",
-		"slug": "martin-e-hellman"
-	},
-	{
-		"first": "Ronald",
-		"middle": "L.",
-		"last": "Rivest",
-		"slug": "ronald-l-rivest"
-	},
-	{
-		"first": "Adi",
-		"middle": "",
-		"last": "Shamir",
-		"slug": "adi-shamir"
-	},
-	{
-		"first": "Leonard",
-		"middle": "M.",
-		"last": "Adleman",
-		"slug": "leonard-m-adleman"
-	},
-	{
-		"first": "Oded",
-		"middle": "",
-		"last": "Goldreich",
-		"slug": "oded-goldreich"
-	},
-	{
-		"first": "Silvio",
-		"middle": "",
-		"last": "Micali",
-		"slug": "silvio-micali"
-	},
-	{
-		"first": "Avi",
-		"middle": "",
-		"last": "Wigderson",
-		"slug": "avi-wigderson"
-	},
-	{
-		"first": "Ian",
-		"middle": "",
-		"last": "Grigg",
-		"slug": "ian-grigg"
-	},
-	{
-		"first": "Bill",
-		"middle": "",
-		"last": "St. Clair",
-		"slug": "bill-st-clair"
-	},
-	{
-		"first": "Eric",
-		"middle": "",
-		"last": "Hughes",
-		"slug": "eric-hughes"
-	},
-	{
-		"first": "Julian",
-		"middle": "",
-		"last": "Assange",
-		"slug": "julian-assange"
-	},
-	{
-		"first": "Eric",
-		"middle": "S.",
-		"last": "Raymond",
-		"slug": "eric-s-raymond"
-	},
-	{
-		"first": "Ludwig",
-		"middle": "von",
-		"last": "Mises",
-		"slug": "ludwig-von-mises"
-	},
-	{
-		"first": "Jörg",
-		"middle": "Guido",
-		"last": "Hülsmann",
-		"slug": "jorg-guido-hulsmann"
-	},
-	{
-		"first": "Jesús",
-		"middle": "",
-		"last": "Huerta de Soto",
-		"slug": "jesus-huerta-de-soto"
-	},
-	{
-		"first": "Friedrich",
-		"middle": "A.",
-		"last": "Hayek",
-		"slug": "friedrich-a-hayek"
-	},
-	{
-		"first": "N.",
-		"middle": "Stephan",
-		"last": "Kinsella",
-		"slug": "n-stephan-kinsella"
-	},
-	{
-		"first": "Michele",
-		"middle": "",
-		"last": "Boldrin",
-		"slug": "michele-boldrin"
-	},
-	{
-		"first": "David",
-		"middle": "K.",
-		"last": "Levine",
-		"slug": "david-k-levine"
-	},
-	{
-		"first": "Richard",
-		"middle": "M.",
-		"last": "Stallman",
-		"slug": "richard-m-stallman"
-	},
-	{
-		"first": "John",
-		"middle": "",
-		"last": "Milton",
-		"slug": "john-milton"
-	},
-	{
-		"first": "Amir",
-		"middle": "",
-		"last": "Taaki",
-		"slug": "amir-taaki"
-	},
-	{
-		"first": "Ben",
-		"middle": "",
-		"last": "Laurie",
-		"slug": "ben-laurie"
-	},
-	{
-		"first": "Philip",
-		"middle": "R.",
-		"last": "Zimmermann",
-		"slug": "philip-r-zimmermann"
-	},
-	{
-		"first": "Chuck",
-		"middle": "",
-		"last": "Hammill",
-		"slug": "chuck-hammill"
-	},
-	{
-		"first": "Daniel",
-		"middle": "",
-		"last": "Krawisz",
-		"slug": "daniel-krawisz"
-	},
-	{
-		"first": "Pierre",
-		"middle": "",
-		"last": "Rochard",
-		"slug": "pierre-rochard"
-	},
-	{
-		"first": "Michael",
-		"middle": "",
-		"last": "Goldstein",
-		"slug": "michael-goldstein"
-	},
-	{
-		"first": "David",
-		"middle": "D.",
-		"last": "Friedman",
-		"slug": "david-d-friedman"
-	},
-	{
-		"first": "Andrew",
-		"middle": "",
-		"last": "Miller",
-		"slug": "andrew-miller"
-	},
-	{
-		"first": "Joseph",
-		"middle": "J.",
-		"last": "LaViola, Jr.",
-		"slug": "joseph-j-laviola-jr"
-	},
-	{
-		"first": "Leslie",
-		"middle": "",
-		"last": "Lamport",
-		"slug": "leslie-lamport"
-	},
-	{
-		"first": "Robert",
-		"middle": "",
-		"last": "Shostak",
-		"slug": "robert-shostak"
-	},
-	{
-		"first": "Marshall",
-		"middle": "",
-		"last": "Pease",
-		"slug": "marshall-pease"
-	},
-	{
-		"first": "Fred",
-		"middle": "B.",
-		"last": "Schneider",
-		"slug": "fred-b-schneider"
-	},
-	{
-		"first": "Daniel",
-		"middle": "A.",
-		"last": "Nagy",
-		"slug": "daniel-a-nagy"
-	},
-	{
-		"first": "Andrew",
-		"middle": "",
-		"last": "Poelstra",
-		"slug": "andrew-poelstra"
-	},
-	{
-		"first": "Ken",
-		"middle": "",
-		"last": "Thompson",
-		"slug": "ken-thompson"
-	},
-	{
-		"first": "John",
-		"middle": "R.",
-		"last": "Douceur",
-		"slug": "john-r-douceur"
-	},
-	{
-		"first": "Alexis",
-		"middle": "",
-		"last": "Bonnecaze",
-		"slug": "alexis-bonnecaze"
-	},
-	{
-		"first": "Pierre",
-		"middle": "",
-		"last": "Liardet",
-		"slug": "pierre-liardet"
-	},
-	{
-		"first": "Alban",
-		"middle": "",
-		"last": "Gabillon",
-		"slug": "alban-gabillon"
-	},
-	{
-		"first": "Kaouther",
-		"middle": "",
-		"last": "Blibech",
-		"slug": "kaouther-blibech"
-	},
-	{
-		"first": "Robert",
-		"middle": "",
-		"last": "Hettinga",
-		"slug": "robert-hettinga"
-	},
-	{
-		"first": "John",
-		"middle": "Perry",
-		"last": "Barlow",
-		"slug": "john-perry-barlow"
-	},
-	{
-		"first": "Jimmy",
-		"middle": "",
-		"last": "Song",
-		"slug": "jimmy-song"
-	},
-	{
-		"first": "David",
-		"middle": "A.",
-		"last": "Harding",
-		"slug": "david-a-harding"
-	},
-	{
-		"first": "Saifedean",
-		"middle": "",
-		"last": "Ammous",
-		"slug": "saifedean-ammous"
-	},
-	{
-		"first": "Joseph",
-		"middle": "",
-		"last": "Poon",
-		"slug": "joseph-poon"
-	},
-	{
-		"first": "Thaddeus",
-		"middle": "",
-		"last": "Dryja",
-		"slug": "thaddeus-dryja"
-	},
-	{
-		"first": "Conrad",
-		"middle": "",
-		"last": "Burchert",
-		"slug": "conrad-burchert"
-	},
-	{
-		"first": "Christian",
-		"middle": "",
-		"last": "Decker",
-		"slug": "christian-decker"
-	},
-	{
-		"first": "Roger",
-		"middle": "",
-		"last": "Wattenhofer",
-		"slug": "roger-wattenhofer"
-	},
-	{
-		"first": "Carl",
-		"middle": "",
-		"last": "Menger",
-		"slug": "carl-menger"
-	},
-	{
-		"first": "Murray",
-		"middle": "N.",
-		"last": "Rothbard",
-		"slug": "murray-n-rothbard"
-	},
-	{
-		"first": "Vijay",
-		"middle": "",
-		"last": "Boyapati",
-		"slug": "vijay-boyapati"
-	},
-	{
-		"first": "Trace",
-		"middle": "",
-		"last": "Mayer",
-		"slug": "trace-mayer"
-	},
-	{
-		"first": "Ross",
-		"middle": "",
-		"last": "Ulbricht",
-		"slug": "ross-ulbricht"
-	},
-	{
-		"first": "Parker",
-		"middle": "",
-		"last": "Lewis",
-		"slug": "parker-lewis"
-	}
+  {
+    "first": "Mark",
+    "middle": "S.",
+    "last": "Miller",
+    "slug": "mark-s-miller"
+  },
+  {
+    "first": "Chip",
+    "middle": "",
+    "last": "Morningstar",
+    "slug": "chip-morningstar"
+  },
+  {
+    "first": "Bill",
+    "middle": "",
+    "last": "Frantz",
+    "slug": "bill-frantz"
+  },
+  {
+    "first": "Oleg",
+    "middle": "",
+    "last": "Andreev",
+    "slug": "oleg-andreev"
+  },
+  {
+    "first": "Andrea",
+    "middle": "",
+    "last": "Castillo",
+    "slug": "andrea-castillo"
+  },
+  {
+    "first": "Mircea",
+    "middle": "",
+    "last": "Popescu",
+    "slug": "mircea-popescu"
+  },
+  {
+    "first": "Peter",
+    "middle": "",
+    "last": "Dushenski",
+    "slug": "peter-dushenski"
+  },
+  {
+    "first": "Satoshi",
+    "middle": "",
+    "last": "Nakamoto",
+    "slug": "satoshi-nakamoto"
+  },
+  {
+    "first": "Peter",
+    "middle": "",
+    "last": "Šurda",
+    "slug": "peter-surda"
+  },
+  {
+    "first": "Konrad",
+    "middle": "S.",
+    "last": "Graf",
+    "slug": "konrad-s-graf"
+  },
+  {
+    "first": "Wei",
+    "middle": "",
+    "last": "Dai",
+    "slug": "wei-dai"
+  },
+  {
+    "first": "Henri",
+    "middle": "",
+    "last": "Massias",
+    "slug": "henri-massias"
+  },
+  {
+    "first": "Xavier",
+    "middle": "",
+    "last": "Serret-Avila",
+    "slug": "xavier-serret-avila"
+  },
+  {
+    "first": "Jean-Jacques",
+    "middle": "",
+    "last": "Quisquater",
+    "slug": "jean-jacques-quisquater"
+  },
+  {
+    "first": "Stuart",
+    "middle": "",
+    "last": "Haber",
+    "slug": "stuart-haber"
+  },
+  {
+    "first": "W.",
+    "middle": "Scott",
+    "last": "Stornetta",
+    "slug": "w-scott-stornetta"
+  },
+  {
+    "first": "Dave",
+    "middle": "",
+    "last": "Bayer",
+    "slug": "dave-bayer"
+  },
+  {
+    "first": "Adam",
+    "middle": "",
+    "last": "Back",
+    "slug": "adam-back"
+  },
+  {
+    "first": "Ralph",
+    "middle": "C.",
+    "last": "Merkle",
+    "slug": "ralph-c-merkle"
+  },
+  {
+    "first": "William",
+    "middle": "",
+    "last": "Feller",
+    "slug": "william-feller"
+  },
+  {
+    "first": "Timothy",
+    "middle": "C.",
+    "last": "May",
+    "slug": "timothy-c-may"
+  },
+  {
+    "first": "Nick",
+    "middle": "",
+    "last": "Szabo",
+    "slug": "nick-szabo"
+  },
+  {
+    "first": "David",
+    "middle": "",
+    "last": "Chaum",
+    "slug": "david-chaum"
+  },
+  {
+    "first": "Hal",
+    "middle": "",
+    "last": "Finney",
+    "slug": "hal-finney"
+  },
+  {
+    "first": "Whitfield",
+    "middle": "",
+    "last": "Diffie",
+    "slug": "whitfield-diffie"
+  },
+  {
+    "first": "Martin",
+    "middle": "E.",
+    "last": "Hellman",
+    "slug": "martin-e-hellman"
+  },
+  {
+    "first": "Ronald",
+    "middle": "L.",
+    "last": "Rivest",
+    "slug": "ronald-l-rivest"
+  },
+  {
+    "first": "Adi",
+    "middle": "",
+    "last": "Shamir",
+    "slug": "adi-shamir"
+  },
+  {
+    "first": "Leonard",
+    "middle": "M.",
+    "last": "Adleman",
+    "slug": "leonard-m-adleman"
+  },
+  {
+    "first": "Oded",
+    "middle": "",
+    "last": "Goldreich",
+    "slug": "oded-goldreich"
+  },
+  {
+    "first": "Silvio",
+    "middle": "",
+    "last": "Micali",
+    "slug": "silvio-micali"
+  },
+  {
+    "first": "Avi",
+    "middle": "",
+    "last": "Wigderson",
+    "slug": "avi-wigderson"
+  },
+  {
+    "first": "Ian",
+    "middle": "",
+    "last": "Grigg",
+    "slug": "ian-grigg"
+  },
+  {
+    "first": "Bill",
+    "middle": "",
+    "last": "St. Clair",
+    "slug": "bill-st-clair"
+  },
+  {
+    "first": "Eric",
+    "middle": "",
+    "last": "Hughes",
+    "slug": "eric-hughes"
+  },
+  {
+    "first": "Julian",
+    "middle": "",
+    "last": "Assange",
+    "slug": "julian-assange"
+  },
+  {
+    "first": "Eric",
+    "middle": "S.",
+    "last": "Raymond",
+    "slug": "eric-s-raymond"
+  },
+  {
+    "first": "Ludwig",
+    "middle": "von",
+    "last": "Mises",
+    "slug": "ludwig-von-mises"
+  },
+  {
+    "first": "Jörg",
+    "middle": "Guido",
+    "last": "Hülsmann",
+    "slug": "jorg-guido-hulsmann"
+  },
+  {
+    "first": "Jesús",
+    "middle": "",
+    "last": "Huerta de Soto",
+    "slug": "jesus-huerta-de-soto"
+  },
+  {
+    "first": "Friedrich",
+    "middle": "A.",
+    "last": "Hayek",
+    "slug": "friedrich-a-hayek"
+  },
+  {
+    "first": "N.",
+    "middle": "Stephan",
+    "last": "Kinsella",
+    "slug": "n-stephan-kinsella"
+  },
+  {
+    "first": "Michele",
+    "middle": "",
+    "last": "Boldrin",
+    "slug": "michele-boldrin"
+  },
+  {
+    "first": "David",
+    "middle": "K.",
+    "last": "Levine",
+    "slug": "david-k-levine"
+  },
+  {
+    "first": "Richard",
+    "middle": "M.",
+    "last": "Stallman",
+    "slug": "richard-m-stallman"
+  },
+  {
+    "first": "John",
+    "middle": "",
+    "last": "Milton",
+    "slug": "john-milton"
+  },
+  {
+    "first": "Amir",
+    "middle": "",
+    "last": "Taaki",
+    "slug": "amir-taaki"
+  },
+  {
+    "first": "Ben",
+    "middle": "",
+    "last": "Laurie",
+    "slug": "ben-laurie"
+  },
+  {
+    "first": "Philip",
+    "middle": "R.",
+    "last": "Zimmermann",
+    "slug": "philip-r-zimmermann"
+  },
+  {
+    "first": "Chuck",
+    "middle": "",
+    "last": "Hammill",
+    "slug": "chuck-hammill"
+  },
+  {
+    "first": "Daniel",
+    "middle": "",
+    "last": "Krawisz",
+    "slug": "daniel-krawisz"
+  },
+  {
+    "first": "Pierre",
+    "middle": "",
+    "last": "Rochard",
+    "slug": "pierre-rochard"
+  },
+  {
+    "first": "Michael",
+    "middle": "",
+    "last": "Goldstein",
+    "slug": "michael-goldstein"
+  },
+  {
+    "first": "David",
+    "middle": "D.",
+    "last": "Friedman",
+    "slug": "david-d-friedman"
+  },
+  {
+    "first": "Andrew",
+    "middle": "",
+    "last": "Miller",
+    "slug": "andrew-miller"
+  },
+  {
+    "first": "Joseph",
+    "middle": "J.",
+    "last": "LaViola, Jr.",
+    "slug": "joseph-j-laviola-jr"
+  },
+  {
+    "first": "Leslie",
+    "middle": "",
+    "last": "Lamport",
+    "slug": "leslie-lamport"
+  },
+  {
+    "first": "Robert",
+    "middle": "",
+    "last": "Shostak",
+    "slug": "robert-shostak"
+  },
+  {
+    "first": "Marshall",
+    "middle": "",
+    "last": "Pease",
+    "slug": "marshall-pease"
+  },
+  {
+    "first": "Fred",
+    "middle": "B.",
+    "last": "Schneider",
+    "slug": "fred-b-schneider"
+  },
+  {
+    "first": "Daniel",
+    "middle": "A.",
+    "last": "Nagy",
+    "slug": "daniel-a-nagy"
+  },
+  {
+    "first": "Andrew",
+    "middle": "",
+    "last": "Poelstra",
+    "slug": "andrew-poelstra"
+  },
+  {
+    "first": "Ken",
+    "middle": "",
+    "last": "Thompson",
+    "slug": "ken-thompson"
+  },
+  {
+    "first": "John",
+    "middle": "R.",
+    "last": "Douceur",
+    "slug": "john-r-douceur"
+  },
+  {
+    "first": "Alexis",
+    "middle": "",
+    "last": "Bonnecaze",
+    "slug": "alexis-bonnecaze"
+  },
+  {
+    "first": "Pierre",
+    "middle": "",
+    "last": "Liardet",
+    "slug": "pierre-liardet"
+  },
+  {
+    "first": "Alban",
+    "middle": "",
+    "last": "Gabillon",
+    "slug": "alban-gabillon"
+  },
+  {
+    "first": "Kaouther",
+    "middle": "",
+    "last": "Blibech",
+    "slug": "kaouther-blibech"
+  },
+  {
+    "first": "Robert",
+    "middle": "",
+    "last": "Hettinga",
+    "slug": "robert-hettinga"
+  },
+  {
+    "first": "John",
+    "middle": "Perry",
+    "last": "Barlow",
+    "slug": "john-perry-barlow"
+  },
+  {
+    "first": "Jimmy",
+    "middle": "",
+    "last": "Song",
+    "slug": "jimmy-song"
+  },
+  {
+    "first": "David",
+    "middle": "A.",
+    "last": "Harding",
+    "slug": "david-a-harding"
+  },
+  {
+    "first": "Saifedean",
+    "middle": "",
+    "last": "Ammous",
+    "slug": "saifedean-ammous"
+  },
+  {
+    "first": "Joseph",
+    "middle": "",
+    "last": "Poon",
+    "slug": "joseph-poon"
+  },
+  {
+    "first": "Thaddeus",
+    "middle": "",
+    "last": "Dryja",
+    "slug": "thaddeus-dryja"
+  },
+  {
+    "first": "Conrad",
+    "middle": "",
+    "last": "Burchert",
+    "slug": "conrad-burchert"
+  },
+  {
+    "first": "Christian",
+    "middle": "",
+    "last": "Decker",
+    "slug": "christian-decker"
+  },
+  {
+    "first": "Roger",
+    "middle": "",
+    "last": "Wattenhofer",
+    "slug": "roger-wattenhofer"
+  },
+  {
+    "first": "Carl",
+    "middle": "",
+    "last": "Menger",
+    "slug": "carl-menger"
+  },
+  {
+    "first": "Murray",
+    "middle": "N.",
+    "last": "Rothbard",
+    "slug": "murray-n-rothbard"
+  },
+  {
+    "first": "Vijay",
+    "middle": "",
+    "last": "Boyapati",
+    "slug": "vijay-boyapati"
+  },
+  {
+    "first": "Trace",
+    "middle": "",
+    "last": "Mayer",
+    "slug": "trace-mayer"
+  },
+  {
+    "first": "Ross",
+    "middle": "",
+    "last": "Ulbricht",
+    "slug": "ross-ulbricht"
+  },
+  {
+    "first": "Parker",
+    "middle": "",
+    "last": "Lewis",
+    "slug": "parker-lewis"
+  }
 ]

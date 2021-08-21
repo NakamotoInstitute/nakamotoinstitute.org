@@ -1,0 +1,113 @@
+{% macro print_author(author) -%}
+  <a href="{{url_for('authors.detail', slug=author.slug)}}">{{author}}</a>
+{%- endmacro %}
+
+{% macro print_authors(authors) -%}
+  {% if authors|length >= 3 %}
+    {% for author in authors %}
+      {% if loop.last %}
+        and {{print_author(author)}}
+      {% else %}
+        {{print_author(author)}},
+      {% endif %}
+    {% endfor %}
+  {% elif authors|length == 2 %}
+    {{print_author(authors[0])}} and {{print_author(authors[1])}}
+  {% else %}
+    {{print_author(authors[0])}}
+  {% endif %}
+{%- endmacro %}
+
+{% macro doctypes(doc, formats, index) -%}
+  {% if 'html' in formats %}
+    <a href="{{url_for('main.doc_view', slug=doc.slug)}}">HTML</a><br>
+  {%endif%}
+  {% if 'pdf' in formats %}
+    <a href="{{url_for('static', filename='docs/' + doc.slug + '.pdf')}}">PDF</a><br>
+  {%endif%}
+  {% if 'txt' in formats %}
+    <a href="{{url_for('static', filename='docs/' + doc.slug + '.txt')}}">txt</a><br>
+  {%endif%}
+  {% if 'epub' in formats %}
+    <a href="{{url_for('static', filename='docs/' + doc.slug + '.epub')}}">ePub</a><br>
+  {%endif%}
+  {% if 'mobi' in formats %}
+    <a href="{{url_for('static', filename='docs/' + doc.slug + '.mobi')}}">mobi</a><br>
+  {%endif%}
+  {% if 'ext' in formats %}
+    {% if index %}
+      <a href="{{doc.external}}">Link</a>
+    {% else %}
+      <a href="{{doc.external}}">External link</a>
+    {% endif %}
+  {%endif%}
+{%- endmacro %}
+
+{% macro print_category(category) -%}
+  <a href="{{url_for('satoshi.quotes.detail_category', slug=category.slug)}}">{{category.name}}</a>
+{%- endmacro %}
+
+{% macro print_categories(categories) -%}
+  {% for category in categories %}
+    {% if loop.last %}
+      {{print_category(category)}}
+    {% else %}
+      {{print_category(category)}},
+    {% endif %}
+  {% endfor %}
+{%- endmacro %}
+
+{% macro print_translator(translator) -%}
+  {% if translator.url %}
+    <a href="{{translator.url}}">{{translator.name}}</a>
+  {% else %}
+    {{translator.name}}
+  {% endif %}
+{%- endmacro %}
+
+{% macro print_translators(translators) -%}
+  {% if translators|length >= 3 %}
+    {% for translator in translators %}
+      {% if loop.last %}
+        and {{print_translator(translator)}}
+      {% else %}
+        {{print_translator(translator)}},
+      {% endif %}
+    {% endfor %}
+  {% elif translators|length == 2 %}
+    {{print_translator(translators[0])}} and {{print_translator(translators[1])}}
+  {% else %}
+    {{print_translator(translators[0])}}
+  {% endif %}
+{%- endmacro %}
+
+{% macro print_translation_info(page, translators) -%}
+  {% if page.translation_url %}<a href="{{page.translation_url}}">Translation</a>
+  {% else %}Translation
+  {% endif %}
+  by {{print_translators(translators)}}
+  {% if page.translation_publication %}
+    of <a href="{{page.translation_publication_url}}">{{page.translation_publication}}</a>
+  {% endif %}
+{%- endmacro %}
+
+{% macro print_language(language, blogpost) -%}
+  <a href="/mempool/{{blogpost.slug}}/{% if language.ietf != 'en' %}{{language.ietf}}/{% endif %}">{{language.name}}</a>
+{%- endmacro %}
+
+{% macro print_translation_links(blogpost, translations) -%}
+  Read in
+  {% if translations|length >= 3 %}
+    {% for translation in translations %}
+      {% if loop.last %}
+        and {{print_language(translation, blogpost)}}
+      {% else %}
+        {{print_language(translation, blogpost)}},
+      {% endif %}
+    {% endfor %}
+  {% elif translations|length == 2 %}
+    {{print_language(translations[0], blogpost)}} and {{print_language(translations[1], blogpost)}}
+  {% else %}
+    {{print_language(translations[0], blogpost)}}
+  {% endif %}
+{%- endmacro %}

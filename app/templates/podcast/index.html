@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+The Crypto-Mises Podcast | Satoshi Nakamoto Institute
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <img class="img-fluid rounded d-block mx-auto" src="{{url_for('static', filename='img/cryptomises/cmpodcast-banner.png')}}" />
+  <div class="text-center mt-3">
+    <a class="align-middle" href="https://itunes.apple.com/us/podcast/the-crypto-mises-podcast/id957258848?mt=2&app=podcast" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/assets/shared/badges/en-us/podcast-lrg.svg) no-repeat;width:164px;height:39px;"></a>
+    <a class="align-middle" href="http://feeds.feedburner.com/cryptomises"><img style="display:inline-block;margin-left:auto;margin-right:auto;height:40px" src="{{url_for('static', filename='img/cryptomises/rss.png')}}" /></a>
+  </div>
+  {% for episode in episodes %}
+  <hr>
+  <h3>
+    <a href="{{url_for('podcast.detail', slug=episode.slug)}}">{{episode.title}}</a>
+  </h3>
+  <h5>{{episode.date.strftime('%B %d, %Y')}}</h5>
+  <p>{{episode.subtitle}}</p>
+  {% endfor %}
+</div>
+{% endblock %}
