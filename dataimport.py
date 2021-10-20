@@ -5,15 +5,13 @@ bash#!/usr/bin/env python
 # Licensed under GNU Affero GPL (https://github.com/pierrerochard/SNI-private/blob/master/LICENSE)
 #
 
-import csv
 import json
 import os.path
-from dateutil import parser
 from datetime import datetime
 
-import click
+import cli
 import requests
-from flask_sqlalchemy import SQLAlchemy
+from dateutil import parser
 
 from fetch_prices import update_skeptics
 from sni import db
@@ -21,23 +19,31 @@ from sni.models import *
 
 
 def color_text(text, color='green'):
-    return click.style(text, fg=color)
+    """
+    """
+    return cli.style(text, fg=color)
 
 
 DONE = color_text('Done!')
 
 
 def model_exists(model_class):
+    """
+    """
     engine = db.get_engine()
     return model_class.metadata.tables[model_class.__tablename__].exists(engine)
 
 
 def get(model, **kwargs):
+    """
+    """
     return db.session.query(model).filter_by(**kwargs).first()
 
 
 # See if object already exists for uniqueness
 def get_or_create(model, **kwargs):
+    """
+    """
     instance = db.session.query(model).filter_by(**kwargs).first()
     if instance:
         return instance
@@ -47,25 +53,32 @@ def get_or_create(model, **kwargs):
 
 
 def flush_db():
-    click.echo('Iniitalizing database...', nl=False)
+    """
+    """
+    cli.echo('Iniitalizing database...', nl=False)
     db.drop_all()
     db.create_all()
-    click.echo(DONE)
+    cli.echo(DONE)
 
 
 def export_prices():
+    """
+    """
+    # noinspection PyTypeChecker
     if not model_exists(Price):
         return
-    click.echo('Exporting Prices...', nl=False)
+    cli.echo('Exporting Prices...', nl=False)
     prices = Price.query.all()
     serialized_prices = [price.serialize() for price in prices]
     with open('data/prices.json', 'w') as f:
         json.dump(serialized_prices, f, indent=4)
-    click.echo(DONE)
+    cli.echo(DONE)
 
 
 def import_prices():
-    click.echo('Importing Prices...', nl=False)
+    """
+    """
+    cli.echo('Importing Prices...', nl=False)
     prices = []
     fname = 'data/prices.json'
     if os.path.isfile(fname):
@@ -93,11 +106,13 @@ def import_prices():
             )
             db.session.add(new_price)
     db.session.commit()
-    click.echo(DONE)
+    cli.echo(DONE)
 
 
 def import_language():
-    click.echo('Importing Language...', nl=False)
+    """
+    """
+    cli.echo('Importing Language...', nl=False)
     with open('data/languages.json') as data_file:
         languages = json.load(data_file)
 
@@ -108,11 +123,13 @@ def import_language():
         )
         db.session.add(new_language)
     db.session.commit()
-    click.echo(DONE)
+    cli.echo(DONE)
 
 
 def import_translator():
-    click.echo('Importing Translator...', nl=False)
+    """
+    """
+    cli.echo('Importing Translator...', nl=False)
     with open('data/translators.json') as data_file:
         translators = json.load(data_file)
 
@@ -123,11 +140,13 @@ def import_translator():
         )
         db.session.add(new_translator)
     db.session.commit()
-    click.echo(DONE)
+    cli.echo(DONE)
 
 
 def import_email_thread():
-    click.echo('Importing EmailThread...', nl=False)
+    """
+    """
+    cli.echo('Importing EmailThread...', nl=False)
     with open('data/threads_emails.json') as data_file:
         threads = json.load(data_file)
 
@@ -139,11 +158,13 @@ def import_email_thread():
         )
         db.session.add(new_thread)
     db.session.commit()
-    click.echo(DONE)
+    cli.echo(DONE)
 
 
 def import_email():
-    click.echo('Importing Email...', nl=False)
+    """
+    """
+    cli.echo('Importing Email...', nl=False)
     with open('./data/emails.json') as data_file:
         emails = json.load(data_file)
 
@@ -169,11 +190,13 @@ def import_email():
             new_email.parent = parent
         db.session.add(new_email)
     db.session.commit()
-    click.echo(DONE)
+    cli.echo(DONE)
 
 
 def import_forum_thread():
-    click.echo('Importing ForumThread...', nl=False)
+    """
+    """
+    cli.echo('Importing ForumThread...', nl=False)
     with open('data/threads_forums.json') as data_file:
         threads = json.load(data_file)
 
@@ -186,11 +209,13 @@ def import_forum_thread():
         )
         db.session.add(new_thread)
     db.session.commit()
-    click.echo(DONE)
+    cli.echo(DONE)
 
 
 def import_post():
-    click.echo('Importing Post...', nl=False)
+    """
+    """
+    cli.echo('Importing Post...', nl=False)
     with open('data/posts.json') as data_file:
         posts = json.load(data_file)
 
@@ -214,11 +239,13 @@ def import_post():
         )
         db.session.add(post)
     db.session.commit()
-    click.echo(DONE)
+    cli.echo(DONE)
 
 
 def import_quote_category():
-    click.echo('Importing QuoteCategory...', nl=False)
+    """
+    """
+    cli.echo('Importing QuoteCategory...', nl=False)
     with open('./data/quotecategories.json') as data_file:
         quotecategories = json.load(data_file)
 
@@ -229,11 +256,14 @@ def import_quote_category():
         )
         db.session.add(quote_category)
     db.session.commit()
-    click.echo(DONE)
+    cli.echo(DONE)
 
 
+# noinspection PyShadowingNames
 def import_quote():
-    click.echo('Importing Quote...', nl=False)
+    """
+    """
+    cli.echo('Importing Quote...', nl=False)
     with open('./data/quotes.json') as data_file:
         quotes = json.load(data_file)
 
@@ -254,11 +284,14 @@ def import_quote():
         q.categories = categories
         db.session.add(q)
     db.session.commit()
-    click.echo(DONE)
+    cli.echo(DONE)
 
 
+# noinspection PyShadowingNames
 def import_author():
-    click.echo('Importing Author...', nl=False)
+    """
+    """
+    cli.echo('Importing Author...', nl=False)
     with open('./data/authors.json') as data_file:
         authors = json.load(data_file)
 
@@ -271,11 +304,13 @@ def import_author():
             slug=author['slug'])
         db.session.add(author)
     db.session.commit()
-    click.echo(DONE)
+    cli.echo(DONE)
 
 
 def import_doc():
-    click.echo('Importing Doc...', nl=False)
+    """
+    """
+    cli.echo('Importing Doc...', nl=False)
     with open('./data/literature.json') as data_file:
         docs = json.load(data_file)
 
@@ -308,11 +343,14 @@ def import_doc():
             external=ext)
         db.session.add(doc)
     db.session.commit()
-    click.echo(DONE)
+    cli.echo(DONE)
 
 
 def import_research_doc():
-    click.echo('Importing ResearchDoc...', nl=False)
+    """
+    """
+    global lit
+    cli.echo('Importing ResearchDoc...', nl=False)
     with open('./data/research.json') as data_file:
         docs = json.load(data_file)
 
@@ -336,7 +374,7 @@ def import_research_doc():
         if 'lit_id' in doc:
             lit = doc['lit_id']
         else:
-            lit_id = None
+            None
         doc = ResearchDoc(
             id=doc['id'],
             title=doc['title'],
@@ -350,11 +388,13 @@ def import_research_doc():
             lit_id=lit)
         db.session.add(doc)
     db.session.commit()
-    click.echo(DONE)
+    cli.echo(DONE)
 
 
 def import_blog_series():
-    click.echo('Importing BlogSeries...', nl=False)
+    """
+    """
+    cli.echo('Importing BlogSeries...', nl=False)
     with open('./data/blogseries.json') as data_file:
         blogss = json.load(data_file)
 
@@ -367,11 +407,13 @@ def import_blog_series():
         )
         db.session.add(blog_series)
     db.session.commit()
-    click.echo(DONE)
+    cli.echo(DONE)
 
 
 def import_blog_post():
-    click.echo('Importing BlogPost...', nl=False)
+    """
+    """
+    cli.echo('Importing BlogPost...', nl=False)
     with open('./data/blogposts.json') as data_file:
         blogposts = json.load(data_file)
 
@@ -403,11 +445,13 @@ def import_blog_post():
             blogpost.translations.append(blog_translation)
             db.session.add(blogpost)
     db.session.commit()
-    click.echo(DONE)
+    cli.echo(DONE)
 
 
 def import_skeptic():
-    click.echo('Importing Skeptic...', nl=False)
+    """
+    """
+    cli.echo('Importing Skeptic...', nl=False)
     with open('./data/skeptics.json') as data_file:
         skeptics = json.load(data_file)
 
@@ -438,14 +482,16 @@ def import_skeptic():
         )
         db.session.add(skeptic)
     db.session.commit()
-    click.echo(DONE)
-    click.echo('Adding Skeptic price data...', nl=False)
+    cli.echo(DONE)
+    cli.echo('Adding Skeptic price data...', nl=False)
     update_skeptics()
-    click.echo(DONE)
+    cli.echo(DONE)
 
 
 def import_episode():
-    click.echo('Importing Episode...', nl=False)
+    """
+    """
+    cli.echo('Importing Episode...', nl=False)
     with open('./data/episodes.json') as data_file:
         episodes = json.load(data_file)
 
@@ -463,66 +509,68 @@ def import_episode():
             time=parser.parse(ep['time']))
         db.session.add(episode)
     db.session.commit()
-    click.echo(DONE)
+    cli.echo(DONE)
 
 
-@click.group()
+@cli.group()
 def cli():
+    """
+    """
     pass
 
 
 @cli.command()
-@click.option('--content/--no-content', default=False,
+@cli.option('--content/--no-content', default=False,
               help='Update literature and mempool related tables')
-@click.option('--skeptic/--no-skeptic', default=False,
+@cli.option('--skeptic/--no-skeptic', default=False,
               help='Update skeptic related tables')
 def update(content, skeptic):
     """Script to initialize and/or update database."""
     if content:
-        click.echo('Deleting Language...', nl=False)
+        cli.echo('Deleting Language...', nl=False)
         langs = Language.query.all()
         for lang in langs:
             db.session.delete(lang)
         db.session.commit()
-        click.echo('Deleting Category...', nl=False)
+        cli.echo('Deleting Category...', nl=False)
         cats = Category.query.all()
         for cat in cats:
             db.session.delete(cat)
         db.session.commit()
-        click.echo(DONE)
-        click.echo('Deleting Format...', nl=False)
+        cli.echo(DONE)
+        cli.echo('Deleting Format...', nl=False)
         forms = Format.query.all()
         for form in forms:
             db.session.delete(form)
         db.session.commit()
-        click.echo(DONE)
-        click.echo('Deleting Author...', nl=False)
+        cli.echo(DONE)
+        cli.echo('Deleting Author...', nl=False)
         auths = Author.query.all()
         for auth in auths:
             db.session.delete(auth)
         db.session.commit()
-        click.echo(DONE)
+        cli.echo(DONE)
         import_author()
-        click.echo('Deleting Doc...', nl=False)
+        cli.echo('Deleting Doc...', nl=False)
         Doc.query.delete()
-        click.echo(DONE)
-        click.echo('Deleting ResearchDoc...', nl=False)
+        cli.echo(DONE)
+        cli.echo('Deleting ResearchDoc...', nl=False)
         ResearchDoc.query.delete()
-        click.echo(DONE)
+        cli.echo(DONE)
         import_doc()
         import_research_doc()
-        click.echo('Deleting BlogPost...', nl=False)
+        cli.echo('Deleting BlogPost...', nl=False)
         BlogPost.query.delete()
-        click.echo(DONE)
-        click.echo('Deleting BlogSeries...', nl=False)
+        cli.echo(DONE)
+        cli.echo('Deleting BlogSeries...', nl=False)
         BlogSeries.query.delete()
-        click.echo(DONE)
+        cli.echo(DONE)
         import_blog_series()
         import_blog_post()
     if skeptic:
-        click.echo('Deleting Skeptic...', nl=False)
+        cli.echo('Deleting Skeptic...', nl=False)
         Skeptic.query.delete()
-        click.echo(DONE)
+        cli.echo(DONE)
         import_skeptic()
     if not content and not skeptic:
         export_prices()
@@ -543,7 +591,7 @@ def update(content, skeptic):
         import_prices()
         import_skeptic()
         import_episode()
-    click.echo(color_text('Finished importing data!'))
+    cli.echo(color_text('Finished importing data!'))
 
 
 if __name__ == '__main__':

@@ -5,7 +5,9 @@ from .. import app
 
 @app.template_filter()
 def commafy(d):
-    return f'{d:,}'
+    """
+    """
+    return '{d:,}'
 
 
 @app.template_filter()

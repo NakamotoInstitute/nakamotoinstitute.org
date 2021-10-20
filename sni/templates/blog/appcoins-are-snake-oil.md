@@ -60,6 +60,8 @@ more business for them. I do not see how investors in the appcoin could expect
 to prevent this. That should eliminate the expectation that any appcoin could
 ever be a good investment.
 
+<!--suppress ALL -->
+
 <div class="my-4 text-center">
   <img class="img-fluid rounded d-block mx-auto" src="/static/img/mempool/appcoins-are-snake-oil/underpants-gnomes.png" />
 </div>

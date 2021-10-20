@@ -5,6 +5,7 @@ Government exists because it is, _de facto,_ the equilibrium solution to providi
 
 The graph below visually explains how the market structure for a given good or service is the result of endogenous constraints:
 
+<!--suppress Annotator, Annotator -->notator -->
 <div class="my-4 text-center">
   <img class="img-fluid rounded d-block mx-auto" alt="Market" src="/static/img/mempool/working-and-saving-are-revolutionary-acts/market.jpg"></a>
 </div>

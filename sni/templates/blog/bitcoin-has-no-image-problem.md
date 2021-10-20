@@ -26,6 +26,7 @@ First look at this [log
 chart](https://en.wikipedia.org/wiki/Logarithmic_scale) of Bitcoin’s market
 cap.
 
+<!--suppress ALL, LongLine -->ngLine -->ngLine -->
 <div class="my-4 text-center">
 	<img class="img-fluid rounded d-block mx-auto" src="/static/img/mempool/bitcoin-has-no-image-problem/marketcap-chart.png">
 </div>

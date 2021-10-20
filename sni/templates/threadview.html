@@ -7,6 +7,7 @@
 
 {% block content %}
 {% set only_satoshi = request.cls.get('view') == 'satoshi' -%}
+<!--suppress ALL -->
 <div class="container">
   <div class="text-center">
     <a href="{{url_for('posts', view='threads')}}">All Threads</a>

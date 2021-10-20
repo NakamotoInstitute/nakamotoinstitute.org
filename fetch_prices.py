@@ -11,6 +11,8 @@ from sni.models import Price, Skeptic
 
 
 def update_skeptics():
+    """
+    """
     skeptics = Skeptic.query.all()
     prices = Price.query.all()
     price_query = db.session.query(Price)
@@ -18,7 +20,7 @@ def update_skeptics():
     for skeptic in skeptics:
         date_diff = (prices[-1].date - skeptic.date).days + 1  # Include first day
         filtered_prices = price_query.filter(Price.date >= skeptic.date).all()
-        total_btc = Decimal('0')
+        total_btc = Decimal()
         for price_data in filtered_prices:
             btc = round(Decimal('1') / Decimal(price_data.price), 8)
             total_btc += btc
@@ -35,13 +37,15 @@ def update_skeptics():
 
 
 def main():
+    """
+    """
     url = 'https://community-api.coinmetrics.io/v2/assets/btc/metricdata?metrics=PriceUSD'
     prices = Price.query.all()
 
     if prices:
         latest = prices[-1]
         start_date = latest.date + timedelta(days=1)
-        url = f'{url}&start={start_date}'
+        url = '{url}&start={start_date}'
 
     resp = requests.get(url).json()
     series = resp['metricData']['series']

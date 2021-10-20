@@ -4,13 +4,12 @@
 # Licensed under GNU Affero GPL (https://github.com/pierrerochard/SNI-private/blob/master/LICENSE)
 #
 
-import os
 import unittest
-import config
 
 from config import SERVER_NAME
-from sni import app, db
-from sni.models import Email, Post, Doc
+
+from sni import app
+
 
 class TestCase(unittest.TestCase):
 	#Test Homepages
@@ -174,4 +173,4 @@ class TestCase(unittest.TestCase):
 		assert "Redirecting..." in resp
 
 if __name__ == '__main__':
-    unittest.main()
+	unittest.main()

@@ -4,18 +4,20 @@
 # Licensed under GNU Affero GPL (https://github.com/pierrerochard/SNI-private/blob/master/LICENSE)
 #
 
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from flask_script import Manager
-from flask_caching import Cache
-from flask_assets import Environment, Bundle
-from flaskext.markdown import Markdown
-from flask_flatpages import FlatPages
 import jinja2
-from datetime import datetime
+from flask_caching import Cache
+from flask_flatpages import Environment, Bundle
+from flask_flatpages import Flask
+from flask_flatpages import FlatPages
+from flask_script import Manager
+from flask_sqlalchemy import SQLAlchemy
+from flaskext.markdown import Markdown
 
 
 class ReverseProxied(object):
+    """
+    """
+    # noinspection PyShadowingNames
     def __init__(self, app):
         self.app = app
 
@@ -70,6 +72,8 @@ cache = Cache(app, config={
 if not app.debug:
     import logging
     from logging.handlers import RotatingFileHandler
+
+    # noinspection PyArgumentEqualDefault
     file_handler = RotatingFileHandler('tmp/snilog.csv',
                                        'a',
                                        10 * 1024 * 1024,
@@ -81,6 +85,3 @@ if not app.debug:
     app.logger.addHandler(file_handler)
     app.logger.info('sni')
 
-
-from sni import views, models
-from sni.util import filters

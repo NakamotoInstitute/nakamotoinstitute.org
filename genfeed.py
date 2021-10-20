@@ -8,6 +8,8 @@ TIMEZONE = timezone('US/Central')
 
 
 def localize_time(time):
+    """
+    """
     return TIMEZONE.localize(time)
 
 
@@ -19,6 +21,7 @@ fg.link(href='http://nakamotoinstitute.org/', rel='alternate')
 fg.subtitle('The official podcast of the Satoshi Nakamoto Institute')
 fg.language('en')
 fg.copyright('cc-by-sa')
+# noinspection LongLine
 fg.podcast.itunes_summary('Michael Goldstein and Daniel Krawisz of the Satoshi Nakamoto Institute discuss Bitcoin, economics, and cryptography.')
 fg.podcast.itunes_owner('Michael Goldstein', 'michael@bitstein.org')
 fg.link(href='http://nakamotoinstitute.org/podcast/feed/', rel='self')
@@ -34,6 +37,7 @@ for ep in eps:
     fe = fg.add_entry()
     fe.id('http://nakamotoinstitute/podcast/'+ep.slug+'/')
     fe.title(ep.title)
+    # noinspection LongLine
     fe.podcast.itunes_summary(ep.summary + ' If you enjoyed this episode, show your support by donating to SNI: ' + ep.address)
     fe.podcast.itunes_subtitle(ep.subtitle)
     fe.podcast.itunes_author('Satoshi Nakamoto Institute')
