@@ -3109,7 +3109,7 @@ THE CYPHERNOMICON
       + Substitution Ciphers (A=C, B=D, etc.)
         - Caesar Shift (blocks)
       + Keyword Ciphers
-        + Vigen?re (with Caesar)
+        + Vigen�re (with Caesar)
           + Rotor Machines
             - Hagelin
             - Enigma
@@ -11102,7 +11102,7 @@ IV. Talk of lawsuits, actions, etc.
      are not presumed to have read each and every one of the
      books they sell...so if somebody blows their hand off in a
      an experiment, the bookstore is not liable.  (The
-     author/publisher may be, but that's a?nt issue.)
+     author/publisher may be, but that's a�nt issue.)
   - How does one become a common carrier? Not clear. One view
      is that a service should "behave like" a common carrier and
      then hope and pray that a court sees it that way.
@@ -12058,7 +12058,7 @@ IV. Talk of lawsuits, actions, etc.
        Russbacher and the others
   - DST, Direction de la Surveillance du Territoire,
      counterespionage arm of France (parallel to FBI)
-  + DSGE, Direction G?n?rale de la S?curit? Ext?riere
+  + DSGE, Direction G�n�rale de la S�curit� Ext�riere
     - provides draft deferments for those who deliver stolen
        information
   + Sweden, Forsvarets Radioanstalt ("Radio Agency of the
@@ -17411,7 +17411,7 @@ IV. Talk of lawsuits, actions, etc.
             - suitcases of cash laundered from Las Vegas to
                Miami
           - Jefferson Savings and Loan Association, Texas
-        + Guilermo Hern?ndez Cartaya, ex-Havana banker, Cuban
+        + Guilermo Hern�ndez Cartaya, ex-Havana banker, Cuban
            exile, was chief figure
           - veteran of Bay of Pigs (likely CIA contacts)
         - investigated by R. Jerome Sanford, Miami assistant
@@ -17424,7 +17424,7 @@ IV. Talk of lawsuits, actions, etc.
       - former agents and drug traffickers were frequently
          recruited by DEA and CIA to run their own drug
          operation, sometimes with political motivations
-      - Carlos Hern?ndez recruited by BNDD (Bureau of Narcotics
+      - Carlos Hern�ndez recruited by BNDD (Bureau of Narcotics
          and Dangerous drugs, predecessor to DEA) to form a
          death squad to assassinate other drug traffickers
       + possible links of the drug dealers to
@@ -18374,7 +18374,7 @@ IV. Talk of lawsuits, actions, etc.
            member of this group
           - Faust was his message of the struggle
       - with the Age of Rationalism, the mystical, mumbo-jumbo
-         aspects of alchemical research were seen to be pass?,
+         aspects of alchemical research were seen to be pass�,
          and groups like Crowleys O.T.O.  became purely mystical
          showmanship
       + but the need for secrecy was now in the financial
