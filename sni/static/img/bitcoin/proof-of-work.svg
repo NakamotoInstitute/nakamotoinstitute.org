@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
+<!--suppress ALL -->
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   version="1.1"
-   width="738.84821"
-   height="191.9296"
-   id="svg11628">
+        xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:cc="http://creativecommons.org/ns#"
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        version="1.1"
+        width="738.84821"
+        height="191.9296"
+        id="svg11628">
   <defs
      id="defs11630">
     <linearGradient
@@ -83,7 +83,7 @@
        xlink:href="#linearGradient5358-7-3"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(0.65798432,0,0,0.10434411,-596.30154,346.02909)"
-       spreadMethod="pad" />
+    />
     <linearGradient
        id="linearGradient5358-7-3">
       <stop
@@ -108,7 +108,7 @@
        xlink:href="#linearGradient5358-7-3-4"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(0.81346207,0,0,0.10434411,95.839074,344.60052)"
-       spreadMethod="pad" />
+    />
     <linearGradient
        id="linearGradient5358-7-3-4">
       <stop
@@ -133,7 +133,7 @@
        xlink:href="#linearGradient5358-7-3-4-2"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(0.81346207,0,0,0.10434411,16.709259,27.643918)"
-       spreadMethod="pad" />
+    />
     <linearGradient
        id="linearGradient5358-7-3-4-2">
       <stop
@@ -158,7 +158,7 @@
        xlink:href="#linearGradient5358-7-3-7"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(0.65798432,0,0,0.10434411,-517.17173,29.072488)"
-       spreadMethod="pad" />
+    />
     <linearGradient
        id="linearGradient5358-7-3-7">
       <stop

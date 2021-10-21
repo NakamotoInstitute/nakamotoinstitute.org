@@ -4,7 +4,7 @@ from .. import app
 
 
 @app.template_filter()
-def commafy(d):
+def commafy():
     """
     """
     return '{d:,}'

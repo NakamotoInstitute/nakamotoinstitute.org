@@ -1,3 +1,4 @@
+# noinspection PyStatementEffect
 bash#!/usr/bin/env python
 #
 # Satoshi Nakamoto Institute (http://nakamotoinstitute.org)
@@ -346,6 +347,7 @@ def import_doc():
     cli.echo(DONE)
 
 
+# noinspection PyGlobalUndefined
 def import_research_doc():
     """
     """
@@ -374,7 +376,7 @@ def import_research_doc():
         if 'lit_id' in doc:
             lit = doc['lit_id']
         else:
-            None
+            var = None
         doc = ResearchDoc(
             id=doc['id'],
             title=doc['title'],

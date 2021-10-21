@@ -200,6 +200,7 @@ class Category(db.Model):
         return '<Category %r>' % self.name
 
 
+# noinspection PyGlobalUndefined
 def get_authors_string(obj):
     """
     """

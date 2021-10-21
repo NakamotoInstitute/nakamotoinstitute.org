@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
+<!--suppress ALL -->
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   version="1.1"
-   width="754.47321"
-   height="310.6796"
-   id="svg11628">
+        xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:cc="http://creativecommons.org/ns#"
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        version="1.1"
+        width="754.47321"
+        height="310.6796"
+        id="svg11628">
   <defs
      id="defs11630">
     <linearGradient
@@ -173,7 +173,7 @@
        xlink:href="#linearGradient5358-7-3-7-3"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(0.65798432,0,0,0.10434411,-455.03446,754.69479)"
-       spreadMethod="pad" />
+    />
     <linearGradient
        id="linearGradient5358-7-3-7-3">
       <stop
@@ -198,7 +198,7 @@
        xlink:href="#linearGradient5358-7-3-7-3-5"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(0.65798432,0,0,0.10434411,-455.03446,780.69479)"
-       spreadMethod="pad" />
+    />
     <linearGradient
        id="linearGradient5358-7-3-7-3-5">
       <stop
@@ -223,7 +223,7 @@
        xlink:href="#linearGradient5358-7-3-7-3-7"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(0.65798432,0,0,0.10434411,-455.03446,806.69479)"
-       spreadMethod="pad" />
+    />
     <linearGradient
        id="linearGradient5358-7-3-7-3-7">
       <stop
@@ -248,7 +248,7 @@
        xlink:href="#linearGradient5358-7-3-7-3-6"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(0.65798432,0,0,0.10434411,-155.72194,754.69479)"
-       spreadMethod="pad" />
+    />
     <linearGradient
        id="linearGradient5358-7-3-7-3-6">
       <stop
@@ -273,7 +273,7 @@
        xlink:href="#linearGradient5358-7-3-7-3-5-0"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(0.65798432,0,0,0.10434411,-155.72194,780.69479)"
-       spreadMethod="pad" />
+    />
     <linearGradient
        id="linearGradient5358-7-3-7-3-5-0">
       <stop

@@ -9,7 +9,7 @@ import os
 import re
 from datetime import datetime
 
-from flask import url_for, re, Response, \
+from flask import url_for, research, Response, \
     send_from_directory
 from jinja2 import escape
 from pytz import timezone
@@ -33,16 +33,16 @@ def date_to_localized_datetime(date):
 def internal_error():
     """
     """
-    app.logger.error(str(re.remote_addr) + ', 404')
-    return re('404.html'), 404
+    app.logger.error(str(research.remote_addr) + ', 404')
+    return research, 404
 
 
 @app.errorhandler(500)
 def internal_error():
     """
     """
-    app.logger.error(str(re.remote_addr) + ', 500')
-    return re('500.html'), 500
+    app.logger.error(str(research.remote_addr) + ', 500')
+    return research, 500
 
 
 @app.route('/favicon.ico')
@@ -58,8 +58,8 @@ def favicon():
 def satoshi_index():
     """
     """
-    app.logger.info(str(re.remote_addr) + ', SatoshiIndex')
-    return re("satoshiindex.html")
+    app.logger.info(str(research.remote_addr) + ', SatoshiIndex')
+    return research
 
 
 @app.route('/')
@@ -68,8 +68,8 @@ def index():
     """
     """
     bp = BlogPost.query.order_by(desc(BlogPost.added)).first()
-    app.logger.info(str(re.remote_addr) + ', Index')
-    return re("index.html", bp=bp)
+    app.logger.info(str(research.remote_addr) + ', Index')
+    return research
 
 
 @app.route('/about/', methods=["GET"])
@@ -77,8 +77,8 @@ def index():
 def about():
     """
     """
-    app.logger.info(str(re.remote_addr) + ', About')
-    return re("about.html")
+    app.logger.info(str(research.remote_addr) + ', About')
+    return research
 
 
 @app.route('/contact/', methods=["GET"])
@@ -86,8 +86,8 @@ def about():
 def contact():
     """
     """
-    app.logger.info(str(re.remote_addr) + ', Contact')
-    return re("contact.html")
+    app.logger.info(str(research.remote_addr) + ', Contact')
+    return research
 
 
 @app.route('/events/', methods=["GET"])
@@ -95,8 +95,8 @@ def contact():
 def events():
     """
     """
-    app.logger.info(str(re.remote_addr) + ', Events')
-    return re("events.html")
+    app.logger.info(str(research.remote_addr) + ', Events')
+    return research
 
 
 @app.route('/donate/', methods=["GET"])
@@ -104,8 +104,8 @@ def events():
 def donate():
     """
     """
-    app.logger.info(str(re.remote_addr) + ', Donate')
-    return re("donate.html")
+    app.logger.info(str(research.remote_addr) + ', Donate')
+    return research
 
 
 # noinspection PyShadowingNames
@@ -114,18 +114,16 @@ def donate():
 def emails():
     """
     """
-    view_query = re.args.get('view')
+    view_query = research.args.get('view')
     if view_query == 'threads':
         threads = Email.query.all()
         cryptography_threads = threads[0:2]
         bitcoin_list_threads = threads[2:]
-        app.logger.info(str(re.remote_addr) + ', threads')
-        return re(
-            "threads_emails.html", threads=threads, cryptography_threads=cryptography_threads,
-            bitcoin_list_threads=bitcoin_list_threads, source=None)
+        app.logger.info(str(research.remote_addr) + ', threads')
+        return research
     emails = Email.query.filter(Email.satoshi_id.isnot(None)).order_by(Email.date).all()
-    app.logger.info(str(re.remote_addr) + ', Emails')
-    return re("emails.html", emails=emails)
+    app.logger.info(str(research.remote_addr) + ', Emails')
+    return research
 
 
 # noinspection PyShadowingNames
@@ -138,10 +136,10 @@ def emailssource(source):
                          .join(Email.email_thread, aliased=True) \
                          .filter_by(source=source).order_by(Email.date).all()
     if len(emails) != 0:
-        app.logger.info(str(re.remote_addr) + ', emails, ' + source)
-        return re("emails.html", emails=emails, source=source)
+        app.logger.info(str(research.remote_addr) + ', emails, ' + source)
+        return research
     else:
-        return re(url_for('emails'))
+        return research
 
 
 @app.route('/emails/<string:source>/<int:emnum>/', subdomain="satoshi", methods=["GET"])
@@ -155,10 +153,10 @@ def emailview(source, emnum):
     prev = Email.query.filter_by(satoshi_id=emnum-1).join(Email.email_thread, aliased=True).first()
     next = Email.query.filter_by(satoshi_id=emnum+1).join(Email.email_thread, aliased=True).first()
     if email is not None:
-        app.logger.info(str(re.remote_addr) + ', Emails, ' + str(emnum))
-        return re("emailview.html", email=email, prev=prev, next=next)
+        app.logger.info(str(research.remote_addr) + ', Emails, ' + str(emnum))
+        return research
     else:
-        return re('emails')
+        return research
 
 
 # noinspection PyShadowingNames
@@ -169,10 +167,10 @@ def emailthreads(source):
     """
     threads = Email.query.filter_by(source=source).order_by(Email.id).all()
     if len(threads) != 0:
-        app.logger.info(str(re.remote_addr) + ', threads, ' + source)
-        return re("threads_emails.html", threads=threads, source=source)
+        app.logger.info(str(research.remote_addr) + ', threads, ' + source)
+        return research
     else:
-        return re(url_for('emails', view='threads'))
+        return research
 
 
 # noinspection PyShadowingNames
@@ -181,21 +179,21 @@ def emailthreads(source):
 def emailthreadview(source, thread_id):
     """
     """
-    view_query = re.args.get('view')
+    view_query = research.args.get('view')
     emails = Email.query.filter_by(thread_id=thread_id)
     if len(emails.all()) > 0:
         thread = emails[0].email_thread
         if thread.source != source:
-            return re(url_for('emailthreadview', source=thread.source, thread_id=thread_id))
+            return research
     else:
-        return re(url_for('emails', view='threads'))
+        return research
     if view_query == 'satoshi':
         emails = emails.filter(Email.satoshi_id.isnot(None))
     emails = emails.all()
     prev = Email.query.filter_by(id=thread_id-1).first()
     next = Email.query.filter_by(id=thread_id+1).first()
-    app.logger.info(str(re.remote_addr) + ', emailthreads ,' + source + ', ' + str(thread_id))
-    return re("threadview_emails.html", emails=emails, prev=prev, next=next)
+    app.logger.info(str(research.remote_addr) + ', emailthreads ,' + source + ', ' + str(thread_id))
+    return research
 
 
 # noinspection PyShadowingNames
@@ -204,18 +202,16 @@ def emailthreadview(source, thread_id):
 def posts():
     """
     """
-    view_query = re.args.get('view')
+    view_query = research.args.get('view')
     if view_query == 'threads':
         threads = ForumThread.query.all()
         p2pfoundation_threads = [threads[0]]
         bitcointalk_threads = threads[1:]
-        app.logger.info(str(re.remote_addr) + ', threads')
-        return re(
-            "threads.html", threads=threads, p2pfoundation_threads=p2pfoundation_threads,
-            bitcointalk_threads=bitcointalk_threads, source=None)
+        app.logger.info(str(research.remote_addr) + ', threads')
+        return research
     posts = Post.query.filter(Post.satoshi_id.isnot(None)).order_by(Post.date).all()
-    app.logger.info(str(re.remote_addr) + ', posts')
-    return re("posts.html", posts=posts, source=None)
+    app.logger.info(str(research.remote_addr) + ', posts')
+    return research
 
 
 # noinspection PyShadowingNames
@@ -228,10 +224,10 @@ def forumposts(source):
                        .join(Post.forum_thread, aliased=True) \
                        .filter_by(source=source).order_by(Post.date).all()
     if len(posts) != 0:
-        app.logger.info(str(re.remote_addr) + ', posts, ' + source)
-        return re("posts.html", posts=posts, source=source)
+        app.logger.info(str(research.remote_addr) + ', posts, ' + source)
+        return research
     else:
-        return re(url_for('posts'))
+        return research
 
 
 @app.route('/posts/<string:source>/<int:postnum>/', subdomain="satoshi", methods=["GET"])
@@ -245,11 +241,10 @@ def postview(postnum, source):
     prev = Post.query.filter_by(satoshi_id=postnum-1).join(Post.forum_thread, aliased=True).first()
     next = Post.query.filter_by(satoshi_id=postnum+1).join(Post.forum_thread, aliased=True).first()
     if post is not None:
-        app.logger.info(str(re.remote_addr) + ', posts ,' + source + ', ' + str(postnum))
-        return re("postview.html", post=post, prev=prev,
-                               next=next)
+        app.logger.info(str(research.remote_addr) + ', posts ,' + source + ', ' + str(postnum))
+        return research
     else:
-        return re('posts')
+        return research
 
 
 # noinspection PyShadowingNames
@@ -260,10 +255,10 @@ def threads(source):
     """
     threads = ForumThread.query.filter_by(source=source).order_by(ForumThread.id).all()
     if len(threads) != 0:
-        app.logger.info(str(re.remote_addr) + ', threads ,' + source)
-        return re("threads.html", threads=threads, source=source)
+        app.logger.info(str(research.remote_addr) + ', threads ,' + source)
+        return research
     else:
-        return re(url_for('posts', view='threads'))
+        return research
 
 
 # noinspection PyShadowingNames
@@ -272,21 +267,21 @@ def threads(source):
 def threadview(source, thread_id):
     """
     """
-    view_query = re.args.get('view')
+    view_query = research.args.get('view')
     posts = Post.query.filter_by(thread_id=thread_id)
     if len(posts.all()) > 0:
         thread = posts[0].forum_thread
         if thread.source != source:
-            return re(url_for('threadview', source=thread.source, thread_id=thread_id))
+            return research
     else:
-        return re(url_for('posts', view='threads'))
+        return research
     if view_query == 'satoshi':
         posts = posts.filter(Post.satoshi_id.isnot(None))
     posts = posts.all()
     prev = ForumThread.query.filter_by(id=thread_id-1).first()
     next = ForumThread.query.filter_by(id=thread_id+1).first()
-    app.logger.info(str(re.remote_addr) + ', threads ,' + source + ', ' + str(thread_id))
-    return re("threadview.html", posts=posts, prev=prev, next=next)
+    app.logger.info(str(research.remote_addr) + ', threads ,' + source + ', ' + str(thread_id))
+    return research
 
 
 @app.route('/code/', subdomain="satoshi")
@@ -294,8 +289,8 @@ def threadview(source, thread_id):
 def code():
     """
     """
-    app.logger.info(str(re.remote_addr) + ', Code')
-    return re("code.html")
+    app.logger.info(str(research.remote_addr) + ', Code')
+    return research
 
 
 @app.route('/quotes/', subdomain="satoshi")
@@ -303,9 +298,9 @@ def code():
 def quotes():
     """
     """
-    app.logger.info(str(re.remote_addr) + ', Quotes')
+    app.logger.info(str(research.remote_addr) + ', Quotes')
     categories = QuoteCategory.query.order_by(QuoteCategory.slug).all()
-    return re("quotes.html", categories=categories)
+    return research
 
 
 # noinspection PyShadowingNames
@@ -314,8 +309,8 @@ def quotes():
 def quotescategory(slug):
     """
     """
-    app.logger.info(str(re.remote_addr) + ', Quotes')
-    order = re.args.get('order')
+    app.logger.info(str(research.remote_addr) + ', Quotes')
+    order = research.args.get('order')
     if order == 'desc':
         quotes = QuoteCategory.query.filter(
             QuoteCategory.categories.any(slug=slug)
@@ -326,10 +321,9 @@ def quotescategory(slug):
         ).order_by(QuoteCategory.date).all()
     category = QuoteCategory.query.filter_by(slug=slug).first()
     if category is not None:
-        return re("quotescategory.html", quotes=quotes,
-                               category=category, order=order)
+        return research
     else:
-        return re('quotes')
+        return research
 
 
 # noinspection PyShadowingNames
@@ -339,8 +333,8 @@ def authors():
     """
     """
     authors = Author.query.order_by(Author.last).all()
-    app.logger.info(str(re.remote_addr) + ', authors')
-    return re("authors.html", authors=authors)
+    app.logger.info(str(research.remote_addr) + ', authors')
+    return research
 
 
 # noinspection PyShadowingNames
@@ -350,19 +344,18 @@ def author(authslug):
     """
     """
     if authslug.lower() == 'satoshi-nakamoto':
-        return re(url_for('satoshi_index'))
+        return research
     author = Author.query.filter_by(slug=authslug).first()
     if author is not None:
         mem = author.blogposts.all()
         lit = author.docs.all()
         res = author.researchdocs.all()
-        app.logger.info(str(re.remote_addr) + ', authors, ' + authslug)
-        return re("author.html", author=author, mem=mem, lit=lit,
-                               res=res)
+        app.logger.info(str(research.remote_addr) + ', authors, ' + authslug)
+        return research
     elif not authslug.islower():
-        return re(url_for('author', authslug=authslug.lower()))
+        return research
     else:
-        return re(url_for('authors'))
+        return research
 
 
 @app.route('/literature/', methods=["GET"])
@@ -375,8 +368,8 @@ def literature():
     for doc in docs:
         formlist = [format.name for format in doc.formats]
         formats[doc.slug] = formlist
-    app.logger.info(str(re.remote_addr) + ', literature')
-    return re("literature.html", docs=docs, formats=formats)
+    app.logger.info(str(research.remote_addr) + ', literature')
+    return research
 
 
 @app.route('/literature/<string:slug>/', methods=["GET"])
@@ -387,13 +380,12 @@ def docinfo(slug):
     doc = Doc.query.filter_by(slug=slug).first()
     if doc is not None:
         forms = [form.name for form in doc.formats]
-        app.logger.info(str(re.remote_addr) + ', literature, ' + slug)
-        return re("docinfo.html", doc=doc, forms=forms,
-                               is_lit=True)
+        app.logger.info(str(research.remote_addr) + ', literature, ' + slug)
+        return research
     elif ResearchDoc.query.filter_by(slug=slug).first() is not None:
-        return re(url_for('researchdocinfo', slug=slug))
+        return research
     else:
-        return re('literature')
+        return research
 
 
 @cache.cached()
@@ -403,12 +395,12 @@ def docinfoid(docid):
     """
     doc = Doc.query.filter_by(id=docid).first()
     if doc is not None:
-        return re(url_for('docinfo', slug=doc.slug))
+        return research
     else:
         doc = ResearchDoc.query.filter_by(lit_id=docid).first()
         if doc is not None:
-            return re(url_for('researchdocinfo', slug=doc.slug))
-    return re('literature')
+            return research
+    return research
 
 
 @cache.cached()
@@ -421,20 +413,17 @@ def docview(slug, format):
         formats = [form.name for form in doc.formats]
         if format in formats:
             if format == 'html':
-                return re(url_for('slugview', slug=slug))
+                return research
             else:
-                return re(url_for('static',
-                                filename='docs/%(x)s.%(y)s' % {
-                                    "x": slug, "y": format
-                                }))
+                return research
         else:
-            return re(url_for('docinfo', slug=slug))
+            return research
     else:
         doc = ResearchDoc.query.filter_by(slug=slug).first()
         if doc is not None:
-            return re(url_for('researchdocview', slug=slug))
+            return research
 
-    return re('literature')
+    return research
 
 
 @cache.cached()
@@ -448,20 +437,17 @@ def docviewid(docid, format):
         slug = doc.slug
         if format in formats:
             if format == 'html':
-                return re(url_for('slugview', slug=slug))
+                return research
             else:
-                return re(url_for('static',
-                                filename='docs/%(x)s.%(y)s' % {
-                                    "x": slug, "y": format
-                                }))
+                return research
         else:
-            return re(url_for('docinfo', slug=doc.slug))
+            return research
     else:
         doc = ResearchDoc.query.filter_by(lit_id=docid).first()
         if doc is not None:
-            return re(url_for('researchdocviewid', id=doc.id))
+            return research
 
-    return re('literature')
+    return research
 
 
 @app.route('/research/', methods=["GET"])
@@ -474,8 +460,8 @@ def research():
     for doc in docs:
         formlist = [format.name for format in doc.formats]
         formats[doc.slug] = formlist
-    app.logger.info(str(re.remote_addr) + ', research')
-    return re('research.html', docs=docs, formats=formats)
+    app.logger.info(str(research.remote_addr) + ', research')
+    return research
 
 
 @app.route('/research/<string:slug>/', methods=["GET"])
@@ -486,11 +472,10 @@ def researchdocinfo(slug):
     res = ResearchDoc.query.filter_by(slug=slug).first()
     if res is not None:
         forms = [form.name for form in res.formats]
-        app.logger.info(str(re.remote_addr) + ', research, ' + slug)
-        return re("docinfo.html", doc=res, forms=forms,
-                               is_lit=False)
+        app.logger.info(str(research.remote_addr) + ', research, ' + slug)
+        return research
     else:
-        return re('research')
+        return research
 
 
 @app.route('/research/<int:resid>/', methods=["GET"])
@@ -500,9 +485,9 @@ def researchdocinfoid(resid):
     """
     res = ResearchDoc.query.filter_by(id=resid).first()
     if res is not None:
-        return re(url_for('researchdocinfo', slug=res.slug))
+        return research
     else:
-        return re('research')
+        return research
 
 
 @app.route('/research/<string:slug>/<string:format>/', methods=["GET"])
@@ -515,16 +500,13 @@ def researchdocview(slug, format):
         formats = [form.name for form in doc.formats]
         if format in formats:
             if format == 'html':
-                return re(url_for('slugview', slug=slug))
+                return research
             else:
-                return re(url_for('static',
-                                filename='docs/%(x)s.%(y)s' % {
-                                    "x": slug, "y": format
-                                }))
+                return research
         else:
-            return re(url_for('researchdocinfo', slug=slug))
+            return research
     else:
-        return re('literature')
+        return research
 
 
 @app.route('/research/<int:resid>/<string:format>/', methods=["GET"])
@@ -532,22 +514,19 @@ def researchdocview(slug, format):
 def researchdocviewid(format):
     """
     """
-    doc = ResearchDoc.query.filter_by(id=resid).first()
+    doc = ResearchDoc.query.filter_by(id=research).first()
     if doc is not None:
         formats = [form.name for form in doc.formats]
         slug = doc.slug
         if format in formats:
             if format == 'html':
-                return re(url_for('slugview', slug=slug))
+                return research
             else:
-                return re(url_for('static',
-                                filename='docs/%(x)s.%(y)s' % {
-                                    "x": slug, "y": format
-                                }))
+                return research
         else:
-            return re(url_for('researchdocinfo', slug=doc.slug))
+            return research
     else:
-        return re('literature')
+        return research
 
 
 @app.route('/<string:slug>/', methods=["GET"])
@@ -557,24 +536,24 @@ def slugview(slug):
     """
     doc = Doc.query.filter_by(slug=slug).first()
     if doc is not None:
-        doc.id
+        var = doc.id
         formats = [form.name for form in doc.formats]
         if 'html' in formats:
-            app.logger.info(str(re.remote_addr) + ', slugview, ' + slug)
-            return re("%s.html" % slug, doc=doc, is_lit=True)
+            app.logger.info(str(research.remote_addr) + ', slugview, ' + slug)
+            return research
         else:
-            return re('literature')
+            return research
     else:
         doc = ResearchDoc.query.filter_by(slug=slug).first()
         if doc is not None:
-            doc.id
+            var = doc.id
             formats = [form.name for form in doc.formats]
             if 'html' in formats:
-                app.logger.info(str(re.remote_addr) + ', slugview, ' + slug)
-                return re("%s.html" % slug, doc=doc)
+                app.logger.info(str(research.remote_addr) + ', slugview, ' + slug)
+                return research
             else:
-                return re('research')
-    return re('literature')
+                return research
+    return research
 
 
 @app.route('/mempool/', methods=["GET"])
@@ -583,8 +562,8 @@ def blog():
     """
     """
     bps = BlogPost.query.order_by(desc(BlogPost.added)).all()
-    app.logger.info(str(re.remote_addr) + ', mempool')
-    return re('blog.html', bps=bps)
+    app.logger.info(str(research.remote_addr) + ', mempool')
+    return research
 
 
 @app.route('/mempool/<string:slug>/', methods=["GET"])
@@ -594,11 +573,11 @@ def blogpost(slug):
     """
     # Redirect for new appcoin slug
     if slug == "appcoins-are-fraudulent":
-        return re(url_for("blogpost", slug="appcoins-are-snake-oil"))
+        return research
     bp = BlogPost.query.filter_by(slug=slug).order_by(desc(BlogPost.date)).first()
     lang = Language.query.filter_by(ietf="en").first()
     if bp:
-        app.logger.info(str(re.remote_addr) + ', mempool, ' + slug)
+        app.logger.info(str(research.remote_addr) + ', mempool, ' + slug)
         page = pages.get(slug)
         translations = [translation.language for translation in bp.translations]
         translations.sort(key=lambda x: x.name)
@@ -608,10 +587,9 @@ def blogpost(slug):
                 series=bp.series, series_index=bp.series_index-1).first()
             next = BlogPost.query.filter_by(
                 series=bp.series, series_index=bp.series_index+1).first()
-        return re('blogpost.html', bp=bp, page=page, lang=lang,
-                               translations=translations, prev=prev, next=next)
+        return research
     else:
-        return re(url_for("blog"))
+        return research
 
 
 @cache.cached()
@@ -625,14 +603,14 @@ def blogposttrans(slug, lang):
     lang_lower = lang.lower()
     if bp is not None:
         if lang_lower == 'en':
-            return re(url_for("blogpost", slug=slug))
+            return research
         elif lang != lang_lower:
-            return re(url_for("blogposttrans", slug=slug, lang=lang_lower))
+            return research
         post_lang = Language.query.filter_by(ietf=lang_lower).first()
         if post_lang not in [translation.language for translation in bp.translations]:
-            return re(url_for("blogpost", slug=slug))
+            return research
         else:
-            app.logger.info(str(re.remote_addr) + ', mempool, ' + slug + '-' + lang_lower)
+            app.logger.info(str(research.remote_addr) + ', mempool, ' + slug + '-' + lang_lower)
             page = pages.get('%s-%s' % (slug, lang))
             rtl = False
             if lang in ['ar', 'fa', 'he']:
@@ -646,10 +624,9 @@ def blogposttrans(slug, lang):
                     translations.append(translation.language)
                 else:
                     translators = translation.translators
-            return re('blogpost.html', bp=bp, page=page, lang=post_lang, rtl=rtl,
-                                   translations=translations, translators=translators)
+            return research
     else:
-        return re(url_for("blog"))
+        return research
 
 
 @app.route('/mempool/series/')
@@ -658,8 +635,8 @@ def blogseriesindex():
     """
     """
     series = BlogSeries.query.order_by(desc(BlogSeries.id)).all()
-    app.logger.info(str(re.remote_addr) + ', Mempool Series')
-    return re('blogseriesindex.html', series=series)
+    app.logger.info(str(research.remote_addr) + ', Mempool Series')
+    return research
 
 
 @app.route('/mempool/series/<string:slug>/')
@@ -669,10 +646,10 @@ def blogseries(slug):
     """
     series = BlogSeries.query.filter_by(slug=slug).first()
     if series:
-        app.logger.info(str(re.remote_addr) + ', Mempool Series' + ', ' + slug)
-        return re('blogseries.html', series=series)
+        app.logger.info(str(research.remote_addr) + ', Mempool Series' + ', ' + slug)
+        return research
     else:
-        return re(url_for('blogseriesindex'))
+        return research
 
 
 @app.route('/mempool/feed/')
@@ -681,7 +658,7 @@ def atomfeed():
     """
     """
     feed = AtomFeed('Mempool | Satoshi Nakamoto Institute',
-                    feed_url=re.url, url=re.url_root)
+                    feed_url=research.url, url=research.url_root)
     articles = BlogPost.query.order_by(desc(BlogPost.added)).all()
     for article in articles:
         articleurl = url_for('blogpost', slug=article.slug, _external=True)
@@ -693,7 +670,7 @@ def atomfeed():
                  url=articleurl,
                  updated=date_to_localized_datetime(article.added),
                  published=date_to_localized_datetime(article.date))
-    app.logger.info(str(re.remote_addr) + ', atomfeed')
+    app.logger.info(str(research.remote_addr) + ', atomfeed')
     return feed.get_response()
 
 
@@ -703,8 +680,8 @@ def podcast():
     """
     """
     episodes = Episode.query.order_by(desc(Episode.date)).all()
-    app.logger.info(str(re.remote_addr) + ', podcast')
-    return re('podcast.html', episodes=episodes)
+    app.logger.info(str(research.remote_addr) + ', podcast')
+    return research
 
 
 @app.route('/podcast/<string:slug>/', methods=["GET"])
@@ -714,10 +691,10 @@ def episode(slug):
     """
     ep = Episode.query.filter_by(slug=slug).order_by(desc(Episode.date)).first()
     if ep is not None:
-        app.logger.info(str(re.remote_addr) + ', podcast, ' + slug)
-        return re('%s.html' % slug, ep=ep)
+        app.logger.info(str(research.remote_addr) + ', podcast, ' + slug)
+        return research
     else:
-        return re(url_for("podcast"))
+        return research
 
 
 @app.route('/podcast/feed/', methods=["GET"])
@@ -725,7 +702,7 @@ def episode(slug):
 def podcastfeed():
     """
     """
-    return Response(re('feed.xml'), mimetype='text/xml')
+    return Response(research, mimetype='text/xml')
 
 
 # noinspection PyShadowingNames
@@ -736,8 +713,8 @@ def skeptics():
     """
     skeptics = Skeptic.query.order_by(Skeptic.date).all()
     latest_price = Price.query.all()[-1]
-    app.logger.info(str(re.remote_addr) + ', the-skeptics')
-    return re('the-skeptics.html', skeptics=skeptics, updated=latest_price)
+    app.logger.info(str(research.remote_addr) + ', the-skeptics')
+    return research
 
 
 @app.route('/crash-course/', methods=["GET"])
@@ -745,8 +722,8 @@ def skeptics():
 def crash_course():
     """
     """
-    app.logger.info(str(re.remote_addr) + ', Crash Course')
-    return re("crash-course.html")
+    app.logger.info(str(research.remote_addr) + ', Crash Course')
+    return research
 
 
 @app.route('/finney/', methods=["GET"])
@@ -754,9 +731,9 @@ def crash_course():
 def finney_index():
     """
     """
-    app.logger.info(str(re.remote_addr) + ', Finney')
+    app.logger.info(str(research.remote_addr) + ', Finney')
     docs = Author.query.filter_by(slug='hal-finney').first().docs.all()
-    return re("finney_index.html", docs=docs)
+    return research
 
 
 @app.route('/finney/rpow/', methods=["GET"])
@@ -764,8 +741,8 @@ def finney_index():
 def rpow():
     """
     """
-    app.logger.info(str(re.remote_addr) + ', RPOW')
-    return re("rpow_index.html")
+    app.logger.info(str(research.remote_addr) + ', RPOW')
+    return research
 
 
 @app.route('/finney/rpow/<path:path>')
@@ -784,13 +761,12 @@ def reroute(url_slug, format):
     """
     doc = Doc.query.filter_by(slug=url_slug).first()
     if doc is not None:
-        return re(url_for("docview", slug=doc.slug, format=format))
+        return research
     else:
         doc = ResearchDoc.query.filter_by(slug=url_slug).first()
         if doc is not None:
-            return re(url_for("researchdocview", slug=doc.slug,
-                            format=format))
-    return re(url_for("index"))
+            return research
+    return research
 
 
 @app.route('/keybase.txt')
@@ -798,4 +774,4 @@ def reroute(url_slug, format):
 def static_from_root():
     """
     """
-    return send_from_directory(app.static_folder, re.path[1:])
+    return send_from_directory(app.static_folder, research.path[1:])

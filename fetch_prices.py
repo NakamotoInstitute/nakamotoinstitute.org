@@ -44,7 +44,7 @@ def main():
 
     if prices:
         latest = prices[-1]
-        start_date = latest.date + timedelta(days=1)
+        latest.date + timedelta(days=1)
         url = '{url}&start={start_date}'
 
     resp = requests.get(url).json()

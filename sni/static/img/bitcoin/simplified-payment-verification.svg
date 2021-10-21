@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
+<!--suppress ALL -->
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   version="1.1"
-   width="1016.9732"
-   height="401.3046"
-   id="svg11628">
+        xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:cc="http://creativecommons.org/ns#"
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        version="1.1"
+        width="1016.9732"
+        height="401.3046"
+        id="svg11628">
   <defs
      id="defs11630">
     <linearGradient
@@ -143,7 +143,7 @@
        xlink:href="#linearGradient5358-7-3-4-2-0"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(0.81346207,0,0,0.10434411,118.31432,542.3863)"
-       spreadMethod="pad" />
+    />
     <linearGradient
        id="linearGradient5358-7-3-4-2-0">
       <stop
@@ -168,7 +168,7 @@
        xlink:href="#linearGradient5358-7-3-7-9"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(0.65798432,0,0,0.10434411,-453.25052,542.42615)"
-       spreadMethod="pad" />
+    />
     <linearGradient
        id="linearGradient5358-7-3-7-9">
       <stop
