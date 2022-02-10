@@ -76,7 +76,7 @@ to Holder right1
 also to Holder right2
 </pre>
 
-<p>They could be performed in any order &ndash; right2 might be performed first, or right1 might be, or (most likely) performance on both might proceed at the sime time. Several <strong>when</strong> statements nested together at the same level have any implicit <strong>also</strong> as they can be triggered in any order.</p>
+<p>They could be performed in any order &ndash; right2 might be performed first, or right1 might be, or (most likely) performance on both might proceed at the same time. Several <strong>when</strong> statements nested together at the same level have any implicit <strong>also</strong> as they can be triggered in any order.</p>
 
 <p><!-- Unless the drafter needs to constrain the performance to fit a calendar schedule, or must ensure that one clause must be performed before another, it is best to let them be performed in any order as above.  This makes for more simplicity and flexibility in the analysis and performance of the contract. -->Envision a dancing elf that follows nesting of clauses as they are performed and of events as they are caught. (Programmers call this dancing elf by the boring name "instruction pointer"). There can be more than one dancing elf if there is an <strong>also</strong> or if more than one when statement is triggered while another is active, but usually we only need to think about one at a time.</p>
 
@@ -141,7 +141,7 @@ future(rightA, rightB, p) =
     then terminate
 </pre>
 
-<p>Instead of pork bellies, we can swap any other <strong>rightA</strong> for <strong>rightB</strong>, which can be a wide variety of things beside money. Drafters can specify very general boilerplate and fill in details for specific contracts later.</p>
+<p>Instead of pork bellies, we can swap any other <strong>rightA</strong> for <strong>rightB</strong>, which can be a wide variety of things besides money. Drafters can specify very general boilerplate and fill in details for specific contracts later.</p>
 
 <h2>Example &ndash; Option Contract</h2>
 
@@ -180,7 +180,7 @@ when beforeTime(time)
         to Holder rightA with to Counterparty rightB
 </pre>
 
-<p>The <strong>beforeTime(time)</strong> is immediately activiated, so that we start with the nested clause(s) at the level immediate below it active as well &ndash; in this case, when choiceOf(Holder).</p>
+<p>The <strong>beforeTime(time)</strong> is immediately activated, so that we start with the nested clause(s) at the level immediately below it active as well &ndash; in this case, when choiceOf(Holder).</p>
 
 <pre>
 when beforeTime(time)
@@ -294,7 +294,7 @@ carPurchase(car, downPayment, monthlyPayment, schedule)  =
 
 <h2>Damage Clauses</h2>
 
-<p>Let's use our language to analyze some important advances in the history of economic institutions. Genoa was an independent and rather libertarian (for its time) city heavily involved in the Mediterranean sea trade. During its height in the twelth through fifteenth centuries it developed many commercial innovations, including two we will examine here, the "dry exchange" loan and pooled-risk insurance.</p>
+<p>Let's use our language to analyze some important advances in the history of economic institutions. Genoa was an independent and rather libertarian (for its time) city heavily involved in the Mediterranean sea trade. During its height in the twelfth through fifteenth centuries it developed many commercial innovations, including two we will examine here, the "dry exchange" loan and pooled-risk insurance.</p>
 
 <p>Here is a clause from a contract made in Genoa on June 23 in 1271 A.D. A man is co-signing an obligation being made by his son:</p>
 
@@ -302,7 +302,7 @@ carPurchase(car, downPayment, monthlyPayment, schedule)  =
   <p>Wherefore and for which we promise, both of us [liable] for the whole amount, to give and to pay to you or to your accredited messenger 53 gold hyperpers, good and of correct weight, in Romania [Byzantium], by the Kalends of September. If, however, we do not give you these [hyperpers] within the said time limit, [we promise] for each of the said hyperpers 11 shillings Genoese in Genoa whenever you wish. Otherwise we promise, both of us [liable] for the whole amount, to give to you, making the stipulation, the penalty of the double of the said amount, the aforesaid [conditions] remaining as settled. And we pledge to you as security for the aforesaid [promises] all our goods, existing and future...<sup><a href="#fn5" id="ref5-1">[5]</a></sup></p>
 </blockquote>
 
-<p>Now, this is a very clever contract, called by scholars a "dry exchange". The Catholic Church forbad the charging of interest, so a loan contract that came right out and charged interest would be unenforceable and expose the drafters to further Church sanctions. But both long-distance exchange (making a trade at a distant market at a later date -- often via a sea voyage, thus a "wet" exchange) and currency exchange were quite legal, enforceable, and common. The above contract combined these two, along with damage clauses, in a clever way. None of the above parties had any intention of travelling to Byzantium, or even outside Genoa, to perform on this contract. Its logic can be analyzed as follows (the Holder is the creditor). We've added the statements "in (geographic location)", <strong>security</strong>, and <strong>foreclose</strong> to highlight important aspects of this contract. The latter sells enough of the goods at auction to satisfy penalty (if there was not enough to satisfy the creditors there was a bankruptcy procedure to fairly allocate the remain security among the creditors, but this is not shown):</p>
+<p>Now, this is a very clever contract, called by scholars a "dry exchange". The Catholic Church forbade the charging of interest, so a loan contract that came right out and charged interest would be unenforceable and expose the drafters to further Church sanctions. But both long-distance exchange (making a trade at a distant market at a later date -- often via a sea voyage, thus a "wet" exchange) and currency exchange were quite legal, enforceable, and common. The above contract combined these two, along with damage clauses, in a clever way. None of the above parties had any intention of travelling to Byzantium, or even outside Genoa, to perform on this contract. Its logic can be analyzed as follows (the Holder is the creditor). We've added the statements "in (geographic location)", <strong>security</strong>, and <strong>foreclose</strong> to highlight important aspects of this contract. The latter sells enough of the goods at auction to satisfy penalty (if there was not enough to satisfy the creditors there was a bankruptcy procedure to fairly allocate the remain security among the creditors, but this is not shown):</p>
 
 <pre>
     counterpartySecurity =  pledge(allGoods(Counterparty))
@@ -375,7 +375,7 @@ insurancePayment(goodsInsured, principal, t1, t2) =
 <blockquote class="blockquote">
   <p>...Geri, [son] of the late Ser Lapo of Florence, Simone Guascone, [9 more Names listed], each of them [liable] for the amount written below, have acknowledged and in truth have declared to me, notary undersigned, as a public official [holding] a public office, making the stipulation and receiving in the name and stead of Federico Vivaldi, citizen of Genoa, that they have bought, have had, and have received from him a certain amount of goods of the said Frederico...And for these goods and in consideration of their price each of them has promised to give and to pay to said Frederico or to his accredited messenger: [from] the said Geri, 150 gold florins, the said Simone, 50 florins, [100 florins each from the other Names] within the next five months from now. Otherwise they have promised to give and to pay to the said Frederico the penalty of the double of it and of the entire amount to which and to the extent of which [this agreement] is violated or is not observed as above, together with restitution of all losses, unrealized profits, and expenses which might be incurred because of it in court or outside &ndash; the aforesaid remaining as settled, and under hypothecation and pledge of their goods and [the goods] of any one of them, existing and future.</p>
 
-  <p>[The above is binding] with the exception and special reservation that if the amount of goods, property, and merchandise which was loaded or is to be loaded by Frederico Imperiale or by another in his behalf for the account of the said Frederico Vivaldi in Aigues-Mortes &ndash; to be transported to Ayassoluk and Rhodes or to either of these two localities in a certain ship...and which departed from Aigues-Mortes or is about to depart in order to sail to aforesaid regions &ndash; is brought and unloaded in the said localities of Ayasoluk and Rhodes or in either of them, in safety, then and in such a case the present intrument is cancelled, void, and of no value and pro rata. And be it understood that such a risk begins when the said ship departs and sets sail from Aigues-Mortes, and it remains and lasts, while the captain goes, stays [in port], sails, loads and unloads, from the said locality of Aigues-Mortres up to the said localities of Ayassoluk and Rhodes, in whatever manner and way he wishes, until said amount of goods, property, and merchandise has been brought and unloaded in Ayassoluk and Rhodes or in either of these two localities in safety, and pro rata. Let the present instrument also be cancelled if the said Frederico refrains from asking payments of the aforesaid amounts of money for the space of one year after the time or the time limit has elapsed for asking or obtaining their payment....Done as above, September 15th, around nones. [1393 A.D.]<sup><a href="#fn5" id="ref5-2">[5]</a></sup></p>
+  <p>[The above is binding] with the exception and special reservation that if the amount of goods, property, and merchandise which was loaded or is to be loaded by Frederico Imperiale or by another in his behalf for the account of the said Frederico Vivaldi in Aigues-Mortes &ndash; to be transported to Ayassoluk and Rhodes or to either of these two localities in a certain ship...and which departed from Aigues-Mortes or is about to depart in order to sail to aforesaid regions &ndash; is brought and unloaded in the said localities of Ayasoluk and Rhodes or in either of them, in safety, then and in such a case the present instrument is cancelled, void, and of no value and pro rata. And be it understood that such a risk begins when the said ship departs and sets sail from Aigues-Mortes, and it remains and lasts, while the captain goes, stays [in port], sails, loads and unloads, from the said locality of Aigues-Mortres up to the said localities of Ayassoluk and Rhodes, in whatever manner and way he wishes, until said amount of goods, property, and merchandise has been brought and unloaded in Ayassoluk and Rhodes or in either of these two localities in safety, and pro rata. Let the present instrument also be cancelled if the said Frederico refrains from asking payments of the aforesaid amounts of money for the space of one year after the time or the time limit has elapsed for asking or obtaining their payment....Done as above, September 15th, around nones. [1393 A.D.]<sup><a href="#fn5" id="ref5-2">[5]</a></sup></p>
 </blockquote>
 
 <p>Ignoring the pro rata language, the specific definition of the risks that prevent generation or not of the safeArrival() event, and ignoring the multiple Names (i.e. treating them as one Counterparty), the contract can be modelled by the insurance contract we drafted above with its parameters filled in as follows, and with Frederico Vivaldi as the insured (the Holder):</p>
@@ -477,23 +477,23 @@ lifeEstateRemainder(Property, Grantee, Remainderman) =
 <pre>
 feeSimpleDeterminable(Property, Grantee, Condition) =
     to Grantee Property
-    then when Condtion(Property) to Grantor Property
+    then when Condition(Property) to Grantor Property
 </pre>
 
-<p>Fee Simple Subject to Executory Limitation. Same as Fee Simple Determinable, except the property gets remaindered to a third party instead of revertin to the grantor.</p>
+<p>Fee Simple Subject to Executory Limitation. Same as Fee Simple Determinable, except the property gets remaindered to a third party instead of reverting to the grantor.</p>
 
 <pre>
 feeSimpleSubjectToExecutoryLimitation(Property, Grantee, Condition, Remainderman) =
     to Grantee Property
-    then when Condtion(Property) to Remainderman Property
+    then when Condition(Property) to Remainderman Property
 </pre>
 
-<p>Fee Simple Subject to Condition Subsequent. Here title is not automatically transferred upon occurence of the condtion. Instead the Grantor must do some affirmative and verifiable act (in this example "entering" the property), to reclaim the title.</p>
+<p>Fee Simple Subject to Condition Subsequent. Here title is not automatically transferred upon occurrence of the condition. Instead the Grantor must do some affirmative and verifiable act (in this example "entering" the property), to reclaim the title.</p>
 
 <pre>
 feeSimpleSubjectToConditionSubsequent(Property, Grantee, Condition, Enters) =
     to Grantee Property
-    then when Condtion(Property)
+    then when Condition(Property)
         when Enters(Grantor, Property) to Grantor Property
 </pre>
 
@@ -546,7 +546,7 @@ callOptionAmerican(escrowRight, rightB, time) =
 
 <p>Further showing the flexibility of our language we can add sensors and effectors, adding "smarts" to our contracts and augmenting legal enforcement with technological constraints.</p>
 
-<p>First we draft a specification for the contract-like bevavior of a vending machine:</p>
+<p>First we draft a specification for the contract-like behavior of a vending machine:</p>
 
 <pre>
 sellCandy(candyPrice = $0.90) =
@@ -579,11 +579,11 @@ sellCandy(candyPrice = $0.90) =
 
 <p>To simplify things, we've left out making change &ndash; our machine has to have one of those signs you sometimes see, "exact change only". If the customer puts in a coin that pushes the amount from, say, $.80 to $1.05 &ndash; too bad, the machine eats it. If the customer puts in $0.90 (or more) and then adds more coins, however, the machine automatically returns the extra coins. The machine will also return whatever has been put in the till, if the customer changes her mind and decides not to buy the candy. Exercise for the reader: verify for yourself that the above behavior descriptions are correct as the code is written.</p>
 
-<p><strong>RedirectNewCoinsTo(returnTill)</strong> causes any further coins to drop into the return chute instead of onto the sensor that triggers the above events. The reader must here imagine what the mechanism looks like, as part of the behavior is "encoded" in its mechaninism rather than explitly in this statement.</p>
+<p><strong>RedirectNewCoinsTo(returnTill)</strong> causes any further coins to drop into the return chute instead of onto the sensor that triggers the above events. The reader must here imagine what the mechanism looks like, as part of the behavior is "encoded" in its mechanism rather than explicitly in this statement.</p>
 
 <p>Think of the nested contracts and rights as an upside-down tree &ndash; a hierarchy of nested clauses. Events propagate from up from the "leaves" of the tree towards the "root" at the top. They are caught by the first <strong>when event</strong> they encounter for that event. In this case, once we enter the <strong>when threshold()</strong> clause, the <strong>when (nickel | dime | quarter)</strong> clause overrides the <strong>when(nickel)</strong> and so on clauses above them.</p>
 
-<p>Like a perpetuity, our vending machine has no scheduled time or condition where it stops performing &ndash; therefore we have a <strong>continue</strong> statement to overrid the implicit <strong>then terminate</strong> on the last line.</p>
+<p>Like a perpetuity, our vending machine has no scheduled time or condition where it stops performing &ndash; therefore we have a <strong>continue</strong> statement to override the implicit <strong>then terminate</strong> on the last line.</p>
 
 <p>Alas, neither I nor real world candy machine makers have any code to solve the case where the candy gets stuck in the machine.</p>
 
@@ -621,7 +621,7 @@ sellCandy(candyPrice = $0.90) =
     continue
 </pre>
 
-<p>How is it that we have specified the behavior of a vending machine in a language designed for drafting contracts? Can nickels, dimes, quarters, and operations like dropping coins from one till to another be thought of as rights and obligations? I think so. They are not <em>legal</em> rights and obligations, to be sure. There is no explicit contract between the vendor and candy machine customers, and if their were it would probably waive liability for violating most of the clauses in our code. What this code describes is the logical and typical behavior of a vending machine. It also reifies the implicit understanding most customers have when using a vending machine. Thus it models a contract-like "meeting of the minds" between the customer and the vendor that is mediated by the machine.</p>
+<p>How is it that we have specified the behavior of a vending machine in a language designed for drafting contracts? Can nickels, dimes, quarters, and operations like dropping coins from one till to another be thought of as rights and obligations? I think so. They are not <em>legal</em> rights and obligations, to be sure. There is no explicit contract between the vendor and candy machine customers, and if there were it would probably waive liability for violating most of the clauses in our code. What this code describes is the logical and typical behavior of a vending machine. It also reifies the implicit understanding most customers have when using a vending machine. Thus it models a contract-like "meeting of the minds" between the customer and the vendor that is mediated by the machine.</p>
 
 <p>Here is a stab at formally describing the hypothetical <a href="http://szabo.best.vwh.net/idea.html">"auto repo auto"</a>. The car is controlled by a <a href="http://szabo.best.vwh.net/proplets.html">proplet</a> and the proplet looks to <a href="http://nakamotoinstitute.org/secure-property-titles.html">property titles</a> to determine ownership authority. The proplet lets only the titled owner enter and drive the car. "Holder" is the bank that made the loan and "Counterparty" is the new owner. As above we ignore the car dealer; the bank originally owning the car. This example highlights the ability of the language to very succinctly describe contracts but also its inability to describe the actual security that will enforce the contract. There is of course a lot missing here, including the items missing from the above car loan contract. From a smart contracts viewpoint, the biggest thing missing is that there is nothing to motivate the "Holder getTitle(car)" in the last <strong>when</strong>, nor any way specified here to enforce it. And of course all connection between ownership and authority to enter, start, and drive the car is here implicit &ndash; the actual proplet behavior in this regard would have to account for safety, emergency use, etc.</p>
 
@@ -699,7 +699,7 @@ period = (startTime,finishTime)
 # can this be more general, an iterator of events?  but periods have
 # a natural order while other kinds of events can occur in any order.
 # each periodIterator.next generates an event which is caught by
-# the next tempral event (withinPeriod() if the iterator generates
+# the next temporal event (withinPeriod() if the iterator generates
 # periods, aftertime() or beforeTime() if it generates times)
 # *down* from the *for*. The implicit "throw" occurs at periodIterator.next
 # so we can still view it, just barely, as propagating up from
@@ -707,7 +707,7 @@ period = (startTime,finishTime)
 # (this is different from the normal event semantics where throws
 # propagate *up* the parse tree) -- should I change it to *up*
 # and rewrite the schedule iterator code above?  but it confuses
-# me &amp;  perhaps the comuter to put it *outside* the loop.
+# me &amp;  perhaps the computer to put it *outside* the loop.
 
 event = choiceOf(agent) | withinPeriod(period) |
     performed(right)  | breachedPerformance(right) |
@@ -787,7 +787,7 @@ contract = agent [right | obligation] ["with" agent [right | obligation]]*
 contract = [ when event "{" contract "}" ]*
 </pre>
 
-<h2>Basic Fucntions</h2>
+<h2>Basic Functions</h2>
 
 <pre>
 doOn(right, period) =
@@ -882,7 +882,7 @@ bond(coupon, principal, schedule) =
 <ol>
   <li>I'm assuming away, for the moment, issues of the protection and enforcement of performance, which I've addressed elsewhere (http://szabo.vwh.best.com/ has many essays that focus on this topic). An eventual goal is to create protocols to enforce the language's atoms and then to compose these atoms maintaining the enforceability.</li>
 
-  <li>Two specific enforcement assumptions &ndash; there exists a secure, agreed-upon time source, and the occurence of other defined events can be agreed upon by the parties and/or audited by third parties.</li>
+  <li>Two specific enforcement assumptions &ndash; there exists a secure, agreed-upon time source, and the occurrence of other defined events can be agreed upon by the parties and/or audited by third parties.</li>
 
   <li>I am assuming some kind of atomicity for each right atom performance &ndash; for example, when an event triggers a "when", a functionPerformance in another thread is gracefully either rolled back or completed.</li>
 
@@ -938,7 +938,7 @@ in their message args?)
 
 <ol>
   <li id="fn1">
-    <p>There are many instances of deals gone sour at the last minute when the salesfolk check with legal and discover that the deal is not possible due to a clause in another contract &ndash; for example a promise not to sell to a customer's competitors in an industry for a certain period of time. Worse, such a conflict might not be discovered until the contraditory commitment has been made.&nbsp;<a href="#ref1">↩</a></p>
+    <p>There are many instances of deals gone sour at the last minute when the salesfolk check with legal and discover that the deal is not possible due to a clause in another contract &ndash; for example a promise not to sell to a customer's competitors in an industry for a certain period of time. Worse, such a conflict might not be discovered until the contradictory commitment has been made.&nbsp;<a href="#ref1">↩</a></p>
   </li>
 
   <li id="fn2">
