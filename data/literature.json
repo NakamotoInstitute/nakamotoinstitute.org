@@ -991,5 +991,16 @@
     "categories": ["cryptography", "property"],
     "doctype": "essay",
     "external": "http://web.archive.org/web/20160806221938/http://szabo.best.vwh.net/proplets.html"
+  },
+  {
+    "id": 95,
+    "title": "A History of Money and Banking in the United States: The Colonial Era to World War II",
+    "author": ["murray-n-rothbard"],
+    "date": "2002",
+    "slug": "a-history-of-money-and-banking-in-the-united-states",
+    "formats": ["pdf", "epub", "ext"],
+    "categories": ["economics"],
+    "doctype": "book",
+    "external": "https://mises.org/library/history-money-and-banking-united-states-colonial-era-world-war-ii"
   }
 ]
