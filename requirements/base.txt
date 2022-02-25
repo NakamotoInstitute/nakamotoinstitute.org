@@ -41,7 +41,7 @@ jinja2==3.0.1
     # via
     #   flask
     #   flask-flatpages
-lxml==4.6.3
+lxml==4.6.5
     # via feedgen
 markdown==3.3.4
     # via flask-flatpages
