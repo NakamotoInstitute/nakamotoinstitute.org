@@ -1,8 +1,8 @@
 [
-	{
-		"name": "Tony ₿",
+  {
+    "name": "Tony ₿",
     "url": "https://twitter.com/TonyCrusoe"
-	},
+  },
   {
     "name": "屈爽 (Qu Shuang)",
     "url": ""
@@ -55,12 +55,12 @@
     "name": "Ekaterina Tarasova",
     "url": "http://blockchainwriter.tilda.ws"
   },
-	{
-		"name": "Il portico dipinto",
-		"url": "http://ilporticodipinto.it"
-	},
-	{
-		"name": "Thomas Brand",
-		"url": "https://twitter.com/thlbr"
-	}
+  {
+    "name": "Il portico dipinto",
+    "url": "http://ilporticodipinto.it"
+  },
+  {
+    "name": "Thomas Brand",
+    "url": "https://twitter.com/thlbr"
+  }
 ]

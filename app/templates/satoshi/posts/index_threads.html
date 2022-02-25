@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% set title = "Forum Threads" %}
+{% if source=="p2pfoundation" %}
+{% set title="P2P Foundation Threads" %}
+{% elif source=="bitcointalk" %}
+{% set title="Bitcointalk Threads" %}
+{% endif %}
+
+{% block title %}
+{{title}} | Satoshi Nakamoto Institute
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="text-center mb-4">
+    <h1>{{title}}</h1>
+    {% if source=="p2pfoundation" %}
+      <a href="{{url_for('satoshi.posts.index_source', source='p2pfoundation')}}">View posts</a><br>
+      <a href="{{url_for('satoshi.posts.index_threads')}}">All Threads</a>
+      (<a href="{{url_for('satoshi.posts.index')}}">Posts</a>) |
+      <a href="{{url_for('satoshi.posts.threads', source='bitcointalk')}}">Bitcointalk</a>
+      (<a href="{{url_for('satoshi.posts.index_source', source='bitcointalk')}}">Posts</a>)
+    {% elif source=="bitcointalk" %}
+      <a href="{{url_for('satoshi.posts.index_source', source='bitcointalk')}}">View posts</a><br>
+      <a href="{{url_for('satoshi.posts.index_threads')}}">All Threads</a>
+      (<a href="{{url_for('satoshi.posts.index')}}">Posts</a>) |
+      <a href="{{url_for('satoshi.posts.threads', source='p2pfoundation')}}">P2P Foundation</a>
+      (<a href="{{url_for('satoshi.posts.index_source', source='p2pfoundation')}}">Posts</a>)
+    {% else %}
+      <a href="{{url_for('satoshi.posts.index')}}">View posts</a><br>
+      <a href="{{url_for('satoshi.posts.threads', source='p2pfoundation')}}">P2P Foundation</a>
+      (<a href="{{url_for('satoshi.posts.index_source', source='p2pfoundation')}}">Posts</a>) |
+      <a href="{{url_for('satoshi.posts.threads', source='bitcointalk')}}">Bitcointalk</a>
+      (<a href="{{url_for('satoshi.posts.index_source', source='bitcointalk')}}">Posts</a>)
+    {% endif %}
+  </div>
+  {% if not source %}
+    <h2>P2P Foundation</h2>
+    <ul>
+      {% for thread in p2pfoundation_threads %}
+      <li>
+        <a href="{{url_for('satoshi.posts.detail_thread', source=thread['source'], thread_id=thread['id'])}}">{{thread['title']}}</a>
+        [<a href="{{url_for('satoshi.posts.detail_thread', source=thread['source'], thread_id=thread['id'], view='satoshi')}}">Satoshi only</a>]
+        <em>({{thread.posts[0]['date']}} UTC)</em>
+      </li>
+      {% endfor %}
+    </ul>
+    <h2>Bitcointalk</h2>
+    <ul>
+      {% for thread in bitcointalk_threads %}
+      <li>
+        <a href="{{url_for('satoshi.posts.detail_thread', source=thread['source'], thread_id=thread['id'])}}">{{thread['title']}}</a>
+        [<a href="{{url_for('satoshi.posts.detail_thread', source=thread['source'], thread_id=thread['id'], view='satoshi')}}">Satoshi only</a>]
+        <em>({{thread.posts[0]['date']}} UTC)</em>
+      </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <ul>
+    {% for thread in threads %}
+      <li>
+        <a href="{{url_for('satoshi.posts.detail_thread', source=thread['source'], thread_id=thread['id'])}}">{{thread['title']}}</a>
+        [<a href="{{url_for('satoshi.posts.detail_thread', source=thread['source'], thread_id=thread['id'], view='satoshi')}}">Satoshi only</a>]
+        <em>({{thread.posts[0]['date']}} UTC)</em></li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+  <div class="text-center mb-4">
+    {% if source=="p2pfoundation" %}
+      <a href="{{url_for('satoshi.posts.index_threads')}}">All Threads</a>
+      (<a href="{{url_for('satoshi.posts.index')}}">Posts</a>) |
+      <a href="{{url_for('satoshi.posts.threads', source='bitcointalk')}}">Bitcointalk</a>
+      (<a href="{{url_for('satoshi.posts.index_source', source='bitcointalk')}}">Posts</a>)<br>
+      <a href="{{url_for('satoshi.posts.index_source', source='p2pfoundation')}}">View posts</a>
+    {% elif source=="bitcointalk" %}
+      <a href="{{url_for('satoshi.posts.index_threads')}}">All Threads</a>
+      (<a href="{{url_for('satoshi.posts.index')}}">Posts</a>) |
+      <a href="{{url_for('satoshi.posts.threads', source='p2pfoundation')}}">P2P Foundation</a>
+      (<a href="{{url_for('satoshi.posts.index_source', source='p2pfoundation')}}">Posts</a>)<br>
+      <a href="{{url_for('satoshi.posts.index_source', source='bitcointalk')}}">View posts</a>
+    {% else %}
+      <a href="{{url_for('satoshi.posts.threads', source='p2pfoundation')}}">P2P Foundation</a>
+      (<a href="{{url_for('satoshi.posts.index_source', source='p2pfoundation')}}">Posts</a>) |
+      <a href="{{url_for('satoshi.posts.threads', source='bitcointalk')}}">Bitcointalk</a>
+      (<a href="{{url_for('satoshi.posts.index_source', source='bitcointalk')}}">Posts</a>)<br>
+      <a href="{{url_for('satoshi.posts.index')}}">View posts</a>
+    {% endif %}
+  </div>
+  <a href="{{url_for('satoshi.index')}}">Main index</a>
+</div>
+{% endblock %}

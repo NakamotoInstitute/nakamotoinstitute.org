@@ -1,0 +1,20 @@
+.doc-content {
+  .contents,
+  .references {
+    list-style: none;
+    padding: 0;
+  }
+
+  h2 > a,
+  h2 > a:focus,
+  h2 > a:hover,
+  h2 > a:active,
+  h2 > a:visited {
+    color: inherit;
+  }
+
+  p > a {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+}

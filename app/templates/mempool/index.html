@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}
+The Memory Pool | Satoshi Nakamoto Institute
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="text-center mb-4">
+    <h1>The Memory Pool</h1>
+    <p>Where ideas wait to be mined into the block chain of the collective conscience<br><em>Some transactions may be invalid</em><br><a href="{{url_for('mempool.feed')}}">Atom Feed</a></p>
+  </div>
+
+  {% for blog_post in blog_posts %}
+  <hr>
+  {% if blog_post.series %}
+    <h5 class="text-muted"><a href="{{url_for('mempool.series.detail', slug=blog_post.series.slug)}}">{{blog_post.series}}</a> {% if not blog_post.series.chapter_title %}(#{{blog_post.series_index}}){% endif %}</h5>
+  {% endif %}
+  <h4 class="{% if blog_post.series %}series{% endif %}">
+    <a href="{{url_for('mempool.detail', slug=blog_post.slug)}}">{% if blog_post.series and blog_post.series.chapter_title %}Chapter {{blog_post.series_index}}: {% endif %}{{blog_post.title}}</a>
+  </h4>
+  <p class="text-muted">
+    <a href="{{url_for('authors.detail', slug=blog_post['author'][0].slug)}}">{{blog_post.author[0]}}</a> - {{blog_post.added.strftime('%B %-d, %Y')}}
+      {% if blog_post.date != blog_post.added %}(Originally published {{blog_post.date.strftime('%B %-d, %Y')}}){% endif %}
+  </p>
+    <p>
+      {{blog_post.excerpt}}
+    </p>
+    {% if blog_post.translations|length > 0 %}
+    <p>
+      Also available in:
+      {% for translation in blog_post.translations|sort(attribute='language.name') %}
+        <a href="{{url_for('mempool.detail_translation', slug=blog_post.slug, language=translation.language.ietf)}}">{{translation.language.name}}</a>{% if not loop.last %},{% endif %}
+      {% endfor %}
+    </p>
+    {% endif %}
+  {% endfor %}
+</div>
+{% endblock %}

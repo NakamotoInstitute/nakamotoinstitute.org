@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{posts[0].forum_thread.title}} | Satoshi Nakamoto Institute
+{% endblock %}
+
+{% block content %}
+{% set only_satoshi = request.args.get('view') == 'satoshi' -%}
+<div class="container">
+  <div class="text-center">
+    <a href="{{url_for('satoshi.posts.index_threads')}}">All Threads</a>
+    <br>
+    {% if previous_thread != None %}
+      {% if only_satoshi %}
+      <a href="{{url_for('satoshi.posts.detail_thread', thread_id=previous_thread['id'], source=previous_thread['source'], view='satoshi')}}">Previous</a> |
+      {% else %}
+      <a href="{{url_for('satoshi.posts.detail_thread', thread_id=previous_thread['id'], source=previous_thread['source'])}}">Previous</a> |
+      {% endif %}
+    {% endif %}
+    <a href="{{url_for('satoshi.posts.threads', source=posts[0].forum_thread['source'])}}">Back</a>
+    {% if next_thread != None %}
+      {% if only_satoshi %}
+      | <a href="{{url_for('satoshi.posts.detail_thread', thread_id=next_thread['id'], source=next_thread['source'], view='satoshi')}}">Next</a>
+      {% else %}
+      | <a href="{{url_for('satoshi.posts.detail_thread', thread_id=next_thread['id'], source=next_thread['source'])}}">Next</a>
+      {% endif %}
+    {% endif %}
+  </div>
+  <div class="text-center">
+    <h2>
+      <small>{{posts[0].forum_thread.source_to_string()}}</small><br>
+      {{posts[0].forum_thread.title}}
+    </h2>
+    <p>
+      {% if only_satoshi %}
+      <a href=".">View all posts</a>
+      {% else %}
+      <a href="?view=satoshi">View Satoshi only</a>
+      {% endif %}
+    </p>
+    <p><a href="{{posts[0].forum_thread.url}}">External link</a></p>
+  </div>
+  <div class="thread mb-4">
+  {% set previous_level = posts[0].nested_level -%}
+  {% for post in posts %}
+    {% if post.forum_thread.source == 'p2pfoundation' %}
+      {% set nested_level = 'thread-post--nested-' + post.nested_level|string -%}
+      {% if previous_level != post.nested_level %}
+      <div class="thread-post {{loop.cycle('', 'thread-post--gray')}} thread-post--nested {{nested_level}} thread-post--first" id="{{post.post_num}}">
+      {% else %}
+      <div class="thread-post {{loop.cycle('', 'thread-post--gray')}} thread-post--nested {{nested_level}}" id="{{post.post_num}}">
+      {% endif %}
+      {% set previous_level = post.nested_level -%}
+    {% else %}
+      <div class="thread-post {{loop.cycle('', 'thread-post--gray')}}" id="{{post.post_num}}">
+    {% endif %}
+      <div class="thread-post__header{% if post.satoshi_id and not only_satoshi %} thread-post__header--highlight{% endif %}">
+        <div class="thread-post__poster-info d-flex">
+          <div class="mr-auto text-truncate">
+            <a href="{{post.poster_url}}"><strong>{{post.poster_name}}</strong></a>
+          </div>
+          <div class="ml-auto">
+            <a href="#{{post.post_num}}">#{{post.post_num}}</a>
+          </div>
+        </div>
+        <div class="thread-post__post-info">
+          <h5>{{post.subject}}</h5>
+          <span>{{post.date.strftime('%B %d, %Y, %I:%M:%S %p')}}</span>
+        </div>
+      </div>
+      <div class="thread-post__body">
+        {{post.text|safe}}
+      </div>
+      <div class="thread-post__footer d-flex">
+        <div class="mr-auto">
+          <a href="{{post.url}}">External link</a>
+        </div>
+        {% if post.satoshi_id %}
+        <div class="ml-auto">
+          <a href="{{url_for('satoshi.posts.detail', post_id=post['satoshi_id'],source=post.forum_thread['source'])}}">Permalink</a>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+  <div class="text-center">
+    {% if previous_thread != None %}
+      {% if only_satoshi %}
+      <a href="{{url_for('satoshi.posts.detail_thread', thread_id=previous_thread['id'], source=previous_thread['source'], view='satoshi')}}">Previous</a> |
+      {% else %}
+      <a href="{{url_for('satoshi.posts.detail_thread', thread_id=previous_thread['id'], source=previous_thread['source'])}}">Previous</a> |
+      {% endif %}
+    {% endif %}
+    <a href="{{url_for('satoshi.posts.threads', source=posts[0].forum_thread['source'])}}">Back</a>
+    {% if next_thread != None %}
+      {% if only_satoshi %}
+      | <a href="{{url_for('satoshi.posts.detail_thread', thread_id=next_thread['id'], source=next_thread['source'], view='satoshi')}}">Next</a>
+      {% else %}
+      | <a href="{{url_for('satoshi.posts.detail_thread', thread_id=next_thread['id'], source=next_thread['source'])}}">Next</a>
+      {% endif %}
+    {% endif %}
+    <br>
+    <a href="{{url_for('satoshi.posts.index_threads')}}">All Threads</a>
+  </div>
+</div>
+{% endblock %}
