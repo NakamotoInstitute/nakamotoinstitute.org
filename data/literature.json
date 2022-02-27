@@ -725,10 +725,10 @@
   },
   {
     "id": 71,
-    "title": "Negative Reputation",
+    "title": "Negative Reputations",
     "author": ["nick-szabo"],
     "date": "1996",
-    "slug": "negative-reputation",
+    "slug": "negative-reputations",
     "formats": ["html", "ext"],
     "categories": ["cryptography"],
     "doctype": "essay",
