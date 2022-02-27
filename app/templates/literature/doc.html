@@ -14,7 +14,7 @@
 		{% if page.original_post %}{{page.original_post|safe}}{% endif %}
 		{% if doc.slug == "rpow" %}{% include "finney/rpow/_info.html" %}{% endif %}
 	</div>
-	<div id="CONTENT" class="doc-content">{{page.html|safe}}</div>
+	<div id="CONTENT" class="doc-content{% if page.numbered_headers %} doc-content--numbered{% endif %}">{{page.html|safe}}</div>
 	<div class="text-center">
     {% if doc_type == "literature" %}
 		<a href="{{url_for('literature.detail', slug=doc.slug)}}">Back</a> | <a href="{{url_for('literature.index')}}">Index</a>

@@ -70,12 +70,25 @@ body {
           .doc-content .contents, .doc-content .references {
             list-style: none;
             padding: 0; }
-            .doc-content h2 > a, .doc-content h2 > a:focus, .doc-content h2 > a:hover,
-            .doc-content h2 > a:active, .doc-content h2 > a:visited {
-              color: inherit; }
-              .doc-content p > a {
-                overflow-wrap: break-word;
-                word-wrap: break-word; }
+            .doc-content .references li {
+              margin-bottom: 1rem; }
+              .doc-content h2 > a, .doc-content h2 > a:focus, .doc-content h2 > a:hover,
+              .doc-content h2 > a:active, .doc-content h2 > a:visited {
+                color: inherit; }
+                .doc-content p > a {
+                  overflow-wrap: break-word;
+                  word-wrap: break-word; }
+                  .doc-content--numbered {
+                    counter-reset: h2counter; }
+                    .doc-content--numbered h1 {
+                      counter-reset: h2counter; }
+                      .doc-content--numbered h2:before {
+                        content: counter(h2counter) "  ";
+                        counter-increment: h2counter;
+                        counter-reset: h3counter; }
+                        .doc-content--numbered h3:before {
+                          content: counter(h2counter) "." counter(h3counter) "  ";
+                          counter-increment: h3counter; }
 
 .donations {
   line-height: 48px;

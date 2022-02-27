@@ -511,7 +511,7 @@
     "author": ["nick-szabo"],
     "date": "May 1999",
     "slug": "micropayments-and-mental-transaction-costs",
-    "formats": ["pdf", "ext"],
+    "formats": ["html", "pdf", "ext"],
     "categories": ["economics"],
     "doctype": "essay",
     "external": "http://szabo.best.vwh.net/berlinmentalmicro.pdf"
