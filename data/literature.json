@@ -1002,5 +1002,16 @@
     "categories": ["economics"],
     "doctype": "book",
     "external": "https://mises.org/library/history-money-and-banking-united-states-colonial-era-world-war-ii"
+  },
+  {
+    "id": 96,
+    "title": "P2P Filename Integrity",
+    "author": ["nick-szabo"],
+    "date": "2005",
+    "slug": "p2p-filename-integrity",
+    "formats": ["html", "ext"],
+    "categories": ["technology", "property"],
+    "doctype": "essay",
+    "external": "https://web.archive.org/web/20160514124505/http://szabo.best.vwh.net/nameintegrity.html"
   }
 ]
