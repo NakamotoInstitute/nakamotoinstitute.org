@@ -21,7 +21,7 @@ In 1998 Wei Dai publishes a proposal of [“b-money”](/b-money/), a practical 
 
 > I am fascinated by Tim May’s crypto-anarchy. Unlike the communities traditionally associated with the word “anarchy”, in a crypto-anarchy the government is not temporarily destroyed but permanently forbidden and permanently unnecessary. It’s a community where the threat of violence is impotent because violence is impossible, and violence is impossible because its participants cannot be linked to their true names or physical locations.
 
-In 2005 Nick Szabo publishes a proposal for [“Bit gold”](/bit-gold/), a purely digital collectible based on a proof-of-work algorithm borrowing ideas from [RPOW server](/finney/rpow/) (“Reusable proof of work”) by Hal Finney. Proposal does not mention contract enforcement mechanism, but Nick Szabo himself already proposed several [ideas about smart contracts](http://www.fon.hum.uva.nl/rob/Courses/InformationInSpeech/CDROM/Literature/LOTwinterschool2006/szabo.best.vwh.net/idea.html) back in the nineties.
+In 2005 Nick Szabo publishes a proposal for [“Bit gold”](/bit-gold/), a purely digital collectible based on a proof-of-work algorithm borrowing ideas from [RPOW server](/finney/rpow/) (“Reusable proof of work”) by Hal Finney. Proposal does not mention contract enforcement mechanism, but Nick Szabo himself already proposed several [ideas about smart contracts](/the-idea-of-smart-contracts/) back in the nineties.
 
 In late 2008 Satoshi Nakamoto publishes an overview of [Bitcoin](/bitcoin/) and on January 3rd, 2009 releases the code and begins the blockchain.
 
