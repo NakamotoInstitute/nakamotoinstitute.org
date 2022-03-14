@@ -17,7 +17,7 @@
       <a href="{{url_for('satoshi.emails.detail_thread', thread_id=previous_thread['id'], source=previous_thread['source'])}}">Previous</a> |
       {% endif %}
     {% endif %}
-    <a href="{{url_for('satoshi.posts.threads', source=emails[0].email_thread['source'])}}">Back</a>
+    <a href="{{url_for('satoshi.emails.threads', source=emails[0].email_thread['source'])}}">Back</a>
     {% if next_thread != None %}
       {% if satoshi_only %}
       | <a href="{{url_for('satoshi.emails.detail_thread', thread_id=next_thread['id'], source=next_thread['source'], view='satoshi')}}">Next</a>
@@ -101,7 +101,7 @@
       <a href="{{url_for('satoshi.emails.detail_thread', thread_id=previous_thread['id'], source=previous_thread['source'])}}">Previous</a> |
       {% endif %}
     {% endif %}
-    <a href="{{url_for('satoshi.emails.index', source=emails[0].email_thread['source'])}}">Back</a>
+    <a href="{{url_for('satoshi.emails.threads', source=emails[0].email_thread['source'])}}">Back</a>
     {% if next_thread != None %}
       {% if satoshi_only %}
       | <a href="{{url_for('satoshi.emails.detail_thread', thread_id=next_thread['id'], source=next_thread['source'], view='satoshi')}}">Next</a>
