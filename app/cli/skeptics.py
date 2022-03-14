@@ -14,7 +14,7 @@ bp = Blueprint("skeptics", __name__)
 
 bp.cli.help = "Update skeptics."
 
-API_URL = "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=btc&metrics=PriceUSD&frequency=1d"  # noqa
+API_URL = "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=btc&metrics=PriceUSD&frequency=1d&page_size=10000"  # noqa
 
 
 def update_skeptics():
