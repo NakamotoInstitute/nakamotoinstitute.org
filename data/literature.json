@@ -2,43 +2,22 @@
   {
     "id": 1,
     "title": "Bitcoin: A Peer-to-Peer Electronic Cash System",
-    "author": [
-      "satoshi-nakamoto"
-    ],
+    "author": ["satoshi-nakamoto"],
     "date": "October 31, 2008",
     "slug": "bitcoin",
-    "formats": [
-      "html",
-      "pdf",
-      "ext"
-    ],
-    "categories": [
-      "cryptography",
-      "economics",
-      "bitcoin"
-    ],
+    "formats": ["html", "pdf", "ext"],
+    "categories": ["cryptography", "economics", "bitcoin"],
     "doctype": "essay",
     "external": "https://bitcoin.org/bitcoin.pdf"
   },
   {
     "id": 4,
     "title": "b-money",
-    "author": [
-      "wei-dai"
-    ],
+    "author": ["wei-dai"],
     "date": "November 1998",
     "slug": "b-money",
-    "formats": [
-      "html",
-      "txt",
-      "ext"
-    ],
-    "categories": [
-      "economics",
-      "cryptography",
-      "bitcoin",
-      "Cypherpunk"
-    ],
+    "formats": ["html", "txt", "ext"],
+    "categories": ["economics", "cryptography", "bitcoin", "Cypherpunk"],
     "doctype": "essay",
     "external": "http://www.weidai.com/bmoney.txt"
   },
@@ -52,1209 +31,717 @@
     ],
     "date": "May 1999",
     "slug": "secure-timestamping-service",
-    "formats": [
-      "pdf",
-      "ext"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["pdf", "ext"],
+    "categories": ["cryptography"],
     "doctype": "journal",
     "external": "http://www.uclouvain.be/crypto/publications/year/1999"
   },
   {
     "id": 6,
     "title": "How to Time-Stamp a Digital Document",
-    "author": [
-      "stuart-haber",
-      "w-scott-stornetta"
-    ],
+    "author": ["stuart-haber", "w-scott-stornetta"],
     "date": "1991",
     "slug": "time-stamp-digital-document",
-    "formats": [
-      "unavailable"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["unavailable"],
+    "categories": ["cryptography"],
     "doctype": "journal"
   },
   {
     "id": 7,
     "title": "Improving the Efficiency and Reliability of Digital Time-Stamping",
-    "author": [
-      "dave-bayer",
-      "stuart-haber",
-      "w-scott-stornetta"
-    ],
+    "author": ["dave-bayer", "stuart-haber", "w-scott-stornetta"],
     "date": "March 1992",
     "slug": "improving-time-stamping",
-    "formats": [
-      "unavailable"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["unavailable"],
+    "categories": ["cryptography"],
     "doctype": "journal"
   },
   {
     "id": 8,
     "title": "Secure Names for Bit-Strings",
-    "author": [
-      "stuart-haber",
-      "w-scott-stornetta"
-    ],
+    "author": ["stuart-haber", "w-scott-stornetta"],
     "date": "April 1997",
     "slug": "secure-names-bit-strings",
-    "formats": [
-      "pdf"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["pdf"],
+    "categories": ["cryptography"],
     "doctype": "journal"
   },
   {
     "id": 9,
     "title": "Hashcash - A Denial of Service Counter-Measure",
-    "author": [
-      "adam-back"
-    ],
+    "author": ["adam-back"],
     "date": "August 1, 2002",
     "slug": "hashcash",
-    "formats": [
-      "pdf",
-      "ext"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["pdf", "ext"],
+    "categories": ["cryptography"],
     "doctype": "journal",
     "external": "http://www.hashcash.org/papers/hashcash.pdf"
   },
   {
     "id": 10,
     "title": "Protocols for Public Key Cryptosystems",
-    "author": [
-      "ralph-c-merkle"
-    ],
+    "author": ["ralph-c-merkle"],
     "date": "April 1978",
     "slug": "public-key-cryptosystems",
-    "formats": [
-      "unavailable"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["unavailable"],
+    "categories": ["cryptography"],
     "doctype": "journal"
   },
   {
     "id": 11,
     "title": "An Introduction to Probability Theory and Its Applications, Vol. I",
-    "author": [
-      "william-feller"
-    ],
+    "author": ["william-feller"],
     "date": "1957",
     "slug": "introduction-probability-theory-vol-i",
-    "formats": [
-      "unavailable"
-    ],
-    "categories": [
-      "mathematics"
-    ],
+    "formats": ["unavailable"],
+    "categories": ["mathematics"],
     "doctype": "book"
   },
   {
     "id": 12,
     "title": "The Crypto Anarchist Manifesto",
-    "author": [
-      "timothy-c-may"
-    ],
+    "author": ["timothy-c-may"],
     "date": "1988",
     "slug": "crypto-anarchist-manifesto",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "cryptography",
-      "Cypherpunk"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["cryptography", "Cypherpunk"],
     "doctype": "essay",
     "external": "https://activism.net/cypherpunk/crypto-anarchy.html"
   },
   {
     "id": 13,
     "title": "The Cyphernomicon",
-    "author": [
-      "timothy-c-may"
-    ],
+    "author": ["timothy-c-may"],
     "date": "September 10, 1994",
     "slug": "cyphernomicon",
-    "formats": [
-      "txt"
-    ],
-    "categories": [
-      "cryptography",
-      "Cypherpunk"
-    ],
+    "formats": ["txt"],
+    "categories": ["cryptography", "Cypherpunk"],
     "doctype": "essay"
   },
   {
     "id": 14,
     "title": "Crypto Anarchy and Virtual Communities",
-    "author": [
-      "timothy-c-may"
-    ],
+    "author": ["timothy-c-may"],
     "date": "December 1994",
     "slug": "virtual-communities",
-    "formats": [
-      "html"
-    ],
-    "categories": [
-      "cryptography",
-      "Cypherpunk"
-    ],
+    "formats": ["html"],
+    "categories": ["cryptography", "Cypherpunk"],
     "doctype": "essay"
   },
   {
     "id": 15,
     "title": "Formalizing and Securing Relationships on Public Networks",
-    "author": [
-      "nick-szabo"
-    ],
+    "author": ["nick-szabo"],
     "date": "1997",
     "slug": "formalizing-securing-relationships",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "cryptography",
-      "law"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["cryptography", "law"],
     "doctype": "essay",
     "external": "http://szabo.best.vwh.net/formalize.html"
   },
   {
     "id": 16,
     "title": "A Formal Language for Analyzing Contracts",
-    "author": [
-      "nick-szabo"
-    ],
+    "author": ["nick-szabo"],
     "date": "2002",
     "slug": "contract-language",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "cryptography",
-      "law"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["cryptography", "law"],
     "doctype": "essay",
     "external": "http://szabo.best.vwh.net/contractlanguage.html"
   },
   {
     "id": 17,
     "title": "Secure Property Titles with Owner Authority",
-    "author": [
-      "nick-szabo"
-    ],
+    "author": ["nick-szabo"],
     "date": "1998",
     "slug": "secure-property-titles",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "cryptography",
-      "law"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["cryptography", "law"],
     "doctype": "essay",
     "external": "http://szabo.best.vwh.net/securetitle.html"
   },
   {
     "id": 18,
     "title": "Trusted Third Parties are Security Holes",
-    "author": [
-      "nick-szabo"
-    ],
+    "author": ["nick-szabo"],
     "date": "2001",
     "slug": "trusted-third-parties",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["cryptography"],
     "doctype": "essay",
     "external": "http://szabo.best.vwh.net/ttps.html"
   },
   {
     "id": 19,
     "title": "Contracts with Bearer",
-    "author": [
-      "nick-szabo"
-    ],
+    "author": ["nick-szabo"],
     "date": "1999",
     "slug": "contracts-with-bearer",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "cryptography",
-      "economics",
-      "finance"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["cryptography", "economics", "finance"],
     "doctype": "essay",
     "external": "http://szabo.best.vwh.net/bearer_contracts.html"
   },
   {
     "id": 20,
     "title": "The God Protocols",
-    "author": [
-      "nick-szabo"
-    ],
+    "author": ["nick-szabo"],
     "date": "1999",
     "slug": "the-god-protocols",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["cryptography"],
     "doctype": "essay",
     "external": "http://web.archive.org/web/20061230075325/http://www.theiia.org/ITAudit/index.cfm?act=itaudit.archive&fid=216"
   },
   {
     "id": 21,
     "title": "Multinational Small Business",
-    "author": [
-      "nick-szabo"
-    ],
+    "author": ["nick-szabo"],
     "date": "1993",
     "slug": "multinational-small-business",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "cryptography",
-      "economics"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["cryptography", "economics"],
     "doctype": "essay",
     "external": "http://szabo.best.vwh.net/multi_small.html"
   },
   {
     "id": 22,
     "title": "Shelling Out: The Origins of Money",
-    "author": [
-      "nick-szabo"
-    ],
+    "author": ["nick-szabo"],
     "date": "2002",
     "slug": "shelling-out",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "economics"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["economics"],
     "doctype": "essay",
     "external": "http://szabo.best.vwh.net/shell.html"
   },
   {
     "id": 23,
     "title": "Untraceable Electronic Mail, Return Addresses, and Digital Pseudonyms",
-    "author": [
-      "david-chaum"
-    ],
+    "author": ["david-chaum"],
     "date": "1988",
     "slug": "untraceable-electronic-mail",
-    "formats": [
-      "pdf"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["pdf"],
+    "categories": ["cryptography"],
     "doctype": "journal"
   },
   {
     "id": 24,
     "title": "Blind Signatures for Untraceable Payments",
-    "author": [
-      "david-chaum"
-    ],
+    "author": ["david-chaum"],
     "date": "1982",
     "slug": "blind-signatures",
-    "formats": [
-      "unavailable"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["unavailable"],
+    "categories": ["cryptography"],
     "doctype": "journal"
   },
   {
     "id": 25,
     "title": "The Dining Cryptographers Problem: Unconditional Sender and Recipient Untraceability",
-    "author": [
-      "david-chaum"
-    ],
+    "author": ["david-chaum"],
     "date": "1988",
     "slug": "dining-cryptographers-problem",
-    "formats": [
-      "unavailable"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["unavailable"],
+    "categories": ["cryptography"],
     "doctype": "essay"
   },
   {
     "id": 26,
     "title": "New Directions in Cryptography",
-    "author": [
-      "whitfield-diffie",
-      "martin-e-hellman"
-    ],
+    "author": ["whitfield-diffie", "martin-e-hellman"],
     "date": "November 1976",
     "slug": "new-directions-in-cryptography",
-    "formats": [
-      "unavailable"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["unavailable"],
+    "categories": ["cryptography"],
     "doctype": "journal"
   },
   {
     "id": 27,
     "title": "A Method for Obtaining Digital Signatures and Public-key Cryptosystems",
-    "author": [
-      "ronald-l-rivest",
-      "adi-shamir",
-      "leonard-m-adleman"
-    ],
+    "author": ["ronald-l-rivest", "adi-shamir", "leonard-m-adleman"],
     "date": "February 1978",
     "slug": "rsa-paper",
-    "formats": [
-      "pdf",
-      "ext"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["pdf", "ext"],
+    "categories": ["cryptography"],
     "doctype": "journal",
     "external": "http://people.csail.mit.edu/rivest/Rsapaper.pdf"
   },
   {
     "id": 28,
     "title": "Proofs that Yield Nothing But Their Validity or All Languages in NP Have Zero-Knowledge Proof Systems",
-    "author": [
-      "oded-goldreich",
-      "silvio-micali",
-      "avi-wigderson"
-    ],
+    "author": ["oded-goldreich", "silvio-micali", "avi-wigderson"],
     "date": "July 1991",
     "slug": "zero-knowledge-proofs",
-    "formats": [
-      "pdf",
-      "ext"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["pdf", "ext"],
+    "categories": ["cryptography"],
     "doctype": "journal",
     "external": "http://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Zero%20Knowledge/Proofs_That_Yield_Nothing_But_Their_Validity_or_All_Languages_in_NP_Have_Zero-Knowledge_Proof_Systems.pdf"
   },
   {
     "id": 29,
     "title": "Secure Communications over Insecure Channels",
-    "author": [
-      "ralph-c-merkle"
-    ],
+    "author": ["ralph-c-merkle"],
     "date": "April 1978",
     "slug": "secure-communications-insecure-channels",
-    "formats": [
-      "pdf",
-      "ext"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["pdf", "ext"],
+    "categories": ["cryptography"],
     "doctype": "journal",
     "external": "http://www.merkle.com/1974/Puzzles1975.12.07.pdf"
   },
   {
     "id": 30,
     "title": "The Ricardian Contract",
-    "author": [
-      "ian-grigg"
-    ],
+    "author": ["ian-grigg"],
     "date": "July 6, 2004",
     "slug": "the-ricardian-contract",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "cryptography",
-      "finance"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["cryptography", "finance"],
     "doctype": "essay",
     "external": "http://iang.org/papers/ricardian_contract.html"
   },
   {
     "id": 31,
     "title": "Triple Entry Accounting",
-    "author": [
-      "ian-grigg"
-    ],
+    "author": ["ian-grigg"],
     "date": "December 25, 2005",
     "slug": "triple-entry-accounting",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "cryptography",
-      "finance"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["cryptography", "finance"],
     "doctype": "essay",
     "external": "http://iang.org/papers/triple_entry.html"
   },
   {
     "id": 32,
     "title": "Truledger in Plain English",
-    "author": [
-      "bill-st-clair"
-    ],
+    "author": ["bill-st-clair"],
     "date": "2008",
     "slug": "truledger",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "cryptography",
-      "finance"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["cryptography", "finance"],
     "doctype": "essay",
     "external": "http://truledger.com/doc/plain-english.html"
   },
   {
     "id": 33,
     "title": "A Cypherpunk's Manifesto",
-    "author": [
-      "eric-hughes"
-    ],
+    "author": ["eric-hughes"],
     "date": "March 9, 1993",
     "slug": "cypherpunk-manifesto",
-    "formats": [
-      "html",
-      "txt"
-    ],
-    "categories": [
-      "Cypherpunk"
-    ],
+    "formats": ["html", "txt"],
+    "categories": ["Cypherpunk"],
     "doctype": "essay"
   },
   {
     "id": 34,
     "title": "State and Terrorist Conspiracies & Conspiracy as Governance",
-    "author": [
-      "julian-assange"
-    ],
+    "author": ["julian-assange"],
     "date": "December 3, 2006",
     "slug": "julian-assange-conspiracies",
-    "formats": [
-      "pdf"
-    ],
-    "categories": [
-      "Cypherpunk"
-    ],
+    "formats": ["pdf"],
+    "categories": ["Cypherpunk"],
     "doctype": "essay"
   },
   {
     "id": 35,
     "title": "The Art of Unix Programming",
-    "author": [
-      "eric-s-raymond"
-    ],
+    "author": ["eric-s-raymond"],
     "date": "2003",
     "slug": "taoup",
-    "formats": [
-      "pdf",
-      "ext"
-    ],
-    "categories": [
-      "computer science"
-    ],
+    "formats": ["pdf", "ext"],
+    "categories": ["computer science"],
     "doctype": "book",
     "external": "http://www.catb.org/esr/writings/taoup/html/"
   },
   {
     "id": 36,
     "title": "The Theory of Money and Credit",
-    "author": [
-      "ludwig-von-mises"
-    ],
+    "author": ["ludwig-von-mises"],
     "date": "1953",
     "slug": "theory-money-credit",
-    "formats": [
-      "pdf",
-      "epub",
-      "ext"
-    ],
-    "categories": [
-      "economics"
-    ],
+    "formats": ["pdf", "epub", "ext"],
+    "categories": ["economics"],
     "doctype": "book",
     "external": "https://mises.org/library/theory-money-and-credit"
   },
   {
     "id": 37,
     "title": "Deflation and Liberty",
-    "author": [
-      "jorg-guido-hulsmann"
-    ],
+    "author": ["jorg-guido-hulsmann"],
     "date": "2008",
     "slug": "deflation-and-liberty",
-    "formats": [
-      "pdf",
-      "epub",
-      "ext"
-    ],
-    "categories": [
-      "economics"
-    ],
+    "formats": ["pdf", "epub", "ext"],
+    "categories": ["economics"],
     "doctype": "book",
     "external": "https://mises.org/library/deflation-and-liberty-1"
   },
   {
     "id": 38,
     "title": "Money, Bank Credit, and Economic Cycles (Third Edition)",
-    "author": [
-      "jesus-huerta-de-soto"
-    ],
+    "author": ["jesus-huerta-de-soto"],
     "date": "2012",
     "slug": "economic-cycles",
-    "formats": [
-      "pdf",
-      "epub",
-      "ext"
-    ],
-    "categories": [
-      "economics"
-    ],
+    "formats": ["pdf", "epub", "ext"],
+    "categories": ["economics"],
     "doctype": "book",
     "external": "https://mises.org/library/money-bank-credit-and-economic-cycles"
   },
   {
     "id": 39,
     "title": "Denationalisation of Money: The Argument Refined",
-    "author": [
-      "friedrich-a-hayek"
-    ],
+    "author": ["friedrich-a-hayek"],
     "date": "1978",
     "slug": "denationalisation",
-    "formats": [
-      "pdf",
-      "epub",
-      "ext"
-    ],
-    "categories": [
-      "economics"
-    ],
+    "formats": ["pdf", "epub", "ext"],
+    "categories": ["economics"],
     "doctype": "book",
     "external": "https://mises.org/library/denationalisation-money-argument-refined"
   },
   {
     "id": 40,
     "title": "Against Intellectual Property",
-    "author": [
-      "n-stephan-kinsella"
-    ],
+    "author": ["n-stephan-kinsella"],
     "date": "2008",
     "slug": "against-ip",
-    "formats": [
-      "pdf",
-      "epub",
-      "ext"
-    ],
-    "categories": [
-      "law"
-    ],
+    "formats": ["pdf", "epub", "ext"],
+    "categories": ["law"],
     "doctype": "book",
     "external": "https://mises.org/library/against-intellectual-property-0"
   },
   {
     "id": 41,
     "title": "Against Intellectual Monopoly",
-    "author": [
-      "michele-boldrin",
-      "david-k-levine"
-    ],
+    "author": ["michele-boldrin", "david-k-levine"],
     "date": "2008",
     "slug": "against-intellectual-monopoly",
-    "formats": [
-      "pdf",
-      "ext"
-    ],
-    "categories": [
-      "law"
-    ],
+    "formats": ["pdf", "ext"],
+    "categories": ["law"],
     "doctype": "book",
     "external": "http://levine.sscnet.ucla.edu/general/intellectual/againstfinal.htm"
   },
   {
     "id": 42,
     "title": "The Right to Read: A Dystopian Short Story",
-    "author": [
-      "richard-m-stallman"
-    ],
+    "author": ["richard-m-stallman"],
     "date": "February 1997",
     "slug": "right-to-read",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "computer science"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["computer science"],
     "doctype": "essay",
     "external": "https://www.gnu.org/philosophy/right-to-read.html"
   },
   {
     "id": 43,
     "title": "Areopagitica: A Speech for the Liberty of Unlicensed Printing to the Parliament of England",
-    "author": [
-      "john-milton"
-    ],
+    "author": ["john-milton"],
     "date": "1644",
     "slug": "areopagitica",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "law"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["law"],
     "doctype": "essay",
     "external": "https://en.wikisource.org/wiki/Areopagitica"
   },
   {
     "id": 44,
     "title": "The libbitcoin Manifesto",
-    "author": [
-      "amir-taaki"
-    ],
+    "author": ["amir-taaki"],
     "date": "September 23, 2013",
     "slug": "libbitcoin-manifesto",
-    "formats": [
-      "html",
-      "pdf",
-      "ext"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["html", "pdf", "ext"],
+    "categories": ["cryptography"],
     "doctype": "essay",
     "external": "https://libbitcoin.dyne.org/libbitcoin-manifesto.pdf"
   },
   {
     "id": 45,
     "title": "Bit Gold",
-    "author": [
-      "nick-szabo"
-    ],
+    "author": ["nick-szabo"],
     "date": "December 29, 2005",
     "slug": "bit-gold",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "cryptography",
-      "Bitcoin"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["cryptography", "Bitcoin"],
     "doctype": "essay",
     "external": "http://unenumerated.blogspot.com/2005/12/bit-gold.html"
   },
   {
     "id": 46,
     "title": "Libertaria in Cyberspace",
-    "author": [
-      "timothy-c-may"
-    ],
+    "author": ["timothy-c-may"],
     "date": "September 1, 1992",
     "slug": "libertaria-in-cyberspace",
-    "formats": [
-      "html"
-    ],
-    "categories": [
-      "cryptography",
-      "Cypherpunk"
-    ],
+    "formats": ["html"],
+    "categories": ["cryptography", "Cypherpunk"],
     "doctype": "essay"
   },
   {
     "id": 47,
     "title": "Crypto Glossary",
-    "author": [
-      "timothy-c-may",
-      "eric-hughes"
-    ],
+    "author": ["timothy-c-may", "eric-hughes"],
     "date": "November 22, 1992",
     "slug": "crypto-glossary",
-    "formats": [
-      "html",
-      "txt"
-    ],
-    "categories": [
-      "cryptography",
-      "Cypherpunk"
-    ],
+    "formats": ["html", "txt"],
+    "categories": ["cryptography", "Cypherpunk"],
     "doctype": "essay"
   },
   {
     "id": 48,
     "title": "Detecting Double Spending",
-    "author": [
-      "hal-finney"
-    ],
+    "author": ["hal-finney"],
     "date": "October 15, 1993",
     "slug": "detecting-double-spending",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "cryptography",
-      "Cypherpunk"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["cryptography", "Cypherpunk"],
     "doctype": "essay",
     "external": "https://web.archive.org/web/20140410150152/http://www.finney.org/~hal/chcash2.html"
   },
   {
     "id": 49,
     "title": "The Cathedral and the Bazaar",
-    "author": [
-      "eric-s-raymond"
-    ],
+    "author": ["eric-s-raymond"],
     "date": "2000",
     "slug": "the-cathedral-and-the-bazaar",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "cryptography",
-      "Cypherpunk"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["cryptography", "Cypherpunk"],
     "doctype": "essay",
     "external": "http://www.catb.org/~esr/writings/cathedral-bazaar/cathedral-bazaar/"
   },
   {
     "id": 50,
     "title": "Micropayments and Mental Transaction Costs",
-    "author": [
-      "nick-szabo"
-    ],
+    "author": ["nick-szabo"],
     "date": "May 1999",
     "slug": "micropayments-and-mental-transaction-costs",
-    "formats": [
-      "pdf",
-      "ext"
-    ],
-    "categories": [
-      "economics"
-    ],
+    "formats": ["html", "pdf", "ext"],
+    "categories": ["economics"],
     "doctype": "essay",
     "external": "http://szabo.best.vwh.net/berlinmentalmicro.pdf"
   },
   {
     "id": 51,
     "title": "Lucre: Anonymous Electronic Tokens v1.8",
-    "author": [
-      "ben-laurie"
-    ],
+    "author": ["ben-laurie"],
     "date": "October 30, 2008",
     "slug": "lucre",
-    "formats": [
-      "pdf",
-      "ext"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["pdf", "ext"],
+    "categories": ["cryptography"],
     "doctype": "essay",
     "external": "http://anoncvs.aldigital.co.uk/lucre/theory2.pdf"
   },
   {
     "id": 52,
     "title": "Advances in Distributed Security",
-    "author": [
-      "nick-szabo"
-    ],
+    "author": ["nick-szabo"],
     "date": "2003",
     "slug": "advances-in-distributed-security",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["cryptography"],
     "doctype": "essay",
     "external": "http://szabo.best.vwh.net/distributed.html"
   },
   {
     "id": 53,
     "title": "Online Cash Checks",
-    "author": [
-      "david-chaum"
-    ],
+    "author": ["david-chaum"],
     "date": "1989",
     "slug": "online-cash-checks",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["cryptography"],
     "doctype": "essay",
     "external": "http://www.chaum.com/publications/Online_Cash_Checks.html"
   },
   {
     "id": 54,
     "title": "Why I Wrote PGP",
-    "author": [
-      "philip-r-zimmermann"
-    ],
+    "author": ["philip-r-zimmermann"],
     "date": "1991",
     "slug": "why-i-wrote-pgp",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["cryptography"],
     "doctype": "essay",
     "external": "https://www.philzimmermann.com/EN/essays/WhyIWrotePGP.html"
   },
   {
     "id": 55,
     "title": "Measuring Value",
-    "author": [
-      "nick-szabo"
-    ],
+    "author": ["nick-szabo"],
     "date": "2002",
     "slug": "measuring-value",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "economics"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["economics"],
     "doctype": "essay",
     "external": "http://szabo.best.vwh.net/measuringvalue.html"
   },
   {
     "id": 56,
     "title": "From Crossbows To Cryptography: Techno-Thwarting The State",
-    "author": [
-      "chuck-hammill"
-    ],
+    "author": ["chuck-hammill"],
     "date": "November 1987",
     "slug": "from-crossbows-to-cryptography",
-    "formats": [
-      "pdf"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["html", "pdf"],
+    "categories": ["cryptography"],
     "doctype": "essay"
   },
   {
     "id": 58,
     "title": "Financial Cryptography in 7 Layers",
-    "author": [
-      "ian-grigg"
-    ],
+    "author": ["ian-grigg"],
     "date": "2000",
     "slug": "financial-cryptography-in-7-layers",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "economics",
-      "cryptography"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["economics", "cryptography"],
     "doctype": "essay",
     "external": "http://iang.org/papers/fc7.html"
   },
   {
     "id": 59,
     "title": "The Playdough Protocols",
-    "author": [
-      "nick-szabo"
-    ],
+    "author": ["nick-szabo"],
     "date": "2002",
     "slug": "the-playdough-protocols",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["cryptography"],
     "doctype": "essay",
     "external": "http://szabo.best.vwh.net/seals.html"
   },
   {
     "id": 60,
     "title": "Capability-based Financial Instruments",
-    "author": [
-      "mark-s-miller",
-      "chip-morningstar",
-      "bill-frantz"
-    ],
+    "author": ["mark-s-miller", "chip-morningstar", "bill-frantz"],
     "date": "2000",
     "slug": "capability-based-financial-instruments",
-    "formats": [
-      "pdf",
-      "ext"
-    ],
-    "categories": [
-      "cryptography",
-      "law"
-    ],
+    "formats": ["pdf", "ext"],
+    "categories": ["cryptography", "law"],
     "doctype": "essay",
     "external": "http://www.erights.org/elib/capability/ode/index.html"
   },
   {
     "id": 61,
     "title": "Contracts in Cyberspace",
-    "author": [
-      "david-d-friedman"
-    ],
+    "author": ["david-d-friedman"],
     "date": "May 4, 2000",
     "slug": "contracts-in-cyberspace",
-    "formats": [
-      "ext"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["ext"],
+    "categories": ["cryptography"],
     "doctype": "essay",
     "external": "http://www.daviddfriedman.com/Academic/contracts_in_%20cyberspace/contracts_in_cyberspace.htm"
   },
   {
     "id": 62,
     "title": "Digital Cash & Privacy",
-    "author": [
-      "hal-finney"
-    ],
+    "author": ["hal-finney"],
     "date": "August 19, 1993",
     "slug": "digital-cash-and-privacy",
-    "formats": [
-      "html"
-    ],
-    "categories": [
-      "cryptography",
-      "Cypherpunk"
-    ],
+    "formats": ["html"],
+    "categories": ["cryptography", "Cypherpunk"],
     "doctype": "essay"
   },
   {
     "id": 63,
     "title": "From Imperial China to Cyberspace: Contracting Without the State",
-    "author": [
-      "david-d-friedman"
-    ],
+    "author": ["david-d-friedman"],
     "date": "2005",
     "slug": "from-imperial-china-to-cyberspace",
-    "formats": [
-      "ext"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["ext"],
+    "categories": ["cryptography"],
     "doctype": "essay",
     "external": "http://www.daviddfriedman.com/Academic/Course_Pages/analytical_methods_08/china_to_cyberspace.htm"
   },
   {
     "id": 64,
     "title": "Bitcoin and Me",
-    "author": [
-      "hal-finney"
-    ],
+    "author": ["hal-finney"],
     "date": "March 19, 2013",
     "slug": "bitcoin-and-me",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["cryptography"],
     "doctype": "essay",
     "external": "https://bitcointalk.org/index.php?topic=155054.msg1643833#msg1643833"
   },
   {
     "id": 65,
     "title": "The Byzantine Generals Problem",
-    "author": [
-      "leslie-lamport",
-      "robert-shostak",
-      "marshall-pease"
-    ],
+    "author": ["leslie-lamport", "robert-shostak", "marshall-pease"],
     "date": "July 1982",
     "slug": "the-byzantine-generals-problem",
-    "formats": [
-      "pdf",
-      "ext"
-    ],
-    "categories": [
-      "cryptography",
-      "computer science"
-    ],
+    "formats": ["pdf", "ext"],
+    "categories": ["cryptography", "computer science"],
     "doctype": "essay",
     "external": "http://research.microsoft.com/en-us/um/people/lamport/pubs/pubs.html#byz"
   },
   {
     "id": 66,
     "title": "Implementing Fault-Tolerant Services Using the State Machine Approach: A Tutorial",
-    "author": [
-      "fred-b-schneider"
-    ],
+    "author": ["fred-b-schneider"],
     "date": "December 1990",
     "slug": "implementing-fault-tolerant-services",
-    "formats": [
-      "pdf",
-      "ext"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["pdf", "ext"],
+    "categories": ["cryptography"],
     "doctype": "essay",
     "external": "https://www.cs.cornell.edu/fbs/fullist.htm"
   },
   {
     "id": 67,
     "title": "Intrapolynomial Cryptography",
-    "author": [
-      "nick-szabo"
-    ],
+    "author": ["nick-szabo"],
     "date": "1999",
     "slug": "intrapolynomial-cryptography",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["cryptography"],
     "doctype": "essay",
     "external": "http://szabo.best.vwh.net/intrapoly.html"
   },
   {
     "id": 68,
     "title": "RPOW - Reusable Proofs of Work",
-    "author": [
-      "hal-finney"
-    ],
+    "author": ["hal-finney"],
     "date": "August 15, 2004",
     "slug": "rpow",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["cryptography"],
     "doctype": "email",
     "external": "http://cryptome.org/rpow.htm"
   },
   {
     "id": 69,
     "title": "On Digital Cash-Like Payment Systems",
-    "author": [
-      "daniel-a-nagy"
-    ],
+    "author": ["daniel-a-nagy"],
     "date": "2005",
     "slug": "on-digital-cash-like-payment-systems",
-    "formats": [
-      "pdf",
-      "ext"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["pdf", "ext"],
+    "categories": ["cryptography"],
     "doctype": "journal",
     "external": "http://www.epointsystem.org/~nagydani/ICETE2005.pdf"
   },
   {
     "id": 70,
     "title": "Reflections on Trusting Trust",
-    "author": [
-      "ken-thompson"
-    ],
+    "author": ["ken-thompson"],
     "date": "August 1984",
     "slug": "reflections-on-trusting-trust",
-    "formats": [
-      "pdf",
-      "ext"
-    ],
-    "categories": [
-      "computing"
-    ],
+    "formats": ["pdf", "ext"],
+    "categories": ["computing"],
     "doctype": "journal",
     "external": "https://dl.acm.org/citation.cfm?id=358210"
   },
   {
     "id": 71,
-    "title": "Negative Reputation",
-    "author": [
-      "nick-szabo"
-    ],
+    "title": "Negative Reputations",
+    "author": ["nick-szabo"],
     "date": "1996",
-    "slug": "negative-reputation",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "slug": "negative-reputations",
+    "formats": ["html", "ext"],
+    "categories": ["cryptography"],
     "doctype": "essay",
     "external": "http://szabo.best.vwh.net/negative_rep.html"
   },
   {
     "id": 72,
     "title": "The Sybil Attack",
-    "author": [
-      "john-r-douceur"
-    ],
+    "author": ["john-r-douceur"],
     "date": "2002",
     "slug": "the-sybil-attack",
-    "formats": [
-      "pdf",
-      "ext"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["pdf", "ext"],
+    "categories": ["cryptography"],
     "doctype": "journal",
     "external": "http://research.microsoft.com/apps/pubs/default.aspx?id=74220"
   },
@@ -1269,415 +756,262 @@
     ],
     "date": "2002",
     "slug": "improving-time-stamping-schemes",
-    "formats": [
-      "pdf",
-      "ext"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["pdf", "ext"],
+    "categories": ["cryptography"],
     "doctype": "journal",
     "external": "http://pages.upf.pf/Alban.Gabillon/articles/AnnalTelecom.pdf"
   },
   {
     "id": 74,
     "title": "PGP Web of Trust Misconceptions",
-    "author": [
-      "hal-finney"
-    ],
+    "author": ["hal-finney"],
     "date": "March 30, 1994",
     "slug": "pgp-web-of-trust-misconceptions",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["cryptography"],
     "doctype": "essay",
     "external": "https://web.archive.org/web/20130513043904/http://finney.org/~hal/web_of_trust.html"
   },
   {
     "id": 75,
     "title": "Scarce Objects",
-    "author": [
-      "nick-szabo"
-    ],
+    "author": ["nick-szabo"],
     "date": "2004",
     "slug": "scarce-objects",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "cryptography",
-      "economics"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["cryptography", "economics"],
     "doctype": "essay",
     "external": "http://szabo.best.vwh.net/scarce.html"
   },
   {
     "id": 76,
     "title": "The Geodesic Market",
-    "author": [
-      "robert-hettinga"
-    ],
+    "author": ["robert-hettinga"],
     "date": "April 1998 through December 1999",
     "slug": "the-geodesic-market",
-    "formats": [
-      "html",
-      "pdf",
-      "ext"
-    ],
-    "categories": [
-      "cryptography",
-      "economics"
-    ],
+    "formats": ["html", "pdf", "ext"],
+    "categories": ["cryptography", "economics"],
     "doctype": "essay",
     "external": "http://www.ibuc.com/pdfs/Geoecon.pdf"
   },
   {
     "id": 77,
     "title": "A Declaration of the Independence of Cyberspace",
-    "author": [
-      "john-perry-barlow"
-    ],
+    "author": ["john-perry-barlow"],
     "date": "February 8, 1996",
     "slug": "cyberspace-independence",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["cryptography"],
     "doctype": "essay",
     "external": "https://www.eff.org/cyberspace-independence"
   },
   {
     "id": 78,
     "title": "Smart Contracts Glossary",
-    "author": [
-      "nick-szabo"
-    ],
+    "author": ["nick-szabo"],
     "date": "1995",
     "slug": "smart-contracts-glossary",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "cryptography",
-      "economics",
-      "law"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["cryptography", "economics", "law"],
     "doctype": "essay",
     "external": "http://web.archive.org/web/20160620184813/http://szabo.best.vwh.net/smart_contracts_glossary.html"
   },
   {
     "id": 79,
     "title": "For-Pay Remailers",
-    "author": [
-      "hal-finney"
-    ],
+    "author": ["hal-finney"],
     "date": "October 28, 1994",
     "slug": "for-pay-remailers",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "cryptography",
-      "economics"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["cryptography", "economics"],
     "doctype": "essay",
     "external": "http://web.archive.org/web/20140306124328/finney.org/~hal/pay_remail.html"
   },
   {
     "id": 80,
     "title": "Politics vs Technology",
-    "author": [
-      "hal-finney"
-    ],
+    "author": ["hal-finney"],
     "date": "January 2, 1994",
     "slug": "politics-vs-technology",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "cryptography",
-      "economics",
-      "politics"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["cryptography", "economics", "politics"],
     "doctype": "essay",
     "external": "http://web.archive.org/web/20130513043046/http://finney.org/~hal/pol_v_tech.html"
   },
   {
     "id": 81,
     "title": "The Case for Privacy",
-    "author": [
-      "david-d-friedman"
-    ],
+    "author": ["david-d-friedman"],
     "date": "2005",
     "slug": "the-case-for-privacy",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "cryptography",
-      "economics",
-      "law"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["cryptography", "economics", "law"],
     "doctype": "essay",
     "external": "http://www.daviddfriedman.com/Academic/privacy_chapter/privacy.htm"
   },
   {
     "id": 82,
     "title": "Computer Systems Established, Maintained, and Trusted by Mutually Suspicious Groups",
-    "author": [
-      "david-chaum"
-    ],
+    "author": ["david-chaum"],
     "date": "June 1982",
     "slug": "computer-systems-by-mutually-suspicious-groups",
-    "formats": [
-      "pdf",
-      "ext"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["pdf", "ext"],
+    "categories": ["cryptography"],
     "doctype": "dissertation",
     "external": "https://www.chaum.com/publications/research_chaum_2.pdf"
   },
   {
     "id": 83,
     "title": "Money, Blockchains, and Social Scalability",
-    "author": [
-      "nick-szabo"
-    ],
+    "author": ["nick-szabo"],
     "date": "February 9, 2017",
     "slug": "money-blockchains-and-social-scalability",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "economics",
-      "cryptography"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["economics", "cryptography"],
     "doctype": "essay",
     "external": "http://unenumerated.blogspot.com/2017/02/money-blockchains-and-social-scalability.html"
   },
   {
     "id": 84,
     "title": "The Idea of Smart Contracts",
-    "author": [
-      "nick-szabo"
-    ],
+    "author": ["nick-szabo"],
     "date": "1997",
     "slug": "the-idea-of-smart-contracts",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "economics",
-      "cryptography",
-      "law"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["economics", "cryptography", "law"],
     "doctype": "essay",
     "external": "http://web.archive.org/web/20140406003401/szabo.best.vwh.net/idea.html"
   },
   {
     "id": 85,
     "title": "Secrecy, Authentication, and Public Key Systems",
-    "author": [
-      "ralph-c-merkle"
-    ],
+    "author": ["ralph-c-merkle"],
     "date": "June 1979",
     "slug": "secrecy-authentication-and-public-key-systems",
-    "formats": [
-      "pdf",
-      "ext"
-    ],
-    "categories": [
-      "cryptography"
-    ],
+    "formats": ["pdf", "ext"],
+    "categories": ["cryptography"],
     "doctype": "essay",
     "external": "http://www.merkle.com/papers/Thesis1979.pdf"
   },
   {
     "id": 86,
     "title": "Cyberspace, Crypto Anarchy, and Pushing Limits",
-    "author": [
-      "timothy-c-may"
-    ],
+    "author": ["timothy-c-may"],
     "date": "April 3, 1994",
     "slug": "cyberspace-crypto-anarchy-and-pushing-limits",
-    "formats": [
-      "html",
-      "txt",
-      "ext"
-    ],
-    "categories": [
-      "crypography",
-      "liberty"
-    ],
+    "formats": ["html", "txt", "ext"],
+    "categories": ["crypography", "liberty"],
     "doctype": "essay",
     "external": "https://groups.csail.mit.edu/mac/classes/6.805/articles/crypto/cypherpunks/may-pushing-limits.txt"
   },
   {
     "id": 87,
     "title": "The Ethics of Money Production",
-    "author": [
-      "jorg-guido-hulsmann"
-    ],
+    "author": ["jorg-guido-hulsmann"],
     "date": "2008",
     "slug": "the-ethics-of-money-production",
-    "formats": [
-      "pdf",
-      "epub",
-      "ext"
-    ],
-    "categories": [
-      "economics"
-    ],
+    "formats": ["pdf", "epub", "ext"],
+    "categories": ["economics"],
     "doctype": "book",
     "external": "https://mises.org/library/ethics-money-production"
   },
   {
     "id": 88,
     "title": "On the Origins of Money",
-    "author": [
-      "carl-menger"
-    ],
+    "author": ["carl-menger"],
     "date": "1892",
     "slug": "on-the-origins-of-money",
-    "formats": [
-      "pdf",
-      "epub",
-      "ext"
-    ],
-    "categories": [
-      "economics"
-    ],
+    "formats": ["pdf", "epub", "ext"],
+    "categories": ["economics"],
     "doctype": "book",
     "external": "https://mises.org/library/origins-money-0"
   },
   {
     "id": 89,
     "title": "What Has Government Done to Our Money?",
-    "author": [
-      "murray-n-rothbard"
-    ],
+    "author": ["murray-n-rothbard"],
     "date": "1963",
     "slug": "what-has-government-done-to-our-money",
-    "formats": [
-      "pdf",
-      "epub",
-      "ext"
-    ],
-    "categories": [
-      "economics"
-    ],
+    "formats": ["pdf", "epub", "ext"],
+    "categories": ["economics"],
     "doctype": "book",
     "external": "https://mises.org/library/what-has-government-done-our-money"
   },
   {
     "id": 90,
     "title": "Human Action: A Treatise on Economics",
-    "author": [
-      "ludwig-von-mises"
-    ],
+    "author": ["ludwig-von-mises"],
     "date": "1949",
     "slug": "human-action",
-    "formats": [
-      "pdf",
-      "epub",
-      "ext"
-    ],
-    "categories": [
-      "economics"
-    ],
+    "formats": ["pdf", "epub", "ext"],
+    "categories": ["economics"],
     "doctype": "book",
     "external": "https://mises.org/library/human-action-0"
   },
   {
     "id": 91,
     "title": "Confidential Auditing",
-    "author": [
-      "nick-szabo"
-    ],
+    "author": ["nick-szabo"],
     "date": "1998",
     "slug": "confidential-auditing",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "economics"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["economics"],
     "doctype": "essay",
     "external": "https://web.archive.org/web/20160319150321/http://szabo.best.vwh.net/confidential.html"
   },
   {
     "id": 92,
     "title": "The Mystery of Banking",
-    "author": [
-      "murray-n-rothbard"
-    ],
+    "author": ["murray-n-rothbard"],
     "date": "1983",
     "slug": "the-mystery-of-banking",
-    "formats": [
-      "pdf",
-      "epub",
-      "ext"
-    ],
-    "categories": [
-      "economics"
-    ],
+    "formats": ["pdf", "epub", "ext"],
+    "categories": ["economics"],
     "doctype": "book",
     "external": "https://mises.org/library/mystery-banking"
   },
   {
     "id": 93,
     "title": "The Machinery of Freedom (2nd Edition)",
-    "author": [
-      "david-d-friedman"
-    ],
+    "author": ["david-d-friedman"],
     "date": "1989",
     "slug": "the-machinery-of-freedom",
-    "formats": [
-      "pdf",
-      "epub",
-      "mobi",
-      "ext"
-    ],
-    "categories": [
-      "economics"
-    ],
+    "formats": ["pdf", "epub", "mobi", "ext"],
+    "categories": ["economics"],
     "doctype": "book",
     "external": "http://daviddfriedman.com/"
   },
   {
     "id": 94,
     "title": "Proplets: Devices for Controlling Property",
-    "author": [
-      "nick-szabo"
-    ],
+    "author": ["nick-szabo"],
     "date": "2001",
     "slug": "proplets-devices-for-controlling-property",
-    "formats": [
-      "html",
-      "ext"
-    ],
-    "categories": [
-      "cryptography",
-      "property"
-    ],
+    "formats": ["html", "ext"],
+    "categories": ["cryptography", "property"],
     "doctype": "essay",
     "external": "http://web.archive.org/web/20160806221938/http://szabo.best.vwh.net/proplets.html"
+  },
+  {
+    "id": 95,
+    "title": "A History of Money and Banking in the United States: The Colonial Era to World War II",
+    "author": ["murray-n-rothbard"],
+    "date": "2002",
+    "slug": "a-history-of-money-and-banking-in-the-united-states",
+    "formats": ["pdf", "epub", "ext"],
+    "categories": ["economics"],
+    "doctype": "book",
+    "external": "https://mises.org/library/history-money-and-banking-united-states-colonial-era-world-war-ii"
+  },
+  {
+    "id": 96,
+    "title": "P2P Filename Integrity",
+    "author": ["nick-szabo"],
+    "date": "2005",
+    "slug": "p2p-filename-integrity",
+    "formats": ["html", "ext"],
+    "categories": ["technology", "property"],
+    "doctype": "essay",
+    "external": "https://web.archive.org/web/20160514124505/http://szabo.best.vwh.net/nameintegrity.html"
   }
 ]

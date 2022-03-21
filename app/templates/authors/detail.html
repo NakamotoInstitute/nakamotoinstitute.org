@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{author}} | Satoshi Nakamoto Institute
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1 class="text-center">{{author}}</h1>
+  {% if literature_docs|length != 0 %}
+  <h3>Literature</h3>
+  {% for doc in literature_docs %}
+  <hr>
+  <a href="{{url_for('literature.detail', slug=doc.slug)}}">{{doc.title}}</a> - {{doc.date}}
+  {% endfor %}
+  <div class="my-3 text-center">
+    <a type="button" class="btn btn-light" href="{{url_for('literature.index')}}">Go to Literature</a>
+  </div>
+  {%endif%}
+
+  {% if research_docs|length != 0 %}
+  <h3>Research</h3>
+  {% for doc in research_docs %}
+  <hr>
+  <a href="{{url_for('research.detail', slug=doc.slug)}}">{{doc.title}}</a> - {{doc.date}}
+  {% endfor %}
+  <div class="my-3 text-center">
+    <a type="button" class="btn btn-light" href="{{url_for('research.index')}}">Go to Research</a>
+  </div>
+  {%endif%}
+
+  {% if mempool_posts|length != 0 %}
+  <h3>The Memory Pool</h3>
+  {% for post in mempool_posts %}
+  <hr>
+  {% if post.series %}
+  <h5 class="text-muted">{{post.series}}{% if not post.series.chapter_title %} (#{{post.series_index}}){% endif %}</h5>
+  {% endif %}
+  <h4>
+    <a href="{{url_for('mempool.detail', slug=post.slug)}}">
+      {% if post.series and post.series.chapter_title %}
+      Chapter {{post.series_index}}:
+      {% endif %}
+      {{post.title}}</a> - {{post.date.strftime('%B %d, %Y')}}</h4>
+  <p><em>{{post.excerpt}}</em></p>
+  {% endfor %}
+  <div class="my-3 text-center">
+    <a type="button" class="btn btn-light" href="{{url_for('mempool.index')}}">Go to the Memory Pool</a>
+  </div>
+  {%endif%}
+
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+.site-footer {
+  margin-top: auto;
+  background-color: $gray;
+  font-size: 85%;
+
+  &__list {
+    font-weight: 500;
+    line-height: 30px;
+    margin: 0 -0.75rem;
+  }
+
+  &__list-item {
+    margin: 0 0.75rem;
+  }
+}

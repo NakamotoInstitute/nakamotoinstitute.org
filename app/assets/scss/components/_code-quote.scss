@@ -1,0 +1,26 @@
+.codeheader,
+.code,
+.quoteheader,
+.quote {
+  border: 1px solid $post-sectional;
+  padding: $post-padding-half;
+}
+
+.codeheader,
+.quoteheader {
+  font-weight: bold;
+}
+
+.code,
+.quote {
+  border-top: none;
+}
+
+.code {
+  white-space: pre-wrap;
+  font-family: monospace;
+}
+
+.quote {
+  margin-bottom: $post-padding;
+}
