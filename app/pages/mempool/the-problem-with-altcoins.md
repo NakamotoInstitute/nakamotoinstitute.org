@@ -47,7 +47,7 @@ Third, a currency is simply a standard that people agree to use as a medium of e
 
 Finally, there is competition _within_ the Bitcoin community, and this is the sort of competition that actually benefits people. There are exchanges, payment processors, online stores, and so on. Every time someone starts a new Bitcoin business, he benefits the Bitcoin economy. Every time someone starts an altcoin, he makes it worse.
 
-A related point is the argument that altcoins can be used as experiments to learn about how different ideas might work in practice. This use is completely legitimate and necessary. However, an altcoin that was understood to be an experiment would not be treated as an investment or an independent products. If this is how altcoins are treated, this would be fine. My objection is to the lies and scams. An experiment is worthless if the people running it are constantly lying about it.
+A related point is the argument that altcoins can be used as experiments to learn about how different ideas might work in practice. This use is completely legitimate and necessary. However, an altcoin that was understood to be an experiment would not be treated as an investment or an independent product. If this is how altcoins are treated, this would be fine. My objection is to the lies and scams. An experiment is worthless if the people running it are constantly lying about it.
 
 ## Multiple block chains would reduce load on the network
 
@@ -77,7 +77,7 @@ It is a _fact_ that the market makes stupid choices all the time, and there is n
 
 ## Scrypt-coins
 
-There is a class of very similar cryptocurrencies that rely on an algorithm called Scrypt as the hash function. I shall refer to them as Scrypt-coins. They also have faster block generation times and a different coin mining schedule. In fact, none of them even have white papers, perhaps they are so unoriginal that there is nothing to write about. Despite this, or perhaps because of it, the Scrypt-coins are surrounded by the loudest, least intelligent, and most obnoxious communities, and the arguments supporting them are either fallacious or detached from reality.
+There is a class of very similar cryptocurrencies that rely on an algorithm called Scrypt as the hash function. I shall refer to them as Scrypt-coins. They also have faster block generation times and a different coin mining schedule. In fact, none of them even have white papers; perhaps they are so unoriginal that there is nothing to write about. Despite this, or perhaps because of it, the Scrypt-coins are surrounded by the loudest, least intelligent, and most obnoxious communities, and the arguments supporting them are either fallacious or detached from reality.
 
 When Bitcoin first came out, it was possible for anyone to mine coins with his CPU. Once software was developed that mined using GPUs, then CPU mining quickly became obsolete. GPU mining remained profitable for some time thereafter because the price of Bitcoin continued to increase as more people became miners. This could not persist indefinitely, and eventually there began work into the development of FPGA and ASIC mining. Once these technologies were developed, GPU mining would become obsolete as well.
 
@@ -128,7 +128,7 @@ There is one way that a Scrypt-coin _does_ come out ahead, however. Consider an 
 
 ## PPCoin
 
-I have already discussed PPCoin[^6] and the proof-of-stake from a theoretical standpoint. Proof-of-stake encourages people to hold coins, which is necessary for a currency to gain an initial value. However, that most important for a currency's _early_ stages. Because people lose their proof-of-stake as they create blocks, proof-of-stake discourages a specialized class of miners with the incentive to keep the network running at as high a capacity as possible.
+I have already discussed PPCoin[^6] and the proof-of-stake from a theoretical standpoint. Proof-of-stake encourages people to hold coins, which is necessary for a currency to gain an initial value. However, that is most important for a currency's _early_ stages. Because people lose their proof-of-stake as they create blocks, proof-of-stake discourages a specialized class of miners with the incentive to keep the network running at as high a capacity as possible.
 
 One thing to be said for PPCoin, however, is that altcoins are a product of the proof-of-work system. Proof-of-stake would not have led to them. If Bitcoin had transitioned to a proof-of-stake system before it was valuable enough for ASIC mining to develop, perhaps there would be no altcoins.
 

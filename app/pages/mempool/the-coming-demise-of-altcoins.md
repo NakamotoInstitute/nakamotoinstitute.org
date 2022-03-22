@@ -29,7 +29,7 @@ Any disruption in the balance of buyers and sellers would affect a currency’s 
 
 A more liquid currency has an advantage over a less liquid one because it can support more trade. Furthermore, liquidity in a currency is self-reinforcing. The more that people buy a currency, the more liquid it becomes. This naturally tends to promote the success of a single currency over all the rest.
 
-Consider the hypothetical example of an economy that uses exactly two currencies, Acoin and Bcoin, which are equally preferred by holders. For whatever reason, Acoin develops a very slight advantage over Bcoin. Consequently a few people exchange Bcoin for Acoin, thus very slightly increasing the market cap and liquidity of Acoin and slightly decreasing that of Bcoin.
+Consider the hypothetical example of an economy that uses exactly two currencies, Acoin and Bcoin, which are equally preferred by holders. For whatever reason, Acoin develops a very slight advantage over Bcoin. Consequently, a few people exchange Bcoin for Acoin, thus very slightly increasing the market cap and liquidity of Acoin and slightly decreasing that of Bcoin.
 
 Now, _in addition_ to its initial slight advantage over Bcoin, Acoin has the advantage of becoming more liquid. As a result, _more_ people will tend to sell Bcoin for Acoin. Thus, Acoin’s initial advantage is self-reinforcing, and as the disparity between Acoin and Bcoin increases, its superiority becomes more and more evident.
 
