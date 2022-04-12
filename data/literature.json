@@ -1013,5 +1013,16 @@
     "categories": ["technology", "property"],
     "doctype": "essay",
     "external": "https://web.archive.org/web/20160514124505/http://szabo.best.vwh.net/nameintegrity.html"
+  },
+  {
+    "id": 97,
+    "title": "How is Fiat Money Possible?—or, The Devolution of Money and Credit",
+    "author": ["hans-hermann-hoppe"],
+    "date": "1994",
+    "slug": "how-is-fiat-money-possible",
+    "formats": ["html", "pdf", "ext"],
+    "categories": ["economics"],
+    "doctype": "essay",
+    "external": "https://mises.org/library/how-fiat-money-possible-or-devolution-money-and-credit"
   }
 ]
