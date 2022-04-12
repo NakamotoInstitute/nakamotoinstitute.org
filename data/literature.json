@@ -1024,5 +1024,16 @@
     "categories": ["economics"],
     "doctype": "essay",
     "external": "https://mises.org/library/how-fiat-money-possible-or-devolution-money-and-credit"
+  },
+  {
+    "id": 98,
+    "title": "Credit With Privity",
+    "author": ["nick-szabo"],
+    "date": "1996",
+    "slug": "credit-with-privity",
+    "formats": ["html", "ext"],
+    "categories": ["economics", "technology"],
+    "doctype": "essay",
+    "external": "https://web.archive.org/web/20160323114322/http://szabo.best.vwh.net/garnishment.html"
   }
 ]
