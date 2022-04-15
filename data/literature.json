@@ -1035,5 +1035,16 @@
     "categories": ["economics", "technology"],
     "doctype": "essay",
     "external": "https://web.archive.org/web/20160323114322/http://szabo.best.vwh.net/garnishment.html"
+  },
+  {
+    "id": 99,
+    "title": "\"The Yield from Money Held\" Reconsidered",
+    "author": ["hans-hermann-hoppe"],
+    "date": "April 24, 2009",
+    "slug": "the-yield-from-money-held-reconsidered",
+    "formats": ["html", "ext"],
+    "categories": ["economics"],
+    "doctype": "essay",
+    "external": "https://mises.org/library/yield-money-held-reconsidered"
   }
 ]

@@ -24,7 +24,7 @@ Literature | Satoshi Nakamoto Institute
       {% for doc in docs %}
       <tr>
         <td>
-        	<a href="{{url_for('literature.detail', slug=doc['slug'])}}">{% if doc['doctype']=="book" %}<em>{{doc['title']}}</em>{% else %}"{{doc['title']}}"{% endif %}</a>
+        	<a href="{{url_for('literature.detail', slug=doc['slug'])}}">{% if doc['doctype']=="book" %}<em>{{doc['title']}}</em>{% else %}"{{doc['title'] | replace("\"", "'")}}"{% endif %}</a>
         </td>
         <td>
           {{ helpers.doctypes(doc, formats[doc.slug], index=True) }}
