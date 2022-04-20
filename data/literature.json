@@ -1046,5 +1046,16 @@
     "categories": ["economics"],
     "doctype": "essay",
     "external": "https://mises.org/library/yield-money-held-reconsidered"
+  },
+  {
+    "id": 100,
+    "title": "Distributing Authorities and Verifying Their Claims",
+    "author": ["nick-szabo"],
+    "date": "1997",
+    "slug": "distributing-authorities-and-verifying-their-claims",
+    "formats": ["html", "ext"],
+    "categories": ["cryptography"],
+    "doctype": "essay",
+    "external": "https://web.archive.org/web/20160417035139/http://szabo.best.vwh.net/authorities.html"
   }
 ]
