@@ -1057,5 +1057,16 @@
     "categories": ["cryptography"],
     "doctype": "essay",
     "external": "https://web.archive.org/web/20160417035139/http://szabo.best.vwh.net/authorities.html"
+  },
+  {
+    "id": 101,
+    "title": "Banking, Nation States, and International Politics: A Sociological Reconstruction of the Present Economic Order",
+    "author": ["hans-hermann-hoppe"],
+    "date": "1990",
+    "slug": "banking-nation-states-and-international-politics",
+    "formats": ["html", "pdf", "ext"],
+    "categories": ["economics"],
+    "doctype": "essay",
+    "external": "https://mises.org/library/banking-nation-states-and-international-politics-sociological-reconstruction-present"
   }
 ]
