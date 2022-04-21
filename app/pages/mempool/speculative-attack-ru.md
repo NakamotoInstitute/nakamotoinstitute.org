@@ -106,7 +106,3 @@ translation_publication_url: https://bitnovosti.com
 [^9]: Если вы не согласны с этим, вы просто недостаточно изучили вопрос, см. примечание номер 3.
 
 [^10]: «Я живу в особенном мире. Я знакома только с одним человеком, голосовавшим за Никсона. Где все остальные, я не знаю. Они за пределами моего круга. Но иногда, в театре, я чувствую их присутствие», — [Паулина Каэл](https://en.wikiquote.org/wiki/Pauline_Kael)
-
-***
-
-Translation by [Ekaterina Tarasova](http://blockchainwriter.tilda.ws) of [BitNovosti](https://bitnovosti.com/2014/08/31/kak-ruhnet-koloss/)
