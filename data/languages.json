@@ -38,5 +38,9 @@
   {
     "name": "Finnish",
     "ietf": "fi"
+  },
+  {
+    "name": "French",
+    "ietf": "fr"
   }
 ]
