@@ -1068,5 +1068,16 @@
     "categories": ["economics"],
     "doctype": "essay",
     "external": "https://mises.org/library/banking-nation-states-and-international-politics-sociological-reconstruction-present"
+  },
+  {
+    "id": 102,
+    "title": "Principles of Economics",
+    "author": ["carl-menger"],
+    "date": "1871",
+    "slug": "principles-of-economics",
+    "formats": ["pdf", "epub", "ext"],
+    "categories": ["economics"],
+    "doctype": "book",
+    "external": "https://mises.org/library/principles-economics"
   }
 ]
