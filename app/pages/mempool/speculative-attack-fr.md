@@ -17,7 +17,7 @@ Les détracteurs de Bitcoin[^1] agitent leurs mains dans tous les sens pour expl
 * Le gouvernement va le bannir
 * Cela ne montera pas en échelle
 
-La réponse de la communauté Bitcoin est soit d'argumenter les points ci-dessus[3](#fn-3) sans fin ou de trouver leur Bitcoin Jonah[^4] intérieur avec des platitudes comme :
+La réponse de la communauté Bitcoin est soit d'argumenter les points ci-dessus[^3] sans fin ou de trouver leur Bitcoin Jonah[^4] intérieur avec des platitudes comme :
 
 * Bitcoin la monnaie ne compte pas, c'est la technologie blockchain qui importe
 * Ce serait mieux si la technologie blockchain était utilisée par les banques et les gouvernements
@@ -27,7 +27,7 @@ La réponse de la communauté Bitcoin est soit d'argumenter les points ci-dessus
 
 Les sophismes ci-dessus méritent chacun leur propre article, ne serait-ce que pour analyser les archétypes psycho-sociaux des perroquets concernés.
 
-Quelques unes des critiques mentionnées plus haut son correctes, mais ce sont des _non sequitur_ complets. Le Bitcoin ne sera pas adopté avec empressement par le grand public, il lui sera imposé. Imposé, comme dans "contraint par la réalité économique". Les gens seront obligés de payer avec des bitcoins, non pas à cause de la "technologie", mais parce que personne n'acceptera leur fiat sans valeur en guise de paiement. Contrairement à la croyance populaire, la bonne monnaie chasse la mauvaise. Cette "éviction" a commencé par une petite hémorragie du fiat. Elle va rapidement se transformer en hémorragie de classe IV en raison des attaques spéculatives sur les monnaies fiduciaires faibles. Le résultat final sera l'[hyperbitcoinisation](https://parlonsbitcoin.com/blog/hyperbitcoinisation), c'est-à-dire que "votre argent n'est pas bon ici".
+Quelques unes des critiques mentionnées plus haut son correctes, mais ce sont des _non sequitur_ complets. Le Bitcoin ne sera pas adopté avec empressement par le grand public, il lui sera imposé. Imposé, comme dans "contraint par la réalité économique". Les gens seront obligés de payer avec des bitcoins, non pas à cause de la "technologie", mais parce que personne n'acceptera leur fiat sans valeur en guise de paiement. Contrairement à la croyance populaire, la bonne monnaie chasse la mauvaise. Cette "éviction" a commencé par une petite hémorragie du fiat. Elle va rapidement se transformer en hémorragie de classe IV en raison des attaques spéculatives sur les monnaies fiduciaires faibles. Le résultat final sera l'[hyperbitcoinisation](/mempool/hyperbitcoinization/fr/), c'est-à-dire que "votre argent n'est pas bon ici".
 
 ## La loi de Thier : le bon argent chasse le mauvais
 
@@ -79,7 +79,7 @@ Quels sont les pays les plus vulnérables à une crise monétaire ? _Business In
 
 ## 3\. L'hyperbitcoinisation
 
-Une attaque spéculative qui semble isolée à une ou quelques monnaies faibles, mais qui provoque une hausse du pouvoir d'achat des bitcoins, se transformera rapidement en contagion. Par exemple, les Suisses verront le prix des bitcoins se multiplier par dix, puis par cent. À la limite, ils achèteront des bitcoins simplement parce qu'ils veulent spéculer sur leur valeur, et non en raison d'un problème inhérent au franc suisse. La [réflexivité](https://fr.wikipedia.org/wiki/R%C3%A9flexivit%C3%A9_(sciences_sociales)) ici implique que la réduction de la demande de francs suisses entraînerait en fait une inflation plus élevée que prévue et donc un problème inhérent au franc suisse. La boucle de rétroaction entre l'inflation des monnaies fiduciaires et la déflation des bitcoins va plonger le monde dans une hyperbitcoinisation totale, expliquée par Daniel [ici](/mempool/hyperbitcoinization).
+Une attaque spéculative qui semble isolée à une ou quelques monnaies faibles, mais qui provoque une hausse du pouvoir d'achat des bitcoins, se transformera rapidement en contagion. Par exemple, les Suisses verront le prix des bitcoins se multiplier par dix, puis par cent. À la limite, ils achèteront des bitcoins simplement parce qu'ils veulent spéculer sur leur valeur, et non en raison d'un problème inhérent au franc suisse. La [réflexivité](https://fr.wikipedia.org/wiki/R%C3%A9flexivit%C3%A9_(sciences_sociales)) ici implique que la réduction de la demande de francs suisses entraînerait en fait une inflation plus élevée que prévue et donc un problème inhérent au franc suisse. La boucle de rétroaction entre l'inflation des monnaies fiduciaires et la déflation des bitcoins va plonger le monde dans une hyperbitcoinisation totale, expliquée par Daniel [ici](/mempool/hyperbitcoinization/fr/).
 
 ## Conclusion
 
@@ -99,7 +99,7 @@ Le Bitcoin va se généraliser. Les sceptiques du Bitcoin ne le comprennent pas 
 
 [^7]: [Bitcoin Has No Image Problem](/mempool/bitcoin-has-no-image-problem/) par Daniel Krawisz
 
-[^8]: [Hyperbitcoinisation](/mempool/hyperbitcoinization/) par Daniel Krawisz
+[^8]: [Hyperbitcoinisation](/mempool/hyperbitcoinization/fr/) par Daniel Krawisz
 
 [^9]: Si vous n'êtes pas d'accord, soit vous n'avez pas étudié, soit vous n'avez pas pris part au débat, retournez à la première case.
 
