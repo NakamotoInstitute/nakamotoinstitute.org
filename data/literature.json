@@ -1079,5 +1079,16 @@
     "categories": ["economics"],
     "doctype": "book",
     "external": "https://mises.org/library/principles-economics"
+  },
+  {
+    "id": 103,
+    "title": "Man, Economy, and State, with Power and Market",
+    "author": ["murray-n-rothbard"],
+    "date": "1962",
+    "slug": "man-economy-and-state-power-and-market",
+    "formats": ["pdf", "epub", "ext"],
+    "categories": ["economics"],
+    "doctype": "book",
+    "external": "https://mises.org/library/man-economy-and-state-power-and-market"
   }
 ]
