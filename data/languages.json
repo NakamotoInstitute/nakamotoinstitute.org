@@ -42,5 +42,9 @@
   {
     "name": "French",
     "ietf": "fr"
+  },
+  {
+    "name": "Portuguese",
+    "ietf": "pt"
   }
 ]
