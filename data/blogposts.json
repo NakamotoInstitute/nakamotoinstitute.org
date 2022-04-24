@@ -404,6 +404,7 @@
     "slug": "everyones-a-scammer",
     "excerpt": "There is a war going on for your bitcoins, and willpower is your only defense.",
     "translations": {
+      "ar": ["BTC Translator"],
       "de": ["Volker Herminghaus"],
       "es": ["Camilo Flores"],
       "fi": ["Thomas Brand"]
