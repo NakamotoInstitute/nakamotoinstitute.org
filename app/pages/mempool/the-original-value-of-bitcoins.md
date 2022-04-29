@@ -1,4 +1,6 @@
+---
 image: oil-well.jpg
+---
 
 ## The Regression Theorem
 

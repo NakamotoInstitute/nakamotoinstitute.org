@@ -1,5 +1,7 @@
+---
 image: bag-head.jpg
 image_alt: Bag Head
+---
 
 ## Why Doesn’t Bitcoin’s Success Speak For Itself?
 

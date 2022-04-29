@@ -1,5 +1,7 @@
+---
 image: bible.jpg
 image_alt: de Soto
+---
 
 In the definitive treatise on Austrian Business Cycle Theory, [_Money, Bank Credit, and Economic Cycles_](http://mises.org/books/desoto.pdf), [Jesús Huerta de Soto](http://www.jesushuertadesoto.com/) establishes the inevitability of economic crises wherever there is fractional reserve banking. All that is left for monetary scholars to do is analyze past crises and lobby the government to have the right reforms. Fortunately, for the first time in history, we are in the enviable position of not having to wait for reforms that may or may not lead to sound money. I explain why [here](/mempool/end-the-fed-hoard-bitcoins "End the Fed: Hoard Bitcoins").
 

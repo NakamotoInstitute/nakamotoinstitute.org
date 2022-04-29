@@ -1,4 +1,6 @@
+---
 image: hulk.jpg
+---
 
 ## The Value of Money is the Value of a Community
 

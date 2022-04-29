@@ -1,5 +1,7 @@
+---
 image: spongebob-and-patrick.png
 image_alt: Spongebob and Patrick
+---
 
 ## An Altcoin in the Block Chain
 

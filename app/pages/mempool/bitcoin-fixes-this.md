@@ -1,5 +1,7 @@
+---
 original_link: https://www.unchained-capital.com/blog/bitcoin-fixes-this/
 original_site: Unchained Capital Blog
+---
 
 This past week marked that time of year when global central bankers, establishment economists and CNBC, et al. descend on Jackson Hole, Wyoming to discuss the systemic issues that plague our economy. Never seeming to find an answer but constantly in search of it; it is the perennial Jackson Hole dilemma. There is always much fanfare and this year was no different. The whole spectacle may have been highlighted by Lawrence Summers, former U.S. Treasury Secretary and former President of Harvard University. In a 28-part [twitter thread](https://twitter.com/LHSummers/status/1164490326549118976), Summers questioned a number of foundational assumptions made by the establishment economic mainstream, of which he is a resident member. In the game of Marco Polo, Summers is getting warmer but he’s still on the wrong side of the pool. Identifying symptoms of the problem maybe, but as with most mainstream economists, the obvious question is never asked. Could the whole apparatus of central bank policy be the root cause of the problem rather than the ever-elusive solution?
 

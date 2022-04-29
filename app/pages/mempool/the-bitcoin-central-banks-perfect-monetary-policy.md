@@ -1,4 +1,3 @@
-
 The following post provides an analytical framework so that critics and proponents of Bitcoin’s monetary policy can engage in a constructive debate.
 
 Bitcoin has a central bank called the “Bitcoin network,” which we will refer to as the Bitcoin Central Bank (BCB). This central bank issues a currency called “bitcoins” and processes the transfer of bitcoins between accounts. The BCB’s rule-based monetary policy was set at its creation and its independence is secured by the distributed nature of the underlying network. This non-discretionary monetary policy can best be described as asymptotic money supply targeting (AMST).

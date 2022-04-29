@@ -1,9 +1,11 @@
+---
 translated_title: Hiperbitcoinización
 image: BitcoinFace.png
 image_alt: BitcoinFace
 translation_url: http://elbitcoin.org/hiperbitcoinizacion/
 translation_publication: ElBitcoin.org
 translation_publication_url: http://elbitcoin.org
+---
 
 ## Desmonetización inducida por Bitcoin
 

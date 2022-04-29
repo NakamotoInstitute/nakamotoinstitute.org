@@ -1,5 +1,7 @@
+---
 image: baby-godzilla.png
 image_alt: Baby Godzilla
+---
 
 If there were a set of rules such that the people who followed them were
 rewarded in a way that increased with the total number of followers, then each

@@ -1,4 +1,6 @@
+---
 image: landscape-with-the-colosseum-and-the-monument-to-marcus-aurelius.jpg
+---
 
 > Some things are in our control and others not.
 >

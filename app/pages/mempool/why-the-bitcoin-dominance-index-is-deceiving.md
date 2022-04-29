@@ -1,5 +1,7 @@
+---
 original_link: https://medium.com/@jimmysong/why-the-bitcoin-dominance-index-is-deceiving-80ae324ee2ac
 original_site: Jimmy Song's Medium blog
+---
 
 While the [scaling debate has been going on for years](https://medium.com/p/why-bitcoin-will-get-scaling-without-segwit-or-large-blocks-772799fab021), more recently, there’s been a lot of complaining and speculation about how Bitcoin will soon lose supremacy as the largest coin and how other coins will eventually take over. In this article, I seek to show how the Bitcoin Dominance Index is inherently deceiving and why there really isn’t a crisis as so many would have us believe.
 

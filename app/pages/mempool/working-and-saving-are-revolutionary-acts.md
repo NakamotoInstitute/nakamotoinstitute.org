@@ -1,5 +1,7 @@
+---
 image: work.jpg
 image_alt: Work
+---
 
 Government exists because it is, _de facto,_ the equilibrium solution to providing judicial and defense services. This equilibrium is the result of ideology, high [transaction costs](http://en.wikipedia.org/wiki/Transaction_cost), and strong [asset specificity](http://en.wikipedia.org/wiki/Asset_specificity). To change this equilibrium, should we try to persuade people that our ideology is the right one, or should we work on reducing transaction costs and weakening asset specificity?
 

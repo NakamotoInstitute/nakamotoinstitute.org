@@ -1,6 +1,8 @@
+---
 translated_title: "Elimina la Fed: Acapara Bitcoins"
 image: bitcoin.png
 image_alt: Bitcoin
+---
 
 La estrategia libertaria para socavar las [monedas fiat](https://es.wikipedia.org/wiki/Dinero_fiduciario) o fiduciarias siempre se ha enfocado en [hacer viables las alternativas del oro y la plata](http://constitution.org/mon/greenspan_gold.htm). Este esfuerzo ha fracasado porque es imposible competirle a una moneda digital (como el dólar) con un “commodity” físico, debido a los altos costos de transacción que se asocian a éstos últimos. La única forma en que los metales preciosos podrían triunfar es si el fiat fracasa. Aunque pueda ocurrir que las monedas fiat inevitablemente colapsen en el largo plazo, esperar que esta posibilidad ocurra es algo inaceptable considerando la magnitud del daño que los bancos centrales están infligiendo a la [acumulación de capital de la humanidad](http://mises.org/efandi/ch4.asp).
 

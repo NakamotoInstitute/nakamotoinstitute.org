@@ -1,4 +1,6 @@
+---
 image: rube-goldberg.jpg
+---
 
 ## Introduction
 

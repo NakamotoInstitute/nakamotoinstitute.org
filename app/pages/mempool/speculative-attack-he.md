@@ -1,6 +1,8 @@
+---
 translated_title: התקפה ספקולטיבית
 image: joker-burning-money.jpg
 image_alt: The Joker demonetizing the USD
+---
 
 ## מבוא
 

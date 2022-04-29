@@ -1,9 +1,11 @@
+---
 translated_title: Ataque especulativo
 image: joker-burning-money.jpg
 image_alt: The Joker demonetizing the USD
 translation_url: http://elbitcoin.org/ataque-especulativo-como-triunfa-el-buen-dinero/
 translation_publication: ElBitcoin.org
 translation_publication_url: http://elbitcoin.org
+---
 
 ## Introducción
 

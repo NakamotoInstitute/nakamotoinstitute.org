@@ -1,5 +1,7 @@
+---
 original_link: https://unchained-capital.com/blog/bitcoin-is-common-sense/
 original_site: Unchained Capital Blog
+---
 
 > “Perhaps the sentiments contained in the following pages, are not yet sufficiently fashionable to procure them general favor; a long habit of not thinking a thing wrong, gives it a superficial appearance of being right, and raises at first a formidable outcry in defense of custom. But the tumult soon subsides. Time makes more converts than reason.”
 > <footer class="blockquote-footer">Thomas Paine, _Common Sense_ (February 24, 1776)</footer>

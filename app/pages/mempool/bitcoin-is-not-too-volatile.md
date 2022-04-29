@@ -1,5 +1,7 @@
+---
 original_link: https://www.unchained-capital.com/blog/bitcoin-is-not-too-volatile/
 original_site: Unchained Capital Blog
+---
 
 Has anyone you respect ever told you that bitcoin doesn’t make any sense? Maybe you’ve seen the price of bitcoin rise exponentially and then seen it crash. You write it off, believe your friend was right, don’t hear about it for a while and think bitcoin must have died. But then you wake up a few years later, bitcoin hasn’t died and somehow its value is a lot higher again. And you start thinking maybe your skeptical friend wasn’t right?
 

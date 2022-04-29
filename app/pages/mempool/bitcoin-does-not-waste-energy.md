@@ -1,5 +1,7 @@
+---
 original_link: https://www.unchained-capital.com/blog/bitcoin-does-not-waste-energy/
 original_site: Unchained Capital Blog
+---
 
 How many times have you heard the safety instructions before a standard commercial flight? You probably know them by heart, but every time, prior to takeoff, flight attendants instruct passengers traveling with children to put their oxygen mask on first and then tend to the children. Instinctively, it’s counterintuitive. Logically, it makes all the sense in the world. Make sure you can breathe, so that the child dependent on you can breathe too. The same principle applies to the coordination function of money in an economy and the resources required to protect that function. In a more philosophical safety warning, the flight attendant may say, “please make sure the money supply is secure so that we can continue to coordinate the activity of millions of people to build these hyper complex planes that afford you the opportunity to even contemplate the problem I’m about to explain.”
 

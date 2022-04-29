@@ -1,5 +1,7 @@
+---
 original_link: https://www.unchained-capital.com/blog/bitcoin-not-blockchain/
 original_site: Unchained Capital Blog
+---
 
 Have you ever heard a smart sounding friend say that they aren’t sure about bitcoin but they believe in blockchain technology? This is like saying you believe in airplanes but you’re not sure about the wings; and there’s a good chance that anyone who thinks that may not understand either. In reality, bitcoin and its blockchain are dependent on each other. However, if new to bitcoin, understanding how it works and parsing the landscape can be incredibly difficult. Frankly, it can be overwhelming; given the complexity and sheer volume of projects, who has the time to possibly evaluate everything? There is in fact a manageable path but you have to know where to start. While there are seemingly thousands of cryptocurrencies and blockchain initiatives, there is really only one that matters: bitcoin. Ignore everything else like it didn’t exist and first try to develop an understanding of why bitcoin exists and how it works; that is the best foundation to then be able to think about the entirety of everything else.
 

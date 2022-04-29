@@ -1,5 +1,7 @@
+---
 original_link: https://gist.github.com/oleganza/8cc921e48f396515c6d6
 original_site: Oleg Andreev's GitHub
+---
 
 In reply to "@Vlad_Roberto: No, not a programmer. I just know there's better ways to doing anything without massive energy consumption & Banks."
 

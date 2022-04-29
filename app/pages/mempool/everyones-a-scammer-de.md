@@ -1,6 +1,8 @@
+---
 translated_title: Jeder ist ein Scammer
 image: eastwood.jpg
 image_alt: Eastwood Scowl
+---
 
 _Translator's note: scammer = schwindler_
 

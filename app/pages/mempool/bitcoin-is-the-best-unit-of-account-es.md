@@ -1,7 +1,9 @@
+---
 translated_title: Bitcoin, la mejor unidad de cuenta
 translation_url: http://elbitcoin.org/bitcoin-la-mejor-unidad-de-cuenta/
 translation_publication: ElBitcoin.org
 translation_publication_url: http://elbitcoin.org/
+---
 
 La objeción de que el bitcoin no es una buena unidad de cuenta esconde un argumento circular que la invalida. La utilidad del bitcoin como unidad de cuenta depende de lo que previamente se crea acerca de Bitcoin. Para los escépticos no tiene sentido utilizar el bitcoin como unidad de cuenta. Para los que creen que Bitcoin seguirá creciendo hasta convertirse en la moneda universal, no tiene sentido utilizar cualquier otra cosa como unidad de cuenta. Si lo que quieres es poseer la mayor cantidad posible de bitcoins, tiene sentido que fijes el precio de cualquier inversión o emprendimiento en bitcoins. De esta manera, podrás saber si ganas o pierdes en función de tu índice de referencia. Por lo tanto, decir que Bitcoin va a fracasar porque el bitcoin es mala unidad de cuenta es como decir que va a fracasar porque va a fracasar.
 

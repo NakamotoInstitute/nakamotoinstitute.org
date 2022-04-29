@@ -1,6 +1,8 @@
+---
 translated_title: Hyperbitcoinization
 image: BitcoinFace.png
 image_alt: BitcoinFace
+---
 
 ## Eine Geldentwertung, verursacht durch Bitcoin
 

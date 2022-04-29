@@ -1,6 +1,8 @@
+---
 translated_title: Estou acumulando bitcoins e, não, não vou lhe dar nenhum
 image: uncle-scrooge.jpg
 image_alt: Tio Patinhas
+---
 
 Esses acumuladores cretinos! Você os conhece. Eles não vão gastar bitcoins porque acham que eles valerão muito mais no futuro. Mas, como podemos convencer vendedores a aceitarem bitcoins se ninguém vai gastá-los? Precisamos condenar esses acumuladores para que gastem os bitcoins e apoiem os vendedores! Este é um artigo sobre por que essa linha de raciocínio é totalmente errada.
 

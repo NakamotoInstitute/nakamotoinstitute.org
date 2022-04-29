@@ -1,5 +1,7 @@
+---
 image: king-kong.jpg
 image_alt: King Kong
+---
 
 Some [recent
 mumblings](http://www.coindesk.com/can-bitcoins-price-ever-stable/) on

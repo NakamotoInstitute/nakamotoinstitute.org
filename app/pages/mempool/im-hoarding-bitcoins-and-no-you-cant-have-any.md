@@ -1,5 +1,7 @@
+---
 image: uncle-scrooge.jpg
 image_alt: Uncle Scrooge
+---
 
 Those nasty hoarders! You know the ones. They won’t use bitcoins because they think they’ll be worth so much more later. But how can we convince businesses to accept bitcoins if no one will spend them? We need to guilt those hoarders into spending their bitcoins to support the merchants! This article is about why this line of reasoning is exactly wrong.
 

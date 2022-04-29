@@ -1,5 +1,7 @@
+---
 image: krugman-bitcoin.png
 image_alt: Krugman Bitcoin
+---
 
 In 1977, Joan and Richard Sweeney wrote an article called “[Monetary Theory and
 the Great Capitol Hill Baby Sitting Co-op

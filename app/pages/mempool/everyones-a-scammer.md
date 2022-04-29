@@ -1,5 +1,7 @@
+---
 image: eastwood.jpg
 image_alt: Eastwood Scowl
+---
 
 _[Suggested background reading music](https://www.youtube.com/watch?v=dJLWLJgWYqQ)_
 

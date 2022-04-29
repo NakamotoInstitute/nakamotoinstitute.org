@@ -1,5 +1,7 @@
+---
 image: bitcoin.png
 image_alt: Bitcoin
+---
 
 The libertarian strategy for undermining [fiat currencies](http://en.wikipedia.org/wiki/Fiat_money) has always centered on [making gold and silver viable alternatives](http://constitution.org/mon/greenspan_gold.htm). This effort has failed because it is impossible to compete against a digital currency, like the dollar, with a physical commodity due to the high transaction costs associated with the latter. The only way metals can succeed is if fiat fails. While it may be the case that fiat currencies inevitably collapse over the long run, waiting for this possibility is unacceptable given the amount of damage that central banks are inflicting on [humanity’s accumulation of capital](http://mises.org/efandi/ch4.asp).
 

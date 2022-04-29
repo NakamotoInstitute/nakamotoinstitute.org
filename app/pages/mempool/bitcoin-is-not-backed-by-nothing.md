@@ -1,5 +1,7 @@
+---
 original_link: https://www.unchained-capital.com/blog/bitcoin-is-not-backed-by-nothing/
 original_site: Unchained Capital Blog
+---
 
 Contrary to popular belief, bitcoin is in fact backed by something. It is backed by the only thing that backs any form of money: the credibility of its monetary properties. Money is not a collective hallucination nor merely a belief system. Over the course of history, various mediums have emerged as money, and each time, it has not just been by coincidence. Goods that emerge as money possess unique properties that differentiate them from other market goods. While [_The Bitcoin Standard_](https://saifedean.com/the-book/) provides a more full discussion, monetary goods possess unique properties that make them particularly useful as a means of exchange; these properties include scarcity, durability, divisibility, fungibility and portability, among others. With each emergent money, inherent properties of one medium improve upon and obsolete the monetary properties inherent in a pre-existing form of money, and every time a good has monetized, another has demonetized. Essentially, the relative strengths of one monetary medium out-compete that of another, and bitcoin is no different. It represents a technological advancement in the global competition for money; it is the superior successor to gold and the fiat money systems that leveraged gold’s monetary properties.
 

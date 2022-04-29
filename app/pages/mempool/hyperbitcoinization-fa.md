@@ -1,6 +1,8 @@
+---
 translated_title: ابربتکوینی شدن
 image: BitcoinFace.png
 image_alt: BitcoinFace
+---
 
 ## کاهش ارزش و اعتبار پول ناشی از وجود بتکوین
 

@@ -1,5 +1,7 @@
+---
 image: peacock.jpg
 image_alt: Peacock
+---
 
 ## The Search
 

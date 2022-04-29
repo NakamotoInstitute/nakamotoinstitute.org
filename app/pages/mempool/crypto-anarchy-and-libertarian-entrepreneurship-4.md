@@ -1,5 +1,7 @@
+---
 image: make.jpg
 image_alt: Make Install Anarchy
+---
 
 [_Chapter 1: The Strategy_](/mempool/crypto-anarchy-and-libertarian-entrepreneurship-1/ "Crypto-Anarchy and Libertarian Entrepreneurship – Chapter 1: The Strategy")
 

@@ -1,4 +1,6 @@
+---
 image: charlie-chaplin-modern-times.jpg
+---
 
 ## Out of the Memory Hole
 

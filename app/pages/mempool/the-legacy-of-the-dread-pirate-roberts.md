@@ -1,5 +1,7 @@
+---
 image: silk-road-logo.jpg
 image_alt: Silk Road
+---
 
 I vividly remember the first time I saw the Silk Road in mid 2012. Like a timid fawn venturing out into an unknown meadow, I fired up the Tor Browser, entered some gobbledygook into the address bar, and took my first peek into the darknet.
 

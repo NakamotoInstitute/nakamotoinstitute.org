@@ -1,5 +1,7 @@
+---
 image: distributed.jpg
 image_alt: Distributed
+---
 
 ## Libertarian Entrepreneurship
 

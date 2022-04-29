@@ -1,7 +1,9 @@
+---
 translated_title: Kaikki ovat huijareita
 image: eastwood.jpg
 image_alt: Eastwood Scowl
 translation_url: https://medium.com/brandin-kirjasto/kaikki-ovat-huijareita-56e9887be468
+---
 
 _[Suositeltua taustamusiikkia](https://www.youtube.com/watch?v=dJLWLJgWYqQ)_
 

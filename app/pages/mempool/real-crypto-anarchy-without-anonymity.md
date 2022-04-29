@@ -1,5 +1,7 @@
+---
 original_link: http://blog.oleganza.com/post/71410377996/real-crypto-anarchy-without-anonymity
 original_site: Oleg Andreev's Blog
+---
 
 Crypto-anarchy is not some crazy utopian ideology, but a very viable thing that unfolds in front of our eyes this very moment. The Internet and Bitcoin will soon allow people solve social problems in a novel way: instead of ancient formula “the strongest wins and beats the shit out of the loser” we all can achieve a peaceful society where both rich and poor, strong and weak can protect their property and freedom on more equal grounds without relying on violent institutions like governments.
 

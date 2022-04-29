@@ -1,5 +1,7 @@
+---
 image: american-flag-bitcoin.png
 image_alt: A new banner of freedom
+---
 
 ## Attacks on Bitcoin
 

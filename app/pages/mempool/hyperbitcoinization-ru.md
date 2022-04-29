@@ -1,6 +1,8 @@
+---
 translated_title: Гипербиткоинизация
 image: BitcoinFace.png
 image_alt: BitcoinFace
+---
 
 ## Демонетизация, вызванная Биткоином
 

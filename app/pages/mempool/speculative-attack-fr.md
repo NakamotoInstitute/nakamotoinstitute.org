@@ -1,9 +1,11 @@
+---
 translated_title: Attaque spéculative
 image: joker-burning-money.jpg
 image_alt: Joker brûlant de l'argent
 translation_url: https://parlonsbitcoin.com/blog/attaque-speculative
 translation_publication: Parlons Bitcoin
 translation_publication_url: https://parlonsbitcoin.com
+---
 
 ## Introduction
 

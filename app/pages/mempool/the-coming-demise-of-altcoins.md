@@ -1,5 +1,7 @@
+---
 image: wanderer-sea-of-fog.jpg
 image_alt: Wanderer Sea of Fog
+---
 
 > O my brethren, am I then cruel? But I say: What falleth, that shall one also push!
 > Everything of to-day—it falleth, it decayeth; who would preserve it! But I—I wish also to push it!

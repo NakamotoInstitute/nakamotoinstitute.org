@@ -1,5 +1,7 @@
+---
 image: internet.png
 image_alt: Internet
+---
 
 [_Chapter 1: The Strategy_](/mempool/crypto-anarchy-and-libertarian-entrepreneurship-1/ "Crypto-Anarchy and Libertarian Entrepreneurship – Chapter 1: The Strategy")
 

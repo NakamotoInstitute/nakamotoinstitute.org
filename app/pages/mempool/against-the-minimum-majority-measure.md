@@ -1,5 +1,7 @@
+---
 original_link: https://dtrt.org/posts/minimum-majority-measure/
 original_site: David A. Harding's blog
+---
 
 Balaji Srinivasan and Leland Lee of the company 21 Inc. recently posted a [detailed article](https://news.21.co/quantifying-decentralization-e39db233c28e) about measuring Bitcoin’s decentralization. This is a description of some concerns I have with the article:
 

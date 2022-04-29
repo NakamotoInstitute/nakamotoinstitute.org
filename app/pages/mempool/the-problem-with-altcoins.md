@@ -1,5 +1,7 @@
+---
 image: elvis-impersonators.jpg
 image_alt: Elvis Impersonators
+---
 
 ## Why no altcoin can succeed
 

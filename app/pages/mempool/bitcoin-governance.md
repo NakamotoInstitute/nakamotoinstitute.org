@@ -1,5 +1,7 @@
+---
 original_link: https://medium.com/@pierre_rochard/bitcoin-governance-37e86299470f
 original_site: Pierre Rochard's Medium blog
+---
 
 ## Why do we care?
 

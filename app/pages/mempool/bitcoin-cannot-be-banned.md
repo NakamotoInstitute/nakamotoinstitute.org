@@ -1,5 +1,7 @@
+---
 original_link: https://www.unchained-capital.com/blog/bitcoin-cannot-be-banned/
 original_site: Unchained Capital Blog
+---
 
 The idea that somehow bitcoin can be banned by governments is the final stage of grief, right before acceptance. The consequence of the statement is an admission that bitcoin “works.” In fact, it posits that bitcoin works so well that it will threaten the incumbent government-run monopolies on money in which case governments will regulate it out of existence to eliminate the threat. Think about the claim that governments will ban bitcoin as conditional logic. Is bitcoin functional as money? If not, governments have nothing to ban. If yes, then governments will attempt to ban bitcoin. So the anchor point for this line of criticism assumes that bitcoin is functional as money. And then, the question becomes whether or not government intervention could successfully cause an otherwise functioning bitcoin to fail.
 

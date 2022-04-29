@@ -1,3 +1,4 @@
+---
 image: archeologists.png
 image_alt: The Archaeologists (1927) Giorgio de Chirico
 original_link: http://theumlaut.com/2014/06/10/bitcoin-is-great-but-it-wont-fix-our-monkey-brains/
@@ -6,6 +7,7 @@ translated_title: 比特币很伟大，但它修不好我们古板的脑袋
 translation_url: http://www.8btc.com/bitcoin-is-great-but-it-wont-fix-our-monkey-brains
 translation_publication: 8btc.com
 translation_publication_url: http://www.8btc.com/
+---
 
 译者按：
 

@@ -1,5 +1,7 @@
+---
 image: nami.jpg
 image_alt: Nami
+---
 
 ## I Hate Success and Happiness
 

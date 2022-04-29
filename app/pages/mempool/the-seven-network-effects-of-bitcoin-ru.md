@@ -1,9 +1,11 @@
+---
 translated_title: Семь сетевых эффектов Биткоина
 original_link: https://www.weusecoins.com/the-seven-network-effects-of-bitcoin/
 original_site: WeUseCoins
 translation_url: https://bitcoin-translated.ru/sources/nakamoto-institute/seven-network-effects-of-bitcoin/
 translation_publication: Bitcoin Translated
 translation_publication_url: https://bitcoin-translated.ru
+---
 
 Обратите внимание на семь сетевых эффектов Биткоина:
 

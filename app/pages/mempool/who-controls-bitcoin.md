@@ -1,5 +1,7 @@
+---
 image: godfather-puppet.jpg
 image_alt: Godfather Puppet
+---
 
 A common and understandable concern about Bitcoin is that it might become corrupted at the protocol level to serve special interests rather than the unwashed masses. For example, features might become adopted which make Bitcoin much less anonymous or which turn it into a centralized system. This question is really about who can influence the development of updates and who can block them. Anyone can fork Bitcoin, but suppose there were an upgrade proposed by some very influential people-the core devs-and suppose that it would hard-fork the Bitcoin protocol in some fundamental and controversial way. The core devs say it's a good idea, but maybe they've been paid off by the NSA. The question I will answer here is whether and how such an upgrade could be prevented from becoming standardized. Who controls Bitcoin?
 

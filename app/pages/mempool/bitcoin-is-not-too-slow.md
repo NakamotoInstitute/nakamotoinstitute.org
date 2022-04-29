@@ -1,5 +1,7 @@
+---
 original_link: https://www.unchained-capital.com/blog/bitcoin-is-not-too-slow/
 original_site: Unchained Capital Blog
+---
 
 In Peter Thiel’s _Zero to One_, he outlines the impact new technology has on building a non-zero sum future. While the book is focused on individuals and companies, bitcoin as a monetary system is the ultimate zero to one technology leap. For historical examples, Thiel highlights the advent of the steam engine as well as the shift from typewriters to computer processors among others. He also articulates a view that innovation has largely stagnated since the early 1970s, while noting that technological progress since then has been more 1 to n than 0 to 1\. Bitcoin fixes this. Bitcoin’s innovation is not only zero to one; it is fundamentally distinct from the class of innovation that is the focus of Thiel’s book. Bitcoin is a monetary protocol built on digital scarcity, the impact of which will be far broader than steam engines and computer processors.
 

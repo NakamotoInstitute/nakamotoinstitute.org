@@ -1,5 +1,7 @@
+---
 image: ministry-of-information.jpg
 image_alt: Ministry of Information
+---
 
 ## Bitcoin and the Agency Problem
 

@@ -1,5 +1,7 @@
+---
 image: celebs-yell-at-clouds.jpg
 image_alt: Celebs Yell at Clouds
+---
 
 > Combined with the emerging information markets, crypto anarchy will create a liquid market for any and all material which can be put into words and pictures.</p>
 >

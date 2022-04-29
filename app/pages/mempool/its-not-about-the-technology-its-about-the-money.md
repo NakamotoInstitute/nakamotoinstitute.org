@@ -1,5 +1,7 @@
+---
 image: lyle-lanley-blockchain-technology.png
 image_alt: Lyle Lanley sells blockchain tech
+---
 
 ## Blockchain Technology
 

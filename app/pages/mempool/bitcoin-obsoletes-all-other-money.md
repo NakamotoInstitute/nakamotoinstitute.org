@@ -1,5 +1,7 @@
+---
 original_link: https://unchained-capital.com/blog/bitcoin-obsoletes-all-other-money/
 original_site: Unchained Capital Blog
+---
 
 When it comes to bitcoin adoption, there are generally two rules that never seem to fail. Everyone always feels late, and everyone always wishes they had bought more bitcoin. There are exceptions to every rule, but bitcoin has an uncanny ability to screw with the human psyche. It turns out that 21 million is a scarily small number, and it actually becomes smaller as more individuals come to understand that the fixed supply of bitcoin is credibly enforced and that monetary networks converge on a single medium. Demand for bitcoin is driven by the credibility of its monetary properties and the convergent nature of money, but increasing demand for bitcoin reinforces the scarcity of bitcoin’s fixed supply. As it does, bitcoin becomes more valuable as a monetary medium. While this becomes evident the further down the bitcoin rabbit hole one travels, it is not uncommon for individuals on the periphery to be overwhelmed by the sheer number of cryptocurrencies. Sure, bitcoin is in the “lead” today, but there are thousands; how do you know bitcoin is not MySpace? How can you be sure that something new doesn’t overtake bitcoin?
 

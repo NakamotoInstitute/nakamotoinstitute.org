@@ -1,5 +1,7 @@
+---
 original_link: https://thesaifhouse.wordpress.com/2017/05/19/economics-of-bitcoin-as-a-settlement-network/
 original_site: The Saif House
+---
 
 As Bitcoin’s popularity continues to increase, its transaction fees rise as well, leading to the customary chorus of doom and gloom by those still stuck in [stage 1 of dealing with Bitcoin grief](https://twitter.com/saifedean/status/864512341987258369). With average transaction fees exceeding $2, the doom-mongers assure us Bitcoin is doomed, because nobody wants to pay $2 to make a payment, when credit cards, paypal, and many other options charge far less transaction costs.
 

@@ -1,6 +1,8 @@
+---
 translated_title: Estoy acumulando bitcoins y no voy a darte ni un Satoshi
 image: uncle-scrooge.jpg
 image_alt: Uncle Scrooge
+---
 
 ¡Esos malditos acaparadores! Sabes a quienes me refiero. Ellos no van a usar sus bitcoins porque piensan que en el futuro van a valer mucho más. Pero ¿cómo podemos convencer a las empresas de que acepten bitcoins si nadie está dispuesto a gastarlos? ¡Tenemos que hacer que los acaparadores se sientan culpables para que gasten sus bitcoins y así apoyen a los comerciantes! Este artículo trata de explicar por qué esta línea de razonamiento es completamente errónea.
 

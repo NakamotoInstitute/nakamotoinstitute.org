@@ -1,7 +1,9 @@
+---
 translated_title: Accumulo bitcoin e no, non ne do a nessuno!
 image: uncle-scrooge.jpg
 image_alt: Uncle Scrooge
 translation_url: http://ilporticodipinto.it/content/metto-da-parte-bitcoin-e-no-non-ne-do-nessuno
+---
 
 Eh, questi fastidiosi risparmiatori! Si capisce a chi mi sto riferendo: quelli che non usano i loro bitcoin perché pensano che varranno molto di più in futuro. Ma come facciamo a convincere le aziende ad accettare bitcoin se nessuno li vorrà spendere? Dobbiamo far sentire in colpa coloro che li accumulano per far si che possano supportare i negozianti! Questo articolo spiega perché questo modo di ragionare è sbagliato.
 

@@ -1,5 +1,7 @@
+---
 original_link: https://medium.com/@RossUlbricht/bitcoin-equals-freedom-6c33986b4852
 original_site: Ross Ulbricht's Medium blog
+---
 
 Something special happened in the first year or so after Satoshi gave us Bitcoin, something no one expected and many thought was impossible. Try to imagine Bitcoin back then, before you could buy things with it, before there was an exchange rate, before anyone really knew what, if anything, would happen with it. Bitcoin didn’t start out as money. It became money, but it did so unlike any money that came before it. For all the things Bitcoin has made possible, for all the ways it is changing our world, we don’t fully appreciate or even understand what happened in those early days, when it was just a play thing for geeks.
 

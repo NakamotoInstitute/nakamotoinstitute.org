@@ -1,4 +1,3 @@
-
 ## The Value of Money
 
 No matter how many times Bitcoin grows by orders of magnitude, holdouts still remain who argue that it is a bubble destined to fail. To address this claim, I will describe a theory that describes how to appraise Bitcoin according to the Austrian theory of money.

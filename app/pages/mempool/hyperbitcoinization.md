@@ -1,5 +1,7 @@
+---
 image: BitcoinFace.png
 image_alt: BitcoinFace
+---
 
 ## Bitcoin-Induced Demonetization
 

@@ -1,5 +1,7 @@
+---
 original_link: https://www.unchained-capital.com/blog/bitcoin-cannot-be-banned/
 original_site: Unchained Capital Blog
+---
 
 At the Democratic National Convention (August 2020), Congresswoman Alexandria Ocasio-Cortez described the Bernie Sanders presidential campaign as, “a movement that realizes the unsustainable brutality of an economy that rewards explosive inequalities of wealth for the few at the expense of long-term stability for the many.” That the current economic system is working very well for a few at the expense of the many has become more widely recognized and accepted across both sides of the political aisle in recent years. While there is vehement disagreement on the appropriate solution, most everyone at least agrees that there is a problem. Fortunately or unfortunately, there is no political solution to a problem that is inherently of economic origin. It is unfortunate because politicians of all ideologies will make promises of grandeur while further dividing the nation as they hopelessly search for a political solution which does not exist. At the same time, it is fortunate that the solution is not political, as bridging partisan divides has historically proven to be a fool’s errand.
 

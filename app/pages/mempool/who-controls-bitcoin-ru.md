@@ -1,5 +1,7 @@
+---
 translated_title: Кто контролирует Биткоин?
 image: godfather-puppet.jpg
+---
 
 ## Кто Контролирует Биткоин?
 

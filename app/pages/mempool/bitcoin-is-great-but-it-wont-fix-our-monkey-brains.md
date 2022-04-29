@@ -1,7 +1,9 @@
+---
 image: archeologists.png
 image_alt: The Archaeologists (1927) Giorgio de Chirico
 original_link: http://theumlaut.com/2014/06/10/bitcoin-is-great-but-it-wont-fix-our-monkey-brains/
 original_site: The Ümlaut
+---
 
 Bitcoin is now [generally](http://unqualified-reservations.blogspot.com/2013/01/how-bitcoin-dies.html) understood to be [A Thing](http://trilema.com/2013/stage-n-bitcoin-exists/), and a [particularly exciting one at that](http://trilema.com/2014/the-idea-that-bitcoin-is-a-sovereign/). Once-fashionable skepticism for its own sake is quickly becoming less click-worthy than this [gripping Stephensonian saga](http://www.laurelzuckerman.com/2013/03/digital-currency-ten-years-before-bitcoin-neal-stephensons-cryptonomicon-.html) written in real time. Take care you don’t go overboard. [I’ve done it myself](http://theumlaut.com/2014/01/21/bitcoin-2-0-decentralized-corporations-derivatives-and-information-markets/). I’m sure I still do, in some way or another. There are many trees and [the forest is still taking shape](http://www.econlib.org/library/YPDBooks/Fisher/fshToI7.html#Part II, Chapter 7). And boy, [can those trees captivate](http://thecurioustask.tumblr.com/post/87898539429/for-instance). This presents new problems.
 

@@ -1,5 +1,7 @@
+---
 image: programming-with-solidity.png
 image_alt: Programming with Solidity
+---
 
 As [some have noted](https://twitter.com/jgarzik/status/736945669978525696), I
 did not understand Ethereum very well when I wrote my [previous

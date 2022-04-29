@@ -1,5 +1,7 @@
+---
 original_link: https://www.weusecoins.com/the-seven-network-effects-of-bitcoin/
 original_site: WeUseCoins
+---
 
 The 7 network effects of Bitcoin are as follows:
 

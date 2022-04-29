@@ -1,4 +1,6 @@
+---
 image: dr-strangelove-bomb.jpg
+---
 
 ## Introduction
 

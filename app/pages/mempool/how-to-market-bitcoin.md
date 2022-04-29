@@ -1,4 +1,3 @@
-
 ## How Bitcoin Adoption Works
 
 Does Bitcoin need to be sanitized and separated from its anarchist, black-market roots in order to become acceptable to the general population? Must Bitcoin become an upstanding citizen and saddle itself with KYC requirements and capital controls? Absolutely not! Those making this argument totally misunderstand the way that Bitcoin adoption will proceed and are consequently wrong-headed about how to market it. The most important rule of the economics of Bitcoin is that _investment creates liquidity, and liquidity creates value_. The more liquid that Bitcoin becomes, the more trade it can absorb, the more it can be used as a medium of exchange, and the easier it will become to profit from a Bitcoin-based service.
