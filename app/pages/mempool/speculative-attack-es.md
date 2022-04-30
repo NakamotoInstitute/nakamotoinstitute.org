@@ -37,7 +37,7 @@ Algunas de las críticas mencionadas son correctas, si bien auténticos [non seq
 >
 > <footer class="blockquote-footer">[Robert Mundell](http://en.wikipedia.org/wiki/Robert_Mundell), ["Uses and Abuses of Gresham's Law in the History of Money"](http://www.columbia.edu/~ram15/grash.html)</footer>
 
-Bitcoin no es sólo buen dinero; es el mejor dinero.[^5] TLa red Bitcoin tiene la mejor política monetaria[^6] y la mejor marca.[^7] Deberíamos entonces esperar que los bitcoins desalojen a las monedas malas y débiles.[^8] ¿Según qué proceso Bitcoin se convertirá en el dinero dominante? ¿Qué monedas fiduciarias serán las primeras en desaparecer? Estas son las preguntas interesantes del momento, puesto que las premisas subyacentes a estas preguntas ya son verdades establecidas.[^9]
+Bitcoin no es sólo buen dinero; es el mejor dinero.[^5] La red Bitcoin tiene la mejor política monetaria[^6] y la mejor marca.[^7] Deberíamos entonces esperar que los bitcoins desalojen a las monedas malas y débiles.[^8] ¿Según qué proceso Bitcoin se convertirá en el dinero dominante? ¿Qué monedas fiduciarias serán las primeras en desaparecer? Estas son las preguntas interesantes del momento, puesto que las premisas subyacentes a estas preguntas ya son verdades establecidas.[^9]
 
 ## 1\. Sangrado fiat
 
