@@ -219,7 +219,7 @@
   {
     "category": "releases",
     "medium": "bitcointalk",
-    "text": "Announcing version 0.3 of Bitcoin, the P2P cryptocurrency!  Bitcoin is a digital currency using cryptography and a distributed network to replace the need for a trusted central server.  Escape the arbitrary inflation risk of centrally managed currencies!  Bitcoin's total circulation is limited to 21 million coins.  The coins are gradually released to the network's nodes based on the CPU proof-of-worker they contribute, so you can get a share of them by contributing your idle CPU time.",
+    "text": "Announcing version 0.3 of Bitcoin, the P2P cryptocurrency!  Bitcoin is a digital currency using cryptography and a distributed network to replace the need for a trusted central server.  Escape the arbitrary inflation risk of centrally managed currencies!  Bitcoin's total circulation is limited to 21 million coins.  The coins are gradually released to the network's nodes based on the CPU power they contribute, so you can get a share of them by contributing your idle CPU time.",
     "post_id": "168",
     "date": "July 6, 2010"
   },
@@ -556,7 +556,7 @@
     "category": "bitcoin-design",
     "medium": "email",
     "email_id": "1",
-    "text": "The main properties: \n Double-spending is prevented with a peer-to-peer network.\n No mint or other trusted parties.\n Participants can be anonymous.\n New coins are made from Hashcash style proof-of-work.\n The proof-of-work for new coin generation also proof-of-workers the network to prevent double-spending.",
+    "text": "The main properties: \n Double-spending is prevented with a peer-to-peer network.\n No mint or other trusted parties.\n Participants can be anonymous.\n New coins are made from Hashcash style proof-of-work.\n The proof-of-work for new coin generation also powers the network to prevent double-spending.",
     "date": "November 1, 2008"
   },
   {
@@ -584,21 +584,21 @@
     "category": "mining",
     "medium": "email",
     "email_id": "3",
-    "text": "The requirement is that the good guys collectively have more CPU proof-of-worker than any single attacker.",
+    "text": "The requirement is that the good guys collectively have more CPU power than any single attacker.",
     "date": "November 3, 2008"
   },
   {
     "category": "mining",
     "medium": "email",
     "email_id": "3",
-    "text": "There would be many smaller zombie farms that are not big enough to overproof-of-worker the network, and they could still make money by generating bitcoins. The smaller farms are then the \"honest nodes\". (I need a better term than \"honest\") The more smaller farms resort to generating bitcoins, the higher the bar gets to overproof-of-worker the network, making larger farms also too small to overproof-of-worker it so that they may as well generate bitcoins too. According to the \"long tail\" theory, the small, medium and merely large farms put together should add up to a lot more than the biggest zombie farm.",
+    "text": "There would be many smaller zombie farms that are not big enough to overpower the network, and they could still make money by generating bitcoins. The smaller farms are then the \"honest nodes\". (I need a better term than \"honest\") The more smaller farms resort to generating bitcoins, the higher the bar gets to overpower the network, making larger farms also too small to overpower it so that they may as well generate bitcoins too. According to the \"long tail\" theory, the small, medium and merely large farms put together should add up to a lot more than the biggest zombie farm.",
     "date": "November 3, 2008"
   },
   {
     "category": "mining",
     "medium": "email",
     "email_id": "3",
-    "text": "Even if a bad guy does overproof-of-worker the network, it's not like he's instantly rich. All he can accomplish is to take back money he himself spent, like bouncing a check. To exploit it, he would have to buy something from a merchant, wait till it ships, then overproof-of-worker the network and try to take his money back. I don't think he could make as much money trying to pull a carding scheme like that as he could by generating bitcoins. With a zombie farm that big, he could generate more bitcoins than everyone else combined.",
+    "text": "Even if a bad guy does overpower the network, it's not like he's instantly rich. All he can accomplish is to take back money he himself spent, like bouncing a check. To exploit it, he would have to buy something from a merchant, wait till it ships, then overpower the network and try to take his money back. I don't think he could make as much money trying to pull a carding scheme like that as he could by generating bitcoins. With a zombie farm that big, he could generate more bitcoins than everyone else combined.",
     "date": "November 3, 2008"
   },
   {
@@ -626,7 +626,7 @@
     "category": "mining, difficulty",
     "medium": "email",
     "email_id": "5",
-    "text": "As computers get faster and the total computing proof-of-worker applied to creating bitcoins increases, the difficulty increases proportionally to keep the total new production constant. Thus, it is known in advance how many new bitcoins will be created every year in the future.",
+    "text": "As computers get faster and the total computing power applied to creating bitcoins increases, the difficulty increases proportionally to keep the total new production constant. Thus, it is known in advance how many new bitcoins will be created every year in the future.",
     "date": "November 8, 2008"
   },
   {
@@ -661,7 +661,7 @@
     "category": "nodes, mining, proof-of-work",
     "medium": "email",
     "email_id": "6",
-    "text": "It is strictly necessary that the longest chain is always considered the valid one. Nodes that were present may remember that one branch was there first and got replaced by another, but there would be no way for them to convince those who were not present of this. We can't have subfactions of nodes that cling to one branch that they think was first, others that saw another branch first, and others that joined later and never saw what happened. The CPU proof-of-worker proof-of-work vote must have the final say. The only way for everyone to stay on the same page is to believe that the longest chain is always the valid one, no matter what.",
+    "text": "It is strictly necessary that the longest chain is always considered the valid one. Nodes that were present may remember that one branch was there first and got replaced by another, but there would be no way for them to convince those who were not present of this. We can't have subfactions of nodes that cling to one branch that they think was first, others that saw another branch first, and others that joined later and never saw what happened. The CPU power proof-of-work vote must have the final say. The only way for everyone to stay on the same page is to believe that the longest chain is always the valid one, no matter what.",
     "date": "November 9, 2008"
   },
   {
@@ -710,7 +710,7 @@
     "category": "proof-of-work",
     "medium": "email",
     "email_id": "8",
-    "text": "The proof-of-work chain is itself self-evident proof that it came from the globally shared view. Only the majority of the network together has enough CPU proof-of-worker to generate such a difficult chain of proof-of-work. Any user, upon receiving the proof-of-work chain, can see what the majority of the network has approved. Once a transaction is hashed into a link that's a few links back in the chain, it is firmly etched into the global history.",
+    "text": "The proof-of-work chain is itself self-evident proof that it came from the globally shared view. Only the majority of the network together has enough CPU power to generate such a difficult chain of proof-of-work. Any user, upon receiving the proof-of-work chain, can see what the majority of the network has approved. Once a transaction is hashed into a link that's a few links back in the chain, it is firmly etched into the global history.",
     "date": "November 9, 2008"
   },
   {
@@ -766,7 +766,7 @@
     "category": "proof-of-work",
     "medium": "email",
     "email_id": "11",
-    "text": "The proof-of-work chain is a solution to the Byzantine Generals' Problem. I'll try to rephrase it in that context.\nA number of Byzantine Generals each have a computer and want to attack the King's wi-fi by brute forcing the password, which they've learned is a certain number of characters in length. Once they stimulate the network to generate a packet, they must crack the password within a limited time to break in and erase the logs, otherwise they will be discovered and get in trouble. They only have enough CPU proof-of-worker to crack it fast enough if a majority of them attack at the same time. \n They don't particularly care when the attack will be, just that they all agree. It has been decided that anyone who feels like it will announce a time, and whatever time is heard first will be the official attack time. The problem is that the network is not instantaneous, and if two generals announce different attack times at close to the same time, some may hear one first and others hear the other first. They use a proof-of-work chain to solve the problem. Once each general receives whatever attack time he hears first, he sets his computer to solve an extremely difficult proof-of-work problem that includes the attack time in its hash. The proof-of-work is so difficult, it's expected to take 10 minutes of them all working at once before one of them finds a solution. Once one of the generals finds a proof-of-work, he broadcasts it to the network, and everyone changes their current proof-of-work computation to include that proof-of-work in the hash they're working on. If anyone was working on a different attack time, they switch to this one, because its proof-of-work chain is now longer.\n After two hours, one attack time should be hashed by a chain of 12 proofs-of-work. Every general, just by verifying the difficulty of the proof-of-work chain, can estimate how much parallel CPU proof-of-worker per hour was expended on it and see that it must have required the majority of the computers to produce that much proof-of-work in the allotted time. They had to all have seen it because the proof-of-work is proof that they worked on it. If the CPU proof-of-worker exhibited by the proof-of-work chain is sufficient to crack the password, they can safely attack at the agreed time.\n The proof-of-work chain is how all the synchronisation, distributed database and global view problems you've asked about are solved.",
+    "text": "The proof-of-work chain is a solution to the Byzantine Generals' Problem. I'll try to rephrase it in that context.\nA number of Byzantine Generals each have a computer and want to attack the King's wi-fi by brute forcing the password, which they've learned is a certain number of characters in length. Once they stimulate the network to generate a packet, they must crack the password within a limited time to break in and erase the logs, otherwise they will be discovered and get in trouble. They only have enough CPU power to crack it fast enough if a majority of them attack at the same time. \n They don't particularly care when the attack will be, just that they all agree. It has been decided that anyone who feels like it will announce a time, and whatever time is heard first will be the official attack time. The problem is that the network is not instantaneous, and if two generals announce different attack times at close to the same time, some may hear one first and others hear the other first. They use a proof-of-work chain to solve the problem. Once each general receives whatever attack time he hears first, he sets his computer to solve an extremely difficult proof-of-work problem that includes the attack time in its hash. The proof-of-work is so difficult, it's expected to take 10 minutes of them all working at once before one of them finds a solution. Once one of the generals finds a proof-of-work, he broadcasts it to the network, and everyone changes their current proof-of-work computation to include that proof-of-work in the hash they're working on. If anyone was working on a different attack time, they switch to this one, because its proof-of-work chain is now longer.\n After two hours, one attack time should be hashed by a chain of 12 proofs-of-work. Every general, just by verifying the difficulty of the proof-of-work chain, can estimate how much parallel CPU power per hour was expended on it and see that it must have required the majority of the computers to produce that much proof-of-work in the allotted time. They had to all have seen it because the proof-of-work is proof that they worked on it. If the CPU power exhibited by the proof-of-work chain is sufficient to crack the password, they can safely attack at the agreed time.\n The proof-of-work chain is how all the synchronisation, distributed database and global view problems you've asked about are solved.",
     "date": "November 13, 2008"
   },
   {
@@ -815,7 +815,7 @@
     "category": "proof-of-work, mining",
     "medium": "email",
     "email_id": "13",
-    "text": "The proof-of-work is a Hashcash style SHA-256 collision finding. It's a memoryless process where you do millions of hashes a second, with a small chance of finding one each time. The 3 or 4 fastest nodes' dominance would only be proportional to their share of the total CPU proof-of-worker. Anyone's chance of finding a solution at any time is proportional to their CPU proof-of-worker.",
+    "text": "The proof-of-work is a Hashcash style SHA-256 collision finding. It's a memoryless process where you do millions of hashes a second, with a small chance of finding one each time. The 3 or 4 fastest nodes' dominance would only be proportional to their share of the total CPU power. Anyone's chance of finding a solution at any time is proportional to their CPU power.",
     "date": "November 17, 2008"
   },
   {
@@ -829,7 +829,7 @@
     "category": "proof-of-work",
     "medium": "email",
     "email_id": "14",
-    "text": "The credential that establishes someone as real is the ability to supply CPU proof-of-worker.",
+    "text": "The credential that establishes someone as real is the ability to supply CPU power.",
     "date": "November 17, 2008"
   },
   {
@@ -924,7 +924,7 @@
   },
   {
     "category": "proof-of-work, double-spending",
-    "text": "We propose a solution to the double-spending problem using a peer-to-peer network. The network timestamps transactions by hashing them into an ongoing chain of hash-based proof-of-work, forming a record that cannot be changed without redoing the proof-of-work. The longest chain not only serves as proof of the sequence of events witnessed, but proof that it came from the largest pool of CPU proof-of-worker. As long as a majority of CPU proof-of-worker is controlled by nodes that are not cooperating to attack the network, they'll generate the longest chain and outpace attackers. The network itself requires minimal structure.",
+    "text": "We propose a solution to the double-spending problem using a peer-to-peer network. The network timestamps transactions by hashing them into an ongoing chain of hash-based proof-of-work, forming a record that cannot be changed without redoing the proof-of-work. The longest chain not only serves as proof of the sequence of events witnessed, but proof that it came from the largest pool of CPU power. As long as a majority of CPU power is controlled by nodes that are not cooperating to attack the network, they'll generate the longest chain and outpace attackers. The network itself requires minimal structure.",
     "medium": "whitepaper",
     "date": "October 31, 2008"
   },
@@ -948,7 +948,7 @@
   },
   {
     "category": "double-spending, proof-of-work",
-    "text": "In this paper, we propose a solution to the double-spending problem using a peer-to-peer distributed timestamp server to generate computational proof of the chronological order of transactions. The system is secure as long as honest nodes collectively control more CPU proof-of-worker than any cooperating group of attacker nodes.",
+    "text": "In this paper, we propose a solution to the double-spending problem using a peer-to-peer distributed timestamp server to generate computational proof of the chronological order of transactions. The system is secure as long as honest nodes collectively control more CPU power than any cooperating group of attacker nodes.",
     "medium": "whitepaper",
     "date": "October 31, 2008"
   },
@@ -990,7 +990,7 @@
   },
   {
     "category": "proof-of-work",
-    "text": "The proof-of-work also solves the problem of determining representation in majority decision making. If the majority were based on one-IP-address-one-vote, it could be subverted by anyone able to allocate many IPs. Proof-of-work is essentially one-CPU-one-vote. The majority decision is represented by the longest chain, which has the greatest proof-of-work effort invested in it. If a majority of CPU proof-of-worker is controlled by honest nodes, the honest chain will grow the fastest and outpace any competing chains. To modify a past block, an attacker would have to redo the proof-of-work of the block and all blocks after it and then catch up with and surpass the work of the honest nodes. We will show later that the probability of a slower attacker catching up diminishes exponentially as subsequent blocks are added.",
+    "text": "The proof-of-work also solves the problem of determining representation in majority decision making. If the majority were based on one-IP-address-one-vote, it could be subverted by anyone able to allocate many IPs. Proof-of-work is essentially one-CPU-one-vote. The majority decision is represented by the longest chain, which has the greatest proof-of-work effort invested in it. If a majority of CPU power is controlled by honest nodes, the honest chain will grow the fastest and outpace any competing chains. To modify a past block, an attacker would have to redo the proof-of-work of the block and all blocks after it and then catch up with and surpass the work of the honest nodes. We will show later that the probability of a slower attacker catching up diminishes exponentially as subsequent blocks are added.",
     "medium": "whitepaper",
     "date": "October 31, 2008"
   },
@@ -1032,7 +1032,7 @@
   },
   {
     "category": "mining, bitcoin-economics",
-    "text": "The incentive may help encourage nodes to stay honest. If a greedy attacker is able to assemble more CPU proof-of-worker than all the honest nodes, he would have to choose between using it to defraud people by stealing back his payments, or using it to generate new coins. He ought to find it more profitable to play by the rules, such rules that favour him with more new coins than everyone else combined, than to undermine the system and the validity of his own wealth.",
+    "text": "The incentive may help encourage nodes to stay honest. If a greedy attacker is able to assemble more CPU power than all the honest nodes, he would have to choose between using it to defraud people by stealing back his payments, or using it to generate new coins. He ought to find it more profitable to play by the rules, such rules that favour him with more new coins than everyone else combined, than to undermine the system and the validity of his own wealth.",
     "medium": "whitepaper",
     "date": "October 31, 2008"
   },
@@ -1050,7 +1050,7 @@
   },
   {
     "category": "bitcoin-design, nodes",
-    "text": "It is possible to verify payments without running a full network node. A user only needs to keep a copy of the block headers of the longest proof-of-work chain, which he can get by querying network nodes until he's convinced he has the longest chain, and obtain the Merkle branch linking the transaction to the block it's timestamped in. He can't check the transaction for himself, but by linking it to a place in the chain, he can see that a network node has accepted it, and blocks added after it further confirm the network has accepted it. \nAs such, the verification is reliable as long as honest nodes control the network, but is more vulnerable if the network is overproof-of-workered by an attacker. While network nodes can verify transactions for themselves, the simplified method can be fooled by an attacker's fabricated transactions for as long as the attacker can continue to overproof-of-worker the network. One strategy to protect against this would be to accept alerts from network nodes when they detect an invalid block, prompting the user's software to download the full block and alerted transactions to confirm the inconsistency. Businesses that receive frequent payments will probably still want to run their own nodes for more independent security and quicker verification.",
+    "text": "It is possible to verify payments without running a full network node. A user only needs to keep a copy of the block headers of the longest proof-of-work chain, which he can get by querying network nodes until he's convinced he has the longest chain, and obtain the Merkle branch linking the transaction to the block it's timestamped in. He can't check the transaction for himself, but by linking it to a place in the chain, he can see that a network node has accepted it, and blocks added after it further confirm the network has accepted it. \nAs such, the verification is reliable as long as honest nodes control the network, but is more vulnerable if the network is overpowered by an attacker. While network nodes can verify transactions for themselves, the simplified method can be fooled by an attacker's fabricated transactions for as long as the attacker can continue to overpower the network. One strategy to protect against this would be to accept alerts from network nodes when they detect an invalid block, prompting the user's software to download the full block and alerted transactions to confirm the inconsistency. Businesses that receive frequent payments will probably still want to run their own nodes for more independent security and quicker verification.",
     "medium": "whitepaper",
     "date": "October 31, 2008"
   },
@@ -1086,13 +1086,13 @@
   },
   {
     "category": "bitcoin-design, trusted-third-parties",
-    "text": "We have proposed a system for electronic transactions without relying on trust. We started with the usual framework of coins made from digital signatures, which provides strong control of ownership, but is incomplete without a way to prevent double-spending. To solve this, we proposed a peer-to-peer network using proof-of-work to record a public history of transactions that quickly becomes computationally impractical for an attacker to change if honest nodes control a majority of CPU proof-of-worker.",
+    "text": "We have proposed a system for electronic transactions without relying on trust. We started with the usual framework of coins made from digital signatures, which provides strong control of ownership, but is incomplete without a way to prevent double-spending. To solve this, we proposed a peer-to-peer network using proof-of-work to record a public history of transactions that quickly becomes computationally impractical for an attacker to change if honest nodes control a majority of CPU power.",
     "medium": "whitepaper",
     "date": "October 31, 2008"
   },
   {
     "category": "nodes, mining",
-    "text": "The network is robust in its unstructured simplicity. Nodes work all at once with little coordination. They do not need to be identified, since messages are not routed to any particular place and only need to be delivered on a best effort basis. Nodes can leave and rejoin the network at will, accepting the proof-of-work chain as proof of what happened while they were gone. They vote with their CPU proof-of-worker, expressing their acceptance of valid blocks by working on extending them and rejecting invalid blocks by refusing to work on them. Any needed rules and incentives can be enforced with this consensus mechanism.",
+    "text": "The network is robust in its unstructured simplicity. Nodes work all at once with little coordination. They do not need to be identified, since messages are not routed to any particular place and only need to be delivered on a best effort basis. Nodes can leave and rejoin the network at will, accepting the proof-of-work chain as proof of what happened while they were gone. They vote with their CPU power, expressing their acceptance of valid blocks by working on extending them and rejecting invalid blocks by refusing to work on them. Any needed rules and incentives can be enforced with this consensus mechanism.",
     "medium": "whitepaper",
     "date": "October 31, 2008"
   }
