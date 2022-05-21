@@ -1090,5 +1090,16 @@
     "categories": ["economics"],
     "doctype": "book",
     "external": "https://mises.org/library/man-economy-and-state-power-and-market"
+  },
+  {
+    "id": 104,
+    "title": "Designing Trusted Services with Group Controls",
+    "author": ["nick-szabo"],
+    "date": "2000",
+    "slug": "designing-trusted-services-with-group-controls",
+    "formats": ["html", "ext"],
+    "categories": ["economics", "property", "cryptography"],
+    "doctype": "essay",
+    "external": "https://web.archive.org/web/20160404162540/http://szabo.best.vwh.net/groupcontrols.html"
   }
 ]
