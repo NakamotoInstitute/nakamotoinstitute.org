@@ -6,6 +6,8 @@
 #
 babel==2.9.1
     # via -r requirements/base.in
+cachelib==0.8.0
+    # via flask-caching
 certifi==2021.5.30
     # via requests
 charset-normalizer==2.0.6
@@ -23,7 +25,7 @@ flask==2.1.2
     #   flask-sqlalchemy
 flask-assets==2.0
     # via -r requirements/base.in
-flask-caching==1.10.1
+flask-caching==1.11.1
     # via -r requirements/base.in
 flask-flatpages==0.8.1
     # via -r requirements/base.in
