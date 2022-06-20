@@ -12,7 +12,7 @@
     <h4 class="text-muted">{{episode.date.strftime('%B %d, %Y')}}</h4>
   </div>
 
-  {% block episode %}{% endblock %}
+  <div class="content">{{page.html|safe}}</div>
 
   <div class="embed-responsive embed-responsive-16by9 mb-3">
     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{episode.youtube}}?rel=0" allowfullscreen></iframe>
