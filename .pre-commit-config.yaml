@@ -4,13 +4,13 @@ fail_fast: true
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.0.1
+    rev: v4.3.0
     hooks:
       - id: trailing-whitespace
       - id: end-of-file-fixer
 
   - repo: https://github.com/psf/black
-    rev: 22.1.0
+    rev: 22.3.0
     hooks:
       - id: black
 
@@ -19,15 +19,15 @@ repos:
     hooks:
       - id: isort
 
-  - repo: https://gitlab.com/pycqa/flake8
-    rev: 3.9.2
+  - repo: https://github.com/pycqa/flake8
+    rev: 4.0.1
     hooks:
       - id: flake8
         args: ["--config=setup.cfg"]
         additional_dependencies: [flake8-isort]
 
   - repo: https://github.com/jazzband/pip-tools
-    rev: 6.2.0
+    rev: 6.6.2
     hooks:
       - id: pip-compile
         name: pip-compile requirements/base.txt

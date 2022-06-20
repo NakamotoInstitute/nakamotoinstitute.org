@@ -4,7 +4,7 @@
 #
 #    pip-compile requirements/base.in
 #
-babel==2.9.1
+babel==2.10.3
     # via -r requirements/base.in
 cachelib==0.8.0
     # via flask-caching
@@ -65,7 +65,7 @@ pytz==2022.1
     #   babel
 pyyaml==5.4.1
     # via flask-flatpages
-requests==2.27.1
+requests==2.28.0
     # via -r requirements/base.in
 six==1.16.0
     # via

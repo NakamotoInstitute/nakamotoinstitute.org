@@ -4,9 +4,9 @@
 #
 #    pip-compile requirements/dev.in
 #
-backports.entry-points-selectable==1.1.1
+backports-entry-points-selectable==1.1.1
     # via virtualenv
-black==22.1
+black==22.3.0
     # via -r requirements/dev.in
 cfgv==3.3.1
     # via pre-commit
@@ -18,11 +18,11 @@ distlib==0.3.2
     # via virtualenv
 filelock==3.0.12
     # via virtualenv
-flake8==3.9.2
+flake8==4.0.1
     # via
     #   -r requirements/dev.in
     #   flake8-isort
-flake8-isort==4.0.0
+flake8-isort==4.1.1
     # via -r requirements/dev.in
 identify==2.2.15
     # via pre-commit
@@ -40,11 +40,11 @@ platformdirs==2.3.0
     # via
     #   black
     #   virtualenv
-pre-commit==2.15.0
+pre-commit==2.19.0
     # via -r requirements/dev.in
-pycodestyle==2.7.0
+pycodestyle==2.8.0
     # via flake8
-pyflakes==2.3.1
+pyflakes==2.4.0
     # via flake8
 pyyaml==5.4.1
     # via
