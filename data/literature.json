@@ -1101,5 +1101,16 @@
     "categories": ["economics", "property", "cryptography"],
     "doctype": "essay",
     "external": "https://web.archive.org/web/20160404162540/http://szabo.best.vwh.net/groupcontrols.html"
+  },
+  {
+    "id": 105,
+    "title": "A Measure of Sacrifice",
+    "author": ["nick-szabo"],
+    "date": "2002",
+    "slug": "a-measure-of-sacrifice",
+    "formats": ["html", "ext"],
+    "categories": ["economics", "history"],
+    "doctype": "essay",
+    "external": "https://web.archive.org/web/20160327021338/http://szabo.best.vwh.net/synch.html"
   }
 ]
