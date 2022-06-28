@@ -9,6 +9,11 @@
     margin-bottom: 1rem;
   }
 
+  .citations li p:only-child {
+    padding-left: 3rem;
+    text-indent: -3rem;
+  }
+
   h2 > a,
   h2 > a:focus,
   h2 > a:hover,

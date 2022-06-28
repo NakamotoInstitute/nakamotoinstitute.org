@@ -99,5 +99,16 @@
     "categories": ["cryptography"],
     "doctype": "essay",
     "external": "https://www.tik.ee.ethz.ch/file/a20a865ce40d40c8f942cf206a7cba96/Scalable_Funding_Of_Blockchain_Micropayment_Networks%20(1).pdf"
+  },
+  {
+    "id": 10,
+    "title": "Commodity, Scarcity, and Monetary Value Theory in Light of Bitcoin",
+    "author": ["konrad-s-graf"],
+    "date": "February 24, 2015",
+    "slug": "commodity-scarcity-and-monetary-value-theory-in-light-of-bitcoin",
+    "formats": ["html", "pdf", "ext"],
+    "categories": ["bitcoin", "economics"],
+    "doctype": "essay",
+    "external": "https://www.konradsgraf.com/s/Graf-commodity-Bitcoin-dr.pdf"
   }
 ]
