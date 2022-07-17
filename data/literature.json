@@ -1112,5 +1112,16 @@
     "categories": ["economics", "history"],
     "doctype": "essay",
     "external": "https://web.archive.org/web/20160327021338/http://szabo.best.vwh.net/synch.html"
+  },
+  {
+    "id": 106,
+    "title": "Pricing via Processing or Combatting Junk Mail",
+    "author": ["cynthia-dwork", "moni-naor"],
+    "date": "1993",
+    "slug": "pricing-via-processing-or-combatting-junk-mail",
+    "formats": ["ext"],
+    "categories": ["cryptography"],
+    "doctype": "journal",
+    "external": "https://link.springer.com/content/pdf/10.1007/3-540-48071-4_10.pdf"
   }
 ]
