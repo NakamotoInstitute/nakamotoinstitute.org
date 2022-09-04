@@ -1134,5 +1134,16 @@
     "categories": ["cryptography"],
     "doctype": "essay",
     "external": "https://web.archive.org/web/20140413000357/http://szabo.best.vwh.net/smart.contracts.html"
+  },
+  {
+    "id": 108,
+    "title": "Smart Liens",
+    "author": ["nick-szabo"],
+    "date": "1994",
+    "slug": "smart-liens",
+    "formats": ["html", "ext"],
+    "categories": ["cryptography"],
+    "doctype": "essay",
+    "external": "https://web.archive.org/web/20140407172139/http://szabo.best.vwh.net/smart.liens.html"
   }
 ]
