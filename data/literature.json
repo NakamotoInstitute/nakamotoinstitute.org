@@ -1123,5 +1123,16 @@
     "categories": ["cryptography"],
     "doctype": "journal",
     "external": "https://link.springer.com/content/pdf/10.1007/3-540-48071-4_10.pdf"
+  },
+  {
+    "id": 107,
+    "title": "Smart Contracts",
+    "author": ["nick-szabo"],
+    "date": "1994",
+    "slug": "smart-contracts",
+    "formats": ["html", "ext"],
+    "categories": ["cryptography"],
+    "doctype": "essay",
+    "external": "https://web.archive.org/web/20140413000357/http://szabo.best.vwh.net/smart.contracts.html"
   }
 ]
