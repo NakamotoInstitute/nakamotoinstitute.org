@@ -5,42 +5,40 @@
 #    pip-compile requirements/base.in
 #
 babel==2.10.3
-    # via -r requirements/base.in
+    # via -r base.in
 cachelib==0.8.0
     # via flask-caching
 certifi==2022.12.7
     # via
-    #   -r requirements/base.in
+    #   -r base.in
     #   requests
 charset-normalizer==2.0.6
     # via requests
 click==8.0.1
     # via flask
 feedgen==0.9.0
-    # via -r requirements/base.in
+    # via -r base.in
 flask==2.1.2
     # via
-    #   -r requirements/base.in
+    #   -r base.in
     #   flask-assets
     #   flask-caching
     #   flask-flatpages
     #   flask-sqlalchemy
 flask-assets==2.0
-    # via -r requirements/base.in
+    # via -r base.in
 flask-caching==1.11.1
-    # via -r requirements/base.in
+    # via -r base.in
 flask-flatpages==0.8.1
-    # via -r requirements/base.in
+    # via -r base.in
 flask-sqlalchemy==2.5.1
-    # via -r requirements/base.in
+    # via -r base.in
 greenlet==1.1.1
     # via sqlalchemy
 gunicorn==20.1.0
-    # via -r requirements/base.in
+    # via -r base.in
 idna==3.2
     # via requests
-importlib-metadata==4.11.4
-    # via flask
 itsdangerous==2.0.1
     # via flask
 jinja2==3.0.1
@@ -49,28 +47,30 @@ jinja2==3.0.1
     #   flask-flatpages
 lxml==4.9.1
     # via
-    #   -r requirements/base.in
+    #   -r base.in
     #   feedgen
 markdown==3.3.4
     # via flask-flatpages
-markupsafe==2.0.1
-    # via jinja2
+markupsafe==2.1.2
+    # via
+    #   jinja2
+    #   werkzeug
 pyscss==1.4.0
-    # via -r requirements/base.in
+    # via -r base.in
 python-dateutil==2.8.2
     # via
-    #   -r requirements/base.in
+    #   -r base.in
     #   feedgen
 python-dotenv==0.20.0
-    # via -r requirements/base.in
+    # via -r base.in
 pytz==2022.1
     # via
-    #   -r requirements/base.in
+    #   -r base.in
     #   babel
 pyyaml==5.4.1
     # via flask-flatpages
 requests==2.28.1
-    # via -r requirements/base.in
+    # via -r base.in
 six==1.16.0
     # via
     #   flask-flatpages
@@ -82,10 +82,8 @@ urllib3==1.26.6
     # via requests
 webassets==2.0
     # via flask-assets
-werkzeug==2.0.1
+werkzeug==2.2.3
     # via flask
-zipp==3.8.0
-    # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
