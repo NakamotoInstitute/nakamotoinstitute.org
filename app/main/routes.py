@@ -105,16 +105,16 @@ def crash_course():
 
 
 # Redirect old links
-@bp.route("/<string:url_slug>.<string:format>/")
+@bp.route("/<string:url_slug>.<string:ext>/")
 @cache.cached()
-def reroute(url_slug, format):
+def reroute(url_slug, ext):
     doc = Doc.query.filter_by(slug=url_slug).first()
     if doc is not None:
-        return redirect(url_for("literature.view", slug=doc.slug, format=format))
+        return redirect(url_for("literature.view", slug=doc.slug, ext=ext))
     else:
         doc = ResearchDoc.query.filter_by(slug=url_slug).first()
         if doc is not None:
-            return redirect(url_for("research.view", slug=doc.slug, format=format))
+            return redirect(url_for("research.view", slug=doc.slug, ext=ext))
     return redirect(url_for("main.index"))
 
 
