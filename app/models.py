@@ -16,7 +16,7 @@ class Language(db.Model):
     blog_posts = db.relationship("BlogPostTranslation", back_populates="language")
 
     def __repr__(self):
-        return "<Language %r>" % (self.ietf)
+        return f"<Language {self.ietf}>"
 
 
 class EmailThread(db.Model):
@@ -32,7 +32,7 @@ class EmailThread(db.Model):
             return self.source
 
     def __repr__(self):
-        return "<EmailThread %r>" % (self.title)
+        return f"<EmailThread {self.title}>"
 
 
 class Email(db.Model):
@@ -53,7 +53,7 @@ class Email(db.Model):
     thread_id = db.Column(db.Integer, db.ForeignKey("email_thread.id"))
 
     def __repr__(self):
-        return "<Email %r - %r>" % (self.subject, self.source_id)
+        return f"<Email {self.subject} - {self.source_id}>"
 
 
 class ForumThread(db.Model):
@@ -72,7 +72,7 @@ class ForumThread(db.Model):
             return self.source
 
     def __repr__(self):
-        return "<ForumThread %r>" % (self.title)
+        return f"<ForumThread {self.title}>"
 
 
 class Post(db.Model):
@@ -91,7 +91,7 @@ class Post(db.Model):
     thread_id = db.Column(db.Integer, db.ForeignKey("forum_thread.id"))
 
     def __repr__(self):
-        return "<Post %r>" % (self.subject)
+        return f"<Post {self.subject}>"
 
 
 quote_categories = db.Table(
@@ -107,7 +107,7 @@ class QuoteCategory(db.Model):
     slug = db.Column(db.String())
 
     def __repr__(self):
-        return "<QuoteCategory %r>" % (self.slug)
+        return f"<QuoteCategory {self.slug}>"
 
 
 class Quote(db.Model):
@@ -124,7 +124,7 @@ class Quote(db.Model):
     )
 
     def __repr__(self):
-        return "<Quote %r>" % (self.id)
+        return f"<Quote {self.id}>"
 
 
 authors = db.Table(
@@ -154,10 +154,10 @@ class Author(db.Model):
     slug = db.Column(db.String())
 
     def __repr__(self):
-        return "<Author %r>" % (self.slug)
+        return f"<Author {self.slug}>"
 
     def __str__(self):
-        return "{} {} {}".format(self.first, self.middle, self.last)
+        return f"{self.first} {self.middle} {self.last}"
 
 
 formats = db.Table(
@@ -178,7 +178,7 @@ class Format(db.Model):
     name = db.Column(db.String())
 
     def __repr__(self):
-        return "<Format %r>" % (self.name)
+        return f"<Format {self.name}>"
 
 
 categories = db.Table(
@@ -199,19 +199,19 @@ class Category(db.Model):
     name = db.Column(db.String())
 
     def __repr__(self):
-        return "<Category %r>" % (self.name)
+        return f"<Category {self.name}>"
 
 
 def get_authors_string(obj):
     if len(obj.author) == 1:
         return str(obj.author[0])
     elif len(obj.author) == 2:
-        return "{} and {}".format(obj.author[0], obj.author[1])
+        return f"{obj.author[0]} and {obj.author[1]}"
     else:
         author_string = ""
         for author in obj.author[:-1]:
-            author_string += "{}, ".format(author)
-        author_string += "and {}".format(author[-1])
+            author_string += f"{author}, "
+        author_string += f"and {author[-1]}"
         return author_string
 
 
@@ -233,7 +233,7 @@ class Doc(db.Model):
     external = db.Column(db.String())
 
     def __repr__(self):
-        return "<Doc %r>" % (self.title)
+        return f"<Doc {self.title}>"
 
     @property
     def authors_string(self):
@@ -265,7 +265,7 @@ class ResearchDoc(db.Model):
     lit_id = db.Column(db.Integer)
 
     def __repr__(self):
-        return "<ResearchDoc %r>" % (self.title)
+        return f"<ResearchDoc {self.title}>"
 
     @property
     def authors_string(self):
@@ -294,7 +294,7 @@ class Translator(db.Model):
     )
 
     def __repr__(self):
-        return "<Translator {}>".format(self.name)
+        return f"<Translator {self.name}>"
 
 
 class BlogPostTranslation(db.Model):
@@ -308,9 +308,7 @@ class BlogPostTranslation(db.Model):
     )
 
     def __repr__(self):
-        return "<BlogPostTranslation {} - {}>".format(
-            self.blog_post.slug, self.language.ietf
-        )
+        return f"<BlogPostTranslation {self.blog_post.slug} - {self.language.ietf}>"
 
 
 class BlogPost(db.Model):
@@ -328,7 +326,7 @@ class BlogPost(db.Model):
     series_index = db.Column(db.Integer)
 
     def __repr__(self):
-        return "<BlogPost %r>" % (self.title)
+        return f"<BlogPost {self.title}>"
 
 
 class BlogSeries(db.Model):
@@ -342,7 +340,7 @@ class BlogSeries(db.Model):
         return self.title
 
     def __repr__(self):
-        return "<BlogSeries %r>" % (self.title)
+        return f"<BlogSeries {self.title}>"
 
 
 class Skeptic(db.Model):
@@ -381,7 +379,7 @@ class Skeptic(db.Model):
         return Decimal(self._percent_change)
 
     def __repr__(self):
-        return "<Skeptic %r>" % (self.name)
+        return f"<Skeptic {self.name}>"
 
 
 class Episode(db.Model):
@@ -397,7 +395,7 @@ class Episode(db.Model):
     time = db.Column(db.DateTime(timezone=True))
 
     def __repr__(self):
-        return "<Episode %r>" % (self.title)
+        return f"<Episode {self.title}>"
 
 
 class Price(db.Model):
@@ -406,7 +404,7 @@ class Price(db.Model):
     price = db.Column(db.String())
 
     def __repr__(self):
-        return "<Price %r>" % (self.date)
+        return f"<Price {self.date}>"
 
     def serialize(self):
         return {

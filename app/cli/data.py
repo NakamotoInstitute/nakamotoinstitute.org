@@ -440,7 +440,7 @@ def import_skeptic():
             waybacklink=skeptic["waybacklink"],
             media_embed=media_embed,
             twitter_screenshot=twitter_screenshot,
-            slug="{}-{}".format(skeptic["slug"], slug_date),
+            slug=f"{skeptic['slug']}-{slug_date}",
         )
         db.session.add(skeptic)
     db.session.commit()
