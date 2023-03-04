@@ -4,6 +4,7 @@ from datetime import datetime
 
 import click
 import requests
+import sqlalchemy as sa
 from dateutil import parser
 from flask import Blueprint
 
@@ -39,7 +40,8 @@ bp.cli.help = "Update database."
 
 def model_exists(model_class):
     engine = db.get_engine()
-    return model_class.metadata.tables[model_class.__tablename__].exists(engine)
+    insp = sa.inspect(engine)
+    return insp.has_table(model_class.__tablename__)
 
 
 def get(model, **kwargs):
@@ -388,6 +390,7 @@ def import_blog_post():
             slug=bp["slug"],
             excerpt=bp["excerpt"],
         )
+        db.session.add(blogpost)
         try:
             blogpost.series = get(BlogSeries, slug=bp["series"])
             blogpost.series_index = bp["series_index"]
@@ -404,7 +407,7 @@ def import_blog_post():
                 translators=dbtranslator,
             )
             blogpost.translations.append(blog_translation)
-            db.session.add(blogpost)
+        db.session.add(blogpost)
     db.session.commit()
     click.echo(DONE)
 

@@ -32,7 +32,7 @@ def index_threads():
 def index_source(source):
     emails = (
         Email.query.filter(Email.satoshi_id.isnot(None))
-        .join(Email.email_thread, aliased=True)
+        .join(Email.email_thread)
         .filter_by(source=source)
         .order_by(Email.date)
         .all()
@@ -50,19 +50,15 @@ def index_source(source):
 def detail(source, email_id):
     email = (
         Email.query.filter_by(satoshi_id=email_id)
-        .join(Email.email_thread, aliased=True)
+        .join(Email.email_thread)
         .filter_by(source=source)
         .first()
     )
     previous_email = (
-        Email.query.filter_by(satoshi_id=email_id - 1)
-        .join(Email.email_thread, aliased=True)
-        .first()
+        Email.query.filter_by(satoshi_id=email_id - 1).join(Email.email_thread).first()
     )
     next_email = (
-        Email.query.filter_by(satoshi_id=email_id + 1)
-        .join(Email.email_thread, aliased=True)
-        .first()
+        Email.query.filter_by(satoshi_id=email_id + 1).join(Email.email_thread).first()
     )
     if email is not None:
         return render_template(

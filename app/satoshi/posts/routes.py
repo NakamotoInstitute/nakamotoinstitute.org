@@ -32,7 +32,7 @@ def index_threads():
 def index_source(source):
     posts = (
         Post.query.filter(Post.satoshi_id.isnot(None))
-        .join(Post.forum_thread, aliased=True)
+        .join(Post.forum_thread)
         .filter_by(source=source)
         .order_by(Post.date)
         .all()
@@ -48,19 +48,15 @@ def index_source(source):
 def detail(source, post_id):
     post = (
         Post.query.filter_by(satoshi_id=post_id)
-        .join(Post.forum_thread, aliased=True)
+        .join(Post.forum_thread)
         .filter_by(source=source)
         .first()
     )
     previous_post = (
-        Post.query.filter_by(satoshi_id=post_id - 1)
-        .join(Post.forum_thread, aliased=True)
-        .first()
+        Post.query.filter_by(satoshi_id=post_id - 1).join(Post.forum_thread).first()
     )
     next_post = (
-        Post.query.filter_by(satoshi_id=post_id + 1)
-        .join(Post.forum_thread, aliased=True)
-        .first()
+        Post.query.filter_by(satoshi_id=post_id + 1).join(Post.forum_thread).first()
     )
     if post is not None:
         return render_template(

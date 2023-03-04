@@ -9,7 +9,6 @@ NakamotoInstitute.org was written in Python using Flask.
 1. Install [`pip-tools`](https://github.com/jazzband/pip-tools)
 1. Copy `.env.example` to `.env`.
 1. Update the domain assigned to `SERVER_NAME` in `.env` if you would like something other than `sni`
-1. By default, `FLASK_ENV` is `development` to enable reloading of the server on code changes. Change this to `production` if you do not want debugging.
 1. Update your /etc/hosts file (replace `sni` with the value from step 3 if you changed it):
     ```
     127.0.0.1     localhost
