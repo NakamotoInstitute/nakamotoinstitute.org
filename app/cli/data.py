@@ -1,19 +1,25 @@
 # import json
 # import os.path
 # from datetime import datetime
+import os
+from typing import Any, Dict, List, Optional, Tuple, Type
 
 import click
 
 # import requests
 import sqlalchemy as sa
+import yaml
 
 # from dateutil import parser
 from flask import Blueprint
+from pydantic import BaseModel, ValidationError
 
 from app import db
 
 # from app.cli.skeptics import API_URL, update_skeptics
 from app.cli.utils import DONE, color_text
+from app.models import Author
+from app.schemas import AuthorMDSchema
 
 bp = Blueprint("data", __name__)
 
@@ -44,6 +50,53 @@ def flush_db():
     db.drop_all()
     db.create_all()
     click.echo(DONE)
+
+
+def read_markdown_file(filepath: str) -> str:
+    with open(filepath, "r", encoding="utf-8") as file:
+        return file.read()
+
+
+def parse_front_matter(content: str) -> Tuple[Optional[Dict[Any, Any]], str]:
+    split_content = content.split("---\n")
+    if len(split_content) < 3:
+        return None, content
+    front_matter_str = split_content[1]
+    remaining_content = "---\n".join(split_content[2:]).strip()
+    return yaml.safe_load(front_matter_str), remaining_content
+
+
+def validate_front_matter(
+    front_matter: Dict[Any, Any], schema: Type[BaseModel]
+) -> Optional[BaseModel]:
+    try:
+        return schema.parse_obj(front_matter)
+    except ValidationError as e:
+        print(f"Validation error: {e}")
+        return None
+
+
+def load_all_markdown_files(
+    directory_path: str, schema: Type[BaseModel]
+) -> List[Dict[str, Any]]:
+    files_data: List[Dict[str, Any]] = []
+
+    for filename in sorted(os.listdir(directory_path)):
+        if filename.endswith(".md"):
+            filepath = os.path.join(directory_path, filename)
+            content = read_markdown_file(filepath)
+            raw_front_matter, remaining_content = parse_front_matter(content)
+
+            if raw_front_matter is not None:
+                front_matter = validate_front_matter(raw_front_matter, schema)
+                if front_matter is not None:
+                    file_data = dict(
+                        **front_matter.dict(),
+                        slug=filename.split(".")[0],
+                        content=remaining_content,
+                    )
+                    files_data.append(file_data)
+    return files_data
 
 
 # def export_prices():
@@ -240,22 +293,14 @@ def flush_db():
 #     click.echo(DONE)
 
 
-# def import_author():
-#     click.echo("Importing Author...", nl=False)
-#     with open("./data/authors.json") as data_file:
-#         authors = json.load(data_file)
-
-#     for i, author in enumerate(authors, start=1):
-#         author = Author(
-#             id=i,
-#             first=author["first"],
-#             middle=author["middle"],
-#             last=author["last"],
-#             slug=author["slug"],
-#         )
-#         db.session.add(author)
-#     db.session.commit()
-#     click.echo(DONE)
+def import_author():
+    click.echo("Importing Author...", nl=False)
+    authors_data = load_all_markdown_files("content/authors", AuthorMDSchema)
+    for author_data in authors_data:
+        author = Author(**author_data)
+        db.session.add(author)
+    db.session.commit()
+    click.echo(DONE)
 
 
 # def import_doc():
@@ -463,7 +508,7 @@ def seed():
     # import_post()
     # import_quote_category()
     # import_quote()
-    # import_author()
+    import_author()
     # import_doc()
     # import_research_doc()
     # import_blog_series()

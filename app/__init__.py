@@ -6,11 +6,26 @@ from flask import Flask
 from flask_caching import Cache
 from flask_flatpages import FlatPages
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import MetaData
+from sqlalchemy.orm import DeclarativeBase
 from werkzeug.middleware.proxy_fix import ProxyFix
 
 from config import Config
 
-db = SQLAlchemy()
+
+class Base(DeclarativeBase):
+    metadata = MetaData(
+        naming_convention={
+            "ix": "ix_%(column_0_label)s",
+            "uq": "uq_%(table_name)s_%(column_0_name)s",
+            "ck": "ck_%(table_name)s_%(constraint_name)s",
+            "fk": "fk_%(table_name)s_%(column_0_name)s_%(referred_table_name)s",
+            "pk": "pk_%(table_name)s",
+        }
+    )
+
+
+db = SQLAlchemy(model_class=Base)
 pages = FlatPages()
 cache = Cache(
     config={
