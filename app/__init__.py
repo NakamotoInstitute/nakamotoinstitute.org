@@ -1,9 +1,3 @@
-#
-# Satoshi Nakamoto Institute (https://nakamotoinstitute.org)
-# Copyright 2013 Satoshi Nakamoto Institute
-# Licensed under GNU Affero GPL (https://github.com/pierrerochard/SNI-private/blob/master/LICENSE)
-#
-
 import logging
 import os
 from logging.handlers import RotatingFileHandler
