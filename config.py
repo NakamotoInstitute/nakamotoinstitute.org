@@ -7,7 +7,7 @@ load_dotenv(os.path.join(basedir, ".env"))
 
 
 class Config(object):
-    SERVER_NAME = os.environ.get("SERVER_NAME", "sni:5000")
+    SERVER_NAME = os.environ.get("SERVER_NAME", None)
     SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(basedir, "app.db")
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
