@@ -1,25 +1,16 @@
-# import json
-# import os.path
-# from datetime import datetime
 import os
 from typing import Any, Dict, List, Optional, Tuple, Type
 
 import click
-
-# import requests
 import sqlalchemy as sa
 import yaml
-
-# from dateutil import parser
 from flask import Blueprint
 from pydantic import BaseModel, ValidationError
 
 from app import db
-
-# from app.cli.skeptics import API_URL, update_skeptics
 from app.cli.utils import DONE, color_text
 from app.models import Author
-from app.schemas import AuthorMDSchema
+from app.schemas.data import AuthorMDSchema
 
 bp = Blueprint("data", __name__)
 

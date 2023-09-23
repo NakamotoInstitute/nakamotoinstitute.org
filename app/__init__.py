@@ -55,6 +55,10 @@ def create_app(config_class=Config):
     else:
         cache.init_app(app)
 
+    from app.authors import authors as authors_bp
+
+    app.register_blueprint(authors_bp, url_prefix="/api/authors")
+
     if not app.debug:
         if not os.path.exists("logs"):
             os.mkdir("logs")

@@ -1,6 +1,6 @@
 # from decimal import Decimal
 
-from sqlalchemy import Integer, String
+from sqlalchemy import Integer, String, Text
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app import db
@@ -11,10 +11,10 @@ class Author(db.Model):
     slug: Mapped[str] = mapped_column(String, unique=True, nullable=False)
     name: Mapped[str] = mapped_column(String, nullable=False)
     sort_name: Mapped[str] = mapped_column(String, nullable=False)
-    content: Mapped[str] = mapped_column(String, nullable=False)
+    content: Mapped[str] = mapped_column(Text, nullable=False)
 
     def __repr__(self) -> str:
-        return self.slug
+        return f"<Author({self.slug})>"
 
 
 # class Language(db.Model):
