@@ -1,0 +1,46 @@
+---
+title: Who Controls Bitcoin?
+author: daniel-krawisz
+date: 2015-02-08
+added: 2015-02-08
+excerpt:
+  Bitcoin upgrades must be a clear improvement to Bitcoin as an investment
+  or else they face a sharp uphill battle to adoption.
+image: godfather-puppet.jpg
+image_alt: Godfather Puppet
+---
+
+A common and understandable concern about Bitcoin is that it might become corrupted at the protocol level to serve special interests rather than the unwashed masses. For example, features might become adopted which make Bitcoin much less anonymous or which turn it into a centralized system. This question is really about who can influence the development of updates and who can block them. Anyone can fork Bitcoin, but suppose there were an upgrade proposed by some very influential people-the core devs-and suppose that it would hard-fork the Bitcoin protocol in some fundamental and controversial way. The core devs say it's a good idea, but maybe they've been paid off by the NSA. The question I will answer here is whether and how such an upgrade could be prevented from becoming standardized. Who controls Bitcoin?
+
+## New and Classic
+
+We'll assume that there is some real disagreement about whether the upgrade is a good idea because if there was not, then there would be no problem. Thus, once the upgrade is released, the network splits. Everyone can choose which fork to follow, or even run both versions at the same time. Effectively there are two Bitcoins now. I'll call them Bitcoin New and Bitcoin Classic. Each has its own network, and anyone who owned bitcoins before has the same amount of New and Classic.
+
+Who can stop New Bitcoin from taking over? This thread on BitcoinTalk argues that the people who run full nodes can stop an upgrade by refusing to upgrade. Well, it is true that if _literally_ no one upgrades, then Bitcoin New fails. However, it is also true that almost nobody's decision to upgrade has any real effect on the network. Most nodes are dead weight. Even the full nodes (by which I mean, nodes that store and validate the whole block chain) are not contributing much. A full node doesn't do anything that lots of other nodes cannot do, and in order to remain synced with the network, they demand as much data as they provide. The network can function just fine with only a few full nodes. Therefore, Bitcoin New won't necessarily be stopped even if a lot of full nodes refuse to upgrade.
+
+The nodes that really matter are the ones that provide valuable services. It doesn't matter if _you_ upgrade. What matters is if Coinbase, BitStamp, and Blockchain.info upgrade. These nodes provide a lot of the infrastructure for Bitcoin, so if they do not upgrade, Bitcoin New will be a lot less useful. However, these nodes are in it for profit, so they will tend to go where the money is. They cannot necessarily afford to wield the influence they might have at the risk of short-term losses. Therefore, they do not necessarily have as great an effect on the outcome as it might at first seem.[^1]
+
+What about the miners? If they refuse to mine on the new chain, that will stop Bitcoin New in its tracks, right? Well no! Miners are in it for the money too, and if Bitcoin Classic cannot support the same hash rate as Bitcoin New, then they put more resources into mining Bitcoin New. Thus, miners also do not necessarily have much of a say in the matter either.
+
+It all boils down to the value of the two coins. If Bitcoin New becomes more valuable than Bitcoin Classic, then miners will mine it and services will support it. If not, then it won't. Investors settle the question. A Bitcoin investor can sell his Bitcoin New for Bitcoin Classic, or vice versa, depending on which he thinks is the better idea.
+
+In both the cases of the service providers and the miners, the problem which makes them less influential than one might think is the fact that they do not necessarily have the funds to take the risk of deciding for themselves which version they like better and which they are going to promote. In short, the problem is that they are not necessarily investors, who by definition _do_ have the funds. Investors do not have to listen to anybody else because they can afford to take the risk of asserting influence. Thus, it is the investors who control Bitcoin.
+
+## Flowing Uphill
+
+Clearly there are technical issues with problem of creating a viable Bitcoin fork that I didn't go into. For example, a Bitcoin fork might not be able to work because its hash rate would initially be so low that blocks could take days or weeks to mine. Since there has never been a battle between two forks before, there are a lot of unknowns about how to do it right, but technical issues like that could be addressed if they were properly researched.
+
+The real issue is not precisely how a Bitcoin fork could actually be implemented, but merely the understanding of how events would play out in such a situation. Hypothetical situations affect reality today. When two armies meet, if they can determine who would win without actually fighting one another, then the battle is over without having begin. This is a similar situation. If a Bitcoin upgrade were known to be unpopular to investors, then its proponents, knowing who would win if push came to shove, would tend to back down before causing that much disruption. Thus, the investors are still in control even for real-life Bitcoin upgrades that never reach the point of creating such contention.
+
+What are the implications of this conclusion? The motivation of investors is the value of the coin. The general rule about Bitcoin upgrades, therefore, is that upgrades which increase Bitcoin's value will be adopted and those which do not will not. Therefore, Bitcoin is not likely to be upgraded in ways which make it easier to regulate because that would decrease the value of the coins. Bitcoin might be upgraded in ways that make it more anonymous because a more anonymous coin would likely be more valuable. An upgrade which allows for larger block sizes is also likely to be adopted because the current limit of 1 MB will eventually limit Bitcoin's value as a form of money. Obvious bug fixes are likely to be adopted, whereas cockamamie schemes which do not clearly improve Bitcoin's value-such as proof-of-stake mining or changing the block reward schedule-have no real chance of succeeding and are therefore hardly worth talking about.
+
+This is not to say that Bitcoin is a divine substance or some immaculate bit of quintessence. It just means that Bitcoin upgrades must be a clear improvement to Bitcoin _as an investment_ or else they face a sharp uphill battle to adoption. Any scheme to reprogram it in service of special interests would almost certainly reduce its value proposition because it would change Bitcoin from something good for the world to something good for a smaller group. Of course, people actually need to be paying attention in order to prevent it, but we also don't need to go mad with hyper-vigilance.
+
+[^1]:
+    I have learned that Emin Gün Sirer has expressed a similar idea in a [blog post](http://hackingdistributed.com/2014/06/19/bitcoin-and-voting-power/). However, he argues that it is the users who control bitcoin, having one vote per node. When I originally wrote this article, I didn’t deal with this this case extensively because I didn’t realize anyone was taking that position. So I am dealing with the full nodes in this note now.
+
+    Consider the following thought experiment. Suppose, as again, that there were two forks of Bitcoin, _new_ and _classic_. Now suppose that _new_ was preferred by investors and _classic_ was preferred by people who run full nodes. As the two classes of people expressed their preference in their actions, the investors would tend to cause an increase in the market cap of _new_ over _classic_, while the node runners would tend to increase the number of nodes of _classic_ over _new_. What has each class gained by this? The investors have gained an asset capable of producing a greater financial impact on the world than that of their competitors’ and therefore more capable of attracting business. While the nodes do control a network, in a sense, the investors control which network becomes important.
+
+    Over a sufficiently long time span, therefore, the interest of those who now run full nodes become meaningless in comparison to the desires of those who are now investors. There are many reasons to run a node and consequently the class of people who run full nodes is less capable of maintaining a consistent set of interests or a group identity. The investors can, and their actions can be expected to alter the composition of the group of full node runners in a way that is not matched by the effect which the full node runners have on the investors.
+
+    Consequently, an individual person’s control over Bitcoin should is better characterized in terms of the amount he owns than in how many nodes he runs. This is why I say your control over Bitcoin is proportional to how much you own and why I say that it is the investors, not the network nodes, who control Bitcoin.

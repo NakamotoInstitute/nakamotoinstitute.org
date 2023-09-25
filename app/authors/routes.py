@@ -5,11 +5,11 @@ from app.models import Author
 from app.utils.decorators import response_model
 
 from . import authors
-from .schemas import AuthorSchema
+from .schemas import AuthorBaseSchema, AuthorSchema
 
 
 @authors.route("/", methods=["GET"])
-@response_model(List[AuthorSchema])
+@response_model(List[AuthorBaseSchema])
 def get_authors():
     authors = db.session.scalars(db.select(Author)).all()
     return authors
