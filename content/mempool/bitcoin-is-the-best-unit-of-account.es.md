@@ -3,9 +3,9 @@ title: Bitcoin, la mejor unidad de cuenta
 slug: bitcoin-la-mejor-unidad-de-cuenta
 translators:
   - majamalu
-translationUrl: http://elbitcoin.org/bitcoin-la-mejor-unidad-de-cuenta/
-translationSite: ElBitcoin.org
-translationSiteUrl: http://elbitcoin.org/
+translation_url: http://elbitcoin.org/bitcoin-la-mejor-unidad-de-cuenta/
+translation_site: ElBitcoin.org
+translation_site_url: http://elbitcoin.org/
 excerpt: Alguien que aún se encuentra perdido en el mundo del dólar mira hacia Bitcoin y ve volatilidad extrema, mientras que al mirar hacia el dólar desde el mundo Bitcoin lo que se ve es la peor crisis económica de la historia.
 ---
 

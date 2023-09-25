@@ -4,9 +4,9 @@ image: archeologists.png
 image_alt: The Archaeologists (1927) Giorgio de Chirico
 translators:
   - qu-shuang
-translationUrl: http://www.8btc.com/bitcoin-is-great-but-it-wont-fix-our-monkey-brains
-translationSite: 8btc.com
-translationSiteUrl: http://www.8btc.com/
+translation_url: http://www.8btc.com/bitcoin-is-great-but-it-wont-fix-our-monkey-brains
+translation_site: 8btc.com
+translation_site_url: http://www.8btc.com/
 excerpt: 我们原本不得不信任垄断势力，比特币给我们提供了另一种选择。然而，它永远无法消除我们心底信任他人的需求，它也无法消除我们大脑里的 Bug——选择性地接受现实，想用技术取代我们的天性只会适得其反。
 ---
 

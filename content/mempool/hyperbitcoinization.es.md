@@ -5,9 +5,9 @@ image: BitcoinFace.png
 image_alt: BitcoinFace
 translators:
   - majamalu
-translationUrl: http://elbitcoin.org/hiperbitcoinizacion/
-translationSite: ElBitcoin.org
-translationSiteUrl: http://elbitcoin.org
+translation_url: http://elbitcoin.org/hiperbitcoinizacion/
+translation_site: ElBitcoin.org
+translation_site_url: http://elbitcoin.org
 excerpt: Este artículo es sobre la desmonetización del dinero inducida por Bitcoin, o <em>hiperbitcoinización</em>, que es lo que va a sufrir cualquier moneda estatal que se interponga en el camino de Bitcoin hacia su expansión global.
 ---
 

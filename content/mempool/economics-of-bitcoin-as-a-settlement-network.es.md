@@ -3,7 +3,7 @@ title: Los economics de Bitcoin como una red de liquidación
 slug: los-economics-de-bitcoin-como-una-red-de-liquidacion
 translators:
   - acrual
-translationUrl: http://queesbitcoin.es/los-economics-bitcoin-una-red-liquidacion/
+translation_url: http://queesbitcoin.es/los-economics-bitcoin-una-red-liquidacion/
 excerpt: Desde el punto de vista de la capa de la red de liquidaciones, la creciente adopción de Bitcoin está incrementando su liquidez internacionalmente, permitiéndole competir con divisas globales de reserva para transacciones cada vez con más valor, provocando que las comisiones sigan aumentando.
 ---
 

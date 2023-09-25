@@ -5,7 +5,7 @@ image: eastwood.jpg
 image_alt: Eastwood Scowl
 translators:
   - thomas-brand
-translationUrl: https://medium.com/brandin-kirjasto/kaikki-ovat-huijareita-56e9887be468
+translation_url: https://medium.com/brandin-kirjasto/kaikki-ovat-huijareita-56e9887be468
 excerpt: Bitcoineistasi on käynnissä sota, ja tahdonvoima on ainoa puolustuskeinosi.
 ---
 

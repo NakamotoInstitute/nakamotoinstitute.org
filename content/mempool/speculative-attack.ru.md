@@ -4,9 +4,9 @@ image: joker-burning-money.jpg
 image_alt: Джокер демонетизирует доллар
 translators:
   - ekaterina-tarasova
-translationUrl: https://bitnovosti.com/2014/08/31/kak-ruhnet-koloss/
-translationSite: BitNovosti
-translationSiteUrl: https://bitnovosti.com
+translation_url: https://bitnovosti.com/2014/08/31/kak-ruhnet-koloss/
+translation_site: BitNovosti
+translation_site_url: https://bitnovosti.com
 ---
 
 ## Введение

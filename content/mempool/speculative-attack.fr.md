@@ -5,9 +5,9 @@ image: joker-burning-money.jpg
 image_alt: Joker brûlant de l'argent
 translators:
   - singe-optimiste
-translationUrl: https://parlonsbitcoin.com/blog/attaque-speculative
-translationSite: Parlons Bitcoin
-translationSiteUrl: https://parlonsbitcoin.com
+translation_url: https://parlonsbitcoin.com/blog/attaque-speculative
+translation_site: Parlons Bitcoin
+translation_site_url: https://parlonsbitcoin.com
 excerpt: Bitcoin prendra le dessus sur des monnaies faibles comme le dollar par le biais d'attaques spéculatives causées par les investisseurs, et non par l'évaluation des journalistes tech et des "consommateurs grand public".
 ---
 

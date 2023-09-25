@@ -1,14 +1,20 @@
 ---
-translated_title: 对密码朋克梦靥的沉思
+title: 对密码朋克梦靥的沉思
 image: landscape-with-the-colosseum-and-the-monument-to-marcus-aurelius.jpg
+translators:
+  - shao-ping
 translation_url: http://www.8btc.com/meditations-on-cypherpunk-meditations
-translation_publication: 8btc.com
-translation_publication_url: http://www.8btc.com/
+translation_site: 8btc.com
+translation_site_url: http://www.8btc.com/
+excerpt: 为了保护自己免于加密无政府主义的危险，我们需要完全拥抱它，内化和练习是曾帮助古人度过人生难关的美德。
 ---
 
-> Some things are in our control and others not.
->
-> <footer class="blockquote-footer">Epictetus, _The Enchiridion_</footer>
+<figure>
+  <blockquote>
+    <p>Some things are in our control and others not.</p>
+  </blockquote>
+  <figcaption>Epictetus, <em>The Enchiridion</em></figcaption>
+</figure>
 
 ## 密码学无政府的传播
 
@@ -25,31 +31,37 @@ translation_publication_url: http://www.8btc.com/
 
 我们已经看到了维基解密和斯诺登公开国家机密的闸门。我们也已看到比特币使得交易明星的裸照成为可能。
 
-现在维基解密在其推特账号上介绍的一个网站，将成为下一代的解密网络。Slur.io志在成为维基解密2.0：
+现在维基解密在其推特账号上介绍的一个网站，将成为下一代的解密网络。Slur.io 志在成为维基解密 2.0：
 
-> Slur是一个开源的、去中心化的、交易机密信息的匿名市场，用比特币作为支付手段。Slur是用C语言写成的，运行在Tor网络上，通过libbitcoin进行比特币交易。卖家和买家都是完全匿名的，对于拍卖的数据没有任何限制。Slur市场不向买家和卖家收取任何费用，但在买卖方陷入纠纷时，会收取一定的费用，支付给志愿仲裁者
+> Slur 是一个开源的、去中心化的、交易机密信息的匿名市场，用比特币作为支付手段。Slur 是用 C 语言写成的，运行在 Tor 网络上，通过 libbitcoin 进行比特币交易。卖家和买家都是完全匿名的，对于拍卖的数据没有任何限制。Slur 市场不向买家和卖家收取任何费用，但在买卖方陷入纠纷时，会收取一定的费用，支付给志愿仲裁者
 
-从商业机密到国家机密，再到针对例如Facebook这样的社交网站的零天攻击机密(zero-day exploits)的任何东西，都将用比特币明码标价。
+从商业机密到国家机密，再到针对例如 Facebook 这样的社交网站的零天攻击机密(zero-day exploits)的任何东西，都将用比特币明码标价。
 
-_生活在2014年的任何人不仅应该假设他们的秘密将被泄露，还应该假设他们的秘密已经被泄露了。_
+_生活在 2014 年的任何人不仅应该假设他们的秘密将被泄露，还应该假设他们的秘密已经被泄露了。_
 
 解决这个问题不容易，因为我们都曾说过现在后悔的话，或者做过不想公开的事情。然而，这些问题并不是互联网新造成的。互联网使得我们从隐私的幻觉中摆脱出来。
 
 ### On change
 
-> The universe is change: life is judgement.
->
-> <footer class="blockquote-footer">Marcus Aurelius, _Mediations_ (Book IV, 3.4)</footer>
+<figure>
+  <blockquote>
+    <p>The universe is change: life is judgement.</p>
+  </blockquote>
+  <figcaption>Marcus Aurelius, <em>Mediations</em> (Book IV, 3.4)</figcaption>
+</figure>
 
-如果我们认真对待Tim May的话和经验数据，他所描述的加密无政府主义正在发生，而且将继续发生。技术是一把双刃剑，从罪犯到好人都能使用它。然而，这应该被认为是技术本性，希望有一种方法可以阻止技术是一种乌托邦。当Cody Wilson和[Defense Distributed](https://defdist.org/)给世界带来解救者，我们被迫面对这一事实：技术不是民主的。对于3D打印枪支、公钥密码学、比特币或者BitTorrent是否应该存在的问题，不是投票决定的。以上每一种技术分别是Cody Wilson, Whitfield Diffie & Martin Hellman, Satoshi Nakamoto和Bram Cohen的作品。它们已经存在了，我们必须应对这种结果。如果坏人能够使用这些技术，我们必须更好的使用这些技术。
+如果我们认真对待 Tim May 的话和经验数据，他所描述的加密无政府主义正在发生，而且将继续发生。技术是一把双刃剑，从罪犯到好人都能使用它。然而，这应该被认为是技术本性，希望有一种方法可以阻止技术是一种乌托邦。当 Cody Wilson 和[Defense Distributed](https://defdist.org/)给世界带来解救者，我们被迫面对这一事实：技术不是民主的。对于 3D 打印枪支、公钥密码学、比特币或者 BitTorrent 是否应该存在的问题，不是投票决定的。以上每一种技术分别是 Cody Wilson, Whitfield Diffie & Martin Hellman, Satoshi Nakamoto 和 Bram Cohen 的作品。它们已经存在了，我们必须应对这种结果。如果坏人能够使用这些技术，我们必须更好的使用这些技术。
 
 世界在改变，既不是好事也不是坏事。只有我们的认知和反应，才能影响它。
 
 ### 关于维持一个高尚的思想
 
-> \[I\]n the sequence of your thoughts you must avoid all that is casual or aimless, and most particularly anything prying or malicious. Train yourself to think only those thoughts such that in answer to the sudden question “What is in your mind now?” you could say with immediate frankness whatever it is, this or that: and so your answer can agive direct evidence that all your thoughts are straightforward and kindly, the thoughts of a social being who has no regard for the fancies of pleasure or wider indulgence, for rivalry, malice, suspicion, or anything else that one would blush to admit was in one’s mind.
->
-> <footer class="blockquote-footer">Marcus Aurelius, _Meditations_ (Book III, 4.2)</footer>
+<figure>
+  <blockquote>
+    <p>\[I\]n the sequence of your thoughts you must avoid all that is casual or aimless, and most particularly anything prying or malicious. Train yourself to think only those thoughts such that in answer to the sudden question “What is in your mind now?” you could say with immediate frankness whatever it is, this or that: and so your answer can agive direct evidence that all your thoughts are straightforward and kindly, the thoughts of a social being who has no regard for the fancies of pleasure or wider indulgence, for rivalry, malice, suspicion, or anything else that one would blush to admit was in one’s mind.</p>
+  </blockquote>
+  <figcaption>Marcus Aurelius, <em>Meditations</em> (Book III, 4.2)</figcaption>
+</figure>
 
 强大的密码学在保护信息，防止被偷窥方面，效果显著，但是密码学的使用是一种风险管理，而不是发现万能药。期待加密或者匿名的信息可以永远保持保密状态，几乎不可能，因为人是会犯错的。没有加密的通信就像发送明信片，接触到明信片的任何人都可以读到信息。
 
@@ -57,9 +69,12 @@ _生活在2014年的任何人不仅应该假设他们的秘密将被泄露，还
 
 ### 关于友谊和信任
 
-> \[I\]f you consider any man a friend whom you do not trust as you trust yourself, you are mightily mistaken and you do not sufficiently understand what true friendship means. Indeed, I would have you discuss everything with a friend; but first of all discuss the man himself. When friendship is settled, you must trust; before friendship is formed, you must pass judgment. Those persons indeed put last first and confound their duties, who, violating the rules of Theophrastus, judge a man after they have made him their friend, instead of making him their friend after they have judged him. Ponder for a long time whether you shall admit a given person to your friendship; but when you have decided to admit him, welcome him with all your heart and soul. Speak as boldly with him as with yourself.
->
-> <footer class="blockquote-footer">Seneca, [“On True and False Friendship”](https://en.wikisource.org/wiki/Moral_letters_to_Lucilius/Letter_3)</footer>
+<figure>
+  <blockquote>
+    <p>\[I\]f you consider any man a friend whom you do not trust as you trust yourself, you are mightily mistaken and you do not sufficiently understand what true friendship means. Indeed, I would have you discuss everything with a friend; but first of all discuss the man himself. When friendship is settled, you must trust; before friendship is formed, you must pass judgment. Those persons indeed put last first and confound their duties, who, violating the rules of Theophrastus, judge a man after they have made him their friend, instead of making him their friend after they have judged him. Ponder for a long time whether you shall admit a given person to your friendship; but when you have decided to admit him, welcome him with all your heart and soul. Speak as boldly with him as with yourself.</p>
+  </blockquote>
+  <figcaption>Seneca, <a href="https://en.wikisource.org/wiki/Moral_letters_to_Lucilius/Letter_3">“On True and False Friendship”</a></figcaption>
+</figure>
 
 正如我上面所说的，[强大的密码学并不是万能药](/mempool/bitcoin-is-great-but-it-wont-fix-our-monkey-brains/zh/)。即使最强大的端对端加密，也不能保护你的信息安全，因为另一端可能泄密。因此，了解和信任和你通信的对方是非常重要的。你应该对对方有信心和理解他们的脆弱性。好人也可能被攻击。
 

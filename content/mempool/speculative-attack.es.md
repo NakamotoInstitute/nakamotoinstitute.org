@@ -5,9 +5,9 @@ image: joker-burning-money.jpg
 image_alt: The Joker demonetizing the USD
 translators:
   - majamalu
-translationUrl: http://elbitcoin.org/ataque-especulativo-como-triunfa-el-buen-dinero/
-translationSite: ElBitcoin.org
-translationSiteUrl: http://elbitcoin.org
+translation_url: http://elbitcoin.org/ataque-especulativo-como-triunfa-el-buen-dinero/
+translation_site: ElBitcoin.org
+translation_site_url: http://elbitcoin.org
 excerpt: "Bitcoin se superará las monedas débiles como el dólar: es a través de ataques especulativos y crisis monetarias causadas por inversores, no de la cuidadosa evaluación por parte de “periodistas especializados en tecnología” y consumidores mainstream."
 ---
 

@@ -5,9 +5,9 @@ image: BitcoinFace.png
 image_alt: BitcoinFace
 translators:
   - singe-optimiste
-translationUrl: https://parlonsbitcoin.com/blog/hyperbitcoinisation
-translationSite: Parlons Bitcoin
-translationSiteUrl: https://parlonsbitcoin.com
+translation_url: https://parlonsbitcoin.com/blog/hyperbitcoinisation
+translation_site: Parlons Bitcoin
+translation_site_url: https://parlonsbitcoin.com
 excerpt: Cet article traite de la possibilité d'une démonétisation de la monnaie induite par le Bitcoin, ou </em>hyperbitcoinisation</em>, ce qui est ce qui arriverait à toute monnaie infortunée qui croiserait le chemin de domination totale du monde par le Bitcoin.
 ---
 

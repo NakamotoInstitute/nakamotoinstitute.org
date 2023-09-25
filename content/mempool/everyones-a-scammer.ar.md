@@ -5,9 +5,9 @@ image: eastwood.jpg
 image_alt: Eastwood Scowl
 translators:
   - btc-translator
-translationUrl: https://bitcoinarabic.org/everyone-scammer-michael-goldstein/
-translationSite: Bitcoin Arabic
-translationSiteUrl: https://bitcoinarabic.org
+translation_url: https://bitcoinarabic.org/everyone-scammer-michael-goldstein/
+translation_site: Bitcoin Arabic
+translation_site_url: https://bitcoinarabic.org
 excerpt: هناك حرباً قائمة هدفها الحصول على بيتكويناتك، وسلاحك الوحيد هو قوة إرادتك.
 ---
 

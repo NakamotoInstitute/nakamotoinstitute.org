@@ -5,7 +5,7 @@ image: uncle-scrooge.jpg
 image_alt: Uncle Scrooge
 translators:
   - il-portico-dipinto
-translationUrl: http://ilporticodipinto.it/content/metto-da-parte-bitcoin-e-no-non-ne-do-nessuno
+translation_url: http://ilporticodipinto.it/content/metto-da-parte-bitcoin-e-no-non-ne-do-nessuno
 excerpt: Il vero eroe è il risparmiatore.
 ---
 

@@ -2,7 +2,7 @@
 title: Биткоин = свобода
 translators:
   - tony-b
-translationUrl: https://medium.com/@Tony_B/%D0%B1%D0%B8%D1%82%D0%BA%D0%BE%D0%B8%D0%BD-%D1%81%D0%B2%D0%BE%D0%B1%D0%BE%D0%B4%D0%B0-d1e06369f258
+translation_url: https://medium.com/@Tony_B/%D0%B1%D0%B8%D1%82%D0%BA%D0%BE%D0%B8%D0%BD-%D1%81%D0%B2%D0%BE%D0%B1%D0%BE%D0%B4%D0%B0-d1e06369f258
 excerpt: Биткоин осознанно, но самопроизвольно принимался за деньги, пока никто не обращал внимания, и теперь наш мир никогда не будет прежним.
 ---
 

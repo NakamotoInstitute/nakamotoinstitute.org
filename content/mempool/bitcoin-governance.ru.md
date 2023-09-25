@@ -2,9 +2,9 @@
 title: Управление Биткоином
 translators:
   - tony-b
-translationUrl: https://bitcoin-translated.ru/sources/nakamoto-institute/bitcoin-governance/
-translationSite: Bitcoin Translated
-translationSiteUrl: https://bitcoin-translated.ru
+translation_url: https://bitcoin-translated.ru/sources/nakamoto-institute/bitcoin-governance/
+translation_site: Bitcoin Translated
+translation_site_url: https://bitcoin-translated.ru
 excerpt: Пренебрежение отсутствием необходимости доверия может помочь цене Биткоина достичь локального максимума. Проблема заключается в том, что это впоследствии помешает достичь гораздо более высокого глобального максимума.
 ---
 
