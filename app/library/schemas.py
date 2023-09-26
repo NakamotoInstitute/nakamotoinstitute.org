@@ -2,7 +2,10 @@ import datetime
 import re
 from typing import List, Optional
 
-from pydantic import BaseModel, validator
+from pydantic import AliasPath, BaseModel, Field, field_serializer, validator
+from pydantic.alias_generators import to_camel
+
+from ..authors.schemas import AuthorSchema
 
 
 class LibraryMDSchema(BaseModel):
@@ -52,3 +55,37 @@ class LibraryTranslatedMDSchema(BaseModel):
     display_title: Optional[str] = None
     slug: Optional[str] = None
     image_alt: Optional[str] = None
+
+
+class DocumentTranslationSchema(BaseModel):
+    language: str
+    title: str
+    slug: str
+
+    class Config:
+        alias_generator = to_camel
+        populate_by_name = True
+        from_attributes = True
+
+
+class LibraryDocBaseSchema(BaseModel):
+    language: str
+    title: str
+    slug: str
+    date: datetime.date = Field(alias=AliasPath("document", "date"))
+    granularity: str = Field(alias=AliasPath("document", "granularity"))
+    authors: List[AuthorSchema] = Field(alias=AliasPath("document", "authors"))
+    translations: List[DocumentTranslationSchema]
+
+    class Config:
+        alias_generator = to_camel
+        populate_by_name = True
+        from_attributes = True
+
+    @field_serializer("date")
+    def serialize_date(self, date: datetime.date) -> str:
+        return date.isoformat()
+
+
+class LibraryDocSchema(LibraryDocBaseSchema):
+    content: str

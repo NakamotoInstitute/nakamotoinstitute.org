@@ -57,9 +57,11 @@ def create_app(config_class=Config):
         cache.init_app(app)
 
     from app.authors import authors as authors_bp
+    from app.library import library as library_bp
     from app.mempool import mempool as mempool_bp
 
     app.register_blueprint(authors_bp, url_prefix="/api/authors")
+    app.register_blueprint(library_bp, url_prefix="/api/library")
     app.register_blueprint(mempool_bp, url_prefix="/api/mempool")
 
     @app.before_request
