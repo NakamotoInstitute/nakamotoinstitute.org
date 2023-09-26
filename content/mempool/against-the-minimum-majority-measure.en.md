@@ -1,6 +1,7 @@
 ---
 title: Against the Minimum Majority Measure
-author: david-a-harding
+authors:
+  - david-a-harding
 date: 2017-07-28
 added: 2017-07-29
 excerpt: "I personally suspect that Bitcoin’s steadily improving privacy will\

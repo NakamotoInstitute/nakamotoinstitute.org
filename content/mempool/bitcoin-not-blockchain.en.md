@@ -1,6 +1,7 @@
 ---
 title: Bitcoin, Not Blockchain
-author: parker-lewis
+authors:
+  - parker-lewis
 date: 2019-09-06
 added: 2020-01-04
 excerpt:

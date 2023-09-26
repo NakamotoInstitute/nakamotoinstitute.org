@@ -1,6 +1,7 @@
 ---
 title: Bitcoin Obsoletes All Other Money
-author: parker-lewis
+authors:
+  - parker-lewis
 date: 2020-01-24
 added: 2020-03-03
 excerpt:

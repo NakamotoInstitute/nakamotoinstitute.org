@@ -1,6 +1,7 @@
 ---
 title: Bitcoin is Not for Criminals
-author: parker-lewis
+authors:
+  - parker-lewis
 date: 2019-11-29
 added: 2020-01-04
 excerpt:

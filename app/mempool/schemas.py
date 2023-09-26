@@ -10,7 +10,7 @@ from ..authors.schemas import AuthorSchema
 class MempoolMDSchema(BaseModel):
     title: str
     excerpt: str
-    author: str
+    authors: List[str]
     image: Optional[str] = None
     image_alt: Optional[str] = None
     date: datetime.date
@@ -51,7 +51,7 @@ class MempoolPostBaseSchema(BaseModel):
     translation_site_url: Optional[str]
     date: datetime.date = Field(alias=AliasPath("blog_post", "date"))
     added: datetime.date = Field(alias=AliasPath("blog_post", "added"))
-    author: AuthorSchema = Field(alias=AliasPath("blog_post", "author"))
+    authors: List[AuthorSchema] = Field(alias=AliasPath("blog_post", "authors"))
     translations: List[MempoolTranslationSchema]
 
     @field_serializer("date")

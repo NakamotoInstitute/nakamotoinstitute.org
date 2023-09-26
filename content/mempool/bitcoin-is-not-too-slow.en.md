@@ -1,6 +1,7 @@
 ---
 title: Bitcoin is Not Too Slow
-author: parker-lewis
+authors:
+  - parker-lewis
 date: 2019-08-23
 added: 2020-01-04
 excerpt:

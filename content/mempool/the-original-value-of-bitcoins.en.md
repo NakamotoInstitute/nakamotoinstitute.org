@@ -1,6 +1,7 @@
 ---
 title: The Original Value of Bitcoins
-author: daniel-krawisz
+authors:
+  - daniel-krawisz
 date: 2013-07-02
 added: 2013-07-02
 excerpt:

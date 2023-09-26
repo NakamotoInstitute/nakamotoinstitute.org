@@ -1,6 +1,7 @@
 ---
 title: "Bitcoin: Killer of Nietzschean Nihilism"
-author: peter-dushenski
+authors:
+  - peter-dushenski
 date: 2014-04-29
 added: 2014-07-04
 excerpt:

@@ -1,6 +1,7 @@
 ---
 title: "Bitcoin’s Compound Rewards"
-author: daniel-krawisz
+authors:
+  - daniel-krawisz
 date: 2014-10-25
 added: 2015-01-05
 excerpt:

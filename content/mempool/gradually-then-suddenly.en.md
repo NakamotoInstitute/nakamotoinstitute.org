@@ -1,6 +1,7 @@
 ---
 title: Gradually, Then Suddenly
-author: parker-lewis
+authors:
+  - parker-lewis
 date: 2019-07-26
 added: 2020-01-04
 excerpt: Bitcoin exists as a solution to the money problem that is global QE.

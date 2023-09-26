@@ -1,6 +1,7 @@
 ---
 title: "Don’t Panic"
-author: daniel-krawisz
+authors:
+  - daniel-krawisz
 date: 2014-11-22
 added: 2015-01-03
 excerpt:

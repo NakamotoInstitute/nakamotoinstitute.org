@@ -1,6 +1,7 @@
 ---
 title: Crashes and Hyperinflation
-author: daniel-krawisz
+authors:
+  - daniel-krawisz
 date: 2017-01-08
 added: 2017-01-08
 excerpt:

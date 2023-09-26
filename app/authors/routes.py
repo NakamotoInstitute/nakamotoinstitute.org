@@ -3,18 +3,19 @@ from typing import List
 from flask import g, jsonify
 
 from app import db
-from app.models import Author, BlogPost, BlogPostTranslation
+from app.models import Author, BlogPost, BlogPostTranslation, blog_post_authors
 from app.utils.decorators import response_model
 
 from . import authors
 from .schemas import AuthorResponse, AuthorSchema
 
 
-@authors.route("", methods=["GET"])
+@authors.route("/", methods=["GET"])
 @response_model(List[AuthorSchema])
 def get_authors():
     authors = db.session.scalars(
         db.select(Author)
+        .outerjoin(blog_post_authors)
         .outerjoin(BlogPost)
         .outerjoin(BlogPostTranslation)
         .filter(BlogPostTranslation.language == g.locale)
@@ -30,6 +31,7 @@ def get_author(slug):
     mempool_posts = db.session.scalars(
         db.select(BlogPostTranslation)
         .join(BlogPost)
+        .join(blog_post_authors)
         .join(Author)
         .filter(Author.id == author.id, BlogPostTranslation.language == g.locale)
     ).all()

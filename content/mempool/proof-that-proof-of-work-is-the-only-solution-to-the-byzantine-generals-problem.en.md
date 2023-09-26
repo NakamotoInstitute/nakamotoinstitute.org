@@ -1,6 +1,7 @@
 ---
 title: Proof That Proof-of-Work is the Only Solution to the Byzantine Generals' Problem
-author: oleg-andreev
+authors:
+  - oleg-andreev
 date: 2014-05-23
 added: 2015-11-17
 excerpt:

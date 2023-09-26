@@ -1,26 +1,5 @@
-from app import cli, create_app, db
-
-# from app.models import (
-#     Author,
-#     BlogPost,
-#     BlogPostTranslation,
-#     BlogSeries,
-#     Category,
-#     Doc,
-#     Email,
-#     EmailThread,
-#     Episode,
-#     Format,
-#     ForumThread,
-#     Language,
-#     Post,
-#     Price,
-#     Quote,
-#     QuoteCategory,
-#     ResearchDoc,
-#     Skeptic,
-#     Translator,
-# )
+from app import cli, create_app
+from app.models import blog_post_authors
 
 app = create_app()
 cli.register(app)
@@ -28,25 +7,4 @@ cli.register(app)
 
 @app.shell_context_processor
 def make_shell_context():
-    return {
-        "db": db,
-        # "Author": Author,
-        # "BlogPost": BlogPost,
-        # "BlogPostTransaction": BlogPostTranslation,
-        # "BlogSeries": BlogSeries,
-        # "Category": Category,
-        # "Doc": Doc,
-        # "Email": Email,
-        # "EmailThread": EmailThread,
-        # "Episode": Episode,
-        # "Format": Format,
-        # "ForumThread": ForumThread,
-        # "Language": Language,
-        # "Post": Post,
-        # "Price": Price,
-        # "Quote": Quote,
-        # "QuoteCategory": QuoteCategory,
-        # "ResearchDoc": ResearchDoc,
-        # "Skeptic": Skeptic,
-        # "Translator": Translator,
-    }
+    return {"blog_post_authors": blog_post_authors}

@@ -1,6 +1,7 @@
 ---
 title: "Bitcoin Is Great, But It Won’t Fix Our Monkey Brains"
-author: andrea-castillo
+authors:
+  - andrea-castillo
 date: 2014-06-10
 added: 2014-09-30
 excerpt:

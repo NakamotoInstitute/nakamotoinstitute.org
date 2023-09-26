@@ -1,6 +1,7 @@
 ---
 title: The Seven Network Effects of Bitcoin
-author: trace-mayer
+authors:
+  - trace-mayer
 date: 2015-06-29
 added: 2019-08-02
 excerpt:

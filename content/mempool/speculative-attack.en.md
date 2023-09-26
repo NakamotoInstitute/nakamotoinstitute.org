@@ -1,6 +1,7 @@
 ---
 title: Speculative Attack
-author: pierre-rochard
+authors:
+  - pierre-rochard
 date: 2014-07-04
 added: 2014-07-04
 excerpt:

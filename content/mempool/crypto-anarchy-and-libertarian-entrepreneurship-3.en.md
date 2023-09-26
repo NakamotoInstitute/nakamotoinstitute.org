@@ -1,6 +1,7 @@
 ---
 title: The Killer App of Liberty
-author: daniel-krawisz
+authors:
+  - daniel-krawisz
 date: 2013-05-29
 added: 2013-05-29
 excerpt: "If Bitcoin becomes money, the government’s control of money will have\

@@ -1,6 +1,7 @@
 ---
 title: How We Know Bitcoin Is Not a Bubble
-author: daniel-krawisz
+authors:
+  - daniel-krawisz
 date: 2014-05-03
 added: 2014-05-03
 excerpt:

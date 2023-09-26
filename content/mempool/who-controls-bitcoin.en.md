@@ -1,6 +1,7 @@
 ---
 title: Who Controls Bitcoin?
-author: daniel-krawisz
+authors:
+  - daniel-krawisz
 date: 2015-02-08
 added: 2015-02-08
 excerpt:

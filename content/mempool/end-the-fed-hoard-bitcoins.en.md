@@ -1,6 +1,7 @@
 ---
 title: "End the Fed: Hoard Bitcoins"
-author: pierre-rochard
+authors:
+  - pierre-rochard
 date: 2013-02-19
 added: 2013-02-19
 excerpt:

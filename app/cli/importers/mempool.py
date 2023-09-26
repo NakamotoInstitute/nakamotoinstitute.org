@@ -62,8 +62,10 @@ def process_other_language_file(filename, directory_path, blog_post_translations
 def handle_translations_for_slug(slug, translations, blog_posts, db_session):
     blog_post_data = blog_posts.get(slug, {})
 
-    if "author" in blog_post_data:
-        blog_post_data["author"] = get(Author, slug=blog_post_data["author"])
+    if "authors" in blog_post_data:
+        blog_post_data["authors"] = [
+            get(Author, slug=author) for author in blog_post_data["authors"]
+        ]
 
     blog_post = BlogPost(**blog_post_data)
     db_session.add(blog_post)

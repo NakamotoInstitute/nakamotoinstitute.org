@@ -1,6 +1,7 @@
 ---
 title: Bitcoin Fixes This
-author: parker-lewis
+authors:
+  - parker-lewis
 date: 2019-08-30
 added: 2020-01-04
 excerpt:

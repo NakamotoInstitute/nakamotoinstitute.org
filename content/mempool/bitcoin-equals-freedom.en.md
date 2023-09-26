@@ -1,6 +1,7 @@
 ---
 title: Bitcoin Equals Freedom
-author: ross-ulbricht
+authors:
+  - ross-ulbricht
 date: 2019-09-25
 added: 2019-09-26
 excerpt:

@@ -1,6 +1,7 @@
 ---
 title: The Proof-of-Work Concept
-author: daniel-krawisz
+authors:
+  - daniel-krawisz
 date: 2013-06-24
 added: 2013-06-24
 excerpt:

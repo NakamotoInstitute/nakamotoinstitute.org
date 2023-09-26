@@ -1,6 +1,7 @@
 ---
 title: Economics of Bitcoin as a Settlement Network
-author: saifedean-ammous
+authors:
+  - saifedean-ammous
 date: 2017-05-19
 added: 2017-11-08
 excerpt:

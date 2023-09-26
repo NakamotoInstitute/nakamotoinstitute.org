@@ -1,6 +1,7 @@
 ---
 title: Bitcoin Cannot Be Banned
-author: parker-lewis
+authors:
+  - parker-lewis
 date: 2019-11-08
 added: 2020-01-04
 excerpt: "Banning bitcoin is a fool’s errand. Some will try; all will fail. And\

@@ -1,6 +1,7 @@
 ---
 title: Bitcoin's Rugged Individualism
-author: daniel-krawisz
+authors:
+  - daniel-krawisz
 date: 2014-06-29
 added: 2014-06-29
 excerpt:

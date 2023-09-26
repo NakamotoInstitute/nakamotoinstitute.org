@@ -1,6 +1,7 @@
 ---
 title: The Bullish Case for Bitcoin
-author: vijay-boyapati
+authors:
+  - vijay-boyapati
 date: 2018-02-26
 added: 2019-07-01
 excerpt: "[T]he bullish case for Bitcoin is compelling but far from obvious."

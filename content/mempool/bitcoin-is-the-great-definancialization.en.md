@@ -1,6 +1,7 @@
 ---
 title: Bitcoin is the Great Definancialization
-author: parker-lewis
+authors:
+  - parker-lewis
 date: 2020-12-19
 added: 2021-01-09
 excerpt:

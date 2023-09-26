@@ -1,6 +1,7 @@
 ---
 title: Bitcoin's Shroud of Subtlety and Allure
-author: daniel-krawisz
+authors:
+  - daniel-krawisz
 date: 2014-06-29
 added: 2014-06-29
 excerpt:

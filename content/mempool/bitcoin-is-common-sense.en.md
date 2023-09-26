@@ -1,6 +1,7 @@
 ---
 title: Bitcoin is Common Sense
-author: parker-lewis
+authors:
+  - parker-lewis
 date: 2020-05-01
 added: 2020-05-23
 excerpt:

@@ -1,6 +1,7 @@
 ---
 title: The Strategy
-author: daniel-krawisz
+authors:
+  - daniel-krawisz
 date: 2013-05-22
 added: 2013-05-22
 excerpt:

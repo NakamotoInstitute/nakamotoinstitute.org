@@ -1,6 +1,7 @@
 ---
 title: I Love Bitcoin's Volatility
-author: daniel-krawisz
+authors:
+  - daniel-krawisz
 date: 2014-01-28
 added: 2014-01-28
 excerpt: "Those who worry about Bitcoin’s volatility fail to understand what\

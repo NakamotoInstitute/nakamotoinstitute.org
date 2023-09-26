@@ -1,6 +1,7 @@
 ---
 title: Mastercoin is a Nightmare of Insanity
-author: daniel-krawisz
+authors:
+  - daniel-krawisz
 date: 2013-12-20
 added: 2013-12-20
 excerpt:

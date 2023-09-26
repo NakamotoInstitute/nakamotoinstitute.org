@@ -1,6 +1,7 @@
 ---
 title: Bitcoin Has No Image Problem
-author: daniel-krawisz
+authors:
+  - daniel-krawisz
 date: 2014-02-25
 added: 2014-02-25
 excerpt:

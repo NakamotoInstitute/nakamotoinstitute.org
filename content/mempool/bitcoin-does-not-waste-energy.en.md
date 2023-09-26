@@ -1,6 +1,7 @@
 ---
 title: Bitcoin Does Not Waste Energy
-author: parker-lewis
+authors:
+  - parker-lewis
 date: 2019-08-16
 added: 2020-01-04
 excerpt:

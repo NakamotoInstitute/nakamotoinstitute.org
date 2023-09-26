@@ -1,6 +1,7 @@
 ---
 title: Bitcoin is One for All
-author: parker-lewis
+authors:
+  - parker-lewis
 date: 2020-08-27
 added: 2020-10-10
 excerpt:

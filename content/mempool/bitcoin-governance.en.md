@@ -1,6 +1,7 @@
 ---
 title: Bitcoin Governance
-author: pierre-rochard
+authors:
+  - pierre-rochard
 date: 2018-07-08
 added: 2018-11-01
 excerpt:

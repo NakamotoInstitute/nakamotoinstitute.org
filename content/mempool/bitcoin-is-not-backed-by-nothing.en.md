@@ -1,6 +1,7 @@
 ---
 title: Bitcoin is Not Backed by Nothing
-author: parker-lewis
+authors:
+  - parker-lewis
 date: 2019-09-27
 added: 2020-01-04
 excerpt: "Ultimately, bitcoin is backed by something, and it’s the only thing\

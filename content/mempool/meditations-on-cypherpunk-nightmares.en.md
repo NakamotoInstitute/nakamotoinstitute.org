@@ -1,6 +1,7 @@
 ---
 title: Meditations on Cypherpunk Nightmares
-author: michael-goldstein
+authors:
+  - michael-goldstein
 date: 2014-12-24
 added: 2014-12-24
 excerpt:

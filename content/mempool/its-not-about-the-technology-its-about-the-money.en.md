@@ -1,6 +1,7 @@
 ---
 title: It's Not About the Technology, It's About the Money
-author: daniel-krawisz
+authors:
+  - daniel-krawisz
 date: 2016-07-13
 added: 2016-07-13
 excerpt: "If someone says “blockchain tech” to you, you might as well walk\

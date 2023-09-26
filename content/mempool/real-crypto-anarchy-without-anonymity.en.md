@@ -1,6 +1,7 @@
 ---
 title: Real Crypto-Anarchy Without Anonymity
-author: oleg-andreev
+authors:
+  - oleg-andreev
 date: 2013-12-28
 added: 2014-10-02
 excerpt:

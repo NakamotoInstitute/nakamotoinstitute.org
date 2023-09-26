@@ -1,6 +1,7 @@
 ---
 title: Bitcoin is Not a Pyramid Scheme
-author: parker-lewis
+authors:
+  - parker-lewis
 date: 2019-10-18
 added: 2020-01-04
 excerpt:

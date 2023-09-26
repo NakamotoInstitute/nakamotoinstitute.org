@@ -1,6 +1,7 @@
 ---
 title: The Two Ideologies in Bitcoin
-author: daniel-krawisz
+authors:
+  - daniel-krawisz
 date: 2014-10-04
 added: 2015-01-02
 excerpt:

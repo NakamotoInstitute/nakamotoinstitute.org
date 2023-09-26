@@ -1,6 +1,7 @@
 ---
 title: Working and Saving are Revolutionary Acts
-author: pierre-rochard
+authors:
+  - pierre-rochard
 date: 2012-12-24
 added: 2012-12-24
 excerpt:

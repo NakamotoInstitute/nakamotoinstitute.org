@@ -1,6 +1,7 @@
 ---
 title: Why the Bitcoin Dominance Index is Deceiving
-author: jimmy-song
+authors:
+  - jimmy-song
 date: 2017-05-08
 added: 2017-05-08
 excerpt:

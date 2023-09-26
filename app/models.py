@@ -25,27 +25,41 @@ language_check = ", ".join([f"'{lang}'" for lang in ALLOWED_LANGUAGES])
 language_check = f"({language_check})"
 
 
+blog_post_authors = db.Table(
+    "blog_post_authors",
+    db.Column("blog_post_id", db.Integer, db.ForeignKey("blog_posts.id")),
+    db.Column("author_id", db.Integer, db.ForeignKey("authors.id")),
+)
+
+
 class Author(db.Model):
+    __tablename__ = "authors"
+
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     slug: Mapped[str] = mapped_column(String, unique=True, nullable=False)
     name: Mapped[str] = mapped_column(String, nullable=False)
     sort_name: Mapped[str] = mapped_column(String, nullable=False)
     content: Mapped[str] = mapped_column(Text, nullable=False)
-    posts: Mapped[List["BlogPost"]] = relationship(back_populates="author")
+    posts: Mapped[List["BlogPost"]] = relationship(
+        secondary=blog_post_authors, back_populates="authors"
+    )
 
     def __repr__(self) -> str:
         return f"<Author({self.slug})>"
 
 
 class BlogPost(db.Model):
+    __tablename__ = "blog_posts"
+
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     image: Mapped[str] = mapped_column(String, nullable=True)
     date: Mapped[datetime.date] = mapped_column(Date, nullable=False)
     added: Mapped[datetime.date] = mapped_column(Date, nullable=True)
     original_url: Mapped[str] = mapped_column(String, nullable=True)
     original_site: Mapped[str] = mapped_column(String, nullable=True)
-    author_id: Mapped[int] = mapped_column(db.ForeignKey("author.id"))
-    author: Mapped["Author"] = relationship(back_populates="posts")
+    authors: Mapped[List["Author"]] = relationship(
+        secondary=blog_post_authors, back_populates="posts"
+    )
     translations: Mapped[List["BlogPostTranslation"]] = relationship(
         back_populates="blog_post"
     )
@@ -55,6 +69,8 @@ class BlogPost(db.Model):
 
 
 class BlogPostTranslation(db.Model):
+    __tablename__ = "blog_post_translations"
+
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     language: Mapped[str] = mapped_column(
         String,
@@ -69,8 +85,8 @@ class BlogPostTranslation(db.Model):
     translation_url: Mapped[str] = mapped_column(String, nullable=True)
     translation_site: Mapped[str] = mapped_column(String, nullable=True)
     translation_site_url: Mapped[str] = mapped_column(String, nullable=True)
-    blog_post_id: Mapped[int] = mapped_column(db.ForeignKey("blog_post.id"))
-    blog_post: Mapped["BlogPost"] = relationship(back_populates="translations")
+    blog_post_id: Mapped[int] = mapped_column(db.ForeignKey("blog_posts.id"))
+    blog_post: Mapped[BlogPost] = relationship(back_populates="translations")
 
     __table_args__ = (db.UniqueConstraint("blog_post_id", "language"),)
 

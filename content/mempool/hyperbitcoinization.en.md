@@ -1,6 +1,7 @@
 ---
 title: Hyperbitcoinization
-author: daniel-krawisz
+authors:
+  - daniel-krawisz
 date: 2014-03-29
 added: 2014-03-29
 excerpt: This article is about the possibility of Bitcoin-induced currency demonetization, or <em>hyperbitcoinization</em>, which is what would happen to any hapless currency that stands in Bitcoin's path of total world domination.

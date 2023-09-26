@@ -1,6 +1,7 @@
 ---
 title: Fractional Reserve Banking is Obsolete
-author: pierre-rochard
+authors:
+  - pierre-rochard
 date: 2013-02-22
 added: 2013-02-22
 excerpt:

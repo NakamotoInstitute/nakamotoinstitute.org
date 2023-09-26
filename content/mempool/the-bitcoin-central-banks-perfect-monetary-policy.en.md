@@ -1,6 +1,7 @@
 ---
 title: The Bitcoin Central Bank's Perfect Monetary Policy
-author: pierre-rochard
+authors:
+  - pierre-rochard
 date: 2013-12-15
 added: 2013-12-15
 excerpt:

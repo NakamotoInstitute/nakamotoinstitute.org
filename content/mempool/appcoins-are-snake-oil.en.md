@@ -1,6 +1,7 @@
 ---
 title: Appcoins Are Snake Oil
-author: daniel-krawisz
+authors:
+  - daniel-krawisz
 date: 2014-05-24
 added: 2014-05-24
 excerpt: Appcoins are a terrible idea.

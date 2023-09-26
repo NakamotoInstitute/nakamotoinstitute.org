@@ -1,6 +1,7 @@
 ---
 title: The Legacy of the Dread Pirate Roberts
-author: daniel-krawisz
+authors:
+  - daniel-krawisz
 date: 2014-07-10
 added: 2014-11-08
 excerpt:

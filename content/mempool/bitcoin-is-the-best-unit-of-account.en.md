@@ -1,6 +1,7 @@
 ---
 title: Bitcoin is the Best Unit of Account
-author: daniel-krawisz
+authors:
+  - daniel-krawisz
 date: 2014-05-10
 added: 2014-05-10
 excerpt:

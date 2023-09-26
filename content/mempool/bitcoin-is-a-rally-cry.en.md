@@ -1,6 +1,7 @@
 ---
 title: Bitcoin is a Rally Cry
-author: parker-lewis
+authors:
+  - parker-lewis
 date: 2020-03-26
 added: 2020-04-10
 excerpt:

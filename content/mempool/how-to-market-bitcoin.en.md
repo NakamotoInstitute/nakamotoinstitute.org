@@ -1,6 +1,7 @@
 ---
 title: How to Market Bitcoin
-author: daniel-krawisz
+authors:
+  - daniel-krawisz
 date: 2014-04-26
 added: 2014-04-26
 excerpt: Does Bitcoin need to be sanitized and separated from its anarchist, black-market roots in order to become acceptable to the general population? Absolutely not!

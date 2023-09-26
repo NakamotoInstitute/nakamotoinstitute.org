@@ -1,6 +1,7 @@
 ---
 title: Who Controls Ethereum?
-author: daniel-krawisz
+authors:
+  - daniel-krawisz
 date: 2016-08-07
 added: 2016-08-07
 excerpt:

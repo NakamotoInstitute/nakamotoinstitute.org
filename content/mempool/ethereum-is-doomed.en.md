@@ -1,6 +1,7 @@
 ---
 title: Ethereum is Doomed
-author: daniel-krawisz
+authors:
+  - daniel-krawisz
 date: 2016-06-20
 added: 2016-06-20
 excerpt: "I fully support the attacker’s actions, and I wish I had thought of\

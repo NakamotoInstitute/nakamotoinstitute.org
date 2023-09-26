@@ -2,7 +2,7 @@ import logging
 import os
 from logging.handlers import RotatingFileHandler
 
-from flask import Flask, g, request
+from flask import Flask, g, redirect, request
 from flask_caching import Cache
 from flask_flatpages import FlatPages
 from flask_sqlalchemy import SQLAlchemy
@@ -39,6 +39,7 @@ cache = Cache(
 def create_app(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(config_class)
+    app.url_map.strict_slashes = False
     app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
 
     db.init_app(app)
@@ -60,6 +61,11 @@ def create_app(config_class=Config):
 
     app.register_blueprint(authors_bp, url_prefix="/api/authors")
     app.register_blueprint(mempool_bp, url_prefix="/api/mempool")
+
+    @app.before_request
+    def remove_trailing_slash():
+        if request.path != "/" and request.path.endswith("/"):
+            return redirect(request.path[:-1])
 
     @app.url_value_preprocessor
     def set_locale(endpoint, values):

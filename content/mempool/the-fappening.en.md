@@ -1,6 +1,7 @@
 ---
 title: "The Fappening — Brought to You By The Information Marketplace"
-author: daniel-krawisz
+authors:
+  - daniel-krawisz
 date: 2014-09-03
 added: 2015-01-06
 excerpt:

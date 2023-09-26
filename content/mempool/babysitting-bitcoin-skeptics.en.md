@@ -1,6 +1,7 @@
 ---
 title: "Babysitting Bitcoin Skeptics: A Response to Krugman and Gobry"
-author: daniel-krawisz
+authors:
+  - daniel-krawisz
 date: 2014-11-30
 added: 2015-01-04
 excerpt:
