@@ -74,5 +74,16 @@ class BlogPostTranslation(db.Model):
 
     __table_args__ = (db.UniqueConstraint("blog_post_id", "language"),)
 
+    @property
+    def translations(self):
+        return sorted(
+            [
+                translation
+                for translation in self.blog_post.translations
+                if translation != self
+            ],
+            key=lambda t: t.language,
+        )
+
     def __repr__(self) -> str:
         return f"<BlogPostTranslation(language={self.language};slug={self.slug})>"

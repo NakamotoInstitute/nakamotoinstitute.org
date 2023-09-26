@@ -2,7 +2,7 @@ import logging
 import os
 from logging.handlers import RotatingFileHandler
 
-from flask import Flask
+from flask import Flask, g, request
 from flask_caching import Cache
 from flask_flatpages import FlatPages
 from flask_sqlalchemy import SQLAlchemy
@@ -60,6 +60,10 @@ def create_app(config_class=Config):
 
     app.register_blueprint(authors_bp, url_prefix="/api/authors")
     app.register_blueprint(mempool_bp, url_prefix="/api/mempool")
+
+    @app.url_value_preprocessor
+    def set_locale(endpoint, values):
+        g.locale = request.args.get("lang", "en")
 
     if not app.debug:
         if not os.path.exists("logs"):

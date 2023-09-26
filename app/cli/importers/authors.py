@@ -1,9 +1,9 @@
 import click
 
 from app import db
+from app.authors.schemas import AuthorMDSchema
 from app.cli.utils import DONE, load_all_markdown_files
 from app.models import Author
-from app.schemas.data import AuthorMDSchema
 
 
 def import_author():

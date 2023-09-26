@@ -1,6 +1,6 @@
 from typing import List
 
-from flask import jsonify
+from flask import g, jsonify
 
 from app import db
 from app.models import Author, BlogPost, BlogPostTranslation
@@ -24,7 +24,7 @@ def get_author(slug):
         db.select(BlogPostTranslation)
         .join(BlogPost)
         .join(Author)
-        .filter(Author.id == author.id, BlogPostTranslation.language == "en")
+        .filter(Author.id == author.id, BlogPostTranslation.language == g.locale)
     ).all()
     response_data = AuthorResponse(author=author, mempool=mempool_posts)
 

@@ -4,8 +4,8 @@ import click
 
 from app import db
 from app.cli.utils import DONE, extract_data_from_filename, get, process_markdown_file
+from app.mempool.schemas import MempoolMDSchema, MempoolTranslatedMDSchema
 from app.models import Author, BlogPost, BlogPostTranslation
-from app.schemas.data import MempoolMDSchema, MempoolTranslatedMDSchema
 
 
 def _load_common_data(slug, lang, extension, directory_path, schema):
