@@ -8,7 +8,7 @@ from . import mempool
 from .schemas import MempoolPostSchema
 
 
-@mempool.route("/", methods=["GET"])
+@mempool.route("", methods=["GET"])
 @response_model(List[MempoolPostSchema])
 def get_mempool_posts():
     posts = db.session.scalars(

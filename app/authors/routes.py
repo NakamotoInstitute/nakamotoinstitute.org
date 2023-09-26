@@ -10,10 +10,17 @@ from . import authors
 from .schemas import AuthorResponse, AuthorSchema
 
 
-@authors.route("/", methods=["GET"])
+@authors.route("", methods=["GET"])
 @response_model(List[AuthorSchema])
 def get_authors():
-    authors = db.session.scalars(db.select(Author)).all()
+    authors = db.session.scalars(
+        db.select(Author)
+        .outerjoin(BlogPost)
+        .outerjoin(BlogPostTranslation)
+        .filter(BlogPostTranslation.language == g.locale)
+        .order_by(Author.sort_name)
+        .distinct()
+    ).all()
     return authors
 
 
