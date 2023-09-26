@@ -1,8 +1,13 @@
 import os
 from typing import Any, Dict, List, Optional, Tuple, Type
 
+import click
 import yaml
 from pydantic import BaseModel, ValidationError
+
+from app import db
+from app.cli.utils import DONE, get
+from app.models import Author
 
 
 def read_markdown_file(filepath: str) -> str:
@@ -85,3 +90,134 @@ def _setup_common_data(slug, lang, extension, directory_path, schema):
         return None, None
 
     return front_matter.dict(), remaining_content
+
+
+def _load_common_data(slug, lang, extension, directory_path, schema):
+    filepath = os.path.join(directory_path, f"{slug}.{lang}.{extension}")
+    front_matter_dict, remaining_content = process_markdown_file(filepath, schema)
+
+    if front_matter_dict:
+        return front_matter_dict, remaining_content
+    return None, None
+
+
+def process_primary_language_file(
+    filename, directory_path, items, item_translations, primary_schema
+):
+    slug, lang, extension = extract_data_from_filename(filename)
+    front_matter_dict, remaining_content = _load_common_data(
+        slug, lang, extension, directory_path, primary_schema
+    )
+
+    if not front_matter_dict:
+        return
+
+    keys_to_move = ["title", "excerpt", "image_alt"]
+    translation_data = {"language": lang, "slug": slug, "content": remaining_content}
+    for key in keys_to_move:
+        translation_data[key] = front_matter_dict.pop(key, None)
+
+    items[slug] = front_matter_dict
+    item_translations[slug] = [translation_data]
+
+
+def process_secondary_language_file(
+    filename, directory_path, item_translations, secondary_schema
+):
+    slug, lang, extension = extract_data_from_filename(filename)
+    front_matter_dict, remaining_content = _load_common_data(
+        slug, lang, extension, directory_path, secondary_schema
+    )
+
+    if not front_matter_dict:
+        return
+
+    translation_data = {
+        "language": lang,
+        "slug": slug,
+        "content": remaining_content,
+        **front_matter_dict,
+    }
+
+    primary_language_data = next(
+        (item for item in item_translations[slug] if item["language"] == "en"), {}
+    )
+    translation_data = {**primary_language_data, **translation_data}
+
+    item_translations.setdefault(slug, []).append(translation_data)
+
+
+def handle_translations(
+    slug, translations, items, db_session, model, translation_model, relationship_key
+):
+    item_data = items.get(slug, {})
+
+    if "authors" in item_data:
+        item_data["authors"] = [
+            get(Author, slug=author) for author in item_data["authors"]
+        ]
+
+    item_instance = model(**item_data)
+    db_session.add(item_instance)
+
+    primary_language_data = next(
+        (item for item in translations if item["language"] == "en"), None
+    )
+
+    if primary_language_data:
+        translation_instance = translation_model(
+            **primary_language_data, **{relationship_key: item_instance}
+        )
+        db_session.add(translation_instance)
+
+    for translation in translations:
+        if translation["language"] != "en" and primary_language_data:
+            for key in primary_language_data:
+                if translation.get(key) is None:
+                    translation[key] = primary_language_data[key]
+
+            translation_instance = translation_model(
+                **translation, **{relationship_key: item_instance}
+            )
+            db_session.add(translation_instance)
+
+
+def import_content(
+    directory_path,
+    primary_schema,
+    secondary_schema,
+    model,
+    translation_model,
+    relationship_key,
+):
+    click.echo(f"Importing content from {directory_path}...", nl=False)
+    item_translations = {}
+    items = {}
+
+    for filename in sorted(os.listdir(directory_path)):
+        slug, lang, _ = extract_data_from_filename(filename)
+        if lang == "en":
+            process_primary_language_file(
+                filename, directory_path, items, item_translations, primary_schema
+            )
+
+    for filename in sorted(os.listdir(directory_path)):
+        slug, lang, _ = extract_data_from_filename(filename)
+        if lang != "en":
+            process_secondary_language_file(
+                filename, directory_path, item_translations, secondary_schema
+            )
+
+    for slug, translations in item_translations.items():
+        handle_translations(
+            slug,
+            translations,
+            items,
+            db.session,
+            model,
+            translation_model,
+            relationship_key,
+        )
+
+    db.session.commit()
+    click.echo(DONE)
