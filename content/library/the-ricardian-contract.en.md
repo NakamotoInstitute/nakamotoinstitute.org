@@ -1,210 +1,221 @@
-<h2>Abstract</h2>
+---
+title: The Ricardian Contract
+sortTitle: Ricardian Contract
+authors:
+  - ian-grigg
+date: 2004-07-06
+categories:
+  - cryptography
+  - finance
+doctype: essay
+external: http://iang.org/papers/ricardian_contract.html
+---
 
-<p><em>Describing digital value for payment systems is not a trivial task. Simplistic methods of using numbers or country codes to describe currencies, and ticker tape symbols to issue bonds, shares, and other financial instruments soon run into shortcomings in their ability to handle dynamic and divergent demands. The seemingly arbitrary variations in the meanings of different instruments are best captured as contracts between issuers and holders. Thus, the digital issuance of instruments can be viewed as the issuance of contracts.</em></p>
+## Abstract
 
-<p><em>This paper proposes that the contract is the issue. A document form is described that encompasses the inherent contractual nature of the financial instrument yet copes with the requirements of being an integral part of a payment system.</em></p>
+_Describing digital value for payment systems is not a trivial task. Simplistic methods of using numbers or country codes to describe currencies, and ticker tape symbols to issue bonds, shares, and other financial instruments soon run into shortcomings in their ability to handle dynamic and divergent demands. The seemingly arbitrary variations in the meanings of different instruments are best captured as contracts between issuers and holders. Thus, the digital issuance of instruments can be viewed as the issuance of contracts._
 
-<h2>1. Introduction</h2>
+_This paper proposes that the contract is the issue. A document form is described that encompasses the inherent contractual nature of the financial instrument yet copes with the requirements of being an integral part of a payment system._
 
-<p>Little work has been done on classification and description of value in the field of financial cryptography. This paper presents the Ricardian Contract, a method to identify and describe issues of financial instruments as contracts<sup><a href="#fn1" id="ref1">[1]</a></sup>. It was originally developed by Ian Grigg and Gary Howland as part of the Ricardo payment system.</p>
+## 1. Introduction
 
-<h3>1.1. The Origins</h3>
+Little work has been done on classification and description of value in the field of financial cryptography. This paper presents the Ricardian Contract, a method to identify and describe issues of financial instruments as contracts<sup><a href="#fn1" id="ref1">[1]</a></sup>. It was originally developed by Ian Grigg and Gary Howland as part of the Ricardo payment system.
 
-<p>The original application was a bond trading system<sup><a href="#fn2" id="ref2">[2]</a></sup>. For trading, a basic component is a transfer or payment system which receives and acts on transfer instructions to move instruments (cash, bonds) from one account to another. Each instruction therefore must identify the instrument.</p>
+### 1.1. The Origins
 
-<p>A means was required to capture, identify, and describe the traded instruments. There are thousands of bonds, and potentially millions of other instruments that could be issued and traded, and each has unique characteristics that are not amenable to compression into databases. To such a system, cash is no different to bonds, and requires the same description.</p>
+The original application was a bond trading system<sup><a href="#fn2" id="ref2">[2]</a></sup>. For trading, a basic component is a transfer or payment system which receives and acts on transfer instructions to move instruments (cash, bonds) from one account to another. Each instruction therefore must identify the instrument.
 
-<h3>1.2. The Problem</h3>
+A means was required to capture, identify, and describe the traded instruments. There are thousands of bonds, and potentially millions of other instruments that could be issued and traded, and each has unique characteristics that are not amenable to compression into databases. To such a system, cash is no different to bonds, and requires the same description.
 
-<p>When someone issues a currency (or bond or share) over the Internet, what is it? What does the recipient have?</p>
+### 1.2. The Problem
 
-<p>Few systems for issuance of value (payment systems) treat these questions adequately. They generally refer to existing external units of currency and tidy up loose edges in a <em>user agreement</em>. For example, Paypal, an issuer of dollars, relies on the familiarity of the US dollar to define much of its service offering. Gold issuers lean more heavily on their user agreements as the metal unit is not so familiar.</p>
+When someone issues a currency (or bond or share) over the Internet, what is it? What does the recipient have?
 
-<p>For trading, it is not sufficient to refer to well-known familiar references, as each instrument is different in finicky ways and these differences matter to traders. Even with currencies, however, the user has difficulty in determining the security and safety of one dollar with respect to another.</p>
+Few systems for issuance of value (payment systems) treat these questions adequately. They generally refer to existing external units of currency and tidy up loose edges in a _user agreement_. For example, Paypal, an issuer of dollars, relies on the familiarity of the US dollar to define much of its service offering. Gold issuers lean more heavily on their user agreements as the metal unit is not so familiar.
 
-<p>Classification by numbers or symbols is a starting point. Almost all systems of digital issuance identify their basic issue by allocating numbers or letters as currencies (for example, 840, "USD", "AUG" <sup><a href="#fn3" id="ref3">[3]</a></sup>). These systems runs into trouble quickly.</p>
+For trading, it is not sufficient to refer to well-known familiar references, as each instrument is different in finicky ways and these differences matter to traders. Even with currencies, however, the user has difficulty in determining the security and safety of one dollar with respect to another.
 
-<p>An issuer with many currencies or many issuers with the same nominal currency raises difficult questions. Can an issuer have two or more dollar units? For example, within ISO3166-1, there are three different US dollars: 840/USD (<em>cash</em>), 998/USS (<em>same day</em>), and 997/USN (<em>next day</em>). Similarly, how does one Digital Gold Currency ("DGC") differentiate his gold over that of another issuer, when all are known as "AUG"?</p>
+Classification by numbers or symbols is a starting point. Almost all systems of digital issuance identify their basic issue by allocating numbers or letters as currencies (for example, 840, "USD", "AUG" <sup><a href="#fn3" id="ref3">[3]</a></sup>). These systems runs into trouble quickly.
 
-<h3>1.3. The Solution</h3>
+An issuer with many currencies or many issuers with the same nominal currency raises difficult questions. Can an issuer have two or more dollar units? For example, within ISO3166-1, there are three different US dollars: 840/USD (_cash_), 998/USS (_same day_), and 997/USN (_next day_). Similarly, how does one Digital Gold Currency ("DGC") differentiate his gold over that of another issuer, when all are known as "AUG"?
 
-<p>As bonds are, at their essence, contracts between issuers and users, our problem reduces to one of <em>issuing contracts</em>. Whereas other issues <em>have</em> contracts, our issues <em>are</em> contracts.</p>
+### 1.3. The Solution
 
-<p>Our innovation is to express an issued instrument as a contract, and to link that contract into every aspect of the payment system. By this process, a document of some broad utility (readable by user and program) is drafted and digitally signed by the issuer of the instrument. This document, the <em>Ricardian Contract</em>, forms the basis for understanding an issue and every transaction within that issue.</p>
+As bonds are, at their essence, contracts between issuers and users, our problem reduces to one of _issuing contracts_. Whereas other issues _have_ contracts, our issues _are_ contracts.
 
-<p>By extension, all issues of value, such as currencies, shares, derivatives, loyalty systems and vouchers, can benefit from this approach.</p>
+Our innovation is to express an issued instrument as a contract, and to link that contract into every aspect of the payment system. By this process, a document of some broad utility (readable by user and program) is drafted and digitally signed by the issuer of the instrument. This document, the _Ricardian Contract_, forms the basis for understanding an issue and every transaction within that issue.
 
-<h3>1.4. Structure</h3>
+By extension, all issues of value, such as currencies, shares, derivatives, loyalty systems and vouchers, can benefit from this approach.
 
-<p>This paper is structured as follows. In Section 2, we discuss conventional approaches to identifying and describing issuance, and explore questions and doubts surrounding these approaches. Then, in Section 3, a design to express issuance as a contract is presented. Finally, in Section 4, concluding remarks are added.</p>
+### 1.4. Structure
 
-<h2>2. Issues of Value as Contracts</h2>
+This paper is structured as follows. In Section 2, we discuss conventional approaches to identifying and describing issuance, and explore questions and doubts surrounding these approaches. Then, in Section 3, a design to express issuance as a contract is presented. Finally, in Section 4, concluding remarks are added.
 
-<h3>2.1. A First Generation Scheme</h3>
+## 2. Issues of Value as Contracts
 
-<p>Consider the case of the pioneering digital cash scheme, eCash, as originally fielded by DigiCash BV. The first valuable currency, issued by Mark Twain Bank of the USA, was identified with the number 4. Lore has it that the early system allocated a small sequential number to each currency. Test systems had already acquired 0,1,2,3 and thus 4 was the next. DigiCash's marketing assumptions then changed to assume one issue per country. In time, this scheme was adjusted to issue currencies numbered after international dialling codes (e.g., 49 for Germany, 61 for Australia). The shortfalls of this scheme became apparent, so a new design was created <sup><a href="#fn4" id="ref4">[4]</a></sup>. One 32 bit number to describe the issue was used, on the pragmatic assumption that this would be large enough to cover foreseeable eventualities.</p>
+### 2.1. A First Generation Scheme
 
-<p>Yet the strains of <em>one issuer, one currency</em> were obvious almost immediately. A more advanced scheme could use a tuple of (<em>issuer</em>, <em>currency</em>) to describe a system whereby each issuer is empowered in some sense to issue multiple competing currencies<sup><a href="#fn5" id="ref5">[5]</a></sup>. It is easy to generalise this system by adding additional elements to the tuple: (<em>issuer</em>, <em>type</em>, <em>identifier</em>) tuple<sup><a href="#fn6" id="ref6">[6]</a></sup>. For example, a zero coupon bond issued by the Joint Universal and Nationwide Keiretsu that pays out in January of 2100 might have a tuple of (JUNK, zero, Jan_2100).</p>
+Consider the case of the pioneering digital cash scheme, eCash, as originally fielded by DigiCash BV. The first valuable currency, issued by Mark Twain Bank of the USA, was identified with the number 4. Lore has it that the early system allocated a small sequential number to each currency. Test systems had already acquired 0,1,2,3 and thus 4 was the next. DigiCash's marketing assumptions then changed to assume one issue per country. In time, this scheme was adjusted to issue currencies numbered after international dialling codes (e.g., 49 for Germany, 61 for Australia). The shortfalls of this scheme became apparent, so a new design was created <sup><a href="#fn4" id="ref4">[4]</a></sup>. One 32 bit number to describe the issue was used, on the pragmatic assumption that this would be large enough to cover foreseeable eventualities.
 
-<h3>2.2. The Trouble with Numbers</h3>
+Yet the strains of _one issuer, one currency_ were obvious almost immediately. A more advanced scheme could use a tuple of (_issuer_, _currency_) to describe a system whereby each issuer is empowered in some sense to issue multiple competing currencies<sup><a href="#fn5" id="ref5">[5]</a></sup>. It is easy to generalise this system by adding additional elements to the tuple: (_issuer_, _type_, _identifier_) tuple<sup><a href="#fn6" id="ref6">[6]</a></sup>. For example, a zero coupon bond issued by the Joint Universal and Nationwide Keiretsu that pays out in January of 2100 might have a tuple of (JUNK, zero, Jan_2100).
 
-<p>Numbers as a space for identifying digital instruments are limiting, and having tuples as an extension is not really an answer.</p>
+### 2.2. The Trouble with Numbers
 
-<p>Firstly, what do they describe? In the case of electronic cash systems, they can describe currencies and issuers. Is it one or both, and how do we generalise to other aspects? Secondly, what surety do we have that what is described is accurate? Whilst a lot can be achieved by simply relying on the reputation of the issuer, financial insiders know that the real value is expressed in the detail and the reliability of the claim. Thirdly, how are the numbers derived? Is a central registry required, or can any issuer of digital value acquire a number as per local requirements? Finally, is there a limit to the space? Integer numbers as expressed in packets are generally limited to some quantity of bits, such as 32. For practical software engineering, there need to be limits, but do these limits need to limit the business possibilities?</p>
+Numbers as a space for identifying digital instruments are limiting, and having tuples as an extension is not really an answer.
 
-<h3>2.3. The Challenge of Success</h3>
+Firstly, what do they describe? In the case of electronic cash systems, they can describe currencies and issuers. Is it one or both, and how do we generalise to other aspects? Secondly, what surety do we have that what is described is accurate? Whilst a lot can be achieved by simply relying on the reputation of the issuer, financial insiders know that the real value is expressed in the detail and the reliability of the claim. Thirdly, how are the numbers derived? Is a central registry required, or can any issuer of digital value acquire a number as per local requirements? Finally, is there a limit to the space? Integer numbers as expressed in packets are generally limited to some quantity of bits, such as 32. For practical software engineering, there need to be limits, but do these limits need to limit the business possibilities?
 
-<p>Any successful system will be used in ways that make it appear to be broken. As software engineers, we need to present our inventions with the humility of toolmakers for future generations of builders, not as bureaucrats planning the zoning of the digital commerce space.</p>
+### 2.3. The Challenge of Success
 
-<p>What happens when we have gone through the early adopters, dominated the moms and pops, and competition is fiercely turning onto our elderly retired set? Imagine mints in the pockets of billions of idle game-playing senior citizens. Or, imagine a world with an issuer of digital loyalty points on every parking meter, or where students must pay for tuition with shares of future earnings. Already we have seen popular musicians selling bonds backed by their music<sup><a href="#fn7" id="ref7">[7]</a></sup>, and proposals for software bug fixes financed by securitized issues to anonymous users<sup><a href="#fn8" id="ref8">[8]</a></sup>.</p>
+Any successful system will be used in ways that make it appear to be broken. As software engineers, we need to present our inventions with the humility of toolmakers for future generations of builders, not as bureaucrats planning the zoning of the digital commerce space.
 
-<h3>2.4. The Zero Coupon Bond</h3>
+What happens when we have gone through the early adopters, dominated the moms and pops, and competition is fiercely turning onto our elderly retired set? Imagine mints in the pockets of billions of idle game-playing senior citizens. Or, imagine a world with an issuer of digital loyalty points on every parking meter, or where students must pay for tuition with shares of future earnings. Already we have seen popular musicians selling bonds backed by their music<sup><a href="#fn7" id="ref7">[7]</a></sup>, and proposals for software bug fixes financed by securitized issues to anonymous users<sup><a href="#fn8" id="ref8">[8]</a></sup>.
 
-<p>Consider the zero coupon bond, an instrument that pays a <em>face value</em> of a currency on a given date. The <em>zero</em> is perhaps the simplest general financial instrument in common use, and it formed the benchmark for our design.</p>
+### 2.4. The Zero Coupon Bond
 
-<p>To describe the face value, the currency of the face value, and the expiry date of this bond, we would add additional elements to the above tuple. But this is only a beginning. In his description of Eurobonds, Noel Clarke expects dozens or hundreds of fields<sup><a href="#fn9" id="ref9">[9]</a></sup>. If we examine just one of these characteristics, for example <em>Event-Related Put Options</em>, we find that a bond needs to describe what happens in the event of:</p>
+Consider the zero coupon bond, an instrument that pays a _face value_ of a currency on a given date. The _zero_ is perhaps the simplest general financial instrument in common use, and it formed the benchmark for our design.
 
-<ul>
-  <li>a hostile or friendly takeover of the issuer,</li>
-  <li>a takeover by the issuer of another party,</li>
-  <li>a recapitalisation,</li>
-  <li>a repurchase program by the issuer of its own shares, or</li>
-  <li>a distribution of assets above a certain percentage of the issue's net worth.</li>
-</ul>
+To describe the face value, the currency of the face value, and the expiry date of this bond, we would add additional elements to the above tuple. But this is only a beginning. In his description of Eurobonds, Noel Clarke expects dozens or hundreds of fields<sup><a href="#fn9" id="ref9">[9]</a></sup>. If we examine just one of these characteristics, for example _Event-Related Put Options_, we find that a bond needs to describe what happens in the event of:
 
-<p>These items bind tightly to the instrument in question, but they represent difficulties to the software architect. We can make a  number of observations.</p>
+- a hostile or friendly takeover of the issuer,
+- a takeover by the issuer of another party,
+- a recapitalisation,
+- a repurchase program by the issuer of its own shares, or
+- a distribution of assets above a certain percentage of the issue's net worth.
 
-<p>Firstly, each event is not simple. Today, one may be able to shoehorn the notion of "a hostile or friendly takeover" into a single name-value pair, but this would not survive the evolving scene of regulation and litigation that applies to such events.</p>
+These items bind tightly to the instrument in question, but they represent difficulties to the software architect. We can make a number of observations.
 
-<p>Secondly, there is no reason to believe that the above list is complete.</p>
+Firstly, each event is not simple. Today, one may be able to shoehorn the notion of "a hostile or friendly takeover" into a single name-value pair, but this would not survive the evolving scene of regulation and litigation that applies to such events.
 
-<p>Thirdly, not only is it going to be hard to design a single field of any sort to cope with these, they are mostly going to be full of legal text.</p>
+Secondly, there is no reason to believe that the above list is complete.
 
-<p>Consider a data layout point of view. To describe the document that forms the basis of a bond we will need a tree-structured database of tuples, as a minimum. More, that layout is only going to work for one instrument, or one extremely tight, nearly fungible set of instruments.</p>
+Thirdly, not only is it going to be hard to design a single field of any sort to cope with these, they are mostly going to be full of legal text.
 
-<h3>2.5. Cash is King</h3>
+Consider a data layout point of view. To describe the document that forms the basis of a bond we will need a tree-structured database of tuples, as a minimum. More, that layout is only going to work for one instrument, or one extremely tight, nearly fungible set of instruments.
 
-<p>Currencies, or cash, might be that tight set. After all, a dollar is a dollar is a dollar. Can we describe money with some simple set of tuples? Even for cash, we argue that a layout of tuples is not sufficient.</p>
+### 2.5. Cash is King
 
-<p>Take the case of a digital dollar issued by a bank. The digital dollars would be derivatives, often backed by deposits in the same amount. This may be sufficient for marketing purposes but it would not survive a serious financial analysis.</p>
+Currencies, or cash, might be that tight set. After all, a dollar is a dollar is a dollar. Can we describe money with some simple set of tuples? Even for cash, we argue that a layout of tuples is not sufficient.
 
-<p>Compare such derivative dollars to those issued by the US Federal Reserve Board. The Fed has yet to deny acceptance of its notes if presented with same, if only as a claim on another bunch of the same instrument, or for taxation liabilities. Radical interpretations aside, the Fed has never filed for bankruptcy and remains a pretty solid bet.</p>
+Take the case of a digital dollar issued by a bank. The digital dollars would be derivatives, often backed by deposits in the same amount. This may be sufficient for marketing purposes but it would not survive a serious financial analysis.
 
-<p>The same cannot be said of just any bank issuer of derivative dollars. Its digital dollars would be backed by deposits with ... the very same institution. Such a bank can close its doors at any time, and, given the history of the banking sector in the 20th Century, an analyst should take this risk seriously. Further, in the USA at least, the FDIC has already ruled that funds so held on a user's PC are considered to be uninsured deposits<sup><a href="#fn10" id="ref10">[10]</a></sup>.</p>
+Compare such derivative dollars to those issued by the US Federal Reserve Board. The Fed has yet to deny acceptance of its notes if presented with same, if only as a claim on another bunch of the same instrument, or for taxation liabilities. Radical interpretations aside, the Fed has never filed for bankruptcy and remains a pretty solid bet.
 
-<p>This is not to suggest that any given bank is about to close doors, but to ask what happens when an issuer does indeed default on its promise?</p>
+The same cannot be said of just any bank issuer of derivative dollars. Its digital dollars would be backed by deposits with ... the very same institution. Such a bank can close its doors at any time, and, given the history of the banking sector in the 20th Century, an analyst should take this risk seriously. Further, in the USA at least, the FDIC has already ruled that funds so held on a user's PC are considered to be uninsured deposits.<sup><a href="#fn10" id="ref10">[10]</a></sup>
 
-<p>Any holder of any asset will carry a risk. A holder of electronic dollars will carry the risk that the issuer fails, and the holder of another issuer's dollars carries a similar, comparable, but <em>distinct</em> risk. Each of those risks result in a cost, which should be subtracted from the face value of the dollar to calculate a comparative value. In this risk distinction lies the inescapable fact that any given dollar is not of constant value, even when measured against some well-known dollar such as that issued by the Federal Reserve.</p>
+This is not to suggest that any given bank is about to close doors, but to ask what happens when an issuer does indeed default on its promise?
 
-<h3>2.6. The Fine Print of the Contract</h3>
+Any holder of any asset will carry a risk. A holder of electronic dollars will carry the risk that the issuer fails, and the holder of another issuer's dollars carries a similar, comparable, but _distinct_ risk. Each of those risks result in a cost, which should be subtracted from the face value of the dollar to calculate a comparative value. In this risk distinction lies the inescapable fact that any given dollar is not of constant value, even when measured against some well-known dollar such as that issued by the Federal Reserve.
 
-<p>If there is no such thing as a single dollar, what is left? Clearly, we must describe each and every dollar for what it is. This would seem to be a task of fine print and detail, and, indeed, <em>every distinct issued currency is a distinct contract between the issuer and the holder.</em></p>
+### 2.6. The Fine Print of the Contract
 
-<p>A contract can encapsulate the detail. Consider the original sovereign currency contracts, in which the issuer promised to pay the bearer in ounces of precious metal. That is four datum in the contract already: which sovereign, "pay to bearer," what to pay, and how much of it.</p>
+If there is no such thing as a single dollar, what is left? Clearly, we must describe each and every dollar for what it is. This would seem to be a task of fine print and detail, and, indeed, _every distinct issued currency is a distinct contract between the issuer and the holder._
 
-<p>So it is with every bond, every currency, and any financial instrument of any complexity. In fact, within the digital domain, the question of how to treat a financial instrument reduces in great part to how to treat a contract.</p>
+A contract can encapsulate the detail. Consider the original sovereign currency contracts, in which the issuer promised to pay the bearer in ounces of precious metal. That is four datum in the contract already: which sovereign, "pay to bearer," what to pay, and how much of it.
 
-<p>Or, an issue <em>is</em> a contract. Issues within other payment systems have contracts but only as adjunct documents such as user agreements. Often, their role and importance is subject to battles; marketing wants them hidden, while Legal asks for them to be thrust in the user's face at all times.</p>
+So it is with every bond, every currency, and any financial instrument of any complexity. In fact, within the digital domain, the question of how to treat a financial instrument reduces in great part to how to treat a contract.
 
-<p>Once we accept that the issue is a contract, the task becomes simple: create a contract that can be linked into the payment system as the centerpiece. That is the subject of the next section.</p>
+Or, an issue _is_ a contract. Issues within other payment systems have contracts but only as adjunct documents such as user agreements. Often, their role and importance is subject to battles; marketing wants them hidden, while Legal asks for them to be thrust in the user's face at all times.
 
-<h2>3. A Digital Contracts System for Issuance</h2>
+Once we accept that the issue is a contract, the task becomes simple: create a contract that can be linked into the payment system as the centerpiece. That is the subject of the next section.
 
-<p>Almost all aspects of Ricardian Contracts are best seen by examining examples, and this section only briefly covers the salient details, before discussing the ramifications. Examples can be found at <a href="http://webfunds.org/ricardo/contracts/"> webfunds.org/ricardo/contracts/</a> .</p>
+## 3. A Digital Contracts System for Issuance
 
-<h3>3.1. Definition</h3>
+Almost all aspects of Ricardian Contracts are best seen by examining examples, and this section only briefly covers the salient details, before discussing the ramifications. Examples can be found at [webfunds.org/ricardo/contracts/](http://webfunds.org/ricardo/contracts/).
 
-<p>A Ricardian Contract can be defined as a single document that is a) a contract offered by an issuer to holders, b) for a valuable right held by holders, and managed by the issuer, c) easily readable by people (like a contract on paper), d) readable by programs (parsable like a database), e) digitally signed, f) carries the keys and server information, and g) allied with a unique and secure identifier.</p>
+### 3.1. Definition
 
-<p>In the simplest possible terms, a Ricardian Contract is a document defining a type of value for issuance over the Internet<sup><a href="#fn11" id="ref11">[11]</a></sup>. It identifies the Issuer, being the signatory, and any terms and clauses the Issuer sees fit to add in to make the document stand as a contract.</p>
+A Ricardian Contract can be defined as a single document that is a) a contract offered by an issuer to holders, b) for a valuable right held by holders, and managed by the issuer, c) easily readable by people (like a contract on paper), d) readable by programs (parsable like a database), e) digitally signed, f) carries the keys and server information, and g) allied with a unique and secure identifier.
 
-<p>The same document has to be both readable by people and parsable by programs. The Ricardian Contract is formatted as a text file that can be easily read (displayed or printed), and programs can convert it into internal forms for searching for name-value pairs. It includes a special section for each type of contract, such as bond, share, currency, etc. Further sections within describe, in program-parsable terms, usage of decimal points, titles, and symbols.</p>
+In the simplest possible terms, a Ricardian Contract is a document defining a type of value for issuance over the Internet.<sup><a href="#fn11" id="ref11">[11]</a></sup> It identifies the Issuer, being the signatory, and any terms and clauses the Issuer sees fit to add in to make the document stand as a contract.
 
-<p>As legal signatory, the Issuer signs the document in the OpenPGP cleartext form with his contract signing key<sup><a href="#fn12" id="ref12">[12]</a></sup>. He includes the full chain of OpenPGP keys within the document to permit programs to directly verify and authenticate.</p>
+The same document has to be both readable by people and parsable by programs. The Ricardian Contract is formatted as a text file that can be easily read (displayed or printed), and programs can convert it into internal forms for searching for name-value pairs. It includes a special section for each type of contract, such as bond, share, currency, etc. Further sections within describe, in program-parsable terms, usage of decimal points, titles, and symbols.
 
-<p>To uniquely identify the contract, any user can calculate a <em>canonical message digest</em> over the clearsigned document. This message digest is included in all records of transactions, and provides a secure (unforgeable) link from the document to the accounting of the issue.</p>
+As legal signatory, the Issuer signs the document in the OpenPGP cleartext form with his contract signing key.<sup><a href="#fn12" id="ref12">[12]</a></sup> He includes the full chain of OpenPGP keys within the document to permit programs to directly verify and authenticate.
 
-<p>E.g., <code>e3b445c2a6d82df81ef46b54d386da23ce8f3775</code> is the full message digest for Systemics Inc's issue of prepaid services dollars. Commonly called a hash, the message digest is a cryptographic technique to create a relatively small number that is one to one with the document. That is, for each document, there is only one hash, and the hash refers uniquely to that document. The algorithm is the well-known standard, SHA1.</p>
+To uniquely identify the contract, any user can calculate a _canonical message digest_ over the clearsigned document. This message digest is included in all records of transactions, and provides a secure (unforgeable) link from the document to the accounting of the issue.
 
-<h3>3.2. Some Observations</h3>
+E.g., <code>e3b445c2a6d82df81ef46b54d386da23ce8f3775</code> is the full message digest for Systemics Inc's issue of prepaid services dollars. Commonly called a hash, the message digest is a cryptographic technique to create a relatively small number that is one to one with the document. That is, for each document, there is only one hash, and the hash refers uniquely to that document. The algorithm is the well-known standard, SHA1.
 
-<p>The following observations highlight how strong the result is.</p>
+### 3.2. Some Observations
 
-<p><b>Hash Limits Frog-Boiling.</b> A gradual change in contract by the stronger party over time is known as <em>frog-boiling</em>. The stronger party is generally the issuer, and can be expected to change the contract if there is a benefit. This is a frequent attack. One result of the use of the hash identifier is that neither party can change the contract arbitrarily or surreptitiously.</p>
+The following observations highlight how strong the result is.
 
-<p>To see this is true, we need to examine the records that refer to the hash. An application can sign all important records (e.g., payments, tokens, receipts, balances), and these signed records include the hash of a Ricardian Contract. The hash within the record cannot be changed without losing its ability to pass a test of signature validity. Likewise, the contract cannot be changed without losing its relationship to records already signed and delivered. In other words, every record, held by every user, incorporates an unalterable copy of that hash. Any change to the contract creates a new hash, and that new hash is not the one which the users have or value.</p>
+**Hash Limits Frog-Boiling.** A gradual change in contract by the stronger party over time is known as _frog-boiling_. The stronger party is generally the issuer, and can be expected to change the contract if there is a benefit. This is a frequent attack. One result of the use of the hash identifier is that neither party can change the contract arbitrarily or surreptitiously.
 
-<p>This crystallises the contract for both parties, stopping the stronger party from modifying the contract subtly at some later stage. To some extent, this redresses the imbalance of power between provider and customer in the offering of a form contract. The lesser party has no option to negotiate, but neither has the greater party the option to claim a distinct contract at a later time. The limitation comes at some cost as it can be a nuisance for the support team of that financial instrument.</p>
+To see this is true, we need to examine the records that refer to the hash. An application can sign all important records (e.g., payments, tokens, receipts, balances), and these signed records include the hash of a Ricardian Contract. The hash within the record cannot be changed without losing its ability to pass a test of signature validity. Likewise, the contract cannot be changed without losing its relationship to records already signed and delivered. In other words, every record, held by every user, incorporates an unalterable copy of that hash. Any change to the contract creates a new hash, and that new hash is not the one which the users have or value.
 
-<p><b>The Ricardian PKI Delivers Clarity.</b> Ricardian Contracts carry their own Public Key Infrastructure ("PKI") with them. The Issuer's top level public key is included in the contract, and it signs his contract-signing key, also included. The contract-signing key signs the contract itself.</p>
+This crystallises the contract for both parties, stopping the stronger party from modifying the contract subtly at some later stage. To some extent, this redresses the imbalance of power between provider and customer in the offering of a form contract. The lesser party has no option to negotiate, but neither has the greater party the option to claim a distinct contract at a later time. The limitation comes at some cost as it can be a nuisance for the support team of that financial instrument.
 
-<p>This achieves several things. Firstly, client software can check the entire digital signature chain in one automated sequence.</p>
+**The Ricardian PKI Delivers Clarity.** Ricardian Contracts carry their own Public Key Infrastructure ("PKI") with them. The Issuer's top level public key is included in the contract, and it signs his contract-signing key, also included. The contract-signing key signs the contract itself.
 
-<p>Secondly, there is no need for a complex multi-party PKI. All the keys are present, and there is no need to go looking for them on the net. This eliminates substitution attacks, whereby a key that might pass some checks could be inserted in some key lookup phase. It also reduces costs dramatically.</p>
+This achieves several things. Firstly, client software can check the entire digital signature chain in one automated sequence.
 
-<p>Thirdly, the canonical hash of the contract also represents a signature on the contract. It is recorded in all relevant records, and thus entangles the contract with those activities<sup><a href="#fn13" id="ref13">[13]</a></sup>. Once the contract has been in play for a while, it establishes its provenance through presence and reliance by the user public. This provides far more persuasive evidence than the issuer's signature itself;  once the issuer and the public have spent time and money relying on the contract, via the hash, it is hard for the issuer to renege on the nature of the contract or his signature.</p>
+Secondly, there is no need for a complex multi-party PKI. All the keys are present, and there is no need to go looking for them on the net. This eliminates substitution attacks, whereby a key that might pass some checks could be inserted in some key lookup phase. It also reduces costs dramatically.
 
-<p>The result is a PKI that delivers strong end-to-end reliability, based on a single document. This is simply not present in other designs for PKIs<sup><a href="#fn14" id="ref14">[14]</a></sup>. This reliability pays off in the dispute resolution phase, where, we suggest, the Ricardian Contract can stand alone on its merits and requires no complex descriptions of PKI, digital signatures, or references to uncertain third parties to bolster its provenance. By including the keys, we can draw a couple of simple lines within the contract, asserting "this key signs that key, and that latter signs the contract. The first key is the top-level key of the individual that signed this contract. That's the whole story, mi'lud."</p>
+Thirdly, the canonical hash of the contract also represents a signature on the contract. It is recorded in all relevant records, and thus entangles the contract with those activities.<sup><a href="#fn13" id="ref13">[13]</a></sup> Once the contract has been in play for a while, it establishes its provenance through presence and reliance by the user public. This provides far more persuasive evidence than the issuer's signature itself; once the issuer and the public have spent time and money relying on the contract, via the hash, it is hard for the issuer to renege on the nature of the contract or his signature.
 
-<p><b>Validating the Issuer's Key.</b> All good crypto protocols divide into two parts, the first of which says to the second, "trust this key completely."</p>
+The result is a PKI that delivers strong end-to-end reliability, based on a single document. This is simply not present in other designs for PKIs.<sup><a href="#fn14" id="ref14">[14]</a></sup> This reliability pays off in the dispute resolution phase, where, we suggest, the Ricardian Contract can stand alone on its merits and requires no complex descriptions of PKI, digital signatures, or references to uncertain third parties to bolster its provenance. By including the keys, we can draw a couple of simple lines within the contract, asserting "this key signs that key, and that latter signs the contract. The first key is the top-level key of the individual that signed this contract. That's the whole story, mi'lud."
 
-<p>The top-level key of the Issuer ultimately authenticates the contract. The keys and other information in the contract also permit a protocol such as SOX to bootstrap a strongly secured connection to the server<sup><a href="#fn15" id="ref15">[15]</a></sup>.</p>
+**Validating the Issuer's Key.** All good crypto protocols divide into two parts, the first of which says to the second, "trust this key completely."
 
-<p>How then to verify that this ultimate key is really the Issuer's? This is not difficult. The business process of digital issuance involves a great deal of relationship-building between Issuers and Users.  Many different interactions involve chances to establish trust. For example, from his web site, the Issuer can publish the contract, keys and hashes, and have other sites mirror them. The value so issued will be distributed via payments that include the hash. An already trusted party usually delivers these payments. The payments validly identify the contract, and derive their own validity, via the hash.</p>
+The top-level key of the Issuer ultimately authenticates the contract. The keys and other information in the contract also permit a protocol such as SOX to bootstrap a strongly secured connection to the server.<sup><a href="#fn15" id="ref15">[15]</a></sup>
 
-<p>Contrast this to assumptions in the x.509 PKI behind SSL/HTTPS browsing (the following is highly debatable, but is presented for comparison only). In that PKI, it was originally claimed that a user would present her credit card to sites with which she had no prior relationship and no way for her to establish the provenance of the site's key. Thus, a trusted third party, the Certificate Authority, was put in place to confirm the key.</p>
+How then to verify that this ultimate key is really the Issuer's? This is not difficult. The business process of digital issuance involves a great deal of relationship-building between Issuers and Users. Many different interactions involve chances to establish trust. For example, from his web site, the Issuer can publish the contract, keys and hashes, and have other sites mirror them. The value so issued will be distributed via payments that include the hash. An already trusted party usually delivers these payments. The payments validly identify the contract, and derive their own validity, via the hash.
 
-<p>Payments, trading and matters of finance are fundamentally relationship-rich. The nature of money and finance is that participants always conduct their own due diligence, they prefer to listen to peers they already trust, and do not readily accept the word of an independent party. Thus, there is no place for a central third party to stand in and authenticate players. Before the user desires to place any value on a given payment, she has almost certainly been made aware of the contract via other means.</p>
+Contrast this to assumptions in the x.509 PKI behind SSL/HTTPS browsing (the following is highly debatable, but is presented for comparison only). In that PKI, it was originally claimed that a user would present her credit card to sites with which she had no prior relationship and no way for her to establish the provenance of the site's key. Thus, a trusted third party, the Certificate Authority, was put in place to confirm the key.
 
-<p><b>Presumption of Possession.</b> The use of the hash as an identifier is a compromise as it is unintelligible to humans<sup><a href="#fn16" id="ref16">[16]</a></sup>. Yet this very compromise delivers an unexpected benefit: <em>Use of the issue leads to a presumption that the user has the contract.</em> To use an issue of value, such as a currency, the user must have the hash in the applicable records. That is, if the user receives a payment, that payment record will include the hash. As the hash is not descriptive, this implies that the user has the contract in order to interpret the issue.</p>
+Payments, trading and matters of finance are fundamentally relationship-rich. The nature of money and finance is that participants always conduct their own due diligence, they prefer to listen to peers they already trust, and do not readily accept the word of an independent party. Thus, there is no place for a central third party to stand in and authenticate players. Before the user desires to place any value on a given payment, she has almost certainly been made aware of the contract via other means.
 
-<p>To see that this is true, imagine having a record with the hash but without having the contract. The first thing the user will need is a database of parameters telling her what the hash refers to. Unlike a payment in 10 of "GBP", a payment of 1000 in "972097bb..." is not intelligible.</p>
+**Presumption of Possession.** The use of the hash as an identifier is a compromise as it is unintelligible to humans.<sup><a href="#fn16" id="ref16">[16]</a></sup> Yet this very compromise delivers an unexpected benefit: _Use of the issue leads to a presumption that the user has the contract._ To use an issue of value, such as a currency, the user must have the hash in the applicable records. That is, if the user receives a payment, that payment record will include the hash. As the hash is not descriptive, this implies that the user has the contract in order to interpret the issue.
 
-<p>Yet how could software predict what the user needs to know about the hash? Very quickly it becomes apparent that the software is better off storing the source of the information &ndash; the full contract itself &ndash; as it removes an unlimited degree of complexity in storing intermediate or secondary information.</p>
+To see that this is true, imagine having a record with the hash but without having the contract. The first thing the user will need is a database of parameters telling her what the hash refers to. Unlike a payment in 10 of "GBP", a payment of 1000 in "972097bb..." is not intelligible.
 
-<p>Software can still function with only the hash. However, it would be entirely blind to the semantics of the instrument. Such a cavalier approach might be acceptable for communications and storage, but for user software, it is equivalent to a traumatic failure. To cope with this, the client-side software takes especial care to acquire and keep contracts. Hence, we can state the presumption with some degree of confidence: in a functioning system, the user has available the full Ricardian Contract (albeit under software control).</p>
+Yet how could software predict what the user needs to know about the hash? Very quickly it becomes apparent that the software is better off storing the source of the information &ndash; the full contract itself &ndash; as it removes an unlimited degree of complexity in storing intermediate or secondary information.
 
-<p>This is only a small step for the client software, but is a giant leap forward for the relationship between the issuer and the holder. Specifically, having a strong presumption that the user has the full contract available will simplify many legal aspects about the issuer's responsibilities. (We suggest and thus acknowledge the legal ramifications of the term <em>presumption</em>, but neither space nor expertise permits more in this paper.)</p>
+Software can still function with only the hash. However, it would be entirely blind to the semantics of the instrument. Such a cavalier approach might be acceptable for communications and storage, but for user software, it is equivalent to a traumatic failure. To cope with this, the client-side software takes especial care to acquire and keep contracts. Hence, we can state the presumption with some degree of confidence: in a functioning system, the user has available the full Ricardian Contract (albeit under software control).
 
-<h3>3.3. The Four Corners of the Page</h3>
+This is only a small step for the client software, but is a giant leap forward for the relationship between the issuer and the holder. Specifically, having a strong presumption that the user has the full contract available will simplify many legal aspects about the issuer's responsibilities. (We suggest and thus acknowledge the legal ramifications of the term _presumption_, but neither space nor expertise permits more in this paper.)
 
-<p>The Ricardian Contract delivers a rich source of primary, complete information. The full story is right there in textual form, in parsable parameters, and in the signature chain. Thus, within a dispute, a hostile legal attack has less room to manoeuvre, and can only confirm the facts as laid out in the contract.</p>
+### 3.3. The Four Corners of the Page
 
-<p>Our intent is that the contract is the beginning and the end of the discussion; we call this principle <em>the rule of one contract</em>. The legal fraternity refers to "the contract being bounded by <em>the four corners of the page</em>." By showing how we have carefully laid out a readable document, with a verifiable digital signature, and an unforgeable identifier linking to every record, we can more readily ask the judiciary to accept that the single document which is being presented is indeed the valid contract agreed to by the parties.</p>
+The Ricardian Contract delivers a rich source of primary, complete information. The full story is right there in textual form, in parsable parameters, and in the signature chain. Thus, within a dispute, a hostile legal attack has less room to manoeuvre, and can only confirm the facts as laid out in the contract.
 
-<h2>4. Conclusion</h2>
+Our intent is that the contract is the beginning and the end of the discussion; we call this principle _the rule of one contract_. The legal fraternity refers to "the contract being bounded by _the four corners of the page_." By showing how we have carefully laid out a readable document, with a verifiable digital signature, and an unforgeable identifier linking to every record, we can more readily ask the judiciary to accept that the single document which is being presented is indeed the valid contract agreed to by the parties.
 
-<p>The contract is the keystone of issuance<sup><a href="#fn17" id="ref17">[17]</a></sup>. Our innovation is to express all the salient details of an issuance as an unforgeable contract, unforgeably linked into every action within a payment system. In this way, financial innovation can develop along the lines it always has done &ndash; by means of innovation within contracts. By translating the institution of the contract into the digital domain, we build upon centuries' and even millenia' worth of experience in documenting, sharing and disputing the meaning of agreements between parties.</p>
+## 4. Conclusion
 
-<h3>4.1. The Challenge of Complexity</h3>
+The contract is the keystone of issuance.<sup><a href="#fn17" id="ref17">[17]</a></sup> Our innovation is to express all the salient details of an issuance as an unforgeable contract, unforgeably linked into every action within a payment system. In this way, financial innovation can develop along the lines it always has done &ndash; by means of innovation within contracts. By translating the institution of the contract into the digital domain, we build upon centuries' and even millenia' worth of experience in documenting, sharing and disputing the meaning of agreements between parties.
 
-<p>To capture complexity, we can put documents such as contracts into electronic form and sign them using digital signature technologies such as OpenPGP. The result is a reasonable analogue of the paper and ink contracts that most people and businesses are familiar with, bolstered with cryptographic integrity.</p>
+### 4.1. The Challenge of Complexity
 
-<p>With the hash as the identifier, software can now uniquely identify a given financial arrangement and can confirm a strong chain of signatures. The hash strongly implies the user has the contract available at all times, and it cannot be changed without being noticed.</p>
+To capture complexity, we can put documents such as contracts into electronic form and sign them using digital signature technologies such as OpenPGP. The result is a reasonable analogue of the paper and ink contracts that most people and businesses are familiar with, bolstered with cryptographic integrity.
 
-<p>The Ricardian Contract delivers one huge benefit to the issuer &ndash; clarity in many legal and customer support questions. The user benefits from lower overall costs, and better presentation of information, within a more consistent framework.</p>
+With the hash as the identifier, software can now uniquely identify a given financial arrangement and can confirm a strong chain of signatures. The hash strongly implies the user has the contract available at all times, and it cannot be changed without being noticed.
 
-<h3>4.2. Lessons Learnt</h3>
+The Ricardian Contract delivers one huge benefit to the issuer &ndash; clarity in many legal and customer support questions. The user benefits from lower overall costs, and better presentation of information, within a more consistent framework.
 
-<p>The form has been in successful use since 1996. Since that time, it has delivered about 20 financial instruments without failure.</p>
+### 4.2. Lessons Learnt
 
-<p><b>Disputes.</b> The Ricardian Contract has appeared in two distinct forums of dispute resolution to resolve claims<sup><a href="#fn18" id="ref18">[18]</a></sup>. Anecdotally, each claim was resolved directly and efficiently, and without undue fuss, simply by referring to the applicable Ricardian Contract.</p>
+The form has been in successful use since 1996. Since that time, it has delivered about 20 financial instruments without failure.
 
-<p><b>Automation.</b> Relatively little has needed to be automated. In practice, fields have been inserted and standardised so that programs can extract decimalisation (dollars versus cents), labels for units (USD versus $), and titles for the issuer and the issue. In contrast to expectations, there has been no demand to parse every field.</p>
+**Disputes.** The Ricardian Contract has appeared in two distinct forums of dispute resolution to resolve claims.<sup><a href="#fn18" id="ref18">[18]</a></sup> Anecdotally, each claim was resolved directly and efficiently, and without undue fuss, simply by referring to the applicable Ricardian Contract.
 
-<p><b>Cost.</b> The cost of the concept has compared favourably with that incurred with other payment systems. The preparation of the contract text carries some costs, but no more so than a user agreement. OpenPGP infrastructure requirements (keys and signing) add some minor costs to issuers but they are easily offset by the benefits of risk reduction from contract distribution. Custom signing editors have helped to reduce those costs<sup><a href="#fn19" id="ref19">[19]</a></sup>.</p>
+**Automation.** Relatively little has needed to be automated. In practice, fields have been inserted and standardised so that programs can extract decimalisation (dollars versus cents), labels for units (USD versus $), and titles for the issuer and the issue. In contrast to expectations, there has been no demand to parse every field.
 
-<h3>4.3. Challenges for the Future</h3>
+**Cost.** The cost of the concept has compared favourably with that incurred with other payment systems. The preparation of the contract text carries some costs, but no more so than a user agreement. OpenPGP infrastructure requirements (keys and signing) add some minor costs to issuers but they are easily offset by the benefits of risk reduction from contract distribution. Custom signing editors have helped to reduce those costs.<sup><a href="#fn19" id="ref19">[19]</a></sup>
 
-<p><b>Layering.</b> Layering of contracts is an impending need. Many businesses can take a standard and defined set of terms and draw on them directly. Other contracts result from earlier contracts and need to reference them.</p>
+### 4.3. Challenges for the Future
 
-<p><b>XML.</b> Initial efforts suggested that XML would break the rule of one contract, but it seems that we will need something better than the archaic INI format<sup><a href="#fn20" id="ref20">[20]</a></sup>. One recent proposal, the XML Voucher, stops short of presenting itself as a contract<sup><a href="#fn21" id="ref21">[21]</a></sup>.</p>
+**Layering.** Layering of contracts is an impending need. Many businesses can take a standard and defined set of terms and draw on them directly. Other contracts result from earlier contracts and need to reference them.
 
-<p><b>Law of Contract.</b> The treatment of the Ricardian Contract as a <em>contract</em> may raise more legal questions than it answers. For example, is this form indeed a contract? How do distinct jurisidictions view the concept (common law, civil law, UCC, Koranic code)? Is this a negotiated or a form contract? When did the user accept the contract? How strong, or rebuttable, is the presumption that the user has the contract?</p>
+**XML.** Initial efforts suggested that XML would break the rule of one contract, but it seems that we will need something better than the archaic INI format.<sup><a href="#fn20" id="ref20">[20]</a></sup> One recent proposal, the XML Voucher, stops short of presenting itself as a contract<sup><a href="#fn21" id="ref21">[21]</a></sup>.
 
-<p><b>Smart Contracts.</b> By unifying all information in a program-readable file, there is the enhanced potential of smart contracts<sup><a href="#fn22" id="ref22">[22]</a></sup>. We have not gone further in this direction than methods to handle decimals. This is partly for lack of demand, and partly because it is not clear how a court would treat a computer program presented as a contract.</p>
+**Law of Contract.** The treatment of the Ricardian Contract as a _contract_ may raise more legal questions than it answers. For example, is this form indeed a contract? How do distinct jurisidictions view the concept (common law, civil law, UCC, Koranic code)? Is this a negotiated or a form contract? When did the user accept the contract? How strong, or rebuttable, is the presumption that the user has the contract?
 
-<h2>5. References</h2>
+**Smart Contracts.** By unifying all information in a program-readable file, there is the enhanced potential of smart contracts<sup><a href="#fn22" id="ref22">[22]</a></sup>. We have not gone further in this direction than methods to handle decimals. This is partly for lack of demand, and partly because it is not clear how a court would treat a computer program presented as a contract.
+
+## 5. References
 
 <ol>
   <li id="fn1">
@@ -296,8 +307,8 @@
   </li>
 </ol>
 
-<hr>
+---
 
-<p>Ian Grigg<br>
-  <em>Systemics, Inc.</em><br>
-  <em>iang@iang.org</em></p>
+Ian Grigg\
+_Systemics, Inc._\
+_iang@iang.org_

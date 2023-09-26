@@ -1,26 +1,37 @@
-<p>One of the key concepts widely used to describe PGP is the "web of trust". This brings to mind a network of connections between people who know and communicate with each other. Two people who want to communicate can do so securely if there is a path of connections in the form of signed keys that joins them.</p>
+---
+title: PGP Web of Trust Misconceptions
+authors:
+  - hal-finney
+date: 1994-03-30
+categories:
+  - cryptography
+doctype: essay
+external: https://web.archive.org/web/20130513043904/http://finney.org/~hal/web_of_trust.html
+---
 
-<p>But this is not quite right. The fundamental fact about PGP key signatures, which is often misunderstood, is this:</p>
+One of the key concepts widely used to describe PGP is the "web of trust". This brings to mind a network of connections between people who know and communicate with each other. Two people who want to communicate can do so securely if there is a path of connections in the form of signed keys that joins them.
 
-<p>You can only communicate securely with someone whose key is signed by a person you know, either personally or by reputation.</p>
+But this is not quite right. The fundamental fact about PGP key signatures, which is often misunderstood, is this:
 
-<p>In other words, if I want to communicate with joe@abc.com, I can only do so if one of the signators of his key is a person I know. If not, I have no way of judging the validity of his key.</p>
+You can only communicate securely with someone whose key is signed by a person you know, either personally or by reputation.
 
-<p>This belies simple interpretations of the "web of trust". I may have signed A's key, A has signed B's, B has signed C's, C has signed D's, and D has signed Joe's, but this is of no value unless I know D. Only then can I trust Joe's key.</p>
+In other words, if I want to communicate with joe@abc.com, I can only do so if one of the signators of his key is a person I know. If not, I have no way of judging the validity of his key.
 
-<p>This means that, in the "web" picture, I can only communicate securely with people who are at most two hops away in the web of connections. I can communicate with the people I know, and I can communicate with the people they know, and that is it.</p>
+This belies simple interpretations of the "web of trust". I may have signed A's key, A has signed B's, B has signed C's, C has signed D's, and D has signed Joe's, but this is of no value unless I know D. Only then can I trust Joe's key.
 
-<p>This is unfortunate, because the simple web model ties into some famous research which suggests that any two people chosen at random are only about half a dozen steps apart in the web of who-knows-whom connections. (This result is where the title of the movie "Six Degrees of Separation" comes from.) If you had a system which actually supported communications via such a web model, it actually would have hope of letting two people communicate who did not have a very long chain between them. But PGP, with a maximum chain length of two, will not allow this.</p>
+This means that, in the "web" picture, I can only communicate securely with people who are at most two hops away in the web of connections. I can communicate with the people I know, and I can communicate with the people they know, and that is it.
 
-<p>What would have to be added in order to allow a true web of trust model to be used in a program like PGP? Basically what is needed is some way to judge the trustworthyness of signatures by people you don't know. This would most plausibly be provided by the people who had signed their keys. For example, if there were another type of key signature which did not only vouch for the person's identity, but also for his trustworthyness and care in signing keys, then a chain of such signatures could serve as the basis for a true web of trust. Obviously such signatures could not be given out nearly as easily as the kind we have now, where a glance at some stranger's drivers' licence is often all we get, but they could be given to close friends and those we know and trust.</p>
+This is unfortunate, because the simple web model ties into some famous research which suggests that any two people chosen at random are only about half a dozen steps apart in the web of who-knows-whom connections. (This result is where the title of the movie "Six Degrees of Separation" comes from.) If you had a system which actually supported communications via such a web model, it actually would have hope of letting two people communicate who did not have a very long chain between them. But PGP, with a maximum chain length of two, will not allow this.
 
-<p>More elaborate systems might include numerical ratings of trustworthiness which would help to estimate the strength of any given path. The main point is that some information of this kind would be needed in order to allow communication with people distant in the web of connections.</p>
+What would have to be added in order to allow a true web of trust model to be used in a program like PGP? Basically what is needed is some way to judge the trustworthyness of signatures by people you don't know. This would most plausibly be provided by the people who had signed their keys. For example, if there were another type of key signature which did not only vouch for the person's identity, but also for his trustworthyness and care in signing keys, then a chain of such signatures could serve as the basis for a true web of trust. Obviously such signatures could not be given out nearly as easily as the kind we have now, where a glance at some stranger's drivers' licence is often all we get, but they could be given to close friends and those we know and trust.
 
-<p>Without this, I think we will continue to have problems with PGP being unable to validate keys of people we want to communicate with. People will collect huge laundry lists of signatures in the hopes that whoever wants to communicate with them will know one of those people. Centralized key validators will appear (as in the case of the SLED service being started now, which will sign a key based on a signed check with your name on it). The result may be a choice between using an unsigned key or using one signed by some faceless bureaucracy, which is no better than the original PEM conception.</p>
+More elaborate systems might include numerical ratings of trustworthiness which would help to estimate the strength of any given path. The main point is that some information of this kind would be needed in order to allow communication with people distant in the web of connections.
 
-<p>(People may be confused by this essay because they thought PGP worked this way already. PGP does have a follow-the-web model, but that is only for following signatures. In the example above, where I wanted to talk to Joe and there was a chain to him through A, B, C, and D, we have to first suppose that I know and trust all of A, B, C, and D. Given that, what PGP can do is to determine whether I have valid keys for all of those people. It will notice that A has signed B's key, so it is valid. I know B and told PGP he was trustworthy, and he signed C's key, so therefore that one is valid. Similarly, I know C and I know D so PGP can follow the chain through them. Finally we come to Joe, whom I don't know, but because I know D and PGP followed the web to determine that D's key is valid, PGP can determine that Joe's key is valid. But again, that was only because I knew D and everyone else in the chain. The bottom line is still that I can only communicate with people who know someone I know.)</p>
+Without this, I think we will continue to have problems with PGP being unable to validate keys of people we want to communicate with. People will collect huge laundry lists of signatures in the hopes that whoever wants to communicate with them will know one of those people. Centralized key validators will appear (as in the case of the SLED service being started now, which will sign a key based on a signed check with your name on it). The result may be a choice between using an unsigned key or using one signed by some faceless bureaucracy, which is no better than the original PEM conception.
 
-<p>Hal Finney<br>
-  <em>hal@rain.org</em></p>
+(People may be confused by this essay because they thought PGP worked this way already. PGP does have a follow-the-web model, but that is only for following signatures. In the example above, where I wanted to talk to Joe and there was a chain to him through A, B, C, and D, we have to first suppose that I know and trust all of A, B, C, and D. Given that, what PGP can do is to determine whether I have valid keys for all of those people. It will notice that A has signed B's key, so it is valid. I know B and told PGP he was trustworthy, and he signed C's key, so therefore that one is valid. Similarly, I know C and I know D so PGP can follow the chain through them. Finally we come to Joe, whom I don't know, but because I know D and PGP followed the web to determine that D's key is valid, PGP can determine that Joe's key is valid. But again, that was only because I knew D and everyone else in the chain. The bottom line is still that I can only communicate with people who know someone I know.)
 
-<p><a href="http://finney.org/~hal/">Hal Finney Home Page</a></p>
+Hal Finney\
+_hal@rain.org_
+
+[Hal Finney Home Page](http://finney.org/~hal/)

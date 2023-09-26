@@ -1,5 +1,15 @@
 ---
-date: Preliminary Draft from 2002
+title: A Formal Language for Analyzing Contracts
+sortTitle: Formal Language for Analyzing Contracts, A
+authors:
+  - nick-szabo
+date: 2002
+displayDate: Preliminary Draft from 2002
+categories:
+  - cryptography
+  - law
+doctype: essay
+external: http://szabo.best.vwh.net/contractlanguage.html
 ---
 
 <!--
@@ -8,45 +18,40 @@ date: Preliminary Draft from 2002
 <p><strong>Nick Szabo</strong> is a computer scientist and economist living in Menlo Park, California.</p>
 -->
 
-<p>The author presents a mini-language for <!-- lawyers, legal scholars, economists, legal and economic historians, business analysts, accountants, auditors, and others --> professionals and researchers interested in drafting and analyzing contracts. It is intended for computers to read, too. The main purpose of this language is to specify, as unambiguously and completely and succinctly as possible, common contracts or contractual terms. These include financial contracts, liens and other kinds of security, transfer of ownership, performance of online services, and supply chain workflow.</p>
+The author presents a mini-language for <!-- lawyers, legal scholars, economists, legal and economic historians, business analysts, accountants, auditors, and others --> professionals and researchers interested in drafting and analyzing contracts. It is intended for computers to read, too. The main purpose of this language is to specify, as unambiguously and completely and succinctly as possible, common contracts or contractual terms. These include financial contracts, liens and other kinds of security, transfer of ownership, performance of online services, and supply chain workflow.
 
-<p>The following problems may be addressed by the language when interpreted by computer:</p>
+The following problems may be addressed by the language when interpreted by computer:
 
-<ul>
-  <li>Accounting and auditing. Sophisticated contracts, including derivatives and combinations, can be specified in our formal language. Then automated or manual accounting rules may be applied to convert transactions completed under the contract to audit trails and ledger entries.</li>
+- Accounting and auditing. Sophisticated contracts, including derivatives and combinations, can be specified in our formal language. Then automated or manual accounting rules may be applied to convert transactions completed under the contract to audit trails and ledger entries.
+- Analyze formally specified contracts for flaws in logic, scheduling, opportunities for parties to breach the contract, and conflicts with other contracts one is already committed to.<sup><a href="#fn1" id="ref1">[1]</a></sup>
+- Translate the formal contracts into an existing programming language such as E<sup><a href="#fn2" id="ref2">[2]</a></sup>, and/or cryptographic protocols<sup><a href="#fn3" id="ref3">[3]</a></sup>, for partially self-enforcing and protected execution as [smart contracts](/the-idea-of-smart-contracts/).
+- Some kinds of contracts, especially financial and commodity contracts and their derivatives, can be converted into a decision or game tree that can be analyzed to determine risk, net present value, etc.
 
-  <li>Analyze formally specified contracts for flaws in logic, scheduling, opportunities for parties to breach the contract, and conflicts with other contracts one is already committed to.<sup><a href="#fn1" id="ref1">[1]</a></sup></li>
+The process of designing this language is also a great way to explore the basic nature of contracts (what are the "elements" out of which a wide variety of useful contracts can be drafted?) and their composibility (what rules for composing these atoms rule out impossible contracts?) The language is also a creative tool for thinking up and "sketching" new kinds of contracts. I welcome your participation.
 
-  <li>Translate the formal contracts into an existing programming language such as E<sup><a href="#fn2" id="ref2">[2]</a></sup>, and/or cryptographic protocols<sup><a href="#fn3" id="ref3">[3]</a></sup>, for partially self-enforcing and protected execution as <a href="/the-idea-of-smart-contracts/">smart contracts</a>.</li>
+The words in our language follow legal terminology as much as possible &ndash; thus for example _performance_ means execution to satisfy the terms of the contract (as in the legal field), rather than measured quantities like speed, memory usage, bandwidth, etc. (as programmers use the term). A law degree is not required to use the language, but some familiarity with contract law and the drafting of contracts is recommended. A lawyer who did reasonably well on the analytical and logical sections of the U.S. LSAT or its overseas equivalent, will, I suspect, have better luck drafting contracts in this language than than a programmer whose sole experience lies in traditional procedural language. That is why I call this a _drafting language_ not a programming language.
 
-  <li>Some kinds of contracts, especially financial and commodity contracts and their derivatives, can be converted into a decision or game tree that can be analyzed to determine risk, net present value, etc.</li>
-</ul>
-
-<p>The process of designing this language is also a great way to explore the basic nature of contracts (what are the "elements" out of which a wide variety of useful contracts can be drafted?) and their composibility (what rules for composing these atoms rule out impossible contracts?) The language is also a creative tool for thinking up and "sketching" new kinds of contracts. I welcome your participation.</p>
-
-<p>The words in our language follow legal terminology as much as possible &ndash; thus for example <em>performance</em> means execution to satisfy the terms of the contract (as in the legal field), rather than measured quantities like speed, memory usage, bandwidth, etc. (as programmers use the term). A law degree is not required to use the language, but some familiarity with contract law and the drafting of contracts is recommended. A lawyer who did reasonably well on the analytical and logical sections of the U.S. LSAT or its overseas equivalent, will, I suspect, have better luck drafting contracts in this language than than a programmer whose sole experience lies in traditional procedural language. That is why I call this a <em>drafting language</em> not a programming language.</p>
-
-<p>Our language can specify the output of a negotiation (which could be an auction, an exchange, or two parties drafting the contract, or one party drafting and the other agreeing to it, etc. ). It also can define the input to an engine that drives and monitors the transactions that perform the contract:</p>
+Our language can specify the output of a negotiation (which could be an auction, an exchange, or two parties drafting the contract, or one party drafting and the other agreeing to it, etc.). It also can define the input to an engine that drives and monitors the transactions that perform the contract:
 
 <pre>
 negotiation --> contract --> performance
 </pre>
 
-<p>Performance of the contract, i.e. its reification as a smart contract, can thus be seen as (hypothetical, at this point) execution of a program written in our language. Furthermore, our language incorporates a wide variety of contractual terms, not just abstract monetary terms and their derivatives. These two characteristics make our language very different from special purpose financial contract languages such as<sup><a href="#fn4" id="ref4">[4]</a></sup>. While we use several financial contract examples to introduce our language and demonstrate its flexibility, its scope both in functionality and the kinds of contracts and transaction protocols it can represent is far broader.</p>
+Performance of the contract, i.e. its reification as a smart contract, can thus be seen as (hypothetical, at this point) execution of a program written in our language. Furthermore, our language incorporates a wide variety of contractual terms, not just abstract monetary terms and their derivatives. These two characteristics make our language very different from special purpose financial contract languages such as<sup><a href="#fn4" id="ref4">[4]</a></sup>. While we use several financial contract examples to introduce our language and demonstrate its flexibility, its scope both in functionality and the kinds of contracts and transaction protocols it can represent is far broader.
 
-<h2>Semantics</h2>
+## Semantics
 
-<p>Each word and phrase in our language has a clear standard meaning. As a result, contracts can be drafted that will be far less subject to disputes over interpretation. On the other hand, the language is not very good at expressing many subjective and ambiguous concepts that are often necessary in contracts. Nor is it any good, in its present state, in referring to jurisdictions or doctrines of law. The language is nevertheless very different from a traditional programming language. Contractual terms are defined in terms of events that trigger their performance. Such events include dates and times, choices made by the parties, observable breaches of contract, and so on.</p>
+Each word and phrase in our language has a clear standard meaning. As a result, contracts can be drafted that will be far less subject to disputes over interpretation. On the other hand, the language is not very good at expressing many subjective and ambiguous concepts that are often necessary in contracts. Nor is it any good, in its present state, in referring to jurisdictions or doctrines of law. The language is nevertheless very different from a traditional programming language. Contractual terms are defined in terms of events that trigger their performance. Such events include dates and times, choices made by the parties, observable breaches of contract, and so on.
 
-<p>Our language is not a markup language. It is not about manipulating text for the purposes of drafting contracts. It is not about structuring text, specifying fill-out forms, defining static data formats, or similar tasks of languages such as HTML or XML. For those tasks one should use a markup language, or a text-manipulating programming language (e.g. Perl), not this language. Our language does something very different. It models the dynamics of contract performance &ndash; when and under what conditions obligations should be performed.</p>
+Our language is not a markup language. It is not about manipulating text for the purposes of drafting contracts. It is not about structuring text, specifying fill-out forms, defining static data formats, or similar tasks of languages such as HTML or XML. For those tasks one should use a markup language, or a text-manipulating programming language (e.g. Perl), not this language. Our language does something very different. It models the dynamics of contract performance &ndash; when and under what conditions obligations should be performed.
 
-<p>The words and sentences of the language do not consist of instructions followed down the page from one step to the next. Instead, a contract is read (both by human and computer) by following nested definitions of contractual terms as they expand, and by looking at events in <strong>when</strong> statements and seeing what they trigger. If the drafter does need to explicitly construct a step by step calendar schedule, this can be done by using calendar-driven events or words like <strong>for</strong> and <strong>then</strong>.</p>
+The words and sentences of the language do not consist of instructions followed down the page from one step to the next. Instead, a contract is read (both by human and computer) by following nested definitions of contractual terms as they expand, and by looking at events in **when** statements and seeing what they trigger. If the drafter does need to explicitly construct a step by step calendar schedule, this can be done by using calendar-driven events or words like **for** and **then**.
 
-<p>The language encourages composition of contracts. Contracts, rights, and obligations can be nested. We call these nested structures <em>clauses</em>. Contracts and clauses involve two parties, the <em>Holder</em>, from whose point of view we read the contract, and a <em>Counterparty</em>. Multi-party agreements can be drafted by composing several two-party contracts.</p>
+The language encourages composition of contracts. Contracts, rights, and obligations can be nested. We call these nested structures _clauses_. Contracts and clauses involve two parties, the _Holder_, from whose point of view we read the contract, and a _Counterparty_. Multi-party agreements can be drafted by composing several two-party contracts.
 
-<h2>Example &ndash; Futures Contracts</h2>
+## Example &ndash; Futures Contracts
 
-<p>Our first example is a well-known financial contract, the <em>future</em>. A future is an obligation on the part of the Holder of the futures contract to purchase a certain amount of a certain commodity in a certain month, and the obligation on the part of the future contract writer, the Counterparty, to deliver these goods. For the purposes of introducing this contract, we give it in the abstract form in which financial analysts usually deal with it, leaving out important details that describe the third parties who act as trusted intermediaries to define "fair bundles" of commodities, and we also leave out many details about the actual delivery.</p>
+Our first example is a well-known financial contract, the _future_. A future is an obligation on the part of the Holder of the futures contract to purchase a certain amount of a certain commodity in a certain month, and the obligation on the part of the future contract writer, the Counterparty, to deliver these goods. For the purposes of introducing this contract, we give it in the abstract form in which financial analysts usually deal with it, leaving out important details that describe the third parties who act as trusted intermediaries to define "fair bundles" of commodities, and we also leave out many details about the actual delivery.
 
 <pre>
 future(rightA="1 round lot pork bellies",
@@ -58,33 +63,35 @@ future(rightA="1 round lot pork bellies",
     then terminate
 </pre>
 
-<p>Since this language is not yet being computer interpreted, the syntax is designed more for human than computer readability. I will be a bit fast and loose with the syntax, and you can be too. I mostly use tabs instead of brackets {} to structure clauses in a way that seems natural and readable to me &ndash; and I hope to you &ndash; but might confuse a computer. Feel free to develop your own style.</p>
+Since this language is not yet being computer interpreted, the syntax is designed more for human than computer readability. I will be a bit fast and loose with the syntax, and you can be too. I mostly use tabs instead of brackets {} to structure clauses in a way that seems natural and readable to me &ndash; and I hope to you &ndash; but might confuse a computer. Feel free to develop your own style.
 
-<p>The top three lines in the contract, in the form <strong>name(parameters)</strong> = tells us that we are defining a <em>named clause</em>. The named clause can define an entire contract or just a clause in a larger contract. We can pass the names of other named clauses, lists of events, and other kinds of information that the named clause needs &ndash; these are the parameters.</p>
+The top three lines in the contract, in the form **name(parameters)** = tells us that we are defining a _named clause_. The named clause can define an entire contract or just a clause in a larger contract. We can pass the names of other named clauses, lists of events, and other kinds of information that the named clause needs &ndash; these are the parameters.
 
-<p><strong>when withinPeriod(p)</strong> means "when the first calendar or clock event generated during period p". The drafter can elsewhere set how often this regular "clock tick" event occurs. The first such clock tick after the start of the period, in this case the first scheduled delivery day in the month of July, triggers the clause with the brackets {}. More sophisticated schedules are possible, such as those that minimize delivery costs for the Counterparty by delivering to different Holders on different days in July. Fortunately, we can hide these scheduling details within the calendar event and schedule iterator mechanisms, leaving the drafter free from worrying about exactly when markets are open, which days are weekends or holidays or leap days, and the like. The Counterparty's delivery schedule can be negotiated or this detail can be left up to the Counterparty. In the contract above, the constraints on delivery are that it occur within July and only in conjunction with payment from the Holder.<!-- This indented clause after the <strong>when</strong> is called a "contract clause" since it contains a right clause for each party (that is, there is mutual consideration, each party has at least one right and at least one obligation under the contract clause).  Because contracts, especially the kinds written in our language, can often be composed by combining smaller contracts, sometimes such a clause is even just called a "contract". --></p>
+**when withinPeriod(p)** means "when the first calendar or clock event generated during period p". The drafter can elsewhere set how often this regular "clock tick" event occurs. The first such clock tick after the start of the period, in this case the first scheduled delivery day in the month of July, triggers the clause with the brackets {}. More sophisticated schedules are possible, such as those that minimize delivery costs for the Counterparty by delivering to different Holders on different days in July. Fortunately, we can hide these scheduling details within the calendar event and schedule iterator mechanisms, leaving the drafter free from worrying about exactly when markets are open, which days are weekends or holidays or leap days, and the like. The Counterparty's delivery schedule can be negotiated or this detail can be left up to the Counterparty. In the contract above, the constraints on delivery are that it occur within July and only in conjunction with payment from the Holder.<!-- This indented clause after the <strong>when</strong> is called a "contract clause" since it contains a right clause for each party (that is, there is mutual consideration, each party has at least one right and at least one obligation under the contract clause).  Because contracts, especially the kinds written in our language, can often be composed by combining smaller contracts, sometimes such a clause is even just called a "contract". -->
 
-<p>The innermost clause says to swap <strong>rightA</strong> for <strong>rightB</strong>. This clause is split into a Holder right and a Counterparty right. The right clause <strong>Holder rightA</strong> means "Holder has the right to performance of rightA", in this case delivery of the pork bellies. The clause <strong>Counterparty rightB</strong> means "Counterparty has the right to performance of rightB", which here is the payment of 1,500 dollars. <strong>with</strong> indicates a simultaneous swap &ndash; the two transactions should occur together, perhaps intermediated by an escrow agent to enforce both the delivery and payment terms.</p>
+The innermost clause says to swap **rightA** for **rightB**. This clause is split into a Holder right and a Counterparty right. The right clause **Holder rightA** means "Holder has the right to performance of rightA", in this case delivery of the pork bellies. The clause **Counterparty rightB** means "Counterparty has the right to performance of rightB", which here is the payment of 1,500 dollars. **with** indicates a simultaneous swap &ndash; the two transactions should occur together, perhaps intermediated by an escrow agent to enforce both the delivery and payment terms.
 
-<p>A <strong>then</strong> statement allows us to proceed step by step. If we had two clauses written thus:</p>
+A **then** statement allows us to proceed step by step. If we had two clauses written thus:
 
 <pre>
 to Holder right1
 also to Holder right2
 </pre>
 
-<p>They could be performed in any order &ndash; right2 might be performed first, or right1 might be, or (most likely) performance on both might proceed at the sime time. Several <strong>when</strong> statements nested together at the same level have any implicit <strong>also</strong> as they can be triggered in any order.</p>
+They could be performed in any order &ndash; right2 might be performed first, or right1 might be, or (most likely) performance on both might proceed at the sime time. Several **when** statements nested together at the same level have any implicit **also** as they can be triggered in any order.
 
-<p><!-- Unless the drafter needs to constrain the performance to fit a calendar schedule, or must ensure that one clause must be performed before another, it is best to let them be performed in any order as above.  This makes for more simplicity and flexibility in the analysis and performance of the contract. -->Envision a dancing elf that follows nesting of clauses as they are performed and of events as they are caught. (Programmers call this dancing elf by the boring name "instruction pointer"). There can be more than one dancing elf if there is an <strong>also</strong> or if more than one when statement is triggered while another is active, but usually we only need to think about one at a time.</p>
+<!-- Unless the drafter needs to constrain the performance to fit a calendar schedule, or must ensure that one clause must be performed before another, it is best to let them be performed in any order as above.  This makes for more simplicity and flexibility in the analysis and performance of the contract. -->
 
-<p>If we wish to add the constraint that right2 cannot be performed until right1 has been, we use <strong>then</strong>:</p>
+Envision a dancing elf that follows nesting of clauses as they are performed and of events as they are caught. (Programmers call this dancing elf by the boring name "instruction pointer"). There can be more than one dancing elf if there is an **also** or if more than one when statement is triggered while another is active, but usually we only need to think about one at a time.
+
+If we wish to add the constraint that right2 cannot be performed until right1 has been, we use **then**:
 
 <pre>
 to Holder right1
 then to Holder right2
 </pre>
 
-<p>Traditional programmers will be sorely tempted to fill their contracts with <strong>then</strong> statements, mimicking the style of procedural programming. Do not! Those experienced with drafting contracts know that in some cases such a constraint is clearly appropriate and in some cases it clearly isn't, and it is important when adding constraints to be explicit. Therefore the following statement is illegal, and will be rejected both by the computer and by any right-thinking drafters working without a computer:</p>
+Traditional programmers will be sorely tempted to fill their contracts with **then** statements, mimicking the style of procedural programming. Do not! Those experienced with drafting contracts know that in some cases such a constraint is clearly appropriate and in some cases it clearly isn't, and it is important when adding constraints to be explicit. Therefore the following statement is illegal, and will be rejected both by the computer and by any right-thinking drafters working without a computer:
 
 <pre>
 # Do not do this!
@@ -92,20 +99,20 @@ then to Holder right2
     to Holder right2
 </pre>
 
-<p>Finally, we have already seen this kind of clause:</p>
+Finally, we have already seen this kind of clause:
 
 <pre>
 to Holder right1
 with to Holder right2
 </pre>
 
-<p>This means that right1 and right2 should be performed simultaneously &ndash; and either both of them should be performed, or neither of them. In the lingo of computer scientists, it should be an "atomic" transaction.</p>
+This means that right1 and right2 should be performed simultaneously &ndash; and either both of them should be performed, or neither of them. In the lingo of computer scientists, it should be an "atomic" transaction.
 
-<p>The <strong>then terminate</strong> at the end of the named clause ensures that all rights and obligations under the contract are terminated once it has been performed. It is not triggered until the one-line body of the future contract has been completed. as well as any outstanding subordinate clauses with their rights and obligations. This clause is implicit at the end of every named clause, but for this one time we make it explicit. This clause is often used explicitly when the drafter wants to ensure the proper termination of non-named clauses nested within a named clause.</p>
+The **then terminate** at the end of the named clause ensures that all rights and obligations under the contract are terminated once it has been performed. It is not triggered until the one-line body of the future contract has been completed. as well as any outstanding subordinate clauses with their rights and obligations. This clause is implicit at the end of every named clause, but for this one time we make it explicit. This clause is often used explicitly when the drafter wants to ensure the proper termination of non-named clauses nested within a named clause.
 
-<p>Let's now proceed through the futures contract step by step, as clauses are activated and then performed. A normal font indicates the clause is inactive. A <strong>bold</strong> font indicates an active state &ndash; the clauses is being performed.</p>
+Let's now proceed through the futures contract step by step, as clauses are activated and then performed. A normal font indicates the clause is inactive. A **bold** font indicates an active state &ndash; the clauses is being performed.
 
-<p>When the parties commit to the contract its first clauses (the clauses at the highest level of indentation) are awoken. In our futures contract we have only one such clause, and so the <strong>when</strong> (but not the clauses nested underneath it) go to in an active state, waiting for the <strong>withinPeriod()</strong> event:</p>
+When the parties commit to the contract its first clauses (the clauses at the highest level of indentation) are awoken. In our futures contract we have only one such clause, and so the **when** (but not the clauses nested underneath it) go to in an active state, waiting for the **withinPeriod()** event:
 
 <pre>
 <strong>when withinPeriod(p)</strong>
@@ -113,7 +120,7 @@ with to Holder right2
 then terminate
 </pre>
 
-<p>When the calendar has advanced to the end of trading on the last trading day of August, the <strong>withinPeriod(p)</strong> event occurs and the <strong>when</strong> activates the clauses nested at the next level inside. The when itself becomes inactive &ndash; it is no longer waiting for an event:</p>
+When the calendar has advanced to the end of trading on the last trading day of August, the **withinPeriod(p)** event occurs and the **when** activates the clauses nested at the next level inside. The when itself becomes inactive &ndash; it is no longer waiting for an event:
 
 <pre>
 when withinPeriod(p)
@@ -121,7 +128,7 @@ when withinPeriod(p)
 then terminate
 </pre>
 
-<p>The <strong>then</strong> has cause the <strong>terminate</strong> to wait for the <strong>when</strong> and its subclauses to be performed. Once the swap of rights has been performed, the performed clauses convert to inactivity and the terminate fires:</p>
+The **then** has cause the **terminate** to wait for the **when** and its subclauses to be performed. Once the swap of rights has been performed, the performed clauses convert to inactivity and the terminate fires:
 
 <pre>
 when withinPeriod(p)
@@ -129,7 +136,7 @@ when withinPeriod(p)
 then <strong>terminate</strong>
 </pre>
 
-<p>It is easy to generalize in our language. The generic futures contract looks like this:</p>
+It is easy to generalize in our language. The generic futures contract looks like this:
 
 <pre>
 future(rightA, rightB, p) =
@@ -138,11 +145,11 @@ future(rightA, rightB, p) =
     then terminate
 </pre>
 
-<p>Instead of pork bellies, we can swap any other <strong>rightA</strong> for <strong>rightB</strong>, which can be a wide variety of things beside money. Drafters can specify very general boilerplate and fill in details for specific contracts later.</p>
+Instead of pork bellies, we can swap any other **rightA** for **rightB**, which can be a wide variety of things beside money. Drafters can specify very general boilerplate and fill in details for specific contracts later.
 
-<h2>Example &ndash; Option Contract</h2>
+## Example &ndash; Option Contract
 
-<p>We now present another kind of financial contract. In this <em>American option</em>, the Holder has the right to buy for $20 (the option strike price) per share one round lot (100 shares) of XYZ Corp on or before the last trading day of August. These kinds of contracts are called "derivatives" because the call option is derived from the underlying right (here a stock).</p>
+We now present another kind of financial contract. In this _American option_, the Holder has the right to buy for $20 (the option strike price) per share one round lot (100 shares) of XYZ Corp on or before the last trading day of August. These kinds of contracts are called "derivatives" because the call option is derived from the underlying right (here a stock).
 
 <pre>
 callOptionAmerican (rightA="1 round lot XYZ Corp.",
@@ -155,9 +162,9 @@ callOptionAmerican (rightA="1 round lot XYZ Corp.",
         terminate
 </pre>
 
-<p>Think about that dancing elf again. (When reading or writing in our language it's important to follow these dancing elves. If the elves become annoying, think of some other dynamic character or process for a metaphor that suits). As it goes around it wakes up clauses, making them active, causing them to be performed. Sometimes there can be more than one elf dancing through the code at the same time, for example if more than one when statement is triggered while another is active, but usually we only need to think about one at a time.</p>
+Think about that dancing elf again. (When reading or writing in our language it's important to follow these dancing elves. If the elves become annoying, think of some other dynamic character or process for a metaphor that suits). As it goes around it wakes up clauses, making them active, causing them to be performed. Sometimes there can be more than one elf dancing through the code at the same time, for example if more than one when statement is triggered while another is active, but usually we only need to think about one at a time.
 
-<p>The contract starts out with dancing elves in the two top-level clauses:</p>
+The contract starts out with dancing elves in the two top-level clauses:
 
 <pre>
 <strong>when beforeTime(time)</strong>
@@ -167,7 +174,7 @@ callOptionAmerican (rightA="1 round lot XYZ Corp.",
     terminate
 </pre>
 
-<p>These when statements are now waiting for their respective events. Since the events are mutually exclusive (it is first <strong>beforeTime(time)</strong>, then <strong>afterTime(time)</strong>, but never both) we only need to worry about the first to be executed. Note that, unless separated by a <strong>then</strong>, the order of the clauses at the same level is not important. The following code is identical to the code in our example:</p>
+These when statements are now waiting for their respective events. Since the events are mutually exclusive (it is first **beforeTime(time)**, then **afterTime(time)**, but never both) we only need to worry about the first to be executed. Note that, unless separated by a **then**, the order of the clauses at the same level is not important. The following code is identical to the code in our example:
 
 <pre>
 when afterTime(time)
@@ -177,7 +184,7 @@ when beforeTime(time)
         to Holder rightA with to Counterparty rightB
 </pre>
 
-<p>The <strong>beforeTime(time)</strong> is immediately activiated, so that we start with the nested clause(s) at the level immediate below it active as well &ndash; in this case, when choiceOf(Holder).</p>
+The **beforeTime(time)** is immediately activiated, so that we start with the nested clause(s) at the level immediate below it active as well &ndash; in this case, when choiceOf(Holder).
 
 <pre>
 when beforeTime(time)
@@ -187,9 +194,9 @@ when beforeTime(time)
     terminate
 </pre>
 
-<p>A series of whenes at the same level in that clause all start waiting for any of them to be triggered. When a when receives an event thrown below it or at it, the nested clause below it becomes active. Then the clauses below it become active and are performed down to the wheness one level below. The whenes at that level go from inactive to active, now waiting for their events to occur.</p>
+A series of whenes at the same level in that clause all start waiting for any of them to be triggered. When a when receives an event thrown below it or at it, the nested clause below it becomes active. Then the clauses below it become active and are performed down to the wheness one level below. The whenes at that level go from inactive to active, now waiting for their events to occur.
 
-<p>The <strong>when beforeTime(time)</strong> becomes active when the option itself is first activated, and remains active until <strong>time</strong>. Being active it wakes up the when choiceOf(Holder). This when specifies the event that gives the contract its nature as an option -- the choice of its holder to exercise it or not. If the Holder chooses to do so, the Holder gets the stock (rightA) from the Counterparty (the writer of the call option) in exchange for the money (rightB). The dancing elves then move from the when clause to the swap clause:</p>
+The **when beforeTime(time)** becomes active when the option itself is first activated, and remains active until **time**. Being active it wakes up the when choiceOf(Holder). This when specifies the event that gives the contract its nature as an option -- the choice of its holder to exercise it or not. If the Holder chooses to do so, the Holder gets the stock (rightA) from the Counterparty (the writer of the call option) in exchange for the money (rightB). The dancing elves then move from the when clause to the swap clause:
 
 <pre>
 when beforeTime(time)
@@ -199,9 +206,9 @@ when beforeTime(time)
     terminate
 </pre>
 
-<p>When code gets complicated, we might not be able to easily tell whether the implicit <strong>then terminate</strong> on the last line will get executed. So it's a good idea to <strong>terminate</strong> the contract explicitly when the option expires.</p>
+When code gets complicated, we might not be able to easily tell whether the implicit **then terminate** on the last line will get executed. So it's a good idea to **terminate** the contract explicitly when the option expires.
 
-<p>We will see examples where more than one kind of event, and even sequences of events (such as a calender schedule of payment dates) trigger the execution of contractual terms.</p>
+We will see examples where more than one kind of event, and even sequences of events (such as a calender schedule of payment dates) trigger the execution of contractual terms.
 
 <!--
 <p>Here is the same contract in a more general form.</p>
@@ -216,11 +223,11 @@ callOptionAmerican(rightA, rightB, time) =
 </pre>
 -->
 
-<p>Remember that the language does not proceed by default step by step &ndash; instead the reader (human or computer) should follow down the nested contract definitions as they expand, and look at events in <strong>when</strong> statements to see what they trigger. Explicit step by step calendar schedules can be built using <strong>for</strong>, <strong>then</strong>, and calendar events.</p>
+Remember that the language does not proceed by default step by step &ndash; instead the reader (human or computer) should follow down the nested contract definitions as they expand, and look at events in **when** statements to see what they trigger. Explicit step by step calendar schedules can be built using **for**, **then**, and calendar events.
 
-<p>Here's an example that uses such explicit steps. A <em>bond</em> makes a sequence of fixed payments, called <em>coupons</em>, on a regular schedule, and then makes a final payment, the <em>principal</em>. We don't show here the details of the schedule itself, but in general a schedule could be defined to be any kind of temporal sequence &ndash; we could pay out coupons on the last day of every month, on every Japanese holiday, according to the computation of Easter (don't laugh &ndash; schedulers of medieval fairs had to face this problem), or however we choose. When implemented the calendar events and schedule iterator will contain a very thorough implementation that solves many of the nasty calendar problems that often appear in transaction processing systems.</p>
+Here's an example that uses such explicit steps. A _bond_ makes a sequence of fixed payments, called _coupons_, on a regular schedule, and then makes a final payment, the _principal_. We don't show here the details of the schedule itself, but in general a schedule could be defined to be any kind of temporal sequence &ndash; we could pay out coupons on the last day of every month, on every Japanese holiday, according to the computation of Easter (don't laugh &ndash; schedulers of medieval fairs had to face this problem), or however we choose. When implemented the calendar events and schedule iterator will contain a very thorough implementation that solves many of the nasty calendar problems that often appear in transaction processing systems.
 
-<p><strong>for</strong> iterates through the events in the schedule one by one, with the nested <strong>when</strong> handling them. When it appears after a <strong>for</strong> clause, a <strong>then</strong> advances the iterator one more step.</p>
+**for** iterates through the events in the schedule one by one, with the nested **when** handling them. When it appears after a **for** clause, a **then** advances the iterator one more step.
 
 <pre>
 bond(coupon, principal, schedule) =
@@ -232,7 +239,7 @@ bond(coupon, principal, schedule) =
         to Holder principal
 </pre>
 
-<p>Next we sketch a contract to sell a car on credit. Being a sketch rather than a full-fledged design, this is an oversimplified or "toy" example &ndash; we leave out fees, any references to a related insurance contract, warrantees, waivers, etc. We also for simplicity have the bank (here the Holder) be the same as the car dealer. Finally, we don't show here any lien on the car to secure the loan. We will make a stab at a lien-like mechanism in an example below.</p>
+Next we sketch a contract to sell a car on credit. Being a sketch rather than a full-fledged design, this is an oversimplified or "toy" example &ndash; we leave out fees, any references to a related insurance contract, warrantees, waivers, etc. We also for simplicity have the bank (here the Holder) be the same as the car dealer. Finally, we don't show here any lien on the car to secure the loan. We will make a stab at a lien-like mechanism in an example below.
 
 <pre>
 loanPayments(payment, schedule) =
@@ -244,7 +251,7 @@ carPurchase(car, downPayment, monthlyPayment, schedule)  =
     then to Holder loanPayment(monthlyPayment, schedule)
 </pre>
 
-<p>If we want to allow prepayment, our schedule would contain single times rather than periods with a begin time and an end time. And our loan payments would look as follows:</p>
+If we want to allow prepayment, our schedule would contain single times rather than periods with a begin time and an end time. And our loan payments would look as follows:
 
 <pre>
 loanPayments(payment, schedule) =
@@ -253,7 +260,7 @@ loanPayments(payment, schedule) =
                  payment
 </pre>
 
-<p>We could compute the above payment from other information we are more likely to see in the contract, but this involves just normal programming. We can use a function to perform the computation in the first place:</p>
+We could compute the above payment from other information we are more likely to see in the contract, but this involves just normal programming. We can use a function to perform the computation in the first place:
 
 <pre>
 loanPayments(principal, interest, schedule) =
@@ -264,7 +271,7 @@ loanPayments(principal, interest, schedule) =
                         payment
 </pre>
 
-<p>"=" sets, for all time (thus <strong>constant</strong>), the number <strong>payment.amount</strong> to the value returned by the function <strong>computeInterest</strong>. We could also do more complicated things &ndash; deduct interest for prepayment, or conversely add prepayment penalties, or a wide variety of other conditions.</p>
+"=" sets, for all time (thus **constant**), the number **payment.amount** to the value returned by the function **computeInterest**. We could also do more complicated things &ndash; deduct interest for prepayment, or conversely add prepayment penalties, or a wide variety of other conditions.
 
 <!--
 <p>We can also make <strong>payment</strong> a variable, that is an object whose value could change, and use the function as an <em>invariant condition</em> to make sure the payment is proper is made in the proper amount, using the <strong>==</strong> and <strong>if/else</strong> constructions:</p>
@@ -280,7 +287,7 @@ loanPayments(principal, schedule, interest) =
 </pre>
 -->
 
-<p>We can also structure the car purchase contract so that the new owner doesn't get the title until after the downPayment has been received:</p>
+We can also structure the car purchase contract so that the new owner doesn't get the title until after the downPayment has been received:
 
 <pre>
 carPurchase(car, downPayment, monthlyPayment, schedule)  =
@@ -289,17 +296,15 @@ carPurchase(car, downPayment, monthlyPayment, schedule)  =
     then to Holder loanPayments(monthlyPayment, schedule)
 </pre>
 
-<h2>Damage Clauses</h2>
+## Damage Clauses
 
-<p>Let's use our language to analyze some important advances in the history of economic institutions. Genoa was an independent and rather libertarian (for its time) city heavily involved in the Mediterranean sea trade. During its height in the twelth through fifteenth centuries it developed many commercial innovations, including two we will examine here, the "dry exchange" loan and pooled-risk insurance.</p>
+Let's use our language to analyze some important advances in the history of economic institutions. Genoa was an independent and rather libertarian (for its time) city heavily involved in the Mediterranean sea trade. During its height in the twelth through fifteenth centuries it developed many commercial innovations, including two we will examine here, the "dry exchange" loan and pooled-risk insurance.
 
-<p>Here is a clause from a contract made in Genoa on June 23 in 1271 A.D. A man is co-signing an obligation being made by his son:</p>
+Here is a clause from a contract made in Genoa on June 23 in 1271 A.D. A man is co-signing an obligation being made by his son:
 
-<blockquote class="blockquote">
-  <p>Wherefore and for which we promise, both of us [liable] for the whole amount, to give and to pay to you or to your accredited messenger 53 gold hyperpers, good and of correct weight, in Romania [Byzantium], by the Kalends of September. If, however, we do not give you these [hyperpers] within the said time limit, [we promise] for each of the said hyperpers 11 shillings Genoese in Genoa whenever you wish. Otherwise we promise, both of us [liable] for the whole amount, to give to you, making the stipulation, the penalty of the double of the said amount, the aforesaid [conditions] remaining as settled. And we pledge to you as security for the aforesaid [promises] all our goods, existing and future...<sup><a href="#fn5" id="ref5-1">[5]</a></sup></p>
-</blockquote>
+> Wherefore and for which we promise, both of us [liable] for the whole amount, to give and to pay to you or to your accredited messenger 53 gold hyperpers, good and of correct weight, in Romania [Byzantium], by the Kalends of September. If, however, we do not give you these [hyperpers] within the said time limit, [we promise] for each of the said hyperpers 11 shillings Genoese in Genoa whenever you wish. Otherwise we promise, both of us [liable] for the whole amount, to give to you, making the stipulation, the penalty of the double of the said amount, the aforesaid [conditions] remaining as settled. And we pledge to you as security for the aforesaid [promises] all our goods, existing and future...<sup><a href="#fn5" id="ref5-1">[5]</a></sup>
 
-<p>Now, this is a very clever contract, called by scholars a "dry exchange". The Catholic Church forbad the charging of interest, so a loan contract that came right out and charged interest would be unenforceable and expose the drafters to further Church sanctions. But both long-distance exchange (making a trade at a distant market at a later date -- often via a sea voyage, thus a "wet" exchange) and currency exchange were quite legal, enforceable, and common. The above contract combined these two, along with damage clauses, in a clever way. None of the above parties had any intention of travelling to Byzantium, or even outside Genoa, to perform on this contract. Its logic can be analyzed as follows (the Holder is the creditor). We've added the statements "in (geographic location)", <strong>security</strong>, and <strong>foreclose</strong> to highlight important aspects of this contract. The latter sells enough of the goods at auction to satisfy penalty (if there was not enough to satisfy the creditors there was a bankruptcy procedure to fairly allocate the remain security among the creditors, but this is not shown):</p>
+Now, this is a very clever contract, called by scholars a "dry exchange". The Catholic Church forbad the charging of interest, so a loan contract that came right out and charged interest would be unenforceable and expose the drafters to further Church sanctions. But both long-distance exchange (making a trade at a distant market at a later date -- often via a sea voyage, thus a "wet" exchange) and currency exchange were quite legal, enforceable, and common. The above contract combined these two, along with damage clauses, in a clever way. None of the above parties had any intention of travelling to Byzantium, or even outside Genoa, to perform on this contract. Its logic can be analyzed as follows (the Holder is the creditor). We've added the statements "in (geographic location)", **security**, and **foreclose** to highlight important aspects of this contract. The latter sells enough of the goods at auction to satisfy penalty (if there was not enough to satisfy the creditors there was a bankruptcy procedure to fairly allocate the remain security among the creditors, but this is not shown):
 
 <pre>
     counterpartySecurity =  pledge(allGoods(Counterparty))
@@ -328,15 +333,15 @@ payment3() =
         continue
 </pre>
 
-<p>Neither party expected payment1 to be performed. The amounts of hyperpers and shillings probably reflected accurately the exchange rate between the two coins at the time &ndash; there's no sense being too obvious. But it would have been far too expensive to travel to Byzantium just to do this exchange. So in fact both parties expected payment2, a fake damage clause, to normally be performed. If it wasn't, then we have two real damage clauses &ndash; the somewhat reasonable "penalty of the double" and the lethal "all our goods, existing and future". Another interpretation of the latter clause is that it would only refer to a value of goods up to the double penalty amount, but the goods could be chosen from among all the goods of the debtor and the co-signer. Certainly a modern court would consider the interpretation I have placed on it in our language to be unconscionable, therefore unenforceable.</p>
+Neither party expected payment1 to be performed. The amounts of hyperpers and shillings probably reflected accurately the exchange rate between the two coins at the time &ndash; there's no sense being too obvious. But it would have been far too expensive to travel to Byzantium just to do this exchange. So in fact both parties expected payment2, a fake damage clause, to normally be performed. If it wasn't, then we have two real damage clauses &ndash; the somewhat reasonable "penalty of the double" and the lethal "all our goods, existing and future". Another interpretation of the latter clause is that it would only refer to a value of goods up to the double penalty amount, but the goods could be chosen from among all the goods of the debtor and the co-signer. Certainly a modern court would consider the interpretation I have placed on it in our language to be unconscionable, therefore unenforceable.
 
-<p>Above the part we quoted, the contract does not specify how much the original loan amount was &ndash; the debtors simply acknowledge that they have received from the creditor "a number of Genoese deniers" and then promise other currencies in return as quoted above. So a Church investigator couldn't prove just from reading the contract that any interest was charged. As for the Genoese judge arbitrating a dispute, he would likely be in favor of loans at interest, and happy to wink and nod and interpret the contract literally.</p>
+Above the part we quoted, the contract does not specify how much the original loan amount was &ndash; the debtors simply acknowledge that they have received from the creditor "a number of Genoese deniers" and then promise other currencies in return as quoted above. So a Church investigator couldn't prove just from reading the contract that any interest was charged. As for the Genoese judge arbitrating a dispute, he would likely be in favor of loans at interest, and happy to wink and nod and interpret the contract literally.
 
-<p>Modern derivatives traders do this all the time, creating synthetic assets or combinations that mimic the financial functionality of some other contract while avoiding its legal limitations. Our language is ideal for drafting and analyzing such contracts.</p>
+Modern derivatives traders do this all the time, creating synthetic assets or combinations that mimic the financial functionality of some other contract while avoiding its legal limitations. Our language is ideal for drafting and analyzing such contracts.
 
-<h2>Insurance</h2>
+## Insurance
 
-<p>The earliest risk-pooling insurance contracts were structured similarly to, and enforced under the same legal principals as, loans. Indeed, let's start with a simple loan for a purchase of goods with no interest where the Holder (the creditor) can call in the loan any time between days <strong>t1</strong> and <strong>t2</strong>:</p>
+The earliest risk-pooling insurance contracts were structured similarly to, and enforced under the same legal principals as, loans. Indeed, let's start with a simple loan for a purchase of goods with no interest where the Holder (the creditor) can call in the loan any time between days **t1** and **t2**:
 
 <pre>
 loan(goods, principal, penalty, t1, t2) =
@@ -351,7 +356,7 @@ loanPayment(principal, t1, t2) =
             to Holder principal
 </pre>
 
-<p>Let's add to our language a <strong>safeArrival(goods)</strong> event &ndash; the event that a ship carrying <strong>goods</strong> arrives safely in port and that <strong>goods</strong> are offloaded and accounted for. Now by adding to this loan contract only one extra line, whening <strong>safeArrival()</strong>, and slightly modifying a few others we can transform it into a marine insurance contract. The insured is the Holder, the insurer is the Counterparty. For this simple version damages are paid in a fixed amount (<strong>principal</strong>) if <strong>safeArrival</strong> does not occur:</p>
+Let's add to our language a **safeArrival(goods)**> event &ndash; the event that a ship carrying **goods**> arrives safely in port and that **goods**> are offloaded and accounted for. Now by adding to this loan contract only one extra line, whening **safeArrival()**>, and slightly modifying a few others we can transform it into a marine insurance contract. The insured is the Holder, the insurer is the Counterparty. For this simple version damages are paid in a fixed amount (**principal**>) if **safeArrival**> does not occur:
 
 <pre>
 insureGoods(goodsPremium, principal, penalty, t1, t2, goodsInsured) =
@@ -367,15 +372,13 @@ insurancePayment(goodsInsured, principal, t1, t2) =
             to Holder principal
 </pre>
 
-<p>Here's an example of an early insurance contract of this kind &ndash; again from Genoa, the birthplace of modern commercial institutions. For the first time we see a pool of insurers &ndash; not one but many counterparties, each pledging their entire property as security. Often these were feudal lords with large landholdings, so the value that could be brought to bear to back these insurance contracts was vast. This is how Lloyds Names still work today. Since several Names back a single contract (e.g. covering a single shipment of goods, as here), each Name puts only a tiny fraction of their estate at risk in that voyage. An insurance exchange like Lloyds allows the agents of goods owners, shippers, and Names to meet and mass-produce these kinds of contracts.</p>
+Here's an example of an early insurance contract of this kind &ndash; again from Genoa, the birthplace of modern commercial institutions. For the first time we see a pool of insurers &ndash; not one but many counterparties, each pledging their entire property as security. Often these were feudal lords with large landholdings, so the value that could be brought to bear to back these insurance contracts was vast. This is how Lloyds Names still work today. Since several Names back a single contract (e.g. covering a single shipment of goods, as here), each Name puts only a tiny fraction of their estate at risk in that voyage. An insurance exchange like Lloyds allows the agents of goods owners, shippers, and Names to meet and mass-produce these kinds of contracts.
 
-<blockquote class="blockquote">
-  <p>...Geri, [son] of the late Ser Lapo of Florence, Simone Guascone, [9 more Names listed], each of them [liable] for the amount written below, have acknowledged and in truth have declared to me, notary undersigned, as a public official [holding] a public office, making the stipulation and receiving in the name and stead of Federico Vivaldi, citizen of Genoa, that they have bought, have had, and have received from him a certain amount of goods of the said Frederico...And for these goods and in consideration of their price each of them has promised to give and to pay to said Frederico or to his accredited messenger: [from] the said Geri, 150 gold florins, the said Simone, 50 florins, [100 florins each from the other Names] within the next five months from now. Otherwise they have promised to give and to pay to the said Frederico the penalty of the double of it and of the entire amount to which and to the extent of which [this agreement] is violated or is not observed as above, together with restitution of all losses, unrealized profits, and expenses which might be incurred because of it in court or outside &ndash; the aforesaid remaining as settled, and under hypothecation and pledge of their goods and [the goods] of any one of them, existing and future.</p>
+> ...Geri, [son] of the late Ser Lapo of Florence, Simone Guascone, [9 more Names listed], each of them [liable] for the amount written below, have acknowledged and in truth have declared to me, notary undersigned, as a public official [holding] a public office, making the stipulation and receiving in the name and stead of Federico Vivaldi, citizen of Genoa, that they have bought, have had, and have received from him a certain amount of goods of the said Frederico...And for these goods and in consideration of their price each of them has promised to give and to pay to said Frederico or to his accredited messenger: [from] the said Geri, 150 gold florins, the said Simone, 50 florins, [100 florins each from the other Names] within the next five months from now. Otherwise they have promised to give and to pay to the said Frederico the penalty of the double of it and of the entire amount to which and to the extent of which [this agreement] is violated or is not observed as above, together with restitution of all losses, unrealized profits, and expenses which might be incurred because of it in court or outside &ndash; the aforesaid remaining as settled, and under hypothecation and pledge of their goods and [the goods] of any one of them, existing and future.</p>
+>
+> [The above is binding] with the exception and special reservation that if the amount of goods, property, and merchandise which was loaded or is to be loaded by Frederico Imperiale or by another in his behalf for the account of the said Frederico Vivaldi in Aigues-Mortes &ndash; to be transported to Ayassoluk and Rhodes or to either of these two localities in a certain ship...and which departed from Aigues-Mortes or is about to depart in order to sail to aforesaid regions &ndash; is brought and unloaded in the said localities of Ayasoluk and Rhodes or in either of them, in safety, then and in such a case the present intrument is cancelled, void, and of no value and pro rata. And be it understood that such a risk begins when the said ship departs and sets sail from Aigues-Mortes, and it remains and lasts, while the captain goes, stays [in port], sails, loads and unloads, from the said locality of Aigues-Mortres up to the said localities of Ayassoluk and Rhodes, in whatever manner and way he wishes, until said amount of goods, property, and merchandise has been brought and unloaded in Ayassoluk and Rhodes or in either of these two localities in safety, and pro rata. Let the present instrument also be cancelled if the said Frederico refrains from asking payments of the aforesaid amounts of money for the space of one year after the time or the time limit has elapsed for asking or obtaining their payment....Done as above, September 15th, around nones. [1393 A.D.]<sup><a href="#fn5" id="ref5-2">[5]</a></sup>
 
-  <p>[The above is binding] with the exception and special reservation that if the amount of goods, property, and merchandise which was loaded or is to be loaded by Frederico Imperiale or by another in his behalf for the account of the said Frederico Vivaldi in Aigues-Mortes &ndash; to be transported to Ayassoluk and Rhodes or to either of these two localities in a certain ship...and which departed from Aigues-Mortes or is about to depart in order to sail to aforesaid regions &ndash; is brought and unloaded in the said localities of Ayasoluk and Rhodes or in either of them, in safety, then and in such a case the present intrument is cancelled, void, and of no value and pro rata. And be it understood that such a risk begins when the said ship departs and sets sail from Aigues-Mortes, and it remains and lasts, while the captain goes, stays [in port], sails, loads and unloads, from the said locality of Aigues-Mortres up to the said localities of Ayassoluk and Rhodes, in whatever manner and way he wishes, until said amount of goods, property, and merchandise has been brought and unloaded in Ayassoluk and Rhodes or in either of these two localities in safety, and pro rata. Let the present instrument also be cancelled if the said Frederico refrains from asking payments of the aforesaid amounts of money for the space of one year after the time or the time limit has elapsed for asking or obtaining their payment....Done as above, September 15th, around nones. [1393 A.D.]<sup><a href="#fn5" id="ref5-2">[5]</a></sup></p>
-</blockquote>
-
-<p>Ignoring the pro rata language, the specific definition of the risks that prevent generation or not of the safeArrival() event, and ignoring the multiple Names (i.e. treating them as one Counterparty), the contract can be modelled by the insurance contract we drafted above with its parameters filled in as follows, and with Frederico Vivaldi as the insured (the Holder):</p>
+Ignoring the pro rata language, the specific definition of the risks that prevent generation or not of the safeArrival() event, and ignoring the multiple Names (i.e. treating them as one Counterparty), the contract can be modelled by the insurance contract we drafted above with its parameters filled in as follows, and with Frederico Vivaldi as the insured (the Holder):
 
 <pre>
 insureGoods(goodsPremium="a certain amount of goods",
@@ -387,15 +390,15 @@ insureGoods(goodsPremium="a certain amount of goods",
           and merchandise which was loaded")
 </pre>
 
-<p>This contract was still, legally speaking, a loan. This had at least two interesting consequences on what we now call the insurance premium. Firstly, the premium was treated as goods purchases by the insurer on credit. Secondly, even at this late date, contracts were coy about the actual value of such goods. Leaving the value of those goods unspecified made usury difficult to prove in this "loan".</p>
+This contract was still, legally speaking, a loan. This had at least two interesting consequences on what we now call the insurance premium. Firstly, the premium was treated as goods purchases by the insurer on credit. Secondly, even at this late date, contracts were coy about the actual value of such goods. Leaving the value of those goods unspecified made usury difficult to prove in this "loan".
 
 <!--
 <p>Let's call <b>damages</b> the amount of damages to said goods, and maxDamages the maximium amount payable. Then we can draft the following contract:</p>
 -->
 
-<h2>Rules: Logically Combined and Superimposed Events</h2>
+## Rules: Logically Combined and Superimposed Events
 
-<p>Events in a <strong>when</strong> clause can be combined in logical conditions which must evaluate to true in order to trigger the subclause. This can be used to model conditional clauses in contracts, and, more broadly, procedural and substantive rules of law. When constructing rules we call the primitive events <em>elements</em>. For example, here is, roughly following the Restatement(Second) of Contracts, a legal rule for promissory estoppel:</p>
+Events in a **when** clause can be combined in logical conditions which must evaluate to true in order to trigger the subclause. This can be used to model conditional clauses in contracts, and, more broadly, procedural and substantive rules of law. When constructing rules we call the primitive events _elements_. For example, here is, roughly following the Restatement(Second) of Contracts, a legal rule for promissory estoppel:
 
 <pre>
 when
@@ -409,13 +412,13 @@ else
     "the promise will not be enforced"
 </pre>
 
-<p>We include a gratuitous "then" here for readability. Computer programmers should note that we are following a shorthand here used by lawyers &ndash; we write the logical phrase <strong>(A and B and C and D)</strong> as <strong>(A B C and D)</strong>. When mixing and and or, write out the complete logic, and use parentheses where appropriate.</p>
+We include a gratuitous "then" here for readability. Computer programmers should note that we are following a shorthand here used by lawyers &ndash; we write the logical phrase **(A and B and C and D)** as **(A B C and D)**. When mixing and and or, write out the complete logic, and use parentheses where appropriate.
 
-<p>The rule elements, such as "there is a promise", exist in a <em>superimposed</em> state. By default, the logic is ignorant of the facts, and each element is <em>genuinely at issue</em>. As a result, "there is a promise" and the other elements of the above rule are both true and false, at the same time. (Those familiar with quantum mechanics or legal reasoning know what I'm talking about here). In the initial state, where every element is genuinely at issue, nontrivial rules will always evaluate to both true and false. Thus, <em>both</em> "promise will be enforced" and "promise will not be enforced" clauses will be triggered. When the clauses are incompatible, as these appear to be by their label, it is up to the implementor of the clause to deal with this properly. In this case, such a clause should only be treated as <em>advisory</em> until all material elements have been decided &ndash; i.e., they are no longer genuinely at issue, at which point the rule can be used to make a <em>decision</em>, i.e. trigger a single clause which takes a consistent action. A future version of this document will describe how to resolve elements genuinely at issue into elements not genuinely at issue, and thus decide on a single outcome or course of action. It will also describe how to deal with advisory clauses; for example, to analyze which elements are most favorable to one outcome or another. Finally, another future feature will include elements that cover a range of numerical values, rather than just true or false, and a formalized "balancing test" that determines outcomes based on underlying numerical estimates.</p>
+The rule elements, such as "there is a promise", exist in a _superimposed_ state. By default, the logic is ignorant of the facts, and each element is _genuinely at issue_. As a result, "there is a promise" and the other elements of the above rule are both true and false, at the same time. (Those familiar with quantum mechanics or legal reasoning know what I'm talking about here). In the initial state, where every element is genuinely at issue, nontrivial rules will always evaluate to both true and false. Thus, _both_ "promise will be enforced" and "promise will not be enforced" clauses will be triggered. When the clauses are incompatible, as these appear to be by their label, it is up to the implementor of the clause to deal with this properly. In this case, such a clause should only be treated as _advisory_ until all material elements have been decided &ndash; i.e., they are no longer genuinely at issue, at which point the rule can be used to make a _decision_, i.e. trigger a single clause which takes a consistent action. A future version of this document will describe how to resolve elements genuinely at issue into elements not genuinely at issue, and thus decide on a single outcome or course of action. It will also describe how to deal with advisory clauses; for example, to analyze which elements are most favorable to one outcome or another. Finally, another future feature will include elements that cover a range of numerical values, rather than just true or false, and a formalized "balancing test" that determines outcomes based on underlying numerical estimates.
 
-<h2>Property &ndash; Estates and Future Interests</h2>
+## Property &ndash; Estates and Future Interests
 
-<p>Our rule language is ideal for specifying estates and future interests in real estate deeds. One can also apply these patterns to other kinds of property where appropriate. Here are some examples:</p>
+Our rule language is ideal for specifying estates and future interests in real estate deeds. One can also apply these patterns to other kinds of property where appropriate. Here are some examples:
 
 <!--  TODO
   * assignment of future interests
@@ -428,7 +431,7 @@ else
   * co-tenancies
 -->
 
-<p>Lease for Term: (n.b. &ndash; Grantor = self). This is an old common law lease that actually transfers title for a certain period of time.</p>
+Lease for Term: (n.b. &ndash; Grantor = self). This is an old common law lease that actually transfers title for a certain period of time.
 
 <pre>
 leaseWithTerm(Property, Lessee, Start, Term) =
@@ -436,7 +439,7 @@ leaseWithTerm(Property, Lessee, Start, Term) =
     then when afterTime(Start+Term) to Grantor Property
 </pre>
 
-<p>Life Estate with Reverter: (n.b. &ndash; Grantor = self)</p>
+Life Estate with Reverter: (n.b. &ndash; Grantor = self)
 
 <pre>
 lifeEstateReverter(Property, Grantee) =
@@ -445,7 +448,7 @@ lifeEstateReverter(Property, Grantee) =
         to Grantor Property
 </pre>
 
-<p>Assignable Reverter for Lease. To make future interests assignable, define them separately. Note to make the Grantor explicit. (As usual we are looking at things from the obligor's side):</p>
+Assignable Reverter for Lease. To make future interests assignable, define them separately. Note to make the Grantor explicit. (As usual we are looking at things from the obligor's side):
 
 <pre>
 Reverter (Grantor, Grantee, Property) =
@@ -453,7 +456,7 @@ Reverter (Grantor, Grantee, Property) =
         to Grantor Property
 </pre>
 
-<p>We can now redefine the Life Estate with Reverter in terms of the separately defined future interest:</p>
+We can now redefine the Life Estate with Reverter in terms of the separately defined future interest:
 
 <pre>
 lifeEstateReverter(Property, Grantee, Reverter) =
@@ -461,7 +464,7 @@ lifeEstateReverter(Property, Grantee, Reverter) =
     then Reverter(Grantor, Grantee, Property)
 </pre>
 
-<p>Life Estate with Remainder. The only difference here is that the property is remaindered to a third party instead of reverting to the grantor.</p>
+Life Estate with Remainder. The only difference here is that the property is remaindered to a third party instead of reverting to the grantor.
 
 <pre>
 lifeEstateRemainder(Property, Grantee, Remainderman) =
@@ -469,7 +472,7 @@ lifeEstateRemainder(Property, Grantee, Remainderman) =
     then when afterDeath(Grantee) to Remainderman Property
 </pre>
 
-<p>Fee Simple Determinable. The <strong>Condition</strong> can be any verifiable event or change of state of the property or its title. A common real estate condition, for example, is "used for commercial purposes" &ndash; i.e., a restriction that the property may not be used for commercial purposes, otherwise the grantee is penalized by losing title to the grantor.</p>
+Fee Simple Determinable. The **Condition** can be any verifiable event or change of state of the property or its title. A common real estate condition, for example, is "used for commercial purposes" &ndash; i.e., a restriction that the property may not be used for commercial purposes, otherwise the grantee is penalized by losing title to the grantor.
 
 <pre>
 feeSimpleDeterminable(Property, Grantee, Condition) =
@@ -477,7 +480,7 @@ feeSimpleDeterminable(Property, Grantee, Condition) =
     then when Condtion(Property) to Grantor Property
 </pre>
 
-<p>Fee Simple Subject to Executory Limitation. Same as Fee Simple Determinable, except the property gets remaindered to a third party instead of revertin to the grantor.</p>
+Fee Simple Subject to Executory Limitation. Same as Fee Simple Determinable, except the property gets remaindered to a third party instead of revertin to the grantor.
 
 <pre>
 feeSimpleSubjectToExecutoryLimitation(Property, Grantee, Condition, Remainderman) =
@@ -485,7 +488,7 @@ feeSimpleSubjectToExecutoryLimitation(Property, Grantee, Condition, Remainderman
     then when Condtion(Property) to Remainderman Property
 </pre>
 
-<p>Fee Simple Subject to Condition Subsequent. Here title is not automatically transferred upon occurence of the condtion. Instead the Grantor must do some affirmative and verifiable act (in this example "entering" the property), to reclaim the title.</p>
+Fee Simple Subject to Condition Subsequent. Here title is not automatically transferred upon occurence of the condtion. Instead the Grantor must do some affirmative and verifiable act (in this example "entering" the property), to reclaim the title.
 
 <pre>
 feeSimpleSubjectToConditionSubsequent(Property, Grantee, Condition, Enters) =
@@ -494,13 +497,13 @@ feeSimpleSubjectToConditionSubsequent(Property, Grantee, Condition, Enters) =
         when Enters(Grantor, Property) to Grantor Property
 </pre>
 
-<h2>Some More Advanced Examples</h2>
+## Some More Advanced Examples
 
-<p>In this section we will look at ways to construct multiparty agreements, distinguish ambient from thrown events, and examine a number of other more advanced features of or ways to use our language.</p>
+In this section we will look at ways to construct multiparty agreements, distinguish ambient from thrown events, and examine a number of other more advanced features of or ways to use our language.
 
-<p>We will complete the life cycle of the American option we drafted above by "writing" the option &ndash; creating it from an underlying security <strong>rightA</strong> and selling it for <strong>rightX</strong>. Here the Holder (same party as the Holder above, in this case the person who will buy the written option) first verifies that the Counterparty indeed holds the underlying security (<strong>rightA</strong>) with Broker. The Broker is trusted by the Holder to make sure Counterparty continues to hold the security until the option is exercised or expired. The contract between the Broker and Holder is <strong>escrowRight()</strong>.)</p>
+We will complete the life cycle of the American option we drafted above by "writing" the option &ndash; creating it from an underlying security **rightA** and selling it for **rightX**. Here the Holder (same party as the Holder above, in this case the person who will buy the written option) first verifies that the Counterparty indeed holds the underlying security (**rightA**) with Broker. The Broker is trusted by the Holder to make sure Counterparty continues to hold the security until the option is exercised or expired. The contract between the Broker and Holder is **escrowRight()**.
 
-<p>Since Counterparty, the option writer, is not paying anything up front for an option on <strong>rightB</strong>, this right does not need to be escrowed.</p>
+Since Counterparty, the option writer, is not paying anything up front for an option on **rightB**, this right does not need to be escrowed.
 
 <pre>
 escrowRight(right, escrow, newHolder, currentHolder,
@@ -521,7 +524,7 @@ writeCallOptionAmerican(rightA, rightB, rightX, time) =
             with to Holder rightX
 </pre>
 
-<p>We now redraft the option itself to take advantage of the escrow. <strong>rightA</strong> is transferred to Holder by the <strong>throw</strong> upon excercise, or back to Counterparty if the option expires.</p>
+We now redraft the option itself to take advantage of the escrow. **rightA** is transferred to Holder by the **throw** upon excercise, or back to Counterparty if the option expires.
 
 <pre>
 callOptionAmerican(escrowRight, rightB, time) =
@@ -535,15 +538,15 @@ callOptionAmerican(escrowRight, rightB, time) =
         then terminate
 </pre>
 
-<p>We can think of events as coming in two kinds. The first, <em>ambient</em> events, occur spontaneously in the environment, or are generated by an entity external to our specification such as a user or a schedule. The second, <em>thrown</em> events, are events we explicitly throw as above.</p>
+We can think of events as coming in two kinds. The first, _ambient_ events, occur spontaneously in the environment, or are generated by an entity external to our specification such as a user or a schedule. The second, _thrown_ events, are events we explicitly throw as above.
 
-<p>In this manual I have expressed contract clauses in terms of rights. Often contract language is expressed in terms of obligations, which can be done as a mirror image &ndash; <strong>to Holder right</strong> is the same as <strong>from Counterparty obligation</strong> and vice versa. Use <strong>from</strong> to distinguish an obligation.</p>
+In this manual I have expressed contract clauses in terms of rights. Often contract language is expressed in terms of obligations, which can be done as a mirror image &ndash; **to Holder right** is the same as **from Counterparty obligation** and vice versa. Use **from** to distinguish an obligation.
 
-<h2>Hooking Up Machines</h2>
+## Hooking Up Machines
 
-<p>Further showing the flexibility of our language we can add sensors and effectors, adding "smarts" to our contracts and augmenting legal enforcement with technological constraints.</p>
+Further showing the flexibility of our language we can add sensors and effectors, adding "smarts" to our contracts and augmenting legal enforcement with technological constraints.
 
-<p>First we draft a specification for the contract-like bevavior of a vending machine:</p>
+First we draft a specification for the contract-like bevavior of a vending machine:
 
 <pre>
 sellCandy(candyPrice = $0.90) =
@@ -570,21 +573,21 @@ sellCandy(candyPrice = $0.90) =
     continue
 </pre>
 
-<p>We have here introduced a new language feature, a state variable. Our state variable <strong>moneyAmount</strong> generates an event upon surpassing the candy price threshold of $0.90. Note that nickels, dimes, etc. are actual physical objects that the sensors (generating events "nickel", "dime", etc.) detect and treat separately &ndash; they are not merely abstract amounts of money.</p>
+We have here introduced a new language feature, a state variable. Our state variable **moneyAmount** generates an event upon surpassing the candy price threshold of $0.90. Note that nickels, dimes, etc. are actual physical objects that the sensors (generating events "nickel", "dime", etc.) detect and treat separately &ndash; they are not merely abstract amounts of money.
 
-<p>State variables can be troublesome, and should be avoided unless utterly necessary as here. This one is relatively harmless because the coin slot tends to force the coins to come in one at a time, so that no two clauses are trying to change the state variable at the same time. Even if they were, the addition operation is what mathematicians call "commutative", meaning it doesn't matter what order it's done in. But if the operation on the state variable were more complicated or involved certain other kinds of operations, we wouldn't know whether it was commutative. The order in which events occured and changed the state variable might matter very much, and we could get into big trouble. So avoid state variables whenever possible.</p>
+State variables can be troublesome, and should be avoided unless utterly necessary as here. This one is relatively harmless because the coin slot tends to force the coins to come in one at a time, so that no two clauses are trying to change the state variable at the same time. Even if they were, the addition operation is what mathematicians call "commutative", meaning it doesn't matter what order it's done in. But if the operation on the state variable were more complicated or involved certain other kinds of operations, we wouldn't know whether it was commutative. The order in which events occured and changed the state variable might matter very much, and we could get into big trouble. So avoid state variables whenever possible.
 
-<p>To simplify things, we've left out making change &ndash; our machine has to have one of those signs you sometimes see, "exact change only". If the customer puts in a coin that pushes the amount from, say, $.80 to $1.05 &ndash; too bad, the machine eats it. If the customer puts in $0.90 (or more) and then adds more coins, however, the machine automatically returns the extra coins. The machine will also return whatever has been put in the till, if the customer changes her mind and decides not to buy the candy. Exercise for the reader: verify for yourself that the above behavior descriptions are correct as the code is written.</p>
+To simplify things, we've left out making change &ndash; our machine has to have one of those signs you sometimes see, "exact change only". If the customer puts in a coin that pushes the amount from, say, $.80 to $1.05 &ndash; too bad, the machine eats it. If the customer puts in $0.90 (or more) and then adds more coins, however, the machine automatically returns the extra coins. The machine will also return whatever has been put in the till, if the customer changes her mind and decides not to buy the candy. Exercise for the reader: verify for yourself that the above behavior descriptions are correct as the code is written.
 
-<p><strong>RedirectNewCoinsTo(returnTill)</strong> causes any further coins to drop into the return chute instead of onto the sensor that triggers the above events. The reader must here imagine what the mechanism looks like, as part of the behavior is "encoded" in its mechaninism rather than explitly in this statement.</p>
+**RedirectNewCoinsTo(returnTill)** causes any further coins to drop into the return chute instead of onto the sensor that triggers the above events. The reader must here imagine what the mechanism looks like, as part of the behavior is "encoded" in its mechaninism rather than explitly in this statement.
 
-<p>Think of the nested contracts and rights as an upside-down tree &ndash; a hierarchy of nested clauses. Events propagate from up from the "leaves" of the tree towards the "root" at the top. They are caught by the first <strong>when event</strong> they encounter for that event. In this case, once we enter the <strong>when threshold()</strong> clause, the <strong>when (nickel | dime | quarter)</strong> clause overrides the <strong>when(nickel)</strong> and so on clauses above them.</p>
+Think of the nested contracts and rights as an upside-down tree &ndash; a hierarchy of nested clauses. Events propagate from up from the "leaves" of the tree towards the "root" at the top. They are caught by the first **when event** they encounter for that event. In this case, once we enter the **when threshold()** clause, the **when (nickel | dime | quarter)** clause overrides the **when(nickel)** and so on clauses above them.
 
-<p>Like a perpetuity, our vending machine has no scheduled time or condition where it stops performing &ndash; therefore we have a <strong>continue</strong> statement to overrid the implicit <strong>then terminate</strong> on the last line.</p>
+Like a perpetuity, our vending machine has no scheduled time or condition where it stops performing &ndash; therefore we have a **continue** statement to overrid the implicit **then terminate** on the last line.
 
-<p>Alas, neither I nor real world candy machine makers have any code to solve the case where the candy gets stuck in the machine.</p>
+Alas, neither I nor real world candy machine makers have any code to solve the case where the candy gets stuck in the machine.
 
-<p>The above is a transcription of machine behavior. Now we make it even more like a contract. Here we incorporate the customer and his choices, which implicitly generated the coin events in the code above &ndash; here the coins are rights of the Holder. Thinking more about the party, rather than the machine, allows us to recognize that at each step the customer wants feedback on how much money they have put in, thus <strong>to Counterparty display(moneyAmount)</strong>. This display is done by the Holder (the vending machine as an agent of the vendor) as a right of the Counterparty (the customer). To enable better customer choice, we add a new construct to our language: <strong>choiceOf(agent, right)</strong> which allows the customer multiple choice, based on which right they wish to transfer to the agent's counterparty (here the vending machine, the Holder).</p>
+The above is a transcription of machine behavior. Now we make it even more like a contract. Here we incorporate the customer and his choices, which implicitly generated the coin events in the code above &ndash; here the coins are rights of the Holder. Thinking more about the party, rather than the machine, allows us to recognize that at each step the customer wants feedback on how much money they have put in, thus **to Counterparty display(moneyAmount)**. This display is done by the Holder (the vending machine as an agent of the vendor) as a right of the Counterparty (the customer). To enable better customer choice, we add a new construct to our language: **choiceOf(agent, right)** which allows the customer multiple choice, based on which right they wish to transfer to the agent's counterparty (here the vending machine, the Holder).
 
 <pre>
 sellCandy(candyPrice = $0.90) =
@@ -618,11 +621,11 @@ sellCandy(candyPrice = $0.90) =
     continue
 </pre>
 
-<p>How is it that we have specified the behavior of a vending machine in a language designed for drafting contracts? Can nickels, dimes, quarters, and operations like dropping coins from one till to another be thought of as rights and obligations? I think so. They are not <em>legal</em> rights and obligations, to be sure. There is no explicit contract between the vendor and candy machine customers, and if their were it would probably waive liability for violating most of the clauses in our code. What this code describes is the logical and typical behavior of a vending machine. It also reifies the implicit understanding most customers have when using a vending machine. Thus it models a contract-like "meeting of the minds" between the customer and the vendor that is mediated by the machine.</p>
+How is it that we have specified the behavior of a vending machine in a language designed for drafting contracts? Can nickels, dimes, quarters, and operations like dropping coins from one till to another be thought of as rights and obligations? I think so. They are not _legal_ rights and obligations, to be sure. There is no explicit contract between the vendor and candy machine customers, and if their were it would probably waive liability for violating most of the clauses in our code. What this code describes is the logical and typical behavior of a vending machine. It also reifies the implicit understanding most customers have when using a vending machine. Thus it models a contract-like "meeting of the minds" between the customer and the vendor that is mediated by the machine.
 
-<p>Here is a stab at formally describing the hypothetical <a href="/the-idea-of-smart-contracts/">"auto repo auto"</a>. The car is controlled by a <a href="/proplets-devices-for-controlling-property/">proplet</a> and the proplet looks to <a href="/secure-property-titles/">property titles</a> to determine ownership authority. The proplet lets only the titled owner enter and drive the car. "Holder" is the bank that made the loan and "Counterparty" is the new owner. As above we ignore the car dealer; the bank originally owning the car. This example highlights the ability of the language to very succinctly describe contracts but also its inability to describe the actual security that will enforce the contract. There is of course a lot missing here, including the items missing from the above car loan contract. From a smart contracts viewpoint, the biggest thing missing is that there is nothing to motivate the "Holder getTitle(car)" in the last <strong>when</strong>, nor any way specified here to enforce it. And of course all connection between ownership and authority to enter, start, and drive the car is here implicit &ndash; the actual proplet behavior in this regard would have to account for safety, emergency use, etc.</p>
+Here is a stab at formally describing the hypothetical ["auto repo auto"](/the-idea-of-smart-contracts/). The car is controlled by a [proplet](/proplets-devices-for-controlling-property/) and the proplet looks to [property titles](/secure-property-titles/) to determine ownership authority. The proplet lets only the titled owner enter and drive the car. "Holder" is the bank that made the loan and "Counterparty" is the new owner. As above we ignore the car dealer; the bank originally owning the car. This example highlights the ability of the language to very succinctly describe contracts but also its inability to describe the actual security that will enforce the contract. There is of course a lot missing here, including the items missing from the above car loan contract. From a smart contracts viewpoint, the biggest thing missing is that there is nothing to motivate the "Holder getTitle(car)" in the last **when**, nor any way specified here to enforce it. And of course all connection between ownership and authority to enter, start, and drive the car is here implicit &ndash; the actual proplet behavior in this regard would have to account for safety, emergency use, etc.
 
-<p>For all that work-up, we've only actually added one clause to our car purchase contract above. The clause forfeits the title and is structured much like the damage clauses we have seen. A <strong>breachedPerformance()</strong> event is generated if it is detected (by the Holder, a third party auditor, or the proplet itself) that the Countparty failed to make a payment according to the schedule specified by <strong>loan</strong>.</p>
+For all that work-up, we've only actually added one clause to our car purchase contract above. The clause forfeits the title and is structured much like the damage clauses we have seen. A **breachedPerformance()** event is generated if it is detected (by the Holder, a third party auditor, or the proplet itself) that the Countparty failed to make a payment according to the schedule specified by **loan**.
 
 <pre>
 loan(payment, schedule) =
@@ -676,9 +679,9 @@ buildingSecurity =
 <p>We design a security system in the same general way the drafters of contracts tend to work. First start with the most relevant and available boilerplate. Work out the main clauses, then fill in missing details, think about ways parties could cheat, and revise accordingly, until we have a satisfactory contract &ndash; or security system. Clearly when used in this way, our language demonstrates its flexibility as a tool for making high-level sketches of a wide variety of relationships, whether mediated and constrained by legal contract or machine or both, but we've hardly actually implemented a real security system. Our language may play a high level role in coordinating and constraining, via smart contract, the people, organizations, devices, and software that make up the security system. The security system might also be used to help enforce and protect the smart contracts.</p>
 -->
 
-<h2>Technical Note &ndash; A Computer-Readable Syntax</h2>
+## Technical Note &ndash; A Computer-Readable Syntax
 
-<p>Here is a formal specification of the language's grammar in "Backus-Naur Form"(BNF). The specification is for a planned computer-readable version of the language and there are a few minor differences, such as the use of brackets {} instead of tabs to denote nesting. BNF is used to define what linguists call "context-free grammars". It is also used, as here, to define the syntax of languages that computers can also interpret and execute. I also include some more discussion of the meanings of the words and structures, especially how the computer might interpret them. As you can see, this is an evolving language, a work in progress with many unresolved issues. Your suggestions for changing or adding more kinds of contractual terms to our language are quite welcome.</p>
+Here is a formal specification of the language's grammar in "Backus-Naur Form"(BNF). The specification is for a planned computer-readable version of the language and there are a few minor differences, such as the use of brackets {} instead of tabs to denote nesting. BNF is used to define what linguists call "context-free grammars". It is also used, as here, to define the syntax of languages that computers can also interpret and execute. I also include some more discussion of the meanings of the words and structures, especially how the computer might interpret them. As you can see, this is an evolving language, a work in progress with many unresolved issues. Your suggestions for changing or adding more kinds of contractual terms to our language are quite welcome.
 
 <pre>
 agent = Holder | Counterparty
@@ -704,7 +707,7 @@ period = (startTime,finishTime)
 # (this is different from the normal event semantics where throws
 # propagate *up* the parse tree) -- should I change it to *up*
 # and rewrite the schedule iterator code above?  but it confuses
-# me &amp;  perhaps the comuter to put it *outside* the loop.
+# me &amp; perhaps the comuter to put it *outside* the loop.
 
 event = choiceOf(agent) | withinPeriod(period) |
     performed(right)  | breachedPerformance(right) |
@@ -784,7 +787,7 @@ contract = agent [right | obligation] ["with" agent [right | obligation]]*
 contract = [ when event "{" contract "}" ]*
 </pre>
 
-<h2>Basic Fucntions</h2>
+## Basic Fucntions
 
 <pre>
 doOn(right, period) =
@@ -809,7 +812,7 @@ doOnDemand(contract) =
 #
 </pre>
 
-<h2>More Examples</h2>
+## More Examples
 
 <pre>
 future(rightA, rightB, p) =
@@ -862,37 +865,30 @@ bond(coupon, principal, schedule) =
     doOn(principal, schedule.next)
 </pre>
 
-<h2>Frequently Asked Questions</h2>
+## Frequently Asked Questions
 
-<p><strong>Q: There are already languages for specifying financial contracts<sup><a href="#fn3" id="ref3">[3]</a></sup>, what is the novelty here?</strong></p>
+**Q: There are already languages for specifying financial contracts<sup><a href="#fn3" id="ref3">[3]</a></sup>, what is the novelty here?**
 
-<p>A: This the first specification language to generalize contractual structures to any kind of exclusive rights, not just money. This is also the first language that incorporates the dynamic nature of many contracts, (their dependence on time or events) in a succinct, complete, and potentially executable manner. Surprisingly, this often makes the specification more not less succinct.</p>
+A: This the first specification language to generalize contractual structures to any kind of exclusive rights, not just money. This is also the first language that incorporates the dynamic nature of many contracts, (their dependence on time or events) in a succinct, complete, and potentially executable manner. Surprisingly, this often makes the specification more not less succinct.
 
-<p><strong>Where's the money?</strong></p>
+**Where's the money?**
 
-<p>A: This language is targeted toward an economy of distributed software and devices performing services for each other. A money economy can be constructed out of a barter economy but not vice versa. Real online money is far more subtle than a mere shared variable (or even the specification of "bank notes" in this language). Money is just one kind of fungible exclusive right, and the structure of financial contracts are generalized by converting money terms into any fungible exclusive right.</p>
+A: This language is targeted toward an economy of distributed software and devices performing services for each other. A money economy can be constructed out of a barter economy but not vice versa. Real online money is far more subtle than a mere shared variable (or even the specification of "bank notes" in this language). Money is just one kind of fungible exclusive right, and the structure of financial contracts are generalized by converting money terms into any fungible exclusive right.
 
-<p><strong>Q: What assumptions are you making?</strong></p>
+**Q: What assumptions are you making?**
 
-<p>A: This is the most important question to ask of any novel scheme! I have identified at least the following:</p>
+A: This is the most important question to ask of any novel scheme! I have identified at least the following:
 
-<ol>
-  <li>I'm assuming away, for the moment, issues of the protection and enforcement of performance, which I've addressed elsewhere (http://szabo.vwh.best.com/ has many essays that focus on this topic). An eventual goal is to create protocols to enforce the language's atoms and then to compose these atoms maintaining the enforceability.</li>
+1. I'm assuming away, for the moment, issues of the protection and enforcement of performance, which I've addressed elsewhere (http://szabo.vwh.best.com/ has many essays that focus on this topic). An eventual goal is to create protocols to enforce the language's atoms and then to compose these atoms maintaining the enforceability.
+2. Two specific enforcement assumptions &ndash; there exists a secure, agreed-upon time source, and the occurence of other defined events can be agreed upon by the parties and/or audited by third parties.
+3. I am assuming some kind of atomicity for each right atom performance &ndash; for example, when an event triggers a "when", a functionPerformance in another thread is gracefully either rolled back or completed.
+4. There are only two parties to the contract, the Holder and Counterparty.
+5. A contract comes in two mirror forms, one of which can be inferred from the other. A party always sees himself as the Holder. Obligations of the Holder can always be expressed in and inferred from rights of the Counterparty, and vice versa.
+6. I'm probably making other assumptions I haven't discovered yet &ndash; if you find any please let me know!
 
-  <li>Two specific enforcement assumptions &ndash; there exists a secure, agreed-upon time source, and the occurence of other defined events can be agreed upon by the parties and/or audited by third parties.</li>
+**Q: What are some problems with this language you'd like to see solved?**
 
-  <li>I am assuming some kind of atomicity for each right atom performance &ndash; for example, when an event triggers a "when", a functionPerformance in another thread is gracefully either rolled back or completed.</li>
-
-  <li>There are only two parties to the contract, the Holder and Counterparty.</li>
-
-  <li>A contract comes in two mirror forms, one of which can be inferred from the other. A party always sees himself as the Holder. Obligations of the Holder can always be expressed in and inferred from rights of the Counterparty, and vice versa.</li>
-
-  <li>I'm probably making other assumptions I haven't discovered yet &ndash; if you find any please let me know!</li>
-</ol>
-
-<p><strong>Q: What are some problems with this language you'd like to see solved?</strong></p>
-
-<p>A: Implementations that satisfy the above assumptions for the particular language atoms, and also for compositions of the atoms. (Of course, various protocols in the "financial cryptography" field, in my own proposals, in the E language, etc. provide many valuable building blocks for such solutions).</p>
+A: Implementations that satisfy the above assumptions for the particular language atoms, and also for compositions of the atoms. (Of course, various protocols in the "financial cryptography" field, in my own proposals, in the E language, etc. provide many valuable building blocks for such solutions).
 
 <!--
 <h3>Technical Notes &ndash; Innovations in this Language</h3>
@@ -931,9 +927,9 @@ in their message args?)
 </pre>
 -->
 
-<h2>References</h2>
+## References
 
-<ol>
+<ol class="references">
   <li id="fn1">
     <p>There are many instances of deals gone sour at the last minute when the salesfolk check with legal and discover that the deal is not possible due to a clause in another contract &ndash; for example a promise not to sell to a customer's competitors in an industry for a certain period of time. Worse, such a conflict might not be discovered until the contraditory commitment has been made.&nbsp;<a href="#ref1">↩</a></p>
   </li>
@@ -955,13 +951,13 @@ in their message args?)
   </li>
 </ol>
 
-<hr>
+---
 
-<p>Please send your comments to nszabo (at) law (dot) gwu (dot) edu</p>
+Please send your comments to nszabo (at) law (dot) gwu (dot) edu
 
-<p>Copyright &copy; 2002 by Nick Szabo<br>
-  Preliminary draft -- Redistribution only with written permission of author.</p>
+Copyright &copy; 2002 by Nick Szabo\
+Preliminary draft — Redistribution only with written permission of author.
 
-<hr>
+--
 
-<p><em>Editor's note: Some links may be broken.</em></p>
+_Editor's note: Some links may be broken._

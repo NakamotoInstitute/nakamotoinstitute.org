@@ -1,45 +1,56 @@
-<p><a href="/negative-reputations/">Reputation systems</a> ultimately need to be based on fact rather than mere opinion or faith to be effective. For example, if we are to have a good credit rating system, we need to be confident that the credit record assembled by the agency is sufficiently accurate. Reputation information is typical gathered and distributed by authorities trusted to perform this task. Other kinds of specific performance are often entrusted to third parties; I call such third parties &ldquo;authorities&rdquo;. We must be able to trust the authority (credit agency, anti-virus software vendor, certificate authority, digital cash mint, etc.) with their particular claims (about creditworthiness, dangerous byte patterns, identity, conservation of the money supply, etc.) As Reagan well noted, &ldquo;trust but verify&rdquo;. To deserve our trust, authorities must convince us that their claims are true. We need to be able to &ldquo;ping&rdquo; their veracity, verifying that certain claimed transactions in fact occurred. An entire profession exists in market economies to perform this function: auditing.</p>
+---
+title: Distributing Authorities and Verifying Their Claims
+authors:
+  - nick-szabo
+date: 1997
+categories:
+  - cryptography
+doctype: essay
+external: https://web.archive.org/web/20160417035139/http://szabo.best.vwh.net/authorities.html
+---
 
-<p>It has long been recognized in both business and politics that authority is more trustworthy when it is distributed. Consider the following crude but effective &ldquo;protocols&rdquo;:</p>
+[Reputation systems](/negative-reputations/) ultimately need to be based on fact rather than mere opinion or faith to be effective. For example, if we are to have a good credit rating system, we need to be confident that the credit record assembled by the agency is sufficiently accurate. Reputation information is typical gathered and distributed by authorities trusted to perform this task. Other kinds of specific performance are often entrusted to third parties; I call such third parties &ldquo;authorities&rdquo;. We must be able to trust the authority (credit agency, anti-virus software vendor, certificate authority, digital cash mint, etc.) with their particular claims (about creditworthiness, dangerous byte patterns, identity, conservation of the money supply, etc.) As Reagan well noted, &ldquo;trust but verify&rdquo;. To deserve our trust, authorities must convince us that their claims are true. We need to be able to &ldquo;ping&rdquo; their veracity, verifying that certain claimed transactions in fact occurred. An entire profession exists in market economies to perform this function: auditing.
 
-<p><em><a href="https://avalon.law.yale.edu/18th_century/fed47.asp">Separation of powers</a></em>: political authority divided into several branches, each responsible for only certain aspects of authority (e.g. one authority passes laws, another different authority enforces them).</p>
+It has long been recognized in both business and politics that authority is more trustworthy when it is distributed. Consider the following crude but effective &ldquo;protocols&rdquo;:
 
-<p><em><a href="https://web.archive.org/web/19990427063637/http://www.bus.orst.edu/faculty/brownc/lectures/controls/control1.htm">Segregation of duties</a></em>: in a large business, transactions are divided up so that no single person can commit fraud. I call this &ldquo;the principle of required conspiracy&rdquo;. For example, the functions of warehouse/delivery, sales, and receipt of payments are each performed by different parties, with a policy that each party reports every transaction to a fourth function, accounting. Any singular reported activity (e.g., delivery without receipt of payment) indicates potential fraud (e.g., a delivery was made to a customer and the payment pocketed instead of being put into t he corporate treasury). Segregation of duties is the auditor's favorite tool. Where it is absent the auditor cries &ldquo;foul&rdquo;, just as a good engineer would react to a single point of failure. Many cryptographic systems have rightfully gone down to commercial failure because they ground down to trust in a single entity rather than segregating functions so as to require conspiracy.</p>
+_[Separation of powers](https://avalon.law.yale.edu/18th_century/fed47.asp)_: political authority divided into several branches, each responsible for only certain aspects of authority (e.g. one authority passes laws, another different authority enforces them).
 
-<p>The irony is that with cryptography we can greatly improve upon the traditional techniques of auditing (segregation of duties, cross-checking transactions against counterparties' books, and so on). I'll briefly mention three mechanisms:</p>
+_[Segregation of duties](https://web.archive.org/web/19990427063637/http://www.bus.orst.edu/faculty/brownc/lectures/controls/control1.htm)_: in a large business, transactions are divided up so that no single person can commit fraud. I call this &ldquo;the principle of required conspiracy&rdquo;. For example, the functions of warehouse/delivery, sales, and receipt of payments are each performed by different parties, with a policy that each party reports every transaction to a fourth function, accounting. Any singular reported activity (e.g., delivery without receipt of payment) indicates potential fraud (e.g., a delivery was made to a customer and the payment pocketed instead of being put into t he corporate treasury). Segregation of duties is the auditor's favorite tool. Where it is absent the auditor cries &ldquo;foul&rdquo;, just as a good engineer would react to a single point of failure. Many cryptographic systems have rightfully gone down to commercial failure because they ground down to trust in a single entity rather than segregating functions so as to require conspiracy.
 
-<h2>Quorum</h2>
+The irony is that with cryptography we can greatly improve upon the traditional techniques of auditing (segregation of duties, cross-checking transactions against counterparties' books, and so on). I'll briefly mention three mechanisms:
 
-<p>Quorum (a.k.a., threshold) distribution of performance or control over resources, based on the <a href="https://web.archive.org/web/19990423083549/http://cacr.math.uwaterloo.ca/%7Edstinson/ssbib.html">secret sharing</a> of keys needed to perform or control a resource. <a href="https://web.archive.org/web/20120113024315/http://cseweb.ucsd.edu/users/markus/">Markus Jacobsson</a> has designed a quorum of mints for signing digital coins, for example. Quorum establishes a &ldquo;required conspiracy&rdquo; of M out of N to peform a function, providing an option for stronger protection than the typical 2 out of N used in segregation of duties, and greater confidence in the security underlying the segregation.</p>
+## Quorum
 
-<h2>Post-unforgeable auditing logs</h2>
+Quorum (a.k.a., threshold) distribution of performance or control over resources, based on the [secret sharing](https://web.archive.org/web/19990423083549/http://cacr.math.uwaterloo.ca/%7Edstinson/ssbib.html) of keys needed to perform or control a resource. [Markus Jacobsson](https://web.archive.org/web/20120113024315/http://cseweb.ucsd.edu/users/markus/) has designed a quorum of mints for signing digital coins, for example. Quorum establishes a &ldquo;required conspiracy&rdquo; of M out of N to peform a function, providing an option for stronger protection than the typical 2 out of N used in segregation of duties, and greater confidence in the security underlying the segregation.
 
-<p>Traditionally, auditors have contacted counterparties in order to verify that a transaction actually took place. (The &ldquo;principle of required conspiracy&rdquo; at work again). With post-unforgeable logs, via <a href="https://web.archive.org/web/20160417035139/https://web.archive.org/web/19980218081923/http://www.surety.com/howfiles/detail3.html">a hierarchical system of one-way hash functions</a>, a party can publically commit to transactions as they are completed by publishing signed cumulative hashes of the transaction stream. The confidentiality of the transaction is fully maintained until an auditor &ldquo;pings&rdquo; the transaction to determine its actual nature. The counterparty identity can remain confidential, because it is not required to establish the other facts of the transaction. The only attack is to forge transactions in real time, as the transaction itself takes place, which in most practical cases will be unfeasible. Most accounting fraud involves analyzing sets of completed transactions and then forging them to make them compute to a desired counterfactual result.</p>
+<h2 id="post-unforgeable-auditing-logs">Post-unforgeable auditing logs</h2>
+
+Traditionally, auditors have contacted counterparties in order to verify that a transaction actually took place. (The &ldquo;principle of required conspiracy&rdquo; at work again). With post-unforgeable logs, via [a hierarchical system of one-way hash functions](https://web.archive.org/web/20160417035139/https://web.archive.org/web/19980218081923/http://www.surety.com/howfiles/detail3.html), a party can publically commit to transactions as they are completed by publishing signed cumulative hashes of the transaction stream. The confidentiality of the transaction is fully maintained until an auditor &ldquo;pings&rdquo; the transaction to determine its actual nature. The counterparty identity can remain confidential, because it is not required to establish the other facts of the transaction. The only attack is to forge transactions in real time, as the transaction itself takes place, which in most practical cases will be unfeasible. Most accounting fraud involves analyzing sets of completed transactions and then forging them to make them compute to a desired counterfactual result.
 
 <h2 id="mutually-confidential-auditing">Mutually confidential auditing</h2>
 
-<p><a href="https://web.archive.org/web/19981202092848/http://harvest.transarc.com/afs/transarc.com/public/beaver/html/research/publications/biblio.html#mpp">Multiparty secure computation</a> allows N parties to share a computation, each learning only what can be inferred from their own inputs and the output of the computation. For example, the parties can compute summary statistics on their shared transaction logs, including cross-checking of the logs against counterparties to a transaction, without revealing those logs. Unfortuneately, straight MSC is far too slow (one Internet message per &ldquo;bignum&rdquo; machine instruction), but knowing that this capability exists in principle may lead us to practical solutions.</p>
+[Multiparty secure computation](https://web.archive.org/web/19981202092848/http://harvest.transarc.com/afs/transarc.com/public/beaver/html/research/publications/biblio.html#mpp) allows N parties to share a computation, each learning only what can be inferred from their own inputs and the output of the computation. For example, the parties can compute summary statistics on their shared transaction logs, including cross-checking of the logs against counterparties to a transaction, without revealing those logs. Unfortuneately, straight MSC is far too slow (one Internet message per &ldquo;bignum&rdquo; machine instruction), but knowing that this capability exists in principle may lead us to practical solutions.
 
-<p>By combining these cryptographic capabilities, we can gain very high confidence in the factuality of authorities' claims and reports without revealing identifying and other detailed information from the transactions underlying those reports. These provide the basis for solid reputation systems, and other trusted third party systems, that maintain integrity across time, communications, and summarization, and preserve confidentiality for transaction participants.</p>
+By combining these cryptographic capabilities, we can gain very high confidence in the factuality of authorities' claims and reports without revealing identifying and other detailed information from the transactions underlying those reports. These provide the basis for solid reputation systems, and other trusted third party systems, that maintain integrity across time, communications, and summarization, and preserve confidentiality for transaction participants.
 
-<h2>References:</h2>
+## References:
 
 <ul class="references">
-    <li>BRICS, <a href="https://web.archive.org/web/20160417035139/http://www.brics.aau.dk/BRICS/Activities/95/SecMultComp/index.html">&ldquo;A BRICS Course on Secure Multi-Party Computation&rdquo;</a></li>
+  <li>BRICS, <a href="https://web.archive.org/web/20160417035139/http://www.brics.aau.dk/BRICS/Activities/95/SecMultComp/index.html">&ldquo;A BRICS Course on Secure Multi-Party Computation&rdquo;</a></li>
 
-    <li>Carol Brown, <a href="https://web.archive.org/web/19970808205719/http://www.bus.orst.edu/faculty/brownc/lectures/controls/control1.htm">&ldquo;Internal Control Concepts&rdquo;</a></li>
+  <li>Carol Brown, <a href="https://web.archive.org/web/19970808205719/http://www.bus.orst.edu/faculty/brownc/lectures/controls/control1.htm">&ldquo;Internal Control Concepts&rdquo;</a></li>
 
-    <li>Publius (James A. Madison), Federalist No. 47 — <a href="https://avalon.law.yale.edu/18th_century/fed47.asp">&ldquo;The Particular Structure of the New Government and the Distribution of Power Among Its Different Parts&rdquo;</a></li>
+  <li>Publius (James A. Madison), Federalist No. 47 — <a href="https://avalon.law.yale.edu/18th_century/fed47.asp">&ldquo;The Particular Structure of the New Government and the Distribution of Power Among Its Different Parts&rdquo;</a></li>
 
-    <li>Publius (James A. Madison), Federalist No. 47 — Federalist No. 48 — <a href="https://avalon.law.yale.edu/18th_century/fed48.asp">&ldquo;These Departments Should Not Be So Far Separated as to Have No Constitutional Control Over Each Other&rdquo;</a></li>
+  <li>Publius (James A. Madison), Federalist No. 47 — Federalist No. 48 — <a href="https://avalon.law.yale.edu/18th_century/fed48.asp">&ldquo;These Departments Should Not Be So Far Separated as to Have No Constitutional Control Over Each Other&rdquo;</a></li>
 
-    <li>Douglas Stinson, <a href="https://web.archive.org/web/19990423083549/http://cacr.math.uwaterloo.ca/%7Edstinson/ssbib.html">&ldquo;Bibliography on Secret Sharing Schemes&rdquo;</a></li>
+  <li>Douglas Stinson, <a href="https://web.archive.org/web/19990423083549/http://cacr.math.uwaterloo.ca/%7Edstinson/ssbib.html">&ldquo;Bibliography on Secret Sharing Schemes&rdquo;</a></li>
 
-    <li>Surety Technologies, <a href="https://web.archive.org/web/20160417035139/https://web.archive.org/web/19980218081923/http://www.surety.com/howfiles/detail3.html">&ldquo;Digital Fingerprints&rdquo;</a></li>
+  <li>Surety Technologies, <a href="https://web.archive.org/web/20160417035139/https://web.archive.org/web/19980218081923/http://www.surety.com/howfiles/detail3.html">&ldquo;Digital Fingerprints&rdquo;</a></li>
 
-    <li>Nick Szabo, <a href="/negative-reputations/">&ldquo;Negative Reputation Systems&rdquo;</a></li>
+  <li>Nick Szabo, <a href="/negative-reputations/">&ldquo;Negative Reputation Systems&rdquo;</a></li>
 </ul>
 
-<hr>
+---
 
-<p>Please send your comments to nszabo (at) law (dot) gwu (dot) edu</p>
+Please send your comments to nszabo (at) law (dot) gwu (dot) edu

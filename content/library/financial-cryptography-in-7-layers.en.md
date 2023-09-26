@@ -1,49 +1,55 @@
 ---
-author: 'Ian Grigg<sup><a href="#fn1" id="ref1">[1]</a></sup><sup><a href="#fn2" id="ref2">[2]</a></sup>'
-date: 1998 – 2000
+title: Financial Cryptography in 7 Layers
+authors:
+  - ian-grigg
+date: 2000
+displayDate: "1998 – 2000"
+categories:
+  - economics
+  - cryptography
+doctype: essay
+external: http://iang.org/papers/fc7.html
 ---
 
 <h2 id="abstract">Abstract</h2>
 
-<p><strong>Abstract:</strong> Financial Cryptography is substantially complex, requiring skills drawn from diverse and incompatible, or at least, unfriendly, disciplines. Caught between Central Banking and Cryptography, or between accountants and programmers, there is a grave danger that efforts to construct Financial Cryptography systems will simplify or omit critical disciplines.</p>
+**Abstract:**<sup><a href="#fn1" id="ref1">[1]</a><a href="#fn2" id="ref2">[2]</a></sup> Financial Cryptography is substantially complex, requiring skills drawn from diverse and incompatible, or at least, unfriendly, disciplines. Caught between Central Banking and Cryptography, or between accountants and programmers, there is a grave danger that efforts to construct Financial Cryptography systems will simplify or omit critical disciplines.
 
-<p>This paper presents a model that seeks to encompass the breadth of Financial Cryptography (at the clear expense of the depth of each area). By placing each discipline into a seven layer model of introductory nature, where the relationship between each adjacent layer is clear, this model should assist project, managerial and requirements people.</p>
+This paper presents a model that seeks to encompass the breadth of Financial Cryptography (at the clear expense of the depth of each area). By placing each discipline into a seven layer model of introductory nature, where the relationship between each adjacent layer is clear, this model should assist project, managerial and requirements people.
 
-<p>Whilst this model is presented as efficacious, there are limits to any model. This one does not propose a methodology for design, nor a checklist for protocols. Further, given the young heritage of the model, and of the field itself, it should be taken as a hint of complexity rather than a defining guide.</p>
+Whilst this model is presented as efficacious, there are limits to any model. This one does not propose a methodology for design, nor a checklist for protocols. Further, given the young heritage of the model, and of the field itself, it should be taken as a hint of complexity rather than a defining guide.
 
-<hr>
+---
 
 <h2 id="intro">Introduction</h2>
 
-<p>Financial Cryptography is substantially complex<sup><a href="#fn3" id="ref3">[3]</a></sup>. For a field that is nominally only half a decade old, by some viewpoints, it is apparent from the implementation work that has been done that many more aspects were involved than envisaged by early pioneers.</p>
+Financial Cryptography is substantially complex.<sup><a href="#fn3" id="ref3">[3]</a></sup> For a field that is nominally only half a decade old, by some viewpoints, it is apparent from the implementation work that has been done that many more aspects were involved than envisaged by early pioneers.
 
-<p>Financial Cryptography appears to be a science, or perhaps an art, that sits at the intersection of many previously unrelated disciplines:</p>
+Financial Cryptography appears to be a science, or perhaps an art, that sits at the intersection of many previously unrelated disciplines:
 
-<ul>
-  <li>Accountancy and Auditing</li>
-  <li>Programming</li>
-  <li>Systems Architecture</li>
-  <li>Cryptography</li>
-  <li>Economics</li>
-  <li>Internet</li>
-  <li>Security</li>
-  <li>Finance and Banking</li>
-  <li>Risk</li>
-  <li>Marketing and Distribution</li>
-  <li>Central Banking<sup><a href="#fn4" id="ref4">[4]</a></sup></li>
-</ul>
+- Accountancy and Auditing
+- Programming
+- Systems Architecture
+- Cryptography
+- Economics
+- Internet
+- Security
+- Finance and Banking
+- Risk
+- Marketing and Distribution
+- Central Banking<sup><a href="#fn4" id="ref4">[4]</a></sup>
 
-<p>At such a busy juncture of so many distinctive bases of knowledge, problems are bound to arise. Not only the inevitable confusion and wasted resources, but the difficulty in acquiring technical, management and marketing talent that can comfortably work in the field is an issue.</p>
+At such a busy juncture of so many distinctive bases of knowledge, problems are bound to arise. Not only the inevitable confusion and wasted resources, but the difficulty in acquiring technical, management and marketing talent that can comfortably work in the field is an issue.
 
-<p>As a preliminary step to the better understanding of Financial Cryptography projects, it is often of some interest to structure these disciplines into models that aid dialogue, comparisons and decision making.</p>
+As a preliminary step to the better understanding of Financial Cryptography projects, it is often of some interest to structure these disciplines into models that aid dialogue, comparisons and decision making.
 
-<p>This paper presents one such model that attempts to describe the field in an introductory manner, as a preamble to greater learning. In this model, the terms Finance and Cryptography are stretched out in order to reveal the disciplines that might have been hidden within the name.</p>
+This paper presents one such model that attempts to describe the field in an introductory manner, as a preamble to greater learning. In this model, the terms Finance and Cryptography are stretched out in order to reveal the disciplines that might have been hidden within the name.
 
-<p>Of course, no one model can plausibly cover the depth and breadth of a complex subject. The intent of this present model is to allow the reader to conceptualise the entire field, identifying the relationships of the disciplines, without spending too much time on the detailed nature of each component. Depth is sacrificed for breadth.</p>
+Of course, no one model can plausibly cover the depth and breadth of a complex subject. The intent of this present model is to allow the reader to conceptualise the entire field, identifying the relationships of the disciplines, without spending too much time on the detailed nature of each component. Depth is sacrificed for breadth.
 
 <h2 id="model">The 7 Layer Model</h2>
 
-<p> This paper introduces a 7 layer model, akin to the Open Systems Interconnect Reference Model of networking fame, as shown in Figure 1<sup><a href="#fn5" id="ref5">[5]</a><a href="#fn6" id="ref6">[6]</a></sup>. In this model, Finance and Cryptography are stretched out, revealing five more areas of interest.</p>
+This paper introduces a 7 layer model, akin to the Open Systems Interconnect Reference Model of networking fame, as shown in Figure 1.<sup><a href="#fn5" id="ref5">[5]</a><a href="#fn6" id="ref6">[6]</a></sup> In this model, Finance and Cryptography are stretched out, revealing five more areas of interest.
 
 <table class="table table-bordered table-responsive">
   <caption class="text-center"><strong>Figure 1:</strong> Financial Cryptography in 7 Layers</caption>
@@ -77,413 +83,338 @@ date: 1998 – 2000
   </tr>
 </table>
 
-<p>An advantage of this model is traversal from the technical to the application, giving major stakeholders easy points of entry.</p>
+An advantage of this model is traversal from the technical to the application, giving major stakeholders easy points of entry.
 
-<p>We can start at the top, the Finance layer, and work top-down; this is a process of mapping requirements and following them down into lower layers. This might be the place to start if engaged in high-level application discussions.</p>
+We can start at the top, the Finance layer, and work top-down; this is a process of mapping requirements and following them down into lower layers. This might be the place to start if engaged in high-level application discussions.
 
-<p>Or, we can start at the bottom, the Cryptography layer, and describe tool kits to offer the higher layers. From ever more sophisticated lower layers, we can build our way up to offering a smorgasboard of options to the all-encompassing financial applications layer.</p>
+Or, we can start at the bottom, the Cryptography layer, and describe tool kits to offer the higher layers. From ever more sophisticated lower layers, we can build our way up to offering a smorgasboard of options to the all-encompassing financial applications layer.
 
-<p>Here, we choose a descriptive presentation that traverses bottom-to-top. Later, an <a href="#example">example</a> is presented in the reverse order, top-to-bottom.</p>
+Here, we choose a descriptive presentation that traverses bottom-to-top. Later, an <a href="#example">example</a> is presented in the reverse order, top-to-bottom.
 
 <h3 id="bup1">Cryptography</h3>
 
-<p>At the bottom is Cryptography<sup><a href="#fn7" id="ref7">[7]</a></sup>. To some extent, the pure science domain of cryptography solves problems in a mathematical sense only, but it delivers useful properties, including:</p>
+At the bottom is Cryptography.<sup><a href="#fn7" id="ref7">[7]</a></sup> To some extent, the pure science domain of cryptography solves problems in a mathematical sense only, but it delivers useful properties, including:
 
-<ul>
-  <li>Confidentiality - encryption algorithms</li>
-  <li>Integrity - hashes and message digests</li>
-  <li>Authentication - digital signatures, hash chains</li>
-</ul>
+- Confidentiality - encryption algorithms
+- Integrity - hashes and message digests
+- Authentication - digital signatures, hash chains
 
-<p>Cryptography also can solve special problems, when correctly formulated<sup><a href="#fn8" id="ref8">[8]</a></sup>. For example, how can Alice sign a statement of Bob's without being aware of the contents of the statement<sup><a href="#fn9" id="ref9">[9]</a></sup>?</p>
+Cryptography also can solve special problems, when correctly formulated.<sup><a href="#fn8" id="ref8">[8]</a></sup> For example, how can Alice sign a statement of Bob's without being aware of the contents of the statement<sup><a href="#fn9" id="ref9">[9]</a></sup>?
 
 <h3 id="bup2">Software Engineering</h3>
 
-<p>It takes Software Engineering, layer 2, to usefully benefit from the properties of cryptography. We draw from database theory (atomicity, transactional integrity and recovery) and networking theory (feedback and idempotency) in order to add such properties as reliability and robustness in the face of network and nodal unreliability, or, designed unavailability such as smart cards and handhelds<sup><a href="#fn10" id="ref10">[10]</a><a href="#fn11" id="ref11">[11]</a></sup>.</p>
+It takes Software Engineering, layer 2, to usefully benefit from the properties of cryptography. We draw from database theory (atomicity, transactional integrity and recovery) and networking theory (feedback and idempotency) in order to add such properties as reliability and robustness in the face of network and nodal unreliability, or, designed unavailability such as smart cards and handhelds.<sup><a href="#fn10" id="ref10">[10]</a><a href="#fn11" id="ref11">[11]</a></sup>
 
-<p>Software engineering provides us with a practical network. We can talk about sending a message across an open network and know that a message will eventually get to the addressee. With the integrity techniques of the previous layer, we can know that the information received by the addressee is as intended by the addressor. By using the specialised sequences of database theory, we can preserve the integrity of the messages over time, in the face of software and hardware failure.</p>
+Software engineering provides us with a practical network. We can talk about sending a message across an open network and know that a message will eventually get to the addressee. With the integrity techniques of the previous layer, we can know that the information received by the addressee is as intended by the addressor. By using the specialised sequences of database theory, we can preserve the integrity of the messages over time, in the face of software and hardware failure.
 
 <h3 id="bup3">Rights</h3>
 
-<p>With both cryptography and software engineering providing a network upon which we can rely, we can think about distributing messages that are designed to Financial Cryptographic purposes<sup><a href="#fn12" id="ref12">[12]</a></sup>. In the Rights layer, we are looking for a protocol that provides a user with control over assets, in an unequivocable, determinable fashion<sup><a href="#fn13" id="ref13">[13]</a></sup>. Techniques aimed at achieving this include:</p>
+With both cryptography and software engineering providing a network upon which we can rely, we can think about distributing messages that are designed to Financial Cryptographic purposes.<sup><a href="#fn12" id="ref12">[12]</a></sup> In the Rights layer, we are looking for a protocol that provides a user with control over assets, in an unequivocable, determinable fashion.<sup><a href="#fn13" id="ref13">[13]</a></sup> Techniques aimed at achieving this include:
 
-<ul>
-  <li>Identity-based systems, such as those operated by banks. Generally, such systems are based on the supply (to an existing account holder) of an account number and password that can access the user's account via an SSL-encrypted web page<sup><a href="#fn14" id="ref14">[14]</a></sup>.</li>
+- Identity-based systems, such as those operated by banks. Generally, such systems are based on the supply (to an existing account holder) of an account number and password that can access the user's account via an SSL-encrypted web page.<sup><a href="#fn14" id="ref14">[14]</a></sup>
+- Token Money that emulates the bearer cash instruments with which consumers are familiar.<sup><a href="#fn15" id="ref15">[15]</a></sup>
+- Transport mechanisms for other payment systems, such as the use of SSL-based systems to carry credit card information.
+- Hybrid systems, that eschew emulation in favour of bottom-up solutions more in tune with the power and limitations of the network. For example, <a href="#ex3">SOX</a> is such a system, presented in the next <a href="#example">section</a>.<sup><a href="#fn16" id="ref16">[16]</a></sup> A variation on this theme of environmental empathy, the <a href="http://www.erights.org/">E language</a> is built from powerful capabilities concepts, and can thus be easily turned to Financial Cryptography.<sup><a href="#fn17" id="ref17">[17]</a></sup>
+- Hardware-based solutions, such as smart cards.<sup><a href="#fn18" id="ref18">[18]</a></sup>
 
-  <li>Token Money that emulates the bearer cash instruments with which consumers are familiar<sup><a href="#fn15" id="ref15">[15]</a></sup>.</li>
-
-  <li>Transport mechanisms for other payment systems, such as the use of SSL-based systems to carry credit card information.</li>
-
-  <li>Hybrid systems, that eschew emulation in favour of bottom-up solutions more in tune with the power and limitations of the network. For example, <a href="#ex3">SOX</a> is such a system, presented in the next <a href="#example">section</a><sup><a href="#fn16" id="ref16">[16]</a></sup>. A variation on this theme of environmental empathy, the <a href="http://www.erights.org/">E language</a> is built from powerful capabilities concepts, and can thus be easily turned to Financial Cryptography<sup><a href="#fn17" id="ref17">[17]</a></sup>.</li>
-
-  <li>Hardware-based solutions, such as smart cards<sup><a href="#fn18" id="ref18">[18]</a></sup>.</li>
-</ul>
-
-<p>although this is not an exclusive list<sup><a href="#fn19" id="ref19">[19]</a><a href="#fn20" id="ref20">[20]</a></sup>.</p>
+although this is not an exclusive list.<sup><a href="#fn19" id="ref19">[19]</a><a href="#fn20" id="ref20">[20]</a></sup>
 
 <h3 id="bup4">Accounting</h3>
 
-<p>The previous layers provide methods reliable enough to be used for passing something of value, which we call rights, over an otherwise unsuitable network. Now, we need the techniques of Accounting in order to store and manage rights over time, To financial cryptographers, accounting is a mundane field, and it has perhaps been attractive to ignore it, but experience shows that systems without conventional accounting features tend to lose the value entrusted to them.</p>
+The previous layers provide methods reliable enough to be used for passing something of value, which we call rights, over an otherwise unsuitable network. Now, we need the techniques of Accounting in order to store and manage rights over time, To financial cryptographers, accounting is a mundane field, and it has perhaps been attractive to ignore it, but experience shows that systems without conventional accounting features tend to lose the value entrusted to them.
 
-<p>The techniques of the accounting discipline include double-entry bookkeeping, balance sheets, and the accounting equation<sup><a href="#fn21" id="ref21">[21]</a></sup>. Accounting concepts permit builders of Financial Cryptography systems to build complex systems that guarantee not to lose value as long as everyone follows the rules; and to efficiently identify where the rules are not followed.</p>
+The techniques of the accounting discipline include double-entry bookkeeping, balance sheets, and the accounting equation.<sup><a href="#fn21" id="ref21">[21]</a></sup> Accounting concepts permit builders of Financial Cryptography systems to build complex systems that guarantee not to lose value as long as everyone follows the rules; and to efficiently identify where the rules are not followed.
 
-<p>The above layer, Rights, defines what needs to be accounted for. As an example, the most basic method would be token money. An accounting model based on tokens or coins would need a simple store of coins for the client. The server would be more complex, requiring an account for unissued value, a float account, and a double spend database that matches the float amount<sup><a href="#fn22" id="ref22">[22]</a></sup>.</p>
+The above layer, Rights, defines what needs to be accounted for. As an example, the most basic method would be token money. An accounting model based on tokens or coins would need a simple store of coins for the client. The server would be more complex, requiring an account for unissued value, a float account, and a double spend database that matches the float amount.<sup><a href="#fn22" id="ref22">[22]</a></sup>
 
 <h3 id="bup5">Governance</h3>
 
-<p>Once there is a guarantee that the digital amounts &ndash; the accounting numbers &ndash; under management can be securely passed over the net, and stored on nodes safely, we need to cast our view wider to threats outside the technical domain<sup><a href="#fn23" id="ref23">[23]</a></sup>.</p>
+Once there is a guarantee that the digital amounts &ndash; the accounting numbers &ndash; under management can be securely passed over the net, and stored on nodes safely, we need to cast our view wider to threats outside the technical domain.<sup><a href="#fn23" id="ref23">[23]</a></sup>
 
-<p>In any working technology, whether it be trading or cash purchasing, the threat of theft or abuse exists from parties who are trusted to manage the system. This problem, known as the <em>agency problem</em>, can be overcome with a wide variety of techniques that here I will label <em>governance</em><sup><a href="#fn24" id="ref24">[24]</a></sup>.</p>
+In any working technology, whether it be trading or cash purchasing, the threat of theft or abuse exists from parties who are trusted to manage the system. This problem, known as the _agency problem_, can be overcome with a wide variety of techniques that here I will label _governance_.<sup><a href="#fn24" id="ref24">[24]</a></sup>
 
-<p>Governance includes these techniques:</p>
+Governance includes these techniques:
 
-<ul>
-  <li>Escrow of value with trusted third parties. For example, funds underlying a dollar currency would be placed in a bank account.</li>
+- Escrow of value with trusted third parties. For example, funds underlying a dollar currency would be placed in a bank account.
+- Separation of powers: routine management from value creation, authentication from accounting, systems from marketing.<sup><a href="#fn25" id="ref25">[25]</a><a href="#fn26" id="ref26">[26]</a><a href="#fn27" id="ref27">[27]</a></sup>
+- Dispute resolution procedures such as mediation, arbitration, ombudsmen, judiciary, and force.<sup><a href="#fn28" id="ref28">[28]</a></sup>
+- Use of third parties for some part of the protocol, such as creation of value within a closed system.
+- Auditing techniques that permit external monitoring of performance and assets.<sup><a href="#fn29" id="ref29">[29]</a></sup>
+- Reports generation to keep information flowing to interested parties. For example, user-driven display of the reserved funds against which a currency is backed.<sup><a href="#fn30" id="ref30">[30]</a></sup>
 
-  <li>Separation of powers: routine management from value creation, authentication from accounting, systems from marketing<sup><a href="#fn25" id="ref25">[25]</a><a href="#fn26" id="ref26">[26]</a><a href="#fn27" id="ref27">[27]</a></sup>.</li>
+As technologists, we strive to make the protocols that we build as secure and self-sustaining as possible; our art is expressed in pushing problem resolution into the lower layers. This is an ideal, however, to which we can only aspire; there will always be some value somewhere that must be protected by non-protocol means.
 
-  <li>Dispute resolution procedures such as mediation, arbitration, ombudsmen, judiciary, and force<sup><a href="#fn28" id="ref28">[28]</a></sup>.</li>
-
-  <li>Use of third parties for some part of the protocol, such as creation of value within a closed system.</li>
-
-  <li>Auditing techniques that permit external monitoring of performance and assets<sup><a href="#fn29" id="ref29">[29]</a></sup>.</li>
-
-  <li>Reports generation to keep information flowing to interested parties. For example, user-driven display of the reserved funds against which a currency is backed<sup><a href="#fn30" id="ref30">[30]</a></sup>.</li>
-</ul>
-
-<p>As technologists, we strive to make the protocols that we build as secure and self-sustaining as possible; our art is expressed in pushing problem resolution into the lower layers. This is an ideal, however, to which we can only aspire; there will always be some value somewhere that must be protected by non-protocol means.</p>
-
-<p>Our task is made easier if we recognise the existance of this gap in the technological armoury, and seek to fill it with the tools of Governance. The design of a system is often ultimately expressed in a compromise between Governance and the lower layers: what we can do in the lower layers, we do; and what we cannot is cleaned up in Governance<sup><a href="#fn31" id="ref31">[31]</a></sup>.</p>
+Our task is made easier if we recognise the existance of this gap in the technological armoury, and seek to fill it with the tools of Governance. The design of a system is often ultimately expressed in a compromise between Governance and the lower layers: what we can do in the lower layers, we do; and what we cannot is cleaned up in Governance.<sup><a href="#fn31" id="ref31">[31]</a></sup>
 
 <h3 id="bup6">Value</h3>
 
-<p>With a system that provides internal and external stability and security, we are now in a position to assign value to the structure. By value, we mean the unit of account, the meaning of that unit, and the range of numbers that are applicable.</p>
+With a system that provides internal and external stability and security, we are now in a position to assign value to the structure. By value, we mean the unit of account, the meaning of that unit, and the range of numbers that are applicable.
 
-<p>For example, a Value layer might ascribe any one of the following to the virginal numbers of lower layers:</p>
+For example, a Value layer might ascribe any one of the following to the virginal numbers of lower layers:
 
-<ul>
-  <li>US dollars with a transaction range of 25 cents up to 500 dollars<sup><a href="#fn32" id="ref32">[32]</a></sup>.</li>
+- US dollars with a transaction range of 25 cents up to 500 dollars.<sup><a href="#fn32" id="ref32">[32]</a></sup>
+- Bonds and stock, representing tradeable assets for the purpose of raising capital.
+- Loyalty Points that can be awarded for purchase of goods.
+- Public goods such as tonnes of fish, or of public bads such as tonnes of pollution.<sup><a href="#fn33" id="ref33">[33]</a><a href="#fn34" id="ref34">[34]</a></sup>
+- Shares in virtual projects.
+- Funny money, being internal money for corporate groups.
 
-  <li>Bonds and stock, representing tradeable assets for the purpose of raising capital.</li>
+As the software is somewhat unconcerned about this decision, we could just as easily used the software for any other value &ndash; but the business needs to harmonise the security and cost implications.
 
-  <li>Loyalty Points that can be awarded for purchase of goods.</li>
-
-  <li>Public goods such as tonnes of fish, or of public bads such as tonnes of pollution<sup><a href="#fn33" id="ref33">[33]</a><a href="#fn34" id="ref34">[34]</a></sup>.</li>
-
-  <li>Shares in virtual projects.</li>
-
-  <li>Funny money, being internal money for corporate groups.</li>
-</ul>
-
-<p>As the software is somewhat unconcerned about this decision, we could just as easily used the software for any other value &ndash; but the business needs to harmonise the security and cost implications.</p>
-
-<p>We might also call this the Contract layer, as any value in electronic form is an agreement between the holder and the owner<sup><a href="#fn35" id="ref35">[35]</a></sup>. It is here that we design the contract that formalises the agreement between an Issuer and a user.</p>
+We might also call this the Contract layer, as any value in electronic form is an agreement between the holder and the owner.<sup><a href="#fn35" id="ref35">[35]</a></sup> It is here that we design the contract that formalises the agreement between an Issuer and a user.
 
 <h3 id="bup7">Finance</h3>
 
-<p>Finally, on top of the value layer, which provides a structure for financial transactions, we can build our application. As we are concerned with Financial Cryptography, it is convenient to call this last layer the Finance layer. Here, we build an application that adds financial meaning to our designs.</p>
+Finally, on top of the value layer, which provides a structure for financial transactions, we can build our application. As we are concerned with Financial Cryptography, it is convenient to call this last layer the Finance layer. Here, we build an application that adds financial meaning to our designs.
 
-<p>In the Finance layer, we construct any and all applications that might readily be useful to users. For example,</p>
+In the Finance layer, we construct any and all applications that might readily be useful to users. For example,
 
-<ul>
-  <li>Retail trading involving the purchase of goods<sup><a href="#fn36" id="ref36">[36]</a></sup>.</li>
+- Retail trading involving the purchase of goods.<sup><a href="#fn36" id="ref36">[36]</a></sup>
+- Investment trading of securities.<sup><a href="#fn37" id="ref37">[37]</a></sup>
+- Loyalty systems and Gift systems to encourage repeat business but not to necessarily replace existing methods of payment.<sup><a href="#fn38" id="ref38">[38]</a></sup>
+- Markets for the fair allocation of limited public goods, such as depletable fishing zones or pollution.<sup><a href="#fn39" id="ref39">[39]</a></sup>
+- Intermediation of Labour markets.<sup><a href="#fn40" id="ref40">[40]</a></sup>
+- Closed or limited purpose systems such as shareware sales or corporate group accounting systems.
 
-  <li>Investment trading of securities<sup><a href="#fn37" id="ref37">[37]</a></sup>.</li>
+And many more.
 
-  <li>Loyalty systems and Gift systems to encourage repeat business but not to necessarily replace existing methods of payment<sup><a href="#fn38" id="ref38">[38]</a></sup>.</li>
-
-  <li>Markets for the fair allocation of limited public goods, such as depletable fishing zones or pollution<sup><a href="#fn39" id="ref39">[39]</a></sup>.</li>
-
-  <li>Intermediation of Labour markets<sup><a href="#fn40" id="ref40">[40]</a></sup>.</li>
-
-  <li>Closed or limited purpose systems such as shareware sales or corporate group accounting systems.</li>
-</ul>
-
-<p>And many more.</p>
-
-<hr>
+---
 
 <h2 id="example">An Example &ndash; The Ricardo System</h2>
 
-<p>In order to see the model in its descriptive role, I present an example, starting from the Finance layer and working down, by following the roadmap of requirements.</p>
+In order to see the model in its descriptive role, I present an example, starting from the Finance layer and working down, by following the roadmap of requirements.
 
-<p>In practice, the model is not a design methodology for setting and mapping requirements, but can be used to reverse-engineer an existing design, for the purposes of presentation and discussion of the mutually agreed contract between the builders and the stakeholders. The following description reflects such a process.</p>
+In practice, the model is not a design methodology for setting and mapping requirements, but can be used to reverse-engineer an existing design, for the purposes of presentation and discussion of the mutually agreed contract between the builders and the stakeholders. The following description reflects such a process.
 
 <h3 id="ex7">Finance</h3>
 
-<p><a href="http://www.systemics.com/">Systemics</a>, a company specialising in Financial Cryptography, built a system to trade financial securities<sup><a href="#fn41" id="ref41">[41]</a></sup>. The Ricardo system, as an application, required clients and servers to maintain securities, and they communicated using a value system suitable to manage securities and cash<sup><a href="#fn42" id="ref42">[42]</a></sup>.</p>
+<a href="http://www.systemics.com/">Systemics</a>, a company specialising in Financial Cryptography, built a system to trade financial securities.<sup><a href="#fn41" id="ref41">[41]</a></sup> The Ricardo system, as an application, required clients and servers to maintain securities, and they communicated using a value system suitable to manage securities and cash.<sup><a href="#fn42" id="ref42">[42]</a></sup>
 
-<p>As trials evolved into experience, and strategic analysis of the securities industry evolved into appreciation, if not wisdom, the following primary requirements were built up.</p>
+As trials evolved into experience, and strategic analysis of the securities industry evolved into appreciation, if not wisdom, the following primary requirements were built up.
 
-<ul>
-  <li><strong>Suitable for all securities,</strong></li>
-  <li><strong>Cheap,</strong></li>
-  <li><strong>Fair to all parties.</strong></li>
-</ul>
+- **Suitable for all securities,**
+- **Cheap,**
+- **Fair to all parties.**
 
-<p>These led to many subsidiary requirements:</p>
+These led to many subsidiary requirements:
 
-<ul>
-  <li>There must be no arbitrary limits on the activities of parties.</li>
-  <li>Arbitrary amounts of value to be managed.</li>
-  <li>All can issue, trade and redeem securities.</li>
-  <li>"nothing but net."</li>
-  <li>Secure.</li>
-  <li>Real Time Gross Settlement, or RTGS.</li>
-  <li>Minimise disputes, by eliminating failures / RTGS.</li>
-  <li>Privacy, competition both help to keep cost down.</li>
-</ul>
+- There must be no arbitrary limits on the activities of parties.
+- Arbitrary amounts of value to be managed.
+- All can issue, trade and redeem securities.
+- "nothing but net."
+- Secure.
+- Real Time Gross Settlement, or RTGS.
+- Minimise disputes, by eliminating failures / RTGS.
+- Privacy, competition both help to keep cost down.
 
-<p>The following discussion concentrates on the value architecture of the Ricardo system built by Systemics, rather than the trading aspects. However, experience shows that trading becomes a tractable problem if the value architecture is solid.</p>
+The following discussion concentrates on the value architecture of the Ricardo system built by Systemics, rather than the trading aspects. However, experience shows that trading becomes a tractable problem if the value architecture is solid.
 
 <h3 id="ex6">Value</h3>
 
-<p>The requirements of the Finance layer result in a derivative requirement for a Value architecture, amongst other things. This Value architecture follows directly after the Finance layer, as the former defines the scope of the security requirements for the remaining layers.</p>
+The requirements of the Finance layer result in a derivative requirement for a Value architecture, amongst other things. This Value architecture follows directly after the Finance layer, as the former defines the scope of the security requirements for the remaining layers.
 
-<p>We developed a notion of instruments as follows:</p>
+We developed a notion of instruments as follows:
 
-<ul>
-  <li>Definition of Securities is broad:</li>
-  <ul>
-    <li>From small to very large value.</li>
-    <li>Extreme flexibility in design of instruments.</li>
-  </ul>
-  <li>Fair. The system should:</li>
-  <ul>
-    <li>protect individual information, but</li>
-    <li>reveal aggregate information to permit user auditing.</li>
-    <li>Especially, it should reveal changes in assets.</li>
-  </ul>
-  <li>Cheap to operate:</li>
-  <ul>
-    <li>Full auditability in the event of disputes.</li>
-    <li>No permission is required to participate.</li>
-    <li>No assumptions are permitted with respect to the use of law or physical force (i.e., cannot rely on laws that "disallow" certain activity or "enforce" certain contracts).</li>
-  </ul>
-</ul>
+- Definition of Securities is broad:
+  - From small to very large value.
+  - Extreme flexibility in design of instruments.
+- Fair. The system should:
+  - protect individual information, but
+  - reveal aggregate information to permit user auditing.
+  - Especially, it should reveal changes in assets.
+- Cheap to operate:
+  - Full auditability in the event of disputes.
+  - No permission is required to participate.
+  - No assumptions are permitted with respect to the use of law or physical force (i.e., cannot rely on laws that "disallow" certain activity or "enforce" certain contracts).
 
-<p>To meet many of these requirements, the notion of a contract for value was developed<sup><a href="#fn43" id="ref43">[43]</a></sup>. This document, which we call a Ricardian contract, documents an agreement between the holder of a security and the issuer of that security, and provides for the flexibility requirement by allowing many and arbitrary clauses to be included.</p>
+To meet many of these requirements, the notion of a contract for value was developed.<sup><a href="#fn43" id="ref43">[43]</a></sup> This document, which we call a Ricardian contract, documents an agreement between the holder of a security and the issuer of that security, and provides for the flexibility requirement by allowing many and arbitrary clauses to be included.
 
-<p>It is both program- and user- readable, and is signed by the Issuer of the instrument as a binding agreement for any holder of units of that issue. By having a strong basis to determine the nature of the contract, in both human and program terms, we support the auditability requirement, and we can clearly identify the regime for resolution of disputes.</p>
+It is both program- and user- readable, and is signed by the Issuer of the instrument as a binding agreement for any holder of units of that issue. By having a strong basis to determine the nature of the contract, in both human and program terms, we support the auditability requirement, and we can clearly identify the regime for resolution of disputes.
 
-<p>Once set in stone with a digital signature, an identifier can be allocated, leading to efficient description in packets. Thus, this invention requires two things of lower layers &ndash; a signature form and a unique document identifier &ndash; which are addressed below.</p>
+Once set in stone with a digital signature, an identifier can be allocated, leading to efficient description in packets. Thus, this invention requires two things of lower layers &ndash; a signature form and a unique document identifier &ndash; which are addressed below.
 
 <h3 id="ex5">Governance</h3>
 
-<p>Once the Value context is defined, indicating the size and nature of instruments, we can address the Governance issues of payment systems and trading.</p>
+Once the Value context is defined, indicating the size and nature of instruments, we can address the Governance issues of payment systems and trading.
 
-<p>These are substantially complex<sup><a href="#fn44" id="ref44">[44]</a></sup>. In order to preserve systems intact in the presence of active fraud in the non-technical domain, many disclosure and informational duties abound. In the Ricardo system, we address the governance layer in three main ways:</p>
+These are substantially complex.<sup><a href="#fn44" id="ref44">[44]</a></sup> In order to preserve systems intact in the presence of active fraud in the non-technical domain, many disclosure and informational duties abound. In the Ricardo system, we address the governance layer in three main ways:
 
-<ul>
-  <li><strong>Static Governance:</strong> persistance and availability of contract.</li>
-  <li><strong>Structural Governance:</strong> separation of concerns and ensuring that reliable parties are employed to carry out singular elements of the protocol.</li>
-  <li><strong>Dynamic Governance:</strong> real time auditing of the balance sheet and other key values.</li>
-</ul>
+- **Static Governance:** persistance and availability of contract.
+- **Structural Governance:** separation of concerns and ensuring that reliable parties are employed to carry out singular elements of the protocol.
+- **Dynamic Governance:** real time auditing of the balance sheet and other key values.
 
-<p>Each of these is discussed below<sup><a href="#fn45" id="ref45">[45]</a></sup>.</p>
+Each of these is discussed below.<sup><a href="#fn45" id="ref45">[45]</a></sup>
 
 <h4 id="static">Static Governance</h4>
 
-<p>In static governance, we ensure that the user has the contract, and that all concerned know that the user has the contract<sup><a href="#fn46" id="ref46">[46]</a></sup>.</p>
+In static governance, we ensure that the user has the contract, and that all concerned know that the user has the contract.<sup><a href="#fn46" id="ref46">[46]</a></sup>
 
-<p>In order to ensure that the Ricardian contract is always present and available to the user, and is continuously binding to the Issuer, we take the message digest of the document and use that message digest as the identifier of the instrument<sup><a href="#fn47" id="ref47">[47]</a></sup>.</p>
+In order to ensure that the Ricardian contract is always present and available to the user, and is continuously binding to the Issuer, we take the message digest of the document and use that message digest as the identifier of the instrument.<sup><a href="#fn47" id="ref47">[47]</a></sup>
 
-<p>Consider a message digest, for example, <code>9c7c9e7bb564224977aea8674623a37407b8f6ee</code> being a large number of bits encoded in hexadecimal. The user cannot meaningfully interpret this string of apparently random information, so the software (and thus, the software engineer) is more or less forced to maintain a database that describes what the message digest represents. As the contract is readable by software, it makes a superior source of data than any other (such as an intermediate database that holds the contents) and thus we can reasonably assume, to the extent that the software can, that the user has the full contract available<sup><a href="#fn48" id="ref48">[48]</a></sup>.</p>
+Consider a message digest, for example, `9c7c9e7bb564224977aea8674623a37407b8f6ee` being a large number of bits encoded in hexadecimal. The user cannot meaningfully interpret this string of apparently random information, so the software (and thus, the software engineer) is more or less forced to maintain a database that describes what the message digest represents. As the contract is readable by software, it makes a superior source of data than any other (such as an intermediate database that holds the contents) and thus we can reasonably assume, to the extent that the software can, that the user has the full contract available.<sup><a href="#fn48" id="ref48">[48]</a></sup>
 
-<p>The system will thus ensure that, to all practical intent, the user has the contract. This provides two cost savings, limiting both on-going support and the likelihood of litigation<sup><a href="#fn49" id="ref49">[49]</a></sup>.</p>
+The system will thus ensure that, to all practical intent, the user has the contract. This provides two cost savings, limiting both on-going support and the likelihood of litigation.<sup><a href="#fn49" id="ref49">[49]</a></sup>
 
 <h4 id="structural">Structural Governance</h4>
 
-<p>Within structural governance, we consider the question of insider fraud, the theft of both digital value within the Financial Cryptography system and of any physical value that underlies the virtual value managed by the system.</p>
+Within structural governance, we consider the question of insider fraud, the theft of both digital value within the Financial Cryptography system and of any physical value that underlies the virtual value managed by the system.
 
-<p>With any payment system, there is an ability to create new assets, or misdirect existing assets, all with no more work than a few button pushes. To address this, we use the approach of <em>separation of concerns</em> to address the agency problem of holding owners' assets, but protecting them from internal attack. This problem is normally handled by separating out management of day-to-day assets with the creation of assets in the system, and increasing the work required for any fraudulent transactions.</p>
+With any payment system, there is an ability to create new assets, or misdirect existing assets, all with no more work than a few button pushes. To address this, we use the approach of _separation of concerns_ to address the agency problem of holding owners' assets, but protecting them from internal attack. This problem is normally handled by separating out management of day-to-day assets with the creation of assets in the system, and increasing the work required for any fraudulent transactions.
 
-<p>The general schema that is advised to Issuers is as follows<sup><a href="#fn50" id="ref50">[50]</a></sup>. In order to limit the creation of value, for each issuance, a special account is designated as <em>the mint</em>, or the creator of value. This account is placed in the hands of a reliable professional source such as an accountant or lawyer, who will hopefully only have an interest in using the account under the probity of the governance regime.</p>
+The general schema that is advised to Issuers is as follows.<sup><a href="#fn50" id="ref50">[50]</a></sup> In order to limit the creation of value, for each issuance, a special account is designated as _the mint_, or the creator of value. This account is placed in the hands of a reliable professional source such as an accountant or lawyer, who will hopefully only have an interest in using the account under the probity of the governance regime.
 
-<p>Then, a manager account is designated that receives any new float from the mint, and also returns any redemptions.</p>
+Then, a manager account is designated that receives any new float from the mint, and also returns any redemptions.
 
-<p>It thus becomes the Issuer's responsibility to ensure that the mint account is rarely used, and then with full authorisation and wide scrutiny. Meanwhile, the manager's account is regularly used, but holds only limited amounts of value for day to day requirements.</p>
+It thus becomes the Issuer's responsibility to ensure that the mint account is rarely used, and then with full authorisation and wide scrutiny. Meanwhile, the manager's account is regularly used, but holds only limited amounts of value for day to day requirements.
 
-<p>The above are general techniques that are supported within the Ricardo system, but are as applicable elsewhere. Certain features get specific support, such as value caps on accounts and target account limitatons.</p>
+The above are general techniques that are supported within the Ricardo system, but are as applicable elsewhere. Certain features get specific support, such as value caps on accounts and target account limitatons.
 
-<p>Note how these protection techniques that we use are partly outside the domain of the technical system. Rather than being outside scope, their discussion here is simply a reflection of the claims that the total security of the system is a holistic issue, and governance is the layer where we solve the security challenges that remain after we have attempted to solve as many as possible in the lower layers.</p>
+Note how these protection techniques that we use are partly outside the domain of the technical system. Rather than being outside scope, their discussion here is simply a reflection of the claims that the total security of the system is a holistic issue, and governance is the layer where we solve the security challenges that remain after we have attempted to solve as many as possible in the lower layers.
 
 <h4 id="dynamic">Dynamic Governance</h4>
 
-<p>Finally, in dynamic governance, we provide for monitoring of key values by the user community, and thus share the auditing burden. These values can be audited in an issued currency within the Ricardo system:</p>
+Finally, in dynamic governance, we provide for monitoring of key values by the user community, and thus share the auditing burden. These values can be audited in an issued currency within the Ricardo system:
 
-<ul>
-  <li> Total value of digital float: the value issued by the mint account.</li>
-  <li>Amount currently held in the issuance manager's account. From this account is drawn new value to be sold, or into this account, old user value is redeemed.</li>
-  <li>The balance sheet of the currency, which is effectively the above numbers, and the total of user value outstanding. As a balance sheet, the total float, minus the manager's account, should equal the outstanding users' total value.</li>
-  <li>With some limitations, it is useful to provide summaries of movements such as bought and sold values through the manager's account, the mint account, and number of user accounts.</li>
-</ul>
+- Total value of digital float: the value issued by the mint account.
+- Amount currently held in the issuance manager's account. From this account is drawn new value to be sold, or into this account, old user value is redeemed.
+- The balance sheet of the currency, which is effectively the above numbers, and the total of user value outstanding. As a balance sheet, the total float, minus the manager's account, should equal the outstanding users' total value.
+- With some limitations, it is useful to provide summaries of movements such as bought and sold values through the manager's account, the mint account, and number of user accounts.
 
 <h4 id="mirror">Mirroring the Governance Model</h4>
 
-<p>It is also worth noting that when a currency is reserved by an underlying asset (for example, if a gold-denominated currency had physical metal escrowed to reserve it) then the above governance features should be mirrored for the reserves.</p>
+It is also worth noting that when a currency is reserved by an underlying asset (for example, if a gold-denominated currency had physical metal escrowed to reserve it) then the above governance features should be mirrored for the reserves.
 
-<p>That is, to continue the example of gold, there should be separate parties responsible for the ingress and egress of metal into storage, and there should be independent verification of the number of bars currently placed in escrow.</p>
+That is, to continue the example of gold, there should be separate parties responsible for the ingress and egress of metal into storage, and there should be independent verification of the number of bars currently placed in escrow.
 
 <h3 id="ex4">Accounting</h3>
 
-<p>In order to meet the conflicting objectives of privacy and flexibility, Ricardo uses a conventional accounting model with some additional features:</p>
+In order to meet the conflicting objectives of privacy and flexibility, Ricardo uses a conventional accounting model with some additional features:
 
-<ul>
-  <li> Accounts are units of allocation of ownership, and are not identities. A user may create these on demand, and likewise dispose of them. Lower layers must provide some mechanism for these accounts.</li>
-  <li>Sub-accounts manage a particular form of value within an account. The sub-account is simply the intersection of ownership authentication (the account) with the value description (the contract).</li>
-  <li>Transactions are movements of value from one account to another, within the sub-account of the instrument.</li>
-  <li>The backend accounting engine is responsible for guaranteeing that each transaction is atomic and persistant. The result of transaction completion is the issuance of a signed receipt.</li>
-  <li>Each transaction settles in real time, as measured by the issuance of the receipt.</li>
-  <li>Both backend and client keep a list of receipts as the sub-account.</li>
-  <li>In order to meet Governance layer requirements for open auditability, some accounts must present balance sheets on demand, and select accounts must be examinable.</li>
-</ul>
+- Accounts are units of allocation of ownership, and are not identities. A user may create these on demand, and likewise dispose of them. Lower layers must provide some mechanism for these accounts.
+- Sub-accounts manage a particular form of value within an account. The sub-account is simply the intersection of ownership authentication (the account) with the value description (the contract).
+- Transactions are movements of value from one account to another, within the sub-account of the instrument.
+- The backend accounting engine is responsible for guaranteeing that each transaction is atomic and persistant. The result of transaction completion is the issuance of a signed receipt.
+- Each transaction settles in real time, as measured by the issuance of the receipt.
+- Both backend and client keep a list of receipts as the sub-account.
+- In order to meet Governance layer requirements for open auditability, some accounts must present balance sheets on demand, and select accounts must be examinable.
 
-<p>Because of the top level requirement for cheapness, the accounting model was designed for complete reliability, right up to the support desk level. It does this by employing a group of non-obvious techniques:</p>
+Because of the top level requirement for cheapness, the accounting model was designed for complete reliability, right up to the support desk level. It does this by employing a group of non-obvious techniques:
 
-<ul>
-  <li>the Issuer backend forces the client to maintain the same data, as discussed in the Rights layer, below<sup><a href="#fn51" id="ref51">[51]</a></sup>. This helps to reduce the frequency of the "request for information" support call<sup><a href="#fn52" id="ref52">[52]</a></sup>.</li>
+- the Issuer backend forces the client to maintain the same data, as discussed in the Rights layer, below.<sup><a href="#fn51" id="ref51">[51]</a></sup> This helps to reduce the frequency of the "request for information" support call.<sup><a href="#fn52" id="ref52">[52]</a></sup>
+- A signed request from the user is merely a request for the backend to attempt a transaction, and the backend is at liberty to ignore it.<sup><a href="#fn53" id="ref53">[53]</a></sup> Only the signed receipt is evidence of a transaction.<sup><a href="#fn54" id="ref54">[54]</a></sup>
+- In order to raise the profile of the signed receipt, balances are not kept anywhere in the system.<sup><a href="#fn55" id="ref55">[55]</a></sup>
 
-  <li>A signed request from the user is merely a request for the backend to attempt a transaction, and the backend is at liberty to ignore it<sup><a href="#fn53" id="ref53">[53]</a></sup>. Only the signed receipt is evidence of a transaction<sup><a href="#fn54" id="ref54">[54]</a></sup>.</li>
-
-  <li>In order to raise the profile of the signed receipt, balances are not kept anywhere in the system<sup><a href="#fn55" id="ref55">[55]</a></sup>.</li>
-</ul>
-
-<p>Using these techniques, the accounting model supports the Finance level requirement of being cheap to operate. If the client software is missing something, then it is a bug, and it properly belongs with the software developer, rather than being covered up as an Issuer help desk problem.</p>
+Using these techniques, the accounting model supports the Finance level requirement of being cheap to operate. If the client software is missing something, then it is a bug, and it properly belongs with the software developer, rather than being covered up as an Issuer help desk problem.
 
 <h3 id="ex3">Rights</h3>
 
-<p>In order to ensure that owners maintain rights to assets that are managed on the servers, the SOX protocol provides these three major features<sup><a href="#fn56" id="ref56">[56]</a></sup>:</p>
+In order to ensure that owners maintain rights to assets that are managed on the servers, the SOX protocol provides these three major features:<sup><a href="#fn56" id="ref56">[56]</a></sup>
 
-<ol>
-  <li>
-    <p>Each user creates key(s) which are registered with the server. These keys are as determined by Cryptography layer, below, and are required to provide a unique identifier.</p>
-  </li>
+1.  Each user creates key(s) which are registered with the server. These keys are as determined by Cryptography layer, below, and are required to provide a unique identifier.
 
-  <li>
-    <p>Value transfer is via three components:</p>
-  </li>
+2.  Value transfer is via three components
 
-  <ol type="a">
-    <li>
-      <p>A key can be used to sign a payment order. This payment order can be directed to a target account, or be open (bearer), and it has a fixed amount of some determined type of value<sup><a href="#fn57" id="ref57">[57]</a></sup>.</p>
+    <ol type="a">
+      <li>
+      <p>A key can be used to sign a payment order. This payment order can be directed to a target account, or be open (bearer), and it has a fixed amount of some determined type of value.<sup><a href="#fn57" id="ref57">[57]</a></sup></p>
 
-      <p>In this sense, the payment is analogous to a cheque. It differs from chequing systems in that the SOX payment has no value until settled, whereas a cheque is expected to have value on signing<sup><a href="#fn58" id="ref58">[58]</a></sup>.</p>
-    </li>
+      <p>In this sense, the payment is analogous to a cheque. It differs from chequing systems in that the SOX payment has no value until settled, whereas a cheque is expected to have value on signing.<sup><a href="#fn58" id="ref58">[58]</a></sup></p>
+      </li>
 
-    <li>
+      <li>
       <p>A payment order can be deposited to a sub-account. Settlement depends on a number of checks, such as funds in the source sub-account, and a valid payment order signature from the source key.</p>
-    </li>
+      </li>
 
-    <li>
+      <li>
       <p>The Issuer server returns the receipt, mentioned in the above Accounting layer.</p>
-    </li>
-  </ol>
+      </li>
+    </ol>
 
-  <li>
-    <p>Finally, in order to cope with network failure, the SOX protocol includes a mail feature, that allows the server to communicate reliably with the client. Packets that must be delivered to the client are placed in the mailbox, and returned on every mail request. Each piece of mail must be signed for, and if not signed for, is simply returned again.</p>
+3.  Finally, in order to cope with network failure, the SOX protocol includes a mail feature, that allows the server to communicate reliably with the client. Packets that must be delivered to the client are placed in the mailbox, and returned on every mail request. Each piece of mail must be signed for, and if not signed for, is simply returned again.
 
-    <p>In the context of the value transfer above, there is only one piece of mail, being the receipt.</p>
-  </li>
-</ol>
+    In the context of the value transfer above, there is only one piece of mail, being the receipt.
 
-<p>SOX is a flexible protocol. By replacing the deposit request, above, with trading requests, it can be used for market trades as well as settlements<sup><a href="#fn59" id="ref59">[59]</a></sup>.</p>
+SOX is a flexible protocol. By replacing the deposit request, above, with trading requests, it can be used for market trades as well as settlements.<sup><a href="#fn59" id="ref59">[59]</a></sup>
 
-<p>In the trading context, requests that are implemented emulate standard market functions such as looking at the order book for an instrument, placing an order (buy or sell), monitoring the progress of an order and cancelling an order. The SOX mailbox is used for the return of orders (assets and results).</p>
+In the trading context, requests that are implemented emulate standard market functions such as looking at the order book for an instrument, placing an order (buy or sell), monitoring the progress of an order and cancelling an order. The SOX mailbox is used for the return of orders (assets and results).
 
 <h3 id="ex2">Software Engineering</h3>
 
-<p>SOX as a protocol spans both the Rights layer and the Software Engineering layer.</p>
+SOX as a protocol spans both the Rights layer and the Software Engineering layer.
 
-<p>In networking, every transmission must be considered as a contender for failure. As a corollary to this, relying on a connection-oriented protocol such as TCP will not guarantee reliability, as its promise is only that that the data that gets there is the correct data as sent<sup><a href="#fn60" id="ref60">[60]</a></sup>.</p>
+In networking, every transmission must be considered as a contender for failure. As a corollary to this, relying on a connection-oriented protocol such as TCP will not guarantee reliability, as its promise is only that that the data that gets there is the correct data as sent.<sup><a href="#fn60" id="ref60">[60]</a></sup>
 
-<p>To cope with these problems, SOX asumes a datagram network only, and handles reliability itself<sup><a href="#fn61" id="ref61">[61]</a></sup>.</p>
+To cope with these problems, SOX asumes a datagram network only, and handles reliability itself.<sup><a href="#fn61" id="ref61">[61]</a></sup>
 
-<p>Secondly, it bases communications on a request model, with each request being independent of the next, and each request only being complete when positive feedback is received.</p>
+Secondly, it bases communications on a request model, with each request being independent of the next, and each request only being complete when positive feedback is received.
 
-<p>Thirdly, SOX requests are idempotent, so they can simply be repeated until some confirmation comes back that one attempt has succeeded. Unique request identifiers are included and used to filter out retries.</p>
+Thirdly, SOX requests are idempotent, so they can simply be repeated until some confirmation comes back that one attempt has succeeded. Unique request identifiers are included and used to filter out retries.
 
-<p>Fourthly, in order to implement SOX, a client must treat each request as unreliable. For example, when a payment is written by the current client, that payment is recorded as pending, which is eventually matched up with a receipt arriving from the Issuer.</p>
+Fourthly, in order to implement SOX, a client must treat each request as unreliable. For example, when a payment is written by the current client, that payment is recorded as pending, which is eventually matched up with a receipt arriving from the Issuer.
 
-<p>Or, the client gives the user the opportunity to cancel the payment simply by re-using the unique identifer, and thus stopping the lost payment ever settling. In this way, where it is impossible to guarantee a result, Ricardo extends reliability management out to include the user.</p>
+Or, the client gives the user the opportunity to cancel the payment simply by re-using the unique identifer, and thus stopping the lost payment ever settling. In this way, where it is impossible to guarantee a result, Ricardo extends reliability management out to include the user.
 
-<p>Finally, SOX includes a <em>comms layer</em> that provides for key exchange for confidentiality and authentication purposes.</p>
+Finally, SOX includes a _comms layer_ that provides for key exchange for confidentiality and authentication purposes.
 
 <h3 id="ex1">Cryptography</h3>
 
-<p>The cryptography demanded by the upper layers includes:</p>
+The cryptography demanded by the upper layers includes:
 
-<ul>
-  <li>A key exchange method. Newer generations of SOX use Diffie-Hellman key exchange, whilst older versions use RSA.</li>
-  <li>A secret key encryption algorithm. IDEA was used in the past, Triple-DES in current versions, and one of the AES algorithms is a likely contender for the future.</li>
-  <li>A public key signature scheme. For newer, DSA, and for older, RSA.</li>
-  <li>A message digest method. SHA-1 is used, although MD5 has been used in the past.</li>
-</ul>
+- A key exchange method. Newer generations of SOX use Diffie-Hellman key exchange, whilst older versions use RSA.
+- A secret key encryption algorithm. IDEA was used in the past, Triple-DES in current versions, and one of the AES algorithms is a likely contender for the future.
+- A public key signature scheme. For newer, DSA, and for older, RSA.
+- A message digest method. SHA-1 is used, although MD5 has been used in the past.
 
-<p>All of these algorithms are implemented as part of <a href="http://www.cryptix.org/">Cryptix</a>, an open source project that was spun off by Systemics in 1996. Cryptography and the cryptographic techniques used in Ricardo are well discussed in the literature<sup><a href="#fn62" id="ref62">[62]</a></sup>.</p>
+All of these algorithms are implemented as part of <a href="http://www.cryptix.org/">Cryptix</a>, an open source project that was spun off by Systemics in 1996. Cryptography and the cryptographic techniques used in Ricardo are well discussed in the literature.<sup><a href="#fn62" id="ref62">[62]</a></sup>
 
-<hr>
+---
 
 <h2 id="conc">Concluding Remarks</h2>
 
 <h3 id="advantages">Advantages of the Model</h3>
 
-<p>The model works well in tackling and reducing the inherent complexities of Financial Cryptography. It does this by dividing the field into 7 areas, and providing an interconnection method (layering).</p>
+The model works well in tackling and reducing the inherent complexities of Financial Cryptography. It does this by dividing the field into 7 areas, and providing an interconnection method (layering).
 
-<p>Once a project is so layered, professionals within different disciplines can clearly deliniate those areas within their expertise, and those which call for other specialisations. Thus, lawyers can recognise the Governance layer as their bailiwick, and pay due attention to it. Other layers can be treated, more or less, as black boxes, interconnecting with requirements down and features up. Likewise, programmers can concentrate on Software Engineering and Rights, with more interest in Accounting than Governance.</p>
+Once a project is so layered, professionals within different disciplines can clearly deliniate those areas within their expertise, and those which call for other specialisations. Thus, lawyers can recognise the Governance layer as their bailiwick, and pay due attention to it. Other layers can be treated, more or less, as black boxes, interconnecting with requirements down and features up. Likewise, programmers can concentrate on Software Engineering and Rights, with more interest in Accounting than Governance.
 
-<p>A project manager, with responsibility for delivery of a Financial Cryptography system, finds this even more powerful, as the model offers a natural checklist and vocabulary for coordinating the activity.</p>
+A project manager, with responsibility for delivery of a Financial Cryptography system, finds this even more powerful, as the model offers a natural checklist and vocabulary for coordinating the activity.
 
-<p>As an analogue of the 7 layer ISO Reference Model, it also wins on easy familiarity with what we are trying to achieve.</p>
+As an analogue of the 7 layer ISO Reference Model, it also wins on easy familiarity with what we are trying to achieve.
 
 <h3 id="not">What the Model is Not!</h3>
 
-<p>The designation of 7 layers does not, in and of itself, encourage the design or implementation of system components that fall neatly into one layer or another. The notion of a layer 3 protocol providing services to a layer 4 protocol simply does not work in practice<sup><a href="#fn63" id="ref63">[63]</a></sup>.</p>
+The designation of 7 layers does not, in and of itself, encourage the design or implementation of system components that fall neatly into one layer or another. The notion of a layer 3 protocol providing services to a layer 4 protocol simply does not work in practice.<sup><a href="#fn63" id="ref63">[63]</a></sup>
 
-<p>Likewise, this model is not a design methodology. The description of a top-down requirements process is illusory, and in practice, the requirements analysis is more modelled by continuing and volatile negotiations between the layers. Whilst it is descriptive to state that a requirement is bouncing up and down between layers one and five, inclusive, this does not give much assistance to a team leader in assisting a design process.</p>
+Likewise, this model is not a design methodology. The description of a top-down requirements process is illusory, and in practice, the requirements analysis is more modelled by continuing and volatile negotiations between the layers. Whilst it is descriptive to state that a requirement is bouncing up and down between layers one and five, inclusive, this does not give much assistance to a team leader in assisting a design process.
 
 <h3 id="criticisms">Criticisms of the Model</h3>
 
-<p>It is easy to criticise any model, as by definition, a model falls short of reality. Here are some points:</p>
+It is easy to criticise any model, as by definition, a model falls short of reality. Here are some points:
 
-<ul>
-  <li>
-    <p>Does the set of layers describe Financial Cryptography accurately? Hettinga suggests, perhaps only partly in jest, the name <em>cryptographic finance</em>, implying that layers one to three may have greater claim to the original term<sup><a href="#fn64" id="ref64">[64]</a></sup>.</p>
-  </li>
+- Does the set of layers describe Financial Cryptography accurately? Hettinga suggests, perhaps only partly in jest, the name _cryptographic finance_, implying that layers one to three may have greater claim to the original term.<sup><a href="#fn64" id="ref64">[64]</a></sup>
 
-  <li>
-    <p>The 7 layer model is static rather than dynamic. Once described, it works, but how did we manage to construct it in the first place?</p>
-  </li>
+- The 7 layer model is static rather than dynamic. Once described, it works, but how did we manage to construct it in the first place?
 
-  <li>
-    <p>Are there really 7 layers? Are the layers as described? About each of the different layers we can ask many questions, including some troublesome ones:</p>
+- Are there really 7 layers? Are the layers as described? About each of the different layers we can ask many questions, including some troublesome ones:
 
-    <ul>
-      <li>is the carve-up between Cryptography, Software Engineering and Rights the best one?</li>
-      <li>does Accounting deserve a full layer?</li>
-      <li>does Governance really sit between Accounting and Value?</li>
-      <li>can we quietly ignore Hardware, or slid it into Software Engineering, where most applicable expertise lies?</li>
-    </ul>
+  - is the carve-up between Cryptography, Software Engineering and Rights the best one?
+  - does Accounting deserve a full layer?
+  - does Governance really sit between Accounting and Value?
+  - can we quietly ignore Hardware, or slid it into Software Engineering, where most applicable expertise lies?
 
-    <p>My answer, today, is 'yes' to each, but only time will provide the real answer.</p>
-  </li>
+  My answer, today, is 'yes' to each, but only time will provide the real answer.
 
-  <li>
-    <p>The top-down requirements <a href="#example">example</a> of Ricardo seems to indicate a natural design flow or methodology, but in practice the design process does not follow that path.</p>
+- The top-down requirements <a href="#example">example</a> of Ricardo seems to indicate a natural design flow or methodology, but in practice the design process does not follow that path.
 
-    <p>Experience has shown that concentration on Finance, and then Value is worthwhile. Then, the vertical flow breaks down; in particular, a lot of time is spent bouncing around the lower 4 layers in a negotiation for the best compromise, with occasional forays upwards in order to tune the requirements. Governance always seems to come last in the design process, as its contents are an admission of what the rest of the architecture has failed to cover.</p>
-  </li>
+  Experience has shown that concentration on Finance, and then Value is worthwhile. Then, the vertical flow breaks down; in particular, a lot of time is spent bouncing around the lower 4 layers in a negotiation for the best compromise, with occasional forays upwards in order to tune the requirements. Governance always seems to come last in the design process, as its contents are an admission of what the rest of the architecture has failed to cover.
 
-  <li>
-    <p>Layers one to four, up to Accounting, are fairly solid in terms of their disciplines, practices and methodologies. Layers five and up (Governance, Value, and Application) are less well-defined.</p>
+- Layers one to four, up to Accounting, are fairly solid in terms of their disciplines, practices and methodologies. Layers five and up (Governance, Value, and Application) are less well-defined.
 
-    <p>This might represent a flaw, or it might indicate an intrinsically messy area. Perhaps coincidentally, the ISO Reference Model exhibits the same pattern.</p>
-  </li>
-</ul>
+  This might represent a flaw, or it might indicate an intrinsically messy area. Perhaps coincidentally, the ISO Reference Model exhibits the same pattern.
 
-<p>I believe that these criticisms are valuable in indicating that the model is promising, as they help to refine ideas, rather than destroy them.</p>
+I believe that these criticisms are valuable in indicating that the model is promising, as they help to refine ideas, rather than destroy them.
 
-<hr>
+---
 
 <h2 id="refs">References</h2>
 
@@ -575,7 +506,6 @@ date: 1998 – 2000
 
   <li id="fn22">
     <p>As a wider comment, it is possible to model any electronic value scheme as a method of accounting. See Alan Tyree, <a href="http://www.law.usyd.edu.au/~alant/svc-legal.html">The legal nature of electronic money</a>.</p>
-
     <p>Whilst a valuable modelling exercise, caution is advised, as most conclusions drawn from such exercises are too broad. Specifically, institutional observers tend towards a line of logic: "it can be modelled as a series of accounts, therefore it should be regulated like banking;" such an approach is fraught with difficulties and unlikely to be satisfactory.&nbsp;<a href="#ref22">↩</a></p>
   </li>
 
@@ -585,12 +515,9 @@ date: 1998 – 2000
 
   <li id="fn24">
     <p>The Agency Problem:</p>
-
-    <blockquote class="blockquote">
-      <p>Also sometimes referred to as the principal-agent problem. The difficult but extremely important and recurrent organizational design problem of how organizations can structure incentives so that people ("agents") who are placed in control over resources that are not their own with a contractual obligation to use these resources in the interests of some other person or group of people actually will perform this obligation as promised &ndash; instead of using their delegated authority over other people's resources to feather their own nests at the expense of those whose interests they are supposed to be serving (their "principals"). Enforcing such contracts will involve transaction costs (often referred to as agency costs), and these costs may sometimes be very high indeed.
-      </p>
+    <blockquote>
+      <p>Also sometimes referred to as the principal-agent problem. The difficult but extremely important and recurrent organizational design problem of how organizations can structure incentives so that people ("agents") who are placed in control over resources that are not their own with a contractual obligation to use these resources in the interests of some other person or group of people actually will perform this obligation as promised &ndash; instead of using their delegated authority over other people's resources to feather their own nests at the expense of those whose interests they are supposed to be serving (their "principals"). Enforcing such contracts will involve transaction costs (often referred to as agency costs), and these costs may sometimes be very high indeed.</p>
     </blockquote>
-
     <p><a href="http://www.auburn.edu/~johnspm/gloss/index.html"><em>A Glossary of Political Economy Terms</em></a> Paul M. Johnson. See also <a href="http://www.google.com/search?q=%22agency+problem%22&amp;start=10&amp;sa=N"> Google</a>.&nbsp;<a href="#ref24">↩</a></p>
   </li>
 
@@ -728,7 +655,6 @@ date: 1998 – 2000
 
   <li id="fn58">
     <p>Note the way in which SOX melds with the Internet, as implication of layer 2. When passing a payment to someone on the other side of the planet, that payment only has value if it is settled and cleared by the Issuer. Otherwise, the payment is an uninteresting series of bits, with similar value to any other random nonsense.</p>
-
     <p>In contrast, the passing of rubber cheques is illegal in some countries, and traumatic in most others. SOX payments are not cheques in that sense.&nbsp;<a href="#ref58">↩</a></p>
   </li>
 
@@ -757,10 +683,10 @@ date: 1998 – 2000
   </li>
 </ol>
 
-<hr>
+---
 
-<p>Copyright &copy; 1998 Systemics Ltd. All rights reserved</p>
+Copyright &copy; 1998 Systemics Ltd. All rights reserved
 
-<hr>
+---
 
-<p><em>Editor's note: Some links may be broken.</em></p>
+_Editor's note: Some links may be broken._
