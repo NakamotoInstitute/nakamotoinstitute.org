@@ -1,6 +1,6 @@
 ---
 title: "The Right to Read: A Dystopian Short Story"
-sortTitle: "Right to Read: A Dystopian Short Story, The"
+sort_title: "Right to Read: A Dystopian Short Story, The"
 authors:
   - richard-m-stallman
 date: 1997-02

@@ -1,6 +1,6 @@
 ---
 title: The Art of Unix Programming
-sortTitle: Art of Unix Programming, The
+sort_title: Art of Unix Programming, The
 authors:
   - eric-s-raymond
 date: 2003

@@ -1,6 +1,6 @@
 ---
 title: The Byzantine Generals Problem
-sortTitle: Byzantine Generals Problem, The
+sort_title: Byzantine Generals Problem, The
 authors:
   - leslie-lamport
   - robert-shostak

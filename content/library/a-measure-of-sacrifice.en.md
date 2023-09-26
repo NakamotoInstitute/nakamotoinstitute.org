@@ -1,6 +1,6 @@
 ---
 title: A Measure of Sacrifice
-sortTitle: Measure of Sacrifice, A
+sort_title: Measure of Sacrifice, A
 authors:
   - nick-szabo
 date: 2002

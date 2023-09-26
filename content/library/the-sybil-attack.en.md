@@ -1,6 +1,6 @@
 ---
 title: The Sybil Attack
-sortTitle: Sybil Attack, The
+sort_title: Sybil Attack, The
 authors:
   - john-r-douceur
 date: 2002

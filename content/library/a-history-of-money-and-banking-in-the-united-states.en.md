@@ -1,6 +1,6 @@
 ---
 title: "A History of Money and Banking in the United States: The Colonial Era to World War II"
-sortTitle: "History of Money and Banking in the United States: The Colonial Era to World War II, A"
+sort_title: "History of Money and Banking in the United States: The Colonial Era to World War II, A"
 authors:
   - murray-n-rothbard
 date: 2002

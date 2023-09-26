@@ -1,6 +1,6 @@
 ---
 title: A Cypherpunk's Manifesto
-sortTitle: Cypherpunk's Manifesto, A
+sort_title: Cypherpunk's Manifesto, A
 authors:
   - eric-hughes
 date: 1993-03-09

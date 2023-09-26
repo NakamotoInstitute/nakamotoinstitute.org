@@ -1,6 +1,6 @@
 ---
 title: '"The Yield from Money Held" Reconsidered'
-sortTitle: Yield from Money Held Reconsidered, The
+sort_title: Yield from Money Held Reconsidered, The
 authors:
   - hans-hermann-hoppe
 date: 2009-04-24

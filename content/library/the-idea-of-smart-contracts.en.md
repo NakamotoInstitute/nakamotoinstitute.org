@@ -1,6 +1,6 @@
 ---
 title: The Idea of Smart Contracts
-sortTitle: Idea of Smart Contracts, The
+sort_title: Idea of Smart Contracts, The
 authors:
   - nick-szabo
 date: 1997

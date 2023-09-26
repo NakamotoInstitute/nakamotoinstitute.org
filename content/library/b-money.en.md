@@ -1,6 +1,6 @@
 ---
 title: b-money
-sortTitle: B-money
+sort_title: B-money
 authors:
   - wei-dai
 date: 1998-11

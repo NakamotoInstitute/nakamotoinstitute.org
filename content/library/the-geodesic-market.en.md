@@ -1,6 +1,6 @@
 ---
 title: The Geodesic Market
-sortTitle: Geodesic Market, The
+sort_title: Geodesic Market, The
 authors:
   - robert-hettinga
 date: 1998-04

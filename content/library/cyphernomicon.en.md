@@ -1,6 +1,6 @@
 ---
 title: The Cyphernomicon
-sortTitle: Cyphernomincon, The
+sort_title: Cyphernomincon, The
 authors:
   - timothy-c-may
 date: 1994-09-10

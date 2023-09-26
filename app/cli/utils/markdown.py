@@ -1,12 +1,11 @@
 import os
 from typing import Any, Dict, List, Optional, Tuple, Type
 
-import click
 import yaml
 from pydantic import BaseModel, ValidationError
 
 from app import db
-from app.cli.utils import DONE, get
+from app.cli.utils import get
 from app.models import Author
 
 
@@ -102,7 +101,7 @@ def _load_common_data(slug, lang, extension, directory_path, schema):
 
 
 def process_primary_language_file(
-    filename, directory_path, items, item_translations, primary_schema
+    filename, directory_path, items, item_translations, primary_schema, keys_to_move
 ):
     slug, lang, extension = extract_data_from_filename(filename)
     front_matter_dict, remaining_content = _load_common_data(
@@ -112,7 +111,6 @@ def process_primary_language_file(
     if not front_matter_dict:
         return
 
-    keys_to_move = ["title", "excerpt", "image_alt"]
     translation_data = {"language": lang, "slug": slug, "content": remaining_content}
     for key in keys_to_move:
         translation_data[key] = front_matter_dict.pop(key, None)
@@ -188,9 +186,9 @@ def import_content(
     secondary_schema,
     model,
     translation_model,
+    keys_to_move,
     relationship_key,
 ):
-    click.echo(f"Importing content from {directory_path}...", nl=False)
     item_translations = {}
     items = {}
 
@@ -198,7 +196,12 @@ def import_content(
         slug, lang, _ = extract_data_from_filename(filename)
         if lang == "en":
             process_primary_language_file(
-                filename, directory_path, items, item_translations, primary_schema
+                filename,
+                directory_path,
+                items,
+                item_translations,
+                primary_schema,
+                keys_to_move,
             )
 
     for filename in sorted(os.listdir(directory_path)):
@@ -220,4 +223,3 @@ def import_content(
         )
 
     db.session.commit()
-    click.echo(DONE)

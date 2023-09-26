@@ -1,6 +1,6 @@
 ---
 title: The Machinery of Freedom (2nd Edition)
-sortTitle: Machinery of Freedom (2nd Edition), The
+sort_title: Machinery of Freedom (2nd Edition), The
 authors:
   - david-d-friedman
 date: 1989

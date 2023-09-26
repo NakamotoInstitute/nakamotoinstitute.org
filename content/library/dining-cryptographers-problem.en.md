@@ -1,6 +1,6 @@
 ---
 title: "The Dining Cryptographers Problem: Unconditional Sender and Recipient Untraceability"
-sortTitle: "Dining Cryptographers Problem: Unconditional Sender and Recipient Untraceability, The"
+sort_title: "Dining Cryptographers Problem: Unconditional Sender and Recipient Untraceability, The"
 authors:
   - david-chaum
 date: 1988

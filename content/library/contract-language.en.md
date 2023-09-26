@@ -1,6 +1,6 @@
 ---
 title: A Formal Language for Analyzing Contracts
-sortTitle: Formal Language for Analyzing Contracts, A
+sort_title: Formal Language for Analyzing Contracts, A
 authors:
   - nick-szabo
 date: 2002

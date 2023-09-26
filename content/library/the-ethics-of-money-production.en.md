@@ -1,6 +1,6 @@
 ---
 title: The Ethics of Money Production
-sortTitle: Ethics of Money Production, The
+sort_title: Ethics of Money Production, The
 authors:
   - jorg-guido-hulsmann
 date: 2008

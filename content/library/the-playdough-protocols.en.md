@@ -1,6 +1,6 @@
 ---
 title: The Playdough Protocols
-sortTitle: Playdough Protocols, The
+sort_title: Playdough Protocols, The
 authors:
   - nick-szabo
 date: 2002

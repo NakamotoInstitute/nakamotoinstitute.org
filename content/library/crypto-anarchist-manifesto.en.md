@@ -1,6 +1,6 @@
 ---
 title: The Crypto Anarchist Manifesto
-sortTitle: Crypto Anarchist Manifesto, The
+sort_title: Crypto Anarchist Manifesto, The
 authors:
   - timothy-c-may
 date: 1988

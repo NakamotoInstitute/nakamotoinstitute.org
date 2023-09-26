@@ -1,6 +1,6 @@
 ---
 title: The Theory of Money and Credit
-sortTitle: Theory of Money and Credit, The
+sort_title: Theory of Money and Credit, The
 authors:
   - ludwig-von-mises
 date: 1953

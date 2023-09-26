@@ -1,6 +1,6 @@
 ---
 title: The God Protocols
-sortTitle: God Protocols, The
+sort_title: God Protocols, The
 authors:
   - nick-szabo
 date: 1999

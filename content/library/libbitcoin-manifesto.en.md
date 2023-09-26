@@ -1,6 +1,6 @@
 ---
 title: The libbitcoin Manifesto
-sortTitle: Libbitcoin Manifesto, The
+sort_title: Libbitcoin Manifesto, The
 authors:
   - amir-taaki
 date: 2013-09-23

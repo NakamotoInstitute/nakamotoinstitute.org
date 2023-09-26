@@ -1,6 +1,6 @@
 ---
 title: The Cathedral and the Bazaar
-sortTitle: Cathedral and the Bazaar, The
+sort_title: Cathedral and the Bazaar, The
 authors:
   - eric-s-raymond
 date: 2000

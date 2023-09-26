@@ -1,6 +1,6 @@
 ---
 title: The Ricardian Contract
-sortTitle: Ricardian Contract
+sort_title: Ricardian Contract
 authors:
   - ian-grigg
 date: 2004-07-06

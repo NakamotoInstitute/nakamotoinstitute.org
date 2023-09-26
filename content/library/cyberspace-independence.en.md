@@ -1,6 +1,6 @@
 ---
 title: A Declaration of the Independence of Cyberspace
-sortTitle: Declaration of the Independence of Cyberspace, A
+sort_title: Declaration of the Independence of Cyberspace, A
 authors:
   - john-perry-barlow
 date: 1996-02-08

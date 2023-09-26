@@ -1,6 +1,6 @@
 ---
 title: The Mystery of Banking
-sortTitle: Mystery of Banking, The
+sort_title: Mystery of Banking, The
 authors:
   - murray-n-rothbard
 date: 1983

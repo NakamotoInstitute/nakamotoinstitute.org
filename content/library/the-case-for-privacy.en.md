@@ -1,6 +1,6 @@
 ---
 title: The Case for Privacy
-sortTitle: Case for Privacy, The
+sort_title: Case for Privacy, The
 authors:
   - david-d-friedman
 date: 2005

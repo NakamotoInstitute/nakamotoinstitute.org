@@ -1,6 +1,6 @@
 ---
 title: An Introduction to Probability Theory and Its Applications, Vol. I
-sortTitle: Introduction to Probability Theory and Its Applications, Vol. I, An
+sort_title: Introduction to Probability Theory and Its Applications, Vol. I, An
 authors:
   - william-feller
 date: 1957

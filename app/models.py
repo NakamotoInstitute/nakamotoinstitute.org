@@ -89,9 +89,10 @@ class DocumentTranslation(db.Model):
         nullable=False,
     )
     title: Mapped[str] = mapped_column(String, nullable=False)
-    sortTitle: Mapped[str] = mapped_column(String, nullable=True)
+    sort_title: Mapped[str] = mapped_column(String, nullable=True)
     subtitle: Mapped[str] = mapped_column(String, nullable=True)
     slug: Mapped[str] = mapped_column(String, nullable=False)
+    content: Mapped[str] = mapped_column(Text, nullable=False)
     image_alt: Mapped[str] = mapped_column(String, nullable=True)
     document_id: Mapped[int] = mapped_column(db.ForeignKey("documents.id"))
     document: Mapped[Document] = relationship(back_populates="translations")
