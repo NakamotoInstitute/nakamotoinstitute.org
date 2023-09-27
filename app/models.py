@@ -1,4 +1,3 @@
-# from decimal import Decimal
 import datetime
 from typing import List, Literal
 
@@ -6,6 +5,12 @@ from sqlalchemy import Date, Integer, String, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app import db
+
+
+def string_literal_check(lst: List[str]) -> str:
+    check = ", ".join([f"'{item}'" for item in lst])
+    return f"({check})"
+
 
 ALLOWED_LANGUAGES = [
     "ar",
@@ -21,8 +26,7 @@ ALLOWED_LANGUAGES = [
     "ru",
     "zh",
 ]
-language_check = ", ".join([f"'{lang}'" for lang in ALLOWED_LANGUAGES])
-language_check = f"({language_check})"
+language_check = string_literal_check(ALLOWED_LANGUAGES)
 
 
 document_authors = db.Table(
@@ -90,6 +94,7 @@ class DocumentTranslation(db.Model):
     )
     title: Mapped[str] = mapped_column(String, nullable=False)
     sort_title: Mapped[str] = mapped_column(String, nullable=True)
+    display_title: Mapped[str] = mapped_column(String, nullable=True)
     subtitle: Mapped[str] = mapped_column(String, nullable=True)
     slug: Mapped[str] = mapped_column(String, nullable=False)
     content: Mapped[str] = mapped_column(Text, nullable=False)

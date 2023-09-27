@@ -8,14 +8,11 @@ from pydantic.alias_generators import to_camel
 from ..authors.schemas import AuthorSchema
 
 
-class LibraryMDSchema(BaseModel):
+class LibraryCanonicalMDSchema(BaseModel):
     authors: List[str]
-    title: str
-    sort_title: Optional[str] = None
     date: str | int | datetime.date
     granularity: str = None
     image: Optional[str] = None
-    image_alt: Optional[str] = None
     doctype: str
 
     @validator("date", pre=True, always=True)
@@ -48,13 +45,16 @@ class LibraryMDSchema(BaseModel):
         return cls.granularity or v
 
 
-class LibraryTranslatedMDSchema(BaseModel):
+class LibraryMDSchema(BaseModel):
     title: str
-    sort_title: Optional[str] = None
     subtitle: Optional[str] = None
     display_title: Optional[str] = None
-    slug: Optional[str] = None
+    sort_title: Optional[str] = None
     image_alt: Optional[str] = None
+
+
+class LibraryTranslatedMDSchema(LibraryMDSchema):
+    slug: Optional[str] = None
 
 
 class DocumentTranslationSchema(BaseModel):

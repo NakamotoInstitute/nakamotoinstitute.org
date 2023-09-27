@@ -7,23 +7,24 @@ from pydantic.alias_generators import to_camel
 from ..authors.schemas import AuthorSchema
 
 
-class MempoolMDSchema(BaseModel):
-    title: str
-    excerpt: str
+class MempoolCanonicalMDSchema(BaseModel):
     authors: List[str]
     image: Optional[str] = None
-    image_alt: Optional[str] = None
     date: datetime.date
     added: Optional[datetime.date] = None
     original_url: Optional[str] = None
     original_site: Optional[str] = None
 
 
-class MempoolTranslatedMDSchema(BaseModel):
+class MempoolMDSchema(BaseModel):
     title: str
+    excerpt: str
+    image_alt: Optional[str] = None
+
+
+class MempoolTranslatedMDSchema(MempoolMDSchema):
     slug: Optional[str] = None
     excerpt: Optional[str] = None
-    image_alt: Optional[str] = None
     translation_url: Optional[str] = None
     translation_site: Optional[str] = None
     translation_site_url: Optional[str] = None
