@@ -29,3 +29,15 @@ def get_mempool_post(slug):
         db.select(BlogPostTranslation).filter_by(slug=slug, language=g.locale)
     )
     return post
+
+
+@mempool.route("/latest", methods=["GET"])
+@response_model(MempoolPostSchema)
+def get_latest_mempool_post():
+    post = db.first_or_404(
+        db.select(BlogPostTranslation)
+        .filter_by(language=g.locale)
+        .join(BlogPost)
+        .order_by(BlogPost.added.desc())
+    )
+    return post
