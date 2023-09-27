@@ -7,6 +7,7 @@ from app.cli.utils import (
     DONE,
     extract_data_from_filename,
     get,
+    get_or_create,
     process_canonical_file,
     process_translated_file,
 )
@@ -15,7 +16,7 @@ from app.library.schemas import (
     LibraryMDSchema,
     LibraryTranslatedMDSchema,
 )
-from app.models import Author, Document, DocumentTranslation
+from app.models import Author, Document, DocumentFormat, DocumentTranslation
 
 
 def process_and_add_canonical_file(
@@ -35,6 +36,10 @@ def process_and_add_canonical_file(
     db.session.add(document)
     db.session.flush()
 
+    translation_data["formats"] = [
+        get_or_create(DocumentFormat, format_type=fmt)
+        for fmt in translation_data["formats"]
+    ]
     document_translation = DocumentTranslation(
         **translation_data,
         slug=slug,
@@ -61,7 +66,10 @@ def process_and_add_translated_file(
         return
 
     translation_data["slug"] = translation_data.get("slug") or slug
-
+    translation_data["formats"] = [
+        get_or_create(DocumentFormat, format_type=fmt)
+        for fmt in translation_data.pop("formats")
+    ]
     document_translation = DocumentTranslation(
         **translation_data,
         language=lang,

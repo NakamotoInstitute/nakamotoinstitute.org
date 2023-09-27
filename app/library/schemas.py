@@ -2,7 +2,7 @@ import datetime
 import re
 from typing import List, Optional
 
-from pydantic import AliasPath, BaseModel, Field, field_serializer, validator
+from pydantic import AliasPath, BaseModel, Field, field_serializer, field_validator
 from pydantic.alias_generators import to_camel
 
 from ..authors.schemas import AuthorSchema
@@ -15,7 +15,7 @@ class LibraryCanonicalMDSchema(BaseModel):
     image: Optional[str] = None
     doctype: str
 
-    @validator("date", pre=True, always=True)
+    @field_validator("date")
     def parse_date(cls, value: str | int | datetime.date) -> datetime.date:
         if isinstance(value, str):
             if re.match(r"^\d{4}-\d{2}$", value):  # E.g. 2022-09
@@ -40,7 +40,7 @@ class LibraryCanonicalMDSchema(BaseModel):
 
         return parsed_date
 
-    @validator("granularity", pre=True, always=True)
+    @field_validator("granularity")
     def set_granularity(cls, v, values):
         return cls.granularity or v
 
@@ -51,6 +51,7 @@ class LibraryMDSchema(BaseModel):
     display_title: Optional[str] = None
     sort_title: Optional[str] = None
     image_alt: Optional[str] = None
+    formats: Optional[List[str]] = []
 
 
 class LibraryTranslatedMDSchema(LibraryMDSchema):
@@ -68,6 +69,15 @@ class DocumentTranslationSchema(BaseModel):
         from_attributes = True
 
 
+class DocumentFormatSchema(BaseModel):
+    format_type: str
+
+    class Config:
+        alias_generator = to_camel
+        populate_by_name = True
+        from_attributes = True
+
+
 class LibraryDocBaseSchema(BaseModel):
     language: str
     title: str
@@ -76,6 +86,7 @@ class LibraryDocBaseSchema(BaseModel):
     granularity: str = Field(alias=AliasPath("document", "granularity"))
     authors: List[AuthorSchema] = Field(alias=AliasPath("document", "authors"))
     translations: List[DocumentTranslationSchema]
+    formats: List[DocumentFormatSchema]
 
     class Config:
         alias_generator = to_camel
@@ -85,6 +96,11 @@ class LibraryDocBaseSchema(BaseModel):
     @field_serializer("date")
     def serialize_date(self, date: datetime.date) -> str:
         return date.isoformat()
+
+    @field_serializer("formats")
+    def serialize_formats(self, formats) -> List[str]:
+        """Convert DocumentFormatSchema to format_type string."""
+        return sorted([fmt.format_type for fmt in formats])
 
 
 class LibraryDocSchema(LibraryDocBaseSchema):

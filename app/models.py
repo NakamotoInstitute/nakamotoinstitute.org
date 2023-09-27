@@ -28,6 +28,9 @@ ALLOWED_LANGUAGES = [
 ]
 language_check = string_literal_check(ALLOWED_LANGUAGES)
 
+ALLOWED_FORMATS = ["pdf", "epub", "mobi", "txt"]
+format_check = string_literal_check(ALLOWED_FORMATS)
+
 
 document_authors = db.Table(
     "document_authors",
@@ -59,6 +62,34 @@ class Author(db.Model):
 
     def __repr__(self) -> str:
         return f"<Author({self.slug})>"
+
+
+document_formats = db.Table(
+    "document_document_formats",
+    db.Column("document_format_id", db.Integer, db.ForeignKey("document_formats.id")),
+    db.Column(
+        "document_translation_id",
+        db.Integer,
+        db.ForeignKey("document_translations.id"),
+    ),
+)
+
+
+class DocumentFormat(db.Model):
+    __tablename__ = "document_formats"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    format_type: Mapped[str] = mapped_column(
+        String,
+        db.CheckConstraint(
+            f"format_type IN {format_check}",
+            name="format_type",
+        ),
+        nullable=True,
+    )
+    documents: Mapped[List["DocumentTranslation"]] = relationship(
+        secondary=document_formats, back_populates="formats"
+    )
 
 
 class Document(db.Model):
@@ -101,6 +132,9 @@ class DocumentTranslation(db.Model):
     image_alt: Mapped[str] = mapped_column(String, nullable=True)
     document_id: Mapped[int] = mapped_column(db.ForeignKey("documents.id"))
     document: Mapped[Document] = relationship(back_populates="translations")
+    formats: Mapped[DocumentFormat] = relationship(
+        secondary=document_formats, back_populates="documents"
+    )
 
     __table_args__ = (db.UniqueConstraint("document_id", "language"),)
 
