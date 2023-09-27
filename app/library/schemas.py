@@ -1,8 +1,8 @@
 import datetime
 import re
-from typing import List, Optional
+from typing import Any, List, Optional
 
-from pydantic import AliasPath, BaseModel, Field, field_serializer, field_validator
+from pydantic import AliasPath, BaseModel, Field, field_serializer, model_validator
 from pydantic.alias_generators import to_camel
 
 from ..authors.schemas import AuthorSchema
@@ -15,34 +15,30 @@ class LibraryCanonicalMDSchema(BaseModel):
     image: Optional[str] = None
     doctype: str
 
-    @field_validator("date")
-    def parse_date(cls, value: str | int | datetime.date) -> datetime.date:
-        if isinstance(value, str):
-            if re.match(r"^\d{4}-\d{2}$", value):  # E.g. 2022-09
-                parsed_date = datetime.datetime.strptime(f"{value}-01", "%Y-%m-%d")
-                cls.granularity = "MONTH"
-            elif re.match(r"^\d{4}$", value):  # E.g. 2022
-                parsed_date = datetime.datetime.strptime(f"{value}-01-01", "%Y-%m-%d")
-                cls.granularity = "YEAR"
+    @model_validator(mode="after")
+    @classmethod
+    def parse_date(cls, data: Any) -> Any:
+        date = data.date
+        if isinstance(date, str):
+            if re.match(r"^\d{4}-\d{2}$", date):  # E.g. 2022-09
+                data.date = datetime.datetime.strptime(f"{date}-01", "%Y-%m-%d").date()
+                data.granularity = "MONTH"
+            elif re.match(r"^\d{4}$", date):  # E.g. 2022
+                data.date = datetime.datetime.strptime(
+                    f"{date}-01-01", "%Y-%m-%d"
+                ).date()
+                data.granularity = "YEAR"
             else:
                 raise ValueError("Invalid string date format")
 
-        elif isinstance(value, int):
-            parsed_date = datetime.date(value, 1, 1)
-            cls.granularity = "YEAR"
-
-        elif isinstance(value, datetime.date):
-            parsed_date = datetime.date(value.year, value.month, value.day)
-            cls.granularity = "DAY"
+        elif isinstance(date, int):
+            data.date = datetime.date(date, 1, 1)
+            data.granularity = "YEAR"
 
         else:
-            raise ValueError("Invalid date format")
+            data.granularity = "DAY"
 
-        return parsed_date
-
-    @field_validator("granularity")
-    def set_granularity(cls, v, values):
-        return cls.granularity or v
+        return data
 
 
 class LibraryMDSchema(BaseModel):
