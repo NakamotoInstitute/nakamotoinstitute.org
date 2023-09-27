@@ -64,6 +64,43 @@ class Author(db.Model):
         return f"<Author({self.slug})>"
 
 
+document_translators = db.Table(
+    "document_translators",
+    db.Column(
+        "document_translation_id", db.Integer, db.ForeignKey("document_translations.id")
+    ),
+    db.Column("translator_id", db.Integer, db.ForeignKey("translators.id")),
+)
+
+blog_post_translators = db.Table(
+    "blog_post_translators",
+    db.Column(
+        "blog_post_translation_id",
+        db.Integer,
+        db.ForeignKey("blog_post_translations.id"),
+    ),
+    db.Column("translator_id", db.Integer, db.ForeignKey("translators.id")),
+)
+
+
+class Translator(db.Model):
+    __tablename__ = "translators"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    name: Mapped[str] = mapped_column(String, nullable=False)
+    url: Mapped[str] = mapped_column(String, nullable=True)
+    slug: Mapped[str] = mapped_column(String, unique=True, nullable=False)
+    posts: Mapped[List["BlogPostTranslation"]] = relationship(
+        secondary=blog_post_translators, back_populates="translators"
+    )
+    docs: Mapped[List["DocumentTranslation"]] = relationship(
+        secondary=document_translators, back_populates="translators"
+    )
+
+    def __repr__(self):
+        return f"<Translator {self.name}>"
+
+
 document_formats = db.Table(
     "document_document_formats",
     db.Column("document_format_id", db.Integer, db.ForeignKey("document_formats.id")),
@@ -135,6 +172,9 @@ class DocumentTranslation(db.Model):
     formats: Mapped[DocumentFormat] = relationship(
         secondary=document_formats, back_populates="documents"
     )
+    translators: Mapped[List["Translator"]] = relationship(
+        secondary=document_translators, back_populates="docs"
+    )
 
     __table_args__ = (db.UniqueConstraint("document_id", "language"),)
 
@@ -192,6 +232,9 @@ class BlogPostTranslation(db.Model):
     translation_site_url: Mapped[str] = mapped_column(String, nullable=True)
     blog_post_id: Mapped[int] = mapped_column(db.ForeignKey("blog_posts.id"))
     blog_post: Mapped[BlogPost] = relationship(back_populates="translations")
+    translators: Mapped[List["Translator"]] = relationship(
+        secondary=blog_post_translators, back_populates="posts"
+    )
 
     __table_args__ = (db.UniqueConstraint("blog_post_id", "language"),)
 

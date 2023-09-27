@@ -1,78 +1,97 @@
 [
   {
     "name": "Tony ₿",
-    "url": "https://twitter.com/TonyCrusoe"
+    "url": "https://twitter.com/TonyCrusoe",
+    "slug": "tony-b"
   },
   {
     "name": "屈爽 (Qu Shuang)",
-    "url": ""
+    "url": "",
+    "slug": "qu-shuang"
   },
   {
     "name": "Majamalu",
-    "url": ""
+    "url": "",
+    "slug": "majamalu"
   },
   {
     "name": "acrual",
-    "url": "https://twitter.com/acrual"
+    "url": "https://twitter.com/acrual",
+    "slug": "acrual"
   },
   {
     "name": "bitman",
-    "url": "https://twitter.com/0xBitman"
+    "url": "https://twitter.com/0xBitman",
+    "slug": "bitman"
   },
   {
     "name": "Volker Herminghaus",
-    "url": "https://twitter.com/Herminghaus"
+    "url": "https://twitter.com/Herminghaus",
+    "slug": "volker-herminghaus"
   },
   {
     "name": "Camilo Flores",
-    "url": "https://medium.com/@llekn"
+    "url": "https://medium.com/@llekn",
+    "slug": "camilo-flores"
   },
   {
     "name": "Mohammed AlShiekh",
-    "url": "https://twitter.com/MAlashiekh"
+    "url": "https://twitter.com/MAlashiekh",
+    "slug": "mohammed-alshiekh"
   },
   {
     "name": "J.O.G.",
-    "url": ""
+    "url": "",
+    "slug": "j-o-g"
   },
   {
     "name": "Janey",
-    "url": "https://twitter.com/janeygak"
+    "url": "https://twitter.com/janeygak",
+    "slug": "janey"
   },
   {
     "name": "Ilya Evdokimov",
-    "url": "https://keybase.io/ievdokimov"
+    "url": "https://keybase.io/ievdokimov",
+    "slug": "ilya-evdokimov"
   },
   {
     "name": "少平 (Shao-ping)",
-    "url": ""
+    "url": "",
+    "slug": "shao-ping"
   },
   {
     "name": "factotum-b",
-    "url": "https://github.com/factotum-b"
+    "url": "https://github.com/factotum-b",
+    "slug": "factotum-b"
   },
   {
     "name": "Ekaterina Tarasova",
-    "url": "http://blockchainwriter.tilda.ws"
+    "url": "http://blockchainwriter.tilda.ws",
+    "slug": "ekaterina-tarasova"
   },
   {
     "name": "Il portico dipinto",
-    "url": "http://ilporticodipinto.it"
+    "url": "http://ilporticodipinto.it",
+    "slug": "il-portico-dipinto"
   },
   {
     "name": "Thomas Brand",
-    "url": "https://twitter.com/thlbr"
+    "url": "https://twitter.com/thlbr",
+    "slug": "thomas-brand"
   },
   {
     "name": "Singe Ωptimiste",
-    "url": "https://twitter.com/singeoptimiste"
+    "url": "https://twitter.com/singeoptimiste",
+    "slug": "singe-optimiste"
   },
   {
     "name": "ottosch",
-    "url": "https://twitter.com/ottosch_"
+    "url": "https://twitter.com/ottosch_",
+    "slug": "ottosch"
   },
   {
     "name": "BTC Translator",
-    "url": "https://twitter.com/BTCTranslator"
+    "url": "https://twitter.com/BTCTranslator",
+    "slug": "btc-translator"
   }
 ]

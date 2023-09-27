@@ -15,7 +15,7 @@ from app.mempool.schemas import (
     MempoolMDSchema,
     MempoolTranslatedMDSchema,
 )
-from app.models import Author, BlogPost, BlogPostTranslation
+from app.models import Author, BlogPost, BlogPostTranslation, Translator
 
 
 def process_and_add_canonical_file(
@@ -35,6 +35,9 @@ def process_and_add_canonical_file(
     db.session.add(blog_post)
     db.session.flush()
 
+    translation_data["translators"] = [
+        get(Translator, slug=slug) for slug in translation_data.pop("translators", [])
+    ]
     blog_post_translation = BlogPostTranslation(
         **translation_data,
         slug=slug,
@@ -64,7 +67,9 @@ def process_and_add_translated_file(
     translation_data["excerpt"] = (
         translation_data.get("excerpt") or blog_post["translation"].excerpt
     )
-
+    translation_data["translators"] = [
+        get(Translator, slug=slug) for slug in translation_data.pop("translators", [])
+    ]
     blog_post_translation = BlogPostTranslation(
         **translation_data,
         language=lang,

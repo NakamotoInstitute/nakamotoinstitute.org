@@ -6,6 +6,7 @@ from pydantic import AliasPath, BaseModel, Field, field_serializer, model_valida
 from pydantic.alias_generators import to_camel
 
 from ..authors.schemas import AuthorSchema
+from ..translators.schemas import TranslatorSchema
 
 
 class LibraryCanonicalMDSchema(BaseModel):
@@ -52,6 +53,7 @@ class LibraryMDSchema(BaseModel):
 
 class LibraryTranslatedMDSchema(LibraryMDSchema):
     slug: Optional[str] = None
+    translators: Optional[List[str]] = []
 
 
 class DocumentTranslationSchema(BaseModel):
@@ -82,6 +84,7 @@ class LibraryDocBaseSchema(BaseModel):
     granularity: str = Field(alias=AliasPath("document", "granularity"))
     authors: List[AuthorSchema] = Field(alias=AliasPath("document", "authors"))
     translations: List[DocumentTranslationSchema]
+    translators: List[TranslatorSchema]
     formats: List[DocumentFormatSchema]
 
     class Config:

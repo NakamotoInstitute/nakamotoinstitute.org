@@ -5,6 +5,7 @@ from pydantic import AliasPath, BaseModel, Field, field_serializer
 from pydantic.alias_generators import to_camel
 
 from ..authors.schemas import AuthorSchema
+from ..translators.schemas import TranslatorSchema
 
 
 class MempoolCanonicalMDSchema(BaseModel):
@@ -28,6 +29,7 @@ class MempoolTranslatedMDSchema(MempoolMDSchema):
     translation_url: Optional[str] = None
     translation_site: Optional[str] = None
     translation_site_url: Optional[str] = None
+    translators: Optional[List[str]] = []
 
 
 class MempoolTranslationSchema(BaseModel):
@@ -54,6 +56,7 @@ class MempoolPostBaseSchema(BaseModel):
     added: datetime.date = Field(alias=AliasPath("blog_post", "added"))
     authors: List[AuthorSchema] = Field(alias=AliasPath("blog_post", "authors"))
     translations: List[MempoolTranslationSchema]
+    translators: List[TranslatorSchema]
 
     @field_serializer("date")
     def serialize_date(self, date: datetime.date) -> str:

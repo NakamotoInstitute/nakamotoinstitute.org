@@ -16,7 +16,7 @@ from app.library.schemas import (
     LibraryMDSchema,
     LibraryTranslatedMDSchema,
 )
-from app.models import Author, Document, DocumentFormat, DocumentTranslation
+from app.models import Author, Document, DocumentFormat, DocumentTranslation, Translator
 
 
 def process_and_add_canonical_file(
@@ -32,6 +32,7 @@ def process_and_add_canonical_file(
     translation_data = validated_translation_data.dict()
 
     authors = [get(Author, slug=author) for author in canonical_data.pop("authors")]
+
     document = Document(**canonical_data, authors=authors)
     db.session.add(document)
     db.session.flush()
@@ -39,6 +40,9 @@ def process_and_add_canonical_file(
     translation_data["formats"] = [
         get_or_create(DocumentFormat, format_type=fmt)
         for fmt in translation_data["formats"]
+    ]
+    translation_data["translators"] = [
+        get(Translator, slug=slug) for slug in translation_data.pop("translators", [])
     ]
     document_translation = DocumentTranslation(
         **translation_data,
@@ -69,6 +73,9 @@ def process_and_add_translated_file(
     translation_data["formats"] = [
         get_or_create(DocumentFormat, format_type=fmt)
         for fmt in translation_data.pop("formats")
+    ]
+    translation_data["translators"] = [
+        get(Translator, slug=slug) for slug in translation_data.pop("translators", [])
     ]
     document_translation = DocumentTranslation(
         **translation_data,
