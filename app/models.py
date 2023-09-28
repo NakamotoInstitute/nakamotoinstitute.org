@@ -90,6 +90,7 @@ class Translator(db.Model):
     name: Mapped[str] = mapped_column(String, nullable=False)
     url: Mapped[str] = mapped_column(String, nullable=True)
     slug: Mapped[str] = mapped_column(String, unique=True, nullable=False)
+    content: Mapped[str] = mapped_column(Text, nullable=False)
     posts: Mapped[List["BlogPostTranslation"]] = relationship(
         secondary=blog_post_translators, back_populates="translators"
     )

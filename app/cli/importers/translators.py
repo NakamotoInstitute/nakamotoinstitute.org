@@ -1,18 +1,18 @@
 import click
 
 from app import db
-from app.cli.utils import DONE, load_and_validate_json
+from app.cli.utils import DONE, load_all_markdown_files
 from app.models import Translator
 from app.translators.schemas import TranslatorMDSchema
 
 
 def import_translator():
     click.echo("Importing Translator...", nl=False)
-    translators_data = load_and_validate_json(
-        "data/translators.json", TranslatorMDSchema
+    translators_data = load_all_markdown_files(
+        "content/translators", TranslatorMDSchema
     )
     for translator_data in translators_data:
-        translator = Translator(**translator_data.dict())
+        translator = Translator(**translator_data)
         db.session.add(translator)
     db.session.commit()
     click.echo(DONE)
