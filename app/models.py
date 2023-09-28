@@ -1,7 +1,7 @@
 import datetime
 from typing import List, Literal
 
-from sqlalchemy import Date, Integer, String, Text
+from sqlalchemy import Boolean, Date, Integer, String, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app import db
@@ -209,6 +209,13 @@ class BlogPost(db.Model):
     translations: Mapped[List["BlogPostTranslation"]] = relationship(
         back_populates="blog_post"
     )
+    series: Mapped["BlogSeries"] = relationship(back_populates="blog_posts")
+    series_id: Mapped[int] = mapped_column(
+        db.ForeignKey("blog_series.id"), nullable=True
+    )
+    series_index: Mapped[int] = mapped_column(Integer, nullable=True)
+
+    __table_args__ = (db.UniqueConstraint("series_id", "series_index"),)
 
     def __repr__(self) -> str:
         return f"<BlogPost({self.id})>"
@@ -250,5 +257,66 @@ class BlogPostTranslation(db.Model):
             key=lambda t: t.language,
         )
 
+    @property
+    def series(self):
+        if self.blog_post.series:
+            return next(
+                (
+                    series_translation
+                    for series_translation in self.blog_post.series.translations
+                    if series_translation.language == self.language
+                ),
+                None,
+            )
+        return None
+
     def __repr__(self) -> str:
         return f"<BlogPostTranslation(language={self.language};slug={self.slug})>"
+
+
+class BlogSeries(db.Model):
+    __tablename__ = "blog_series"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    chapter_title: Mapped[bool] = mapped_column(Boolean)
+    blog_posts: Mapped[List["BlogPost"]] = relationship(
+        back_populates="series", order_by="BlogPost.series_index"
+    )
+    translations: Mapped[List["BlogSeriesTranslation"]] = relationship(
+        back_populates="blog_series"
+    )
+
+    def __repr__(self) -> str:
+        return f"<BlogSeries(id={self.id})>"
+
+
+class BlogSeriesTranslation(db.Model):
+    __tablename__ = "blog_series_translations"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    title: Mapped[str] = mapped_column(String, nullable=False)
+    slug: Mapped[str] = mapped_column(String, unique=True, nullable=False)
+    language: Mapped[str] = mapped_column(
+        String,
+        db.CheckConstraint(f"language IN {language_check}", name="language"),
+        nullable=False,
+    )
+    content: Mapped[str] = mapped_column(Text, nullable=True)
+    blog_series_id: Mapped[int] = mapped_column(db.ForeignKey("blog_series.id"))
+    blog_series: Mapped[BlogSeries] = relationship(back_populates="translations")
+
+    __table_args__ = (db.UniqueConstraint("blog_series_id", "language"),)
+
+    @property
+    def translations(self):
+        return sorted(
+            [
+                translation
+                for translation in self.blog_series.translations
+                if translation != self
+            ],
+            key=lambda t: t.language,
+        )
+
+    def __repr__(self) -> str:
+        return f"<BlogSeriesTranslation(slug={self.slug})>"

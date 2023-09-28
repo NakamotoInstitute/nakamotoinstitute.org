@@ -15,7 +15,13 @@ from app.mempool.schemas import (
     MempoolMDSchema,
     MempoolTranslatedMDSchema,
 )
-from app.models import Author, BlogPost, BlogPostTranslation, Translator
+from app.models import (
+    Author,
+    BlogPost,
+    BlogPostTranslation,
+    BlogSeriesTranslation,
+    Translator,
+)
 
 
 def process_and_add_canonical_file(
@@ -30,8 +36,14 @@ def process_and_add_canonical_file(
     canonical_data = validated_canonical_data.dict()
     translation_data = validated_translation_data.dict()
 
-    authors = [get(Author, slug=author) for author in canonical_data.pop("authors")]
-    blog_post = BlogPost(**canonical_data, authors=authors)
+    canonical_data["authors"] = [
+        get(Author, slug=author) for author in canonical_data.pop("authors")
+    ]
+    series = canonical_data.pop("series")
+    canonical_data["series"] = (
+        get(BlogSeriesTranslation, slug=series).blog_series if series else None
+    )
+    blog_post = BlogPost(**canonical_data)
     db.session.add(blog_post)
     db.session.flush()
 

@@ -5,6 +5,7 @@ from app.cli.importers import (
     import_author,
     import_library,
     import_mempool,
+    import_mempool_series,
     import_translator,
 )
 from app.cli.utils import color_text, flush_db
@@ -21,5 +22,6 @@ def seed():
     import_author()
     import_translator()
     import_library()
+    import_mempool_series()
     import_mempool()
     click.echo(color_text("Finished importing data!"))

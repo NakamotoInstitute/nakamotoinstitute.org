@@ -15,6 +15,8 @@ class MempoolCanonicalMDSchema(BaseModel):
     added: Optional[datetime.date] = None
     original_url: Optional[str] = None
     original_site: Optional[str] = None
+    series: Optional[str] = None
+    series_index: Optional[int] = None
 
 
 class MempoolMDSchema(BaseModel):
@@ -30,6 +32,18 @@ class MempoolTranslatedMDSchema(MempoolMDSchema):
     translation_site: Optional[str] = None
     translation_site_url: Optional[str] = None
     translators: Optional[List[str]] = []
+
+
+class MempoolSeriesCanonicalMDSchema(BaseModel):
+    chapter_title: Optional[bool] = False
+
+
+class MempoolSeriesMDSchema(BaseModel):
+    title: str
+
+
+class MempoolSeriesTranslatedMDSchema(MempoolSeriesMDSchema):
+    slug: Optional[str] = None
 
 
 class MempoolTranslationSchema(BaseModel):
@@ -57,6 +71,8 @@ class MempoolPostBaseSchema(BaseModel):
     authors: List[AuthorSchema] = Field(alias=AliasPath("blog_post", "authors"))
     translations: List[MempoolTranslationSchema]
     translators: List[TranslatorSchema]
+    series_index: Optional[int] = Field(alias=AliasPath("blog_post", "series_index"))
+    series: Optional["MempoolSeriesBaseSchema"]
 
     @field_serializer("date")
     def serialize_date(self, date: datetime.date) -> str:
@@ -74,3 +90,26 @@ class MempoolPostBaseSchema(BaseModel):
 
 class MempoolPostSchema(MempoolPostBaseSchema):
     content: str
+
+
+class MempoolSeriesBaseSchema(BaseModel):
+    language: str
+    title: str
+    slug: str
+    chapter_title: Optional[bool] = Field(
+        alias=AliasPath("blog_series", "chapter_title")
+    )
+
+    class Config:
+        alias_generator = to_camel
+        populate_by_name = True
+        from_attributes = True
+
+
+class MempoolSeriesSchema(MempoolSeriesBaseSchema):
+    translations: List[MempoolSeriesBaseSchema]
+
+
+class MempoolSeriesResponse(BaseModel):
+    series: MempoolSeriesSchema
+    posts: List[MempoolPostBaseSchema]
