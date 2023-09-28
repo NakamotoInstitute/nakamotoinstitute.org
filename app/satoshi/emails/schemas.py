@@ -2,6 +2,7 @@ import datetime
 from typing import Literal, Optional
 
 from pydantic import BaseModel
+from pydantic.alias_generators import to_camel
 
 EmailSource = Literal["cryptography", "bitcoin-list"]
 
@@ -23,3 +24,14 @@ class EmailJSONSchema(BaseModel):
     source_id: str
     parent_id: Optional[int] = None
     satoshi_id: Optional[int] = None
+
+
+class EmailBaseResponse(EmailJSONSchema):
+    class Config:
+        alias_generator = to_camel
+        populate_by_name = True
+        from_attributes = True
+
+
+class EmailResponse(EmailBaseResponse):
+    parent: Optional[EmailBaseResponse]

@@ -5,7 +5,6 @@ from sqlalchemy import Boolean, Date, DateTime, Integer, String, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app import db
-from app.satoshi.emails.schemas import EmailSource
 
 
 def string_literal_check(lst: List[str]) -> str:
@@ -38,7 +37,7 @@ class EmailThread(db.Model):
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     title: Mapped[str] = mapped_column(String, nullable=False)
-    source: Mapped[EmailSource] = mapped_column(String, nullable=False)
+    source: Mapped[str] = mapped_column(String, nullable=False)
     emails: Mapped[List["Email"]] = relationship(back_populates="thread")
 
     def __repr__(self):
