@@ -5,6 +5,8 @@ from app.cli.importers import (
     import_author,
     import_email,
     import_email_thread,
+    import_forum_post,
+    import_forum_thread,
     import_library,
     import_mempool,
     import_mempool_series,
@@ -25,6 +27,8 @@ def seed():
     import_translator()
     import_email()
     import_email_thread()
+    import_forum_post()
+    import_forum_thread()
     import_library()
     import_mempool_series()
     import_mempool()

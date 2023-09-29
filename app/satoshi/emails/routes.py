@@ -1,10 +1,11 @@
 from typing import List
 
-from flask import jsonify, request
+from flask import jsonify
 
 from app import db
 from app.models import Email, EmailThread
 from app.utils.decorators import response_model
+from app.utils.request import get_bool_param
 
 from . import bp
 from .schemas import (
@@ -68,7 +69,7 @@ def get_email_by_source(source, satoshi_id):
 
 @bp.route("/<string:source>/threads", methods=["GET"])
 @response_model(List[EmailThreadResponse])
-def get_threads_by_source(source):
+def get_email_threads_by_source(source):
     threads = db.session.scalars(
         db.select(EmailThread).filter_by(source=source).order_by(EmailThread.id)
     ).all()
@@ -76,8 +77,8 @@ def get_threads_by_source(source):
 
 
 @bp.route("/<string:source>/threads/<int:thread_id>", methods=["GET"])
-def get_thread_by_source(source, thread_id):
-    satoshi_only = request.args.get("satoshi") is True
+def get_email_thread_by_source(source, thread_id):
+    satoshi_only = get_bool_param("satoshi")
 
     emails_query = (
         db.select(Email)
