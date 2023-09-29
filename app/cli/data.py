@@ -12,6 +12,7 @@ from app.cli.importers import (
     import_mempool_series,
     import_quote,
     import_quote_category,
+    import_skeptic,
     import_translator,
 )
 from app.cli.utils import color_text, flush_db
@@ -36,4 +37,5 @@ def seed():
     import_library()
     import_mempool_series()
     import_mempool()
+    import_skeptic()
     click.echo(color_text("Finished importing data!"))
