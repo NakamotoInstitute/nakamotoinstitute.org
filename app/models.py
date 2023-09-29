@@ -65,22 +65,10 @@ class Email(db.Model):
         Integer, db.ForeignKey("email_threads.id"), nullable=False
     )
     thread: Mapped[EmailThread] = relationship(back_populates="emails")
+    quotes: Mapped[List["Quote"]] = relationship(back_populates="email")
 
     def __repr__(self):
         return f"<Email {self.subject} - {self.source_id}>"
-
-
-document_authors = db.Table(
-    "document_authors",
-    db.Column("document_id", db.Integer, db.ForeignKey("documents.id")),
-    db.Column("author_id", db.Integer, db.ForeignKey("authors.id")),
-)
-
-blog_post_authors = db.Table(
-    "blog_post_authors",
-    db.Column("blog_post_id", db.Integer, db.ForeignKey("blog_posts.id")),
-    db.Column("author_id", db.Integer, db.ForeignKey("authors.id")),
-)
 
 
 class ForumThread(db.Model):
@@ -112,13 +100,68 @@ class ForumPost(db.Model):
         nullable=False,
     )
     source_id: Mapped[str] = mapped_column(String, nullable=False)
-    thread_id = mapped_column(
+    thread_id: Mapped[int] = mapped_column(
         Integer, db.ForeignKey("forum_threads.id"), nullable=False
     )
     thread: Mapped[ForumThread] = relationship(back_populates="posts")
+    quotes: Mapped[List["Quote"]] = relationship(back_populates="post")
 
     def __repr__(self):
         return f"<ForumPost {self.subject} - {self.source_id}>"
+
+
+quote_quote_categories = db.Table(
+    "quote_quote_categories",
+    db.Column("quote_id", db.Integer, db.ForeignKey("quotes.id")),
+    db.Column("quote_category_id", db.Integer, db.ForeignKey("quote_categories.id")),
+)
+
+
+class QuoteCategory(db.Model):
+    __tablename__ = "quote_categories"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    name: Mapped[str] = mapped_column(String, nullable=False)
+    slug: Mapped[str] = mapped_column(String, unique=True, nullable=False)
+    quotes: Mapped[List["Quote"]] = relationship(
+        secondary=quote_quote_categories, back_populates="categories"
+    )
+
+    def __repr__(self) -> str:
+        return f"<QuoteCategory({self.slug})"
+
+
+class Quote(db.Model):
+    __tablename__ = "quotes"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    text: Mapped[str] = mapped_column(Text, nullable=False)
+    date: Mapped[datetime.date] = mapped_column(Date, nullable=False)
+    medium: Mapped[str] = mapped_column(String, nullable=False)
+    email_id: Mapped[int] = mapped_column(
+        Integer, db.ForeignKey("emails.satoshi_id"), nullable=True
+    )
+    email: Mapped[Email] = relationship(back_populates="quotes")
+    post_id: Mapped[int] = mapped_column(
+        Integer, db.ForeignKey("forum_posts.satoshi_id"), nullable=True
+    )
+    post: Mapped[ForumPost] = relationship(back_populates="quotes")
+    categories: Mapped[List[QuoteCategory]] = relationship(
+        secondary=quote_quote_categories, back_populates="quotes"
+    )
+
+
+document_authors = db.Table(
+    "document_authors",
+    db.Column("document_id", db.Integer, db.ForeignKey("documents.id")),
+    db.Column("author_id", db.Integer, db.ForeignKey("authors.id")),
+)
+
+blog_post_authors = db.Table(
+    "blog_post_authors",
+    db.Column("blog_post_id", db.Integer, db.ForeignKey("blog_posts.id")),
+    db.Column("author_id", db.Integer, db.ForeignKey("authors.id")),
+)
 
 
 class Author(db.Model):
