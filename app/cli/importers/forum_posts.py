@@ -20,7 +20,9 @@ def import_forum_thread():
 
 def import_forum_post():
     click.echo("Importing ForumPost...", nl=False)
-    forum_posts_data = load_and_validate_json("data/posts.json", ForumPostJSONSchema)
+    forum_posts_data = load_and_validate_json(
+        "data/forum_posts.json", ForumPostJSONSchema
+    )
     for forum_post_data in forum_posts_data:
         forum_post = ForumPost(**forum_post_data.dict())
         db.session.add(forum_post)
