@@ -57,12 +57,14 @@ def create_app(config_class=Config):
         cache.init_app(app)
 
     from app.authors import authors as authors_bp
+    from app.errors import bp as errors_bp
     from app.library import library as library_bp
     from app.mempool import mempool as mempool_bp
     from app.podcast import bp as podcast_bp
     from app.satoshi import satoshi as satoshi_bp
     from app.skeptics import bp as skeptics_bp
 
+    app.register_blueprint(errors_bp)
     app.register_blueprint(satoshi_bp, url_prefix="/api/satoshi")
     app.register_blueprint(authors_bp, url_prefix="/api/authors")
     app.register_blueprint(library_bp, url_prefix="/api/library")

@@ -26,12 +26,7 @@ def response_model(model: Type[BaseModel] | List[Type[BaseModel]]):
                     400,
                 )
             except Exception as e:
-                return (
-                    jsonify(
-                        {"error": "An unexpected error occurred", "details": str(e)}
-                    ),
-                    500,
-                )
+                raise e
 
         return decorated_function
 
