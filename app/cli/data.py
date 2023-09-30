@@ -5,6 +5,7 @@ from app.cli.importers import (
     import_author,
     import_email,
     import_email_thread,
+    import_episode,
     import_forum_post,
     import_forum_thread,
     import_library,
@@ -38,4 +39,5 @@ def seed():
     import_mempool_series()
     import_mempool()
     import_skeptic()
+    import_episode()
     click.echo(color_text("Finished importing data!"))

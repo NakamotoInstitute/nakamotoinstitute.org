@@ -59,6 +59,7 @@ def create_app(config_class=Config):
     from app.authors import authors as authors_bp
     from app.library import library as library_bp
     from app.mempool import mempool as mempool_bp
+    from app.podcast import bp as podcast_bp
     from app.satoshi import satoshi as satoshi_bp
     from app.skeptics import bp as skeptics_bp
 
@@ -67,6 +68,7 @@ def create_app(config_class=Config):
     app.register_blueprint(library_bp, url_prefix="/api/library")
     app.register_blueprint(mempool_bp, url_prefix="/api/mempool")
     app.register_blueprint(skeptics_bp, url_prefix="/api/skeptics")
+    app.register_blueprint(podcast_bp, url_prefix="/api/podcast")
 
     @app.before_request
     def remove_trailing_slash():

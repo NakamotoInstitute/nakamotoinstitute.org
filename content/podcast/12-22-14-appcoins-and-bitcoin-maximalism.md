@@ -1,4 +1,13 @@
-Daniel and Michael discuss appcoins and Vitalik Buterin's critique of "Bitcoin maximalism".
+---
+title: Appcoins and Bitcoin Maximalism
+date: 2014-12-22 17:00:00 -6
+duration: "38:30"
+summary: Daniel Krawisz and Michael Goldstein discuss appcoins and Vitalik Buterin's critique of "Bitcoin maximalism."
+notes: Daniel Krawisz and Michael Goldstein discuss appcoins and Vitalik Buterin's critique of "Bitcoin maximalism." Visit the website for show notes and related links. https://nakamotoinstitute.org/podcast/12-22-14-appcoins-and-bitcoin-maximalism/
+youtube_id: v6JUyK5dHoE
+---
+
+Daniel Krawisz and Michael Goldstein discuss appcoins and Vitalik Buterin's critique of "Bitcoin maximalism."
 
 Related links:
 
