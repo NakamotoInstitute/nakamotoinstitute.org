@@ -47,6 +47,7 @@ export const urls = (locale: Locale) => {
 
   return {
     home: getUrl("/"),
+    about: getUrl("/about"),
     satoshi: {
       index: getSatoshiUrl("/"),
     },

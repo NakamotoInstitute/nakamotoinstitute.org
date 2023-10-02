@@ -4,9 +4,14 @@ import Link from "next/link";
 
 export function Footer({ locale }: { locale: Locale }) {
   return (
-    <footer className="border-t-1 border-t-night mt-auto border-dashed">
+    <footer className="mt-auto border-t-1 border-dashed border-t-night">
       <div className="mx-auto max-w-7xl py-3">
         <ul className="align-center my-3 flex-wrap justify-between text-center sm:flex">
+          <li className="mx-2">
+            <Link className="text-night" href={urls(locale).about}>
+              About
+            </Link>
+          </li>
           <li className="mx-2">
             <Link className="text-night" href="#">
               Feed

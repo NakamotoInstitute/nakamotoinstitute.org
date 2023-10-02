@@ -19,6 +19,10 @@
     "react": "^18",
     "react-dom": "^18",
     "react-i18next": "^13.2.2",
+    "react-markdown": "^8.0.7",
+    "rehype-raw": "^6.1.1",
+    "remark-definition-list": "^1.2.0",
+    "remark-gfm": "^3.0.1",
     "zod": "^3.22.2"
   },
   "devDependencies": {
