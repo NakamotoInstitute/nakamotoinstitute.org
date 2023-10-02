@@ -1,3 +1,6 @@
+import { ToggleLinkProps } from "@/app/components/LanguageToggle";
+import { locales } from "@/i18n";
+import languages from "@/locales/languages.json";
 import { domainToPathMapping } from "@/middleware";
 
 const APP_BASE_URL = (() => {
@@ -49,4 +52,32 @@ export const urls = (locale: Locale) => {
     },
     github: "https://github.com/NakamotoInstitute/nakamotoinstitute.org",
   };
+};
+
+export const generateLocaleToggleLinks = (
+  locale: string,
+  generateHref: (locale: Locale) => string,
+): ToggleLinkProps => {
+  return locales.reduce<ToggleLinkProps>(
+    (acc, loc) => {
+      const lang = languages.find((lang) => lang.code === loc);
+
+      if (!lang) {
+        return acc;
+      }
+
+      if (loc === locale) {
+        acc.current = lang.name;
+        return acc;
+      }
+
+      acc.links?.push({
+        name: lang.name,
+        href: generateHref(loc),
+      });
+
+      return acc;
+    },
+    { current: "", links: [] },
+  );
 };

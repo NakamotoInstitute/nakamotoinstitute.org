@@ -10,6 +10,7 @@
     "translate:extract": "i18next -c ./i18next-parser.config.js --fail-on-warnings"
   },
   "dependencies": {
+    "@floating-ui/react": "^0.26.0",
     "clsx": "^2.0.0",
     "i18next": "^23.5.1",
     "i18next-parser": "^8.8.0",

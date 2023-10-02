@@ -21,7 +21,14 @@ export function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang={locale} className={clsx(stix.variable, plexMono.variable)}>
+    <html
+      lang={locale}
+      className={clsx(
+        stix.variable,
+        plexMono.variable,
+        "bg-bone text-night font-serif",
+      )}
+    >
       {children}
     </html>
   );
