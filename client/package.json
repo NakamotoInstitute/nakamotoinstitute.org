@@ -6,13 +6,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "translate:extract": "i18next -c ./i18next-parser.config.js --fail-on-warnings"
   },
   "dependencies": {
     "clsx": "^2.0.0",
+    "i18next": "^23.5.1",
+    "i18next-parser": "^8.8.0",
+    "i18next-resources-to-backend": "^1.1.4",
     "next": "13.5.3",
     "react": "^18",
     "react-dom": "^18",
+    "react-i18next": "^13.2.2",
     "zod": "^3.22.2"
   },
   "devDependencies": {

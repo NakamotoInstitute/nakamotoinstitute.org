@@ -1,16 +1,18 @@
 import { RootLayout } from "@/app/components";
+import { i18nTranslation } from "@/lib/i18n";
 import { Metadata } from "next";
 
 export async function generateMetadata({
   params: { locale },
 }: LocaleParams): Promise<Metadata> {
-  const siteTitle = "Satoshi Nakamoto Institute";
+  const { t } = await i18nTranslation(locale);
+  const siteTitle = t("Satoshi Nakamoto Institute");
   return {
     title: {
       template: `%s | ${siteTitle}`,
-      default: `The Complete Satoshi | ${siteTitle}`,
+      default: `${t("The Complete Satoshi")} | ${siteTitle}`,
     },
-    description: "Bitcoin scholarship",
+    description: t("Bitcoin scholarship"),
   };
 }
 
