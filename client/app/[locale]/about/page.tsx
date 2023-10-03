@@ -1,4 +1,4 @@
-import { getPage } from "@/lib/content/pages";
+import { getPage } from "@/lib/content";
 import { getLocaleParams, i18nTranslation } from "@/lib/i18n";
 import { Markdown, PageLayout } from "@/app/components";
 import { urls } from "@/lib/urls";

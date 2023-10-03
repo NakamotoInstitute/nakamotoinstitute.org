@@ -13,3 +13,11 @@ export const getDirectoryFile = async (
   const filePath = path.join(dir, `${slug}.${locale}.md`);
   return fs.readFile(filePath, "utf-8");
 };
+
+export const getPage = async (slug: string, locale: Locale) => {
+  let page = getDirectoryFile("pages", slug, locale);
+  if (!page && locale !== defaultLocale) {
+    page = getDirectoryFile("pages", slug, locale);
+  }
+  return page ?? null;
+};

@@ -48,6 +48,10 @@ export const urls = (locale: Locale) => {
   return {
     home: getUrl("/"),
     about: getUrl("/about"),
+    authors: {
+      index: getUrl("/authors"),
+      detail: (slug: string) => getUrl(`/authors/${slug}`),
+    },
     satoshi: {
       index: getSatoshiUrl("/"),
     },
