@@ -79,7 +79,7 @@ def create_app(config_class=Config):
 
     @app.url_value_preprocessor
     def set_locale(endpoint, values):
-        g.locale = request.args.get("lang", "en")
+        g.locale = request.args.get("locale", "en")
 
     if not app.debug:
         if not os.path.exists("logs"):

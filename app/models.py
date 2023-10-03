@@ -12,7 +12,7 @@ def string_literal_check(lst: List[str]) -> str:
     return f"({check})"
 
 
-ALLOWED_LANGUAGES = [
+ALLOWED_LOCALES = [
     "ar",
     "de",
     "en",
@@ -26,7 +26,7 @@ ALLOWED_LANGUAGES = [
     "ru",
     "zh",
 ]
-language_check = string_literal_check(ALLOWED_LANGUAGES)
+locale_check = string_literal_check(ALLOWED_LOCALES)
 
 ALLOWED_FORMATS = ["pdf", "epub", "mobi", "txt"]
 format_check = string_literal_check(ALLOWED_FORMATS)
@@ -275,9 +275,9 @@ class DocumentTranslation(db.Model):
     __tablename__ = "document_translations"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    language: Mapped[str] = mapped_column(
+    locale: Mapped[str] = mapped_column(
         String,
-        db.CheckConstraint(f"language IN {language_check}", name="language"),
+        db.CheckConstraint(f"locale IN {locale_check}", name="locale"),
         nullable=False,
     )
     title: Mapped[str] = mapped_column(String, nullable=False)
@@ -296,7 +296,7 @@ class DocumentTranslation(db.Model):
         secondary=document_translators, back_populates="docs"
     )
 
-    __table_args__ = (db.UniqueConstraint("document_id", "language"),)
+    __table_args__ = (db.UniqueConstraint("document_id", "locale"),)
 
     @property
     def translations(self):
@@ -306,11 +306,11 @@ class DocumentTranslation(db.Model):
                 for translation in self.document.translations
                 if translation != self
             ],
-            key=lambda t: t.language,
+            key=lambda t: t.locale,
         )
 
     def __repr__(self) -> str:
-        return f"<DocumentTranslation(language={self.language};slug={self.slug})>"
+        return f"<DocumentTranslation(locale={self.locale};slug={self.slug})>"
 
 
 class BlogPost(db.Model):
@@ -344,9 +344,9 @@ class BlogPostTranslation(db.Model):
     __tablename__ = "blog_post_translations"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    language: Mapped[str] = mapped_column(
+    locale: Mapped[str] = mapped_column(
         String,
-        db.CheckConstraint(f"language IN {language_check}", name="language"),
+        db.CheckConstraint(f"locale IN {locale_check}", name="locale"),
         nullable=False,
     )
     title: Mapped[str] = mapped_column(String, nullable=False)
@@ -363,7 +363,7 @@ class BlogPostTranslation(db.Model):
         secondary=blog_post_translators, back_populates="posts"
     )
 
-    __table_args__ = (db.UniqueConstraint("blog_post_id", "language"),)
+    __table_args__ = (db.UniqueConstraint("blog_post_id", "locale"),)
 
     @property
     def translations(self):
@@ -373,7 +373,7 @@ class BlogPostTranslation(db.Model):
                 for translation in self.blog_post.translations
                 if translation != self
             ],
-            key=lambda t: t.language,
+            key=lambda t: t.locale,
         )
 
     @property
@@ -383,14 +383,14 @@ class BlogPostTranslation(db.Model):
                 (
                     series_translation
                     for series_translation in self.blog_post.series.translations
-                    if series_translation.language == self.language
+                    if series_translation.locale == self.locale
                 ),
                 None,
             )
         return None
 
     def __repr__(self) -> str:
-        return f"<BlogPostTranslation(language={self.language};slug={self.slug})>"
+        return f"<BlogPostTranslation(locale={self.locale};slug={self.slug})>"
 
 
 class BlogSeries(db.Model):
@@ -415,16 +415,16 @@ class BlogSeriesTranslation(db.Model):
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     title: Mapped[str] = mapped_column(String, nullable=False)
     slug: Mapped[str] = mapped_column(String, unique=True, nullable=False)
-    language: Mapped[str] = mapped_column(
+    locale: Mapped[str] = mapped_column(
         String,
-        db.CheckConstraint(f"language IN {language_check}", name="language"),
+        db.CheckConstraint(f"locale IN {locale_check}", name="locale"),
         nullable=False,
     )
     content: Mapped[str] = mapped_column(Text, nullable=True)
     blog_series_id: Mapped[int] = mapped_column(db.ForeignKey("blog_series.id"))
     blog_series: Mapped[BlogSeries] = relationship(back_populates="translations")
 
-    __table_args__ = (db.UniqueConstraint("blog_series_id", "language"),)
+    __table_args__ = (db.UniqueConstraint("blog_series_id", "locale"),)
 
     @property
     def translations(self):
@@ -434,7 +434,7 @@ class BlogSeriesTranslation(db.Model):
                 for translation in self.blog_series.translations
                 if translation != self
             ],
-            key=lambda t: t.language,
+            key=lambda t: t.locale,
         )
 
     def __repr__(self) -> str:

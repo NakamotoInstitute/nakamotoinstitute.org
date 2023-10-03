@@ -57,7 +57,7 @@ class LibraryTranslatedMDSchema(LibraryMDSchema):
 
 
 class DocumentTranslationSchema(BaseModel):
-    language: str
+    locale: str
     title: str
     slug: str
 
@@ -77,7 +77,7 @@ class DocumentFormatSchema(BaseModel):
 
 
 class LibraryDocBaseSchema(BaseModel):
-    language: str
+    locale: str
     title: str
     slug: str
     date: datetime.date = Field(alias=AliasPath("document", "date"))

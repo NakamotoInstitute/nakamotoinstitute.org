@@ -47,7 +47,7 @@ class MempoolSeriesTranslatedMDSchema(MempoolSeriesMDSchema):
 
 
 class MempoolTranslationSchema(BaseModel):
-    language: str
+    locale: str
     title: str
     slug: str
 
@@ -58,7 +58,7 @@ class MempoolTranslationSchema(BaseModel):
 
 
 class MempoolPostBaseSchema(BaseModel):
-    language: str
+    locale: str
     title: str
     slug: str
     excerpt: str
@@ -96,7 +96,7 @@ class MempoolPostSchema(MempoolPostBaseSchema):
 
 
 class MempoolSeriesBaseSchema(BaseModel):
-    language: str
+    locale: str
     title: str
     slug: str
     chapter_title: Optional[bool] = Field(

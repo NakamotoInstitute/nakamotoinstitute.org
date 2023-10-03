@@ -47,7 +47,7 @@ def process_and_add_canonical_file(
     document_translation = DocumentTranslation(
         **translation_data,
         slug=slug,
-        language="en",
+        locale="en",
         content=content,
         document=document,
     )
@@ -57,7 +57,7 @@ def process_and_add_canonical_file(
 
 
 def process_and_add_translated_file(
-    filepath: str, slug: str, lang: str, documents: dict, translated_schema
+    filepath: str, slug: str, locale: str, documents: dict, translated_schema
 ):
     validated_translation_data, content = process_translated_file(
         filepath, translated_schema
@@ -79,7 +79,7 @@ def process_and_add_translated_file(
     ]
     document_translation = DocumentTranslation(
         **translation_data,
-        language=lang,
+        locale=locale,
         content=content,
         document=document["canonical"],
     )
@@ -92,8 +92,8 @@ def import_content(directory_path: str, canonical_schema, schema, translated_sch
     non_english_filenames = []
 
     for filename in sorted(os.listdir(directory_path)):
-        _, lang, _ = extract_data_from_filename(filename)
-        if lang == "en":
+        _, locale, _ = extract_data_from_filename(filename)
+        if locale == "en":
             english_filenames.append(filename)
         else:
             non_english_filenames.append(filename)
@@ -107,9 +107,9 @@ def import_content(directory_path: str, canonical_schema, schema, translated_sch
 
     for filename in non_english_filenames:
         filepath = os.path.join(directory_path, filename)
-        slug, lang, _ = extract_data_from_filename(filename)
+        slug, locale, _ = extract_data_from_filename(filename)
         process_and_add_translated_file(
-            filepath, slug, lang, blog_posts, translated_schema
+            filepath, slug, locale, blog_posts, translated_schema
         )
 
     db.session.commit()

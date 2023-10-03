@@ -33,8 +33,8 @@ def get_authors():
         .outerjoin(BlogPostTranslation)
         .filter(
             or_(
-                DocumentTranslation.language == g.locale,
-                BlogPostTranslation.language == g.locale,
+                DocumentTranslation.locale == g.locale,
+                BlogPostTranslation.locale == g.locale,
             )
         )
         .order_by(Author.sort_name)
@@ -53,7 +53,7 @@ def get_author(slug):
         .join(BlogPost)
         .join(blog_post_authors)
         .join(Author)
-        .filter(Author.id == author.id, BlogPostTranslation.language == g.locale)
+        .filter(Author.id == author.id, BlogPostTranslation.locale == g.locale)
     ).all()
 
     library_docs = db.session.scalars(
@@ -61,7 +61,7 @@ def get_author(slug):
         .join(Document)
         .join(document_authors)
         .join(Author)
-        .filter(Author.id == author.id, DocumentTranslation.language == g.locale)
+        .filter(Author.id == author.id, DocumentTranslation.locale == g.locale)
     ).all()
 
     if not mempool_posts and not library_docs:
@@ -80,16 +80,16 @@ def get_author_params():
     valid_combinations = []
 
     authors = db.session.scalars(db.select(Author)).all()
-    languages = set(
+    locales = set(
         db.session.scalars(
-            db.select(BlogPostTranslation.language).union(
-                db.select(DocumentTranslation.language)
+            db.select(BlogPostTranslation.locale).union(
+                db.select(DocumentTranslation.locale)
             )
         ).all()
     )
 
     for author in authors:
-        for lang in languages:
+        for locale in locales:
             mempool_posts_exist = db.session.scalar(
                 db.select(
                     db.exists(
@@ -97,7 +97,7 @@ def get_author_params():
                         .select_from(BlogPostTranslation)
                         .join(BlogPost)
                         .join(blog_post_authors)
-                        .where(BlogPostTranslation.language == lang)
+                        .where(BlogPostTranslation.locale == locale)
                         .where(blog_post_authors.c.author_id == author.id)
                     )
                 )
@@ -110,13 +110,13 @@ def get_author_params():
                         .select_from(DocumentTranslation)
                         .join(Document)
                         .join(document_authors)
-                        .where(DocumentTranslation.language == lang)
+                        .where(DocumentTranslation.locale == locale)
                         .where(document_authors.c.author_id == author.id)
                     )
                 )
             )
 
             if mempool_posts_exist or library_docs_exist:
-                valid_combinations.append({"slug": author.slug, "locale": lang})
+                valid_combinations.append({"slug": author.slug, "locale": locale})
 
     return valid_combinations

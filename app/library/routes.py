@@ -15,7 +15,7 @@ from .schemas import LibraryDocBaseSchema, LibraryDocSchema
 def get_library_docs():
     docs = db.session.scalars(
         db.select(DocumentTranslation)
-        .filter(DocumentTranslation.language == g.locale)
+        .filter(DocumentTranslation.locale == g.locale)
         .order_by(DocumentTranslation.sort_title.asc())
     ).all()
     return docs
@@ -25,6 +25,6 @@ def get_library_docs():
 @response_model(LibraryDocSchema)
 def get_library_doc(slug):
     post = db.first_or_404(
-        db.select(DocumentTranslation).filter_by(slug=slug, language=g.locale)
+        db.select(DocumentTranslation).filter_by(slug=slug, locale=g.locale)
     )
     return post

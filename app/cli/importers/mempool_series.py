@@ -36,7 +36,7 @@ def process_and_add_canonical_series_file(
     blog_series_translation = BlogSeriesTranslation(
         **translation_data,
         slug=slug,
-        language="en",
+        locale="en",
         content=content,
         blog_series=new_blog_series,
     )
@@ -49,7 +49,7 @@ def process_and_add_canonical_series_file(
 
 
 def process_and_add_translated_series_file(
-    filepath: str, slug: str, lang: str, blog_series: dict, translated_schema
+    filepath: str, slug: str, locale: str, blog_series: dict, translated_schema
 ):
     validated_translation_data, content = process_translated_file(
         filepath, translated_schema
@@ -64,7 +64,7 @@ def process_and_add_translated_series_file(
     translation_data["slug"] = translation_data.get("slug") or slug
     blog_series_translation = BlogSeriesTranslation(
         **translation_data,
-        language=lang,
+        locale=locale,
         content=content,
         blog_series=blog_series["canonical"],
     )
@@ -79,8 +79,8 @@ def import_series_content(
     non_english_filenames = []
 
     for filename in sorted(os.listdir(directory_path)):
-        _, lang, _ = extract_data_from_filename(filename)
-        if lang == "en":
+        _, locale, _ = extract_data_from_filename(filename)
+        if locale == "en":
             english_filenames.append(filename)
         else:
             non_english_filenames.append(filename)
@@ -94,9 +94,9 @@ def import_series_content(
 
     for filename in non_english_filenames:
         filepath = os.path.join(directory_path, filename)
-        slug, lang, _ = extract_data_from_filename(filename)
+        slug, locale, _ = extract_data_from_filename(filename)
         process_and_add_translated_series_file(
-            filepath, slug, lang, blog_series, translated_schema
+            filepath, slug, locale, blog_series, translated_schema
         )
 
     db.session.commit()
