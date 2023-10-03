@@ -71,7 +71,10 @@ class MempoolPostBaseSchema(BaseModel):
     authors: List[AuthorSchema] = Field(alias=AliasPath("blog_post", "authors"))
     translations: List[MempoolTranslationSchema]
     translators: List[TranslatorSchema]
-    series_index: Optional[int] = Field(alias=AliasPath("blog_post", "series_index"))
+    series_index: Optional[int] = Field(
+        validation_alias=AliasPath("blog_post", "series_index"),
+        serialization_alias="seriesIndex",
+    )
     series: Optional["MempoolSeriesBaseSchema"]
 
     @field_serializer("date")
@@ -97,7 +100,8 @@ class MempoolSeriesBaseSchema(BaseModel):
     title: str
     slug: str
     chapter_title: Optional[bool] = Field(
-        alias=AliasPath("blog_series", "chapter_title")
+        validation_alias=AliasPath("blog_series", "chapter_title"),
+        serialization_alias="chapterTitle",
     )
 
     class Config:
