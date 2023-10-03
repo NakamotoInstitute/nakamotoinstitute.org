@@ -1,6 +1,6 @@
 from typing import List
 
-from flask import g, jsonify
+from flask import abort, g, jsonify
 from sqlalchemy import or_
 
 from app import db
@@ -63,8 +63,11 @@ def get_author(slug):
         .filter(Author.id == author.id, DocumentTranslation.language == g.locale)
     ).all()
 
+    if not mempool_posts and not library_docs:
+        abort(404)
+
     response_data = AuthorResponse(
         author=author, library=library_docs, mempool=mempool_posts
     )
 
-    return jsonify(response_data.dict())
+    return jsonify(response_data.dict(by_alias=True))
