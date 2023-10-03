@@ -16,7 +16,7 @@ from app.models import (
 from app.utils.decorators import response_model
 
 from . import authors
-from .schemas import AuthorResponse, AuthorSchema
+from .schemas import AuthorParamResponse, AuthorResponse, AuthorSchema
 
 
 @authors.route("/", methods=["GET"])
@@ -71,3 +71,51 @@ def get_author(slug):
     )
 
     return jsonify(response_data.dict(by_alias=True))
+
+
+@authors.route("/params", methods=["GET"])
+@response_model(List[AuthorParamResponse])
+def get_author_params():
+    valid_combinations = []
+
+    authors = db.session.scalars(db.select(Author)).all()
+    languages = set(
+        db.session.scalars(
+            db.select(BlogPostTranslation.language).union(
+                db.select(DocumentTranslation.language)
+            )
+        ).all()
+    )
+
+    for author in authors:
+        for lang in languages:
+            mempool_posts_exist = db.session.scalar(
+                db.select(
+                    db.exists(
+                        db.select(1)
+                        .select_from(BlogPostTranslation)
+                        .join(BlogPost)
+                        .join(blog_post_authors)
+                        .where(BlogPostTranslation.language == lang)
+                        .where(blog_post_authors.c.author_id == author.id)
+                    )
+                )
+            )
+
+            library_docs_exist = db.session.scalar(
+                db.select(
+                    db.exists(
+                        db.select(1)
+                        .select_from(DocumentTranslation)
+                        .join(Document)
+                        .join(document_authors)
+                        .where(DocumentTranslation.language == lang)
+                        .where(document_authors.c.author_id == author.id)
+                    )
+                )
+            )
+
+            if mempool_posts_exist or library_docs_exist:
+                valid_combinations.append({"slug": author.slug, "locale": lang})
+
+    return valid_combinations
