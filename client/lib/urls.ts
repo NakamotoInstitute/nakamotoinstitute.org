@@ -52,6 +52,14 @@ export const urls = (locale: Locale) => {
       index: getUrl("/authors"),
       detail: (slug: string) => getUrl(`/authors/${slug}`),
     },
+    contact: getUrl("/contact"),
+    crashCourse: getUrl("/crash-course"),
+    donate: getUrl("/donate"),
+    events: getUrl("/events"),
+    finney: {
+      index: getUrl("/finney"),
+      rpow: getUrl("/finney/rpow"),
+    },
     satoshi: {
       index: getSatoshiUrl("/"),
     },
