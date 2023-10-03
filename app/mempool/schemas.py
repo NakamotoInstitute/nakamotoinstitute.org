@@ -125,4 +125,4 @@ class MempoolSeriesSchema(MempoolSeriesBaseSchema):
 
 class MempoolSeriesResponse(BaseModel):
     series: MempoolSeriesSchema
-    posts: List[MempoolPostBaseSchema]
+    posts: List[MempoolPostSchema]

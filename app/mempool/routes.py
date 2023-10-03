@@ -77,4 +77,11 @@ def get_mempool_series(slug):
 
     response_data = MempoolSeriesResponse(series=series, posts=posts)
 
-    return jsonify(response_data.dict())
+    return jsonify(response_data.dict(by_alias=True))
+
+
+@mempool.route("/series/params", methods=["GET"])
+@response_model(List[SlugParamResponse])
+def get_mempool_series_params():
+    all_series = db.session.scalars(db.select(BlogSeriesTranslation)).all()
+    return [{"locale": series.locale, "slug": series.slug} for series in all_series]

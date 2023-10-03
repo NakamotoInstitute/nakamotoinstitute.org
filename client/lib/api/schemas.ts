@@ -37,6 +37,8 @@ export const mempoolSeriesDataSchema = z.object({
 
 export type MempoolSeries = z.infer<typeof mempoolSeriesDataSchema>;
 
+export const mempoolSeriesIndexDataSchema = z.array(mempoolSeriesDataSchema);
+
 export const mempoolPostDataSchema = z.object({
   locale: z.string(),
   title: z.string(),
@@ -61,3 +63,10 @@ export const mempoolPostDataSchema = z.object({
 export type MempoolPost = z.infer<typeof mempoolPostDataSchema>;
 
 export const mempoolIndexResponseSchema = z.array(mempoolPostDataSchema);
+
+export const mempoolSeriesResponseSchema = z.object({
+  series: mempoolSeriesDataSchema.extend({
+    translations: z.array(mempoolTranslationDataSchema),
+  }),
+  posts: mempoolIndexResponseSchema,
+});
