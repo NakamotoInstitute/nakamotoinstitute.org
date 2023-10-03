@@ -4,6 +4,7 @@ from flask import g, jsonify
 
 from app import db
 from app.models import BlogPost, BlogPostTranslation, BlogSeries, BlogSeriesTranslation
+from app.shared.schemas import SlugParamResponse
 from app.utils.decorators import response_model
 
 from . import mempool
@@ -29,6 +30,13 @@ def get_mempool_post(slug):
         db.select(BlogPostTranslation).filter_by(slug=slug, language=g.locale)
     )
     return post
+
+
+@mempool.route("/params", methods=["GET"])
+@response_model(List[SlugParamResponse])
+def get_mempool_params():
+    posts = db.session.scalars(db.select(BlogPostTranslation)).all()
+    return [{"locale": post.language, "slug": post.slug} for post in posts]
 
 
 @mempool.route("/latest", methods=["GET"])

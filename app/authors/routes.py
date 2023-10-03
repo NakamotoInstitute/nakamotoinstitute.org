@@ -13,10 +13,11 @@ from app.models import (
     blog_post_authors,
     document_authors,
 )
+from app.shared.schemas import SlugParamResponse
 from app.utils.decorators import response_model
 
 from . import authors
-from .schemas import AuthorParamResponse, AuthorResponse, AuthorSchema
+from .schemas import AuthorResponse, AuthorSchema
 
 
 @authors.route("/", methods=["GET"])
@@ -74,7 +75,7 @@ def get_author(slug):
 
 
 @authors.route("/params", methods=["GET"])
-@response_model(List[AuthorParamResponse])
+@response_model(List[SlugParamResponse])
 def get_author_params():
     valid_combinations = []
 
