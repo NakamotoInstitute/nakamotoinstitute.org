@@ -2,7 +2,7 @@ import { PageLayout } from "@/app/components";
 import { PageHeader } from "@/app/components/PageHeader";
 import { getLocaleParams, i18nTranslation } from "@/lib/i18n";
 import { urls } from "@/lib/urls";
-import { formatDateRange } from "@/lib/utils/dates";
+import { formatDateRange } from "@/utils/dates";
 import { Metadata } from "next";
 
 export async function generateMetadata({

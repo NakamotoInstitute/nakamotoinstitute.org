@@ -62,7 +62,16 @@ class MempoolPostBaseSchema(BaseModel):
     title: str
     slug: str
     excerpt: str
+    image: Optional[str] = Field(alias=AliasPath("blog_post", "image"))
     image_alt: Optional[str]
+    original_url: Optional[str] = Field(
+        validation_alias=AliasPath("blog_post", "original_url"),
+        serialization_alias="originalUrl",
+    )
+    original_site: Optional[str] = Field(
+        validation_alias=AliasPath("blog_post", "original_site"),
+        serialization_alias="originalSite",
+    )
     translation_url: Optional[str]
     translation_site: Optional[str]
     translation_site_url: Optional[str]
