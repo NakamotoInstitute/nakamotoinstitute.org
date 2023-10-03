@@ -3,25 +3,24 @@ import Image from "next/image";
 import Link from "next/link";
 
 export function Footer({ locale }: { locale: Locale }) {
+  const links = [
+    { label: "About", url: urls(locale).about },
+    { label: "Contact", url: urls(locale).contact },
+    { label: "Donate", url: urls(locale).donate },
+    { label: "Feed", url: "#" },
+    { label: "GitHub", url: urls(locale).github },
+  ];
   return (
     <footer className="mt-auto border-t-1 border-dashed border-t-night">
       <div className="mx-auto max-w-7xl py-3">
         <ul className="align-center my-3 flex-wrap justify-between text-center sm:flex">
-          <li className="mx-2">
-            <Link className="text-night" href={urls(locale).about}>
-              About
-            </Link>
-          </li>
-          <li className="mx-2">
-            <Link className="text-night" href="#">
-              Feed
-            </Link>
-          </li>
-          <li className="mx-2">
-            <Link className="text-night" href={urls(locale).github}>
-              GitHub
-            </Link>
-          </li>
+          {links.map(({ label, url }) => (
+            <li key={label} className="mx-2">
+              <Link className="text-night" href={url}>
+                {label}
+              </Link>
+            </li>
+          ))}
         </ul>
         <div className="flex flex-col sm:flex-row">
           <Link
