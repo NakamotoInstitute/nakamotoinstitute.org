@@ -70,6 +70,12 @@ export const urls = (locale: Locale) => {
       seriesIndex: getUrl("/mempool/series"),
       seriesDetail: (slug: string) => getUrl(`/mempool/series/${slug}`),
     },
+    podcast: {
+      index: getUrl("/podcast"),
+      episode: (slug: string) => getUrl(`/podcast/${slug}`),
+      episodeMp3: (slug: string) =>
+        `https://s3.amazonaws.com/nakamotoinstitute/cryptomises/${slug}.mp3`,
+    },
     satoshi: {
       index: getSatoshiUrl("/"),
     },
