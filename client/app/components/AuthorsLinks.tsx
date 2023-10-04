@@ -1,21 +1,9 @@
 import { urls } from "@/lib/urls";
 import { LinkedItemsList, LinkedItemsListProps } from "./LinkedItemsList";
-import Link from "next/link";
-import { AuthorData } from "@/lib/api/schemas";
-
-type AuthorLinkProps = {
-  locale: Locale;
-  author: AuthorData;
-};
-
-export function AuthorLink({ author, locale }: AuthorLinkProps) {
-  return (
-    <Link href={urls(locale).authors.detail(author.slug)}>{author.name}</Link>
-  );
-}
+import { Author } from "@/lib/api/schemas";
 
 type AuthorLinksProps = Omit<LinkedItemsListProps, "items" | "urlFunc"> & {
-  authors: AuthorData[];
+  authors: Author[];
 };
 
 export function AuthorsLinks({ authors, ...rest }: AuthorLinksProps) {
