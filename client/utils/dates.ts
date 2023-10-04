@@ -71,3 +71,9 @@ export const formatTimeAttr = (date: Date, granularity: Granularity) => {
       return "";
   }
 };
+
+export const calculateDayDifference = (date1: Date, date2: Date) => {
+  const timeDifference = Math.abs(date2.getTime() - date1.getTime());
+  const dayDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
+  return dayDifference;
+};

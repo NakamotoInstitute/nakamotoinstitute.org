@@ -79,6 +79,7 @@ export const urls = (locale: Locale) => {
     satoshi: {
       index: getSatoshiUrl("/"),
     },
+    skeptics: getUrl("/the-skeptics"),
     github: "https://github.com/NakamotoInstitute/nakamotoinstitute.org",
   };
 };
