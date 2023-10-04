@@ -13,3 +13,5 @@ export const zTranslationData = z.object({
   title: z.string(),
   slug: z.string(),
 });
+
+export const zTranslations = z.array(zTranslationData);

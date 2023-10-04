@@ -50,6 +50,11 @@ class LibraryMDSchema(BaseModel):
     image_alt: Optional[str] = None
     formats: Optional[List[str]] = []
 
+    @model_validator(mode="after")
+    def check_sort_title(self) -> "LibraryMDSchema":
+        self.sort_title = self.sort_title or self.title
+        return self
+
 
 class LibraryTranslatedMDSchema(LibraryMDSchema):
     slug: Optional[str] = None
@@ -82,6 +87,7 @@ class LibraryDocBaseSchema(BaseModel):
     slug: str
     date: datetime.date = Field(alias=AliasPath("document", "date"))
     granularity: str = Field(alias=AliasPath("document", "granularity"))
+    external: Optional[str] = Field(alias=AliasPath("document", "external"))
     authors: List[AuthorSchema] = Field(alias=AliasPath("document", "authors"))
     translations: List[DocumentTranslationSchema]
     translators: List[TranslatorSchema]
@@ -102,5 +108,19 @@ class LibraryDocBaseSchema(BaseModel):
         return sorted([fmt.format_type for fmt in formats])
 
 
+class LibraryDocIndexSchema(LibraryDocBaseSchema):
+    has_content: bool = False
+
+    @model_validator(mode="before")
+    @classmethod
+    def check_content(cls, data: Any) -> Any:
+        data.has_content = bool(data.content)
+        return data
+
+
 class LibraryDocSchema(LibraryDocBaseSchema):
     content: str
+    subtitle: Optional[str] = None
+    display_title: Optional[str] = None
+    image: Optional[str] = Field(alias=AliasPath("document", "image"))
+    image_alt: Optional[str] = None

@@ -3,8 +3,9 @@ import clsx from "clsx";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 import { generateLocaleToggleLinks, urls } from "@/lib/urls";
+import { i18nTranslation } from "@/lib/i18n";
 
-export function PageLayout({
+export async function PageLayout({
   className,
   locale,
   generateHref,
@@ -15,6 +16,7 @@ export function PageLayout({
   locale: Locale;
   children: ReactNode | ReactNode[];
 }) {
+  const { t } = await i18nTranslation(locale);
   const toggleProps = generateHref
     ? generateLocaleToggleLinks(locale, generateHref)
     : {};
@@ -25,7 +27,12 @@ export function PageLayout({
         locale={locale}
         homeHref={urls(locale).home}
         navLinks={[
-          { href: urls(locale).satoshi.index, label: "The Complete Satoshi" },
+          {
+            href: urls(locale).satoshi.index,
+            label: t("The Complete Satoshi"),
+          },
+          { href: urls(locale).library.index, label: t("Library") },
+          { href: urls(locale).mempool.index, label: t("Mempool") },
         ]}
         {...toggleProps}
       />

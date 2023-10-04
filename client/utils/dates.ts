@@ -1,3 +1,5 @@
+import { Granularity } from "@/lib/api/schemas";
+
 export const formatDate = (
   locale: Locale,
   date: Date,
@@ -25,4 +27,47 @@ export const formatDateRange = (
     timeZone: "UTC",
     ...options,
   }).formatRange(startDate, endDate);
+};
+
+export const formatDocDate = (
+  locale: Locale,
+  date: Date,
+  granularity: Granularity,
+) => {
+  switch (granularity) {
+    case "YEAR":
+      return formatDate(locale, date, { year: "numeric" });
+
+    case "MONTH":
+      return formatDate(locale, date, { year: "numeric", month: "long" });
+
+    case "DAY":
+      return formatDate(locale, date);
+
+    default:
+      return "";
+  }
+};
+
+export const formatTimeAttr = (date: Date, granularity: Granularity) => {
+  const year = date.getUTCFullYear();
+
+  switch (granularity) {
+    case "DAY": {
+      const month = String(date.getUTCMonth() + 1).padStart(2, "0");
+      const day = String(date.getUTCDate()).padStart(2, "0");
+      return `${year}-${month}-${day}`;
+    }
+
+    case "MONTH": {
+      const month = String(date.getUTCMonth() + 1).padStart(2, "0");
+      return `${year}-${month}`;
+    }
+
+    case "YEAR":
+      return String(year);
+
+    default:
+      return "";
+  }
 };

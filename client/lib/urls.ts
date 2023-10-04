@@ -60,6 +60,10 @@ export const urls = (locale: Locale) => {
       index: getUrl("/finney"),
       rpow: getUrl("/finney/rpow"),
     },
+    library: {
+      index: getUrl("/library"),
+      doc: (slug: string) => getUrl(`/library/${slug}`),
+    },
     mempool: {
       index: getUrl("/mempool"),
       post: (slug: string) => getUrl(`/mempool/${slug}`),
