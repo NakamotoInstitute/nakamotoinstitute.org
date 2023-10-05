@@ -26,4 +26,4 @@ def get_quote_category(slug):
 
     response_data = QuoteCategoryDetailResponse(category=category, quotes=quotes)
 
-    return jsonify(response_data.dict())
+    return jsonify(response_data.dict(by_alias=True))

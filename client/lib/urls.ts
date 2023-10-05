@@ -2,6 +2,8 @@ import { ToggleLinkProps } from "@/app/components/LanguageToggle";
 import { locales } from "@/i18n";
 import languages from "@/locales/languages.json";
 import { domainToPathMapping } from "@/middleware";
+import { EmailSource } from "./api/schemas/emails";
+import { ForumPostSource } from "./api/schemas/posts";
 
 const APP_BASE_URL = (() => {
   switch (process.env.VERCEL_ENV) {
@@ -78,6 +80,32 @@ export const urls = (locale: Locale) => {
     },
     satoshi: {
       index: getSatoshiUrl("/"),
+      quotesIndex: getSatoshiUrl("/quotes"),
+      quoteCategory: (slug: string) => getSatoshiUrl(`/quotes/${slug}`),
+      emails: {
+        index: getSatoshiUrl("/emails"),
+        threadsIndex: getSatoshiUrl("/emails/threads"),
+        sourceIndex: (source: EmailSource) =>
+          getSatoshiUrl(`/emails/${source}`),
+        sourceEmail: (source: EmailSource, id: string) =>
+          getSatoshiUrl(`/emails/${source}/${id}`),
+        sourceThreadsIndex: (source: EmailSource) =>
+          getSatoshiUrl(`/emails/${source}/threads`),
+        sourceThreadsDetail: (source: EmailSource, id: string) =>
+          getSatoshiUrl(`/emails/${source}/threads/${id}`),
+      },
+      posts: {
+        index: getSatoshiUrl("/posts"),
+        threadsIndex: getSatoshiUrl("/posts/threads"),
+        sourceIndex: (source: ForumPostSource) =>
+          getSatoshiUrl(`/posts/${source}`),
+        sourcePost: (source: ForumPostSource, id: string) =>
+          getSatoshiUrl(`/posts/${source}/${id}`),
+        sourceThreadsIndex: (source: ForumPostSource) =>
+          getSatoshiUrl(`/posts/${source}/threads`),
+        sourceThreadsDetail: (source: ForumPostSource, id: string) =>
+          getSatoshiUrl(`/posts/${source}/threads/${id}`),
+      },
     },
     skeptics: getUrl("/the-skeptics"),
     github: "https://github.com/NakamotoInstitute/nakamotoinstitute.org",

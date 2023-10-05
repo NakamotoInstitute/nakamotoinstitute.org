@@ -137,7 +137,7 @@ class Quote(db.Model):
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     text: Mapped[str] = mapped_column(Text, nullable=False)
     date: Mapped[datetime.date] = mapped_column(Date, nullable=False)
-    medium: Mapped[str] = mapped_column(String, nullable=False)
+    whitepaper: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
     email_id: Mapped[int] = mapped_column(
         Integer, db.ForeignKey("emails.satoshi_id"), nullable=True
     )
