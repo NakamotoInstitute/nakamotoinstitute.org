@@ -1,4 +1,4 @@
-import { Email } from "@/lib/api";
+import { Email, ForumPost } from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n";
 import { urls } from "@/lib/urls";
 import Link from "next/link";
@@ -10,6 +10,8 @@ type NavProps<Data> = {
 };
 
 type EmailNavProps = NavProps<Email>;
+
+type PostNavProps = NavProps<ForumPost>;
 
 type ContentNavigationProps = {
   locale: Locale;
@@ -52,6 +54,33 @@ export const EmailNavigation = ({ locale, previous, next }: EmailNavProps) => {
 
   const nextHref = next
     ? urls(locale).satoshi.emails.sourceEmail(
+        next.source,
+        next.satoshiId.toString(),
+      )
+    : undefined;
+
+  const indexHref = urls(locale).satoshi.emails.index;
+
+  return (
+    <ContentNavigation
+      locale={locale}
+      prevHref={prevHref}
+      nextHref={nextHref}
+      indexHref={indexHref}
+    />
+  );
+};
+
+export const PostNavigation = ({ locale, previous, next }: PostNavProps) => {
+  const prevHref = previous
+    ? urls(locale).satoshi.posts.sourcePost(
+        previous.source,
+        previous.satoshiId.toString(),
+      )
+    : undefined;
+
+  const nextHref = next
+    ? urls(locale).satoshi.posts.sourcePost(
         next.source,
         next.satoshiId.toString(),
       )

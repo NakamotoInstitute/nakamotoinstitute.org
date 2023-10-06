@@ -41,6 +41,25 @@ class ForumPostJSONSchema(BaseModel):
         return v
 
 
+class ForumPostBaseResponse(BaseModel):
+    poster_name: str
+    poster_url: Optional[str] = None
+    subject: str
+    text: str
+    date: datetime.datetime
+    url: str
+    thread_id: int
+    source_id: str
+    nested_level: int = 0
+    satoshi_id: Optional[int] = None
+    source: str = Field(alias=AliasPath("thread", "source"))
+
+    class Config:
+        alias_generator = to_camel
+        populate_by_name = True
+        from_attributes = True
+
+
 class ForumThreadResponse(ForumThreadJSONSchema):
     date: datetime.datetime = Field(alias=AliasPath("posts", 0, "date"))
 
@@ -60,7 +79,7 @@ class ForumThreadDetailResponse(BaseModel):
         alias_generator = to_camel
 
 
-class ForumPostResponse(ForumPostJSONSchema):
+class ForumPostResponse(ForumPostBaseResponse):
     class Config:
         alias_generator = to_camel
         populate_by_name = True

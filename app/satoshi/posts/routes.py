@@ -9,6 +9,7 @@ from app.utils.request import get_bool_param
 
 from . import bp
 from .schemas import (
+    ForumPostBaseResponse,
     ForumPostDetailResponse,
     ForumPostResponse,
     ForumThreadDetailResponse,
@@ -17,7 +18,7 @@ from .schemas import (
 
 
 @bp.route("/", methods=["GET"])
-@response_model(List[ForumPostResponse])
+@response_model(List[ForumPostBaseResponse])
 def get_forum_posts():
     posts = db.session.scalars(
         db.select(ForumPost)
@@ -66,7 +67,7 @@ def get_forum_post_by_source(source, satoshi_id):
         post=post, previous=previous_post, next=next_post
     )
 
-    return jsonify(response_data.dict())
+    return jsonify(response_data.dict(by_alias=True))
 
 
 @bp.route("/<string:source>/threads", methods=["GET"])
@@ -102,4 +103,4 @@ def get_forum_thread_by_source(source, thread_id):
         posts=posts, thread=thread, previous=previous_thread, next=next_thread
     )
 
-    return jsonify(response_data.dict())
+    return jsonify(response_data.dict(by_alias=True))
