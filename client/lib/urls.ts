@@ -80,8 +80,7 @@ export const urls = (locale: Locale) => {
     },
     satoshi: {
       index: getSatoshiUrl("/"),
-      quotesIndex: getSatoshiUrl("/quotes"),
-      quoteCategory: (slug: string) => getSatoshiUrl(`/quotes/${slug}`),
+      code: getSatoshiUrl("/code"),
       emails: {
         index: getSatoshiUrl("/emails"),
         threadsIndex: getSatoshiUrl("/emails/threads"),
@@ -106,6 +105,8 @@ export const urls = (locale: Locale) => {
         sourceThreadsDetail: (source: ForumPostSource, id: string) =>
           getSatoshiUrl(`/posts/${source}/threads/${id}`),
       },
+      quotesIndex: getSatoshiUrl("/quotes"),
+      quoteCategory: (slug: string) => getSatoshiUrl(`/quotes/${slug}`),
     },
     skeptics: getUrl("/the-skeptics"),
     github: "https://github.com/NakamotoInstitute/nakamotoinstitute.org",

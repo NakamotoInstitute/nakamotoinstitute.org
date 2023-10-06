@@ -9,15 +9,19 @@ export const getDirectoryFile = async (
   slug: string,
   locale: Locale = defaultLocale,
 ) => {
-  const dir = path.join("@/../content", directory);
-  const filePath = path.join(dir, `${slug}.${locale}.md`);
-  return fs.readFile(filePath, "utf-8");
+  try {
+    const dir = path.join("@/../content", directory);
+    const filePath = path.join(dir, `${slug}.${locale}.md`);
+    return await fs.readFile(filePath, "utf-8");
+  } catch {
+    return null;
+  }
 };
 
 export const getPage = async (slug: string, locale: Locale) => {
-  let page = getDirectoryFile("pages", slug, locale);
+  let page = await getDirectoryFile("pages", slug, locale);
   if (!page && locale !== defaultLocale) {
-    page = getDirectoryFile("pages", slug, locale);
+    page = await getDirectoryFile("pages", slug);
   }
-  return page ?? null;
+  return page ?? "";
 };
