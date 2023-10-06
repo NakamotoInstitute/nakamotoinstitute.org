@@ -1,7 +1,7 @@
 import datetime
 from typing import List, Literal, Optional
 
-from pydantic import AliasPath, BaseModel, Field
+from pydantic import AliasPath, BaseModel, Field, field_serializer
 from pydantic.alias_generators import to_camel
 
 EmailSource = Literal["cryptography", "bitcoin-list"]
@@ -36,7 +36,7 @@ class EmailThreadResponse(EmailThreadJSONSchema):
 
 
 class EmailThreadDetailResponse(BaseModel):
-    emails: List["EmailBaseResponse"]
+    emails: List["ThreadEmailResponse"]
     thread: EmailThreadResponse
     previous: Optional[EmailThreadResponse]
     next: Optional[EmailThreadResponse]
@@ -45,21 +45,55 @@ class EmailThreadDetailResponse(BaseModel):
         alias_generator = to_camel
 
 
-class EmailBaseResponse(EmailJSONSchema):
+class EmailReplyResponse(BaseModel):
+    source_id: str
+
     class Config:
         alias_generator = to_camel
         populate_by_name = True
         from_attributes = True
 
 
-class EmailResponse(EmailBaseResponse):
+class EmailBaseResponse(BaseModel):
+    sent_from: str
+    subject: str
+    text: str
+    date: datetime.datetime
+    url: str
+    thread_id: int
+    source_id: str
+    parent_id: Optional[int] = None
+    satoshi_id: Optional[int] = None
+    source: str = Field(alias=AliasPath("thread", "source"))
+    replies: List[EmailReplyResponse]
+
+    class Config:
+        alias_generator = to_camel
+        populate_by_name = True
+        from_attributes = True
+
+    @field_serializer("date")
+    def serialize_date(self, date: datetime.date) -> str:
+        return date.isoformat()
+
+    @field_serializer("replies")
+    def serialize_replies(self, replies) -> List[str]:
+        """Convert EmailReplyResponse to source_id string."""
+        return sorted([reply.source_id for reply in replies])
+
+
+class ThreadEmailResponse(EmailBaseResponse):
     parent: Optional[EmailBaseResponse]
 
 
+class EmailResponse(EmailBaseResponse):
+    satoshi_id: int
+
+
 class EmailDetailResponse(BaseModel):
-    email: EmailBaseResponse
-    previous: Optional[EmailBaseResponse]
-    next: Optional[EmailBaseResponse]
+    email: EmailResponse
+    previous: Optional[EmailBaseResponse] = None
+    next: Optional[EmailBaseResponse] = None
 
     class Config:
         alias_generator = to_camel

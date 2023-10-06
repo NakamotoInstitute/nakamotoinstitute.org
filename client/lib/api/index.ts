@@ -1,4 +1,5 @@
 export * from "./authors";
+export * from "./emails";
 export * from "./library";
 export * from "./mempool";
 export * from "./quotes";

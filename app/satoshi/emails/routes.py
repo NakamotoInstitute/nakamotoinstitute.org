@@ -9,6 +9,7 @@ from app.utils.request import get_bool_param
 
 from . import bp
 from .schemas import (
+    EmailBaseResponse,
     EmailDetailResponse,
     EmailResponse,
     EmailThreadDetailResponse,
@@ -17,7 +18,7 @@ from .schemas import (
 
 
 @bp.route("/", methods=["GET"])
-@response_model(List[EmailResponse])
+@response_model(List[EmailBaseResponse])
 def get_emails():
     emails = db.session.scalars(
         db.select(Email).filter(Email.satoshi_id.isnot(None)).order_by(Email.date)
@@ -64,7 +65,7 @@ def get_email_by_source(source, satoshi_id):
         email=email, previous=previous_email, next=next_email
     )
 
-    return jsonify(response_data.dict())
+    return jsonify(response_data.dict(by_alias=True))
 
 
 @bp.route("/<string:source>/threads", methods=["GET"])
@@ -100,4 +101,4 @@ def get_email_thread_by_source(source, thread_id):
         emails=emails, thread=thread, previous=previous_thread, next=next_thread
     )
 
-    return jsonify(response_data.dict())
+    return jsonify(response_data.dict(by_alias=True))
