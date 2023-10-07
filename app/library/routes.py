@@ -4,15 +4,15 @@ from flask import g
 
 from app import db
 from app.models import DocumentTranslation
-from app.shared.schemas import SlugParamResponse
+from app.shared.schemas import SlugParamModel
 from app.utils.decorators import response_model
 
 from . import library
-from .schemas import LibraryDocIndexSchema, LibraryDocSchema
+from .schemas import DocumentIndexModel, DocumentModel
 
 
 @library.route("/", methods=["GET"])
-@response_model(List[LibraryDocIndexSchema])
+@response_model(List[DocumentIndexModel])
 def get_library_docs():
     docs = db.session.scalars(
         db.select(DocumentTranslation)
@@ -23,7 +23,7 @@ def get_library_docs():
 
 
 @library.route("/<string:slug>", methods=["GET"])
-@response_model(LibraryDocSchema)
+@response_model(DocumentModel)
 def get_library_doc(slug):
     post = db.first_or_404(
         db.select(DocumentTranslation).filter_by(slug=slug, locale=g.locale)
@@ -32,7 +32,7 @@ def get_library_doc(slug):
 
 
 @library.route("/params", methods=["GET"])
-@response_model(List[SlugParamResponse])
+@response_model(List[SlugParamModel])
 def get_library_params():
     posts = db.session.scalars(db.select(DocumentTranslation)).all()
     return [{"locale": post.locale, "slug": post.slug} for post in posts]

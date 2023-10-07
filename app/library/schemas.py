@@ -5,11 +5,12 @@ from typing import Any, List, Optional
 from pydantic import AliasPath, BaseModel, Field, field_serializer, model_validator
 from pydantic.alias_generators import to_camel
 
-from ..authors.schemas import AuthorSchema
-from ..translators.schemas import TranslatorSchema
+from ..authors.schemas import AuthorModel
+from ..shared.schemas import TranslationSchema
+from ..translators.schemas import TranslatorModel
 
 
-class LibraryCanonicalMDSchema(BaseModel):
+class DocumentCanonicalMDModel(BaseModel):
     authors: List[str]
     date: str | int | datetime.date
     granularity: str = None
@@ -42,7 +43,7 @@ class LibraryCanonicalMDSchema(BaseModel):
         return data
 
 
-class LibraryMDSchema(BaseModel):
+class DocumentMDModel(BaseModel):
     title: str
     subtitle: Optional[str] = None
     display_title: Optional[str] = None
@@ -51,28 +52,17 @@ class LibraryMDSchema(BaseModel):
     formats: Optional[List[str]] = []
 
     @model_validator(mode="after")
-    def check_sort_title(self) -> "LibraryMDSchema":
+    def check_sort_title(self) -> "DocumentMDModel":
         self.sort_title = self.sort_title or self.title
         return self
 
 
-class LibraryTranslatedMDSchema(LibraryMDSchema):
+class DocumentTranslationMDModel(DocumentMDModel):
     slug: Optional[str] = None
     translators: Optional[List[str]] = []
 
 
-class DocumentTranslationSchema(BaseModel):
-    locale: str
-    title: str
-    slug: str
-
-    class Config:
-        alias_generator = to_camel
-        populate_by_name = True
-        from_attributes = True
-
-
-class DocumentFormatSchema(BaseModel):
+class DocumentFormatModel(BaseModel):
     format_type: str
 
     class Config:
@@ -81,17 +71,17 @@ class DocumentFormatSchema(BaseModel):
         from_attributes = True
 
 
-class LibraryDocBaseSchema(BaseModel):
+class DocumentBaseModel(BaseModel):
     locale: str
     title: str
     slug: str
     date: datetime.date = Field(alias=AliasPath("document", "date"))
     granularity: str = Field(alias=AliasPath("document", "granularity"))
     external: Optional[str] = Field(alias=AliasPath("document", "external"))
-    authors: List[AuthorSchema] = Field(alias=AliasPath("document", "authors"))
-    translations: List[DocumentTranslationSchema]
-    translators: List[TranslatorSchema]
-    formats: List[DocumentFormatSchema]
+    authors: List[AuthorModel] = Field(alias=AliasPath("document", "authors"))
+    translations: List[TranslationSchema]
+    translators: List[TranslatorModel]
+    formats: List[DocumentFormatModel]
 
     class Config:
         alias_generator = to_camel
@@ -104,11 +94,11 @@ class LibraryDocBaseSchema(BaseModel):
 
     @field_serializer("formats")
     def serialize_formats(self, formats) -> List[str]:
-        """Convert DocumentFormatSchema to format_type string."""
+        """Convert DocumentFormatModel to format_type string."""
         return sorted([fmt.format_type for fmt in formats])
 
 
-class LibraryDocIndexSchema(LibraryDocBaseSchema):
+class DocumentIndexModel(DocumentBaseModel):
     has_content: bool = False
 
     @model_validator(mode="before")
@@ -118,7 +108,7 @@ class LibraryDocIndexSchema(LibraryDocBaseSchema):
         return data
 
 
-class LibraryDocSchema(LibraryDocBaseSchema):
+class DocumentModel(DocumentBaseModel):
     content: str
     subtitle: Optional[str] = None
     display_title: Optional[str] = None

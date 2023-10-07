@@ -3,13 +3,13 @@ import click
 from app import db
 from app.cli.utils import DONE, load_and_validate_json
 from app.models import ForumPost, ForumThread
-from app.satoshi.posts.schemas import ForumPostJSONSchema, ForumThreadJSONSchema
+from app.satoshi.posts.schemas import ForumPostJSONModel, ForumThreadJSONModel
 
 
 def import_forum_thread():
     click.echo("Importing ForumThread...", nl=False)
     forum_threads_data = load_and_validate_json(
-        "data/forum_threads.json", ForumThreadJSONSchema
+        "data/forum_threads.json", ForumThreadJSONModel
     )
     for forum_thread_data in forum_threads_data:
         email_thread = ForumThread(**forum_thread_data.dict())
@@ -21,7 +21,7 @@ def import_forum_thread():
 def import_forum_post():
     click.echo("Importing ForumPost...", nl=False)
     forum_posts_data = load_and_validate_json(
-        "data/forum_posts.json", ForumPostJSONSchema
+        "data/forum_posts.json", ForumPostJSONModel
     )
     for forum_post_data in forum_posts_data:
         forum_post = ForumPost(**forum_post_data.dict())

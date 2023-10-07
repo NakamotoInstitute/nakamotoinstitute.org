@@ -11,7 +11,7 @@ const zForumPostBase = z.object({
   sourceId: z.string(),
   url: z.string(),
   threadId: z.number().int().min(1),
-  satoshiId: z.number().int().min(1).optional(),
+  satoshiId: z.number().int().min(1).nullable(),
   nestedLevel: z.number().int().min(0),
   posterName: z.string(),
   posterUrl: z.string().nullable(),

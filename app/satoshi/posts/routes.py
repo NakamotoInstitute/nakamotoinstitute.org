@@ -9,16 +9,16 @@ from app.utils.request import get_bool_param
 
 from . import bp
 from .schemas import (
-    ForumPostBaseResponse,
-    ForumPostDetailResponse,
-    ForumPostResponse,
-    ForumThreadDetailResponse,
-    ForumThreadResponse,
+    ForumPostBaseModel,
+    ForumPostDetailModel,
+    ForumPostModel,
+    ForumThreadBaseModel,
+    ForumThreadModel,
 )
 
 
 @bp.route("/", methods=["GET"])
-@response_model(List[ForumPostBaseResponse])
+@response_model(List[ForumPostBaseModel])
 def get_forum_posts():
     posts = db.session.scalars(
         db.select(ForumPost)
@@ -29,14 +29,14 @@ def get_forum_posts():
 
 
 @bp.route("/threads", methods=["GET"])
-@response_model(List[ForumThreadResponse])
+@response_model(List[ForumThreadBaseModel])
 def get_forum_threads():
     threads = db.session.scalars(db.select(ForumThread)).all()
     return threads
 
 
 @bp.route("/<string:source>", methods=["GET"])
-@response_model(List[ForumPostResponse])
+@response_model(List[ForumPostModel])
 def get_forum_posts_by_source(source):
     posts = db.session.scalars(
         db.select(ForumPost)
@@ -63,7 +63,7 @@ def get_forum_post_by_source(source, satoshi_id):
         db.select(ForumPost).filter_by(satoshi_id=satoshi_id + 1).join(ForumThread)
     )
 
-    response_data = ForumPostDetailResponse(
+    response_data = ForumPostDetailModel(
         post=post, previous=previous_post, next=next_post
     )
 
@@ -71,7 +71,7 @@ def get_forum_post_by_source(source, satoshi_id):
 
 
 @bp.route("/<string:source>/threads", methods=["GET"])
-@response_model(List[ForumThreadResponse])
+@response_model(List[ForumThreadBaseModel])
 def get_forum_threads_by_source(source):
     threads = db.session.scalars(
         db.select(ForumThread).filter_by(source=source).order_by(ForumThread.id)
@@ -99,7 +99,7 @@ def get_forum_thread_by_source(source, thread_id):
     )
     next_thread = db.session.scalar(db.select(ForumThread).filter_by(id=thread_id + 1))
 
-    response_data = ForumThreadDetailResponse(
+    response_data = ForumThreadModel(
         posts=posts, thread=thread, previous=previous_thread, next=next_thread
     )
 

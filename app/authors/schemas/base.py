@@ -2,12 +2,12 @@ from pydantic import BaseModel
 from pydantic.alias_generators import to_camel
 
 
-class AuthorMDSchema(BaseModel):
+class AuthorMDModel(BaseModel):
     name: str
     sort_name: str
 
 
-class AuthorSchema(BaseModel):
+class AuthorModel(BaseModel):
     slug: str
     name: str
     sort_name: str

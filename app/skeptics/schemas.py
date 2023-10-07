@@ -5,7 +5,7 @@ from pydantic import BaseModel, field_serializer
 from pydantic.alias_generators import to_camel
 
 
-class SkepticJSONSchema(BaseModel):
+class SkepticJSONModel(BaseModel):
     name: str
     name_slug: str
     title: str
@@ -19,7 +19,7 @@ class SkepticJSONSchema(BaseModel):
     wayback_link: Optional[str] = None
 
 
-class SkepticResponse(BaseModel):
+class SkepticModel(BaseModel):
     name: str
     slug: str
     title: str

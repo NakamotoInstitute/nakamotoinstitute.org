@@ -9,16 +9,16 @@ from app.utils.request import get_bool_param
 
 from . import bp
 from .schemas import (
-    EmailBaseResponse,
-    EmailDetailResponse,
-    EmailResponse,
-    EmailThreadDetailResponse,
-    EmailThreadResponse,
+    EmailBaseModel,
+    EmailDetailModel,
+    EmailThreadBaseModel,
+    EmailThreadModel,
+    SatoshiEmailModel,
 )
 
 
 @bp.route("/", methods=["GET"])
-@response_model(List[EmailBaseResponse])
+@response_model(List[EmailBaseModel])
 def get_emails():
     emails = db.session.scalars(
         db.select(Email).filter(Email.satoshi_id.isnot(None)).order_by(Email.date)
@@ -27,14 +27,14 @@ def get_emails():
 
 
 @bp.route("/threads", methods=["GET"])
-@response_model(List[EmailThreadResponse])
+@response_model(List[EmailThreadBaseModel])
 def get_email_threads():
     threads = db.session.scalars(db.select(EmailThread)).all()
     return threads
 
 
 @bp.route("/<string:source>", methods=["GET"])
-@response_model(List[EmailResponse])
+@response_model(List[SatoshiEmailModel])
 def get_emails_by_source(source):
     emails = db.session.scalars(
         db.select(Email)
@@ -61,7 +61,7 @@ def get_email_by_source(source, satoshi_id):
         db.select(Email).filter_by(satoshi_id=satoshi_id + 1).join(EmailThread)
     )
 
-    response_data = EmailDetailResponse(
+    response_data = EmailDetailModel(
         email=email, previous=previous_email, next=next_email
     )
 
@@ -69,7 +69,7 @@ def get_email_by_source(source, satoshi_id):
 
 
 @bp.route("/<string:source>/threads", methods=["GET"])
-@response_model(List[EmailThreadResponse])
+@response_model(List[EmailThreadBaseModel])
 def get_email_threads_by_source(source):
     threads = db.session.scalars(
         db.select(EmailThread).filter_by(source=source).order_by(EmailThread.id)
@@ -97,7 +97,7 @@ def get_email_thread_by_source(source, thread_id):
     )
     next_thread = db.session.scalar(db.select(EmailThread).filter_by(id=thread_id + 1))
 
-    response_data = EmailThreadDetailResponse(
+    response_data = EmailThreadModel(
         emails=emails, thread=thread, previous=previous_thread, next=next_thread
     )
 

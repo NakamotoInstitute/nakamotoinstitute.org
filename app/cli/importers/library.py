@@ -12,9 +12,9 @@ from app.cli.utils import (
     process_translated_file,
 )
 from app.library.schemas import (
-    LibraryCanonicalMDSchema,
-    LibraryMDSchema,
-    LibraryTranslatedMDSchema,
+    DocumentCanonicalMDModel,
+    DocumentMDModel,
+    DocumentTranslationMDModel,
 )
 from app.models import Author, Document, DocumentFormat, DocumentTranslation, Translator
 
@@ -119,8 +119,8 @@ def import_library():
     click.echo("Importing Library...", nl=False)
     import_content(
         "content/library",
-        LibraryCanonicalMDSchema,
-        LibraryMDSchema,
-        LibraryTranslatedMDSchema,
+        DocumentCanonicalMDModel,
+        DocumentMDModel,
+        DocumentTranslationMDModel,
     )
     click.echo(DONE)

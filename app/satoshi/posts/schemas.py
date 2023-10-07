@@ -4,16 +4,16 @@ from typing import List, Literal, Optional
 from pydantic import AliasPath, BaseModel, Field, field_validator
 from pydantic.alias_generators import to_camel
 
-EmailSource = Literal["p2pfoundation", "bitcointalk"]
+ForumPostSource = Literal["p2pfoundation", "bitcointalk"]
 
 
-class ForumThreadJSONSchema(BaseModel):
+class ForumThreadJSONModel(BaseModel):
     id: int
     title: str
-    source: EmailSource
+    source: ForumPostSource
 
 
-class ForumPostJSONSchema(BaseModel):
+class ForumPostJSONModel(BaseModel):
     id: int
     poster_name: str
     poster_url: Optional[str] = None
@@ -41,7 +41,7 @@ class ForumPostJSONSchema(BaseModel):
         return v
 
 
-class ForumPostBaseResponse(BaseModel):
+class ForumPostBaseModel(BaseModel):
     poster_name: str
     poster_url: Optional[str] = None
     subject: str
@@ -60,7 +60,7 @@ class ForumPostBaseResponse(BaseModel):
         from_attributes = True
 
 
-class ForumThreadResponse(ForumThreadJSONSchema):
+class ForumThreadBaseModel(ForumThreadJSONModel):
     date: datetime.datetime = Field(alias=AliasPath("posts", 0, "date"))
 
     class Config:
@@ -69,27 +69,31 @@ class ForumThreadResponse(ForumThreadJSONSchema):
         from_attributes = True
 
 
-class ForumThreadDetailResponse(BaseModel):
-    posts: List["ForumPostResponse"]
-    thread: ForumThreadResponse
-    previous: Optional[ForumThreadResponse]
-    next: Optional[ForumThreadResponse]
-
-    class Config:
-        alias_generator = to_camel
-
-
-class ForumPostResponse(ForumPostBaseResponse):
+class ForumPostModel(ForumPostBaseModel):
     class Config:
         alias_generator = to_camel
         populate_by_name = True
         from_attributes = True
 
 
-class ForumPostDetailResponse(BaseModel):
-    post: ForumPostResponse
-    previous: Optional[ForumPostResponse]
-    next: Optional[ForumPostResponse]
+class ForumThreadModel(BaseModel):
+    posts: List[ForumPostModel]
+    thread: ForumThreadBaseModel
+    previous: Optional[ForumThreadBaseModel]
+    next: Optional[ForumThreadBaseModel]
+
+    class Config:
+        alias_generator = to_camel
+
+
+class SatoshiForumPostModel(ForumPostBaseModel):
+    satoshi_id: int
+
+
+class ForumPostDetailModel(BaseModel):
+    post: SatoshiForumPostModel
+    previous: Optional[SatoshiForumPostModel]
+    next: Optional[SatoshiForumPostModel]
 
     class Config:
         alias_generator = to_camel

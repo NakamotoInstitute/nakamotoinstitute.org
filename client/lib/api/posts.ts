@@ -41,8 +41,7 @@ export async function getForumThread(
   const res = await fetchAPI(
     `/satoshi/posts/${source}/threads/${threadIdNum}?satoshi=${satoshiOnly}`,
   );
-  const js = await res.json();
-  return zForumThread.parse(js);
+  return zForumThread.parse(await res.json());
 }
 
 export async function getForumThreadsBySource(source: ForumPostSource) {

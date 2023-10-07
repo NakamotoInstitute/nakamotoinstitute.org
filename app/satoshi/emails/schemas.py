@@ -7,13 +7,13 @@ from pydantic.alias_generators import to_camel
 EmailSource = Literal["cryptography", "bitcoin-list"]
 
 
-class EmailThreadJSONSchema(BaseModel):
+class EmailThreadJSONModel(BaseModel):
     id: int
     title: str
     source: EmailSource
 
 
-class EmailJSONSchema(BaseModel):
+class EmailJSONModel(BaseModel):
     id: int
     sent_from: str
     subject: str
@@ -26,7 +26,7 @@ class EmailJSONSchema(BaseModel):
     satoshi_id: Optional[int] = None
 
 
-class EmailThreadResponse(EmailThreadJSONSchema):
+class EmailThreadBaseModel(EmailThreadJSONModel):
     date: datetime.datetime = Field(alias=AliasPath("emails", 0, "date"))
 
     class Config:
@@ -35,17 +35,17 @@ class EmailThreadResponse(EmailThreadJSONSchema):
         from_attributes = True
 
 
-class EmailThreadDetailResponse(BaseModel):
-    emails: List["ThreadEmailResponse"]
-    thread: EmailThreadResponse
-    previous: Optional[EmailThreadResponse]
-    next: Optional[EmailThreadResponse]
+class EmailThreadModel(BaseModel):
+    emails: List["ThreadEmailModel"]
+    thread: EmailThreadBaseModel
+    previous: Optional[EmailThreadBaseModel]
+    next: Optional[EmailThreadBaseModel]
 
     class Config:
         alias_generator = to_camel
 
 
-class EmailReplyResponse(BaseModel):
+class EmailReplyModel(BaseModel):
     source_id: str
 
     class Config:
@@ -54,7 +54,7 @@ class EmailReplyResponse(BaseModel):
         from_attributes = True
 
 
-class EmailBaseResponse(BaseModel):
+class EmailBaseModel(BaseModel):
     sent_from: str
     subject: str
     text: str
@@ -65,7 +65,7 @@ class EmailBaseResponse(BaseModel):
     parent_id: Optional[int] = None
     satoshi_id: Optional[int] = None
     source: str = Field(alias=AliasPath("thread", "source"))
-    replies: List[EmailReplyResponse]
+    replies: List[EmailReplyModel]
 
     class Config:
         alias_generator = to_camel
@@ -78,22 +78,22 @@ class EmailBaseResponse(BaseModel):
 
     @field_serializer("replies")
     def serialize_replies(self, replies) -> List[str]:
-        """Convert EmailReplyResponse to source_id string."""
+        """Convert EmailReplyModel to source_id string."""
         return sorted([reply.source_id for reply in replies])
 
 
-class ThreadEmailResponse(EmailBaseResponse):
-    parent: Optional[EmailBaseResponse]
+class ThreadEmailModel(EmailBaseModel):
+    parent: Optional[EmailBaseModel]
 
 
-class EmailResponse(EmailBaseResponse):
+class SatoshiEmailModel(EmailBaseModel):
     satoshi_id: int
 
 
-class EmailDetailResponse(BaseModel):
-    email: EmailResponse
-    previous: Optional[EmailBaseResponse] = None
-    next: Optional[EmailBaseResponse] = None
+class EmailDetailModel(BaseModel):
+    email: SatoshiEmailModel
+    previous: Optional[SatoshiEmailModel] = None
+    next: Optional[SatoshiEmailModel] = None
 
     class Config:
         alias_generator = to_camel

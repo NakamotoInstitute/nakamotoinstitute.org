@@ -36,7 +36,7 @@ export type MempoolPost = z.infer<typeof zMempoolPostData>;
 
 export const zMempoolIndexResponse = z.array(zMempoolPostData);
 
-export const zMempoolSeriesResponse = z.object({
+export const zMempoolSeriesFullModel = z.object({
   series: zMempoolSeriesData.extend({
     translations: z.array(zTranslationData),
   }),

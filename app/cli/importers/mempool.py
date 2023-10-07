@@ -11,9 +11,9 @@ from app.cli.utils import (
     process_translated_file,
 )
 from app.mempool.schemas import (
-    MempoolCanonicalMDSchema,
-    MempoolMDSchema,
-    MempoolTranslatedMDSchema,
+    MempoolCanonicalMDModel,
+    MempoolMDModel,
+    MempoolTranslationMDModel,
 )
 from app.models import (
     Author,
@@ -124,8 +124,8 @@ def import_mempool():
     click.echo("Importing Mempool...", nl=False)
     import_content(
         "content/mempool",
-        MempoolCanonicalMDSchema,
-        MempoolMDSchema,
-        MempoolTranslatedMDSchema,
+        MempoolCanonicalMDModel,
+        MempoolMDModel,
+        MempoolTranslationMDModel,
     )
     click.echo(DONE)

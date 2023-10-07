@@ -4,16 +4,16 @@ from pydantic import BaseModel
 from pydantic.alias_generators import to_camel
 
 
-class TranslatorBaseSchema(BaseModel):
+class TranslatorBaseModel(BaseModel):
     name: str
     url: Optional[str] = None
 
 
-class TranslatorMDSchema(TranslatorBaseSchema):
+class TranslatorMDModel(TranslatorBaseModel):
     pass
 
 
-class TranslatorSchema(TranslatorBaseSchema):
+class TranslatorModel(TranslatorBaseModel):
     slug: str
 
     class Config:

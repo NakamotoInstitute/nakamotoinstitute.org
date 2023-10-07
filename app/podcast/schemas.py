@@ -4,7 +4,7 @@ from pydantic import BaseModel
 from pydantic.alias_generators import to_camel
 
 
-class EpisodeMDSchema(BaseModel):
+class EpisodeMDModel(BaseModel):
     title: str
     date: datetime.datetime
     duration: str
@@ -13,7 +13,7 @@ class EpisodeMDSchema(BaseModel):
     youtube_id: str
 
 
-class EpisodeResponse(EpisodeMDSchema):
+class EpisodeModel(EpisodeMDModel):
     slug: str
     content: str
 

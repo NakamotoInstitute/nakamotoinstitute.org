@@ -4,11 +4,12 @@ from typing import List, Optional
 from pydantic import AliasPath, BaseModel, Field, field_serializer
 from pydantic.alias_generators import to_camel
 
-from ..authors.schemas import AuthorSchema
-from ..translators.schemas import TranslatorSchema
+from ..authors.schemas import AuthorModel
+from ..shared.schemas import TranslationSchema
+from ..translators.schemas import TranslatorModel
 
 
-class MempoolCanonicalMDSchema(BaseModel):
+class MempoolCanonicalMDModel(BaseModel):
     authors: List[str]
     image: Optional[str] = None
     date: datetime.date
@@ -19,13 +20,13 @@ class MempoolCanonicalMDSchema(BaseModel):
     series_index: Optional[int] = None
 
 
-class MempoolMDSchema(BaseModel):
+class MempoolMDModel(BaseModel):
     title: str
     excerpt: str
     image_alt: Optional[str] = None
 
 
-class MempoolTranslatedMDSchema(MempoolMDSchema):
+class MempoolTranslationMDModel(MempoolMDModel):
     slug: Optional[str] = None
     excerpt: Optional[str] = None
     translation_url: Optional[str] = None
@@ -34,22 +35,26 @@ class MempoolTranslatedMDSchema(MempoolMDSchema):
     translators: Optional[List[str]] = []
 
 
-class MempoolSeriesCanonicalMDSchema(BaseModel):
+class MempoolSeriesCanonicalMDModel(BaseModel):
     chapter_title: Optional[bool] = False
 
 
-class MempoolSeriesMDSchema(BaseModel):
+class MempoolSeriesMDModel(BaseModel):
     title: str
 
 
-class MempoolSeriesTranslatedMDSchema(MempoolSeriesMDSchema):
+class MempoolSeriesTranslationMDModel(MempoolSeriesMDModel):
     slug: Optional[str] = None
 
 
-class MempoolTranslationSchema(BaseModel):
+class MempoolSeriesBaseModel(BaseModel):
     locale: str
     title: str
     slug: str
+    chapter_title: Optional[bool] = Field(
+        validation_alias=AliasPath("blog_series", "chapter_title"),
+        serialization_alias="chapterTitle",
+    )
 
     class Config:
         alias_generator = to_camel
@@ -57,7 +62,7 @@ class MempoolTranslationSchema(BaseModel):
         from_attributes = True
 
 
-class MempoolPostBaseSchema(BaseModel):
+class MempoolPostBaseModel(BaseModel):
     locale: str
     title: str
     slug: str
@@ -77,14 +82,14 @@ class MempoolPostBaseSchema(BaseModel):
     translation_site_url: Optional[str]
     date: datetime.date = Field(alias=AliasPath("blog_post", "date"))
     added: datetime.date = Field(alias=AliasPath("blog_post", "added"))
-    authors: List[AuthorSchema] = Field(alias=AliasPath("blog_post", "authors"))
-    translations: List[MempoolTranslationSchema]
-    translators: List[TranslatorSchema]
+    authors: List[AuthorModel] = Field(alias=AliasPath("blog_post", "authors"))
+    translations: List[TranslationSchema]
+    translators: List[TranslatorModel]
     series_index: Optional[int] = Field(
         validation_alias=AliasPath("blog_post", "series_index"),
         serialization_alias="seriesIndex",
     )
-    series: Optional["MempoolSeriesBaseSchema"]
+    series: Optional[MempoolSeriesBaseModel] = None
 
     @field_serializer("date")
     def serialize_date(self, date: datetime.date) -> str:
@@ -100,29 +105,14 @@ class MempoolPostBaseSchema(BaseModel):
         from_attributes = True
 
 
-class MempoolPostSchema(MempoolPostBaseSchema):
+class MempoolPostModel(MempoolPostBaseModel):
     content: str
 
 
-class MempoolSeriesBaseSchema(BaseModel):
-    locale: str
-    title: str
-    slug: str
-    chapter_title: Optional[bool] = Field(
-        validation_alias=AliasPath("blog_series", "chapter_title"),
-        serialization_alias="chapterTitle",
-    )
-
-    class Config:
-        alias_generator = to_camel
-        populate_by_name = True
-        from_attributes = True
+class MempoolSeriesModel(MempoolSeriesBaseModel):
+    translations: List[MempoolSeriesBaseModel]
 
 
-class MempoolSeriesSchema(MempoolSeriesBaseSchema):
-    translations: List[MempoolSeriesBaseSchema]
-
-
-class MempoolSeriesResponse(BaseModel):
-    series: MempoolSeriesSchema
-    posts: List[MempoolPostSchema]
+class MempoolSeriesFullModel(BaseModel):
+    series: MempoolSeriesModel
+    posts: List[MempoolPostModel]

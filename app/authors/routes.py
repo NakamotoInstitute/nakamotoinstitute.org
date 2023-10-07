@@ -13,15 +13,15 @@ from app.models import (
     blog_post_authors,
     document_authors,
 )
-from app.shared.schemas import SlugParamResponse
+from app.shared.schemas import SlugParamModel
 from app.utils.decorators import response_model
 
 from . import authors
-from .schemas import AuthorResponse, AuthorSchema
+from .schemas import AuthorDetailModel, AuthorModel
 
 
 @authors.route("/", methods=["GET"])
-@response_model(List[AuthorSchema])
+@response_model(List[AuthorModel])
 def get_authors():
     authors = db.session.scalars(
         db.select(Author)
@@ -67,7 +67,7 @@ def get_author(slug):
     if not mempool_posts and not library_docs:
         abort(404)
 
-    response_data = AuthorResponse(
+    response_data = AuthorDetailModel(
         author=author, library=library_docs, mempool=mempool_posts
     )
 
@@ -75,7 +75,7 @@ def get_author(slug):
 
 
 @authors.route("/params", methods=["GET"])
-@response_model(List[SlugParamResponse])
+@response_model(List[SlugParamModel])
 def get_author_params():
     valid_combinations = []
 

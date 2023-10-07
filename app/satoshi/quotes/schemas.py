@@ -5,12 +5,12 @@ from pydantic import AliasPath, BaseModel, Field, model_validator
 from pydantic.alias_generators import to_camel
 
 
-class QuoteCategoryJSONSchema(BaseModel):
+class QuoteCategoryJSONModel(BaseModel):
     name: str
     slug: str
 
 
-class QuoteBaseSchema(BaseModel):
+class QuoteBaseModel(BaseModel):
     whitepaper: Optional[bool] = False
     text: str
     post_id: Optional[int] = None
@@ -18,24 +18,24 @@ class QuoteBaseSchema(BaseModel):
     date: datetime.date
 
     @model_validator(mode="after")
-    def check_source(self) -> "QuoteBaseSchema":
+    def check_source(self) -> "QuoteBaseModel":
         if not self.whitepaper and self.post_id is None and self.email_id is None:
             raise ValueError("Must have a source")
         return self
 
 
-class QuoteJSONSchema(QuoteBaseSchema):
+class QuoteJSONModel(QuoteBaseModel):
     categories: List[str]
 
 
-class QuoteCategoryResponse(QuoteCategoryJSONSchema):
+class QuoteCategoryBaseModel(QuoteCategoryJSONModel):
     class Config:
         alias_generator = to_camel
         populate_by_name = True
         from_attributes = True
 
 
-class QuoteItem(BaseModel):
+class QuoteItemModel(BaseModel):
     satoshi_id: int
     subject: str
     source: str = Field(alias=AliasPath("thread", "source"))
@@ -46,13 +46,13 @@ class QuoteItem(BaseModel):
         from_attributes = True
 
 
-class QuoteResponse(BaseModel):
+class QuoteModel(BaseModel):
     whitepaper: Optional[bool] = False
     text: str
-    post: Optional[QuoteItem] = None
-    email: Optional[QuoteItem] = None
+    post: Optional[QuoteItemModel] = None
+    email: Optional[QuoteItemModel] = None
     date: datetime.date
-    categories: List[QuoteCategoryResponse]
+    categories: List[QuoteCategoryBaseModel]
 
     class Config:
         alias_generator = to_camel
@@ -60,6 +60,6 @@ class QuoteResponse(BaseModel):
         from_attributes = True
 
 
-class QuoteCategoryDetailResponse(BaseModel):
-    category: QuoteCategoryResponse
-    quotes: List[QuoteResponse]
+class QuoteCategoryModel(BaseModel):
+    category: QuoteCategoryBaseModel
+    quotes: List[QuoteModel]

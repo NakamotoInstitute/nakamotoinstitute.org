@@ -10,9 +10,9 @@ from app.cli.utils import (
     process_translated_file,
 )
 from app.mempool.schemas import (
-    MempoolSeriesCanonicalMDSchema,
-    MempoolSeriesMDSchema,
-    MempoolSeriesTranslatedMDSchema,
+    MempoolSeriesCanonicalMDModel,
+    MempoolSeriesMDModel,
+    MempoolSeriesTranslationMDModel,
 )
 from app.models import BlogSeries, BlogSeriesTranslation
 
@@ -106,8 +106,8 @@ def import_mempool_series():
     click.echo("Importing Mempool series...", nl=False)
     import_series_content(
         "content/mempool_series",
-        MempoolSeriesCanonicalMDSchema,
-        MempoolSeriesMDSchema,
-        MempoolSeriesTranslatedMDSchema,
+        MempoolSeriesCanonicalMDModel,
+        MempoolSeriesMDModel,
+        MempoolSeriesTranslationMDModel,
     )
     click.echo(DONE)

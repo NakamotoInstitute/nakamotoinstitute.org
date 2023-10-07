@@ -4,7 +4,7 @@ import {
   zMempoolIndexResponse,
   zMempoolPostData,
   zMempoolSeriesIndexData,
-  zMempoolSeriesResponse,
+  zMempoolSeriesFullModel,
   zSlugParamsResponse,
 } from "./schemas";
 
@@ -36,7 +36,7 @@ export async function getMempoolSeries(slug: string, locale: Locale) {
   if (res.status === 404) {
     notFound();
   }
-  return zMempoolSeriesResponse.parse(await res.json());
+  return zMempoolSeriesFullModel.parse(await res.json());
 }
 
 export async function getMempoolSeriesParams() {

@@ -3,13 +3,13 @@ import click
 from app import db
 from app.cli.utils import DONE, get, load_and_validate_json
 from app.models import Quote, QuoteCategory
-from app.satoshi.quotes.schemas import QuoteCategoryJSONSchema, QuoteJSONSchema
+from app.satoshi.quotes.schemas import QuoteCategoryJSONModel, QuoteJSONModel
 
 
 def import_quote_category():
     click.echo("Importing QuoteCategory...", nl=False)
     quote_categories_data = load_and_validate_json(
-        "data/quote_categories.json", QuoteCategoryJSONSchema
+        "data/quote_categories.json", QuoteCategoryJSONModel
     )
     for quote_category_data in quote_categories_data:
         quote_category = QuoteCategory(**quote_category_data.dict())
@@ -20,7 +20,7 @@ def import_quote_category():
 
 def import_quote():
     click.echo("Importing Quote...", nl=False)
-    quotes_data = load_and_validate_json("data/quotes.json", QuoteJSONSchema)
+    quotes_data = load_and_validate_json("data/quotes.json", QuoteJSONModel)
     for _quote_data in quotes_data:
         quote_data = _quote_data.dict()
         quote_data["categories"] = [
