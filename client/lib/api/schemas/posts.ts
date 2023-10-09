@@ -3,7 +3,7 @@ import { z } from "zod";
 export const zForumPostSource = z.enum(["p2pfoundation", "bitcointalk"]);
 export type ForumPostSource = z.infer<typeof zForumPostSource>;
 
-const zForumPostBase = z.object({
+const zForumPost = z.object({
   date: z.coerce.date(),
   subject: z.string(),
   text: z.string(),
@@ -16,34 +16,34 @@ const zForumPostBase = z.object({
   posterName: z.string(),
   posterUrl: z.string().nullable(),
 });
-export type ThreadPost = z.infer<typeof zForumPostBase>;
+export type ForumPost = z.infer<typeof zForumPost>;
 
-export const zSatoshiForumPost = zForumPostBase.extend({
+export const zSatoshiForumPost = zForumPost.extend({
   satoshiId: z.number().int().min(1),
 });
-export type ForumPost = z.infer<typeof zSatoshiForumPost>;
+export type SatoshiForumPost = z.infer<typeof zSatoshiForumPost>;
 
-export const zForumPostIndexResponse = z.array(zSatoshiForumPost);
+export const zForumPostIndex = z.array(zSatoshiForumPost);
 
-export const zForumPostResponse = z.object({
+export const zForumPostDetail = z.object({
   post: zSatoshiForumPost,
   previous: zSatoshiForumPost.nullable(),
   next: zSatoshiForumPost.nullable(),
 });
 
-export const zForumThreadBase = z.object({
+export const zForumThread = z.object({
   id: z.number().int().min(1),
   title: z.string(),
   source: zForumPostSource,
   date: z.coerce.date(),
 });
-export type ForumThreadBase = z.infer<typeof zForumThreadBase>;
+export type ForumThread = z.infer<typeof zForumThread>;
 
-export const zForumThreadIndexResponse = z.array(zForumThreadBase);
+export const zForumThreadIndex = z.array(zForumThread);
 
-export const zForumThread = z.object({
-  thread: zForumThreadBase,
-  posts: z.array(zForumPostBase),
-  previous: zForumThreadBase.nullable(),
-  next: zForumThreadBase.nullable(),
+export const zForumThreadDetail = z.object({
+  thread: zForumThread,
+  posts: z.array(zForumPost),
+  previous: zForumThread.nullable(),
+  next: zForumThread.nullable(),
 });

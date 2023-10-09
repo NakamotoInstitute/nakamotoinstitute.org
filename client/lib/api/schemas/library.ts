@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { zAuthorIndexResponse } from "./authors";
+import { zAuthorIndex } from "./authors";
 import { zTranslations } from "./shared";
 
 export const zFormat = z.enum(["pdf", "epub", "mobi", "txt"]);
@@ -8,10 +8,10 @@ export type LibraryFormat = z.infer<typeof zFormat>;
 export const zGranularity = z.enum(["DAY", "MONTH", "YEAR"]);
 export type Granularity = z.infer<typeof zGranularity>;
 
-const zLibraryBaseData = z.object({
+const zDocumentBase = z.object({
   slug: z.string(),
   title: z.string(),
-  authors: zAuthorIndexResponse,
+  authors: zAuthorIndex,
   date: z.coerce.date(),
   granularity: zGranularity,
   external: z.string().nullable(),
@@ -19,18 +19,18 @@ const zLibraryBaseData = z.object({
   translations: zTranslations,
 });
 
-export const zLibraryIndexDocData = zLibraryBaseData.extend({
-  hasContent: z.boolean(),
-});
-export type LibraryIndexDoc = z.infer<typeof zLibraryIndexDocData>;
-
-export const zLibraryData = zLibraryBaseData.extend({
+export const zDocument = zDocumentBase.extend({
   content: z.string(),
   subtitle: z.string().nullable(),
   displayTitle: z.string().nullable(),
   image: z.string().nullable(),
   imageAlt: z.string().nullable(),
 });
-export type LibraryDoc = z.infer<typeof zLibraryData>;
+export type Document = z.infer<typeof zDocument>;
 
-export const zLibraryIndexResponse = z.array(zLibraryIndexDocData);
+export const zDocumentIndex = zDocumentBase.extend({
+  hasContent: z.boolean(),
+});
+export type DocumentIndex = z.infer<typeof zDocumentIndex>;
+
+export const zLibraryIndex = z.array(zDocumentIndex);

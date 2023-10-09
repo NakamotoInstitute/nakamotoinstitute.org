@@ -23,21 +23,20 @@ const zQuoteBase = z.object({
   date: z.coerce.date(),
 });
 
-export const zQuoteCategoryBase = z.object({
+export const zQuoteCategory = z.object({
   name: z.string(),
   slug: z.string(),
 });
-export type QuoteCategoryBase = z.infer<typeof zQuoteCategoryBase>;
+export type QuoteCategory = z.infer<typeof zQuoteCategory>;
 
-export const zQuoteCategoryIndex = z.array(zQuoteCategoryBase);
+export const zQuoteCategoryIndex = z.array(zQuoteCategory);
 
 export const zQuote = zQuoteBase.extend({
-  categories: z.array(zQuoteCategoryBase),
+  categories: z.array(zQuoteCategory),
 });
 export type Quote = z.infer<typeof zQuote>;
 
-export const zQuoteCategory = z.object({
-  category: zQuoteCategoryBase,
+export const zQuoteCategoryDetail = z.object({
+  category: zQuoteCategory,
   quotes: z.array(zQuote),
 });
-export type QuoteCategory = z.infer<typeof zQuoteCategory>;

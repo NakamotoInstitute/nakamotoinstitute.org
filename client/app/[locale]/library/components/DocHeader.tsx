@@ -2,11 +2,11 @@ import { Trans } from "react-i18next/TransWithoutContext";
 import { AuthorsLinks } from "@/app/components";
 import { formatDocDate, formatTimeAttr } from "@/utils/dates";
 import { i18nTranslation } from "@/lib/i18n";
-import { LibraryDoc } from "@/lib/api/schemas";
+import { Document } from "@/lib/api/schemas";
 
 type DocHeaderProps = {
   locale: Locale;
-  doc: LibraryDoc;
+  doc: Document;
 };
 
 export async function DocHeader({ locale, doc }: DocHeaderProps) {

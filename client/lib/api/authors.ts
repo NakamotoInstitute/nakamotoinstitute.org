@@ -1,14 +1,10 @@
 import { notFound } from "next/navigation";
 import fetchAPI from "./fetchAPI";
-import {
-  zAuthorIndexResponse,
-  zAuthorDetailResponse,
-  zSlugParamsResponse,
-} from "./schemas";
+import { zAuthorIndex, zAuthorDetail, zSlugParamsResponse } from "./schemas";
 
 export async function getAuthors(locale: Locale) {
   const res = await fetchAPI(`/authors?locale=${locale}`);
-  return zAuthorIndexResponse.parse(await res.json());
+  return zAuthorIndex.parse(await res.json());
 }
 
 export async function getAuthor(slug: string, locale: Locale) {
@@ -16,7 +12,7 @@ export async function getAuthor(slug: string, locale: Locale) {
   if (res.status === 404) {
     notFound();
   }
-  return zAuthorDetailResponse.parse(await res.json());
+  return zAuthorDetail.parse(await res.json());
 }
 
 export async function getAuthorParams() {

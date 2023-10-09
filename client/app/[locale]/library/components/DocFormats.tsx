@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import clsx from "clsx";
 import { Chip } from "@/app/components";
-import { LibraryIndexDoc } from "@/lib/api/schemas";
+import { DocumentIndex } from "@/lib/api/schemas";
 import { i18nTranslation } from "@/lib/i18n";
 
 export async function DocFormats({
@@ -11,7 +11,7 @@ export async function DocFormats({
 }: {
   locale: Locale;
   className?: string;
-  doc: LibraryIndexDoc;
+  doc: DocumentIndex;
 }) {
   const { t } = await i18nTranslation(locale);
   const chips: ReactNode[] = [];

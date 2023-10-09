@@ -1,5 +1,5 @@
 import { PageLayout, PageHeader } from "@/app/components";
-import { ForumPostSource, ForumThreadBase, getForumThreads } from "@/lib/api";
+import { ForumPostSource, ForumThread, getForumThreads } from "@/lib/api";
 import { getLocaleParams } from "@/lib/i18n";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
@@ -17,7 +17,7 @@ export default async function PostThreadsIndex({
       return acc;
     },
     { p2pfoundation: [], bitcointalk: [] } as {
-      [K in ForumPostSource]: ForumThreadBase[];
+      [K in ForumPostSource]: ForumThread[];
     },
   );
 

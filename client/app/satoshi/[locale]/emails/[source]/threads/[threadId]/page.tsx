@@ -6,7 +6,6 @@ import {
   getEmailThread,
   getEmailThreads,
   EmailSource,
-  Email,
   ThreadEmail,
 } from "@/lib/api";
 import { getLocaleParams } from "@/lib/i18n";

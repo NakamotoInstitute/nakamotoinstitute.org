@@ -2,15 +2,15 @@ import { getNumericId } from "@/utils/strings";
 import fetchAPI from "./fetchAPI";
 import {
   ForumPostSource,
-  zForumPostIndexResponse,
-  zForumThreadIndexResponse,
-  zForumThread,
-  zForumPostResponse,
+  zForumPostIndex,
+  zForumThreadIndex,
+  zForumThreadDetail,
+  zForumPostDetail,
 } from "./schemas/posts";
 
 export async function getSatoshiPosts() {
   const res = await fetchAPI("/satoshi/posts");
-  return zForumPostIndexResponse.parse(await res.json());
+  return zForumPostIndex.parse(await res.json());
 }
 
 export async function getForumPost(
@@ -19,17 +19,17 @@ export async function getForumPost(
 ) {
   const satoshiIdNum = getNumericId(satoshiId);
   const res = await fetchAPI(`/satoshi/posts/${source}/${satoshiIdNum}`);
-  return zForumPostResponse.parse(await res.json());
+  return zForumPostDetail.parse(await res.json());
 }
 
 export async function getSatoshiPostsBySource(source: ForumPostSource) {
   const res = await fetchAPI(`/satoshi/posts/${source}`);
-  return zForumPostIndexResponse.parse(await res.json());
+  return zForumPostIndex.parse(await res.json());
 }
 
 export async function getForumThreads() {
   const res = await fetchAPI("/satoshi/posts/threads");
-  return zForumThreadIndexResponse.parse(await res.json());
+  return zForumThreadIndex.parse(await res.json());
 }
 
 export async function getForumThread(
@@ -41,10 +41,10 @@ export async function getForumThread(
   const res = await fetchAPI(
     `/satoshi/posts/${source}/threads/${threadIdNum}?satoshi=${satoshiOnly}`,
   );
-  return zForumThread.parse(await res.json());
+  return zForumThreadDetail.parse(await res.json());
 }
 
 export async function getForumThreadsBySource(source: ForumPostSource) {
   const res = await fetchAPI(`/satoshi/posts/${source}/threads`);
-  return zForumThreadIndexResponse.parse(await res.json());
+  return zForumThreadIndex.parse(await res.json());
 }

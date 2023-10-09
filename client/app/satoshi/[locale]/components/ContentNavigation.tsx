@@ -1,4 +1,4 @@
-import { Email, ForumPost } from "@/lib/api";
+import { SatoshiEmail, SatoshiForumPost } from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n";
 import { urls } from "@/lib/urls";
 import Link from "next/link";
@@ -9,9 +9,9 @@ type NavProps<Data> = {
   next: Data | null;
 };
 
-type EmailNavProps = NavProps<Email>;
+type EmailNavProps = NavProps<SatoshiEmail>;
 
-type PostNavProps = NavProps<ForumPost>;
+type PostNavProps = NavProps<SatoshiForumPost>;
 
 type ContentNavigationProps = {
   locale: Locale;

@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const zEpisodeData = z.object({
+export const zEpisode = z.object({
   slug: z.string(),
   title: z.string(),
   date: z.coerce.date(),
@@ -10,6 +10,6 @@ export const zEpisodeData = z.object({
   notes: z.string(),
   youtubeId: z.string(),
 });
-export type Episode = z.infer<typeof zEpisodeData>;
+export type Episode = z.infer<typeof zEpisode>;
 
-export const zEpisodeIndex = z.array(zEpisodeData);
+export const zPodcastIndex = z.array(zEpisode);

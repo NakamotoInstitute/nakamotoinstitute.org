@@ -2,15 +2,15 @@ import { getNumericId } from "@/utils/strings";
 import fetchAPI from "./fetchAPI";
 import {
   EmailSource,
-  zEmailIndexResponse,
-  zEmailResponse,
-  zEmailThread,
-  zEmailThreadIndexResponse,
+  zEmailIndex,
+  zEmailDetail,
+  zEmailThreadDetail,
+  zEmailThreadIndex,
 } from "./schemas/emails";
 
 export async function getSatoshiEmails() {
   const res = await fetchAPI("/satoshi/emails");
-  return zEmailIndexResponse.parse(await res.json());
+  return zEmailIndex.parse(await res.json());
 }
 
 export async function getEmail(
@@ -19,17 +19,17 @@ export async function getEmail(
 ) {
   const satoshiIdNum = getNumericId(satoshiId);
   const res = await fetchAPI(`/satoshi/emails/${source}/${satoshiIdNum}`);
-  return zEmailResponse.parse(await res.json());
+  return zEmailDetail.parse(await res.json());
 }
 
 export async function getSatoshiEmailsBySource(source: EmailSource) {
   const res = await fetchAPI(`/satoshi/emails/${source}`);
-  return zEmailIndexResponse.parse(await res.json());
+  return zEmailIndex.parse(await res.json());
 }
 
 export async function getEmailThreads() {
   const res = await fetchAPI("/satoshi/emails/threads");
-  return zEmailThreadIndexResponse.parse(await res.json());
+  return zEmailThreadIndex.parse(await res.json());
 }
 
 export async function getEmailThread(
@@ -41,10 +41,10 @@ export async function getEmailThread(
   const res = await fetchAPI(
     `/satoshi/emails/${source}/threads/${threadIdNum}?satoshi=${satoshiOnly}`,
   );
-  return zEmailThread.parse(await res.json());
+  return zEmailThreadDetail.parse(await res.json());
 }
 
 export async function getEmailThreadsBySource(source: EmailSource) {
   const res = await fetchAPI(`/satoshi/emails/${source}/threads`);
-  return zEmailThreadIndexResponse.parse(await res.json());
+  return zEmailThreadIndex.parse(await res.json());
 }

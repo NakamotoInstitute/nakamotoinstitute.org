@@ -1,9 +1,9 @@
 import fetchAPI from "./fetchAPI";
-import { zPriceData, zSkepticDataResponse } from "./schemas/skeptics";
+import { zPriceData, zSkepticsIndex } from "./schemas/skeptics";
 
 export async function getSkeptics() {
   const res = await fetchAPI(`/skeptics`);
-  return zSkepticDataResponse.parse(await res.json());
+  return zSkepticsIndex.parse(await res.json());
 }
 
 const PRICE_API_URL =

@@ -1,14 +1,10 @@
 import { notFound } from "next/navigation";
 import fetchAPI from "./fetchAPI";
-import {
-  zLibraryData,
-  zLibraryIndexResponse,
-  zSlugParamsResponse,
-} from "./schemas";
+import { zDocument, zLibraryIndex, zSlugParamsResponse } from "./schemas";
 
 export async function getLibraryDocs(locale: Locale) {
   const res = await fetchAPI(`/library?locale=${locale}`);
-  return zLibraryIndexResponse.parse(await res.json());
+  return zLibraryIndex.parse(await res.json());
 }
 
 export async function getLibraryDoc(slug: string, locale: Locale) {
@@ -16,7 +12,7 @@ export async function getLibraryDoc(slug: string, locale: Locale) {
   if (res.status === 404) {
     notFound();
   }
-  return zLibraryData.parse(await res.json());
+  return zDocument.parse(await res.json());
 }
 
 export async function getLibraryParams() {

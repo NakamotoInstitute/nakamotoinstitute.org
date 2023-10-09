@@ -1,13 +1,13 @@
 import { PageLayout } from "@/app/components";
 import { PageHeader } from "@/app/components/PageHeader";
-import { QuoteCategoryBase, getQuoteCategories } from "@/lib/api";
+import { QuoteCategory, getQuoteCategories } from "@/lib/api";
 import { getLocaleParams } from "@/lib/i18n";
 import { urls } from "@/lib/urls";
 import Link from "next/link";
 
 type LinkColumnProps = {
   locale: Locale;
-  categories: QuoteCategoryBase[];
+  categories: QuoteCategory[];
 };
 
 function LinkColumn({ locale, categories }: LinkColumnProps) {

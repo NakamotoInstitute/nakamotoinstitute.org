@@ -1,18 +1,18 @@
 import { z } from "zod";
-import { zAuthorIndexResponse } from "./authors";
+import { zAuthorIndex } from "./authors";
 import { zTranslationData } from "./shared";
 
-export const zMempoolSeriesData = z.object({
+export const zMempoolSeries = z.object({
   locale: z.string(),
   title: z.string(),
   slug: z.string(),
   chapterTitle: z.boolean().default(false),
 });
-export type MempoolSeries = z.infer<typeof zMempoolSeriesData>;
+export type MempoolSeries = z.infer<typeof zMempoolSeries>;
 
-export const zMempoolSeriesIndexData = z.array(zMempoolSeriesData);
+export const zMempoolSeriesIndex = z.array(zMempoolSeries);
 
-export const zMempoolPostData = z.object({
+export const zMempoolPost = z.object({
   locale: z.string(),
   title: z.string(),
   slug: z.string(),
@@ -26,19 +26,19 @@ export const zMempoolPostData = z.object({
   translationSiteUrl: z.string().nullable(),
   date: z.coerce.date(),
   added: z.coerce.date(),
-  authors: zAuthorIndexResponse,
+  authors: zAuthorIndex,
   translations: z.array(zTranslationData),
   seriesIndex: z.number().int().min(1).nullable(),
-  series: zMempoolSeriesData.nullable(),
+  series: zMempoolSeries.nullable(),
   content: z.string(),
 });
-export type MempoolPost = z.infer<typeof zMempoolPostData>;
+export type MempoolPost = z.infer<typeof zMempoolPost>;
 
-export const zMempoolIndexResponse = z.array(zMempoolPostData);
+export const zMempoolIndex = z.array(zMempoolPost);
 
-export const zMempoolSeriesFullModel = z.object({
-  series: zMempoolSeriesData.extend({
+export const zMempoolSeriesDetail = z.object({
+  series: zMempoolSeries.extend({
     translations: z.array(zTranslationData),
   }),
-  posts: zMempoolIndexResponse,
+  posts: zMempoolIndex,
 });

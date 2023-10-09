@@ -23,34 +23,34 @@ export const zEmail = zEmailBase.extend({
 export const zSatoshiEmail = zEmailBase.extend({
   satoshiId: z.number().int().min(1),
 });
-export type Email = z.infer<typeof zSatoshiEmail>;
+export type SatoshiEmail = z.infer<typeof zSatoshiEmail>;
 
 export const zThreadEmail = zEmail.extend({
   parent: zEmail.nullable(),
 });
 export type ThreadEmail = z.infer<typeof zThreadEmail>;
 
-export const zEmailIndexResponse = z.array(zSatoshiEmail);
+export const zEmailIndex = z.array(zSatoshiEmail);
 
-export const zEmailResponse = z.object({
+export const zEmailDetail = z.object({
   email: zSatoshiEmail,
   previous: zSatoshiEmail.nullable(),
   next: zSatoshiEmail.nullable(),
 });
 
-export const zEmailThreadBase = z.object({
+export const zEmailThread = z.object({
   id: z.number().int().min(1),
   title: z.string(),
   source: zEmailSource,
   date: z.coerce.date(),
 });
-export type EmailThreadBase = z.infer<typeof zEmailThreadBase>;
+export type EmailThread = z.infer<typeof zEmailThread>;
 
-export const zEmailThreadIndexResponse = z.array(zEmailThreadBase);
+export const zEmailThreadIndex = z.array(zEmailThread);
 
-export const zEmailThread = z.object({
-  thread: zEmailThreadBase,
+export const zEmailThreadDetail = z.object({
+  thread: zEmailThread,
   emails: z.array(zThreadEmail),
-  previous: zEmailThreadBase.nullable(),
-  next: zEmailThreadBase.nullable(),
+  previous: zEmailThread.nullable(),
+  next: zEmailThread.nullable(),
 });

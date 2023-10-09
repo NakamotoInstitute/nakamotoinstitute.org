@@ -1,6 +1,6 @@
 import { PageLayout } from "@/app/components";
 import { PageHeader } from "@/app/components/PageHeader";
-import { EmailSource, EmailThreadBase, getEmailThreads } from "@/lib/api";
+import { EmailSource, EmailThread, getEmailThreads } from "@/lib/api";
 import { getLocaleParams } from "@/lib/i18n";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
@@ -20,7 +20,7 @@ export default async function EmailThreadsIndex({
     {
       cryptography: [],
       "bitcoin-list": [],
-    } as { [K in EmailSource]: EmailThreadBase[] },
+    } as { [K in EmailSource]: EmailThread[] },
   );
 
   return (

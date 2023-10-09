@@ -1,7 +1,7 @@
 import Big from "big.js";
 import { z } from "zod";
 
-export const zSkepticData = z.object({
+export const zSkeptic = z.object({
   name: z.string(),
   slug: z.string(),
   title: z.string(),
@@ -14,9 +14,9 @@ export const zSkepticData = z.object({
   twitterScreenshot: z.boolean(),
   waybackLink: z.string().nullable(),
 });
-export type Skeptic = z.infer<typeof zSkepticData>;
+export type Skeptic = z.infer<typeof zSkeptic>;
 
-export const zSkepticDataResponse = z.array(zSkepticData);
+export const zSkepticsIndex = z.array(zSkeptic);
 
 export const zPriceDatum = z
   .object({

@@ -1,7 +1,7 @@
 import { PageLayout } from "@/app/components";
 import {
   ForumPostSource,
-  ThreadPost,
+  ForumPost,
   getForumThread,
   getForumThreads,
 } from "@/lib/api";
@@ -22,7 +22,7 @@ function ThreadPost({
   satoshiOnly,
 }: {
   locale: Locale;
-  post: ThreadPost;
+  post: ForumPost;
   odd: boolean;
   satoshiOnly: boolean;
 }) {

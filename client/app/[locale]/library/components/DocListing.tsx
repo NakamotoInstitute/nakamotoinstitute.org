@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { AuthorsLinks } from "@/app/components";
-import { LibraryIndexDoc } from "@/lib/api/schemas";
+import { DocumentIndex } from "@/lib/api/schemas";
 import { urls } from "@/lib/urls";
 import { formatDocDate, formatTimeAttr } from "@/utils/dates";
 import { DocFormats } from "./DocFormats";
@@ -9,7 +9,7 @@ export async function DocListing({
   doc,
   locale,
 }: {
-  doc: LibraryIndexDoc;
+  doc: DocumentIndex;
   locale: Locale;
 }) {
   return (
