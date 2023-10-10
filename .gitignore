@@ -63,6 +63,8 @@ app/static/docs/*.epub
 app/static/docs/*.mobi
 app/static/docs/*.zip
 
+.ruff_cache
+
 .vscode
 
 ## CLIENT GITIGNORE

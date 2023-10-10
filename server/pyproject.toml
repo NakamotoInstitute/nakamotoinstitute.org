@@ -1,0 +1,11 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sni"
+description = "Content server for SNI"
+readme = "README.md"
+
+[tool.ruff]
+select = ["E", "F", "I"]
