@@ -1,0 +1,11 @@
+version: '3'
+services:
+  flask:
+    build:
+      context: .
+      dockerfile: ./compose/production/flask/Dockerfile
+    environment:
+      - FLASK_APP=run.py
+      - FLASK_RUN_HOST=0.0.0.0
+    ports:
+      - "8000:8000"

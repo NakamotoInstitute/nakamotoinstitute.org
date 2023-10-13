@@ -1,0 +1,14 @@
+version: '3'
+services:
+  flask:
+    build:
+      context: .
+      dockerfile: ./compose/local/flask/Dockerfile
+    environment:
+      - FLASK_APP=run.py
+    env_file:
+      - ./.envs/.local/.flask
+    volumes:
+      - .:/app:z
+    ports:
+      - "5000:5000"

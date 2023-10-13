@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+python -m flask data seed
+exec python -m flask run
