@@ -1,0 +1,5 @@
+{$CADDY_URL} {
+    reverse_proxy flask:8000 {
+        header_up X-Real-IP {http.request.remote}
+    }
+}

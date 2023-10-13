@@ -1,4 +1,4 @@
-version: '3'
+version: "3.9"
 services:
   flask:
     build:
@@ -7,5 +7,21 @@ services:
     environment:
       - FLASK_APP=run.py
       - FLASK_RUN_HOST=0.0.0.0
+  caddy:
+    image: caddy:2.7.4
+    restart: unless-stopped
     ports:
-      - "8000:8000"
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    env_file:
+      - ./.envs/.production/.caddy
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./site:/srv
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  caddy_data:
+  caddy_config:
