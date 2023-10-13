@@ -65,12 +65,12 @@ def create_app(config_class=Config):
     from sni.skeptics import bp as skeptics_bp
 
     app.register_blueprint(errors_bp)
-    app.register_blueprint(satoshi_bp, url_prefix="/api/satoshi")
-    app.register_blueprint(authors_bp, url_prefix="/api/authors")
-    app.register_blueprint(library_bp, url_prefix="/api/library")
-    app.register_blueprint(mempool_bp, url_prefix="/api/mempool")
-    app.register_blueprint(skeptics_bp, url_prefix="/api/skeptics")
-    app.register_blueprint(podcast_bp, url_prefix="/api/podcast")
+    app.register_blueprint(satoshi_bp, url_prefix="/satoshi")
+    app.register_blueprint(authors_bp, url_prefix="/authors")
+    app.register_blueprint(library_bp, url_prefix="/library")
+    app.register_blueprint(mempool_bp, url_prefix="/mempool")
+    app.register_blueprint(skeptics_bp, url_prefix="/skeptics")
+    app.register_blueprint(podcast_bp, url_prefix="/podcast")
 
     @app.before_request
     def remove_trailing_slash():
