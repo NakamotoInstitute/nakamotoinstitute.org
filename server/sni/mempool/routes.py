@@ -8,11 +8,16 @@ from sni.shared.schemas import SlugParamModel
 from sni.utils.decorators import response_model
 
 from . import mempool
-from .schemas import MempoolPostModel, MempoolSeriesFullModel, MempoolSeriesModel
+from .schemas import (
+    MempoolPostIndexModel,
+    MempoolPostModel,
+    MempoolSeriesFullModel,
+    MempoolSeriesModel,
+)
 
 
 @mempool.route("/", methods=["GET"])
-@response_model(List[MempoolPostModel])
+@response_model(List[MempoolPostIndexModel])
 def get_mempool_posts():
     posts = db.session.scalars(
         db.select(BlogPostTranslation)

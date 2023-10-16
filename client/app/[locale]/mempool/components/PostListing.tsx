@@ -4,14 +4,14 @@ import { formatDate } from "@/utils/dates";
 import { AuthorsLinks } from "@/app/components";
 import { i18nTranslation } from "@/lib/i18n";
 import { Trans } from "react-i18next/TransWithoutContext";
-import { MempoolPost } from "@/lib/api/schemas";
+import { MempoolPostIndex } from "@/lib/api/schemas";
 
 export async function PostListing({
   locale,
   post,
 }: {
   locale: Locale;
-  post: MempoolPost;
+  post: MempoolPostIndex;
 }) {
   const { t } = await i18nTranslation(locale);
   const original = post.date.getTime() === post.added.getTime();

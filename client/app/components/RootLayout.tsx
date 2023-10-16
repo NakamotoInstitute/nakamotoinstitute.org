@@ -26,7 +26,7 @@ export function RootLayout({
       className={clsx(
         stix.variable,
         plexMono.variable,
-        "bg-bone text-night font-serif",
+        "bg-bone font-serif text-night",
       )}
     >
       {children}

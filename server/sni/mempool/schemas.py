@@ -125,4 +125,4 @@ class MempoolSeriesModel(MempoolSeriesBaseModel):
 
 class MempoolSeriesFullModel(BaseModel):
     series: MempoolSeriesModel
-    posts: List[MempoolPostModel]
+    posts: List[MempoolPostIndexModel]
