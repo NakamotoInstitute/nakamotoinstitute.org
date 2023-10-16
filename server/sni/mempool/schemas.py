@@ -1,7 +1,7 @@
 import datetime
-from typing import List, Optional
+from typing import Any, List, Optional
 
-from pydantic import AliasPath, BaseModel, Field, field_serializer
+from pydantic import AliasPath, BaseModel, Field, field_serializer, model_validator
 from pydantic.alias_generators import to_camel
 
 from ..authors.schemas import AuthorModel
@@ -103,6 +103,16 @@ class MempoolPostBaseModel(BaseModel):
         alias_generator = to_camel
         populate_by_name = True
         from_attributes = True
+
+
+class MempoolPostIndexModel(MempoolPostBaseModel):
+    has_content: bool = False
+
+    @model_validator(mode="before")
+    @classmethod
+    def check_content(cls, data: Any) -> Any:
+        data.has_content = bool(data.content)
+        return data
 
 
 class MempoolPostModel(MempoolPostBaseModel):

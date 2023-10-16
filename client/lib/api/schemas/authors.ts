@@ -19,5 +19,5 @@ export function getAuthorIndex() {
 export const zAuthorDetail = z.object({
   author: zAuthor,
   library: z.lazy(() => getLibraryIndex()),
-  mempool: z.array(zMempoolIndex),
+  mempool: zMempoolIndex,
 });

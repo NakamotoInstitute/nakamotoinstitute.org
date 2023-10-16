@@ -12,7 +12,7 @@ export type MempoolSeries = z.infer<typeof zMempoolSeries>;
 
 export const zMempoolSeriesIndex = z.array(zMempoolSeries);
 
-export const zMempoolPost = z.object({
+const zMempoolPostBase = z.object({
   locale: z.string(),
   title: z.string(),
   slug: z.string(),
@@ -30,11 +30,19 @@ export const zMempoolPost = z.object({
   translations: z.array(zTranslationData),
   seriesIndex: z.number().int().min(1).nullable(),
   series: zMempoolSeries.nullable(),
+});
+
+export const zMempoolPost = zMempoolPostBase.extend({
   content: z.string(),
 });
 export type MempoolPost = z.infer<typeof zMempoolPost>;
 
-export const zMempoolIndex = z.array(zMempoolPost);
+export const zMempoolPostIndex = zMempoolPostBase.extend({
+  hasContent: z.boolean(),
+});
+export type MempoolPostIndex = z.infer<typeof zMempoolPostIndex>;
+
+export const zMempoolIndex = z.array(zMempoolPostIndex);
 
 export const zMempoolSeriesDetail = z.object({
   series: zMempoolSeries.extend({
