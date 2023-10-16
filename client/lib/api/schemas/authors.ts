@@ -1,5 +1,6 @@
 import { z } from "zod";
-import { zLibraryIndex, zMempoolIndex } from ".";
+import { getLibraryIndex } from "./library";
+import { zMempoolIndex } from "./mempool";
 
 export const zAuthor = z.object({
   name: z.string(),
@@ -11,8 +12,12 @@ export type Author = z.infer<typeof zAuthor>;
 
 export const zAuthorIndex = z.array(zAuthor);
 
+export function getAuthorIndex() {
+  return zAuthorIndex;
+}
+
 export const zAuthorDetail = z.object({
   author: zAuthor,
-  library: z.array(zLibraryIndex),
+  library: z.lazy(() => getLibraryIndex()),
   mempool: z.array(zMempoolIndex),
 });

@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { zAuthorIndex } from "./authors";
+import { getAuthorIndex } from "./authors";
 import { zTranslations } from "./shared";
 
 export const zFormat = z.enum(["pdf", "epub", "mobi", "txt"]);
@@ -11,7 +11,7 @@ export type Granularity = z.infer<typeof zGranularity>;
 const zDocumentBase = z.object({
   slug: z.string(),
   title: z.string(),
-  authors: zAuthorIndex,
+  authors: z.lazy(() => getAuthorIndex()),
   date: z.coerce.date(),
   granularity: zGranularity,
   external: z.string().nullable(),
@@ -34,3 +34,7 @@ export const zDocumentIndex = zDocumentBase.extend({
 export type DocumentIndex = z.infer<typeof zDocumentIndex>;
 
 export const zLibraryIndex = z.array(zDocumentIndex);
+
+export function getLibraryIndex() {
+  return zLibraryIndex;
+}

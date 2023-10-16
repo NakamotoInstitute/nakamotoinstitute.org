@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { zAuthorIndex } from "./authors";
+import { getAuthorIndex } from "./authors";
 import { zTranslationData } from "./shared";
 
 export const zMempoolSeries = z.object({
@@ -26,7 +26,7 @@ export const zMempoolPost = z.object({
   translationSiteUrl: z.string().nullable(),
   date: z.coerce.date(),
   added: z.coerce.date(),
-  authors: zAuthorIndex,
+  authors: z.lazy(() => getAuthorIndex()),
   translations: z.array(zTranslationData),
   seriesIndex: z.number().int().min(1).nullable(),
   series: zMempoolSeries.nullable(),
