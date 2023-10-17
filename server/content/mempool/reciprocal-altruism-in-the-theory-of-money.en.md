@@ -5,7 +5,7 @@ authors:
 date: 2014-12-08
 added: 2014-12-08
 excerpt: That monetary behavior is a form of altruism, and of reciprocal altruism in particular, has been demonstrated by relating the properties of money to the definition of reciprocal altruism and to its required features.
-mathjax: true
+has_math: true
 ---
 
 ## Methodological Issues

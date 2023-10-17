@@ -16,6 +16,7 @@ class DocumentCanonicalMDModel(BaseModel):
     granularity: str = None
     image: Optional[str] = None
     doctype: str
+    has_math: Optional[bool] = False
 
     @model_validator(mode="after")
     @classmethod
@@ -114,3 +115,7 @@ class DocumentModel(DocumentBaseModel):
     display_title: Optional[str] = None
     image: Optional[str] = Field(alias=AliasPath("document", "image"))
     image_alt: Optional[str] = None
+    has_math: bool = Field(
+        validation_alias=AliasPath("document", "has_math"),
+        serialization_alias="hasMath",
+    )

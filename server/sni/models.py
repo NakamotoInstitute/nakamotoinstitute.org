@@ -251,6 +251,7 @@ class Document(db.Model):
     translations: Mapped[List["DocumentTranslation"]] = relationship(
         back_populates="document"
     )
+    has_math: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
 
     def __repr__(self) -> str:
         return f"<Document({self.id})>"
@@ -318,6 +319,7 @@ class BlogPost(db.Model):
         db.ForeignKey("blog_series.id"), nullable=True
     )
     series_index: Mapped[int] = mapped_column(Integer, nullable=True)
+    has_math: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
 
     __table_args__ = (db.UniqueConstraint("series_id", "series_index"),)
 

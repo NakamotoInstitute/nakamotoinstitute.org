@@ -8,7 +8,7 @@ formats:
 categories:
   - cryptography
 doctype: essay
-mathjax: true
+has_math: true
 ---
 
 _Presented at the Future of Freedom Conference, November 1987_

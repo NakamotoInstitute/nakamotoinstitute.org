@@ -34,6 +34,7 @@ const zMempoolPostBase = z.object({
 
 export const zMempoolPost = zMempoolPostBase.extend({
   content: z.string(),
+  hasMath: z.boolean(),
 });
 export type MempoolPost = z.infer<typeof zMempoolPost>;
 

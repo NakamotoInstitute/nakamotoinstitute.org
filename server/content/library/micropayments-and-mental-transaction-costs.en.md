@@ -9,7 +9,7 @@ categories:
   - economics
 doctype: essay
 external: http://szabo.best.vwh.net/berlinmentalmicro.pdf
-mathjax: true
+has_math: true
 numbered_headers: true
 ---
 

@@ -11,7 +11,7 @@ categories:
   - bitcoin
 doctype: essay
 external: https://bitcoin.org/bitcoin.pdf
-mathjax: true
+has_math: true
 ---
 
 <h2 id="abstract"><a href="#abstract">Abstract</a></h2>

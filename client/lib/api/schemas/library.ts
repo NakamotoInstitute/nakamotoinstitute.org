@@ -25,6 +25,7 @@ export const zDocument = zDocumentBase.extend({
   displayTitle: z.string().nullable(),
   image: z.string().nullable(),
   imageAlt: z.string().nullable(),
+  hasMath: z.boolean(),
 });
 export type Document = z.infer<typeof zDocument>;
 

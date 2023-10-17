@@ -18,6 +18,7 @@ class MempoolCanonicalMDModel(BaseModel):
     original_site: Optional[str] = None
     series: Optional[str] = None
     series_index: Optional[int] = None
+    has_math: Optional[bool] = False
 
 
 class MempoolMDModel(BaseModel):
@@ -117,6 +118,10 @@ class MempoolPostIndexModel(MempoolPostBaseModel):
 
 class MempoolPostModel(MempoolPostBaseModel):
     content: str
+    has_math: bool = Field(
+        validation_alias=AliasPath("blog_post", "has_math"),
+        serialization_alias="hasMath",
+    )
 
 
 class MempoolSeriesModel(MempoolSeriesBaseModel):
