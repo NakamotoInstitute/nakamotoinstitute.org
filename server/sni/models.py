@@ -4,6 +4,7 @@ from typing import List, Literal
 from sqlalchemy import Boolean, Date, DateTime, Integer, String, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
+from config import ALLOWED_FORMATS, ALLOWED_LOCALES
 from sni import db
 
 
@@ -12,23 +13,7 @@ def string_literal_check(lst: List[str]) -> str:
     return f"({check})"
 
 
-ALLOWED_LOCALES = [
-    "ar",
-    "de",
-    "en",
-    "es",
-    "fa",
-    "fi",
-    "fr",
-    "he",
-    "it",
-    "pt",
-    "ru",
-    "zh",
-]
 locale_check = string_literal_check(ALLOWED_LOCALES)
-
-ALLOWED_FORMATS = ["pdf", "epub", "mobi", "txt"]
 format_check = string_literal_check(ALLOWED_FORMATS)
 
 
