@@ -31,7 +31,7 @@ export default async function LibraryDetail({
         <DocHeader locale={locale} doc={doc} />
         {doc.content ? (
           <section className="prose mx-auto">
-            <Markdown>{doc.content}</Markdown>
+            <Markdown hasMath={doc.hasMath}>{doc.content}</Markdown>
           </section>
         ) : null}
       </article>

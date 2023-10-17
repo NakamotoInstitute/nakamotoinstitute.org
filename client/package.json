@@ -16,14 +16,17 @@
     "i18next": "^23.5.1",
     "i18next-parser": "^8.9.0",
     "i18next-resources-to-backend": "^1.1.4",
+    "katex": "^0.16.9",
     "next": "13.5.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^13.3.0",
     "react-markdown": "^9.0.0",
+    "rehype-katex": "^7.0.0",
     "rehype-raw": "^7.0.0",
     "remark-definition-list": "^2.0.0",
     "remark-gfm": "^4.0.0",
+    "remark-math": "^6.0.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {

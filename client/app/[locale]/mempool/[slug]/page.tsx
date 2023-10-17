@@ -33,7 +33,7 @@ export default async function MempoolPost({
       <article>
         <PostHeader locale={locale} post={post} />
         <section className="prose mx-auto">
-          <Markdown>{post.content}</Markdown>
+          <Markdown hasMath={post.hasMath}>{post.content}</Markdown>
         </section>
       </article>
     </PageLayout>
