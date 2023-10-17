@@ -17,7 +17,7 @@ services:
     env_file:
       - ./.envs/.production/.caddy
     volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./compose/production/caddy/Caddyfile:/etc/caddy/Caddyfile
       - ./site:/srv
       - caddy_data:/data
       - caddy_config:/config
