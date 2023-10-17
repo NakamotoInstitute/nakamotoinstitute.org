@@ -4,7 +4,6 @@ from logging.handlers import RotatingFileHandler
 
 from flask import Flask, g, redirect, request
 from flask_caching import Cache
-from flask_flatpages import FlatPages
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import MetaData
 from sqlalchemy.orm import DeclarativeBase
@@ -26,7 +25,6 @@ class Base(DeclarativeBase):
 
 
 db = SQLAlchemy(model_class=Base)
-pages = FlatPages()
 cache = Cache(
     config={
         "CACHE_TYPE": "filesystem",
@@ -43,7 +41,6 @@ def create_app(config_class=Config):
     app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
 
     db.init_app(app)
-    pages.init_app(app)
 
     if app.debug:
         cache.init_app(

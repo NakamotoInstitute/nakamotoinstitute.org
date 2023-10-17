@@ -7,20 +7,16 @@ name = "sni"
 version = "2.0"
 description = "Content server for SNI"
 dependencies = [
-    "babel==2.12.1",
-    "flask==2.3.3",
-    "flask-caching==2.0.2",
-    "flask-flatpages==0.8.1",
+    "flask==3.0.0",
+    "flask-caching==2.1.0",
     "flask-sqlalchemy==3.1.1",
-    "lxml==4.9.3",
-    "pydantic==2.3.0",
-    "python-dateutil==2.8.2",
+    "pydantic==2.4.1",
     "python-dotenv==1.0.0",
-    "requests==2.31.0",
+    "pyyaml==6.0.1",
 ]
 
 [project.optional-dependencies]
-dev = ["black==23.3.0", "ruff==0.0.292"]
+dev = ["black==23.10.0", "ruff==0.1.0"]
 prod = ["gunicorn==21.2.0"]
 
 [tool.ruff]
