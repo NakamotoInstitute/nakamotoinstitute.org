@@ -1,23 +1,2 @@
-[build-system]
-requires = ["flit_core >=3.2,<4"]
-build-backend = "flit_core.buildapi"
-
-[project]
-name = "sni"
-version = "2.0"
-description = "Content server for SNI"
-dependencies = [
-    "flask==3.0.0",
-    "flask-caching==2.1.0",
-    "flask-sqlalchemy==3.1.1",
-    "pydantic==2.4.1",
-    "python-dotenv==1.0.0",
-    "pyyaml==6.0.1",
-]
-
-[project.optional-dependencies]
-dev = ["black==23.10.0", "ruff==0.1.0"]
-prod = ["gunicorn==21.2.0"]
-
 [tool.ruff]
 select = ["E", "F", "I"]

@@ -1,0 +1,3 @@
+-r base.txt
+black==23.10.0
+ruff==0.1.0
