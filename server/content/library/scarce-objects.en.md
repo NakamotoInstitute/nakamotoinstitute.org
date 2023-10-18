@@ -107,8 +107,8 @@ Scarce objects, by creating a simpler and far more intuitive model of computatio
 ## Diagram of Proposed Scarce Object Architecture
 
 <figure>
-  <a href="/img/docs/scarce-objects/ScarceObjects.jpg">
-    <img src="/img/docs/scarce-objects/ScarceObjects.jpg" alt="" />
+  <a href="/img/library/scarce-objects/ScarceObjects.jpg">
+    <img src="/img/library/scarce-objects/ScarceObjects.jpg" alt="" />
   </a>
   <figcaption>Click for larger version</figcaption>
 </figure>

@@ -22,7 +22,7 @@ Violating these desired invariants are then treated as the goals of the attacker
 One can define a trusted third party service in terms of what it promises to do, or what customers reasonably expect it to do, and then construct an attack tree as per above.
 
 <figure>
-  <img src="/img/docs/designing-trusted-services-with-group-controls/TrustedServiceAttackTree.gif" alt="" />
+  <img src="/img/library/designing-trusted-services-with-group-controls/TrustedServiceAttackTree.gif" alt="" />
 </figure>
 
 Most attacks against trusted services come from insiders, not outsiders. Business has evolved over the centuries a rich tradition of structures for securing transactions from their own employees. These structures prevent or deter theft or fraud by requiring cooperation to fulfill or change a transaction. When these structures are successful, employees cannot individually commit fraud but must at least collude or compromise the security of the other to do so.
@@ -58,7 +58,7 @@ Secure logging and review by a party from a third group C, for example, add a fu
 Schneier attack trees allow these structures and collusion probabilities to be examined in terms of the overall attack threat. Group control structures allow us to design trustworthy services and to communicate to customers why these services, conducted by individuals who are total strangers to the customers, can nevertheless be trusted.
 
 <figure>
-  <img src="/img/docs/designing-trusted-services-with-group-controls/AttackTreeDualControl.gif" alt="" />
+  <img src="/img/library/designing-trusted-services-with-group-controls/AttackTreeDualControl.gif" alt="" />
 </figure>
 
 ---

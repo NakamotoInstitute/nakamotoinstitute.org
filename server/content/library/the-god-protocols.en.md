@@ -18,7 +18,7 @@ Alas, in the our temporal world we deal with humans rather than deities. Yet, to
 <h2>Trusted Third Party</h2>
 
 <figure>
-  <img src="/img/docs/the-god-protocols/mutually.gif" alt="" />
+  <img src="/img/library/the-god-protocols/mutually.gif" alt="" />
 </figure>
 
 Network security theorists have recently solved this problem to an astonishing extent. They have developed protocols which create virtual machines between two or more parties. Multiparty secure computation allows any number of parties to share a computation, each learning only what can be inferred from their own inputs and the output of the computation. These virtual machines have the exciting property that each party's input is strongly confidential from the other parties. The program and the output are shared by the parties.
@@ -28,7 +28,7 @@ For example, we could run a spreadsheet across the Internet on this virtual comp
 <h2>Mathematically Trustworthy Protocol</h2>
 
 <figure>
-  <img src="/img/docs/the-god-protocols/virtual.gif" alt="" />
+  <img src="/img/library/the-god-protocols/virtual.gif" alt="" />
 </figure>
 
 There are three major limitations. The first is that this virtual computer is very slow: in some cases, one arithmetic calculation per network message. Currently it is at best practical only for small logic or arithmetic calculations used as an adjunct to or component of more efficient computations and protocols.

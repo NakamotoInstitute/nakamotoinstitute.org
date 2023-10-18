@@ -17,7 +17,7 @@ external: https://web.archive.org/web/20160327021338/http://szabo.best.vwh.net/s
 By the late 13<sup>th</sup> century western Europeans had developed a new culture. They possessed a unique combination of the craft skills to make clocks, and more importantly, growing use of relationships that benefited from more precise coordination in time. Almost simultaneously, again uniquely, in the late 13<sup>th</sup> or early 14<sup>th</sup> century these Europeans started making and using two very different kinds of clocks – the mechanical clock and the sandglass. The technology of the mechanical clock was independent of that of the sandglass, but they played complementary roles in their function. As a result they appeared and were widely used at the same time and place in history.
 
 <figure>
-  <img src="/img/docs/a-measure-of-sacrifice/Sandglass2.jpg" alt="" />
+  <img src="/img/library/a-measure-of-sacrifice/Sandglass2.jpg" alt="" />
 </figure>
 
 From an engineering perspective the mechanical clock with its novelty, the escapement, was by far the more important invention. In terms of its impact on contemporary temporal relationships, the mechanical clock and sandglass were of similar importance. The main innovations were the restructurings of the relationships themselves. Chief among these was the time-rate wage, which played a leading role the economic revolution that started in the late Middle Ages. Between the 14<sup>th</sup> century (by which time the sandglass and mechanical clock had been invented and the use of the time-rate wage was accelerating) and the 19<sup>th</sup> century (when slavery and serfdom finally disappeared in the First World) occurred the most rapid transformation of economic institutions in human history. During this era physically coerced labor gave way to worker choice; serfdom and slavery succumbed to the time-rate wage. First with the bell towers, then with their new clocks, Europeans measured with increasing accuracy and integrity the quantity of a most basic human quality – the sacrifices we make for each other.
@@ -70,7 +70,7 @@ Canon law, like the ringing of bells we will discuss below, was meant to be a lo
 As such, it was most commonly used in local contracts, such as loans to apermanent resident. If the debtor could not pay back the loan, his creditorswould present the contract to the parish priest and ask for anexcommunication. Such condemnation was a common event, but it was damagingnevertheless. In the town church, and in the larger towns this could be alooming dark cathedral, the congregation gathered and listened to the sermon,with the deadbeat separated out. After the sermon the priest from his pulpitread out the name of the oath-breaker, and denounced him, telling thetownspeople what the excommunication was for. Reaching the end of hiscondemnation, all the candles in the church were snuffed out, reflecting thenew state of the condemned’s soul. The bell was tolled, using the particularsequence and bell used for a funeral.<sup><a id="ref6-1" href="#fn6">6</a></sup>
 
 <figure>
-  <img src="/img/docs/a-measure-of-sacrifice/BellTowerRonciglione.jpg" alt="" />
+  <img src="/img/library/a-measure-of-sacrifice/BellTowerRonciglione.jpg" alt="" />
 </figure>
 
 The deadbeat now could not attend church. If he died while excommunicate, he would be buried in unconsecrated ground, and would usually believe the doctrine that he was condemned to hell. Wroe has described the penance with which a miscreant in a 14<sup>th</sup> century French town, after having worked out a revised payback schedule between himself, his creditors, and his Church – and in monetary terms the Church was quite lenient—later won back his soul:
@@ -86,7 +86,7 @@ Some historians claim that the size and expense of Europe’s steeples and publi
 Telling time was not the only, and perhaps not even initially the main, function of church towers and their bells. An important early function of the bell tower was as an alarm, to inform the town of emergencies such as a fire or attacking army. The towers also sometimes made a good vantage point to detect such events. They tolled for events such as baptisms and funerals. Timekeeping became its primary function, first in order to call people to mass, but soon as a general service the Church provided to the surrounding Catholic community that supported it. Long before the mechanical clock, residents within a few miles of a church started working their schedules around the canonical hours – sundial-based unequal hours – tolled on its bells.
 
 <figure>
-  <img src="/img/docs/a-measure-of-sacrifice/BellTowerSundial.jpg" alt="" />
+  <img src="/img/library/a-measure-of-sacrifice/BellTowerSundial.jpg" alt="" />
 </figure>
 
 Thus in many European cities, long before the invention of the mechanical clock, the local church was trusted to ring the hours. Churches, funded mainly by the nearby parishioners, but often also by the city or directly by a guild of merchants, lavished enormous resources to build, operate, and maintain the towers as well as the bells, and later for the clocks that were installed in those towers. The productive synchronization of human relationships funded the bell towers; the bell towers would provide a ready market for public clocks. Thus did in Europe emerge a “virtuous circle” that would advance both its timekeeping technologies and time-dependent institutions beyond those of the other continents.
@@ -100,13 +100,13 @@ The heaviest and most expensive elements of the towers were the bells. Bells smi
 The most valuable property of the bell tower time was not its accuracy, but its fairness. Even if it broadcast the wrong time, it broadcast the same wrong time to everybody. An employer, even if he was colluding with the Church to bias the sometimes subjective ringing of the canonical hours, couldn’t tell his favorite employees that it was time to go home, while making other employees work extra, and pretend that it was the same time. (In contrast, on our computer networks such “Byzantine” attacks are possible, without advanced safeguards, when “broadcasting” time or other information).
 
 <figure>
-  <img src="/img/docs/a-measure-of-sacrifice/ClockIndependentTime.jpg" alt="" />
+  <img src="/img/library/a-measure-of-sacrifice/ClockIndependentTime.jpg" alt="" />
 </figure>
 
 While nearby churches or monasteries provided the public, standard time, workers and employers both often employed their own timekeeping devices as a check. Peasants could tell the time by observing their own shadow against some standard sized object. In Germany and Flanders, even the smallest peasant villages had “quadrants to indicate the hours without the sun”. Miners, working underground, followed work bells, operated by the employers, and passed their signal on through the tunnels by workers banging on tools. As a check, the miners had their own marked tallow candles.<sup><a id="ref4-4" href="#fn4">4</a></sup> Despite the public broadcast of authoritative time, few dispensed with the option to check their own independent sources.
 
 <figure>
-  <img src="/img/docs/a-measure-of-sacrifice/CandleClock.gif" alt="" />
+  <img src="/img/library/a-measure-of-sacrifice/CandleClock.gif" alt="" />
 </figure>
 
 Dohrn-van Rossum<sup><a id="ref4-5" href="#fn4">4</a></sup> describes how bells came to be rung, not only for the time, but for widely different purposes and groups of people: prayer, funerals, visiting dignitaries, opening and closing the gates, beginning and ending the market, calling meetings, and so on. Often guild regulations were enforced by a guild or city bell rung, independently of the church, to indicate the start of work, breaks, and end of work. By the late Middle Ages, cities and guilds increasingly had their own set of bells. The Church was mainly interested in its own events. It typically rang only four of the canonical hours in the day. More precise times were rung based on the specific event. As schedules and event types diversified, cities grew increasingly cacophonous as more specific events were broadcast to all. Specific events that could not gain access to this scarce “acoustic space” had to remain unrung and thus unsynchronized. A better solution was needed.
@@ -126,7 +126,7 @@ Among the musical instruments of 13<sup>th</sup> century Europe was a circular t
 Two technological ideals arose from the rapidly growing mill industries of high medieval Europe and the corresponding professional craftsmen who designed, built, and operated them. The first ideal was the <em>automata</em>, the goal of mimicking life. Today this goal is still alive and well, in the form of robotics and artificial intelligence. The second ideal was the <em>perpetuum mobile</em>, the goal of achieving unending motion. One inspiration of this ideal was the movement of water mills, which (if designed well enough) would never ceased as long as the water flowed. Also inspiring were the movements of the moon, sun, and stars – “machines” that ran on their own, cycling, so it seemed, for eternity. The ideal of the <em>perpetuum mobile</em> is not today popular, because it became confused with the ideal of a source requiring no energy, which 19<sup>th</sup> century thermodynamics showed to be impossible. However, reducing friction, noise, and other obstacles to smooth motion are still important objectives for mechanical engineers.
 
 <figure>
-  <img src="/img/docs/a-measure-of-sacrifice/BellClocks.jpg" alt="" />
+  <img src="/img/library/a-measure-of-sacrifice/BellClocks.jpg" alt="" />
 </figure>
 
 Early public mechanical clocks were also (or even mainly) works of art that both demonstrated the <em>perpetuum mobile</em> ideal – specific mimicry of the sun, moon, and stars in a mill-like machine, and the <em>automata</em> ideal, in the form of parades of crowing cocks, bowing Magi, and a variety of other life-like creations. The technological breakthrough, the escapement, provided the “heartbeat” of these automata while also allowing the long-lived mimicry of the regular movements of the cosmos.
@@ -148,7 +148,7 @@ Before the mechanical clock, bell towers used the old system of canonical hours,
 Even with the advent of the mechanical clock, its most fair and secure property was not that it told time more accurately – its accuracy slipped by several minutes per day, and the monks or prelates had to be trusted to not reset it. The secure fairness of the bell tower’s broadcast was the most valuable component of the system. However, the mechanical clock’s improvement in accuracy from up to an hour, to only a few minutes, still greatly increased the ability to coordinate and reduced disputes over, for example, daily work times.
 
 <figure>
-  <img src="/img/docs/a-measure-of-sacrifice/SandglassOld.jpg" alt="" />
+  <img src="/img/library/a-measure-of-sacrifice/SandglassOld.jpg" alt="" />
 </figure>
 
 ## Sandglasses
@@ -182,7 +182,7 @@ Measuring value is hard. Measuring something that actually indicates value is ha
 Most workers in the modern economy earn money based on a time rate—the hour, the day, the week, or the month. In agricultural societies slavery, serfdom, and piece rates were more common than time-rate wages. Time measures input rather than output. Time is the main way we arrange our affairs around the measurement of the sacrifice rather than its results.
 
 <figure>
-  <img src="/img/docs/a-measure-of-sacrifice/notar_300px.jpg" alt="" />
+  <img src="/img/library/a-measure-of-sacrifice/notar_300px.jpg" alt="" />
 </figure>
 
 To create anything of value requires some sacrifice. To successfully contract we must measure value. Since we can’t, absent a perfect exchange market, directly measure the economic value of something, we may be able to estimate it indirectly by measuring something else. This something else anchors the performance – it gives the performer an incentive to optimize the measured value. Which measures are the most appropriate anchors of performance? Starting in Europe by the 13<sup>th</sup> century, that measure was increasingly a measure of the sacrifice needed to create the desired economic value.
@@ -200,7 +200,7 @@ In an unregulated commodity market, buyers can reject or negotiate downwards the
 Thus with the time-rate wage the employee is insured against vagaries of production beyond his control, including selling price fluctuations (in the case of a market exchange), or variation in the price or availability of factors of production (in the case of both market exchange or piece rates). The employer takes on these risks, while at the same time through promotion, raises, demotions, wage cuts or firing retaining incentives for quality employee output.
 
 <figure>
-  <img src="/img/docs/a-measure-of-sacrifice/munt.jpg" alt="" />
+  <img src="/img/library/a-measure-of-sacrifice/munt.jpg" alt="" />
 </figure>
 
 Besides lacking implicit insurance for the employee, another limit to market purchase of each worker’s output is that it can be made prohibitively costly by relationship-specific investments. These investments occur when workers engage in interdependent production—as the workers learn the equipment or adapt to each other. Relationship-specific investments can also occur between firms, for example building a cannon foundry next to an iron mine. These investments, when combine with the inability to write long-term contracts that account for all eventualities, motivate firms to integrate. Dealing with unspecified eventualities then becomes the right of the single owner. This incentive to integrate is opposed by the diseconomies of scale in a bureaucracy, caused by the distribution of knowledge, which market exchange handles much better.<sup><a id="ref13" href="#fn13">13</a></sup> An in-depth discussion of economic tradeoffs that produce observed distributions of firm sizes in a market, i.e. the number of workers involved in an employment relationship instead of selling their wares directly or working for smaller firms, has been discussed by Coase<sup><a id="ref11" href="#fn11">11</a></sup> and Williamson<sup><a id="ref12" href="#fn12">12</a></sup>.

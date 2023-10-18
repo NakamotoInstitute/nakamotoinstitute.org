@@ -517,13 +517,13 @@ Year 5 saw cycles of media attention, dramatic price movements, and countless bu
 The following chart reflects the entire history of Bitcoin price formation in one image. Visualizing this data together requires a logarithmic scale so that the smaller figures do not vanish into the baseline. In keeping with a long-term perspective, typical weekly, or when available, weekly weighted average, figures are used. This helps filter out noise from the extremely short-term peaks and troughs of mania/panics that are so beloved for use in pop media lead-ins. The flat zero blue line from January to the start of October 2009 is to be understood as no price of any kind, even though the logarithmic scale does not allow for a true zero line (seen here as $0.0001).
 
 <figure>
-  <img src="/img/docs/on-the-origins-of-bitcoin/chart1.png" alt="" />
+  <img src="/img/library/on-the-origins-of-bitcoin/chart1.png" alt="" />
 </figure>
 
 A second version of this chart on the following page clarifies the association of the different data lines with calendar years.<sup><a id="ref39" href="#fn39">39</a></sup> The slope lines from the start to the end of each calendar year (or best available data point) show how the data lines combine to suggest an overall historical trend.
 
 <figure>
-  <img src="/img/docs/on-the-origins-of-bitcoin/chart2.png" alt="" />
+  <img src="/img/library/on-the-origins-of-bitcoin/chart2.png" alt="" />
 </figure>
 
 The chart combines different sources of data for different time periods. Working backwards, the line Bstp-13 is the weekly weighted average chart for the Bitstamp exchange in 2013. I abandoned MtGox exchange data as they became clear outliers during 2013. Gox-10&ndash;Gox12 are the weekly weighted average data lines for the entire history of MtGox from its $0.05 opening trade through 2012.
@@ -601,7 +601,7 @@ Wilber, Ken. 1998. _The Marriage of Sense and Soul: Integrating Science and Reli
 <h2 id="about">About the Author</h2>
 
 <figure>
-  <img src="/img/docs/on-the-origins-of-bitcoin/konrad.jpeg" alt="" />
+  <img src="/img/library/on-the-origins-of-bitcoin/konrad.jpeg" alt="" />
 </figure>
 
 Konrad S. Graf is the formulator of the action-based jurisprudence framework, which argues for new and more explicit applications of the action-theory principles of Mises and Hoppe within an integral approach to the foundations of legal philosophy. He has written numerous works on Bitcoin and monetary theory.

@@ -47,7 +47,7 @@ Many are the reasons why organizations may come to favor costly TTP based securi
 **The temptation to claim the "high ground" as a TTP of choice are great.** The ambition to become the next Visa or Verisign is a power trip that's hard to refuse. The barriers to actually building a successful TTP business are, however, often severe &ndash; the startup costs are substantial, ongoing costs remain high, liability risks are great, and unless there is a substantial "first mover" advantage barriers to entry for competitors are few. Still, if nobody solves the TTP problems in the protocol this can be a lucrative business, and it's easy to envy big winners like Verisign rather than remembering all the now obscure companies that tried but lost. It's also easy to imagine oneself as the successful TTP, and come to advocate the security protocol that requires the TTP, rather than trying harder to actually solve the security problem.
 
 <figure>
-  <img src="/img/docs/trusted-third-parties/miracle.jpg" alt="" />
+  <img src="/img/library/trusted-third-parties/miracle.jpg" alt="" />
 </figure>
 
 **Entrenched interests.** Large numbers of articulate professionals make their living using the skills necessary in TTP organizations. For example, the legions of auditors and lawyers who create and operate traditional control structures and legal protections. They naturally favor security models that assume they must step in and implement the real security. In new areas like e-commerce they favor new business models based on TTPs (e.g. Application Service Providers) rather than taking the time to learn new practices that may threaten their old skills.

@@ -77,13 +77,13 @@ A successful altruistic strategy has two characteristics: first, it must be pref
 One example of a game that models reciprocal altruism is the famous Prisoner’s Dilemma.<sup><a href="#vi" id="ref-vi">vi</a></sup> This is a two-person game, in which each player has two options: cooperate or defect. The payoff matrix for the Prisoner’s Dilemma looks like this:
 
 <figure>
-  <img src="/img/docs/reciprocal-altruism-in-the-theory-of-money/matrix-1.svg" alt="" />
+  <img src="/img/mempool/reciprocal-altruism-in-the-theory-of-money/matrix-1.svg" alt="" />
 </figure>
 
 In this diagram, each box represents an outcome after both players have made a choice. The first item in the list for each outcome is the reward to player one, and the second is the reward to player 2. The numbers in the boxes are arbitrary—what matters only is some ordering relations between them. A more abstract (but equivalent) payoff matrix for the Prisoner’s Dilemma is this:
 
 <figure>
-  <img src="/img/docs/reciprocal-altruism-in-the-theory-of-money/matrix-2.svg" alt="" />
+  <img src="/img/mempool/reciprocal-altruism-in-the-theory-of-money/matrix-2.svg" alt="" />
 </figure>
 
 where $Y>W>Z>X$ and $X+Y<2 W$. This second condition means that outcome $W$ is preferable to equal odds of outcome $X$ and $Y$.
@@ -128,7 +128,7 @@ Of course, if more complex strategies were allowed, then the players could excha
 So now we have two kinds of reciprocal altruism, right? Not really; there is nothing much new here because we can find the Prisoner’s Dilemma hiding in them. This table explains how to combine moves in the modified Prisoner’s Dilemma to construct the same outcomes as the standard Prisoner’s Dilemma.
 
 <figure>
-<img src="/img/docs/reciprocal-altruism-in-the-theory-of-money/matrix-3.svg" alt="" />
+<img src="/img/mempool/reciprocal-altruism-in-the-theory-of-money/matrix-3.svg" alt="" />
 </figure>
 
 Other possible moves exist in the modified Prisoner’s Dilemma over two rounds, but they can be ignored because they do not affect the winning strategy.
