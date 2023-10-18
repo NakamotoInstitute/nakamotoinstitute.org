@@ -1,12 +1,6 @@
 *.py[cod]
 .DS_Store
 
-tmp/*
-migrations/*
-addresses/*
-
-*.pdf
-
 # C extensions
 *.so
 
@@ -44,6 +38,7 @@ nosetests.xml
 
 *.sublime-project
 *.sublime-workspace
+*.code-workspace
 venv/*
 
 .python-version
@@ -53,15 +48,7 @@ app.db-journal
 
 .env
 
-*.mp3
-.webassets-cache/*
 cache/
-logs/
-data/prices.json
-sni/static/css/main.css
-app/static/docs/*.epub
-app/static/docs/*.mobi
-app/static/docs/*.zip
 
 .ruff_cache
 
