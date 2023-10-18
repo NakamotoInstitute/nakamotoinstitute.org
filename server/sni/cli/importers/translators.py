@@ -1,6 +1,6 @@
 import click
 
-from sni import db
+from sni.extensions import db
 from sni.cli.utils import DONE, load_all_markdown_files
 from sni.models import Translator
 from sni.translators.schemas import TranslatorMDModel

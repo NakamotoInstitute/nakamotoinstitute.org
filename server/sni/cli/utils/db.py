@@ -1,7 +1,7 @@
 import click
 import sqlalchemy as sa
 
-from sni import db
+from sni.extensions import db
 
 from .click import DONE
 

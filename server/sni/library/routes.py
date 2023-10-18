@@ -2,7 +2,7 @@ from typing import List
 
 from flask import g
 
-from sni import db
+from sni.extensions import db
 from sni.models import DocumentTranslation
 from sni.shared.schemas import SlugParamModel
 from sni.utils.decorators import response_model

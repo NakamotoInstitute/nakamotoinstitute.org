@@ -2,7 +2,7 @@ from typing import List
 
 from flask import jsonify
 
-from sni import db
+from sni.extensions import db
 from sni.models import Email, EmailThread
 from sni.utils.decorators import response_model
 from sni.utils.request import get_bool_param

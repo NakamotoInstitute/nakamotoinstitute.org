@@ -2,7 +2,7 @@ from typing import List
 
 from flask import g, jsonify
 
-from sni import db
+from sni.extensions import db
 from sni.models import BlogPost, BlogPostTranslation, BlogSeries, BlogSeriesTranslation
 from sni.shared.schemas import SlugParamModel
 from sni.utils.decorators import response_model

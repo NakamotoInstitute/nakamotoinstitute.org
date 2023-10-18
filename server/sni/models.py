@@ -4,17 +4,8 @@ from typing import List, Literal
 from sqlalchemy import Boolean, Date, DateTime, Integer, String, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from config import ALLOWED_FORMATS, ALLOWED_LOCALES
-from sni import db
-
-
-def string_literal_check(lst: List[str]) -> str:
-    check = ", ".join([f"'{item}'" for item in lst])
-    return f"({check})"
-
-
-locale_check = string_literal_check(ALLOWED_LOCALES)
-format_check = string_literal_check(ALLOWED_FORMATS)
+from sni.database import format_check, locale_check
+from sni.extensions import db
 
 
 class EmailThread(db.Model):

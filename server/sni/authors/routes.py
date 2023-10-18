@@ -3,7 +3,7 @@ from typing import List
 from flask import abort, g, jsonify
 from sqlalchemy import or_
 
-from sni import db
+from sni.extensions import db
 from sni.models import (
     Author,
     BlogPost,

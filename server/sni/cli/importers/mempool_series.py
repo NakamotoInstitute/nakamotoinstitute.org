@@ -2,7 +2,7 @@ import os
 
 import click
 
-from sni import db
+from sni.extensions import db
 from sni.cli.utils import (
     DONE,
     extract_data_from_filename,
