@@ -1,13 +1,12 @@
 from typing import List
 
-from flask import g, jsonify
+from flask import Blueprint, g, jsonify
 
 from sni.extensions import db
 from sni.models import BlogPost, BlogPostTranslation, BlogSeries, BlogSeriesTranslation
 from sni.shared.schemas import SlugParamModel
 from sni.utils.decorators import response_model
 
-from . import mempool
 from .schemas import (
     MempoolPostIndexModel,
     MempoolPostModel,
@@ -15,8 +14,10 @@ from .schemas import (
     MempoolSeriesModel,
 )
 
+blueprint = Blueprint("mempool", __name__, url_prefix="/mempool")
 
-@mempool.route("/", methods=["GET"])
+
+@blueprint.route("/", methods=["GET"])
 @response_model(List[MempoolPostIndexModel])
 def get_mempool_posts():
     posts = db.session.scalars(
@@ -28,7 +29,7 @@ def get_mempool_posts():
     return posts
 
 
-@mempool.route("/<string:slug>", methods=["GET"])
+@blueprint.route("/<string:slug>", methods=["GET"])
 @response_model(MempoolPostModel)
 def get_mempool_post(slug):
     post = db.first_or_404(
@@ -37,14 +38,14 @@ def get_mempool_post(slug):
     return post
 
 
-@mempool.route("/params", methods=["GET"])
+@blueprint.route("/params", methods=["GET"])
 @response_model(List[SlugParamModel])
 def get_mempool_params():
     posts = db.session.scalars(db.select(BlogPostTranslation)).all()
     return [{"locale": post.locale, "slug": post.slug} for post in posts]
 
 
-@mempool.route("/latest", methods=["GET"])
+@blueprint.route("/latest", methods=["GET"])
 @response_model(MempoolPostModel)
 def get_latest_mempool_post():
     post = db.first_or_404(
@@ -56,7 +57,7 @@ def get_latest_mempool_post():
     return post
 
 
-@mempool.route("/series", methods=["GET"])
+@blueprint.route("/series", methods=["GET"])
 @response_model(List[MempoolSeriesModel])
 def get_all_mempool_series():
     series = db.session.scalars(
@@ -67,7 +68,7 @@ def get_all_mempool_series():
     return series
 
 
-@mempool.route("/series/<string:slug>", methods=["GET"])
+@blueprint.route("/series/<string:slug>", methods=["GET"])
 def get_mempool_series(slug):
     series = db.first_or_404(
         db.select(BlogSeriesTranslation).filter_by(slug=slug, locale=g.locale)
@@ -85,7 +86,7 @@ def get_mempool_series(slug):
     return jsonify(response_data.dict(by_alias=True))
 
 
-@mempool.route("/series/params", methods=["GET"])
+@blueprint.route("/series/params", methods=["GET"])
 @response_model(List[SlugParamModel])
 def get_mempool_series_params():
     all_series = db.session.scalars(db.select(BlogSeriesTranslation)).all()

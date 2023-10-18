@@ -6,7 +6,7 @@ from flask import Flask, g, redirect, request
 from werkzeug.middleware.proxy_fix import ProxyFix
 
 from config import Config
-from sni import cli
+from sni import authors, cli, errors, library, mempool, podcast, satoshi, skeptics
 from sni.extensions import cache, db
 from sni.models import blog_post_authors
 
@@ -59,25 +59,16 @@ def apply_app_decorators(app):
 
 
 def register_errorhandlers(app):
-    from sni.errors import bp as errors_bp
-
-    app.register_blueprint(errors_bp)
+    app.register_blueprint(errors.handlers.blueprint)
 
 
 def register_blueprints(app):
-    from sni.authors import authors as authors_bp
-    from sni.library import library as library_bp
-    from sni.mempool import mempool as mempool_bp
-    from sni.podcast import bp as podcast_bp
-    from sni.satoshi import satoshi as satoshi_bp
-    from sni.skeptics import bp as skeptics_bp
-
-    app.register_blueprint(satoshi_bp, url_prefix="/satoshi")
-    app.register_blueprint(authors_bp, url_prefix="/authors")
-    app.register_blueprint(library_bp, url_prefix="/library")
-    app.register_blueprint(mempool_bp, url_prefix="/mempool")
-    app.register_blueprint(skeptics_bp, url_prefix="/skeptics")
-    app.register_blueprint(podcast_bp, url_prefix="/podcast")
+    app.register_blueprint(satoshi.routes.blueprint)
+    app.register_blueprint(authors.routes.blueprint)
+    app.register_blueprint(library.routes.blueprint)
+    app.register_blueprint(mempool.routes.blueprint)
+    app.register_blueprint(skeptics.routes.blueprint)
+    app.register_blueprint(podcast.routes.blueprint)
 
 
 def register_shellcontext(app):
@@ -88,7 +79,7 @@ def register_shellcontext(app):
 
 
 def register_cli(app):
-    cli.register(app)
+    app.register_blueprint(cli.data.blueprint)
 
 
 def register_logger(app):

@@ -1,16 +1,17 @@
 from typing import List
 
-from flask import jsonify
+from flask import Blueprint, jsonify
 
 from sni.extensions import db
 from sni.models import QuoteCategory
 from sni.utils.decorators import response_model
 
-from . import bp
 from .schemas import QuoteCategoryBaseModel, QuoteCategoryModel
 
+blueprint = Blueprint("quotes", __name__, url_prefix="/quotes")
 
-@bp.route("/", methods=["GET"])
+
+@blueprint.route("/", methods=["GET"])
 @response_model(List[QuoteCategoryBaseModel])
 def get_quote_categories():
     categories = db.session.scalars(
@@ -19,7 +20,7 @@ def get_quote_categories():
     return categories
 
 
-@bp.route("/<string:slug>", methods=["GET"])
+@blueprint.route("/<string:slug>", methods=["GET"])
 def get_quote_category(slug):
     category = db.first_or_404(db.select(QuoteCategory).filter_by(slug=slug))
     quotes = category.quotes

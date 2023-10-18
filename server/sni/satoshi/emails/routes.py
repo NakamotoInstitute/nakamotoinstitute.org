@@ -1,13 +1,12 @@
 from typing import List
 
-from flask import jsonify
+from flask import Blueprint, jsonify
 
 from sni.extensions import db
 from sni.models import Email, EmailThread
 from sni.utils.decorators import response_model
 from sni.utils.request import get_bool_param
 
-from . import bp
 from .schemas import (
     EmailBaseModel,
     EmailDetailModel,
@@ -16,8 +15,10 @@ from .schemas import (
     SatoshiEmailModel,
 )
 
+blueprint = Blueprint("emails", __name__, url_prefix="/emails")
 
-@bp.route("/", methods=["GET"])
+
+@blueprint.route("/", methods=["GET"])
 @response_model(List[EmailBaseModel])
 def get_emails():
     emails = db.session.scalars(
@@ -26,14 +27,14 @@ def get_emails():
     return emails
 
 
-@bp.route("/threads", methods=["GET"])
+@blueprint.route("/threads", methods=["GET"])
 @response_model(List[EmailThreadBaseModel])
 def get_email_threads():
     threads = db.session.scalars(db.select(EmailThread)).all()
     return threads
 
 
-@bp.route("/<string:source>", methods=["GET"])
+@blueprint.route("/<string:source>", methods=["GET"])
 @response_model(List[SatoshiEmailModel])
 def get_emails_by_source(source):
     emails = db.session.scalars(
@@ -46,7 +47,7 @@ def get_emails_by_source(source):
     return emails
 
 
-@bp.route("/<string:source>/<int:satoshi_id>", methods=["GET"])
+@blueprint.route("/<string:source>/<int:satoshi_id>", methods=["GET"])
 def get_email_by_source(source, satoshi_id):
     email = db.first_or_404(
         db.select(Email)
@@ -68,7 +69,7 @@ def get_email_by_source(source, satoshi_id):
     return jsonify(response_data.dict(by_alias=True))
 
 
-@bp.route("/<string:source>/threads", methods=["GET"])
+@blueprint.route("/<string:source>/threads", methods=["GET"])
 @response_model(List[EmailThreadBaseModel])
 def get_email_threads_by_source(source):
     threads = db.session.scalars(
@@ -77,7 +78,7 @@ def get_email_threads_by_source(source):
     return threads
 
 
-@bp.route("/<string:source>/threads/<int:thread_id>", methods=["GET"])
+@blueprint.route("/<string:source>/threads/<int:thread_id>", methods=["GET"])
 def get_email_thread_by_source(source, thread_id):
     satoshi_only = get_bool_param("satoshi")
 

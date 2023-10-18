@@ -1,14 +1,14 @@
-from flask import jsonify
+from flask import Blueprint, jsonify
 
-from . import bp
+blueprint = Blueprint("errors", __name__)
 
 
-@bp.app_errorhandler(404)
+@blueprint.app_errorhandler(404)
 def not_found(error):
     return jsonify({"error": "Not Found", "message": str(error)}), 404
 
 
-@bp.app_errorhandler(500)
+@blueprint.app_errorhandler(500)
 def server_error(error):
     return (
         jsonify({"error": "An unexpected error occurred", "details": str(error)}),

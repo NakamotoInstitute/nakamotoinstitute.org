@@ -1,6 +1,6 @@
 from typing import List
 
-from flask import abort, g, jsonify
+from flask import Blueprint, abort, g, jsonify
 from sqlalchemy import or_
 
 from sni.extensions import db
@@ -16,11 +16,12 @@ from sni.models import (
 from sni.shared.schemas import SlugParamModel
 from sni.utils.decorators import response_model
 
-from . import authors
 from .schemas import AuthorDetailModel, AuthorModel
 
+blueprint = Blueprint("authors", __name__, url_prefix="/authors")
 
-@authors.route("/", methods=["GET"])
+
+@blueprint.route("/", methods=["GET"])
 @response_model(List[AuthorModel])
 def get_authors():
     authors = db.session.scalars(
@@ -44,7 +45,7 @@ def get_authors():
     return authors
 
 
-@authors.route("/<string:slug>", methods=["GET"])
+@blueprint.route("/<string:slug>", methods=["GET"])
 def get_author(slug):
     author = db.first_or_404(db.select(Author).filter_by(slug=slug))
 
@@ -74,7 +75,7 @@ def get_author(slug):
     return jsonify(response_data.dict(by_alias=True))
 
 
-@authors.route("/params", methods=["GET"])
+@blueprint.route("/params", methods=["GET"])
 @response_model(List[SlugParamModel])
 def get_author_params():
     valid_combinations = []

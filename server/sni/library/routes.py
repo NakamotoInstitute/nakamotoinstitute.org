@@ -1,17 +1,18 @@
 from typing import List
 
-from flask import g
+from flask import Blueprint, g
 
 from sni.extensions import db
 from sni.models import DocumentTranslation
 from sni.shared.schemas import SlugParamModel
 from sni.utils.decorators import response_model
 
-from . import library
 from .schemas import DocumentIndexModel, DocumentModel
 
+blueprint = Blueprint("library", __name__, url_prefix="/library")
 
-@library.route("/", methods=["GET"])
+
+@blueprint.route("/", methods=["GET"])
 @response_model(List[DocumentIndexModel])
 def get_library_docs():
     docs = db.session.scalars(
@@ -22,7 +23,7 @@ def get_library_docs():
     return docs
 
 
-@library.route("/<string:slug>", methods=["GET"])
+@blueprint.route("/<string:slug>", methods=["GET"])
 @response_model(DocumentModel)
 def get_library_doc(slug):
     post = db.first_or_404(
@@ -31,7 +32,7 @@ def get_library_doc(slug):
     return post
 
 
-@library.route("/params", methods=["GET"])
+@blueprint.route("/params", methods=["GET"])
 @response_model(List[SlugParamModel])
 def get_library_params():
     posts = db.session.scalars(db.select(DocumentTranslation)).all()

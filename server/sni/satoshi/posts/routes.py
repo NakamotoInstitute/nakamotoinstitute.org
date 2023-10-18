@@ -1,13 +1,12 @@
 from typing import List
 
-from flask import jsonify
+from flask import Blueprint, jsonify
 
 from sni.extensions import db
 from sni.models import ForumPost, ForumThread
 from sni.utils.decorators import response_model
 from sni.utils.request import get_bool_param
 
-from . import bp
 from .schemas import (
     ForumPostBaseModel,
     ForumPostDetailModel,
@@ -16,8 +15,10 @@ from .schemas import (
     ForumThreadModel,
 )
 
+blueprint = Blueprint("posts", __name__, url_prefix="/posts")
 
-@bp.route("/", methods=["GET"])
+
+@blueprint.route("/", methods=["GET"])
 @response_model(List[ForumPostBaseModel])
 def get_forum_posts():
     posts = db.session.scalars(
@@ -28,14 +29,14 @@ def get_forum_posts():
     return posts
 
 
-@bp.route("/threads", methods=["GET"])
+@blueprint.route("/threads", methods=["GET"])
 @response_model(List[ForumThreadBaseModel])
 def get_forum_threads():
     threads = db.session.scalars(db.select(ForumThread)).all()
     return threads
 
 
-@bp.route("/<string:source>", methods=["GET"])
+@blueprint.route("/<string:source>", methods=["GET"])
 @response_model(List[ForumPostModel])
 def get_forum_posts_by_source(source):
     posts = db.session.scalars(
@@ -48,7 +49,7 @@ def get_forum_posts_by_source(source):
     return posts
 
 
-@bp.route("/<string:source>/<int:satoshi_id>", methods=["GET"])
+@blueprint.route("/<string:source>/<int:satoshi_id>", methods=["GET"])
 def get_forum_post_by_source(source, satoshi_id):
     post = db.first_or_404(
         db.select(ForumPost)
@@ -70,7 +71,7 @@ def get_forum_post_by_source(source, satoshi_id):
     return jsonify(response_data.dict(by_alias=True))
 
 
-@bp.route("/<string:source>/threads", methods=["GET"])
+@blueprint.route("/<string:source>/threads", methods=["GET"])
 @response_model(List[ForumThreadBaseModel])
 def get_forum_threads_by_source(source):
     threads = db.session.scalars(
@@ -79,7 +80,7 @@ def get_forum_threads_by_source(source):
     return threads
 
 
-@bp.route("/<string:source>/threads/<int:thread_id>", methods=["GET"])
+@blueprint.route("/<string:source>/threads/<int:thread_id>", methods=["GET"])
 def get_forum_thread_by_source(source, thread_id):
     satoshi_only = get_bool_param("satoshi")
 

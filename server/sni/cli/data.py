@@ -18,12 +18,12 @@ from sni.cli.importers import (
 )
 from sni.cli.utils import color_text, flush_db
 
-bp = Blueprint("data", __name__)
+blueprint = Blueprint("data", __name__)
 
-bp.cli.help = "Update database."
+blueprint.cli.help = "Update database."
 
 
-@bp.cli.command()
+@blueprint.cli.command()
 def seed():
     """Initialize and seed database."""
     flush_db()

@@ -4,7 +4,7 @@ from typing import List, Literal
 from sqlalchemy import Boolean, Date, DateTime, Integer, String, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from sni.database import format_check, locale_check
+from sni.db import format_check, locale_check
 from sni.extensions import db
 
 
