@@ -2,13 +2,13 @@ import os
 
 import click
 
-from sni.extensions import db
 from sni.cli.utils import (
     DONE,
     extract_data_from_filename,
     process_canonical_file,
     process_translated_file,
 )
+from sni.extensions import db
 from sni.mempool.schemas import (
     MempoolSeriesCanonicalMDModel,
     MempoolSeriesMDModel,

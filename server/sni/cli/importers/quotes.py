@@ -1,7 +1,7 @@
 import click
 
-from sni.extensions import db
 from sni.cli.utils import DONE, get, load_and_validate_json
+from sni.extensions import db
 from sni.models import Quote, QuoteCategory
 from sni.satoshi.quotes.schemas import QuoteCategoryJSONModel, QuoteJSONModel
 

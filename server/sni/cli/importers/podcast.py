@@ -1,7 +1,7 @@
 import click
 
-from sni.extensions import db
 from sni.cli.utils import DONE, load_all_markdown_files
+from sni.extensions import db
 from sni.models import Episode
 from sni.podcast.schemas import EpisodeMDModel
 
