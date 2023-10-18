@@ -68,7 +68,7 @@ function ThreadPost({
       </header>
       <section>
         <div
-          className="p-2 font-serif text-sm"
+          className="p-2 font-serif text-sm [&>.post>img]:inline"
           dangerouslySetInnerHTML={{
             __html: post.text,
           }}
