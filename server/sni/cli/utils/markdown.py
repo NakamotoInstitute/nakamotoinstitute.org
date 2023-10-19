@@ -117,7 +117,47 @@ class ContentImporter:
                 self.non_english_filenames.append(filename)
 
     def process_and_add_canonical_file(self, filepath, slug):
-        raise NotImplementedError("Subclasses must implement this method")
+        (
+            validated_canonical_data,
+            validated_translation_data,
+            content,
+        ) = process_canonical_file(filepath, self.canonical_schema, self.md_schema)
+
+        canonical_data = validated_canonical_data.dict()
+        translation_data = validated_translation_data.dict()
+
+        # Hook: Process additional data for canonical entry
+        canonical_entry_data = self.process_canonical_additional_data(canonical_data)
+        canonical_entry = self.canonical_model(**canonical_entry_data)
+        db.session.add(canonical_entry)
+        db.session.flush()
+
+        # Hook: Process additional data for translation entry
+        translation_entry_data = self.process_translation_additional_data(
+            translation_data, canonical_entry, slug, content
+        )
+        translation_entry = self.translation_model(
+            **translation_entry_data,
+            slug=slug,
+            locale="en",
+            content=content,
+            **{self.content_key: canonical_entry},
+        )
+        db.session.add(translation_entry)
+
+        self.content_map[slug] = {
+            "canonical": canonical_entry,
+            "translation": translation_entry,
+        }
+
+    # Hook method placeholders in base class (can be overridden in derived classes)
+    def process_canonical_additional_data(self, canonical_data):
+        return canonical_data
+
+    def process_translation_additional_data(
+        self, translation_data, canonical_entry, slug, content
+    ):
+        return translation_data
 
     def process_and_add_translated_file(self, filepath, slug, locale):
         raise NotImplementedError("Subclasses must implement this method")

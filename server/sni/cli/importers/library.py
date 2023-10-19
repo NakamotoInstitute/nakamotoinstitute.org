@@ -3,7 +3,6 @@ from sni.cli.utils import (
     ContentImporter,
     get,
     get_or_create,
-    process_canonical_file,
     process_translated_file,
 )
 from sni.extensions import db
@@ -23,46 +22,26 @@ class LibraryImporter(ContentImporter):
     canonical_schema = DocumentCanonicalMDModel
     md_schema = DocumentMDModel
     translation_schema = DocumentTranslationMDModel
+    content_key = "document"
 
-    def process_and_add_canonical_file(self, filepath, slug):
-        (
-            validated_canonical_data,
-            validated_translation_data,
-            content,
-        ) = process_canonical_file(filepath, self.canonical_schema, self.md_schema)
-
-        canonical_data = validated_canonical_data.dict()
-        translation_data = validated_translation_data.dict()
-
+    def process_canonical_additional_data(self, canonical_data):
         canonical_data["authors"] = [
-            get(Author, slug=author) for author in canonical_data.pop("authors")
+            get(Author, slug=author) for author in canonical_data.pop("authors", [])
         ]
+        return canonical_data
 
-        document = self.canonical_model(**canonical_data)
-        db.session.add(document)
-        db.session.flush()
-
+    def process_translation_additional_data(
+        self, translation_data, canonical_entry, slug, content
+    ):
         translation_data["formats"] = [
             get_or_create(DocumentFormat, format_type=fmt)
-            for fmt in translation_data["formats"]
+            for fmt in translation_data.pop("formats", [])
         ]
         translation_data["translators"] = [
             get(Translator, slug=slug)
             for slug in translation_data.pop("translators", [])
         ]
-        document_translation = self.translation_model(
-            **translation_data,
-            slug=slug,
-            locale="en",
-            content=content,
-            document=document,
-        )
-        db.session.add(document_translation)
-
-        self.content_map[slug] = {
-            "canonical": document,
-            "translation": document_translation,
-        }
+        return translation_data
 
     def process_and_add_translated_file(self, filepath, slug, locale):
         validated_translation_data, content = process_translated_file(

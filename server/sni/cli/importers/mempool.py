@@ -2,7 +2,6 @@ from sni.authors.models import Author
 from sni.cli.utils import (
     ContentImporter,
     get,
-    process_canonical_file,
     process_translated_file,
 )
 from sni.extensions import db
@@ -22,17 +21,9 @@ class MempoolImporter(ContentImporter):
     canonical_schema = MempoolCanonicalMDModel
     md_schema = MempoolMDModel
     translation_schema = MempoolTranslationMDModel
+    content_key = "blog_post"
 
-    def process_and_add_canonical_file(self, filepath, slug):
-        (
-            validated_canonical_data,
-            validated_translation_data,
-            content,
-        ) = process_canonical_file(filepath, self.canonical_schema, self.md_schema)
-
-        canonical_data = validated_canonical_data.dict()
-        translation_data = validated_translation_data.dict()
-
+    def process_canonical_additional_data(self, canonical_data):
         canonical_data["authors"] = [
             get(Author, slug=author) for author in canonical_data.pop("authors")
         ]
@@ -40,27 +31,16 @@ class MempoolImporter(ContentImporter):
         canonical_data["series"] = (
             get(BlogSeriesTranslation, slug=series).blog_series if series else None
         )
-        blog_post = self.canonical_model(**canonical_data)
-        db.session.add(blog_post)
-        db.session.flush()
+        return canonical_data
 
+    def process_translation_additional_data(
+        self, translation_data, canonical_entry, slug, content
+    ):
         translation_data["translators"] = [
             get(Translator, slug=slug)
             for slug in translation_data.pop("translators", [])
         ]
-        blog_post_translation = self.translation_model(
-            **translation_data,
-            slug=slug,
-            locale="en",
-            content=content,
-            blog_post=blog_post,
-        )
-        db.session.add(blog_post_translation)
-
-        self.content_map[slug] = {
-            "canonical": blog_post,
-            "translation": blog_post_translation,
-        }
+        return translation_data
 
     def process_and_add_translated_file(self, filepath, slug, locale):
         validated_translation_data, content = process_translated_file(
