@@ -134,7 +134,7 @@ class ContentImporter:
 
         # Hook: Process additional data for translation entry
         translation_entry_data = self.process_translation_additional_data(
-            translation_data, canonical_entry, slug, content
+            translation_data, canonical_entry
         )
         translation_entry = self.translation_model(
             **translation_entry_data,
@@ -154,13 +154,36 @@ class ContentImporter:
     def process_canonical_additional_data(self, canonical_data):
         return canonical_data
 
-    def process_translation_additional_data(
-        self, translation_data, canonical_entry, slug, content
-    ):
+    def process_translation_additional_data(self, translation_data, canonical_entry):
         return translation_data
 
     def process_and_add_translated_file(self, filepath, slug, locale):
-        raise NotImplementedError("Subclasses must implement this method")
+        validated_translation_data, content = process_translated_file(
+            filepath, self.translation_schema
+        )
+        translation_data = validated_translation_data.dict()
+
+        canonical_entry = self.content_map.get(slug)
+        if not canonical_entry:
+            return
+
+        translation_data["slug"] = translation_data.get("slug") or slug
+        translation_entry_data = self.process_translation_for_translated_file(
+            translation_data, canonical_entry
+        )
+
+        translation_entry = self.translation_model(
+            **translation_entry_data,
+            locale=locale,
+            content=content,
+            **{self.content_key: canonical_entry["canonical"]},
+        )
+        db.session.add(translation_entry)
+
+    def process_translation_for_translated_file(
+        self, translation_data, canonical_entry
+    ):
+        return translation_data
 
     def import_content(self):
         self._identify_files()
