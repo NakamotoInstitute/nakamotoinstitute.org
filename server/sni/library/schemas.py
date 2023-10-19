@@ -3,10 +3,9 @@ import re
 from typing import Any, List, Optional
 
 from pydantic import AliasPath, BaseModel, Field, field_serializer, model_validator
-from pydantic.alias_generators import to_camel
 
 from ..authors.schemas.base import AuthorModel
-from ..shared.schemas import TranslationSchema
+from ..shared.schemas import ORMModel, TranslationSchema
 from ..translators.schemas import TranslatorModel
 
 
@@ -63,16 +62,11 @@ class DocumentTranslationMDModel(DocumentMDModel):
     translators: Optional[List[str]] = []
 
 
-class DocumentFormatModel(BaseModel):
+class DocumentFormatModel(ORMModel):
     format_type: str
 
-    class Config:
-        alias_generator = to_camel
-        populate_by_name = True
-        from_attributes = True
 
-
-class DocumentBaseModel(BaseModel):
+class DocumentBaseModel(ORMModel):
     locale: str
     title: str
     slug: str
@@ -83,11 +77,6 @@ class DocumentBaseModel(BaseModel):
     translations: List[TranslationSchema]
     translators: List[TranslatorModel]
     formats: List[DocumentFormatModel]
-
-    class Config:
-        alias_generator = to_camel
-        populate_by_name = True
-        from_attributes = True
 
     @field_serializer("date")
     def serialize_date(self, date: datetime.date) -> str:

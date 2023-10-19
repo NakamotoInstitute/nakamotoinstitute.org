@@ -4,6 +4,8 @@ from typing import List, Literal, Optional
 from pydantic import AliasPath, BaseModel, Field, field_validator
 from pydantic.alias_generators import to_camel
 
+from sni.shared.schemas import ORMModel
+
 ForumPostSource = Literal["p2pfoundation", "bitcointalk"]
 
 
@@ -41,7 +43,7 @@ class ForumPostJSONModel(BaseModel):
         return v
 
 
-class ForumPostBaseModel(BaseModel):
+class ForumPostBaseModel(ORMModel):
     poster_name: str
     poster_url: Optional[str] = None
     subject: str
@@ -54,26 +56,13 @@ class ForumPostBaseModel(BaseModel):
     satoshi_id: Optional[int] = None
     source: str = Field(alias=AliasPath("thread", "source"))
 
-    class Config:
-        alias_generator = to_camel
-        populate_by_name = True
-        from_attributes = True
 
-
-class ForumThreadBaseModel(ForumThreadJSONModel):
+class ForumThreadBaseModel(ForumThreadJSONModel, ORMModel):
     date: datetime.datetime = Field(alias=AliasPath("posts", 0, "date"))
-
-    class Config:
-        alias_generator = to_camel
-        populate_by_name = True
-        from_attributes = True
 
 
 class ForumPostModel(ForumPostBaseModel):
-    class Config:
-        alias_generator = to_camel
-        populate_by_name = True
-        from_attributes = True
+    pass
 
 
 class ForumThreadModel(BaseModel):

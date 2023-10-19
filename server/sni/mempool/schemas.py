@@ -2,10 +2,9 @@ import datetime
 from typing import Any, List, Optional
 
 from pydantic import AliasPath, BaseModel, Field, field_serializer, model_validator
-from pydantic.alias_generators import to_camel
 
 from ..authors.schemas.base import AuthorModel
-from ..shared.schemas import TranslationSchema
+from ..shared.schemas import ORMModel, TranslationSchema
 from ..translators.schemas import TranslatorModel
 
 
@@ -48,7 +47,7 @@ class MempoolSeriesTranslationMDModel(MempoolSeriesMDModel):
     slug: Optional[str] = None
 
 
-class MempoolSeriesBaseModel(BaseModel):
+class MempoolSeriesBaseModel(ORMModel):
     locale: str
     title: str
     slug: str
@@ -57,13 +56,8 @@ class MempoolSeriesBaseModel(BaseModel):
         serialization_alias="chapterTitle",
     )
 
-    class Config:
-        alias_generator = to_camel
-        populate_by_name = True
-        from_attributes = True
 
-
-class MempoolPostBaseModel(BaseModel):
+class MempoolPostBaseModel(ORMModel):
     locale: str
     title: str
     slug: str
@@ -99,11 +93,6 @@ class MempoolPostBaseModel(BaseModel):
     @field_serializer("added")
     def serialize_added(self, added: datetime.date) -> str:
         return added.isoformat()
-
-    class Config:
-        alias_generator = to_camel
-        populate_by_name = True
-        from_attributes = True
 
 
 class MempoolPostIndexModel(MempoolPostBaseModel):

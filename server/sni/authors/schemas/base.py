@@ -1,5 +1,6 @@
 from pydantic import BaseModel
-from pydantic.alias_generators import to_camel
+
+from sni.shared.schemas import ORMModel
 
 
 class AuthorMDModel(BaseModel):
@@ -7,13 +8,8 @@ class AuthorMDModel(BaseModel):
     sort_name: str
 
 
-class AuthorModel(BaseModel):
+class AuthorModel(ORMModel):
     slug: str
     name: str
     sort_name: str
     content: str
-
-    class Config:
-        alias_generator = to_camel
-        populate_by_name = True
-        from_attributes = True

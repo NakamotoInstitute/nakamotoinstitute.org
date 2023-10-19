@@ -4,6 +4,8 @@ from typing import List, Optional
 from pydantic import AliasPath, BaseModel, Field, model_validator
 from pydantic.alias_generators import to_camel
 
+from sni.shared.schemas import ORMModel
+
 
 class QuoteCategoryJSONModel(BaseModel):
     name: str
@@ -28,7 +30,7 @@ class QuoteJSONModel(QuoteBaseModel):
     categories: List[str]
 
 
-class QuoteCategoryBaseModel(QuoteCategoryJSONModel):
+class QuoteCategoryBaseModel(QuoteCategoryJSONModel, ORMModel):
     class Config:
         alias_generator = to_camel
         populate_by_name = True

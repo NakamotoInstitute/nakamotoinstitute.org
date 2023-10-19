@@ -2,7 +2,8 @@ import datetime
 from typing import List, Optional
 
 from pydantic import BaseModel, field_serializer
-from pydantic.alias_generators import to_camel
+
+from sni.shared.schemas import ORMModel
 
 
 class SkepticJSONModel(BaseModel):
@@ -19,7 +20,7 @@ class SkepticJSONModel(BaseModel):
     wayback_link: Optional[str] = None
 
 
-class SkepticModel(BaseModel):
+class SkepticModel(ORMModel):
     name: str
     slug: str
     title: str
@@ -39,8 +40,3 @@ class SkepticModel(BaseModel):
     @field_serializer("link")
     def serialize_link(self, link) -> List[str]:
         return [_link.strip() for _link in link.split(",")]
-
-    class Config:
-        alias_generator = to_camel
-        populate_by_name = True
-        from_attributes = True

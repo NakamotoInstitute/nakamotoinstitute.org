@@ -4,6 +4,8 @@ from typing import List, Literal, Optional
 from pydantic import AliasPath, BaseModel, Field, field_serializer
 from pydantic.alias_generators import to_camel
 
+from sni.shared.schemas import ORMModel
+
 EmailSource = Literal["cryptography", "bitcoin-list"]
 
 
@@ -26,13 +28,8 @@ class EmailJSONModel(BaseModel):
     satoshi_id: Optional[int] = None
 
 
-class EmailThreadBaseModel(EmailThreadJSONModel):
+class EmailThreadBaseModel(EmailThreadJSONModel, ORMModel):
     date: datetime.datetime = Field(alias=AliasPath("emails", 0, "date"))
-
-    class Config:
-        alias_generator = to_camel
-        populate_by_name = True
-        from_attributes = True
 
 
 class EmailThreadModel(BaseModel):
@@ -45,16 +42,11 @@ class EmailThreadModel(BaseModel):
         alias_generator = to_camel
 
 
-class EmailReplyModel(BaseModel):
+class EmailReplyModel(ORMModel):
     source_id: str
 
-    class Config:
-        alias_generator = to_camel
-        populate_by_name = True
-        from_attributes = True
 
-
-class EmailBaseModel(BaseModel):
+class EmailBaseModel(ORMModel):
     sent_from: str
     subject: str
     text: str
@@ -66,11 +58,6 @@ class EmailBaseModel(BaseModel):
     satoshi_id: Optional[int] = None
     source: str = Field(alias=AliasPath("thread", "source"))
     replies: List[EmailReplyModel]
-
-    class Config:
-        alias_generator = to_camel
-        populate_by_name = True
-        from_attributes = True
 
     @field_serializer("date")
     def serialize_date(self, date: datetime.date) -> str:
