@@ -7,7 +7,7 @@ from werkzeug.middleware.proxy_fix import ProxyFix
 from config import Config
 from sni import authors, cli, errors, library, mempool, podcast, satoshi, skeptics
 from sni.extensions import cache, db
-from sni.models import blog_post_authors
+from sni.mempool.models import blog_post_authors
 
 
 def create_app(config_class=Config):

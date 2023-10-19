@@ -1,9 +1,9 @@
 import click
 
-from sni.authors.schemas import AuthorMDModel
+from sni.authors.models import Author
+from sni.authors.schemas.base import AuthorMDModel
 from sni.cli.utils import DONE, load_all_markdown_files
 from sni.extensions import db
-from sni.models import Author
 
 
 def import_author():

@@ -2,7 +2,7 @@ import click
 
 from sni.cli.utils import DONE, load_and_validate_json
 from sni.extensions import db
-from sni.models import Email, EmailThread
+from sni.satoshi.emails.models import Email, EmailThread
 from sni.satoshi.emails.schemas import EmailJSONModel, EmailThreadJSONModel
 
 

@@ -9,12 +9,12 @@ from sni.cli.utils import (
     process_translated_file,
 )
 from sni.extensions import db
+from sni.mempool.models import BlogSeries, BlogSeriesTranslation
 from sni.mempool.schemas import (
     MempoolSeriesCanonicalMDModel,
     MempoolSeriesMDModel,
     MempoolSeriesTranslationMDModel,
 )
-from sni.models import BlogSeries, BlogSeriesTranslation
 
 
 def process_and_add_canonical_series_file(

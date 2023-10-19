@@ -3,9 +3,9 @@ from typing import List
 from flask import Blueprint
 
 from sni.extensions import db
-from sni.models import Episode
 from sni.utils.decorators import response_model
 
+from .models import Episode
 from .schemas import EpisodeModel
 
 blueprint = Blueprint("podcast", __name__, url_prefix="/podcast")

@@ -2,6 +2,7 @@ import os
 
 import click
 
+from sni.authors.models import Author
 from sni.cli.utils import (
     DONE,
     extract_data_from_filename,
@@ -11,12 +12,13 @@ from sni.cli.utils import (
     process_translated_file,
 )
 from sni.extensions import db
+from sni.library.models import Document, DocumentFormat, DocumentTranslation
 from sni.library.schemas import (
     DocumentCanonicalMDModel,
     DocumentMDModel,
     DocumentTranslationMDModel,
 )
-from sni.models import Author, Document, DocumentFormat, DocumentTranslation, Translator
+from sni.translators.models import Translator
 
 
 def process_and_add_canonical_file(

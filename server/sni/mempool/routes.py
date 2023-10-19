@@ -3,10 +3,10 @@ from typing import List
 from flask import Blueprint, g, jsonify
 
 from sni.extensions import db
-from sni.models import BlogPost, BlogPostTranslation, BlogSeries, BlogSeriesTranslation
 from sni.shared.schemas import SlugParamModel
 from sni.utils.decorators import response_model
 
+from .models import BlogPost, BlogPostTranslation, BlogSeries, BlogSeriesTranslation
 from .schemas import (
     MempoolPostIndexModel,
     MempoolPostModel,

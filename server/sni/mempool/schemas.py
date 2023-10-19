@@ -4,7 +4,7 @@ from typing import Any, List, Optional
 from pydantic import AliasPath, BaseModel, Field, field_serializer, model_validator
 from pydantic.alias_generators import to_camel
 
-from ..authors.schemas import AuthorModel
+from ..authors.schemas.base import AuthorModel
 from ..shared.schemas import TranslationSchema
 from ..translators.schemas import TranslatorModel
 

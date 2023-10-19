@@ -2,7 +2,7 @@ import click
 
 from sni.cli.utils import DONE, load_all_markdown_files
 from sni.extensions import db
-from sni.models import Episode
+from sni.podcast.models import Episode
 from sni.podcast.schemas import EpisodeMDModel
 
 

@@ -3,7 +3,7 @@ from typing import List
 from flask import Blueprint
 
 from sni.extensions import db
-from sni.models import Skeptic
+from sni.skeptics.models import Skeptic
 from sni.utils.decorators import response_model
 
 from .schemas import SkepticModel

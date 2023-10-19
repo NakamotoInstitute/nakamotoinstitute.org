@@ -4,19 +4,18 @@ from flask import Blueprint, abort, g, jsonify
 from sqlalchemy import or_
 
 from sni.extensions import db
-from sni.models import (
-    Author,
+from sni.library.models import Document, DocumentTranslation, document_authors
+from sni.mempool.models import (
     BlogPost,
     BlogPostTranslation,
-    Document,
-    DocumentTranslation,
     blog_post_authors,
-    document_authors,
 )
 from sni.shared.schemas import SlugParamModel
 from sni.utils.decorators import response_model
 
-from .schemas import AuthorDetailModel, AuthorModel
+from .models import Author
+from .schemas.base import AuthorModel
+from .schemas.response import AuthorDetailModel
 
 blueprint = Blueprint("authors", __name__, url_prefix="/authors")
 

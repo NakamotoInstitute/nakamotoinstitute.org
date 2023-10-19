@@ -2,6 +2,7 @@ import os
 
 import click
 
+from sni.authors.models import Author
 from sni.cli.utils import (
     DONE,
     extract_data_from_filename,
@@ -10,18 +11,17 @@ from sni.cli.utils import (
     process_translated_file,
 )
 from sni.extensions import db
+from sni.mempool.models import (
+    BlogPost,
+    BlogPostTranslation,
+    BlogSeriesTranslation,
+)
 from sni.mempool.schemas import (
     MempoolCanonicalMDModel,
     MempoolMDModel,
     MempoolTranslationMDModel,
 )
-from sni.models import (
-    Author,
-    BlogPost,
-    BlogPostTranslation,
-    BlogSeriesTranslation,
-    Translator,
-)
+from sni.translators.models import Translator
 
 
 def process_and_add_canonical_file(

@@ -2,7 +2,7 @@ import click
 
 from sni.cli.utils import DONE, load_and_validate_json
 from sni.extensions import db
-from sni.models import Skeptic
+from sni.skeptics.models import Skeptic
 from sni.skeptics.schemas import SkepticJSONModel
 
 

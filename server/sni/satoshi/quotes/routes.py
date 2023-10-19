@@ -3,7 +3,7 @@ from typing import List
 from flask import Blueprint, jsonify
 
 from sni.extensions import db
-from sni.models import QuoteCategory
+from sni.satoshi.quotes.models import QuoteCategory
 from sni.utils.decorators import response_model
 
 from .schemas import QuoteCategoryBaseModel, QuoteCategoryModel

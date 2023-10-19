@@ -3,10 +3,10 @@ from typing import List
 from flask import Blueprint, jsonify
 
 from sni.extensions import db
-from sni.models import Email, EmailThread
 from sni.utils.decorators import response_model
 from sni.utils.request import get_bool_param
 
+from .models import Email, EmailThread
 from .schemas import (
     EmailBaseModel,
     EmailDetailModel,

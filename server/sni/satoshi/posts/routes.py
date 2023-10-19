@@ -3,7 +3,7 @@ from typing import List
 from flask import Blueprint, jsonify
 
 from sni.extensions import db
-from sni.models import ForumPost, ForumThread
+from sni.satoshi.posts.models import ForumPost, ForumThread
 from sni.utils.decorators import response_model
 from sni.utils.request import get_bool_param
 
