@@ -4,10 +4,9 @@ import sys
 from flask import Flask, g, redirect, request
 from werkzeug.middleware.proxy_fix import ProxyFix
 
-from config import Config
 from sni import authors, cli, errors, library, mempool, podcast, satoshi, skeptics
+from sni.config import Config
 from sni.extensions import cache, db
-from sni.mempool.models import blog_post_authors
 
 
 def create_app(config_class=Config):
@@ -18,6 +17,7 @@ def create_app(config_class=Config):
     apply_app_decorators(app)
     register_errorhandlers(app)
     register_blueprints(app)
+    register_shellcontext(app)
     register_cli(app)
     register_logger(app)
     return app
@@ -35,12 +35,7 @@ def register_extensions(app):
         "CACHE_TYPE": "null",
         "CACHE_DEFAULT_TIMEOUT": 0,
     }
-
-    prod_cache_config = {
-        "CACHE_TYPE": "filesystem",
-        "CACHE_DIR": "cache",
-        "CACHE_DEFAULT_TIMEOUT": 1800,
-    }
+    prod_cache_config = debug_cache_config
 
     cache_config = debug_cache_config if app.debug else prod_cache_config
     cache.init_app(app, config=cache_config)
@@ -71,10 +66,7 @@ def register_blueprints(app):
 
 
 def register_shellcontext(app):
-    def shell_context():
-        return {"blog_post_authors": blog_post_authors}
-
-    app.shell_context_processor(shell_context)
+    app.shell_context_processor(cli.context.make_shell_context)
 
 
 def register_cli(app):

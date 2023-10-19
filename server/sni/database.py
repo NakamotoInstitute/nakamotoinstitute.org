@@ -3,7 +3,7 @@ from typing import List
 from sqlalchemy import MetaData
 from sqlalchemy.orm import DeclarativeBase
 
-from config import ALLOWED_FORMATS, ALLOWED_LOCALES
+from .config import ALLOWED_FORMATS, ALLOWED_LOCALES
 
 
 class Base(DeclarativeBase):
