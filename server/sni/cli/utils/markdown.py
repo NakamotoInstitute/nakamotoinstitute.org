@@ -1,8 +1,14 @@
 import os
 from typing import Any, Dict, List, Optional, Tuple, Type
 
+import click
 import yaml
 from pydantic import BaseModel, ValidationError
+
+from sni.cli.utils import (
+    DONE,
+)
+from sni.extensions import db
 
 
 def read_markdown_file(filepath: str) -> str:
@@ -93,3 +99,45 @@ def process_translated_file(filepath: str, translated_schema):
     front_matter_dict, content = process_common(filepath)
     translation_data = validate_front_matter_data(front_matter_dict, translated_schema)
     return translation_data, content
+
+
+class ContentImporter:
+    def __init__(self, directory_path):
+        self.directory_path = directory_path
+        self.content_map = {}
+        self.english_filenames = []
+        self.non_english_filenames = []
+
+    def _identify_files(self):
+        for filename in sorted(os.listdir(self.directory_path)):
+            _, locale, _ = extract_data_from_filename(filename)
+            if locale == "en":
+                self.english_filenames.append(filename)
+            else:
+                self.non_english_filenames.append(filename)
+
+    def process_and_add_canonical_file(self, filepath, slug):
+        raise NotImplementedError("Subclasses must implement this method")
+
+    def process_and_add_translated_file(self, filepath, slug, locale):
+        raise NotImplementedError("Subclasses must implement this method")
+
+    def import_content(self):
+        self._identify_files()
+
+        for filename in self.english_filenames:
+            filepath = os.path.join(self.directory_path, filename)
+            slug, _, _ = extract_data_from_filename(filename)
+            self.process_and_add_canonical_file(filepath, slug)
+
+        for filename in self.non_english_filenames:
+            filepath = os.path.join(self.directory_path, filename)
+            slug, locale, _ = extract_data_from_filename(filename)
+            self.process_and_add_translated_file(filepath, slug, locale)
+
+        db.session.commit()
+
+    def run_import(self):
+        click.echo(f"Importing {self.content_type}...", nl=False)
+        self.import_content()
+        click.echo(DONE)
