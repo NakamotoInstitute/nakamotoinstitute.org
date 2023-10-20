@@ -13,6 +13,11 @@ export async function generateMetadata({
       default: `${t("The Complete Satoshi")} | ${siteTitle}`,
     },
     description: t("Bitcoin scholarship"),
+    robots: {
+      index: false,
+      follow: false,
+      nocache: true,
+    },
   };
 }
 

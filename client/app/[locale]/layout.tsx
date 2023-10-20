@@ -13,6 +13,11 @@ export async function generateMetadata({
       default: siteTitle,
     },
     description: t("Bitcoin scholarship"),
+    robots: {
+      index: false,
+      follow: false,
+      nocache: true,
+    },
   };
 }
 
