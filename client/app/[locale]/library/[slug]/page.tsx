@@ -4,6 +4,8 @@ import { getLibraryDoc, getLibraryParams } from "@/lib/api";
 import { urls } from "@/lib/urls";
 import { DocHeader } from "../components/DocHeader";
 
+export const dynamicParams = false;
+
 export async function generateMetadata({
   params: { locale, slug },
 }: LocaleParams<{ slug: string }>): Promise<Metadata> {
@@ -17,6 +19,7 @@ export default async function LibraryDetail({
   params: { slug, locale },
 }: LocaleParams<{ slug: string }>) {
   const doc = await getLibraryDoc(slug, locale);
+
   const generateHref = (l: Locale) => {
     const translation = doc.translations?.find((t) => t.locale === l);
     if (translation) {
