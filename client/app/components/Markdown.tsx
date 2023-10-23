@@ -2,8 +2,9 @@ import ReactMarkdown, { Options } from "react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import remarkDefinitionList from "remark-definition-list";
-import rehypeKatex from "rehype-katex";
+import rehypeMathjax from "rehype-mathjax/browser";
 import rehypeRaw from "rehype-raw";
+import Script from "next/script";
 
 type MarkdownProps = {
   className?: string;
@@ -29,7 +30,10 @@ export async function Markdown({
   additionalRehypePlugins = [],
   remarkRehypeOptions = null,
 }: MarkdownProps) {
-  const defaultRemarkPlugins = [remarkGfm, remarkDefinitionList];
+  const defaultRemarkPlugins: Options["remarkPlugins"] = [
+    remarkGfm,
+    remarkDefinitionList,
+  ];
   if (hasMath) {
     defaultRemarkPlugins.push(remarkMath);
   }
@@ -38,18 +42,16 @@ export async function Markdown({
     ...additionalRemarkPlugins,
   ];
 
-  const defaultRehypePlugins = [rehypeKatex, rehypeRaw];
+  const defaultRehypePlugins: Options["rehypePlugins"] = [rehypeRaw];
+  if (hasMath) {
+    defaultRehypePlugins.unshift(rehypeMathjax);
+  }
   const mergedRehypePlugins = rehypePlugins || [
     ...defaultRehypePlugins,
     ...additionalRehypePlugins,
   ];
 
-  // Only include katex css if it is needed
-  if (hasMath && mergedRehypePlugins.includes(rehypeKatex)) {
-    await require("katex/dist/katex.min.css");
-  }
-
-  const defaultRemarkRehypeOptions = {
+  const defaultRemarkRehypeOptions: Partial<Options["remarkRehypeOptions"]> = {
     clobberPrefix: null,
   };
 
@@ -59,13 +61,18 @@ export async function Markdown({
   };
 
   return (
-    <ReactMarkdown
-      className={className}
-      remarkPlugins={mergedRemarkPlugins}
-      rehypePlugins={mergedRehypePlugins}
-      remarkRehypeOptions={mergedRemarkRehypeOptions}
-    >
-      {children}
-    </ReactMarkdown>
+    <>
+      {hasMath ? (
+        <Script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" />
+      ) : null}
+      <ReactMarkdown
+        className={className}
+        remarkPlugins={mergedRemarkPlugins}
+        rehypePlugins={mergedRehypePlugins}
+        remarkRehypeOptions={mergedRemarkRehypeOptions}
+      >
+        {children}
+      </ReactMarkdown>
+    </>
   );
 }
