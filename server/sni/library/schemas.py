@@ -15,6 +15,7 @@ class DocumentCanonicalMDModel(BaseModel):
     granularity: str = None
     image: Optional[str] = None
     doctype: str
+    external: Optional[str] = None
     has_math: Optional[bool] = False
 
     @model_validator(mode="after")
