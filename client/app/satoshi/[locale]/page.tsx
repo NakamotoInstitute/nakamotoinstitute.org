@@ -55,7 +55,9 @@ export default async function SatoshiIndex({
           <Link href="#">Spanish</Link>, and <Link href="#">Vietnamese</Link>
         </p>
         <p>
-          <Link href="#">Satoshi Nakamoto&rsquo;s PGP Key</Link>
+          <Link href="/satoshinakamoto.asc">
+            Satoshi Nakamoto&rsquo;s PGP Key
+          </Link>
         </p>
       </section>
       <hr className="my-4" />
