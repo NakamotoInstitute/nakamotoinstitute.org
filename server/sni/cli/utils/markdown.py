@@ -1,4 +1,5 @@
 import os
+from datetime import datetime
 from typing import Any, Dict, List, Optional, Tuple, Type
 
 import click
@@ -9,6 +10,8 @@ from sni.cli.utils import (
     DONE,
 )
 from sni.extensions import db
+from sni.shared.models import FileMetadata
+from sni.utils.files import get_file_hash
 
 
 def read_markdown_file(filepath: str) -> str:
@@ -134,7 +137,7 @@ class ContentImporter:
 
         # Hook: Process additional data for translation entry
         translation_entry_data = self.process_translation_additional_data(
-            translation_data, canonical_entry
+            translation_data, canonical_entry, filepath
         )
         translation_entry = self.translation_model(
             **translation_entry_data,
@@ -154,8 +157,10 @@ class ContentImporter:
     def process_canonical_additional_data(self, canonical_data):
         return canonical_data
 
-    def process_translation_additional_data(self, translation_data, canonical_entry):
-        return translation_data
+    def process_translation_additional_data(
+        self, translation_data, canonical_entry, filepath
+    ):
+        return self._process_file_metadata(translation_data, filepath)
 
     def process_and_add_translated_file(self, filepath, slug, locale):
         validated_translation_data, content = process_translated_file(
@@ -169,7 +174,7 @@ class ContentImporter:
 
         translation_data["slug"] = translation_data.get("slug") or slug
         translation_entry_data = self.process_translation_for_translated_file(
-            translation_data, canonical_entry
+            translation_data, canonical_entry, filepath
         )
 
         translation_entry = self.translation_model(
@@ -181,8 +186,17 @@ class ContentImporter:
         db.session.add(translation_entry)
 
     def process_translation_for_translated_file(
-        self, translation_data, canonical_entry
+        self, translation_data, canonical_entry, filepath
     ):
+        return self._process_file_metadata(translation_data, filepath)
+
+    def _process_file_metadata(self, translation_data, filepath):
+        file_hash = get_file_hash(filepath)
+        file_metadata = FileMetadata(
+            filename=filepath, hash=file_hash, last_modified=datetime.now()
+        )
+        translation_data["file_metadata"] = file_metadata
+        translation_data["content_type"] = self.content_key
         return translation_data
 
     def import_content(self):

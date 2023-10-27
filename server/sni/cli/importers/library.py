@@ -24,7 +24,9 @@ class LibraryImporter(ContentImporter):
         ]
         return canonical_data
 
-    def process_translation_additional_data(self, translation_data, canonical_entry):
+    def process_translation_additional_data(
+        self, translation_data, canonical_entry, filepath
+    ):
         translation_data["formats"] = [
             get_or_create(DocumentFormat, format_type=fmt)
             for fmt in translation_data.pop("formats", [])
@@ -33,10 +35,12 @@ class LibraryImporter(ContentImporter):
             get(Translator, slug=slug)
             for slug in translation_data.pop("translators", [])
         ]
-        return translation_data
+        return super().process_translation_additional_data(
+            translation_data, canonical_entry, filepath
+        )
 
     def process_translation_for_translated_file(
-        self, translation_data, canonical_entry
+        self, translation_data, canonical_entry, filepath
     ):
         translation_data["formats"] = [
             get_or_create(DocumentFormat, format_type=fmt)
@@ -47,7 +51,9 @@ class LibraryImporter(ContentImporter):
             for slug in translation_data.pop("translators", [])
         ]
 
-        return translation_data
+        return super().process_translation_for_translated_file(
+            translation_data, canonical_entry, filepath
+        )
 
 
 def import_library():

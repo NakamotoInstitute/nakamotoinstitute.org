@@ -6,6 +6,7 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from sni.database import format_check, locale_check
 from sni.extensions import db
+from sni.shared.models import MarkdownContent
 
 if TYPE_CHECKING:
     from sni.models import Author, Translator
@@ -75,10 +76,12 @@ class Document(db.Model):
         return f"<Document({self.id})>"
 
 
-class DocumentTranslation(db.Model):
+class DocumentTranslation(MarkdownContent):
     __tablename__ = "document_translations"
 
-    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    id: Mapped[int] = mapped_column(
+        Integer, db.ForeignKey("markdown_content.id"), primary_key=True
+    )
     locale: Mapped[str] = mapped_column(
         String,
         db.CheckConstraint(f"locale IN {locale_check}", name="locale"),
@@ -89,7 +92,6 @@ class DocumentTranslation(db.Model):
     display_title: Mapped[str] = mapped_column(String, nullable=True)
     subtitle: Mapped[str] = mapped_column(String, nullable=True)
     slug: Mapped[str] = mapped_column(String, nullable=False)
-    content: Mapped[str] = mapped_column(Text, nullable=False)
     image_alt: Mapped[str] = mapped_column(String, nullable=True)
     document_id: Mapped[int] = mapped_column(db.ForeignKey("documents.id"))
     document: Mapped[Document] = relationship(back_populates="translations")
@@ -99,6 +101,8 @@ class DocumentTranslation(db.Model):
     translators: Mapped[List["Translator"]] = relationship(
         secondary=document_translators, back_populates="docs"
     )
+
+    __mapper_args__ = {"polymorphic_identity": "document"}
 
     __table_args__ = (db.UniqueConstraint("document_id", "locale"),)
 

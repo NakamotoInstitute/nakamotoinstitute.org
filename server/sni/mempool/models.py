@@ -6,6 +6,7 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from sni.database import locale_check
 from sni.extensions import db
+from sni.shared.models import MarkdownContent
 
 if TYPE_CHECKING:
     from sni.authors.models import Author
@@ -57,10 +58,12 @@ class BlogPost(db.Model):
         return f"<BlogPost({self.id})>"
 
 
-class BlogPostTranslation(db.Model):
+class BlogPostTranslation(MarkdownContent):
     __tablename__ = "blog_post_translations"
 
-    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    id: Mapped[int] = mapped_column(
+        Integer, db.ForeignKey("markdown_content.id"), primary_key=True
+    )
     locale: Mapped[str] = mapped_column(
         String,
         db.CheckConstraint(f"locale IN {locale_check}", name="locale"),
@@ -69,7 +72,6 @@ class BlogPostTranslation(db.Model):
     title: Mapped[str] = mapped_column(String, nullable=False)
     slug: Mapped[str] = mapped_column(String, nullable=False)
     excerpt: Mapped[str] = mapped_column(Text, nullable=False)
-    content: Mapped[str] = mapped_column(Text, nullable=False)
     image_alt: Mapped[str] = mapped_column(String, nullable=True)
     translation_url: Mapped[str] = mapped_column(String, nullable=True)
     translation_site: Mapped[str] = mapped_column(String, nullable=True)
@@ -79,6 +81,8 @@ class BlogPostTranslation(db.Model):
     translators: Mapped[List["Translator"]] = relationship(
         secondary=blog_post_translators, back_populates="posts"
     )
+
+    __mapper_args__ = {"polymorphic_identity": "blog_post"}
 
     __table_args__ = (db.UniqueConstraint("blog_post_id", "locale"),)
 
@@ -126,10 +130,12 @@ class BlogSeries(db.Model):
         return f"<BlogSeries(id={self.id})>"
 
 
-class BlogSeriesTranslation(db.Model):
+class BlogSeriesTranslation(MarkdownContent):
     __tablename__ = "blog_series_translations"
 
-    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    id: Mapped[int] = mapped_column(
+        Integer, db.ForeignKey("markdown_content.id"), primary_key=True
+    )
     title: Mapped[str] = mapped_column(String, nullable=False)
     slug: Mapped[str] = mapped_column(String, unique=True, nullable=False)
     locale: Mapped[str] = mapped_column(
@@ -137,9 +143,10 @@ class BlogSeriesTranslation(db.Model):
         db.CheckConstraint(f"locale IN {locale_check}", name="locale"),
         nullable=False,
     )
-    content: Mapped[str] = mapped_column(Text, nullable=True)
     blog_series_id: Mapped[int] = mapped_column(db.ForeignKey("blog_series.id"))
     blog_series: Mapped[BlogSeries] = relationship(back_populates="translations")
+
+    __mapper_args__ = {"polymorphic_identity": "blog_series"}
 
     __table_args__ = (db.UniqueConstraint("blog_series_id", "locale"),)
 
