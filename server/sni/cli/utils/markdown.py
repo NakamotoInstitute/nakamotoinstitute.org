@@ -1,7 +1,7 @@
 import collections
 import os
 from datetime import datetime
-from typing import Any, Dict, List, Optional, Tuple, Type
+from typing import Any, Dict, Optional, Tuple, Type
 
 import click
 import yaml
@@ -53,29 +53,6 @@ def process_markdown_file(
             return None, remaining_content
 
     return None, content
-
-
-def load_all_markdown_files(
-    directory_path: str, schema: Type[BaseModel]
-) -> List[Dict[str, Any]]:
-    files_data: List[Dict[str, Any]] = []
-
-    for filename in sorted(os.listdir(directory_path)):
-        if filename.endswith(".md"):
-            filepath = os.path.join(directory_path, filename)
-            front_matter_dict, remaining_content = process_markdown_file(
-                filepath, schema
-            )
-
-            if front_matter_dict is not None:
-                file_data = dict(
-                    **front_matter_dict,
-                    slug=filename.split(".")[0],
-                    content=remaining_content,
-                )
-                files_data.append(file_data)
-
-    return files_data
 
 
 def extract_data_from_filename(filename):
