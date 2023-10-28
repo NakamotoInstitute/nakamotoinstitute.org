@@ -1,7 +1,7 @@
 import datetime
 from typing import TYPE_CHECKING, List, Literal
 
-from sqlalchemy import Boolean, Date, Integer, String, Text
+from sqlalchemy import Boolean, Date, Integer, String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from sni.database import format_check, locale_check

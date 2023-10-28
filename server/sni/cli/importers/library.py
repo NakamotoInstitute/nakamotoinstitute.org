@@ -1,5 +1,5 @@
 from sni.authors.models import Author
-from sni.cli.utils import ContentImporter, get, get_or_create
+from sni.cli.utils import TranslatedContentImporter, get, get_or_create
 from sni.library.models import Document, DocumentFormat, DocumentTranslation
 from sni.library.schemas import (
     DocumentCanonicalMDModel,
@@ -9,7 +9,7 @@ from sni.library.schemas import (
 from sni.translators.models import Translator
 
 
-class LibraryImporter(ContentImporter):
+class LibraryImporter(TranslatedContentImporter):
     content_type = "Library"
     canonical_model = Document
     translation_model = DocumentTranslation

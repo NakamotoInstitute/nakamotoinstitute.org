@@ -1,4 +1,4 @@
-from sni.cli.utils import ContentImporter
+from sni.cli.utils import TranslatedContentImporter
 from sni.mempool.models import BlogSeries, BlogSeriesTranslation
 from sni.mempool.schemas import (
     MempoolSeriesCanonicalMDModel,
@@ -7,7 +7,7 @@ from sni.mempool.schemas import (
 )
 
 
-class MempoolSeriesImporter(ContentImporter):
+class MempoolSeriesImporter(TranslatedContentImporter):
     content_type = "Mempool series"
     canonical_model = BlogSeries
     translation_model = BlogSeriesTranslation

@@ -1,3 +1,4 @@
+import collections
 import os
 from datetime import datetime
 from typing import Any, Dict, List, Optional, Tuple, Type
@@ -104,7 +105,122 @@ def process_translated_file(filepath: str, translated_schema):
     return translation_data, content
 
 
+IMPORT_MESSAGE = "Importing {content_type}..."
+SUMMARY_MESSAGE = "{new_files} new, {updated_files} updated, {deleted_files} deleted"
+
+
 class ContentImporter:
+    def __init__(self, directory_path):
+        self.directory_path = directory_path
+        self.files_in_db = {}
+
+    @property
+    def filenames(self):
+        return sorted(os.listdir(self.directory_path))
+
+    def run_import(self):
+        click.echo(IMPORT_MESSAGE.format(content_type=self.content_type), nl=False)
+        actions = self.import_content()
+        click.echo(DONE)
+        click.echo(
+            SUMMARY_MESSAGE.format(
+                new_files=actions["new"],
+                updated_files=actions["updated"],
+                deleted_files=actions["deleted"],
+            )
+        )
+        click.echo()
+
+    def import_content(self):
+        self._populate_files_from_db()
+        actions = collections.Counter()
+
+        for filename in self.filenames:
+            action = self._process_file(filename)
+            actions[action] += 1
+
+        actions["deleted"] = self._process_deleted_files()
+        db.session.commit()
+
+        return actions
+
+    def _populate_files_from_db(self):
+        self.files_in_db = {
+            content.file_metadata.filename: content
+            for content in db.session.scalars(
+                db.select(MarkdownContent).filter_by(content_type=self.content_key)
+            ).all()
+        }
+
+    def _process_file(self, filename):
+        filepath = os.path.join(self.directory_path, filename)
+        current_hash = self._get_file_hash(filepath)
+        current_timestamp = datetime.fromtimestamp(os.path.getmtime(filepath))
+
+        file_record = self.files_in_db.pop(filepath, None)
+        new_metadata = None
+
+        if not file_record:
+            new_metadata = self._create_new_metadata(
+                filepath, current_hash, current_timestamp
+            )
+            action = "new"
+        elif self._needs_update(file_record, current_hash, current_timestamp):
+            new_metadata = self._update_existing_metadata(
+                file_record, current_hash, current_timestamp
+            )
+            action = "updated"
+        else:
+            action = "unchanged"
+
+        if new_metadata:
+            slug, *_ = extract_data_from_filename(filename)
+            self._process_and_add_file(new_metadata, slug)
+
+        return action
+
+    def _get_file_hash(self, filepath):
+        return get_file_hash(filepath)
+
+    def _needs_update(self, file_record, current_hash, current_timestamp):
+        return (
+            file_record.file_metadata.hash != current_hash
+            or file_record.file_metadata.last_modified != current_timestamp
+        )
+
+    def _create_new_metadata(self, filepath, current_hash, current_timestamp):
+        new_metadata = FileMetadata(
+            filename=filepath, hash=current_hash, last_modified=current_timestamp
+        )
+        db.session.add(new_metadata)
+        return new_metadata
+
+    def _update_existing_metadata(self, file_record, current_hash, current_timestamp):
+        current_metadata = file_record.file_metadata
+        current_metadata.hash = current_hash
+        current_metadata.last_modified = current_timestamp
+        db.session.add(current_metadata)
+        return current_metadata
+
+    def _process_and_add_file(self, metadata, slug):
+        validated_data, content = process_markdown_file(metadata.filename, self.schema)
+        new_entry = self.model(
+            **validated_data,
+            slug=slug,
+            content=content,
+            file_metadata=metadata,
+            content_type=self.content_key,
+        )
+        db.session.add(new_entry)
+
+    def _process_deleted_files(self):
+        deleted_files_count = len(self.files_in_db)
+        for deleted_file in self.files_in_db.values():
+            db.session.delete(deleted_file)
+        return deleted_files_count
+
+
+class TranslatedContentImporter:
     def __init__(self, directory_path):
         self.directory_path = directory_path
         self.content_map = {}
@@ -145,13 +261,11 @@ class ContentImporter:
         canonical_data = validated_canonical_data.dict()
         translation_data = validated_translation_data.dict()
 
-        # Hook: Process additional data for canonical entry
         canonical_entry_data = self.process_canonical_additional_data(canonical_data)
         canonical_entry = self.canonical_model(**canonical_entry_data)
         db.session.add(canonical_entry)
         db.session.flush()
 
-        # Hook: Process additional data for translation entry
         translation_entry_data = self.process_translation_additional_data(
             translation_data, canonical_entry, metadata
         )
@@ -169,7 +283,6 @@ class ContentImporter:
             "translation": translation_entry,
         }
 
-    # Hook method placeholders in base class (can be overridden in derived classes)
     def process_canonical_additional_data(self, canonical_data):
         return canonical_data
 
@@ -225,15 +338,15 @@ class ContentImporter:
                 filepath, current_hash, current_timestamp
             )
         elif (
-            file_record.hash != current_hash
-            or file_record.last_modified_timestamp != current_timestamp
+            file_record.file_metadata.hash != current_hash
+            or file_record.file_metadata.last_modified != current_timestamp
         ):
             self.updated_files += 1
             new_metadata = self._update_existing_metadata(
                 file_record, current_hash, current_timestamp
             )
 
-        return new_metadata, filepath
+        return new_metadata
 
     @staticmethod
     def _create_new_metadata(filepath, current_hash, current_timestamp):
@@ -258,13 +371,13 @@ class ContentImporter:
         self._identify_files()
 
         for filename in self.english_filenames:
-            metadata, _ = self._process_file(filename)
+            metadata = self._process_file(filename)
             if metadata:
                 slug, _, _ = extract_data_from_filename(filename)
                 self.process_and_add_canonical_file(metadata, slug)
 
         for filename in self.non_english_filenames:
-            metadata, filepath = self._process_file(filename)
+            metadata = self._process_file(filename)
             if metadata:
                 slug, locale, _ = extract_data_from_filename(filename)
                 self.process_and_add_translated_file(metadata, slug, locale)
@@ -278,9 +391,12 @@ class ContentImporter:
     def run_import(self):
         click.echo(f"Importing {self.content_type}...", nl=False)
         self.import_content()
+        click.echo(DONE)
         click.echo(
-            f"{self.new_files} new, {self.updated_files} updated, {self.deleted_files} deleted"  # noqa E501
+            SUMMARY_MESSAGE.format(
+                new_files=self.new_files,
+                updated_files=self.updated_files,
+                deleted_files=self.deleted_files,
+            )
         )
-        click.echo(
-            DONE,
-        )
+        click.echo()

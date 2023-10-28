@@ -1,16 +1,15 @@
-import click
-
-from sni.cli.utils import DONE, load_all_markdown_files
-from sni.extensions import db
+from sni.cli.utils import ContentImporter
 from sni.translators.models import Translator
 from sni.translators.schemas import TranslatorMDModel
 
 
+class TranslatorImporter(ContentImporter):
+    content_type = "Translator"
+    model = Translator
+    schema = TranslatorMDModel
+    content_key = "translator"
+
+
 def import_translator():
-    click.echo("Importing Translator...", nl=False)
-    translators_data = load_all_markdown_files("content/translators", TranslatorMDModel)
-    for translator_data in translators_data:
-        translator = Translator(**translator_data)
-        db.session.add(translator)
-    db.session.commit()
-    click.echo(DONE)
+    translator_importer = TranslatorImporter(directory_path="content/translators")
+    translator_importer.run_import()
