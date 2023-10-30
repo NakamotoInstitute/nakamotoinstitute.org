@@ -1,16 +1,17 @@
-import click
-
-from sni.cli.utils import DONE, load_and_validate_json
-from sni.extensions import db
-from sni.skeptics.models import Skeptic
+from sni.cli.utils import JSONImporter
+from sni.skeptics.models import Skeptic, SkepticFile
 from sni.skeptics.schemas import SkepticJSONModel
 
 
+class SkepticImporter(JSONImporter):
+    filepath = "data/skeptics.json"
+    item_schema = SkepticJSONModel
+    model = Skeptic
+    file_model = SkepticFile
+    content_type = "skeptics"
+    query_field = "slug"
+
+
 def import_skeptic():
-    click.echo("Importing Skeptic...", nl=False)
-    skeptics_data = load_and_validate_json("data/skeptics.json", SkepticJSONModel)
-    for skeptic_data in skeptics_data:
-        skeptic = Skeptic(**skeptic_data.dict())
-        db.session.add(skeptic)
-    db.session.commit()
-    click.echo(DONE)
+    importer = SkepticImporter()
+    importer.run_import()

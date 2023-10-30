@@ -5,9 +5,20 @@ from sqlalchemy import DateTime, Integer, String, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from sni.extensions import db
+from sni.shared.models import JSONFile
 
 if TYPE_CHECKING:
     from sni.models import Quote
+
+
+class ForumThreadFile(JSONFile):
+    threads: Mapped[List["ForumThread"]] = relationship(
+        "ForumThread", back_populates="file"
+    )
+
+    __mapper_args__ = {
+        "polymorphic_identity": "forum_threads",
+    }
 
 
 class ForumThread(db.Model):
@@ -17,9 +28,21 @@ class ForumThread(db.Model):
     title: Mapped[str] = mapped_column(String, nullable=False)
     source: Mapped[str] = mapped_column(String, nullable=False)
     posts: Mapped[List["ForumPost"]] = relationship(back_populates="thread")
+    file_id: Mapped[int] = mapped_column(Integer, db.ForeignKey("json_files.id"))
+    file: Mapped[ForumThreadFile] = relationship(
+        "ForumThreadFile", back_populates="threads"
+    )
 
     def __repr__(self):
         return f"<ForumThread {self.title}>"
+
+
+class ForumPostFile(JSONFile):
+    posts: Mapped[List["ForumPost"]] = relationship("ForumPost", back_populates="file")
+
+    __mapper_args__ = {
+        "polymorphic_identity": "forum_posts",
+    }
 
 
 class ForumPost(db.Model):
@@ -44,6 +67,8 @@ class ForumPost(db.Model):
     )
     thread: Mapped[ForumThread] = relationship(back_populates="posts")
     quotes: Mapped[List["Quote"]] = relationship(back_populates="post")
+    file_id: Mapped[int] = mapped_column(Integer, db.ForeignKey("json_files.id"))
+    file: Mapped[ForumPostFile] = relationship("ForumPostFile", back_populates="posts")
 
     def __repr__(self):
         return f"<ForumPost {self.subject} - {self.source_id}>"

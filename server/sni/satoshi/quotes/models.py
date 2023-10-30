@@ -5,6 +5,7 @@ from sqlalchemy import Boolean, Date, Integer, String, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from sni.extensions import db
+from sni.shared.models import JSONFile
 
 if TYPE_CHECKING:
     from sni.satoshi.emails.models import Email
@@ -18,6 +19,16 @@ quote_quote_categories = db.Table(
 )
 
 
+class QuoteCategoryFile(JSONFile):
+    categories: Mapped[List["QuoteCategory"]] = relationship(
+        "QuoteCategory", back_populates="file"
+    )
+
+    __mapper_args__ = {
+        "polymorphic_identity": "quote_categories",
+    }
+
+
 class QuoteCategory(db.Model):
     __tablename__ = "quote_categories"
 
@@ -27,9 +38,21 @@ class QuoteCategory(db.Model):
     quotes: Mapped[List["Quote"]] = relationship(
         secondary=quote_quote_categories, back_populates="categories"
     )
+    file_id: Mapped[int] = mapped_column(Integer, db.ForeignKey("json_files.id"))
+    file: Mapped[QuoteCategoryFile] = relationship(
+        "QuoteCategoryFile", back_populates="categories"
+    )
 
     def __repr__(self) -> str:
         return f"<QuoteCategory({self.slug})"
+
+
+class QuoteFile(JSONFile):
+    quotes: Mapped[List["Quote"]] = relationship("Quote", back_populates="file")
+
+    __mapper_args__ = {
+        "polymorphic_identity": "quotes",
+    }
 
 
 class Quote(db.Model):
@@ -50,3 +73,5 @@ class Quote(db.Model):
     categories: Mapped[List[QuoteCategory]] = relationship(
         secondary=quote_quote_categories, back_populates="quotes"
     )
+    file_id: Mapped[int] = mapped_column(Integer, db.ForeignKey("json_files.id"))
+    file: Mapped[QuoteFile] = relationship("QuoteFile", back_populates="quotes")

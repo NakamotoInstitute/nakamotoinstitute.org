@@ -1,33 +1,36 @@
-import click
-
-from sni.cli.utils import DONE, get, load_and_validate_json
-from sni.extensions import db
-from sni.satoshi.quotes.models import Quote, QuoteCategory
+from sni.cli.utils import JSONImporter, get
+from sni.satoshi.quotes.models import Quote, QuoteCategory, QuoteCategoryFile, QuoteFile
 from sni.satoshi.quotes.schemas import QuoteCategoryJSONModel, QuoteJSONModel
 
 
+class QuoteCategoryImporter(JSONImporter):
+    filepath = "data/quote_categories.json"
+    item_schema = QuoteCategoryJSONModel
+    model = QuoteCategory
+    file_model = QuoteCategoryFile
+    content_type = "quote_categories"
+
+
 def import_quote_category():
-    click.echo("Importing QuoteCategory...", nl=False)
-    quote_categories_data = load_and_validate_json(
-        "data/quote_categories.json", QuoteCategoryJSONModel
-    )
-    for quote_category_data in quote_categories_data:
-        quote_category = QuoteCategory(**quote_category_data.dict())
-        db.session.add(quote_category)
-    db.session.commit()
-    click.echo(DONE)
+    importer = QuoteCategoryImporter()
+    importer.run_import()
 
 
-def import_quote():
-    click.echo("Importing Quote...", nl=False)
-    quotes_data = load_and_validate_json("data/quotes.json", QuoteJSONModel)
-    for _quote_data in quotes_data:
-        quote_data = _quote_data.dict()
+class QuoteImporter(JSONImporter):
+    filepath = "data/quotes.json"
+    item_schema = QuoteJSONModel
+    model = Quote
+    file_model = QuoteFile
+    content_type = "quotes"
+
+    def process_item_data(self, quote_data):
         quote_data["categories"] = [
             get(QuoteCategory, slug=category)
             for category in quote_data.pop("categories", [])
         ]
-        quote = Quote(**quote_data)
-        db.session.add(quote)
-    db.session.commit()
-    click.echo(DONE)
+        return quote_data
+
+
+def import_quote():
+    importer = QuoteImporter()
+    importer.run_import()

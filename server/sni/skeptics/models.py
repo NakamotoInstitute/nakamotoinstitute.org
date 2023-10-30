@@ -1,9 +1,17 @@
 import datetime
+from typing import List
 
 from sqlalchemy import Boolean, Date, Integer, String, Text
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from sni.extensions import db
+from sni.shared.models import JSONFile
+
+
+class SkepticFile(JSONFile):
+    skeptics: Mapped[List["Skeptic"]] = relationship("Skeptic", back_populates="file")
+
+    __mapper_args__ = {"polymorphic_identity": "skeptics"}
 
 
 class Skeptic(db.Model):
@@ -23,6 +31,8 @@ class Skeptic(db.Model):
         Boolean, default=False, nullable=False
     )
     wayback_link: Mapped[str] = mapped_column(String, nullable=True)
+    file_id: Mapped[int] = mapped_column(Integer, db.ForeignKey("json_files.id"))
+    file: Mapped[SkepticFile] = relationship("SkepticFile", back_populates="skeptics")
 
     @property
     def slug(self):

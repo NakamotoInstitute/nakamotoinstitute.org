@@ -1,30 +1,34 @@
-import click
-
-from sni.cli.utils import DONE, load_and_validate_json
-from sni.extensions import db
-from sni.satoshi.posts.models import ForumPost, ForumThread
+from sni.cli.utils import JSONImporter
+from sni.satoshi.posts.models import (
+    ForumPost,
+    ForumPostFile,
+    ForumThread,
+    ForumThreadFile,
+)
 from sni.satoshi.posts.schemas import ForumPostJSONModel, ForumThreadJSONModel
 
 
+class ForumThreadImporter(JSONImporter):
+    filepath = "data/forum_threads.json"
+    item_schema = ForumThreadJSONModel
+    model = ForumThread
+    file_model = ForumThreadFile
+    content_type = "forum_threads"
+
+
 def import_forum_thread():
-    click.echo("Importing ForumThread...", nl=False)
-    forum_threads_data = load_and_validate_json(
-        "data/forum_threads.json", ForumThreadJSONModel
-    )
-    for forum_thread_data in forum_threads_data:
-        email_thread = ForumThread(**forum_thread_data.dict())
-        db.session.add(email_thread)
-    db.session.commit()
-    click.echo(DONE)
+    importer = ForumThreadImporter()
+    importer.run_import()
+
+
+class ForumPostImporter(JSONImporter):
+    filepath = "data/forum_posts.json"
+    item_schema = ForumPostJSONModel
+    model = ForumPost
+    file_model = ForumPostFile
+    content_type = "forum_posts"
 
 
 def import_forum_post():
-    click.echo("Importing ForumPost...", nl=False)
-    forum_posts_data = load_and_validate_json(
-        "data/forum_posts.json", ForumPostJSONModel
-    )
-    for forum_post_data in forum_posts_data:
-        forum_post = ForumPost(**forum_post_data.dict())
-        db.session.add(forum_post)
-    db.session.commit()
-    click.echo(DONE)
+    importer = ForumPostImporter()
+    importer.run_import()
