@@ -5,9 +5,20 @@ from sqlalchemy import DateTime, Integer, String, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from sni.extensions import db
+from sni.shared.models import JSONFile
 
 if TYPE_CHECKING:
     from sni.models import Quote
+
+
+class EmailThreadFile(JSONFile):
+    threads: Mapped[List["EmailThread"]] = relationship(
+        "EmailThread", back_populates="file"
+    )
+
+    __mapper_args__ = {
+        "polymorphic_identity": "email_threads",
+    }
 
 
 class EmailThread(db.Model):
@@ -17,9 +28,21 @@ class EmailThread(db.Model):
     title: Mapped[str] = mapped_column(String, nullable=False)
     source: Mapped[str] = mapped_column(String, nullable=False)
     emails: Mapped[List["Email"]] = relationship(back_populates="thread")
+    file_id: Mapped[int] = mapped_column(Integer, db.ForeignKey("json_files.id"))
+    file: Mapped[EmailThreadFile] = relationship(
+        "EmailThreadFile", back_populates="threads"
+    )
 
     def __repr__(self):
         return f"<EmailThread {self.title}>"
+
+
+class EmailFile(JSONFile):
+    emails: Mapped[List["Email"]] = relationship("Email", back_populates="file")
+
+    __mapper_args__ = {
+        "polymorphic_identity": "emails",
+    }
 
 
 class Email(db.Model):
@@ -44,6 +67,8 @@ class Email(db.Model):
     )
     thread: Mapped[EmailThread] = relationship(back_populates="emails")
     quotes: Mapped[List["Quote"]] = relationship(back_populates="email")
+    file_id: Mapped[int] = mapped_column(Integer, db.ForeignKey("json_files.id"))
+    file: Mapped[EmailFile] = relationship("EmailFile", back_populates="emails")
 
     def __repr__(self):
         return f"<Email {self.subject} - {self.source_id}>"

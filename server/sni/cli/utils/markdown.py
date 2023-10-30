@@ -7,9 +7,7 @@ import click
 import yaml
 from pydantic import BaseModel, ValidationError
 
-from sni.cli.utils import (
-    DONE,
-)
+from sni.cli.utils import DONE
 from sni.extensions import db
 from sni.shared.models import FileMetadata, MarkdownContent
 from sni.utils.files import get_file_hash

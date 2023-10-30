@@ -24,6 +24,22 @@ class MarkdownContent(db.Model):
     }
 
 
+class JSONFile(db.Model):
+    __tablename__ = "json_files"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    file_metadata_id: Mapped[int] = mapped_column(db.ForeignKey("file_metadata.id"))
+    file_metadata: Mapped["FileMetadata"] = relationship(
+        "FileMetadata",
+        backref=db.backref("json_files", uselist=False, cascade="all, delete-orphan"),
+    )
+    content_type: Mapped[str] = mapped_column(String(50))
+    __mapper_args__ = {
+        "polymorphic_identity": "json_file",
+        "polymorphic_on": "content_type",
+    }
+
+
 class FileMetadata(db.Model):
     __tablename__ = "file_metadata"
 
