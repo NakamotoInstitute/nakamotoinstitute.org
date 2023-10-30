@@ -10,3 +10,7 @@ def get_file_hash(filename, hash_function="sha256"):
         for chunk in iter(lambda: file.read(4096), b""):
             h.update(chunk)
     return h.hexdigest()
+
+
+def split_filename(filename):
+    return filename.split(".")

@@ -56,10 +56,7 @@ class JSONImporter:
     def update_metadata_and_items(
         self, file_metadata, items_data, current_hash, current_timestamp
     ):
-        if (
-            file_metadata.last_modified != current_timestamp
-            or file_metadata.hash != current_hash
-        ):
+        if file_metadata.hash != current_hash:
             for item_data in items_data:
                 processed_item_data = self.process_item_data(item_data)
                 try:

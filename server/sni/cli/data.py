@@ -23,10 +23,7 @@ blueprint = Blueprint("data", __name__)
 blueprint.cli.help = "Update database."
 
 
-@blueprint.cli.command()
-def seed():
-    """Initialize and seed database."""
-    flush_db()
+def seed_db():
     import_author()
     import_translator()
     import_email()
@@ -40,4 +37,11 @@ def seed():
     import_mempool()
     import_skeptic()
     import_episode()
+
+
+@blueprint.cli.command()
+def seed():
+    """Initialize and seed database."""
+    flush_db()
+    seed_db()
     click.echo(color_text("Finished importing data!"))

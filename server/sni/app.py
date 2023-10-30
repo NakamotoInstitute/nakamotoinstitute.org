@@ -1,4 +1,5 @@
 import logging
+import os
 import sys
 
 from flask import Flask, g, redirect, request
@@ -20,6 +21,11 @@ def create_app(config_class=Config):
     register_shellcontext(app)
     register_cli(app)
     register_logger(app)
+
+    if app.debug and os.environ.get("WERKZEUG_RUN_MAIN") == "true":
+        with app.app_context():
+            cli.data.seed_db()
+
     return app
 
 

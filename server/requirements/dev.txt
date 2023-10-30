@@ -1,3 +1,4 @@
 -r base.txt
 black==23.10.1
 ruff==0.1.2
+watchdog==3.0.0
