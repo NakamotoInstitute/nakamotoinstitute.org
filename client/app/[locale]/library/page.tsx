@@ -1,5 +1,5 @@
 import { PageLayout } from "@/app/components";
-import { getLibraryDocs, getLibraryParams } from "@/lib/api";
+import { getLibraryDocs } from "@/lib/api";
 import { getLocaleParams, i18nTranslation } from "@/lib/i18n";
 import { urls } from "@/lib/urls";
 import { DocListing } from "./components/DocListing";
@@ -49,5 +49,5 @@ export default async function LibraryIndex({
 }
 
 export function generateStaticParams() {
-  return getLibraryParams();
+  return getLocaleParams();
 }
