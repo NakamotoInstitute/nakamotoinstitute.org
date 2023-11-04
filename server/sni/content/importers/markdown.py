@@ -16,9 +16,8 @@ IMPORT_MESSAGE = "Importing {content_type}..."
 SUMMARY_MESSAGE = "{new_files} new, {updated_files} updated, {deleted_files} deleted"
 
 
-class BaseImporter:
-    def __init__(self, directory_path):
-        self.directory_path = directory_path
+class BaseMarkdownImporter:
+    def __init__(self):
         self.files_in_db = {}
         self.actions = collections.Counter(new=0, updated=0, deleted=0, unchanged=0)
 
@@ -110,7 +109,7 @@ class BaseImporter:
         return deleted_files_count
 
 
-class ContentImporter(BaseImporter):
+class MarkdownImporter(BaseMarkdownImporter):
     def import_content(self):
         self._populate_files_from_db()
 
@@ -180,9 +179,9 @@ class ContentImporter(BaseImporter):
             db.session.add(new_entry)
 
 
-class TranslatedContentImporter(BaseImporter):
-    def __init__(self, directory_path):
-        super().__init__(directory_path)
+class TranslatedMarkdownImporter(BaseMarkdownImporter):
+    def __init__(self):
+        super().__init__()
         self.content_map = {}
         (
             self.english_filenames,

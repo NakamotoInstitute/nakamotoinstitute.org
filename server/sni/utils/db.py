@@ -1,9 +1,6 @@
-import click
 import sqlalchemy as sa
 
 from sni.extensions import db
-
-from .click import DONE
 
 
 def model_exists(model_class):
@@ -26,7 +23,5 @@ def get_or_create(model, **kwargs):
 
 
 def flush_db():
-    click.echo("Initializing database...", nl=False)
     db.drop_all()
     db.create_all()
-    click.echo(DONE)

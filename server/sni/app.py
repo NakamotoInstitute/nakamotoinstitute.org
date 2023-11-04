@@ -5,7 +5,17 @@ import sys
 from flask import Flask, g, redirect, request
 from werkzeug.middleware.proxy_fix import ProxyFix
 
-from sni import authors, cli, errors, library, mempool, podcast, satoshi, skeptics
+from sni import (
+    authors,
+    cli,
+    content,
+    errors,
+    library,
+    mempool,
+    podcast,
+    satoshi,
+    skeptics,
+)
 from sni.config import Config
 from sni.extensions import cache, db
 
@@ -24,7 +34,7 @@ def create_app(config_class=Config):
 
     if app.debug and os.environ.get("WERKZEUG_RUN_MAIN") == "true":
         with app.app_context():
-            cli.data.seed_db()
+            content.update.update_content()
 
     return app
 
@@ -76,7 +86,7 @@ def register_shellcontext(app):
 
 
 def register_cli(app):
-    app.register_blueprint(cli.data.blueprint)
+    app.register_blueprint(cli.content.blueprint)
 
 
 def register_logger(app):

@@ -1,6 +1,7 @@
-from sni.cli.utils import JSONImporter, get
+from sni.content.importers import JSONImporter
 from sni.satoshi.quotes.models import Quote, QuoteCategory, QuoteCategoryFile, QuoteFile
 from sni.satoshi.quotes.schemas import QuoteCategoryJSONModel, QuoteJSONModel
+from sni.utils.db import get
 
 
 class QuoteCategoryImporter(JSONImporter):

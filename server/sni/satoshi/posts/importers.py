@@ -1,4 +1,4 @@
-from sni.cli.utils import JSONImporter
+from sni.content.importers import JSONImporter
 from sni.satoshi.posts.models import (
     ForumPost,
     ForumPostFile,

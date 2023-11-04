@@ -1,15 +1,25 @@
 from sni.authors.models import Author
-from sni.cli.utils import TranslatedContentImporter, get
-from sni.mempool.models import BlogPost, BlogPostTranslation, BlogSeriesTranslation
+from sni.content.importers import TranslatedMarkdownImporter
+from sni.mempool.models import (
+    BlogPost,
+    BlogPostTranslation,
+    BlogSeries,
+    BlogSeriesTranslation,
+)
 from sni.mempool.schemas import (
     MempoolCanonicalMDModel,
     MempoolMDModel,
+    MempoolSeriesCanonicalMDModel,
+    MempoolSeriesMDModel,
+    MempoolSeriesTranslationMDModel,
     MempoolTranslationMDModel,
 )
 from sni.translators.models import Translator
+from sni.utils.db import get
 
 
-class MempoolImporter(TranslatedContentImporter):
+class MempoolImporter(TranslatedMarkdownImporter):
+    directory_path = "content/mempool"
     content_type = "Mempool"
     canonical_model = BlogPost
     translation_model = BlogPostTranslation
@@ -56,5 +66,21 @@ class MempoolImporter(TranslatedContentImporter):
 
 
 def import_mempool():
-    mempool_importer = MempoolImporter(directory_path="content/mempool")
+    mempool_importer = MempoolImporter()
     mempool_importer.run_import()
+
+
+class MempoolSeriesImporter(TranslatedMarkdownImporter):
+    directory_path = "content/mempool_series"
+    content_type = "Mempool series"
+    canonical_model = BlogSeries
+    translation_model = BlogSeriesTranslation
+    canonical_schema = MempoolSeriesCanonicalMDModel
+    md_schema = MempoolSeriesMDModel
+    translation_schema = MempoolSeriesTranslationMDModel
+    content_key = "blog_series"
+
+
+def import_mempool_series():
+    mempool_series_importer = MempoolSeriesImporter()
+    mempool_series_importer.run_import()

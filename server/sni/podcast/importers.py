@@ -1,9 +1,10 @@
-from sni.cli.utils import ContentImporter
+from sni.content.importers import MarkdownImporter
 from sni.podcast.models import Episode
 from sni.podcast.schemas import EpisodeMDModel
 
 
-class EpisodeImporter(ContentImporter):
+class EpisodeImporter(MarkdownImporter):
+    directory_path = "content/podcast"
     content_type = "Episode"
     model = Episode
     schema = EpisodeMDModel
@@ -11,5 +12,5 @@ class EpisodeImporter(ContentImporter):
 
 
 def import_episode():
-    episode_importer = EpisodeImporter(directory_path="content/podcast")
+    episode_importer = EpisodeImporter()
     episode_importer.run_import()

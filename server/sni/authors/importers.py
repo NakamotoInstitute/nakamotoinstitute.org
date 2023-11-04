@@ -1,9 +1,10 @@
 from sni.authors.models import Author
 from sni.authors.schemas.base import AuthorMDModel
-from sni.cli.utils import ContentImporter
+from sni.content.importers import MarkdownImporter
 
 
-class AuthorImporter(ContentImporter):
+class AuthorImporter(MarkdownImporter):
+    directory_path = "content/authors"
     content_type = "Author"
     model = Author
     schema = AuthorMDModel
@@ -11,5 +12,5 @@ class AuthorImporter(ContentImporter):
 
 
 def import_author():
-    author_importer = AuthorImporter(directory_path="content/authors")
+    author_importer = AuthorImporter()
     author_importer.run_import()
