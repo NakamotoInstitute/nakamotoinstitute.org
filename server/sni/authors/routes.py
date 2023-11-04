@@ -2,6 +2,7 @@ from typing import List
 
 from flask import Blueprint, abort, g, jsonify
 from sqlalchemy import or_
+from sqlalchemy.orm import aliased
 
 from sni.extensions import db
 from sni.library.models import Document, DocumentTranslation, document_authors
@@ -23,18 +24,20 @@ blueprint = Blueprint("authors", __name__, url_prefix="/authors")
 @blueprint.route("/", methods=["GET"])
 @response_model(List[AuthorModel])
 def get_authors():
+    DocumentTranslationAlias = aliased(DocumentTranslation, flat=True)
+    BlogPostTranslationAlias = aliased(BlogPostTranslation, flat=True)
     authors = db.session.scalars(
         db.select(Author)
         .outerjoin(document_authors)
         .outerjoin(Document)
-        .outerjoin(DocumentTranslation)
+        .outerjoin(DocumentTranslationAlias)
         .outerjoin(blog_post_authors)
         .outerjoin(BlogPost)
-        .outerjoin(BlogPostTranslation)
+        .outerjoin(BlogPostTranslationAlias)
         .filter(
             or_(
-                DocumentTranslation.locale == g.locale,
-                BlogPostTranslation.locale == g.locale,
+                DocumentTranslationAlias.locale == g.locale,
+                BlogPostTranslationAlias.locale == g.locale,
             )
         )
         .order_by(Author.sort_name)
@@ -48,20 +51,23 @@ def get_authors():
 def get_author(slug):
     author = db.first_or_404(db.select(Author).filter_by(slug=slug))
 
+    DocumentTranslationAlias = aliased(DocumentTranslation, flat=True)
+    BlogPostTranslationAlias = aliased(BlogPostTranslation, flat=True)
+
     mempool_posts = db.session.scalars(
-        db.select(BlogPostTranslation)
+        db.select(BlogPostTranslationAlias)
         .join(BlogPost)
         .join(blog_post_authors)
         .join(Author)
-        .filter(Author.id == author.id, BlogPostTranslation.locale == g.locale)
+        .filter(Author.id == author.id, BlogPostTranslationAlias.locale == g.locale)
     ).all()
 
     library_docs = db.session.scalars(
-        db.select(DocumentTranslation)
+        db.select(DocumentTranslationAlias)
         .join(Document)
         .join(document_authors)
         .join(Author)
-        .filter(Author.id == author.id, DocumentTranslation.locale == g.locale)
+        .filter(Author.id == author.id, DocumentTranslationAlias.locale == g.locale)
     ).all()
 
     if not mempool_posts and not library_docs:
@@ -88,16 +94,19 @@ def get_author_params():
         ).all()
     )
 
+    DocumentTranslationAlias = aliased(DocumentTranslation, flat=True)
+    BlogPostTranslationAlias = aliased(BlogPostTranslation, flat=True)
+
     for author in authors:
         for locale in locales:
             mempool_posts_exist = db.session.scalar(
                 db.select(
                     db.exists(
                         db.select(1)
-                        .select_from(BlogPostTranslation)
+                        .select_from(BlogPostTranslationAlias)
                         .join(BlogPost)
                         .join(blog_post_authors)
-                        .where(BlogPostTranslation.locale == locale)
+                        .where(BlogPostTranslationAlias.locale == locale)
                         .where(blog_post_authors.c.author_id == author.id)
                     )
                 )
@@ -107,10 +116,10 @@ def get_author_params():
                 db.select(
                     db.exists(
                         db.select(1)
-                        .select_from(DocumentTranslation)
+                        .select_from(DocumentTranslationAlias)
                         .join(Document)
                         .join(document_authors)
-                        .where(DocumentTranslation.locale == locale)
+                        .where(DocumentTranslationAlias.locale == locale)
                         .where(document_authors.c.author_id == author.id)
                     )
                 )
