@@ -10,8 +10,3 @@ class SkepticImporter(JSONImporter):
     file_model = SkepticFile
     content_type = "skeptics"
     query_field = "slug"
-
-
-def import_skeptic():
-    importer = SkepticImporter()
-    importer.run_import()

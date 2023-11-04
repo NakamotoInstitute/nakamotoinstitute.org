@@ -9,8 +9,3 @@ class AuthorImporter(MarkdownImporter):
     model = Author
     schema = AuthorMDModel
     content_key = "author"
-
-
-def import_author():
-    author_importer = AuthorImporter()
-    author_importer.run_import()

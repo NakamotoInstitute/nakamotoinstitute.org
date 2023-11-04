@@ -56,8 +56,3 @@ class LibraryImporter(TranslatedMarkdownImporter):
         return super().process_translation_for_translated_file(
             translation_data, canonical_entry, metadata
         )
-
-
-def import_library():
-    library_importer = LibraryImporter()
-    library_importer.run_import()

@@ -11,19 +11,9 @@ class EmailThreadImporter(JSONImporter):
     content_type = "email_threads"
 
 
-def import_email_thread():
-    importer = EmailThreadImporter()
-    importer.run_import()
-
-
 class EmailImporter(JSONImporter):
     filepath = "data/emails.json"
     item_schema = EmailJSONModel
     model = Email
     file_model = EmailFile
     content_type = "emails"
-
-
-def import_email():
-    importer = EmailImporter()
-    importer.run_import()

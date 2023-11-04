@@ -12,9 +12,6 @@ from sni.extensions import db
 from sni.shared.models import FileMetadata, MarkdownContent
 from sni.utils.files import get_file_hash, split_filename
 
-IMPORT_MESSAGE = "Importing {content_type}..."
-SUMMARY_MESSAGE = "{new_files} new, {updated_files} updated, {deleted_files} deleted"
-
 
 class BaseMarkdownImporter:
     def __init__(self):
@@ -26,11 +23,11 @@ class BaseMarkdownImporter:
         return sorted(os.listdir(self.directory_path))
 
     def run_import(self):
-        click.echo(IMPORT_MESSAGE.format(content_type=self.content_type), nl=False)
+        click.echo(f"Importing {self.content_type}...", nl=False)
         self.import_content()
         click.echo(DONE)
         click.echo(
-            SUMMARY_MESSAGE.format(
+            "{new_files} new, {updated_files} updated, {deleted_files} deleted".format(
                 new_files=self.actions["new"],
                 updated_files=self.actions["updated"],
                 deleted_files=self.actions["deleted"],

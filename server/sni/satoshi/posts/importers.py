@@ -16,19 +16,9 @@ class ForumThreadImporter(JSONImporter):
     content_type = "forum_threads"
 
 
-def import_forum_thread():
-    importer = ForumThreadImporter()
-    importer.run_import()
-
-
 class ForumPostImporter(JSONImporter):
     filepath = "data/forum_posts.json"
     item_schema = ForumPostJSONModel
     model = ForumPost
     file_model = ForumPostFile
     content_type = "forum_posts"
-
-
-def import_forum_post():
-    importer = ForumPostImporter()
-    importer.run_import()

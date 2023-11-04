@@ -9,8 +9,3 @@ class TranslatorImporter(MarkdownImporter):
     model = Translator
     schema = TranslatorMDModel
     content_key = "translator"
-
-
-def import_translator():
-    translator_importer = TranslatorImporter()
-    translator_importer.run_import()

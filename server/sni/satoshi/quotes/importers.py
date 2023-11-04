@@ -12,11 +12,6 @@ class QuoteCategoryImporter(JSONImporter):
     content_type = "quote_categories"
 
 
-def import_quote_category():
-    importer = QuoteCategoryImporter()
-    importer.run_import()
-
-
 class QuoteImporter(JSONImporter):
     filepath = "data/quotes.json"
     item_schema = QuoteJSONModel
@@ -30,8 +25,3 @@ class QuoteImporter(JSONImporter):
             for category in quote_data.pop("categories", [])
         ]
         return quote_data
-
-
-def import_quote():
-    importer = QuoteImporter()
-    importer.run_import()
