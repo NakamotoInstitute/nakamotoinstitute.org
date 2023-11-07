@@ -17,7 +17,7 @@ from sni import (
     skeptics,
 )
 from sni.config import Config
-from sni.extensions import cache, db
+from sni.extensions import cache, db, migrate
 
 
 def create_app(config_class=Config):
@@ -46,6 +46,7 @@ def register_configurations(app):
 
 def register_extensions(app):
     db.init_app(app)
+    migrate.init_app(app, db)
 
     debug_cache_config = {
         "CACHE_TYPE": "null",

@@ -4,12 +4,29 @@ services:
     build:
       context: .
       dockerfile: ./compose/local/flask/Dockerfile
+    depends_on:
+      - postgres
     environment:
       - FLASK_APP=app.py
       - FLASK_RUN_HOST=0.0.0.0
     env_file:
       - ./.envs/.local/.flask
+      - ./.envs/.local/.postgres
     volumes:
       - .:/app:z
     ports:
       - "5000:5000"
+
+  postgres:
+    image: postgres:16
+    volumes:
+      - sni_local_postgres_data:/var/lib/postgresql/data
+      - sni_local_postgres_data_backups:/backups
+    env_file:
+      - ./.envs/.local/.postgres
+    ports:
+      - "5234:5432"
+
+volumes:
+  sni_local_postgres_data: {}
+  sni_local_postgres_data_backups: {}
