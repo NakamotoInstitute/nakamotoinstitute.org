@@ -121,20 +121,20 @@ We consider the scenario of an attacker trying to generate an alternate chain fa
 
 The race between the honest chain and an attacker chain can be characterized as a Binomial Random Walk. The success event is the honest chain being extended by one block, increasing its lead by +1, and the failure event is the attacker's chain being extended by one block, reducing the gap by -1.
 
-The probability of an attacker catching up from a given deficit is analogous to a Gambler's Ruin problem. Suppose a gambler with unlimited credit starts at a deficit and plays potentially an infinite number of trials to try to reach breakeven. We can calculate the probability he ever reaches breakeven, or that an attacker ever catches up with the honest chain, as follows<sup><a href="#fn8" id="ref8">[8]</a></sup>:
+The probability of an attacker catching up from a given deficit is analogous to a Gambler's Ruin problem. Suppose a gambler with unlimited credit starts at a deficit and plays potentially an infinite number of trials to try to reach breakeven. We can calculate the probability he ever reaches breakeven, or that an attacker ever catches up with the honest chain, as follows:<sup><a href="#fn8" id="ref8">[8]</a></sup>
 
 $$
-\begin{eqnarray*}
-\large p &=& \text{ probability an honest node finds the next block}\newline
-\large q &=& \text{ probability the attacker finds the next block}\newline
-\large q_z &=& \text{ probability the attacker will ever catch up from $z$ blocks behind}
-\end{eqnarray*}
+\begin{aligned}
+p &= \text{probability an honest node finds the next block} \\
+q &= \text{probability the attacker finds the next block} \\
+q_z &= \text{probability the attacker will ever catch up from $z$ blocks behind}
+\end{aligned}
 $$
 
 $$
 \large q_z = \begin{Bmatrix}
-1 & \textit{if}\; p \leq q\newline
-(q/p)^z & \textit{if}\; p > q
+1 & \text{if}\; p \leq q\newline
+(q/p)^z & \text{if}\; p > q
 \end{Bmatrix}
 $$
 
@@ -146,23 +146,25 @@ The receiver generates a new key pair and gives the public key to the sender sho
 
 The recipient waits until the transaction has been added to a block and $z$ blocks have been linked after it. He doesn't know the exact amount of progress the attacker has made, but assuming the honest blocks took the average expected time per block, the attacker's potential progress will be a Poisson distribution with expected value:
 
-$$\large \lambda = z \frac qp$$
+$$
+\lambda = z \frac{q}{p}
+$$
 
 To get the probability the attacker could still catch up now, we multiply the Poisson density for each amount of progress he could have made by the probability he could catch up from that point:
 
 $$
-\large \sum_{k=0}^{\infty} \frac{\lambda^k e^{-\lambda}}{k!} \cdot
+\sum_{k=0}^{\infty} \frac{\lambda^k e^{-\lambda}}{k!} \cdot
 \begin{Bmatrix}
-(q/p)^{(z-k)} & \textit{if}\;k\leq z\newline
-1 & \textit{if} \; k > z
+(q/p)^{(z-k)} & \text{if}\; k\leq z\newline
+1 & \text{if}\; k > z
 \end{Bmatrix}
 $$
 
 Rearranging to avoid summing the infinite tail of the distribution...
 
 $$
-\large 1 - \sum_{k=0}^{z} \frac{\lambda^k e^{-\lambda}}{k!}
-\left ( 1-(q/p)^{(z-k)} \right )
+1 - \sum_{k=0}^{z} \frac{\lambda^k e^{-\lambda}}{k!}
+\left( 1-(q/p)^{(z-k)} \right)
 $$
 
 Converting to C code...
