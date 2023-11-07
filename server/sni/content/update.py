@@ -13,10 +13,10 @@ def update_content():
     importers = [
         AuthorImporter,
         TranslatorImporter,
-        EmailImporter,
         EmailThreadImporter,
-        ForumPostImporter,
+        EmailImporter,
         ForumThreadImporter,
+        ForumPostImporter,
         QuoteCategoryImporter,
         QuoteImporter,
         LibraryImporter,
