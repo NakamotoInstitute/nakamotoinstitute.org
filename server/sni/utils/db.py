@@ -20,8 +20,3 @@ def get_or_create(model, **kwargs):
         return instance
     else:
         return model(**kwargs)
-
-
-def flush_db():
-    db.drop_all()
-    db.create_all()
