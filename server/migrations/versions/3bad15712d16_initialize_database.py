@@ -1,15 +1,16 @@
 """Initialize database
 
-Revision ID: 1935008381f2
+Revision ID: 3bad15712d16
 Revises: 
-Create Date: 2023-11-07 20:52:37.653465
+Create Date: 2023-11-08 22:47:37.524573
 
 """
 import sqlalchemy as sa
 from alembic import op
+from sqlalchemy.dialects import postgresql
 
 # revision identifiers, used by Alembic.
-revision = "1935008381f2"
+revision = "3bad15712d16"
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -26,8 +27,17 @@ def upgrade():
     op.create_table(
         "document_formats",
         sa.Column("id", sa.Integer(), nullable=False),
-        sa.Column("format_type", sa.String(), nullable=True),
+        sa.Column(
+            "format_type",
+            postgresql.ENUM(
+                "pdf", "epub", "mobi", "txt", name="documentformats", create_type=False
+            ),
+            nullable=False,
+        ),
         sa.PrimaryKeyConstraint("id", name=op.f("pk_document_formats")),
+        sa.UniqueConstraint(
+            "format_type", name=op.f("uq_document_formats_format_type")
+        ),
     )
     op.create_table(
         "documents",
@@ -109,7 +119,26 @@ def upgrade():
     op.create_table(
         "blog_post_translations",
         sa.Column("id", sa.Integer(), nullable=False),
-        sa.Column("locale", sa.String(), nullable=False),
+        sa.Column(
+            "locale",
+            postgresql.ENUM(
+                "ar",
+                "de",
+                "en",
+                "es",
+                "fa",
+                "fi",
+                "fr",
+                "he",
+                "it",
+                "pt",
+                "ru",
+                "zh",
+                name="locales",
+                create_type=False,
+            ),
+            nullable=False,
+        ),
         sa.Column("title", sa.String(), nullable=False),
         sa.Column("slug", sa.String(), nullable=False),
         sa.Column("excerpt", sa.Text(), nullable=False),
@@ -140,7 +169,26 @@ def upgrade():
         sa.Column("id", sa.Integer(), nullable=False),
         sa.Column("title", sa.String(), nullable=False),
         sa.Column("slug", sa.String(), nullable=False),
-        sa.Column("locale", sa.String(), nullable=False),
+        sa.Column(
+            "locale",
+            postgresql.ENUM(
+                "ar",
+                "de",
+                "en",
+                "es",
+                "fa",
+                "fi",
+                "fr",
+                "he",
+                "it",
+                "pt",
+                "ru",
+                "zh",
+                name="locales",
+                create_type=False,
+            ),
+            nullable=False,
+        ),
         sa.Column("blog_series_id", sa.Integer(), nullable=False),
         sa.ForeignKeyConstraint(
             ["blog_series_id"],
@@ -163,7 +211,26 @@ def upgrade():
     op.create_table(
         "document_translations",
         sa.Column("id", sa.Integer(), nullable=False),
-        sa.Column("locale", sa.String(), nullable=False),
+        sa.Column(
+            "locale",
+            postgresql.ENUM(
+                "ar",
+                "de",
+                "en",
+                "es",
+                "fa",
+                "fi",
+                "fr",
+                "he",
+                "it",
+                "pt",
+                "ru",
+                "zh",
+                name="locales",
+                create_type=False,
+            ),
+            nullable=False,
+        ),
         sa.Column("title", sa.String(), nullable=False),
         sa.Column("sort_title", sa.String(), nullable=True),
         sa.Column("display_title", sa.String(), nullable=True),

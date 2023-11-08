@@ -1,10 +1,10 @@
 import datetime
 from typing import TYPE_CHECKING, List, Literal
 
-from sqlalchemy import Boolean, Date, Integer, String
+from sqlalchemy import Boolean, Date, Enum, Integer, String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from sni.database import format_check, locale_check
+from sni.config import DocumentFormats, Locales
 from sni.extensions import db
 from sni.shared.models import MarkdownContent
 
@@ -41,12 +41,8 @@ class DocumentFormat(db.Model):
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     format_type: Mapped[str] = mapped_column(
-        String,
-        db.CheckConstraint(
-            f"format_type IN {format_check}",
-            name="format_type",
-        ),
-        nullable=True,
+        Enum(DocumentFormats, values_callable=lambda x: [e.value for e in x]),
+        unique=True,
     )
     documents: Mapped[List["DocumentTranslation"]] = relationship(
         secondary=document_formats, back_populates="formats"
@@ -82,10 +78,8 @@ class DocumentTranslation(MarkdownContent):
     id: Mapped[int] = mapped_column(
         Integer, db.ForeignKey("markdown_content.id"), primary_key=True
     )
-    locale: Mapped[str] = mapped_column(
-        String,
-        db.CheckConstraint(f"locale IN {locale_check}", name="locale"),
-        nullable=False,
+    locale: Mapped[Locales] = mapped_column(
+        Enum(Locales, values_callable=lambda x: [e.value for e in x]), nullable=False
     )
     title: Mapped[str] = mapped_column(String, nullable=False)
     sort_title: Mapped[str] = mapped_column(String, nullable=True)

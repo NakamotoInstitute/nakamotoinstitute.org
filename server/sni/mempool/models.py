@@ -1,10 +1,10 @@
 import datetime
 from typing import TYPE_CHECKING, List
 
-from sqlalchemy import Boolean, Date, Integer, String, Text
+from sqlalchemy import Boolean, Date, Enum, Integer, String, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from sni.database import locale_check
+from sni.config import Locales
 from sni.extensions import db
 from sni.shared.models import MarkdownContent
 
@@ -64,10 +64,8 @@ class BlogPostTranslation(MarkdownContent):
     id: Mapped[int] = mapped_column(
         Integer, db.ForeignKey("markdown_content.id"), primary_key=True
     )
-    locale: Mapped[str] = mapped_column(
-        String,
-        db.CheckConstraint(f"locale IN {locale_check}", name="locale"),
-        nullable=False,
+    locale: Mapped[Locales] = mapped_column(
+        Enum(Locales, values_callable=lambda x: [e.value for e in x]), nullable=False
     )
     title: Mapped[str] = mapped_column(String, nullable=False)
     slug: Mapped[str] = mapped_column(String, nullable=False)
@@ -138,10 +136,8 @@ class BlogSeriesTranslation(MarkdownContent):
     )
     title: Mapped[str] = mapped_column(String, nullable=False)
     slug: Mapped[str] = mapped_column(String, unique=True, nullable=False)
-    locale: Mapped[str] = mapped_column(
-        String,
-        db.CheckConstraint(f"locale IN {locale_check}", name="locale"),
-        nullable=False,
+    locale: Mapped[Locales] = mapped_column(
+        Enum(Locales, values_callable=lambda x: [e.value for e in x]), nullable=False
     )
     blog_series_id: Mapped[int] = mapped_column(db.ForeignKey("blog_series.id"))
     blog_series: Mapped[BlogSeries] = relationship(back_populates="translations")

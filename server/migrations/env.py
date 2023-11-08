@@ -1,6 +1,7 @@
 import logging
 from logging.config import fileConfig
 
+import alembic_postgresql_enum  # noqa: F401
 from alembic import context
 from flask import current_app
 

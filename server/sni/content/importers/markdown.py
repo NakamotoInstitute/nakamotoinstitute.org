@@ -8,6 +8,7 @@ import yaml
 from pydantic import BaseModel, ValidationError
 
 from sni.cli.utils import DONE
+from sni.config import Locales
 from sni.extensions import db
 from sni.shared.models import FileMetadata, MarkdownContent
 from sni.utils.files import get_file_hash, split_filename
@@ -221,7 +222,7 @@ class TranslatedMarkdownImporter(BaseMarkdownImporter):
         all_canonical_entries = db.session.query(self.canonical_model).all()
         for entry in all_canonical_entries:
             english_translation = next(
-                (t for t in entry.translations if t.locale == "en"), None
+                (t for t in entry.translations if t.locale == Locales.ENGLISH), None
             )
             self.content_map[english_translation.slug] = {
                 "canonical": entry,
@@ -319,7 +320,7 @@ class TranslatedMarkdownImporter(BaseMarkdownImporter):
             translation_entry = self.translation_model(
                 **translation_entry_data,
                 slug=slug,
-                locale="en",
+                locale=Locales.ENGLISH,
                 content=content,
                 **{self.content_key: canonical_entry},
             )

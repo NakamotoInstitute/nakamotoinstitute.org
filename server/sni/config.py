@@ -1,5 +1,5 @@
 import os
-from typing import List
+from enum import Enum, unique
 
 from dotenv import load_dotenv
 
@@ -16,23 +16,25 @@ class Config(object):
     CSRF_ENABLED = True
 
 
-def string_literal_check(lst: List[str]) -> str:
-    check = ", ".join([f"'{item}'" for item in lst])
-    return f"({check})"
+@unique
+class Locales(Enum):
+    ARABIC = "ar"
+    GERMAN = "de"
+    ENGLISH = "en"
+    SPANISH = "es"
+    PERSIAN = "fa"
+    FINNISH = "fi"
+    FRENCH = "fr"
+    HEBREW = "he"
+    ITALIAN = "it"
+    PORTUGUESE = "pt"
+    RUSSIAN = "ru"
+    CHINESE = "zh"
 
 
-ALLOWED_LOCALES = [
-    "ar",
-    "de",
-    "en",
-    "es",
-    "fa",
-    "fi",
-    "fr",
-    "he",
-    "it",
-    "pt",
-    "ru",
-    "zh",
-]
-ALLOWED_FORMATS = ["pdf", "epub", "mobi", "txt"]
+@unique
+class DocumentFormats(Enum):
+    PDF = "pdf"
+    EPUB = "epub"
+    MOBI = "mobi"
+    TXT = "txt"

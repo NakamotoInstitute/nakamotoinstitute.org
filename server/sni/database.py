@@ -1,9 +1,5 @@
-from typing import List
-
 from sqlalchemy import MetaData
 from sqlalchemy.orm import DeclarativeBase
-
-from .config import ALLOWED_FORMATS, ALLOWED_LOCALES
 
 
 class Base(DeclarativeBase):
@@ -16,12 +12,3 @@ class Base(DeclarativeBase):
             "pk": "pk_%(table_name)s",
         }
     )
-
-
-def string_literal_check(lst: List[str]) -> str:
-    check = ", ".join([f"'{item}'" for item in lst])
-    return f"({check})"
-
-
-locale_check = string_literal_check(ALLOWED_LOCALES)
-format_check = string_literal_check(ALLOWED_FORMATS)
