@@ -7,7 +7,7 @@ services:
     depends_on:
       - postgres
     environment:
-      - FLASK_APP=run.py
+      - FLASK_APP=app.py
       - FLASK_RUN_HOST=0.0.0.0
     env_file:
       - ./.envs/.production/.postgres
