@@ -4,6 +4,8 @@ from typing import Any, List, Optional
 
 from pydantic import AliasPath, BaseModel, Field, field_serializer, model_validator
 
+from sni.config import DocumentFormats, Locales
+
 from ..authors.schemas.base import AuthorModel
 from ..shared.schemas import ORMModel, TranslationSchema
 from ..translators.schemas import TranslatorModel
@@ -64,11 +66,11 @@ class DocumentTranslationMDModel(DocumentMDModel):
 
 
 class DocumentFormatModel(ORMModel):
-    format_type: str
+    format_type: DocumentFormats
 
 
 class DocumentBaseModel(ORMModel):
-    locale: str
+    locale: Locales
     title: str
     slug: str
     date: datetime.date = Field(alias=AliasPath("document", "date"))
@@ -86,7 +88,7 @@ class DocumentBaseModel(ORMModel):
     @field_serializer("formats")
     def serialize_formats(self, formats) -> List[str]:
         """Convert DocumentFormatModel to format_type string."""
-        return sorted([fmt.format_type for fmt in formats])
+        return sorted([fmt.format_type.value for fmt in formats])
 
 
 class DocumentIndexModel(DocumentBaseModel):

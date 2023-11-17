@@ -3,6 +3,8 @@ from typing import Any, List, Optional
 
 from pydantic import AliasPath, BaseModel, Field, field_serializer, model_validator
 
+from sni.config import Locales
+
 from ..authors.schemas.base import AuthorModel
 from ..shared.schemas import ORMModel, TranslationSchema
 from ..translators.schemas import TranslatorModel
@@ -48,7 +50,7 @@ class MempoolSeriesTranslationMDModel(MempoolSeriesMDModel):
 
 
 class MempoolSeriesBaseModel(ORMModel):
-    locale: str
+    locale: Locales
     title: str
     slug: str
     chapter_title: Optional[bool] = Field(
@@ -58,7 +60,7 @@ class MempoolSeriesBaseModel(ORMModel):
 
 
 class MempoolPostBaseModel(ORMModel):
-    locale: str
+    locale: Locales
     title: str
     slug: str
     excerpt: str

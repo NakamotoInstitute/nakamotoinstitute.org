@@ -17,7 +17,7 @@ class Config(object):
 
 
 @unique
-class Locales(Enum):
+class Locales(str, Enum):
     ARABIC = "ar"
     GERMAN = "de"
     ENGLISH = "en"
