@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { PageLayout } from "@/app/components";
-import { getAuthors } from "@/lib/api";
-import { getLocaleParams, i18nTranslation } from "@/lib/i18n";
+import { PageLayout } from "@/app/components/PageLayout";
+import { getAuthors } from "@/lib/api/authors";
+import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
+import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { PageHeader } from "@/app/components/PageHeader";
 import { Metadata } from "next";

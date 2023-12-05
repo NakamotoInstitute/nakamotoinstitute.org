@@ -1,14 +1,10 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import clsx from "clsx";
-import { PageLayout } from "@/app/components";
-import {
-  getEmailThread,
-  getEmailThreads,
-  EmailSource,
-  ThreadEmail,
-} from "@/lib/api";
-import { getLocaleParams } from "@/lib/i18n";
+import { PageLayout } from "@/app/components/PageLayout";
+import { getEmailThread, getEmailThreads } from "@/lib/api/emails";
+import { EmailSource, ThreadEmail } from "@/lib/api/schemas/emails";
+import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import { formatEmailSource } from "@/utils/strings";

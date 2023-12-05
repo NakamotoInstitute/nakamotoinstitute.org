@@ -1,7 +1,8 @@
-import { PageLayout } from "@/app/components";
+import { PageLayout } from "@/app/components/PageLayout";
 import { PageHeader } from "@/app/components/PageHeader";
-import { EmailSource, getEmailThreadsBySource, zEmailSource } from "@/lib/api";
-import { getLocaleParams } from "@/lib/i18n";
+import { getEmailThreadsBySource } from "@/lib/api/emails";
+import { EmailSource, zEmailSource } from "@/lib/api/schemas/emails";
+import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatEmailSource } from "@/utils/strings";
 import Link from "next/link";

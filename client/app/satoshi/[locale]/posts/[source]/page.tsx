@@ -1,12 +1,10 @@
 import Link from "next/link";
-import { PageLayout, PageHeader } from "@/app/components";
-import {
-  ForumPostSource,
-  getSatoshiPostsBySource,
-  zForumPostSource,
-} from "@/lib/api";
+import { PageHeader } from "@/app/components/PageHeader";
+import { PageLayout } from "@/app/components/PageLayout";
+import { getSatoshiPostsBySource } from "@/lib/api/posts";
+import { ForumPostSource, zForumPostSource } from "@/lib/api/schemas/posts";
 import { formatPostSource } from "@/utils/strings";
-import { getLocaleParams } from "@/lib/i18n";
+import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 
 export default async function PostsSourceIndex({

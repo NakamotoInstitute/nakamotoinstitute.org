@@ -5,8 +5,8 @@ import {
   zMempoolPost,
   zMempoolSeriesDetail,
   zMempoolSeriesIndex,
-  zSlugParamsResponse,
-} from "./schemas";
+} from "./schemas/mempool";
+import { zSlugParamsResponse } from "./schemas/shared";
 
 export async function getMempoolPosts(locale: Locale) {
   const res = await fetchAPI(`/mempool?locale=${locale}`);

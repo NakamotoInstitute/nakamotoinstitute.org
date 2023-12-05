@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { Metadata, ResolvingMetadata } from "next";
-import { i18nTranslation } from "@/lib/i18n";
+import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 
 export async function generateMetadata(
   { params: { locale } }: LocaleParams,

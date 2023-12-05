@@ -1,8 +1,10 @@
-import { Markdown, PageLayout } from "@/app/components";
-import { fetchPriceHistory, Price } from "@/lib/api";
-import { getSkeptics } from "@/lib/api";
+import { Markdown } from "@/app/components/Markdown";
+import { PageLayout } from "@/app/components/PageLayout";
+import { fetchPriceHistory, getSkeptics } from "@/lib/api/skeptics";
+import { Price } from "@/lib/api/schemas/skeptics";
 import { Skeptic } from "./components/Skeptic";
-import { getLocaleParams, i18nTranslation } from "@/lib/i18n";
+import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
+import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { PageHeader } from "@/app/components/PageHeader";
 import Link from "next/link";

@@ -1,11 +1,9 @@
 import Link from "next/link";
-import { PageLayout, PageHeader } from "@/app/components";
-import {
-  zForumPostSource,
-  ForumPostSource,
-  getForumThreadsBySource,
-} from "@/lib/api";
-import { getLocaleParams } from "@/lib/i18n";
+import { PageHeader } from "@/app/components/PageHeader";
+import { PageLayout } from "@/app/components/PageLayout";
+import { getForumThreadsBySource } from "@/lib/api/posts";
+import { ForumPostSource, zForumPostSource } from "@/lib/api/schemas/posts";
+import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import { formatPostSource } from "@/utils/strings";

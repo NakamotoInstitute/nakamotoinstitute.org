@@ -1,7 +1,9 @@
 import Link from "next/link";
-import { PageLayout } from "@/app/components";
-import { ForumPostSource, getForumPost, getSatoshiPosts } from "@/lib/api";
-import { getLocaleParams, i18nTranslation } from "@/lib/i18n";
+import { PageLayout } from "@/app/components/PageLayout";
+import { getForumPost, getSatoshiPosts } from "@/lib/api/posts";
+import { ForumPostSource } from "@/lib/api/schemas/posts";
+import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
+import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import { formatPostSource } from "@/utils/strings";

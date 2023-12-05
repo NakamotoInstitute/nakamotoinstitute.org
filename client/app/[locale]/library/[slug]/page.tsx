@@ -1,6 +1,7 @@
 import { Metadata } from "next";
-import { Markdown, PageLayout } from "@/app/components";
-import { getLibraryDoc, getLibraryParams } from "@/lib/api";
+import { Markdown } from "@/app/components/Markdown";
+import { PageLayout } from "@/app/components/PageLayout";
+import { getLibraryDoc, getLibraryParams } from "@/lib/api/library";
 import { urls } from "@/lib/urls";
 import { DocHeader } from "../components/DocHeader";
 

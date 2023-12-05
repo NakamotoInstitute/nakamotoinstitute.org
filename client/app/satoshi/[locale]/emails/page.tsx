@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { PageLayout } from "@/app/components";
-import { getSatoshiEmails } from "@/lib/api";
-import { getLocaleParams } from "@/lib/i18n";
+import { PageLayout } from "@/app/components/PageLayout";
+import { getSatoshiEmails } from "@/lib/api/emails";
+import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import { PageHeader } from "@/app/components/PageHeader";

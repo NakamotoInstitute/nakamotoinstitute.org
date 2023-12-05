@@ -1,11 +1,12 @@
 import Link from "next/link";
-import { PageLayout } from "@/app/components";
-import { EmailSource, getSatoshiEmailsBySource } from "@/lib/api";
+import { PageLayout } from "@/app/components/PageLayout";
+import { EmailSource } from "@/lib/api/schemas/emails";
+import { getSatoshiEmailsBySource } from "@/lib/api/emails";
 import { formatEmailSource } from "@/utils/strings";
-import { getLocaleParams } from "@/lib/i18n";
+import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { PageHeader } from "@/app/components/PageHeader";
-import { zEmailSource } from "@/lib/api";
+import { zEmailSource } from "@/lib/api/schemas/emails";
 
 export const dynamicParams = false;
 

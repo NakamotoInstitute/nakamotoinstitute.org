@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 import { generateLocaleToggleLinks, urls } from "@/lib/urls";
-import { i18nTranslation } from "@/lib/i18n";
+import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 
 export async function PageLayout({
   className,

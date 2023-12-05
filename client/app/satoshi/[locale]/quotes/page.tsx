@@ -1,7 +1,8 @@
-import { PageLayout } from "@/app/components";
+import { PageLayout } from "@/app/components/PageLayout";
 import { PageHeader } from "@/app/components/PageHeader";
-import { QuoteCategory, getQuoteCategories } from "@/lib/api";
-import { getLocaleParams } from "@/lib/i18n";
+import { getQuoteCategories } from "@/lib/api/quotes";
+import { QuoteCategory } from "@/lib/api/schemas/quotes";
+import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import Link from "next/link";
 

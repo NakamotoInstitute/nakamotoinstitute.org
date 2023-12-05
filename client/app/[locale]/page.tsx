@@ -1,5 +1,6 @@
-import { PageLayout } from "@/app/components";
-import { getLocaleParams, i18nTranslation } from "@/lib/i18n";
+import { PageLayout } from "@/app/components/PageLayout";
+import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
+import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 
 export default async function HomePage({ params: { locale } }: LocaleParams) {

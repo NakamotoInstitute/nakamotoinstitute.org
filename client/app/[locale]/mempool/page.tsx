@@ -1,6 +1,7 @@
-import { getMempoolPosts } from "@/lib/api";
-import { getLocaleParams, i18nTranslation } from "@/lib/i18n";
-import { PageLayout } from "@/app/components";
+import { getMempoolPosts } from "@/lib/api/mempool";
+import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
+import { getLocaleParams } from "@/lib/i18n/utils";
+import { PageLayout } from "@/app/components/PageLayout";
 import { PostListing } from "./components/PostListing";
 import { urls } from "@/lib/urls";
 import Link from "next/link";

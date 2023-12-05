@@ -1,8 +1,9 @@
-import { PageLayout } from "@/app/components";
+import { PageLayout } from "@/app/components/PageLayout";
 import { LinkedItemsList } from "@/app/components/LinkedItemsList";
 import { PageHeader } from "@/app/components/PageHeader";
-import { Quote, getQuoteCategories, getQuoteCategory } from "@/lib/api";
-import { getLocaleParams } from "@/lib/i18n";
+import { getQuoteCategories, getQuoteCategory } from "@/lib/api/quotes";
+import { Quote } from "@/lib/api/schemas/quotes";
+import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import Link from "next/link";

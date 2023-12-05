@@ -1,6 +1,7 @@
 import { Metadata } from "next";
-import { getMempoolPost, getMempoolParams } from "@/lib/api";
-import { Markdown, PageLayout } from "@/app/components";
+import { getMempoolPost, getMempoolParams } from "@/lib/api/mempool";
+import { Markdown } from "@/app/components/Markdown";
+import { PageLayout } from "@/app/components/PageLayout";
 import { urls } from "@/lib/urls";
 import { PostHeader } from "../components/PostHeader";
 

@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import fetchAPI from "./fetchAPI";
-import { zDocument, zLibraryIndex, zSlugParamsResponse } from "./schemas";
+import { zDocument, zLibraryIndex } from "./schemas/library";
+import { zSlugParamsResponse } from "./schemas/shared";
 
 export async function getLibraryDocs(locale: Locale) {
   const res = await fetchAPI(`/library?locale=${locale}`);

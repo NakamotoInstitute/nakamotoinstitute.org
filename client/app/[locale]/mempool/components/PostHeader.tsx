@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { Trans } from "react-i18next/TransWithoutContext";
-import { i18nTranslation } from "@/lib/i18n";
+import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { formatDate } from "@/utils/dates";
-import { AuthorsLinks } from "@/app/components";
+import { AuthorsLinks } from "@/app/components/AuthorsLinks";
 import { urls } from "@/lib/urls";
-import { MempoolPost, MempoolSeries } from "@/lib/api/schemas";
+import { MempoolPost, MempoolSeries } from "@/lib/api/schemas/mempool";
 
 type SeriesHeaderProps = {
   locale: Locale;

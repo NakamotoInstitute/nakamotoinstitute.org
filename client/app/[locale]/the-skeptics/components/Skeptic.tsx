@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Big from "big.js";
-import { Markdown } from "@/app/components";
-import { Price, Skeptic } from "@/lib/api";
-import { i18nTranslation } from "@/lib/i18n";
+import { Markdown } from "@/app/components/Markdown";
+import { Price, Skeptic } from "@/lib/api/schemas/skeptics";
+import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { commafy } from "@/utils/strings";
 import { formatDate } from "@/utils/dates";
 import { calculateDCA } from "@/utils/prices";

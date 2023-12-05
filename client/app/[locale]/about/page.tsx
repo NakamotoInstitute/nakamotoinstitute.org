@@ -1,6 +1,8 @@
 import { getPage } from "@/lib/content";
-import { getLocaleParams, i18nTranslation } from "@/lib/i18n";
-import { Markdown, PageLayout } from "@/app/components";
+import { getLocaleParams } from "@/lib/i18n/utils";
+import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
+import { Markdown } from "@/app/components/Markdown";
+import { PageLayout } from "@/app/components/PageLayout";
 import { urls } from "@/lib/urls";
 import { PageHeader } from "@/app/components/PageHeader";
 import { Metadata } from "next";

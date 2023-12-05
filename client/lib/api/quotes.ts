@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import fetchAPI from "./fetchAPI";
-import { zQuoteCategoryDetail, zQuoteCategoryIndex } from "./schemas";
+import { zQuoteCategoryDetail, zQuoteCategoryIndex } from "./schemas/quotes";
 
 export async function getQuoteCategories() {
   const res = await fetchAPI(`/satoshi/quotes`);

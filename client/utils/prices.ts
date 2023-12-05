@@ -1,5 +1,5 @@
 import Big from "big.js";
-import { Price } from "@/lib/api";
+import { Price } from "@/lib/api/schemas/skeptics";
 import { calculateDayDifference } from "@/utils/dates";
 
 const DAILY_BUY = new Big(1);

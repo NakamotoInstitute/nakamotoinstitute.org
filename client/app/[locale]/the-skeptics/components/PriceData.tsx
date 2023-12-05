@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import Big from "big.js";
-import { i18nTranslation } from "@/lib/i18n";
+import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { commafy } from "@/utils/strings";
 import { DCAData } from "@/utils/prices";
 

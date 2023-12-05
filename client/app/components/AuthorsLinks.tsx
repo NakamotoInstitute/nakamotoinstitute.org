@@ -1,6 +1,6 @@
 import { urls } from "@/lib/urls";
 import { LinkedItemsList, LinkedItemsListProps } from "./LinkedItemsList";
-import { Author } from "@/lib/api/schemas";
+import { Author } from "@/lib/api/schemas/authors";
 
 type AuthorLinksProps = Omit<LinkedItemsListProps, "items" | "urlFunc"> & {
   authors: Author[];

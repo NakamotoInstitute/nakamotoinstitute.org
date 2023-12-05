@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
 import clsx from "clsx";
-import { Chip } from "@/app/components";
-import { DocumentIndex } from "@/lib/api/schemas";
-import { i18nTranslation } from "@/lib/i18n";
+import { Chip } from "@/app/components/Chip";
+import { DocumentIndex } from "@/lib/api/schemas/library";
+import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 
 export async function DocFormats({
   locale,

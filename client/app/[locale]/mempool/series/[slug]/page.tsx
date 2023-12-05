@@ -1,6 +1,6 @@
-import { PageLayout } from "@/app/components";
-import { getMempoolSeries, getMempoolSeriesParams } from "@/lib/api";
-import { i18nTranslation } from "@/lib/i18n";
+import { PageLayout } from "@/app/components/PageLayout";
+import { getMempoolSeries, getMempoolSeriesParams } from "@/lib/api/mempool";
+import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { PostListing } from "@main/mempool/components/PostListing";
 import { urls } from "@/lib/urls";
 import { PageHeader } from "@/app/components/PageHeader";

@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { PageLayout } from "@/app/components";
-import { EmailSource, getEmail, getSatoshiEmails } from "@/lib/api";
-import { getLocaleParams, i18nTranslation } from "@/lib/i18n";
+import { PageLayout } from "@/app/components/PageLayout";
+import { getEmail, getSatoshiEmails } from "@/lib/api/emails";
+import { EmailSource } from "@/lib/api/schemas/emails";
+import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
+import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import { formatEmailSource } from "@/utils/strings";

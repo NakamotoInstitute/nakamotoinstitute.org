@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { i18nRoutingMiddleware, subdomainRouting } from "./lib/middleware";
+import { i18nRoutingMiddleware } from "@/lib/middleware/i18n";
+import { subdomainRouting } from "@/lib/middleware/subdomains";
 
 const prodDomainToPathMapping = [
   {

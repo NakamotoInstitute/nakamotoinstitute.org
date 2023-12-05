@@ -1,5 +1,6 @@
-import { SatoshiEmail, SatoshiForumPost } from "@/lib/api";
-import { i18nTranslation } from "@/lib/i18n";
+import { SatoshiEmail } from "@/lib/api/schemas/emails";
+import { SatoshiForumPost } from "@/lib/api/schemas/posts";
+import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { urls } from "@/lib/urls";
 import Link from "next/link";
 

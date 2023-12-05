@@ -1,8 +1,8 @@
 import { Trans } from "react-i18next/TransWithoutContext";
-import { AuthorsLinks } from "@/app/components";
+import { AuthorsLinks } from "@/app/components/AuthorsLinks";
 import { formatDocDate, formatTimeAttr } from "@/utils/dates";
-import { i18nTranslation } from "@/lib/i18n";
-import { Document } from "@/lib/api/schemas";
+import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
+import { Document } from "@/lib/api/schemas/library";
 
 type DocHeaderProps = {
   locale: Locale;

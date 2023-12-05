@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { CodeDownload, CodeDownloadProps } from "./CodeDownload";
 import Link from "next/link";
-import { i18nTranslation } from "@/lib/i18n";
+import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { formatDate } from "@/utils/dates";
 
 type CodeTableRowProps = {

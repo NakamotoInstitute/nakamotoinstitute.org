@@ -1,7 +1,8 @@
-import { PageLayout } from "@/app/components";
+import { PageLayout } from "@/app/components/PageLayout";
 import { PageHeader } from "@/app/components/PageHeader";
-import { getEpisodes } from "@/lib/api";
-import { getLocaleParams, i18nTranslation } from "@/lib/i18n";
+import { getEpisodes } from "@/lib/api/podcast";
+import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
+import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { Metadata } from "next";
 import { EpisodeListing } from "./components/EpisodeListing";

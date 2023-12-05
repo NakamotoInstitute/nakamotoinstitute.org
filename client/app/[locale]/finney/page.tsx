@@ -1,6 +1,7 @@
-import { PageLayout } from "@/app/components";
+import { PageLayout } from "@/app/components/PageLayout";
 import { PageHeader } from "@/app/components/PageHeader";
-import { getLocaleParams, i18nTranslation } from "@/lib/i18n";
+import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
+import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDateRange } from "@/utils/dates";
 import { Metadata } from "next";

@@ -1,6 +1,6 @@
 import { Metadata } from "next";
-import { RootLayout } from "../components";
-import { i18nTranslation } from "@/lib/i18n";
+import { RootLayout } from "../components/RootLayout";
+import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 
 export async function generateMetadata({
   params: { locale },

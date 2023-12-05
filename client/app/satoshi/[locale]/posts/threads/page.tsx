@@ -1,6 +1,8 @@
-import { PageLayout, PageHeader } from "@/app/components";
-import { ForumPostSource, ForumThread, getForumThreads } from "@/lib/api";
-import { getLocaleParams } from "@/lib/i18n";
+import { PageHeader } from "@/app/components/PageHeader";
+import { PageLayout } from "@/app/components/PageLayout";
+import { getForumThreads } from "@/lib/api/posts";
+import { ForumPostSource, ForumThread } from "@/lib/api/schemas/posts";
+import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import { formatPostSource } from "@/utils/strings";

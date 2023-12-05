@@ -1,9 +1,9 @@
 import { Metadata } from "next";
-import { PageLayout } from "@/app/components";
+import { PageLayout } from "@/app/components/PageLayout";
 import { PageHeader } from "@/app/components/PageHeader";
-import { getAuthor, getAuthorParams } from "@/lib/api";
+import { getAuthor, getAuthorParams } from "@/lib/api/authors";
 import { urls } from "@/lib/urls";
-import { i18nTranslation } from "@/lib/i18n";
+import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { DocListing } from "@main/library/components/DocListing";
 import { PostListing } from "@main/mempool/components/PostListing";
 
