@@ -10,10 +10,10 @@
     "translate:extract": "i18next -c ./i18next-parser.config.js --fail-on-warnings"
   },
   "dependencies": {
-    "@floating-ui/react": "^0.26.2",
+    "@floating-ui/react": "^0.26.3",
     "big.js": "^6.2.1",
     "clsx": "^2.0.0",
-    "i18next": "^23.7.6",
+    "i18next": "^23.7.7",
     "i18next-parser": "^8.9.0",
     "i18next-resources-to-backend": "^1.2.0",
     "next": "14.0.3",
@@ -31,17 +31,17 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
     "@types/big.js": "^6.2.2",
-    "@types/node": "^20.9.1",
-    "@types/react": "^18.2.37",
-    "@types/react-dom": "^18.2.15",
+    "@types/node": "^20.10.3",
+    "@types/react": "^18.2.42",
+    "@types/react-dom": "^18.2.17",
     "autoprefixer": "^10.4.16",
-    "eslint": "^8.53.0",
+    "eslint": "^8.55.0",
     "eslint-config-next": "14.0.3",
-    "eslint-config-prettier": "^9.0.0",
-    "postcss": "^8.4.31",
+    "eslint-config-prettier": "^9.1.0",
+    "postcss": "^8.4.32",
     "prettier": "^3.1.0",
-    "prettier-plugin-tailwindcss": "^0.5.7",
-    "tailwindcss": "^3.3.5",
-    "typescript": "^5.2.2"
+    "prettier-plugin-tailwindcss": "^0.5.8",
+    "tailwindcss": "^3.3.6",
+    "typescript": "^5.3.2"
   }
 }
