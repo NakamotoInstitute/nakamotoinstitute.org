@@ -8,6 +8,7 @@ export const locales = [
   "fr",
   "he",
   "it",
+  "ko",
   "pt",
   "ru",
   "zh",

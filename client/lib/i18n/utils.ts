@@ -1,7 +1,5 @@
 import { locales } from "@/i18n";
 
-import { urls } from "../urls";
-
 type LocaleParam = { locale: Locale; [key: string]: unknown };
 type CallbackResponse = (locale: Locale) => LocaleParam[];
 type AsyncCallbackResponse = (locale: Locale) => Promise<LocaleParam[]>;

@@ -63,6 +63,7 @@ class Locales(str, Enum):
     FRENCH = "fr"
     HEBREW = "he"
     ITALIAN = "it"
+    KOREAN = "ko"
     PORTUGUESE = "pt"
     RUSSIAN = "ru"
     CHINESE = "zh"
@@ -78,6 +79,7 @@ LocaleType = Literal[
     Locales.FRENCH.value,
     Locales.HEBREW.value,
     Locales.ITALIAN.value,
+    Locales.KOREAN.value,
     Locales.PORTUGUESE.value,
     Locales.RUSSIAN.value,
     Locales.CHINESE.value,
