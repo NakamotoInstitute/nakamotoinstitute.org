@@ -2,8 +2,8 @@ flask==3.0.0
 flask-caching==2.1.0
 flask-migrate===4.0.5
 flask-sqlalchemy==3.1.1
-psycopg[binary]==3.1.15
-alembic-postgresql-enum==1.0.0
+psycopg[binary]==3.1.16
+alembic-postgresql-enum==1.0.1
 pydantic==2.5.2
 python-dotenv==1.0.0
 pyyaml==6.0.1
