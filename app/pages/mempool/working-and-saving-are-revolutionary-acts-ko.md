@@ -12,7 +12,7 @@ image_alt: 일
   <img class="img-fluid rounded d-block mx-auto" alt="시장" src="/static/img/mempool/working-and-saving-are-revolutionary-acts/market.jpg"></a>
 </div>
 
-자유주의자로서 우리의 목표는 정부의 독점에서 벗어나 [현물 시장](http://en.wiktionary.org/wiki/spot_market)에서 사고파는 기업 중심의 경제 활동으로 전환하는 것입니다. _다행히도, 이러한 변화는 정부의 개입이나 정치적 활동과 상관없이 사회의 [자본스톡](http://wiki.mises.org/wiki/Capital)이 증가함에 따라 자연스럽게 일어납니다._ 새로운 자본의 형성은 모든 산업의 균형을 분산된 시장으로 이끄는 두 가지 흐름인 기술의 고도화와 [분업](https://mises.org/library/human-action-0/html/pp/706)의 심화를 촉진하는 원동력입니다.
+자유주의자로서 우리의 목표는 정부의 독점에서 벗어나 [현물시장](http://en.wiktionary.org/wiki/spot_market)에서 사고파는 기업 중심의 경제 활동으로 전환하는 것입니다. _다행히도, 이러한 변화는 정부의 개입이나 정치적 활동과 상관없이 사회의 [자본스톡](http://wiki.mises.org/wiki/Capital)이 증가함에 따라 자연스럽게 일어납니다._ 새로운 자본의 형성은 모든 산업의 균형을 분산된 시장으로 이끄는 두 가지 흐름인 기술의 고도화와 [분업](https://mises.org/library/human-action-0/html/pp/706)의 심화를 촉진하는 원동력입니다.
 
 기업과 개인은 투기적인 금융 연구에 참여하거나 자금을 조달하기 위한 저축이나 자본이 없으면 새로운 기술을 개발할 수 없습니다. 일단 상용화되면, 기술은 탐색 및 정보비용(구글, 위키피디아), 교섭비용(아마존, 이베이), 이행비용(비자, 페이팔)을 감소시킵니다. 기술은 또한 인쇄기, 총기, 컴퓨터, 카메라, [암호화폐](http://bitcoin.org/)와 같은 새로운 도구로 정부 기관의 자산 특유성을 약화시킵니다.
 
@@ -22,7 +22,7 @@ image_alt: 일
   <img class="img-fluid rounded d-block mx-auto" alt="보험" src="/static/img/mempool/working-and-saving-are-revolutionary-acts/insurance.jpg"></a>
 </div>
 
-보험 및 재보험 회사는 위험이 현실화되는 것을 방지하고 이러한 위험이 발생했을 때 손실을 최소화하기 위해 점점 더 많은 자원을 투입하고 있습니다. 여기에는 [소방](http://www.santafenewmexican.com/Local%20News/Firefighters-for-hire--Insurance-firms-providing-protection-in-#.UNjqqInjkwk), [보안](http://www.bloomberg.com/news/2012-10-22/somalia-piracy-attacks-plunge-as-navies-secure-trade-route-1-.html), [위험 관리](https://www.travelers.com/business-insurance/risk-control/index.aspx)와 같은 서비스가 포함됩니다. 보험사의 규모가 계속 증가함에 따라, 전통적으로 정부 서비스로 여겨지던 것들에 대해 효율적인 민간 기업과 거래하려는 동기와 역량도 함께 커질 것입니다. 보험 회사들은 이미 정부 법원보다 비용과 시간이 적게 드는 [민간 중재](http://www.arias-us.org/)에 참여하고 있습니다. 보험 회사들의 영향력으로 인해 완전히 사적인 사법 체계가 생겨나는 것은 시간문제일 뿐이며, 이에 따라 정부는 법에 대한 독점적 우위를 잃게 될 것입니다.
+보험 및 재보험 회사는 위험이 현실화되는 것을 방지하고 이러한 위험이 발생했을 때 손실을 최소화하기 위해 점점 더 많은 자원을 투입하고 있습니다. 여기에는 [소방](http://www.santafenewmexican.com/Local%20News/Firefighters-for-hire--Insurance-firms-providing-protection-in-#.UNjqqInjkwk), [보안](http://www.bloomberg.com/news/2012-10-22/somalia-piracy-attacks-plunge-as-navies-secure-trade-route-1-.html), [위험관리](https://www.travelers.com/business-insurance/risk-control/index.aspx)와 같은 서비스가 포함됩니다. 보험사의 규모가 계속 증가함에 따라, 전통적으로 정부 서비스로 여겨지던 것들에 대해 효율적인 민간 기업과 거래하려는 동기와 역량도 함께 커질 것입니다. 보험 회사들은 이미 정부 법원보다 비용과 시간이 적게 드는 [민간중재](http://www.arias-us.org/)에 참여하고 있습니다. 보험 회사들의 영향력으로 인해 완전히 사적인 사법 체계가 생겨나는 것은 시간문제일 뿐이며, 이에 따라 정부는 법에 대한 독점적 우위를 잃게 될 것입니다.
 
 이러한 낙관적인 견해에 대한 반론은 민간 부문이 얻게 될 이득에 대응하기 위해 정부도 더 많은 자원과 기술을 보유하게 될 것이라는 점인데, 이렇게 된다면 경제 성장은 국가의 성장을 촉진하게 되는 것이므로 우리는 모두 골트(Galt)나 아고리스트(agorist)가 되어야 할 것입니다. 이 반론은 정부의 지속 불가능한 재정/통화 관행과 경제 성장을 허용하는 수준으로 세금을 부과하려는 경향을 무시한 것입니다. 전자는 국가의 자멸을 초래하며, 후자는 민간 경제의 지속적 성장을 보장합니다.
 
@@ -33,9 +33,9 @@ image_alt: 일
 보다 건강하고 만족스러운 접근법은 다음과 같은 방법을 통해 자본 형성을 극대화하는 것입니다:
 
 1. 자신이 사랑하고 실제 가치를 창출하는 전문 분야에서 경력을 개발하기
-   - 정치 공작의 전문가가 되지 않기
-   - 다단계 마케팅 계획에 참여하지 않기
-   - 학자가 되지 않기
+    * 정치 공작의 전문가가 되지 않기
+    * 다단계 마케팅 계획에 참여하지 않기
+    * 학자가 되지 않기
 2. 가능한 한 많은 수입을 저축하고 자신과 사랑하는 사람들 그리고 재산에 대해 보험 들기
 3. 회사에서 일할 때든, 혼자 있을 때든, 파트너와 함께 있을 때든, 혁신적인 기업가 정신에 투자하기
 
