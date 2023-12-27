@@ -2,17 +2,19 @@ import json
 import os
 from datetime import datetime
 
-import click
 from pydantic import ValidationError
+from sqlalchemy import select
 
-from sni.cli.utils import DONE
-from sni.extensions import db
-from sni.shared.models import FileMetadata
+from sni.database import SessionLocal
+from sni.models import FileMetadata
 from sni.utils.files import get_file_hash
 
 
 class JSONImporter:
     query_field = "id"
+
+    def __init__(self):
+        self.db_session = SessionLocal()
 
     def load_and_validate_json(self):
         try:
@@ -40,18 +42,18 @@ class JSONImporter:
         new_metadata = FileMetadata(
             filename=self.filepath, hash=current_hash, last_modified=current_timestamp
         )
-        db.session.add(new_metadata)
+        self.db_session.add(new_metadata)
 
         file_obj = self.file_model(
             file_metadata=new_metadata, content_type=self.content_type
         )
-        db.session.add(file_obj)
-        db.session.flush()
+        self.db_session.add(file_obj)
+        self.db_session.flush()
 
         for item_data in items_data:
             processed_item_data = self.process_item_data(item_data.dict())
             item = self.model(**processed_item_data, file=file_obj)
-            db.session.add(item)
+            self.db_session.add(item)
 
     def update_metadata_and_items(
         self, file_metadata, items_data, current_hash, current_timestamp
@@ -63,8 +65,8 @@ class JSONImporter:
                     filter_args = {
                         self.query_field: processed_item_data[self.query_field]
                     }
-                    item = db.session.scalars(
-                        db.select(self.model).filter_by(**filter_args)
+                    item = self.db_session.scalars(
+                        select(self.model).filter_by(**filter_args)
                     ).first()
                     if item:
                         for key, value in processed_item_data.items():
@@ -73,7 +75,7 @@ class JSONImporter:
                         item = self.model(
                             **processed_item_data, file_id=file_metadata.id
                         )
-                        db.session.add(item)
+                        self.db_session.add(item)
                 except KeyError:
                     raise KeyError(
                         f"Item missing '{self.query_field}': {processed_item_data}"
@@ -83,25 +85,30 @@ class JSONImporter:
             file_metadata.hash = current_hash
 
     def run_import(self):
-        click.echo(f"Importing {self.model.__name__}...", nl=False)
-        items_data = self.load_and_validate_json()
+        try:
+            print(f"Importing {self.model.__name__}...", end="")
+            items_data = self.load_and_validate_json()
 
-        if not items_data:
-            return
+            if not items_data:
+                return
 
-        current_hash = get_file_hash(self.filepath)
-        current_timestamp = datetime.fromtimestamp(os.path.getmtime(self.filepath))
+            current_hash = get_file_hash(self.filepath)
+            current_timestamp = datetime.fromtimestamp(os.path.getmtime(self.filepath))
 
-        file_metadata = db.session.scalars(
-            db.select(FileMetadata).filter_by(filename=self.filepath).limit(1)
-        ).first()
+            file_metadata = self.db_session.scalars(
+                select(FileMetadata).filter_by(filename=self.filepath).limit(1)
+            ).first()
 
-        if not file_metadata:
-            self.create_metadata_and_items(items_data, current_hash, current_timestamp)
-        else:
-            self.update_metadata_and_items(
-                file_metadata, items_data, current_hash, current_timestamp
-            )
+            if not file_metadata:
+                self.create_metadata_and_items(
+                    items_data, current_hash, current_timestamp
+                )
+            else:
+                self.update_metadata_and_items(
+                    file_metadata, items_data, current_hash, current_timestamp
+                )
 
-        db.session.commit()
-        click.echo(DONE)
+            self.db_session.commit()
+        finally:
+            self.db_session.close()
+            print("DONE")

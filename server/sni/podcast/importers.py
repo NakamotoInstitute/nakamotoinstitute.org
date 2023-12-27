@@ -1,6 +1,7 @@
 from sni.content.importers import MarkdownImporter
-from sni.podcast.models import Episode
-from sni.podcast.schemas import EpisodeMDModel
+from sni.models import Episode
+
+from .schemas import EpisodeMDModel
 
 
 class EpisodeImporter(MarkdownImporter):

@@ -1,6 +1,7 @@
-from sni.authors.models import Author
-from sni.authors.schemas.base import AuthorMDModel
 from sni.content.importers import MarkdownImporter
+from sni.models import Author
+
+from .schemas.base import AuthorMDModel
 
 
 class AuthorImporter(MarkdownImporter):

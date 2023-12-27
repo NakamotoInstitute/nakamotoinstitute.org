@@ -32,16 +32,6 @@ class EmailThreadBaseModel(EmailThreadJSONModel, ORMModel):
     date: datetime.datetime = Field(alias=AliasPath("emails", 0, "date"))
 
 
-class EmailThreadModel(BaseModel):
-    emails: List["ThreadEmailModel"]
-    thread: EmailThreadBaseModel
-    previous: Optional[EmailThreadBaseModel]
-    next: Optional[EmailThreadBaseModel]
-
-    class Config:
-        alias_generator = to_camel
-
-
 class EmailReplyModel(ORMModel):
     source_id: str
 
@@ -71,6 +61,16 @@ class EmailBaseModel(ORMModel):
 
 class ThreadEmailModel(EmailBaseModel):
     parent: Optional[EmailBaseModel]
+
+
+class EmailThreadModel(BaseModel):
+    emails: List[ThreadEmailModel]
+    thread: EmailThreadBaseModel
+    previous: Optional[EmailThreadBaseModel]
+    next: Optional[EmailThreadBaseModel]
+
+    class Config:
+        alias_generator = to_camel
 
 
 class SatoshiEmailModel(EmailBaseModel):

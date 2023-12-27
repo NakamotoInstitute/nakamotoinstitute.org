@@ -1,5 +1,5 @@
 from sni.content.importers import JSONImporter
-from sni.skeptics.models import Skeptic, SkepticFile
+from sni.models import Skeptic, SkepticFile
 from sni.skeptics.schemas import SkepticJSONModel
 
 

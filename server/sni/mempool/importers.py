@@ -1,12 +1,15 @@
-from sni.authors.models import Author
 from sni.content.importers import TranslatedMarkdownImporter
-from sni.mempool.models import (
+from sni.models import (
+    Author,
     BlogPost,
     BlogPostTranslation,
     BlogSeries,
     BlogSeriesTranslation,
+    Translator,
 )
-from sni.mempool.schemas import (
+from sni.shared.service import get
+
+from .schemas import (
     MempoolCanonicalMDModel,
     MempoolMDModel,
     MempoolSeriesCanonicalMDModel,
@@ -14,8 +17,6 @@ from sni.mempool.schemas import (
     MempoolSeriesTranslationMDModel,
     MempoolTranslationMDModel,
 )
-from sni.translators.models import Translator
-from sni.utils.db import get
 
 
 class MempoolImporter(TranslatedMarkdownImporter):
@@ -30,11 +31,16 @@ class MempoolImporter(TranslatedMarkdownImporter):
 
     def process_canonical_additional_data(self, canonical_data):
         canonical_data["authors"] = [
-            get(Author, slug=author) for author in canonical_data.pop("authors")
+            get(Author, db_session=self.db_session, slug=author)
+            for author in canonical_data.pop("authors")
         ]
         series = canonical_data.pop("series")
         canonical_data["series"] = (
-            get(BlogSeriesTranslation, slug=series).blog_series if series else None
+            get(
+                BlogSeriesTranslation, db_session=self.db_session, slug=series
+            ).blog_series
+            if series
+            else None
         )
         return canonical_data
 
@@ -42,7 +48,7 @@ class MempoolImporter(TranslatedMarkdownImporter):
         self, translation_data, canonical_entry, metadata
     ):
         translation_data["translators"] = [
-            get(Translator, slug=slug)
+            get(Translator, db_session=self.db_session, slug=slug)
             for slug in translation_data.pop("translators", [])
         ]
         return super().process_translation_additional_data(
@@ -56,7 +62,7 @@ class MempoolImporter(TranslatedMarkdownImporter):
             translation_data.get("excerpt") or canonical_entry["translation"].excerpt
         )
         translation_data["translators"] = [
-            get(Translator, slug=slug)
+            get(Translator, db_session=self.db_session, slug=slug)
             for slug in translation_data.pop("translators", [])
         ]
 

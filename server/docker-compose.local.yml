@@ -1,21 +1,18 @@
 version: '3'
 services:
-  flask:
+  fastapi:
     build:
       context: .
-      dockerfile: ./compose/local/flask/Dockerfile
+      dockerfile: ./compose/local/fastapi/Dockerfile
     depends_on:
       - postgres
-    environment:
-      - FLASK_APP=app.py
-      - FLASK_RUN_HOST=0.0.0.0
     env_file:
-      - ./.envs/.local/.flask
+      - ./.envs/.local/.fastapi
       - ./.envs/.local/.postgres
     volumes:
       - .:/app:z
     ports:
-      - "5000:5000"
+      - "8000:8000"
 
   postgres:
     image: postgres:16

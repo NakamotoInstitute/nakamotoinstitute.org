@@ -1,7 +1,8 @@
 from sni.content.importers import JSONImporter
-from sni.satoshi.quotes.models import Quote, QuoteCategory, QuoteCategoryFile, QuoteFile
-from sni.satoshi.quotes.schemas import QuoteCategoryJSONModel, QuoteJSONModel
-from sni.utils.db import get
+from sni.models import Quote, QuoteCategory, QuoteCategoryFile, QuoteFile
+from sni.shared.service import get
+
+from .schemas import QuoteCategoryJSONModel, QuoteJSONModel
 
 
 class QuoteCategoryImporter(JSONImporter):
@@ -21,7 +22,7 @@ class QuoteImporter(JSONImporter):
 
     def process_item_data(self, quote_data):
         quote_data["categories"] = [
-            get(QuoteCategory, slug=category)
+            get(QuoteCategory, db_session=self.db_session, slug=category)
             for category in quote_data.pop("categories", [])
         ]
         return quote_data

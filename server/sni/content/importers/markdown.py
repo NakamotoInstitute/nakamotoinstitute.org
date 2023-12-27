@@ -3,14 +3,13 @@ import os
 from datetime import datetime
 from typing import Any, Dict, Optional, Tuple, Type
 
-import click
 import yaml
 from pydantic import BaseModel, ValidationError
+from sqlalchemy import select
 
-from sni.cli.utils import DONE
 from sni.config import Locales
-from sni.extensions import db
-from sni.shared.models import FileMetadata, MarkdownContent
+from sni.database import SessionLocal
+from sni.models import FileMetadata, MarkdownContent
 from sni.utils.files import get_file_hash, split_filename
 
 
@@ -18,23 +17,27 @@ class BaseMarkdownImporter:
     def __init__(self):
         self.files_in_db = {}
         self.actions = collections.Counter(new=0, updated=0, deleted=0, unchanged=0)
+        self.db_session = SessionLocal()
 
     @property
     def filenames(self):
         return sorted(os.listdir(self.directory_path))
 
     def run_import(self):
-        click.echo(f"Importing {self.content_type}...", nl=False)
-        self.import_content()
-        click.echo(DONE)
-        click.echo(
+        print(f"Importing {self.content_type}...", end="")
+        try:
+            self.import_content()
+        finally:
+            self.db_session.close()
+        print("DONE")
+        print(
             "{new_files} new, {updated_files} updated, {deleted_files} deleted".format(
                 new_files=self.actions["new"],
                 updated_files=self.actions["updated"],
                 deleted_files=self.actions["deleted"],
             )
         )
-        click.echo()
+        print()
 
     def read_markdown_file(self, filepath: str) -> str:
         with open(filepath, "r", encoding="utf-8") as file:
@@ -75,8 +78,8 @@ class BaseMarkdownImporter:
     def _populate_files_from_db(self):
         self.files_in_db = {
             content.file_metadata.filename: content
-            for content in db.session.scalars(
-                db.select(MarkdownContent).filter_by(content_type=self.content_key)
+            for content in self.db_session.scalars(
+                select(MarkdownContent).filter_by(content_type=self.content_key)
             ).all()
         }
 
@@ -90,20 +93,20 @@ class BaseMarkdownImporter:
         new_metadata = FileMetadata(
             filename=filepath, hash=current_hash, last_modified=current_timestamp
         )
-        db.session.add(new_metadata)
+        self.db_session.add(new_metadata)
         return new_metadata
 
     def _update_existing_metadata(self, file_record, current_hash, current_timestamp):
         current_metadata = file_record.file_metadata
         current_metadata.hash = current_hash
         current_metadata.last_modified = current_timestamp
-        db.session.add(current_metadata)
+        self.db_session.add(current_metadata)
         return current_metadata
 
     def _process_deleted_files(self):
         deleted_files_count = len(self.files_in_db)
         for deleted_file in self.files_in_db.values():
-            db.session.delete(deleted_file)
+            self.db_session.delete(deleted_file)
         return deleted_files_count
 
 
@@ -116,7 +119,7 @@ class MarkdownImporter(BaseMarkdownImporter):
             self.actions[action] += 1
 
         self.actions["deleted"] = self._process_deleted_files()
-        db.session.commit()
+        self.db_session.commit()
 
     def _process_file(self, filename):
         filepath = os.path.join(self.directory_path, filename)
@@ -151,8 +154,8 @@ class MarkdownImporter(BaseMarkdownImporter):
         )
 
         if action == "updated":
-            existing_entry = db.session.scalars(
-                db.select(self.model).filter_by(file_metadata=metadata)
+            existing_entry = self.db_session.scalars(
+                select(self.model).filter_by(file_metadata=metadata)
             ).first()
             if existing_entry:
                 for key, value in validated_data.items():
@@ -174,7 +177,7 @@ class MarkdownImporter(BaseMarkdownImporter):
                 file_metadata=metadata,
                 content_type=self.content_key,
             )
-            db.session.add(new_entry)
+            self.db_session.add(new_entry)
 
 
 class TranslatedMarkdownImporter(BaseMarkdownImporter):
@@ -202,11 +205,11 @@ class TranslatedMarkdownImporter(BaseMarkdownImporter):
     def import_content(self):
         self._populate_files_from_db()
         self._import_english_content()
-        db.session.commit()
+        self.db_session.commit()
         self._populate_content_map_from_db()
         self._import_translated_content()
         self.actions["deleted"] = self._process_deleted_files()
-        db.session.commit()
+        self.db_session.commit()
 
     def _import_english_content(self):
         for filename in self.english_filenames:
@@ -219,7 +222,7 @@ class TranslatedMarkdownImporter(BaseMarkdownImporter):
             self.actions[action] += 1
 
     def _populate_content_map_from_db(self):
-        all_canonical_entries = db.session.query(self.canonical_model).all()
+        all_canonical_entries = self.db_session.query(self.canonical_model).all()
         for entry in all_canonical_entries:
             english_translation = next(
                 (t for t in entry.translations if t.locale == Locales.ENGLISH), None
@@ -278,8 +281,8 @@ class TranslatedMarkdownImporter(BaseMarkdownImporter):
         translation_data = validated_translation_data.dict()
 
         if action == "updated":
-            existing_translation_entry = db.session.scalars(
-                db.select(self.translation_model).filter_by(file_metadata=metadata)
+            existing_translation_entry = self.db_session.scalars(
+                select(self.translation_model).filter_by(file_metadata=metadata)
             ).first()
             if existing_translation_entry:
                 existing_canonical_entry = getattr(
@@ -293,7 +296,7 @@ class TranslatedMarkdownImporter(BaseMarkdownImporter):
                 existing_translation_entry.slug = slug
                 existing_translation_entry.locale = "en"
                 existing_translation_entry.content = content
-                db.session.add(existing_translation_entry)
+                self.db_session.add(existing_translation_entry)
 
                 existing_canonical_entry = getattr(
                     existing_translation_entry, self.content_key, None
@@ -304,15 +307,15 @@ class TranslatedMarkdownImporter(BaseMarkdownImporter):
                     )
                     for key, value in canonical_data.items():
                         setattr(existing_canonical_entry, key, value)
-                    db.session.add(existing_canonical_entry)
+                    self.db_session.add(existing_canonical_entry)
 
         elif action == "new":
             canonical_entry_data = self.process_canonical_additional_data(
                 canonical_data
             )
             canonical_entry = self.canonical_model(**canonical_entry_data)
-            db.session.add(canonical_entry)
-            db.session.flush()
+            self.db_session.add(canonical_entry)
+            self.db_session.flush()
 
             translation_entry_data = self.process_translation_additional_data(
                 translation_data, canonical_entry, metadata
@@ -324,7 +327,7 @@ class TranslatedMarkdownImporter(BaseMarkdownImporter):
                 content=content,
                 **{self.content_key: canonical_entry},
             )
-            db.session.add(translation_entry)
+            self.db_session.add(translation_entry)
 
     def process_canonical_additional_data(self, canonical_data):
         return canonical_data
@@ -350,14 +353,14 @@ class TranslatedMarkdownImporter(BaseMarkdownImporter):
         )
 
         if action == "updated":
-            existing_translation_entry = db.session.scalars(
-                db.select(self.translation_model).filter_by(file_metadata=metadata)
+            existing_translation_entry = self.db_session.scalars(
+                select(self.translation_model).filter_by(file_metadata=metadata)
             ).first()
             for key, value in translation_data.items():
                 setattr(existing_translation_entry, key, value)
             existing_translation_entry.locale = locale
             existing_translation_entry.content = content
-            db.session.add(existing_translation_entry)
+            self.db_session.add(existing_translation_entry)
         elif action == "new":
             translation_entry = self.translation_model(
                 **translation_entry_data,
@@ -365,7 +368,7 @@ class TranslatedMarkdownImporter(BaseMarkdownImporter):
                 content=content,
                 **{self.content_key: canonical_entry["canonical"]},
             )
-            db.session.add(translation_entry)
+            self.db_session.add(translation_entry)
 
     def process_translation_for_translated_file(
         self, translation_data, canonical_entry, metadata

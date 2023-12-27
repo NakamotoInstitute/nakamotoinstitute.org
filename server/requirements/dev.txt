@@ -1,3 +1,2 @@
 -r base.txt
 ruff==0.1.9
-watchdog==3.0.0

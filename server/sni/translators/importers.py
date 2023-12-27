@@ -1,6 +1,7 @@
 from sni.content.importers import MarkdownImporter
-from sni.translators.models import Translator
-from sni.translators.schemas import TranslatorMDModel
+from sni.models import Translator
+
+from .schemas import TranslatorMDModel
 
 
 class TranslatorImporter(MarkdownImporter):

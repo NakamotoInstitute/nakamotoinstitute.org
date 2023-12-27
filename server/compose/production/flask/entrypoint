@@ -1,9 +1,0 @@
-#!/bin/bash
-
-set -o errexit
-set -o pipefail
-set -o nounset
-
-python -m flask db upgrade
-python -m flask content initialize
-exec gunicorn app:app --bind 0.0.0.0:8000 --workers 4

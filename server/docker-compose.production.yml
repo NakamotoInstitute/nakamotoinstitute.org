@@ -1,14 +1,11 @@
 version: "3.9"
 services:
-  flask:
+  fastapi:
     build:
       context: .
-      dockerfile: ./compose/production/flask/Dockerfile
+      dockerfile: ./compose/production/fastapi/Dockerfile
     depends_on:
       - postgres
-    environment:
-      - FLASK_APP=app.py
-      - FLASK_RUN_HOST=0.0.0.0
     env_file:
       - ./.envs/.production/.postgres
 

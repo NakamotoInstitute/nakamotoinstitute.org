@@ -1,11 +1,12 @@
 from sni.content.importers import JSONImporter
-from sni.satoshi.posts.models import (
+from sni.models import (
     ForumPost,
     ForumPostFile,
     ForumThread,
     ForumThreadFile,
 )
-from sni.satoshi.posts.schemas import ForumPostJSONModel, ForumThreadJSONModel
+
+from .schemas import ForumPostJSONModel, ForumThreadJSONModel
 
 
 class ForumThreadImporter(JSONImporter):

@@ -1,6 +1,7 @@
 from sni.content.importers import JSONImporter
-from sni.satoshi.emails.models import Email, EmailFile, EmailThread, EmailThreadFile
-from sni.satoshi.emails.schemas import EmailJSONModel, EmailThreadJSONModel
+from sni.models import Email, EmailFile, EmailThread, EmailThreadFile
+
+from .schemas import EmailJSONModel, EmailThreadJSONModel
 
 
 class EmailThreadImporter(JSONImporter):

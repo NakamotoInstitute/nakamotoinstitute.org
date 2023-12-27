@@ -3,11 +3,10 @@ from typing import Any, List, Optional
 
 from pydantic import AliasPath, BaseModel, Field, field_serializer, model_validator
 
+from sni.authors.schemas.base import AuthorModel
 from sni.config import Locales
-
-from ..authors.schemas.base import AuthorModel
-from ..shared.schemas import ORMModel, TranslationSchema
-from ..translators.schemas import TranslatorModel
+from sni.shared.schemas import ORMModel, TranslationSchema
+from sni.translators.schemas import TranslatorModel
 
 
 class MempoolCanonicalMDModel(BaseModel):

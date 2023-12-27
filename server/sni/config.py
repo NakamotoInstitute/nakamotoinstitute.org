@@ -1,19 +1,18 @@
-import os
 from enum import Enum, unique
+from typing import Literal
 
-from dotenv import load_dotenv
-
-basedir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-load_dotenv(os.path.join(basedir, ".env"))
+from pydantic_settings import BaseSettings
 
 
-class Config(object):
-    SQLALCHEMY_DATABASE_URI = os.environ.get("SQLALCHEMY_DATABASE_URI")
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
+class Settings(BaseSettings):
+    SQLALCHEMY_DATABASE_URI: str | None = (
+        "postgresql+psycopg://myuser:mysecretpassword@127.0.0.1:5432/mydatabase"
+    )
+    SQLALCHEMY_TRACK_MODIFICATIONS: bool | None = False
+    ENVIRONMENT: Literal["development", "production"] = "production"
 
-    CACHE_NO_NULL_WARNING = os.environ.get("CACHE_NO_NULL_WARNING", True)
 
-    CSRF_ENABLED = True
+settings = Settings()
 
 
 @unique
@@ -30,6 +29,22 @@ class Locales(str, Enum):
     PORTUGUESE = "pt"
     RUSSIAN = "ru"
     CHINESE = "zh"
+
+
+LocaleType = Literal[
+    Locales.ARABIC.value,
+    Locales.GERMAN.value,
+    Locales.ENGLISH.value,
+    Locales.SPANISH.value,
+    Locales.PERSIAN.value,
+    Locales.FINNISH.value,
+    Locales.FRENCH.value,
+    Locales.HEBREW.value,
+    Locales.ITALIAN.value,
+    Locales.PORTUGUESE.value,
+    Locales.RUSSIAN.value,
+    Locales.CHINESE.value,
+]
 
 
 @unique
