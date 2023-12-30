@@ -1,4 +1,4 @@
-from sni.content.importers import JSONImporter
+from sni.content.json import JSONImporter
 from sni.models import Quote, QuoteCategory, QuoteCategoryFile, QuoteFile
 from sni.shared.service import get
 

@@ -89,7 +89,7 @@ Once the latest transaction in a coin is buried under enough blocks, the spent t
   <img src="/img/bitcoin/reclaiming-disk-space.svg" onerror="this.src='/img/bitcoin/reclaiming-disk-space.png'" alt="Reclaiming disk space" />
 </figure>
 
-A block header with no transactions would be about 80 bytes. If we suppose blocks are generated every 10 minutes, 80 bytes _ 6 _ 24 \* 365 = 4.2MB per year. With computer systems typically selling with 2GB of RAM as of 2008, and Moore's Law predicting current growth of 1.2GB per year, storage should not be a problem even if the block headers must be kept in memory.
+A block header with no transactions would be about 80 bytes. If we suppose blocks are generated every 10 minutes, 80 bytes \* 6 \* 24 \* 365 = 4.2MB per year. With computer systems typically selling with 2GB of RAM as of 2008, and Moore's Law predicting current growth of 1.2GB per year, storage should not be a problem even if the block headers must be kept in memory.
 
 <h2 id="simplified-payment-verification"><a href="#simplified-payment-verification">8. Simplified Payment Verification</a></h2>
 

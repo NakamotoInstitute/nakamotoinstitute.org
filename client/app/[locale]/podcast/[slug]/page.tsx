@@ -1,4 +1,4 @@
-import { Markdown } from "@/app/components/Markdown";
+import { Rehype } from "@/app/components/Rehype";
 import { PageLayout } from "@/app/components/PageLayout";
 import { PageHeader } from "@/app/components/PageHeader";
 import { getEpisode, getEpisodes } from "@/lib/api/podcast";
@@ -35,7 +35,7 @@ export default async function PodcastDetail({
         </p>
       </PageHeader>
       <section className="prose mx-auto">
-        <Markdown>{episode.content}</Markdown>
+        <Rehype>{episode.content}</Rehype>
         <iframe
           className="aspect-video w-full"
           src={`https://www.youtube.com/embed/${episode.youtubeId}?rel=0`}

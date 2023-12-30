@@ -9,7 +9,7 @@ from sni.skeptics.importers import SkepticImporter
 from sni.translators.importers import TranslatorImporter
 
 
-def update_content():
+def update_content(force: bool = False):
     importers = [
         AuthorImporter,
         TranslatorImporter,
@@ -27,4 +27,4 @@ def update_content():
     ]
     for importer in importers:
         instance = importer()
-        instance.run_import()
+        instance.run_import(force)

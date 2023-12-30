@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { Markdown } from "@/app/components/Markdown";
+import { Rehype } from "@/app/components/Rehype";
 import { PageLayout } from "@/app/components/PageLayout";
 import { getLibraryDoc, getLibraryParams } from "@/lib/api/library";
 import { urls } from "@/lib/urls";
@@ -35,7 +35,7 @@ export default async function LibraryDetail({
         <DocHeader locale={locale} doc={doc} />
         {doc.content ? (
           <section className="prose mx-auto">
-            <Markdown hasMath={doc.hasMath}>{doc.content}</Markdown>
+            <Rehype hasMath={doc.hasMath}>{doc.content}</Rehype>
           </section>
         ) : null}
       </article>

@@ -1,4 +1,4 @@
-from sni.content.importers import JSONImporter
+from sni.content.json import JSONImporter
 from sni.models import Email, EmailFile, EmailThread, EmailThreadFile
 
 from .schemas import EmailJSONModel, EmailThreadJSONModel

@@ -1,4 +1,4 @@
-from sni.content.importers import MarkdownImporter
+from sni.content.markdown import MarkdownImporter
 from sni.models import Episode
 
 from .schemas import EpisodeMDModel

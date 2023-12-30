@@ -3,7 +3,6 @@ import os
 from datetime import datetime
 from typing import Any, Dict, Optional, Tuple, Type
 
-import yaml
 from pydantic import BaseModel, ValidationError
 from sqlalchemy import select
 
@@ -12,18 +11,22 @@ from sni.database import SessionLocal
 from sni.models import FileMetadata, MarkdownContent
 from sni.utils.files import get_file_hash, split_filename
 
+from .renderer import MDRender
+
 
 class BaseMarkdownImporter:
     def __init__(self):
         self.files_in_db = {}
         self.actions = collections.Counter(new=0, updated=0, deleted=0, unchanged=0)
         self.db_session = SessionLocal()
+        self.force = False
 
     @property
     def filenames(self):
         return sorted(os.listdir(self.directory_path))
 
-    def run_import(self):
+    def run_import(self, force: bool = False):
+        self.force = force
         print(f"Importing {self.content_type}...", end="")
         try:
             self.import_content()
@@ -39,19 +42,6 @@ class BaseMarkdownImporter:
         )
         print()
 
-    def read_markdown_file(self, filepath: str) -> str:
-        with open(filepath, "r", encoding="utf-8") as file:
-            return file.read()
-
-    def parse_front_matter(self, filepath: str) -> Tuple[Optional[Dict[Any, Any]], str]:
-        content = self.read_markdown_file(filepath)
-        split_content = content.split("---\n")
-        if len(split_content) < 3:
-            return None, content
-        front_matter_str = split_content[1]
-        remaining_content = "---\n".join(split_content[2:]).strip()
-        return yaml.safe_load(front_matter_str), remaining_content
-
     def validate_front_matter(
         self, front_matter: Dict[Any, Any], schema: Type[BaseModel]
     ) -> Optional[BaseModel]:
@@ -64,16 +54,16 @@ class BaseMarkdownImporter:
     def process_markdown_file(
         self, filepath: str, schema: Type[BaseModel]
     ) -> Tuple[Optional[Dict[Any, Any]], str]:
-        raw_front_matter, remaining_content = self.parse_front_matter(filepath)
+        raw_front_matter, html_content, markdown_content = MDRender.process_md(filepath)
 
         if raw_front_matter:
             validated_front_matter = self.validate_front_matter(
                 raw_front_matter, schema
             )
             if validated_front_matter:
-                return validated_front_matter.dict(), remaining_content
+                return validated_front_matter.dict(), html_content, markdown_content
 
-        return None, remaining_content
+        return None, html_content, markdown_content
 
     def _populate_files_from_db(self):
         self.files_in_db = {
@@ -87,7 +77,7 @@ class BaseMarkdownImporter:
         return get_file_hash(filepath)
 
     def _needs_update(self, file_record, current_hash, current_timestamp):
-        return file_record.file_metadata.hash != current_hash
+        return self.force or file_record.file_metadata.hash != current_hash
 
     def _create_new_metadata(self, filepath, current_hash, current_timestamp):
         new_metadata = FileMetadata(
@@ -149,7 +139,7 @@ class MarkdownImporter(BaseMarkdownImporter):
         return action
 
     def _process_and_add_file(self, metadata, slug, action):
-        validated_data, content = self.process_markdown_file(
+        validated_data, html_content, file_content = self.process_markdown_file(
             metadata.filename, self.schema
         )
 
@@ -161,7 +151,8 @@ class MarkdownImporter(BaseMarkdownImporter):
                 for key, value in validated_data.items():
                     setattr(existing_entry, key, value)
                 existing_entry.slug = slug
-                existing_entry.content = content
+                existing_entry.file_content = file_content
+                existing_entry.html_content = html_content
                 existing_entry.file_metadata = metadata
                 existing_entry.content_type = self.content_key
             else:
@@ -173,7 +164,8 @@ class MarkdownImporter(BaseMarkdownImporter):
             new_entry = self.model(
                 **validated_data,
                 slug=slug,
-                content=content,
+                file_content=file_content,
+                html_content=html_content,
                 file_metadata=metadata,
                 content_type=self.content_key,
             )
@@ -263,16 +255,17 @@ class TranslatedMarkdownImporter(BaseMarkdownImporter):
         return action
 
     def _process_canonical_file(self, filepath: str, canonical_schema, schema):
-        front_matter_dict, content = self.parse_front_matter(filepath)
+        front_matter_dict, html_content, file_content = MDRender.process_md(filepath)
         canonical_data = self.validate_front_matter(front_matter_dict, canonical_schema)
         translation_data = self.validate_front_matter(front_matter_dict, schema)
-        return canonical_data, translation_data, content
+        return canonical_data, translation_data, html_content, file_content
 
     def process_and_add_canonical_file(self, metadata, slug, action):
         (
             validated_canonical_data,
             validated_translation_data,
-            content,
+            html_content,
+            file_content,
         ) = self._process_canonical_file(
             metadata.filename, self.canonical_schema, self.md_schema
         )
@@ -295,7 +288,8 @@ class TranslatedMarkdownImporter(BaseMarkdownImporter):
                     setattr(existing_translation_entry, key, value)
                 existing_translation_entry.slug = slug
                 existing_translation_entry.locale = "en"
-                existing_translation_entry.content = content
+                existing_translation_entry.file_content = file_content
+                existing_translation_entry.html_content = html_content
                 self.db_session.add(existing_translation_entry)
 
                 existing_canonical_entry = getattr(
@@ -324,7 +318,8 @@ class TranslatedMarkdownImporter(BaseMarkdownImporter):
                 **translation_entry_data,
                 slug=slug,
                 locale=Locales.ENGLISH,
-                content=content,
+                file_content=file_content,
+                html_content=html_content,
                 **{self.content_key: canonical_entry},
             )
             self.db_session.add(translation_entry)
@@ -338,10 +333,9 @@ class TranslatedMarkdownImporter(BaseMarkdownImporter):
         return self._process_translation_metadata(translation_data, metadata)
 
     def process_and_add_translated_file(self, metadata, slug, locale, action):
-        validated_translation_data, content = self.process_markdown_file(
+        translation_data, html_content, file_content = self.process_markdown_file(
             metadata.filename, self.translation_schema
         )
-        translation_data = validated_translation_data
 
         canonical_entry = self.content_map.get(slug)
         if not canonical_entry:
@@ -359,13 +353,15 @@ class TranslatedMarkdownImporter(BaseMarkdownImporter):
             for key, value in translation_data.items():
                 setattr(existing_translation_entry, key, value)
             existing_translation_entry.locale = locale
-            existing_translation_entry.content = content
+            existing_translation_entry.file_content = file_content
+            existing_translation_entry.html_content = html_content
             self.db_session.add(existing_translation_entry)
         elif action == "new":
             translation_entry = self.translation_model(
                 **translation_entry_data,
                 locale=locale,
-                content=content,
+                file_content=file_content,
+                html_content=html_content,
                 **{self.content_key: canonical_entry["canonical"]},
             )
             self.db_session.add(translation_entry)

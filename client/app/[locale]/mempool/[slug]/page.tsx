@@ -1,6 +1,6 @@
 import { Metadata } from "next";
+import { Rehype } from "@/app/components/Rehype";
 import { getMempoolPost, getMempoolParams } from "@/lib/api/mempool";
-import { Markdown } from "@/app/components/Markdown";
 import { PageLayout } from "@/app/components/PageLayout";
 import { urls } from "@/lib/urls";
 import { PostHeader } from "../components/PostHeader";
@@ -34,7 +34,7 @@ export default async function MempoolPost({
       <article>
         <PostHeader locale={locale} post={post} />
         <section className="prose mx-auto">
-          <Markdown hasMath={post.hasMath}>{post.content}</Markdown>
+          <Rehype hasMath={post.hasMath}>{post.content}</Rehype>
         </section>
       </article>
     </PageLayout>

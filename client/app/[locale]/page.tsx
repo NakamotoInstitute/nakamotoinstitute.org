@@ -2,6 +2,7 @@ import { PageLayout } from "@/app/components/PageLayout";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
+import { Rehype } from "../components/Rehype";
 
 export default async function HomePage({ params: { locale } }: LocaleParams) {
   const { t } = await i18nTranslation(locale);

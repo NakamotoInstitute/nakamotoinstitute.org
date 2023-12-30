@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 from sni.shared.schemas import ORMModel
 
@@ -12,4 +12,4 @@ class AuthorModel(ORMModel):
     slug: str
     name: str
     sort_name: str
-    content: str
+    html_content: str = Field(alias="content")

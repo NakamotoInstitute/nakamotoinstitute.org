@@ -97,12 +97,12 @@ class DocumentIndexModel(DocumentBaseModel):
     @model_validator(mode="before")
     @classmethod
     def check_content(cls, data: Any) -> Any:
-        data.has_content = bool(data.content)
+        data.has_content = bool(data.html_content)
         return data
 
 
 class DocumentModel(DocumentBaseModel):
-    content: str
+    html_content: str = Field(alias="content")
     subtitle: Optional[str] = None
     display_title: Optional[str] = None
     image: Optional[str] = Field(alias=AliasPath("document", "image"))

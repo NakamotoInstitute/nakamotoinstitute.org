@@ -1,4 +1,4 @@
-from sni.content.importers import TranslatedMarkdownImporter
+from sni.content.markdown import TranslatedMarkdownImporter
 from sni.models import (
     Author,
     BlogPost,

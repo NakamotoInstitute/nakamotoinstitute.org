@@ -238,6 +238,6 @@ _Thank you to Aleks Svetski for organizing and inviting me to participate in the
 
 _Lastly, I’d like to recognize the other contributors to the Bitcoin Times: [Jimmy Song](https://twitter.com/jimmysong), [Erik Cason](https://twitter.com/Erikcason), [Jeff Booth](https://twitter.com/JeffBooth), [Giacomo Zucco](https://twitter.com/giacomozucco) and [Aleksandar Svetski](https://twitter.com/AleksSvetski), himself (as well as Makena Rhodes for editing and design). I’m lucky to call these brave men friends, teammates, clients, twitter friends, fellow bitcoiners or a combination in certain cases. It’s an honor just to be included._
 
-_Best, Parker_
-_[@parkeralewis](https://twitter.com/parkeralewis)_
+_Best, Parker_  
+_[@parkeralewis](https://twitter.com/parkeralewis)_  
 _[www.unchained-capital.com](http://www.unchained-capital.com)_

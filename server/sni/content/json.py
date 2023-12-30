@@ -84,7 +84,7 @@ class JSONImporter:
             file_metadata.last_modified = current_timestamp
             file_metadata.hash = current_hash
 
-    def run_import(self):
+    def run_import(self, *args):
         try:
             print(f"Importing {self.model.__name__}...", end="")
             items_data = self.load_and_validate_json()

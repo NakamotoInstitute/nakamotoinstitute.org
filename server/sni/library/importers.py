@@ -1,4 +1,4 @@
-from sni.content.importers import TranslatedMarkdownImporter
+from sni.content.markdown import TranslatedMarkdownImporter
 from sni.models import Author, Document, DocumentFormat, DocumentTranslation, Translator
 from sni.shared.service import get, get_or_create
 

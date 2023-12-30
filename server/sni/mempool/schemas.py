@@ -102,12 +102,12 @@ class MempoolPostIndexModel(MempoolPostBaseModel):
     @model_validator(mode="before")
     @classmethod
     def check_content(cls, data: Any) -> Any:
-        data.has_content = bool(data.content)
+        data.has_content = bool(data.html_content)
         return data
 
 
 class MempoolPostModel(MempoolPostBaseModel):
-    content: str
+    html_content: str = Field(alias="content")
     has_math: bool = Field(
         validation_alias=AliasPath("blog_post", "has_math"),
         serialization_alias="hasMath",

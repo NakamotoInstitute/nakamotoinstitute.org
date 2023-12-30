@@ -1,4 +1,4 @@
-from sni.content.importers import MarkdownImporter
+from sni.content.markdown import MarkdownImporter
 from sni.models import Translator
 
 from .schemas import TranslatorMDModel

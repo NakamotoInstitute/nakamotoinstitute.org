@@ -10,7 +10,8 @@ class MarkdownContent(Base):
     __tablename__ = "markdown_content"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    content: Mapped[str] = mapped_column(Text, nullable=False)
+    file_content: Mapped[str] = mapped_column(Text, nullable=False)
+    html_content: Mapped[str] = mapped_column(Text, nullable=False)
     file_metadata_id: Mapped[int] = mapped_column(ForeignKey("file_metadata.id"))
     file_metadata: Mapped["FileMetadata"] = relationship(
         "FileMetadata",
