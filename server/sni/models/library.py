@@ -101,7 +101,7 @@ class DocumentTranslation(MarkdownContent):
     image_alt: Mapped[str] = mapped_column(String, nullable=True)
     document_id: Mapped[int] = mapped_column(ForeignKey("documents.id"))
     document: Mapped[Document] = relationship(back_populates="translations")
-    formats: Mapped[DocumentFormat] = relationship(
+    formats: Mapped[List[DocumentFormat]] = relationship(
         secondary=document_formats, back_populates="documents"
     )
     translators: Mapped[List["Translator"]] = relationship(
