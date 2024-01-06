@@ -662,7 +662,9 @@
     "added": "February 22, 2013",
     "slug": "fractional-reserve-banking-is-obsolete",
     "excerpt": "There is no reason to deposit your money with a 3rd party. Bitcoin makes fractional reserve banking an obsolete technology.",
-    "translations": {}
+    "translations": {
+      "ko": ["sogoagain"]
+    }
   },
   {
     "title": "End the Fed: Hoard Bitcoins",
