@@ -40,7 +40,7 @@ Sur base de ces deux différences, je fais deux prédictions sur un évènement 
 L'hyperbitcoinisation sera probablement une période confuse pour tout le monde, comme une seconde adolescence. Cependant, une fois qu'elle sera terminée, plus personne ne sera capable de s'imaginer comment on s'en sortait avec le système précédent.
 
 <figure>
-  <img src="/img/mempool/hyperbitcoinization/Bitcoinbody.png" alt="Bitcoinbody" />
+  <img src="/static/img/mempool/hyperbitcoinization/Bitcoinbody.png" alt="Bitcoinbody" />
 </figure>
 
 <p class="text-muted text-center">

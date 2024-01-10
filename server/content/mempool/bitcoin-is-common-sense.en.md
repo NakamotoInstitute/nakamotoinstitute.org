@@ -47,7 +47,7 @@ In all perceived-to-be successful applications today, money is issued by a centr
 As kids, we all learn that _money doesn’t grow on trees_ but on a societal level, or as a country, any remnant of common sense seems to have left the building. Just in the last two months, central banks in the United States, Europe and Japan (the Fed, ECB and BOJ) have collectively inflated the supply of their respective currencies by $3.3 trillion in aggregate – an increase of over 20% in just eight weeks. The Fed alone has accounted for the majority, minting $2.5 trillion dollars and increasing the base money supply by over 60%. And it’s far from over; trillions more will be created. It is not a possibility; it is a certainty. Common sense is that deep feeling of uncertainty many are experiencing that says, “this doesn’t make any sense” or “this doesn’t end well.” Few carry that thought process out to its logical conclusion, often because it is uncomfortable to think about, but it is reverberating throughout the country and the world. While not everyone is connecting the equation to 21 million bitcoin, a growing number of people are. _Time makes more converts than reason._ Individuals don’t have to understand how or why there will only ever be 21 million bitcoin; all that has to be recognized in practical experience is that dollars are going to be worth significantly less in the future, and then the idea of having a currency with a fixed supply begins to make sense. Understanding how it is possible that bitcoin has a fixed supply comes after making that initial connection, but even still, no one needs to understand the how to understand that it is valuable. It is the light bulb turning on.
 
 <figure>
-  <img src="/img/mempool/bitcoin-is-common-sense/Bitstein-money-printing.png" alt="Bitstein money printing" />
+  <img src="/static/img/mempool/bitcoin-is-common-sense/Bitstein-money-printing.png" alt="Bitstein money printing" />
 </figure>
 
 For each individual, there is a choice to either exist in a world in which someone gets to produce new units of money for free (but just not them) or a world where no one gets to do that (including them). From an individual perspective, there is not a marginal difference in those two worlds; it is night and day, and anyone conscious of the decision very intuitively opts for the latter, recognizing that the former is neither sustainable, nor to his or her advantage. Imagine there were 100 individuals in an economy, each with different skills. All have determined to use a common form of money to facilitate trade in exchange for goods and services produced by others. With the one exception that a single individual has a superpower to print money, requiring no investment of time and at practically no cost. Given human time is an inherently scarce resource and that it is a required input in the production of any good or service demanded in trade, such a scenario would mean that one person would get to purchase the output of all the others for free. Why would anyone agree to such an arrangement? That the individual is an enterprise, and more specifically, a central bank expected to act in the public interest does not change the fundamental operation. If it does not make sense on a micro level, it does not magically transform into a different fundamental fact merely because there are greater degrees of separation. If no individual would bestow that power in another, neither would a conscious decision be made to bestow it in a central bank.
@@ -66,7 +66,7 @@ Everything beyond this fundamental reality strays into abstract theory, relying 
 #### Basic Bitcoin Common Sense {:.text-center}
 
 <figure>
-  <img src="/img/mempool/bitcoin-is-common-sense/Big-lebowski.png" alt="Big Lebowski" />
+  <img src="/static/img/mempool/bitcoin-is-common-sense/Big-lebowski.png" alt="Big Lebowski" />
 </figure>
 
 ## There is No Such Thing as a Free Lunch
@@ -80,7 +80,7 @@ When the Fed creates $2.5 trillion in a matter of weeks, it is consolidating the
 #### No Free Lunches, Just More Dollars {:.text-center}
 
 <figure>
-  <img src="/img/mempool/bitcoin-is-common-sense/Labor-force-vs-fed-balance-sheet.png" alt="Labor force vs fed balance sheet" />
+  <img src="/static/img/mempool/bitcoin-is-common-sense/Labor-force-vs-fed-balance-sheet.png" alt="Labor force vs fed balance sheet" />
 </figure>
 
 Since 2007, the Fed balance sheet has increased seven-fold, but the labor force has only increased 6%. There are roughly the same number of people contributing output (human time) but far more dollars to compensate for that time. Do not be confused by impossible-to-quantify theory concerning the idea of a job saved versus a job lost; this is the U.S. labor force, defined by the Bureau of Labor Statistics as all persons 16 years of age and older, both employed and unemployed. The inevitable result is that the value of each dollar declines, but it does not create more workers, and all prices do not adjust ratably to the increase in the money supply, including the price of labor.
@@ -88,31 +88,31 @@ Since 2007, the Fed balance sheet has increased seven-fold, but the labor force 
 In a theoretical world, if the Fed were to distribute the money in equal proportion to each individual that held the currency previously, it would not shift the balance of power. In practical application, the distribution of ownership shifts dramatically, heavily favoring the holders of financial assets (which is what the Fed buys in the process of creating new dollars) as well as those with cheap access to credit (the government, large corporations, high net-worth individuals, etc.). In aggregate, the purchasing power of every dollar declines, just not immediately, while a small subset benefits at the cost of the whole (see the [Cantillon Effect](https://www.austriancenter.com/cantillon-effect-populism/)). Despite the consequences, the Fed takes these actions in an attempt to support a credit system that would otherwise collapse without the supply of more dollars. In the Fed’s economy, the credit system is the price setting mechanism as the amount of dollar-denominated debt far outstrips the supply of dollars, which is also why the purchasing power of each dollar does not immediately respond to the increase in the money supply.
 
 <figure>
-  <img src="/img/mempool/bitcoin-is-common-sense/Fed-balance-sheet-change-Feb-to-april.png" alt="Fed balance sheet change Feb to April" />
+  <img src="/static/img/mempool/bitcoin-is-common-sense/Fed-balance-sheet-change-Feb-to-april.png" alt="Fed balance sheet change Feb to April" />
 </figure>
 
 Instead, the effects of increasing the money supply are transmitted, over time, through an expansion of the credit system. The credit system attempting to contract is the market and the individuals within an economy adjusting and re-pricing value; the Fed attempting to reverse that natural course by flooding the market with dollars is, by definition, overriding the market’s price setting function, fundamentally altering the structure of the economy. The market solution to the problem is to reduce debt (expression of preference) and the Fed’s solution is to increase the supply of dollars such that existing debt levels can be sustained. The goal is to stabilize the credit system such that it can then expand, and it is a redux to the 2008 financial crisis, which provides a historical roadmap. In the immediate aftermath of the prior crisis, the Fed created $1.3 trillion new dollars in a matter of months. Despite this, the dollar initially strengthened as deflationary pressures in the credit system overwhelmed the increase in the money supply, but then, as the credit system began to expand, the dollar’s purchasing power resumed its gradual decline. At present, the cause and effect of the Fed’s monetary stimulus is principally transmitted through the credit system. It was the case in the years following the 2008 crisis, and it will hold true this time so long as the credit system remains intact.
 
 <figure>
-  <img src="/img/mempool/bitcoin-is-common-sense/Crisis-Fred-01.png" alt="Crisis Fred 1" />
+  <img src="/static/img/mempool/bitcoin-is-common-sense/Crisis-Fred-01.png" alt="Crisis Fred 1" />
 </figure>
 
 <figure>
-  <img src="/img/mempool/bitcoin-is-common-sense/Crisis-Fred-02.png" alt="Crisis Fred 2" />
+  <img src="/static/img/mempool/bitcoin-is-common-sense/Crisis-Fred-02.png" alt="Crisis Fred 2" />
 </figure>
 
 <figure>
-  <img src="/img/mempool/bitcoin-is-common-sense/Crisis-Fred-03.png" alt="Crisis Fred 3" />
+  <img src="/static/img/mempool/bitcoin-is-common-sense/Crisis-Fred-03.png" alt="Crisis Fred 3" />
 </figure>
 
 How the effects manifest in the real economy is very complicated, but it does not take any sophistication to recognize the general direction of the end game or its foundational flaws. More dollars result in each dollar becoming worth less, and the value of any good naturally trends toward its cost to produce. The marginal cost for the Fed to produce a dollar is zero. With all the bailouts from both the Fed and Congress, whether to individuals or companies, someone is paying for everything. It is axiomatic that _printing money (or creating digital dollars) does nothing to generate economic activity_; it only shifts the balance of powers as to who allocates the money and prices risk. It strips power from the people and centralizes it to the government. It also fundamentally impairs the economy’s ability to function as it distorts prices everywhere. But most importantly, it puts the stability of the underlying currency at risk, which is the cost that everyone collectively pays. The Fed may be able to create dollars for free and the Treasury may be able to borrow at near-zero interest rates as a direct result, but there is still no such thing as a free lunch. Someone still has to do the work, and all printing money does is shift who has the dollars to coordinate and price that work.
 
 <figure>
-  <img src="/img/mempool/bitcoin-is-common-sense/Hamilton-paper-emmissions.png" alt="Hamilton paper emissions" />
+  <img src="/static/img/mempool/bitcoin-is-common-sense/Hamilton-paper-emmissions.png" alt="Hamilton paper emissions" />
 </figure>
 
 <figure>
-  <img src="/img/mempool/bitcoin-is-common-sense/Government-debt-share.png" alt="Government debt share" />
+  <img src="/static/img/mempool/bitcoin-is-common-sense/Government-debt-share.png" alt="Government debt share" />
 </figure>
 
 > “Gospodin,” he said presently, “you used an odd word earlier–odd to me, I mean…”
@@ -138,21 +138,21 @@ But with all this, bitcoin is very simple. If the supply of bitcoin remains fixe
 {:.text-center}
 
 <figure>
-  <img src="/img/mempool/bitcoin-is-common-sense/fool-me-4-times.png" alt="Fool me 4 times" />
+  <img src="/static/img/mempool/bitcoin-is-common-sense/fool-me-4-times.png" alt="Fool me 4 times" />
 </figure>
 
 **Plus Exhibit B – Bitcoin Supply**
 {:.text-center}
 
 <figure>
-  <img src="/img/mempool/bitcoin-is-common-sense/Bitcoin-supply-schedule-4_30.png" alt="Bitcoin supply schedule 4-30" />
+  <img src="/static/img/mempool/bitcoin-is-common-sense/Bitcoin-supply-schedule-4_30.png" alt="Bitcoin supply schedule 4-30" />
 </figure>
 
 **Equals Exhibit C – Purchasing Power of Bitcoin Relative to Dollars**
 {:.text-center}
 
 <figure>
-  <img src="/img/mempool/bitcoin-is-common-sense/bitcoin-price-log-scale-4_30.png" alt="Bitcoin price log scale 4-30" />
+  <img src="/static/img/mempool/bitcoin-is-common-sense/bitcoin-price-log-scale-4_30.png" alt="Bitcoin price log scale 4-30" />
 </figure>
 
 There is a lot happening in the background, but these three charts are what drives everything. People all over the world are connecting these dots. The Fed is creating trillions of dollars at the same time the rate of issuance in bitcoin is about to be cut in half (see the [bitcoin halvening](https://www.buybitcoinworldwide.com/bitcoin-clock/)). While most may not be aware of these two divergent paths, a growing number are (knowledge distributes with time) and even a small number of people figuring it out ultimately puts a significant imbalance between the demand for bitcoin and its supply. When this happens, the value of bitcoin goes up. It is that simple and that is what draws everyone else in: price. Price is what communicates information. All those otherwise not paying attention react to price signals. The underlying demand is ultimately dictated by fundamentals (even if speculation exists), but the majority do not need to understand those fundamentals to recognize that the market is sending a signal.

@@ -83,7 +83,7 @@ translators:
 אלו מדינות הפגיעות ביותר למשבר מטבע? יש רשימה שתעזור [פה](http://www.businessinsider.com/countries-most-vulnerable-to-crisis-2013-11). ביטקוינים יהיו חייבים להגיע לאיזשהו סף נזילות, שישתקף על ידי מסחר משמעותי בכל מרכז פיננסי וגיבוי על ידי כסף אמיתי – שווי שוק – של לפחות $50 מיליארד, לפני שיהיה ניתן להשתמש בהם ככלי להתקפה ספקולטיבית. זה יתלווה או יגרום למשבר מטבע.
 
 <figure>
-  <img src="/img/mempool/speculative-attack/europes-crisis-contagion.jpg" alt="" />
+  <img src="/static/img/mempool/speculative-attack/europes-crisis-contagion.jpg" alt="" />
 </figure>
 
 ## 3\. היפר-ביטקויניזציה

@@ -1,4 +1,4 @@
-import { urls } from "@/lib/urls";
+import { cdnUrl, urls } from "@/lib/urls";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -30,7 +30,7 @@ export function Footer({ locale }: { locale: Locale }) {
           >
             <Image
               alt="Creative Commons License"
-              src="/img/cc-4-0-by-sa.png"
+              src={cdnUrl("/img/cc-4-0-by-sa.png")}
               width={88}
               height={31}
             />

@@ -75,8 +75,7 @@ export const urls = (locale: Locale) => {
     podcast: {
       index: getUrl("/podcast"),
       episode: (slug: string) => getUrl(`/podcast/${slug}`),
-      episodeMp3: (slug: string) =>
-        `https://s3.amazonaws.com/nakamotoinstitute/cryptomises/${slug}.mp3`,
+      episodeMp3: (slug: string) => cdnUrl(`/cryptomises/${slug}.mp3`),
     },
     satoshi: {
       index: getSatoshiUrl("/"),
@@ -112,6 +111,8 @@ export const urls = (locale: Locale) => {
     github: "https://github.com/NakamotoInstitute/nakamotoinstitute.org",
   };
 };
+
+export const cdnUrl = (path: string) => process.env.CDN_BASE_URL + path;
 
 export const generateLocaleToggleLinks = (
   locale: string,

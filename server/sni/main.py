@@ -1,6 +1,7 @@
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
 
 from sni.authors.router import router as authors_router
 from sni.content.update import update_content
@@ -12,15 +13,20 @@ from sni.skeptics.router import router as skeptics_router
 
 from .config import settings
 
+IS_DEVELOPMENT = settings.ENVIRONMENT == "development"
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    if settings.ENVIRONMENT == "development":
+    if IS_DEVELOPMENT:
         update_content()
     yield
 
 
 app = FastAPI(lifespan=lifespan)
+
+if IS_DEVELOPMENT:
+    app.mount("/static", StaticFiles(directory="static"), name="static")
 
 app.include_router(authors_router, tags=["authors"], prefix="/authors")
 app.include_router(library_router, tags=["library"], prefix="/library")

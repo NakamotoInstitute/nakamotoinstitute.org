@@ -36,7 +36,7 @@ Die Anpassung daran ist eher einer Reihe von unternehmerischen Handlungen einzel
 
 Ausgehend von diesen zwei Unterschieden mache ich zwei Voraussagen über eine (mögliche) Hyperbitcoinization:
 
-1.           Die Hyperbitcoinization wird schneller ablaufen als eine Hyperinflation
+1.            Die Hyperbitcoinization wird schneller ablaufen als eine Hyperinflation
 
     Ich habe zwei Gründe für diese Annahme:
     a) Der Staat wird weitaus größere Schwierigkeiten haben Bitcoin am Übertritt von Landesgrenzen
@@ -57,7 +57,7 @@ Hyperbitcoinization wird wahrscheinlich für manchen verwirrend sein, wie eine z
 Sobald diese vorbei ist, wird es unvorstellbar sein wie wir mit dem alten System haben leben können.
 
 <figure>
-  <img src="/img/mempool/hyperbitcoinization/Bitcoinbody.png" alt="Bitcoinbody" />
+  <img src="/static/img/mempool/hyperbitcoinization/Bitcoinbody.png" alt="Bitcoinbody" />
 </figure>
 
 <p class="text-muted text-center">

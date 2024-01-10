@@ -22,7 +22,7 @@ And it’s working. Bitcoin is poised for exponential growth, so the opportunity
 Bitcoin is a dangerous place. There is an [endless list of hacks, scams, and thefts](https://bitcointalk.org/index.php?topic=576337). Bitcoin promises a network with distributed trust. You know why? Because other bitcoiners exist.
 
 <figure>
-  <img src="/img/mempool/everyones-a-scammer/noose.jpg" alt="Noose" />
+  <img src="/static/img/mempool/everyones-a-scammer/noose.jpg" alt="Noose" />
 </figure>
 
 Not every bitcoin scammer is merely an amoral businessman or investor. Many are outright fraudsters and con-artists. When you buy a rug from Overstock, at least you actually get a rug. When you send money to Ethereum, you may actually get a worthless ether token eventually. You know what you probably will never get? Your Butterfly Labs pre-order or your Goxbucks.
@@ -46,7 +46,7 @@ At long last Newegg accepts Bitcoin, along with Overstock.com, TigerDirect, Dell
 Merchants have absolutely every reason to accept Bitcoin. BitPay recently removed all fees for payment processing, including currency exchange. Not only can merchants receive payments without fees, but there are of course a litany of other benefits, from no fraud or chargeback to easy international payments. They can pass on their savings to customers or increase their profit margins. They also can and should hold onto bitcoins as their accounting permits, so as to earn profits from future price increases. After all, if Bitcoin increases adoption for payments, there are only so many units to go around, so each one will become more valuable.
 
 <figure>
-  <img src="/img/mempool/everyones-a-scammer/my-mule.jpg" alt="My mule" />
+  <img src="/static/img/mempool/everyones-a-scammer/my-mule.jpg" alt="My mule" />
 </figure>
 
 So merchants are in a good position. They can save money on their business, and they can try to purchase bitcoins with retail goods, just as many purchase them with dollars or euros. If I were a merchant, I would most certainly encourage people to shop at my store in Bitcoin. I might even try to convince them, despite its fallacious economic reasoning, that spending bitcoins at my store is actually good for Bitcoin—certainly more than you saving and speculating on them. After all, “it could become worthless overnight” and “Its future depends on it” (because I say so). I might even say things like:
@@ -76,7 +76,7 @@ Bitcoin is exciting. Looking at a static wallet file and balance is not. Instead
 All of these are scams.
 
 <figure>
-  <img src="/img/mempool/everyones-a-scammer/rifle.jpg" alt="Rifle" />
+  <img src="/static/img/mempool/everyones-a-scammer/rifle.jpg" alt="Rifle" />
 </figure>
 
 Regardless of their ability to actually deliver their promises, they all fail a simple test: is the return on investment positive? If you are stuck in a fiat mindset, you may well make a quick buck, but given Bitcoin’s extraordinary expected growth, can one really expect to do better than one can by holding it? Long term investors should use Bitcoin as their unit of account and every single investment should be compared to the expected returns of Bitcoin.
@@ -100,7 +100,7 @@ The Bitcoin hoarder is in a constant battle with himself to lower his time prefe
 Bitcoin hoarders are excited about the price rises, but they are also excited when the price is on its way down. Coinbase just months ago was willing to give me a bitcoin for $1200, and now they are only asking for $475\. Whatever price, the bitcoin hoarder thinks to himself, “Suckers.”
 
 <figure>
-  <img src="/img/mempool/everyones-a-scammer/eastwood-cigar.jpg" alt="Eastwood cigar" />
+  <img src="/static/img/mempool/everyones-a-scammer/eastwood-cigar.jpg" alt="Eastwood cigar" />
 </figure>
 
 Bitcoin hoarders are in it for the long run. Their strategy is not to buy low, sell high, but to buy any, sell some highest. They will do anything to get their hands on more satoshis, and there is nothing that makes them happier than a schmuck giving up the goods after being convinced Bitcoin is only worth <span style="white-space:nowrap;">\$[x < moon]</span>. These sellers have [volunteered to hold the fiat shitbag](http://trilema.com/2014/people-us-dollars-are-not-worth-a-fifth-of-a-bitcent-stop-selling/), and hoarders will not be so quick to help them get rid of the stench.
@@ -114,7 +114,7 @@ _Hoarders are scammers because they understand the exponential (and very likely)
 Hoarding is what gives money value. And no, [you can’t have any](/mempool/im-hoarding-bitcoins-and-no-you-cant-have-any/).
 
 <figure>
-  <img src="/img/mempool/everyones-a-scammer/bitcoinfeedbackloops.jpg" alt="Bitcoin feedback loops" />
+  <img src="/static/img/mempool/everyones-a-scammer/bitcoinfeedbackloops.jpg" alt="Bitcoin feedback loops" />
 </figure>
 
 Great news for Bitcoin!
@@ -124,7 +124,7 @@ Great news for Bitcoin!
 Indeed, Bitcoin scamming is a job that will never be finished. The market-based scams (that is, ones that don’t require fraud) will subside as Bitcoin absorbs the real money supply of all other currencies, when demand for cash begins to decelerate and eventually stabilizes. However, other scammers will always be looking for ways to screw someone out of their bitcoins.
 
 <figure>
-  <img src="/img/mempool/everyones-a-scammer/cornered.jpg" alt="Cornered" />
+  <img src="/static/img/mempool/everyones-a-scammer/cornered.jpg" alt="Cornered" />
 </figure>
 
 The only way this will be solved is if trusted networks can be built. As has been said before, [Bitcoin is great, but it won’t fix our monkey brains](/mempool/bitcoin-is-great-but-it-wont-fix-our-monkey-brains/). While Bitcoin offers a money with no trusted third party, it can only do so because the ledger is self-referential. The humans actually using it must always be in a mindset of _caveat emptor_ when using Bitcoin. Through [payment protocols](https://github.com/bitcoin/bips/blob/master/bip-0070.mediawiki), [webs-of-trust](http://bitcoin-otc.com/), [smart contracts](https://en.bitcoin.it/wiki/Contracts), [GPG contracts](/gpg-contracts/), and [voting pools](http://bitcoinism.blogspot.com/2013/12/voting-pools-how-to-stop-plague-of.html), users can mitigate the risk of engaging in various forms of commerce.
@@ -134,7 +134,7 @@ The only way this will be solved is if trusted networks can be built. As has bee
 We live in a state of total war. Everyone who holds bitcoins is trying to get more by scamming others out of theirs or convincing others it’s not worth trying to get into. Everyone who does not hold bitcoins was either scammed out of them or was scammed from getting into it. Having bitcoins takes the knowledge and will to know and desire its future, while not having or spending them is lacking one or the other. If you hold bitcoins, you must take a breath every time you wish to send any to another person. Ask yourself if that person truly deserves untold amounts of your future wealth for pouring you a beer. You may just find the will to hodl more.
 
 <figure>
-  <img src="/img/mempool/everyones-a-scammer/body-armor.gif" alt="Body armor" />
+  <img src="/static/img/mempool/everyones-a-scammer/body-armor.gif" alt="Body armor" />
 </figure>
 
 Hyperbitcoinization will not be a force to trifle with. Even a marginal bitcoin holding right now will constitute a very significant majority of a bitcoiner’s portfolio. Once it happens, there is no going back. One day, your Bitcoin balance will likely never see the decimal point move to the right again. Bitcoin will brake for no one on its race down the road from serfdom to global domination (liberation?). Do not give your seat up for someone else.

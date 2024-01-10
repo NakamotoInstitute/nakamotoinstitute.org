@@ -16,7 +16,7 @@ original_url: https://www.unchained-capital.com/blog/bitcoin-fixes-this/
 This past week marked that time of year when global central bankers, establishment economists and CNBC, et al. descend on Jackson Hole, Wyoming to discuss the systemic issues that plague our economy. Never seeming to find an answer but constantly in search of it; it is the perennial Jackson Hole dilemma. There is always much fanfare and this year was no different. The whole spectacle may have been highlighted by Lawrence Summers, former U.S. Treasury Secretary and former President of Harvard University. In a 28-part [twitter thread](https://twitter.com/LHSummers/status/1164490326549118976), Summers questioned a number of foundational assumptions made by the establishment economic mainstream, of which he is a resident member. In the game of Marco Polo, Summers is getting warmer but he’s still on the wrong side of the pool. Identifying symptoms of the problem maybe, but as with most mainstream economists, the obvious question is never asked. Could the whole apparatus of central bank policy be the root cause of the problem rather than the ever-elusive solution?
 
 <figure>
-  <img src="/img/mempool/bitcoin-fixes-this/larry-summers.png" alt="Larry Summers" />
+  <img src="/static/img/mempool/bitcoin-fixes-this/larry-summers.png" alt="Larry Summers" />
 </figure>
 
 The baseline question from Summers: can central banking as we know it be the primary tool of macroeconomic stabilization in the industrial world over the next decade? Summers doubts that it can, but what if the better question were: is central banking the primary cause of macroeconomic instability? Since the financial crisis, quantitative easing has been the primary tool central banks have used in an attempt to stabilize the economy and to manufacture inflation. The playbook is as follows: increase the money supply, reduce interest rates and reflate asset values such that existing debt levels can be sustained and more debt can be created.
@@ -24,7 +24,7 @@ The baseline question from Summers: can central banking as we know it be the pri
 However, despite record low interest rates, the global economy has once again begun to deteriorate and the effectiveness of quantitative easing is naturally being questioned by many. As Summers notes, what has long been taught as axiomatic is now very much in doubt. Contrary to popular belief, the function of quantitative easing actually creates the instability it seeks to avoid. When understanding its base operation, it becomes clear that quantitative easing has always been a fool’s errand. As Nassim Taleb writes in the foreword to [_The Bitcoin Standard_](https://saifedean.com/the-book/), the macroeconomic experts are not only not experts, they don’t know it either.
 
 <figure>
-  <img src="/img/mempool/bitcoin-fixes-this/bitcoin-standard-foreword.png" alt="Bitcoin Standard foreword" />
+  <img src="/static/img/mempool/bitcoin-fixes-this/bitcoin-standard-foreword.png" alt="Bitcoin Standard foreword" />
 </figure>
 
 <figure>
@@ -35,7 +35,7 @@ However, despite record low interest rates, the global economy has once again be
 </figure>
 
 <figure>
-  <img src="/img/mempool/bitcoin-fixes-this/Yellen.png" alt="Janet Yellen" />
+  <img src="/static/img/mempool/bitcoin-fixes-this/Yellen.png" alt="Janet Yellen" />
 </figure>
 
 History has consistently established that the experts are limited in the field of their own expertise, yet policies such as quantitative easing continue to be pursued, largely because macroeconomics and central banking is a monoculture, as Taleb describes. The mainstream policy position starts with the assumption that central banking is core to the function of an economy; then debate centers on what levers to pull and how best to manage the economy via central bank planning. Active management of the money supply via quantitative easing is taken as a given; it’s a question of how much and when, rather than if.
@@ -51,11 +51,11 @@ While attempting to be a source of macroeconomic stabilization, central bankers 
 In the most simplistic terms, quantitative easing is a technical term that describes how the Federal Reserve creates new dollars. It isn’t technically “printing money,” but it is functionally the same. The Fed digitally creates new digital dollars on a ledger (literally out of thin air) and uses those dollars to purchase financial assets, such as U.S. treasuries (government debt) or mortgage-backed securities. Following the financial crisis, the Fed introduced $3.6 trillion new dollars into the banking system via QE, quintupling the size of its balance sheet. As a net effect, more dollars exist within the banking system in the form of bank reserves and those reserves can then be used to lend or to purchase other assets. In simple terms, more dollars exist, which causes the value of each individual dollar to decrease.
 
 <figure>
-  <img src="/img/mempool/bitcoin-fixes-this/monetary-base.png" alt="Monetary base" />
+  <img src="/static/img/mempool/bitcoin-fixes-this/monetary-base.png" alt="Monetary base" />
 </figure>
 
 <figure>
-  <img src="/img/mempool/bitcoin-fixes-this/CPI-Value-of-a-Dollar.png" alt="CPI value of a dollar" />
+  <img src="/static/img/mempool/bitcoin-fixes-this/CPI-Value-of-a-Dollar.png" alt="CPI value of a dollar" />
 </figure>
 
 Quantitative easing is the root cause of why your dollar purchases less tomorrow; however, the effects of quantitative easing are transmitted gradually through the economy via the expansion of the credit system. Said another way, quantitative easing is designed to allow banks to expand credit; for every dollar that is created through quantitative easing, the credit system can expand by multiples of each dollar added. This incremental credit (think auto loans, mortgages, student loans, etc.) is then used to purchase goods in the real economy, which causes the prices of goods to rise and the value of the dollar to decline on a relative basis.
@@ -67,7 +67,7 @@ The short answer is no. While many believe that quantitative easing was necessar
 Through this function, the Fed inadvertently created the instability that existed in the financial system in 2008 because it created the environment which allowed for an unsustainable degree of system leverage to accumulate over the course of decades. While it has pursued similar policies for decades, the financial crisis created an environment that triggered a more drastic response from the Fed. Practically speaking, the Fed needed a bigger boat and in response to the market turmoil, it increased the supply of dollars by $3.6 trillion in order to stave off an impending financial collapse. This time was different; while the subprime crisis steals the headlines, the real issue was the cumulative effect of sustained imbalances in the credit system which had accumulated over many cycles and the overall degree of system leverage.
 
 <figure>
-  <img src="/img/mempool/bitcoin-fixes-this/debt-vs-monetary-base.png" alt="Debt vs. monetary base" />
+  <img src="/static/img/mempool/bitcoin-fixes-this/debt-vs-monetary-base.png" alt="Debt vs. monetary base" />
 </figure>
 
 In the Fed’s economy, the credit system has become the marginal price mechanism. And because the Fed has a mandate to maintain price stability, it must implicitly maintain the size of the credit system in order to sustain general price levels. During the financial crisis, the credit system began to contract and asset price levels rapidly declined in a disorderly fashion. In order to reverse the impact, the Fed was forced to drastically increase the money supply (quantitative easing) in an effort to maintain the size of the credit system. Even after the height of the crisis, the Fed determined it was necessary to add trillions more in new dollars to continue to support a languishing system, despite acknowledging the limitations of its monetary policy tools. This is the Fed’s catch-22; even when it seemingly knows betters, the Fed’s default position is to err on the side of more quantitative easing, not less.
@@ -97,7 +97,7 @@ Because of the leverage that remains inherent in the existing financial system, 
 In [“The Pretense of Knowledge”](https://mises.org/library/pretense-knowledge), a speech delivered by Friedrich Hayek at the ceremony awarding him the Nobel Prize in economics in 1974, he articulates the first principles of why the disparate knowledge of all market participants is greater than that which any single mind possesses. It is through this reasoning that he explains why the dominant macroeconomic theory and monetary policy which guides central banks is inherently flawed. And, why the policy tools used by central banks, particularly quantitative easing, create more harm than good. I highly recommend reading the full speech as it provides the counter-narrative to the monoculture of today’s economic policy making. Our current system entrusts the allocation of trillions of dollars to just a few individuals. It is not that these individuals lack a significant amount of knowledge; instead, it is that any small group of individuals necessarily possesses far less knowledge than the hundreds of millions of individuals that actually make up an economy.
 
 <figure>
-  <img src="/img/mempool/bitcoin-fixes-this/pretenseofknowledge.png" alt="Pretense of Knowledge" />
+  <img src="/static/img/mempool/bitcoin-fixes-this/pretenseofknowledge.png" alt="Pretense of Knowledge" />
   <figcaption><a href="https://mises.org/library/pretense-knowledge">“The Pretense of Knowledge”</a>, Hayek (Nobel Prize Lecture, 1974)</figcaption>
 </figure>
 

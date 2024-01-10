@@ -33,17 +33,17 @@ Bitcoin was therefore birthed onto fertile ground and was recognized by those th
 
 <figure>
   <div class="img-container">
-    <a href="/img/mempool/bitcoin-equals-freedom/scan-1.jpg" target="_blank">
-      <img src="/img/mempool/bitcoin-equals-freedom/scan-1.jpg" alt="" />
+    <a href="/static/img/mempool/bitcoin-equals-freedom/scan-1.jpg" target="_blank">
+      <img src="/static/img/mempool/bitcoin-equals-freedom/scan-1.jpg" alt="" />
     </a>
-    <a href="/img/mempool/bitcoin-equals-freedom/scan-2.jpg" target="_blank">
-      <img src="/img/mempool/bitcoin-equals-freedom/scan-2.jpg" alt="" />
+    <a href="/static/img/mempool/bitcoin-equals-freedom/scan-2.jpg" target="_blank">
+      <img src="/static/img/mempool/bitcoin-equals-freedom/scan-2.jpg" alt="" />
     </a>
-    <a href="/img/mempool/bitcoin-equals-freedom/scan-3.jpg" target="_blank">
-      <img src="/img/mempool/bitcoin-equals-freedom/scan-3.jpg" alt="" />
+    <a href="/static/img/mempool/bitcoin-equals-freedom/scan-3.jpg" target="_blank">
+      <img src="/static/img/mempool/bitcoin-equals-freedom/scan-3.jpg" alt="" />
     </a>
-    <a href="/img/mempool/bitcoin-equals-freedom/scan-4.jpg" target="_blank">
-      <img src="/img/mempool/bitcoin-equals-freedom/scan-4.jpg" alt="" />
+    <a href="/static/img/mempool/bitcoin-equals-freedom/scan-4.jpg" target="_blank">
+      <img src="/static/img/mempool/bitcoin-equals-freedom/scan-4.jpg" alt="" />
     </a>
   </div>
 </figure>

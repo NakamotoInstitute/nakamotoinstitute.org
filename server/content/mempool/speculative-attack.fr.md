@@ -86,7 +86,7 @@ L'augmentation des taux d'intérêt par la banque centrale indienne pose un éno
 Quels sont les pays les plus vulnérables à une crise monétaire ? _Business Insider_ fournit une liste utile [ici](http://www.businessinsider.com/countries-most-vulnerable-to-crisis-2013-11). Les bitcoins devront atteindre un certain seuil de liquidité, indiqué par un échange solide dans chaque centre financier et une masse monétaire réelle - c'est-à-dire une capitalisation boursière - d'au moins 50 milliards de dollars, avant de pouvoir être utilisés comme instrument dans une attaque spéculative. Cela coïncidera avec une crise monétaire ou la provoquera.
 
 <figure>
-  <img src="/img/mempool/speculative-attack/europes-crisis-contagion.jpg" alt="" />
+  <img src="/static/img/mempool/speculative-attack/europes-crisis-contagion.jpg" alt="" />
 </figure>
 
 ## 3\. L'hyperbitcoinisation

@@ -20,7 +20,7 @@ However, a better physical metaphor might be the formation of crystals. A liquid
 By this metaphor, the supercooled liquid is the world as of a few years ago, ripe for a monetary revolution, and the seed is the initial bitcoin purchase. The fact that Bitcoin successfully transformed into something with value seems like a miracle. However, it was no miracle. It was a result of the dedication and faith of its community, whose members will not let go of the beautiful vision of a Bitcoin future. It might be better to use a word like “crystallization” to describe the formation of the initial “seed” of Bitcoin trading rather than a metaphor like “bootstrapping”, which depicts a physical paradox.[^1]
 
 <figure>
-  <img src="/img/mempool/why-bitcoin-will-continue-to-grow/breaking-bad.jpg" alt="" />
+  <img src="/static/img/mempool/why-bitcoin-will-continue-to-grow/breaking-bad.jpg" alt="" />
 </figure>
 
 Thus, when people dismiss Bitcoin as valueless and call every upward price movement a bubble, they are really missing the point. An investment in bitcoins is an investment in the Bitcoin community. It was in late 2012 that I came to realize just how wonderfully fanatical this community was, and this was what convinced me to treat my bitcoins not as simply an utter speculation, but as something with very real prospects.
@@ -46,7 +46,7 @@ It might be argued that Bitcoin could retain its uses on illegal markets, but th
 All things being equal, a larger network is better than a smaller one. This puts Bitcoin at a disadvantage with respect to national currencies. One would therefore expect Bitcoin to decline relative to dollars or euros. The fact that this is not the case tells us that all things are not equal. It shows us that Bitcoin is still good enough compared to the national currencies. It can grow anyway despite their advantages over it. The network effect means that the bigger Bitcoin gets, the better its prospects. The fact that Bitcoin has grown in the immediate past is strong evidence that it will continue to grow in the immediate future.
 
 <figure>
-  <img src="/img/mempool/why-bitcoin-will-continue-to-grow/chart.png" alt="" />
+  <img src="/static/img/mempool/why-bitcoin-will-continue-to-grow/chart.png" alt="" />
 </figure>
 
 A possible objection is that Bitcoin’s demand is mostly investment demand rather than demand as a currency. Therefore, the objection goes, it is no longer the case that Bitcoin’s demand is self-promoting. However, a currency becomes more useful as a result of any kind of demand, not just demand as a currency. I would bet that most people who are invested in bitcoins today would be happy to get more by trading goods and services for them. They are also happy to serve as a facilitator for bitcoin trades via the dollar, which is effectively what happens when a merchant accepts bitcoins as payment and then immediately converts them to dollars. Thus, their investment demand enables more use of Bitcoin as a currency. By merely investing in Bitcoin, they enable more potential trades and make Bitcoin a better currency.

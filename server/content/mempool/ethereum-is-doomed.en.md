@@ -90,7 +90,7 @@ but these are complications on top of the fundamental problem. A hacker can
 try to ensure that only the last send fails so as to end up with everything.
 
 <figure>
-  <img src="/img/mempool/ethereum-is-doomed/the-dao-is-empty.png" alt="" />
+  <img src="/static/img/mempool/ethereum-is-doomed/the-dao-is-empty.png" alt="" />
   <figcaption>via <a href="https://twitter.com/KonradSGraf/status/743843080961409025">Twitter</a></figcaption>
 </figure>
 
@@ -195,7 +195,7 @@ Sirer](http://hackingdistributed.com/2016/06/17/thoughts-on-the-dao-hack/#what-s
 > done.
 
 <figure>
-  <img src="/img/mempool/ethereum-is-doomed/vitalik-rai-stones.jpg" alt="" />
+  <img src="/static/img/mempool/ethereum-is-doomed/vitalik-rai-stones.jpg" alt="" />
   <figcaption>Artwork by <a href="https://twitter.com/BigLambda/status/891148584334245888">Big λ</a></figcaption>
 </figure>
 

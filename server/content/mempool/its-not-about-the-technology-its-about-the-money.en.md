@@ -384,7 +384,7 @@ finally figured this out. Once Litecoin loses its shared hallucination, no
 amount of sloganeering will bring it back.
 
 <figure>
-  <img src="/img/mempool/its-not-about-the-technology-its-about-the-money/litecoin-prices-all-time.png" alt="" />
+  <img src="/static/img/mempool/its-not-about-the-technology-its-about-the-money/litecoin-prices-all-time.png" alt="" />
   <figcaption>Litecoin prices, all-time (via <a href="http://coinmarketcap.com/currencies/litecoin/">CoinMarketCap</a>)</figcaption>
 </figure>
 

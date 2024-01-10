@@ -28,7 +28,7 @@ To recap, the regression theorem says that:
 Both of these are necessarily market phenomena because they take place as peoples' individual decisions as to what they wish to trade with and with whom. Institutionalized coercion can affect the process, but always from the outside: for example, a State could try to promote one media of exchange over others by outlawing the rest. This might affect which media of exchange becomes money, but they cannot cause a thing to become money or a medium of exchange directly through decree.
 
 <figure>
-  <img src="/img/mempool/the-original-value-of-bitcoins/mises-tmc.jpg" alt="Mises" />
+  <img src="/static/img/mempool/the-original-value-of-bitcoins/mises-tmc.jpg" alt="Mises" />
 </figure>
 
 On the other hand, the regression theorem does _not_ say that:

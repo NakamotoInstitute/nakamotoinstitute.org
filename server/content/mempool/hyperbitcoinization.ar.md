@@ -36,7 +36,7 @@ excerpt: هذا المقال يتحدث عن احتمالية بطلان الع�
 فترة البتكنة ستكون فترة محيرة (كفترة مراهقة أخرى). لكن، عندما تنتهي الفترة وتنجلي الرؤية سيصعب تخيل كيف استطعنا التعايش مع النظام السابق.
 
 <figure>
-  <img src="/img/mempool/hyperbitcoinization/Bitcoinbody.png" alt="Bitcoinbody" />
+  <img src="/static/img/mempool/hyperbitcoinization/Bitcoinbody.png" alt="Bitcoinbody" />
 </figure>
 
 <p class="text-muted text-center">

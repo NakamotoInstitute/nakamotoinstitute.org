@@ -69,7 +69,7 @@ to prevent this. That should eliminate the expectation that any appcoin could
 ever be a good investment.
 
 <figure>
-  <img src="/img/mempool/appcoins-are-snake-oil/underpants-gnomes.png" alt="" />
+  <img src="/static/img/mempool/appcoins-are-snake-oil/underpants-gnomes.png" alt="" />
 </figure>
 
 ## Beating a Dead Horse
@@ -126,7 +126,7 @@ machines](http://en.wikipedia.org/wiki/Rube_Goldberg_machine), so don't get
 fooled.
 
 <figure>
-  <img src="/img/mempool/appcoins-are-snake-oil/inconvenience-store.jpg" alt="" />
+  <img src="/static/img/mempool/appcoins-are-snake-oil/inconvenience-store.jpg" alt="" />
 </figure>
 
 _[Update 6/16/2014: Added argument about developers changing the app

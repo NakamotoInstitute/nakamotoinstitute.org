@@ -25,7 +25,7 @@ Und es funktioniert. Bitcoin steht vor explosivem Wachstum, daher sind die Oppor
 Bitcoin ist ein gefährlicher Ort. Es gibt eine endlose Liste von [Hacks, Betrugsfällen und Diebstählen](https://bitcointalk.org/index.php?topic=576337) . Bitcoins verspricht ein Netzwerk des verteilten Vertrauens. Weißt du, warum? Weil es die anderen Bitcoiner gibt.
 
 <figure>
-  <img src="/img/mempool/everyones-a-scammer/noose.jpg" alt="Noose" />
+  <img src="/static/img/mempool/everyones-a-scammer/noose.jpg" alt="Noose" />
 </figure>
 
 Nicht jeder Bitcoin Scammer ist lediglich ein amoralischer Geschäftsmann oder Investor. Viele sind regelrechte Betrüger oder Trickdiebe. Wenn du einen Teppich von Overstock kaufst bekommst du wenigstens deinen Teppich. Wenn du Geld an Ethereum schickst bekommst du vielleicht irgendwann einmal ein wertloses Ether Token. Weißt du, was du wahrscheinlich nie bekommen wirst? Deine Vorbestellung von Butterfly Labs oder deine Goxbucks.
@@ -49,7 +49,7 @@ Jetzt endlich akzeptiert Newegg Bitcoin, zusammen mit Overstock, TigerDirect, De
 Händler haben absolut allen Grund, Bitcoin zu akzeptieren. BitPay hat neulich alle Gebühren für die Zahlungsabwicklung herausgenommen, einschließlich dem Währungsumtausch. Nicht nur können Händler gebührenfrei Zahlungen erhalten, sondern es gibt natürlich eine Latte an anderen Vergünstigungen, vom Ausschluss von Betrugs und Rückzahlungsverpflichtung bis zu vereinfachten internationalen Zahlungen. Sie können diese Ersparnisse an die Kunden weitergeben oder ihre Marge vergrößern. Sie können auch, und sollten, so viel Bitcoin behalten wie ihre Buchhaltung erlaubt, um Profit aus künftigen Preissteigerungen zu ziehen. Wenn die Annahme von Bitcoin für Zahlungen zunimmt wird jede einzelne Einheit mehr wert werden, da es nur eine begrenzte Anzahl gibt.
 
 <figure>
-  <img src="/img/mempool/everyones-a-scammer/my-mule.jpg" alt="My mule" />
+  <img src="/static/img/mempool/everyones-a-scammer/my-mule.jpg" alt="My mule" />
 </figure>
 
 Händler sind also gut aufgestellt. Sie können Kosten in ihrem Geschäft sparen, und sie können Bitcoins mit Hilfe von Waren erwerben, so wie andere dies mit Hilfe von Dollars oder Euros tun. Wenn ich ein Händler wäre, dann würde ich auf jeden Fall die Kunden dazu ermuntern, bei mir mit Bitcoin einzukaufen. Ich würde sie vielleicht sogar versuchen von dem wirtschaftlichen Trugschluss zu überzeugen, dass das Ausgeben von Bitcoin in meinem Geschäft gut für Bitcoin ist – sicher besser als sie zu sparen oder damit zu spekulieren. Schließlich “kann alles über Nacht wertlos werden” und “Bitcoins Zukunft hängt davon ab.” Ich würde vielleicht sogar Dinge sagen wie:
@@ -79,7 +79,7 @@ Bitcoin ist aufregend. Auf ein immer gleiches Wallet mit unverändertem Kontosta
 Und das sind alles Scams.
 
 <figure>
-  <img src="/img/mempool/everyones-a-scammer/rifle.jpg" alt="Rifle" />
+  <img src="/static/img/mempool/everyones-a-scammer/rifle.jpg" alt="Rifle" />
 </figure>
 
 Unabhängig von deren Fähigkeit tatsächlich ihre Versprechen einzulösen fallen sie alle bei einem einfachen Test durch: Ist der Return On Investment positiv? Wenn du gedanklich in der Fiat-Welt steckengeblieben bist, kannst du natürlich ein paar schnelle Euros machen, aber angesichts des erwarteten Wachstums von Bitcoin: kann man wirklich erwarten, irgendwie besser dazustehen als mit Hamstern? Langfristige Investoren sollten Bitcoin als Rechnungseinheit benutzen und jede einzelne Investition mit dem erwarteten Gewinn aus Bitcoin vergleichen.
@@ -101,7 +101,7 @@ Fang an zu prgrammieren. Jedes neue [git commit](https://git-scm.com/book/en/v2)
 Der Bitcoin Hamster ist in ständigem Konflikt mit sich selbst, seine Zeitpräferenz so weit wie möglich abzusenken. Das ist die einzige Möglichkeit, seinen Bitcoin Besitz zu optimieren. Meine Freunde und ich scherzen über den Hungertod durch intensive Deflation, aber ich muss sagen dass ich rückblickend gern auf ein paar Mittagessen in der miserablen Studentencafeteria verzichtet hätte um für das Geld lieber Bitcoin zu kaufen als ich die Gelegenheit dazu hatte. Bitcoin Hamster sind begeistert über Preisanstiege, aber auch über Preisverfall. Coinbase hätte mir vor ein paar Monaten für $1200 ein Bitcoin verkauft, und heute wollen sie nur noch $475 dafür haben. Egal bei welchem Preis, die Bitcoin Hamster denken bei sich "Trottel".
 
 <figure>
-  <img src="/img/mempool/everyones-a-scammer/eastwood-cigar.jpg" alt="Eastwood cigar" />
+  <img src="/static/img/mempool/everyones-a-scammer/eastwood-cigar.jpg" alt="Eastwood cigar" />
 </figure>
 
 Bitcoin Hamster sind langfristig orientiert. Deren Strategie ist nicht billig einzukaufen und teuer zu verkaufen, sondern zu jedem Preis zu kaufen, dann ein bisschen zu Höchstpreisen zu verkaufen. Sie tun alles um ihre Finger an ein paar zusätzliche Satoshis zu bekommen und nichts macht sie glücklicher als wenn ein Schwachkopf seine Dinger hergibt, nachdem man ihn überzeugt hat, dass Bitcoin höchstens €[x < Mondpreis] wert ist. Diese Verkäufer nehmen freiwillig den [Fiat-Müllbeutel](http://trilema.com/2014/people-us-dollars-are-not-worth-a-fifth-of-a-bitcent-stop-selling/) entgegen und die Hamster werden ihnen nicht so schnell helfen, den Gestank wieder loszuwerden.
@@ -115,7 +115,7 @@ _Hamster sind Scammer weil sie das exponentielle (und sehr wahrscheinliche) Wach
 Hamstern gibt dem Geld erst seinen Wert. Und nein, [meine kriegst du nicht](/mempool/im-hoarding-bitcoins-and-no-you-cant-have-any/) .
 
 <figure>
-  <img src="/img/mempool/everyones-a-scammer/bitcoinfeedbackloops.jpg" alt="Bitcoin feedback loops" />
+  <img src="/static/img/mempool/everyones-a-scammer/bitcoinfeedbackloops.jpg" alt="Bitcoin feedback loops" />
 </figure>
 
 Gute Nachrichten für Bitcoin.
@@ -125,7 +125,7 @@ Gute Nachrichten für Bitcoin.
 Bitcoin Scamming ist tatsächlich ein Job, der nie zu Ende sein wird. Die marktbasierten Scams (also diejenigen, die ohne Betrug auskommen) werden abklingen während Bitcoin den Realgeldmenge aller anderen Währungen absorbiert, wenn die Nachfrage nach Bargeld sich verlangsamt und irgendwann stabilisiert. Aber andere Scammer werden immer nach Mitteln und Wegen suchen, jemanden um seine Bitcoin zu betrügen.
 
 <figure>
-  <img src="/img/mempool/everyones-a-scammer/cornered.jpg" alt="Cornered" />
+  <img src="/static/img/mempool/everyones-a-scammer/cornered.jpg" alt="Cornered" />
 </figure>
 
 Der einzige Lösungsweg besteht im Aufbau von vertrauenswürdigen Netzwerken. Wie bereits gesagt wurde ist [Bitcoin toll, aber es kann uns nicht mit unserem Affenhirn helfen](/mempool/bitcoin-is-great-but-it-wont-fix-our-monkey-brains/) . Bitcoin bietet zwar ein Geld ohne Dritte des Vertrauens, aber es kann dies nur weil sein Hauptbuch (Ledger) selbstbezüglich ist. Die Menschen, die es tatsächlich benutzen, müssen sich immer des Ausschlusses jeder Gewährleistung bewusst sein, wenn sie Bitcoin benutzen. Durch [Zahlungsabwicklungsprotokolle](https://github.com/bitcoin/bips/blob/master/bip-0070.mediawiki) , [Vertrauensnetzwerke](https://bitcoin-otc.com) , [Intelligente Verträge](https://en.bitcoin.it/wiki/Contract) , [GPG Verträge](/gpg-contracts/) und [Abstimmungspools](http://bitcoinism.blogspot.de/2013/12/voting-pools-how-to-stop-plague-of.html) können Benutzer die Risiken der Teilnahme an verschiedenen Handelsformen mindern.
@@ -135,7 +135,7 @@ Der einzige Lösungsweg besteht im Aufbau von vertrauenswürdigen Netzwerken. Wi
 Wir leben in einem Zustand des totalen Krieges. Jeder, der Bitcoin hat, versucht mehr zu bekommen, indem er andere um ihre Bitcoin betrügt oder sie überzeugt, dass es sich nicht lohne mitzumachen. Jeder, der kein Bitcoin hat, wurde entweder um sie betrogen oder wurde um den Einstieg in Bitcoin betrogen. Bitcoin zu haben setzt das Wissen und den Willen voraus, dessen Zukunft zu kennen und zu wünschen, und sie nicht zu haben oder auszugeben heißt, dass einem eine dieser Voraussetzungen fehlt. Wenn du Bitcoin hast musst du jedesmal erst tief einatmen bevor du sie jemand anderem schickst. Frag dich ob diese Person deinen unbeschreiblichen zukünftigen Reichtum wirklich verdient nur dafür, dass er dir gerade ein Bier einschenkt. Das kann dich davon überzeugen, lieber weiter zu HODLen.
 
 <figure>
-  <img src="/img/mempool/everyones-a-scammer/body-armor.gif" alt="Body armor" />
+  <img src="/static/img/mempool/everyones-a-scammer/body-armor.gif" alt="Body armor" />
 </figure>
 
 Hyperbitcoinisierung ist keine Kleinigkeit. Auch ein zum jetzigen Zeitpunkt kleines Bitcoin Guthaben wird wird künftig eine sehr signifikante Mehrheit im Portfolio eine Bitcoiners ausmachen. Wenn das passiert, gibt es kein zurück mehr. Eines Tages wird dein Bitcoin Guthaben wahrscheinlich nie wieder den Dezimalpunkt nach rechts rutschen sehen. Bitcoin bremst für niemanden in seinem Rennen auf dem Weg aus der Knechtschaft und zu globaler Dominanz (befreiung?). Überlasse deinen Sitz niemand anderem.

@@ -96,7 +96,7 @@ Digital signatures then represent a new way to create reliable and trustworthy e
 Designs that derived from the characteristics of the Internet, the capabilities of cryptography and the needs of governance led to the development of the _signed receipt_.<sup><a href="#fn7" id="ref7">[7]</a></sup> In order to develop this concept, let us assume a simple three party payment system, wherein each party holds an authorising key which can be used to sign their instructions. We call these players _Alice_, _Bob_ (two users) and _Ivan_ (the Issuer) for convenience.
 
 <figure>
-  <img src="/img/library/triple-entry-accounting/interim-receipt.png" alt="" />
+  <img src="/static/img/library/triple-entry-accounting/interim-receipt.png" alt="" />
 </figure>
 
 When Alice wishes to transfer value to Bob in some unit or contract managed by Ivan, she writes out the payment instruction and signs it digitally, much like a cheque is dealt with in the physical world. She sends this to the server, Ivan, and he presumably agrees and does the transfer in his internal set of books. He then issues a receipt and signs it with his signing key. As an important part of the protocol, Ivan then reliably delivers the signed receipt to both Alice and Bob, and they can update their internal books accordingly.
@@ -108,7 +108,7 @@ Our concept of digital value sought to eliminate as many risks as possible. This
 One risk that consistently blew away any design for efficient digital value at reasonable cost was the risk of _insider fraud_. In our model of many users and a single centralised server, the issuers of the unit of digital value (as signatory to the contract) and any governance partners such as the server operators are powerful candidates for insider fraud. Events over the last few years such as the mutual funds and stockgate scandals are canonical cases of risks that we decided to address.
 
 <figure>
-  <img src="/img/library/triple-entry-accounting/signed-receipt.png" alt="" />
+  <img src="/static/img/library/triple-entry-accounting/signed-receipt.png" alt="" />
 </figure>
 
 In order to address the risk of insider fraud, the written receipt was historically introduced as being a primary source of evidence. Mostly forgotten to the buying public these days, the purpose of a written receipt in normal retail trade is not to permit returns and complaints by the customer, but rather to engage her in a protocol of documentation that binds the shop attendant into safekeeping of the monies. A good customer will notice fraud by the shop attendant and warn the owner to look out for the monies identified by the receipt; the same story applies to the invention of the cash till or register, which was originally just a box separating the owner's takings from the monies in the shop attendant's pockets. We extend this primary motive into the digital world by using a signed receipt to bind the Issuer into a governance protocol with the users.

@@ -54,7 +54,7 @@ I want to draw an analogy to F. A. Hayek’s concept of liberty which he explain
 Those who have chosen ETC have chosen abstract rules over arbitrary interventions. They have said that the developers will be designers, not rulers. This is a choice that I respect. Furthermore, if ETC succeeds, the initial investors in it today will become disproportionately influential over it as it grows. Therefore, the intelligence which characterized its inception will continue to influence its evolution in the future. I would then have to consider it the strongest Bitcoin competitor yet.
 
 <figure>
-  <img src="/img/mempool/who-controls-ethereum/devs-cant-control-ethereum.png" alt="" />
+  <img src="/static/img/mempool/who-controls-ethereum/devs-cant-control-ethereum.png" alt="" />
   <figcaption>Artwork by the author.</figcaption>
 </figure>
 

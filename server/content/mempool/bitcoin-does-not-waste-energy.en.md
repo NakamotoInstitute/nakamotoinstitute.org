@@ -41,7 +41,7 @@ For background, bitcoin is secured by a decentralized network of nodes (computer
 The work performed requires massive amounts of processing power contributed by miners all over the world, running 24 hours a day, 7 days a week. This processing power requires energy. For context, at 75 exahashes per second, the bitcoin network currently consumes approximately 7-8 gigawatts of power, which translates to ~$9 million per day (or ~$3.3 billion per year) of energy at a marginal cost of 5 cents per kWh (rough estimates). Based on national averages in the U.S., the bitcoin network consumes as much power as approximately 6 million homes. Yeah, it is definitely a lot of power, but it is also what secures and backs the bitcoin network.
 
 <figure>
-  <img src="/img/mempool/bitcoin-does-not-waste-energy/bitcoin-hashrate.png" alt="Bitcoin hashrate" />
+  <img src="/static/img/mempool/bitcoin-does-not-waste-energy/bitcoin-hashrate.png" alt="Bitcoin hashrate" />
 </figure>
 
 How could this much energy be justified? And what will bitcoin consume when a billion people are using it? The dollar works just fine, right? Well that’s just the thing, it doesn’t. These resources are being devoted to fix a problem most don’t understand exists, which makes justifying a derivative cost challenging. To help ease the pain of environmentalists and social justice warriors, we often point out a number of countervailing narratives to make it seem more palatable:
@@ -69,7 +69,7 @@ Without getting into the details of what money is (read [_The Bitcoin Standard_]
 </figure>
 
 <figure>
-  <img src="/img/mempool/bitcoin-does-not-waste-energy/Money-freedom-hayek.png" alt="Hayek money and freedom" />
+  <img src="/static/img/mempool/bitcoin-does-not-waste-energy/Money-freedom-hayek.png" alt="Hayek money and freedom" />
 </figure>
 
 More specifically, money is the good that allows for specialization and the division of labor. It allows individuals to pursue their own interests; it is how individuals communicate their preferences to the world, whether in work or in leisure, and it is what creates the “range of choice” we all take for granted. Our modern economy is built on the foundation of freedom that money provides, but the end result is a highly complex and specialized system.
@@ -85,7 +85,7 @@ Venezuela provides a tangible macro and micro example of the vital role money pl
 How does this relate to bitcoin and energy consumption? Being an energy rich country, oil was (and is) Venezuela’s primary export; or rather, the good it needs to produce in order to trade. Despite being one of the most energy rich countries in the world, Venezuela’s oil production is plummeting.
 
 <figure>
-  <img src="/img/mempool/bitcoin-does-not-waste-energy/Venezuela-Crude.png" alt="Venezuela Crude" />
+  <img src="/static/img/mempool/bitcoin-does-not-waste-energy/Venezuela-Crude.png" alt="Venezuela Crude" />
 </figure>
 
 Venezuela can no longer import the technology or coordinate the resources it needs to extract its primary trading currency (oil). This has caused significant deterioration in its local economy, impairing its ability to produce the electricity needed to power its own energy grids, causing extended blackouts and preventing the delivery of basic services such as power, clean water or healthcare.
@@ -97,7 +97,7 @@ What is occurring in Venezuela is devastating, and it is a function of the econo
 Now, many sitting comfortably in the developed world will look at Venezuela and think, “it could never happen here,” but that ignores all first principles. Whether it is well understood or not, the market structure of the Venezuelan bolivar or the Argentine peso is identical to that of the dollar, the euro or the yen. The Fed, the European Central Bank or the Bank of Japan may be better at managing stability (for now), but it does not change the fact that the underpinnings of all fiat currency systems are the same.
 
 <figure>
-  <img src="/img/mempool/bitcoin-does-not-waste-energy/Fed-QE.png" alt="Fed QE" />
+  <img src="/static/img/mempool/bitcoin-does-not-waste-energy/Fed-QE.png" alt="Fed QE" />
 </figure>
 
 To highlight the U.S. as an example, the Federal Reserve expanded the monetary base from $180 billion in 1984 to a peak of $4.2 trillion following QE3, an increase of 23x. Because of the nature of the Fed’s credit-based economy, the economic distortion of this debasement occurred gradually ([see here](https://www.unchained-capital.com/blog/enders-game/)) until the financial crisis which occurred suddenly, and as a function of quantitative easing, we presently sit further out on the same ledge. If you believe the developed world is not in a precarious situation or not subject to a similar monetary foundation as Venezuela, I would respectfully point to patients zero: the Fed, the ECB and the Bank of Japan. Often, faith placed in these institutions is blind to both first principles and common sense, but consider the quote below from a resident Fed economist during the aftermath of the financial crisis and as the Fed was in the middle innings of creating $3.6 trillion new dollars as part of quantitative easing:

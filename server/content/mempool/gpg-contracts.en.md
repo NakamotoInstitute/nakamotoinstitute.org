@@ -20,7 +20,7 @@ A voids any contracts that were obtained “improperly”, such as by the use of
 Traditionally, contracts are instruments of torture. People agree to be married (thus entering into, of course, a Marriage Contract) and then have to suffer their spouse whether they’d like to or not.
 
 <figure>
-  <img src="/img/mempool/gpg-contracts/now-i-can-get-fat.jpg" alt="" />
+  <img src="/static/img/mempool/gpg-contracts/now-i-can-get-fat.jpg" alt="" />
 </figure>
 
 This is the entire point of contracts : once entered into they will be enforced, to the detriment of either party (and usually both parties). This view of contracts as instruments into which people enter wilfully and then have to respect whether they want to or not is what gave rise to the organised state as seen in post-Roman Empire Europe, this view of contracts is the proximate cause of the European standing army, the European politics and pretty much all of the history of this corner of the world. Also practically speaking of the entire world altogether, mostly because of the preminence (essentially cultural and flowing from that economical, military and so on) that this particular mental construct bestowed upon its practitioners. I will go as far as to say that the reason men everywhere, from the deserts of rural Egypt to the desolate windblown outskirts of Irkutsk wear suits today as opposed to Iroquis shaman headdresses or Hawaiian stupidskirts whatever those things are called is simply the world domination allowed by and achieved through the Contract. Suitwearer, Contractbearer, Master of the World.

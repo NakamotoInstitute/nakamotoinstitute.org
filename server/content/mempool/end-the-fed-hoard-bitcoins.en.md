@@ -19,25 +19,25 @@ The mantra of passing an [Audit the Fed bill](http://en.wikipedia.org/wiki/Feder
 Low transaction costs make Bitcoin the most competitive medium of exchange in humanity’s history, and it may be the case that a currency with even lower transaction costs is theoretically impossible. To learn more about bitcoins I would recommend our excellent [Bitcoin Reader](http://themisescircle.org/blog/2013/01/25/a-bitcoin-reader/).
 
 <figure>
-  <img src="/img/mempool/end-the-fed-hoard-bitcoins/transactioncosts.jpg" alt="Transaction Costs" />
+  <img src="/static/img/mempool/end-the-fed-hoard-bitcoins/transactioncosts.jpg" alt="Transaction Costs" />
 </figure>
 
 Bitcoin is slowly supplanting metallic and fiat mediums of exchange. It is currently transitioning from the [“Innovators” to “Early Adopters” phase:](http://en.wikipedia.org/wiki/Technology_adoption_lifecycle)
 
 <figure>
-  <img src="/img/mempool/end-the-fed-hoard-bitcoins/innovationcurve.jpg" alt="Innovation Curve" />
+  <img src="/static/img/mempool/end-the-fed-hoard-bitcoins/innovationcurve.jpg" alt="Innovation Curve" />
 </figure>
 
 This transition is accelerated by new intermediaries, like [Coinbase](https://coinbase.com/about), that are driving down the cost of selling fiat money for bitcoins. At the same time as demand is increasing, bitcoin inflation slowed considerably due to the [block reward halving](http://bitcoinmagazine.com/block-reward-halving-a-guide/):
 
 <figure>
-  <img src="/img/mempool/end-the-fed-hoard-bitcoins/Bitcoin-Inflation.png" alt="Bitcoin Inflation" />
+  <img src="/static/img/mempool/end-the-fed-hoard-bitcoins/Bitcoin-Inflation.png" alt="Bitcoin Inflation" />
 </figure>
 
 The dollar value of all bitcoins in existence now [exceeds $300 million](https://blockchain.info/charts/market-cap):
 
 <figure>
-  <img src="/img/mempool/end-the-fed-hoard-bitcoins/marketcap.jpg" alt="Bitcoin Marketcap" />
+  <img src="/static/img/mempool/end-the-fed-hoard-bitcoins/marketcap.jpg" alt="Bitcoin Marketcap" />
 </figure>
 
 This leads us to an interesting question: is the value of bitcoins a [speculative bubble](http://en.wikipedia.org/wiki/Economic_bubble)?
@@ -47,7 +47,7 @@ The price of fiat currencies (and the debts [denominated](http://www.investopedi
 If you're interested in getting rid of central banking I would recommend hoarding bitcoins by transferring your dollars to [coinbase.com](http://www.coinbase.com) (1% fee) and sending the bitcoins you buy to a [secure computer](https://en.bitcoin.it/wiki/Securing_your_wallet). This hoarding sets off a virtuous feedback loop that accelerates Bitcoin adoption:
 
 <figure>
-  <img src="/img/mempool/end-the-fed-hoard-bitcoins/bitcoinfeedbackloops.jpg" alt="Bitcoin Feedback Loops" />
+  <img src="/static/img/mempool/end-the-fed-hoard-bitcoins/bitcoinfeedbackloops.jpg" alt="Bitcoin Feedback Loops" />
 </figure>
 
 (Flow chart based on Zangelbert Bingledack's [post](https://bitcointalk.org/index.php?topic=144911.0).)

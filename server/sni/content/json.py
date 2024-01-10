@@ -60,7 +60,7 @@ class JSONImporter:
     ):
         if file_metadata.hash != current_hash:
             for item_data in items_data:
-                processed_item_data = self.process_item_data(item_data)
+                processed_item_data = self.process_item_data(item_data).dict()
                 try:
                     filter_args = {
                         self.query_field: processed_item_data[self.query_field]

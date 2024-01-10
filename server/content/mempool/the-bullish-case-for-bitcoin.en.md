@@ -18,7 +18,7 @@ Never in the history of the world had it been possible to transfer value between
 For an investor the salient fact of the invention of Bitcoin is the creation of a new scarce digital good—bitcoins. Bitcoins are transferable digital tokens that are created on the Bitcoin network in a process known as “mining”. Bitcoin mining is roughly analogous to gold mining except that production follows a designed, predictable schedule. By design, only 21 million bitcoins will ever be mined and most of these already have been—approximately 16.8 million bitcoins have been mined at the time of writing. Every four years the number of bitcoins produced by mining halves and the production of new bitcoins will end completely by the year 2140.
 
 <figure>
-  <img src="/img/mempool/the-bullish-case-for-bitcoin/bitcoin-inflation.jpg" alt="" />
+  <img src="/static/img/mempool/the-bullish-case-for-bitcoin/bitcoin-inflation.jpg" alt="" />
 </figure>
 
 Bitcoins are not backed by any physical commodity, nor are they guaranteed by any government or company, which raises the obvious question for a new bitcoin investor: why do they have any value at all? Unlike stocks, bonds, real-estate or even commodities such as oil and wheat, bitcoins cannot be valued using standard discounted cash flow analysis or by demand for their use in the production of higher order goods. Bitcoins fall into an entirely different category of goods, known as monetary goods, whose value is set game-theoretically. I.e., each market participant values the good based on their appraisal of whether and how much other participants will value it. To understand the game-theoretic nature of monetary goods, we need to explore the origins of money.
@@ -36,7 +36,7 @@ Collectibles served as a sort of “proto-money” by making trade possible betw
 Early man faced an important game-theoretic dilemma when deciding which collectibles to gather or create: which objects would be desired by other humans? By correctly anticipating which objects might be demanded for their collectible value, a tremendous benefit was conferred on the possessor in their ability to complete trade and to acquire wealth. Some Native American tribes, such as the Narragansetts, specialized in the manufacture of otherwise useless collectibles simply for their value in trade. It is worth noting that the earlier the anticipation of future demand for a collectible good, the greater the advantage conferred to its possessor; it can be acquired more cheaply than when it is widely demanded and its trade value appreciates as the population which demands it expands. Furthermore, acquiring a good in hopes that it will be demanded as a future store of value hastens its adoption for that very purpose. This seeming circularity is actually a feedback loop that drives societies to quickly converge on a single store of value. In game-theoretic terms, this is known as a “[Nash Equilibrium](https://www.investopedia.com/terms/n/nash-equilibrium.asp)”. Achieving a Nash Equilibrium for a store of value is a major boon to any society, as it greatly facilitates trade and the division of labor, paving the way for the advent of civilization.
 
 <figure>
-  <img src="/img/mempool/the-bullish-case-for-bitcoin/the-silk-road.jpg" alt="" />
+  <img src="/static/img/mempool/the-bullish-case-for-bitcoin/the-silk-road.jpg" alt="" />
 </figure>
 
 Over the millennia, as human societies grew and trade routes developed, the stores of value that had emerged in individual societies came to compete against each other. Merchants and traders would face a choice of whether to save the proceeds of their trade in the store of value of their own society or the store of value of the society they were trading with, or some balance of both. The benefit of maintaining savings in a foreign store of value was the enhanced ability to complete trade in the associated foreign society. Merchants holding savings in a foreign store of value also had an incentive to encourage its adoption within their own society, as this would increase the purchasing power of their savings. The benefits of an imported store of value accrued not only to the merchants doing the importing, but also to the societies themselves. Two societies converging on a single store of value would see a substantial decrease in the cost of completing trade with each other and an attendant increase in trade-based wealth. Indeed, the 19th century was the first time when most of the world converged on a single store of value—gold—and this period saw the greatest explosion of trade in the history of the world. Of this halcyon period, Lord Keynes wrote:
@@ -59,7 +59,7 @@ When stores of value compete against each other, it is the specific attributes t
 The table below grades Bitcoin, gold and fiat money (such as dollars) against the attributes listed above and is followed by an explanation of each grade:
 
 <figure>
-  <img src="/img/mempool/the-bullish-case-for-bitcoin/bitcoin-gold-fiat-comparison.png" alt="" />
+  <img src="/static/img/mempool/the-bullish-case-for-bitcoin/bitcoin-gold-fiat-comparison.png" alt="" />
 </figure>
 
 ### Durability
@@ -91,7 +91,7 @@ The attribute that most clearly distinguishes Bitcoin from fiat currencies and g
 No monetary good has a history as long and storied as gold, which has been valued for as long as human civilization has existed. Coins minted in the distant days of antiquity [still maintain significant value today](https://en.wikipedia.org/wiki/Hoxne_Hoard). The same cannot be said of fiat currencies, which are a relatively recent anomaly of history. From their inception, fiat currencies have had a near-universal tendency toward eventual worthlessness. The use of inflation as an insidious means of invisibly taxing a citizenry has been a temptation that few states in history have been able to resist. If the 20th century, in which fiat monies came to dominate the global monetary order, established any economic truth, it is that fiat money cannot be trusted to maintain its value over the long or even medium term. Bitcoin, despite its short existence, has weathered enough trials in the market that there is a high likelihood it will not vanish as a valued asset any time soon. Furthermore, the [Lindy effect](https://en.wikipedia.org/wiki/Lindy_effect) suggests that the longer Bitcoin remains in existence the greater society’s confidence that it will continue to exist long into the future. In other words, the societal trust of a new monetary good is asymptotic in nature, as is illustrated in the graph below:
 
 <figure>
-  <img src="/img/mempool/the-bullish-case-for-bitcoin/trust-vs-time.png" alt="" />
+  <img src="/static/img/mempool/the-bullish-case-for-bitcoin/trust-vs-time.png" alt="" />
 </figure>
 
 If Bitcoin exists for 20 years, there will be near-universal confidence that it will be available forever, much as people believe the Internet is a permanent feature of the modern world.
@@ -129,7 +129,7 @@ Bitcoin is currently transitioning from the first stage of monetization to the s
 In the process of being monetized, a monetary good will soar in purchasing power. Many have commented that the increase in purchasing power of Bitcoin creates the appearance of a “bubble”. While this term is often using disparagingly to suggest that Bitcoin is grossly overvalued, it is unintentionally apt. A characteristic that is common to all monetary goods is that their purchasing power is higher than can be justified by their use-value alone. Indeed, many historical monies had no use-value at all. The difference between the purchasing power of a monetary good and the exchange-value it could command for its inherent usefulness can be thought of as a “monetary premium”. As a monetary good transitions through the stages of monetization (listed in the section above), the monetary premium will increase. The premium does not, however, move in a straight, predictable line. A good X that was in the process of being monetized may be outcompeted by another good Y that is more suitable as money, and the monetary premium of X may drop or vanish entirely. The monetary premium of silver disappeared almost entirely in the late 19th century when governments across the world largely abandoned it as money in favor of gold.
 
 <figure>
-  <img src="/img/mempool/the-bullish-case-for-bitcoin/monetary-premium.png" alt="" />
+  <img src="/static/img/mempool/the-bullish-case-for-bitcoin/monetary-premium.png" alt="" />
 </figure>
 
 Even in the absence of exogenous factors such as government intervention or competition from other monetary goods, the monetary premium for a new money will not follow a predictable path. Economist Larry White [observed that](http://oll.libertyfund.org/pages/misestmc):
@@ -155,13 +155,13 @@ While the comparison to religion may give Bitcoin an aura of irrational faith, i
 While there are no _a priori_ rules about the path a monetary good will take as it is monetized, a curious pattern has emerged during the relatively brief history of Bitcoin’s monetization. Bitcoin’s price appears to follow a fractal pattern of increasing magnitude, where each iteration of the fractal matches the classic shape of a Gartner hype cycle.
 
 <figure>
-  <img src="/img/mempool/the-bullish-case-for-bitcoin/gartner-hype-cycle.png" alt="" />
+  <img src="/static/img/mempool/the-bullish-case-for-bitcoin/gartner-hype-cycle.png" alt="" />
 </figure>
 
 In his article on [the Speculative Bitcoin Adoption/Price Theory](https://medium.com/@mcasey0827/speculative-bitcoin-adoption-price-theory-2eed48ecf7da), Michael Casey posits that the expanding Gartner hype cycles represent phases of a standard S-curve of adoption that was followed by many transformative technologies as they become commonly used in society.
 
 <figure>
-  <img src="/img/mempool/the-bullish-case-for-bitcoin/technological-adoption.jpg" alt="" />
+  <img src="/static/img/mempool/the-bullish-case-for-bitcoin/technological-adoption.jpg" alt="" />
 </figure>
 
 Each Gartner hype cycle begins with a burst of enthusiasm for the new technology, and the price is bid up by the market participants who are “reachable” in that iteration. The earliest buyers in a Gartner hype cycle typically have a strong conviction about the transformative nature of the technology they are investing in. Eventually the market reaches a crescendo of enthusiasm as the supply of new participants who can be reached in the cycle is exhausted and the buying becomes dominated by speculators more interested in quick profits than the underlying technology.
@@ -175,7 +175,7 @@ Very few people participating in an iteration of a Gartner hype cycle will corre
 It is telling that gold followed the classic pattern of a Gartner hype cycle from the late 1970s to the early 2000s. One might speculate that the hype cycle is an inherent social dynamic to the process of monetization.
 
 <figure>
-  <img src="/img/mempool/the-bullish-case-for-bitcoin/gold-historical-price.jpg" alt="" />
+  <img src="/static/img/mempool/the-bullish-case-for-bitcoin/gold-historical-price.jpg" alt="" />
 </figure>
 
 ## Gartner cohorts
@@ -197,7 +197,7 @@ It was only after the collapse of the MtGox exchange and a two-year lull in the 
 At the time of writing, the Bitcoin market is undergoing its fourth major hype cycle. Participation in the current hype cycle has been dominated by what Michael Casey described as the “early majority” of retail and institutional investors.
 
 <figure>
-  <img src="/img/mempool/the-bullish-case-for-bitcoin/market-penetration.png" alt="" />
+  <img src="/static/img/mempool/the-bullish-case-for-bitcoin/market-penetration.png" alt="" />
 </figure>
 
 As sources of liquidity have deepened and matured, major institutional investors now have the opportunity to participate through regulated futures markets. The availability of a regulated futures market paves the way for the creation of a Bitcoin ETF, which will then usher in the “late majority” and “laggards” in subsequent hype cycles.
@@ -229,7 +229,7 @@ There are, however, major institutional barriers to a nascent store of value bec
 The handicapping of market-based monetary goods is not an insurmountable barrier to their adoption as a generally accepted medium of exchange, however. If faith is lost in a sovereign money, its value can collapse in a process known as hyperinflation. When a sovereign money hyperinflates, its value first collapses against the most liquid goods in the society, such as gold or a foreign money like the US dollar, if they are available. When no liquid goods are available or their supply is limited, a hyperinflating money collapses against real goods, such as real estate and commodities. The archetypal image of a hyperinflation is a grocery store emptied of all its produce as consumers flee the rapidly diminishing value of their nation’s money.
 
 <figure>
-  <img src="/img/mempool/the-bullish-case-for-bitcoin/empty-venezuelan-supermarket.jpg" alt="" />
+  <img src="/static/img/mempool/the-bullish-case-for-bitcoin/empty-venezuelan-supermarket.jpg" alt="" />
 </figure>
 
 Eventually, when faith is completely lost during a hyperinflation, a sovereign money will no longer be accepted by anyone, and the society will either devolve to barter or the monetary unit will be completely replaced as a medium of exchange. An example of this process was the replacement of the Zimbabwe dollar with the US dollar. The replacement of a sovereign money with a foreign one is made more difficult by the scarcity of the foreign money and the absence of foreign banking institutions to provide liquidity.
@@ -241,7 +241,7 @@ The ability to easily transmit bitcoins across borders and absence of a need for
 Much of this article has focused on the monetary nature of Bitcoin. With this foundation we can now address some of the most commonly held misconceptions about Bitcoin.
 
 <figure>
-  <img src="/img/mempool/the-bullish-case-for-bitcoin/bitcoin-fiat.gif" alt="" />
+  <img src="/static/img/mempool/the-bullish-case-for-bitcoin/bitcoin-fiat.gif" alt="" />
 </figure>
 
 ### Bitcoin is a bubble
@@ -265,7 +265,7 @@ The specious root of the criticism of Bitcoin’s “high” transaction fees is
 As an open-source software protocol, it has always been possible to copy Bitcoin’s software and imitate its network. Over the years, many imitators have been created, ranging from ersatz facsimiles, such as Litecoin, to complex variants like Ethereum that promise to allow arbitrarily complex contractual arrangements using a distributed computational system. A common investment criticism of Bitcoin is that it cannot maintain its value when competitors can be easily created that are able to incorporate the latest innovations and software features.
 
 <figure>
-  <img src="/img/mempool/the-bullish-case-for-bitcoin/bitcoin-and-altcoins.jpg" alt="" />
+  <img src="/static/img/mempool/the-bullish-case-for-bitcoin/bitcoin-and-altcoins.jpg" alt="" />
 </figure>
 
 The fallacy in this argument is that the scores of Bitcoin competitors that have been created over the years lack the “network effect” of the first and dominant technology in the space. A network effect—the increased value of using Bitcoin simply because it is already the dominant network—is a feature in and of itself. For any technology that possesses a network effect, it is by far the most important feature.
@@ -277,7 +277,7 @@ The network effect for Bitcoin encompasses the liquidity of its market, the numb
 A trend that became popular in 2017 was not only to imitate Bitcoin’s software, but to copy the entire history of its past transactions (known as the blockchain). By copying Bitcoin’s blockchain up to a certain point and then splitting off into a new network, in a process known as “forking”, competitors to Bitcoin were able to solve the problem of distributing their token to a large user base.
 
 <figure>
-  <img src="/img/mempool/the-bullish-case-for-bitcoin/fork-in-the-road.jpg" alt="" />
+  <img src="/static/img/mempool/the-bullish-case-for-bitcoin/fork-in-the-road.jpg" alt="" />
 </figure>
 
 The most significant fork of this kind occurred on August 1st, 2017 when a new network known as Bitcoin Cash (BCash) was created. An owner of N bitcoins before August 1st, 2017, would then own both N bitcoins and N BCash tokens. The small but vocal community of BCash proponents have tirelessly attempted to expropriate Bitcoin’s brand recognition, both through the naming of their new network and a campaign to convince neophytes in the Bitcoin market that Bcash is the “real” Bitcoin. These attempts have largely failed, and this failure is reflected in the market capitalizations of the two networks. However, for new investors, there remains an apparent risk that a competitor might clone Bitcoin and its blockchain and succeed in overtaking it in market capitalization, thus becoming the de facto Bitcoin.

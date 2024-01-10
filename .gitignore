@@ -90,4 +90,13 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+## SERVER GITIGNORE
+
 server/.envs/.production/*
+*.epub
+*.mobi
+*.mp3
+*.pdf
+*.rar
+*.tgz
+*.zip

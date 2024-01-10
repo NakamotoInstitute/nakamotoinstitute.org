@@ -421,7 +421,7 @@ That is what I think of money. Now, for the good of society, earn as many
 bitcoins as you can!
 
 <figure>
-  <img src="/img/mempool/crashes-and-hyperinflation/they-live-money.png" alt="" />
+  <img src="/static/img/mempool/crashes-and-hyperinflation/they-live-money.png" alt="" />
 </figure>
 
 ## Further Reading

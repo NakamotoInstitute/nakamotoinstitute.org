@@ -37,14 +37,14 @@ chart](https://en.wikipedia.org/wiki/Logarithmic_scale) of Bitcoin’s market
 cap.
 
 <figure>
-  <img src="/img/mempool/bitcoin-has-no-image-problem/marketcap-chart.png" alt="" />
+  <img src="/static/img/mempool/bitcoin-has-no-image-problem/marketcap-chart.png" alt="" />
 </figure>
 
 Now take a look at the number of MyWallet users over the past two years. This
 is also a log chart.
 
 <figure>
-  <img src="/img/mempool/bitcoin-has-no-image-problem/mywallet-chart.png" alt="" />
+  <img src="/static/img/mempool/bitcoin-has-no-image-problem/mywallet-chart.png" alt="" />
 </figure>
 
 That’s an increase of like 500 times in two years. Ooo, I’m so terrified
@@ -119,7 +119,7 @@ accept it because it’s too ugly and gross, so they try to convince people that
 it’s a pretty shiny pink and tastes like cherries.
 
 <figure>
-  <img src="/img/mempool/bitcoin-has-no-image-problem/narcissism.jpg" alt="" />
+  <img src="/static/img/mempool/bitcoin-has-no-image-problem/narcissism.jpg" alt="" />
   <figcaption>Oh Narcissus, you’ll never understand Bitcoin.</figcaption>
 </figure>
 
@@ -163,7 +163,7 @@ someone figures out how great Bitcoin really is, he makes Bitcoin even _more_
 great by joining in.
 
 <figure>
-  <img src="/img/mempool/bitcoin-has-no-image-problem/miss-sunshine.jpg" alt="" />
+  <img src="/static/img/mempool/bitcoin-has-no-image-problem/miss-sunshine.jpg" alt="" />
   <figcaption>When you’re an immortal distributed system that can’t be controlled, you don’t have to care what other people think.</figcaption>
 </figures>
 

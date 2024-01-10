@@ -36,7 +36,7 @@ No computational module can be read or controlled by physical tampering—it wil
 Only protocols that are simple and composable with provable security govern the communications between the security kernel (private key operations), control box, sandbox, and other components of a computation modules. Similarly for communications between modules and between proplets.
 
 <figure>
-  <img src="/img/library/proplets-devices-for-controlling-property/proplet.gif" alt="" />
+  <img src="/static/img/library/proplets-devices-for-controlling-property/proplet.gif" alt="" />
 <figure>
 
 How does a proplet find out who owns it, or a guest module who controls it? There are two basic ways:
@@ -49,7 +49,7 @@ A proplet's guest modules are publicly listed and transferred independently of e
 With the home proplet alternative, biometric control of the home proplets may replace public ownership records.
 
 <figure>
-  <img src="/img/library/proplets-devices-for-controlling-property/propletsystem.gif" alt="" />
+  <img src="/static/img/library/proplets-devices-for-controlling-property/propletsystem.gif" alt="" />
 </figure>
 
 Proplets control electronics directly from ownership or guest modules. Proplets control machinery via entanglement. Entanglement can take at least two forms:

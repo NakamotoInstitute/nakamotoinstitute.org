@@ -11,7 +11,7 @@ Der folgende Text liefert den analytischen Rahmen für eine konstruktive Debatte
 Bitcoin hat eine Zentralbank namens “Bitcoin Netzwerk”, die wir im Folgenden als Bitcoin Zentralbank (BZB) bezeichnen werden. Diese Zentralbank ist Herausgeber einer Währung namens “Bitcoins” und bearbeitet den Transfer von Bitcoins zwischen Konten. Die regelbasierte Geldpolitik der BZB wurde bei ihrer Gründung festgelegt und ihre Unabhängigkeit wird durch die verteilte Natur des zugrundeliegenden Netzwerk abgesichert. Diese ermessensunabhängige Geldpolitik bezeichnet man am besten als “asymptotische Geldmengen Vorgabe (AGMV)” bzw. “asymptotic money supply targeting (AMST)”.
 
 <figure>
-  <img src="/img/mempool/the-bitcoin-central-banks-perfect-monetary-policy/amst-de.png" alt="" />
+  <img src="/static/img/mempool/the-bitcoin-central-banks-perfect-monetary-policy/amst-de.png" alt="" />
 </figure>
 
 Die BZB gibt Bitcoins an ein Netzwerk von Unterauftragnehmern heraus, welche zur Absicherung der Unabhängigkeit der BZB und zur Abarbeiten der Transaktionen Arbeitsnachweise in Form von Berechnungen ([“Proof-of-Work calculations”]((/mempool/the-proof-of-work-concept/ "The Proof-of-Work Concept"))) leisten. Die [Seigniorage](http://en.wikipedia.org/wiki/Seigniorage) subventioniert das Zahlungssystem, anstatt dem Herausgeber oder dem Verkäufer/Empfänger von [Offenmarkttransaktionen](http://en.wikipedia.org/wiki/Open_market_operation) von Obligationen zugute zu kommen. Proof-of-Work Seignorage (PoWS) und AGMV/AMST erzeugen in gegenseitiger Ergänzung drei monetäre Phänomene:
@@ -23,7 +23,7 @@ Die BZB gibt Bitcoins an ein Netzwerk von Unterauftragnehmern heraus, welche zur
 Zunächst ist es vernünftig für Marktteilnehmer, so viel Bitcoins zu halten, wie sie sich leisten können zu verlieren (d.h. ohne ihre Fähigkeit zu konsumieren oder investieren erheblich einzuschränken). Die BZB kann aufgrund der PoW Subvention Transaktionskosten anbieten, die um Größenordnungen unter denen ihrer Wettbewerber liegen. Dieser große Wettbewerbsvorteil lässt Marktteilnehmer erwarten, dass Bitcoin als Zahlungssystem angenommen werden und die Liquidität des Wechselkurses zunehmen wird. Diese Erwartung stellte sich immer wieder als zutreffend heraus, sodass der Verlangen, Bitcoins zu halten, zugenommen hat, was durch den [Wechselkurs](https://blockchain.info/charts/market-price) und das [Internet Suchvolumen](http://www.google.com/trends/explore#q=buy%20bitcoin&cmpt=q) bestätigt wird.
 
 <figure>
-  <img src="/img/mempool/the-bitcoin-central-banks-perfect-monetary-policy/transactioncosts-de.png" alt="" />
+  <img src="/static/img/mempool/the-bitcoin-central-banks-perfect-monetary-policy/transactioncosts-de.png" alt="" />
 </figure>
 
 ## Wechselkurse und Zinssätze Regelt Ausschließlich der Markt
@@ -33,7 +33,7 @@ Die Wechselkursschwankungen sind ein Nebenprodukt der Wahl von ermessensunabhän
 Die Zinssätze von Bitcoin basieren auf der Arbitrage zwischen dem erwarteten Ertrag aus dem Halten von Bitcoins gegenüber dem Ertrag aus deren Verleih. Der erwartete Ertrag aus dem Halten von Bitcoins hängt vollständig von dem erwarteten künftigen Wechselkurs ab, da Bitcoins eine reine [Vehikelwährung](http://www.encyclo.co.uk/define/Vehicle%20currency) ist. Die unterschiedlichen Erwartungen der Bitcoin-Halter in Bezug auf den Wechselkurs haben zur Entwicklung von [Margen-Verleihgeschäften](https://btcjam.com/) [geführt](http://www.reddit.com/r/bitcoinstocks). Allerdings erwarten die meisten Bitcoin Halter eine Steigerung des Kurses, die viel schneller ist, als irgendein Kreditor zu zahlen bereit wäre. Bitcoins werden weiterhin gehamstert werden und in Bitcoin nominierte Kreditmärkte werden unterentwickelt bleiben, bis die Erwartungen der Bitcoin-Halter entweder nach unten angepasst oder erfüllt werden. Die BZB braucht nichts zu tun um den momentanen Gleichgewichtszustand zu brechen, da die Erwartungen der Hamsterer aufgrund von Bitcoin’s Überlegenheit gegenüber herkömmlichen Zahlungssystemen und Wertspeichern getroffen werden.
 
 <figure>
-  <img src="/img/mempool/the-bitcoin-central-banks-perfect-monetary-policy/bitcoinfeedbackloops-de.png" alt="" />
+  <img src="/static/img/mempool/the-bitcoin-central-banks-perfect-monetary-policy/bitcoinfeedbackloops-de.png" alt="" />
 </figure>
 
 ## Mindestreserve-Systeme Können Sich Nicht Entwickeln

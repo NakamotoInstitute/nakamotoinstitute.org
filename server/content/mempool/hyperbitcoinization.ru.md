@@ -36,7 +36,7 @@ _Демонетизация_ — процесс, при котором люди 
 Гипербиткоинизация возможно будет смутным временем для каждого, как второе отрочество. Однако, как только она закончится, никто не сможет себе представить, как мы жили со старой системой.
 
 <figure>
-  <img src="/img/mempool/hyperbitcoinization/Bitcoinbody.png" alt="Bitcoinbody" />
+  <img src="/static/img/mempool/hyperbitcoinization/Bitcoinbody.png" alt="Bitcoinbody" />
 </figure>
 
 <p class="text-muted text-center">

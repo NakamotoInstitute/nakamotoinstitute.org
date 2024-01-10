@@ -438,13 +438,13 @@ With these caveats, any algorithmic intermediary can, in principle, be replaced 
 **Trusted Third Party:**
 
 <figure>
-  <img src="/img/library/formalizing-securing-relationships/mutually.gif" alt="" />
+  <img src="/static/img/library/formalizing-securing-relationships/mutually.gif" alt="" />
 </figure>
 
 **Mathematically Trustworthy Protocol:**
 
 <figure>
-  <img src="/img/library/formalizing-securing-relationships/virtual.gif" alt="" />
+  <img src="/static/img/library/formalizing-securing-relationships/virtual.gif" alt="" />
 </figure>
 
 Multiparty secure computer theory, by making possible privy virtual intermediation, has major implications for all phases of contracting. This can be seen most clearly in the area of negotiations. A "mechanism" in economics is an abstract model of an institution which communicates with its participants via messages, and whose rules can be specified algorithmically. These institutions can be auctions, exchanges, voting, and so on. They typically implement some kind of negotiation or decision making process.

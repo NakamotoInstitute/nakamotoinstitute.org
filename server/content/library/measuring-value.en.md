@@ -112,8 +112,8 @@ The Laffer curve and measurement costs can also be used to analyze the relative 
 
 <figure>
   <div class="img-container">
-    <img src="/img/library/measuring-value/taxnarrowhouse.jpg" alt="" />
-    <img src="/img/library/measuring-value/taxstaircase.jpg" alt="" />
+    <img src="/static/img/library/measuring-value/taxnarrowhouse.jpg" alt="" />
+    <img src="/static/img/library/measuring-value/taxstaircase.jpg" alt="" />
   </div>
 	<figcaption>Taxes distorted the economy of the Netherlands &ndash; quite literally. Here are some houses in Amsterdam built in the 17th and 18th centuries, and a typical narrow staircase. Furniture and other large objects must be hauled up by the small cranes seen above the top-story windows.</figcaption>
 </figure>

@@ -15,25 +15,25 @@ El mantra de aprobar [una legislación para auditar a la Reserva Federal de los 
 Los bajos costos de transacción convierten a Bitcoin en el medio de intercambio más competitivo en la historia de la humanidad, y puede que una moneda con costos de transacción aún más bajos sea algo teóricamente imposible. Para aprender más sobre los bitcoins les recomiendo nuestra excelente [selección de textos](http://themisescircle.org/blog/2013/01/25/a-bitcoin-reader/).
 
 <figure>
-  <img src="/img/mempool/end-the-fed-hoard-bitcoins/transactioncosts.jpg" alt="Transaction Costs" />
+  <img src="/static/img/mempool/end-the-fed-hoard-bitcoins/transactioncosts.jpg" alt="Transaction Costs" />
 </figure>
 
 Bitcoin está reemplazando lentamente a los medios de intercambio fiat y metálicos. Actualmente está transitando desde [la fase de los “innovadores” a la de la “adopción temprana”:] (http://en.wikipedia.org/wiki/Technology_adoption_lifecycle)
 
 <figure>
-  <img src="/img/mempool/end-the-fed-hoard-bitcoins/innovationcurve.jpg" alt="Innovation Curve" />
+  <img src="/static/img/mempool/end-the-fed-hoard-bitcoins/innovationcurve.jpg" alt="Innovation Curve" />
 </figure>
 
 Esta transición es acelerada por los nuevos intermediarios, como [Coinbase](https://coinbase.com/about), que están disminuyendo el costo de vender monedas fiat por bitcoins. Al mismo tiempo que la demanda aumenta, la inflación de bitcoin se reduce considerablemente debido a [la reducción a la mitad de la recompensa del bloque](http://bitcoinmagazine.com/block-reward-halving-a-guide/):
 
 <figure>
-  <img src="/img/mempool/end-the-fed-hoard-bitcoins/Bitcoin-Inflation.png" alt="Bitcoin Inflation" />
+  <img src="/static/img/mempool/end-the-fed-hoard-bitcoins/Bitcoin-Inflation.png" alt="Bitcoin Inflation" />
 </figure>
 
 El valor en dólares de todos los bitcoins en existencia ahora [excede los $300 millones](https://blockchain.info/charts/market-cap):
 
 <figure>
-  <img src="/img/mempool/end-the-fed-hoard-bitcoins/marketcap.jpg" alt="Bitcoin Marketcap" />
+  <img src="/static/img/mempool/end-the-fed-hoard-bitcoins/marketcap.jpg" alt="Bitcoin Marketcap" />
 </figure>
 
 Esto nos lleva a una pregunta interesante: ¿es el valor de los bitcoins una [burbuja especulativa](http://es.wikipedia.org/wiki/Burbuja_econ%C3%B3mica)?
@@ -43,7 +43,7 @@ El precio de las monedas fiat (y de las deudas [denominadas](http://www.investop
 Si tienes un interés en eliminar a los bancos centrales te recomendaría que acumules bitcoins transfiriendo tus dólares a [coinbase.com](http://www.coinbase.com) (1% de comisión) y que luego muevas los bitcoins que compres a un [computador seguro](https://en.bitcoin.it/wiki/Securing_your_wallet). Esta acumulación o acaparamiento echa a andar un circulo virtuoso de retroalimentación que acelera la adopción de Bitcoin:
 
 <figure>
-  <img src="/img/mempool/end-the-fed-hoard-bitcoins/bitcoinfeedbackloops.jpg" alt="Bitcoin Feedback Loops" />
+  <img src="/static/img/mempool/end-the-fed-hoard-bitcoins/bitcoinfeedbackloops.jpg" alt="Bitcoin Feedback Loops" />
 </figure>
 
 Diagrama de flujo basado en la [publicación](https://bitcointalk.org/index.php?topic=144911.0) de Zangelbert Bingledack.

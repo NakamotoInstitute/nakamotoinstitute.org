@@ -38,7 +38,7 @@ Based on these two differences, I make two predictions about a hyperbitcoinizati
 Hyperbitcoinization will probably be a confusing time for everyone, like a second adolescence. However, once it is over, no one will be able to imagine how we got by with the earlier system.
 
 <figure>
-  <img src="/img/mempool/hyperbitcoinization/Bitcoinbody.png" alt="Bitcoinbody" />
+  <img src="/static/img/mempool/hyperbitcoinization/Bitcoinbody.png" alt="Bitcoinbody" />
 </figure>
 
 <p class="text-muted text-center">

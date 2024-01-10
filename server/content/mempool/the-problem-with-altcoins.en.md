@@ -14,7 +14,7 @@ image_alt: Elvis Impersonators
 New ideas attract not only visionaries and pioneers but also charlatans and fools. The former group understands the nature and potential of the new idea and attempts to extend it in new ways. The latter observes the success of the former and expects similar results through blind imitation and empty hope, rather like the Melanesian [cargo cults](http://en.wikipedia.org/wiki/Cargo_cult) which arose after World War II when the American military abandoned its airports there.
 
 <figure>
-  <img src="/img/mempool/the-problem-with-altcoins/cargo-cult.jpg" alt="The litecoiners of aeronautics" />
+  <img src="/static/img/mempool/the-problem-with-altcoins/cargo-cult.jpg" alt="The litecoiners of aeronautics" />
   <figcaption>The litecoiners of aeronautics</figcaption>
 </figure>
 
@@ -29,7 +29,7 @@ The Bitcoin community is not just overwhelmingly larger but of overwhelmingly be
 ## Motivated reasoning
 
 <figure>
-  <img src="/img/mempool/the-problem-with-altcoins/altcoiners.png" alt="Altcoiners obsessing over Cryptsy's exchange rates" />
+  <img src="/static/img/mempool/the-problem-with-altcoins/altcoiners.png" alt="Altcoiners obsessing over Cryptsy's exchange rates" />
   <figcaption>Altcoiners obsessing over Cryptsy's exchange rates</figcaption>
 </figure>
 
@@ -86,7 +86,7 @@ There is a class of very similar cryptocurrencies that rely on an algorithm call
 When Bitcoin first came out, it was possible for anyone to mine coins with his CPU. Once software was developed that mined using GPUs, then CPU mining quickly became obsolete. GPU mining remained profitable for some time thereafter because the price of Bitcoin continued to increase as more people became miners. This could not persist indefinitely, and eventually there began work into the development of FPGA and ASIC mining. Once these technologies were developed, GPU mining would become obsolete as well.
 
 <figure>
-  <img src="/img/mempool/the-problem-with-altcoins/mining.jpg" alt="The Golden Age of mining, according to altcoiners" />
+  <img src="/static/img/mempool/the-problem-with-altcoins/mining.jpg" alt="The Golden Age of mining, according to altcoiners" />
   <figcaption>The Golden Age of mining, according to altcoiners</figcaption>
 </figure>
 

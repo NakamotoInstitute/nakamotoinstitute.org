@@ -1,6 +1,7 @@
 from typing import Dict, Optional, Sequence, Tuple
 
 import yaml
+from bs4 import BeautifulSoup
 from markdown_it import MarkdownIt
 from markdown_it.renderer import RendererHTML, RendererProtocol
 from markdown_it.token import Token
@@ -9,6 +10,8 @@ from mdit_py_plugins.deflist import deflist_plugin
 from mdit_py_plugins.dollarmath import dollarmath_plugin
 from mdit_py_plugins.footnote import footnote_plugin
 from mdit_py_plugins.front_matter import front_matter_plugin
+
+from sni.config import settings
 
 
 def render_math_inline(
@@ -52,6 +55,22 @@ class MDRender:
     """
 
     @classmethod
+    def process_html(cls, html_content):
+        soup = BeautifulSoup(html_content, "html.parser")
+
+        for img in soup.find_all("img"):
+            src = img.get("src")
+            if src and src.startswith("/static"):
+                img["src"] = src.replace("/static", settings.CDN_BASE_URL)
+
+        for a in soup.find_all("a"):
+            href = a.get("href")
+            if href and href.startswith("/static"):
+                a["href"] = href.replace("/static", settings.CDN_BASE_URL)
+
+        return str(soup)
+
+    @classmethod
     def process_md(cls, md_file_path: str) -> Tuple[Optional[Dict], str]:
         md = (
             MarkdownIt(
@@ -70,8 +89,9 @@ class MDRender:
 
         file_content = cls._get_file_content(md_file_path)
         html_content = md.render(file_content).strip()
+        processed_html_content = cls.process_html(html_content)
 
-        return md.renderer._front_matter, html_content, file_content
+        return md.renderer._front_matter, processed_html_content, file_content
 
     @classmethod
     def _get_file_content(cls, md_file_path: str) -> str:

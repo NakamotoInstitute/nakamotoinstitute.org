@@ -3,7 +3,7 @@ import { Trans } from "react-i18next/TransWithoutContext";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { formatDate } from "@/utils/dates";
 import { AuthorsLinks } from "@/app/components/AuthorsLinks";
-import { urls } from "@/lib/urls";
+import { cdnUrl, urls } from "@/lib/urls";
 import { MempoolPost, MempoolSeries } from "@/lib/api/schemas/mempool";
 
 type SeriesHeaderProps = {
@@ -94,7 +94,7 @@ export async function PostHeader({ locale, post }: PostHeaderProps) {
           // eslint-disable-next-line @next/next/no-img-element
           <img
             className="mx-auto block rounded-sm pt-6"
-            src={`/img/mempool/${post.slug}/${post.image}`}
+            src={cdnUrl(`/img/mempool/${post.slug}/${post.image}`)}
             alt={post.imageAlt ?? ""}
           />
         ) : null}

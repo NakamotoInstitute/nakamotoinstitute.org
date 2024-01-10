@@ -50,7 +50,7 @@ But there is really only one defense: to retain control over our computers, our 
 Fortunately, the necessary philosophy was developed by Richard Stallman, founder of the free software movement and of [GNU](https://www.gnu.org/), a project to create a free operating system that eventually evolved into the GNU/Linux.[^3] Free software is software whose source code is as available as its binaries and which comes with the right to edit and redistribute edited versions.[^4] This term refers only to the rights that come with the software, not to its money price. Proprietary software is software that is not free software. The major goal of the free software movement is that all software should be free software.
 
 <figure>
-  <img src="/img/mempool/crypto-anarchy-and-libertarian-entrepreneurship-4/stallman.jpg" alt="Stallman" />
+  <img src="/static/img/mempool/crypto-anarchy-and-libertarian-entrepreneurship-4/stallman.jpg" alt="Stallman" />
 </figure>
 
 Libertarians have not had much of a connection with the free software movement before. I would rate it as at least as important an ally to the libertarian movement as the homeschooling movement. There is much that is admirable about it: Stallman, for example, was against copyright and patents long before libertarians got the picture. He invented copyleft, which, though not entirely compatible with libertarianism, is, as a form of self-defense in a world oppressed by intellectual property, a stroke of genius.[^5]
@@ -72,7 +72,7 @@ Finally, the third way we give up control is to use proprietary devices. A free 
 To retain control over our computers, we must drastically reduce proprietary software, proprietary devices, and software-as-a-service as business practices. Libertarian entrepreneurs should try to compete with other business practices that make our computers more secure against outside control. This will greatly reduce the risk of a government invasion of our computers and the internet.
 
 <figure>
-  <img src="/img/mempool/crypto-anarchy-and-libertarian-entrepreneurship-4/tux.png" alt="Tux" />
+  <img src="/static/img/mempool/crypto-anarchy-and-libertarian-entrepreneurship-4/tux.png" alt="Tux" />
 </figure>
 
 ## Free Software and Voluntary Slavery
@@ -84,7 +84,7 @@ The issue is relevant because a person whose computer is restrained is not liter
 Already people depend on their computers so much that they are getting to be like body parts. Our computers are a conduit to the rest of the world. They are our eyes, ears, and mouth. Thus, I do not consider myself to be speaking hyperbolically to say that a person who buys an iPhone becomes a voluntary slave. He uses the device as his eyes and ears to the world and he does not even have the right to say what software he wants to install on it. Apple retains the ability to remotely control his device, so at any moment, Apple might shut off his vision, send him hallucinations, or secretly watch him.
 
 <figure>
-  <img src="/img/mempool/crypto-anarchy-and-libertarian-entrepreneurship-4/apple.jpg" alt="Apple" />
+  <img src="/static/img/mempool/crypto-anarchy-and-libertarian-entrepreneurship-4/apple.jpg" alt="Apple" />
 </figure>
 
 ## Free Software Values

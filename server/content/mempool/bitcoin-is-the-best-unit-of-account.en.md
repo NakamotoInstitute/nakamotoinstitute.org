@@ -36,7 +36,7 @@ longest](http://bitcoinism.blogspot.com/2013/11/us-dollar-falls-to-new-lows-agai
 economic crash in history.
 
 <figure>
-  <img src="/img/mempool/bitcoin-is-the-best-unit-of-account/SP500inBTC.png" alt="" />
+  <img src="/static/img/mempool/bitcoin-is-the-best-unit-of-account/SP500inBTC.png" alt="" />
   <figcaption>Worst recession ever.</figcaption>
 </figure>
 

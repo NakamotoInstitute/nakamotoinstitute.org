@@ -21,7 +21,7 @@ Que tal isso? Fale com os vendedores da região que você quer gastar em espéci
 ## Acumuladores dão valor ao Bitcoin
 
 <figure>
-  <img src="/img/mempool/im-hoarding-bitcoins-and-no-you-cant-have-any/gold-bars.jpg" alt="Barras de ouro" />
+  <img src="/static/img/mempool/im-hoarding-bitcoins-and-no-you-cant-have-any/gold-bars.jpg" alt="Barras de ouro" />
 </figure>
 
 O preço inicial do bitcoin foi causado pelas pessoas que queriam mantê-lo, não pelas pessoas que queriam gastá-lo. Além disso, cada etapa do avanço do Bitcoin deve começar com mais acumuladores, não mais gastadores. Os mercados que os bitcoins podem absorver são limitados por seu market cap. Com um market cap de dois ou três bilhões de dólares, o Bitcoin pode absorver muitos pequenos mercados, mas não pode ser usado para o comércio internacional de petróleo. Ele teria que ser dezenas de vezes mais caro para isso, e isso só é possível se o desejo das pessoas de ter bitcoins continuar crescendo mais rápido do que o desejo delas de vendê-los. Assim, aquele que quer que o Bitcoin se torne mainstream nunca deveria querer que o preço seja menor. Ele deveria querer uma quantidade cada vez maior de acumuladores.
@@ -39,7 +39,7 @@ A menos que um vendedor esteja vendendo algo que não possa ser comprado com dó
 ## A ganância é sua amiga
 
 <figure>
-  <img src="/img/mempool/im-hoarding-bitcoins-and-no-you-cant-have-any/dragon.jpg" alt="Dragão" />
+  <img src="/static/img/mempool/im-hoarding-bitcoins-and-no-you-cant-have-any/dragon.jpg" alt="Dragão" />
 </figure>
 
 Não dá para ter venda de bitcoins sem a compra dos mesmos, ou seja, todo uso de bitcoins como meio de troca depende de alguém querendo aumentar seu estoque próprio, isto é, um acumulador. Sem eles, não haveria literalmente nenhum comércio de Bitcoin. Além disso, é contraproducente tentar converter os acumuladores em gastadores. Não existe nenhum motivo real para alguém gastar bitcoins num futuro próximo - se todos estão acumulando, isso vai fazer com que o preço suba, até que finalmente alguém não resistirá em gastar um pouco.

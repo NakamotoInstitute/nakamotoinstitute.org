@@ -13,7 +13,10 @@ La objeción de que el bitcoin no es una buena unidad de cuenta esconde un argum
 
 No existe, por supuesto, ninguna unidad objetiva de valor que pueda medirse con una unidad de cuenta. Es por esta razón que dos personas pueden tener preferencias por unidades de cuenta extremadamente diversas. Alguien que aún se encuentra perdido en el mundo del dólar mira hacia Bitcoin y ve volatilidad extrema, mientras que al mirar hacia el dólar desde el mundo Bitcoin lo que se ve es [la peor crisis económica](http://bitcoinism.blogspot.com/2013/11/us-dollar-falls-to-new-lows-against.html) de la historia.
 
-![Worst Recession Ever](/img/mempool/bitcoin-is-the-best-unit-of-account/SP500inBTC.png)
+<figure>
+  <img src="/static/img/mempool/bitcoin-is-the-best-unit-of-account/SP500inBTC.png" alt="" />
+  <figcaption>Worst recession ever.</figcaption>
+</figure>
 
 Al entrar en el mundo Bitcoin, uno se da cuenta paulatinamente de que allí los dólares tienen mucho menos sentido. Supongamos, por ejemplo, que uno está considerando la posibilidad de involucrarse en minería de bitcoins. La pregunta más importante que uno se hace es si los equipos mineros generarán más bitcoins de lo que costaron – los dólares aquí no interesan. Los empresarios del mundo Bitcoin piensan de manera similar; deben preguntarse, respecto de cualquier inversión en el negocio: ¿me ha permitido obtener más bitcoins de los que me ha costado?
 

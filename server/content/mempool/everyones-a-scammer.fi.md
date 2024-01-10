@@ -22,7 +22,7 @@ Ja se toimii. Bitcoin valmistautuu eksponentiaaliseen kasvuun, joten sen vaihtoe
 Bitcoin on vaarallinen paikka. [Loputon luettelo hakkeroinneista, huijareista ja varkauksista](https://bitcointalk.org/index.php?topic=576337). Bitcoin lupaa verkon, jossa luottamus on hajautettu. Tiedätkö miksi? Koska muita bitcoinaajia on olemassa.
 
 <figure>
-  <img src="/img/mempool/everyones-a-scammer/noose.jpg" alt="Noose" />
+  <img src="/static/img/mempool/everyones-a-scammer/noose.jpg" alt="Noose" />
 </figure>
 
 Kaikki bitcoin-huijarit eivät ole vain moraalittomia liikemiehiä tai sijoittajia. Monet ovat suorastaan huijareita ja petkuttajia. Kun ostat maton Overstockista, saat ainakin maton. Lähettäessäsi rahaa Ethereumiin, saatat lopulta saada ether-poletin. Tiedätkö mitä et todennäköisesti koskaan saa? Butterfly Labsin ennakkotilaustasi tai Goxbucksejasi.
@@ -46,7 +46,7 @@ Vihdoinkin Newegg hyväksyy Bitcoinin, kuten myös Overstock.com, TigerDirect, D
 Kauppiailla on täysi syy hyväksyä Bitcoin. BitPay poisti äskettäin kaikkien maksujen käsittelymaksut, mukaan lukien valuutanvaihtomaksut. Kauppiaat voivat paitsi vastaanottaa maksuja palkkiotta, mutta tietysti tähän liittyy myös litania muita etuja petos- tai takaisinperintäriskien vähenemisestä helppoihin kansainvälisiin maksuihin. Kauppiaat voivat siirtää säästönsä asiakkailleen tai kasvattaa katteitaan. He voivat pitää ja heidän kannattaa pitää kiinni bitcoineista kirjanpidon salliessa, jotta ne hyötyvät tulevasta hintakehityksestä. Loppujen lopuksi, jos Bitcoinilla maksaminen lisääntyy, niitä on rajallinen määrä, joten jokaisesta niistä tulee arvokkaampi.
 
 <figure>
-  <img src="/img/mempool/everyones-a-scammer/my-mule.jpg" alt="My mule" />
+  <img src="/static/img/mempool/everyones-a-scammer/my-mule.jpg" alt="My mule" />
 </figure>
 
 Kauppiaat ovat siis hyvässä asemassa. He voivat säästää rahaa liiketoiminnassaan, ja he voivat yrittää ostaa bitcoineja vähittäistavaroilla, aivan kuten monet ostavat niitä dollareilla tai euroilla. Jos olisin kauppias, rohkaisisin ihmisiä tekemään ostoksia Bitcoinilla kaupassani. Voisin jopa yrittää vakuuttaa heille heikoista taloudellisista perusteluista huolimatta, että bitcoinien kuluttaminen kaupassani on todella hyödyllistä Bitcoinin kannalta — ainakin parempaa kuin että sinä säästäisit ja keinottelisit niillä. Loppujen lopuksi “siitä voi tulla arvoton yhdessä yössä” ja “sen tulevaisuus riippuu siitä” (koska minä sanon niin). Voisin jopa esimerkiksi sanoa:
@@ -76,7 +76,7 @@ Bitcoin on jännittävä. Staattisen lompakkotiedoston ja saldon katselu ei ole.
 Kaikki nämä ovat huijauksia.
 
 <figure>
-  <img src="/img/mempool/everyones-a-scammer/rifle.jpg" alt="Rifle" />
+  <img src="/static/img/mempool/everyones-a-scammer/rifle.jpg" alt="Rifle" />
 </figure>
 
 Riippumatta niiden kyvystä todella lunastaa lupauksena, ne kaikki epäonnistuvat yksinkertaisessa testissä: onko sijoitetun pääoman tuotto positiivinen? Jos olet juuttunut fiat-ajattelutapaan, saatat hyvinkin tehdä nopeaa rahaa, mutta ottaen huomioon Bitcoinin odottamattoman odotetun kasvun, voitko todella odottaa tekevän parempaa tuottoa kuin vain pitämällä kiinni siitä? Pitkäaikaisten sijoittajien tulisi käyttää Bitcoinia laskentayksikkönään ja jokaista sijoitusta olisi verrattava Bitcoinin odotettavaan tuottoon.
@@ -100,7 +100,7 @@ Bitcoinin hamstraaja on jatkuvassa taistelussa itsensä kanssa aikapreferenssins
 Bitcoin-hamstraajat ovat innostuneita hinnannoususta, mutta he ovat myös hinnoissaan hinnan ollessa laskussa. Vain kuukausia sitten Coinbase oli valmis antamaan minulle bitcoinin 1200 dollarilla, ja nyt he pyytävät vain 475 dollaria. Mikä tahansa hinta, bitcoin-hamstraaja ajattelee itsekseen: “Luuserit.”
 
 <figure>
-  <img src="/img/mempool/everyones-a-scammer/eastwood-cigar.jpg" alt="Eastwood cigar" />
+  <img src="/static/img/mempool/everyones-a-scammer/eastwood-cigar.jpg" alt="Eastwood cigar" />
 </figure>
 
 Bitcoin-hamstraajat pelaavat pitkää peliä. Heidän strategiansa ei ole ostaa matalalta, myydä korkealta, vaan ostaa millä tahansa hinnalla, myydä osa korkeimmillaan. He tekevät mitä tahansa saadakseen hieman enemmän satosheita haltuunsa, eikä mikään tee heistä onnellisempia kuin ääliö, joka luopuu tavaroista vakuuttuneena siitä, että Bitcoin on vain [x < kuu] dollarin arvoinen. Nämä myyjät ovat [vapaaehtoisesti päättäneet pitää fiat-kakkapussia](http://trilema.com/2014/people-us-dollars-are-not-worth-a-fifth-of-a-bitcent-stop-selling/), eivätkä hamstraajat ole koskaan nopeampia päästäkseen eroon löyhkästä.
@@ -114,7 +114,7 @@ _Hamstraajat ovat huijareita, koska he ymmärtävät Bitcoinin eksponentiaalisen
 Hamstraus antaa rahalle sen arvon. Ja ei, [sinä et voi saada yhtään](/mempool/im-hoarding-bitcoins-and-no-you-cant-have-any/).
 
 <figure>
-  <img src="/img/mempool/everyones-a-scammer/bitcoinfeedbackloops-fi.png" alt="Bitcoin feedback loops" />
+  <img src="/static/img/mempool/everyones-a-scammer/bitcoinfeedbackloops-fi.png" alt="Bitcoin feedback loops" />
 </figure>
 
 Hyviä uutisia Bitcoinille!
@@ -124,7 +124,7 @@ Hyviä uutisia Bitcoinille!
 Itse asiassa, Bitcoin-huijaaminen on työtä, joka ei koskaan lopu. Markkinapohjaiset huijaukset (eli ne, jotka eivät vaadi petoksia) laantuvat, kun Bitcoin imee kaikkien muiden valuuttojen todellisen rahan tarjonnan, kun käteisvarojen kysyntä hidastuu ja lopulta vakiintuu. Muut huijarit kuitenkin etsivät aina tapoja jymäyttää joltakulta hänen bitcoininsa.
 
 <figure>
-  <img src="/img/mempool/everyones-a-scammer/cornered.jpg" alt="Cornered" />
+  <img src="/static/img/mempool/everyones-a-scammer/cornered.jpg" alt="Cornered" />
 </figure>
 
 Ainoa tapa tämän ratkaisemiseksi on luotettavien verkkojen rakentaminen. [Bitcoin on suuri, mutta se ei korjaa apinan aivojamme](/mempool/bitcoin-is-great-but-it-wont-fix-our-monkey-brains/), kuten aikaisemmin on sanottu. Vaikka Bitcoin tarjoaa rahan ilman luotettavaa kolmatta osapuolta, se voi tehdä niin vain siksi, että tilikirja on itseohjautuva. Bitcoinia käyttävien ihmisten on aina toimittava _caveat emptor_ (ostaja varokoon) ajattelutavan varassa. [Maksuprotokollien](https://github.com/bitcoin/bips/blob/master/bip-0070.mediawiki), [luottamusverkostojen](http://bitcoin-otc.com/), [älykkäiden sopimusten](https://en.bitcoin.it/wiki/Contracts), [GPG-sopimusten](/gpg-contracts/) ja [äänestyssyndikaattien](http://bitcoinism.blogspot.com/2013/12/voting-pools-how-to-stop-plague-of.html) avulla käyttäjät voivat vähentää eri kauppamuotoihin liittyviä riskejä.
@@ -134,7 +134,7 @@ Ainoa tapa tämän ratkaisemiseksi on luotettavien verkkojen rakentaminen. [Bitc
 Elämme täydellisen sodan tilassa. Jokainen, joka pitää hallussaan bitcoineja, yrittää saada niitä enemmän huijaamalla ne muilta tai vakuuttamalla muut siitä, että niitä ei kannata ostaa. Jokainen, jolla ei ole bitcoineja, menettivät ne tullessaan huijatuiksi tai huijattiin olemaan ostamatta niitä. Bitcoinien hankkiminen vaatii tietoa ja tahdonvoimaa tietää ja haluta tulevaisuutta, kun taas bitcoinien hankkimattomuus tai niiden kuluttaminen on merkki jommankumman — tiedon tai tahdonvoiman — puuttumisesta. Jos sinulla on hallussasi bitcoineja, sinun on syytä hengittää joka kerta ennen kuin haluat lähettää minkä tahansa määrän toiselle ihmiselle. Kysy itseltäsi, onko tämä ihminen todella ansainnut sanomattoman määrän tulevaisuuden vaurauttasi oluttuopista. Saatat löytää tahdonvoiman hodlata enemmän.
 
 <figure>
-  <img src="/img/mempool/everyones-a-scammer/body-armor.gif" alt="Body armor" />
+  <img src="/static/img/mempool/everyones-a-scammer/body-armor.gif" alt="Body armor" />
 </figure>
 
 Hyperbitcoinisaatio ei ole pikkujuttu. Jopa pikkuriikkinen bitcoin-omistus tällä hetkellä voi muodostaa erittäin merkittävän osan bitcoinaajan portfoliosta. Kun hyperbitcoinisaatio tapahtuu, ei ole paluuta menneeseen. Eräänä päivänä Bitcoin-saldosi desimaalimerkki ei todennäköisesti enää koska siirry oikealle. Bitcoin ei jarruta kenenkään edessä kilpailussaan orjuudesta globaaliin herruuteen (vapautumiseen?). Älä anna paikkaasi jollekulle muulle.

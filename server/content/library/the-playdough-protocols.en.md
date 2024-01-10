@@ -39,7 +39,7 @@ Nor, thanks to five thousand years of experience with the technologies of tamper
 <h2 id="seals-and-sealing">Seals and Sealing</h2>
 
 <figure>
-  <img src="/img/library/the-playdough-protocols/indusseals.gif" alt="" />
+  <img src="/static/img/library/the-playdough-protocols/indusseals.gif" alt="" />
   <figcaption>Terra cotta sealing (bottom) and rectangular stamp seals, Mohenjo-Daro, Indus Valley, c. 2,000 B.C. The central sign on the top seal may represent a house or temple and is a symbol that is often repeated on Indus seals with horned deities seated in yogic position. Courtesy harappa.com.</figcaption>
 </figure>
 
@@ -52,7 +52,7 @@ The seal design was usually recessed, resulting in a raised impression; occasion
 While sun-dried clay could usually be remoistened and rewritten, it would have been very difficult to hide from a trained eye. Rejoining the breached container lid, knot, or latch and replacing the broken seal with a new, identical seal would have been, short of stealing the original unique seal carving, impossible to hide from the inspector. Looking for a particular seal impression and examining the container, the inspector could reliably tell whether the contents had been tampered with. The difference between an accidental crack, from dropping or hitting the object, and a breach that allowed the thief or adulterator access to the goods, would also be apparent. Ancient inspectors undoubtedly became experts at looking for clues to distinguish accident from fraud. In any case, a broken seal then as now indicated suspect goods suitable perhaps for the discount bin, but more normally for the trash. It also indicated error for fraud – and potential punishment.
 
 <figure>
-  <img src="/img/library/the-playdough-protocols/dariusseal.jpg" alt="" />
+  <img src="/static/img/library/the-playdough-protocols/dariusseal.jpg" alt="" />
   <figcaption>Cylinder seal (left) and its sealing (right), King Darius the Great, Persia, 586–522 B.C., with weapons of war</figcaption>
 </figure>
 
@@ -75,7 +75,7 @@ A worthy deity is found, who starts breaking the seals and thereby loosing the H
 The Sumerians used thin wires and flat ingots of gold and silver, carefully weighed in balance scales, rather than coins like the Roman denarius. Except for paying the price in coins rather than coils, the commerce of the Third Horseman would have sounded quite familiar to our Sumerian merchant.
 
 <figure>
-  <img src="/img/library/the-playdough-protocols/coilcash.jpg" alt="" />
+  <img src="/static/img/library/the-playdough-protocols/coilcash.jpg" alt="" />
   <figcaption>Wire ring and coil money, Sumeria, c. 2,500 B.C.</figcaption>
 </figure>
 
@@ -88,7 +88,7 @@ Recall our merchant, entrusting goods to sailors. Not all goods could be sealed 
 Pebbles, shells, and other counters have long been used to count things. Without even knowing how to verbally count in order – some cultures do not have words for numbers above three – one can “count” objects by placing a pebble, on a pile or in a bag, one for each object. One nomadic tribe in Africa<sup><a href="#fn4-1" id="ref4-1">[4]</a></sup> counts cattle passing through a gate by drilling furrows. As each cattle paces, a pebble is placed in the rightmost furrow. When there are nine pebbles in this furrow, and the tenth cow goes through the gate, the pebbles are removed from the first furrow and a single is placed in the next furrow to the left. This is a “carry” operation, used in abacuses around the world and even used in modern computers. These nomads have, along with many other cultures, invented a kind of abacus, with a ones place, a tens place. A zero is simply an empty furrow. Many other cultures (though not this one) have taken this to the next step and used this abacus, in the form of pebbles on a board or beads strung on rods, to add, subtract, multiply, and perform other computations. Indeed, until the advent of our modern Arabic numbers, everywhere calculations were done by the abacus or fingers, not on paper.
 
 <figure>
-  <img src="/img/library/the-playdough-protocols/dlottmesoclaytokens.gif" alt="" />
+  <img src="/static/img/library/the-playdough-protocols/dlottmesoclaytokens.gif" alt="" />
   <figcaption>Clay envelope and tokens, Sumer, c. 3,400 B.C.</figcaption>
 </figure>
 
@@ -119,7 +119,7 @@ Breaking a seal still, but fortunately only quite rarely, can have implications 
 Everybody is familiar with shrink-wrapped plastic, a less secure but commonly used technology – as common as the ubiquitous price tag. Another favorite tamper-evident device is the seal used to protect pill bottles.
 
 <figure>
-  <img src="/img/library/the-playdough-protocols/evidencebag.jpg" alt="" />
+  <img src="/static/img/library/the-playdough-protocols/evidencebag.jpg" alt="" />
   <figcaption>Evidence bag. Courtesy Custom Specialties Inc. [no relationship to author].</figcaption>
 </figure>
 
@@ -127,8 +127,8 @@ Bank employees, our modern descendants of ancient temple accountant-priests, sti
 
 <figure>
   <div class="img-container">
-    <img src="/img/library/the-playdough-protocols/tamperdoorbefore.gif" alt="" />
-    <img src="/img/library/the-playdough-protocols/tamperdoorafter.gif" alt="" />
+    <img src="/static/img/library/the-playdough-protocols/tamperdoorbefore.gif" alt="" />
+    <img src="/static/img/library/the-playdough-protocols/tamperdoorafter.gif" alt="" />
   </div>
 	<figcaption>Tamper evident tape on a cabinet door. Note the sequential number, which when recorded and checked detects the replacement of the original tape with a new one. (The security of the serial number assumes that this label is not easy to duplicate using a laser printer). On the right, the broken seal has left a difficult to remove mark including the word “tamper”. Courtesy tamper.com [no relationship to author].</figcaption>
 </figure>

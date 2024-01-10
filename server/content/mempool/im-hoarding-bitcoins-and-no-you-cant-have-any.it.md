@@ -22,7 +22,7 @@ Oppure potresti dire ai tuoi negozianti locali che vorresti poter spendere conta
 ## Sono i risparmiatori che danno il valore ai bitcoin
 
 <figure>
-  <img src="/img/mempool/im-hoarding-bitcoins-and-no-you-cant-have-any/gold-bars.jpg" alt="Gold Bars" />
+  <img src="/static/img/mempool/im-hoarding-bitcoins-and-no-you-cant-have-any/gold-bars.jpg" alt="Gold Bars" />
 </figure>
 
 Il prezzo dei bitcoin dipende dalla gente che li tiene, non da quella che li spende. Ogni passo in avanti nella crescita di bitcoin avverrà attraverso altri risparmiatori e non dagli spendaccioni. Le aziende che possono essere coinvolte sono limitate dal valore dell’intera economia. Con un tetto massimo di due o tre miliardi di euro, bitcoin può essere usato da molte piccole imprese ma non per il commercio internazionale di petrolio: sarebbe necessario che sia decine di volte più costoso per questo, e può accadere soltanto se il desiderio delle persone di accumulare bitcoin aumenta rispetto al desiderio di spenderli. Chi desidera che bitcoin diventi popolare non dovrebbe mai volere che il suo prezzo scenda: dovrebbe desiderare che sempre più persone cerchino di conservarli.
@@ -40,7 +40,7 @@ A meno che un commerciante non offrisse qualcosa che non si può comprare con gl
 ## L’avidità è tua amica
 
 <figure>
-  <img src="/img/mempool/im-hoarding-bitcoins-and-no-you-cant-have-any/dragon.jpg" alt="Dragon" />
+  <img src="/static/img/mempool/im-hoarding-bitcoins-and-no-you-cant-have-any/dragon.jpg" alt="Dragon" />
 </figure>
 
 I bitcoin non possono essere spesi se non vengono prima comprati, per cui l’utilizzo di bitcoin come mezzo di scambio dipende da coloro che desiderano aumentare i propri averi, ad esempio i risparmiatori. Senza di loro non potrebbe esserci alcun commercio in bitcoin. Inoltre è controproducente provare a convertire i risparmiatori in spendaccioni. Non c’è alcun motivo per cui qualcuno dovrebbe spendere i propri bitcoin nel breve periodo. Se tutti provassero ad accumularli, il prezzo salirebbe fino al punto da invogliare qualcun altro a venderli.
