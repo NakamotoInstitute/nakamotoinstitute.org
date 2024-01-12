@@ -34,7 +34,7 @@ class JSONFile(Base):
     file_metadata_id: Mapped[int] = mapped_column(ForeignKey("file_metadata.id"))
     file_metadata: Mapped["FileMetadata"] = relationship(
         "FileMetadata",
-        backref=backref("json_files", uselist=False, cascade="all, delete-orphan"),
+        backref=backref("json_file", uselist=False, cascade="all, delete-orphan"),
     )
     content_type: Mapped[str] = mapped_column(String(50))
     __mapper_args__ = {

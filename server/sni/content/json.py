@@ -1,114 +1,126 @@
 import json
-import os
 from datetime import datetime
+from typing import Any, Dict, List, Type
 
-from pydantic import ValidationError
-from sqlalchemy import select
+from pydantic import BaseModel, ValidationError
+from sqlalchemy import delete, select
+from sqlalchemy.orm import Session
 
-from sni.database import SessionLocal
 from sni.models import FileMetadata
 from sni.utils.files import get_file_hash
 
 
 class JSONImporter:
-    query_field = "id"
+    schema: Type[BaseModel] = None
+    dependent_importers: List[Type["JSONImporter"]] = []
+    existing_thread_ids = set()
+    file_updated = False
 
-    def __init__(self):
-        self.db_session = SessionLocal()
+    def __init__(self, db_session: Session):
+        self.db_session = db_session
+        self.fetch_existing_item_ids()
 
-    def load_and_validate_json(self):
+    def fetch_existing_item_ids(self):
+        result = self.db_session.scalars(select(self.model.id)).all()
+        self.existing_item_ids = set(result)
+
+    def load_json_data(
+        self, file_path: str, force: bool = False
+    ) -> List[Dict[str, Any]]:
+        self.handle_file_metadata(file_path, force)
         try:
-            with open(self.filepath, "r") as file:
-                data = json.load(file)
-                if not isinstance(data, list):
-                    print(
-                        f"Invalid data format. Expected a list but got {type(data).__name__}"  # noqa: E501
-                    )
-                    return None
+            with open(file_path, "r") as file:
+                return json.load(file)
+        except Exception as e:
+            print(f"Error loading JSON data: {e}")
+            return []
 
-                validated_data = [self.item_schema(**item) for item in data]
-                return validated_data
+    def handle_file_metadata(self, file_path: str, force: bool = False):
+        existing_metadata = self.db_session.scalars(
+            select(FileMetadata).filter_by(filename=file_path)
+        ).first()
+
+        current_hash = get_file_hash(file_path)
+        current_last_modified = datetime.now()
+
+        if existing_metadata:
+            if existing_metadata.hash != current_hash or force:
+                existing_metadata.hash = current_hash
+                existing_metadata.last_modified = current_last_modified
+                self.file_updated = True
+            self.file_metadata = existing_metadata
+        else:
+            self.file_metadata = FileMetadata(
+                filename=file_path,
+                hash=current_hash,
+                last_modified=current_last_modified,
+            )
+            self.db_session.add(self.file_metadata)
+
+            new_file = self.file_model(
+                file_metadata=self.file_metadata, content_type=self.content_type
+            )
+
+            self.db_session.add(new_file)
+            self.db_session.flush()
+            self.file_updated = True
+
+        self.json_file = self.file_metadata.json_file
+
+        if self.file_updated:
+            self.delete_all_existing_items()
+
+    def delete_dependent_entities(self):
+        for dependent_importer_cls in self.dependent_importers:
+            dependent_importer = dependent_importer_cls(self.db_session)
+            dependent_importer.delete_all_existing_items()
+
+    def delete_all_existing_items(self):
+        self.delete_dependent_entities()
+        self.db_session.execute(delete(self.model))
+
+    def validate_data(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        if not self.schema:
+            raise ValueError("Pydantic schema not defined in subclass")
+
+        try:
+            return self.schema(**data).dict()
         except ValidationError as e:
             print(f"Validation error: {e}")
-            return None
-        except Exception as e:
-            print(f"Error loading JSON file: {e}")
-            return None
+            raise
 
-    def process_item_data(self, item_data):
+    def process_item_data(self, item_data: Dict) -> Dict:
         return item_data
 
-    def create_metadata_and_items(self, items_data, current_hash, current_timestamp):
-        new_metadata = FileMetadata(
-            filename=self.filepath, hash=current_hash, last_modified=current_timestamp
-        )
-        self.db_session.add(new_metadata)
+    def process_data(self, json_data: List[Dict[str, Any]]):
+        for item_data in json_data:
+            processed_item_data = self.process_item_data(item_data)
+            new_thread = self.model(**processed_item_data, file_id=self.json_file.id)
+            self.db_session.add(new_thread)
 
-        file_obj = self.file_model(
-            file_metadata=new_metadata, content_type=self.content_type
-        )
-        self.db_session.add(file_obj)
-        self.db_session.flush()
-
-        for item_data in items_data:
-            processed_item_data = self.process_item_data(item_data.dict())
-            item = self.model(**processed_item_data, file=file_obj)
-            self.db_session.add(item)
-
-    def update_metadata_and_items(
-        self, file_metadata, items_data, current_hash, current_timestamp
-    ):
-        if file_metadata.hash != current_hash:
-            for item_data in items_data:
-                processed_item_data = self.process_item_data(item_data).dict()
-                try:
-                    filter_args = {
-                        self.query_field: processed_item_data[self.query_field]
-                    }
-                    item = self.db_session.scalars(
-                        select(self.model).filter_by(**filter_args)
-                    ).first()
-                    if item:
-                        for key, value in processed_item_data.items():
-                            setattr(item, key, value)
-                    else:
-                        item = self.model(
-                            **processed_item_data, file_id=file_metadata.id
-                        )
-                        self.db_session.add(item)
-                except KeyError:
-                    raise KeyError(
-                        f"Item missing '{self.query_field}': {processed_item_data}"
-                    )
-
-            file_metadata.last_modified = current_timestamp
-            file_metadata.hash = current_hash
-
-    def run_import(self, *args):
+    def commit_changes(self):
         try:
-            print(f"Importing {self.model.__name__}...", end="")
-            items_data = self.load_and_validate_json()
-
-            if not items_data:
-                return
-
-            current_hash = get_file_hash(self.filepath)
-            current_timestamp = datetime.fromtimestamp(os.path.getmtime(self.filepath))
-
-            file_metadata = self.db_session.scalars(
-                select(FileMetadata).filter_by(filename=self.filepath).limit(1)
-            ).first()
-
-            if not file_metadata:
-                self.create_metadata_and_items(
-                    items_data, current_hash, current_timestamp
-                )
-            else:
-                self.update_metadata_and_items(
-                    file_metadata, items_data, current_hash, current_timestamp
-                )
-
             self.db_session.commit()
-        finally:
-            self.db_session.close()
-            print("DONE")
+        except Exception as e:
+            print(f"Error committing changes to the database: {e}")
+            self.db_session.rollback()
+
+    def import_data(self, force: bool = False):
+        print(f"Importing {self.model.__name__}...", end="")
+        json_data = self.load_json_data(self.file_path, force)
+        if self.file_updated or force:
+            validated_data = [self.validate_data(item) for item in json_data]
+            self.process_data(validated_data)
+            self.commit_changes()
+        print("DONE")
+
+
+def run_json_importer(
+    importer_cls: Type[JSONImporter],
+    db_session: Session,
+    force: bool = False,
+    force_conditions: List[bool] = [],
+) -> bool:
+    importer = importer_cls(db_session)
+    importer.import_data(force or any(force_conditions))
+    return importer.file_updated

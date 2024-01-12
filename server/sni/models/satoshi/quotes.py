@@ -15,8 +15,12 @@ if TYPE_CHECKING:
 quote_quote_categories = Table(
     "quote_quote_categories",
     Base.metadata,
-    Column("quote_id", Integer, ForeignKey("quotes.id")),
-    Column("quote_category_id", Integer, ForeignKey("quote_categories.id")),
+    Column("quote_id", Integer, ForeignKey("quotes.id", ondelete="CASCADE")),
+    Column(
+        "quote_category_id",
+        Integer,
+        ForeignKey("quote_categories.id", ondelete="CASCADE"),
+    ),
 )
 
 

@@ -5,17 +5,9 @@ from sni.shared.service import get
 from .schemas import QuoteCategoryJSONModel, QuoteJSONModel
 
 
-class QuoteCategoryImporter(JSONImporter):
-    filepath = "data/quote_categories.json"
-    item_schema = QuoteCategoryJSONModel
-    model = QuoteCategory
-    file_model = QuoteCategoryFile
-    content_type = "quote_categories"
-
-
 class QuoteImporter(JSONImporter):
-    filepath = "data/quotes.json"
-    item_schema = QuoteJSONModel
+    file_path = "data/quotes.json"
+    schema = QuoteJSONModel
     model = Quote
     file_model = QuoteFile
     content_type = "quotes"
@@ -26,3 +18,12 @@ class QuoteImporter(JSONImporter):
             for category in quote_data.pop("categories", [])
         ]
         return quote_data
+
+
+class QuoteCategoryImporter(JSONImporter):
+    file_path = "data/quote_categories.json"
+    schema = QuoteCategoryJSONModel
+    model = QuoteCategory
+    file_model = QuoteCategoryFile
+    content_type = "quote_categories"
+    dependent_importers = [QuoteImporter]

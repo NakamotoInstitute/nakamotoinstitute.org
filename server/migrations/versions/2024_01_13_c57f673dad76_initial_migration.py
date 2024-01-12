@@ -1,8 +1,8 @@
 """Initial migration
 
-Revision ID: f0565826c40f
+Revision ID: c57f673dad76
 Revises: 
-Create Date: 2023-12-27 13:38:47.181632
+Create Date: 2024-01-13 00:41:00.675849
 
 """
 from typing import Sequence, Union
@@ -12,7 +12,7 @@ from alembic import op
 from sqlalchemy.dialects import postgresql
 
 # revision identifiers, used by Alembic.
-revision: str = "f0565826c40f"
+revision: str = "c57f673dad76"
 down_revision: Union[str, None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
@@ -531,11 +531,13 @@ def upgrade() -> None:
             ["quote_category_id"],
             ["quote_categories.id"],
             name=op.f("fk_quote_quote_categories_quote_category_id_quote_categories"),
+            ondelete="CASCADE",
         ),
         sa.ForeignKeyConstraint(
             ["quote_id"],
             ["quotes.id"],
             name=op.f("fk_quote_quote_categories_quote_id_quotes"),
+            ondelete="CASCADE",
         ),
     )
     # ### end Alembic commands ###
