@@ -16,3 +16,7 @@ export const getLocaleParams = async (
     )
   ).flat();
 };
+
+export const getDir = (locale: Locale) => {
+  return ["ar", "fa", "he"].includes(locale) ? "rtl" : "ltr";
+};

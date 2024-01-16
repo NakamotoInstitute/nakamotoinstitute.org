@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { Rehype } from "@/app/components/Rehype";
 import { PageLayout } from "@/app/components/PageLayout";
 import { getLibraryDoc, getLibraryParams } from "@/lib/api/library";
+import { getDir } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { DocHeader } from "../components/DocHeader";
 
@@ -34,7 +35,7 @@ export default async function LibraryDetail({
       <article>
         <DocHeader locale={locale} doc={doc} />
         {doc.content ? (
-          <section className="prose mx-auto">
+          <section className="prose mx-auto" dir={getDir(locale)}>
             <Rehype hasMath={doc.hasMath}>{doc.content}</Rehype>
           </section>
         ) : null}
