@@ -26,7 +26,13 @@ export default async function PostDetail({
 
   return (
     <PageLayout locale={locale} generateHref={generateHref}>
-      <PostNavigation locale={locale} previous={previous} next={next} />
+      <PostNavigation
+        className="mb-2"
+        locale={locale}
+        source={post.source}
+        previous={previous}
+        next={next}
+      />
       <div>
         <h2 className="text-2xl">{formatPostSource(post.source)}</h2>
         <h1 className="text-4xl">{post.subject}</h1>
@@ -60,7 +66,14 @@ export default async function PostDetail({
           __html: post.text,
         }}
       />
-      <PostNavigation locale={locale} previous={previous} next={next} />
+      <PostNavigation
+        className="mt-4"
+        locale={locale}
+        previous={previous}
+        next={next}
+        source={post.source}
+        reverse
+      />
     </PageLayout>
   );
 }

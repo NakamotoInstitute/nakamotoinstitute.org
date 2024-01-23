@@ -22,8 +22,8 @@ export function Navbar({
   const current = languages.find((lang) => lang.code === locale)!.name;
 
   return (
-    <nav className="border-night border-b border-dashed">
-      <div className="mx-auto max-w-7xl px-2 font-bold md:px-6 lg:px-8">
+    <nav className="mb-4 border-b border-dashed">
+      <div className="twbs-container font-bold">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
             <button
@@ -71,24 +71,17 @@ export function Navbar({
           </div>
           <div className="flex flex-1 items-center justify-center md:items-stretch md:justify-start">
             <div className="flex flex-shrink-0 items-center">
-              <Link
-                href={homeHref}
-                className="text-night hidden md:inline-block"
-              >
+              <Link href={homeHref} className="hidden md:inline-block">
                 Satoshi Nakamoto Institute
               </Link>
-              <Link href={homeHref} className="text-night md:hidden">
+              <Link href={homeHref} className="md:hidden">
                 SNI
               </Link>
             </div>
             <div className="hidden md:ml-auto md:block">
               <div className="flex space-x-4">
                 {navLinks.map(({ href, label }) => (
-                  <Link
-                    key={label}
-                    href={href}
-                    className="text-night p-2 text-sm"
-                  >
+                  <Link key={label} href={href} className="p-2 text-sm">
                     {label}
                   </Link>
                 ))}
@@ -103,11 +96,7 @@ export function Navbar({
       <div className={clsx("md:hidden", { hidden: !menuOpen })} id="mobileMenu">
         <div className="space-y-1 px-2 pb-3 pt-2">
           {navLinks.map(({ href, label }) => (
-            <Link
-              key={label}
-              href={href}
-              className="text-night block px-3 py-2 text-base"
-            >
+            <Link key={label} href={href} className="block px-3 py-2 text-base">
               {label}
             </Link>
           ))}

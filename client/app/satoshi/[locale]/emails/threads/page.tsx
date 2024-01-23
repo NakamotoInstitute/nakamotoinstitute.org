@@ -1,12 +1,11 @@
-import { PageLayout } from "@/app/components/PageLayout";
-import { PageHeader } from "@/app/components/PageHeader";
+import Link from "next/link";
 import { getEmailThreads } from "@/lib/api/emails";
 import { EmailSource, EmailThread } from "@/lib/api/schemas/emails";
 import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import { formatEmailSource } from "@/utils/strings";
-import Link from "next/link";
+import { IndexPageLayout } from "@satoshi/components/IndexPageLayout";
 
 export default async function EmailThreadsIndex({
   params: { locale },
@@ -24,9 +23,36 @@ export default async function EmailThreadsIndex({
     } as { [K in EmailSource]: EmailThread[] },
   );
 
+  const navLinks = {
+    main: {
+      label: "View emails",
+      href: urls(locale).satoshi.emails.index,
+    },
+    left: {
+      label: formatEmailSource("cryptography", true),
+      href: urls(locale).satoshi.emails.sourceThreadsIndex("cryptography"),
+      sublink: {
+        label: "Emails",
+        href: urls(locale).satoshi.emails.sourceIndex("cryptography"),
+      },
+    },
+    right: {
+      label: formatEmailSource("bitcoin-list", true),
+      href: urls(locale).satoshi.emails.sourceThreadsIndex("bitcoin-list"),
+      sublink: {
+        label: "Emails",
+        href: urls(locale).satoshi.emails.sourceIndex("bitcoin-list"),
+      },
+    },
+  };
+
   return (
-    <PageLayout locale={locale} generateHref={generateHref}>
-      <PageHeader title="Email Threads" />
+    <IndexPageLayout
+      title="Email Threads"
+      locale={locale}
+      generateHref={generateHref}
+      navLinks={navLinks}
+    >
       <section>
         {Object.entries(sortedThreads).map(([source, sourceThreads]) => {
           const typedSource = source as EmailSource;
@@ -46,7 +72,7 @@ export default async function EmailThreadsIndex({
                     >
                       {thread.title}
                     </Link>{" "}
-                    - <em>{formatDate(locale, thread.date)}</em>
+                    <em>({formatDate(locale, thread.date)})</em>
                   </li>
                 ))}
               </ul>
@@ -54,7 +80,7 @@ export default async function EmailThreadsIndex({
           );
         })}
       </section>
-    </PageLayout>
+    </IndexPageLayout>
   );
 }
 

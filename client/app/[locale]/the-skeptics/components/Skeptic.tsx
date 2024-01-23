@@ -10,22 +10,20 @@ import { SkepticPriceData } from "./PriceData";
 
 const DAILY_BUY = new Big(1);
 
-export async function Skeptic({
-  locale,
-  skeptic,
-  prices,
-}: {
+type SkepticProps = {
   locale: Locale;
   skeptic: Skeptic;
   prices: Price[];
-}) {
+};
+
+export async function Skeptic({ locale, skeptic, prices }: SkepticProps) {
   const { t } = await i18nTranslation(locale);
   const priceData = calculateDCA(skeptic.date, prices, DAILY_BUY);
 
   return (
     <article
       id={skeptic.slug}
-      className="border-b border-solid border-night py-4 first:pt-0 last:border-b-0"
+      className="border-b border-solid py-4 first:pt-0 last:border-b-0"
     >
       <header>
         <p className="text-2xl">

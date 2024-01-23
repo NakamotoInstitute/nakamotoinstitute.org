@@ -10,7 +10,7 @@ type EpisodeListingProps = {
 
 export function EpisodeListing({ locale, episode }: EpisodeListingProps) {
   return (
-    <article className="border-b border-solid border-night py-4 first:pt-0 last:border-b-0">
+    <article className="border-b border-solid py-4 first:pt-0 last:border-b-0">
       <header>
         <h2 className="text-2xl">
           <Link href={urls(locale).podcast.episode(episode.slug)}>

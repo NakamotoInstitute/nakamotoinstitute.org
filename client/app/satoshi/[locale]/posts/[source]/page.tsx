@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { PageHeader } from "@/app/components/PageHeader";
-import { PageLayout } from "@/app/components/PageLayout";
 import { getSatoshiPostsBySource } from "@/lib/api/posts";
 import { ForumPostSource, zForumPostSource } from "@/lib/api/schemas/posts";
-import { formatPostSource } from "@/utils/strings";
+import { formatPostSource, otherForumPostSource } from "@/utils/strings";
 import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
+import { IndexPageLayout } from "@satoshi/components/IndexPageLayout";
+import { formatDate } from "@/utils/dates";
 
 export default async function PostsSourceIndex({
   params: { source, locale },
@@ -13,9 +13,37 @@ export default async function PostsSourceIndex({
   const posts = await getSatoshiPostsBySource(source);
   const generateHref = (l: Locale) => urls(l).satoshi.posts.sourceIndex(source);
 
+  const otherSource = otherForumPostSource(source);
+
+  const navLinks = {
+    main: {
+      label: "View threads",
+      href: urls(locale).satoshi.posts.sourceThreadsIndex(source),
+    },
+    left: {
+      label: "All posts",
+      href: urls(locale).satoshi.posts.index,
+      sublink: {
+        label: "Threads",
+        href: urls(locale).satoshi.posts.threadsIndex,
+      },
+    },
+    right: {
+      label: formatPostSource(otherSource),
+      href: urls(locale).satoshi.posts.sourceIndex(otherSource),
+      sublink: {
+        label: "Threads",
+        href: urls(locale).satoshi.posts.sourceThreadsIndex(otherSource),
+      },
+    },
+  };
   return (
-    <PageLayout locale={locale} generateHref={generateHref}>
-      <PageHeader title={`${formatPostSource(source)} Posts`} />
+    <IndexPageLayout
+      title={`${formatPostSource(source)} Posts`}
+      locale={locale}
+      generateHref={generateHref}
+      navLinks={navLinks}
+    >
       <ul>
         {posts.map((p) => (
           <li key={p.satoshiId}>
@@ -27,11 +55,19 @@ export default async function PostsSourceIndex({
             >
               {p.subject}
             </Link>{" "}
-            <em>{p.date.toString()}</em>
+            <em>
+              (
+              {formatDate(locale, p.date, {
+                dateStyle: "medium",
+                timeStyle: "long",
+                hourCycle: "h24",
+              })}
+              )
+            </em>
           </li>
         ))}
       </ul>
-    </PageLayout>
+    </IndexPageLayout>
   );
 }
 

@@ -43,6 +43,7 @@ export const zEmailThread = z.object({
   title: z.string(),
   source: zEmailSource,
   date: z.coerce.date(),
+  url: z.string(),
 });
 export type EmailThread = z.infer<typeof zEmailThread>;
 

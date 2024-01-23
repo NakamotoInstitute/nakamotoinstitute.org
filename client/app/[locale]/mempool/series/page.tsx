@@ -17,15 +17,14 @@ export async function generateMetadata({
   };
 }
 
-function SeriesListing({
-  locale,
-  series,
-}: {
+type SeriesListingProps = {
   locale: Locale;
   series: MempoolSeries;
-}) {
+};
+
+function SeriesListing({ locale, series }: SeriesListingProps) {
   return (
-    <article className="border-b border-solid border-night py-4 first:pt-0 last:border-b-0">
+    <article className="border-b border-solid py-4 first:pt-0 last:border-b-0">
       <h2>
         <Link href={urls(locale).mempool.seriesDetail(series.slug)}>
           <em>{series.title}</em>

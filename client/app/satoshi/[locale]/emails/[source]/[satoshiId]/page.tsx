@@ -28,7 +28,13 @@ export default async function EmailDetail({
 
   return (
     <PageLayout locale={locale} generateHref={generateHref}>
-      <EmailNavigation locale={locale} previous={previous} next={next} />
+      <EmailNavigation
+        className="mb-2"
+        locale={locale}
+        source={email.source}
+        previous={previous}
+        next={next}
+      />
       <div>
         <h2 className="text-2xl">{formatEmailSource(email.source)}</h2>
         <h1 className="text-4xl">{email.subject}</h1>
@@ -63,7 +69,14 @@ export default async function EmailDetail({
           __html: email.text.replaceAll("\n", "<br />"),
         }}
       />
-      <EmailNavigation locale={locale} previous={previous} next={next} />
+      <EmailNavigation
+        className="mt-4"
+        locale={locale}
+        previous={previous}
+        next={next}
+        source={email.source}
+        reverse
+      />
     </PageLayout>
   );
 }

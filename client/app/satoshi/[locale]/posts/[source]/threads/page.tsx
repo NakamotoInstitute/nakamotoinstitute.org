@@ -1,12 +1,11 @@
 import Link from "next/link";
-import { PageHeader } from "@/app/components/PageHeader";
-import { PageLayout } from "@/app/components/PageLayout";
 import { getForumThreadsBySource } from "@/lib/api/posts";
 import { ForumPostSource, zForumPostSource } from "@/lib/api/schemas/posts";
 import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
-import { formatPostSource } from "@/utils/strings";
+import { formatPostSource, otherForumPostSource } from "@/utils/strings";
+import { IndexPageLayout } from "@satoshi/components/IndexPageLayout";
 
 export default async function PostSourceThreadsIndex({
   params: { source, locale },
@@ -15,9 +14,38 @@ export default async function PostSourceThreadsIndex({
   const generateHref = (l: Locale) =>
     urls(l).satoshi.posts.sourceThreadsIndex(source);
 
+  const otherSource = otherForumPostSource(source);
+
+  const navLinks = {
+    main: {
+      label: "View posts",
+      href: urls(locale).satoshi.posts.index,
+    },
+    left: {
+      label: "All threads",
+      href: urls(locale).satoshi.posts.threadsIndex,
+      sublink: {
+        label: "Posts",
+        href: urls(locale).satoshi.posts.index,
+      },
+    },
+    right: {
+      label: formatPostSource(otherSource),
+      href: urls(locale).satoshi.posts.sourceThreadsIndex(otherSource),
+      sublink: {
+        label: "Posts",
+        href: urls(locale).satoshi.posts.sourceIndex(otherSource),
+      },
+    },
+  };
+
   return (
-    <PageLayout locale={locale} generateHref={generateHref}>
-      <PageHeader title={`${formatPostSource(source)} Threads`} />
+    <IndexPageLayout
+      title={`${formatPostSource(source)} Threads`}
+      locale={locale}
+      generateHref={generateHref}
+      navLinks={navLinks}
+    >
       <ul>
         {threads.map((t) => (
           <li key={t.id}>
@@ -29,11 +57,11 @@ export default async function PostSourceThreadsIndex({
             >
               {t.title}
             </Link>{" "}
-            - <em>{formatDate(locale, t.date)}</em>
+            <em>({formatDate(locale, t.date)})</em>
           </li>
         ))}
       </ul>
-    </PageLayout>
+    </IndexPageLayout>
   );
 }
 

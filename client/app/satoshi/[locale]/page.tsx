@@ -4,18 +4,16 @@ import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { getLocaleParams } from "@/lib/i18n/utils";
-import { urls } from "@/lib/urls";
+import { cdnUrl, urls } from "@/lib/urls";
 import { getPage } from "@/lib/content";
 
-const SatoshiSection = ({
-  label,
-  href,
-  children,
-}: {
+type SatoshiSectionProps = {
   label: string;
   href: string;
   children: string;
-}) => {
+};
+
+const SatoshiSection = ({ label, href, children }: SatoshiSectionProps) => {
   return (
     <div>
       <Link href={href} className="text-xl font-medium">
@@ -50,12 +48,21 @@ export default async function SatoshiIndex({
           </Link>
         </p>
         <p>
-          PDF available in <Link href="#">English</Link>,{" "}
-          <Link href="#">Chinese (Simplified)</Link>,{" "}
-          <Link href="#">Chinese (Traditional)</Link>,{" "}
-          <Link href="#">Hebrew</Link>, <Link href="#">Italian</Link>,{" "}
-          <Link href="#">Japanese</Link>, <Link href="#">Russian</Link>,{" "}
-          <Link href="#">Spanish</Link>, and <Link href="#">Vietnamese</Link>
+          PDF available in{" "}
+          <Link href={cdnUrl("/docs/bitcoin.pdf")}>English</Link>,{" "}
+          <Link href={cdnUrl("/docs/bitcoin-zh-cn.pdf")}>
+            Chinese (Simplified)
+          </Link>
+          ,{" "}
+          <Link href={cdnUrl("/docs/bitcoin-zh-tw.pdf")}>
+            Chinese (Traditional)
+          </Link>
+          , <Link href={cdnUrl("/docs/bitcoin-he.pdf")}>Hebrew</Link>,{" "}
+          <Link href={cdnUrl("/docs/bitcoin-it.pdf")}>Italian</Link>,{" "}
+          <Link href={cdnUrl("/docs/bitcoin-jp.pdf")}>Japanese</Link>,{" "}
+          <Link href={cdnUrl("/docs/bitcoin-ru.pdf")}>Russian</Link>,{" "}
+          <Link href={cdnUrl("/docs/bitcoin-es.pdf")}>Spanish</Link>, and{" "}
+          <Link href={cdnUrl("/docs/bitcoin-vn.pdf")}>Vietnamese</Link>
         </p>
         <p>
           <Link href="/satoshinakamoto.asc">

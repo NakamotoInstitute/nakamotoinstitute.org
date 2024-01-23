@@ -13,5 +13,6 @@ export const zTranslationData = z.object({
   title: z.string(),
   slug: z.string(),
 });
+export type TranslationData = z.infer<typeof zTranslationData>;
 
 export const zTranslations = z.array(zTranslationData);

@@ -1,11 +1,6 @@
 import clsx from "clsx";
-import { IBM_Plex_Mono, STIX_Two_Text } from "next/font/google";
+import { IBM_Plex_Mono } from "next/font/google";
 import "../globals.css";
-
-const stix = STIX_Two_Text({
-  subsets: ["latin"],
-  variable: "--font-stix",
-});
 
 const plexMono = IBM_Plex_Mono({
   subsets: ["latin"],
@@ -13,22 +8,14 @@ const plexMono = IBM_Plex_Mono({
   weight: ["400", "500"],
 });
 
-export function RootLayout({
-  locale,
-  children,
-}: {
+type RootLayoutProps = {
   locale: Locale;
   children: React.ReactNode;
-}) {
+};
+
+export function RootLayout({ locale, children }: RootLayoutProps) {
   return (
-    <html
-      lang={locale}
-      className={clsx(
-        stix.variable,
-        plexMono.variable,
-        "bg-bone font-serif text-night",
-      )}
-    >
+    <html lang={locale} className={clsx(plexMono.variable, "font-sans")}>
       {children}
     </html>
   );

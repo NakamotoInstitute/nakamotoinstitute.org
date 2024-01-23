@@ -59,6 +59,7 @@ class ForumPostBaseModel(ORMModel):
 
 class ForumThreadBaseModel(ForumThreadJSONModel, ORMModel):
     date: datetime.datetime = Field(alias=AliasPath("posts", 0, "date"))
+    url: str = Field(alias=AliasPath("posts", 0, "url"))
 
 
 class ForumPostModel(ForumPostBaseModel):

@@ -1,9 +1,9 @@
-import { Trans } from "react-i18next/TransWithoutContext";
 import { AuthorsLinks } from "@/app/components/AuthorsLinks";
-import { formatDocDate, formatTimeAttr } from "@/utils/dates";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { Document } from "@/lib/api/schemas/library";
 import { cdnUrl } from "@/lib/urls";
+import { formatDocDate, formatTimeAttr } from "@/utils/dates";
+import { DocFormatLinks } from "./DocFormats";
 
 type DocHeaderProps = {
   locale: Locale;
@@ -15,30 +15,21 @@ export async function DocHeader({ locale, doc }: DocHeaderProps) {
 
   return (
     <>
-      <header className="mt-17 mx-auto max-w-4xl text-center">
+      <header className="mx-auto mt-6 max-w-4xl text-center">
         <h1
-          className="mb-6 text-7xl font-medium"
+          className="mb-2 text-5xl font-medium"
           dangerouslySetInnerHTML={{ __html: doc.displayTitle ?? doc.title }}
         />
         {doc.subtitle ? (
           <p className="mb-6 text-xl italic">{doc.subtitle}</p>
         ) : null}
+        <AuthorsLinks
+          className="mb-2 text-3xl font-medium"
+          itemClassName="text-gray-500 hover:text-gray-600"
+          locale={locale}
+          authors={doc.authors}
+        />
         <p className="text-2xl font-medium">
-          <Trans
-            t={t}
-            i18nKey="By <authors />"
-            components={{
-              authors: (
-                <AuthorsLinks
-                  as={"span"}
-                  locale={locale}
-                  authors={doc.authors}
-                />
-              ),
-            }}
-          />
-        </p>
-        <p className="text-xl font-medium italic opacity-60">
           <time dateTime={formatTimeAttr(doc.date, doc.granularity)}>
             {formatDocDate(locale, doc.date, doc.granularity)}
           </time>
@@ -52,7 +43,26 @@ export async function DocHeader({ locale, doc }: DocHeaderProps) {
           />
         ) : null}
       </header>
-      <hr className="mx-auto my-12 w-12 border-night border-opacity-40" />
+      <hr className="mx-auto my-6 w-12 border border-opacity-40" />
+      {doc.content ? (
+        <>
+          <DocFormatLinks
+            classes={{ root: "justify-center gap-3 font-medium" }}
+            locale={locale}
+            doc={doc}
+          />
+          <hr className="mx-auto my-6 w-12 border-opacity-40" />
+        </>
+      ) : (
+        <DocFormatLinks
+          classes={{
+            root: "text-center flex-col gap-3",
+            link: "text-lg font-medium",
+          }}
+          locale={locale}
+          doc={doc}
+        />
+      )}
     </>
   );
 }

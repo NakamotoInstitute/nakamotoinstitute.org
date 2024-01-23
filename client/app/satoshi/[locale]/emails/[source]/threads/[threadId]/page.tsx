@@ -8,34 +8,33 @@ import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import { formatEmailSource } from "@/utils/strings";
+import { EmailThreadNavigation } from "@satoshi/components/ContentNavigation";
+import { ThreadPageHeader } from "@satoshi/components/ThreadPageHeader";
 
 export const dynamicParams = false;
 
-function ThreadEmail({
-  locale,
-  email,
-  odd,
-  satoshiOnly,
-}: {
+type ThreadEmailProps = {
   locale: Locale;
   email: ThreadEmail;
   odd: boolean;
   satoshiOnly: boolean;
-}) {
+};
+
+function ThreadEmail({ locale, email, odd, satoshiOnly }: ThreadEmailProps) {
   return (
     <article
       id={email.sourceId}
       className={clsx(
-        "mb-3 border-2 border-night font-mono text-[13px] last:mb-0",
-        odd ? "bg-gray" : "bg-white",
+        "mb-3 border-2 font-mono text-[13px] last:mb-0",
+        odd ? "bg-neutral-100" : "bg-white",
       )}
     >
-      <header className={clsx(email.satoshiId && "bg-flax")}>
-        <div className="flex justify-between border-b-1 border-b-night p-2">
+      <header className={clsx(email.satoshiId && "bg-amber-200")}>
+        <div className="flex justify-between border-b p-2">
           <span className="font-bold">From: {email.sentFrom}</span>
           <Link href={{ hash: email.sourceId }}>#{email.sourceId}</Link>
         </div>
-        <div className="border-b-1 border-b-night p-2">
+        <div className="border-b p-2">
           <h2 className="text-lg font-bold">{email.subject}</h2>
           <time dateTime={email.date.toISOString()}>
             {formatDate(locale, email.date, {
@@ -44,12 +43,24 @@ function ThreadEmail({
             })}
           </time>
         </div>
-        {!satoshiOnly && email.replies.length > 0 ? (
-          <div className="border-b-1 border-night p-2">
-            {email.parentId ? (
-              <p>Replying to: {email.parent?.sourceId}</p>
+        {!satoshiOnly && (email.parent || email.replies.length > 0) ? (
+          <div className="border-b p-2">
+            {email.parent ? (
+              <div className="flex gap-2">
+                <span>Replying to:</span>
+                <Link
+                  href={{ hash: email.parent.sourceId }}
+                >{`>>${email.parent.sourceId}`}</Link>
+              </div>
             ) : null}
-            <p>Replies: {email.replies.join(", ")}</p>
+            {email.replies.length > 0 ? (
+              <div className="flex gap-2">
+                <span>Replies:</span>
+                {email.replies.map((reply) => (
+                  <Link key={reply} href={{ hash: reply }}>{`>>${reply}`}</Link>
+                ))}
+              </div>
+            ) : null}
           </div>
         ) : null}
       </header>
@@ -61,7 +72,7 @@ function ThreadEmail({
           }}
         />
       </section>
-      <footer className="flex justify-between border-t-1 border-t-night p-2">
+      <footer className="flex justify-between border-t p-2">
         <Link href={email.url}>External link</Link>
         {email.satoshiId ? (
           <Link
@@ -95,20 +106,25 @@ export default async function EmailSourceThreadDetail({
   const generateHref = (l: Locale) =>
     urls(l).satoshi.emails.sourceThreadsDetail(source, threadId);
 
-  const { thread, emails } = threadData;
+  const { thread, emails, next, previous } = threadData;
 
   return (
     <PageLayout locale={locale} generateHref={generateHref}>
-      <div className="text-center">
-        <p>{formatEmailSource(thread.source)}</p>
-        <h1 className="text-2xl">{thread.title}</h1>
-        {satoshiOnly ? (
-          <Link href={generateHref(locale)}>View all emails</Link>
-        ) : (
-          <Link href={{ query: { view: "satoshi" } }}>View Satoshi only</Link>
-        )}
-      </div>
-
+      <ThreadPageHeader
+        sourceTitle={formatEmailSource(thread.source)}
+        title={thread.title}
+        allLink={{ href: generateHref(locale), label: "emails" }}
+        externalLink={thread.url}
+        satoshiOnly={satoshiOnly}
+      >
+        <EmailThreadNavigation
+          className="mb-4"
+          locale={locale}
+          next={next}
+          previous={previous}
+          source={thread.source}
+        />
+      </ThreadPageHeader>
       {emails.map((e, index) => (
         <ThreadEmail
           key={e.sourceId}
@@ -118,6 +134,14 @@ export default async function EmailSourceThreadDetail({
           satoshiOnly={satoshiOnly}
         />
       ))}
+      <EmailThreadNavigation
+        className="mt-4"
+        locale={locale}
+        next={next}
+        previous={previous}
+        source={thread.source}
+        reverse
+      />
     </PageLayout>
   );
 }

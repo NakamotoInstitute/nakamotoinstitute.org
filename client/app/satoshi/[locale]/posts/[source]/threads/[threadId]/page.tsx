@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import clsx from "clsx";
 import { PageLayout } from "@/app/components/PageLayout";
 import { getForumThread, getForumThreads } from "@/lib/api/posts";
 import { ForumPostSource, ForumPost } from "@/lib/api/schemas/posts";
@@ -5,29 +8,25 @@ import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import { formatPostSource } from "@/utils/strings";
-import clsx from "clsx";
-import Link from "next/link";
-import { notFound } from "next/navigation";
+import { PostThreadNavigation } from "@satoshi/components/ContentNavigation";
+import { ThreadPageHeader } from "@satoshi/components/ThreadPageHeader";
 
 export const dynamicParams = false;
 
-function ThreadPost({
-  locale,
-  post,
-  odd,
-  satoshiOnly,
-}: {
+type ThreadPostProps = {
   locale: Locale;
   post: ForumPost;
   odd: boolean;
   satoshiOnly: boolean;
-}) {
+};
+
+function ThreadPost({ locale, post, odd, satoshiOnly }: ThreadPostProps) {
   return (
     <article
       id={post.sourceId}
       className={clsx(
-        "mb-3 border-2 border-night font-mono text-[13px] last:mb-0",
-        odd ? "bg-gray" : "bg-white",
+        "mb-3 border-2 font-mono text-[13px] last:mb-0",
+        odd ? "bg-neutral-100" : "bg-white",
         !satoshiOnly &&
           post.source === "p2pfoundation" && [
             "relative",
@@ -41,8 +40,8 @@ function ThreadPost({
           ],
       )}
     >
-      <header className={clsx(post.satoshiId && "bg-flax")}>
-        <div className="flex justify-between border-b-1 border-b-night p-2">
+      <header className={clsx(post.satoshiId && "bg-amber-200")}>
+        <div className="flex justify-between border-b p-2">
           <span className="font-bold">
             {post.posterUrl ? (
               <Link href={post.posterUrl}>{post.posterName}</Link>
@@ -52,7 +51,7 @@ function ThreadPost({
           </span>
           <Link href={{ hash: post.sourceId }}>#{post.sourceId}</Link>
         </div>
-        <div className="border-b-1 border-b-night p-2">
+        <div className="border-b p-2">
           <h2 className="text-lg font-bold">{post.subject}</h2>
           <time dateTime={post.date.toISOString()}>
             {formatDate(locale, post.date, {
@@ -64,13 +63,13 @@ function ThreadPost({
       </header>
       <section>
         <div
-          className="p-2 font-serif text-sm [&>.post>img]:inline"
+          className="p-2 font-sans text-sm [&>.post>img]:inline"
           dangerouslySetInnerHTML={{
             __html: post.text,
           }}
         />
       </section>
-      <footer className="flex justify-between border-t-1 border-t-night p-2">
+      <footer className="flex justify-between border-t p-2">
         <Link href={post.url}>External link</Link>
         {post.satoshiId ? (
           <Link
@@ -103,19 +102,25 @@ export default async function PostSourceThreadDetail({
   const generateHref = (l: Locale) =>
     urls(l).satoshi.posts.sourceThreadsDetail(source, threadId);
 
-  const { thread, posts } = threadData;
+  const { thread, posts, next, previous } = threadData;
 
   return (
     <PageLayout locale={locale} generateHref={generateHref}>
-      <div className="text-center">
-        <p>{formatPostSource(thread.source)}</p>
-        <h1 className="text-2xl">{thread.title}</h1>
-        {satoshiOnly ? (
-          <Link href={generateHref(locale)}>View all posts</Link>
-        ) : (
-          <Link href={{ query: { view: "satoshi" } }}>View Satoshi only</Link>
-        )}
-      </div>
+      <ThreadPageHeader
+        sourceTitle={formatPostSource(thread.source)}
+        title={thread.title}
+        allLink={{ href: generateHref(locale), label: "posts" }}
+        externalLink={thread.url}
+        satoshiOnly={satoshiOnly}
+      >
+        <PostThreadNavigation
+          className="mb-4"
+          locale={locale}
+          next={next}
+          previous={previous}
+          source={thread.source}
+        />
+      </ThreadPageHeader>
       {posts.map((p, index) => (
         <ThreadPost
           key={p.sourceId}
@@ -125,6 +130,14 @@ export default async function PostSourceThreadDetail({
           satoshiOnly={satoshiOnly}
         />
       ))}
+      <PostThreadNavigation
+        className="mt-4"
+        locale={locale}
+        next={next}
+        previous={previous}
+        source={thread.source}
+        reverse
+      />
     </PageLayout>
   );
 }

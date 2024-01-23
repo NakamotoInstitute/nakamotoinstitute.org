@@ -4,6 +4,7 @@ import languages from "@/locales/languages.json";
 import { domainToPathMapping } from "@/middleware";
 import { EmailSource } from "./api/schemas/emails";
 import { ForumPostSource } from "./api/schemas/posts";
+import { TranslationData } from "./api/schemas/shared";
 
 const APP_BASE_URL = (() => {
   switch (process.env.VERCEL_ENV) {

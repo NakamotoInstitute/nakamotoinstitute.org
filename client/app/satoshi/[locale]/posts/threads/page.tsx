@@ -1,12 +1,11 @@
-import { PageHeader } from "@/app/components/PageHeader";
-import { PageLayout } from "@/app/components/PageLayout";
+import Link from "next/link";
 import { getForumThreads } from "@/lib/api/posts";
 import { ForumPostSource, ForumThread } from "@/lib/api/schemas/posts";
 import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import { formatPostSource } from "@/utils/strings";
-import Link from "next/link";
+import { IndexPageLayout } from "@satoshi/components/IndexPageLayout";
 
 export default async function PostThreadsIndex({
   params: { locale },
@@ -23,9 +22,36 @@ export default async function PostThreadsIndex({
     },
   );
 
+  const navLinks = {
+    main: {
+      label: "View posts",
+      href: urls(locale).satoshi.posts.index,
+    },
+    left: {
+      label: formatPostSource("p2pfoundation"),
+      href: urls(locale).satoshi.posts.sourceThreadsIndex("p2pfoundation"),
+      sublink: {
+        label: "Posts",
+        href: urls(locale).satoshi.posts.sourceIndex("p2pfoundation"),
+      },
+    },
+    right: {
+      label: formatPostSource("bitcointalk"),
+      href: urls(locale).satoshi.posts.sourceThreadsIndex("bitcointalk"),
+      sublink: {
+        label: "Posts",
+        href: urls(locale).satoshi.posts.sourceIndex("bitcointalk"),
+      },
+    },
+  };
+
   return (
-    <PageLayout locale={locale} generateHref={generateHref}>
-      <PageHeader title="Forum Threads" />
+    <IndexPageLayout
+      title="Forum Threads"
+      locale={locale}
+      generateHref={generateHref}
+      navLinks={navLinks}
+    >
       <section>
         {Object.entries(sortedThreads).map(([source, sourceThreads]) => {
           const typedSource = source as ForumPostSource;
@@ -43,7 +69,7 @@ export default async function PostThreadsIndex({
                     >
                       {thread.title}
                     </Link>{" "}
-                    - <em>{formatDate(locale, thread.date)}</em>
+                    <em>({formatDate(locale, thread.date)})</em>
                   </li>
                 ))}
               </ul>
@@ -51,7 +77,7 @@ export default async function PostThreadsIndex({
           );
         })}
       </section>
-    </PageLayout>
+    </IndexPageLayout>
   );
 }
 

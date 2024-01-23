@@ -1,11 +1,11 @@
-import { PageLayout } from "@/app/components/PageLayout";
-import { PageHeader } from "@/app/components/PageHeader";
+import Link from "next/link";
 import { getEmailThreadsBySource } from "@/lib/api/emails";
 import { EmailSource, zEmailSource } from "@/lib/api/schemas/emails";
 import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
-import { formatEmailSource } from "@/utils/strings";
-import Link from "next/link";
+import { formatEmailSource, otherEmailSource } from "@/utils/strings";
+import { IndexPageLayout } from "@satoshi/components/IndexPageLayout";
+import { formatDate } from "@/utils/dates";
 
 export const dynamicParams = false;
 
@@ -16,9 +16,38 @@ export default async function EmailSourceThreadsIndex({
   const generateHref = (l: Locale) =>
     urls(l).satoshi.emails.sourceThreadsIndex(source);
 
+  const otherSource = otherEmailSource(source);
+
+  const navLinks = {
+    main: {
+      label: "View emails",
+      href: urls(locale).satoshi.emails.index,
+    },
+    left: {
+      label: "All threads",
+      href: urls(locale).satoshi.emails.threadsIndex,
+      sublink: {
+        label: "Emails",
+        href: urls(locale).satoshi.emails.index,
+      },
+    },
+    right: {
+      label: formatEmailSource(otherSource, true),
+      href: urls(locale).satoshi.emails.sourceThreadsIndex(otherSource),
+      sublink: {
+        label: "Emails",
+        href: urls(locale).satoshi.emails.sourceIndex(otherSource),
+      },
+    },
+  };
+
   return (
-    <PageLayout locale={locale} generateHref={generateHref}>
-      <PageHeader title={`${formatEmailSource(source)} Threads`} />
+    <IndexPageLayout
+      title={`${formatEmailSource(source)} Threads`}
+      locale={locale}
+      generateHref={generateHref}
+      navLinks={navLinks}
+    >
       <ul>
         {threads.map((t) => (
           <li key={t.id}>
@@ -29,11 +58,12 @@ export default async function EmailSourceThreadsIndex({
               )}
             >
               {t.title}
-            </Link>
+            </Link>{" "}
+            <em>({formatDate(locale, t.date)})</em>
           </li>
         ))}
       </ul>
-    </PageLayout>
+    </IndexPageLayout>
   );
 }
 

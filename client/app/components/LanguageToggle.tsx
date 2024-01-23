@@ -44,7 +44,7 @@ export function LanguageToggle({
     <div>
       <button
         type="button"
-        className="p-1 text-sm focus:outline-none"
+        className="rounded border-1 border-blue-500 px-3 py-2 text-sm text-blue-500 hover:border-blue-600 hover:text-blue-500 focus:outline-none"
         ref={refs.setReference}
         {...getReferenceProps({
           onClick() {
@@ -57,7 +57,7 @@ export function LanguageToggle({
       </button>
       {isOpen ? (
         <div
-          className="bg-bone rounded-sm p-2 text-sm shadow-lg"
+          className="rounded-sm bg-white p-2 text-sm shadow-lg"
           ref={refs.setFloating}
           style={floatingStyles}
           {...getFloatingProps()}
@@ -65,9 +65,7 @@ export function LanguageToggle({
           <ul>
             {links.map((link) => (
               <li key={link.href} className="mb-1 last:mb-0">
-                <Link href={link.href} className="text-night">
-                  {link.name}
-                </Link>
+                <Link href={link.href}>{link.name}</Link>
               </li>
             ))}
           </ul>

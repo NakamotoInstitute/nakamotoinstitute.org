@@ -1,5 +1,5 @@
 import { PageLayout } from "@/app/components/PageLayout";
-import { LinkedItemsList } from "@/app/components/LinkedItemsList";
+import { RenderedItemsList } from "@/app/components/RenderedItemsList";
 import { PageHeader } from "@/app/components/PageHeader";
 import { getQuoteCategories, getQuoteCategory } from "@/lib/api/quotes";
 import { Quote } from "@/lib/api/schemas/quotes";
@@ -50,18 +50,25 @@ function SatoshiQuote({ locale, quote }: SatoshiQuoteProps) {
   }
 
   return (
-    <article className="border-b border-night py-4 first:pt-0 last:border-b-0">
+    <article className="border-b py-4 first:pt-0 last:border-b-0">
       <h2 className="text-2xl">{subject}</h2>
       <p>
         <time>{formatDate(locale, quote.date)}</time> -{" "}
         <Link href={url}>{label}</Link>
       </p>
       <p className="py-2">{quote.text}</p>
-      <LinkedItemsList
-        classes={{ root: "text-sm" }}
+      <RenderedItemsList
+        className="text-sm"
         locale={locale}
         items={quote.categories}
-        urlFunc={(_locale, _slug) => urls(_locale).satoshi.quoteCategory(_slug)}
+        renderItem={(item) => (
+          <Link
+            key={item.slug}
+            href={urls(locale).satoshi.quoteCategory(item.slug)}
+          >
+            {item.name}
+          </Link>
+        )}
         options={{ type: "unit" }}
       />
     </article>

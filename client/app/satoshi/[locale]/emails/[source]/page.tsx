@@ -1,12 +1,12 @@
 import Link from "next/link";
-import { PageLayout } from "@/app/components/PageLayout";
 import { EmailSource } from "@/lib/api/schemas/emails";
 import { getSatoshiEmailsBySource } from "@/lib/api/emails";
-import { formatEmailSource } from "@/utils/strings";
+import { formatEmailSource, otherEmailSource } from "@/utils/strings";
 import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
-import { PageHeader } from "@/app/components/PageHeader";
 import { zEmailSource } from "@/lib/api/schemas/emails";
+import { IndexPageLayout } from "@satoshi/components/IndexPageLayout";
+import { formatDate } from "@/utils/dates";
 
 export const dynamicParams = false;
 
@@ -17,9 +17,38 @@ export default async function EmailsSourceIndex({
   const generateHref = (l: Locale) =>
     urls(l).satoshi.emails.sourceIndex(source);
 
+  const otherSource = otherEmailSource(source);
+
+  const navLinks = {
+    main: {
+      label: "View threads",
+      href: urls(locale).satoshi.emails.sourceThreadsIndex(source),
+    },
+    left: {
+      label: "All emails",
+      href: urls(locale).satoshi.emails.index,
+      sublink: {
+        label: "Threads",
+        href: urls(locale).satoshi.emails.threadsIndex,
+      },
+    },
+    right: {
+      label: formatEmailSource(otherSource, true),
+      href: urls(locale).satoshi.emails.sourceIndex(otherSource),
+      sublink: {
+        label: "Threads",
+        href: urls(locale).satoshi.emails.sourceThreadsIndex(otherSource),
+      },
+    },
+  };
+
   return (
-    <PageLayout locale={locale} generateHref={generateHref}>
-      <PageHeader title={`${formatEmailSource(source)} Emails`} />
+    <IndexPageLayout
+      title={`${formatEmailSource(source)} Emails`}
+      locale={locale}
+      generateHref={generateHref}
+      navLinks={navLinks}
+    >
       <ul>
         {emails.map((e) => (
           <li key={e.satoshiId}>
@@ -31,11 +60,19 @@ export default async function EmailsSourceIndex({
             >
               {e.subject}
             </Link>{" "}
-            <em>{e.date.toString()}</em>
+            <em>
+              (
+              {formatDate(locale, e.date, {
+                dateStyle: "medium",
+                timeStyle: "long",
+                hourCycle: "h24",
+              })}
+              )
+            </em>
           </li>
         ))}
       </ul>
-    </PageLayout>
+    </IndexPageLayout>
   );
 }
 

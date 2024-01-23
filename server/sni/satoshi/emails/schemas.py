@@ -30,6 +30,7 @@ class EmailJSONModel(BaseModel):
 
 class EmailThreadBaseModel(EmailThreadJSONModel, ORMModel):
     date: datetime.datetime = Field(alias=AliasPath("emails", 0, "date"))
+    url: str = Field(alias=AliasPath("emails", 0, "url"))
 
 
 class EmailReplyModel(ORMModel):

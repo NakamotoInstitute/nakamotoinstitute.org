@@ -26,11 +26,19 @@ export function formatListWithPlaceholders(
   return formatter.format(placeholders);
 }
 
-export function formatEmailSource(source: EmailSource) {
+export function otherEmailSource(source: EmailSource) {
+  return source === "cryptography" ? "bitcoin-list" : "cryptography";
+}
+
+export function formatEmailSource(source: EmailSource, short: boolean = false) {
   return {
     "bitcoin-list": "bitcoin-list",
-    cryptography: "Cryptography Mailing List",
+    cryptography: short ? "Cryptography" : "Cryptography Mailing List",
   }[source];
+}
+
+export function otherForumPostSource(source: ForumPostSource) {
+  return source === "bitcointalk" ? "p2pfoundation" : "bitcointalk";
 }
 
 export function formatPostSource(source: ForumPostSource) {

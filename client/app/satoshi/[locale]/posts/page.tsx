@@ -1,18 +1,44 @@
 import Link from "next/link";
-import { PageLayout } from "@/app/components/PageLayout";
 import { getSatoshiPosts } from "@/lib/api/posts";
 import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
-import { PageHeader } from "@/app/components/PageHeader";
+import { formatPostSource } from "@/utils/strings";
+import { IndexPageLayout } from "@satoshi/components/IndexPageLayout";
 
 export default async function PostsIndex({ params: { locale } }: LocaleParams) {
   const posts = await getSatoshiPosts();
   const generateHref = (l: Locale) => urls(l).satoshi.posts.index;
 
+  const navLinks = {
+    main: {
+      label: "View threads",
+      href: urls(locale).satoshi.posts.threadsIndex,
+    },
+    left: {
+      label: formatPostSource("p2pfoundation"),
+      href: urls(locale).satoshi.posts.sourceIndex("p2pfoundation"),
+      sublink: {
+        label: "Threads",
+        href: urls(locale).satoshi.posts.sourceThreadsIndex("p2pfoundation"),
+      },
+    },
+    right: {
+      label: formatPostSource("bitcointalk"),
+      href: urls(locale).satoshi.posts.sourceIndex("bitcointalk"),
+      sublink: {
+        label: "Threads",
+        href: urls(locale).satoshi.posts.sourceThreadsIndex("bitcointalk"),
+      },
+    },
+  };
   return (
-    <PageLayout locale={locale} generateHref={generateHref}>
-      <PageHeader title="Forum Posts" />
+    <IndexPageLayout
+      title="Forum Posts"
+      locale={locale}
+      generateHref={generateHref}
+      navLinks={navLinks}
+    >
       <ul>
         {posts.map((p) => (
           <li key={p.satoshiId}>
@@ -25,16 +51,18 @@ export default async function PostsIndex({ params: { locale } }: LocaleParams) {
               {p.subject}
             </Link>{" "}
             <em>
+              (
               {formatDate(locale, p.date, {
-                dateStyle: "long",
+                dateStyle: "medium",
                 timeStyle: "long",
                 hourCycle: "h24",
               })}
+              )
             </em>
           </li>
         ))}
       </ul>
-    </PageLayout>
+    </IndexPageLayout>
   );
 }
 

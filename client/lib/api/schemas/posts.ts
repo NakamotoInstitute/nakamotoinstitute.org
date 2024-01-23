@@ -36,6 +36,7 @@ export const zForumThread = z.object({
   title: z.string(),
   source: zForumPostSource,
   date: z.coerce.date(),
+  url: z.string(),
 });
 export type ForumThread = z.infer<typeof zForumThread>;
 

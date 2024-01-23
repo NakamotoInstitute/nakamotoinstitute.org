@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import { Metadata, ResolvingMetadata } from "next";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 
@@ -19,6 +18,10 @@ export async function generateMetadata(
   };
 }
 
-export default function QuotesLayout({ children }: { children: ReactNode }) {
+type QuotesLayoutProps = {
+  children: React.ReactNode;
+};
+
+export default function QuotesLayout({ children }: QuotesLayoutProps) {
   return children;
 }
