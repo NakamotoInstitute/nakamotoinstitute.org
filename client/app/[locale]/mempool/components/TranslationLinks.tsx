@@ -1,8 +1,9 @@
-import { ElementType } from "react";
 import Link from "next/link";
-import languages from "@/locales/languages.json";
+import { ElementType } from "react";
+
 import { RenderedItemsList } from "@/app/components/RenderedItemsList";
 import { TranslationData } from "@/lib/api/schemas/shared";
+import languages from "@/locales/languages.json";
 
 type TranslationLinksProps = {
   as?: ElementType;

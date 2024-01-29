@@ -30,6 +30,7 @@ export const zForumPostDetail = z.object({
   previous: zSatoshiForumPost.nullable(),
   next: zSatoshiForumPost.nullable(),
 });
+export type ForumPostDetail = z.infer<typeof zForumPostDetail>;
 
 export const zForumThread = z.object({
   id: z.number().int().min(1),

@@ -1,11 +1,26 @@
+import { Metadata } from "next";
 import Link from "next/link";
+
 import { getEmailThreads } from "@/lib/api/emails";
 import { EmailSource, EmailThread } from "@/lib/api/schemas/emails";
+import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import { formatEmailSource } from "@/utils/strings";
+
 import { IndexPageLayout } from "@satoshi/components/IndexPageLayout";
+
+export const dynamicParams = false;
+
+export async function generateMetadata({
+  params: { locale },
+}: LocaleParams): Promise<Metadata> {
+  const { t } = await i18nTranslation(locale);
+  return {
+    title: t("Email Threads"),
+  };
+}
 
 export default async function EmailThreadsIndex({
   params: { locale },

@@ -1,8 +1,10 @@
 import { notFound } from "next/navigation";
+
 import fetchAPI from "./fetchAPI";
 import {
   zMempoolIndex,
   zMempoolPost,
+  zMempoolPostIndex,
   zMempoolSeriesDetail,
   zMempoolSeriesIndex,
 } from "./schemas/mempool";
@@ -19,6 +21,14 @@ export async function getMempoolPost(slug: string, locale: Locale) {
     notFound();
   }
   return zMempoolPost.parse(await res.json());
+}
+
+export async function getLatestMempoolPost(locale: Locale) {
+  const res = await fetchAPI(`/mempool/latest?locale=${locale}`);
+  if (res.status === 404) {
+    return null;
+  }
+  return zMempoolPostIndex.parse(await res.json());
 }
 
 export async function getMempoolParams() {
@@ -42,4 +52,12 @@ export async function getMempoolSeries(slug: string, locale: Locale) {
 export async function getMempoolSeriesParams() {
   const res = await fetchAPI("/mempool/series/params");
   return zSlugParamsResponse.parse(await res.json());
+}
+
+export async function getMempoolFeed(
+  locale: Locale,
+  format: "rss" | "atom" = "rss",
+) {
+  const res = await fetchAPI(`/mempool/feed?locale=${locale}&format=${format}`);
+  return await res.text();
 }

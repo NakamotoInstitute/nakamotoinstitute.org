@@ -1,5 +1,5 @@
 from enum import Enum, unique
-from typing import Literal
+from typing import Any, Literal
 
 from pydantic import model_validator
 from pydantic_settings import BaseSettings
@@ -11,11 +11,21 @@ class Settings(BaseSettings):
     )
     SQLALCHEMY_TRACK_MODIFICATIONS: bool | None = False
     ENVIRONMENT: Literal["development", "production"] = "production"
+    BASE_URL: str
     CDN_ACCESS_KEY: str | None = None
     CDN_SECRET_KEY: str | None = None
     CDN_BUCKET_NAME: str | None = None
     CDN_ENDPOINT_URL: str | None = None
     CDN_BASE_URL: str | None = None
+
+    @model_validator(mode="before")
+    @classmethod
+    def check_base_url(cls, data: Any) -> Any:
+        if isinstance(data, dict):
+            if "BASE_URL" not in data:
+                if data.get("ENVIRONMENT") == "development":
+                    data["BASE_URL"] = "http://localhost:8000"
+        return data
 
     @model_validator(mode="after")
     def check_cdn_settings(self) -> "Settings":

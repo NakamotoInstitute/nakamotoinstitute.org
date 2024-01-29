@@ -1,12 +1,13 @@
+import Link from "next/link";
+
+import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
 import { RenderedItemsList } from "@/app/components/RenderedItemsList";
-import { PageHeader } from "@/app/components/PageHeader";
 import { getQuoteCategories, getQuoteCategory } from "@/lib/api/quotes";
 import { Quote } from "@/lib/api/schemas/quotes";
 import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
-import Link from "next/link";
 
 export async function generateMetadata({
   params: { slug },

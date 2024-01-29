@@ -1,13 +1,26 @@
+import { Metadata } from "next";
 import Link from "next/link";
+
 import { getEmailThreadsBySource } from "@/lib/api/emails";
 import { EmailSource, zEmailSource } from "@/lib/api/schemas/emails";
+import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
-import { formatEmailSource, otherEmailSource } from "@/utils/strings";
-import { IndexPageLayout } from "@satoshi/components/IndexPageLayout";
 import { formatDate } from "@/utils/dates";
+import { formatEmailSource, otherEmailSource } from "@/utils/strings";
+
+import { IndexPageLayout } from "@satoshi/components/IndexPageLayout";
 
 export const dynamicParams = false;
+
+export async function generateMetadata({
+  params: { locale, source },
+}: LocaleParams<{ source: EmailSource }>): Promise<Metadata> {
+  const { t } = await i18nTranslation(locale);
+  return {
+    title: t("{{source}} Threads", { source: formatEmailSource(source) }),
+  };
+}
 
 export default async function EmailSourceThreadsIndex({
   params: { locale, source },
@@ -21,7 +34,7 @@ export default async function EmailSourceThreadsIndex({
   const navLinks = {
     main: {
       label: "View emails",
-      href: urls(locale).satoshi.emails.index,
+      href: urls(locale).satoshi.emails.sourceIndex(source),
     },
     left: {
       label: "All threads",

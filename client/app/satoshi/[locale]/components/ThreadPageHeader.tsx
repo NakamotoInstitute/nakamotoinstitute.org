@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import { IndexLink } from "./IndexNavigation";
 
 type ThreadPageHeaderProps = {

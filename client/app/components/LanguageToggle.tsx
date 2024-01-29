@@ -1,15 +1,15 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
 import {
   autoUpdate,
   useClick,
-  useFloating,
-  useInteractions,
   useDismiss,
+  useFloating,
   useFocus,
+  useInteractions,
 } from "@floating-ui/react";
+import Link from "next/link";
+import { useState } from "react";
 
 type LanguageLink = { name: string; href: string };
 

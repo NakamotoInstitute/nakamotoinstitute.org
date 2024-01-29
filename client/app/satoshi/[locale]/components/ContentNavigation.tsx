@@ -1,3 +1,6 @@
+import clsx from "clsx";
+import Link from "next/link";
+
 import {
   EmailSource,
   EmailThread,
@@ -11,8 +14,7 @@ import {
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { urls } from "@/lib/urls";
 import { formatEmailSource, formatPostSource } from "@/utils/strings";
-import clsx from "clsx";
-import Link from "next/link";
+
 import { IndexLink } from "./IndexNavigation";
 
 type ContentNavigationProps = {

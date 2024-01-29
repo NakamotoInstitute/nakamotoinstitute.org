@@ -1,5 +1,6 @@
-import { defaultLocale, locales } from "@/i18n";
 import { NextRequest, NextResponse } from "next/server";
+
+import { defaultLocale, locales } from "@/i18n";
 
 // Portions of i18n middleware code adapted from next-intl
 // https://github.com/amannn/next-intl

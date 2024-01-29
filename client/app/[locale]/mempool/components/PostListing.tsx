@@ -1,11 +1,13 @@
-import Link from "next/link";
 import clsx from "clsx";
+import Link from "next/link";
 import { Trans } from "react-i18next/TransWithoutContext";
+
+import { AuthorsLinks } from "@/app/components/AuthorsLinks";
+import { MempoolPostIndex } from "@/lib/api/schemas/mempool";
+import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
-import { AuthorsLinks } from "@/app/components/AuthorsLinks";
-import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
-import { MempoolPostIndex } from "@/lib/api/schemas/mempool";
+
 import { TranslationLinks } from "../components/TranslationLinks";
 
 type PostListingProps = {

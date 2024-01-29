@@ -1,12 +1,14 @@
+import { Metadata } from "next";
+import Link from "next/link";
+
+import { PageHeader } from "@/app/components/PageHeader";
+import { PageLayout } from "@/app/components/PageLayout";
 import { getMempoolPosts } from "@/lib/api/mempool";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { getLocaleParams } from "@/lib/i18n/utils";
-import { PageLayout } from "@/app/components/PageLayout";
-import { PostListing } from "./components/PostListing";
 import { urls } from "@/lib/urls";
-import Link from "next/link";
-import { PageHeader } from "@/app/components/PageHeader";
-import { Metadata } from "next";
+
+import { PostListing } from "./components/PostListing";
 
 export async function generateMetadata({
   params: { locale },

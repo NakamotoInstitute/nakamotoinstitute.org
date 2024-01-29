@@ -1,21 +1,35 @@
+import clsx from "clsx";
+import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import clsx from "clsx";
+
 import { PageLayout } from "@/app/components/PageLayout";
 import { getEmailThread, getEmailThreads } from "@/lib/api/emails";
-import { EmailSource, ThreadEmail } from "@/lib/api/schemas/emails";
+import { EmailSource, EmailWithParent } from "@/lib/api/schemas/emails";
+import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import { formatEmailSource } from "@/utils/strings";
+
 import { EmailThreadNavigation } from "@satoshi/components/ContentNavigation";
 import { ThreadPageHeader } from "@satoshi/components/ThreadPageHeader";
 
 export const dynamicParams = false;
 
+export async function generateMetadata({
+  params: { locale, source, threadId },
+}: LocaleParams<{ source: EmailSource; threadId: string }>): Promise<Metadata> {
+  const threadData = await getEmailThread(source, threadId);
+  const { t } = await i18nTranslation(locale);
+  return {
+    title: t("{{title}} - Thread", { title: threadData.thread.title }),
+  };
+}
+
 type ThreadEmailProps = {
   locale: Locale;
-  email: ThreadEmail;
+  email: EmailWithParent;
   odd: boolean;
   satoshiOnly: boolean;
 };

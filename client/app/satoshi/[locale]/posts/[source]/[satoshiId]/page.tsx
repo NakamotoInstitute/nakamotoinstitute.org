@@ -1,4 +1,7 @@
+import { Metadata } from "next";
 import Link from "next/link";
+import { notFound } from "next/navigation";
+
 import { PageLayout } from "@/app/components/PageLayout";
 import { getForumPost, getSatoshiPosts } from "@/lib/api/posts";
 import { ForumPostSource } from "@/lib/api/schemas/posts";
@@ -7,8 +10,22 @@ import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import { formatPostSource } from "@/utils/strings";
-import { notFound } from "next/navigation";
+
 import { PostNavigation } from "@satoshi/components/ContentNavigation";
+
+export const dynamicParams = false;
+
+export async function generateMetadata({
+  params: { source, satoshiId },
+}: LocaleParams<{
+  source: ForumPostSource;
+  satoshiId: string;
+}>): Promise<Metadata> {
+  const postData = await getForumPost(source, satoshiId);
+  return {
+    title: postData.post.subject,
+  };
+}
 
 export default async function PostDetail({
   params: { source, satoshiId, locale },

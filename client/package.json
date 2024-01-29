@@ -10,12 +10,12 @@
     "translate:extract": "i18next -c ./i18next-parser.config.js --fail-on-warnings"
   },
   "dependencies": {
-    "@floating-ui/react": "^0.26.6",
+    "@floating-ui/react": "^0.26.7",
     "@types/hast": "^3.0.3",
     "big.js": "^6.2.1",
     "clsx": "^2.1.0",
     "hast-util-to-jsx-runtime": "^2.3.0",
-    "i18next": "^23.7.18",
+    "i18next": "^23.7.20",
     "i18next-parser": "^8.12.0",
     "i18next-resources-to-backend": "^1.2.0",
     "next": "14.1.0",
@@ -36,8 +36,9 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/big.js": "^6.2.2",
-    "@types/node": "^20.11.5",
+    "@types/node": "^20.11.7",
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
     "autoprefixer": "^10.4.17",

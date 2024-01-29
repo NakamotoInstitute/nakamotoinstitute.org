@@ -1,6 +1,7 @@
-import { PageLayout, PageLayoutProps } from "@/app/components/PageLayout";
 import { PageHeader } from "@/app/components/PageHeader";
-import { IndexNavigation, IndexLinks } from "./IndexNavigation";
+import { PageLayout, PageLayoutProps } from "@/app/components/PageLayout";
+
+import { IndexLinks, IndexNavigation } from "./IndexNavigation";
 
 type IndexPageLayoutProps = PageLayoutProps & {
   title: string;

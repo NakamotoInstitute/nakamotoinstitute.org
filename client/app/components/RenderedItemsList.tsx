@@ -1,4 +1,5 @@
 import { ElementType, Fragment } from "react";
+
 import { formatListWithPlaceholders } from "@/utils/strings";
 
 type RenderFunction<T> = (item: T, index: number) => React.ReactNode;

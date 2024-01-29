@@ -1,17 +1,19 @@
+import { Metadata } from "next";
+import Link from "next/link";
+import { Trans } from "react-i18next/TransWithoutContext";
+
 import { Markdown } from "@/app/components/Markdown";
+import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
-import { fetchPriceHistory, getSkeptics } from "@/lib/api/skeptics";
 import { Price } from "@/lib/api/schemas/skeptics";
-import { Skeptic } from "./components/Skeptic";
+import { fetchPriceHistory, getSkeptics } from "@/lib/api/skeptics";
+import { getPage } from "@/lib/content";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
-import { PageHeader } from "@/app/components/PageHeader";
-import Link from "next/link";
 import { formatDate } from "@/utils/dates";
-import { Metadata } from "next";
-import { Trans } from "react-i18next/TransWithoutContext";
-import { getPage } from "@/lib/content";
+
+import { SkepticListing } from "./components/SkepticListing";
 
 export async function generateMetadata({
   params: { locale },
@@ -80,7 +82,12 @@ export default async function TheSkepticsPage({
       {error ? <div>{t("Error loading prices")}</div> : null}
       <section>
         {skeptics.map((s) => (
-          <Skeptic key={s.slug} locale={locale} skeptic={s} prices={prices} />
+          <SkepticListing
+            key={s.slug}
+            locale={locale}
+            skeptic={s}
+            prices={prices}
+          />
         ))}
       </section>
     </PageLayout>

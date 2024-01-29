@@ -1,17 +1,34 @@
+import clsx from "clsx";
+import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import clsx from "clsx";
+
 import { PageLayout } from "@/app/components/PageLayout";
 import { getForumThread, getForumThreads } from "@/lib/api/posts";
-import { ForumPostSource, ForumPost } from "@/lib/api/schemas/posts";
+import { ForumPost, ForumPostSource } from "@/lib/api/schemas/posts";
+import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import { formatPostSource } from "@/utils/strings";
+
 import { PostThreadNavigation } from "@satoshi/components/ContentNavigation";
 import { ThreadPageHeader } from "@satoshi/components/ThreadPageHeader";
 
 export const dynamicParams = false;
+
+export async function generateMetadata({
+  params: { locale, source, threadId },
+}: LocaleParams<{
+  source: ForumPostSource;
+  threadId: string;
+}>): Promise<Metadata> {
+  const threadData = await getForumThread(source, threadId);
+  const { t } = await i18nTranslation(locale);
+  return {
+    title: t("{{title}} - Thread", { title: threadData.thread.title }),
+  };
+}
 
 type ThreadPostProps = {
   locale: Locale;

@@ -13,6 +13,14 @@
 }
 
 @layer components {
+  .page-content > h2 {
+      @apply mb-2 text-3xl font-medium;
+  }
+
+  .page-content > p {
+    @apply mb-4;
+  }
+
   .twbs-container {
     @apply mx-auto px-3;
     @apply w-full max-w-4xl;

@@ -1,12 +1,14 @@
 "use client";
 
-import { useState } from "react";
 import clsx from "clsx";
 import Link from "next/link";
-import { LanguageToggle, ToggleLinkProps } from "./LanguageToggle";
+import { useState } from "react";
+
 import languages from "@/locales/languages.json";
 
-type NavLink = { href: string; label: string };
+import { LanguageToggle, ToggleLinkProps } from "./LanguageToggle";
+
+export type NavLink = { href: string; label: string };
 
 export function Navbar({
   locale,

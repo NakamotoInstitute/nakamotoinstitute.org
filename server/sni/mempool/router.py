@@ -1,12 +1,15 @@
 from typing import List
 
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Response
 from sqlalchemy.orm import Session
 
 from sni.config import LocaleType
 from sni.database import get_db
+from sni.shared.feed import FeedFormat
+from sni.shared.responses import AtomResponse, RSSResponse
 from sni.shared.schemas import SlugParamModel
 
+from .feed import generate_mempool_feed
 from .schemas import (
     MempoolPostIndexModel,
     MempoolPostModel,
@@ -60,7 +63,7 @@ def get_mempool_posts(locale: LocaleType = "en", db: Session = Depends(get_db)):
     return get_all_posts_by_locale(db_session=db, locale=locale)
 
 
-@router.get("/latest", response_model=MempoolPostModel)
+@router.get("/latest", response_model=MempoolPostIndexModel)
 def get_latest_mempool_post(locale: LocaleType = "en", db: Session = Depends(get_db)):
     post = get_latest_post(db_session=db, locale=locale)
     if not post:
@@ -73,6 +76,21 @@ def get_latest_mempool_post(locale: LocaleType = "en", db: Session = Depends(get
 def get_mempool_params(db: Session = Depends(get_db)):
     posts = get_all_posts(db_session=db)
     return [{"locale": post.locale, "slug": post.slug} for post in posts]
+
+
+@router.get("/feed", response_class=Response)
+async def generate_feed(
+    locale: LocaleType = "en",
+    format: FeedFormat = FeedFormat.rss,
+    db: Session = Depends(get_db),
+):
+    posts = get_all_posts_by_locale(db_session=db, locale=locale)
+    feed = generate_mempool_feed(posts, locale, format)
+
+    if format == FeedFormat.rss:
+        return RSSResponse(content=feed.rss_str(pretty=True))
+    else:
+        return AtomResponse(content=feed.atom_str(pretty=True))
 
 
 @router.get("/{slug}", response_model=MempoolPostModel)

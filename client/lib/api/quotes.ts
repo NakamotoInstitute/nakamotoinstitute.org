@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+
 import fetchAPI from "./fetchAPI";
 import { zQuoteCategoryDetail, zQuoteCategoryIndex } from "./schemas/quotes";
 

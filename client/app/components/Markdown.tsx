@@ -1,10 +1,13 @@
+import Link from "next/link";
+import Script from "next/script";
 import ReactMarkdown, { Options } from "react-markdown";
-import remarkGfm from "remark-gfm";
-import remarkMath from "remark-math";
-import remarkDefinitionList from "remark-definition-list";
 import rehypeMathjax from "rehype-mathjax/browser";
 import rehypeRaw from "rehype-raw";
-import Script from "next/script";
+import remarkDefinitionList from "remark-definition-list";
+import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
+
+import { toFullUrl } from "@/lib/urls";
 
 type MarkdownProps = {
   className?: string;
@@ -70,6 +73,24 @@ export async function Markdown({
         remarkPlugins={mergedRemarkPlugins}
         rehypePlugins={mergedRehypePlugins}
         remarkRehypeOptions={mergedRemarkRehypeOptions}
+        components={{
+          a(props) {
+            const { children, href, ref, ...rest } = props;
+            if (href?.startsWith("/")) {
+              return (
+                // Todo: figure out how to forward this ref
+                <Link href={toFullUrl(href)} {...rest}>
+                  {children}
+                </Link>
+              );
+            }
+            return (
+              <a ref={ref} href={href} {...rest}>
+                {children}
+              </a>
+            );
+          },
+        }}
       >
         {children}
       </ReactMarkdown>

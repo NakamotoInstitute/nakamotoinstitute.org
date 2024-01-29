@@ -1,11 +1,12 @@
 import { getNumericId } from "@/utils/strings";
+
 import fetchAPI from "./fetchAPI";
 import {
   ForumPostSource,
-  zForumPostIndex,
-  zForumThreadIndex,
-  zForumThreadDetail,
   zForumPostDetail,
+  zForumPostIndex,
+  zForumThreadDetail,
+  zForumThreadIndex,
 } from "./schemas/posts";
 
 export async function getSatoshiPosts() {

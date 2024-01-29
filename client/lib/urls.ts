@@ -2,9 +2,9 @@ import { ToggleLinkProps } from "@/app/components/LanguageToggle";
 import { locales } from "@/i18n";
 import languages from "@/locales/languages.json";
 import { domainToPathMapping } from "@/middleware";
+
 import { EmailSource } from "./api/schemas/emails";
 import { ForumPostSource } from "./api/schemas/posts";
-import { TranslationData } from "./api/schemas/shared";
 
 const APP_BASE_URL = (() => {
   switch (process.env.VERCEL_ENV) {
@@ -19,7 +19,7 @@ const APP_BASE_URL = (() => {
 
 const satoshiBase = "/satoshi";
 
-const toFullUrl = (relativeUrl: string) => {
+export const toFullUrl = (relativeUrl: string) => {
   let baseUrl = APP_BASE_URL;
   // if the relativeURL matches a path mapped to a specific domain,
   // use that domain to build the full URL
@@ -72,11 +72,14 @@ export const urls = (locale: Locale) => {
       post: (slug: string) => getUrl(`/mempool/${slug}`),
       seriesIndex: getUrl("/mempool/series"),
       seriesDetail: (slug: string) => getUrl(`/mempool/series/${slug}`),
+      rss: getUrl("/mempool/feed.xml"),
+      atom: getUrl("/mempool/atom.xml"),
     },
     podcast: {
       index: getUrl("/podcast"),
       episode: (slug: string) => getUrl(`/podcast/${slug}`),
       episodeMp3: (slug: string) => cdnUrl(`/cryptomises/${slug}.mp3`),
+      rss: getUrl("/podcast/feed.xml"),
     },
     satoshi: {
       index: getSatoshiUrl("/"),

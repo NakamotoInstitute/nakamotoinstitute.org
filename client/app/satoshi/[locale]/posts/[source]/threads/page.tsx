@@ -1,11 +1,26 @@
+import { Metadata } from "next";
 import Link from "next/link";
+
 import { getForumThreadsBySource } from "@/lib/api/posts";
 import { ForumPostSource, zForumPostSource } from "@/lib/api/schemas/posts";
+import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import { formatPostSource, otherForumPostSource } from "@/utils/strings";
+
 import { IndexPageLayout } from "@satoshi/components/IndexPageLayout";
+
+export const dynamicParams = false;
+
+export async function generateMetadata({
+  params: { locale, source },
+}: LocaleParams<{ source: ForumPostSource }>): Promise<Metadata> {
+  const { t } = await i18nTranslation(locale);
+  return {
+    title: t("{{source}} Threads", { source: formatPostSource(source) }),
+  };
+}
 
 export default async function PostSourceThreadsIndex({
   params: { source, locale },
@@ -19,7 +34,7 @@ export default async function PostSourceThreadsIndex({
   const navLinks = {
     main: {
       label: "View posts",
-      href: urls(locale).satoshi.posts.index,
+      href: urls(locale).satoshi.posts.sourceIndex(source),
     },
     left: {
       label: "All threads",

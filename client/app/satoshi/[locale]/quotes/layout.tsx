@@ -1,4 +1,5 @@
 import { Metadata, ResolvingMetadata } from "next";
+
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 
 export async function generateMetadata(

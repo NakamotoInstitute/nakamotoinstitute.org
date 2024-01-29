@@ -1,9 +1,9 @@
-import { unified } from "unified";
 import Script from "next/script";
-import rehypeReact, { Options } from "rehype-react";
-import rehypeParse from "rehype-parse";
-import rehypeMathjax from "rehype-mathjax/browser";
 import * as runtime from "react/jsx-runtime";
+import rehypeMathjax from "rehype-mathjax/browser";
+import rehypeParse from "rehype-parse";
+import rehypeReact, { Options } from "rehype-react";
+import { unified } from "unified";
 
 type RehypeProps = {
   hasMath?: boolean;

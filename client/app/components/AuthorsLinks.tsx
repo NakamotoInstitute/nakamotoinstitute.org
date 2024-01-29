@@ -1,7 +1,9 @@
-import { urls } from "@/lib/urls";
-import { RenderedItemsList, RenderedItemsListProps } from "./RenderedItemsList";
-import { Author } from "@/lib/api/schemas/authors";
 import Link from "next/link";
+
+import { Author } from "@/lib/api/schemas/authors";
+import { urls } from "@/lib/urls";
+
+import { RenderedItemsList, RenderedItemsListProps } from "./RenderedItemsList";
 
 type AuthorLinksProps = Omit<
   RenderedItemsListProps<Author>,

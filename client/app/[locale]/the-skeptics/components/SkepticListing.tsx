@@ -1,11 +1,13 @@
-import Link from "next/link";
 import Big from "big.js";
+import Link from "next/link";
+
 import { Rehype } from "@/app/components/Rehype";
 import { Price, Skeptic } from "@/lib/api/schemas/skeptics";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
-import { commafy } from "@/utils/strings";
 import { formatDate } from "@/utils/dates";
 import { calculateDCA } from "@/utils/prices";
+import { commafy } from "@/utils/strings";
+
 import { SkepticPriceData } from "./PriceData";
 
 const DAILY_BUY = new Big(1);
@@ -16,7 +18,11 @@ type SkepticProps = {
   prices: Price[];
 };
 
-export async function Skeptic({ locale, skeptic, prices }: SkepticProps) {
+export async function SkepticListing({
+  locale,
+  skeptic,
+  prices,
+}: SkepticProps) {
   const { t } = await i18nTranslation(locale);
   const priceData = calculateDCA(skeptic.date, prices, DAILY_BUY);
 

@@ -1,12 +1,13 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import clsx from "clsx";
-import { Rehype } from "@/app/components/Rehype";
+
 import { PageLayout } from "@/app/components/PageLayout";
+import { Rehype } from "@/app/components/Rehype";
 import { getLibraryDoc, getLibraryParams } from "@/lib/api/library";
+import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { getDir } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
-import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
+
 import { DocHeader } from "../components/DocHeader";
 
 export const dynamicParams = false;

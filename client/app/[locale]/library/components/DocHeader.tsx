@@ -1,8 +1,9 @@
 import { AuthorsLinks } from "@/app/components/AuthorsLinks";
-import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { Document } from "@/lib/api/schemas/library";
+import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { cdnUrl } from "@/lib/urls";
 import { formatDocDate, formatTimeAttr } from "@/utils/dates";
+
 import { DocFormatLinks } from "./DocFormats";
 
 type DocHeaderProps = {

@@ -1,6 +1,7 @@
-import { defaultLocale } from "@/i18n";
 import fs from "fs/promises";
 import path from "path";
+
+import { defaultLocale } from "@/i18n";
 
 type ContentDirectory = "pages";
 

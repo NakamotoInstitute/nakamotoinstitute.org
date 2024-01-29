@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+
 import fetchAPI from "./fetchAPI";
 import { zEpisode, zPodcastIndex } from "./schemas/podcast";
 
@@ -13,4 +14,9 @@ export async function getEpisode(slug: string) {
     notFound();
   }
   return zEpisode.parse(await res.json());
+}
+
+export async function getPodcastFeed() {
+  const res = await fetchAPI("/podcast/feed");
+  return await res.text();
 }

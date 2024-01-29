@@ -1,5 +1,7 @@
+import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+
 import { PageLayout } from "@/app/components/PageLayout";
 import { getEmail, getSatoshiEmails } from "@/lib/api/emails";
 import { EmailSource } from "@/lib/api/schemas/emails";
@@ -8,9 +10,22 @@ import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import { formatEmailSource } from "@/utils/strings";
+
 import { EmailNavigation } from "@satoshi/components/ContentNavigation";
 
 export const dynamicParams = false;
+
+export async function generateMetadata({
+  params: { source, satoshiId },
+}: LocaleParams<{
+  source: EmailSource;
+  satoshiId: string;
+}>): Promise<Metadata> {
+  const emailData = await getEmail(source, satoshiId);
+  return {
+    title: emailData.email.subject,
+  };
+}
 
 export default async function EmailDetail({
   params: { locale, source, satoshiId },

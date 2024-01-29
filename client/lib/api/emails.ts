@@ -1,9 +1,10 @@
 import { getNumericId } from "@/utils/strings";
+
 import fetchAPI from "./fetchAPI";
 import {
   EmailSource,
-  zEmailIndex,
   zEmailDetail,
+  zEmailIndex,
   zEmailThreadDetail,
   zEmailThreadIndex,
 } from "./schemas/emails";

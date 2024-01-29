@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
+
 import fetchAPI from "./fetchAPI";
-import { zAuthorIndex, zAuthorDetail } from "./schemas/authors";
+import { zAuthorDetail, zAuthorIndex } from "./schemas/authors";
 import { zSlugParamsResponse } from "./schemas/shared";
 
 export async function getAuthors(locale: Locale) {

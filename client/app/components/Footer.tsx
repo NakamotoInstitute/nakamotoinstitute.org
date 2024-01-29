@@ -1,6 +1,7 @@
-import { cdnUrl, urls } from "@/lib/urls";
 import Image from "next/image";
 import Link from "next/link";
+
+import { cdnUrl, urls } from "@/lib/urls";
 
 type FooterProps = {
   locale: Locale;

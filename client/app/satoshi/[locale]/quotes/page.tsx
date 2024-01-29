@@ -1,10 +1,11 @@
-import { PageLayout } from "@/app/components/PageLayout";
+import Link from "next/link";
+
 import { PageHeader } from "@/app/components/PageHeader";
+import { PageLayout } from "@/app/components/PageLayout";
 import { getQuoteCategories } from "@/lib/api/quotes";
 import { QuoteCategory } from "@/lib/api/schemas/quotes";
 import { getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
-import Link from "next/link";
 
 type LinkColumnProps = {
   locale: Locale;
