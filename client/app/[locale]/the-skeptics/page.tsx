@@ -5,22 +5,28 @@ import { Trans } from "react-i18next/TransWithoutContext";
 import { Markdown } from "@/app/components/Markdown";
 import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
+import { locales } from "@/i18n";
 import { Price } from "@/lib/api/schemas/skeptics";
 import { fetchPriceHistory, getSkeptics } from "@/lib/api/skeptics";
 import { getPage } from "@/lib/content";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
-import { getLocaleParams } from "@/lib/i18n/utils";
+import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 
 import { SkepticListing } from "./components/SkepticListing";
 
+const generateHref = (l: Locale) => urls(l).skeptics;
+
 export async function generateMetadata({
   params: { locale },
 }: LocaleParams): Promise<Metadata> {
   const { t } = await i18nTranslation(locale);
+  const languages = generateHrefLangs([...locales], generateHref);
+
   return {
     title: t("The Skeptics"),
+    alternates: { languages },
   };
 }
 
@@ -39,8 +45,6 @@ export default async function TheSkepticsPage({
   } catch (err) {
     error = true;
   }
-
-  const generateHref = (l: Locale) => urls(l).skeptics;
 
   return (
     <PageLayout locale={locale} generateHref={generateHref}>

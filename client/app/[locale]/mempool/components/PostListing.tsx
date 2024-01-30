@@ -62,7 +62,7 @@ export async function PostListing({ locale, post }: PostListingProps) {
                       locale={locale}
                       translations={post.translations}
                       urlFunc={(item) =>
-                        urls(item.locale as Locale).mempool.post(item.slug)
+                        urls(item.locale).mempool.post(item.slug)
                       }
                     />
                   ),

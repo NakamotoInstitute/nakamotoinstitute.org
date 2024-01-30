@@ -1,10 +1,11 @@
 import { Metadata } from "next";
 import Link from "next/link";
 
+import { locales } from "@/i18n";
 import { getForumThreadsBySource } from "@/lib/api/posts";
 import { ForumPostSource, zForumPostSource } from "@/lib/api/schemas/posts";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
-import { getLocaleParams } from "@/lib/i18n/utils";
+import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import { formatPostSource, otherForumPostSource } from "@/utils/strings";
@@ -13,12 +14,18 @@ import { IndexPageLayout } from "@satoshi/components/IndexPageLayout";
 
 export const dynamicParams = false;
 
+const generateHref = (source: ForumPostSource) => (l: Locale) =>
+  urls(l).satoshi.posts.sourceThreadsIndex(source);
+
 export async function generateMetadata({
   params: { locale, source },
 }: LocaleParams<{ source: ForumPostSource }>): Promise<Metadata> {
   const { t } = await i18nTranslation(locale);
+  const languages = generateHrefLangs([...locales], generateHref(source));
+
   return {
     title: t("{{source}} Threads", { source: formatPostSource(source) }),
+    alternates: { languages },
   };
 }
 
@@ -26,8 +33,6 @@ export default async function PostSourceThreadsIndex({
   params: { source, locale },
 }: LocaleParams<{ source: ForumPostSource }>) {
   const threads = await getForumThreadsBySource(source);
-  const generateHref = (l: Locale) =>
-    urls(l).satoshi.posts.sourceThreadsIndex(source);
 
   const otherSource = otherForumPostSource(source);
 
@@ -58,7 +63,7 @@ export default async function PostSourceThreadsIndex({
     <IndexPageLayout
       title={`${formatPostSource(source)} Threads`}
       locale={locale}
-      generateHref={generateHref}
+      generateHref={generateHref(source)}
       navLinks={navLinks}
     >
       <ul>

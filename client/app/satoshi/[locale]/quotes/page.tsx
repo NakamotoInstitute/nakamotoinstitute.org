@@ -1,11 +1,23 @@
+import { Metadata } from "next";
 import Link from "next/link";
 
 import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
+import { locales } from "@/i18n";
 import { getQuoteCategories } from "@/lib/api/quotes";
 import { QuoteCategory } from "@/lib/api/schemas/quotes";
-import { getLocaleParams } from "@/lib/i18n/utils";
+import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
+
+const generateHref = (l: Locale) => urls(l).satoshi.quotesIndex;
+
+export async function generateMetadata(): Promise<Metadata> {
+  const languages = generateHrefLangs([...locales], generateHref);
+
+  return {
+    alternates: { languages },
+  };
+}
 
 type LinkColumnProps = {
   locale: Locale;
@@ -30,7 +42,6 @@ export default async function QuotesIndex({
   params: { locale },
 }: LocaleParams) {
   const categories = await getQuoteCategories();
-  const generateHref = (l: Locale) => urls(l).satoshi.quotesIndex;
 
   const halfLength = Math.ceil(categories.length / 2);
   const firstColumn = categories.slice(0, halfLength);

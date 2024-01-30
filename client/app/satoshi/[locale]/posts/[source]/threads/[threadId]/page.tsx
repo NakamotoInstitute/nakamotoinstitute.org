@@ -4,10 +4,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { PageLayout } from "@/app/components/PageLayout";
+import { locales } from "@/i18n";
 import { getForumThread, getForumThreads } from "@/lib/api/posts";
 import { ForumPost, ForumPostSource } from "@/lib/api/schemas/posts";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
-import { getLocaleParams } from "@/lib/i18n/utils";
+import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import { formatPostSource } from "@/utils/strings";
@@ -17,6 +18,10 @@ import { ThreadPageHeader } from "@satoshi/components/ThreadPageHeader";
 
 export const dynamicParams = false;
 
+const generateHref =
+  (source: ForumPostSource, threadId: string) => (l: Locale) =>
+    urls(l).satoshi.posts.sourceThreadsDetail(source, threadId);
+
 export async function generateMetadata({
   params: { locale, source, threadId },
 }: LocaleParams<{
@@ -25,8 +30,14 @@ export async function generateMetadata({
 }>): Promise<Metadata> {
   const threadData = await getForumThread(source, threadId);
   const { t } = await i18nTranslation(locale);
+  const languages = generateHrefLangs(
+    [...locales],
+    generateHref(source, threadId),
+  );
+
   return {
     title: t("{{title}} - Thread", { title: threadData.thread.title }),
+    alternates: { languages },
   };
 }
 
@@ -116,17 +127,17 @@ export default async function PostSourceThreadDetail({
     return notFound();
   }
 
-  const generateHref = (l: Locale) =>
-    urls(l).satoshi.posts.sourceThreadsDetail(source, threadId);
-
   const { thread, posts, next, previous } = threadData;
 
   return (
-    <PageLayout locale={locale} generateHref={generateHref}>
+    <PageLayout locale={locale} generateHref={generateHref(source, threadId)}>
       <ThreadPageHeader
         sourceTitle={formatPostSource(thread.source)}
         title={thread.title}
-        allLink={{ href: generateHref(locale), label: "posts" }}
+        allLink={{
+          href: generateHref(source, threadId)(locale),
+          label: "posts",
+        }}
         externalLink={thread.url}
         satoshiOnly={satoshiOnly}
       >

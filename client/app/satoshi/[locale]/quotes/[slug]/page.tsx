@@ -1,20 +1,28 @@
+import { Metadata } from "next";
 import Link from "next/link";
 
 import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
 import { RenderedItemsList } from "@/app/components/RenderedItemsList";
+import { locales } from "@/i18n";
 import { getQuoteCategories, getQuoteCategory } from "@/lib/api/quotes";
 import { Quote } from "@/lib/api/schemas/quotes";
-import { getLocaleParams } from "@/lib/i18n/utils";
+import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 
+const generateHref = (slug: string) => (l: Locale) =>
+  urls(l).satoshi.quoteCategory(slug);
+
 export async function generateMetadata({
   params: { slug },
-}: LocaleParams<{ slug: string }>) {
+}: LocaleParams<{ slug: string }>): Promise<Metadata> {
   const { category } = await getQuoteCategory(slug);
+  const languages = generateHrefLangs([...locales], generateHref(slug));
+
   return {
     title: category.name,
+    alternates: { languages },
   };
 }
 
@@ -80,10 +88,9 @@ export default async function QuotesCategoryPage({
   params: { locale, slug },
 }: LocaleParams<{ slug: string }>) {
   const { category, quotes } = await getQuoteCategory(slug);
-  const generateHref = (l: Locale) => urls(l).satoshi.quoteCategory(slug);
 
   return (
-    <PageLayout locale={locale} generateHref={generateHref}>
+    <PageLayout locale={locale} generateHref={generateHref(slug)}>
       <PageHeader title={category.name} superTitle="The Quotable Satoshi" />
       <section>
         {quotes.map((q) => (

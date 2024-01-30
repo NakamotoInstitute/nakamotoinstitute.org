@@ -1,12 +1,14 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { Trans } from "react-i18next/TransWithoutContext";
-import { Rehype } from "@/app/components/Rehype";
-import { getMempoolPost, getMempoolParams } from "@/lib/api/mempool";
+
 import { PageLayout } from "@/app/components/PageLayout";
+import { Rehype } from "@/app/components/Rehype";
+import { getMempoolParams, getMempoolPost } from "@/lib/api/mempool";
+import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { getDir } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
-import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
+
 import { PostHeader } from "../components/PostHeader";
 import { TranslationLinks } from "../components/TranslationLinks";
 
@@ -16,8 +18,16 @@ export async function generateMetadata({
   params: { locale, slug },
 }: LocaleParams<{ slug: string }>): Promise<Metadata> {
   const post = await getMempoolPost(slug, locale);
+  const languages = post.translations.reduce(
+    (acc, t) => {
+      acc[t.locale] = urls(t.locale).mempool.post(t.slug);
+      return acc;
+    },
+    {} as Record<Locale, string>,
+  );
   return {
     title: post.title,
+    alternates: { languages },
   };
 }
 
@@ -31,7 +41,7 @@ export default async function MempoolPost({
   const backLabel = t("Back to the Memory Pool");
 
   const generateHref = (l: Locale) => {
-    const translation = post.translations?.find((t) => t.locale === l);
+    const translation = post.translations.find((t) => t.locale === l);
     if (translation) {
       return urls(l).mempool.post(translation.slug);
     }
@@ -59,7 +69,7 @@ export default async function MempoolPost({
                       locale={locale}
                       translations={post.translations}
                       urlFunc={(item) =>
-                        urls(item.locale as Locale).mempool.post(item.slug)
+                        urls(item.locale).mempool.post(item.slug)
                       }
                     />
                   ),

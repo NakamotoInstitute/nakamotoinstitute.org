@@ -13,6 +13,7 @@ from .service import (
     check_documents_exist,
     get,
     get_all,
+    get_all_author_locales,
     get_all_by_locale,
     get_author_locales,
     get_blog_posts,
@@ -32,7 +33,7 @@ def get_author_params(db: Session = Depends(get_db)):
     valid_combinations = []
 
     authors = get_all(db_session=db)
-    locales = get_author_locales(db_session=db)
+    locales = get_all_author_locales(db_session=db)
 
     for author in authors:
         for locale in locales:
@@ -55,10 +56,17 @@ def get_author(slug: str, locale: LocaleType = "en", db: Session = Depends(get_d
     if not author:
         raise HTTPException(status_code=404, detail="Author not found")
 
+    locales = get_author_locales(author, db_session=db)
+
     mempool_posts = get_blog_posts(author, db_session=db, locale=locale)
     library_docs = get_documents(author, db_session=db, locale=locale)
 
     if not mempool_posts and not library_docs:
         raise HTTPException(status_code=404, detail="Author not found")
 
-    return {"author": author, "library": library_docs, "mempool": mempool_posts}
+    return {
+        "author": author,
+        "library": library_docs,
+        "mempool": mempool_posts,
+        "locales": locales,
+    }

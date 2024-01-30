@@ -2,16 +2,22 @@ import { Metadata } from "next";
 
 import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
+import { locales } from "@/i18n";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
-import { getLocaleParams } from "@/lib/i18n/utils";
+import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
+
+const generateHref = (l: Locale) => urls(l).contact;
 
 export async function generateMetadata({
   params: { locale },
 }: LocaleParams): Promise<Metadata> {
   const { t } = await i18nTranslation(locale);
+  const languages = generateHrefLangs([...locales], generateHref);
+
   return {
     title: t("Contact"),
+    alternates: { languages },
   };
 }
 
@@ -19,7 +25,6 @@ export default async function ContactPage({
   params: { locale },
 }: LocaleParams) {
   const { t } = await i18nTranslation(locale);
-  const generateHref = (l: Locale) => urls(l).contact;
 
   return (
     <PageLayout locale={locale} generateHref={generateHref}>

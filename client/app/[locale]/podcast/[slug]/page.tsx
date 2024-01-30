@@ -4,18 +4,25 @@ import Link from "next/link";
 import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
 import { Rehype } from "@/app/components/Rehype";
+import { locales } from "@/i18n";
 import { getEpisode, getEpisodes } from "@/lib/api/podcast";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
-import { getLocaleParams } from "@/lib/i18n/utils";
+import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
+
+const generateHref = (slug: string) => (l: Locale) =>
+  urls(l).podcast.episode(slug);
 
 export async function generateMetadata({
   params: { slug },
 }: LocaleParams<{ slug: string }>): Promise<Metadata> {
   const episode = await getEpisode(slug);
+  const languages = generateHrefLangs([...locales], generateHref(slug));
+
   return {
     title: episode.title,
+    alternates: { languages },
   };
 }
 
@@ -24,10 +31,9 @@ export default async function PodcastDetail({
 }: LocaleParams<{ slug: string }>) {
   const { t } = await i18nTranslation(locale);
   const episode = await getEpisode(slug);
-  const generateHref = (l: Locale) => urls(l).podcast.episode(slug);
 
   return (
-    <PageLayout locale={locale} generateHref={generateHref}>
+    <PageLayout locale={locale} generateHref={generateHref(slug)}>
       <PageHeader title={episode.title}>
         <p>
           <time dateTime={episode.date.toISOString()}>

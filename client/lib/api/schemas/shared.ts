@@ -1,7 +1,16 @@
 import { z } from "zod";
 
+import { locales } from "@/i18n";
+
+export const zLocale = z.string().refine(
+  (val): val is Locale => {
+    return locales.includes(val as Locale);
+  },
+  { message: "Invalid locale" },
+);
+
 const zSlugParam = z.object({
-  locale: z.string(),
+  locale: zLocale,
   slug: z.string(),
 });
 export type SlugParam = z.infer<typeof zSlugParam>;
@@ -9,7 +18,7 @@ export type SlugParam = z.infer<typeof zSlugParam>;
 export const zSlugParamsResponse = z.array(zSlugParam);
 
 export const zTranslationData = z.object({
-  locale: z.string(),
+  locale: zLocale,
   title: z.string(),
   slug: z.string(),
 });

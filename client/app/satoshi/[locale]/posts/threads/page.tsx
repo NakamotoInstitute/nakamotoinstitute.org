@@ -1,10 +1,11 @@
 import { Metadata } from "next";
 import Link from "next/link";
 
+import { locales } from "@/i18n";
 import { getForumThreads } from "@/lib/api/posts";
 import { ForumPostSource, ForumThread } from "@/lib/api/schemas/posts";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
-import { getLocaleParams } from "@/lib/i18n/utils";
+import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import { formatPostSource } from "@/utils/strings";
@@ -13,12 +14,17 @@ import { IndexPageLayout } from "@satoshi/components/IndexPageLayout";
 
 export const dynamicParams = false;
 
+const generateHref = (l: Locale) => urls(l).satoshi.posts.threadsIndex;
+
 export async function generateMetadata({
   params: { locale },
 }: LocaleParams): Promise<Metadata> {
   const { t } = await i18nTranslation(locale);
+  const languages = generateHrefLangs([...locales], generateHref);
+
   return {
     title: t("Forum Threads"),
+    alternates: { languages },
   };
 }
 
@@ -26,7 +32,6 @@ export default async function PostThreadsIndex({
   params: { locale },
 }: LocaleParams) {
   const threads = await getForumThreads();
-  const generateHref = (l: Locale) => urls(l).satoshi.posts.threadsIndex;
   const sortedThreads = threads.reduce(
     (acc, thread) => {
       acc[thread.source].push(thread);

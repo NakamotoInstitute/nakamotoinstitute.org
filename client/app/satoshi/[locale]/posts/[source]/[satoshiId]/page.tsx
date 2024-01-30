@@ -3,10 +3,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { PageLayout } from "@/app/components/PageLayout";
+import { locales } from "@/i18n";
 import { getForumPost, getSatoshiPosts } from "@/lib/api/posts";
 import { ForumPostSource } from "@/lib/api/schemas/posts";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
-import { getLocaleParams } from "@/lib/i18n/utils";
+import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import { formatPostSource } from "@/utils/strings";
@@ -15,6 +16,10 @@ import { PostNavigation } from "@satoshi/components/ContentNavigation";
 
 export const dynamicParams = false;
 
+const generateHref =
+  (source: ForumPostSource, satoshiId: string) => (l: Locale) =>
+    urls(l).satoshi.posts.sourcePost(source, satoshiId);
+
 export async function generateMetadata({
   params: { source, satoshiId },
 }: LocaleParams<{
@@ -22,8 +27,14 @@ export async function generateMetadata({
   satoshiId: string;
 }>): Promise<Metadata> {
   const postData = await getForumPost(source, satoshiId);
+  const languages = generateHrefLangs(
+    [...locales],
+    generateHref(source, satoshiId),
+  );
+
   return {
     title: postData.post.subject,
+    alternates: { languages },
   };
 }
 
@@ -38,11 +49,9 @@ export default async function PostDetail({
   }
 
   const { next, previous, post } = postData;
-  const generateHref = (l: Locale) =>
-    urls(l).satoshi.posts.sourcePost(source, satoshiId);
 
   return (
-    <PageLayout locale={locale} generateHref={generateHref}>
+    <PageLayout locale={locale} generateHref={generateHref(source, satoshiId)}>
       <PostNavigation
         className="mb-2"
         locale={locale}

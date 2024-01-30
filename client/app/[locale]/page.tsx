@@ -1,14 +1,26 @@
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Trans } from "react-i18next/TransWithoutContext";
 
 import { PageLayout } from "@/app/components/PageLayout";
+import { locales } from "@/i18n";
 import { getLatestMempoolPost } from "@/lib/api/mempool";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
-import { getLocaleParams } from "@/lib/i18n/utils";
+import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { cdnUrl, urls } from "@/lib/urls";
 
 import { NavLink } from "../components/Navbar";
+
+const generateHref = (loc: Locale) => urls(loc).home;
+
+export async function generateMetadata(): Promise<Metadata> {
+  const languages = generateHrefLangs([...locales], generateHref);
+
+  return {
+    alternates: { languages },
+  };
+}
 
 type HomeSectionProps = {
   title: string;
@@ -55,8 +67,6 @@ const Banner = ({ children }: BannerProps) => {
 export default async function HomePage({ params: { locale } }: LocaleParams) {
   const { t } = await i18nTranslation(locale);
   const latest = await getLatestMempoolPost(locale);
-
-  const generateHref = (loc: Locale) => urls(loc).home;
 
   return (
     <PageLayout locale={locale} generateHref={generateHref}>

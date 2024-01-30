@@ -48,10 +48,36 @@ def get_all_by_locale(
     ).all()
 
 
-def get_author_locales(*, db_session: Session):
+def get_all_author_locales(*, db_session: Session):
     return set(
         db_session.scalars(
             select(BlogPostTranslation.locale).union(select(DocumentTranslation.locale))
+        ).all()
+    )
+
+
+def get_author_locales(
+    author: Author, *, db_session: Session, locale: LocaleType = "en"
+):
+    BlogPostTranslationAlias = aliased(BlogPostTranslation, flat=True)
+    DocumentTranslationAlias = aliased(DocumentTranslation, flat=True)
+
+    return set(
+        db_session.scalars(
+            select(BlogPostTranslationAlias.locale)
+            .join(BlogPost)
+            .join(blog_post_authors)
+            .join(Author)
+            .filter(Author.id == author.id, BlogPostTranslationAlias.locale != locale)
+            .union(
+                select(DocumentTranslationAlias.locale)
+                .join(Document)
+                .join(document_authors)
+                .join(Author)
+                .filter(
+                    Author.id == author.id, DocumentTranslationAlias.locale != locale
+                )
+            )
         ).all()
     )
 

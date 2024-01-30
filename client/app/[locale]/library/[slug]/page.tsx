@@ -16,8 +16,17 @@ export async function generateMetadata({
   params: { locale, slug },
 }: LocaleParams<{ slug: string }>): Promise<Metadata> {
   const doc = await getLibraryDoc(slug, locale);
+  const languages = doc.translations.reduce(
+    (acc, t) => {
+      acc[t.locale] = urls(t.locale).library.doc(t.slug);
+      return acc;
+    },
+    {} as Record<Locale, string>,
+  );
+
   return {
     title: doc.title,
+    alternates: { languages },
   };
 }
 
@@ -31,7 +40,7 @@ export default async function LibraryDetail({
   const backLabel = t("Back to library");
 
   const generateHref = (l: Locale) => {
-    const translation = doc.translations?.find((t) => t.locale === l);
+    const translation = doc.translations.find((t) => t.locale === l);
     if (translation) {
       return urls(l).library.doc(translation.slug);
     }

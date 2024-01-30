@@ -14,9 +14,18 @@ export const dynamicParams = false;
 export async function generateMetadata({
   params: { locale, slug },
 }: LocaleParams<{ slug: string }>): Promise<Metadata> {
-  const { author } = await getAuthor(slug, locale);
+  const { author, locales } = await getAuthor(slug, locale);
+  const languages = locales.reduce(
+    (acc, loc) => {
+      acc[loc] = urls(loc).authors.detail(slug);
+      return acc;
+    },
+    {} as Record<Locale, string>,
+  );
+
   return {
     title: author.name,
+    alternates: { languages },
   };
 }
 

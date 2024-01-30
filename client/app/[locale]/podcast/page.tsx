@@ -2,19 +2,25 @@ import { Metadata } from "next";
 
 import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
+import { locales } from "@/i18n";
 import { getEpisodes } from "@/lib/api/podcast";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
-import { getLocaleParams } from "@/lib/i18n/utils";
+import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 
 import { EpisodeListing } from "./components/EpisodeListing";
+
+const generateHref = (l: Locale) => urls(l).podcast.index;
 
 export async function generateMetadata({
   params: { locale },
 }: LocaleParams): Promise<Metadata> {
   const { t } = await i18nTranslation(locale);
+  const languages = generateHrefLangs([...locales], generateHref);
+
   return {
     title: t("The Crypto-Mises Podcast"),
+    alternates: { languages },
   };
 }
 
@@ -23,7 +29,6 @@ export default async function PodcastIndex({
 }: LocaleParams) {
   const { t } = await i18nTranslation(locale);
   const episodes = await getEpisodes();
-  const generateHref = (l: Locale) => urls(l).podcast.index;
 
   return (
     <PageLayout locale={locale} generateHref={generateHref}>

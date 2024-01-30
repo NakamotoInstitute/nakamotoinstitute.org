@@ -1,5 +1,7 @@
 import { locales } from "@/i18n";
 
+import { urls } from "../urls";
+
 type LocaleParam = { locale: Locale; [key: string]: unknown };
 type CallbackResponse = (locale: Locale) => LocaleParam[];
 type AsyncCallbackResponse = (locale: Locale) => Promise<LocaleParam[]>;
@@ -19,4 +21,17 @@ export const getLocaleParams = async (
 
 export const getDir = (locale: Locale) => {
   return ["ar", "fa", "he"].includes(locale) ? "rtl" : "ltr";
+};
+
+export const generateHrefLangs = (
+  _locales: Locale[],
+  generateHref: (_locale: Locale) => string,
+) => {
+  return _locales.reduce(
+    (acc, locale) => {
+      acc[locale] = generateHref(locale);
+      return acc;
+    },
+    {} as Record<Locale, string>,
+  );
 };

@@ -1,9 +1,10 @@
 import { Metadata } from "next";
 import Link from "next/link";
 
+import { locales } from "@/i18n";
 import { getSatoshiEmails } from "@/lib/api/emails";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
-import { getLocaleParams } from "@/lib/i18n/utils";
+import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import { formatEmailSource } from "@/utils/strings";
@@ -12,12 +13,17 @@ import { IndexPageLayout } from "@satoshi/components/IndexPageLayout";
 
 export const dynamicParams = false;
 
+const generateHref = (l: Locale) => urls(l).satoshi.emails.index;
+
 export async function generateMetadata({
   params: { locale },
 }: LocaleParams): Promise<Metadata> {
   const { t } = await i18nTranslation(locale);
+  const languages = generateHrefLangs([...locales], generateHref);
+
   return {
     title: t("Emails"),
+    alternates: { languages },
   };
 }
 
@@ -25,7 +31,6 @@ export default async function EmailsIndex({
   params: { locale },
 }: LocaleParams) {
   const emails = await getSatoshiEmails();
-  const generateHref = (l: Locale) => urls(l).satoshi.emails.index;
 
   const navLinks = {
     main: {

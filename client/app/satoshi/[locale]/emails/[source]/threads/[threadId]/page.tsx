@@ -4,10 +4,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { PageLayout } from "@/app/components/PageLayout";
+import { locales } from "@/i18n";
 import { getEmailThread, getEmailThreads } from "@/lib/api/emails";
 import { EmailSource, EmailWithParent } from "@/lib/api/schemas/emails";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
-import { getLocaleParams } from "@/lib/i18n/utils";
+import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import { formatEmailSource } from "@/utils/strings";
@@ -17,13 +18,22 @@ import { ThreadPageHeader } from "@satoshi/components/ThreadPageHeader";
 
 export const dynamicParams = false;
 
+const generateHref = (source: EmailSource, threadId: string) => (l: Locale) =>
+  urls(l).satoshi.emails.sourceThreadsDetail(source, threadId);
+
 export async function generateMetadata({
   params: { locale, source, threadId },
 }: LocaleParams<{ source: EmailSource; threadId: string }>): Promise<Metadata> {
   const threadData = await getEmailThread(source, threadId);
   const { t } = await i18nTranslation(locale);
+  const languages = generateHrefLangs(
+    [...locales],
+    generateHref(source, threadId),
+  );
+
   return {
     title: t("{{title}} - Thread", { title: threadData.thread.title }),
+    alternates: { languages },
   };
 }
 
@@ -117,17 +127,17 @@ export default async function EmailSourceThreadDetail({
     return notFound();
   }
 
-  const generateHref = (l: Locale) =>
-    urls(l).satoshi.emails.sourceThreadsDetail(source, threadId);
-
   const { thread, emails, next, previous } = threadData;
 
   return (
-    <PageLayout locale={locale} generateHref={generateHref}>
+    <PageLayout locale={locale} generateHref={generateHref(source, threadId)}>
       <ThreadPageHeader
         sourceTitle={formatEmailSource(thread.source)}
         title={thread.title}
-        allLink={{ href: generateHref(locale), label: "emails" }}
+        allLink={{
+          href: generateHref(source, threadId)(locale),
+          label: "emails",
+        }}
         externalLink={thread.url}
         satoshiOnly={satoshiOnly}
       >
