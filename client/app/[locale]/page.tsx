@@ -99,7 +99,7 @@ export default async function HomePage({ params: { locale } }: LocaleParams) {
           src="https://nakamotoinst.substack.com/embed"
           width="480"
           height="150"
-          className="mx-auto overflow-hidden border border-solid border-zinc-100 bg-white"
+          className="mx-auto overflow-hidden border border-solid border-zinc-100 bg-white max-sm:w-80"
         ></iframe>
       </div>
       <Banner>
@@ -129,7 +129,7 @@ export default async function HomePage({ params: { locale } }: LocaleParams) {
           }}
         />
       </Banner>
-      <div className="mt-6 flex text-left">
+      <div className="mt-6 flex text-left flex-col sm:flex-row">
         {latest ? (
           <HomeSection
             title={t("Mempool")}
