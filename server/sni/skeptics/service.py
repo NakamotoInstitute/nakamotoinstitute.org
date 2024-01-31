@@ -1,10 +1,10 @@
 from typing import List
 
 from sqlalchemy import select
-from sqlalchemy.orm import Session
+from sqlalchemy.ext.asyncio import AsyncSession
 
 from sni.models import Skeptic
 
 
-def get_all(*, db_session: Session) -> List[Skeptic]:
-    return db_session.scalars(select(Skeptic).order_by(Skeptic.date)).all()
+async def get_all(*, db_session: AsyncSession) -> List[Skeptic]:
+    return (await db_session.scalars(select(Skeptic).order_by(Skeptic.date))).all()

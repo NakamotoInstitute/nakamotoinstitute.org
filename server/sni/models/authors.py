@@ -22,10 +22,10 @@ class Author(MarkdownContent):
     name: Mapped[str] = mapped_column(String, nullable=False)
     sort_name: Mapped[str] = mapped_column(String, nullable=False)
     posts: Mapped[List["BlogPost"]] = relationship(
-        secondary=blog_post_authors, back_populates="authors"
+        secondary=blog_post_authors, back_populates="authors", lazy="selectin"
     )
     docs: Mapped[List["Document"]] = relationship(
-        secondary=document_authors, back_populates="authors"
+        secondary=document_authors, back_populates="authors", lazy="selectin"
     )
 
     __mapper_args__ = {"polymorphic_identity": "author"}

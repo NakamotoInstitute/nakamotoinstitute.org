@@ -1,7 +1,7 @@
 from typing import List
 
 from fastapi import APIRouter, Depends
-from sqlalchemy.orm import Session
+from sqlalchemy.ext.asyncio import AsyncSession
 
 from sni.database import get_db
 
@@ -12,5 +12,5 @@ router = APIRouter()
 
 
 @router.get("", response_model=List[SkepticModel])
-def get_skeptics(db: Session = Depends(get_db)):
-    return get_all(db_session=db)
+async def get_skeptics(db: AsyncSession = Depends(get_db)):
+    return await get_all(db_session=db)

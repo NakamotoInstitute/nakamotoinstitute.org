@@ -1,7 +1,7 @@
 from typing import List
 
 from fastapi import APIRouter, Depends, HTTPException
-from sqlalchemy.orm import Session
+from sqlalchemy.ext.asyncio import AsyncSession
 
 from sni.config import LocaleType
 from sni.database import get_db
@@ -24,23 +24,23 @@ router = APIRouter()
 
 
 @router.get("", response_model=List[AuthorModel])
-def get_authors(locale: LocaleType = "en", db: Session = Depends(get_db)):
-    return get_all_by_locale(db_session=db, locale=locale)
+async def get_authors(locale: LocaleType = "en", db: AsyncSession = Depends(get_db)):
+    return await get_all_by_locale(db_session=db, locale=locale)
 
 
 @router.get("/params", response_model=List[SlugParamModel])
-def get_author_params(db: Session = Depends(get_db)):
+async def get_author_params(db: AsyncSession = Depends(get_db)):
     valid_combinations = []
 
-    authors = get_all(db_session=db)
-    locales = get_all_author_locales(db_session=db)
+    authors = await get_all(db_session=db)
+    locales = await get_all_author_locales(db_session=db)
 
     for author in authors:
         for locale in locales:
-            mempool_posts_exist = check_blog_posts_exist(
+            mempool_posts_exist = await check_blog_posts_exist(
                 author, db_session=db, locale=locale
             )
-            library_docs_exist = check_documents_exist(
+            library_docs_exist = await check_documents_exist(
                 author, db_session=db, locale=locale
             )
 
@@ -51,15 +51,17 @@ def get_author_params(db: Session = Depends(get_db)):
 
 
 @router.get("/{slug}", response_model=AuthorDetailModel)
-def get_author(slug: str, locale: LocaleType = "en", db: Session = Depends(get_db)):
-    author = get(slug, db_session=db)
+async def get_author(
+    slug: str, locale: LocaleType = "en", db: AsyncSession = Depends(get_db)
+):
+    author = await get(slug, db_session=db)
     if not author:
         raise HTTPException(status_code=404, detail="Author not found")
 
-    locales = get_author_locales(author, db_session=db)
+    locales = await get_author_locales(author, db_session=db)
 
-    mempool_posts = get_blog_posts(author, db_session=db, locale=locale)
-    library_docs = get_documents(author, db_session=db, locale=locale)
+    mempool_posts = await get_blog_posts(author, db_session=db, locale=locale)
+    library_docs = await get_documents(author, db_session=db, locale=locale)
 
     if not mempool_posts and not library_docs:
         raise HTTPException(status_code=404, detail="Author not found")

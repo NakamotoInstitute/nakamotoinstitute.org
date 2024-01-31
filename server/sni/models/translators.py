@@ -22,10 +22,10 @@ class Translator(MarkdownContent):
     url: Mapped[str] = mapped_column(String, nullable=True)
     slug: Mapped[str] = mapped_column(String, unique=True, nullable=False)
     posts: Mapped[List["BlogPostTranslation"]] = relationship(
-        secondary=blog_post_translators, back_populates="translators"
+        secondary=blog_post_translators, back_populates="translators", lazy="selectin"
     )
     docs: Mapped[List["DocumentTranslation"]] = relationship(
-        secondary=document_translators, back_populates="translators"
+        secondary=document_translators, back_populates="translators", lazy="selectin"
     )
 
     __mapper_args__ = {"polymorphic_identity": "translator"}

@@ -57,7 +57,7 @@ class DocumentFormat(Base):
         unique=True,
     )
     documents: Mapped[List["DocumentTranslation"]] = relationship(
-        secondary=document_formats, back_populates="formats"
+        secondary=document_formats, back_populates="formats", lazy="selectin"
     )
 
 
@@ -73,10 +73,10 @@ class Document(Base):
     doctype: Mapped[str] = mapped_column(String, nullable=False)
     external: Mapped[str] = mapped_column(String, nullable=True)
     authors: Mapped[List["Author"]] = relationship(
-        secondary=document_authors, back_populates="docs"
+        secondary=document_authors, back_populates="docs", lazy="joined"
     )
     translations: Mapped[List["DocumentTranslation"]] = relationship(
-        back_populates="document"
+        back_populates="document", lazy="joined"
     )
     has_math: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
 
@@ -100,12 +100,14 @@ class DocumentTranslation(MarkdownContent):
     slug: Mapped[str] = mapped_column(String, nullable=False)
     image_alt: Mapped[str] = mapped_column(String, nullable=True)
     document_id: Mapped[int] = mapped_column(ForeignKey("documents.id"))
-    document: Mapped[Document] = relationship(back_populates="translations")
+    document: Mapped[Document] = relationship(
+        back_populates="translations", lazy="selectin"
+    )
     formats: Mapped[List[DocumentFormat]] = relationship(
-        secondary=document_formats, back_populates="documents"
+        secondary=document_formats, back_populates="documents", lazy="selectin"
     )
     translators: Mapped[List["Translator"]] = relationship(
-        secondary=document_translators, back_populates="docs"
+        secondary=document_translators, back_populates="docs", lazy="selectin"
     )
 
     __mapper_args__ = {"polymorphic_identity": "document"}

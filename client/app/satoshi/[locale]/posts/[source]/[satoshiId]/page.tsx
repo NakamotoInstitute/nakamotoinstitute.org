@@ -41,13 +41,12 @@ export async function generateMetadata({
 export default async function PostDetail({
   params: { source, satoshiId, locale },
 }: LocaleParams<{ source: ForumPostSource; satoshiId: string }>) {
-  const { t } = await i18nTranslation(locale);
   const postData = await getForumPost(source, satoshiId);
-
   if (!postData) {
     return notFound();
   }
 
+  const { t } = await i18nTranslation(locale);
   const { next, previous, post } = postData;
 
   return (
@@ -104,15 +103,15 @@ export default async function PostDetail({
   );
 }
 
-export async function generateStaticParams() {
-  const posts = await getSatoshiPosts();
-  return getLocaleParams((locale) =>
-    posts
-      .filter((p) => p.satoshiId)
-      .map((p) => ({
-        locale,
-        source: p.source,
-        satoshiId: p.satoshiId!.toString(),
-      })),
-  );
-}
+// export async function generateStaticParams() {
+//   const posts = await getSatoshiPosts();
+//   return getLocaleParams((locale) =>
+//     posts
+//       .filter((p) => p.satoshiId)
+//       .map((p) => ({
+//         locale,
+//         source: p.source,
+//         satoshiId: p.satoshiId!.toString(),
+//       })),
+//   );
+// }

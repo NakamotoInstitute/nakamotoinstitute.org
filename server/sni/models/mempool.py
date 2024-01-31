@@ -53,12 +53,14 @@ class BlogPost(Base):
     original_url: Mapped[str] = mapped_column(String, nullable=True)
     original_site: Mapped[str] = mapped_column(String, nullable=True)
     authors: Mapped[List["Author"]] = relationship(
-        secondary=blog_post_authors, back_populates="posts"
+        secondary=blog_post_authors, back_populates="posts", lazy="selectin"
     )
     translations: Mapped[List["BlogPostTranslation"]] = relationship(
-        back_populates="blog_post"
+        back_populates="blog_post", lazy="joined"
     )
-    series: Mapped["BlogSeries"] = relationship(back_populates="blog_posts")
+    series: Mapped["BlogSeries"] = relationship(
+        back_populates="blog_posts", lazy="joined"
+    )
     series_id: Mapped[int] = mapped_column(ForeignKey("blog_series.id"), nullable=True)
     series_index: Mapped[int] = mapped_column(Integer, nullable=True)
     has_math: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
@@ -86,9 +88,11 @@ class BlogPostTranslation(MarkdownContent):
     translation_site: Mapped[str] = mapped_column(String, nullable=True)
     translation_site_url: Mapped[str] = mapped_column(String, nullable=True)
     blog_post_id: Mapped[int] = mapped_column(ForeignKey("blog_posts.id"))
-    blog_post: Mapped[BlogPost] = relationship(back_populates="translations")
+    blog_post: Mapped[BlogPost] = relationship(
+        back_populates="translations", lazy="selectin"
+    )
     translators: Mapped[List["Translator"]] = relationship(
-        secondary=blog_post_translators, back_populates="posts"
+        secondary=blog_post_translators, back_populates="posts", lazy="selectin"
     )
 
     __mapper_args__ = {"polymorphic_identity": "blog_post"}
@@ -129,10 +133,10 @@ class BlogSeries(Base):
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     chapter_title: Mapped[bool] = mapped_column(Boolean)
     blog_posts: Mapped[List["BlogPost"]] = relationship(
-        back_populates="series", order_by="BlogPost.series_index"
+        back_populates="series", order_by="BlogPost.series_index", lazy="selectin"
     )
     translations: Mapped[List["BlogSeriesTranslation"]] = relationship(
-        back_populates="blog_series"
+        back_populates="blog_series", lazy="joined"
     )
 
     def __repr__(self) -> str:
@@ -151,7 +155,9 @@ class BlogSeriesTranslation(MarkdownContent):
         Enum(Locales, values_callable=lambda x: [e.value for e in x]), nullable=False
     )
     blog_series_id: Mapped[int] = mapped_column(ForeignKey("blog_series.id"))
-    blog_series: Mapped[BlogSeries] = relationship(back_populates="translations")
+    blog_series: Mapped[BlogSeries] = relationship(
+        back_populates="translations", lazy="selectin"
+    )
 
     __mapper_args__ = {"polymorphic_identity": "blog_series"}
 

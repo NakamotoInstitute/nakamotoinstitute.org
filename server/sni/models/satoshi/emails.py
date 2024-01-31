@@ -2,7 +2,7 @@ import datetime
 from typing import TYPE_CHECKING, List
 
 from sqlalchemy import DateTime, ForeignKey, Integer, String, Text
-from sqlalchemy.orm import Mapped, backref, mapped_column, relationship
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from sni.database import Base
 from sni.models.content import JSONFile
@@ -27,10 +27,12 @@ class EmailThread(Base):
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     title: Mapped[str] = mapped_column(String, nullable=False)
     source: Mapped[str] = mapped_column(String, nullable=False)
-    emails: Mapped[List["Email"]] = relationship(back_populates="thread")
+    emails: Mapped[List["Email"]] = relationship(
+        back_populates="thread", lazy="selectin"
+    )
     file_id: Mapped[int] = mapped_column(Integer, ForeignKey("json_files.id"))
     file: Mapped[EmailThreadFile] = relationship(
-        "EmailThreadFile", back_populates="threads"
+        "EmailThreadFile", back_populates="threads", lazy="selectin"
     )
 
     def __repr__(self):
@@ -38,7 +40,9 @@ class EmailThread(Base):
 
 
 class EmailFile(JSONFile):
-    emails: Mapped[List["Email"]] = relationship("Email", back_populates="file")
+    emails: Mapped[List["Email"]] = relationship(
+        "Email", back_populates="file", lazy="selectin"
+    )
 
     __mapper_args__ = {
         "polymorphic_identity": "emails",
@@ -59,14 +63,24 @@ class Email(Base):
     parent_id: Mapped[int] = mapped_column(
         Integer, ForeignKey("emails.id"), nullable=True
     )
+    parent: Mapped["Email"] = relationship(
+        "Email",
+        back_populates="replies",
+        remote_side=[id],
+        lazy="joined",
+    )
     replies: Mapped[List["Email"]] = relationship(
-        backref=backref("parent", remote_side=[id])
+        "Email", back_populates="parent", lazy="selectin", join_depth=1
     )
     thread_id = mapped_column(Integer, ForeignKey("email_threads.id"), nullable=False)
-    thread: Mapped[EmailThread] = relationship(back_populates="emails")
-    quotes: Mapped[List["Quote"]] = relationship(back_populates="email")
+    thread: Mapped[EmailThread] = relationship(back_populates="emails", lazy="joined")
+    quotes: Mapped[List["Quote"]] = relationship(
+        back_populates="email", lazy="selectin"
+    )
     file_id: Mapped[int] = mapped_column(Integer, ForeignKey("json_files.id"))
-    file: Mapped[EmailFile] = relationship("EmailFile", back_populates="emails")
+    file: Mapped[EmailFile] = relationship(
+        "EmailFile", back_populates="emails", lazy="selectin"
+    )
 
     def __repr__(self):
         return f"<Email {self.subject} - {self.source_id}>"

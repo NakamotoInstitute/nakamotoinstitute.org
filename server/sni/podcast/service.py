@@ -1,14 +1,16 @@
 from typing import List
 
 from sqlalchemy import select
-from sqlalchemy.orm import Session
+from sqlalchemy.ext.asyncio import AsyncSession
 
 from sni.models import Episode
 
 
-def get(slug: str, *, db_session: Session) -> Episode:
-    return db_session.scalar(select(Episode).filter_by(slug=slug))
+async def get(slug: str, *, db_session: AsyncSession) -> Episode:
+    return await db_session.scalar(select(Episode).filter_by(slug=slug))
 
 
-def get_all(*, db_session: Session) -> List[Episode]:
-    return db_session.scalars(select(Episode).order_by(Episode.date.desc())).all()
+async def get_all(*, db_session: AsyncSession) -> List[Episode]:
+    return (
+        await db_session.scalars(select(Episode).order_by(Episode.date.desc()))
+    ).all()

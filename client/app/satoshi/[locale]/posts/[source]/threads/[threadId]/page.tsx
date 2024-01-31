@@ -170,13 +170,13 @@ export default async function PostSourceThreadDetail({
   );
 }
 
-export async function generateStaticParams() {
-  const threads = await getForumThreads();
-  return getLocaleParams((locale) =>
-    threads.map((t) => ({
-      locale,
-      source: t.source,
-      threadId: t.id.toString(),
-    })),
-  );
-}
+// export async function generateStaticParams() {
+//   const threads = await getForumThreads();
+//   return getLocaleParams((locale) =>
+//     threads.map((t) => ({
+//       locale,
+//       source: t.source,
+//       threadId: t.id.toString(),
+//     })),
+//   );
+// }

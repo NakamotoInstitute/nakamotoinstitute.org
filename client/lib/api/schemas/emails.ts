@@ -17,7 +17,6 @@ export const zEmail = zEmailBase.extend({
   sentFrom: z.string(),
   parentId: z.number().int().min(1).nullable(),
   satoshiId: z.number().int().min(1).nullable(),
-  replies: z.array(z.string()),
 });
 
 export const zSatoshiEmail = zEmailBase.extend({
@@ -27,6 +26,7 @@ export type SatoshiEmail = z.infer<typeof zSatoshiEmail>;
 
 export const zEmailWithParent = zEmail.extend({
   parent: zEmail.nullable(),
+  replies: z.array(z.string()),
 });
 export type EmailWithParent = z.infer<typeof zEmailWithParent>;
 
