@@ -12,8 +12,6 @@ import { formatPostSource } from "@/utils/strings";
 
 import { IndexPageLayout } from "@satoshi/components/IndexPageLayout";
 
-export const dynamicParams = false;
-
 const generateHref = (l: Locale) => urls(l).satoshi.posts.threadsIndex;
 
 export async function generateMetadata({

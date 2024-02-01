@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+
 import { getNumericId } from "@/utils/strings";
 
 import fetchAPI from "./fetchAPI";
@@ -20,6 +22,9 @@ export async function getEmail(
 ) {
   const satoshiIdNum = getNumericId(satoshiId);
   const res = await fetchAPI(`/satoshi/emails/${source}/${satoshiIdNum}`);
+  if (res.status === 404 || res.status === 422) {
+    notFound();
+  }
   return zEmailDetail.parse(await res.json());
 }
 
@@ -42,6 +47,9 @@ export async function getEmailThread(
   const res = await fetchAPI(
     `/satoshi/emails/${source}/threads/${threadIdNum}?satoshi=${satoshiOnly}`,
   );
+  if (res.status === 404 || res.status === 422) {
+    notFound();
+  }
   return zEmailThreadDetail.parse(await res.json());
 }
 

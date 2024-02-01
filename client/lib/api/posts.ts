@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+
 import { getNumericId } from "@/utils/strings";
 
 import fetchAPI from "./fetchAPI";
@@ -20,6 +22,9 @@ export async function getForumPost(
 ) {
   const satoshiIdNum = getNumericId(satoshiId);
   const res = await fetchAPI(`/satoshi/posts/${source}/${satoshiIdNum}`);
+  if (res.status === 404 || res.status === 422) {
+    notFound();
+  }
   return zForumPostDetail.parse(await res.json());
 }
 
@@ -42,10 +47,16 @@ export async function getForumThread(
   const res = await fetchAPI(
     `/satoshi/posts/${source}/threads/${threadIdNum}?satoshi=${satoshiOnly}`,
   );
+  if (res.status === 404 || res.status === 422) {
+    notFound();
+  }
   return zForumThreadDetail.parse(await res.json());
 }
 
 export async function getForumThreadsBySource(source: ForumPostSource) {
   const res = await fetchAPI(`/satoshi/posts/${source}/threads`);
+  if (res.status === 404) {
+    notFound();
+  }
   return zForumThreadIndex.parse(await res.json());
 }
