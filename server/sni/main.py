@@ -18,8 +18,8 @@ IS_DEVELOPMENT = settings.ENVIRONMENT == "development"
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # if IS_DEVELOPMENT:
-    #     update_content()
+    if IS_DEVELOPMENT:
+        update_content()
     yield
 
 

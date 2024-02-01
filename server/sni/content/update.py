@@ -2,7 +2,7 @@ import logging
 from contextlib import contextmanager
 
 from sni.authors.importers import AuthorImporter
-from sni.database import SessionLocal
+from sni.database import SessionLocalSync
 from sni.library.importers import LibraryImporter
 from sni.mempool.importers import MempoolImporter, MempoolSeriesImporter
 from sni.podcast.importers import EpisodeImporter
@@ -17,7 +17,7 @@ from .json import run_json_importer
 
 @contextmanager
 def session_scope():
-    db_session = SessionLocal()
+    db_session = SessionLocalSync()
     try:
         yield db_session
         db_session.commit()

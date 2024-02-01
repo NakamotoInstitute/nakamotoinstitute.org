@@ -7,7 +7,7 @@ from pydantic import BaseModel, ValidationError
 from sqlalchemy import select
 
 from sni.config import Locales
-from sni.database import SessionLocal
+from sni.database import SessionLocalSync
 from sni.models import FileMetadata, MarkdownContent
 from sni.utils.files import get_file_hash, split_filename
 
@@ -18,7 +18,7 @@ class BaseMarkdownImporter:
     def __init__(self):
         self.files_in_db = {}
         self.actions = collections.Counter(new=0, updated=0, deleted=0, unchanged=0)
-        self.db_session = SessionLocal()
+        self.db_session = SessionLocalSync()
         self.force = False
 
     @property

@@ -1,11 +1,14 @@
-from sqlalchemy import MetaData
+from sqlalchemy import MetaData, create_engine
 from sqlalchemy.ext.asyncio import async_sessionmaker, create_async_engine
-from sqlalchemy.orm import DeclarativeBase
+from sqlalchemy.orm import DeclarativeBase, sessionmaker
 
 from .config import settings
 
 engine = create_async_engine(settings.SQLALCHEMY_DATABASE_URI)
 SessionLocal = async_sessionmaker(bind=engine)
+
+engine_sync = create_engine(settings.SQLALCHEMY_DATABASE_URI)
+SessionLocalSync = sessionmaker(autocommit=False, autoflush=False, bind=engine_sync)
 
 
 async def get_db():
