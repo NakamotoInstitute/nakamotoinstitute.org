@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 from pydantic.alias_generators import to_camel
 
-from sni.config import Locales
+from sni.constants import Locales
 
 
 class ORMModel(BaseModel):

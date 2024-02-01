@@ -2,7 +2,7 @@ from typing import List
 
 from feedgen.feed import FeedGenerator
 
-from sni.config import LocaleType
+from sni.constants import LocaleType
 from sni.models import BlogPostTranslation
 from sni.shared.feed import FeedFormat
 from sni.shared.urls import BaseURLGenerator

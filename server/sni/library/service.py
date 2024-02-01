@@ -3,7 +3,7 @@ from typing import List
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from sni.config import LocaleType
+from sni.constants import LocaleType
 from sni.models import DocumentTranslation
 
 

@@ -13,19 +13,17 @@ from sni.skeptics.router import router as skeptics_router
 
 from .config import settings
 
-IS_DEVELOPMENT = settings.ENVIRONMENT == "development"
-
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    if IS_DEVELOPMENT:
+    if settings.ENVIRONMENT.is_debug:
         update_content()
     yield
 
 
 app = FastAPI(lifespan=lifespan)
 
-if IS_DEVELOPMENT:
+if settings.ENVIRONMENT.is_debug:
     app.mount("/static", StaticFiles(directory="static"), name="static")
 
 app.include_router(authors_router, tags=["authors"], prefix="/authors")

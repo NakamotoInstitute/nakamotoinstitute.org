@@ -4,7 +4,7 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import Session
 
-from sni.config import LocaleType
+from sni.constants import LocaleType
 from sni.models import BlogPost, BlogPostTranslation, BlogSeries, BlogSeriesTranslation
 
 

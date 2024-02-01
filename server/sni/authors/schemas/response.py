@@ -3,7 +3,7 @@ from typing import List
 from pydantic import BaseModel
 from pydantic.alias_generators import to_camel
 
-from sni.config import Locales
+from sni.constants import Locales
 from sni.library.schemas import DocumentIndexModel
 from sni.mempool.schemas import MempoolPostIndexModel
 

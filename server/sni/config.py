@@ -1,35 +1,33 @@
-from enum import Enum, unique
-from typing import Any, Literal
-
 from pydantic import model_validator
 from pydantic_settings import BaseSettings
+
+from .constants import Environment
+
+DEFAULT_BASE_URL = "http://localhost:8000"
+DEBUG_CDN_BASE_URL = f"{DEFAULT_BASE_URL}/static"
 
 
 class Settings(BaseSettings):
     SQLALCHEMY_DATABASE_URI: str | None = (
         "postgresql+psycopg://myuser:mysecretpassword@127.0.0.1:5432/mydatabase"
     )
-    SQLALCHEMY_TRACK_MODIFICATIONS: bool | None = False
-    ENVIRONMENT: Literal["development", "production"] = "production"
-    BASE_URL: str
+    ENVIRONMENT: Environment = Environment.PRODUCTION
+    BASE_URL: str | None = None
     CDN_ACCESS_KEY: str | None = None
     CDN_SECRET_KEY: str | None = None
     CDN_BUCKET_NAME: str | None = None
     CDN_ENDPOINT_URL: str | None = None
     CDN_BASE_URL: str | None = None
 
-    @model_validator(mode="before")
-    @classmethod
-    def check_base_url(cls, data: Any) -> Any:
-        if isinstance(data, dict):
-            if "BASE_URL" not in data:
-                if data.get("ENVIRONMENT") == "development":
-                    data["BASE_URL"] = "http://localhost:8000"
-        return data
+    @model_validator(mode="after")
+    def check_base_url(self) -> "Settings":
+        if self.ENVIRONMENT.is_debug and self.BASE_URL is None:
+            self.BASE_URL = DEFAULT_BASE_URL
+        return self
 
     @model_validator(mode="after")
     def check_cdn_settings(self) -> "Settings":
-        if self.ENVIRONMENT == "production":
+        if self.ENVIRONMENT.is_deployed:
             variables = {
                 "CDN_ACCESS_KEY": self.CDN_ACCESS_KEY,
                 "CDN_SECRET_KEY": self.CDN_SECRET_KEY,
@@ -44,51 +42,9 @@ class Settings(BaseSettings):
                         f"{var_name} must not be None when ENVIRONMENT is 'production'"
                     )
         elif self.CDN_BASE_URL is None:
-            self.CDN_BASE_URL = "http://localhost:8000/static"
+            self.CDN_BASE_URL = DEBUG_CDN_BASE_URL
 
         return self
 
 
 settings = Settings()
-
-
-@unique
-class Locales(str, Enum):
-    ARABIC = "ar"
-    GERMAN = "de"
-    ENGLISH = "en"
-    SPANISH = "es"
-    PERSIAN = "fa"
-    FINNISH = "fi"
-    FRENCH = "fr"
-    HEBREW = "he"
-    ITALIAN = "it"
-    KOREAN = "ko"
-    PORTUGUESE = "pt"
-    RUSSIAN = "ru"
-    CHINESE_SIMPLIFIED = "zh-cn"
-
-
-LocaleType = Literal[
-    Locales.ARABIC.value,
-    Locales.GERMAN.value,
-    Locales.ENGLISH.value,
-    Locales.SPANISH.value,
-    Locales.PERSIAN.value,
-    Locales.FINNISH.value,
-    Locales.FRENCH.value,
-    Locales.HEBREW.value,
-    Locales.ITALIAN.value,
-    Locales.KOREAN.value,
-    Locales.PORTUGUESE.value,
-    Locales.RUSSIAN.value,
-    Locales.CHINESE_SIMPLIFIED.value,
-]
-
-
-@unique
-class DocumentFormats(Enum):
-    PDF = "pdf"
-    EPUB = "epub"
-    MOBI = "mobi"
-    TXT = "txt"

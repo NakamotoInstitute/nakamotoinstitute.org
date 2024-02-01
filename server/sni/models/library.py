@@ -14,7 +14,7 @@ from sqlalchemy import (
 )
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from sni.config import DocumentFormats, Locales
+from sni.constants import DocumentFormats, Locales
 from sni.database import Base
 from sni.models.content import MarkdownContent
 

@@ -4,7 +4,7 @@ from sqlalchemy import exists, or_, select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import aliased
 
-from sni.config import LocaleType
+from sni.constants import LocaleType
 from sni.models import (
     Author,
     BlogPost,

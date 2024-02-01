@@ -6,7 +6,7 @@ from typing import Any, Dict, Optional, Tuple, Type
 from pydantic import BaseModel, ValidationError
 from sqlalchemy import select
 
-from sni.config import Locales
+from sni.constants import Locales
 from sni.database import SessionLocalSync
 from sni.models import FileMetadata, MarkdownContent
 from sni.utils.files import get_file_hash, split_filename

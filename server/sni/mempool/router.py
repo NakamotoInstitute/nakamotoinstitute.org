@@ -4,7 +4,7 @@ from fastapi import APIRouter, Depends, HTTPException, Response
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import Session
 
-from sni.config import LocaleType
+from sni.constants import LocaleType
 from sni.database import get_db
 from sni.shared.feed import FeedFormat
 from sni.shared.responses import AtomResponse, RSSResponse

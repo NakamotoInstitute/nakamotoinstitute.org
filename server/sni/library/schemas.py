@@ -4,7 +4,7 @@ from typing import Any, List, Optional
 
 from pydantic import AliasPath, BaseModel, Field, field_serializer, model_validator
 
-from sni.config import DocumentFormats, Locales
+from sni.constants import DocumentFormats, Locales
 
 from ..authors.schemas.base import AuthorModel
 from ..shared.schemas import ORMModel, TranslationSchema

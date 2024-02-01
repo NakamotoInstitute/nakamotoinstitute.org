@@ -83,7 +83,7 @@ def sync(
         bool, typer.Option(help="Force cdn sync even if in development")
     ] = False,
 ):
-    if settings.ENVIRONMENT == "development" and not force:
+    if settings.ENVIRONMENT.is_debug and not force:
         print("Skipping sync in development environment without force flag.")
         return
 
