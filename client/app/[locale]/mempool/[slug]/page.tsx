@@ -4,6 +4,7 @@ import { Trans } from "react-i18next/TransWithoutContext";
 
 import { PageLayout } from "@/app/components/PageLayout";
 import { Rehype } from "@/app/components/Rehype";
+import { RenderedItemsList } from "@/app/components/RenderedItemsList";
 import { getMempoolParams, getMempoolPost } from "@/lib/api/mempool";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { getDir } from "@/lib/i18n/utils";
@@ -58,24 +59,53 @@ export default async function MempoolPost({
         <section className="prose mx-auto" dir={getDir(locale)}>
           <Rehype hasMath={post.hasMath}>{post.content}</Rehype>
           <hr />
-          {post.translations.length > 0 ? (
+          {post.translators.length > 0 ? (
             <p>
               <Trans
                 t={t}
-                i18nKey="Read in <links />"
+                i18nKey="Translated by <links />"
                 components={{
                   links: (
-                    <TranslationLinks
+                    <RenderedItemsList
+                      as="span"
                       locale={locale}
-                      translations={post.translations}
-                      urlFunc={(item) =>
-                        urls(item.locale).mempool.post(item.slug)
+                      items={post.translators}
+                      renderItem={(item) =>
+                        item.url ? (
+                          <Link key={item.slug} href={item.url}>
+                            {item.name}
+                          </Link>
+                        ) : (
+                          item.name
+                        )
                       }
                     />
                   ),
                 }}
               />
             </p>
+          ) : null}
+          {post.translations.length > 0 ? (
+            <>
+              {post.translators.length > 0 ? <hr /> : null}
+              <p>
+                <Trans
+                  t={t}
+                  i18nKey="Read in <links />"
+                  components={{
+                    links: (
+                      <TranslationLinks
+                        locale={locale}
+                        translations={post.translations}
+                        urlFunc={(item) =>
+                          urls(item.locale).mempool.post(item.slug)
+                        }
+                      />
+                    ),
+                  }}
+                />
+              </p>
+            </>
           ) : null}
         </section>
       </article>

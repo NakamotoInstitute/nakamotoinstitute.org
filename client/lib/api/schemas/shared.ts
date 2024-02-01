@@ -25,3 +25,12 @@ export const zTranslationData = z.object({
 export type TranslationData = z.infer<typeof zTranslationData>;
 
 export const zTranslations = z.array(zTranslationData);
+
+export const zTranslator = z.object({
+  name: z.string(),
+  url: z.string().nullable(),
+  slug: z.string(),
+});
+export type Translator = z.infer<typeof zTranslator>;
+
+export const zTranslators = z.array(zTranslator);

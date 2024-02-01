@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 import { getAuthorIndex } from "./authors";
-import { zTranslationData } from "./shared";
+import { zTranslationData, zTranslations, zTranslators } from "./shared";
 
 export const zMempoolSeries = z.object({
   locale: z.string(),
@@ -28,13 +28,14 @@ const zMempoolPostBase = z.object({
   date: z.coerce.date(),
   added: z.coerce.date(),
   authors: z.lazy(() => getAuthorIndex()),
-  translations: z.array(zTranslationData),
+  translations: zTranslations,
   seriesIndex: z.number().int().min(1).nullable(),
   series: zMempoolSeries.nullable(),
 });
 
 export const zMempoolPost = zMempoolPostBase.extend({
   content: z.string(),
+  translators: zTranslators,
   hasMath: z.boolean(),
 });
 export type MempoolPost = z.infer<typeof zMempoolPost>;
