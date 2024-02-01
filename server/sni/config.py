@@ -66,7 +66,7 @@ class Locales(str, Enum):
     KOREAN = "ko"
     PORTUGUESE = "pt"
     RUSSIAN = "ru"
-    CHINESE = "zh"
+    CHINESE_SIMPLIFIED = "zh-cn"
 
 
 LocaleType = Literal[
@@ -82,7 +82,7 @@ LocaleType = Literal[
     Locales.KOREAN.value,
     Locales.PORTUGUESE.value,
     Locales.RUSSIAN.value,
-    Locales.CHINESE.value,
+    Locales.CHINESE_SIMPLIFIED.value,
 ]
 
 

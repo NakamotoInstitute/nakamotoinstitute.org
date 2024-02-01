@@ -33,7 +33,7 @@ def upgrade() -> None:
         "ko",
         "pt",
         "ru",
-        "zh",
+        "zh-cn",
         name="locales",
     ).create(op.get_bind())
     sa.Enum("pdf", "epub", "mobi", "txt", name="documentformats").create(op.get_bind())
@@ -154,7 +154,7 @@ def upgrade() -> None:
                 "it",
                 "pt",
                 "ru",
-                "zh",
+                "zh-cn",
                 name="locales",
                 create_type=False,
             ),
@@ -205,7 +205,7 @@ def upgrade() -> None:
                 "ko",
                 "pt",
                 "ru",
-                "zh",
+                "zh-cn",
                 name="locales",
                 create_type=False,
             ),
@@ -248,7 +248,7 @@ def upgrade() -> None:
                 "it",
                 "pt",
                 "ru",
-                "zh",
+                "zh-cn",
                 name="locales",
                 create_type=False,
             ),
@@ -589,7 +589,7 @@ def downgrade() -> None:
         "it",
         "pt",
         "ru",
-        "zh",
+        "zh-cn",
         name="locales",
     ).drop(op.get_bind())
     # ### end Alembic commands ###

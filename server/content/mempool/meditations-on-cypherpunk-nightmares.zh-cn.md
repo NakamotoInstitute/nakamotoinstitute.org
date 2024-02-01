@@ -47,7 +47,7 @@ _生活在 2014 年的任何人不仅应该假设他们的秘密将被泄露，�
   <blockquote>
     <p>The universe is change: life is judgement.</p>
   </blockquote>
-  <figcaption>Marcus Aurelius, <em>Mediations</em> (Book IV, 3.4)</figcaption>
+  <figcaption>Marcus Aurelius, <em>Meditations</em> (Book IV, 3.4)</figcaption>
 </figure>
 
 如果我们认真对待 Tim May 的话和经验数据，他所描述的加密无政府主义正在发生，而且将继续发生。技术是一把双刃剑，从罪犯到好人都能使用它。然而，这应该被认为是技术本性，希望有一种方法可以阻止技术是一种乌托邦。当 Cody Wilson 和[Defense Distributed](https://defdist.org/)给世界带来解救者，我们被迫面对这一事实：技术不是民主的。对于 3D 打印枪支、公钥密码学、比特币或者 BitTorrent 是否应该存在的问题，不是投票决定的。以上每一种技术分别是 Cody Wilson, Whitfield Diffie & Martin Hellman, Satoshi Nakamoto 和 Bram Cohen 的作品。它们已经存在了，我们必须应对这种结果。如果坏人能够使用这些技术，我们必须更好的使用这些技术。
