@@ -9,7 +9,7 @@ export const locales = [
   "he",
   "it",
   "ko",
-  "pt",
+  "pt-br",
   "ru",
   "zh-cn",
 ] as const;
