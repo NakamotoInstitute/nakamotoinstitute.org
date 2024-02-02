@@ -8,7 +8,7 @@ import { locales } from "@/i18n";
 import { getPage } from "@/lib/content";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
-import { cdnUrl, urls } from "@/lib/urls";
+import { urls } from "@/lib/urls";
 
 const generateHref = (l: Locale) => urls(l).satoshi.index;
 
@@ -54,29 +54,6 @@ export default async function SatoshiIndex({
       </PageHeader>
       <section>
         <p>
-          Read the original whitepaper,{" "}
-          <Link href={urls(locale).library.doc("bitcoin")}>
-            &ldquo;Bitcoin: A Peer-to-Peer Electronic Cash System.&rdquo;
-          </Link>
-        </p>
-        <p>
-          PDF available in{" "}
-          <Link href={cdnUrl("/docs/bitcoin.pdf")}>English</Link>,{" "}
-          <Link href={cdnUrl("/docs/bitcoin-zh-cn.pdf")}>
-            Chinese (Simplified)
-          </Link>
-          ,{" "}
-          <Link href={cdnUrl("/docs/bitcoin-zh-tw.pdf")}>
-            Chinese (Traditional)
-          </Link>
-          , <Link href={cdnUrl("/docs/bitcoin-he.pdf")}>Hebrew</Link>,{" "}
-          <Link href={cdnUrl("/docs/bitcoin-it.pdf")}>Italian</Link>,{" "}
-          <Link href={cdnUrl("/docs/bitcoin-jp.pdf")}>Japanese</Link>,{" "}
-          <Link href={cdnUrl("/docs/bitcoin-ru.pdf")}>Russian</Link>,{" "}
-          <Link href={cdnUrl("/docs/bitcoin-es.pdf")}>Spanish</Link>, and{" "}
-          <Link href={cdnUrl("/docs/bitcoin-vn.pdf")}>Vietnamese</Link>
-        </p>
-        <p>
           <Link href="/satoshinakamoto.asc">
             Satoshi Nakamoto&rsquo;s PGP Key
           </Link>
@@ -84,6 +61,12 @@ export default async function SatoshiIndex({
       </section>
       <hr className="my-4" />
       <section className="mx-auto flex flex-col gap-4">
+        <SatoshiSection
+          label="The Whitepaper"
+          href={urls(locale).library.doc("bitcoin")}
+        >
+          The original vision.
+        </SatoshiSection>
         <SatoshiSection label="Emails" href={urls(locale).satoshi.emails.index}>
           It all began here.
         </SatoshiSection>
@@ -94,7 +77,7 @@ export default async function SatoshiIndex({
           Where an idea flourished.
         </SatoshiSection>
         <SatoshiSection label="Code" href={urls(locale).satoshi.code}>
-          The vision distilled.
+          The vision instantiated.
         </SatoshiSection>
         <SatoshiSection label="Quotes" href={urls(locale).satoshi.quotesIndex}>
           Indexed wisdom from the quotable Satoshi.

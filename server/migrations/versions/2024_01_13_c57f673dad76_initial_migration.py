@@ -65,7 +65,6 @@ def upgrade() -> None:
         sa.Column("date", sa.Date(), nullable=False),
         sa.Column("granularity", sa.String(), nullable=False),
         sa.Column("doctype", sa.String(), nullable=False),
-        sa.Column("external", sa.String(), nullable=True),
         sa.Column("has_math", sa.Boolean(), nullable=False),
         sa.PrimaryKeyConstraint("id", name=op.f("pk_documents")),
     )
@@ -259,6 +258,7 @@ def upgrade() -> None:
         sa.Column("display_title", sa.String(), nullable=True),
         sa.Column("subtitle", sa.String(), nullable=True),
         sa.Column("slug", sa.String(), nullable=False),
+        sa.Column("external", sa.String(), nullable=True),
         sa.Column("image_alt", sa.String(), nullable=True),
         sa.Column("document_id", sa.Integer(), nullable=False),
         sa.ForeignKeyConstraint(

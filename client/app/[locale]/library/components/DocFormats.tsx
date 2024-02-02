@@ -27,7 +27,11 @@ export async function DocFormatLinks({
       <Link
         key={format}
         className={classes?.link}
-        href={cdnUrl(`/docs/${doc.slug}.${format}`)}
+        href={cdnUrl(
+          locale === "en"
+            ? `/docs/${doc.slug}.${format}`
+            : `/docs/${doc.slug}_${locale}.${format}`,
+        )}
       >
         {format === "epub" ? "ePub" : format.toUpperCase()}
       </Link>,

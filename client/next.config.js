@@ -19,15 +19,21 @@ const nextConfig = {
     ],
   },
   async redirects() {
-    return process.env.VERCEL_ENV !== "preview"
-      ? [
-          {
-            source: "/satoshi/:path*",
-            destination: satoshiDestination,
-            permanent: false,
-          },
-        ]
-      : [];
+    const redirects = [
+      {
+        source: "/bitcoin.pdf",
+        destination: `${cdnBaseUrl}/docs/bitcoin.pdf`,
+        permanent: true,
+      },
+    ];
+    if (process.env.VERCEL_ENV !== "preview") {
+      redirects.push({
+        source: "/satoshi/:path*",
+        destination: satoshiDestination,
+        permanent: false,
+      });
+    }
+    return redirects;
   },
 };
 

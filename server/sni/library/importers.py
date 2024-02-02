@@ -44,6 +44,9 @@ class LibraryImporter(TranslatedMarkdownImporter):
     def process_translation_for_translated_file(
         self, translation_data, canonical_entry, metadata
     ):
+        translation_data["external"] = (
+            translation_data.get("external") or canonical_entry["translation"].external
+        )
         translation_data["formats"] = [
             get_or_create(DocumentFormat, db_session=self.db_session, format_type=fmt)
             for fmt in translation_data.pop("formats")

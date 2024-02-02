@@ -17,7 +17,6 @@ class DocumentCanonicalMDModel(BaseModel):
     granularity: str = None
     image: Optional[str] = None
     doctype: str
-    external: Optional[str] = None
     has_math: Optional[bool] = False
 
     @model_validator(mode="after")
@@ -50,6 +49,7 @@ class DocumentMDModel(BaseModel):
     title: str
     subtitle: Optional[str] = None
     display_title: Optional[str] = None
+    external: Optional[str] = None
     sort_title: Optional[str] = None
     image_alt: Optional[str] = None
     formats: Optional[List[str]] = []
@@ -62,6 +62,7 @@ class DocumentMDModel(BaseModel):
 
 class DocumentTranslationMDModel(DocumentMDModel):
     slug: Optional[str] = None
+    external: Optional[str] = None
     translators: Optional[List[str]] = []
 
 
@@ -75,7 +76,7 @@ class DocumentBaseModel(ORMModel):
     slug: str
     date: datetime.date = Field(alias=AliasPath("document", "date"))
     granularity: str = Field(alias=AliasPath("document", "granularity"))
-    external: Optional[str] = Field(alias=AliasPath("document", "external"))
+    external: Optional[str]
     authors: List[AuthorModel] = Field(alias=AliasPath("document", "authors"))
     translations: List[TranslationSchema]
     translators: List[TranslatorModel]

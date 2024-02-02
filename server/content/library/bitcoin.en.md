@@ -264,7 +264,3 @@ We have proposed a system for electronic transactions without relying on trust. 
 		<p>W. Feller, <a href="/library/introduction-probability-theory-vol-i/">"An introduction to probability theory and its applications,"</a> 1957.&nbsp;<a href="#ref8" title="Jump back to [8]">↩</a></p>
 	</li>
 </ol>
-
----
-
-PDF available in [English](/static/docs/bitcoin.pdf), [Chinese (Simplified)](/static/docs/bitcoin-zh-cn.pdf), [Chinese (Traditional)](/static/docs/bitcoin-zh-tw.pdf), [Hebrew](/static/docs/bitcoin-he.pdf), [Italian](/static/docs/bitcoin-it.pdf), [Japanese](/static/docs/bitcoin-jp.pdf), [Russian](/static/docs/bitcoin-ru.pdf), [Spanish](/static/docs/bitcoin-es.pdf), and [Vietnamese](/static/docs/bitcoin-vn.pdf)

@@ -71,7 +71,6 @@ class Document(Base):
         String, nullable=False
     )
     doctype: Mapped[str] = mapped_column(String, nullable=False)
-    external: Mapped[str] = mapped_column(String, nullable=True)
     authors: Mapped[List["Author"]] = relationship(
         secondary=document_authors, back_populates="docs", lazy="joined"
     )
@@ -98,6 +97,7 @@ class DocumentTranslation(MarkdownContent):
     display_title: Mapped[str] = mapped_column(String, nullable=True)
     subtitle: Mapped[str] = mapped_column(String, nullable=True)
     slug: Mapped[str] = mapped_column(String, nullable=False)
+    external: Mapped[str] = mapped_column(String, nullable=True)
     image_alt: Mapped[str] = mapped_column(String, nullable=True)
     document_id: Mapped[int] = mapped_column(ForeignKey("documents.id"))
     document: Mapped[Document] = relationship(
