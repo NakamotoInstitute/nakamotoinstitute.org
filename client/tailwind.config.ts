@@ -74,6 +74,11 @@ const config: Config = {
                 },
               },
             },
+            "mjx-container": {
+              margin: "0.5em 0",
+              padding: "0.5em 0",
+              overflowX: "scroll",
+            }
           },
         },
       }),
