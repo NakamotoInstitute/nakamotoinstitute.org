@@ -94,7 +94,7 @@ export async function PostHeader({ locale, post }: PostHeaderProps) {
         {post.image ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            className="mx-auto block rounded-sm pt-6"
+            className="mx-auto block rounded-sm pt-6 max-w-[640px]"
             src={cdnUrl(`/img/mempool/${post.slug}/${post.image}`)}
             alt={post.imageAlt ?? ""}
           />

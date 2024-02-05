@@ -42,7 +42,7 @@ export default async function SeriesDetail({
 
   return (
     <PageLayout locale={locale} generateHref={generateHref}>
-      <PageHeader title={series.title}></PageHeader>
+      <PageHeader title={series.title} />
       <section>
         {posts?.map((post) => (
           <PostListing key={post.slug} locale={locale} post={post} />
