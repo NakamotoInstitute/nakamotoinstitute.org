@@ -153,7 +153,7 @@ cause a severe disruption to the Bitcoin economy. There would not be enough
 bitcoins to go around and bitcoins would be so inconvenient that no one would
 want to improve the bitcoin infrastructure. That would be a very severe
 liquidity trap! But because the exchange rate of bitcoins is set [by the
-market](/mempool/the-bitcoin-central-banks-perfect-monetary-policy/)
+market](/mempool/the-bitcoin-central-banks-perfect-monetary-policy)
 rather than fixed, nothing like this has ever been a problem.
 
 Now I let Krugman off the hook for disregarding deregulation as a solution,
@@ -176,7 +176,7 @@ he says.
 At the time of this writing, demand for Bitcoin has gone up roughly 160,000
 times, as measured by its price, since the day that two pizzas were bought for
 10,000 BTC. Moreover this price increase
-[corresponds](/mempool/how-we-know-bitcoin-is-not-a-bubble/) to the growth of
+[corresponds](/mempool/how-we-know-bitcoin-is-not-a-bubble) to the growth of
 the Bitcoin economy. Yet there are now only about three times as many bitcoins
 that have been claimed as in those days.
 
@@ -223,7 +223,7 @@ joining and holding its scrip is worthwhile, but without a fixed price, there
 is effectively no such pledge. It is possible that some system of rules would
 enable the system to function still, but _merely_ eliminating the fixed price
 for scrip would transform it into nothing but an
-[appcoin](/mempool/appcoins-are-snake-oil/). Consequently, there would be a
+[appcoin](/mempool/appcoins-are-snake-oil). Consequently, there would be a
 self-reinforcing trend of members reducing their holdings of scrip in
 expectation that others will do the same, and demanding higher prices for the
 same reason. This in turn would reduce the expected future value of the co-op,
@@ -234,12 +234,12 @@ would not be able to maintain itself on those terms.
 users have no need to make pledges or guarantees to one another because
 Bitcoin works without requiring a contractual relationship between its users.
 People can be expected to follow Bitcoin’s
-[conventions](/mempool/bitcoins-compound-rewards/) (like
+[conventions](/mempool/bitcoins-compound-rewards) (like
 accepting the greatest-difficulty chain) without making promises to one
 another, because Bitcoin has its incentives in the right place. Because there
 are real reasons to expect Bitcoin to be useful as money and for the Bitcoin
 network to grow, people should be expected to demand continually [lower
-prices](/mempool/why-bitcoin-will-continue-to-grow/) in Bitcoin, not higher
+prices](/mempool/why-bitcoin-will-continue-to-grow) in Bitcoin, not higher
 ones.
 
 Thus, a babysitting co-op is very different from a money economy (Bitcoin or

@@ -84,7 +84,7 @@ Und das sind alles Scams.
 
 Unabhängig von deren Fähigkeit tatsächlich ihre Versprechen einzulösen fallen sie alle bei einem einfachen Test durch: Ist der Return On Investment positiv? Wenn du gedanklich in der Fiat-Welt steckengeblieben bist, kannst du natürlich ein paar schnelle Euros machen, aber angesichts des erwarteten Wachstums von Bitcoin: kann man wirklich erwarten, irgendwie besser dazustehen als mit Hamstern? Langfristige Investoren sollten Bitcoin als Rechnungseinheit benutzen und jede einzelne Investition mit dem erwarteten Gewinn aus Bitcoin vergleichen.
 
-Wenn es zur [Hyperbitcoinisierung](/mempool/hyperbitcoinization/) kommt werden Bitcoin Halter ihre Kaufkraft um Größenordnungen steigen sehen. Bitcoiner sollten zweimal nachdenken bevor sie auch nur ein paar Millibits in ein Projekt stecken "nur um zu gucken, was dabei herauskommt." Der Running Gag in der Gemeinde ist, wie teuer die beiden Pizzas waren, die [Laszlo gekauft](https://bitcointalk.org/index.php?topic=137) hat. Wir reißen Witze über eine Millionen-Dollar-Pizza, aber die Hyperbitcoinisierung hat noch nicht einmal stattgefunden. Ich preise Laszlo für seinen unternehmerischen Einsatz einer neuen Technologie, aber ich wünsche weder für mich noch irgend jemanden sonst, ein Laszlo zu sein.
+Wenn es zur [Hyperbitcoinisierung](/mempool/hyperbitcoinization) kommt werden Bitcoin Halter ihre Kaufkraft um Größenordnungen steigen sehen. Bitcoiner sollten zweimal nachdenken bevor sie auch nur ein paar Millibits in ein Projekt stecken "nur um zu gucken, was dabei herauskommt." Der Running Gag in der Gemeinde ist, wie teuer die beiden Pizzas waren, die [Laszlo gekauft](https://bitcointalk.org/index.php?topic=137) hat. Wir reißen Witze über eine Millionen-Dollar-Pizza, aber die Hyperbitcoinisierung hat noch nicht einmal stattgefunden. Ich preise Laszlo für seinen unternehmerischen Einsatz einer neuen Technologie, aber ich wünsche weder für mich noch irgend jemanden sonst, ein Laszlo zu sein.
 
 Wer gewinnt hier? Es ist nicht der Investor, sondern der wahre Jakob der Krypto-Träume. Ethereum hat neulich [015122656932 Mio](https://www.wired.com/2014/09/ethereum-backers-raise-15-million/) in ihrem "Ether Sale" für ein unfertiges Produkt eingenommen. In Bitcoin natürlich. Es gibt noch nicht einmal ein Produkt, aber Investoren haben schon ihre Wetten platziert. Ethereum hat jetzt über 30.000 Bitcoins, die einmal einen unbeschreiblichen Reichtum darstellen werden, während Investoren nur wertlose Hoffnung besitzen.
 
@@ -92,7 +92,7 @@ _Investitionen sind Scams weil sie zu der Annahme verleiten, man könne einen h�
 
 ## …Aber Das Müsste Nicht Sein
 
-Wenn ein Bitcoin Hamster seinen Profit reinvestieren will, braucht er nicht weiter zu schauen als in das Bitcoin Netzwerk selbst. Die richtige Strategie für Bitcoin Unternehmertum, wie Daniel ausgeführt hat, ist [spekulative Philanthropie](/mempool/the-correct-strategy-of-bitcoin-entrepreneurship/) . Während endlos Geld in Altcoins, Appcoins, Vaporware, unsichere Dienste von Drittanbietern etc. geflossen sind, gibt es in Bitcoin viele Probleme, die durch Open Source Entwicklung gelöst werden müssen; viele davon sind einfach zu lösen. Durch das unterstützen dieser Projekte steigen die Sicherheit, Zugänglichkeit und Nutzbarkeit der Bitcoin Netzwerks, wodurch dieses zu einer noch besseren Investition wird.
+Wenn ein Bitcoin Hamster seinen Profit reinvestieren will, braucht er nicht weiter zu schauen als in das Bitcoin Netzwerk selbst. Die richtige Strategie für Bitcoin Unternehmertum, wie Daniel ausgeführt hat, ist [spekulative Philanthropie](/mempool/the-correct-strategy-of-bitcoin-entrepreneurship) . Während endlos Geld in Altcoins, Appcoins, Vaporware, unsichere Dienste von Drittanbietern etc. geflossen sind, gibt es in Bitcoin viele Probleme, die durch Open Source Entwicklung gelöst werden müssen; viele davon sind einfach zu lösen. Durch das unterstützen dieser Projekte steigen die Sicherheit, Zugänglichkeit und Nutzbarkeit der Bitcoin Netzwerks, wodurch dieses zu einer noch besseren Investition wird.
 
 Fang an zu prgrammieren. Jedes neue [git commit](https://git-scm.com/book/en/v2) ist gut für Bitcoin.
 
@@ -112,7 +112,7 @@ _Hamster sind Scammer weil sie das exponentielle (und sehr wahrscheinliche) Wach
 
 ## …Und Du Solltest Ihnen Dankbar Sein
 
-Hamstern gibt dem Geld erst seinen Wert. Und nein, [meine kriegst du nicht](/mempool/im-hoarding-bitcoins-and-no-you-cant-have-any/) .
+Hamstern gibt dem Geld erst seinen Wert. Und nein, [meine kriegst du nicht](/mempool/im-hoarding-bitcoins-and-no-you-cant-have-any) .
 
 <figure>
   <img src="/static/img/mempool/everyones-a-scammer/bitcoinfeedbackloops.jpg" alt="Bitcoin feedback loops" />
@@ -128,7 +128,7 @@ Bitcoin Scamming ist tatsächlich ein Job, der nie zu Ende sein wird. Die marktb
   <img src="/static/img/mempool/everyones-a-scammer/cornered.jpg" alt="Cornered" />
 </figure>
 
-Der einzige Lösungsweg besteht im Aufbau von vertrauenswürdigen Netzwerken. Wie bereits gesagt wurde ist [Bitcoin toll, aber es kann uns nicht mit unserem Affenhirn helfen](/mempool/bitcoin-is-great-but-it-wont-fix-our-monkey-brains/) . Bitcoin bietet zwar ein Geld ohne Dritte des Vertrauens, aber es kann dies nur weil sein Hauptbuch (Ledger) selbstbezüglich ist. Die Menschen, die es tatsächlich benutzen, müssen sich immer des Ausschlusses jeder Gewährleistung bewusst sein, wenn sie Bitcoin benutzen. Durch [Zahlungsabwicklungsprotokolle](https://github.com/bitcoin/bips/blob/master/bip-0070.mediawiki) , [Vertrauensnetzwerke](https://bitcoin-otc.com) , [Intelligente Verträge](https://en.bitcoin.it/wiki/Contract) , [GPG Verträge](/gpg-contracts/) und [Abstimmungspools](http://bitcoinism.blogspot.de/2013/12/voting-pools-how-to-stop-plague-of.html) können Benutzer die Risiken der Teilnahme an verschiedenen Handelsformen mindern.
+Der einzige Lösungsweg besteht im Aufbau von vertrauenswürdigen Netzwerken. Wie bereits gesagt wurde ist [Bitcoin toll, aber es kann uns nicht mit unserem Affenhirn helfen](/mempool/bitcoin-is-great-but-it-wont-fix-our-monkey-brains) . Bitcoin bietet zwar ein Geld ohne Dritte des Vertrauens, aber es kann dies nur weil sein Hauptbuch (Ledger) selbstbezüglich ist. Die Menschen, die es tatsächlich benutzen, müssen sich immer des Ausschlusses jeder Gewährleistung bewusst sein, wenn sie Bitcoin benutzen. Durch [Zahlungsabwicklungsprotokolle](https://github.com/bitcoin/bips/blob/master/bip-0070.mediawiki) , [Vertrauensnetzwerke](https://bitcoin-otc.com) , [Intelligente Verträge](https://en.bitcoin.it/wiki/Contract) , [GPG Verträge](/gpg-contracts/) und [Abstimmungspools](http://bitcoinism.blogspot.de/2013/12/voting-pools-how-to-stop-plague-of.html) können Benutzer die Risiken der Teilnahme an verschiedenen Handelsformen mindern.
 
 ## Der Einzig Siegreiche Handlung Ist, Nicht Zu Handeln
 

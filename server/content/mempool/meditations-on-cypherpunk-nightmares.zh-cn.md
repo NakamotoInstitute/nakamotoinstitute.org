@@ -76,9 +76,9 @@ _生活在 2014 年的任何人不仅应该假设他们的秘密将被泄露，�
   <figcaption>Seneca, <a href="https://en.wikisource.org/wiki/Moral_letters_to_Lucilius/Letter_3">“On True and False Friendship”</a></figcaption>
 </figure>
 
-正如我上面所说的，[强大的密码学并不是万能药](/mempool/bitcoin-is-great-but-it-wont-fix-our-monkey-brains/zh/)。即使最强大的端对端加密，也不能保护你的信息安全，因为另一端可能泄密。因此，了解和信任和你通信的对方是非常重要的。你应该对对方有信心和理解他们的脆弱性。好人也可能被攻击。
+正如我上面所说的，[强大的密码学并不是万能药](/zh-cn/mempool/bitcoin-is-great-but-it-wont-fix-our-monkey-brains)。即使最强大的端对端加密，也不能保护你的信息安全，因为另一端可能泄密。因此，了解和信任和你通信的对方是非常重要的。你应该对对方有信心和理解他们的脆弱性。好人也可能被攻击。
 
-因此，交最好的朋友。与其他人建立牢固的、可信任的关系，知道那些关系的限度。不要让社交媒体稀释“朋友”这个词，[避免结交骗子](/mempool/everyones-a-scammer/)。
+因此，交最好的朋友。与其他人建立牢固的、可信任的关系，知道那些关系的限度。不要让社交媒体稀释“朋友”这个词，[避免结交骗子](/mempool/everyones-a-scammer)。
 
 ## 结论
 

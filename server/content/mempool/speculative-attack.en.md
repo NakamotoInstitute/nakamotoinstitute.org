@@ -92,7 +92,7 @@ Which countries are most vulnerable to a currency crisis? Business Insider provi
 
 ## 3\. Hyperbitcoinization
 
-A speculative attack that seems isolated to one or a few weak currencies, but causes the purchasing power of bitcoins to go up dramatically, will rapidly turn into a contagion. For example, the Swiss will see the price of bitcoins go up ten fold, and then a hundred fold. At the margin they will buy bitcoins simply because they want to speculate on their value, not due to an inherent problem with the Swiss Franc. The [reflexivity](http://en.wikipedia.org/wiki/Reflexivity_%28social_theory%29) here entails that the reduction in demand for Swiss Francs would actually cause higher than expected inflation and thus an inherent problem with the Swiss Franc. The feedback loop between fiat inflation and bitcoin deflation will throw the world into full hyperbitcoinization, explained by Daniel [here](/mempool/hyperbitcoinization/).
+A speculative attack that seems isolated to one or a few weak currencies, but causes the purchasing power of bitcoins to go up dramatically, will rapidly turn into a contagion. For example, the Swiss will see the price of bitcoins go up ten fold, and then a hundred fold. At the margin they will buy bitcoins simply because they want to speculate on their value, not due to an inherent problem with the Swiss Franc. The [reflexivity](http://en.wikipedia.org/wiki/Reflexivity_%28social_theory%29) here entails that the reduction in demand for Swiss Francs would actually cause higher than expected inflation and thus an inherent problem with the Swiss Franc. The feedback loop between fiat inflation and bitcoin deflation will throw the world into full hyperbitcoinization, explained by Daniel [here](/mempool/hyperbitcoinization).
 
 ## Conclusion
 
@@ -102,9 +102,9 @@ Bitcoin will become mainstream. The Bitcoin skeptics don't understand this due t
 [^2]: This is generally stated by people who are in the 'out-group' and fantasize about being in the 'in-group' through politics/pedigree rather than economic/meritocratic processes. Demographically, they probably overlap with fans of [The Secret](http://en.wikipedia.org/wiki/The_Secret_%28book%29). Economically, they are without exception [bezzlers](http://trilema.com/2014/the-bezzle-usd-and-the-tide-usd/#footnote_1_53585).
 [^3]: Bitcoin has entered its [Eternal September](http://en.wikipedia.org/wiki/Eternal_September), where every person new to Bitcoin thinks they have a unique understanding of Bitcoin and everyone ought to hear about it. There's an endless flood of newbies 'concerned' about such and such 'problem' with Bitcoin. The Bitcoin community does these arrivistes a real disservice by taking them seriously instead of just telling them 'read more'.
 [^4]: The opposite of Bitcoin Jesus. Bitcoin [Jonah](http://en.wikipedia.org/wiki/Jonah_complex) is a defeatist, self-sabotaging, and timid 'man' who is on a permanent quest to confirm Bitcoin's weakness.
-[^5]: [Bitcoin is the Best Unit of Account](/mempool/bitcoin-is-the-best-unit-of-account/) by Daniel Krawisz
-[^6]: [The Bitcoin Central Bank’s Perfect Monetary Policy](/mempool/the-bitcoin-central-banks-perfect-monetary-policy/) by Pierre Rochard
-[^7]: [Bitcoin Has No Image Problem](/mempool/bitcoin-has-no-image-problem/) by Daniel Krawisz
-[^8]: [Hyperbitcoinization](/mempool/hyperbitcoinization/) by Daniel Krawisz
+[^5]: [Bitcoin is the Best Unit of Account](/mempool/bitcoin-is-the-best-unit-of-account) by Daniel Krawisz
+[^6]: [The Bitcoin Central Bank’s Perfect Monetary Policy](/mempool/the-bitcoin-central-banks-perfect-monetary-policy) by Pierre Rochard
+[^7]: [Bitcoin Has No Image Problem](/mempool/bitcoin-has-no-image-problem) by Daniel Krawisz
+[^8]: [Hyperbitcoinization](/mempool/hyperbitcoinization) by Daniel Krawisz
 [^9]: If you disagree then either you have not been learning or you have not been engaging in the debate, go back to square one.
 [^10]: 'I live in a rather special world. I only know one person who voted for Nixon. Where they are I don't know. They're outside my ken. But sometimes when I'm in a theater I can feel them.' - [Pauline Kael](http://en.wikiquote.org/wiki/Pauline_Kael#Sourced)

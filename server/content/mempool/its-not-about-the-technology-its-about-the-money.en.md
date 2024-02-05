@@ -320,7 +320,7 @@ them would be willing to risk a second round. If the game should proceed well,
 the economists would start to think about how wealthy each would be if they
 managed to get more than the rest. Soon the game would cease to be orderly as
 they all tried to sell as [much as
-possible](/mempool/bitcoins-compound-rewards/) in
+possible](/mempool/bitcoins-compound-rewards) in
 order to buy the new money while it was cheap.
 
 Bitcoin did not arise out of a barter system. The dollar and the other
@@ -364,7 +364,7 @@ diversify into that you lose everything. Diversification only makes sense
 among investments which are not bullshit. If we were looking at a bunch of
 stocks that all already paid dividends, then diversification would make sense.
 On the other hand, there are potentially an [infinite number of
-scamcoins](/mempool/the-coming-demise-of-altcoins/).
+scamcoins](/mempool/the-coming-demise-of-altcoins).
 During late 2013 and early 2014, new ones were being produced and hawked every
 day. They can be produced at this rate until everyone who thinks
 diversification is a good idea goes broke. Now that all the dumbest people
@@ -390,7 +390,7 @@ amount of sloganeering will bring it back.
 
 But what about something more elaborate? Let’s pretend for a moment that
 Ethereum [actually
-worked](/mempool/ethereum-is-doomed/) and was
+worked](/mempool/ethereum-is-doomed) and was
 actually something that competed with Bitcoin on some level. Do its smart
 contracts give it a serious advantage over Bitcoin? I don’t see how Ethereum’s
 smart contract system would tend to bring in opportunities to unload ethers
@@ -399,7 +399,7 @@ cool smart contracts sound, they make Ethereum just another appcoin, and as
 with other appcoins, people will reduce the risk of holding them by not
 holding them, or holding them for as short a time as possible. This will
 [drive the price
-down](/mempool/appcoins-are-snake-oil/) until they
+down](/mempool/appcoins-are-snake-oil) until they
 are useless in trade.
 
 By the way, I would prefer to be called a “Bitcoin minimalist” rather than a
@@ -431,7 +431,7 @@ increase the government’s supply. [^5] It is usually not possible to predict
 what they will do, at least over long time spans.
 
 This is not possible under Bitcoin’s [current
-rules](/mempool/the-bitcoin-central-banks-perfect-monetary-policy/),
+rules](/mempool/the-bitcoin-central-banks-perfect-monetary-policy),
 and it would be difficult to change them in ways that might eventually enable
 anything similar. Although many new bitcoins will be created in the future,
 the release schedule is publicly known, and is therefore already priced into
@@ -451,7 +451,7 @@ dollar’s.
 ## Final Thoughts
 
 The reason, therefore, that the
-[_monetary_](/mempool/bitcoin-as-a-store-of-value-unit-of-account-and-medium-of-exchange/)
+[_monetary_](/mempool/bitcoin-as-a-store-of-value-unit-of-account-and-medium-of-exchange)
 aspects of Bitcoin are particularly interesting is the possibility that
 Bitcoin could become the preferred good for being stored away. If it did, then
 its value would grow until it was a significant part of the world economy.
@@ -480,7 +480,7 @@ Someone who knew what he was talking about would know that you can’t just
 string a bunch of buzzwords together in order to generate an idea that makes
 sense. Unfortunately, if a lack of basic critical thought is widespread, and
 if everyone becomes [invested in everyone else’s
-stupidity](/mempool/everyones-a-scammer/), then
+stupidity](/mempool/everyones-a-scammer), then
 nobody _wants_ to know either, at least not before they’ve found a favorable
 time to exit their position. This will probably never happen because although
 they may think they’re preying on other people’s stupidity, they are more

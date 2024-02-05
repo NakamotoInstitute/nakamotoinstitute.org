@@ -234,7 +234,7 @@ The difference between saving in bitcoin (not taking risk) and financial investi
 
 ---
 
-_Thank you to Aleks Svetski for organizing and inviting me to participate in the 2020 edition of the Bitcoin Times. I also want to thank Aleks in addition to [Phil Geiger](https://twitter.com/phil_geiger), [Robert Breedlove](https://twitter.com/Breedlove22) and [Will Cole](https://twitter.com/willcole) for providing valuable feedback on this 17th essay in the [Gradually, Then Suddenly](/mempool/series/gradually-then-suddenly/) series._
+_Thank you to Aleks Svetski for organizing and inviting me to participate in the 2020 edition of the Bitcoin Times. I also want to thank Aleks in addition to [Phil Geiger](https://twitter.com/phil_geiger), [Robert Breedlove](https://twitter.com/Breedlove22) and [Will Cole](https://twitter.com/willcole) for providing valuable feedback on this 17th essay in the [Gradually, Then Suddenly](/mempool/series/gradually-then-suddenly) series._
 
 _Lastly, I’d like to recognize the other contributors to the Bitcoin Times: [Jimmy Song](https://twitter.com/jimmysong), [Erik Cason](https://twitter.com/Erikcason), [Jeff Booth](https://twitter.com/JeffBooth), [Giacomo Zucco](https://twitter.com/giacomozucco) and [Aleksandar Svetski](https://twitter.com/AleksSvetski), himself (as well as Makena Rhodes for editing and design). I’m lucky to call these brave men friends, teammates, clients, twitter friends, fellow bitcoiners or a combination in certain cases. It’s an honor just to be included._
 

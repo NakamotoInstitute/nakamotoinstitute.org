@@ -35,7 +35,7 @@ Two lessons here:
 
 Also, by _will_, I mean _already_.
 
-We have already seen [WikiLeaks](https://wikileaks.org/) and [Edward Snowden](https://en.wikipedia.org/wiki/Edward_Snowden) open the floodgates for State secrets (which include your secrets). We have also already seen Bitcoin enable the [Fappening marketplace of celebrity nude pictures](/mempool/the-fappening/).
+We have already seen [WikiLeaks](https://wikileaks.org/) and [Edward Snowden](https://en.wikipedia.org/wiki/Edward_Snowden) open the floodgates for State secrets (which include your secrets). We have also already seen Bitcoin enable the [Fappening marketplace of celebrity nude pictures](/mempool/the-fappening).
 
 And now a website promoted by WikiLeaks’s Twitter account wants to take it to the next level. [Slur.io](http://slur.io/) promises to be WikiLeaks 2.0:
 
@@ -84,9 +84,9 @@ A solution to this is to aim to be virtuous in thought and action in the first p
   <figcaption>Seneca, <a href="https://en.wikisource.org/wiki/Moral_letters_to_Lucilius/Letter_3">“On True and False Friendship”</a></figcaption>
 </figure>
 
-As I said above, [strong cryptography is not a panacea](/mempool/bitcoin-is-great-but-it-wont-fix-our-monkey-brains/). Even the strongest end-to-end encryption does not protect you from information leaking from the other end. It is therefore important to know and trust who you are communicating, both on virtue and on security capabilities. To trust in cryptographic communication should be to have confidence in your peer and to understand their vulnerabilities. Nice people can be hacked, too.
+As I said above, [strong cryptography is not a panacea](/mempool/bitcoin-is-great-but-it-wont-fix-our-monkey-brains). Even the strongest end-to-end encryption does not protect you from information leaking from the other end. It is therefore important to know and trust who you are communicating, both on virtue and on security capabilities. To trust in cryptographic communication should be to have confidence in your peer and to understand their vulnerabilities. Nice people can be hacked, too.
 
-Therefore, make the best friends. Build strong, trusted relationships with other individuals, and know the limits of those relationships. Sign keys, verify fingerprints, and most importantly, know what value you truly give one another. Do not let social media devalue the word friend, lest you fraternize with [scammers](/mempool/everyones-a-scammer/).
+Therefore, make the best friends. Build strong, trusted relationships with other individuals, and know the limits of those relationships. Sign keys, verify fingerprints, and most importantly, know what value you truly give one another. Do not let social media devalue the word friend, lest you fraternize with [scammers](/mempool/everyones-a-scammer).
 
 ## Conclusion
 

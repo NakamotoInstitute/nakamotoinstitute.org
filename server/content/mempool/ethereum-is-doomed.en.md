@@ -12,7 +12,7 @@ image_alt: Programming with Solidity
 
 As [some have noted](https://twitter.com/jgarzik/status/736945669978525696), I
 did not understand Ethereum very well when I wrote my [previous
-article](/mempool/the-coming-demise-of-altcoins/) that touched on it. I
+article](/mempool/the-coming-demise-of-altcoins) that touched on it. I
 dismissed Ethereum as just another altcoin with extra bells and whistles.
 However, there was a huge opportunity hiding in there, open to anyone who
 understood the system well enough. I wish I had examined it further and much

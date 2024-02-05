@@ -39,7 +39,7 @@ everyone else. This is not something anyone can reliably guarantee, especially
 a Bitcoin startup (if history is any guide). This is the same reason that
 attempts to create crypto-equities that track the price of gold or dollars and
 other things through protocols like ProtoShares and
-[Mastercoin](/mempool/mastercoin-is-a-nightmare-of-insanity/) won’t work. It
+[Mastercoin](/mempool/mastercoin-is-a-nightmare-of-insanity) won’t work. It
 is also why the federal reserve is traditionally so secretive, why the
 chairman tries to talk without saying anything, and why his or her every move
 is so deeply scrutinized.
@@ -55,13 +55,13 @@ of scarce resources.
 
 Right now the world is deciding whether it wants Bitcoin to be its money.
 That’s kind of a big change, and it’s pretty reasonable that Bitcoin would [be
-volatile](/mempool/i-love-bitcoins-volatility/). Will Bitcoin take over or
+volatile](/mempool/i-love-bitcoins-volatility). Will Bitcoin take over or
 will it drop to nothing? Fundamentally we don’t know and the rapid changes in
 Bitcoin’s price reflect the confusion and self-doubt in the minds of real
 people trading it, and this is exactly what they should be doing because
 without price signals, there could be no Bitcoin adoption. Bitcoin’s
 exponential growth is a [very strong
-signal](/mempool/bitcoins-compound-rewards/), and if Bitcoin were stable,
+signal](/mempool/bitcoins-compound-rewards), and if Bitcoin were stable,
 there would be no such signal. There would be no dedicated community of
 enthusiasts because no one would have any particular reason to want it to be
 adopted other than the company issuing it. And that company could not offer
@@ -109,7 +109,7 @@ to everyone else, not the engineer. Thus, if Bitcoin is going to succeed, then
 it’s a good store of value.
 
 Now, what about Bitcoin as a [unit of
-account](/mempool/bitcoin-is-the-best-unit-of-account/)? Unlike _store of
+account](/mempool/bitcoin-is-the-best-unit-of-account)? Unlike _store of
 value_, this is actually a really good term, but unfortunately people do not
 take it literally. When people say _unit of account_, they seem to want
 something that will reliably measure wealth somehow, or that things can be

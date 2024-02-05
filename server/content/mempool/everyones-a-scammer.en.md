@@ -35,7 +35,7 @@ Some scams are outright malicious. Scammers have resorted to malware and ransom.
 
 Scammers have resorted to blackmail. On September 8th, a hacker gained control of Satoshi Nakamoto’s email account, using it not only to deface the Bitcoin sourceforge page, but to allegedly find out Satoshi’s true name. From a [Vice article](http://motherboard.vice.com/read/the-satoshi-nakamoto-email-hacker-says-hes-negotiating-with-the-bitcoin-founder): “After inquiring what [the hacker] was trying to get out of all this, he said ‘Bitcoins, obviously… [But] don’t forget the lulz.’”
 
-Scammers have also gone to the trouble of leaking nude photos of celebrities [to get some bitcoins](/mempool/the-fappening/).
+Scammers have also gone to the trouble of leaking nude photos of celebrities [to get some bitcoins](/mempool/the-fappening).
 
 Scammers will do whatever it takes to increase their bitcoin holdings. You know this. You scammed someone to get yours. You probably did not outright defraud or hack someone like the above, but you necessarily took advantage of their short-term thinking.
 
@@ -65,7 +65,7 @@ This is not to say merchant adoption is bad. In fact, from the hoarder’s persp
 
 This does not mean a hoarder will actually want to spend bitcoins. More importantly, he _can_ spend bitcoins. Demand for cash exists because there is uncertainty of future needs, and the holder of cash believes he will come across currently unknown opportunities in the future that can better satisfy his needs than any current opportunities. When an opportunity exists that he believes benefits him more than what the same cash can get him in the future, he is able to seize it. As Metcalfe’s Law shows us, the value of a network increases exponentially with each additional node. With each additional merchant, there are more potential people to trade with, and thus more potential opportunities to satisfy his needs with cash.
 
-Of course, these benefits to the hoarder does not require merchants accept Bitcoin, given the right infrastructure. [Xapo debit cards](http://xapo.com/), for instance, give the hoarder the ability to use bitcoins on existing credit card networks. This means hoarders can already use Bitcoin as their [unit of account](/mempool/bitcoin-is-the-best-unit-of-account/) whether or not merchants even know what a bitcoin is. The more Bitcoin can be used as a method of payment the fewer dollars hoarders must begrudgingly speculate on, a risk they typically only wish on government agents and skeptical economists. Thus, the primary advantage of merchant adoption is that your average balance of bitcoins held can go up. You don’t need to buy dollars in anticipation of making dollar payments, instead you can replenish your bitcoin hoard after you make bitcoin payments.
+Of course, these benefits to the hoarder does not require merchants accept Bitcoin, given the right infrastructure. [Xapo debit cards](http://xapo.com/), for instance, give the hoarder the ability to use bitcoins on existing credit card networks. This means hoarders can already use Bitcoin as their [unit of account](/mempool/bitcoin-is-the-best-unit-of-account) whether or not merchants even know what a bitcoin is. The more Bitcoin can be used as a method of payment the fewer dollars hoarders must begrudgingly speculate on, a risk they typically only wish on government agents and skeptical economists. Thus, the primary advantage of merchant adoption is that your average balance of bitcoins held can go up. You don’t need to buy dollars in anticipation of making dollar payments, instead you can replenish your bitcoin hoard after you make bitcoin payments.
 
 Between merchant adoption and debit systems, Bitcoin becomes a more valuable good to hoard. Good news for Bitcoin!
 
@@ -81,7 +81,7 @@ All of these are scams.
 
 Regardless of their ability to actually deliver their promises, they all fail a simple test: is the return on investment positive? If you are stuck in a fiat mindset, you may well make a quick buck, but given Bitcoin’s extraordinary expected growth, can one really expect to do better than one can by holding it? Long term investors should use Bitcoin as their unit of account and every single investment should be compared to the expected returns of Bitcoin.
 
-If [hyperbitcoinization](/mempool/hyperbitcoinization/) occurs, Bitcoin holders will see their purchasing power increase by orders of magnitude. Bitcoiners should think twice before throwing away even a couple millibits towards a project “just to see where it goes.” A running joke in the community is how expensive the [two pizzas Laszlo bought](https://bitcointalk.org/index.php?topic=137) were. We joke about a million dollar pizza, and hyperbitcoinization has not even occurred yet. I praise Laszlo for his entrepreneurial use of a new technology, but I do not wish for myself or others to be a Laszlo.
+If [hyperbitcoinization](/mempool/hyperbitcoinization) occurs, Bitcoin holders will see their purchasing power increase by orders of magnitude. Bitcoiners should think twice before throwing away even a couple millibits towards a project “just to see where it goes.” A running joke in the community is how expensive the [two pizzas Laszlo bought](https://bitcointalk.org/index.php?topic=137) were. We joke about a million dollar pizza, and hyperbitcoinization has not even occurred yet. I praise Laszlo for his entrepreneurial use of a new technology, but I do not wish for myself or others to be a Laszlo.
 
 Who wins here? It is not the investor, but the peddler of crypto-dreams. Ethereum recently [raised $15 million](http://www.wired.com/2014/09/ethereum-backers-raise-15-million/) in their “Ether sale” for an [unfinished project](http://www.bitblogger.net/2014/07/30/complexity-is-the-enemy-of-security/), in Bitcoin, of course. There isn’t even a product yet, but investors have placed their bets. Ethereum now has [over thirty thousand bitcoins](https://blockchain.info/address/36PrZ1KHYMpqSyAQXSG8VwbUiq2EogxLo2), destined to be worth unspeakable volumes of wealth, while investors hold worthless hope.
 
@@ -89,7 +89,7 @@ _Investments are scams because they lead you to believe you can get a higher ret
 
 ## ...But They Don't Have to Be
 
-If a Bitcoin hoarder wants to reinvest his profits, he need not further than the Bitcoin network itself. The correct strategy for Bitcoin entrepreneurship, as Daniel has pointed out, is [speculative philanthropy](/mempool/the-correct-strategy-of-bitcoin-entrepreneurship/). While endless money has been funneled into altcoins, appcoins, vaporware, vulnerable third party services, etc., there are many problems in Bitcoin that still need to be solved through open source development, many of which are low-hanging fruit. By funding these projects, the security, accessibility, and usability of the Bitcoin network increase, thus making it an even better investment.
+If a Bitcoin hoarder wants to reinvest his profits, he need not further than the Bitcoin network itself. The correct strategy for Bitcoin entrepreneurship, as Daniel has pointed out, is [speculative philanthropy](/mempool/the-correct-strategy-of-bitcoin-entrepreneurship). While endless money has been funneled into altcoins, appcoins, vaporware, vulnerable third party services, etc., there are many problems in Bitcoin that still need to be solved through open source development, many of which are low-hanging fruit. By funding these projects, the security, accessibility, and usability of the Bitcoin network increase, thus making it an even better investment.
 
 Get coding. Every new [git commit](http://git-scm.com/book) is good news for Bitcoin.
 
@@ -111,7 +111,7 @@ _Hoarders are scammers because they understand the exponential (and very likely)
 
 ## ...And You Should Thank Them
 
-Hoarding is what gives money value. And no, [you can’t have any](/mempool/im-hoarding-bitcoins-and-no-you-cant-have-any/).
+Hoarding is what gives money value. And no, [you can’t have any](/mempool/im-hoarding-bitcoins-and-no-you-cant-have-any).
 
 <figure>
   <img src="/static/img/mempool/everyones-a-scammer/bitcoinfeedbackloops.jpg" alt="Bitcoin feedback loops" />
@@ -127,7 +127,7 @@ Indeed, Bitcoin scamming is a job that will never be finished. The market-based 
   <img src="/static/img/mempool/everyones-a-scammer/cornered.jpg" alt="Cornered" />
 </figure>
 
-The only way this will be solved is if trusted networks can be built. As has been said before, [Bitcoin is great, but it won’t fix our monkey brains](/mempool/bitcoin-is-great-but-it-wont-fix-our-monkey-brains/). While Bitcoin offers a money with no trusted third party, it can only do so because the ledger is self-referential. The humans actually using it must always be in a mindset of _caveat emptor_ when using Bitcoin. Through [payment protocols](https://github.com/bitcoin/bips/blob/master/bip-0070.mediawiki), [webs-of-trust](http://bitcoin-otc.com/), [smart contracts](https://en.bitcoin.it/wiki/Contracts), [GPG contracts](/gpg-contracts/), and [voting pools](http://bitcoinism.blogspot.com/2013/12/voting-pools-how-to-stop-plague-of.html), users can mitigate the risk of engaging in various forms of commerce.
+The only way this will be solved is if trusted networks can be built. As has been said before, [Bitcoin is great, but it won’t fix our monkey brains](/mempool/bitcoin-is-great-but-it-wont-fix-our-monkey-brains). While Bitcoin offers a money with no trusted third party, it can only do so because the ledger is self-referential. The humans actually using it must always be in a mindset of _caveat emptor_ when using Bitcoin. Through [payment protocols](https://github.com/bitcoin/bips/blob/master/bip-0070.mediawiki), [webs-of-trust](http://bitcoin-otc.com/), [smart contracts](https://en.bitcoin.it/wiki/Contracts), [GPG contracts](/gpg-contracts/), and [voting pools](http://bitcoinism.blogspot.com/2013/12/voting-pools-how-to-stop-plague-of.html), users can mitigate the risk of engaging in various forms of commerce.
 
 ## The Only Winning Move is Not to Spend
 

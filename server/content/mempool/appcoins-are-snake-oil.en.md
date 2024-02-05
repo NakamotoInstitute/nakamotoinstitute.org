@@ -13,7 +13,7 @@ image: rube-goldberg.jpg
 Appcoins.[^1] What a great way to [fund an open source
 project](http://startupboy.com/2014/03/09/the-bitcoin-model-for-crowdfunding/),
 right? The idea began with
-[Mastercoin](/mempool/mastercoin-is-a-nightmare-of-insanity/), but seems to
+[Mastercoin](/mempool/mastercoin-is-a-nightmare-of-insanity), but seems to
 have jumped from there to become its own meme. You just create an app, and
 then make it less convenient by creating a cryptocurrency (or "appcoin") that
 is required to use it, some of which you sell to investors to pay for
@@ -44,12 +44,12 @@ a perfectly legitimate investment if the company issuing it is not fraudulent.
 On the other hand, the value of an appcoin can move completely independently
 of the value of the app itself. This is because the value of a currency is due
 to the value of the [network of people holding
-it](/mempool/how-we-know-bitcoin-is-not-a-bubble/), which is a logically
+it](/mempool/how-we-know-bitcoin-is-not-a-bubble), which is a logically
 separate concept to the network using the app. The value of the app is a
 matter entirely of the service it provides, whereas the value of the appcoin
 partly due to the value of the app and partly to its competition with other
 currencies. If there are two currencies to choose, there is a [relative
-disutility](/mempool/the-coming-demise-of-altcoins/) of holding the one which
+disutility](/mempool/the-coming-demise-of-altcoins) of holding the one which
 has the smaller market cap. The disutility becomes stronger as the difference
 between their market caps becomes greater.
 
@@ -98,7 +98,7 @@ this article, investors will no longer be so innocent as to see value in an
 appcoin. An investor could not ultimately expect to make a return on an
 appcoin given that there is an incentive to disconnect the coin from the app.
 Once that happens, the appcoin is simply [another
-altcoin](/mempool/the-problem-with-altcoins/).
+altcoin](/mempool/the-problem-with-altcoins).
 
 Furthermore, the more that investors realize that other investors also
 understand the worthlessness of appcoins, the less successful will the appcoin
@@ -165,7 +165,7 @@ themselves. Slight edits for clarity. Added footnote about frauds.]_
 [^2]:
     There is a similar effect between Bitcoin and the dollar, but because
     Bitcoin is such an enormous technological achievement over the dollar, Bitcoin
-    [continues to grow](/mempool/why-bitcoin-will-continue-to-grow/) despite the
+    [continues to grow](/mempool/why-bitcoin-will-continue-to-grow) despite the
     dollar's superior network. If an appcoin could manage to reduce transaction
     costs by an order of magnitude versus Bitcoin, then it should be expected to
     defeat Bitcoin and all the other appcoins too.

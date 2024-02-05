@@ -91,7 +91,7 @@ Pero hay un gran problema con la subida de tipos por parte del banco central ind
 
 ## 3\. Hiperbitcoinización
 
-Un ataque especulativo que parezca limitado a una o más monedas, pero que haga que el valor del bitcoin suba drásticamente, se tornará rápidamente en una infección. Por ejemplo, los suizos verán el precio del bitcoin subir 10 veces, y luego 100 veces. Ellos comprarán bitcoins simplemente porque quieren especular con su valor, no por un problema inherente al franco suizo. Ahora bien, el efecto de [reflexividad](http://en.wikipedia.org/wiki/Reflexivity_%28social_theory%29) condicionaría una reducción en la demanda de francos suizos, lo que causaría una inflación más alta de lo esperado y, así, un problema inherente al franco suizo. El bucle de retroalimentación entre la inflación fiat y la deflación bitcoin precipitará el mundo a la hiperbitcoinización, como explica Daniel [aquí](/mempool/hyperbitcoinization/es/).
+Un ataque especulativo que parezca limitado a una o más monedas, pero que haga que el valor del bitcoin suba drásticamente, se tornará rápidamente en una infección. Por ejemplo, los suizos verán el precio del bitcoin subir 10 veces, y luego 100 veces. Ellos comprarán bitcoins simplemente porque quieren especular con su valor, no por un problema inherente al franco suizo. Ahora bien, el efecto de [reflexividad](http://en.wikipedia.org/wiki/Reflexivity_%28social_theory%29) condicionaría una reducción en la demanda de francos suizos, lo que causaría una inflación más alta de lo esperado y, así, un problema inherente al franco suizo. El bucle de retroalimentación entre la inflación fiat y la deflación bitcoin precipitará el mundo a la hiperbitcoinización, como explica Daniel [aquí](/es/mempool/hiperbitcoinizacion).
 
 ## Conclusión
 
@@ -101,9 +101,9 @@ Bitcoin se convertirá en una moneda dominante. Los escépticos no entienden est
 [^2]: Esto es dicho generalmente por la gente de “fuera” que fantasea sobre estar “dentro” mediante la política o el pedigrí, en lugar de procesos económico-meritorios. Demográficamente, seguramente están en el mismo grupo que los seguidores de [“El Secreto”](http://en.wikipedia.org/wiki/The_Secret_%28book%29). Económicamente, son [malversadores de fondos](http://trilema.com/2014/the-bezzle-usd-and-the-tide-usd/#footnote_1_53585).
 [^3]: Bitcoin ha entrado en su [Septiembre Eterno](http://en.wikipedia.org/wiki/Eternal_September), donde cada persona nueva en el tema cree tener una comprensión única que todo el mundo debería escuchar. Hay un flujo interminable de novatos que están “preocupados” por tal y cual problema con Bitcoin. La comunidad Bitcoin, por su parte, le hace un flaco favor a estos recién llegados al tomarles en serio y no decirles simplemente: “lean más”.
 [^4]: El opuesto del Jesús de Bitcoin, el [Jonás](http://en.wikipedia.org/wiki/Jonah_complex) de Bitcoin es un perdedor, un autosaboteador y tímido “hombre” en una misión permanente cuyo objetivo es confirmar la debilidad de Bitcoin.
-[^5]: [Bitcoin es la mejor unidad de cuenta](/mempool/bitcoin-is-the-best-unit-of-account/es/) por Daniel Krawisz
-[^6]: [The Bitcoin Central Bank’s Perfect Monetary Policy](/mempool/the-bitcoin-central-banks-perfect-monetary-policy/) by Pierre Rochard
-[^7]: [Bitcoin Has No Image Problem](/mempool/bitcoin-has-no-image-problem/) by Daniel Krawisz
-[^8]: [Hyperbitcoinización](/mempool/hyperbitcoinization/es/) por Daniel Krawisz
+[^5]: [Bitcoin es la mejor unidad de cuenta](/es/mempool/bitcoin-la-mejor-unidad-de-cuenta) por Daniel Krawisz
+[^6]: [The Bitcoin Central Bank’s Perfect Monetary Policy](/mempool/the-bitcoin-central-banks-perfect-monetary-policy) by Pierre Rochard
+[^7]: [Bitcoin Has No Image Problem](/mempool/bitcoin-has-no-image-problem) by Daniel Krawisz
+[^8]: [Hyperbitcoinización](/es/mempool/hiperbitcoinizacion) por Daniel Krawisz
 [^9]: Si no estás de acuerdo, o no has estado aprendiendo, o no has estado participando en el debate, vuelve a la primera casilla.
 [^10]: “Vivo en un mundo peculiar. Solo conozco a una persona que ha votado a Nixon. Los demás votantes no sé dónde se meterán, pero a veces, cuando estoy en el cine, siento que los tengo cerca.” – [Pauline Kael](http://en.wikiquote.org/wiki/Pauline_Kael#Sourced)

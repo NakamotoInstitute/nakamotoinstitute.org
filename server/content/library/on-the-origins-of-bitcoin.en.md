@@ -566,7 +566,7 @@ Kinsella, Stephan. 2001. “Against Intellectual Property.” _Journal of Libert
 
 Knapp, Georg Friedrich. 1895. _Staatliche Theorie des Geldes_ (“The State Theory of Money”), München u. Leipzig, Duncker &amp; Humblot. 3rd edition 1921. English translation 1924. London: McMillan and Company. [http://socserv2.socsci.mcmaster.ca/~econ/ugcm/3ll3/knapp/StateTheoryMoney.pdf](http://socserv2.socsci.mcmaster.ca/~econ/ugcm/3ll3/knapp/StateTheoryMoney.pdf)
 
-Krawisz, Daniel. 2 July 2013. “The Original Value of Bitcoins.” _[nakamotoinstitute.org](/mempool/the-original-value-of-bitcoins/)_.
+Krawisz, Daniel. 2 July 2013. “The Original Value of Bitcoins.” _[nakamotoinstitute.org](/mempool/the-original-value-of-bitcoins)_.
 
 Menger, Carl. 2009 [1892]. “On the Origins of Money.” Auburn, Alabama: Ludwig von Mises Institute. Translation by C. A. Foley.
 

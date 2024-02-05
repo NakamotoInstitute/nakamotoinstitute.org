@@ -83,7 +83,7 @@ currencies work in a fundamentally different way from what I have described.
 
 I recently wrote an article on the growth of money called [“It’s Not About the
 Technology, It’s About the
-Money”](/mempool/its-not-about-the-technology-its-about-the-money/).
+Money”](/mempool/its-not-about-the-technology-its-about-the-money).
 This article can be seen as a continuation of that one, but it can be read
 independently. That article is mostly about a positive-feedback between the
 use of money and its value. That is, as more people use a good as money, it
@@ -337,7 +337,7 @@ I think of this article as being the last of a trilogy, the first two being
 [“Reciprocal Altruism in The Theory of
 Money”](/reciprocal-altruism-in-the-theory-of-money/),
 and [“It’s Not About The Technology, it’s About the
-Money”](/mempool/its-not-about-the-technology-its-about-the-money/).
+Money”](/mempool/its-not-about-the-technology-its-about-the-money).
 The first article is an attempt to explain the use of money as a game. The
 second is about the growth of money, and this last one is about the death of
 money.
