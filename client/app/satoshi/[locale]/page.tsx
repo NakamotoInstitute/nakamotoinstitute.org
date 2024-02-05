@@ -20,17 +20,15 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-type SatoshiSectionProps = {
-  label: string;
-  href: string;
+type SatoshiSectionProps = AnchorProps & {
   children: string;
 };
 
-const SatoshiSection = ({ label, href, children }: SatoshiSectionProps) => {
+const SatoshiSection = ({ text, href, children }: SatoshiSectionProps) => {
   return (
     <div>
       <Link href={href} className="text-xl font-medium">
-        {label}
+        {text}
       </Link>
       <p>{children}</p>
     </div>
@@ -62,24 +60,24 @@ export default async function SatoshiIndex({
       <hr className="my-4" />
       <section className="mx-auto flex flex-col gap-4">
         <SatoshiSection
-          label="The Whitepaper"
+          text="The Whitepaper"
           href={urls(locale).library.doc("bitcoin")}
         >
           The original vision.
         </SatoshiSection>
-        <SatoshiSection label="Emails" href={urls(locale).satoshi.emails.index}>
+        <SatoshiSection text="Emails" href={urls(locale).satoshi.emails.index}>
           It all began here.
         </SatoshiSection>
         <SatoshiSection
-          label="Forum Posts"
+          text="Forum Posts"
           href={urls(locale).satoshi.posts.index}
         >
           Where an idea flourished.
         </SatoshiSection>
-        <SatoshiSection label="Code" href={urls(locale).satoshi.code}>
+        <SatoshiSection text="Code" href={urls(locale).satoshi.code}>
           The vision instantiated.
         </SatoshiSection>
-        <SatoshiSection label="Quotes" href={urls(locale).satoshi.quotesIndex}>
+        <SatoshiSection text="Quotes" href={urls(locale).satoshi.quotesIndex}>
           Indexed wisdom from the quotable Satoshi.
         </SatoshiSection>
       </section>

@@ -32,10 +32,10 @@ export async function PageLayout({
         navLinks={[
           {
             href: urls(locale).satoshi.index,
-            label: t("The Complete Satoshi"),
+            text: t("The Complete Satoshi"),
           },
-          { href: urls(locale).library.index, label: t("Library") },
-          { href: urls(locale).mempool.index, label: t("Mempool") },
+          { href: urls(locale).library.index, text: t("Library") },
+          { href: urls(locale).mempool.index, text: t("Mempool") },
         ]}
         {...toggleProps}
       />

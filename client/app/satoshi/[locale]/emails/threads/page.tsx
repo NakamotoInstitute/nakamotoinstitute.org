@@ -45,22 +45,22 @@ export default async function EmailThreadsIndex({
 
   const navLinks = {
     main: {
-      label: "View emails",
+      text: "View emails",
       href: urls(locale).satoshi.emails.index,
     },
     left: {
-      label: formatEmailSource("cryptography", true),
+      text: formatEmailSource("cryptography", true),
       href: urls(locale).satoshi.emails.sourceThreadsIndex("cryptography"),
       sublink: {
-        label: "Emails",
+        text: "Emails",
         href: urls(locale).satoshi.emails.sourceIndex("cryptography"),
       },
     },
     right: {
-      label: formatEmailSource("bitcoin-list", true),
+      text: formatEmailSource("bitcoin-list", true),
       href: urls(locale).satoshi.emails.sourceThreadsIndex("bitcoin-list"),
       sublink: {
-        label: "Emails",
+        text: "Emails",
         href: urls(locale).satoshi.emails.sourceIndex("bitcoin-list"),
       },
     },

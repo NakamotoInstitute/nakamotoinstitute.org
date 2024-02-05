@@ -1,12 +1,10 @@
 import Link from "next/link";
 
-import { IndexLink } from "./IndexNavigation";
-
 type ThreadPageHeaderProps = {
   title: string;
   sourceTitle: string;
   satoshiOnly: boolean;
-  allLink: IndexLink;
+  allLink: AnchorProps;
   externalLink: string;
   children?: React.ReactNode;
 };
@@ -27,7 +25,7 @@ export const ThreadPageHeader = ({
         <h1 className="text-4xl">{title}</h1>
         <div className="flex flex-col gap-2">
           {satoshiOnly ? (
-            <Link href={allLink.href}>View all {allLink.label}</Link>
+            <Link href={allLink.href}>View all {allLink.text}</Link>
           ) : (
             <Link href={{ query: { view: "satoshi" } }}>View Satoshi only</Link>
           )}

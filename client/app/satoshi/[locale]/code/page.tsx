@@ -49,7 +49,7 @@ export default async function SatoshiCode({
           date={new Date(2008, 10, 16)}
           downloads={{
             release: {
-              name: "bitcoin-nov08.tgz",
+              text: "bitcoin-nov08.tgz",
               href: "https://s3.amazonaws.com/nakamotoinstitute/code/bitcoin-nov08.tgz",
               note: t("(Compressed by SNI)"),
             },
@@ -65,7 +65,7 @@ export default async function SatoshiCode({
           downloads={[
             {
               release: {
-                name: "bitcoin-0.1.0.rar",
+                text: "bitcoin-0.1.0.rar",
                 href: "https://s3.amazonaws.com/nakamotoinstitute/code/bitcoin-0.1.0.rar",
               },
               md5: { hash: "91e2dfa2af043eabbb38964cbf368500" },
@@ -73,7 +73,7 @@ export default async function SatoshiCode({
             },
             {
               release: {
-                name: "bitcoin-0.1.0.tgz",
+                text: "bitcoin-0.1.0.tgz",
                 href: "https://s3.amazonaws.com/nakamotoinstitute/code/bitcoin-0.1.0.tgz",
               },
               md5: { hash: "dca1095f053a0c2dc90b19c92bd1ec00" },
@@ -89,7 +89,7 @@ export default async function SatoshiCode({
           dateRef="https://bitcointalk.org/index.php?topic=49815.msg593132#msg593132"
           downloads={{
             release: {
-              name: "bitcoin-0.1.3.rar",
+              text: "bitcoin-0.1.3.rar",
               href: "https://s3.amazonaws.com/nakamotoinstitute/code/bitcoin-0.1.3.rar",
             },
             md5: { hash: "9a73e0826d5c069091600ca295c6d224" },

@@ -25,6 +25,7 @@ export async function generateMetadata({
 
   return {
     title: t("{{source}} Threads", { source: formatEmailSource(source) }),
+    alternates: { languages },
   };
 }
 
@@ -37,22 +38,22 @@ export default async function EmailSourceThreadsIndex({
 
   const navLinks = {
     main: {
-      label: "View emails",
+      text: "View emails",
       href: urls(locale).satoshi.emails.sourceIndex(source),
     },
     left: {
-      label: "All threads",
+      text: "All threads",
       href: urls(locale).satoshi.emails.threadsIndex,
       sublink: {
-        label: "Emails",
+        text: "Emails",
         href: urls(locale).satoshi.emails.index,
       },
     },
     right: {
-      label: formatEmailSource(otherSource, true),
+      text: formatEmailSource(otherSource, true),
       href: urls(locale).satoshi.emails.sourceThreadsIndex(otherSource),
       sublink: {
-        label: "Emails",
+        text: "Emails",
         href: urls(locale).satoshi.emails.sourceIndex(otherSource),
       },
     },

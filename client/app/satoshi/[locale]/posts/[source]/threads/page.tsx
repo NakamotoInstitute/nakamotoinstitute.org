@@ -38,22 +38,22 @@ export default async function PostSourceThreadsIndex({
 
   const navLinks = {
     main: {
-      label: "View posts",
+      text: "View posts",
       href: urls(locale).satoshi.posts.sourceIndex(source),
     },
     left: {
-      label: "All threads",
+      text: "All threads",
       href: urls(locale).satoshi.posts.threadsIndex,
       sublink: {
-        label: "Posts",
+        text: "Posts",
         href: urls(locale).satoshi.posts.index,
       },
     },
     right: {
-      label: formatPostSource(otherSource),
+      text: formatPostSource(otherSource),
       href: urls(locale).satoshi.posts.sourceThreadsIndex(otherSource),
       sublink: {
-        label: "Posts",
+        text: "Posts",
         href: urls(locale).satoshi.posts.sourceIndex(otherSource),
       },
     },

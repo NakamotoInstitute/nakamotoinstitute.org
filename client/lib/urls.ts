@@ -136,7 +136,7 @@ export const generateLocaleToggleLinks = (
       }
 
       acc.links?.push({
-        name: lang.name,
+        text: lang.name,
         href: generateHref(loc),
       });
 

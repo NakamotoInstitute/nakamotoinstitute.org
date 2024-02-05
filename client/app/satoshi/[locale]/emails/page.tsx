@@ -34,22 +34,22 @@ export default async function EmailsIndex({
 
   const navLinks = {
     main: {
-      label: "View threads",
+      text: "View threads",
       href: urls(locale).satoshi.emails.threadsIndex,
     },
     left: {
-      label: formatEmailSource("cryptography", true),
+      text: formatEmailSource("cryptography", true),
       href: urls(locale).satoshi.emails.sourceIndex("cryptography"),
       sublink: {
-        label: "Threads",
+        text: "Threads",
         href: urls(locale).satoshi.emails.sourceThreadsIndex("cryptography"),
       },
     },
     right: {
-      label: formatEmailSource("bitcoin-list", true),
+      text: formatEmailSource("bitcoin-list", true),
       href: urls(locale).satoshi.emails.sourceIndex("bitcoin-list"),
       sublink: {
-        label: "Threads",
+        text: "Threads",
         href: urls(locale).satoshi.emails.sourceThreadsIndex("bitcoin-list"),
       },
     },

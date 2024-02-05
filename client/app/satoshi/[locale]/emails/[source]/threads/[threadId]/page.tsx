@@ -136,7 +136,7 @@ export default async function EmailSourceThreadDetail({
         title={thread.title}
         allLink={{
           href: generateHref(source, threadId)(locale),
-          label: "emails",
+          text: "emails",
         }}
         externalLink={thread.url}
         satoshiOnly={satoshiOnly}

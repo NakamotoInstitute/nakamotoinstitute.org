@@ -1,17 +1,12 @@
 import clsx from "clsx";
 import Link from "next/link";
 
-export type IndexLink = {
-  label: string;
-  href: string;
-};
-
-type IndexLinkWithSublink = IndexLink & {
-  sublink?: IndexLink;
+type IndexLinkWithSublink = AnchorProps & {
+  sublink?: AnchorProps;
 };
 
 export type IndexLinks = {
-  main: IndexLink;
+  main: AnchorProps;
   left: IndexLinkWithSublink;
   right: IndexLinkWithSublink;
 };
@@ -25,11 +20,11 @@ export const IndexNavigation = ({
   links: { main, left, right },
   reverse = false,
 }: IndexNavigationProps) => {
-  const renderLink = (link: IndexLink) =>
+  const renderLink = (link: AnchorProps) =>
     link.href ? (
-      <Link href={link.href}>{link.label}</Link>
+      <Link href={link.href}>{link.text}</Link>
     ) : (
-      <span>{link.label}</span>
+      <span>{link.text}</span>
     );
 
   return (

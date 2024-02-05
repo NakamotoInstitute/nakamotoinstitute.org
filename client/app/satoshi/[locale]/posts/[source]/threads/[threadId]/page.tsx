@@ -136,7 +136,7 @@ export default async function PostSourceThreadDetail({
         title={thread.title}
         allLink={{
           href: generateHref(source, threadId)(locale),
-          label: "posts",
+          text: "posts",
         }}
         externalLink={thread.url}
         satoshiOnly={satoshiOnly}

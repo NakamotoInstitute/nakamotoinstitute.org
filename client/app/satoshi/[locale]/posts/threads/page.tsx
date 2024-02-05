@@ -42,22 +42,22 @@ export default async function PostThreadsIndex({
 
   const navLinks = {
     main: {
-      label: "View posts",
+      text: "View posts",
       href: urls(locale).satoshi.posts.index,
     },
     left: {
-      label: formatPostSource("p2pfoundation"),
+      text: formatPostSource("p2pfoundation"),
       href: urls(locale).satoshi.posts.sourceThreadsIndex("p2pfoundation"),
       sublink: {
-        label: "Posts",
+        text: "Posts",
         href: urls(locale).satoshi.posts.sourceIndex("p2pfoundation"),
       },
     },
     right: {
-      label: formatPostSource("bitcointalk"),
+      text: formatPostSource("bitcointalk"),
       href: urls(locale).satoshi.posts.sourceThreadsIndex("bitcointalk"),
       sublink: {
-        label: "Posts",
+        text: "Posts",
         href: urls(locale).satoshi.posts.sourceIndex("bitcointalk"),
       },
     },

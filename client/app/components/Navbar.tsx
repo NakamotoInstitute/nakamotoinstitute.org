@@ -8,8 +8,6 @@ import languages from "@/locales/languages.json";
 
 import { LanguageToggle, ToggleLinkProps } from "./LanguageToggle";
 
-export type NavLink = { href: string; label: string };
-
 export function Navbar({
   locale,
   homeHref,
@@ -18,7 +16,7 @@ export function Navbar({
 }: ToggleLinkProps & {
   locale: Locale;
   homeHref: string;
-  navLinks: NavLink[];
+  navLinks: AnchorProps[];
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const current = languages.find((lang) => lang.code === locale)!.name;
@@ -82,9 +80,9 @@ export function Navbar({
             </div>
             <div className="hidden md:ml-auto md:block">
               <div className="flex space-x-4">
-                {navLinks.map(({ href, label }) => (
-                  <Link key={label} href={href} className="p-2 text-sm">
-                    {label}
+                {navLinks.map(({ href, text }) => (
+                  <Link key={text} href={href} className="p-2 text-sm">
+                    {text}
                   </Link>
                 ))}
               </div>
@@ -97,9 +95,9 @@ export function Navbar({
       </div>
       <div className={clsx("md:hidden", { hidden: !menuOpen })} id="mobileMenu">
         <div className="space-y-1 px-2 pb-3 pt-2">
-          {navLinks.map(({ href, label }) => (
-            <Link key={label} href={href} className="block px-3 py-2 text-base">
-              {label}
+          {navLinks.map(({ href, text }) => (
+            <Link key={text} href={href} className="block px-3 py-2 text-base">
+              {text}
             </Link>
           ))}
         </div>

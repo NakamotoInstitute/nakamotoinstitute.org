@@ -10,8 +10,6 @@ import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { cdnUrl, urls } from "@/lib/urls";
 
-import { NavLink } from "../components/Navbar";
-
 const generateHref = (loc: Locale) => urls(loc).home;
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -24,7 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 type HomeSectionProps = {
   title: string;
-  button: NavLink;
+  button: AnchorProps;
   children: React.ReactNode;
 };
 
@@ -44,7 +42,7 @@ const HomeSection = ({ title, button, children }: HomeSectionProps) => {
             href={button.href}
             role="button"
           >
-            {button.label} »
+            {button.text} »
           </a>
         </p>
       </div>
@@ -134,7 +132,7 @@ export default async function HomePage({ params: { locale } }: LocaleParams) {
           <HomeSection
             title={t("Mempool")}
             button={{
-              label: "Read more",
+              text: "Read more",
               href: urls(locale).mempool.post(latest.slug),
             }}
           >
@@ -145,7 +143,7 @@ export default async function HomePage({ params: { locale } }: LocaleParams) {
         <HomeSection
           title={t("Podcast")}
           button={{
-            label: t("See episodes"),
+            text: t("See episodes"),
             href: urls(locale).podcast.index,
           }}
         >
@@ -157,7 +155,7 @@ export default async function HomePage({ params: { locale } }: LocaleParams) {
         </HomeSection>
         <HomeSection
           title={t("Support")}
-          button={{ label: t("Donate"), href: urls(locale).donate }}
+          button={{ text: t("Donate"), href: urls(locale).donate }}
         >
           <p>
             {t(

@@ -1,9 +1,7 @@
 import Link from "next/link";
 
 export type CodeDownloadProps = {
-  release: {
-    name: string;
-    href: string;
+  release: AnchorProps & {
     note?: string;
   };
   md5: {
@@ -21,7 +19,7 @@ export function CodeDownload({ release, md5, sha1 }: CodeDownloadProps) {
     <div>
       <p>
         <Link className="font-bold" href={release.href}>
-          {release.name}
+          {release.text}
         </Link>
         {release.note ? ` ${release.note}` : null}
       </p>

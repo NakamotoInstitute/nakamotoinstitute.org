@@ -32,22 +32,22 @@ export default async function PostsIndex({ params: { locale } }: LocaleParams) {
 
   const navLinks = {
     main: {
-      label: "View threads",
+      text: "View threads",
       href: urls(locale).satoshi.posts.threadsIndex,
     },
     left: {
-      label: formatPostSource("p2pfoundation"),
+      text: formatPostSource("p2pfoundation"),
       href: urls(locale).satoshi.posts.sourceIndex("p2pfoundation"),
       sublink: {
-        label: "Threads",
+        text: "Threads",
         href: urls(locale).satoshi.posts.sourceThreadsIndex("p2pfoundation"),
       },
     },
     right: {
-      label: formatPostSource("bitcointalk"),
+      text: formatPostSource("bitcointalk"),
       href: urls(locale).satoshi.posts.sourceIndex("bitcointalk"),
       sublink: {
-        label: "Threads",
+        text: "Threads",
         href: urls(locale).satoshi.posts.sourceThreadsIndex("bitcointalk"),
       },
     },

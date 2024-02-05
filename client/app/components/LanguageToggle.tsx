@@ -11,11 +11,9 @@ import {
 import Link from "next/link";
 import { useState } from "react";
 
-type LanguageLink = { name: string; href: string };
-
 export type ToggleLinkProps = {
   current?: string;
-  links?: LanguageLink[];
+  links?: AnchorProps[];
 };
 
 export function LanguageToggle({
@@ -65,7 +63,7 @@ export function LanguageToggle({
           <ul>
             {links.map((link) => (
               <li key={link.href} className="mb-1 last:mb-0">
-                <Link href={link.href}>{link.name}</Link>
+                <Link href={link.href}>{link.text}</Link>
               </li>
             ))}
           </ul>
