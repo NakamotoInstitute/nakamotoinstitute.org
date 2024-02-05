@@ -10,9 +10,13 @@ export default async function fetchAPI(
   endpoint: string,
   options: RequestInit = {},
 ) {
+  const headers: HeadersInit | undefined = process.env.API_KEY
+    ? { "X-API-Key": process.env.API_KEY, ...options.headers }
+    : options.headers;
   return fetch(`${apiBaseUrl}${endpoint}`, {
     ...options,
     cache:
       process.env.VERCEL_ENV === "development" ? "no-store" : "force-cache",
+    headers,
   });
 }

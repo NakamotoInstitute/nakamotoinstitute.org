@@ -12,6 +12,8 @@ from sni.satoshi.router import router as satoshi_router
 from sni.skeptics.router import router as skeptics_router
 
 from .config import settings
+from .constants import STATIC_ROUTE
+from .middleware import APIKeyMiddleware
 
 
 @asynccontextmanager
@@ -23,8 +25,12 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 
+if settings.API_KEY:
+    app.add_middleware(APIKeyMiddleware)
+
+
 if settings.ENVIRONMENT.is_debug:
-    app.mount("/static", StaticFiles(directory="static"), name="static")
+    app.mount(STATIC_ROUTE, StaticFiles(directory="static"), name="static")
 
 app.include_router(authors_router, tags=["authors"], prefix="/authors")
 app.include_router(library_router, tags=["library"], prefix="/library")

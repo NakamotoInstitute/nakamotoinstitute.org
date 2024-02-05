@@ -18,11 +18,18 @@ class Settings(BaseSettings):
     CDN_BUCKET_NAME: str | None = None
     CDN_ENDPOINT_URL: str | None = None
     CDN_BASE_URL: str | None = None
+    API_KEY: str | None = None
 
     @model_validator(mode="after")
     def check_base_url(self) -> "Settings":
         if self.ENVIRONMENT.is_debug and self.BASE_URL is None:
             self.BASE_URL = DEFAULT_BASE_URL
+        return self
+
+    @model_validator(mode="after")
+    def check_api_key(self) -> "Settings":
+        if self.ENVIRONMENT.is_deployed and self.API_KEY is None:
+            raise ValueError("API_KEY must be set")
         return self
 
     @model_validator(mode="after")

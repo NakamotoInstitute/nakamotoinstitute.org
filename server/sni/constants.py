@@ -1,18 +1,20 @@
 from enum import Enum, unique
 from typing import Literal
 
+STATIC_ROUTE = "/static"
+
 
 class Environment(str, Enum):
     LOCAL = "LOCAL"
     PRODUCTION = "PRODUCTION"
 
     @property
-    def is_debug(self):
+    def is_debug(self) -> bool:
         return self in (self.LOCAL,)
 
     @property
     def is_deployed(self) -> bool:
-        return self in (self.PRODUCTION)
+        return self in (self.PRODUCTION,)
 
 
 @unique
