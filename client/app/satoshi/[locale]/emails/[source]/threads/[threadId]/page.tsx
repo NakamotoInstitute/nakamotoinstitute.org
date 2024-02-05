@@ -16,7 +16,7 @@ import { formatEmailSource } from "@/utils/strings";
 import { EmailThreadNavigation } from "@satoshi/components/ContentNavigation";
 import { ThreadPageHeader } from "@satoshi/components/ThreadPageHeader";
 
-export const dynamicParams = false;
+// export const dynamicParams = false;
 
 const generateHref = (source: EmailSource, threadId: string) => (l: Locale) =>
   urls(l).satoshi.emails.sourceThreadsDetail(source, threadId);
@@ -170,13 +170,13 @@ export default async function EmailSourceThreadDetail({
   );
 }
 
-export async function generateStaticParams() {
-  const threads = await getEmailThreads();
-  return getLocaleParams((locale) =>
-    threads.map((t) => ({
-      locale,
-      source: t.source,
-      threadId: t.id.toString(),
-    })),
-  );
-}
+// export async function generateStaticParams() {
+//   const threads = await getEmailThreads();
+//   return getLocaleParams((locale) =>
+//     threads.map((t) => ({
+//       locale,
+//       source: t.source,
+//       threadId: t.id.toString(),
+//     })),
+//   );
+// }

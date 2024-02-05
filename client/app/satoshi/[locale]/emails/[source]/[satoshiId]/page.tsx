@@ -14,7 +14,7 @@ import { formatEmailSource } from "@/utils/strings";
 
 import { EmailNavigation } from "@satoshi/components/ContentNavigation";
 
-export const dynamicParams = false;
+// export const dynamicParams = false;
 
 const generateHref = (source: EmailSource, satoshiId: string) => (l: Locale) =>
   urls(l).satoshi.emails.sourceEmail(source, satoshiId);
@@ -104,13 +104,13 @@ export default async function EmailDetail({
   );
 }
 
-export async function generateStaticParams() {
-  const emails = await getSatoshiEmails();
-  return getLocaleParams((locale) =>
-    emails.map((e) => ({
-      locale,
-      source: e.source,
-      satoshiId: e.satoshiId.toString(),
-    })),
-  );
-}
+// export async function generateStaticParams() {
+//   const emails = await getSatoshiEmails();
+//   return getLocaleParams((locale) =>
+//     emails.map((e) => ({
+//       locale,
+//       source: e.source,
+//       satoshiId: e.satoshiId.toString(),
+//     })),
+//   );
+// }
