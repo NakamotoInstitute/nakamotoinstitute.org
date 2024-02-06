@@ -16,7 +16,7 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from sni.constants import DocumentFormats, Locales
 from sni.database import Base
-from sni.models.content import MarkdownContent
+from sni.models.content import MarkdownContent, YAMLFile
 
 if TYPE_CHECKING:
     from sni.models.authors import Author
@@ -61,6 +61,12 @@ class DocumentFormat(Base):
     )
 
 
+class LibraryWeightFile(YAMLFile):
+    __mapper_args__ = {
+        "polymorphic_identity": "library_weights",
+    }
+
+
 class Document(Base):
     __tablename__ = "documents"
 
@@ -78,6 +84,7 @@ class Document(Base):
         back_populates="document", lazy="joined"
     )
     has_math: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
+    weight: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
 
     def __repr__(self) -> str:
         return f"<Document({self.id})>"

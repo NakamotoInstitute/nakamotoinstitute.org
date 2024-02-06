@@ -3,7 +3,7 @@ from contextlib import contextmanager
 
 from sni.authors.importers import AuthorImporter
 from sni.database import SessionLocalSync
-from sni.library.importers import LibraryImporter
+from sni.library.importers import LibraryImporter, LibraryWeightImporter
 from sni.mempool.importers import MempoolImporter, MempoolSeriesImporter
 from sni.podcast.importers import EpisodeImporter
 from sni.satoshi.emails.importers import EmailImporter, EmailThreadImporter
@@ -13,6 +13,7 @@ from sni.skeptics.importers import SkepticImporter
 from sni.translators.importers import TranslatorImporter
 
 from .json import run_json_importer
+from .yaml import run_weight_importer
 
 
 @contextmanager
@@ -75,3 +76,7 @@ def update_content(force: bool = False):
     for importer in importers:
         instance = importer()
         instance.run_import(force)
+
+    importers = [LibraryWeightImporter]
+    for importer in importers:
+        run_weight_importer(LibraryWeightImporter, db_session, force)

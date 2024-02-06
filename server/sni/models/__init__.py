@@ -4,6 +4,7 @@ from .library import (  # noqa: F401
     Document,
     DocumentFormat,
     DocumentTranslation,
+    LibraryWeightFile,
     document_authors,
     document_formats,
     document_translators,

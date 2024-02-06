@@ -56,7 +56,7 @@ async def get_series_posts(
     series: BlogSeriesTranslation,
     *,
     db_session: AsyncSession,
-    locale: LocaleType = "en"
+    locale: LocaleType = "en",
 ) -> List[BlogPostTranslation]:
     return (
         await db_session.scalars(

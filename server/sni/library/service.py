@@ -4,7 +4,7 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from sni.constants import LocaleType
-from sni.models import DocumentTranslation
+from sni.models import Document, DocumentTranslation
 
 
 async def get(
@@ -25,7 +25,8 @@ async def get_all_by_locale(
     return (
         await db_session.scalars(
             select(DocumentTranslation)
+            .join(Document)
             .filter(DocumentTranslation.locale == locale)
-            .order_by(DocumentTranslation.sort_title.asc())
+            .order_by(Document.weight.desc(), DocumentTranslation.sort_title.asc())
         )
     ).all()

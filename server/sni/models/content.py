@@ -43,6 +43,22 @@ class JSONFile(Base):
     }
 
 
+class YAMLFile(Base):
+    __tablename__ = "yaml_files"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    file_metadata_id: Mapped[int] = mapped_column(ForeignKey("file_metadata.id"))
+    file_metadata: Mapped["FileMetadata"] = relationship(
+        "FileMetadata",
+        backref=backref("yaml_file", uselist=False, cascade="all, delete-orphan"),
+    )
+    content_type: Mapped[str] = mapped_column(String(50))
+    __mapper_args__ = {
+        "polymorphic_identity": "yaml_file",
+        "polymorphic_on": "content_type",
+    }
+
+
 class FileMetadata(Base):
     __tablename__ = "file_metadata"
 
