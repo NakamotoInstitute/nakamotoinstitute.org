@@ -36,6 +36,7 @@ export async function PageLayout({
           },
           { href: urls(locale).library.index, text: t("Library") },
           { href: urls(locale).mempool.index, text: t("Mempool") },
+          { href: urls(locale).substack, text: t("Newsletter") },
         ]}
         {...toggleProps}
       />

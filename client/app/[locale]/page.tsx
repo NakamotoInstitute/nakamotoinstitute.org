@@ -90,17 +90,14 @@ export default async function HomePage({ params: { locale } }: LocaleParams) {
           {t("Read Satoshi's White Paper")}
         </a>
       </div>
-      <div className="my-6 text-center">
-        <h2 className="mb-2 text-3xl font-medium">
-          {t("Sign up for email updates")}
-        </h2>
-        <iframe
-          src="https://nakamotoinst.substack.com/embed"
-          width="480"
-          height="150"
-          className="mx-auto overflow-hidden border border-solid border-zinc-100 bg-white max-sm:w-80"
-        ></iframe>
-      </div>
+      <p className="my-6 text-center text-3xl font-medium">
+        <Trans
+          i18nKey="Sign up for our <a>newsletter</a> to receive email updates."
+          components={{
+            a: <Link href={urls(locale).substack} />,
+          }}
+        />
+      </p>
       <Banner>
         <Trans
           t={t}

@@ -12,7 +12,8 @@ export function Footer({ locale }: FooterProps) {
     { label: "About", url: urls(locale).about },
     { label: "Contact", url: urls(locale).contact },
     { label: "Donate", url: urls(locale).donate },
-    { label: "Feed", url: "#" },
+    { label: "Feed", url: urls(locale).mempool.atom },
+    { label: "Newsletter", url: urls(locale).substack },
     { label: "GitHub", url: urls(locale).github },
   ];
 
