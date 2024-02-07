@@ -75,6 +75,7 @@ export default async function HomePage({ params: { locale } }: LocaleParams) {
           width={480}
           height={240}
           alt="Blockchain"
+          priority
         />
         <p className="mb-4 text-xl font-light italic">
           {t(
