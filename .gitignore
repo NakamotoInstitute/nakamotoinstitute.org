@@ -93,6 +93,7 @@ next-env.d.ts
 ## SERVER GITIGNORE
 
 server/.envs/.production/*
+server/.justenv
 *.epub
 *.mobi
 *.mp3
