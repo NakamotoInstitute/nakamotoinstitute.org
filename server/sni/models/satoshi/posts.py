@@ -27,12 +27,10 @@ class ForumThread(Base):
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     title: Mapped[str] = mapped_column(String, nullable=False)
     source: Mapped[str] = mapped_column(String, nullable=False)
-    posts: Mapped[List["ForumPost"]] = relationship(
-        back_populates="thread", lazy="selectin"
-    )
+    posts: Mapped[List["ForumPost"]] = relationship(back_populates="thread")
     file_id: Mapped[int] = mapped_column(Integer, ForeignKey("json_files.id"))
     file: Mapped[ForumThreadFile] = relationship(
-        "ForumThreadFile", back_populates="threads", lazy="selectin"
+        "ForumThreadFile", back_populates="threads"
     )
 
     def __repr__(self):
@@ -67,8 +65,8 @@ class ForumPost(Base):
     thread_id: Mapped[int] = mapped_column(
         Integer, ForeignKey("forum_threads.id"), nullable=False
     )
-    thread: Mapped[ForumThread] = relationship(back_populates="posts", lazy="joined")
-    quotes: Mapped[List["Quote"]] = relationship(back_populates="post", lazy="selectin")
+    thread: Mapped[ForumThread] = relationship(back_populates="posts")
+    quotes: Mapped[List["Quote"]] = relationship(back_populates="post")
     file_id: Mapped[int] = mapped_column(Integer, ForeignKey("json_files.id"))
     file: Mapped[ForumPostFile] = relationship("ForumPostFile", back_populates="posts")
 

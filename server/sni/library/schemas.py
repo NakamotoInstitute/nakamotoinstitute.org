@@ -79,7 +79,6 @@ class DocumentBaseModel(ORMModel):
     external: Optional[str]
     authors: List[AuthorModel] = Field(alias=AliasPath("document", "authors"))
     translations: List[TranslationSchema]
-    translators: List[TranslatorModel]
     formats: List[DocumentFormatModel]
 
     @field_serializer("date")
@@ -112,3 +111,4 @@ class DocumentModel(DocumentBaseModel):
         validation_alias=AliasPath("document", "has_math"),
         serialization_alias="hasMath",
     )
+    translators: List[TranslatorModel]

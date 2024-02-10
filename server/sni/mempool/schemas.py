@@ -80,7 +80,6 @@ class MempoolPostBaseModel(ORMModel):
     added: datetime.date = Field(alias=AliasPath("blog_post", "added"))
     authors: List[AuthorModel] = Field(alias=AliasPath("blog_post", "authors"))
     translations: List[TranslationSchema]
-    translators: List[TranslatorModel]
     series_index: Optional[int] = Field(
         validation_alias=AliasPath("blog_post", "series_index"),
         serialization_alias="seriesIndex",
@@ -112,6 +111,7 @@ class MempoolPostModel(MempoolPostBaseModel):
         validation_alias=AliasPath("blog_post", "has_math"),
         serialization_alias="hasMath",
     )
+    translators: List[TranslatorModel]
 
 
 class MempoolSeriesModel(MempoolSeriesBaseModel):

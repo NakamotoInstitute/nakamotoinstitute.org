@@ -7,10 +7,13 @@ from sni.models import Episode
 
 
 async def get(slug: str, *, db_session: AsyncSession) -> Episode:
-    return await db_session.scalar(select(Episode).filter_by(slug=slug))
+    query = select(Episode).filter_by(slug=slug)
+
+    return await db_session.scalar(query)
 
 
 async def get_all(*, db_session: AsyncSession) -> List[Episode]:
-    return (
-        await db_session.scalars(select(Episode).order_by(Episode.date.desc()))
-    ).all()
+    query = select(Episode).order_by(Episode.date.desc())
+
+    result = await db_session.scalars(query)
+    return result.all()

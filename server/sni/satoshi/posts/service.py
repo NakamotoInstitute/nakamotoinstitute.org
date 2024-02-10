@@ -2,61 +2,78 @@ from typing import List
 
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.orm import joinedload, selectinload
 
 from sni.models import ForumPost, ForumThread
 
 
 async def get_all_posts(*, db_session: AsyncSession) -> List[ForumPost]:
-    return (
-        await db_session.scalars(
-            select(ForumPost)
-            .filter(ForumPost.satoshi_id.isnot(None))
-            .order_by(ForumPost.date)
-        )
-    ).all()
+    query = (
+        select(ForumPost)
+        .options(joinedload(ForumPost.thread))
+        .filter(ForumPost.satoshi_id.isnot(None))
+        .order_by(ForumPost.date)
+    )
+
+    result = await db_session.scalars(query)
+    return result.all()
 
 
 async def get_threads(*, db_session: AsyncSession) -> List[ForumThread]:
-    return (await db_session.scalars(select(ForumThread))).all()
+    query = select(ForumThread).options(selectinload(ForumThread.posts))
+
+    result = await db_session.scalars(query)
+    return result.all()
 
 
 async def get_posts_by_source(
     source: str, *, db_session: AsyncSession
 ) -> List[ForumPost]:
-    return (
-        await db_session.scalars(
-            select(ForumPost)
-            .filter(ForumPost.satoshi_id.isnot(None))
-            .join(ForumThread)
-            .filter_by(source=source)
-            .order_by(ForumPost.date)
-        )
-    ).all()
+    query = (
+        select(ForumPost)
+        .options(joinedload(ForumPost.thread))
+        .filter(ForumPost.satoshi_id.isnot(None))
+        .join(ForumThread)
+        .filter_by(source=source)
+        .order_by(ForumPost.date)
+    )
+
+    result = await db_session.scalars(query)
+    return result.all()
 
 
 async def get_post_by_source(
     source: str, satoshi_id: int, *, db_session: AsyncSession
 ) -> ForumPost:
-    return await db_session.scalar(
+    query = (
         select(ForumPost)
+        .options(joinedload(ForumPost.thread))
         .filter_by(satoshi_id=satoshi_id)
         .join(ForumThread)
         .filter_by(source=source)
     )
 
+    return await db_session.scalar(query)
+
 
 async def get_post(satoshi_id: int, *, db_session: AsyncSession) -> ForumPost:
-    return await db_session.scalar(select(ForumPost).filter_by(satoshi_id=satoshi_id))
+    query = select(ForumPost).filter_by(satoshi_id=satoshi_id)
+
+    return await db_session.scalar(query)
 
 
 async def get_threads_by_source(
     source: str, *, db_session: AsyncSession
 ) -> List[ForumThread]:
-    return (
-        await db_session.scalars(
-            select(ForumThread).filter_by(source=source).order_by(ForumThread.id)
-        )
-    ).all()
+    query = (
+        select(ForumThread)
+        .options(selectinload(ForumThread.posts))
+        .filter_by(source=source)
+        .order_by(ForumThread.id)
+    )
+
+    result = await db_session.scalars(query)
+    return result.all()
 
 
 async def get_thread_posts(
@@ -74,4 +91,10 @@ async def get_thread_posts(
 
 
 async def get_thread(thread_id: int, *, db_session: AsyncSession) -> ForumThread:
-    return await db_session.scalar(select(ForumThread).filter_by(id=thread_id))
+    query = (
+        select(ForumThread)
+        .options(selectinload(ForumThread.posts))
+        .filter_by(id=thread_id)
+    )
+
+    return await db_session.scalar(query)

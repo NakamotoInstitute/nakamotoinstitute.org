@@ -2,7 +2,7 @@ from typing import List
 
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, joinedload, selectinload
 
 from sni.constants import LocaleType
 from sni.models import BlogPost, BlogPostTranslation, BlogSeries, BlogSeriesTranslation
@@ -11,77 +11,136 @@ from sni.models import BlogPost, BlogPostTranslation, BlogSeries, BlogSeriesTran
 async def get_post(
     slug: str, *, db_session: AsyncSession, locale: LocaleType = "en"
 ) -> BlogPostTranslation:
-    return await db_session.scalar(
-        select(BlogPostTranslation).filter_by(slug=slug, locale=locale)
+    query = (
+        select(BlogPostTranslation)
+        .options(
+            joinedload(BlogPostTranslation.blog_post).options(
+                selectinload(BlogPost.authors),
+                selectinload(BlogPost.translations),
+                joinedload(BlogPost.series).selectinload(BlogSeries.translations),
+            ),
+            selectinload(BlogPostTranslation.translators),
+        )
+        .filter_by(slug=slug, locale=locale)
     )
+    return await db_session.scalar(query)
 
 
-async def get_all_posts(*, db_session: AsyncSession) -> List[BlogPostTranslation]:
-    return (await db_session.scalars(select(BlogPostTranslation))).all()
+async def get_params(*, db_session: AsyncSession) -> List[BlogPostTranslation]:
+    query = select(BlogPostTranslation.slug, BlogPostTranslation.locale)
+
+    result = await db_session.execute(query)
+    all_params = result.all()
+
+    return [dict(slug=slug, locale=locale) for (slug, locale) in all_params]
 
 
 async def get_all_posts_by_locale(
     *, db_session: Session, locale: LocaleType = "en"
 ) -> List[BlogPostTranslation]:
-    return (
-        await db_session.scalars(
-            select(BlogPostTranslation)
-            .join(BlogPost)
-            .filter(BlogPostTranslation.locale == locale)
-            .order_by(BlogPost.added.desc())
+    query = (
+        select(BlogPostTranslation)
+        .options(
+            joinedload(BlogPostTranslation.blog_post).options(
+                selectinload(BlogPost.authors),
+                selectinload(BlogPost.translations),
+                joinedload(BlogPost.series).selectinload(BlogSeries.translations),
+            )
         )
-    ).all()
+        .join(BlogPost)
+        .outerjoin(BlogSeries)
+        .filter(BlogPostTranslation.locale == locale)
+        .order_by(BlogPost.added.desc())
+    )
+
+    result = await db_session.scalars(query)
+    return result.all()
 
 
 async def get_latest_post(
     *, db_session: AsyncSession, locale: LocaleType = "en"
 ) -> BlogPostTranslation:
-    return await db_session.scalar(
+    query = (
         select(BlogPostTranslation)
+        .options(
+            joinedload(BlogPostTranslation.blog_post).options(
+                selectinload(BlogPost.authors),
+                selectinload(BlogPost.translations),
+                joinedload(BlogPost.series).selectinload(BlogSeries.translations),
+            )
+        )
         .filter_by(locale=locale)
         .join(BlogPost)
         .order_by(BlogPost.added.desc())
     )
 
+    return await db_session.scalar(query)
+
 
 async def get_series(
     slug: str, *, db_session: AsyncSession, locale: LocaleType = "en"
 ) -> BlogSeriesTranslation:
-    return await db_session.scalar(
-        select(BlogSeriesTranslation).filter_by(slug=slug, locale=locale)
+    query = (
+        select(BlogSeriesTranslation)
+        .options(
+            joinedload(BlogSeriesTranslation.blog_series).selectinload(
+                BlogSeries.translations
+            )
+        )
+        .filter_by(slug=slug, locale=locale)
     )
+
+    return await db_session.scalar(query)
 
 
 async def get_series_posts(
-    series: BlogSeriesTranslation,
+    series_id: int,
     *,
     db_session: AsyncSession,
     locale: LocaleType = "en",
 ) -> List[BlogPostTranslation]:
-    return (
-        await db_session.scalars(
-            select(BlogPostTranslation)
-            .join(BlogPost)
-            .join(BlogSeries)
-            .filter(
-                BlogPostTranslation.locale == locale,
-                BlogSeries.id == series.blog_series.id,
+    query = (
+        select(BlogPostTranslation)
+        .options(
+            joinedload(BlogPostTranslation.blog_post).options(
+                joinedload(BlogPost.series),
+                selectinload(BlogPost.authors),
+                selectinload(BlogPost.translations),
             )
         )
-    ).all()
+        .join(BlogPost)
+        .filter(
+            BlogPostTranslation.locale == locale,
+            BlogPost.series_id == series_id,
+        )
+        .order_by(BlogPost.series_index.asc())
+    )
+
+    result = await db_session.scalars(query)
+    return result.all()
 
 
-async def get_all_series(*, db_session: AsyncSession) -> List[BlogSeriesTranslation]:
-    return (await db_session.scalars(select(BlogSeriesTranslation))).all()
+async def get_series_params(*, db_session: AsyncSession) -> List[BlogSeriesTranslation]:
+    query = select(BlogSeriesTranslation.slug, BlogSeriesTranslation.locale)
+
+    result = await db_session.execute(query)
+    all_params = result.all()
+
+    return [dict(slug=slug, locale=locale) for slug, locale in all_params]
 
 
 async def get_all_series_by_locale(
     *, db_session: AsyncSession, locale: LocaleType = "en"
 ) -> List[BlogSeriesTranslation]:
-    return (
-        await db_session.scalars(
-            select(BlogSeriesTranslation)
-            .join(BlogSeries)
-            .filter(BlogSeriesTranslation.locale == locale)
+    query = (
+        select(BlogSeriesTranslation)
+        .options(
+            joinedload(BlogSeriesTranslation.blog_series).selectinload(
+                BlogSeries.translations
+            )
         )
-    ).all()
+        .filter(BlogSeriesTranslation.locale == locale)
+    )
+
+    result = await db_session.scalars(query)
+    return result.all()

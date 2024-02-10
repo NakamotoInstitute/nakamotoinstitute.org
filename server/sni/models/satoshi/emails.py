@@ -27,12 +27,10 @@ class EmailThread(Base):
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     title: Mapped[str] = mapped_column(String, nullable=False)
     source: Mapped[str] = mapped_column(String, nullable=False)
-    emails: Mapped[List["Email"]] = relationship(
-        back_populates="thread", lazy="selectin"
-    )
+    emails: Mapped[List["Email"]] = relationship(back_populates="thread")
     file_id: Mapped[int] = mapped_column(Integer, ForeignKey("json_files.id"))
     file: Mapped[EmailThreadFile] = relationship(
-        "EmailThreadFile", back_populates="threads", lazy="selectin"
+        "EmailThreadFile", back_populates="threads"
     )
 
     def __repr__(self):
@@ -40,9 +38,7 @@ class EmailThread(Base):
 
 
 class EmailFile(JSONFile):
-    emails: Mapped[List["Email"]] = relationship(
-        "Email", back_populates="file", lazy="selectin"
-    )
+    emails: Mapped[List["Email"]] = relationship("Email", back_populates="file")
 
     __mapper_args__ = {
         "polymorphic_identity": "emails",
@@ -70,17 +66,13 @@ class Email(Base):
         lazy="joined",
     )
     replies: Mapped[List["Email"]] = relationship(
-        "Email", back_populates="parent", lazy="selectin", join_depth=1
+        "Email", back_populates="parent", join_depth=1
     )
     thread_id = mapped_column(Integer, ForeignKey("email_threads.id"), nullable=False)
-    thread: Mapped[EmailThread] = relationship(back_populates="emails", lazy="joined")
-    quotes: Mapped[List["Quote"]] = relationship(
-        back_populates="email", lazy="selectin"
-    )
+    thread: Mapped[EmailThread] = relationship(back_populates="emails")
+    quotes: Mapped[List["Quote"]] = relationship(back_populates="email")
     file_id: Mapped[int] = mapped_column(Integer, ForeignKey("json_files.id"))
-    file: Mapped[EmailFile] = relationship(
-        "EmailFile", back_populates="emails", lazy="selectin"
-    )
+    file: Mapped[EmailFile] = relationship("EmailFile", back_populates="emails")
 
     def __repr__(self):
         return f"<Email {self.subject} - {self.source_id}>"

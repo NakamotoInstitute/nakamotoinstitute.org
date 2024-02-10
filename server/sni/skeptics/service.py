@@ -7,4 +7,7 @@ from sni.models import Skeptic
 
 
 async def get_all(*, db_session: AsyncSession) -> List[Skeptic]:
-    return (await db_session.scalars(select(Skeptic).order_by(Skeptic.date))).all()
+    query = select(Skeptic).order_by(Skeptic.date)
+
+    result = await db_session.scalars(query)
+    return result.all()

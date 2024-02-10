@@ -41,7 +41,7 @@ class QuoteCategory(Base):
     name: Mapped[str] = mapped_column(String, nullable=False)
     slug: Mapped[str] = mapped_column(String, unique=True, nullable=False)
     quotes: Mapped[List["Quote"]] = relationship(
-        secondary=quote_quote_categories, back_populates="categories", lazy="selectin"
+        secondary=quote_quote_categories, back_populates="categories"
     )
     file_id: Mapped[int] = mapped_column(Integer, ForeignKey("json_files.id"))
     file: Mapped[QuoteCategoryFile] = relationship(
@@ -70,13 +70,13 @@ class Quote(Base):
     email_id: Mapped[int] = mapped_column(
         Integer, ForeignKey("emails.satoshi_id"), nullable=True
     )
-    email: Mapped["Email"] = relationship(back_populates="quotes", lazy="joined")
+    email: Mapped["Email"] = relationship(back_populates="quotes")
     post_id: Mapped[int] = mapped_column(
         Integer, ForeignKey("forum_posts.satoshi_id"), nullable=True
     )
-    post: Mapped["ForumPost"] = relationship(back_populates="quotes", lazy="joined")
+    post: Mapped["ForumPost"] = relationship(back_populates="quotes")
     categories: Mapped[List[QuoteCategory]] = relationship(
-        secondary=quote_quote_categories, back_populates="quotes", lazy="joined"
+        secondary=quote_quote_categories, back_populates="quotes"
     )
     file_id: Mapped[int] = mapped_column(Integer, ForeignKey("json_files.id"))
     file: Mapped[QuoteFile] = relationship("QuoteFile", back_populates="quotes")

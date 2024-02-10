@@ -2,15 +2,29 @@ from typing import List
 
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.orm import joinedload, selectinload
 
-from sni.models import QuoteCategory
+from sni.models import Email, ForumPost, Quote, QuoteCategory
 
 
 async def get(slug: str, *, db_session: AsyncSession) -> QuoteCategory:
-    return await db_session.scalar(select(QuoteCategory).filter_by(slug=slug))
+    query = (
+        select(QuoteCategory)
+        .options(
+            selectinload(QuoteCategory.quotes).options(
+                joinedload(Quote.email).joinedload(Email.thread),
+                joinedload(Quote.post).joinedload(ForumPost.thread),
+                selectinload(Quote.categories),
+            )
+        )
+        .filter_by(slug=slug)
+    )
+
+    return await db_session.scalar(query)
 
 
 async def get_all(*, db_session: AsyncSession) -> List[QuoteCategory]:
-    return (
-        await db_session.scalars(select(QuoteCategory).order_by(QuoteCategory.slug))
-    ).all()
+    query = select(QuoteCategory).order_by(QuoteCategory.slug)
+
+    result = await db_session.scalars(query)
+    return result

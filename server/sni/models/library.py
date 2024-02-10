@@ -57,7 +57,7 @@ class DocumentFormat(Base):
         unique=True,
     )
     documents: Mapped[List["DocumentTranslation"]] = relationship(
-        secondary=document_formats, back_populates="formats", lazy="selectin"
+        secondary=document_formats, back_populates="formats"
     )
 
 
@@ -78,10 +78,10 @@ class Document(Base):
     )
     doctype: Mapped[str] = mapped_column(String, nullable=False)
     authors: Mapped[List["Author"]] = relationship(
-        secondary=document_authors, back_populates="docs", lazy="joined"
+        secondary=document_authors, back_populates="docs"
     )
     translations: Mapped[List["DocumentTranslation"]] = relationship(
-        back_populates="document", lazy="joined"
+        back_populates="document"
     )
     has_math: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
     weight: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
@@ -107,14 +107,12 @@ class DocumentTranslation(MarkdownContent):
     external: Mapped[str] = mapped_column(String, nullable=True)
     image_alt: Mapped[str] = mapped_column(String, nullable=True)
     document_id: Mapped[int] = mapped_column(ForeignKey("documents.id"))
-    document: Mapped[Document] = relationship(
-        back_populates="translations", lazy="selectin"
-    )
+    document: Mapped[Document] = relationship(back_populates="translations")
     formats: Mapped[List[DocumentFormat]] = relationship(
-        secondary=document_formats, back_populates="documents", lazy="selectin"
+        secondary=document_formats, back_populates="documents"
     )
     translators: Mapped[List["Translator"]] = relationship(
-        secondary=document_translators, back_populates="docs", lazy="selectin"
+        secondary=document_translators, back_populates="docs"
     )
 
     __mapper_args__ = {"polymorphic_identity": "document"}
@@ -133,4 +131,4 @@ class DocumentTranslation(MarkdownContent):
         )
 
     def __repr__(self) -> str:
-        return f"<DocumentTranslation(locale={self.locale};slug={self.slug})>"
+        return f"<DocumentTranslation(locale={self.locale.value};slug={self.slug})>"
