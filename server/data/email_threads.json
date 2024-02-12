@@ -2,81 +2,113 @@
   {
     "id": 1,
     "title": "Bitcoin P2P e-cash paper",
-    "source": "cryptography"
+    "source": "cryptography",
+    "date": "2008-10-31T18:10:00Z",
+    "url": "http://www.metzdowd.com/pipermail/cryptography/2008-October/014810.html"
   },
   {
     "id": 2,
     "title": "Bitcoin v0.1 released",
-    "source": "cryptography"
+    "source": "cryptography",
+    "date": "2009-01-08T19:27:40Z",
+    "url": "http://www.metzdowd.com/pipermail/cryptography/2009-January/014994.html"
   },
   {
     "id": 3,
     "title": "[bitcoin-list] Welcome",
-    "source": "bitcoin-list"
+    "source": "bitcoin-list",
+    "date": "2008-12-10T17:00:23Z",
+    "url": "https://sourceforge.net/p/bitcoin/mailman/message/21033408/"
   },
   {
     "id": 4,
     "title": "[bitcoin-list] Bitcoin v0.1 released",
-    "source": "bitcoin-list"
+    "source": "bitcoin-list",
+    "date": "2009-01-11T03:16:43Z",
+    "url": "https://sourceforge.net/p/bitcoin/mailman/message/21312757/"
   },
   {
     "id": 5,
     "title": "[bitcoin-list] Bitcoin v0.1.2 now available",
-    "source": "bitcoin-list"
+    "source": "bitcoin-list",
+    "date": "2009-01-11T22:32:18Z",
+    "url": "https://sourceforge.net/p/bitcoin/mailman/message/21303153/"
   },
   {
     "id": 6,
     "title": "[bitcoin-list] Bitcoin v0.1 Alpha release notes",
-    "source": "bitcoin-list"
+    "source": "bitcoin-list",
+    "date": "2009-01-12T20:20:47Z",
+    "url": "https://sourceforge.net/p/bitcoin/mailman/message/21312004/"
   },
   {
     "id": 7,
     "title": "[bitcoin-list] Bitcoin v0.1.3",
-    "source": "bitcoin-list"
+    "source": "bitcoin-list",
+    "date": "2009-01-12T22:48:23Z",
+    "url": "https://sourceforge.net/p/bitcoin/mailman/message/21313152/"
   },
   {
     "id": 8,
     "title": "[bitcoin-list] Problems",
-    "source": "bitcoin-list"
+    "source": "bitcoin-list",
+    "date": "2009-01-25T10:17:52Z",
+    "url": "https://sourceforge.net/p/bitcoin/mailman/message/21423198/"
   },
   {
     "id": 9,
     "title": "[bitcoin-list] Bitcoin v0.1.5 released",
-    "source": "bitcoin-list"
+    "source": "bitcoin-list",
+    "date": "2009-02-04T19:46:04Z",
+    "url": "https://sourceforge.net/p/bitcoin/mailman/message/21500063/"
   },
   {
     "id": 10,
     "title": "[bitcoin-list] Does Bitcoin Crash in Windows?",
-    "source": "bitcoin-list"
+    "source": "bitcoin-list",
+    "date": "2009-10-23T11:50:10Z",
+    "url": "https://sourceforge.net/p/bitcoin/mailman/message/23818861/"
   },
   {
     "id": 11,
     "title": "[bitcoin-list] Bitcoin 0.2 released",
-    "source": "bitcoin-list"
+    "source": "bitcoin-list",
+    "date": "2009-12-17T06:52:09Z",
+    "url": "https://sourceforge.net/p/bitcoin/mailman/message/24205662/"
   },
   {
     "id": 12,
     "title": "[bitcoin-list] Bitcoin 0.3 released!",
-    "source": "bitcoin-list"
+    "source": "bitcoin-list",
+    "date": "2010-07-06T21:53:53Z",
+    "url": "https://sourceforge.net/p/bitcoin/mailman/message/25686730/"
   },
   {
     "id": 13,
     "title": "[bitcoin-list] Alert: upgrade to bitcoin 0.3.6",
-    "source": "bitcoin-list"
+    "source": "bitcoin-list",
+    "date": "2010-07-30T06:02:38Z",
+    "url": "https://sourceforge.net/p/bitcoin/mailman/message/25843947/"
   },
   {
     "id": 14,
     "title": "[bitcoin-list] ALERT - we are investigating a problem",
-    "source": "bitcoin-list"
+    "source": "bitcoin-list",
+    "date": "2010-08-15T20:38:33Z",
+    "url": "https://sourceforge.net/p/bitcoin/mailman/message/25954806/"
   },
   {
     "id": 15,
     "title": "[bitcoin-list] Bitcoin 0.3.18 is released",
-    "source": "bitcoin-list"
+    "source": "bitcoin-list",
+    "date": "2010-12-08T23:11:55Z",
+    "url": "https://sourceforge.net/p/bitcoin/mailman/message/26722835/"
   },
   {
     "id": 16,
     "title": "[bitcoin-list] Bitcoin 0.3.19 is released",
-    "source": "bitcoin-list"
+    "source": "bitcoin-list",
+    "date": "2010-12-13T16:12:09Z",
+    "url": "https://sourceforge.net/p/bitcoin/mailman/message/26744510/"
   }
 ]

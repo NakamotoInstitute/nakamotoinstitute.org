@@ -5,7 +5,8 @@
     "url": "http://p2pfoundation.ning.com/forum/topics/bitcoin-open-source",
     "downloaded": true,
     "num_satoshi": 4,
-    "source": "p2pfoundation"
+    "source": "p2pfoundation",
+    "date": "2009-02-11T22:27:00Z"
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "url": "https://bitcointalk.org/index.php?topic=5",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2009-11-22T18:04:28Z"
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "url": "https://bitcointalk.org/index.php?topic=6",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2009-11-22T18:31:44Z"
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "url": "https://bitcointalk.org/index.php?topic=7",
     "downloaded": true,
     "num_satoshi": 4,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2009-11-22T18:32:00Z"
   },
   {
     "id": 5,
@@ -37,7 +41,8 @@
     "url": "https://bitcointalk.org/index.php?topic=8",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2009-11-25T18:15:57Z"
   },
   {
     "id": 6,
@@ -45,7 +50,8 @@
     "url": "https://bitcointalk.org/index.php?topic=9",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2009-11-27T17:17:22Z"
   },
   {
     "id": 7,
@@ -53,7 +59,8 @@
     "url": "https://bitcointalk.org/index.php?topic=10",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2009-11-27T22:48:39Z"
   },
   {
     "id": 8,
@@ -61,7 +68,8 @@
     "url": "https://bitcointalk.org/index.php?topic=12",
     "downloaded": true,
     "num_satoshi": 10,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2009-12-09T05:34:46Z"
   },
   {
     "id": 9,
@@ -69,7 +77,8 @@
     "url": "https://bitcointalk.org/index.php?topic=13",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2009-12-10T13:13:51Z"
   },
   {
     "id": 10,
@@ -77,7 +86,8 @@
     "url": "https://bitcointalk.org/index.php?topic=16",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2009-12-16T22:45:36Z"
   },
   {
     "id": 11,
@@ -85,7 +95,8 @@
     "url": "https://bitcointalk.org/index.php?topic=17",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-01-01T18:09:58Z"
   },
   {
     "id": 12,
@@ -93,7 +104,8 @@
     "url": "https://bitcointalk.org/index.php?topic=18",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-01-11T16:13:20Z"
   },
   {
     "id": 13,
@@ -101,7 +113,8 @@
     "url": "https://bitcointalk.org/index.php?topic=21",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-01-16T14:27:15Z"
   },
   {
     "id": 14,
@@ -109,7 +122,8 @@
     "url": "https://bitcointalk.org/index.php?topic=22",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-01-16T23:22:55Z"
   },
   {
     "id": 15,
@@ -117,7 +131,8 @@
     "url": "https://bitcointalk.org/index.php?topic=25",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-01-24T09:52:48Z"
   },
   {
     "id": 16,
@@ -125,7 +140,8 @@
     "url": "https://bitcointalk.org/index.php?topic=27",
     "downloaded": true,
     "num_satoshi": 3,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-01-25T23:07:16Z"
   },
   {
     "id": 17,
@@ -133,7 +149,8 @@
     "url": "https://bitcointalk.org/index.php?topic=28",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-01-26T02:48:41Z"
   },
   {
     "id": 18,
@@ -141,7 +158,8 @@
     "url": "https://bitcointalk.org/index.php?topic=29",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-01-27T07:51:02Z"
   },
   {
     "id": 19,
@@ -149,7 +167,8 @@
     "url": "https://bitcointalk.org/index.php?topic=30",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-01-27T09:10:16Z"
   },
   {
     "id": 20,
@@ -157,7 +176,8 @@
     "url": "https://bitcointalk.org/index.php?topic=34",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-02-01T02:17:02Z"
   },
   {
     "id": 21,
@@ -165,7 +185,8 @@
     "url": "https://bitcointalk.org/index.php?topic=35",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-02-01T18:51:53Z"
   },
   {
     "id": 22,
@@ -173,7 +194,8 @@
     "url": "https://bitcointalk.org/index.php?topic=43",
     "downloaded": true,
     "num_satoshi": 14,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-02-05T19:19:12Z"
   },
   {
     "id": 23,
@@ -181,7 +203,8 @@
     "url": "https://bitcointalk.org/index.php?topic=44",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-02-06T09:36:45Z"
   },
   {
     "id": 24,
@@ -189,7 +212,8 @@
     "url": "https://bitcointalk.org/index.php?topic=45",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-02-07T09:27:56Z"
   },
   {
     "id": 25,
@@ -197,7 +221,8 @@
     "url": "https://bitcointalk.org/index.php?topic=46",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-02-08T09:00:02Z"
   },
   {
     "id": 26,
@@ -205,7 +230,8 @@
     "url": "https://bitcointalk.org/index.php?topic=47",
     "downloaded": true,
     "num_satoshi": 3,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-02-08T01:27:02Z"
   },
   {
     "id": 27,
@@ -213,7 +239,8 @@
     "url": "https://bitcointalk.org/index.php?topic=48",
     "downloaded": true,
     "num_satoshi": 3,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-02-10T18:31:40Z"
   },
   {
     "id": 28,
@@ -221,7 +248,8 @@
     "url": "https://bitcointalk.org/index.php?topic=49",
     "downloaded": true,
     "num_satoshi": 3,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-02-12T00:31:35Z"
   },
   {
     "id": 29,
@@ -229,7 +257,8 @@
     "url": "https://bitcointalk.org/index.php?topic=54",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-02-16T00:35:25Z"
   },
   {
     "id": 30,
@@ -237,7 +266,8 @@
     "url": "https://bitcointalk.org/index.php?topic=55",
     "downloaded": true,
     "num_satoshi": 4,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-02-16T20:51:42Z"
   },
   {
     "id": 31,
@@ -245,7 +275,8 @@
     "url": "https://bitcointalk.org/index.php?topic=57",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-02-18T07:12:50Z"
   },
   {
     "id": 32,
@@ -253,7 +284,8 @@
     "url": "https://bitcointalk.org/index.php?topic=58",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-02-19T00:12:56Z"
   },
   {
     "id": 33,
@@ -261,7 +293,8 @@
     "url": "https://bitcointalk.org/index.php?topic=59",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-02-21T04:19:53Z"
   },
   {
     "id": 34,
@@ -269,7 +302,8 @@
     "url": "https://bitcointalk.org/index.php?topic=60",
     "downloaded": true,
     "num_satoshi": 3,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-02-21T21:48:01Z"
   },
   {
     "id": 35,
@@ -277,7 +311,8 @@
     "url": "https://bitcointalk.org/index.php?topic=61",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-02-22T13:22:37Z"
   },
   {
     "id": 36,
@@ -285,7 +320,8 @@
     "url": "https://bitcointalk.org/index.php?topic=62",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-02-23T03:46:44Z"
   },
   {
     "id": 37,
@@ -293,7 +329,8 @@
     "url": "https://bitcointalk.org/index.php?topic=63",
     "downloaded": true,
     "num_satoshi": 7,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-02-23T22:15:41Z"
   },
   {
     "id": 38,
@@ -301,7 +338,8 @@
     "url": "https://bitcointalk.org/index.php?topic=64",
     "downloaded": true,
     "num_satoshi": 6,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-02-24T21:24:23Z"
   },
   {
     "id": 39,
@@ -309,7 +347,8 @@
     "url": "https://bitcointalk.org/index.php?topic=65",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-02-27T17:09:59Z"
   },
   {
     "id": 40,
@@ -317,7 +356,8 @@
     "url": "https://bitcointalk.org/index.php?topic=69",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-03-02T07:22:10Z"
   },
   {
     "id": 41,
@@ -325,7 +365,8 @@
     "url": "https://bitcointalk.org/index.php?topic=72",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-03-08T09:29:56Z"
   },
   {
     "id": 42,
@@ -333,7 +374,8 @@
     "url": "https://bitcointalk.org/index.php?topic=83",
     "downloaded": true,
     "num_satoshi": 4,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-03-15T19:16:56Z"
   },
   {
     "id": 43,
@@ -341,7 +383,8 @@
     "url": "https://bitcointalk.org/index.php?topic=84",
     "downloaded": true,
     "num_satoshi": 5,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-03-15T19:58:52Z"
   },
   {
     "id": 44,
@@ -349,7 +392,8 @@
     "url": "https://bitcointalk.org/index.php?topic=87",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-03-20T01:33:19Z"
   },
   {
     "id": 45,
@@ -357,7 +401,8 @@
     "url": "https://bitcointalk.org/index.php?topic=88",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-03-22T17:16:17Z"
   },
   {
     "id": 46,
@@ -365,7 +410,8 @@
     "url": "https://bitcointalk.org/index.php?topic=101",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-04-08T14:56:25Z"
   },
   {
     "id": 47,
@@ -373,7 +419,8 @@
     "url": "https://bitcointalk.org/index.php?topic=112",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-04-15T00:12:40Z"
   },
   {
     "id": 48,
@@ -381,7 +428,8 @@
     "url": "https://bitcointalk.org/index.php?topic=125",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-05-03T00:33:35Z"
   },
   {
     "id": 49,
@@ -389,7 +437,8 @@
     "url": "https://bitcointalk.org/index.php?topic=128",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-05-07T17:19:02Z"
   },
   {
     "id": 50,
@@ -397,7 +446,8 @@
     "url": "https://bitcointalk.org/index.php?topic=129",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-05-09T04:44:01Z"
   },
   {
     "id": 51,
@@ -405,7 +455,8 @@
     "url": "https://bitcointalk.org/index.php?topic=130",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-05-09T04:45:11Z"
   },
   {
     "id": 52,
@@ -413,7 +464,8 @@
     "url": "https://bitcointalk.org/index.php?topic=135",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-05-14T18:07:50Z"
   },
   {
     "id": 53,
@@ -421,7 +473,8 @@
     "url": "https://bitcointalk.org/index.php?topic=141",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-05-20T09:38:53Z"
   },
   {
     "id": 54,
@@ -429,7 +482,8 @@
     "url": "https://bitcointalk.org/index.php?topic=145",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-05-22T18:44:20Z"
   },
   {
     "id": 55,
@@ -437,7 +491,8 @@
     "url": "https://bitcointalk.org/index.php?topic=149",
     "downloaded": true,
     "num_satoshi": 3,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-05-23T16:28:12Z"
   },
   {
     "id": 56,
@@ -445,7 +500,8 @@
     "url": "https://bitcointalk.org/index.php?topic=151",
     "downloaded": true,
     "num_satoshi": 12,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-05-24T11:56:41Z"
   },
   {
     "id": 57,
@@ -453,7 +509,8 @@
     "url": "https://bitcointalk.org/index.php?topic=153",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-05-24T18:43:49Z"
   },
   {
     "id": 58,
@@ -461,7 +518,8 @@
     "url": "https://bitcointalk.org/index.php?topic=154",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-05-25T18:27:19Z"
   },
   {
     "id": 59,
@@ -469,7 +527,8 @@
     "url": "https://bitcointalk.org/index.php?topic=157",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-05-26T18:27:25Z"
   },
   {
     "id": 60,
@@ -477,7 +536,8 @@
     "url": "https://bitcointalk.org/index.php?topic=158",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-05-29T04:38:52Z"
   },
   {
     "id": 61,
@@ -485,7 +545,8 @@
     "url": "https://bitcointalk.org/index.php?topic=163",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-06-05T01:03:34Z"
   },
   {
     "id": 62,
@@ -493,7 +554,8 @@
     "url": "https://bitcointalk.org/index.php?topic=165",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-06-05T16:26:09Z"
   },
   {
     "id": 63,
@@ -501,7 +563,8 @@
     "url": "https://bitcointalk.org/index.php?topic=171",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-06-08T16:51:55Z"
   },
   {
     "id": 64,
@@ -509,7 +572,8 @@
     "url": "https://bitcointalk.org/index.php?topic=177",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-06-10T02:12:24Z"
   },
   {
     "id": 65,
@@ -517,7 +581,8 @@
     "url": "https://bitcointalk.org/index.php?topic=179",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-06-10T20:38:13Z"
   },
   {
     "id": 66,
@@ -525,7 +590,8 @@
     "url": "https://bitcointalk.org/index.php?topic=183",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-06-11T17:38:45Z"
   },
   {
     "id": 67,
@@ -533,7 +599,8 @@
     "url": "https://bitcointalk.org/index.php?topic=184",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-06-11T18:19:41Z"
   },
   {
     "id": 68,
@@ -541,7 +608,8 @@
     "url": "https://bitcointalk.org/index.php?topic=191",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-06-14T01:01:11Z"
   },
   {
     "id": 69,
@@ -549,7 +617,8 @@
     "url": "https://bitcointalk.org/index.php?topic=195",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-06-17T11:38:31Z"
   },
   {
     "id": 70,
@@ -557,7 +626,8 @@
     "url": "https://bitcointalk.org/index.php?topic=197",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-06-19T15:17:21Z"
   },
   {
     "id": 71,
@@ -565,7 +635,8 @@
     "url": "https://bitcointalk.org/index.php?topic=198",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-06-21T13:22:35Z"
   },
   {
     "id": 72,
@@ -573,7 +644,8 @@
     "url": "https://bitcointalk.org/index.php?topic=199",
     "downloaded": true,
     "num_satoshi": 18,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-06-22T04:01:53Z"
   },
   {
     "id": 73,
@@ -581,7 +653,8 @@
     "url": "https://bitcointalk.org/index.php?topic=202",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-06-23T07:42:04Z"
   },
   {
     "id": 74,
@@ -589,7 +662,8 @@
     "url": "https://bitcointalk.org/index.php?topic=206",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-06-23T14:23:46Z"
   },
   {
     "id": 75,
@@ -597,7 +671,8 @@
     "url": "https://bitcointalk.org/index.php?topic=215",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-06-25T20:20:16Z"
   },
   {
     "id": 76,
@@ -605,7 +680,8 @@
     "url": "https://bitcointalk.org/index.php?topic=217",
     "downloaded": true,
     "num_satoshi": 3,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-06-26T17:02:43Z"
   },
   {
     "id": 77,
@@ -613,7 +689,8 @@
     "url": "https://bitcointalk.org/index.php?topic=218",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-06-26T23:17:51Z"
   },
   {
     "id": 78,
@@ -621,7 +698,8 @@
     "url": "https://bitcointalk.org/index.php?topic=223",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-06-29T00:41:52Z"
   },
   {
     "id": 79,
@@ -629,7 +707,8 @@
     "url": "https://bitcointalk.org/index.php?topic=234",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-05T16:07:52Z"
   },
   {
     "id": 80,
@@ -637,7 +716,8 @@
     "url": "https://bitcointalk.org/index.php?topic=238",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-06T18:32:35Z"
   },
   {
     "id": 81,
@@ -645,7 +725,8 @@
     "url": "https://bitcointalk.org/index.php?topic=240",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-07T14:53:00Z"
   },
   {
     "id": 82,
@@ -653,7 +734,8 @@
     "url": "https://bitcointalk.org/index.php?topic=241",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-07T16:54:44Z"
   },
   {
     "id": 83,
@@ -661,7 +743,8 @@
     "url": "https://bitcointalk.org/index.php?topic=242",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-07T18:15:28Z"
   },
   {
     "id": 84,
@@ -669,7 +752,8 @@
     "url": "https://bitcointalk.org/index.php?topic=246",
     "downloaded": true,
     "num_satoshi": 3,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-08T09:33:16Z"
   },
   {
     "id": 85,
@@ -677,7 +761,8 @@
     "url": "https://bitcointalk.org/index.php?topic=286",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-12T11:36:17Z"
   },
   {
     "id": 86,
@@ -685,7 +770,8 @@
     "url": "https://bitcointalk.org/index.php?topic=287",
     "downloaded": true,
     "num_satoshi": 6,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-12T12:04:24Z"
   },
   {
     "id": 87,
@@ -693,7 +779,8 @@
     "url": "https://bitcointalk.org/index.php?topic=291",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-12T14:47:00Z"
   },
   {
     "id": 88,
@@ -701,7 +788,8 @@
     "url": "https://bitcointalk.org/index.php?topic=295",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-12T19:15:46Z"
   },
   {
     "id": 89,
@@ -709,7 +797,8 @@
     "url": "https://bitcointalk.org/index.php?topic=296",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-12T19:27:30Z"
   },
   {
     "id": 90,
@@ -717,7 +806,8 @@
     "url": "https://bitcointalk.org/index.php?topic=298",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-12T19:20:51Z"
   },
   {
     "id": 91,
@@ -725,7 +815,8 @@
     "url": "https://bitcointalk.org/index.php?topic=299",
     "downloaded": true,
     "num_satoshi": 3,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-12T20:59:16Z"
   },
   {
     "id": 92,
@@ -733,7 +824,8 @@
     "url": "https://bitcointalk.org/index.php?topic=303",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-12T22:46:44Z"
   },
   {
     "id": 93,
@@ -741,7 +833,8 @@
     "url": "https://bitcointalk.org/index.php?topic=305",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-13T00:18:19Z"
   },
   {
     "id": 94,
@@ -749,7 +842,8 @@
     "url": "https://bitcointalk.org/index.php?topic=318",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-13T11:56:45Z"
   },
   {
     "id": 95,
@@ -757,7 +851,8 @@
     "url": "https://bitcointalk.org/index.php?topic=323",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-13T16:57:43Z"
   },
   {
     "id": 96,
@@ -765,7 +860,8 @@
     "url": "https://bitcointalk.org/index.php?topic=325",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-13T18:23:55Z"
   },
   {
     "id": 97,
@@ -773,7 +869,8 @@
     "url": "https://bitcointalk.org/index.php?topic=326",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-13T18:32:44Z"
   },
   {
     "id": 98,
@@ -781,7 +878,8 @@
     "url": "https://bitcointalk.org/index.php?topic=327",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-13T19:19:47Z"
   },
   {
     "id": 99,
@@ -789,7 +887,8 @@
     "url": "https://bitcointalk.org/index.php?topic=338",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-14T04:09:21Z"
   },
   {
     "id": 100,
@@ -797,7 +896,8 @@
     "url": "https://bitcointalk.org/index.php?topic=342",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-14T07:21:08Z"
   },
   {
     "id": 101,
@@ -805,7 +905,8 @@
     "url": "https://bitcointalk.org/index.php?topic=343",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-14T09:12:39Z"
   },
   {
     "id": 102,
@@ -813,7 +914,8 @@
     "url": "https://bitcointalk.org/index.php?topic=360",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-14T22:37:56Z"
   },
   {
     "id": 103,
@@ -821,7 +923,8 @@
     "url": "https://bitcointalk.org/index.php?topic=364",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-15T01:09:23Z"
   },
   {
     "id": 104,
@@ -829,7 +932,8 @@
     "url": "https://bitcointalk.org/index.php?topic=373",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-15T09:11:26Z"
   },
   {
     "id": 105,
@@ -837,7 +941,8 @@
     "url": "https://bitcointalk.org/index.php?topic=378",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-15T15:26:59Z"
   },
   {
     "id": 106,
@@ -845,7 +950,8 @@
     "url": "https://bitcointalk.org/index.php?topic=383",
     "downloaded": true,
     "num_satoshi": 11,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-15T17:05:54Z"
   },
   {
     "id": 107,
@@ -853,7 +959,8 @@
     "url": "https://bitcointalk.org/index.php?topic=391",
     "downloaded": true,
     "num_satoshi": 3,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-15T19:22:53Z"
   },
   {
     "id": 108,
@@ -861,7 +968,8 @@
     "url": "https://bitcointalk.org/index.php?topic=393",
     "downloaded": true,
     "num_satoshi": 4,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-15T21:30:23Z"
   },
   {
     "id": 109,
@@ -869,7 +977,8 @@
     "url": "https://bitcointalk.org/index.php?topic=397",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-16T00:40:51Z"
   },
   {
     "id": 110,
@@ -877,7 +986,8 @@
     "url": "https://bitcointalk.org/index.php?topic=400",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-16T04:30:15Z"
   },
   {
     "id": 111,
@@ -885,7 +995,8 @@
     "url": "https://bitcointalk.org/index.php?topic=403",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-16T05:42:14Z"
   },
   {
     "id": 112,
@@ -893,7 +1004,8 @@
     "url": "https://bitcointalk.org/index.php?topic=417",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-16T19:45:10Z"
   },
   {
     "id": 113,
@@ -901,7 +1013,8 @@
     "url": "https://bitcointalk.org/index.php?topic=419",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-16T23:04:44Z"
   },
   {
     "id": 114,
@@ -909,7 +1022,8 @@
     "url": "https://bitcointalk.org/index.php?topic=423",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-17T02:33:41Z"
   },
   {
     "id": 115,
@@ -917,7 +1031,8 @@
     "url": "https://bitcointalk.org/index.php?topic=431",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-17T13:21:16Z"
   },
   {
     "id": 116,
@@ -925,7 +1040,8 @@
     "url": "https://bitcointalk.org/index.php?topic=432",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-17T14:10:03Z"
   },
   {
     "id": 117,
@@ -933,7 +1049,8 @@
     "url": "https://bitcointalk.org/index.php?topic=434",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-17T14:13:46Z"
   },
   {
     "id": 118,
@@ -941,7 +1058,8 @@
     "url": "https://bitcointalk.org/index.php?topic=437",
     "downloaded": true,
     "num_satoshi": 3,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-17T21:35:51Z"
   },
   {
     "id": 119,
@@ -949,7 +1067,8 @@
     "url": "https://bitcointalk.org/index.php?topic=441",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-18T00:20:04Z"
   },
   {
     "id": 120,
@@ -957,7 +1076,8 @@
     "url": "https://bitcointalk.org/index.php?topic=453",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-18T13:28:50Z"
   },
   {
     "id": 121,
@@ -965,7 +1085,8 @@
     "url": "https://bitcointalk.org/index.php?topic=454",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-18T14:27:18Z"
   },
   {
     "id": 122,
@@ -973,7 +1094,8 @@
     "url": "https://bitcointalk.org/index.php?topic=458",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-18T16:16:55Z"
   },
   {
     "id": 123,
@@ -981,7 +1103,8 @@
     "url": "https://bitcointalk.org/index.php?topic=461",
     "downloaded": true,
     "num_satoshi": 14,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-18T20:49:22Z"
   },
   {
     "id": 124,
@@ -989,7 +1112,8 @@
     "url": "https://bitcointalk.org/index.php?topic=479",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-19T16:01:38Z"
   },
   {
     "id": 125,
@@ -997,7 +1121,8 @@
     "url": "https://bitcointalk.org/index.php?topic=501",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-20T21:02:02Z"
   },
   {
     "id": 126,
@@ -1005,7 +1130,8 @@
     "url": "https://bitcointalk.org/index.php?topic=528",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-22T02:09:49Z"
   },
   {
     "id": 127,
@@ -1013,7 +1139,8 @@
     "url": "https://bitcointalk.org/index.php?topic=532",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-22T05:17:28Z"
   },
   {
     "id": 128,
@@ -1021,7 +1148,8 @@
     "url": "https://bitcointalk.org/index.php?topic=548",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-23T12:29:48Z"
   },
   {
     "id": 129,
@@ -1029,7 +1157,8 @@
     "url": "https://bitcointalk.org/index.php?topic=550",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-23T18:24:56Z"
   },
   {
     "id": 130,
@@ -1037,7 +1166,8 @@
     "url": "https://bitcointalk.org/index.php?topic=555",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-24T01:27:32Z"
   },
   {
     "id": 131,
@@ -1045,7 +1175,8 @@
     "url": "https://bitcointalk.org/index.php?topic=556",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-24T03:32:52Z"
   },
   {
     "id": 132,
@@ -1053,7 +1184,8 @@
     "url": "https://bitcointalk.org/index.php?topic=567",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-25T13:02:28Z"
   },
   {
     "id": 133,
@@ -1061,7 +1193,8 @@
     "url": "https://bitcointalk.org/index.php?topic=570",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-25T16:55:09Z"
   },
   {
     "id": 134,
@@ -1069,7 +1202,8 @@
     "url": "https://bitcointalk.org/index.php?topic=571",
     "downloaded": true,
     "num_satoshi": 5,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-25T17:08:03Z"
   },
   {
     "id": 135,
@@ -1077,7 +1211,8 @@
     "url": "https://bitcointalk.org/index.php?topic=572",
     "downloaded": true,
     "num_satoshi": 3,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-26T08:17:20Z"
   },
   {
     "id": 136,
@@ -1085,7 +1220,8 @@
     "url": "https://bitcointalk.org/index.php?topic=576",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-26T17:23:33Z"
   },
   {
     "id": 137,
@@ -1093,7 +1229,8 @@
     "url": "https://bitcointalk.org/index.php?topic=583",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-27T02:09:27Z"
   },
   {
     "id": 138,
@@ -1101,7 +1238,8 @@
     "url": "https://bitcointalk.org/index.php?topic=587",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-27T10:11:51Z"
   },
   {
     "id": 139,
@@ -1109,7 +1247,8 @@
     "url": "https://bitcointalk.org/index.php?topic=589",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-27T14:08:17Z"
   },
   {
     "id": 140,
@@ -1117,7 +1256,8 @@
     "url": "https://bitcointalk.org/index.php?topic=601",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-28T13:38:00Z"
   },
   {
     "id": 141,
@@ -1125,7 +1265,8 @@
     "url": "https://bitcointalk.org/index.php?topic=604",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-28T15:18:25Z"
   },
   {
     "id": 142,
@@ -1133,7 +1274,8 @@
     "url": "https://bitcointalk.org/index.php?topic=611",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-29T00:34:53Z"
   },
   {
     "id": 143,
@@ -1141,7 +1283,8 @@
     "url": "https://bitcointalk.org/index.php?topic=612",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-29T03:22:37Z"
   },
   {
     "id": 144,
@@ -1149,7 +1292,8 @@
     "url": "https://bitcointalk.org/index.php?topic=615",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-29T11:20:33Z"
   },
   {
     "id": 145,
@@ -1157,7 +1301,8 @@
     "url": "https://bitcointalk.org/index.php?topic=626",
     "downloaded": true,
     "num_satoshi": 8,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-29T19:13:06Z"
   },
   {
     "id": 146,
@@ -1165,7 +1310,8 @@
     "url": "https://bitcointalk.org/index.php?topic=628",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-29T20:03:07Z"
   },
   {
     "id": 147,
@@ -1173,7 +1319,8 @@
     "url": "https://bitcointalk.org/index.php?topic=632",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-29T23:29:31Z"
   },
   {
     "id": 148,
@@ -1181,7 +1328,8 @@
     "url": "https://bitcointalk.org/index.php?topic=635",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-30T04:02:55Z"
   },
   {
     "id": 149,
@@ -1189,7 +1337,8 @@
     "url": "https://bitcointalk.org/index.php?topic=642",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-30T16:39:16Z"
   },
   {
     "id": 150,
@@ -1197,7 +1346,8 @@
     "url": "https://bitcointalk.org/index.php?topic=644",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-30T18:31:48Z"
   },
   {
     "id": 151,
@@ -1205,7 +1355,8 @@
     "url": "https://bitcointalk.org/index.php?topic=645",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-30T19:29:08Z"
   },
   {
     "id": 152,
@@ -1213,7 +1364,8 @@
     "url": "https://bitcointalk.org/index.php?topic=648",
     "downloaded": true,
     "num_satoshi": 9,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-30T21:23:10Z"
   },
   {
     "id": 153,
@@ -1221,7 +1373,8 @@
     "url": "https://bitcointalk.org/index.php?topic=651",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-31T01:32:08Z"
   },
   {
     "id": 154,
@@ -1229,7 +1382,8 @@
     "url": "https://bitcointalk.org/index.php?topic=652",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-31T02:17:41Z"
   },
   {
     "id": 155,
@@ -1237,7 +1391,8 @@
     "url": "https://bitcointalk.org/index.php?topic=655",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-07-31T19:06:37Z"
   },
   {
     "id": 156,
@@ -1245,7 +1400,8 @@
     "url": "https://bitcointalk.org/index.php?topic=660",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-01T01:52:47Z"
   },
   {
     "id": 157,
@@ -1253,7 +1409,8 @@
     "url": "https://bitcointalk.org/index.php?topic=661",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-01T11:07:24Z"
   },
   {
     "id": 158,
@@ -1261,7 +1418,8 @@
     "url": "https://bitcointalk.org/index.php?topic=665",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-01T20:14:29Z"
   },
   {
     "id": 159,
@@ -1269,7 +1427,8 @@
     "url": "https://bitcointalk.org/index.php?topic=671",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-02T13:12:03Z"
   },
   {
     "id": 160,
@@ -1277,7 +1436,8 @@
     "url": "https://bitcointalk.org/index.php?topic=685",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-03T10:33:13Z"
   },
   {
     "id": 161,
@@ -1285,7 +1445,8 @@
     "url": "https://bitcointalk.org/index.php?topic=689",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-03T15:49:49Z"
   },
   {
     "id": 162,
@@ -1293,7 +1454,8 @@
     "url": "https://bitcointalk.org/index.php?topic=691",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-03T17:53:51Z"
   },
   {
     "id": 163,
@@ -1301,7 +1463,8 @@
     "url": "https://bitcointalk.org/index.php?topic=696",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-03T23:40:18Z"
   },
   {
     "id": 164,
@@ -1309,7 +1472,8 @@
     "url": "https://bitcointalk.org/index.php?topic=704",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-04T20:40:55Z"
   },
   {
     "id": 165,
@@ -1317,7 +1481,8 @@
     "url": "https://bitcointalk.org/index.php?topic=711",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-05T14:22:14Z"
   },
   {
     "id": 166,
@@ -1325,7 +1490,8 @@
     "url": "https://bitcointalk.org/index.php?topic=713",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-05T16:05:07Z"
   },
   {
     "id": 167,
@@ -1333,7 +1499,8 @@
     "url": "https://bitcointalk.org/index.php?topic=721",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-06T01:52:00Z"
   },
   {
     "id": 168,
@@ -1341,7 +1508,8 @@
     "url": "https://bitcointalk.org/index.php?topic=723",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-06T07:05:56Z"
   },
   {
     "id": 169,
@@ -1349,7 +1517,8 @@
     "url": "https://bitcointalk.org/index.php?topic=750",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-07T20:13:52Z"
   },
   {
     "id": 170,
@@ -1357,7 +1526,8 @@
     "url": "https://bitcointalk.org/index.php?topic=753",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-08T03:06:59Z"
   },
   {
     "id": 171,
@@ -1365,7 +1535,8 @@
     "url": "https://bitcointalk.org/index.php?topic=760",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-09T12:25:35Z"
   },
   {
     "id": 172,
@@ -1373,7 +1544,8 @@
     "url": "https://bitcointalk.org/index.php?topic=765",
     "downloaded": true,
     "num_satoshi": 3,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-09T19:46:58Z"
   },
   {
     "id": 173,
@@ -1381,7 +1553,8 @@
     "url": "https://bitcointalk.org/index.php?topic=766",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-09T20:58:45Z"
   },
   {
     "id": 174,
@@ -1389,7 +1562,8 @@
     "url": "https://bitcointalk.org/index.php?topic=770",
     "downloaded": true,
     "num_satoshi": 4,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-10T05:45:45Z"
   },
   {
     "id": 175,
@@ -1397,7 +1571,8 @@
     "url": "https://bitcointalk.org/index.php?topic=782",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-10T23:15:16Z"
   },
   {
     "id": 176,
@@ -1405,7 +1580,8 @@
     "url": "https://bitcointalk.org/index.php?topic=784",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-11T01:20:42Z"
   },
   {
     "id": 177,
@@ -1413,7 +1589,8 @@
     "url": "https://bitcointalk.org/index.php?topic=788",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-11T15:45:42Z"
   },
   {
     "id": 178,
@@ -1421,7 +1598,8 @@
     "url": "https://bitcointalk.org/index.php?topic=790",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-11T23:00:16Z"
   },
   {
     "id": 179,
@@ -1429,7 +1607,8 @@
     "url": "https://bitcointalk.org/index.php?topic=795",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-12T21:20:31Z"
   },
   {
     "id": 180,
@@ -1437,7 +1616,8 @@
     "url": "https://bitcointalk.org/index.php?topic=806",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-13T17:40:00Z"
   },
   {
     "id": 181,
@@ -1445,7 +1625,8 @@
     "url": "https://bitcointalk.org/index.php?topic=807",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-13T19:28:23Z"
   },
   {
     "id": 182,
@@ -1453,7 +1634,8 @@
     "url": "https://bitcointalk.org/index.php?topic=813",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-14T12:43:54Z"
   },
   {
     "id": 183,
@@ -1461,7 +1643,8 @@
     "url": "https://bitcointalk.org/index.php?topic=816",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-14T22:08:00Z"
   },
   {
     "id": 184,
@@ -1469,7 +1652,8 @@
     "url": "https://bitcointalk.org/index.php?topic=820",
     "downloaded": true,
     "num_satoshi": 11,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-15T15:52:09Z"
   },
   {
     "id": 185,
@@ -1477,7 +1661,8 @@
     "url": "https://bitcointalk.org/index.php?topic=823",
     "downloaded": true,
     "num_satoshi": 15,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-15T19:04:11Z"
   },
   {
     "id": 186,
@@ -1485,7 +1670,8 @@
     "url": "https://bitcointalk.org/index.php?topic=827",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-15T23:48:22Z"
   },
   {
     "id": 187,
@@ -1493,7 +1679,8 @@
     "url": "https://bitcointalk.org/index.php?topic=828",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-16T00:09:18Z"
   },
   {
     "id": 188,
@@ -1501,7 +1688,8 @@
     "url": "https://bitcointalk.org/index.php?topic=832",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-16T02:57:55Z"
   },
   {
     "id": 189,
@@ -1509,7 +1697,8 @@
     "url": "https://bitcointalk.org/index.php?topic=834",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-16T09:40:23Z"
   },
   {
     "id": 190,
@@ -1517,7 +1706,8 @@
     "url": "https://bitcointalk.org/index.php?topic=837",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-16T15:59:25Z"
   },
   {
     "id": 191,
@@ -1525,7 +1715,8 @@
     "url": "https://bitcointalk.org/index.php?topic=841",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-16T20:07:46Z"
   },
   {
     "id": 192,
@@ -1533,7 +1724,8 @@
     "url": "https://bitcointalk.org/index.php?topic=845",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-17T18:45:18Z"
   },
   {
     "id": 193,
@@ -1541,7 +1733,8 @@
     "url": "https://bitcointalk.org/index.php?topic=846",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-17T19:25:38Z"
   },
   {
     "id": 194,
@@ -1549,7 +1742,8 @@
     "url": "https://bitcointalk.org/index.php?topic=850",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-18T07:16:55Z"
   },
   {
     "id": 195,
@@ -1557,7 +1751,8 @@
     "url": "https://bitcointalk.org/index.php?topic=862",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-18T21:20:35Z"
   },
   {
     "id": 196,
@@ -1565,7 +1760,8 @@
     "url": "https://bitcointalk.org/index.php?topic=867",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-19T07:23:53Z"
   },
   {
     "id": 197,
@@ -1573,7 +1769,8 @@
     "url": "https://bitcointalk.org/index.php?topic=868",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-19T07:44:37Z"
   },
   {
     "id": 198,
@@ -1581,7 +1778,8 @@
     "url": "https://bitcointalk.org/index.php?topic=870",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-19T19:24:37Z"
   },
   {
     "id": 199,
@@ -1589,7 +1787,8 @@
     "url": "https://bitcointalk.org/index.php?topic=873",
     "downloaded": true,
     "num_satoshi": 3,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-19T20:14:01Z"
   },
   {
     "id": 200,
@@ -1597,7 +1796,8 @@
     "url": "https://bitcointalk.org/index.php?topic=890",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-21T14:13:27Z"
   },
   {
     "id": 201,
@@ -1605,7 +1805,8 @@
     "url": "https://bitcointalk.org/index.php?topic=898",
     "downloaded": true,
     "num_satoshi": 8,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-22T23:55:06Z"
   },
   {
     "id": 202,
@@ -1613,7 +1814,8 @@
     "url": "https://bitcointalk.org/index.php?topic=920",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-25T01:03:13Z"
   },
   {
     "id": 203,
@@ -1621,7 +1823,8 @@
     "url": "https://bitcointalk.org/index.php?topic=921",
     "downloaded": true,
     "num_satoshi": 5,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-25T03:52:13Z"
   },
   {
     "id": 204,
@@ -1629,7 +1832,8 @@
     "url": "https://bitcointalk.org/index.php?topic=928",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-26T00:21:31Z"
   },
   {
     "id": 205,
@@ -1637,7 +1841,8 @@
     "url": "https://bitcointalk.org/index.php?topic=930",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-26T06:10:29Z"
   },
   {
     "id": 206,
@@ -1645,7 +1850,8 @@
     "url": "https://bitcointalk.org/index.php?topic=941",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-27T21:54:12Z"
   },
   {
     "id": 207,
@@ -1653,7 +1859,8 @@
     "url": "https://bitcointalk.org/index.php?topic=955",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-30T23:50:33Z"
   },
   {
     "id": 208,
@@ -1661,7 +1868,8 @@
     "url": "https://bitcointalk.org/index.php?topic=960",
     "downloaded": true,
     "num_satoshi": 3,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-08-31T12:55:44Z"
   },
   {
     "id": 209,
@@ -1669,7 +1877,8 @@
     "url": "https://bitcointalk.org/index.php?topic=967",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-09-01T17:38:07Z"
   },
   {
     "id": 210,
@@ -1677,7 +1886,8 @@
     "url": "https://bitcointalk.org/index.php?topic=969",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-09-01T20:28:15Z"
   },
   {
     "id": 211,
@@ -1685,7 +1895,8 @@
     "url": "https://bitcointalk.org/index.php?topic=989",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-09-06T02:54:49Z"
   },
   {
     "id": 212,
@@ -1693,7 +1904,8 @@
     "url": "https://bitcointalk.org/index.php?topic=992",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-09-06T21:44:06Z"
   },
   {
     "id": 213,
@@ -1701,7 +1913,8 @@
     "url": "https://bitcointalk.org/index.php?topic=994",
     "downloaded": true,
     "num_satoshi": 3,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-09-07T03:17:34Z"
   },
   {
     "id": 214,
@@ -1709,7 +1922,8 @@
     "url": "https://bitcointalk.org/index.php?topic=999",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-09-07T19:17:55Z"
   },
   {
     "id": 215,
@@ -1717,7 +1931,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1007",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-09-09T01:04:05Z"
   },
   {
     "id": 216,
@@ -1725,7 +1940,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1013",
     "downloaded": true,
     "num_satoshi": 3,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-09-09T13:56:54Z"
   },
   {
     "id": 217,
@@ -1733,7 +1949,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1023",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-09-13T05:51:44Z"
   },
   {
     "id": 218,
@@ -1741,7 +1958,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1032",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-09-14T05:44:11Z"
   },
   {
     "id": 219,
@@ -1749,7 +1967,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1034",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-09-14T12:14:25Z"
   },
   {
     "id": 220,
@@ -1757,7 +1976,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1048",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-09-16T02:57:43Z"
   },
   {
     "id": 221,
@@ -1765,7 +1985,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1063",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-09-18T22:19:22Z"
   },
   {
     "id": 222,
@@ -1773,7 +1994,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1268",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-09-23T16:00:16Z"
   },
   {
     "id": 223,
@@ -1781,7 +2003,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1269",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-09-23T16:19:08Z"
   },
   {
     "id": 224,
@@ -1789,7 +2012,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1271",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-09-23T17:35:35Z"
   },
   {
     "id": 225,
@@ -1797,7 +2021,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1283",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-09-26T01:16:18Z"
   },
   {
     "id": 226,
@@ -1805,7 +2030,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1291",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-09-27T16:50:25Z"
   },
   {
     "id": 227,
@@ -1813,7 +2039,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1306",
     "downloaded": true,
     "num_satoshi": 3,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-09-29T11:05:57Z"
   },
   {
     "id": 228,
@@ -1821,7 +2048,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1314",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-09-29T20:13:30Z"
   },
   {
     "id": 229,
@@ -1829,7 +2057,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1322",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-09-30T17:04:15Z"
   },
   {
     "id": 230,
@@ -1837,7 +2066,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1327",
     "downloaded": true,
     "num_satoshi": 8,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-10-01T00:34:35Z"
   },
   {
     "id": 231,
@@ -1845,7 +2075,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1332",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-10-01T11:31:46Z"
   },
   {
     "id": 232,
@@ -1853,7 +2084,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1334",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-10-01T18:21:59Z"
   },
   {
     "id": 233,
@@ -1861,7 +2093,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1347",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-10-03T20:13:42Z"
   },
   {
     "id": 234,
@@ -1869,7 +2102,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1375",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-10-06T01:59:38Z"
   },
   {
     "id": 235,
@@ -1877,7 +2111,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1414",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-10-09T20:19:33Z"
   },
   {
     "id": 236,
@@ -1885,7 +2120,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1528",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-10-21T16:39:27Z"
   },
   {
     "id": 237,
@@ -1893,7 +2129,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1530",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-10-21T20:52:09Z"
   },
   {
     "id": 238,
@@ -1901,7 +2138,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1540",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-10-22T21:24:38Z"
   },
   {
     "id": 239,
@@ -1909,7 +2147,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1545",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-10-23T15:11:17Z"
   },
   {
     "id": 240,
@@ -1917,7 +2156,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1668",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-11-05T23:44:00Z"
   },
   {
     "id": 241,
@@ -1925,7 +2165,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1735",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-11-10T12:49:16Z"
   },
   {
     "id": 242,
@@ -1933,7 +2174,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1780",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-11-13T23:26:40Z"
   },
   {
     "id": 243,
@@ -1941,7 +2183,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1786",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-11-15T01:17:03Z"
   },
   {
     "id": 244,
@@ -1949,7 +2192,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1790",
     "downloaded": true,
     "num_satoshi": 6,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-11-15T03:02:31Z"
   },
   {
     "id": 245,
@@ -1957,7 +2201,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1850",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-11-19T19:02:38Z"
   },
   {
     "id": 246,
@@ -1965,7 +2210,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1901",
     "downloaded": true,
     "num_satoshi": 4,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-11-23T19:50:12Z"
   },
   {
     "id": 247,
@@ -1973,7 +2219,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1925",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-11-25T00:45:23Z"
   },
   {
     "id": 248,
@@ -1981,7 +2228,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1931",
     "downloaded": true,
     "num_satoshi": 5,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-11-25T07:07:51Z"
   },
   {
     "id": 249,
@@ -1989,7 +2237,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1946",
     "downloaded": true,
     "num_satoshi": 2,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-11-25T20:07:36Z"
   },
   {
     "id": 250,
@@ -1997,7 +2246,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1976",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-11-27T13:45:41Z"
   },
   {
     "id": 251,
@@ -2005,7 +2255,8 @@
     "url": "https://bitcointalk.org/index.php?topic=1986",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-11-28T13:44:12Z"
   },
   {
     "id": 252,
@@ -2013,7 +2264,8 @@
     "url": "https://bitcointalk.org/index.php?topic=2007",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-11-29T20:45:46Z"
   },
   {
     "id": 253,
@@ -2021,7 +2273,8 @@
     "url": "https://bitcointalk.org/index.php?topic=2151",
     "downloaded": true,
     "num_satoshi": 4,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-12-08T17:07:21Z"
   },
   {
     "id": 254,
@@ -2029,7 +2282,8 @@
     "url": "https://bitcointalk.org/index.php?topic=2162",
     "downloaded": true,
     "num_satoshi": 3,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-12-08T23:19:24Z"
   },
   {
     "id": 255,
@@ -2037,7 +2291,8 @@
     "url": "https://bitcointalk.org/index.php?topic=2181",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-12-09T19:45:38Z"
   },
   {
     "id": 256,
@@ -2045,7 +2300,8 @@
     "url": "https://bitcointalk.org/index.php?topic=2188",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-12-10T09:22:33Z"
   },
   {
     "id": 257,
@@ -2053,7 +2309,8 @@
     "url": "https://bitcointalk.org/index.php?topic=2202",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-12-10T19:21:03Z"
   },
   {
     "id": 258,
@@ -2061,7 +2318,8 @@
     "url": "https://bitcointalk.org/index.php?topic=2208",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-12-11T05:49:22Z"
   },
   {
     "id": 259,
@@ -2069,7 +2327,8 @@
     "url": "https://bitcointalk.org/index.php?topic=2216",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-12-11T20:46:19Z"
   },
   {
     "id": 260,
@@ -2077,6 +2336,7 @@
     "url": "https://bitcointalk.org/index.php?topic=2228",
     "downloaded": true,
     "num_satoshi": 1,
-    "source": "bitcointalk"
+    "source": "bitcointalk",
+    "date": "2010-12-12T18:22:33Z"
   }
 ]

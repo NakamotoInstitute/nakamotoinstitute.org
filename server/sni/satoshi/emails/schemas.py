@@ -13,6 +13,8 @@ class EmailThreadJSONModel(BaseModel):
     id: int
     title: str
     source: EmailSource
+    url: str
+    date: datetime.datetime
 
 
 class EmailJSONModel(BaseModel):
@@ -29,8 +31,8 @@ class EmailJSONModel(BaseModel):
 
 
 class EmailThreadBaseModel(EmailThreadJSONModel, ORMModel):
-    date: datetime.datetime = Field(alias=AliasPath("emails", 0, "date"))
-    url: str = Field(alias=AliasPath("emails", 0, "url"))
+    date: datetime.datetime
+    url: str
 
 
 class EmailReplyModel(ORMModel):

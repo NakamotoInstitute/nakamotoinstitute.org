@@ -6,6 +6,8 @@ from sqlalchemy.orm import joinedload, selectinload
 
 from sni.models import ForumPost, ForumThread
 
+from .schemas import ForumPostSource
+
 
 async def get_all_posts(*, db_session: AsyncSession) -> List[ForumPost]:
     query = (
@@ -76,25 +78,23 @@ async def get_threads_by_source(
     return result.all()
 
 
+async def get_thread(thread_id: int, *, db_session: AsyncSession) -> ForumThread:
+    query = select(ForumThread).filter_by(id=thread_id)
+
+    return await db_session.scalar(query)
+
+
 async def get_thread_posts(
-    source: str, thread_id: int, satoshi: bool, *, db_session: AsyncSession
+    source: ForumPostSource, thread_id: int, satoshi: bool, *, db_session: AsyncSession
 ) -> List[ForumPost]:
-    posts_query = (
+    query = (
         select(ForumPost)
         .join(ForumThread)
         .filter(ForumPost.thread_id == thread_id, ForumThread.source == source)
     )
     if satoshi:
-        posts_query = posts_query.filter(ForumPost.satoshi_id.isnot(None))
+        query = query.filter(ForumPost.satoshi_id.isnot(None))
+    query = query.order_by(ForumPost.date)
 
-    return (await db_session.scalars(posts_query)).all()
-
-
-async def get_thread(thread_id: int, *, db_session: AsyncSession) -> ForumThread:
-    query = (
-        select(ForumThread)
-        .options(selectinload(ForumThread.posts))
-        .filter_by(id=thread_id)
-    )
-
-    return await db_session.scalar(query)
+    result = await db_session.scalars(query)
+    return result.all()

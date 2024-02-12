@@ -50,18 +50,18 @@ async def get_email_thread_by_source(
     satoshi: bool = False,
     db: AsyncSession = Depends(get_db),
 ):
-    thread = await service.get_thread(thread_id, db_session=db, emails=True)
+    thread = await service.get_thread(thread_id, db_session=db)
     if not thread or thread.source != source:
         raise HTTPException(status_code=404, detail="Email thread not found")
 
-    previous_thread = await service.get_thread(
-        thread_id - 1, db_session=db, emails=False
-    )
-    next_thread = await service.get_thread(thread_id + 1, db_session=db, emails=False)
+    emails = await service.get_thread_emails(source, thread_id, satoshi, db_session=db)
+
+    previous_thread = await service.get_thread(thread_id - 1, db_session=db)
+    next_thread = await service.get_thread(thread_id + 1, db_session=db)
 
     return {
-        "emails": thread.emails,
         "thread": thread,
+        "emails": emails,
         "previous": previous_thread,
         "next": next_thread,
     }

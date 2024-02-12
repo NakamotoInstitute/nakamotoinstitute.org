@@ -13,6 +13,8 @@ class ForumThreadJSONModel(BaseModel):
     id: int
     title: str
     source: ForumPostSource
+    date: datetime.datetime
+    url: str
 
 
 class ForumPostJSONModel(BaseModel):
@@ -58,8 +60,8 @@ class ForumPostBaseModel(ORMModel):
 
 
 class ForumThreadBaseModel(ForumThreadJSONModel, ORMModel):
-    date: datetime.datetime = Field(alias=AliasPath("posts", 0, "date"))
-    url: str = Field(alias=AliasPath("posts", 0, "url"))
+    date: datetime.datetime
+    url: str
 
 
 class ForumPostModel(ForumPostBaseModel):

@@ -26,6 +26,8 @@ class ForumThread(Base):
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     title: Mapped[str] = mapped_column(String, nullable=False)
+    date: Mapped[datetime.datetime] = mapped_column(DateTime, nullable=False)
+    url: Mapped[str] = mapped_column(String, nullable=False)
     source: Mapped[str] = mapped_column(String, nullable=False)
     posts: Mapped[List["ForumPost"]] = relationship(back_populates="thread")
     file_id: Mapped[int] = mapped_column(Integer, ForeignKey("json_files.id"))

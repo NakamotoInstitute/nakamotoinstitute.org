@@ -48,12 +48,14 @@ async def get_forum_thread_by_source(
     if not thread or thread.source != source:
         raise HTTPException(status_code=404, detail="Forum thread not found")
 
+    posts = await service.get_thread_posts(thread_id, satoshi, db_session=db)
+
     previous_thread = await service.get_thread(thread_id - 1, db_session=db)
     next_thread = await service.get_thread(thread_id + 1, db_session=db)
 
     return {
-        "posts": thread.posts,
         "thread": thread,
+        "posts": posts,
         "previous": previous_thread,
         "next": next_thread,
     }
