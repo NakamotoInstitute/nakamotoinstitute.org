@@ -8,7 +8,7 @@ translators:
 translation_url: http://elbitcoin.org/hiperbitcoinizacion/
 translation_site: ElBitcoin.org
 translation_site_url: http://elbitcoin.org
-excerpt: Este artículo es sobre la desmonetización del dinero inducida por Bitcoin, o <em>hiperbitcoinización</em>, que es lo que va a sufrir cualquier moneda estatal que se interponga en el camino de Bitcoin hacia su expansión global.
+excerpt: Este artículo es sobre la desmonetización del dinero inducida por Bitcoin, o hiperbitcoinización, que es lo que va a sufrir cualquier moneda estatal que se interponga en el camino de Bitcoin hacia su expansión global.
 ---
 
 ## Desmonetización inducida por Bitcoin

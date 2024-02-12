@@ -8,7 +8,7 @@ translators:
 translation_url: https://parlonsbitcoin.com/blog/hyperbitcoinisation
 translation_site: Parlons Bitcoin
 translation_site_url: https://parlonsbitcoin.com
-excerpt: Cet article traite de la possibilité d'une démonétisation de la monnaie induite par le Bitcoin, ou </em>hyperbitcoinisation</em>, ce qui est ce qui arriverait à toute monnaie infortunée qui croiserait le chemin de domination totale du monde par le Bitcoin.
+excerpt: Cet article traite de la possibilité d'une démonétisation de la monnaie induite par le Bitcoin, ou hyperbitcoinisation, ce qui est ce qui arriverait à toute monnaie infortunée qui croiserait le chemin de domination totale du monde par le Bitcoin.
 ---
 
 ## Démonétisation induite par le Bitcoin
