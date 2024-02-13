@@ -3,7 +3,6 @@ title: I'm Hoarding Bitcoins, and No You Can't Have Any
 authors:
   - daniel-krawisz
 date: 2014-02-12
-added: 2014-02-12
 excerpt: The real hero is the hoarder.
 image: uncle-scrooge.jpg
 image_alt: Uncle Scrooge

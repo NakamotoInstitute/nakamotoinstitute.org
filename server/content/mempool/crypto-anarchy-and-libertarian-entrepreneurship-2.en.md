@@ -3,7 +3,6 @@ title: Public-Key Cryptography
 authors:
   - daniel-krawisz
 date: 2013-05-24
-added: 2013-05-24
 excerpt: Public-key cryptography is the greatest tool of liberty ever devised.
 image: internet.png
 image_alt: Internet

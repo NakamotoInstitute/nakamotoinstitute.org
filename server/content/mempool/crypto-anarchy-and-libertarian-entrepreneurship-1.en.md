@@ -3,7 +3,6 @@ title: The Strategy
 authors:
   - daniel-krawisz
 date: 2013-05-22
-added: 2013-05-22
 excerpt:
   With cryptography, one libertarian inventor can create an entire libertarian
   society.

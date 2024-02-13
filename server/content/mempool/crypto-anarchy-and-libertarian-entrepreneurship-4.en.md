@@ -3,7 +3,6 @@ title: The Risk from the Software Industry
 authors:
   - daniel-krawisz
 date: 2013-06-05
-added: 2013-06-05
 excerpt: "Stay one step ahead of the government and don’t get embroiled in politics."
 image: make.jpg
 image_alt: Make Install Anarchy

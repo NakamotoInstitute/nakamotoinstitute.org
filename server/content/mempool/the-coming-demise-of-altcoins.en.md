@@ -3,7 +3,6 @@ title: The Coming Demise of the Altcoins (And What You Can Do to Hasten It)
 authors:
   - daniel-krawisz
 date: 2014-03-14
-added: 2014-03-14
 excerpt: What falleth, that shall one also push!
 image: wanderer-sea-of-fog.jpg
 image_alt: Wanderer Sea of Fog

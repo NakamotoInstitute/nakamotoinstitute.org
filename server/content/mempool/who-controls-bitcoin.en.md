@@ -3,7 +3,6 @@ title: Who Controls Bitcoin?
 authors:
   - daniel-krawisz
 date: 2015-02-08
-added: 2015-02-08
 excerpt:
   Bitcoin upgrades must be a clear improvement to Bitcoin as an investment
   or else they face a sharp uphill battle to adoption.

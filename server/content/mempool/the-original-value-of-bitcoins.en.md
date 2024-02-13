@@ -3,7 +3,6 @@ title: The Original Value of Bitcoins
 authors:
   - daniel-krawisz
 date: 2013-07-02
-added: 2013-07-02
 excerpt:
   Once it was known that bitcoin could be sold, even for a pittance, new possibilities
   opened up.

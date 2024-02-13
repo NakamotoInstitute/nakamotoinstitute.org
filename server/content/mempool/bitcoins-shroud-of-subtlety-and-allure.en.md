@@ -3,7 +3,6 @@ title: Bitcoin's Shroud of Subtlety and Allure
 authors:
   - daniel-krawisz
 date: 2014-06-29
-added: 2014-06-29
 excerpt:
   Potential Bitcoin attackers are in a Prisoner's Dilemma. In the same way
   that the people cannot easily rebel against the king owing to a lack of coordination

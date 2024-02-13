@@ -3,7 +3,6 @@ title: Bitcoin as a Store of Value, Unit of Account, and Medium of Exchange
 authors:
   - daniel-krawisz
 date: 2015-01-12
-added: 2015-01-12
 excerpt: "Bitcoin has the right properties for the world’s money, and the more\
   \ the world comes to terms with this, the more stable it will become."
 image: king-kong.jpg

@@ -3,7 +3,6 @@ title: "End the Fed: Hoard Bitcoins"
 authors:
   - pierre-rochard
 date: 2013-02-19
-added: 2013-02-19
 excerpt:
   "Low transaction costs make Bitcoin the most competitive medium of exchange\
   \ in humanity’s history, and it may be the case that a currency with even lower\

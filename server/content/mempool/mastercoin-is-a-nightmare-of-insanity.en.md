@@ -3,7 +3,6 @@ title: Mastercoin is a Nightmare of Insanity
 authors:
   - daniel-krawisz
 date: 2013-12-20
-added: 2013-12-20
 excerpt:
   No one should ever use Mastercoin under any circumstances or appraise their
   value as anything above zero.

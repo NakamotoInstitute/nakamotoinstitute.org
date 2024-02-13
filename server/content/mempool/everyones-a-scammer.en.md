@@ -3,7 +3,6 @@ title: Everyone's a Scammer
 authors:
   - michael-goldstein
 date: 2014-09-11
-added: 2014-09-11
 excerpt: There is a war going on for your bitcoins, and willpower is your only defense.
 image: eastwood.jpg
 image_alt: Eastwood Scowl

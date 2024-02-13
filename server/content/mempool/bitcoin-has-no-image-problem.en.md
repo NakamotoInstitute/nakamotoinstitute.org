@@ -3,7 +3,6 @@ title: Bitcoin Has No Image Problem
 authors:
   - daniel-krawisz
 date: 2014-02-25
-added: 2014-02-25
 excerpt:
   "The best way to improve Bitcoin’s image is simply to improve the Bitcoin\
   \ economy."

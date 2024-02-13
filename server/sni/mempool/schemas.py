@@ -13,12 +13,19 @@ class MempoolCanonicalMDModel(BaseModel):
     authors: List[str]
     image: Optional[str] = None
     date: datetime.date
-    added: Optional[datetime.date] = None
+    added: datetime.date
     original_url: Optional[str] = None
     original_site: Optional[str] = None
     series: Optional[str] = None
     series_index: Optional[int] = None
     has_math: Optional[bool] = False
+
+    @model_validator(mode="before")
+    @classmethod
+    def check_added(cls, data: Any) -> Any:
+        if data.get("added", None) is None:
+            data["added"] = data["date"]
+        return data
 
 
 class MempoolMDModel(BaseModel):

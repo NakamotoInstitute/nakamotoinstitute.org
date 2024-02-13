@@ -3,7 +3,6 @@ title: Crashes and Hyperinflation
 authors:
   - daniel-krawisz
 date: 2017-01-08
-added: 2017-01-08
 excerpt:
   This article is about how money interacts with the rest of the economy after
   it has matured and about how mismanagement by an issuer can cause it to fail.

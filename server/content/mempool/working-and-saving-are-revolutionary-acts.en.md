@@ -3,7 +3,6 @@ title: Working and Saving are Revolutionary Acts
 authors:
   - pierre-rochard
 date: 2012-12-24
-added: 2012-12-24
 excerpt:
   "New capital formation is the impetus for two trends that push the equilibrium
   of all industries towards decentralized markets: increasing technological sophistication

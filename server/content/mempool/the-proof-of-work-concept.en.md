@@ -3,7 +3,6 @@ title: The Proof-of-Work Concept
 authors:
   - daniel-krawisz
 date: 2013-06-24
-added: 2013-06-24
 excerpt:
   Proof-of-work should not be seen as a mysterious or wasteful system, but
   as something functional, natural, and potentially of value for the design of any

@@ -3,7 +3,6 @@ title: Meditations on Cypherpunk Nightmares
 authors:
   - michael-goldstein
 date: 2014-12-24
-added: 2014-12-24
 excerpt:
   Protecting ourselves from the dangers of crypto-anarchy requires embracing
   it even more fully and internalizing and practicing the virtues that have helped

@@ -3,7 +3,6 @@ title: Bitcoin is the Best Unit of Account
 authors:
   - daniel-krawisz
 date: 2014-05-10
-added: 2014-05-10
 excerpt:
   Someone still lost in the dollar world looks at Bitcoin and sees wild and
   extreme volatility, whereas someone in Bitcoin looking back at the dollar sees the
