@@ -31,7 +31,7 @@ async function SeriesHeader({
         <p className="text-3xl">
           <Trans
             t={t}
-            i18nKey="Chapter {{index}}\:"
+            i18nKey="Chapter {{index}}:"
             values={{ index: seriesIndex }}
           />
         </p>

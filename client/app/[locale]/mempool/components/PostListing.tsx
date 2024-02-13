@@ -31,6 +31,7 @@ export async function PostListing({ locale, post }: PostListingProps) {
           </h3>
         ) : null}
         <h2 className="text-xl font-bold">
+          {post.series?.chapterTitle ? `Chapter ${post.seriesIndex}: ` : null}
           <Link href={urls(locale).mempool.post(post.slug)}>{post.title}</Link>
         </h2>
         <p>

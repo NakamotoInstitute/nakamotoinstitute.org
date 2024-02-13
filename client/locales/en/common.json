@@ -26,7 +26,7 @@
   "Translated by <links />": "Translated by <links />",
   "Read in <links />": "Read in <links />",
   "Back to {{title}}": "Back to {{title}}",
-  "Chapter {{index}}\\:": "Chapter {{index}}\\:",
+  "Chapter {{index}}:": "Chapter {{index}}:",
   "By <authors />": "By <authors />",
   "First published on <a><em>{{originalSite}}</em></a>": "First published on <a><em>{{originalSite}}</em></a>",
   "Added: <date>{{pubDate}}</date>": "Added: <date>{{pubDate}}</date>",
