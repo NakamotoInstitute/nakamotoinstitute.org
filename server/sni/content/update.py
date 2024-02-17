@@ -77,6 +77,6 @@ def update_content(force: bool = False):
         instance = importer()
         instance.run_import(force)
 
-    importers = [LibraryWeightImporter]
-    for importer in importers:
+    weight_importers = [LibraryWeightImporter]
+    for importer in weight_importers:
         run_weight_importer(LibraryWeightImporter, db_session, force)

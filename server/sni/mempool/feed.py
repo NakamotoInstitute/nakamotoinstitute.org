@@ -1,4 +1,4 @@
-from typing import List
+from typing import Sequence
 
 from feedgen.feed import FeedGenerator
 
@@ -27,7 +27,7 @@ class URLGenerator(BaseURLGenerator):
 
 
 def generate_mempool_feed(
-    posts: List[BlogPostTranslation],
+    posts: Sequence[BlogPostTranslation],
     locale: LocaleType = "en",
     format: FeedFormat = FeedFormat.rss,
 ) -> FeedGenerator:

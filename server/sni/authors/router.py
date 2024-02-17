@@ -1,4 +1,4 @@
-from typing import List
+from typing import Any, List
 
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -13,22 +13,22 @@ from .schemas.response import AuthorDetailModel, AuthorModel
 router = APIRouter()
 
 
-@router.get("")
+@router.get("", response_model=List[AuthorModel])
 async def get_authors(
     locale: LocaleType = "en", db: AsyncSession = Depends(get_db)
-) -> List[AuthorModel]:
+) -> Any:
     return await service.get_all_by_locale(db_session=db, locale=locale)
 
 
 @router.get("/params", response_model=List[SlugParamModel])
-async def get_author_params(db: AsyncSession = Depends(get_db)):
+async def get_author_params(db: AsyncSession = Depends(get_db)) -> Any:
     return await service.get_params(db_session=db)
 
 
 @router.get("/{slug}", response_model=AuthorDetailModel)
 async def get_author(
     slug: str, locale: LocaleType = "en", db: AsyncSession = Depends(get_db)
-):
+) -> Any:
     author = await service.get(slug, db_session=db, locale=locale)
     if not author:
         raise HTTPException(status_code=404, detail="Author not found")

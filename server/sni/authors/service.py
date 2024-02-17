@@ -1,4 +1,4 @@
-from typing import List
+from typing import Sequence
 
 from sqlalchemy import or_, select, union
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -19,7 +19,7 @@ from sni.models import (
 
 async def get(
     slug: str, *, db_session: AsyncSession, locale: LocaleType = "en"
-) -> Author:
+) -> Author | None:
     query = (
         select(Author)
         .filter_by(slug=slug)
@@ -44,7 +44,7 @@ async def get(
 
 async def get_documents(
     author_id: int, *, db_session: AsyncSession, locale: LocaleType = "en"
-):
+) -> Sequence[DocumentTranslation]:
     DocumentTranslationAlias = aliased(DocumentTranslation, flat=True)
 
     query = (
@@ -64,7 +64,7 @@ async def get_documents(
 
 async def get_blog_posts(
     author_id: int, *, db_session: AsyncSession, locale: LocaleType = "en"
-):
+) -> Sequence[BlogPostTranslation]:
     BlogPostTranslationAlias = aliased(BlogPostTranslation, flat=True)
 
     query = (
@@ -91,7 +91,7 @@ async def get_blog_posts(
 
 async def get_all_by_locale(
     *, db_session: AsyncSession, locale: LocaleType = "en"
-) -> List[Author]:
+) -> Sequence[Author]:
     DocumentTranslationAlias = aliased(DocumentTranslation, flat=True)
     BlogPostTranslationAlias = aliased(BlogPostTranslation, flat=True)
 

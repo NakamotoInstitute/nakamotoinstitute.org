@@ -1,4 +1,4 @@
-from typing import List
+from typing import Sequence
 
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -9,7 +9,7 @@ from sni.models import Email, EmailThread
 from .schemas import EmailSource
 
 
-async def get_all_emails(*, db_session: AsyncSession) -> List[Email]:
+async def get_all_emails(*, db_session: AsyncSession) -> Sequence[Email]:
     query = (
         select(Email)
         .options(joinedload(Email.thread), selectinload(Email.replies))
@@ -21,7 +21,7 @@ async def get_all_emails(*, db_session: AsyncSession) -> List[Email]:
     return result.all()
 
 
-async def get_threads(*, db_session: AsyncSession) -> List[EmailThread]:
+async def get_threads(*, db_session: AsyncSession) -> Sequence[EmailThread]:
     query = select(EmailThread).options(selectinload(EmailThread.emails))
 
     result = await db_session.scalars(query)
@@ -30,7 +30,7 @@ async def get_threads(*, db_session: AsyncSession) -> List[EmailThread]:
 
 async def get_satoshi_emails_by_source(
     source: str, *, db_session: AsyncSession
-) -> List[Email]:
+) -> Sequence[Email]:
     query = (
         select(Email)
         .options(joinedload(Email.thread), selectinload(Email.replies))
@@ -46,7 +46,7 @@ async def get_satoshi_emails_by_source(
 
 async def get_satoshi_email_by_source(
     source: str, satoshi_id: int, *, db_session: AsyncSession
-) -> Email:
+) -> Email | None:
     query = (
         select(Email)
         .options(joinedload(Email.thread), selectinload(Email.replies))
@@ -58,7 +58,7 @@ async def get_satoshi_email_by_source(
     return await db_session.scalar(query)
 
 
-async def get_email(satoshi_id: int, *, db_session: AsyncSession) -> Email:
+async def get_email(satoshi_id: int, *, db_session: AsyncSession) -> Email | None:
     query = (
         select(Email)
         .options(selectinload(Email.replies))
@@ -70,7 +70,7 @@ async def get_email(satoshi_id: int, *, db_session: AsyncSession) -> Email:
 
 async def get_threads_by_source(
     source: str, *, db_session: AsyncSession
-) -> List[EmailThread]:
+) -> Sequence[EmailThread]:
     query = (
         select(EmailThread)
         .options(selectinload(EmailThread.emails))
@@ -82,7 +82,7 @@ async def get_threads_by_source(
     return result.all()
 
 
-async def get_thread(thread_id: int, *, db_session: AsyncSession) -> EmailThread:
+async def get_thread(thread_id: int, *, db_session: AsyncSession) -> EmailThread | None:
     query = select(EmailThread).filter_by(id=thread_id)
 
     return await db_session.scalar(query)
@@ -93,8 +93,8 @@ async def get_thread_emails(
     thread_id: int,
     satoshi: bool = False,
     *,
-    db_session: AsyncSession
-) -> List[Email]:
+    db_session: AsyncSession,
+) -> Sequence[Email]:
     query = (
         select(Email)
         .options(

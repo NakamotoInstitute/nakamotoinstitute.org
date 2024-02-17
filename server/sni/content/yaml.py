@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import Any, Dict, List, Type
+from typing import Any, Sequence, Type
 
 import yaml
 from pydantic import BaseModel, Field, ValidationError
@@ -7,7 +7,7 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from sni.database import Base
-from sni.models import FileMetadata
+from sni.models import FileMetadata, YAMLFile
 from sni.utils.files import get_file_hash
 
 
@@ -17,10 +17,12 @@ class SlugWeight(BaseModel):
 
 
 class SlugWeights(BaseModel):
-    weights: List[SlugWeight]
+    weights: list[SlugWeight]
 
 
 class WeightImporter:
+    content_type: str
+    file_model: Type[YAMLFile]
     file_updated = False
     schema = SlugWeights
 
@@ -29,7 +31,7 @@ class WeightImporter:
 
     def load_yaml_data(
         self, file_path: str, force: bool = False
-    ) -> List[Dict[str, Any]]:
+    ) -> list[dict[str, Any]]:
         self.handle_file_metadata(file_path, force)
         try:
             with open(file_path, "r") as file:
@@ -70,10 +72,10 @@ class WeightImporter:
 
         self.yaml_file = self.file_metadata.yaml_file
 
-    def process_item_data(self, item_data: Dict) -> Dict:
+    def process_item_data(self, item_data: dict) -> dict:
         return item_data
 
-    def process_data(self, items: List[Base], slug_weights: Dict[str, int]):
+    def process_data(self, items: Sequence[Base], slug_weights: dict[str, int]):
         for item in items:
             weight = slug_weights.get(item.slug, 0)
             if self.parent:
@@ -84,7 +86,7 @@ class WeightImporter:
                 item.weight = weight
                 self.db_session.add(item)
 
-    def validate_data(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    def validate_data(self, data: dict[str, Any]) -> dict[str, Any]:
         if not self.schema:
             raise ValueError("Pydantic schema not defined in subclass")
 
@@ -119,7 +121,7 @@ def run_weight_importer(
     importer_cls: Type[WeightImporter],
     db_session: Session,
     force: bool = False,
-    force_conditions: List[bool] = [],
+    force_conditions: list[bool] = [],
 ) -> bool:
     importer = importer_cls(db_session)
     importer.import_data(force or any(force_conditions))

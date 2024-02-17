@@ -1,8 +1,8 @@
-from typing import List
+from typing import Sequence
 
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy.orm import Session, joinedload, selectinload
+from sqlalchemy.orm import joinedload, selectinload
 
 from sni.constants import LocaleType
 from sni.models import BlogPost, BlogPostTranslation, BlogSeries, BlogSeriesTranslation
@@ -10,7 +10,7 @@ from sni.models import BlogPost, BlogPostTranslation, BlogSeries, BlogSeriesTran
 
 async def get_post(
     slug: str, *, db_session: AsyncSession, locale: LocaleType = "en"
-) -> BlogPostTranslation:
+) -> BlogPostTranslation | None:
     query = (
         select(BlogPostTranslation)
         .options(
@@ -26,7 +26,7 @@ async def get_post(
     return await db_session.scalar(query)
 
 
-async def get_params(*, db_session: AsyncSession) -> List[BlogPostTranslation]:
+async def get_params(*, db_session: AsyncSession) -> list[dict[str, LocaleType]]:
     query = select(BlogPostTranslation.slug, BlogPostTranslation.locale)
 
     result = await db_session.execute(query)
@@ -36,8 +36,8 @@ async def get_params(*, db_session: AsyncSession) -> List[BlogPostTranslation]:
 
 
 async def get_all_posts_by_locale(
-    *, db_session: Session, locale: LocaleType = "en"
-) -> List[BlogPostTranslation]:
+    *, db_session: AsyncSession, locale: LocaleType = "en"
+) -> Sequence[BlogPostTranslation]:
     query = (
         select(BlogPostTranslation)
         .options(
@@ -59,7 +59,7 @@ async def get_all_posts_by_locale(
 
 async def get_latest_post(
     *, db_session: AsyncSession, locale: LocaleType = "en"
-) -> BlogPostTranslation:
+) -> BlogPostTranslation | None:
     query = (
         select(BlogPostTranslation)
         .options(
@@ -79,7 +79,7 @@ async def get_latest_post(
 
 async def get_series(
     slug: str, *, db_session: AsyncSession, locale: LocaleType = "en"
-) -> BlogSeriesTranslation:
+) -> BlogSeriesTranslation | None:
     query = (
         select(BlogSeriesTranslation)
         .options(
@@ -98,7 +98,7 @@ async def get_series_posts(
     *,
     db_session: AsyncSession,
     locale: LocaleType = "en",
-) -> List[BlogPostTranslation]:
+) -> Sequence[BlogPostTranslation]:
     query = (
         select(BlogPostTranslation)
         .options(
@@ -120,7 +120,7 @@ async def get_series_posts(
     return result.all()
 
 
-async def get_series_params(*, db_session: AsyncSession) -> List[BlogSeriesTranslation]:
+async def get_series_params(*, db_session: AsyncSession) -> list[dict[str, LocaleType]]:
     query = select(BlogSeriesTranslation.slug, BlogSeriesTranslation.locale)
 
     result = await db_session.execute(query)
@@ -131,7 +131,7 @@ async def get_series_params(*, db_session: AsyncSession) -> List[BlogSeriesTrans
 
 async def get_all_series_by_locale(
     *, db_session: AsyncSession, locale: LocaleType = "en"
-) -> List[BlogSeriesTranslation]:
+) -> Sequence[BlogSeriesTranslation]:
     query = (
         select(BlogSeriesTranslation)
         .options(

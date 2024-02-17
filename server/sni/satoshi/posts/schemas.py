@@ -1,5 +1,5 @@
 import datetime
-from typing import List, Literal, Optional
+from typing import Literal
 
 from pydantic import AliasPath, BaseModel, Field, field_validator
 from pydantic.alias_generators import to_camel
@@ -20,7 +20,7 @@ class ForumThreadJSONModel(BaseModel):
 class ForumPostJSONModel(BaseModel):
     id: int
     poster_name: str
-    poster_url: Optional[str] = None
+    poster_url: str | None = None
     subject: str
     text: str
     date: datetime.datetime
@@ -28,7 +28,7 @@ class ForumPostJSONModel(BaseModel):
     thread_id: int
     source_id: str
     nested_level: int = 0
-    satoshi_id: Optional[int] = None
+    satoshi_id: int | None = None
 
     @field_validator("nested_level")
     @classmethod
@@ -47,7 +47,7 @@ class ForumPostJSONModel(BaseModel):
 
 class ForumPostBaseModel(ORMModel):
     poster_name: str
-    poster_url: Optional[str] = None
+    poster_url: str | None
     subject: str
     text: str
     date: datetime.datetime
@@ -55,8 +55,8 @@ class ForumPostBaseModel(ORMModel):
     thread_id: int
     source_id: str
     nested_level: int = 0
-    satoshi_id: Optional[int] = None
-    source: str = Field(alias=AliasPath("thread", "source"))
+    satoshi_id: int | None
+    source: str = Field(validation_alias=AliasPath("thread", "source"))
 
 
 class ForumThreadBaseModel(ForumThreadJSONModel, ORMModel):
@@ -69,10 +69,10 @@ class ForumPostModel(ForumPostBaseModel):
 
 
 class ForumThreadModel(BaseModel):
-    posts: List[ForumPostModel]
+    posts: list[ForumPostModel]
     thread: ForumThreadBaseModel
-    previous: Optional[ForumThreadBaseModel]
-    next: Optional[ForumThreadBaseModel]
+    previous: ForumThreadBaseModel | None
+    next: ForumThreadBaseModel | None
 
     class Config:
         alias_generator = to_camel
@@ -84,8 +84,8 @@ class SatoshiForumPostModel(ForumPostBaseModel):
 
 class ForumPostDetailModel(BaseModel):
     post: SatoshiForumPostModel
-    previous: Optional[SatoshiForumPostModel]
-    next: Optional[SatoshiForumPostModel]
+    previous: SatoshiForumPostModel | None
+    next: SatoshiForumPostModel | None
 
     class Config:
         alias_generator = to_camel

@@ -9,8 +9,8 @@ default:
 build:
   {{docker_compose_cmd}} build
 
-up:
-  {{docker_compose_cmd}} up -d
+up *args:
+  {{docker_compose_cmd}} up {{args}} -d
 
 stop:
   {{docker_compose_cmd}} stop

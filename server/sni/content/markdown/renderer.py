@@ -1,4 +1,4 @@
-from typing import Dict, Optional, Sequence, Tuple
+from typing import Sequence, cast
 
 import yaml
 from bs4 import BeautifulSoup
@@ -20,7 +20,7 @@ def render_math_inline(
     idx: int,
     options: OptionsDict,
     env: EnvType,
-):
+) -> str:
     return f"<span class='language-math math-inline'>{tokens[idx].content}</span>"
 
 
@@ -39,11 +39,11 @@ class SNIMarkdownRenderer(RendererHTML):
     Custom Markdown Renderer that can handle front matter.
     """
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
-        self._front_matter: Dict | None = None
+        self._front_matter: dict | None = None
 
-    def front_matter(self, tokens, idx, options, env):
+    def front_matter(self, tokens, idx, options, env) -> str:
         self._front_matter = yaml.safe_load(tokens[idx].content)
         return self.renderToken(tokens, idx, options, env)
 
@@ -71,7 +71,7 @@ class MDRender:
         return str(soup)
 
     @classmethod
-    def process_md(cls, md_file_path: str) -> Tuple[Optional[Dict], str]:
+    def process_md(cls, md_file_path: str) -> tuple[dict | None, str, str]:
         md = (
             MarkdownIt(
                 "commonmark",
@@ -91,7 +91,9 @@ class MDRender:
         html_content = md.render(file_content).strip()
         processed_html_content = cls.process_html(html_content)
 
-        return md.renderer._front_matter, processed_html_content, file_content
+        renderer = cast(SNIMarkdownRenderer, md.renderer)
+
+        return renderer._front_matter, processed_html_content, file_content
 
     @classmethod
     def _get_file_content(cls, md_file_path: str) -> str:

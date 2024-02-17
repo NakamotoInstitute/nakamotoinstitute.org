@@ -1,5 +1,5 @@
 import datetime
-from typing import List, Literal, Optional
+from typing import Literal
 
 from pydantic import AliasPath, BaseModel, Field, field_serializer
 from pydantic.alias_generators import to_camel
@@ -26,8 +26,8 @@ class EmailJSONModel(BaseModel):
     url: str
     thread_id: int
     source_id: str
-    parent_id: Optional[int] = None
-    satoshi_id: Optional[int] = None
+    parent_id: int | None = None
+    satoshi_id: int | None = None
 
 
 class EmailThreadBaseModel(EmailThreadJSONModel, ORMModel):
@@ -47,30 +47,30 @@ class EmailBaseModel(ORMModel):
     url: str
     thread_id: int
     source_id: str
-    parent_id: Optional[int] = None
-    satoshi_id: Optional[int] = None
-    source: str = Field(alias=AliasPath("thread", "source"))
-    replies: List[EmailReplyModel]
+    parent_id: int | None
+    satoshi_id: int | None
+    source: str = Field(validation_alias=AliasPath("thread", "source"))
+    replies: list[EmailReplyModel]
 
     @field_serializer("date")
     def serialize_date(self, date: datetime.date) -> str:
         return date.isoformat()
 
     @field_serializer("replies")
-    def serialize_replies(self, replies) -> List[str]:
+    def serialize_replies(self, replies) -> list[str]:
         """Convert EmailReplyModel to source_id string."""
         return sorted([reply.source_id for reply in replies])
 
 
 class ThreadEmailModel(EmailBaseModel):
-    parent: Optional[EmailBaseModel]
+    parent: EmailBaseModel | None
 
 
 class EmailThreadModel(BaseModel):
-    emails: List[ThreadEmailModel]
+    emails: list[ThreadEmailModel]
     thread: EmailThreadBaseModel
-    previous: Optional[EmailThreadBaseModel]
-    next: Optional[EmailThreadBaseModel]
+    previous: EmailThreadBaseModel | None
+    next: EmailThreadBaseModel | None
 
     class Config:
         alias_generator = to_camel
@@ -82,8 +82,8 @@ class SatoshiEmailModel(EmailBaseModel):
 
 class EmailDetailModel(BaseModel):
     email: SatoshiEmailModel
-    previous: Optional[SatoshiEmailModel] = None
-    next: Optional[SatoshiEmailModel] = None
+    previous: SatoshiEmailModel | None
+    next: SatoshiEmailModel | None
 
     class Config:
         alias_generator = to_camel

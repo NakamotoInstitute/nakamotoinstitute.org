@@ -1,5 +1,5 @@
 from .authors import Author  # noqa: F401
-from .content import FileMetadata, JSONFile, MarkdownContent  # noqa: F401
+from .content import FileMetadata, JSONFile, MarkdownContent, YAMLFile  # noqa: F401
 from .library import (  # noqa: F401
     Document,
     DocumentFormat,

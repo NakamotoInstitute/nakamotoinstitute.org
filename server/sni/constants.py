@@ -35,19 +35,7 @@ class Locales(str, Enum):
 
 
 LocaleType = Literal[
-    Locales.ARABIC.value,
-    Locales.GERMAN.value,
-    Locales.ENGLISH.value,
-    Locales.SPANISH.value,
-    Locales.PERSIAN.value,
-    Locales.FINNISH.value,
-    Locales.FRENCH.value,
-    Locales.HEBREW.value,
-    Locales.ITALIAN.value,
-    Locales.KOREAN.value,
-    Locales.PORTUGUESE_BRAZILIAN.value,
-    Locales.RUSSIAN.value,
-    Locales.CHINESE_SIMPLIFIED.value,
+    "ar", "de", "en", "es", "fa", "fi", "fr", "he", "it", "ko", "pt-br", "ru", "zh-cn"
 ]
 
 

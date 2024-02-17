@@ -1,7 +1,8 @@
 import collections
 import os
+from abc import ABC, abstractmethod
 from datetime import datetime
-from typing import Any, Dict, Optional, Tuple, Type
+from typing import Any, Type
 
 from pydantic import BaseModel, ValidationError
 from sqlalchemy import select
@@ -14,12 +15,18 @@ from sni.utils.files import get_file_hash, split_filename
 from .renderer import MDRender
 
 
-class BaseMarkdownImporter:
+class BaseMarkdownImporter(ABC):
+    content_type: str
+
     def __init__(self):
         self.files_in_db = {}
         self.actions = collections.Counter(new=0, updated=0, deleted=0, unchanged=0)
         self.db_session = SessionLocalSync()
         self.force = False
+
+    @abstractmethod
+    def import_content(self) -> None:
+        pass
 
     @property
     def filenames(self):
@@ -43,8 +50,8 @@ class BaseMarkdownImporter:
         print()
 
     def validate_front_matter(
-        self, front_matter: Dict[Any, Any], schema: Type[BaseModel]
-    ) -> Optional[BaseModel]:
+        self, front_matter: dict[Any, Any] | None, schema: Type[BaseModel]
+    ) -> BaseModel | None:
         try:
             return schema.parse_obj(front_matter)
         except ValidationError as e:
@@ -53,7 +60,7 @@ class BaseMarkdownImporter:
 
     def process_markdown_file(
         self, filepath: str, schema: Type[BaseModel]
-    ) -> Tuple[Optional[Dict[Any, Any]], str]:
+    ) -> tuple[dict[Any, Any] | None, str, str]:
         raw_front_matter, html_content, markdown_content = MDRender.process_md(filepath)
 
         if raw_front_matter:

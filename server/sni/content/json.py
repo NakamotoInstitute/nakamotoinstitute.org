@@ -11,7 +11,7 @@ from sni.utils.files import get_file_hash
 
 
 class JSONImporter:
-    schema: Type[BaseModel] = None
+    schema: Type[BaseModel]
     dependent_importers: List[Type["JSONImporter"]] = []
     existing_thread_ids = set()
     file_updated = False

@@ -1,5 +1,5 @@
 import datetime
-from typing import List, Optional
+from typing import Optional
 
 from pydantic import AliasPath, BaseModel, Field, model_validator
 from pydantic.alias_generators import to_camel
@@ -13,10 +13,10 @@ class QuoteCategoryJSONModel(BaseModel):
 
 
 class QuoteBaseModel(BaseModel):
-    whitepaper: Optional[bool] = False
+    whitepaper: bool = False
     text: str
-    post_id: Optional[int] = None
-    email_id: Optional[int] = None
+    post_id: int | None = None
+    email_id: int | None = None
     date: datetime.date
 
     @model_validator(mode="after")
@@ -27,7 +27,7 @@ class QuoteBaseModel(BaseModel):
 
 
 class QuoteJSONModel(QuoteBaseModel):
-    categories: List[str]
+    categories: list[str]
 
 
 class QuoteCategoryBaseModel(QuoteCategoryJSONModel, ORMModel):
@@ -40,7 +40,7 @@ class QuoteCategoryBaseModel(QuoteCategoryJSONModel, ORMModel):
 class QuoteItemModel(BaseModel):
     satoshi_id: int
     subject: str
-    source: str = Field(alias=AliasPath("thread", "source"))
+    source: str = Field(validation_alias=AliasPath("thread", "source"))
 
     class Config:
         alias_generator = to_camel
@@ -49,12 +49,12 @@ class QuoteItemModel(BaseModel):
 
 
 class QuoteModel(BaseModel):
-    whitepaper: Optional[bool] = False
+    whitepaper: bool = False
     text: str
     post: Optional[QuoteItemModel] = None
     email: Optional[QuoteItemModel] = None
     date: datetime.date
-    categories: List[QuoteCategoryBaseModel]
+    categories: list[QuoteCategoryBaseModel]
 
     class Config:
         alias_generator = to_camel
@@ -64,4 +64,4 @@ class QuoteModel(BaseModel):
 
 class QuoteCategoryModel(BaseModel):
     category: QuoteCategoryBaseModel
-    quotes: List[QuoteModel]
+    quotes: list[QuoteModel]

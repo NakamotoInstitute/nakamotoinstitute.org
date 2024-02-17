@@ -1,5 +1,4 @@
 import datetime
-from typing import List, Optional
 
 from pydantic import BaseModel, field_serializer
 
@@ -10,33 +9,33 @@ class SkepticJSONModel(BaseModel):
     name: str
     name_slug: str
     title: str
-    article: Optional[str] = None
+    article: str | None = None
     date: datetime.date
     source: str
-    excerpt: Optional[str] = None
+    excerpt: str | None = None
     link: str
-    media_embed: Optional[str] = None
-    twitter_screenshot: Optional[bool] = False
-    wayback_link: Optional[str] = None
+    media_embed: str | None = None
+    twitter_screenshot: bool = False
+    wayback_link: str | None = None
 
 
 class SkepticModel(ORMModel):
     name: str
     slug: str
     title: str
-    article: Optional[str] = None
+    article: str | None = None
     date: datetime.date
     source: str
-    excerpt: Optional[str] = None
+    excerpt: str | None = None
     link: str
-    media_embed: Optional[str] = None
-    twitter_screenshot: Optional[bool] = False
-    wayback_link: Optional[str] = None
+    media_embed: str | None = None
+    twitter_screenshot: bool = False
+    wayback_link: str | None = None
 
     @field_serializer("date")
     def serialize_date(self, date: datetime.date) -> str:
         return date.isoformat()
 
     @field_serializer("link")
-    def serialize_link(self, link) -> List[str]:
+    def serialize_link(self, link) -> list[str]:
         return [_link.strip() for _link in link.split(",")]

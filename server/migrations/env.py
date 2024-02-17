@@ -68,6 +68,10 @@ def run_migrations_online() -> None:
 
     """
     configuration = config.get_section(config.config_ini_section)
+    if configuration is None:
+        configuration = {}
+    else:
+        configuration = dict(configuration)
     configuration["sqlalchemy.url"] = get_url()
     connectable = engine_from_config(
         configuration,

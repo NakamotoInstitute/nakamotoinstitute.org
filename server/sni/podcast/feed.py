@@ -1,4 +1,4 @@
-from typing import List
+from typing import Sequence
 
 from feedgen.feed import FeedGenerator
 
@@ -27,7 +27,7 @@ class URLGenerator(BaseURLGenerator):
 
 
 def generate_podcast_feed(
-    episodes: List[Episode],
+    episodes: Sequence[Episode],
 ) -> FeedGenerator:
     locale = "en"
     urls = URLGenerator(locale)

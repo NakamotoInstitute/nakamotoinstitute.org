@@ -8,7 +8,7 @@ DEBUG_CDN_BASE_URL = f"{DEFAULT_BASE_URL}/static"
 
 
 class Settings(BaseSettings):
-    SQLALCHEMY_DATABASE_URI: str | None = (
+    SQLALCHEMY_DATABASE_URI: str = (
         "postgresql+psycopg://myuser:mysecretpassword@127.0.0.1:5432/mydatabase"
     )
     ENVIRONMENT: Environment = Environment.PRODUCTION

@@ -1,4 +1,4 @@
-from typing import List
+from typing import Sequence
 
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -10,7 +10,7 @@ from sni.models import Document, DocumentTranslation
 
 async def get(
     slug: str, *, db_session: AsyncSession, locale: LocaleType
-) -> DocumentTranslation:
+) -> DocumentTranslation | None:
     query = (
         select(DocumentTranslation)
         .options(
@@ -26,7 +26,7 @@ async def get(
     return await db_session.scalar(query)
 
 
-async def get_params(*, db_session: AsyncSession) -> List[DocumentTranslation]:
+async def get_params(*, db_session: AsyncSession) -> list[dict[str, LocaleType]]:
     query = select(DocumentTranslation.slug, DocumentTranslation.locale)
 
     result = await db_session.execute(query)
@@ -37,7 +37,7 @@ async def get_params(*, db_session: AsyncSession) -> List[DocumentTranslation]:
 
 async def get_all_by_locale(
     *, db_session: AsyncSession, locale: LocaleType
-) -> List[DocumentTranslation]:
+) -> Sequence[DocumentTranslation]:
     query = (
         select(DocumentTranslation)
         .options(
