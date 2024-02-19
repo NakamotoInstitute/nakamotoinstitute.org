@@ -14,6 +14,7 @@ from sqlalchemy import (
 )
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
+from sni.config import settings
 from sni.constants import DocumentFormats, Locales
 from sni.database import Base
 from sni.models.content import MarkdownContent, YAMLFile
@@ -71,6 +72,7 @@ class Document(Base):
     __tablename__ = "documents"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    slug: Mapped[str] = mapped_column(String, nullable=False)
     image: Mapped[str] = mapped_column(String, nullable=True)
     date: Mapped[datetime.date] = mapped_column(Date, nullable=False)
     granularity: Mapped[Literal["DAY", "MONTH", "YEAR"]] = mapped_column(
@@ -85,6 +87,12 @@ class Document(Base):
     )
     has_math: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
     weight: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
+
+    @property
+    def image_url(self):
+        if self.image:
+            return f"{settings.CDN_BASE_URL}/img/library/{self.slug}/{self.image}"
+        return None
 
     def __repr__(self) -> str:
         return f"<Document({self.id})>"

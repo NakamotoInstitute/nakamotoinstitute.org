@@ -112,7 +112,7 @@ class DocumentModel(DocumentBaseModel):
     html_content: str = Field(alias="content")
     subtitle: str | None
     display_title: str | None
-    image: str | None = Field(validation_alias=AliasPath("document", "image"))
+    image: str | None = Field(validation_alias=AliasPath("document", "image_url"))
     image_alt: str | None
     has_math: bool = Field(
         validation_alias=AliasPath("document", "has_math"),

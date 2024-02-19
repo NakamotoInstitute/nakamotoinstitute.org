@@ -1,7 +1,6 @@
 import { AuthorsLinks } from "@/app/components/AuthorsLinks";
 import { Document } from "@/lib/api/schemas/library";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
-import { cdnUrl } from "@/lib/urls";
 import { formatDocDate, formatTimeAttr } from "@/utils/dates";
 
 import { DocFormatLinks } from "./DocFormats";
@@ -39,7 +38,7 @@ export async function DocHeader({ locale, doc }: DocHeaderProps) {
           // eslint-disable-next-line @next/next/no-img-element
           <img
             className="mx-auto block rounded-sm pt-6"
-            src={cdnUrl(`/img/library/${doc.slug}/${doc.image}`)}
+            src={doc.image}
             alt={doc.imageAlt ?? ""}
           />
         ) : null}

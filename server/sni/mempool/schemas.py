@@ -73,7 +73,7 @@ class MempoolPostBaseModel(ORMModel):
     title: str
     slug: str
     excerpt: str
-    image: str | None = Field(validation_alias=AliasPath("blog_post", "image"))
+    image: str | None = Field(validation_alias=AliasPath("blog_post", "image_url"))
     image_alt: str | None
     original_url: str | None = Field(
         validation_alias=AliasPath("blog_post", "original_url"),

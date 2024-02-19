@@ -15,6 +15,7 @@ from sqlalchemy import (
 )
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
+from sni.config import settings
 from sni.constants import Locales
 from sni.database import Base
 from sni.models.content import MarkdownContent
@@ -47,6 +48,7 @@ class BlogPost(Base):
     __tablename__ = "blog_posts"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    slug: Mapped[int] = mapped_column(String, nullable=False)
     image: Mapped[str] = mapped_column(String, nullable=True)
     date: Mapped[datetime.date] = mapped_column(Date, nullable=False)
     added: Mapped[datetime.date] = mapped_column(Date, nullable=True)
@@ -64,6 +66,12 @@ class BlogPost(Base):
     has_math: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
 
     __table_args__ = (UniqueConstraint("series_id", "series_index"),)
+
+    @property
+    def image_url(self):
+        if self.image:
+            return f"{settings.CDN_BASE_URL}/img/mempool/{self.slug}/{self.image}"
+        return None
 
     def __repr__(self) -> str:
         return f"<BlogPost({self.id})>"

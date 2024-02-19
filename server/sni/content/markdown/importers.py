@@ -314,7 +314,7 @@ class TranslatedMarkdownImporter(BaseMarkdownImporter):
             canonical_entry_data = self.process_canonical_additional_data(
                 canonical_data
             )
-            canonical_entry = self.canonical_model(**canonical_entry_data)
+            canonical_entry = self.canonical_model(**canonical_entry_data, slug=slug)
             self.db_session.add(canonical_entry)
             self.db_session.flush()
 
