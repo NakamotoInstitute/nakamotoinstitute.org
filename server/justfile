@@ -18,8 +18,14 @@ stop:
 down:
   {{docker_compose_cmd}} down
 
+run *args:
+  {{docker_compose_cmd}} run --rm {{args}}
+
 exec *args:
   {{docker_compose_cmd}} exec fastapi {{args}}
+
+bash:
+  {{docker_compose_cmd}} exec fastapi bash
 
 logs *args: 
   {{docker_compose_cmd}} logs {{args}} -f
