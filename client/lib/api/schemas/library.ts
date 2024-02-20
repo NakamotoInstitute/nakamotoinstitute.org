@@ -9,6 +9,12 @@ export type LibraryFormat = z.infer<typeof zFormat>;
 export const zGranularity = z.enum(["DAY", "MONTH", "YEAR"]);
 export type Granularity = z.infer<typeof zGranularity>;
 
+export const zDocumentFormat = z.object({
+  url: z.string(),
+  type: zFormat,
+});
+export type DocumentFormat = z.infer<typeof zDocumentFormat>;
+
 const zDocumentBase = z.object({
   slug: z.string(),
   title: z.string(),
@@ -16,7 +22,7 @@ const zDocumentBase = z.object({
   date: z.coerce.date(),
   granularity: zGranularity,
   external: z.string().nullable(),
-  formats: z.array(zFormat),
+  formats: z.array(zDocumentFormat),
   translations: zTranslations,
 });
 

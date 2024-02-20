@@ -24,16 +24,8 @@ export async function DocFormatLinks({
 
   doc.formats?.forEach((format) =>
     links.push(
-      <Link
-        key={format}
-        className={classes?.link}
-        href={cdnUrl(
-          locale === "en"
-            ? `/docs/${doc.slug}.${format}`
-            : `/docs/${doc.slug}_${locale}.${format}`,
-        )}
-      >
-        {format === "epub" ? "ePub" : format.toUpperCase()}
+      <Link key={format.type} className={classes?.link} href={format.url}>
+        {format.type === "epub" ? "ePub" : format.type.toUpperCase()}
       </Link>,
     ),
   );
@@ -71,8 +63,8 @@ export async function DocFormatChips({
 
   doc.formats?.forEach((format) =>
     chips.push(
-      <Chip key={format}>
-        {format === "epub" ? "ePub" : format.toUpperCase()}
+      <Chip key={format.type}>
+        {format.type === "epub" ? "ePub" : format.type.toUpperCase()}
       </Chip>,
     ),
   );

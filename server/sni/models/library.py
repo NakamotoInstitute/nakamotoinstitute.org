@@ -1,5 +1,5 @@
 import datetime
-from typing import TYPE_CHECKING, List, Literal
+from typing import TYPE_CHECKING, List, Literal, Self
 
 from sqlalchemy import (
     Boolean,
@@ -128,7 +128,20 @@ class DocumentTranslation(MarkdownContent):
     __table_args__ = (UniqueConstraint("document_id", "locale"),)
 
     @property
-    def translations(self):
+    def serialized_formats(self) -> list[str]:
+        serialized_formats = []
+        for fmt in self.formats:
+            if self.slug == self.document.slug and self.locale != Locales.ENGLISH:
+                slug = f"{self.slug}_{self.locale.value}"
+            else:
+                slug = self.slug
+            format_type = fmt.format_type.value
+            filename = f"{settings.CDN_BASE_URL}/docs/{slug}.{format_type}"
+            serialized_formats.append({"url": filename, "type": format_type})
+        return sorted(serialized_formats, key=lambda x: x["type"])
+
+    @property
+    def translations(self) -> list[Self]:
         return sorted(
             [
                 translation

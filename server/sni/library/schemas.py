@@ -72,7 +72,8 @@ class DocumentTranslationMDModel(DocumentMDModel):
 
 
 class DocumentFormatModel(ORMModel):
-    format_type: DocumentFormats
+    url: str
+    type: DocumentFormats
 
 
 class DocumentBaseModel(ORMModel):
@@ -86,16 +87,11 @@ class DocumentBaseModel(ORMModel):
         validation_alias=AliasPath("document", "authors")
     )
     translations: list[TranslationSchema]
-    formats: list[DocumentFormatModel]
+    formats: list[DocumentFormatModel] = Field(validation_alias="serialized_formats")
 
     @field_serializer("date")
     def serialize_date(self, date: datetime.date) -> str:
         return date.isoformat()
-
-    @field_serializer("formats")
-    def serialize_formats(self, formats) -> list[str]:
-        """Convert DocumentFormatModel to format_type string."""
-        return sorted([fmt.format_type.value for fmt in formats])
 
 
 class DocumentIndexModel(DocumentBaseModel):
