@@ -12,7 +12,6 @@ type RehypeProps = {
 
 export function Rehype({ hasMath, children }: RehypeProps) {
   const rehypeOptions: Options = {
-    // @ts-expect-error: the react types are missing.
     Fragment: runtime.Fragment,
     // @ts-expect-error: the react types are missing.
     jsx: runtime.jsx,
