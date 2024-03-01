@@ -27,7 +27,6 @@ Financialization has been so errantly normalized that the lines between saving (
 Over the course of the past several decades, economies everywhere, but particularly those in the developed world (and specifically the United States), have become increasingly financialized. Increased financialization has become the necessary companion to the idea that you must make your money grow. But the idea itself — that ‘you must make your money grow’ — only really emerged in the mainstream consciousness as everyone similarly became conditioned to the unfortunate reality that money loses its value over time.
 
 **Money Loses Value → Need to Make Money Grow → Need Financial Products to Make Money Grow → Repeat.**
-{:.text-center}
 
 <figure>
   <img src="/static/img/mempool/bitcoin-is-the-great-definancialization/purchasing-power-of-usd.png" alt="Purchasing power of USD" />
@@ -173,7 +172,6 @@ Time preference as a concept is described at length in _the Bitcoin Standard_ by
 Taken to an extreme just to make the point, if you made money and literally never spent a dime (or a sat), it wouldn’t have done you any good. So even if money were increasing in value over time, consumption or investment in the present has an inherent bias over the future, on average, because of positive time preference and the existence of daily consumption needs that must be satisfied for survival (if not for want).
 
 **7 billion people competing + 21 million bitcoin = Appreciating Currency + Constant Spending ✔**
-{:.text-center}
 
 Now, imagine this principle applying to everyone simultaneously and in a world of bitcoin with a fixed money supply. 7 billion plus people and only 21 million bitcoin. Everyone both has an incentive to save because there is a finite amount of money and everyone has a positive time preference as well as daily consumption needs. In this world, there would be a fierce competition for money. Each individual would have to produce something sufficiently valuable in order to entice someone else to part with their hard-earned money, but he or she would be incentivized to do so because the roles would then be reversed. That is the contract bitcoin provides.
 

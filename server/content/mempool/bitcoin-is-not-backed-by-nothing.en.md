@@ -91,7 +91,6 @@ The problem for the Fed’s economy (and the dollar) is that it depends on the f
 The relationship between dollars and dollar credit keeps the Fed’s game in play, and central bankers believe this can go on forever. Create more dollars; create more debt. Too much debt? Create more dollars, and so on. Ultimately, in the Fed’s (or any central bank’s) system, the currency is the release valve. Because there is $73 trillion of debt and only $1.6 trillion dollars in the U.S. banking system, more dollars will have to be added to the system to support the debt. The scarcity of dollars relative to the demand for dollars is what gives the dollar its value. Nothing more, nothing less. Nothing else backs the dollar. And while the dynamics of the credit system create relative scarcity of the dollar, it is also what ensures dollars will become less and less scarce on an absolute basis.
 
 _Too much debt → Create more money → More debt → Too much debt_
-{:.text-center}
 
 <figure>
   <img src="/static/img/mempool/bitcoin-is-not-backed-by-nothing/Fed-QE.png" alt="Fed QE" />

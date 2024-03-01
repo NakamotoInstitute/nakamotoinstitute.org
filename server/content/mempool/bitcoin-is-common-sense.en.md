@@ -54,7 +54,7 @@ For each individual, there is a choice to either exist in a world in which someo
 
 Everything beyond this fundamental reality strays into abstract theory, relying on leaps of faith, hypotheticals and big words that no one understands, all while divorced from individual decision points. It is not that one individual is more trusted than another or one central bank relative to another; it is simply that, on an individual level, no individual is advantaged by someone else having the ability to print money, regardless of identity or interests. That this is true leaves only one alternative, that each individual would be advantaged by ensuring that no other individual or entity has this power. The Fed may have the ability to create dollars at zero cost, but _money still doesn’t grow on trees_. It is more likely that a particular form of money is not actually money than it is that money miraculously started growing on trees. And at an individual level, everyone is incentivized to ensure that is not the case. While there is a long habit of not thinking this particular thing wrong, the errant defense of custom can only stray so far. Time converts everyone back into reality. At present, it is the Fed’s “shock and awe” campaign contrasted by the simplicity in bitcoin’s fixed supply of 21 million. There is no amount of reason that can replace an observed divergence in two distinct paths.
 
-#### Defending Existing Custom {:.text-center}
+#### Defending Existing Custom
 
 <figure>
   <blockquote>
@@ -63,7 +63,7 @@ Everything beyond this fundamental reality strays into abstract theory, relying 
   <figcaption>Ray Dalio, <a href="https://www.cnbc.com/2017/09/19/ray-dalio-talks-the-biggest-economic-and-social-question-of-our-time.html">CNBC September 19, 2017</a></figcaption>
 </figure>
 
-#### Basic Bitcoin Common Sense {:.text-center}
+#### Basic Bitcoin Common Sense
 
 <figure>
   <img src="/static/img/mempool/bitcoin-is-common-sense/Big-lebowski.png" alt="Big Lebowski" />
@@ -77,7 +77,7 @@ Recognize that any tangible good or service produced is produced by some individ
 
 When the Fed creates $2.5 trillion in a matter of weeks, it is consolidating the power to price and value human time. Seems cryptic but it is not a suggestion that the individuals at the Fed are consciously or deliberately operating maliciously. It is just the root level consequence of the Fed’s actions, even if well intentioned. Again, the Fed’s operation (arbitrarily adding zeros to various bank account balances) cannot actually generate economic activity; all it can do is determine how to allocate new dollars. By doing so, it is advantaging some individual, enterprise or segment of the economy over another. In allocating new dollars that it creates, it is replacing a market function, one priced by billions of people, with a centralized function, greatly influencing the balance of power as to who controls the monetary capital that coordinates economic activity. Think about the distribution of money as the balance of control influencing and ultimately determining what gets built, by whom and at what price. At the moment of creation, there exists more money but there exists no more human time or goods and services as a consequence of that action. Similarly, over time, the Fed’s actions do not create more jobs, there are just more dollars to distribute across the labor force, but with a different distribution of those holding the currency. The Fed can print money (technically, create digital dollars), but it can’t print time nor can it do anything but artificially manipulate the allocation of resources within an economy.
 
-#### No Free Lunches, Just More Dollars {:.text-center}
+#### No Free Lunches, Just More Dollars
 
 <figure>
   <img src="/static/img/mempool/bitcoin-is-common-sense/Labor-force-vs-fed-balance-sheet.png" alt="Labor force vs fed balance sheet" />
@@ -135,21 +135,18 @@ Among its perceived flaws as a currency, bitcoin is viewed by many to be too com
 But with all this, bitcoin is very simple. If the supply of bitcoin remains fixed at 21 million, more people will demand it and its purchasing power will increase; there is nothing about the complexity underneath the hood that will prevent adoption. Most participants in the dollar economy, even the most sophisticated, have no practical understanding of the dollar system at a technical level. Not only is the dollar system far more complex than bitcoin, it is far less transparent. Similar degrees of complexity and many of the same primitives that exist in bitcoin underly an iPhone, yet individuals manage to successfully use the application without understanding how it actually works at a technical level. The same is true of bitcoin; the innovation in bitcoin is that it achieved finite digital scarcity, while being easy to divide and transfer. 21 million bitcoin ever, period. That compared to $2.5 trillion new dollars created in two months, by one central bank, is the only common sense application anyone really needs to know.
 
 **Exhibit A – Dollar Supply**
-{:.text-center}
 
 <figure>
   <img src="/static/img/mempool/bitcoin-is-common-sense/fool-me-4-times.png" alt="Fool me 4 times" />
 </figure>
 
 **Plus Exhibit B – Bitcoin Supply**
-{:.text-center}
 
 <figure>
   <img src="/static/img/mempool/bitcoin-is-common-sense/Bitcoin-supply-schedule-4_30.png" alt="Bitcoin supply schedule 4-30" />
 </figure>
 
 **Equals Exhibit C – Purchasing Power of Bitcoin Relative to Dollars**
-{:.text-center}
 
 <figure>
   <img src="/static/img/mempool/bitcoin-is-common-sense/bitcoin-price-log-scale-4_30.png" alt="Bitcoin price log scale 4-30" />
