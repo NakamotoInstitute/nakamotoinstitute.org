@@ -45,6 +45,34 @@ def upgrade() -> None:
     op.execute(update_stmt)
     op.alter_column("blog_posts", "slug", nullable=False)
 
+    # Update blog_series
+    op.add_column("blog_series", sa.Column("slug", sa.String(), nullable=True))
+    blog_series_table = sa.table(
+        "blog_series", sa.column("id", sa.Integer), sa.column("slug", sa.String())
+    )
+
+    blog_series_translations_table = sa.table(
+        "blog_series_translations",
+        sa.column("blog_series_id", sa.Integer),
+        sa.column("locale", sa.Enum(name="locales")),
+        sa.column("slug", sa.String()),
+    )
+    subquery = (
+        sa.select(blog_series_translations_table.c.slug)
+        .where(
+            sa.and_(
+                blog_series_translations_table.c.blog_series_id
+                == blog_series_table.c.id,
+                blog_series_translations_table.c.locale == "en",
+            )
+        )
+        .limit(1)
+        .scalar_subquery()
+    )
+    update_stmt = blog_series_table.update().values(slug=subquery)
+    op.execute(update_stmt)
+    op.alter_column("blog_series", "slug", nullable=False)
+
     # Update documents
     op.add_column("documents", sa.Column("slug", sa.String(), nullable=True))
     documents_table = sa.table(
@@ -75,4 +103,5 @@ def upgrade() -> None:
 
 def downgrade() -> None:
     op.drop_column("documents", "slug")
+    op.drop_column("blog_seres", "slug")
     op.drop_column("blog_posts", "slug")

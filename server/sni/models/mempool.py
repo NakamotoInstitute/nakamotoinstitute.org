@@ -135,6 +135,7 @@ class BlogSeries(Base):
     __tablename__ = "blog_series"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    slug: Mapped[int] = mapped_column(String, nullable=False)
     chapter_title: Mapped[bool] = mapped_column(Boolean)
     blog_posts: Mapped[List["BlogPost"]] = relationship(back_populates="series")
     translations: Mapped[List["BlogSeriesTranslation"]] = relationship(
