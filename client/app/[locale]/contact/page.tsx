@@ -30,7 +30,7 @@ export default async function ContactPage({
     <PageLayout locale={locale} generateHref={generateHref}>
       <PageHeader title={t("Contact")} />
       <div className="text-center">
-        <p>nakamotoinst (at) protonmail (dot) com</p>
+        <p>contact (at) nakamotoinstitute (dot) org</p>
       </div>
     </PageLayout>
   );
