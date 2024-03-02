@@ -57,7 +57,10 @@ export const urls = (locale: Locale) => {
     },
     contact: getUrl("/contact"),
     crashCourse: getUrl("/crash-course"),
-    donate: getUrl("/donate"),
+    donate: {
+      index: getUrl("/donate"),
+      zaprite: "https://pay.zaprite.com/pl_vNYDp4YBSd",
+    },
     events: getUrl("/events"),
     finney: {
       index: getUrl("/finney"),
@@ -113,7 +116,7 @@ export const urls = (locale: Locale) => {
     },
     skeptics: getUrl("/the-skeptics"),
     github: "https://github.com/NakamotoInstitute/nakamotoinstitute.org",
-    substack: "https://nakamotoinst.substack.com"
+    substack: "https://nakamotoinst.substack.com",
   };
 };
 

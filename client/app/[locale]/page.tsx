@@ -84,7 +84,7 @@ export default async function HomePage({ params: { locale } }: LocaleParams) {
         </p>
         <a
           className="inline-block cursor-pointer select-none rounded border border-solid border-green-600 bg-green-600 px-3 py-1 text-white hover:border-green-700 hover:bg-green-700 hover:text-white focus:border-green-700 focus:bg-green-700 focus:text-white"
-          href="/bitcoin/"
+          href={urls(locale).library.doc("bitcoin")}
           role="button"
         >
           {t("Read Satoshi's White Paper")}
@@ -153,7 +153,7 @@ export default async function HomePage({ params: { locale } }: LocaleParams) {
         </HomeSection>
         <HomeSection
           title={t("Support")}
-          button={{ text: t("Donate"), href: urls(locale).donate }}
+          button={{ text: t("Donate"), href: urls(locale).donate.index }}
         >
           <p>
             {t(
