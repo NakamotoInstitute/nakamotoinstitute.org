@@ -1,0 +1,19 @@
+weights:
+  - slug: bitcoin
+    weight: 90
+  - slug: b-money
+    weight: 80
+  - slug: secure-timestamping-service
+    weight: 70
+  - slug: time-stamp-digital-document
+    weight: 60
+  - slug: improving-time-stamping
+    weight: 50
+  - slug: secure-name-bit-strings
+    weight: 40
+  - slug: hashcash
+    weight: 30
+  - slug: public-key-cryptosystems
+    weight: 20
+  - slug: introduction-probability-theory-vol-i
+    weight: 10

@@ -1,0 +1,47 @@
+set dotenv-filename := ".justenv"
+
+env := env("ENV")
+docker_compose_cmd := "docker compose -f docker-compose." + env + ".yml"
+
+default:
+  just --list
+
+build:
+  {{docker_compose_cmd}} build
+
+up *args:
+  {{docker_compose_cmd}} up {{args}} -d
+
+stop:
+  {{docker_compose_cmd}} stop
+
+down:
+  {{docker_compose_cmd}} down
+
+run *args:
+  {{docker_compose_cmd}} run --rm {{args}}
+
+exec *args:
+  {{docker_compose_cmd}} exec fastapi {{args}}
+
+bash:
+  {{docker_compose_cmd}} exec fastapi bash
+
+logs *args: 
+  {{docker_compose_cmd}} logs {{args}} -f
+
+mm *args:
+  {{docker_compose_cmd}} exec fastapi alembic revision --autogenerate -m "{{args}}"
+
+migrate:
+  {{docker_compose_cmd}} exec fastapi alembic upgrade head
+
+downgrade *args:
+  {{docker_compose_cmd}} exec fastapi alembic downgrade {{args}}
+
+import *args:
+  {{docker_compose_cmd}} exec fastapi python cli.py content initialize {{args}}
+
+ruff *args:
+  {{docker_compose_cmd}} exec fastapi ruff {{args}} .
+  {{docker_compose_cmd}} exec fastapi ruff format .

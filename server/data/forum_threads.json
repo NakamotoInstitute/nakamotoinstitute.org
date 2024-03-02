@@ -1,0 +1,2342 @@
+[
+  {
+    "id": 1,
+    "title": "Bitcoin open source implementation of P2P currency",
+    "url": "http://p2pfoundation.ning.com/forum/topics/bitcoin-open-source",
+    "downloaded": true,
+    "num_satoshi": 4,
+    "source": "p2pfoundation",
+    "date": "2009-02-11T22:27:00Z"
+  },
+  {
+    "id": 2,
+    "title": "Welcome to the new Bitcoin forum!",
+    "url": "https://bitcointalk.org/index.php?topic=5",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2009-11-22T18:04:28Z"
+  },
+  {
+    "id": 3,
+    "title": "Repost: Bitcoin Maturation",
+    "url": "https://bitcointalk.org/index.php?topic=6",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2009-11-22T18:31:44Z"
+  },
+  {
+    "id": 4,
+    "title": "Repost: Request: Make this anonymous?",
+    "url": "https://bitcointalk.org/index.php?topic=7",
+    "downloaded": true,
+    "num_satoshi": 4,
+    "source": "bitcointalk",
+    "date": "2009-11-22T18:32:00Z"
+  },
+  {
+    "id": 5,
+    "title": "Repost: How anonymous are bitcoins?",
+    "url": "https://bitcointalk.org/index.php?topic=8",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2009-11-25T18:15:57Z"
+  },
+  {
+    "id": 6,
+    "title": "Repost: Linux/UNIX compile",
+    "url": "https://bitcointalk.org/index.php?topic=9",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2009-11-27T17:17:22Z"
+  },
+  {
+    "id": 7,
+    "title": "[OLD THREAD] Bitcoin version 0.2 development status",
+    "url": "https://bitcointalk.org/index.php?topic=10",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2009-11-27T22:48:39Z"
+  },
+  {
+    "id": 8,
+    "title": "A few suggestions",
+    "url": "https://bitcointalk.org/index.php?topic=12",
+    "downloaded": true,
+    "num_satoshi": 10,
+    "source": "bitcointalk",
+    "date": "2009-12-09T05:34:46Z"
+  },
+  {
+    "id": 9,
+    "title": "Questions about Bitcoin",
+    "url": "https://bitcointalk.org/index.php?topic=13",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2009-12-10T13:13:51Z"
+  },
+  {
+    "id": 10,
+    "title": "Bitcoin 0.2 released!",
+    "url": "https://bitcointalk.org/index.php?topic=16",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2009-12-16T22:45:36Z"
+  },
+  {
+    "id": 11,
+    "title": "Is my second Transaction working correctly? +Transfer Question",
+    "url": "https://bitcointalk.org/index.php?topic=17",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-01-01T18:09:58Z"
+  },
+  {
+    "id": 12,
+    "title": "64bit support",
+    "url": "https://bitcointalk.org/index.php?topic=18",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-01-11T16:13:20Z"
+  },
+  {
+    "id": 13,
+    "title": "Number of connections?",
+    "url": "https://bitcointalk.org/index.php?topic=21",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-01-16T14:27:15Z"
+  },
+  {
+    "id": 14,
+    "title": "TOR and I2P",
+    "url": "https://bitcointalk.org/index.php?topic=22",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-01-16T23:22:55Z"
+  },
+  {
+    "id": 15,
+    "title": "A newb's test - anyone want to buy a picture for $1?",
+    "url": "https://bitcointalk.org/index.php?topic=25",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-01-24T09:52:48Z"
+  },
+  {
+    "id": 16,
+    "title": "Bitcoin crash when sending coins",
+    "url": "https://bitcointalk.org/index.php?topic=27",
+    "downloaded": true,
+    "num_satoshi": 3,
+    "source": "bitcointalk",
+    "date": "2010-01-25T23:07:16Z"
+  },
+  {
+    "id": 17,
+    "title": "Blocks never stop generating?",
+    "url": "https://bitcointalk.org/index.php?topic=28",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-01-26T02:48:41Z"
+  },
+  {
+    "id": 18,
+    "title": "Payment server",
+    "url": "https://bitcointalk.org/index.php?topic=29",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-01-27T07:51:02Z"
+  },
+  {
+    "id": 19,
+    "title": "We accept Bitcoins [moved to bitcoin.it/wiki/Trade]",
+    "url": "https://bitcointalk.org/index.php?topic=30",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-01-27T09:10:16Z"
+  },
+  {
+    "id": 20,
+    "title": "Questions about Addresses",
+    "url": "https://bitcointalk.org/index.php?topic=34",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-02-01T02:17:02Z"
+  },
+  {
+    "id": 21,
+    "title": "Win32 CPU Cycles vs 'Live Protection' Engines ?",
+    "url": "https://bitcointalk.org/index.php?topic=35",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-02-01T18:51:53Z"
+  },
+  {
+    "id": 22,
+    "title": "Proof-of-work difficulty increasing",
+    "url": "https://bitcointalk.org/index.php?topic=43",
+    "downloaded": true,
+    "num_satoshi": 14,
+    "source": "bitcointalk",
+    "date": "2010-02-05T19:19:12Z"
+  },
+  {
+    "id": 23,
+    "title": "How divisible are bitcoins and other market/economic questions",
+    "url": "https://bitcointalk.org/index.php?topic=44",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-02-06T09:36:45Z"
+  },
+  {
+    "id": 24,
+    "title": "Make your \"we accept Bitcoin\" logo",
+    "url": "https://bitcointalk.org/index.php?topic=45",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-02-07T09:27:56Z"
+  },
+  {
+    "id": 25,
+    "title": "Simple to implement feature requests",
+    "url": "https://bitcointalk.org/index.php?topic=46",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-02-08T09:00:02Z"
+  },
+  {
+    "id": 26,
+    "title": "Bitcoin client and website translation",
+    "url": "https://bitcointalk.org/index.php?topic=47",
+    "downloaded": true,
+    "num_satoshi": 3,
+    "source": "bitcointalk",
+    "date": "2010-02-08T01:27:02Z"
+  },
+  {
+    "id": 27,
+    "title": "What's with this odd generation?",
+    "url": "https://bitcointalk.org/index.php?topic=48",
+    "downloaded": true,
+    "num_satoshi": 3,
+    "source": "bitcointalk",
+    "date": "2010-02-10T18:31:40Z"
+  },
+  {
+    "id": 28,
+    "title": "DEB Package?",
+    "url": "https://bitcointalk.org/index.php?topic=49",
+    "downloaded": true,
+    "num_satoshi": 3,
+    "source": "bitcointalk",
+    "date": "2010-02-12T00:31:35Z"
+  },
+  {
+    "id": 29,
+    "title": "Setting up multiple bitcoin machines behind NAT",
+    "url": "https://bitcointalk.org/index.php?topic=54",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-02-16T00:35:25Z"
+  },
+  {
+    "id": 30,
+    "title": "URI-scheme for bitcoin",
+    "url": "https://bitcointalk.org/index.php?topic=55",
+    "downloaded": true,
+    "num_satoshi": 4,
+    "source": "bitcointalk",
+    "date": "2010-02-16T20:51:42Z"
+  },
+  {
+    "id": 31,
+    "title": "The current Bitcoin economic model doesn't work",
+    "url": "https://bitcointalk.org/index.php?topic=57",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-02-18T07:12:50Z"
+  },
+  {
+    "id": 32,
+    "title": "Number of connections",
+    "url": "https://bitcointalk.org/index.php?topic=58",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-02-19T00:12:56Z"
+  },
+  {
+    "id": 33,
+    "title": "Post your static IP",
+    "url": "https://bitcointalk.org/index.php?topic=59",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-02-21T04:19:53Z"
+  },
+  {
+    "id": 34,
+    "title": "UI improvements",
+    "url": "https://bitcointalk.org/index.php?topic=60",
+    "downloaded": true,
+    "num_satoshi": 3,
+    "source": "bitcointalk",
+    "date": "2010-02-21T21:48:01Z"
+  },
+  {
+    "id": 35,
+    "title": "generation slowed down dramatically",
+    "url": "https://bitcointalk.org/index.php?topic=61",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-02-22T13:22:37Z"
+  },
+  {
+    "id": 36,
+    "title": "Bitcoin Address Collisions",
+    "url": "https://bitcointalk.org/index.php?topic=62",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-02-23T03:46:44Z"
+  },
+  {
+    "id": 37,
+    "title": "Command Line and JSON-RPC",
+    "url": "https://bitcointalk.org/index.php?topic=63",
+    "downloaded": true,
+    "num_satoshi": 7,
+    "source": "bitcointalk",
+    "date": "2010-02-23T22:15:41Z"
+  },
+  {
+    "id": 38,
+    "title": "New icon/logo",
+    "url": "https://bitcointalk.org/index.php?topic=64",
+    "downloaded": true,
+    "num_satoshi": 6,
+    "source": "bitcointalk",
+    "date": "2010-02-24T21:24:23Z"
+  },
+  {
+    "id": 39,
+    "title": "wxWidgets 2.9.0",
+    "url": "https://bitcointalk.org/index.php?topic=65",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-02-27T17:09:59Z"
+  },
+  {
+    "id": 40,
+    "title": "Money Transfer Regulations",
+    "url": "https://bitcointalk.org/index.php?topic=69",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-03-02T07:22:10Z"
+  },
+  {
+    "id": 41,
+    "title": "bitcoin auto-renice-ing",
+    "url": "https://bitcointalk.org/index.php?topic=72",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-03-08T09:29:56Z"
+  },
+  {
+    "id": 42,
+    "title": "Idea for file hosting and proxy services",
+    "url": "https://bitcointalk.org/index.php?topic=83",
+    "downloaded": true,
+    "num_satoshi": 4,
+    "source": "bitcointalk",
+    "date": "2010-03-15T19:16:56Z"
+  },
+  {
+    "id": 43,
+    "title": "On IRC bootstrapping",
+    "url": "https://bitcointalk.org/index.php?topic=84",
+    "downloaded": true,
+    "num_satoshi": 5,
+    "source": "bitcointalk",
+    "date": "2010-03-15T19:58:52Z"
+  },
+  {
+    "id": 44,
+    "title": "Exchange Methods",
+    "url": "https://bitcointalk.org/index.php?topic=87",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-03-20T01:33:19Z"
+  },
+  {
+    "id": 45,
+    "title": "who is bitcoin.com",
+    "url": "https://bitcointalk.org/index.php?topic=88",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-03-22T17:16:17Z"
+  },
+  {
+    "id": 46,
+    "title": "removing bitcoin addresses",
+    "url": "https://bitcointalk.org/index.php?topic=101",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-04-08T14:56:25Z"
+  },
+  {
+    "id": 47,
+    "title": "Is there a way to automate bitcoin payments for a website?",
+    "url": "https://bitcointalk.org/index.php?topic=112",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-04-15T00:12:40Z"
+  },
+  {
+    "id": 48,
+    "title": "Ummmm... where did my bitcoins go?",
+    "url": "https://bitcointalk.org/index.php?topic=125",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-05-03T00:33:35Z"
+  },
+  {
+    "id": 49,
+    "title": "A New Currency System for the World",
+    "url": "https://bitcointalk.org/index.php?topic=128",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-05-07T17:19:02Z"
+  },
+  {
+    "id": 50,
+    "title": "For a website taking payments with bitcoins, better: IP or bitcoin addresses?",
+    "url": "https://bitcointalk.org/index.php?topic=129",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-05-09T04:44:01Z"
+  },
+  {
+    "id": 51,
+    "title": "Could the bitcoin network be destroyed by someone generating endless bitcoin add",
+    "url": "https://bitcointalk.org/index.php?topic=130",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-05-09T04:45:11Z"
+  },
+  {
+    "id": 52,
+    "title": "Exception: 9key_error error",
+    "url": "https://bitcointalk.org/index.php?topic=135",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-05-14T18:07:50Z"
+  },
+  {
+    "id": 53,
+    "title": "Odd amount of generated coins",
+    "url": "https://bitcointalk.org/index.php?topic=141",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-05-20T09:38:53Z"
+  },
+  {
+    "id": 54,
+    "title": "CLI bitcoin generation",
+    "url": "https://bitcointalk.org/index.php?topic=145",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-05-22T18:44:20Z"
+  },
+  {
+    "id": 55,
+    "title": "Bitcoin in Ubuntu 10.04",
+    "url": "https://bitcointalk.org/index.php?topic=149",
+    "downloaded": true,
+    "num_satoshi": 3,
+    "source": "bitcointalk",
+    "date": "2010-05-23T16:28:12Z"
+  },
+  {
+    "id": 56,
+    "title": "Website and software translations",
+    "url": "https://bitcointalk.org/index.php?topic=151",
+    "downloaded": true,
+    "num_satoshi": 12,
+    "source": "bitcointalk",
+    "date": "2010-05-24T11:56:41Z"
+  },
+  {
+    "id": 57,
+    "title": "Share database blocks ?",
+    "url": "https://bitcointalk.org/index.php?topic=153",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-05-24T18:43:49Z"
+  },
+  {
+    "id": 58,
+    "title": "Tracing a coin's lineage",
+    "url": "https://bitcointalk.org/index.php?topic=154",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-05-25T18:27:19Z"
+  },
+  {
+    "id": 59,
+    "title": "JSON-RPC programming tips using labels",
+    "url": "https://bitcointalk.org/index.php?topic=157",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-05-26T18:27:25Z"
+  },
+  {
+    "id": 60,
+    "title": "Hostnames instead of IP Addresses",
+    "url": "https://bitcointalk.org/index.php?topic=158",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-05-29T04:38:52Z"
+  },
+  {
+    "id": 61,
+    "title": "Can't Build r80 from SVN",
+    "url": "https://bitcointalk.org/index.php?topic=163",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-06-05T01:03:34Z"
+  },
+  {
+    "id": 62,
+    "title": "What is the incentive to collect transactions?",
+    "url": "https://bitcointalk.org/index.php?topic=165",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-06-05T16:26:09Z"
+  },
+  {
+    "id": 63,
+    "title": "Building BitCoin Client completely Headless",
+    "url": "https://bitcointalk.org/index.php?topic=171",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-06-08T16:51:55Z"
+  },
+  {
+    "id": 64,
+    "title": "Bitcoin mobile.",
+    "url": "https://bitcointalk.org/index.php?topic=177",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-06-10T02:12:24Z"
+  },
+  {
+    "id": 65,
+    "title": "Technical clarifications",
+    "url": "https://bitcointalk.org/index.php?topic=179",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-06-10T20:38:13Z"
+  },
+  {
+    "id": 66,
+    "title": "Get 5 free bitcoins from freebitcoins.appspot.com",
+    "url": "https://bitcointalk.org/index.php?topic=183",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-06-11T17:38:45Z"
+  },
+  {
+    "id": 67,
+    "title": "new binary release?",
+    "url": "https://bitcointalk.org/index.php?topic=184",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-06-11T18:19:41Z"
+  },
+  {
+    "id": 68,
+    "title": "Dealing with SHA-256 Collisions",
+    "url": "https://bitcointalk.org/index.php?topic=191",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-06-14T01:01:11Z"
+  },
+  {
+    "id": 69,
+    "title": "Transactions and Scripts: DUP HASH160 ... EQUALVERIFY CHECKSIG",
+    "url": "https://bitcointalk.org/index.php?topic=195",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-06-17T11:38:31Z"
+  },
+  {
+    "id": 70,
+    "title": "How fast do the fastest computers generate bitcoins?",
+    "url": "https://bitcointalk.org/index.php?topic=197",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-06-19T15:17:21Z"
+  },
+  {
+    "id": 71,
+    "title": "Dying bitcoins",
+    "url": "https://bitcointalk.org/index.php?topic=198",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-06-21T13:22:35Z"
+  },
+  {
+    "id": 72,
+    "title": "0.3 almost ready -- please test the Mac version!",
+    "url": "https://bitcointalk.org/index.php?topic=199",
+    "downloaded": true,
+    "num_satoshi": 18,
+    "source": "bitcointalk",
+    "date": "2010-06-22T04:01:53Z"
+  },
+  {
+    "id": 73,
+    "title": "Major Meltdown",
+    "url": "https://bitcointalk.org/index.php?topic=202",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-06-23T07:42:04Z"
+  },
+  {
+    "id": 74,
+    "title": "Bitcoin Faucet changes",
+    "url": "https://bitcointalk.org/index.php?topic=206",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-06-23T14:23:46Z"
+  },
+  {
+    "id": 75,
+    "title": "Bitcoin clients getting k-lined from the IRC bootstrapping channel",
+    "url": "https://bitcointalk.org/index.php?topic=215",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-06-25T20:20:16Z"
+  },
+  {
+    "id": 76,
+    "title": "Beta?",
+    "url": "https://bitcointalk.org/index.php?topic=217",
+    "downloaded": true,
+    "num_satoshi": 3,
+    "source": "bitcointalk",
+    "date": "2010-06-26T17:02:43Z"
+  },
+  {
+    "id": 77,
+    "title": "IPv6, headless client, and more",
+    "url": "https://bitcointalk.org/index.php?topic=218",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-06-26T23:17:51Z"
+  },
+  {
+    "id": 78,
+    "title": "Feature Request: Limiting Connections",
+    "url": "https://bitcointalk.org/index.php?topic=223",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-06-29T00:41:52Z"
+  },
+  {
+    "id": 79,
+    "title": "Slashdot Submission for 1.0",
+    "url": "https://bitcointalk.org/index.php?topic=234",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-05T16:07:52Z"
+  },
+  {
+    "id": 80,
+    "title": "Bitcoin 0.3 released!",
+    "url": "https://bitcointalk.org/index.php?topic=238",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-06T18:32:35Z"
+  },
+  {
+    "id": 81,
+    "title": "Security",
+    "url": "https://bitcointalk.org/index.php?topic=240",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-07T14:53:00Z"
+  },
+  {
+    "id": 82,
+    "title": "Anonymity",
+    "url": "https://bitcointalk.org/index.php?topic=241",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-07T16:54:44Z"
+  },
+  {
+    "id": 83,
+    "title": "BTC Vulnerability? (Massive Attack against BTC system. Is it really?)",
+    "url": "https://bitcointalk.org/index.php?topic=242",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-07T18:15:28Z"
+  },
+  {
+    "id": 84,
+    "title": "bitcoin 0.3 win64 - broken access to APPDATA if non-latin characters in username",
+    "url": "https://bitcointalk.org/index.php?topic=246",
+    "downloaded": true,
+    "num_satoshi": 3,
+    "source": "bitcointalk",
+    "date": "2010-07-08T09:33:16Z"
+  },
+  {
+    "id": 85,
+    "title": "Scalability",
+    "url": "https://bitcointalk.org/index.php?topic=286",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-12T11:36:17Z"
+  },
+  {
+    "id": 86,
+    "title": "Flood attack 0.00000001 BC",
+    "url": "https://bitcointalk.org/index.php?topic=287",
+    "downloaded": true,
+    "num_satoshi": 6,
+    "source": "bitcointalk",
+    "date": "2010-07-12T12:04:24Z"
+  },
+  {
+    "id": 87,
+    "title": "Warning this block was not received by any other nodes",
+    "url": "https://bitcointalk.org/index.php?topic=291",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-12T14:47:00Z"
+  },
+  {
+    "id": 88,
+    "title": "Donations to freebitcoins.appspot.com needed!",
+    "url": "https://bitcointalk.org/index.php?topic=295",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-12T19:15:46Z"
+  },
+  {
+    "id": 89,
+    "title": "Fedora 13 libcrypto",
+    "url": "https://bitcointalk.org/index.php?topic=296",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-12T19:27:30Z"
+  },
+  {
+    "id": 90,
+    "title": "Building Bitcoin 0.3",
+    "url": "https://bitcointalk.org/index.php?topic=298",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-12T19:20:51Z"
+  },
+  {
+    "id": 91,
+    "title": "Runaway CPU usage for 64bit BitCoin (Linux Client)",
+    "url": "https://bitcointalk.org/index.php?topic=299",
+    "downloaded": true,
+    "num_satoshi": 3,
+    "source": "bitcointalk",
+    "date": "2010-07-12T20:59:16Z"
+  },
+  {
+    "id": 92,
+    "title": "Resending transaction",
+    "url": "https://bitcointalk.org/index.php?topic=303",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-12T22:46:44Z"
+  },
+  {
+    "id": 93,
+    "title": "Stuck on 513 blocks",
+    "url": "https://bitcointalk.org/index.php?topic=305",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-13T00:18:19Z"
+  },
+  {
+    "id": 94,
+    "title": "Error on Ubuntu 10.04",
+    "url": "https://bitcointalk.org/index.php?topic=318",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-13T11:56:45Z"
+  },
+  {
+    "id": 95,
+    "title": "No blocks downloaded - MS Security Essentials users please read",
+    "url": "https://bitcointalk.org/index.php?topic=323",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-13T16:57:43Z"
+  },
+  {
+    "id": 96,
+    "title": "Hash/sec Throttling for Democracy",
+    "url": "https://bitcointalk.org/index.php?topic=325",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-13T18:23:55Z"
+  },
+  {
+    "id": 97,
+    "title": "UPDATED - Linux x64 bins for those having libcrypto and GLIBCXX_3.4.11 troubles",
+    "url": "https://bitcointalk.org/index.php?topic=326",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-13T18:32:44Z"
+  },
+  {
+    "id": 98,
+    "title": "resource hog",
+    "url": "https://bitcointalk.org/index.php?topic=327",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-07-13T19:19:47Z"
+  },
+  {
+    "id": 99,
+    "title": "wiki registration email?",
+    "url": "https://bitcointalk.org/index.php?topic=338",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-14T04:09:21Z"
+  },
+  {
+    "id": 100,
+    "title": "They want to delete the Wikipedia article",
+    "url": "https://bitcointalk.org/index.php?topic=342",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-14T07:21:08Z"
+  },
+  {
+    "id": 101,
+    "title": "stopped prodicing coins",
+    "url": "https://bitcointalk.org/index.php?topic=343",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-14T09:12:39Z"
+  },
+  {
+    "id": 102,
+    "title": "Hash() function not secure",
+    "url": "https://bitcointalk.org/index.php?topic=360",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-14T22:37:56Z"
+  },
+  {
+    "id": 103,
+    "title": "Website integration for bitcoin",
+    "url": "https://bitcointalk.org/index.php?topic=364",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-15T01:09:23Z"
+  },
+  {
+    "id": 104,
+    "title": "[Bitcoin 0.3.0] Runtime error",
+    "url": "https://bitcointalk.org/index.php?topic=373",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-15T09:11:26Z"
+  },
+  {
+    "id": 105,
+    "title": "bitcoin trademark?",
+    "url": "https://bitcointalk.org/index.php?topic=378",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-15T15:26:59Z"
+  },
+  {
+    "id": 106,
+    "title": "Bitcoin 0.3.1 released",
+    "url": "https://bitcointalk.org/index.php?topic=383",
+    "downloaded": true,
+    "num_satoshi": 11,
+    "source": "bitcointalk",
+    "date": "2010-07-15T17:05:54Z"
+  },
+  {
+    "id": 107,
+    "title": "\"SetIcons(): icon bundle doesn't contain any suitable icon\"",
+    "url": "https://bitcointalk.org/index.php?topic=391",
+    "downloaded": true,
+    "num_satoshi": 3,
+    "source": "bitcointalk",
+    "date": "2010-07-15T19:22:53Z"
+  },
+  {
+    "id": 108,
+    "title": "Source code documentation",
+    "url": "https://bitcointalk.org/index.php?topic=393",
+    "downloaded": true,
+    "num_satoshi": 4,
+    "source": "bitcointalk",
+    "date": "2010-07-15T21:30:23Z"
+  },
+  {
+    "id": 109,
+    "title": "Request: expected bitcoins per day display",
+    "url": "https://bitcointalk.org/index.php?topic=397",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-16T00:40:51Z"
+  },
+  {
+    "id": 110,
+    "title": "Assertion Failure - Ubuntu Lucid",
+    "url": "https://bitcointalk.org/index.php?topic=400",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-07-16T04:30:15Z"
+  },
+  {
+    "id": 111,
+    "title": "The dollar cost of bitmining energy",
+    "url": "https://bitcointalk.org/index.php?topic=403",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-16T05:42:14Z"
+  },
+  {
+    "id": 112,
+    "title": "Sample account system using JSON-RPC needed",
+    "url": "https://bitcointalk.org/index.php?topic=417",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-16T19:45:10Z"
+  },
+  {
+    "id": 113,
+    "title": "Network Size",
+    "url": "https://bitcointalk.org/index.php?topic=419",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-16T23:04:44Z"
+  },
+  {
+    "id": 114,
+    "title": "Bitcoin snack machine (fast transaction problem)",
+    "url": "https://bitcointalk.org/index.php?topic=423",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-07-17T02:33:41Z"
+  },
+  {
+    "id": 115,
+    "title": "Nenolod, the guy that wants to prove Bitcoin doesn't work.",
+    "url": "https://bitcointalk.org/index.php?topic=431",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-07-17T13:21:16Z"
+  },
+  {
+    "id": 116,
+    "title": "BUG Report: Rounding glitch",
+    "url": "https://bitcointalk.org/index.php?topic=432",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-17T14:10:03Z"
+  },
+  {
+    "id": 117,
+    "title": "Privacy versus Safety: handling change",
+    "url": "https://bitcointalk.org/index.php?topic=434",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-17T14:13:46Z"
+  },
+  {
+    "id": 118,
+    "title": "Bitcoin 0.3.2 released",
+    "url": "https://bitcointalk.org/index.php?topic=437",
+    "downloaded": true,
+    "num_satoshi": 3,
+    "source": "bitcointalk",
+    "date": "2010-07-17T21:35:51Z"
+  },
+  {
+    "id": 119,
+    "title": "Did block generation crawl to a halt?",
+    "url": "https://bitcointalk.org/index.php?topic=441",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-18T00:20:04Z"
+  },
+  {
+    "id": 120,
+    "title": "Faster SHA-256, MSVC build ",
+    "url": "https://bitcointalk.org/index.php?topic=453",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-18T13:28:50Z"
+  },
+  {
+    "id": 121,
+    "title": "Builds for Ubuntu?",
+    "url": "https://bitcointalk.org/index.php?topic=454",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-18T14:27:18Z"
+  },
+  {
+    "id": 122,
+    "title": "md5?",
+    "url": "https://bitcointalk.org/index.php?topic=458",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-18T16:16:55Z"
+  },
+  {
+    "id": 123,
+    "title": "JSON-RPC password",
+    "url": "https://bitcointalk.org/index.php?topic=461",
+    "downloaded": true,
+    "num_satoshi": 14,
+    "source": "bitcointalk",
+    "date": "2010-07-18T20:49:22Z"
+  },
+  {
+    "id": 124,
+    "title": "Warning: don't use -server or bitcoind where you web browse (v0.3.2 and lower)",
+    "url": "https://bitcointalk.org/index.php?topic=479",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-07-19T16:01:38Z"
+  },
+  {
+    "id": 125,
+    "title": "Bitcoin x64 for Windows",
+    "url": "https://bitcointalk.org/index.php?topic=501",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-20T21:02:02Z"
+  },
+  {
+    "id": 126,
+    "title": "JSON-RPC Multiple Invocations",
+    "url": "https://bitcointalk.org/index.php?topic=528",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-22T02:09:49Z"
+  },
+  {
+    "id": 127,
+    "title": "Scalability and transaction rate",
+    "url": "https://bitcointalk.org/index.php?topic=532",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-22T05:17:28Z"
+  },
+  {
+    "id": 128,
+    "title": "bitcoind not responding to RPC",
+    "url": "https://bitcointalk.org/index.php?topic=548",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-07-23T12:29:48Z"
+  },
+  {
+    "id": 129,
+    "title": "Faster initial block download (5x faster)",
+    "url": "https://bitcointalk.org/index.php?topic=550",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-07-23T18:24:56Z"
+  },
+  {
+    "id": 130,
+    "title": "Reading/Writing Blocks and FLATDATA",
+    "url": "https://bitcointalk.org/index.php?topic=555",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-24T01:27:32Z"
+  },
+  {
+    "id": 131,
+    "title": "Version 0.3.2.5 -- please test!",
+    "url": "https://bitcointalk.org/index.php?topic=556",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-24T03:32:52Z"
+  },
+  {
+    "id": 132,
+    "title": "a simple traffic load test run",
+    "url": "https://bitcointalk.org/index.php?topic=567",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-07-25T13:02:28Z"
+  },
+  {
+    "id": 133,
+    "title": "Bitcoin 0.3.3 released -- PLEASE UPGRADE",
+    "url": "https://bitcointalk.org/index.php?topic=570",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-25T16:55:09Z"
+  },
+  {
+    "id": 134,
+    "title": "Stealing Coins",
+    "url": "https://bitcointalk.org/index.php?topic=571",
+    "downloaded": true,
+    "num_satoshi": 5,
+    "source": "bitcointalk",
+    "date": "2010-07-25T17:08:03Z"
+  },
+  {
+    "id": 135,
+    "title": "Bitcoin x86 for Windows",
+    "url": "https://bitcointalk.org/index.php?topic=572",
+    "downloaded": true,
+    "num_satoshi": 3,
+    "source": "bitcointalk",
+    "date": "2010-07-26T08:17:20Z"
+  },
+  {
+    "id": 136,
+    "title": "bitcoind without wxWidgets",
+    "url": "https://bitcointalk.org/index.php?topic=576",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-26T17:23:33Z"
+  },
+  {
+    "id": 137,
+    "title": "Bitcoin does NOT violate Mises' Regression Theorem",
+    "url": "https://bitcointalk.org/index.php?topic=583",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-27T02:09:27Z"
+  },
+  {
+    "id": 138,
+    "title": "Difficulty",
+    "url": "https://bitcointalk.org/index.php?topic=587",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-27T10:11:51Z"
+  },
+  {
+    "id": 139,
+    "title": "Running on a port other than 8333",
+    "url": "https://bitcointalk.org/index.php?topic=589",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-27T14:08:17Z"
+  },
+  {
+    "id": 140,
+    "title": "Having problems specifing -datadir",
+    "url": "https://bitcointalk.org/index.php?topic=601",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-07-28T13:38:00Z"
+  },
+  {
+    "id": 141,
+    "title": "Build error SVN r115 on my Mac: workaround",
+    "url": "https://bitcointalk.org/index.php?topic=604",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-28T15:18:25Z"
+  },
+  {
+    "id": 142,
+    "title": "[PATCH] implement 'xlisttransactions'",
+    "url": "https://bitcointalk.org/index.php?topic=611",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-29T00:34:53Z"
+  },
+  {
+    "id": 143,
+    "title": "Linux distribution download",
+    "url": "https://bitcointalk.org/index.php?topic=612",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-07-29T03:22:37Z"
+  },
+  {
+    "id": 144,
+    "title": "Transaction disappeared in the void...",
+    "url": "https://bitcointalk.org/index.php?topic=615",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-29T11:20:33Z"
+  },
+  {
+    "id": 145,
+    "title": "*** ALERT *** Upgrade to 0.3.6",
+    "url": "https://bitcointalk.org/index.php?topic=626",
+    "downloaded": true,
+    "num_satoshi": 8,
+    "source": "bitcointalk",
+    "date": "2010-07-29T19:13:06Z"
+  },
+  {
+    "id": 146,
+    "title": "Implementation bug prior to 0.3.6",
+    "url": "https://bitcointalk.org/index.php?topic=628",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-29T20:03:07Z"
+  },
+  {
+    "id": 147,
+    "title": "Protocol Buffers for Bitcoin",
+    "url": "https://bitcointalk.org/index.php?topic=632",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-29T23:29:31Z"
+  },
+  {
+    "id": 148,
+    "title": "Building initial transaction trust through \"coin ripping\"",
+    "url": "https://bitcointalk.org/index.php?topic=635",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-30T04:02:55Z"
+  },
+  {
+    "id": 149,
+    "title": "Bug: \"Immature\" coins lost in wallet.dat during transaction",
+    "url": "https://bitcointalk.org/index.php?topic=642",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-30T16:39:16Z"
+  },
+  {
+    "id": 150,
+    "title": "Automated nightly builds",
+    "url": "https://bitcointalk.org/index.php?topic=644",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-30T18:31:48Z"
+  },
+  {
+    "id": 151,
+    "title": "A proposal for a semi-automated Escrow mechanism",
+    "url": "https://bitcointalk.org/index.php?topic=645",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-07-30T19:29:08Z"
+  },
+  {
+    "id": 152,
+    "title": "4 hashes parallel on SSE2 CPUs for 0.3.6",
+    "url": "https://bitcointalk.org/index.php?topic=648",
+    "downloaded": true,
+    "num_satoshi": 9,
+    "source": "bitcointalk",
+    "date": "2010-07-30T21:23:10Z"
+  },
+  {
+    "id": 153,
+    "title": "Webpage idea: Next predicted difficulty change",
+    "url": "https://bitcointalk.org/index.php?topic=651",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-31T01:32:08Z"
+  },
+  {
+    "id": 154,
+    "title": "BitCoin Wikipedia page DELETED!!!",
+    "url": "https://bitcointalk.org/index.php?topic=652",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-31T02:17:41Z"
+  },
+  {
+    "id": 155,
+    "title": "Linux version => No GUI after upgrade.  WTF?",
+    "url": "https://bitcointalk.org/index.php?topic=655",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-07-31T19:06:37Z"
+  },
+  {
+    "id": 156,
+    "title": "Mac Client Problems Outlined...",
+    "url": "https://bitcointalk.org/index.php?topic=660",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-08-01T01:52:47Z"
+  },
+  {
+    "id": 157,
+    "title": "What happens when network is split for prolonged time and reconnected?",
+    "url": "https://bitcointalk.org/index.php?topic=661",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-08-01T11:07:24Z"
+  },
+  {
+    "id": 158,
+    "title": "Multiple Wallets, one computer (multiple accounts)",
+    "url": "https://bitcointalk.org/index.php?topic=665",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-08-01T20:14:29Z"
+  },
+  {
+    "id": 159,
+    "title": "Porn",
+    "url": "https://bitcointalk.org/index.php?topic=671",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-08-02T13:12:03Z"
+  },
+  {
+    "id": 160,
+    "title": "Bitcoind x86 binary for CentOS",
+    "url": "https://bitcointalk.org/index.php?topic=685",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-08-03T10:33:13Z"
+  },
+  {
+    "id": 161,
+    "title": "Authentication, JSON RPC and Python",
+    "url": "https://bitcointalk.org/index.php?topic=689",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-08-03T15:49:49Z"
+  },
+  {
+    "id": 162,
+    "title": "Bitcoin Watchdog Service",
+    "url": "https://bitcointalk.org/index.php?topic=691",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-08-03T17:53:51Z"
+  },
+  {
+    "id": 163,
+    "title": "Please upgrade to 0.3.8!",
+    "url": "https://bitcointalk.org/index.php?topic=696",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-08-03T23:40:18Z"
+  },
+  {
+    "id": 164,
+    "title": "Who's the Spanish jerk draining the Faucet?",
+    "url": "https://bitcointalk.org/index.php?topic=704",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-08-04T20:40:55Z"
+  },
+  {
+    "id": 165,
+    "title": "bitcoind transaction to ip address",
+    "url": "https://bitcointalk.org/index.php?topic=711",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-08-05T14:22:14Z"
+  },
+  {
+    "id": 166,
+    "title": "Transaction Overload Solution",
+    "url": "https://bitcointalk.org/index.php?topic=713",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-08-05T16:05:07Z"
+  },
+  {
+    "id": 167,
+    "title": "Bitcoin minting is thermodynamically perverse",
+    "url": "https://bitcointalk.org/index.php?topic=721",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-08-06T01:52:00Z"
+  },
+  {
+    "id": 168,
+    "title": "latency and locality",
+    "url": "https://bitcointalk.org/index.php?topic=723",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-08-06T07:05:56Z"
+  },
+  {
+    "id": 169,
+    "title": "Escrow",
+    "url": "https://bitcointalk.org/index.php?topic=750",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-08-07T20:13:52Z"
+  },
+  {
+    "id": 170,
+    "title": "bitcoin generation broken in 0.3.8?  (64-bit)",
+    "url": "https://bitcointalk.org/index.php?topic=753",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-08-08T03:06:59Z"
+  },
+  {
+    "id": 171,
+    "title": "What could be the transition plan to Y2038 compliant Bitcoin? (it already is)",
+    "url": "https://bitcointalk.org/index.php?topic=760",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-08-09T12:25:35Z"
+  },
+  {
+    "id": 172,
+    "title": "Version 0.3.8.1 update for Linux 64-bit",
+    "url": "https://bitcointalk.org/index.php?topic=765",
+    "downloaded": true,
+    "num_satoshi": 3,
+    "source": "bitcointalk",
+    "date": "2010-08-09T19:46:58Z"
+  },
+  {
+    "id": 173,
+    "title": "Connection limits",
+    "url": "https://bitcointalk.org/index.php?topic=766",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-08-09T20:58:45Z"
+  },
+  {
+    "id": 174,
+    "title": "Not a suggestion",
+    "url": "https://bitcointalk.org/index.php?topic=770",
+    "downloaded": true,
+    "num_satoshi": 4,
+    "source": "bitcointalk",
+    "date": "2010-08-10T05:45:45Z"
+  },
+  {
+    "id": 175,
+    "title": "Lost large number of bitcoins",
+    "url": "https://bitcointalk.org/index.php?topic=782",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-08-10T23:15:16Z"
+  },
+  {
+    "id": 176,
+    "title": "Compile error in SVN r127",
+    "url": "https://bitcointalk.org/index.php?topic=784",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-08-11T01:20:42Z"
+  },
+  {
+    "id": 177,
+    "title": "Where is the separate discussion devoted to possible Bitcoin weaknesses.",
+    "url": "https://bitcointalk.org/index.php?topic=788",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-08-11T15:45:42Z"
+  },
+  {
+    "id": 178,
+    "title": "BSD detection",
+    "url": "https://bitcointalk.org/index.php?topic=790",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-08-11T23:00:16Z"
+  },
+  {
+    "id": 179,
+    "title": "Bugfixes in SVN rev 130",
+    "url": "https://bitcointalk.org/index.php?topic=795",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-08-12T21:20:31Z"
+  },
+  {
+    "id": 180,
+    "title": "Version 0.3.9 rc1, please test",
+    "url": "https://bitcointalk.org/index.php?topic=806",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-08-13T17:40:00Z"
+  },
+  {
+    "id": 181,
+    "title": "Proposed change to sendtoaddress API call",
+    "url": "https://bitcointalk.org/index.php?topic=807",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-08-13T19:28:23Z"
+  },
+  {
+    "id": 182,
+    "title": "Potential disaster scenario",
+    "url": "https://bitcointalk.org/index.php?topic=813",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-08-14T12:43:54Z"
+  },
+  {
+    "id": 183,
+    "title": "Big endinan code problems",
+    "url": "https://bitcointalk.org/index.php?topic=816",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-08-14T22:08:00Z"
+  },
+  {
+    "id": 184,
+    "title": "tcatm's 4-way SSE2 for Linux 32/64-bit is in 0.3.10",
+    "url": "https://bitcointalk.org/index.php?topic=820",
+    "downloaded": true,
+    "num_satoshi": 11,
+    "source": "bitcointalk",
+    "date": "2010-08-15T15:52:09Z"
+  },
+  {
+    "id": 185,
+    "title": "overflow bug SERIOUS",
+    "url": "https://bitcointalk.org/index.php?topic=823",
+    "downloaded": true,
+    "num_satoshi": 15,
+    "source": "bitcointalk",
+    "date": "2010-08-15T19:04:11Z"
+  },
+  {
+    "id": 186,
+    "title": "Version 0.3.10 - block 74638 overflow PATCH!",
+    "url": "https://bitcointalk.org/index.php?topic=827",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-08-15T23:48:22Z"
+  },
+  {
+    "id": 187,
+    "title": "0.3.10.1 Question on where block should be",
+    "url": "https://bitcointalk.org/index.php?topic=828",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-08-16T00:09:18Z"
+  },
+  {
+    "id": 188,
+    "title": "[PATCH] Automatic block validation",
+    "url": "https://bitcointalk.org/index.php?topic=832",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-08-16T02:57:55Z"
+  },
+  {
+    "id": 189,
+    "title": "checkpointing the block chain",
+    "url": "https://bitcointalk.org/index.php?topic=834",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-08-16T09:40:23Z"
+  },
+  {
+    "id": 190,
+    "title": "blocks minus 1",
+    "url": "https://bitcointalk.org/index.php?topic=837",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-08-16T15:59:25Z"
+  },
+  {
+    "id": 191,
+    "title": "Checking the block chain on load",
+    "url": "https://bitcointalk.org/index.php?topic=841",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-08-16T20:07:46Z"
+  },
+  {
+    "id": 192,
+    "title": "Bitcoins are most like shares of common stock",
+    "url": "https://bitcointalk.org/index.php?topic=845",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-08-17T18:45:18Z"
+  },
+  {
+    "id": 193,
+    "title": "Difficulty: More nodes active, or faster nodes?",
+    "url": "https://bitcointalk.org/index.php?topic=846",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-08-17T19:25:38Z"
+  },
+  {
+    "id": 194,
+    "title": "New screenshots to the front page?",
+    "url": "https://bitcointalk.org/index.php?topic=850",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-08-18T07:16:55Z"
+  },
+  {
+    "id": 195,
+    "title": "28 days without generation, i have 4200khash/s",
+    "url": "https://bitcointalk.org/index.php?topic=862",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-08-18T21:20:35Z"
+  },
+  {
+    "id": 196,
+    "title": "Convert Bitcoin to GTK: Yes?  No?  wx is better?",
+    "url": "https://bitcointalk.org/index.php?topic=867",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-08-19T07:23:53Z"
+  },
+  {
+    "id": 197,
+    "title": "HOWTO: Compiling Bitcoin on Ubuntu 10.04 (Karmic)",
+    "url": "https://bitcointalk.org/index.php?topic=868",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-08-19T07:44:37Z"
+  },
+  {
+    "id": 198,
+    "title": "Hypothetical question on lost coins / transfers",
+    "url": "https://bitcointalk.org/index.php?topic=870",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-08-19T19:24:37Z"
+  },
+  {
+    "id": 199,
+    "title": "Need a post writing up some things users should know",
+    "url": "https://bitcointalk.org/index.php?topic=873",
+    "downloaded": true,
+    "num_satoshi": 3,
+    "source": "bitcointalk",
+    "date": "2010-08-19T20:14:01Z"
+  },
+  {
+    "id": 200,
+    "title": "integrating digital payments into p2p protocols",
+    "url": "https://bitcointalk.org/index.php?topic=890",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-08-21T14:13:27Z"
+  },
+  {
+    "id": 201,
+    "title": "Development of alert system",
+    "url": "https://bitcointalk.org/index.php?topic=898",
+    "downloaded": true,
+    "num_satoshi": 8,
+    "source": "bitcointalk",
+    "date": "2010-08-22T23:55:06Z"
+  },
+  {
+    "id": 202,
+    "title": "RFC: remove DB_PRIVATE flag",
+    "url": "https://bitcointalk.org/index.php?topic=920",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-08-25T01:03:13Z"
+  },
+  {
+    "id": 203,
+    "title": "auto backing up of wallet.dat",
+    "url": "https://bitcointalk.org/index.php?topic=921",
+    "downloaded": true,
+    "num_satoshi": 5,
+    "source": "bitcointalk",
+    "date": "2010-08-25T03:52:13Z"
+  },
+  {
+    "id": 204,
+    "title": "New web service: obtain dump of bitcoin block NNNN",
+    "url": "https://bitcointalk.org/index.php?topic=928",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-08-26T00:21:31Z"
+  },
+  {
+    "id": 205,
+    "title": "Gentoo Linux Ebuild",
+    "url": "https://bitcointalk.org/index.php?topic=930",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-08-26T06:10:29Z"
+  },
+  {
+    "id": 206,
+    "title": "Version 0.3.11 with upgrade alerts",
+    "url": "https://bitcointalk.org/index.php?topic=941",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-08-27T21:54:12Z"
+  },
+  {
+    "id": 207,
+    "title": "Bitcoin Blogger: Is It Better To Buy Or Generate Bitcoins?",
+    "url": "https://bitcointalk.org/index.php?topic=955",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-08-30T23:50:33Z"
+  },
+  {
+    "id": 208,
+    "title": "Warning : Check your system clock (help me)",
+    "url": "https://bitcointalk.org/index.php?topic=960",
+    "downloaded": true,
+    "num_satoshi": 3,
+    "source": "bitcointalk",
+    "date": "2010-08-31T12:55:44Z"
+  },
+  {
+    "id": 209,
+    "title": "CryptoPP Assertion Error",
+    "url": "https://bitcointalk.org/index.php?topic=967",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-09-01T17:38:07Z"
+  },
+  {
+    "id": 210,
+    "title": "HTTP status codes from the JSON-RPC api",
+    "url": "https://bitcointalk.org/index.php?topic=969",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-09-01T20:28:15Z"
+  },
+  {
+    "id": 211,
+    "title": "Switch to GPL",
+    "url": "https://bitcointalk.org/index.php?topic=989",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-09-06T02:54:49Z"
+  },
+  {
+    "id": 212,
+    "title": "bitcoind as daemon in OSX",
+    "url": "https://bitcointalk.org/index.php?topic=992",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-09-06T21:44:06Z"
+  },
+  {
+    "id": 213,
+    "title": "Always pay transaction fee?",
+    "url": "https://bitcointalk.org/index.php?topic=994",
+    "downloaded": true,
+    "num_satoshi": 3,
+    "source": "bitcointalk",
+    "date": "2010-09-07T03:17:34Z"
+  },
+  {
+    "id": 214,
+    "title": "Version 0.3.12",
+    "url": "https://bitcointalk.org/index.php?topic=999",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-09-07T19:17:55Z"
+  },
+  {
+    "id": 215,
+    "title": "Auto-detect for 128-bit 4-way SSE2",
+    "url": "https://bitcointalk.org/index.php?topic=1007",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-09-09T01:04:05Z"
+  },
+  {
+    "id": 216,
+    "title": "Won't let me send coins because it requires a transaction fee?",
+    "url": "https://bitcointalk.org/index.php?topic=1013",
+    "downloaded": true,
+    "num_satoshi": 3,
+    "source": "bitcointalk",
+    "date": "2010-09-09T13:56:54Z"
+  },
+  {
+    "id": 217,
+    "title": "Memory leak",
+    "url": "https://bitcointalk.org/index.php?topic=1023",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-09-13T05:51:44Z"
+  },
+  {
+    "id": 218,
+    "title": "Message Encryption as a built-in feature?",
+    "url": "https://bitcointalk.org/index.php?topic=1032",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-09-14T05:44:11Z"
+  },
+  {
+    "id": 219,
+    "title": "Issues building bitcoin on Windows 7",
+    "url": "https://bitcointalk.org/index.php?topic=1034",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-09-14T12:14:25Z"
+  },
+  {
+    "id": 220,
+    "title": "The case for removing IP transactions",
+    "url": "https://bitcointalk.org/index.php?topic=1048",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-09-16T02:57:43Z"
+  },
+  {
+    "id": 221,
+    "title": "Bug?  /usr/bin/bitcoind \"\"",
+    "url": "https://bitcointalk.org/index.php?topic=1063",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-09-18T22:19:22Z"
+  },
+  {
+    "id": 222,
+    "title": "The Niche List",
+    "url": "https://bitcointalk.org/index.php?topic=1268",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-09-23T16:00:16Z"
+  },
+  {
+    "id": 223,
+    "title": "Internal version number",
+    "url": "https://bitcointalk.org/index.php?topic=1269",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-09-23T16:19:08Z"
+  },
+  {
+    "id": 224,
+    "title": "How divisible are bitcoins - the technical side",
+    "url": "https://bitcointalk.org/index.php?topic=1271",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-09-23T17:35:35Z"
+  },
+  {
+    "id": 225,
+    "title": "How To Make a Distributed BitCoin Escrow Service",
+    "url": "https://bitcointalk.org/index.php?topic=1283",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-09-26T01:16:18Z"
+  },
+  {
+    "id": 226,
+    "title": "Remote RPC access",
+    "url": "https://bitcointalk.org/index.php?topic=1291",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-09-27T16:50:25Z"
+  },
+  {
+    "id": 227,
+    "title": "I broke my wallet, sends never confirm now.",
+    "url": "https://bitcointalk.org/index.php?topic=1306",
+    "downloaded": true,
+    "num_satoshi": 3,
+    "source": "bitcointalk",
+    "date": "2010-09-29T11:05:57Z"
+  },
+  {
+    "id": 228,
+    "title": "Prioritized transactions, and tx fees",
+    "url": "https://bitcointalk.org/index.php?topic=1314",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-09-29T20:13:30Z"
+  },
+  {
+    "id": 229,
+    "title": "0.3.13 RC1 for Windows, please test",
+    "url": "https://bitcointalk.org/index.php?topic=1322",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-09-30T17:04:15Z"
+  },
+  {
+    "id": 230,
+    "title": "Version 0.3.13, please upgrade",
+    "url": "https://bitcointalk.org/index.php?topic=1327",
+    "downloaded": true,
+    "num_satoshi": 8,
+    "source": "bitcointalk",
+    "date": "2010-10-01T00:34:35Z"
+  },
+  {
+    "id": 231,
+    "title": "How to overthrow the GPU Oligarchs",
+    "url": "https://bitcointalk.org/index.php?topic=1332",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-10-01T11:31:46Z"
+  },
+  {
+    "id": 232,
+    "title": "python OpenCL bitcoin miner",
+    "url": "https://bitcointalk.org/index.php?topic=1334",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-10-01T18:21:59Z"
+  },
+  {
+    "id": 233,
+    "title": "[PATCH] increase block size limit",
+    "url": "https://bitcointalk.org/index.php?topic=1347",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-10-03T20:13:42Z"
+  },
+  {
+    "id": 234,
+    "title": "Tor connections not working reliably, many seednodes offline",
+    "url": "https://bitcointalk.org/index.php?topic=1375",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-10-06T01:59:38Z"
+  },
+  {
+    "id": 235,
+    "title": "Key pool feature for safer wallet backup",
+    "url": "https://bitcointalk.org/index.php?topic=1414",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-10-09T20:19:33Z"
+  },
+  {
+    "id": 236,
+    "title": "Version 0.3.14",
+    "url": "https://bitcointalk.org/index.php?topic=1528",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-10-21T16:39:27Z"
+  },
+  {
+    "id": 237,
+    "title": "ERROR - PLEASE HELP ME!",
+    "url": "https://bitcointalk.org/index.php?topic=1530",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-10-21T20:52:09Z"
+  },
+  {
+    "id": 238,
+    "title": "Win7 64bit since last patch Tues now crashes",
+    "url": "https://bitcointalk.org/index.php?topic=1540",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-10-22T21:24:38Z"
+  },
+  {
+    "id": 239,
+    "title": "Suggestion: Allow short messages to be sent together with bitcoins ?",
+    "url": "https://bitcointalk.org/index.php?topic=1545",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-10-23T15:11:17Z"
+  },
+  {
+    "id": 240,
+    "title": "Some testing that I did on the testnetwork, my findings.",
+    "url": "https://bitcointalk.org/index.php?topic=1668",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-11-05T23:44:00Z"
+  },
+  {
+    "id": 241,
+    "title": "Wikileaks contact info?",
+    "url": "https://bitcointalk.org/index.php?topic=1735",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-11-10T12:49:16Z"
+  },
+  {
+    "id": 242,
+    "title": "Version 0.3.15",
+    "url": "https://bitcointalk.org/index.php?topic=1780",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-11-13T23:26:40Z"
+  },
+  {
+    "id": 243,
+    "title": "Need OP_BLOCKNUMBER to allow \"time\" limited transactions",
+    "url": "https://bitcointalk.org/index.php?topic=1786",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-11-15T01:17:03Z"
+  },
+  {
+    "id": 244,
+    "title": "BitDNS and Generalizing Bitcoin",
+    "url": "https://bitcointalk.org/index.php?topic=1790",
+    "downloaded": true,
+    "num_satoshi": 6,
+    "source": "bitcointalk",
+    "date": "2010-11-15T03:02:31Z"
+  },
+  {
+    "id": 245,
+    "title": "Transaction / spam flood attack currently under way",
+    "url": "https://bitcointalk.org/index.php?topic=1850",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-11-19T19:02:38Z"
+  },
+  {
+    "id": 246,
+    "title": "New getwork",
+    "url": "https://bitcointalk.org/index.php?topic=1901",
+    "downloaded": true,
+    "num_satoshi": 4,
+    "source": "bitcointalk",
+    "date": "2010-11-23T19:50:12Z"
+  },
+  {
+    "id": 247,
+    "title": "New demonstration CPU miner available",
+    "url": "https://bitcointalk.org/index.php?topic=1925",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-11-25T00:45:23Z"
+  },
+  {
+    "id": 248,
+    "title": "RFC: ship block chain 1-74000 with release tarballs?",
+    "url": "https://bitcointalk.org/index.php?topic=1931",
+    "downloaded": true,
+    "num_satoshi": 5,
+    "source": "bitcointalk",
+    "date": "2010-11-25T07:07:51Z"
+  },
+  {
+    "id": 249,
+    "title": "Version 0.3.17",
+    "url": "https://bitcointalk.org/index.php?topic=1946",
+    "downloaded": true,
+    "num_satoshi": 2,
+    "source": "bitcointalk",
+    "date": "2010-11-25T20:07:36Z"
+  },
+  {
+    "id": 250,
+    "title": "[2.5+ EH] Slush Pool (slushpool.com); World's First Mining Pool",
+    "url": "https://bitcointalk.org/index.php?topic=1976",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-11-27T13:45:41Z"
+  },
+  {
+    "id": 251,
+    "title": "Is safe running bitcoins with the same wallet on more computers simultaneously?",
+    "url": "https://bitcointalk.org/index.php?topic=1986",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-11-28T13:44:12Z"
+  },
+  {
+    "id": 252,
+    "title": "Incompatible wallet format with latest bitcoin-git ?",
+    "url": "https://bitcointalk.org/index.php?topic=2007",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-11-29T20:45:46Z"
+  },
+  {
+    "id": 253,
+    "title": "JSON-RPC method idea: list transactions newer than a given txid",
+    "url": "https://bitcointalk.org/index.php?topic=2151",
+    "downloaded": true,
+    "num_satoshi": 4,
+    "source": "bitcointalk",
+    "date": "2010-12-08T17:07:21Z"
+  },
+  {
+    "id": 254,
+    "title": "Version 0.3.18",
+    "url": "https://bitcointalk.org/index.php?topic=2162",
+    "downloaded": true,
+    "num_satoshi": 3,
+    "source": "bitcointalk",
+    "date": "2010-12-08T23:19:24Z"
+  },
+  {
+    "id": 255,
+    "title": "Fees in BitDNS confusion",
+    "url": "https://bitcointalk.org/index.php?topic=2181",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-12-09T19:45:38Z"
+  },
+  {
+    "id": 256,
+    "title": "minimalistic bitcoin client on D language?",
+    "url": "https://bitcointalk.org/index.php?topic=2188",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-12-10T09:22:33Z"
+  },
+  {
+    "id": 257,
+    "title": "Accounts example code",
+    "url": "https://bitcointalk.org/index.php?topic=2202",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-12-10T19:21:03Z"
+  },
+  {
+    "id": 258,
+    "title": "Bitcoin and buffer overflow attacks",
+    "url": "https://bitcointalk.org/index.php?topic=2208",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-12-11T05:49:22Z"
+  },
+  {
+    "id": 259,
+    "title": "PC World Article on Bitcoin",
+    "url": "https://bitcointalk.org/index.php?topic=2216",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-12-11T20:46:19Z"
+  },
+  {
+    "id": 260,
+    "title": "Added some DoS limits, removed safe mode (0.3.19)",
+    "url": "https://bitcointalk.org/index.php?topic=2228",
+    "downloaded": true,
+    "num_satoshi": 1,
+    "source": "bitcointalk",
+    "date": "2010-12-12T18:22:33Z"
+  }
+]

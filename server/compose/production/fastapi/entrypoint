@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+python scripts/wait_for_postgres.py
+
+python -m alembic upgrade head
+python cli.py content initialize
+python cli.py cdn sync
+exec gunicorn sni.main:app --workers 4 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:8000

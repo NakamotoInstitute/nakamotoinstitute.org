@@ -1,12 +1,6 @@
 *.py[cod]
 .DS_Store
 
-tmp/*
-migrations/*
-addresses/*
-
-*.pdf
-
 # C extensions
 *.so
 
@@ -22,6 +16,7 @@ sdist
 develop-eggs
 .installed.cfg
 lib
+!client/**/lib
 lib64
 __pycache__
 
@@ -43,6 +38,7 @@ nosetests.xml
 
 *.sublime-project
 *.sublime-workspace
+*.code-workspace
 venv/*
 
 .python-version
@@ -52,14 +48,56 @@ app.db-journal
 
 .env
 
-*.mp3
-.webassets-cache/*
 cache/
-logs/
-data/prices.json
-sni/static/css/main.css
-app/static/docs/*.epub
-app/static/docs/*.mobi
-app/static/docs/*.zip
+
+.ruff_cache
 
 .vscode
+
+## CLIENT GITIGNORE
+
+# dependencies
+node_modules
+.pnp
+.pnp.js
+
+# testing
+coverage
+
+# next.js
+.next/
+out/
+
+# production
+build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+## SERVER GITIGNORE
+
+server/.envs/.production/*
+server/.justenv
+*.epub
+*.mobi
+*.mp3
+*.pdf
+*.rar
+*.tgz
+*.zip

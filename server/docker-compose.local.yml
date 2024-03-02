@@ -1,0 +1,31 @@
+version: '3'
+services:
+  fastapi:
+    build:
+      context: .
+      dockerfile: ./compose/local/fastapi/Dockerfile
+    depends_on:
+      - postgres
+    env_file:
+      - ./.envs/.local/.fastapi
+      - ./.envs/.local/.postgres
+    volumes:
+      - .:/app:z
+    ports:
+      - "8000:8000"
+    stdin_open: true
+    tty: true
+
+  postgres:
+    image: postgres:16
+    volumes:
+      - sni_local_postgres_data:/var/lib/postgresql/data
+      - sni_local_postgres_data_backups:/backups
+    env_file:
+      - ./.envs/.local/.postgres
+    ports:
+      - "5234:5432"
+
+volumes:
+  sni_local_postgres_data: {}
+  sni_local_postgres_data_backups: {}

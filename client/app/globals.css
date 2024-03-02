@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  a {
+    @apply text-blue-500;
+  }
+
+  a:hover {
+    @apply text-blue-600;
+  }
+}
+
+@layer components {
+  .page-content > h2 {
+      @apply mb-2 text-3xl font-medium;
+  }
+
+  .page-content > p {
+    @apply mb-4;
+  }
+
+  .twbs-container {
+    @apply mx-auto px-3;
+    @apply w-full max-w-4xl;
+  }
+
+  .codeheader,
+  .quoteheader {
+    @apply border border-neutral-300;
+    @apply p-1.5;
+    @apply font-bold;
+  }
+
+  .code,
+  .quote {
+    @apply border border-neutral-300 border-t-0;
+    @apply p-1.5;
+  }
+
+  .code {
+    @apply font-mono whitespace-pre-wrap;
+  }
+
+  .quote {
+    @apply mb-3;
+  }
+}
