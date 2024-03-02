@@ -33,9 +33,9 @@ translators:
 
 하이퍼비트코인화는 아마도 마치 제2의 사춘기처럼 모두에게 혼란스러운 시기가 될 것입니다. 그러나, 이 시기가 지나고 나면, 그 누구도 우리가 이전의 시스템으로 어떻게 살아왔는지 상상조차 할 수 없을 것입니다.
 
-<div class="my-4 text-center">
-  <img class="img-fluid rounded d-block mx-auto" alt="Bitcoinbody" src="/static/img/mempool/hyperbitcoinization/Bitcoinbody.png"/>
-</div>
+<figure>
+  <img src="/static/img/mempool/hyperbitcoinization/Bitcoinbody.png" alt="Bitcoinbody" />
+</figure>
 
 <p class="text-muted text-center">
 	(작성자가 그린 원화)

@@ -95,7 +95,9 @@ A block header with no transactions would be about 80 bytes. If we suppose block
 
 It is possible to verify payments without running a full network node. A user only needs to keep a copy of the block headers of the longest proof-of-work chain, which he can get by querying network nodes until he's convinced he has the longest chain, and obtain the Merkle branch linking the transaction to the block it's timestamped in. He can't check the transaction for himself, but by linking it to a place in the chain, he can see that a network node has accepted it, and blocks added after it further confirm the network has accepted it.
 
-<img class="img-fluid d-block mx-auto my-4" src="/static/img/library/bitcoin/simplified-payment-verification.svg" onerror="this.src='/img/library/bitcoin/simplified-payment-verification.png'">
+<figure>
+  <img src="/static/img/library/bitcoin/simplified-payment-verification.svg" onerror="this.src='/img/library/bitcoin/simplified-payment-verification.png'" alt="Simplified payment verification" />
+</figure>
 
 As such, the verification is reliable as long as honest nodes control the network, but is more vulnerable if the network is overpowered by an attacker. While network nodes can verify transactions for themselves, the simplified method can be fooled by an attacker's fabricated transactions for as long as the attacker can continue to overpower the network. One strategy to protect against this would be to accept alerts from network nodes when they detect an invalid block, prompting the user's software to download the full block and alerted transactions to confirm the inconsistency. Businesses that receive frequent payments will probably still want to run their own nodes for more independent security and quicker verification.
 
@@ -103,7 +105,9 @@ As such, the verification is reliable as long as honest nodes control the networ
 
 Although it would be possible to handle coins individually, it would be unwieldy to make a separate transaction for every cent in a transfer. To allow value to be split and combined, transactions contain multiple inputs and outputs. Normally there will be either a single input from a larger previous transaction or multiple inputs combining smaller amounts, and at most two outputs: one for the payment, and one returning the change, if any, back to the sender.
 
-<img class="img-fluid d-block mx-auto my-4" src="/static/img/library/bitcoin/combining-splitting-value.svg" onerror="this.src='/img/library/bitcoin/combining-splitting-value.png'">
+<figure>
+  <img src="/static/img/library/bitcoin/combining-splitting-value.svg" onerror="this.src='/img/library/bitcoin/combining-splitting-value.png'" alt="Combining and splitting value" />
+</figure>
 
 It should be noted that fan-out, where a transaction depends on several transactions, and those transactions depend on many more, is not a problem here. There is never the need to extract a complete standalone copy of a transaction's history.
 
@@ -111,7 +115,9 @@ It should be noted that fan-out, where a transaction depends on several transact
 
 The traditional banking model achieves a level of privacy by limiting access to information to the parties involved and the trusted third party. The necessity to announce all transactions publicly precludes this method, but privacy can still be maintained by breaking the flow of information in another place: by keeping public keys anonymous. The public can see that someone is sending an amount to someone else, but without information linking the transaction to anyone. This is similar to the level of information released by stock exchanges, where the time and size of individual trades, the "tape", is made public, but without telling who the parties were.
 
-<img class="img-fluid d-block mx-auto my-4" src="/static/img/library/bitcoin/privacy.svg" onerror="this.src='/img/library/bitcoin/privacy.png'">
+<figure>
+  <img src="/static/img/library/bitcoin/privacy.svg" onerror="this.src='/static/img/library/bitcoin/privacy.png'" alt="Privacy" />
+</figure>
 
 As an additional firewall, a new key pair should be used for each transaction to keep them from being linked to a common owner. Some linking is still unavoidable with multi-input transactions, which necessarily reveal that their inputs were owned by the same owner. The risk is that if the owner of a key is revealed, linking could reveal other transactions that belonged to the same owner.
 
