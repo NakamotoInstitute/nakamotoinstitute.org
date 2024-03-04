@@ -35,7 +35,16 @@ def get_r2_files(bucket_name):
 
 def upload_file(file_path, bucket_name, file_key):
     """Upload a file to R2."""
-    client.upload_file(Filename=str(file_path), Bucket=bucket_name, Key=file_key)
+    extra_args = {}
+    if file_path.suffix == ".svg":
+        extra_args["ContentType"] = "image/svg+xml"
+
+    client.upload_file(
+        Filename=str(file_path),
+        Bucket=bucket_name,
+        Key=file_key,
+        ExtraArgs=extra_args if extra_args else None,
+    )
     print(f"Uploaded {file_key}")
 
 
