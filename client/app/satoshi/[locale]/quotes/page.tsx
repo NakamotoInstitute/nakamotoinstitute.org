@@ -70,7 +70,7 @@ export default async function QuotesIndex({
       <footer className="text-center italic">
         <p>
           Special thanks to{" "}
-          <Link href="https://www.buybitcoinworldwide.com/">
+          <Link href="https://charts.bitbo.io/">
             Jordan Tuwiner
           </Link>{" "}
           for indexing quotations.
