@@ -14,7 +14,7 @@ export async function generateMetadata({
       template: `%s | ${siteTitle}`,
       default: siteTitle,
     },
-    description: t("Bitcoin scholarship"),
+    description: t("Advancing and preserving Bitcoin knowledge"),
     robots: {
       index: false,
       follow: false,

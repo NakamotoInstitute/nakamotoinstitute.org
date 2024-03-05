@@ -13,7 +13,7 @@ export async function generateMetadata({
       template: `%s | ${siteTitle}`,
       default: `${t("The Complete Satoshi")} | ${siteTitle}`,
     },
-    description: t("Bitcoin scholarship"),
+    description: t("Advancing and preserving Bitcoin knowledge"),
     robots: {
       index: false,
       follow: false,
