@@ -3,9 +3,11 @@ import { NextRequest, NextResponse } from "next/server";
 import { i18nRoutingMiddleware } from "@/lib/middleware/i18n";
 import { subdomainRouting } from "@/lib/middleware/subdomains";
 
+import { env } from "./env";
+
 const prodDomainToPathMapping = [
   {
-    domain: process.env.SATOSHI_HOST as string,
+    domain: env.SATOSHI_HOST,
     path: "/satoshi",
   },
 ];
@@ -18,7 +20,7 @@ const localDomainToPathMapping = [
 ];
 
 export const domainToPathMapping = (() => {
-  switch (process.env.VERCEL_ENV) {
+  switch (env.VERCEL_ENV) {
     case "development":
       return localDomainToPathMapping;
     case "production":

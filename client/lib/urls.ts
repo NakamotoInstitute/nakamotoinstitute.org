@@ -1,4 +1,5 @@
 import { ToggleLinkProps } from "@/app/components/LanguageToggle";
+import { env } from "@/env";
 import { locales } from "@/i18n";
 import languages from "@/locales/languages.json";
 import { domainToPathMapping } from "@/middleware";
@@ -7,13 +8,13 @@ import { EmailSource } from "./api/schemas/emails";
 import { ForumPostSource } from "./api/schemas/posts";
 
 const APP_BASE_URL = (() => {
-  switch (process.env.VERCEL_ENV) {
+  switch (env.VERCEL_ENV) {
     case "development":
       return "http://localhost:3000";
     case "production":
-      return process.env.APP_BASE_URL as string;
+      return env.APP_BASE_URL;
     default:
-      return `https://${process.env.VERCEL_URL as string}`;
+      return `https://${env.VERCEL_URL}`;
   }
 })();
 
@@ -42,7 +43,7 @@ export const urls = (locale: Locale) => {
 
   const getSatoshiUrl = (path: string) => {
     const fullPath =
-      locale === "en" && process.env.VERCEL_ENV !== "preview"
+      locale === "en" && env.VERCEL_ENV !== "preview"
         ? `${satoshiBase}${path}`
         : `${satoshiBase}/${locale}${path}`;
     return toFullUrl(fullPath);
@@ -120,7 +121,7 @@ export const urls = (locale: Locale) => {
   };
 };
 
-export const cdnUrl = (path: string) => process.env.CDN_BASE_URL + path;
+export const cdnUrl = (path: string) => env.CDN_BASE_URL + path;
 
 export const generateLocaleToggleLinks = (
   locale: string,

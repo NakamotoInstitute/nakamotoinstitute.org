@@ -1,9 +1,15 @@
-const satoshiDestination =
-  process.env.VERCEL_ENV === "development"
-    ? `http://satoshi.localhost:${process.env.PORT ?? 3000}`
-    : `https://${process.env.SATOSHI_HOST}`;
+import createJiti from "jiti";
+import { fileURLToPath } from "node:url";
 
-const cdnBaseUrl = new URL(process.env.CDN_BASE_URL);
+const jiti = createJiti(fileURLToPath(import.meta.url));
+const { env } = jiti("./env");
+
+const satoshiDestination =
+  env.VERCEL_ENV === "development"
+    ? `http://satoshi.localhost:${env.PORT}`
+    : `https://${env.SATOSHI_HOST}`;
+
+const cdnBaseUrl = new URL(env.CDN_BASE_URL);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -26,7 +32,7 @@ const nextConfig = {
         permanent: true,
       },
     ];
-    if (process.env.VERCEL_ENV !== "preview") {
+    if (env.VERCEL_ENV !== "preview") {
       redirects.push({
         source: "/satoshi/:path*",
         destination: satoshiDestination,
@@ -37,4 +43,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;

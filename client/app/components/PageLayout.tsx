@@ -1,5 +1,6 @@
 import clsx from "clsx";
 
+import { env } from "@/env";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateLocaleToggleLinks, urls } from "@/lib/urls";
 
@@ -27,7 +28,7 @@ export async function PageLayout({
 
   return (
     <body className="flex min-h-screen flex-col">
-      <Fathom siteId={process.env.FATHOM_ID!} />
+      <Fathom siteId={env.FATHOM_ID!} />
       <Navbar
         locale={locale}
         homeHref={urls(locale).home}
