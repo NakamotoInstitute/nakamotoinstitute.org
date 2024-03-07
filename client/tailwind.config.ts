@@ -43,6 +43,13 @@ const config: Config = {
       typography: ({ theme }: PluginAPI) => ({
         DEFAULT: {
           css: {
+            "ol.references,ul.references": {
+              listStyle: "none",
+              padding: 0,
+              "& li": {
+                padding: 0,
+              },
+            },
             "blockquote p:first-of-type::before": null,
             "blockquote p:last-of-type::after": null,
             ".footnotes": {
@@ -78,7 +85,7 @@ const config: Config = {
               margin: "0.5em 0",
               padding: "0.5em 0",
               overflowX: "scroll",
-            }
+            },
           },
         },
       }),
