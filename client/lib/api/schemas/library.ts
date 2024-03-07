@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 import { getAuthorIndex } from "./authors";
-import { zTranslations } from "./shared";
+import { zTranslations, zTranslators } from "./shared";
 
 export const zFormat = z.enum(["pdf", "epub", "mobi", "txt"]);
 export type LibraryFormat = z.infer<typeof zFormat>;
@@ -33,6 +33,7 @@ export const zDocument = zDocumentBase.extend({
   image: z.string().nullable(),
   imageAlt: z.string().nullable(),
   hasMath: z.boolean(),
+  translators: zTranslators,
 });
 export type Document = z.infer<typeof zDocument>;
 

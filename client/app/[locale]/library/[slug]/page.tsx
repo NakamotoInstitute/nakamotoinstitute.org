@@ -1,13 +1,16 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { Trans } from "react-i18next/TransWithoutContext";
 
 import { PageLayout } from "@/app/components/PageLayout";
 import { Rehype } from "@/app/components/Rehype";
+import { RenderedItemsList } from "@/app/components/RenderedItemsList";
 import { getLibraryDoc, getLibraryParams } from "@/lib/api/library";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { getDir } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 
+import { TranslationLinks } from "../../mempool/components/TranslationLinks";
 import { DocHeader } from "../components/DocHeader";
 
 export const dynamicParams = false;
@@ -58,6 +61,57 @@ export default async function LibraryDetail({
           <>
             <section className="prose mx-auto" dir={getDir(locale)}>
               <Rehype hasMath={doc.hasMath}>{doc.content}</Rehype>
+              {doc.translators.length > 0 ? (
+                <>
+                  <hr />
+                  <p>
+                    <Trans
+                      t={t}
+                      i18nKey="Translated by <links />"
+                      components={{
+                        links: (
+                          <RenderedItemsList
+                            as="span"
+                            locale={locale}
+                            items={doc.translators}
+                            renderItem={(item) =>
+                              item.url ? (
+                                <Link key={item.slug} href={item.url}>
+                                  {item.name}
+                                </Link>
+                              ) : (
+                                item.name
+                              )
+                            }
+                          />
+                        ),
+                      }}
+                    />
+                  </p>
+                </>
+              ) : null}
+              {doc.translations.length > 0 ? (
+                <>
+                  <hr />
+                  <p>
+                    <Trans
+                      t={t}
+                      i18nKey="Read in <links />"
+                      components={{
+                        links: (
+                          <TranslationLinks
+                            locale={locale}
+                            translations={doc.translations}
+                            urlFunc={(item) =>
+                              urls(item.locale).library.doc(item.slug)
+                            }
+                          />
+                        ),
+                      }}
+                    />
+                  </p>
+                </>
+              ) : null}
             </section>
           </>
         ) : null}
