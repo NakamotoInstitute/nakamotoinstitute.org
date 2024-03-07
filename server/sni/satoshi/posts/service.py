@@ -59,7 +59,11 @@ async def get_post_by_source(
 
 
 async def get_post(satoshi_id: int, *, db_session: AsyncSession) -> ForumPost | None:
-    query = select(ForumPost).filter_by(satoshi_id=satoshi_id)
+    query = (
+        select(ForumPost)
+        .options(joinedload(ForumPost.thread))
+        .filter_by(satoshi_id=satoshi_id)
+    )
 
     return await db_session.scalar(query)
 
