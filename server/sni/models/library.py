@@ -110,6 +110,7 @@ class DocumentTranslation(MarkdownContent):
     title: Mapped[str] = mapped_column(String, nullable=False)
     sort_title: Mapped[str] = mapped_column(String, nullable=True)
     display_title: Mapped[str] = mapped_column(String, nullable=True)
+    display_date: Mapped[str] = mapped_column(String, nullable=True)
     subtitle: Mapped[str] = mapped_column(String, nullable=True)
     slug: Mapped[str] = mapped_column(String, nullable=False)
     external: Mapped[str] = mapped_column(String, nullable=True)

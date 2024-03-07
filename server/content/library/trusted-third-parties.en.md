@@ -3,7 +3,7 @@ title: Trusted Third Parties are Security Holes
 authors:
   - nick-szabo
 date: 2001
-displayDate: Originally published in 2001
+display_date: Originally published in 2001
 categories:
   - cryptography
 doctype: essay

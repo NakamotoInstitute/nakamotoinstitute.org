@@ -3,7 +3,7 @@ title: Smart Contracts Glossary
 authors:
   - nick-szabo
 date: 1995
-displayDate: Originally published in 1995
+display_date: Originally published in 1995
 categories:
   - cryptography
   - economics

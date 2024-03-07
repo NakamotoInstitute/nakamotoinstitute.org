@@ -1,5 +1,6 @@
 ---
 title: "Pagando en conchas marinas: una reformulación del origen del dinero"
+display_date: "Publicado originalmente en 2002"
 translators:
   - juan-fernando-carpio
 ---

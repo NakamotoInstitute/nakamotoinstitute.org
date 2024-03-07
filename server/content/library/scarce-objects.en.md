@@ -3,7 +3,7 @@ title: Scarce Objects
 authors:
   - nick-szabo
 date: 2004
-displayDate: Originally published in 2004
+display_date: Originally published in 2004
 categories:
   - cryptography
   - economics

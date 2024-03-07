@@ -3,7 +3,7 @@ title: Secure Property Titles with Owner Authority
 authors:
   - nick-szabo
 date: 1998
-displayDate: Originally published in 1998
+display_date: Originally published in 1998
 categories:
   - cryptography
   - law

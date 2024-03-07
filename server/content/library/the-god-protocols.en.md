@@ -4,7 +4,7 @@ sort_title: God Protocols, The
 authors:
   - nick-szabo
 date: 1999
-displayDate: Originally published in 1997
+display_date: Originally published in 1997
 categories:
   - cryptography
 doctype: essay

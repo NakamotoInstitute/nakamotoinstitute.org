@@ -3,7 +3,7 @@ title: Why I Wrote PGP
 authors:
   - philip-r-zimmermann
 date: 1991
-displayDate: Part of the Original 1991 <em>PGP User's Guide</em> (updated in 1999)
+display_date: Part of the Original 1991 <em>PGP User's Guide</em> (updated in 1999)
 image: prz.jpg
 categories:
   - cryptography

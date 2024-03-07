@@ -4,7 +4,7 @@ sort_title: Cathedral and the Bazaar, The
 authors:
   - eric-s-raymond
 date: 2000
-displayDate: Version 3.0 – August 2, 2002<br>(Originally published in 2000)
+display_date: Version 3.0 – August 2, 2002<br>(Originally published in 2000)
 categories:
   - cryptography
   - Cypherpunk

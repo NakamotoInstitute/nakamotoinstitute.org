@@ -3,7 +3,7 @@ title: Financial Cryptography in 7 Layers
 authors:
   - ian-grigg
 date: 2000
-displayDate: "1998 – 2000"
+display_date: "1998 – 2000"
 categories:
   - economics
   - cryptography

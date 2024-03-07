@@ -3,7 +3,7 @@ title: Credit with Privity
 authors:
   - nick-szabo
 date: 1996
-displayDate: Originally published in 1996
+display_date: Originally published in 1996
 categories:
   - economics
   - technology

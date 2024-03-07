@@ -4,7 +4,7 @@ sort_title: "Right to Read: A Dystopian Short Story, The"
 authors:
   - richard-m-stallman
 date: 1997-02
-displayDate: Originally published in 1996
+display_date: Originally published in 1996
 categories:
   - computer science
 doctype: essay

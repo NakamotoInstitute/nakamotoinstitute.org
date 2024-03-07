@@ -3,7 +3,7 @@ title: "Shelling Out: The Origins of Money"
 authors:
   - nick-szabo
 date: 2002
-displayDate: Originally published in 2002
+display_date: Originally published in 2002
 categories:
   - economics
 doctype: essay

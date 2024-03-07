@@ -3,7 +3,7 @@ title: Formalizing and Securing Relationships on Public Networks
 authors:
   - nick-szabo
 date: 1997
-displayDate: Originally published in 1997
+display_date: Originally published in 1997
 categories:
   - cryptography
   - law

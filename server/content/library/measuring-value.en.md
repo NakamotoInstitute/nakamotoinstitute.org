@@ -3,7 +3,7 @@ title: Measuring Value
 authors:
   - nick-szabo
 date: 2002
-displayDate: Originally published in 1997
+display_date: Originally published in 1997
 subtitle: "A crucial issue in transaction costs economics"
 categories:
   - economics

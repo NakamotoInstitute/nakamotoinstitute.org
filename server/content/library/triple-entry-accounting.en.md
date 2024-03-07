@@ -3,7 +3,7 @@ title: Triple Entry Accounting
 authors:
   - ian-grigg
 date: 2005-12-25
-displayDate: "Revision: 1.7 - Work in Progress<br>December 25, 2005"
+display_date: "Revision: 1.7 - Work in Progress<br>December 25, 2005"
 categories:
   - cryptography
   - finance

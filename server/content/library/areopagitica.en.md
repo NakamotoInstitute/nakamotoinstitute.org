@@ -3,8 +3,8 @@ title: "Areopagitica: A Speech for the Liberty of Unlicensed Printing to the Par
 authors:
   - john-milton
 date: 1644
-displayTitle: Areopagitica;<br>A Speech of Mr. John Milton<br>For the Liberty of Unlicens'd Printing,<br>to the Parliament of England
-displayDate: London,<br>Printed in the Year 1644
+display_title: Areopagitica;<br>A Speech of Mr. John Milton<br>For the Liberty of Unlicens'd Printing,<br>to the Parliament of England
+display_date: London,<br>Printed in the Year 1644
 categories:
   - law
 doctype: essay

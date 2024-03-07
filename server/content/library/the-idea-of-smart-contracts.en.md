@@ -4,7 +4,7 @@ sort_title: Idea of Smart Contracts, The
 authors:
   - nick-szabo
 date: 1997
-displayDate: Originally published in 1997
+display_date: Originally published in 1997
 categories:
   - economics
   - cryptography

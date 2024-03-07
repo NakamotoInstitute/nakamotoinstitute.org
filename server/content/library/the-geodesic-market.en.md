@@ -4,7 +4,7 @@ sort_title: Geodesic Market, The
 authors:
   - robert-hettinga
 date: 1998-04
-displayDate: Originally published from April 1998 through December 1999
+display_date: Originally published from April 1998 through December 1999
 formats:
   - pdf
 categories:

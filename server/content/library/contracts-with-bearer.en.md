@@ -3,7 +3,7 @@ title: Contracts with Bearer
 authors:
   - nick-szabo
 date: 1999
-displayDate: Originally published in 1997
+display_date: Originally published in 1997
 categories:
   - cryptography
   - economics

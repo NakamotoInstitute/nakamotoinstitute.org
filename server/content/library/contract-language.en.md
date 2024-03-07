@@ -4,7 +4,7 @@ sort_title: Formal Language for Analyzing Contracts, A
 authors:
   - nick-szabo
 date: 2002
-displayDate: Preliminary Draft from 2002
+display_date: Preliminary Draft from 2002
 categories:
   - cryptography
   - law

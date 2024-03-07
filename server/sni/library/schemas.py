@@ -53,7 +53,6 @@ class DocumentCanonicalMDModel(BaseModel):
 class DocumentMDModel(BaseModel):
     title: str
     subtitle: str | None = None
-    display_title: str | None = None
     external: str | None = None
     sort_title: str | None = None
     image_alt: str | None = None
@@ -67,6 +66,8 @@ class DocumentMDModel(BaseModel):
 
 class DocumentTranslationMDModel(DocumentMDModel):
     slug: str | None = None
+    display_title: str | None = None
+    display_date: str | None = None
     external: str | None = None
     translators: list[str] = []
 
@@ -108,6 +109,7 @@ class DocumentModel(DocumentBaseModel):
     html_content: str = Field(alias="content")
     subtitle: str | None
     display_title: str | None
+    display_date: str | None
     image: str | None = Field(validation_alias=AliasPath("document", "image_url"))
     image_alt: str | None
     has_math: bool = Field(

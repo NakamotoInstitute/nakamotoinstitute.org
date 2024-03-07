@@ -30,9 +30,14 @@ export async function DocHeader({ locale, doc }: DocHeaderProps) {
           authors={doc.authors}
         />
         <p className="text-2xl font-medium">
-          <time dateTime={formatTimeAttr(doc.date, doc.granularity)}>
-            {formatDocDate(locale, doc.date, doc.granularity)}
-          </time>
+          <time
+            dateTime={formatTimeAttr(doc.date, doc.granularity)}
+            dangerouslySetInnerHTML={{
+              __html:
+                doc.displayDate ??
+                formatDocDate(locale, doc.date, doc.granularity),
+            }}
+          />
         </p>
         {doc.image ? (
           // eslint-disable-next-line @next/next/no-img-element
