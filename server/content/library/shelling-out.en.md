@@ -34,7 +34,7 @@ The precursors of money, along with language, enabled early modern humans to sol
 
 <h2 id="money">Money</h2>
 
-From the very start, England's 17th century colonies in America had a problem &ndash; a shortage of coins<sup><a href="#fnD94" id="refD94-1">[D94]</a></sup><sup><a href="#fnT01" id="refT01-1">[T01]</a></sup> The British idea was to grow large amounts of tobacco, cut timber for the ships of their global navy and merchant marine, and so forth, sending in return the supplies they felt were needed to keep the Americans working. In effect, early colonists were supposed to both work for the company and shop at the company store. The investors and the Crown much preferred this to paying in coin what the farmers might ask, letting the farmers themselves buy the supplies &ndash; and, heaven forbid, keep some of the profit as well.
+From the very start, England's 17th century colonies in America had a problem &ndash; a shortage of coins.<sup><a href="#fnD94" id="refD94-1">[D94]</a></sup><sup><a href="#fnT01" id="refT01-1">[T01]</a></sup> The British idea was to grow large amounts of tobacco, cut timber for the ships of their global navy and merchant marine, and so forth, sending in return the supplies they felt were needed to keep the Americans working. In effect, early colonists were supposed to both work for the company and shop at the company store. The investors and the Crown much preferred this to paying in coin what the farmers might ask, letting the farmers themselves buy the supplies &ndash; and, heaven forbid, keep some of the profit as well.
 
 The colonists' solution was at hand, but it took a few years for them to recognize it. The natives had money, but it was very different from the money Europeans were used to. American Indians had been using money for millennia, and quite useful money it turned out to be for the newly arrived Europeans &ndash; despite the prejudice among some that only metal with the faces of their political leaders stamped on it constituted real money. Worse, the New England natives used neither silver nor gold. Instead, they used the most appropriate money to be found in their environment &ndash; durable skeleton parts of their prey. Specifically, they used wampum, shells of the clam <i>Venus mercenaria</i> and its relatives, strung onto pendants.
 
@@ -149,7 +149,7 @@ We shall describe how collectibles lowered transaction costs in each kind of wea
 
 All these kinds of value transfer occurred in many cultures of human prehistory, probably from the beginning of Homo sapiens sapiens. The gains to be made, by one or both parties, from these major life event transfers of wealth, were so great that they occurred despite high transaction costs. Compared to modern money, primitive money had a very low velocity &ndash; it might be transferred only a handful of times in an average individual's lifetime. Nevertheless, a durable collectible, what today we would call an heirloom, could persist for many generations and added substantial value at each transfer &ndash; often making the transfer even possible at all. Tribes therefore often spent large amounts of time on the seemingly frivolous tasks of manufacturing and exploring for the raw materials of jewelry and other collectibles.
 
-<h3>The Kula Ring</h3>
+### The Kula Ring
 
 <figure>
   <img src="/static/img/library/shelling-out/KulaRing.gif" alt="" />
@@ -221,9 +221,9 @@ Like most hunter-gatherers, the !Kung spend most of the year in small, dispersed
   <figcaption>Necklaces used in the hxaro exchange.</figcaption>
 </figure>
 
-One of the main things the !Kung buy and sell with their collectibles are abstract rights to enter another band's territory and hunt or gather food there. Trade in these rights is especially brisk during local shortages which can be alleviated by foraging in a neighbor's territory<sup><a href="#fnW77" id="refW77">[W77]</a></sup><sup><a href="#fnW82" id="refW82">[W82]</a></sup> !Kung bands mark their territories with arrows; trespassing without having purchased the right to enter and forage is tantamount to a declaration of war. Like the inter-band food trade discussed above, the use of collectibles to purchase foraging rights constitutes an "insurance policy against starvation", to use the phrase of Stanley Ambrose.<sup><a href="#fnA98" id="refA98-2">[A98]</a></sup>
+One of the main things the !Kung buy and sell with their collectibles are abstract rights to enter another band's territory and hunt or gather food there. Trade in these rights is especially brisk during local shortages which can be alleviated by foraging in a neighbor's territory.<sup><a href="#fnW77" id="refW77">[W77]</a></sup><sup><a href="#fnW82" id="refW82">[W82]</a></sup> !Kung bands mark their territories with arrows; trespassing without having purchased the right to enter and forage is tantamount to a declaration of war. Like the inter-band food trade discussed above, the use of collectibles to purchase foraging rights constitutes an "insurance policy against starvation", to use the phrase of Stanley Ambrose.<sup><a href="#fnA98" id="refA98-2">[A98]</a></sup>
 
-Although anatomically modern humans surely had conscious thought, language, and some ability to plan, it would have required little conscious thought or language, and very little planning, to generate trades. It was not necessary that tribe members reasoned out the benefits of anything but a single trade. To create this institution it would have sufficed that people follow their instincts to make obtain collectibles with the [characteristics outlined below](#attributes-of-collectibles). (as indicated by proxy observations that make approximate estimations for these characteristics). This is to various extents true of the other institutions we will study &ndash; they evolved, rather than being consciously designed. No one participating in the institution's rituals would have explained their function in terms of ultimate evolutionary function; rather they explained in terms of a wide variety of mythologies that served more as proximate motivators of behavior than as theories of ultimate purpose or origin.
+Although anatomically modern humans surely had conscious thought, language, and some ability to plan, it would have required little conscious thought or language, and very little planning, to generate trades. It was not necessary that tribe members reasoned out the benefits of anything but a single trade. To create this institution it would have sufficed that people follow their instincts to make obtain collectibles with the [characteristics outlined below](#attributes-of-collectibles) (as indicated by proxy observations that make approximate estimations for these characteristics). This is to various extents true of the other institutions we will study &ndash; they evolved, rather than being consciously designed. No one participating in the institution's rituals would have explained their function in terms of ultimate evolutionary function; rather they explained in terms of a wide variety of mythologies that served more as proximate motivators of behavior than as theories of ultimate purpose or origin.
 
 Direct evidence for trade in food has long since decayed. We may, in the future, find more direct evidence than is now available for this article, via comparison of hunting remains in one tribe with the consumption patterns in another tribe &ndash; the hardest part of this task likely being to identify the boundaries of different tribes or kin groups. According to our theory, such transfer of meat from one tribe to another was common in many parts of the world during the Paleolithic where large-scale and specialized big game hunting occurred.
 
@@ -389,7 +389,7 @@ Primitive money was not modern money as we know it. It took on some of the funct
 
   <li id="fnG95">[G95] Gilead, I. 1995. "The Foragers of the Upper Paleolithic Period," in Archaeology and Society in the Holy Land. Ed. by T. E. Levy. New York, Facts on File.&nbsp;<a href="#refG95">↩</a></li>
 
-  <li id="fnG01">[G01] [ref: http://www-geology.ucdavis.edu/~GEL115/115CH1.html]&nbsp;<a href="#refG01">↩</a></li>
+  <li id="fnG01">[G01] [ref: <a href="http://www-geology.ucdavis.edu/~GEL115/115CH1.html">http://www-geology.ucdavis.edu/~GEL115/115CH1.html</a>]&nbsp;<a href="#refG01">↩</a></li>
 
   <li id="fnGr01">[Gr01] Graeber, David, <em>Towards an Anthropological Theory of Value</em>, Palgrave 2001.</li>
 
@@ -401,11 +401,11 @@ Primitive money was not modern money as we know it. It took on some of the funct
 
   <li id="fnL94">[L94] Landa, Janet, <em>Trust, Ethnicity, and Identity: Beyond the New Institutional Economics of Ethnic Trading Networks, Contract Law, and Gift-Exchange</em>, The University of Michigan Press, second edition, 1998.&nbsp;<a href="#refL94-1">↩</a>&nbsp;<a href="#refL94-2">↩</a>&nbsp;<a href="#refL94-3">↩</a></li>
 
-  <li id="fnM1892">[M1892] Menger, Carl, "On the Origins of Money" Economic Journal, volume 2,(1892) p. 239-55. translated by C.A. Foley, at http://www.socsci.mcmaster.ca/~econ/ugcm/3ll3/menger/money.txt&nbsp;<a href="#refM1892">↩</a></li>
+  <li id="fnM1892">[M1892] Menger, Carl, "On the Origins of Money" Economic Journal, volume 2,(1892) p. 239-55. translated by C.A. Foley, at <a href="http://www.socsci.mcmaster.ca/~econ/ugcm/3ll3/menger/money.txt">http://www.socsci.mcmaster.ca/~econ/ugcm/3ll3/menger/money.txt</a>&nbsp;<a href="#refM1892">↩</a></li>
 
   <li id="fnM50">[M50] Mauss, Marcel, <em>The Gift</em>, 1950, English translation by W.D. Halls, W.W. Norton 1990.&nbsp;<a href="#refM50">↩</a></li>
 
-  <li id="fnM93">[M93] (Morse 1993) via http://www.wac.uct.ac.za/wac4/symposia/papers/s095wht1.pdf&nbsp;<a href="#refM93">↩</a></li>
+  <li id="fnM93">[M93] (Morse 1993) via <a href="http://www.wac.uct.ac.za/wac4/symposia/papers/s095wht1.pdf">http://www.wac.uct.ac.za/wac4/symposia/papers/s095wht1.pdf</a>&nbsp;<a href="#refM93">↩</a></li>
 
   <li id="fnR96">[R96] Riddley, Matt, <em>The Origins of Virtue</em>, Viking 1996.</li>
 
@@ -417,11 +417,11 @@ Primitive money was not modern money as we know it. It took on some of the funct
 
   <li id="fnW82">[W82] Wiessner, P. 1982. Risk, reciprocity and social influences on !Kung San economies. In: Leacock, H. R. &amp; Lee, R.B. (eds) <em>Politics and history in band societies</em>: 61-84. London: Cambridge University Press.</li>
 
-  <li id="fnW95">[W95] White, Randall, "Ivory Personal Ornaments of Aurignacian Age: Technological, Social and Symbolic Perspectives", Institute For Ice Age Studies, http://www.insticeagestudies.com/library/Ivory/Ivorypersonal.html<!-- http://www.insticeagestudies.com/library/Ivory/ivory2.html -->&nbsp;<a href="#refW95">↩</a></li>
+  <li id="fnW95">[W95] White, Randall, "Ivory Personal Ornaments of Aurignacian Age: Technological, Social and Symbolic Perspectives", Institute For Ice Age Studies, <a href="http://www.insticeagestudies.com/library/Ivory/Ivorypersonal.html">http://www.insticeagestudies.com/library/Ivory/Ivorypersonal.html</a><!-- http://www.insticeagestudies.com/library/Ivory/ivory2.html -->&nbsp;<a href="#refW95">↩</a></li>
 
-  <li id="fnW97">[W97] White, Randall, "From Materials To Meaning", Institute For Ice Age Studies, http://www.insticeagestudies.com/library/materialstomeaning/index.html<!-- http://www.insticeagestudies.com/library/materialstomeaning/mat3d.html -->&nbsp;<a href="#refW97">↩</a></li>
+  <li id="fnW97">[W97] White, Randall, "From Materials To Meaning", Institute For Ice Age Studies, <a href="http://www.insticeagestudies.com/library/materialstomeaning/index.html">http://www.insticeagestudies.com/library/materialstomeaning/index.html</a><!-- http://www.insticeagestudies.com/library/materialstomeaning/mat3d.html -->&nbsp;<a href="#refW97">↩</a></li>
 
-  <li id="fnW98">[W98] Winterhalder, Bruce, "Intra-Group Resource Transfers: Comparative Evidence, Models, and Implications for Human Evolution", http://www.unc.edu/depts/ecology/winterweb/intra_group.html&nbsp;<a href="#refW98">↩</a></li>
+  <li id="fnW98">[W98] Winterhalder, Bruce, "Intra-Group Resource Transfers: Comparative Evidence, Models, and Implications for Human Evolution", <a href="http://www.unc.edu/depts/ecology/winterweb/intra_group.html">http://www.unc.edu/depts/ecology/winterweb/intra_group.html</a>&nbsp;<a href="#refW98">↩</a></li>
 
   <li id="fnW02">[W02] Wilford, John, "Debate is Fueled on When Humans Became Human", New York Times, February 26th, 2002 <!-- http://www.bebeyond.com/LearnEnglish/DailyReadings/Science2/Humans.htm -->&nbsp;<a href="#refW02">↩</a></li>
 </ol>
