@@ -12,7 +12,7 @@ function TrackPageView({ siteId }: { siteId: string }) {
     load(siteId, {
       auto: false,
     });
-  }, []);
+  }, [siteId]);
 
   useEffect(() => {
     if (!pathname) return;
