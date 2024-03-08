@@ -20,24 +20,7 @@ from sni.models import (
 async def get(
     slug: str, *, db_session: AsyncSession, locale: LocaleType = "en"
 ) -> Author | None:
-    query = (
-        select(Author)
-        .filter_by(slug=slug)
-        .options(
-            selectinload(Author.posts).options(
-                selectinload(BlogPost.authors),
-                selectinload(
-                    BlogPost.translations.and_(BlogPostTranslation.locale == locale)
-                ),
-            ),
-            selectinload(Author.docs).options(
-                selectinload(Document.authors),
-                selectinload(
-                    Document.translations.and_(DocumentTranslation.locale == locale)
-                ).options(selectinload(DocumentTranslation.formats)),
-            ),
-        )
-    )
+    query = select(Author).filter_by(slug=slug)
 
     return await db_session.scalar(query)
 
@@ -49,6 +32,12 @@ async def get_documents(
 
     query = (
         select(DocumentTranslationAlias)
+        .options(
+            joinedload(DocumentTranslationAlias.document).options(
+                selectinload(Document.authors), selectinload(Document.translations)
+            ),
+            selectinload(DocumentTranslationAlias.formats),
+        )
         .join(Document)
         .join(document_authors)
         .filter(
