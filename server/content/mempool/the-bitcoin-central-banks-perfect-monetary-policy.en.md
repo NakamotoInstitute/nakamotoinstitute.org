@@ -6,8 +6,6 @@ date: 2013-12-15
 excerpt:
   The Bitcoin Central Bank will be the longest lasting institution of its kind
   thanks to the anti-fragile independent monetary policy it has set in stone.
-image: spongebob-and-patrick.png
-image_alt: Spongebob and Patrick
 ---
 
 The following post provides an analytical framework so that critics and proponents of Bitcoin’s monetary policy can engage in a constructive debate.

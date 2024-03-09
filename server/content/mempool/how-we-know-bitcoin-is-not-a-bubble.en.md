@@ -6,7 +6,6 @@ date: 2014-05-03
 excerpt:
   The difference between money and a bubble is that a commodity whose price
   is a bubble actually has some underlying value.
-image: rube-goldberg.jpg
 ---
 
 ## The Value of Money

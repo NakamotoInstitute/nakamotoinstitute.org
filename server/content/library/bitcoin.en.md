@@ -255,7 +255,7 @@ We have proposed a system for electronic transactions without relying on trust. 
 		<p>S. Haber, W.S. Stornetta, <a href="/library/time-stamp-digital-document/">"How to time-stamp a digital document,"</a> In <em>Journal of Cryptology</em>, vol 3, no 2, pages 99-111, 1991.&nbsp;<a href="#ref2" title="Jump back to [2-5]">↩</a></p>
 	</li>
 	<li id="fn4">
-		<p>D. Bayer, S. Haber, W.S. Stornetta, <a href="/library/im[$2]oving-time-stamping/">"Improving the efficiency and reliability of digital time-stamping,"</a> In <em>Sequences II: Methods in Communication, Security and Computer Science</em>, pages 329-334, 1993.&nbsp;<a href="#ref2" title="Jump back to [2-5]">↩</a></p>
+		<p>D. Bayer, S. Haber, W.S. Stornetta, <a href="/library/improving-time-stamping/">"Improving the efficiency and reliability of digital time-stamping,"</a> In <em>Sequences II: Methods in Communication, Security and Computer Science</em>, pages 329-334, 1993.&nbsp;<a href="#ref2" title="Jump back to [2-5]">↩</a></p>
 	</li>
 	<li id="fn5">
 		<p>S. Haber, W.S. Stornetta, <a href="/static/docs/secure-names-bit-strings.pdf">"Secure names for bit-strings,"</a> In <em>Proceedings of the 4th ACM Conference on Computer and Communications Security</em>, pages 28-35, April 1997.&nbsp;<a href="#ref2" title="Jump back to [2-5]">↩</a>&nbsp;<a href="#ref5" title="Jump back to [5]">↩</a></p>

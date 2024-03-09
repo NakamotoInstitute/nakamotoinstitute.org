@@ -4,7 +4,6 @@ authors:
   - daniel-krawisz
 date: 2014-05-16
 excerpt: "Don’t be a venture capitalist—be a speculative philanthropist."
-image: rube-goldberg.jpg
 ---
 
 ## We're All in This Together
