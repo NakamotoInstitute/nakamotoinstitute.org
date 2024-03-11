@@ -7,7 +7,6 @@ excerpt:
   Someone still lost in the dollar world looks at Bitcoin and sees wild and
   extreme volatility, whereas someone in Bitcoin looking back at the dollar sees the
   worst and longest economic crash in history.
-image: rube-goldberg.jpg
 ---
 
 In an [earlier article](/mempool/i-love-bitcoins-volatility), I conceded too
