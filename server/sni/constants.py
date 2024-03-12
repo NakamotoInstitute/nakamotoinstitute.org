@@ -31,11 +31,25 @@ class Locales(str, Enum):
     KOREAN = "ko"
     PORTUGUESE_BRAZILIAN = "pt-br"
     RUSSIAN = "ru"
+    VIETNAMESE = "vi"
     CHINESE_SIMPLIFIED = "zh-cn"
 
 
 LocaleType = Literal[
-    "ar", "de", "en", "es", "fa", "fi", "fr", "he", "it", "ko", "pt-br", "ru", "zh-cn"
+    "ar",
+    "de",
+    "en",
+    "es",
+    "fa",
+    "fi",
+    "fr",
+    "he",
+    "it",
+    "ko",
+    "pt-br",
+    "ru",
+    "vi",
+    "zh-cn",
 ]
 
 

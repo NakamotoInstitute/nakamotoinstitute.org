@@ -11,6 +11,7 @@ export const locales = [
   "ko",
   "pt-br",
   "ru",
+  "vi",
   "zh-cn",
 ] as const;
 export const defaultLocale = "en";
