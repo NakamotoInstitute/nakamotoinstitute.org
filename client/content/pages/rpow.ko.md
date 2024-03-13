@@ -1,4 +1,4 @@
-재사용할 수 있는 작업 증명 (Reusable Proof-of-Work, RPOW)은 닉 스자보(Nick Szabo)의 [수집품 이론(theory of collectibles)](/library/shelling-out/)에 기반한 디지털 현금의 프로토타입으로 할 피니(Hal Finney)가 고안한 발명품입니다. RPOW는 디지털 현금의 역사에서 중요한 초기 단계였으며 비트코인의 전신이었습니다. 프로토타입 이상으로 의도된 적은 없었지만, RPOW는 매우 정교한 소프트웨어였으며, 만약 널리 사용되었다면 거대한 네트워크를 제공할 수 있었을 것입니다.
+재사용할 수 있는 작업 증명(Reusable Proof-of-Work, RPOW)은 닉 스자보(Nick Szabo)의 [수집품 이론(theory of collectibles)](/library/shelling-out/)에 기반한 디지털 현금의 프로토타입으로 할 피니(Hal Finney)가 고안한 발명품입니다. RPOW는 디지털 현금의 역사에서 중요한 초기 단계였으며 비트코인의 전신이었습니다. 프로토타입 이상으로 의도된 적은 없었지만, RPOW는 매우 정교한 소프트웨어였으며, 만약 널리 사용되었다면 거대한 네트워크를 제공할 수 있었을 것입니다.
 
 ## 역사적 맥락
 
