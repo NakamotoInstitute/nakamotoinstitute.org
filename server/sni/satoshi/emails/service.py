@@ -61,7 +61,7 @@ async def get_satoshi_email_by_source(
 async def get_email(satoshi_id: int, *, db_session: AsyncSession) -> Email | None:
     query = (
         select(Email)
-        .options(selectinload(Email.replies))
+        .options(selectinload(Email.replies), joinedload(Email.thread))
         .filter_by(satoshi_id=satoshi_id)
     )
 
