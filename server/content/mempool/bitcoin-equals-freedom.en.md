@@ -4,9 +4,7 @@ authors:
   - ross-ulbricht
 date: 2019-09-25
 added: 2019-09-26
-excerpt:
-  Bitcoin was consciously, yet spontaneously taken up as money while no one
-  was watching, and our world will never be the same.
+excerpt: Bitcoin was consciously, yet spontaneously taken up as money while no one was watching, and our world will never be the same.
 original_site: Ross Ulbricht’s Medium blog
 original_url: https://medium.com/@RossUlbricht/bitcoin-equals-freedom-6c33986b4852
 ---
