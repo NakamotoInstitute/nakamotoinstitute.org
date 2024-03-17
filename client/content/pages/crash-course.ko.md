@@ -9,7 +9,7 @@
 
 통화정책 측면에서 비트코인은 세계 역사상 가장 위대한 화폐입니다.
 
-- 피에르 로샤르의 ["연준의 종말: 비트코인을 축적하라"](/mempool/end-the-fed-hoard-bitcoins)
+- 피에르 로샤르의 ["연준을 폐지하라: 비트코인을 축적하라"](/mempool/end-the-fed-hoard-bitcoins)
 - 피에르 로샤르의 ["부분지급준비은행업은 구시대 유물이다"](/mempool/fractional-reserve-banking-is-obsolete)
 - 피에르 로샤르의 ["The Bitcoin Central Bank's Perfect Monetary Policy"](/mempool/the-bitcoin-central-banks-perfect-monetary-policy)
 
