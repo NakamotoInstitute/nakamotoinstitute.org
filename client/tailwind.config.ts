@@ -55,6 +55,9 @@ const config: Config = {
             ".footnotes": {
               fontSize: "1rem",
             },
+            pre: {
+              strong: { color: "var(--tw-prose-pre-code)" },
+            },
             figure: {
               "& > img": {
                 marginLeft: "auto",
