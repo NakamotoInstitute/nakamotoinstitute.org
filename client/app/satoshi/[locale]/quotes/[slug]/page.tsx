@@ -7,6 +7,7 @@ import { RenderedItemsList } from "@/app/components/RenderedItemsList";
 import { locales } from "@/i18n";
 import { getQuoteCategories, getQuoteCategory } from "@/lib/api/quotes";
 import { Quote } from "@/lib/api/schemas/quotes";
+import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
@@ -31,29 +32,30 @@ type SatoshiQuoteProps = {
   quote: Quote;
 };
 
-function SatoshiQuote({ locale, quote }: SatoshiQuoteProps) {
+async function SatoshiQuote({ locale, quote }: SatoshiQuoteProps) {
+  const { t } = await i18nTranslation(locale);
   let subject: string;
   let url: string;
   let label: string;
 
   if (quote.whitepaper) {
-    subject = "Bitcoin: A Peer-to-Peer Electronic Cash System";
+    subject = t("Bitcoin: A Peer-to-Peer Electronic Cash System");
     url = urls("en").library.doc("bitcoin");
-    label = "View whitepaper";
+    label = t("View whitepaper");
   } else if (quote.post) {
     subject = quote.post.subject;
     url = urls(locale).satoshi.posts.sourcePost(
       quote.post.source,
       quote.post.satoshiId.toString(),
     );
-    label = "View post";
+    label = t("View post");
   } else if (quote.email) {
     subject = quote.email.subject;
     url = urls(locale).satoshi.emails.sourceEmail(
       quote.email.source,
       quote.email.satoshiId.toString(),
     );
-    label = "View email";
+    label = t("View email");
   } else {
     return null;
   }
@@ -87,11 +89,15 @@ function SatoshiQuote({ locale, quote }: SatoshiQuoteProps) {
 export default async function QuotesCategoryPage({
   params: { locale, slug },
 }: LocaleParams<{ slug: string }>) {
+  const { t } = await i18nTranslation(locale);
   const { category, quotes } = await getQuoteCategory(slug);
 
   return (
     <PageLayout locale={locale} generateHref={generateHref(slug)}>
-      <PageHeader title={category.name} superTitle="The Quotable Satoshi" />
+      <PageHeader
+        title={category.name}
+        superTitle={t("The Quotable Satoshi")}
+      />
       <section>
         {quotes.map((q) => (
           <SatoshiQuote key={q.text} locale={locale} quote={q} />

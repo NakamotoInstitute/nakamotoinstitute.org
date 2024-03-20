@@ -31,6 +31,8 @@ export async function PageLayout({
       <Fathom siteId={env.FATHOM_ID!} />
       <Navbar
         locale={locale}
+        title={t("Satoshi Nakamoto Institute")}
+        mobileTitle={t("SNI")}
         homeHref={urls(locale).home}
         navLinks={[
           {

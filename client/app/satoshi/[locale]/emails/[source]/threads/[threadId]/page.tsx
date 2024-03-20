@@ -44,7 +44,14 @@ type ThreadEmailProps = {
   satoshiOnly: boolean;
 };
 
-function ThreadEmail({ locale, email, odd, satoshiOnly }: ThreadEmailProps) {
+async function ThreadEmail({
+  locale,
+  email,
+  odd,
+  satoshiOnly,
+}: ThreadEmailProps) {
+  const { t } = await i18nTranslation(locale);
+
   return (
     <article
       id={email.sourceId}
@@ -71,7 +78,7 @@ function ThreadEmail({ locale, email, odd, satoshiOnly }: ThreadEmailProps) {
           <div className="border-b p-2">
             {email.parent ? (
               <div className="flex gap-2">
-                <span>Replying to:</span>
+                <span>{t("Replying to:")}</span>
                 <Link
                   href={{ hash: email.parent.sourceId }}
                 >{`>>${email.parent.sourceId}`}</Link>
@@ -79,7 +86,7 @@ function ThreadEmail({ locale, email, odd, satoshiOnly }: ThreadEmailProps) {
             ) : null}
             {email.replies.length > 0 ? (
               <div className="flex gap-2">
-                <span>Replies:</span>
+                <span>{t("Replies:")}</span>
                 {email.replies.map((reply) => (
                   <Link key={reply} href={{ hash: reply }}>{`>>${reply}`}</Link>
                 ))}
@@ -97,7 +104,7 @@ function ThreadEmail({ locale, email, odd, satoshiOnly }: ThreadEmailProps) {
         />
       </section>
       <footer className="flex justify-between border-t p-2">
-        <Link href={email.url}>External link</Link>
+        <Link href={email.url}>{t("External link")}</Link>
         {email.satoshiId ? (
           <Link
             href={urls(locale).satoshi.emails.sourceEmail(
@@ -105,7 +112,7 @@ function ThreadEmail({ locale, email, odd, satoshiOnly }: ThreadEmailProps) {
               email.satoshiId.toString(),
             )}
           >
-            Permalink
+            {t("Permalink")}
           </Link>
         ) : null}
       </footer>
@@ -129,14 +136,17 @@ export default async function EmailSourceThreadDetail({
 
   const { thread, emails, next, previous } = threadData;
 
+  const { t } = await i18nTranslation(locale);
+
   return (
     <PageLayout locale={locale} generateHref={generateHref(source, threadId)}>
       <ThreadPageHeader
+        locale={locale}
         sourceTitle={formatEmailSource(thread.source)}
         title={thread.title}
         allLink={{
           href: generateHref(source, threadId)(locale),
-          text: "emails",
+          text: t("View all emails"),
         }}
         externalLink={thread.url}
         satoshiOnly={satoshiOnly}

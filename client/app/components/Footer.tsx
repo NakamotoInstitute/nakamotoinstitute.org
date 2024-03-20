@@ -1,20 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Trans } from "react-i18next/TransWithoutContext";
 
+import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { cdnUrl, urls } from "@/lib/urls";
 
 type FooterProps = {
   locale: Locale;
 };
 
-export function Footer({ locale }: FooterProps) {
+export async function Footer({ locale }: FooterProps) {
+  const { t } = await i18nTranslation(locale);
+
   const links = [
-    { label: "About", url: urls(locale).about },
-    { label: "Contact", url: urls(locale).contact },
-    { label: "Donate", url: urls(locale).donate.index },
-    { label: "Feed", url: urls(locale).mempool.atom },
-    { label: "Newsletter", url: urls(locale).substack },
-    { label: "GitHub", url: urls(locale).github },
+    { label: t("About"), url: urls(locale).about },
+    { label: t("Contact"), url: urls(locale).contact },
+    { label: t("Donate"), url: urls(locale).donate.index },
+    { label: t("Feed"), url: urls(locale).mempool.atom },
+    { label: t("Newsletter"), url: urls(locale).substack },
+    { label: t("GitHub"), url: urls(locale).github },
   ];
 
   return (
@@ -41,14 +45,18 @@ export function Footer({ locale }: FooterProps) {
             />
           </Link>
           <span className="block sm:ml-4 sm:inline">
-            Satoshi Nakamoto Institute is licensed under a{" "}
-            <Link
-              rel="license"
-              href="http://creativecommons.org/licenses/by-sa/4.0/"
-            >
-              Creative Commons Attribution-ShareAlike 4.0 International License
-            </Link>
-            . Some works may be subject to other licenses.
+            <Trans
+              t={t}
+              i18nKey="Satoshi Nakamoto Institute is licensed under a <link>Creative Commons Attribution-ShareAlike 4.0 International License</link>. Some works may be subject to other licenses."
+              components={{
+                link: (
+                  <Link
+                    rel="license"
+                    href="http://creativecommons.org/licenses/by-sa/4.0/"
+                  />
+                ),
+              }}
+            />
           </span>
         </div>
       </div>

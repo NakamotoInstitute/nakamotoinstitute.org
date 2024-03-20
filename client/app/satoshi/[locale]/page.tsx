@@ -53,7 +53,7 @@ export default async function SatoshiIndex({
       <section>
         <p>
           <Link href="/satoshinakamoto.asc">
-            Satoshi Nakamoto&rsquo;s PGP Key
+            {t("Satoshi Nakamoto&rsquo;s PGP Key")}
           </Link>
         </p>
       </section>
@@ -63,22 +63,22 @@ export default async function SatoshiIndex({
           text="The Whitepaper"
           href={urls(locale).library.doc("bitcoin")}
         >
-          The original vision.
+          {t("The original vision.")}
         </SatoshiSection>
         <SatoshiSection text="Emails" href={urls(locale).satoshi.emails.index}>
-          It all began here.
+          {t("It all began here.")}
         </SatoshiSection>
         <SatoshiSection
           text="Forum Posts"
           href={urls(locale).satoshi.posts.index}
         >
-          Where an idea flourished.
+          {t("Where an idea flourished.")}
         </SatoshiSection>
         <SatoshiSection text="Code" href={urls(locale).satoshi.code}>
-          The vision instantiated.
+          {t("The vision instantiated.")}
         </SatoshiSection>
         <SatoshiSection text="Quotes" href={urls(locale).satoshi.quotesIndex}>
-          Indexed wisdom from the quotable Satoshi.
+          {t("Indexed wisdom from the quotable Satoshi.")}
         </SatoshiSection>
       </section>
     </PageLayout>

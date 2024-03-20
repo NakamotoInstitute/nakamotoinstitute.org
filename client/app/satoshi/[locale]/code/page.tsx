@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { Trans } from "react-i18next/TransWithoutContext";
 
 import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
@@ -33,13 +34,13 @@ export default async function SatoshiCode({
     <PageLayout locale={locale} generateHref={generateHref}>
       <PageHeader title={t("Code")}>
         <p>
-          This page contains files for the first three available Bitcoin
-          codebases written by Satoshi Nakamoto. Verion control and releases
-          from v0.1.5 onward can be viewed in the{" "}
-          <Link href="https://github.com/bitcoin/bitcoin/">
-            Bitcoin GitHub repository
-          </Link>
-          .
+          <Trans
+            t={t}
+            i18nKey="This page contains files for the first three available Bitcoin codebases written by Satoshi Nakamoto. Verion control and releases from v0.1.5 onward can be viewed in the <link>Bitcoin GitHub repository</link>."
+            components={{
+              link: <Link href="https://github.com/bitcoin/bitcoin/" />,
+            }}
+          />
         </p>
       </PageHeader>
       <section>

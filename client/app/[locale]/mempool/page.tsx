@@ -35,14 +35,15 @@ export default async function MempoolIndex({
     <PageLayout locale={locale} generateHref={generateHref}>
       <PageHeader title={t("The Memory Pool")}>
         <p>
-          Where ideas wait to be mined into the blockchain of the collective
-          conscience
+          {t(
+            "Where ideas wait to be mined into the blockchain of the collective conscience",
+          )}
         </p>
         <p>
-          <em>Some transactions may be invalid</em>
+          <em>{t("Some transactions may be invalid")}</em>
         </p>
         <p>
-          <Link href="#">Feed</Link>
+          <Link href={urls(locale).mempool.rss}>{t("RSS Feed")}</Link>
         </p>
       </PageHeader>
       <section>

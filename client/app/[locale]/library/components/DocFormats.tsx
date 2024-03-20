@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Chip } from "@/app/components/Chip";
 import { Document, DocumentIndex } from "@/lib/api/schemas/library";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
-import { cdnUrl } from "@/lib/urls";
 
 type DocFormatLinksProps = {
   locale: Locale;

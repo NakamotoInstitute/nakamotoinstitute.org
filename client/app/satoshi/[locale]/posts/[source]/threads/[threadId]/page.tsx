@@ -48,7 +48,9 @@ type ThreadPostProps = {
   satoshiOnly: boolean;
 };
 
-function ThreadPost({ locale, post, odd, satoshiOnly }: ThreadPostProps) {
+async function ThreadPost({ locale, post, odd, satoshiOnly }: ThreadPostProps) {
+  const { t } = await i18nTranslation(locale);
+
   return (
     <article
       id={post.sourceId}
@@ -98,7 +100,7 @@ function ThreadPost({ locale, post, odd, satoshiOnly }: ThreadPostProps) {
         />
       </section>
       <footer className="flex justify-between border-t p-2">
-        <Link href={post.url}>External link</Link>
+        <Link href={post.url}>{t("External link")}</Link>
         {post.satoshiId ? (
           <Link
             href={urls(locale).satoshi.posts.sourcePost(
@@ -106,7 +108,7 @@ function ThreadPost({ locale, post, odd, satoshiOnly }: ThreadPostProps) {
               post.satoshiId.toString(),
             )}
           >
-            Permalink
+            {t("Permalink")}
           </Link>
         ) : null}
       </footer>
@@ -129,14 +131,17 @@ export default async function PostSourceThreadDetail({
 
   const { thread, posts, next, previous } = threadData;
 
+  const { t } = await i18nTranslation(locale);
+
   return (
     <PageLayout locale={locale} generateHref={generateHref(source, threadId)}>
       <ThreadPageHeader
+        locale={locale}
         sourceTitle={formatPostSource(thread.source)}
         title={thread.title}
         allLink={{
           href: generateHref(source, threadId)(locale),
-          text: "posts",
+          text: t("View all posts"),
         }}
         externalLink={thread.url}
         satoshiOnly={satoshiOnly}

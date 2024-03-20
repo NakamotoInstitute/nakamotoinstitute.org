@@ -31,6 +31,7 @@ export async function generateMetadata({
 export default async function EmailThreadsIndex({
   params: { locale },
 }: LocaleParams) {
+  const { t } = await i18nTranslation(locale);
   const threads = await getEmailThreads();
   const sortedThreads = threads.reduce(
     (acc, thread) => {
@@ -45,14 +46,14 @@ export default async function EmailThreadsIndex({
 
   const navLinks = {
     main: {
-      text: "View emails",
+      text: t("View emails"),
       href: urls(locale).satoshi.emails.index,
     },
     left: {
       text: formatEmailSource("cryptography", true),
       href: urls(locale).satoshi.emails.sourceThreadsIndex("cryptography"),
       sublink: {
-        text: "Emails",
+        text: t("Emails"),
         href: urls(locale).satoshi.emails.sourceIndex("cryptography"),
       },
     },
@@ -60,7 +61,7 @@ export default async function EmailThreadsIndex({
       text: formatEmailSource("bitcoin-list", true),
       href: urls(locale).satoshi.emails.sourceThreadsIndex("bitcoin-list"),
       sublink: {
-        text: "Emails",
+        text: t("Emails"),
         href: urls(locale).satoshi.emails.sourceIndex("bitcoin-list"),
       },
     },
@@ -68,7 +69,7 @@ export default async function EmailThreadsIndex({
 
   return (
     <IndexPageLayout
-      title="Email Threads"
+      title={t("Email Threads")}
       locale={locale}
       generateHref={generateHref}
       navLinks={navLinks}

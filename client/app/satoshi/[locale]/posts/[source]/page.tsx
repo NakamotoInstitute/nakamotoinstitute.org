@@ -32,20 +32,21 @@ export async function generateMetadata({
 export default async function PostsSourceIndex({
   params: { source, locale },
 }: LocaleParams<{ source: ForumPostSource }>) {
+  const { t } = await i18nTranslation(locale);
   const posts = await getSatoshiPostsBySource(source);
 
   const otherSource = otherForumPostSource(source);
 
   const navLinks = {
     main: {
-      text: "View threads",
+      text: t("View threads"),
       href: urls(locale).satoshi.posts.sourceThreadsIndex(source),
     },
     left: {
-      text: "All posts",
+      text: t("All posts"),
       href: urls(locale).satoshi.posts.index,
       sublink: {
-        text: "Threads",
+        text: t("Threads"),
         href: urls(locale).satoshi.posts.threadsIndex,
       },
     },
@@ -53,14 +54,14 @@ export default async function PostsSourceIndex({
       text: formatPostSource(otherSource),
       href: urls(locale).satoshi.posts.sourceIndex(otherSource),
       sublink: {
-        text: "Threads",
+        text: t("Threads"),
         href: urls(locale).satoshi.posts.sourceThreadsIndex(otherSource),
       },
     },
   };
   return (
     <IndexPageLayout
-      title={`${formatPostSource(source)} Posts`}
+      title={t("{{source}} Posts", { source: formatPostSource(source) })}
       locale={locale}
       generateHref={generateHref(source)}
       navLinks={navLinks}

@@ -33,20 +33,21 @@ export async function generateMetadata({
 export default async function EmailsSourceIndex({
   params: { locale, source },
 }: LocaleParams<{ source: EmailSource }>) {
+  const { t } = await i18nTranslation(locale);
   const emails = await getSatoshiEmailsBySource(source);
 
   const otherSource = otherEmailSource(source);
 
   const navLinks = {
     main: {
-      text: "View threads",
+      text: t("View threads"),
       href: urls(locale).satoshi.emails.sourceThreadsIndex(source),
     },
     left: {
-      text: "All emails",
+      text: t("All emails"),
       href: urls(locale).satoshi.emails.index,
       sublink: {
-        text: "Threads",
+        text: t("Threads"),
         href: urls(locale).satoshi.emails.threadsIndex,
       },
     },
@@ -54,7 +55,7 @@ export default async function EmailsSourceIndex({
       text: formatEmailSource(otherSource, true),
       href: urls(locale).satoshi.emails.sourceIndex(otherSource),
       sublink: {
-        text: "Threads",
+        text: t("Threads"),
         href: urls(locale).satoshi.emails.sourceThreadsIndex(otherSource),
       },
     },
@@ -62,7 +63,7 @@ export default async function EmailsSourceIndex({
 
   return (
     <IndexPageLayout
-      title={`${formatEmailSource(source)} Emails`}
+      title={t("{{source}} Emails", { source: formatEmailSource(source) })}
       locale={locale}
       generateHref={generateHref(source)}
       navLinks={navLinks}

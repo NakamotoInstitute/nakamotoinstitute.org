@@ -10,11 +10,15 @@ import { LanguageToggle, ToggleLinkProps } from "./LanguageToggle";
 
 export function Navbar({
   locale,
+  title,
+  mobileTitle,
   homeHref,
   navLinks,
   ...toggleProps
 }: ToggleLinkProps & {
   locale: Locale;
+  title: string;
+  mobileTitle: string;
   homeHref: string;
   navLinks: AnchorProps[];
 }) {
@@ -72,10 +76,10 @@ export function Navbar({
           <div className="flex flex-1 items-center justify-center md:items-stretch md:justify-start">
             <div className="flex flex-shrink-0 items-center">
               <Link href={homeHref} className="hidden md:inline-block">
-                Satoshi Nakamoto Institute
+                {title}
               </Link>
               <Link href={homeHref} className="md:hidden">
-                SNI
+                {mobileTitle}
               </Link>
             </div>
             <div className="hidden md:ml-auto md:block">

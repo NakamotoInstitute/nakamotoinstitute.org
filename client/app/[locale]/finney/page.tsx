@@ -58,7 +58,7 @@ export default async function FinneyIndex({
       <ul>
         <li>
           <Link href={urls(locale).finney.rpow}>
-            RPOW - Reusable Proofs of Work
+            {t("RPOW - Reusable Proofs of Work")}
           </Link>
         </li>
       </ul>

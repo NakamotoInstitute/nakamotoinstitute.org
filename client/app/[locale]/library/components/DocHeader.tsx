@@ -11,8 +11,6 @@ type DocHeaderProps = {
 };
 
 export async function DocHeader({ locale, doc }: DocHeaderProps) {
-  const { t } = await i18nTranslation(locale);
-
   return (
     <>
       <header className="mx-auto mt-6 max-w-4xl text-center">

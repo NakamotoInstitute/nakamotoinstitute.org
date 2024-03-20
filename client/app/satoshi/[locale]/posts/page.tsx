@@ -28,18 +28,19 @@ export async function generateMetadata({
 }
 
 export default async function PostsIndex({ params: { locale } }: LocaleParams) {
+  const { t } = await i18nTranslation(locale);
   const posts = await getSatoshiPosts();
 
   const navLinks = {
     main: {
-      text: "View threads",
+      text: t("View threads"),
       href: urls(locale).satoshi.posts.threadsIndex,
     },
     left: {
       text: formatPostSource("p2pfoundation"),
       href: urls(locale).satoshi.posts.sourceIndex("p2pfoundation"),
       sublink: {
-        text: "Threads",
+        text: t("Threads"),
         href: urls(locale).satoshi.posts.sourceThreadsIndex("p2pfoundation"),
       },
     },
@@ -47,14 +48,14 @@ export default async function PostsIndex({ params: { locale } }: LocaleParams) {
       text: formatPostSource("bitcointalk"),
       href: urls(locale).satoshi.posts.sourceIndex("bitcointalk"),
       sublink: {
-        text: "Threads",
+        text: t("Threads"),
         href: urls(locale).satoshi.posts.sourceThreadsIndex("bitcointalk"),
       },
     },
   };
   return (
     <IndexPageLayout
-      title="Forum Posts"
+      title={t("Forum Posts")}
       locale={locale}
       generateHref={generateHref}
       navLinks={navLinks}

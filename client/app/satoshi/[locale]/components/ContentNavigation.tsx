@@ -79,7 +79,7 @@ type NavProps<Data, Source> = {
 
 type EmailNavProps = NavProps<SatoshiEmail, EmailSource>;
 
-export const EmailNavigation = ({
+export const EmailNavigation = async ({
   locale,
   source,
   previous,
@@ -87,6 +87,8 @@ export const EmailNavigation = ({
   className,
   reverse,
 }: EmailNavProps) => {
+  const { t } = await i18nTranslation(locale);
+
   const prevHref = previous
     ? urls(locale).satoshi.emails.sourceEmail(
         previous.source,
@@ -109,13 +111,15 @@ export const EmailNavigation = ({
       locale={locale}
       mainLink={{
         href: urls(locale).satoshi.emails.index,
-        text: "All emails",
+        text: t("All emails"),
       }}
       prevHref={prevHref}
       nextHref={nextHref}
       indexLink={{
         href: indexHref,
-        text: `${formatEmailSource(source, true)} index`,
+        text: t("{{source}} index", {
+          source: formatEmailSource(source, true),
+        }),
       }}
       reverse={reverse}
     />
@@ -124,7 +128,7 @@ export const EmailNavigation = ({
 
 export type EmailThreadNavProps = NavProps<EmailThread, EmailSource>;
 
-export const EmailThreadNavigation = ({
+export const EmailThreadNavigation = async ({
   locale,
   source,
   previous,
@@ -132,6 +136,8 @@ export const EmailThreadNavigation = ({
   className,
   reverse,
 }: EmailThreadNavProps) => {
+  const { t } = await i18nTranslation(locale);
+
   const prevHref = previous
     ? urls(locale).satoshi.emails.sourceThreadsDetail(
         previous.source,
@@ -154,13 +160,15 @@ export const EmailThreadNavigation = ({
       locale={locale}
       mainLink={{
         href: urls(locale).satoshi.emails.threadsIndex,
-        text: "All email threads",
+        text: t("All email threads"),
       }}
       prevHref={prevHref}
       nextHref={nextHref}
       indexLink={{
         href: indexHref,
-        text: `${formatEmailSource(source, true)} index`,
+        text: t("{{source}} index", {
+          source: formatEmailSource(source, true),
+        }),
       }}
       reverse={reverse}
     />
@@ -169,7 +177,7 @@ export const EmailThreadNavigation = ({
 
 type PostNavProps = NavProps<SatoshiForumPost, ForumPostSource>;
 
-export const PostNavigation = ({
+export const PostNavigation = async ({
   locale,
   source,
   previous,
@@ -177,6 +185,8 @@ export const PostNavigation = ({
   className,
   reverse,
 }: PostNavProps) => {
+  const { t } = await i18nTranslation(locale);
+
   const prevHref = previous
     ? urls(locale).satoshi.posts.sourcePost(
         previous.source,
@@ -199,13 +209,13 @@ export const PostNavigation = ({
       locale={locale}
       mainLink={{
         href: urls(locale).satoshi.posts.index,
-        text: "All posts",
+        text: t("All posts"),
       }}
       prevHref={prevHref}
       nextHref={nextHref}
       indexLink={{
         href: indexHref,
-        text: `${formatPostSource(source)} posts`,
+        text: t("{{source}} posts", { source: formatPostSource(source) }),
       }}
       reverse={reverse}
     />
@@ -214,7 +224,7 @@ export const PostNavigation = ({
 
 export type PostThreadNavProps = NavProps<ForumThread, ForumPostSource>;
 
-export const PostThreadNavigation = ({
+export const PostThreadNavigation = async ({
   locale,
   source,
   previous,
@@ -222,6 +232,8 @@ export const PostThreadNavigation = ({
   className,
   reverse,
 }: PostThreadNavProps) => {
+  const { t } = await i18nTranslation(locale);
+
   const prevHref = previous
     ? urls(locale).satoshi.posts.sourceThreadsDetail(
         previous.source,
@@ -244,13 +256,13 @@ export const PostThreadNavigation = ({
       locale={locale}
       mainLink={{
         href: urls(locale).satoshi.emails.threadsIndex,
-        text: "All post threads",
+        text: t("All post threads"),
       }}
       prevHref={prevHref}
       nextHref={nextHref}
       indexLink={{
         href: indexHref,
-        text: `${formatPostSource(source)} index`,
+        text: t("{{source}} index", { source: formatPostSource(source) }),
       }}
       reverse={reverse}
     />
