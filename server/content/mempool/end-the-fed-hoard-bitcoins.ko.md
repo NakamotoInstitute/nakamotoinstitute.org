@@ -42,6 +42,5 @@ translators:
 
 <figure>
   <img src="/static/img/mempool/end-the-fed-hoard-bitcoins/bitcoinfeedbackloops.jpg" alt="비트코인 피드백 루프" />
+  <figcaption>(Zangelbert Bingledack의 <a href="https://bitcointalk.org/index.php?topic=144911.0">포스트</a>를 기반으로 한 순서도입니다.)</figcaption>
 </figure>
-
-(Zangelbert Bingledack의 [포스트](https://bitcointalk.org/index.php?topic=144911.0)를 기반으로 한 순서도입니다.)

@@ -44,6 +44,5 @@ Si tienes un interés en eliminar a los bancos centrales te recomendaría que ac
 
 <figure>
   <img src="/static/img/mempool/end-the-fed-hoard-bitcoins/bitcoinfeedbackloops.jpg" alt="Bitcoin Feedback Loops" />
+  <figcaption>(Diagrama de flujo basado en la <a href="https://bitcointalk.org/index.php?topic=144911.0">publicación</a> de Zangelbert Bingledack.)</figcaption>
 </figure>
-
-Diagrama de flujo basado en la [publicación](https://bitcointalk.org/index.php?topic=144911.0) de Zangelbert Bingledack.

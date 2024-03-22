@@ -47,6 +47,5 @@ If you're interested in getting rid of central banking I would recommend hoardin
 
 <figure>
   <img src="/static/img/mempool/end-the-fed-hoard-bitcoins/bitcoinfeedbackloops.jpg" alt="Bitcoin Feedback Loops" />
+  <figcaption>(Flow chart based on Zangelbert Bingledack's <a href="https://bitcointalk.org/index.php?topic=144911.0">post</a>.)</figcaption>
 </figure>
-
-(Flow chart based on Zangelbert Bingledack's [post](https://bitcointalk.org/index.php?topic=144911.0).)
