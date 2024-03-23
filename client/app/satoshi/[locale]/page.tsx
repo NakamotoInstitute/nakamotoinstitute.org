@@ -60,24 +60,30 @@ export default async function SatoshiIndex({
       <hr className="my-4" />
       <section className="mx-auto flex flex-col gap-4">
         <SatoshiSection
-          text="The Whitepaper"
+          text={t("The Whitepaper")}
           href={urls(locale).library.doc("bitcoin")}
         >
           {t("The original vision.")}
         </SatoshiSection>
-        <SatoshiSection text="Emails" href={urls(locale).satoshi.emails.index}>
+        <SatoshiSection
+          text={t("Emails")}
+          href={urls(locale).satoshi.emails.index}
+        >
           {t("It all began here.")}
         </SatoshiSection>
         <SatoshiSection
-          text="Forum Posts"
+          text={t("Forum Posts")}
           href={urls(locale).satoshi.posts.index}
         >
           {t("Where an idea flourished.")}
         </SatoshiSection>
-        <SatoshiSection text="Code" href={urls(locale).satoshi.code}>
+        <SatoshiSection text={t("Code")} href={urls(locale).satoshi.code}>
           {t("The vision instantiated.")}
         </SatoshiSection>
-        <SatoshiSection text="Quotes" href={urls(locale).satoshi.quotesIndex}>
+        <SatoshiSection
+          text={t("Quotes")}
+          href={urls(locale).satoshi.quotesIndex}
+        >
           {t("Indexed wisdom from the quotable Satoshi.")}
         </SatoshiSection>
       </section>
