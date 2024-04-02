@@ -28,7 +28,7 @@
   "Back to {{title}}": "",
   "Chapter {{index}}:": "",
   "By <authors />": "",
-  "First published on <a><em>{{originalSite}}</em></a>": "",
+  "First published on <a><em>{{- originalSite}}</em></a>": "",
   "Added: <date>{{pubDate}}</date>": "",
   "The Memory Pool": "",
   "Where ideas wait to be mined into the blockchain of the collective conscience": "",

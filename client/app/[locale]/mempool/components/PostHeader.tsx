@@ -47,6 +47,7 @@ type PostHeaderProps = {
 
 export async function PostHeader({ locale, post }: PostHeaderProps) {
   const { t } = await i18nTranslation(locale);
+
   return (
     <>
       <header className="mt-17 mx-auto max-w-4xl text-center">
@@ -82,7 +83,7 @@ export async function PostHeader({ locale, post }: PostHeaderProps) {
           <p className="mt-4 text-lg italic">
             <Trans
               t={t}
-              i18nKey="First published on <a><em>{{originalSite}}</em></a>"
+              i18nKey="First published on <a><em>{{- originalSite}}</em></a>"
               values={{ originalSite: post.originalSite }}
               components={{
                 em: <em className="not-italic" />,
