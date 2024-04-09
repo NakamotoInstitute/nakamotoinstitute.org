@@ -47,9 +47,9 @@ export async function Footer({ locale }: FooterProps) {
           <span className="block sm:ml-4 sm:inline">
             <Trans
               t={t}
-              i18nKey="Satoshi Nakamoto Institute is licensed under a <link>Creative Commons Attribution-ShareAlike 4.0 International License</link>. Some works may be subject to other licenses."
+              i18nKey="Satoshi Nakamoto Institute is licensed under a <a>Creative Commons Attribution-ShareAlike 4.0 International License</a>. Some works may be subject to other licenses."
               components={{
-                link: (
+                a: (
                   <Link
                     rel="license"
                     href="http://creativecommons.org/licenses/by-sa/4.0/"

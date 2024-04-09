@@ -36,9 +36,9 @@ export default async function SatoshiCode({
         <p>
           <Trans
             t={t}
-            i18nKey="This page contains files for the first three available Bitcoin codebases written by Satoshi Nakamoto. Verion control and releases from v0.1.5 onward can be viewed in the <link>Bitcoin GitHub repository</link>."
+            i18nKey="This page contains files for the first three available Bitcoin codebases written by Satoshi Nakamoto. Version control and releases from v0.1.5 onward can be viewed in the <a>Bitcoin GitHub repository</a>."
             components={{
-              link: <Link href="https://github.com/bitcoin/bitcoin/" />,
+              a: <Link href="https://github.com/bitcoin/bitcoin/" />,
             }}
           />
         </p>

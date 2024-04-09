@@ -62,7 +62,7 @@
   "Error loading prices": "",
   "Feed": "",
   "Newsletter": "",
-  "Satoshi Nakamoto Institute is licensed under a <link>Creative Commons Attribution-ShareAlike 4.0 International License</link>. Some works may be subject to other licenses.": "",
+  "Satoshi Nakamoto Institute is licensed under a <a>Creative Commons Attribution-ShareAlike 4.0 International License</a>. Some works may be subject to other licenses.": "",
   "SNI": "",
   "The Complete Satoshi": "",
   "Date": "",
@@ -70,7 +70,7 @@
   "Release notes": "",
   "Source": "",
   "Code": "",
-  "This page contains files for the first three available Bitcoin codebases written by Satoshi Nakamoto. Verion control and releases from v0.1.5 onward can be viewed in the <link>Bitcoin GitHub repository</link>.": "",
+  "This page contains files for the first three available Bitcoin codebases written by Satoshi Nakamoto. Version control and releases from v0.1.5 onward can be viewed in the <a>Bitcoin GitHub repository</a>.": "",
   "Bitcoin Pre-Release": "",
   "(Compressed by SNI)": "",
   "Bitcoin v0.1.0": "",
@@ -121,7 +121,7 @@
   "View email": "",
   "The Quotable Satoshi": "",
   "It&lsquo;s very attractive to the libertarian viewpoint if we can explain it properly.<br><em>I&lsquo;m better with code than with words though.</em>": "",
-  "<link>Satoshi Nakamoto</link>, {{date}}": "",
-  "Special thanks to <link>Jordan Tuwiner</link> for indexing quotations.": "",
+  "<a>Satoshi Nakamoto</a>, {{date}}": "",
+  "Special thanks to <a>Jordan Tuwiner</a> for indexing quotations.": "",
   "If there is a quotation or category you would like to add, please <contact>contact us</contact> or submit a pull request on <github>GitHub</github>.": ""
 }

@@ -66,9 +66,9 @@ export default async function QuotesIndex({
           </blockquote>
           <figcaption>
             <Trans
-              i18nKey="<link>Satoshi Nakamoto</link>, {{date}}"
+              i18nKey="<a>Satoshi Nakamoto</a>, {{date}}"
               components={{
-                link: (
+                a: (
                   <Link
                     href={urls(locale).authors.detail("satoshi-nakamoto")}
                   />
@@ -89,14 +89,16 @@ export default async function QuotesIndex({
       <footer className="text-center italic">
         <p>
           <Trans
-            i18nKey="Special thanks to <link>Jordan Tuwiner</link> for indexing quotations."
+            t={t}
+            i18nKey="Special thanks to <a>Jordan Tuwiner</a> for indexing quotations."
             components={{
-              link: <Link href="https://charts.bitbo.io" />,
+              a: <Link href="https://charts.bitbo.io" />,
             }}
           />
         </p>
         <p>
           <Trans
+            t={t}
             i18nKey="If there is a quotation or category you would like to add, please <contact>contact us</contact> or submit a pull request on <github>GitHub</github>."
             components={{
               contact: <Link href={urls(locale).contact} />,

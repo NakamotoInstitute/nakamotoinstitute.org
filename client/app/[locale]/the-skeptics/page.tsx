@@ -55,7 +55,7 @@ export default async function TheSkepticsPage({
             t={t}
             i18nKey="Submit a link via <a>GitHub</a>"
             components={{
-              a: <Link href={urls(locale).github}>GitHub</Link>,
+              a: <Link href={urls(locale).github} />,
             }}
           />
         </p>
