@@ -1,7 +1,8 @@
 <figure>
   <blockquote>
-    <p>널리 사용될 때를 대비해 비트코인을 조금 갖고 있는 것이 합리적일 수 있습니다. 충분히 많은 사람이 같은 생각을 하게 된다면, 그것은 자기 실현적 예언이 될 것입니다.</p>
+    <p>It might make sense just to get some in case it catches on. 충분히 많은 사람이 같은 생각을 하게 된다면, 그것은 자기 실현적 예언이 될 것입니다.</p>
   </blockquote>
+  
   <figcaption><a href="/satoshi/emails/cryptography/17/">사토시 나카모토</a>, 2009년 1월 17일</figcaption>
 </figure>
 
@@ -36,11 +37,11 @@
 - 다니엘 크라위츠의 ["Appcoins are Snake Oil"](/mempool/appcoins-are-snake-oil)
 - 다니엘 크라위츠의 ["It's Not About the Technology, It's About the Money"](/mempool/its-not-about-the-technology-its-about-the-money)
 
-현재 변동성이 존재하지만, 그게 뭐 어떤가요? 오히려 좋은 현상입니다. 보유자들은 동요하지 않습니다.
+현재 변동성이 존재하지만, 그게 뭐 어떤가요? If anything, that's a good thing. 보유자들은 동요하지 않습니다.
 
 - 다니엘 크라위츠의 ["I Love Bitcoin's Volatility"](/mempool/i-love-bitcoins-volatility)
 
-사람들의 우려와는 달리, 비트코인은 잠재적인 불법 사용으로 인한 이미지 문제로 고통받지 않습니다. 사실, 법적 규제를 우회할 수 있다는 점은 비트코인의 큰 장점 중 하나이며 축하받아 마땅합니다.
+사람들의 우려와는 달리, 비트코인은 잠재적인 불법 사용으로 인한 이미지 문제로 고통받지 않습니다. In fact, its ability to bypass legal restrictions is one of its biggest selling points and should be celebrated.
 
 - 다니엘 크라위츠의 ["Bitcoin Has No Image Problem"](/mempool/bitcoin-has-no-image-problem)
 - 다니엘 크라위츠의 ["How to Market Bitcoin"](/mempool/how-to-market-bitcoin)
