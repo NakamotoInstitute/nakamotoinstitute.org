@@ -28,7 +28,7 @@
   "Back to {{title}}": "{{title}}(으)로 돌아가기",
   "Chapter {{index}}:": "{{index}}장:",
   "By <authors />": "<authors /> 작성",
-  "First published on <a><em>{{- originalSite}}</em></a>": "",
+  "First published on <a><em>{{- originalSite}}</em></a>": "First published on <a><em>{{- originalSite}}</em></a>",
   "Added: <date>{{pubDate}}</date>": "추가됨: <date>{{pubDate}}</date>",
   "The Memory Pool": "메모리 풀",
   "Where ideas wait to be mined into the blockchain of the collective conscience": "아이디어가 집합의식 블록체인에 채굴되기를 기다리는 공간",
