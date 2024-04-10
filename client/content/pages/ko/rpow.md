@@ -10,7 +10,7 @@ RPOW 클라이언트는 자신의 개인키로 서명된 주어진 난이도의 
 
 이중 지출 문제는 모든 디지털 현금의 근본적인 문제입니다. RPOW는 신뢰할 수 있는 서버에 토큰의 소유권을 등록하는 방식으로 이 문제를 해결합니다. 그러나 RPOW는 모든 RPOW 토큰의 등록을 관리하는 서버를 일반 은행보다 더 신뢰할 수 있도록 정교한 보안 모델로 구축되었습니다. 서버는 실행 중인 소프트웨어의 해시를 안전하게 검증할 수 있는 IBM 4758 보안 암호화 코프로세서에서 실행되도록 설계되었습니다. RPOW 서버는 더 많은 요청을 처리하기 위해 협력할 수 있습니다.
 
-더 자세한 정보는 할 피니의 [원본 페이지](/finney/rpow/index.html)를 참조하시기 바랍니다. 여기에는 [개요](/finney/rpow/index.html), [FAQ](/finney/rpow/faqs.html), [이론 페이지](/finney/rpow/theory.html), [프레젠테이션](/finney/rpow/slides/slide001.html), 그리고 RPOW가 전 세계에 서비스를 제공하기 위해 어떻게 확장될 수 있는지 설명하는 매우 흥미로운 페이지인 [RPOW의 세계](/finney/rpow/world.html)가 포함되어 있습니다.
+여기에는 [개요](/finney/rpow/index.html), [FAQ](/finney/rpow/faqs.html), [이론 페이지](/finney/rpow/theory.html), [프레젠테이션](/finney/rpow/slides/slide001.html), 그리고 RPOW가 전 세계에 서비스를 제공하기 위해 어떻게 확장될 수 있는지 설명하는 매우 흥미로운 페이지인 [RPOW의 세계](/finney/rpow/world.html)가 포함되어 있습니다.
 
 원본 코드는 GitHub의 [여기](https://github.com/NakamotoInstitute/RPOW)에서 찾을 수 있습니다.
 
