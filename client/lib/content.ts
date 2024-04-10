@@ -12,7 +12,7 @@ export const getDirectoryFile = async (
 ) => {
   try {
     const dir = path.join("@/../content", directory);
-    const filePath = path.join(dir, `${slug}.${locale}.md`);
+    const filePath = path.join(dir, slug, `${locale}.md`);
     return await fs.readFile(filePath, "utf-8");
   } catch {
     return null;
