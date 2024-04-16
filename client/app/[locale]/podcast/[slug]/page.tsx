@@ -33,7 +33,7 @@ export default async function PodcastDetail({
   const episode = await getEpisode(slug);
 
   return (
-    <PageLayout locale={locale} generateHref={generateHref(slug)}>
+    <PageLayout t={t} locale={locale} generateHref={generateHref(slug)}>
       <PageHeader title={episode.title}>
         <p>
           <time dateTime={episode.date.toISOString()}>

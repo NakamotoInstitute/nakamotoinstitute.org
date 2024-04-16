@@ -62,6 +62,7 @@ export default async function EmailSourceThreadsIndex({
 
   return (
     <IndexPageLayout
+      t={t}
       title={t("{{source}} Threads", { source: formatEmailSource(source) })}
       locale={locale}
       generateHref={generateHref(source)}

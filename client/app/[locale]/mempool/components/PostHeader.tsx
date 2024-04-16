@@ -1,24 +1,25 @@
+import { TFunction } from "i18next";
 import Link from "next/link";
 import { Trans } from "react-i18next/TransWithoutContext";
 
 import { AuthorsLinks } from "@/app/components/AuthorsLinks";
 import { MempoolPost, MempoolSeries } from "@/lib/api/schemas/mempool";
-import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 
 type SeriesHeaderProps = {
+  t: TFunction<string, string>;
   locale: Locale;
   series: MempoolSeries;
   seriesIndex: number;
 };
 
 async function SeriesHeader({
+  t,
   locale,
   series,
   seriesIndex,
 }: SeriesHeaderProps) {
-  const { t } = await i18nTranslation(locale);
   return (
     <div className="mb-6">
       <h2 className="text-3xl">
@@ -41,18 +42,18 @@ async function SeriesHeader({
 }
 
 type PostHeaderProps = {
+  t: TFunction<string, string>;
   locale: Locale;
   post: MempoolPost;
 };
 
-export async function PostHeader({ locale, post }: PostHeaderProps) {
-  const { t } = await i18nTranslation(locale);
-
+export async function PostHeader({ t, locale, post }: PostHeaderProps) {
   return (
     <>
       <header className="mt-17 mx-auto max-w-4xl text-center">
         {post.series && post.seriesIndex !== null ? (
           <SeriesHeader
+            t={t}
             locale={locale}
             series={post.series}
             seriesIndex={post.seriesIndex}

@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import "@/app/globals.css";
+import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 
 import { PageLayout } from "./PageLayout";
 
@@ -9,12 +10,13 @@ type NotFoundLayoutProps = {
   generateHref: (locale: Locale) => string;
 };
 
-export default function NotFoundLayout({
+export default async function NotFoundLayout({
   locale,
   generateHref,
 }: NotFoundLayoutProps) {
+  const { t } = await i18nTranslation(locale);
   return (
-    <PageLayout locale={locale} generateHref={generateHref}>
+    <PageLayout t={t} locale={locale} generateHref={generateHref}>
       <div>
         <h2>Not Found</h2>
         <p>Could not find requested resource</p>

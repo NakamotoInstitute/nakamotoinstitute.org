@@ -66,6 +66,7 @@ export default async function PostThreadsIndex({
 
   return (
     <IndexPageLayout
+      t={t}
       title={t("Forum Threads")}
       locale={locale}
       generateHref={generateHref}

@@ -50,8 +50,13 @@ export default async function PostDetail({
   const { next, previous, post } = postData;
 
   return (
-    <PageLayout locale={locale} generateHref={generateHref(source, satoshiId)}>
+    <PageLayout
+      t={t}
+      locale={locale}
+      generateHref={generateHref(source, satoshiId)}
+    >
       <PostNavigation
+        t={t}
         className="mb-2"
         locale={locale}
         source={post.source}
@@ -92,6 +97,7 @@ export default async function PostDetail({
         }}
       />
       <PostNavigation
+        t={t}
         className="mt-4"
         locale={locale}
         previous={previous}

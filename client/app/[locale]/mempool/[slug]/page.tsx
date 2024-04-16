@@ -50,12 +50,12 @@ export default async function MempoolPost({
   };
 
   return (
-    <PageLayout locale={locale} generateHref={generateHref}>
+    <PageLayout t={t} locale={locale} generateHref={generateHref}>
       <Link className="mb-4 block text-center" href={backHref}>
         {backLabel}
       </Link>
       <article>
-        <PostHeader locale={locale} post={post} />
+        <PostHeader t={t} locale={locale} post={post} />
         <section className="prose mx-auto" dir={getDir(locale)}>
           <Rehype hasMath={post.hasMath}>{post.content}</Rehype>
           <hr />

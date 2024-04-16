@@ -37,7 +37,7 @@ export default async function FinneyIndex({
   const deathDate = new Date(Date.UTC(2014, 7, 28));
 
   return (
-    <PageLayout locale={locale} generateHref={generateHref}>
+    <PageLayout t={t} locale={locale} generateHref={generateHref}>
       <PageHeader title={t("Hal Finney")}>
         <p className="text-xl text-gray-500">
           {formatDateRange(locale, birthDate, deathDate)}

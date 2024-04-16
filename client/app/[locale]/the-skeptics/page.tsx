@@ -47,7 +47,7 @@ export default async function TheSkepticsPage({
   }
 
   return (
-    <PageLayout locale={locale} generateHref={generateHref}>
+    <PageLayout t={t} locale={locale} generateHref={generateHref}>
       <PageHeader title={t("The Skeptics")}>
         <Markdown>{content}</Markdown>
         <p>
@@ -88,6 +88,7 @@ export default async function TheSkepticsPage({
         {skeptics.map((s) => (
           <SkepticListing
             key={s.slug}
+            t={t}
             locale={locale}
             skeptic={s}
             prices={prices}

@@ -28,7 +28,7 @@ export default async function DonatePage({ params: { locale } }: LocaleParams) {
   const content = await getPage("donate", locale);
 
   return (
-    <PageLayout locale={locale} generateHref={generateHref}>
+    <PageLayout t={t} locale={locale} generateHref={generateHref}>
       <PageHeader title={t("Donate")} />
       <Markdown className="prose mx-auto mb-4">{content}</Markdown>
       <div className="text-center">

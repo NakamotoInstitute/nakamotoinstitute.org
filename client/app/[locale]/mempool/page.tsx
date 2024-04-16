@@ -32,7 +32,7 @@ export default async function MempoolIndex({
   const posts = await getMempoolPosts(locale);
 
   return (
-    <PageLayout locale={locale} generateHref={generateHref}>
+    <PageLayout t={t} locale={locale} generateHref={generateHref}>
       <PageHeader title={t("The Memory Pool")}>
         <p>
           {t(
@@ -48,7 +48,7 @@ export default async function MempoolIndex({
       </PageHeader>
       <section>
         {posts.map((post) => (
-          <PostListing key={post.slug} locale={locale} post={post} />
+          <PostListing key={post.slug} t={t} locale={locale} post={post} />
         ))}
       </section>
     </PageLayout>

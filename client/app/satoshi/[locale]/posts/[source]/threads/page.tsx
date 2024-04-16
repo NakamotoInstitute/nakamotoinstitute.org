@@ -62,6 +62,7 @@ export default async function PostSourceThreadsIndex({
 
   return (
     <IndexPageLayout
+      t={t}
       title={`${formatPostSource(source)} Threads`}
       locale={locale}
       generateHref={generateHref(source)}

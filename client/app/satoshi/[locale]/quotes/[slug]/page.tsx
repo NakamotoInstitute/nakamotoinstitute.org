@@ -1,3 +1,4 @@
+import { TFunction } from "i18next";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -28,12 +29,12 @@ export async function generateMetadata({
 }
 
 type SatoshiQuoteProps = {
+  t: TFunction<string, string>;
   locale: Locale;
   quote: Quote;
 };
 
-async function SatoshiQuote({ locale, quote }: SatoshiQuoteProps) {
-  const { t } = await i18nTranslation(locale);
+async function SatoshiQuote({ t, locale, quote }: SatoshiQuoteProps) {
   let subject: string;
   let url: string;
   let label: string;
@@ -93,14 +94,14 @@ export default async function QuotesCategoryPage({
   const { category, quotes } = await getQuoteCategory(slug);
 
   return (
-    <PageLayout locale={locale} generateHref={generateHref(slug)}>
+    <PageLayout t={t} locale={locale} generateHref={generateHref(slug)}>
       <PageHeader
         title={category.name}
         superTitle={t("The Quotable Satoshi")}
       />
       <section>
         {quotes.map((q) => (
-          <SatoshiQuote key={q.text} locale={locale} quote={q} />
+          <SatoshiQuote key={q.text} t={t} locale={locale} quote={q} />
         ))}
       </section>
     </PageLayout>

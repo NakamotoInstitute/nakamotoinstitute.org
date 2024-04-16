@@ -32,7 +32,7 @@ export default async function CrashCoursePage({
   const content = await getPage("crash-course", locale);
 
   return (
-    <PageLayout locale={locale} generateHref={generateHref}>
+    <PageLayout t={t} locale={locale} generateHref={generateHref}>
       <PageHeader
         title={t("The SNI Mempool Crash Course in Bitcoin Political Economy")}
       >

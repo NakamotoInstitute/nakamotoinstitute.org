@@ -67,7 +67,7 @@ export default async function HomePage({ params: { locale } }: LocaleParams) {
   const latest = await getLatestMempoolPost(locale);
 
   return (
-    <PageLayout locale={locale} generateHref={generateHref}>
+    <PageLayout t={t} locale={locale} generateHref={generateHref}>
       <div className="mb-8 rounded bg-gray-200 px-4 py-8 text-center">
         <Image
           className="mx-auto"

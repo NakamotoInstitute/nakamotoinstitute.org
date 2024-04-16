@@ -27,7 +27,7 @@ export default async function ContactPage({
   const { t } = await i18nTranslation(locale);
 
   return (
-    <PageLayout locale={locale} generateHref={generateHref}>
+    <PageLayout t={t} locale={locale} generateHref={generateHref}>
       <PageHeader title={t("Contact")} />
       <div className="text-center">
         <p>contact (at) nakamotoinstitute (dot) org</p>

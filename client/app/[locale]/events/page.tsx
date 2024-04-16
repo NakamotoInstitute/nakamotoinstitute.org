@@ -26,7 +26,7 @@ export default async function EventsPage({ params: { locale } }: LocaleParams) {
   const generateHref = (l: Locale) => urls(l).events;
 
   return (
-    <PageLayout locale={locale} generateHref={generateHref}>
+    <PageLayout t={t} locale={locale} generateHref={generateHref}>
       <PageHeader title={t("Events")} />
       <div className="text-center">
         <p>{t("There are no events currently scheduled.")}</p>

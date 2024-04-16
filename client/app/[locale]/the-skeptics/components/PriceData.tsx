@@ -1,7 +1,7 @@
 import Big from "big.js";
 import clsx from "clsx";
+import { TFunction } from "i18next";
 
-import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { DCAData } from "@/utils/prices";
 import { commafy } from "@/utils/strings";
 
@@ -59,15 +59,14 @@ function PriceDatum({
 }
 
 type SkepticPriceDataProps = {
-  locale: Locale;
+  t: TFunction<string, string>;
   priceData: DCAData;
 };
 
 export async function SkepticPriceData({
-  locale,
+  t,
   priceData: { usdInvested, totalBtc, usdValue, change },
 }: SkepticPriceDataProps) {
-  const { t } = await i18nTranslation(locale);
   return (
     <div className="flex flex-col flex-wrap justify-between border-b border-t border-opacity-25 py-2 md:flex-row">
       <PriceDatum label={t("Daily buy")} amount={Big(DAILY_BUY)} />

@@ -51,12 +51,12 @@ export default async function LibraryDetail({
   };
 
   return (
-    <PageLayout locale={locale} generateHref={generateHref}>
+    <PageLayout t={t} locale={locale} generateHref={generateHref}>
       <Link className="mb-4 block text-center" href={backHref}>
         {backLabel}
       </Link>
       <article>
-        <DocHeader locale={locale} doc={doc} />
+        <DocHeader t={t} locale={locale} doc={doc} />
         {doc.content ? (
           <>
             <section className="prose mx-auto" dir={getDir(locale)}>

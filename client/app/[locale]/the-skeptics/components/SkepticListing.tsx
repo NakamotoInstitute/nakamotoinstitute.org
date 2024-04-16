@@ -1,9 +1,9 @@
 import Big from "big.js";
+import { TFunction } from "i18next";
 import Link from "next/link";
 
 import { Rehype } from "@/app/components/Rehype";
 import { Price, Skeptic } from "@/lib/api/schemas/skeptics";
-import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { formatDate } from "@/utils/dates";
 import { calculateDCA } from "@/utils/prices";
 import { commafy } from "@/utils/strings";
@@ -13,17 +13,18 @@ import { SkepticPriceData } from "./PriceData";
 const DAILY_BUY = new Big(1);
 
 type SkepticProps = {
+  t: TFunction<string, string>;
   locale: Locale;
   skeptic: Skeptic;
   prices: Price[];
 };
 
 export async function SkepticListing({
+  t,
   locale,
   skeptic,
   prices,
 }: SkepticProps) {
-  const { t } = await i18nTranslation(locale);
   const priceData = calculateDCA(skeptic.date, prices, DAILY_BUY);
 
   return (
@@ -40,7 +41,7 @@ export async function SkepticListing({
         <p className="italic">{skeptic.title}</p>
       </header>
       <section className="py-2">
-        <SkepticPriceData locale={locale} priceData={priceData} />
+        <SkepticPriceData t={t} priceData={priceData} />
       </section>
       <section>
         {skeptic.excerpt ? <Rehype>{skeptic.excerpt}</Rehype> : null}

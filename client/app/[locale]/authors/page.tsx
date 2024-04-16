@@ -31,7 +31,7 @@ export default async function AuthorsIndex({
   const generateHref = (l: Locale) => urls(l).authors.index;
 
   return (
-    <PageLayout locale={locale} generateHref={generateHref}>
+    <PageLayout t={t} locale={locale} generateHref={generateHref}>
       <PageHeader title={t("Authors")} />
       <ul>
         {authors.map((author) => (

@@ -1,17 +1,16 @@
+import { TFunction } from "i18next";
 import Image from "next/image";
 import Link from "next/link";
 import { Trans } from "react-i18next/TransWithoutContext";
 
-import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { cdnUrl, urls } from "@/lib/urls";
 
 type FooterProps = {
+  t: TFunction<string, string>;
   locale: Locale;
 };
 
-export async function Footer({ locale }: FooterProps) {
-  const { t } = await i18nTranslation(locale);
-
+export async function Footer({ t, locale }: FooterProps) {
   const links = [
     { label: t("About"), url: urls(locale).about },
     { label: t("Contact"), url: urls(locale).contact },

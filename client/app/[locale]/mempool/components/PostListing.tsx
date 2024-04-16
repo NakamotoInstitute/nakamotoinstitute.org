@@ -1,22 +1,22 @@
 import clsx from "clsx";
+import { TFunction } from "i18next";
 import Link from "next/link";
 import { Trans } from "react-i18next/TransWithoutContext";
 
 import { AuthorsLinks } from "@/app/components/AuthorsLinks";
 import { MempoolPostIndex } from "@/lib/api/schemas/mempool";
-import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 
 import { TranslationLinks } from "../components/TranslationLinks";
 
 type PostListingProps = {
+  t: TFunction<string, string>;
   locale: Locale;
   post: MempoolPostIndex;
 };
 
-export async function PostListing({ locale, post }: PostListingProps) {
-  const { t } = await i18nTranslation(locale);
+export async function PostListing({ t, locale, post }: PostListingProps) {
   const original = post.date.getTime() === post.added.getTime();
 
   return (

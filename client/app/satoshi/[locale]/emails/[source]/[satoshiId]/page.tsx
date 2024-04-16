@@ -4,10 +4,10 @@ import { notFound } from "next/navigation";
 
 import { PageLayout } from "@/app/components/PageLayout";
 import { locales } from "@/i18n";
-import { getEmail, getSatoshiEmails } from "@/lib/api/emails";
+import { getEmail } from "@/lib/api/emails";
 import { EmailSource } from "@/lib/api/schemas/emails";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
-import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
+import { generateHrefLangs } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import { formatEmailSource } from "@/utils/strings";
@@ -50,8 +50,13 @@ export default async function EmailDetail({
   const { next, previous, email } = emailData;
 
   return (
-    <PageLayout locale={locale} generateHref={generateHref(source, satoshiId)}>
+    <PageLayout
+      t={t}
+      locale={locale}
+      generateHref={generateHref(source, satoshiId)}
+    >
       <EmailNavigation
+        t={t}
         className="mb-2"
         locale={locale}
         source={email.source}
@@ -93,6 +98,7 @@ export default async function EmailDetail({
         }}
       />
       <EmailNavigation
+        t={t}
         className="mt-4"
         locale={locale}
         previous={previous}

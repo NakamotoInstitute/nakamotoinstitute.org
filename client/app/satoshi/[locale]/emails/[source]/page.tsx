@@ -63,6 +63,7 @@ export default async function EmailsSourceIndex({
 
   return (
     <IndexPageLayout
+      t={t}
       title={t("{{source}} Emails", { source: formatEmailSource(source) })}
       locale={locale}
       generateHref={generateHref(source)}

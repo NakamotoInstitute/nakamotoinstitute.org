@@ -1,3 +1,4 @@
+import { TFunction } from "i18next";
 import Link from "next/link";
 
 import { AuthorsLinks } from "@/app/components/AuthorsLinks";
@@ -10,9 +11,10 @@ import { DocFormatChips } from "./DocFormats";
 type DocListingProps = {
   doc: DocumentIndex;
   locale: Locale;
+  t: TFunction<string, string>;
 };
 
-export async function DocListing({ doc, locale }: DocListingProps) {
+export async function DocListing({ doc, locale, t }: DocListingProps) {
   return (
     <article className="border-b border-solid py-4 first:pt-0 last:border-b-0">
       <header>
@@ -28,7 +30,7 @@ export async function DocListing({ doc, locale }: DocListingProps) {
         </p>
       </header>
       <section>
-        <DocFormatChips className="pt-1" locale={locale} doc={doc} />
+        <DocFormatChips t={t} className="pt-1" doc={doc} />
       </section>
     </article>
   );

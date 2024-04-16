@@ -1,14 +1,15 @@
 import clsx from "clsx";
+import { TFunction } from "i18next";
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { PageLayout } from "@/app/components/PageLayout";
 import { locales } from "@/i18n";
-import { getForumThread, getForumThreads } from "@/lib/api/posts";
+import { getForumThread } from "@/lib/api/posts";
 import { ForumPost, ForumPostSource } from "@/lib/api/schemas/posts";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
-import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
+import { generateHrefLangs } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import { formatPostSource } from "@/utils/strings";
@@ -42,15 +43,20 @@ export async function generateMetadata({
 }
 
 type ThreadPostProps = {
+  t: TFunction<string, string>;
   locale: Locale;
   post: ForumPost;
   odd: boolean;
   satoshiOnly: boolean;
 };
 
-async function ThreadPost({ locale, post, odd, satoshiOnly }: ThreadPostProps) {
-  const { t } = await i18nTranslation(locale);
-
+async function ThreadPost({
+  t,
+  locale,
+  post,
+  odd,
+  satoshiOnly,
+}: ThreadPostProps) {
   return (
     <article
       id={post.sourceId}
@@ -134,9 +140,13 @@ export default async function PostSourceThreadDetail({
   const { t } = await i18nTranslation(locale);
 
   return (
-    <PageLayout locale={locale} generateHref={generateHref(source, threadId)}>
+    <PageLayout
+      t={t}
+      locale={locale}
+      generateHref={generateHref(source, threadId)}
+    >
       <ThreadPageHeader
-        locale={locale}
+        t={t}
         sourceTitle={formatPostSource(thread.source)}
         title={thread.title}
         allLink={{
@@ -147,6 +157,7 @@ export default async function PostSourceThreadDetail({
         satoshiOnly={satoshiOnly}
       >
         <PostThreadNavigation
+          t={t}
           className="mb-4"
           locale={locale}
           next={next}
@@ -157,6 +168,7 @@ export default async function PostSourceThreadDetail({
       {posts.map((p, index) => (
         <ThreadPost
           key={p.sourceId}
+          t={t}
           locale={locale}
           post={p}
           odd={index % 2 !== 0}
@@ -164,6 +176,7 @@ export default async function PostSourceThreadDetail({
         />
       ))}
       <PostThreadNavigation
+        t={t}
         className="mt-4"
         locale={locale}
         next={next}

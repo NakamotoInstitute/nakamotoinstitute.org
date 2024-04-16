@@ -38,13 +38,13 @@ export default async function AuthorDetail({
   const generateHref = (l: Locale) => urls(l).authors.detail(slug);
 
   return (
-    <PageLayout locale={locale} generateHref={generateHref}>
+    <PageLayout t={t} locale={locale} generateHref={generateHref}>
       <PageHeader title={author.name} />
       {library.length > 0 ? (
         <section>
           <h2 className="text-3xl">{t("Library")}</h2>
           {library.map((doc) => (
-            <DocListing key={doc.slug} doc={doc} locale={locale} />
+            <DocListing key={doc.slug} t={t} doc={doc} locale={locale} />
           ))}
         </section>
       ) : null}
@@ -52,7 +52,7 @@ export default async function AuthorDetail({
         <section>
           <h2 className="text-3xl">{t("Mempool")}</h2>
           {mempool.map((post) => (
-            <PostListing key={post.slug} post={post} locale={locale} />
+            <PostListing key={post.slug} t={t} post={post} locale={locale} />
           ))}
         </section>
       ) : null}

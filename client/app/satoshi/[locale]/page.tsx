@@ -43,6 +43,7 @@ export default async function SatoshiIndex({
 
   return (
     <PageLayout
+      t={t}
       className="text-center"
       locale={locale}
       generateHref={generateHref}

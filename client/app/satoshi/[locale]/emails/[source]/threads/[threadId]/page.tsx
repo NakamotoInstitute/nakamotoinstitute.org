@@ -1,14 +1,15 @@
 import clsx from "clsx";
+import { TFunction } from "i18next";
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { PageLayout } from "@/app/components/PageLayout";
 import { locales } from "@/i18n";
-import { getEmailThread, getEmailThreads } from "@/lib/api/emails";
+import { getEmailThread } from "@/lib/api/emails";
 import { EmailSource, EmailWithParent } from "@/lib/api/schemas/emails";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
-import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
+import { generateHrefLangs } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import { formatEmailSource } from "@/utils/strings";
@@ -38,6 +39,7 @@ export async function generateMetadata({
 }
 
 type ThreadEmailProps = {
+  t: TFunction<string, string>;
   locale: Locale;
   email: EmailWithParent;
   odd: boolean;
@@ -45,13 +47,12 @@ type ThreadEmailProps = {
 };
 
 async function ThreadEmail({
+  t,
   locale,
   email,
   odd,
   satoshiOnly,
 }: ThreadEmailProps) {
-  const { t } = await i18nTranslation(locale);
-
   return (
     <article
       id={email.sourceId}
@@ -139,9 +140,13 @@ export default async function EmailSourceThreadDetail({
   const { t } = await i18nTranslation(locale);
 
   return (
-    <PageLayout locale={locale} generateHref={generateHref(source, threadId)}>
+    <PageLayout
+      t={t}
+      locale={locale}
+      generateHref={generateHref(source, threadId)}
+    >
       <ThreadPageHeader
-        locale={locale}
+        t={t}
         sourceTitle={formatEmailSource(thread.source)}
         title={thread.title}
         allLink={{
@@ -152,6 +157,7 @@ export default async function EmailSourceThreadDetail({
         satoshiOnly={satoshiOnly}
       >
         <EmailThreadNavigation
+          t={t}
           className="mb-4"
           locale={locale}
           next={next}
@@ -162,6 +168,7 @@ export default async function EmailSourceThreadDetail({
       {emails.map((e, index) => (
         <ThreadEmail
           key={e.sourceId}
+          t={t}
           locale={locale}
           email={e}
           odd={index % 2 !== 0}
@@ -169,6 +176,7 @@ export default async function EmailSourceThreadDetail({
         />
       ))}
       <EmailThreadNavigation
+        t={t}
         className="mt-4"
         locale={locale}
         next={next}

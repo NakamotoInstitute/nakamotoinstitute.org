@@ -48,7 +48,7 @@ export default async function SeriesIndex({
   const allSeries = await getAllMempoolSeries(locale);
 
   return (
-    <PageLayout locale={locale} generateHref={generateHref}>
+    <PageLayout t={t} locale={locale} generateHref={generateHref}>
       <PageHeader title={t("Mempool Series")}>
         <p>{t("Extended blogchains for a deeper dive")}</p>
       </PageHeader>

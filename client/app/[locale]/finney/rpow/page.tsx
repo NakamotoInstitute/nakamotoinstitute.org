@@ -29,7 +29,7 @@ export default async function RPOWPage({ params: { locale } }: LocaleParams) {
   const content = await getPage("rpow", locale);
 
   return (
-    <PageLayout locale={locale} generateHref={generateHref}>
+    <PageLayout t={t} locale={locale} generateHref={generateHref}>
       <PageHeader title={t("RPOW - Reusable Proofs of Work")} />
       <div className="text-center">
         <p>

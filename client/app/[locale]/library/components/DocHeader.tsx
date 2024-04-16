@@ -1,16 +1,18 @@
+import { TFunction } from "i18next";
+
 import { AuthorsLinks } from "@/app/components/AuthorsLinks";
 import { Document } from "@/lib/api/schemas/library";
-import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { formatDocDate, formatTimeAttr } from "@/utils/dates";
 
 import { DocFormatLinks } from "./DocFormats";
 
 type DocHeaderProps = {
+  t: TFunction<string, string>;
   locale: Locale;
   doc: Document;
 };
 
-export async function DocHeader({ locale, doc }: DocHeaderProps) {
+export async function DocHeader({ t, locale, doc }: DocHeaderProps) {
   return (
     <>
       <header className="mx-auto mt-6 max-w-4xl text-center">
@@ -50,19 +52,19 @@ export async function DocHeader({ locale, doc }: DocHeaderProps) {
       {doc.content ? (
         <>
           <DocFormatLinks
+            t={t}
             classes={{ root: "justify-center gap-3 font-medium" }}
-            locale={locale}
             doc={doc}
           />
           <hr className="mx-auto my-6 w-12 border-opacity-40" />
         </>
       ) : (
         <DocFormatLinks
+          t={t}
           classes={{
             root: "text-center flex-col gap-3",
             link: "text-lg font-medium",
           }}
-          locale={locale}
           doc={doc}
         />
       )}

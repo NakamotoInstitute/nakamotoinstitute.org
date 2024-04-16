@@ -28,7 +28,7 @@ export default async function AboutPage({ params: { locale } }: LocaleParams) {
   const { t } = await i18nTranslation(locale);
 
   return (
-    <PageLayout locale={locale} generateHref={generateHref}>
+    <PageLayout t={t} locale={locale} generateHref={generateHref}>
       <PageHeader title={t("About")} />
       <Markdown className="page-content">{content}</Markdown>
     </PageLayout>

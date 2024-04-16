@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { TFunction } from "i18next";
 import Link from "next/link";
 
 import {
@@ -11,12 +12,11 @@ import {
   ForumThread,
   SatoshiForumPost,
 } from "@/lib/api/schemas/posts";
-import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { urls } from "@/lib/urls";
 import { formatEmailSource, formatPostSource } from "@/utils/strings";
 
 type ContentNavigationProps = {
-  locale: Locale;
+  t: TFunction<string, string>;
   mainLink: AnchorProps;
   prevHref?: string;
   nextHref?: string;
@@ -26,7 +26,7 @@ type ContentNavigationProps = {
 };
 
 const ContentNavigation = async ({
-  locale,
+  t,
   mainLink,
   prevHref,
   nextHref,
@@ -34,7 +34,6 @@ const ContentNavigation = async ({
   className,
   reverse,
 }: ContentNavigationProps) => {
-  const { t } = await i18nTranslation(locale);
   return (
     <div
       className={clsx(
@@ -69,6 +68,7 @@ const ContentNavigation = async ({
 };
 
 type NavProps<Data, Source> = {
+  t: TFunction<string, string>;
   locale: Locale;
   previous: Data | null;
   next: Data | null;
@@ -80,6 +80,7 @@ type NavProps<Data, Source> = {
 type EmailNavProps = NavProps<SatoshiEmail, EmailSource>;
 
 export const EmailNavigation = async ({
+  t,
   locale,
   source,
   previous,
@@ -87,8 +88,6 @@ export const EmailNavigation = async ({
   className,
   reverse,
 }: EmailNavProps) => {
-  const { t } = await i18nTranslation(locale);
-
   const prevHref = previous
     ? urls(locale).satoshi.emails.sourceEmail(
         previous.source,
@@ -107,8 +106,8 @@ export const EmailNavigation = async ({
 
   return (
     <ContentNavigation
+      t={t}
       className={className}
-      locale={locale}
       mainLink={{
         href: urls(locale).satoshi.emails.index,
         text: t("All emails"),
@@ -129,6 +128,7 @@ export const EmailNavigation = async ({
 export type EmailThreadNavProps = NavProps<EmailThread, EmailSource>;
 
 export const EmailThreadNavigation = async ({
+  t,
   locale,
   source,
   previous,
@@ -136,8 +136,6 @@ export const EmailThreadNavigation = async ({
   className,
   reverse,
 }: EmailThreadNavProps) => {
-  const { t } = await i18nTranslation(locale);
-
   const prevHref = previous
     ? urls(locale).satoshi.emails.sourceThreadsDetail(
         previous.source,
@@ -156,8 +154,8 @@ export const EmailThreadNavigation = async ({
 
   return (
     <ContentNavigation
+      t={t}
       className={className}
-      locale={locale}
       mainLink={{
         href: urls(locale).satoshi.emails.threadsIndex,
         text: t("All email threads"),
@@ -178,6 +176,7 @@ export const EmailThreadNavigation = async ({
 type PostNavProps = NavProps<SatoshiForumPost, ForumPostSource>;
 
 export const PostNavigation = async ({
+  t,
   locale,
   source,
   previous,
@@ -185,8 +184,6 @@ export const PostNavigation = async ({
   className,
   reverse,
 }: PostNavProps) => {
-  const { t } = await i18nTranslation(locale);
-
   const prevHref = previous
     ? urls(locale).satoshi.posts.sourcePost(
         previous.source,
@@ -205,8 +202,8 @@ export const PostNavigation = async ({
 
   return (
     <ContentNavigation
+      t={t}
       className={className}
-      locale={locale}
       mainLink={{
         href: urls(locale).satoshi.posts.index,
         text: t("All posts"),
@@ -225,6 +222,7 @@ export const PostNavigation = async ({
 export type PostThreadNavProps = NavProps<ForumThread, ForumPostSource>;
 
 export const PostThreadNavigation = async ({
+  t,
   locale,
   source,
   previous,
@@ -232,8 +230,6 @@ export const PostThreadNavigation = async ({
   className,
   reverse,
 }: PostThreadNavProps) => {
-  const { t } = await i18nTranslation(locale);
-
   const prevHref = previous
     ? urls(locale).satoshi.posts.sourceThreadsDetail(
         previous.source,
@@ -252,8 +248,8 @@ export const PostThreadNavigation = async ({
 
   return (
     <ContentNavigation
+      t={t}
       className={className}
-      locale={locale}
       mainLink={{
         href: urls(locale).satoshi.emails.threadsIndex,
         text: t("All post threads"),

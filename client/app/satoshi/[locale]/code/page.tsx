@@ -31,7 +31,7 @@ export default async function SatoshiCode({
   const { t } = await i18nTranslation(locale);
 
   return (
-    <PageLayout locale={locale} generateHref={generateHref}>
+    <PageLayout t={t} locale={locale} generateHref={generateHref}>
       <PageHeader title={t("Code")}>
         <p>
           <Trans
@@ -45,6 +45,7 @@ export default async function SatoshiCode({
       </PageHeader>
       <section>
         <CodeTable
+          t={t}
           locale={locale}
           title={t("Bitcoin Pre-Release")}
           date={new Date(2008, 10, 16)}
@@ -60,6 +61,7 @@ export default async function SatoshiCode({
           source="https://bitcointalk.org/index.php?topic=382374.0"
         />
         <CodeTable
+          t={t}
           locale={locale}
           title={t("Bitcoin v0.1.0")}
           date={new Date(2009, 0, 9)}
@@ -84,6 +86,7 @@ export default async function SatoshiCode({
           source="https://bitcointalk.org/index.php?topic=68121.0"
         />
         <CodeTable
+          t={t}
           locale={locale}
           title={t("Bitcoin v0.1.3")}
           date={new Date(2008, 10, 16)}

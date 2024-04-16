@@ -31,7 +31,7 @@ export default async function PodcastIndex({
   const episodes = await getEpisodes();
 
   return (
-    <PageLayout locale={locale} generateHref={generateHref}>
+    <PageLayout t={t} locale={locale} generateHref={generateHref}>
       <PageHeader title={t("The Crypto-Mises Podcast")} />
       <section>
         {episodes.map((e) => (

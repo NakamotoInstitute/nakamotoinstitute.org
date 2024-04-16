@@ -52,7 +52,7 @@ export default async function QuotesIndex({
   const secondColumn = categories.slice(halfLength);
 
   return (
-    <PageLayout locale={locale} generateHref={generateHref}>
+    <PageLayout t={t} locale={locale} generateHref={generateHref}>
       <PageHeader title={t("The Quotable Satoshi")}>
         <figure>
           <blockquote>

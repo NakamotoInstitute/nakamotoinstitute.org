@@ -1,24 +1,23 @@
 import clsx from "clsx";
+import { TFunction } from "i18next";
 import Link from "next/link";
 
 import { Chip } from "@/app/components/Chip";
 import { Document, DocumentIndex } from "@/lib/api/schemas/library";
-import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 
 type DocFormatLinksProps = {
-  locale: Locale;
+  t: TFunction<string, string>;
   className?: string;
   doc: Document;
   classes?: { root?: string; link?: string };
 };
 
 export async function DocFormatLinks({
+  t,
   classes,
   className,
   doc,
-  locale,
 }: DocFormatLinksProps) {
-  const { t } = await i18nTranslation(locale);
   const links: React.ReactNode[] = [];
 
   doc.formats?.forEach((format) =>
@@ -43,17 +42,16 @@ export async function DocFormatLinks({
 }
 
 type DocFormatChipsProps = {
-  locale: Locale;
+  t: TFunction<string, string>;
   className?: string;
   doc: DocumentIndex;
 };
 
 export async function DocFormatChips({
-  locale,
+  t,
   className,
   doc,
 }: DocFormatChipsProps) {
-  const { t } = await i18nTranslation(locale);
   const chips: React.ReactNode[] = [];
 
   if (doc.hasContent) {

@@ -1,9 +1,8 @@
+import { TFunction } from "i18next";
 import Link from "next/link";
 
-import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
-
 type ThreadPageHeaderProps = {
-  locale: Locale;
+  t: TFunction<string, string>;
   title: string;
   sourceTitle: string;
   satoshiOnly: boolean;
@@ -13,7 +12,7 @@ type ThreadPageHeaderProps = {
 };
 
 export const ThreadPageHeader = async ({
-  locale,
+  t,
   sourceTitle,
   title,
   satoshiOnly,
@@ -21,8 +20,6 @@ export const ThreadPageHeader = async ({
   externalLink,
   children,
 }: ThreadPageHeaderProps) => {
-  const { t } = await i18nTranslation(locale);
-
   return (
     <>
       {children}

@@ -1,6 +1,6 @@
+import { TFunction } from "i18next";
 import Link from "next/link";
 
-import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { formatDate } from "@/utils/dates";
 
 import { CodeDownload, CodeDownloadProps } from "./CodeDownload";
@@ -20,6 +20,7 @@ function CodeTableRow({ label, children }: CodeTableRowProps) {
 }
 
 type CodeTableProps = {
+  t: TFunction<string, string>;
   locale: Locale;
   title: string;
   date: Date;
@@ -30,6 +31,7 @@ type CodeTableProps = {
 };
 
 export async function CodeTable({
+  t,
   locale,
   title,
   date,
@@ -38,7 +40,6 @@ export async function CodeTable({
   notes,
   source,
 }: CodeTableProps) {
-  const { t } = await i18nTranslation(locale);
   return (
     <article className="my-4 first:mt-0 last:mb-0">
       <h2 className="text-2xl font-medium">{title}</h2>

@@ -55,6 +55,7 @@ export default async function PostsIndex({ params: { locale } }: LocaleParams) {
   };
   return (
     <IndexPageLayout
+      t={t}
       title={t("Forum Posts")}
       locale={locale}
       generateHref={generateHref}

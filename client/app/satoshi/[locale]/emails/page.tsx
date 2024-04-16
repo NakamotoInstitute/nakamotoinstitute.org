@@ -58,6 +58,7 @@ export default async function EmailsIndex({
 
   return (
     <IndexPageLayout
+      t={t}
       title={t("Emails")}
       locale={locale}
       generateHref={generateHref}

@@ -61,6 +61,7 @@ export default async function PostsSourceIndex({
   };
   return (
     <IndexPageLayout
+      t={t}
       title={t("{{source}} Posts", { source: formatPostSource(source) })}
       locale={locale}
       generateHref={generateHref(source)}

@@ -33,7 +33,7 @@ export default async function LibraryIndex({
   const docs = await getLibraryDocs(locale);
 
   return (
-    <PageLayout locale={locale} generateHref={generateHref}>
+    <PageLayout t={t} locale={locale} generateHref={generateHref}>
       <PageHeader title={t("Library")}>
         <p>
           {t(
@@ -44,7 +44,7 @@ export default async function LibraryIndex({
       <section>
         {docs.length > 0 ? (
           docs.map((doc) => (
-            <DocListing key={doc.slug} doc={doc} locale={locale} />
+            <DocListing key={doc.slug} doc={doc} locale={locale} t={t} />
           ))
         ) : (
           <p className="text-center">

@@ -1,7 +1,7 @@
 import clsx from "clsx";
+import { TFunction } from "i18next";
 
 import { env } from "@/env";
-import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateLocaleToggleLinks, urls } from "@/lib/urls";
 
 import Fathom from "./Fathom";
@@ -9,6 +9,7 @@ import { Footer } from "./Footer";
 import { Navbar } from "./Navbar";
 
 export type PageLayoutProps = {
+  t: TFunction<string, string>;
   className?: string;
   generateHref?: (locale: Locale) => string;
   locale: Locale;
@@ -16,12 +17,12 @@ export type PageLayoutProps = {
 };
 
 export async function PageLayout({
+  t,
   className,
   locale,
   generateHref,
   children,
 }: PageLayoutProps) {
-  const { t } = await i18nTranslation(locale);
   const toggleProps = generateHref
     ? generateLocaleToggleLinks(locale, generateHref)
     : {};
@@ -48,7 +49,7 @@ export async function PageLayout({
       <main className={clsx("twbs-container mb-4 flex-grow pb-4", className)}>
         {children}
       </main>
-      <Footer locale={locale} />
+      <Footer t={t} locale={locale} />
     </body>
   );
 }

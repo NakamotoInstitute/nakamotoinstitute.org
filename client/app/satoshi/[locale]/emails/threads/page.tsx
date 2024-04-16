@@ -69,6 +69,7 @@ export default async function EmailThreadsIndex({
 
   return (
     <IndexPageLayout
+      t={t}
       title={t("Email Threads")}
       locale={locale}
       generateHref={generateHref}
