@@ -1,4 +1,4 @@
-Reusable Proof-of-Work (RPOW) was an invention by Hal Finney intended as a prototype for a digital cash based on Nick Szabo's [theory of collectibles](/library/shelling-out/). RPOW was a significant early step in the history of digital cash and was a precursor to Bitcoin. Although never intended to be more than a prototype, RPOW was a very sophisticated piece of software that would have been capable of serving a huge network, had it caught on.
+Reusable Proof-of-Work (RPOW) was invented by Hal Finney intended as a prototype for a digital cash based on Nick Szabo's [theory of collectibles](/library/shelling-out/). RPOW was a significant early step in the history of digital cash and was a precursor to Bitcoin. Although never intended to be more than a prototype, RPOW was a very sophisticated piece of software that would have been capable of serving a huge network, had it caught on.
 
 ## Historical Context
 
