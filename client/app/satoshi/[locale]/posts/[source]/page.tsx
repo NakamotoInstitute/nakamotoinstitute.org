@@ -24,7 +24,7 @@ export async function generateMetadata({
   const languages = generateHrefLangs([...locales], generateHref(source));
 
   return {
-    title: t("{{source}} Posts", { source: formatPostSource(source) }),
+    title: t("source_posts_title", { source: formatPostSource(source) }),
     alternates: { languages },
   };
 }
@@ -39,14 +39,14 @@ export default async function PostsSourceIndex({
 
   const navLinks = {
     main: {
-      text: t("View threads"),
+      text: t("view_threads"),
       href: urls(locale).satoshi.posts.sourceThreadsIndex(source),
     },
     left: {
-      text: t("All posts"),
+      text: t("all_posts"),
       href: urls(locale).satoshi.posts.index,
       sublink: {
-        text: t("Threads"),
+        text: t("threads"),
         href: urls(locale).satoshi.posts.threadsIndex,
       },
     },
@@ -54,7 +54,7 @@ export default async function PostsSourceIndex({
       text: formatPostSource(otherSource),
       href: urls(locale).satoshi.posts.sourceIndex(otherSource),
       sublink: {
-        text: t("Threads"),
+        text: t("threads"),
         href: urls(locale).satoshi.posts.sourceThreadsIndex(otherSource),
       },
     },
@@ -62,7 +62,7 @@ export default async function PostsSourceIndex({
   return (
     <IndexPageLayout
       t={t}
-      title={t("{{source}} Posts", { source: formatPostSource(source) })}
+      title={t("source_posts_title", { source: formatPostSource(source) })}
       locale={locale}
       generateHref={generateHref(source)}
       navLinks={navLinks}

@@ -47,7 +47,7 @@ export async function SkepticListing({
         {skeptic.excerpt ? <Rehype>{skeptic.excerpt}</Rehype> : null}
         {skeptic.waybackLink ? (
           <p>
-            <Link href={skeptic.waybackLink}>{t("Archive link")}</Link>
+            <Link href={skeptic.waybackLink}>{t("archive_link")}</Link>
           </p>
         ) : null}
       </section>

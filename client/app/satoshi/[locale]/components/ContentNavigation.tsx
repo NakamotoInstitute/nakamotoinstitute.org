@@ -50,7 +50,7 @@ const ContentNavigation = async ({
           !!prevHref && "border-r border-gray-400",
         )}
       >
-        {prevHref ? <Link href={prevHref}>{t("Previous")}</Link> : null}
+        {prevHref ? <Link href={prevHref}>{t("previous")}</Link> : null}
       </div>
       <div className="px-2">
         <Link href={indexLink.href}>{indexLink.text}</Link>
@@ -61,7 +61,7 @@ const ContentNavigation = async ({
           !!nextHref && "border-l border-gray-400",
         )}
       >
-        {nextHref ? <Link href={nextHref}>{t("Next")}</Link> : null}
+        {nextHref ? <Link href={nextHref}>{t("next")}</Link> : null}
       </div>
     </div>
   );
@@ -110,13 +110,13 @@ export const EmailNavigation = async ({
       className={className}
       mainLink={{
         href: urls(locale).satoshi.emails.index,
-        text: t("All emails"),
+        text: t("all_emails"),
       }}
       prevHref={prevHref}
       nextHref={nextHref}
       indexLink={{
         href: indexHref,
-        text: t("{{source}} index", {
+        text: t("source_index", {
           source: formatEmailSource(source, true),
         }),
       }}
@@ -158,13 +158,13 @@ export const EmailThreadNavigation = async ({
       className={className}
       mainLink={{
         href: urls(locale).satoshi.emails.threadsIndex,
-        text: t("All email threads"),
+        text: t("all_email_threads"),
       }}
       prevHref={prevHref}
       nextHref={nextHref}
       indexLink={{
         href: indexHref,
-        text: t("{{source}} index", {
+        text: t("source_index", {
           source: formatEmailSource(source, true),
         }),
       }}
@@ -206,13 +206,13 @@ export const PostNavigation = async ({
       className={className}
       mainLink={{
         href: urls(locale).satoshi.posts.index,
-        text: t("All posts"),
+        text: t("all_posts"),
       }}
       prevHref={prevHref}
       nextHref={nextHref}
       indexLink={{
         href: indexHref,
-        text: t("{{source}} posts", { source: formatPostSource(source) }),
+        text: t("source_posts", { source: formatPostSource(source) }),
       }}
       reverse={reverse}
     />
@@ -252,13 +252,13 @@ export const PostThreadNavigation = async ({
       className={className}
       mainLink={{
         href: urls(locale).satoshi.emails.threadsIndex,
-        text: t("All post threads"),
+        text: t("all_post_threads"),
       }}
       prevHref={prevHref}
       nextHref={nextHref}
       indexLink={{
         href: indexHref,
-        text: t("{{source}} index", { source: formatPostSource(source) }),
+        text: t("source_index", { source: formatPostSource(source) }),
       }}
       reverse={reverse}
     />

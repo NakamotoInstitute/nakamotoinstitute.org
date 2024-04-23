@@ -92,7 +92,7 @@ For library content translations, follow these guidelines:
 
 ### General Guidelines
 
-- **New Languages**: To introduce a new language, update `Locales` and `LocaleType` in `server/sni/constants.py`, as well as `locales` in both `client/i18n.ts` and `client/locales/languages.json`. Then, execute `pnpm translate:extract` within the `client` directory.
+- **New Languages**: To introduce a new language, update `Locales` and `LocaleType` in `server/sni/constants.py`, as well as `languages` and `locales` in `client/i18n.ts`. Then, execute `pnpm translate:extract` within the `client` directory.
 
 ---
 

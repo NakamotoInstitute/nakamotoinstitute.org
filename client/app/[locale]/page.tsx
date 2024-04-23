@@ -77,22 +77,18 @@ export default async function HomePage({ params: { locale } }: LocaleParams) {
           alt="Blockchain"
           priority
         />
-        <p className="mb-4 text-xl font-light italic">
-          {t(
-            "I've been working on a new electronic cash system that's fully peer-to-peer, with no trusted third party...",
-          )}
-        </p>
+        <p className="mb-4 text-xl font-light italic">{t("satoshi_quote")}</p>
         <a
           className="inline-block cursor-pointer select-none rounded border border-solid border-green-600 bg-green-600 px-3 py-1 text-white hover:border-green-700 hover:bg-green-700 hover:text-white focus:border-green-700 focus:bg-green-700 focus:text-white"
           href={urls(locale).library.doc("bitcoin")}
           role="button"
         >
-          {t("Read Satoshi's White Paper")}
+          {t("read_white_paper")}
         </a>
       </div>
       <p className="my-6 text-center text-3xl font-medium">
         <Trans
-          i18nKey="Sign up for our <a>newsletter</a> to receive email updates."
+          i18nKey="newsletter_signup"
           components={{
             a: <Link href={urls(locale).substack} />,
           }}
@@ -101,7 +97,7 @@ export default async function HomePage({ params: { locale } }: LocaleParams) {
       <Banner>
         <Trans
           t={t}
-          i18nKey="Check out the original code and website for Hal Finney's <a>Reusable Proofs of Work</a>"
+          i18nKey="rpow_banner"
           components={{
             a: <Link className="font-bold" href={urls(locale).finney.rpow} />,
           }}
@@ -110,7 +106,7 @@ export default async function HomePage({ params: { locale } }: LocaleParams) {
       <Banner>
         <Trans
           t={t}
-          i18nKey="Pay respect to visionary prognosticators at <a>The Skeptics: A Tribute to Bold Assertions</a>"
+          i18nKey="skeptics_banner"
           components={{
             a: <Link className="font-bold" href={urls(locale).skeptics} />,
           }}
@@ -119,7 +115,7 @@ export default async function HomePage({ params: { locale } }: LocaleParams) {
       <Banner>
         <Trans
           t={t}
-          i18nKey="Read the <a>Crash Course in Bitcoin Political Economy</a>"
+          i18nKey="crash_course_banner"
           components={{
             a: <Link className="font-bold" href={urls(locale).crashCourse} />,
           }}
@@ -128,7 +124,7 @@ export default async function HomePage({ params: { locale } }: LocaleParams) {
       <div className="mt-6 flex text-left flex-col sm:flex-row">
         {latest ? (
           <HomeSection
-            title={t("Mempool")}
+            title={t("mempool")}
             button={{
               text: "Read more",
               href: urls(locale).mempool.post(latest.slug),
@@ -139,27 +135,19 @@ export default async function HomePage({ params: { locale } }: LocaleParams) {
           </HomeSection>
         ) : null}
         <HomeSection
-          title={t("Podcast")}
+          title={t("podcast")}
           button={{
-            text: t("See episodes"),
+            text: t("see_episodes"),
             href: urls(locale).podcast.index,
           }}
         >
-          <p>
-            {t(
-              "The Crypto-Mises Podcast offers commentary on Bitcoin, economics, cryptography, and current events.",
-            )}
-          </p>
+          <p>{t("podcast_description")}</p>
         </HomeSection>
         <HomeSection
-          title={t("Support")}
-          button={{ text: t("Donate"), href: urls(locale).donate.index }}
+          title={t("support")}
+          button={{ text: t("donate"), href: urls(locale).donate.index }}
         >
-          <p>
-            {t(
-              "You can help us achieve our goals by donating today. Bitcoins only.",
-            )}
-          </p>
+          <p>{t("donation_message")}</p>
         </HomeSection>
       </div>
     </PageLayout>

@@ -16,7 +16,7 @@ export async function generateMetadata({
   const languages = generateHrefLangs([...locales], generateHref);
 
   return {
-    title: t("Events"),
+    title: t("events"),
     alternates: { languages },
   };
 }
@@ -27,9 +27,9 @@ export default async function EventsPage({ params: { locale } }: LocaleParams) {
 
   return (
     <PageLayout t={t} locale={locale} generateHref={generateHref}>
-      <PageHeader title={t("Events")} />
+      <PageHeader title={t("events")} />
       <div className="text-center">
-        <p>{t("There are no events currently scheduled.")}</p>
+        <p>{t("no_events_message")}</p>
       </div>
     </PageLayout>
   );

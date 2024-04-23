@@ -8,13 +8,13 @@ export async function generateMetadata({
   params: { locale },
 }: LocaleParams): Promise<Metadata> {
   const { t } = await i18nTranslation(locale);
-  const siteTitle = t("Satoshi Nakamoto Institute");
+  const siteTitle = t("sni_full");
   return {
     title: {
       template: `%s | ${siteTitle}`,
       default: siteTitle,
     },
-    description: t("Advancing and preserving Bitcoin knowledge"),
+    description: t("sni_mission_statement"),
     robots: {
       index: false,
       follow: false,

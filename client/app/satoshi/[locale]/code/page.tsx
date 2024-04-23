@@ -20,7 +20,7 @@ export async function generateMetadata({
   const languages = generateHrefLangs([...locales], generateHref);
 
   return {
-    title: t("Code"),
+    title: t("code"),
     alternates: { languages },
   };
 }
@@ -32,11 +32,11 @@ export default async function SatoshiCode({
 
   return (
     <PageLayout t={t} locale={locale} generateHref={generateHref}>
-      <PageHeader title={t("Code")}>
+      <PageHeader title={t("code")}>
         <p>
           <Trans
             t={t}
-            i18nKey="This page contains files for the first three available Bitcoin codebases written by Satoshi Nakamoto. Version control and releases from v0.1.5 onward can be viewed in the <a>Bitcoin GitHub repository</a>."
+            i18nKey="version_control_description"
             components={{
               a: <Link href="https://github.com/bitcoin/bitcoin/" />,
             }}
@@ -47,13 +47,13 @@ export default async function SatoshiCode({
         <CodeTable
           t={t}
           locale={locale}
-          title={t("Bitcoin Pre-Release")}
+          title={t("bitcoin_pre_release")}
           date={new Date(2008, 10, 16)}
           downloads={{
             release: {
               text: "bitcoin-nov08.tgz",
               href: "https://s3.amazonaws.com/nakamotoinstitute/code/bitcoin-nov08.tgz",
-              note: t("(Compressed by SNI)"),
+              note: t("compressed_by_sni"),
             },
             md5: { hash: "e9492e326512b55208c7d9f1db23e35a" },
             sha1: { hash: "466e67a3ce0f7e0ca3661e6fb5e72b874015b0b7" },
@@ -63,7 +63,7 @@ export default async function SatoshiCode({
         <CodeTable
           t={t}
           locale={locale}
-          title={t("Bitcoin v0.1.0")}
+          title={t("bitcoin_v010")}
           date={new Date(2009, 0, 9)}
           downloads={[
             {
@@ -88,7 +88,7 @@ export default async function SatoshiCode({
         <CodeTable
           t={t}
           locale={locale}
-          title={t("Bitcoin v0.1.3")}
+          title={t("bitcoin_v013")}
           date={new Date(2008, 10, 16)}
           dateRef="https://bitcointalk.org/index.php?topic=49815.msg593132#msg593132"
           downloads={{
@@ -99,7 +99,7 @@ export default async function SatoshiCode({
             md5: { hash: "9a73e0826d5c069091600ca295c6d224" },
             sha1: {
               hash: "294c684fbaa13ae2662e612e98d288bde0ba2b88",
-              note: t("(Calculated by SNI)"),
+              note: t("calculated_by_sni"),
             },
           }}
           source="https://bitcointalk.org/index.php?topic=68121.msg814283#msg814283"

@@ -40,7 +40,7 @@ export default async function LibraryDetail({
   const doc = await getLibraryDoc(slug, locale);
 
   const backHref = urls(locale).library.index;
-  const backLabel = t("Back to library");
+  const backLabel = t("back_to_library");
 
   const generateHref = (l: Locale) => {
     const translation = doc.translations.find((t) => t.locale === l);
@@ -67,7 +67,7 @@ export default async function LibraryDetail({
                   <p>
                     <Trans
                       t={t}
-                      i18nKey="Translated by <links />"
+                      i18nKey="translated_by"
                       components={{
                         links: (
                           <RenderedItemsList
@@ -96,7 +96,7 @@ export default async function LibraryDetail({
                   <p>
                     <Trans
                       t={t}
-                      i18nKey="Read in <links />"
+                      i18nKey="translation_links"
                       components={{
                         links: (
                           <TranslationLinks

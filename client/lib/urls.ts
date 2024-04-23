@@ -1,7 +1,6 @@
 import { ToggleLinkProps } from "@/app/components/LanguageToggle";
 import { env } from "@/env";
-import { locales } from "@/i18n";
-import languages from "@/locales/languages.json";
+import { languages, locales } from "@/i18n";
 import { domainToPathMapping } from "@/middleware";
 
 import { EmailSource } from "./api/schemas/emails";
@@ -50,7 +49,7 @@ export const urls = (locale: Locale) => {
   };
 
   return {
-    home: getUrl("/"),
+    home: getUrl(""),
     about: getUrl("/about"),
     authors: {
       index: getUrl("/authors"),
@@ -129,19 +128,15 @@ export const generateLocaleToggleLinks = (
 ): ToggleLinkProps => {
   return locales.reduce<ToggleLinkProps>(
     (acc, loc) => {
-      const lang = languages.find((lang) => lang.code === loc);
-
-      if (!lang) {
-        return acc;
-      }
+      const name = languages[loc];
 
       if (loc === locale) {
-        acc.current = lang.name;
+        acc.current = name;
         return acc;
       }
 
       acc.links?.push({
-        text: lang.name,
+        text: name,
         href: generateHref(loc),
       });
 

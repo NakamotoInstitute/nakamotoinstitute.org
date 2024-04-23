@@ -21,7 +21,7 @@ export async function generateMetadata({
   const languages = generateHrefLangs([...locales], generateHref);
 
   return {
-    title: t("Library"),
+    title: t("library"),
     alternates: { languages },
   };
 }
@@ -34,12 +34,8 @@ export default async function LibraryIndex({
 
   return (
     <PageLayout t={t} locale={locale} generateHref={generateHref}>
-      <PageHeader title={t("Library")}>
-        <p>
-          {t(
-            "Bitcoin was not forged in a vacuum. These works serve to contextualize bitcoin into the broader story of cryptography and freedom.",
-          )}
-        </p>
+      <PageHeader title={t("library")}>
+        <p>{t("bitcoin_context")}</p>
       </PageHeader>
       <section>
         {docs.length > 0 ? (
@@ -47,9 +43,7 @@ export default async function LibraryIndex({
             <DocListing key={doc.slug} doc={doc} locale={locale} t={t} />
           ))
         ) : (
-          <p className="text-center">
-            {t("The library is empty for this language.")}
-          </p>
+          <p className="text-center">{t("empty_library_message")}</p>
         )}
       </section>
     </PageLayout>

@@ -19,7 +19,7 @@ export async function generateMetadata({
   const languages = generateHrefLangs([...locales], generateHref);
 
   return {
-    title: t("RPOW - Reusable Proofs of Work"),
+    title: t("rpow_title"),
     alternates: { languages },
   };
 }
@@ -30,25 +30,25 @@ export default async function RPOWPage({ params: { locale } }: LocaleParams) {
 
   return (
     <PageLayout t={t} locale={locale} generateHref={generateHref}>
-      <PageHeader title={t("RPOW - Reusable Proofs of Work")} />
+      <PageHeader title={t("rpow_title")} />
       <div className="text-center">
         <p>
-          <Link href="/finney/rpow/index.html">{t("Archived Website")}</Link>
+          <Link href="/finney/rpow/index.html">{t("archived_website")}</Link>
         </p>
         <p>
           <Link href="https://github.com/NakamotoInstitute/RPOW">
-            {t("GitHub")}
+            {t("github")}
           </Link>
         </p>
         <p>
-          <Link href="/library/rpow">{t("Original Announcement")}</Link>
+          <Link href="/library/rpow">{t("original_announcement")}</Link>
         </p>
       </div>
       <hr className="my-4" />
       <Markdown className="page-content">{content}</Markdown>
       <hr className="my-4" />
       <div className="text-center">
-        <Link href={urls(locale).finney.index}>{t("Back")}</Link>
+        <Link href={urls(locale).finney.index}>{t("back")}</Link>
       </div>
     </PageLayout>
   );

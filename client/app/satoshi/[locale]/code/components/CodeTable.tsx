@@ -44,7 +44,7 @@ export async function CodeTable({
     <article className="my-4 first:mt-0 last:mb-0">
       <h2 className="text-2xl font-medium">{title}</h2>
       <div className="grid grid-cols-1 md:grid-cols-[1fr,5fr] md:gap-4">
-        <CodeTableRow label={t("Date")}>
+        <CodeTableRow label={t("date")}>
           {formatDate(locale, date)}
           {dateRef ? (
             <span className="ml-1">
@@ -52,7 +52,7 @@ export async function CodeTable({
             </span>
           ) : null}
         </CodeTableRow>
-        <CodeTableRow label={t("Download")}>
+        <CodeTableRow label={t("download")}>
           {Array.isArray(downloads) ? (
             downloads.map((download, index) => (
               <CodeDownload key={index} {...download} />
@@ -62,9 +62,9 @@ export async function CodeTable({
           )}
         </CodeTableRow>
         {notes ? (
-          <CodeTableRow label={t("Release notes")}>{notes}</CodeTableRow>
+          <CodeTableRow label={t("release_notes")}>{notes}</CodeTableRow>
         ) : null}
-        <CodeTableRow label={t("Source")}>
+        <CodeTableRow label={t("source")}>
           <Link className="break-words" href={source}>
             {source}
           </Link>

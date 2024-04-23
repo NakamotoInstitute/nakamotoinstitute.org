@@ -18,7 +18,7 @@ export async function generateMetadata({
   const languages = generateHrefLangs([...locales], generateHref);
 
   return {
-    title: t("Authors"),
+    title: t("authors"),
     alternates: { languages },
   };
 }
@@ -32,7 +32,7 @@ export default async function AuthorsIndex({
 
   return (
     <PageLayout t={t} locale={locale} generateHref={generateHref}>
-      <PageHeader title={t("Authors")} />
+      <PageHeader title={t("authors")} />
       <ul>
         {authors.map((author) => (
           <li key={author.slug}>

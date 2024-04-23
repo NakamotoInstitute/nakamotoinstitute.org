@@ -33,7 +33,7 @@ export async function generateMetadata({
   );
 
   return {
-    title: t("{{title}} - Thread", { title: threadData.thread.title }),
+    title: t("title_thread", { title: threadData.thread.title }),
     alternates: { languages },
   };
 }
@@ -79,7 +79,7 @@ async function ThreadEmail({
           <div className="border-b p-2">
             {email.parent ? (
               <div className="flex gap-2">
-                <span>{t("Replying to:")}</span>
+                <span>{t("replying_to")}</span>
                 <Link
                   href={{ hash: email.parent.sourceId }}
                 >{`>>${email.parent.sourceId}`}</Link>
@@ -87,7 +87,7 @@ async function ThreadEmail({
             ) : null}
             {email.replies.length > 0 ? (
               <div className="flex gap-2">
-                <span>{t("Replies:")}</span>
+                <span>{t("replies")}</span>
                 {email.replies.map((reply) => (
                   <Link key={reply} href={{ hash: reply }}>{`>>${reply}`}</Link>
                 ))}
@@ -105,7 +105,7 @@ async function ThreadEmail({
         />
       </section>
       <footer className="flex justify-between border-t p-2">
-        <Link href={email.url}>{t("External link")}</Link>
+        <Link href={email.url}>{t("external_link")}</Link>
         {email.satoshiId ? (
           <Link
             href={urls(locale).satoshi.emails.sourceEmail(
@@ -113,7 +113,7 @@ async function ThreadEmail({
               email.satoshiId.toString(),
             )}
           >
-            {t("Permalink")}
+            {t("permalink")}
           </Link>
         ) : null}
       </footer>
@@ -151,7 +151,7 @@ export default async function EmailSourceThreadDetail({
         title={thread.title}
         allLink={{
           href: generateHref(source, threadId)(locale),
-          text: t("View all emails"),
+          text: t("view_all_emails"),
         }}
         externalLink={thread.url}
         satoshiOnly={satoshiOnly}

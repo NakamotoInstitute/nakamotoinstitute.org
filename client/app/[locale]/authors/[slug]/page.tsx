@@ -42,7 +42,7 @@ export default async function AuthorDetail({
       <PageHeader title={author.name} />
       {library.length > 0 ? (
         <section>
-          <h2 className="text-3xl">{t("Library")}</h2>
+          <h2 className="text-3xl">{t("library")}</h2>
           {library.map((doc) => (
             <DocListing key={doc.slug} t={t} doc={doc} locale={locale} />
           ))}
@@ -50,7 +50,7 @@ export default async function AuthorDetail({
       ) : null}
       {mempool.length > 0 ? (
         <section>
-          <h2 className="text-3xl">{t("Mempool")}</h2>
+          <h2 className="text-3xl">{t("mempool")}</h2>
           {mempool.map((post) => (
             <PostListing key={post.slug} t={t} post={post} locale={locale} />
           ))}

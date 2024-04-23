@@ -31,10 +31,10 @@ export const ThreadPageHeader = async ({
             <Link href={allLink.href}>{allLink.text}</Link>
           ) : (
             <Link href={{ query: { view: "satoshi" } }}>
-              {t("View Satoshi only")}
+              {t("view_satoshi_only")}
             </Link>
           )}
-          <Link href={externalLink}>{t("External link")}</Link>
+          <Link href={externalLink}>{t("external_link")}</Link>
         </div>
       </div>
     </>

@@ -13,7 +13,7 @@ export async function generateMetadata({
       types: {
         "application/rss+xml": [
           {
-            title: t("The Crypto-Mises Podcast"),
+            title: t("crypto_mises_podcast"),
             url: urls(locale).podcast.rss,
           },
         ],

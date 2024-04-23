@@ -48,44 +48,42 @@ export default async function SatoshiIndex({
       locale={locale}
       generateHref={generateHref}
     >
-      <PageHeader title={t("The Complete Satoshi")}>
+      <PageHeader title={t("complete_satoshi")}>
         <Markdown>{content}</Markdown>
       </PageHeader>
       <section>
         <p>
-          <Link href="/satoshinakamoto.asc">
-            {t("Satoshi Nakamoto&rsquo;s PGP Key")}
-          </Link>
+          <Link href="/satoshinakamoto.asc">{t("satoshi_pgp_key")}</Link>
         </p>
       </section>
       <hr className="my-4" />
       <section className="mx-auto flex flex-col gap-4">
         <SatoshiSection
-          text={t("The Whitepaper")}
+          text={t("the_whitepaper")}
           href={urls(locale).library.doc("bitcoin")}
         >
-          {t("The original vision.")}
+          {t("original_vision")}
         </SatoshiSection>
         <SatoshiSection
-          text={t("Emails")}
+          text={t("emails")}
           href={urls(locale).satoshi.emails.index}
         >
-          {t("It all began here.")}
+          {t("it_all_began_here")}
         </SatoshiSection>
         <SatoshiSection
-          text={t("Forum Posts")}
+          text={t("forum_posts")}
           href={urls(locale).satoshi.posts.index}
         >
-          {t("Where an idea flourished.")}
+          {t("idea_flourished")}
         </SatoshiSection>
-        <SatoshiSection text={t("Code")} href={urls(locale).satoshi.code}>
-          {t("The vision instantiated.")}
+        <SatoshiSection text={t("code")} href={urls(locale).satoshi.code}>
+          {t("vision_instantiated")}
         </SatoshiSection>
         <SatoshiSection
-          text={t("Quotes")}
+          text={t("quotes")}
           href={urls(locale).satoshi.quotesIndex}
         >
-          {t("Indexed wisdom from the quotable Satoshi.")}
+          {t("indexed_wisdom")}
         </SatoshiSection>
       </section>
     </PageLayout>

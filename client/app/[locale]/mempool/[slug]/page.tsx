@@ -39,7 +39,7 @@ export default async function MempoolPost({
   const post = await getMempoolPost(slug, locale);
 
   const backHref = urls(locale).mempool.index;
-  const backLabel = t("Back to the Memory Pool");
+  const backLabel = t("back_to_mempool");
 
   const generateHref = (l: Locale) => {
     const translation = post.translations.find((t) => t.locale === l);
@@ -63,7 +63,7 @@ export default async function MempoolPost({
             <p>
               <Trans
                 t={t}
-                i18nKey="Translated by <links />"
+                i18nKey="translated_by"
                 components={{
                   links: (
                     <RenderedItemsList
@@ -91,7 +91,7 @@ export default async function MempoolPost({
               <p>
                 <Trans
                   t={t}
-                  i18nKey="Read in <links />"
+                  i18nKey="translation_links"
                   components={{
                     links: (
                       <TranslationLinks
@@ -117,7 +117,7 @@ export default async function MempoolPost({
         >
           <Trans
             t={t}
-            i18nKey="Back to {{title}}"
+            i18nKey="back_to_title"
             values={{
               title: post.series.title,
             }}

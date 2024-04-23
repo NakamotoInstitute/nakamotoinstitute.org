@@ -32,7 +32,7 @@ async function SeriesHeader({
         <p className="text-3xl">
           <Trans
             t={t}
-            i18nKey="Chapter {{index}}:"
+            i18nKey="chapter_index"
             values={{ index: seriesIndex }}
           />
         </p>
@@ -63,7 +63,7 @@ export async function PostHeader({ t, locale, post }: PostHeaderProps) {
         <p className="text-2xl font-medium">
           <Trans
             t={t}
-            i18nKey="By <authors />"
+            i18nKey="by_authors"
             components={{
               authors: (
                 <AuthorsLinks
@@ -84,7 +84,7 @@ export async function PostHeader({ t, locale, post }: PostHeaderProps) {
           <p className="mt-4 text-lg italic">
             <Trans
               t={t}
-              i18nKey="First published on <a><em>{{- originalSite}}</em></a>"
+              i18nKey="first_published"
               values={{ originalSite: post.originalSite }}
               components={{
                 em: <em className="not-italic" />,

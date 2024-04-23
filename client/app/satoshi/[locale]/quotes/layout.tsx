@@ -8,7 +8,7 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { t } = await i18nTranslation(locale);
   const parentTitleTemplate = (await parent).title?.template;
-  const sectionTitle = t("The Quotable Satoshi");
+  const sectionTitle = t("quotable_satoshi");
   return {
     title: {
       template: parentTitleTemplate

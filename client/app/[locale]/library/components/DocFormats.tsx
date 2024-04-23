@@ -31,7 +31,7 @@ export async function DocFormatLinks({
   if (doc.external) {
     links.push(
       <Link key="link" href={doc.external} className={classes?.link}>
-        {t("External link")}
+        {t("external_link")}
       </Link>,
     );
   }
@@ -67,7 +67,7 @@ export async function DocFormatChips({
   );
 
   if (doc.external) {
-    chips.push(<Chip key="link">{t("Link")}</Chip>);
+    chips.push(<Chip key="link">{t("link")}</Chip>);
   }
 
   return chips ? (

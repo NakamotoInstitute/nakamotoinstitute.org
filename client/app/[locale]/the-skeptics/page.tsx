@@ -25,7 +25,7 @@ export async function generateMetadata({
   const languages = generateHrefLangs([...locales], generateHref);
 
   return {
-    title: t("The Skeptics"),
+    title: t("the_skeptics"),
     alternates: { languages },
   };
 }
@@ -48,12 +48,12 @@ export default async function TheSkepticsPage({
 
   return (
     <PageLayout t={t} locale={locale} generateHref={generateHref}>
-      <PageHeader title={t("The Skeptics")}>
+      <PageHeader title={t("the_skeptics")}>
         <Markdown>{content}</Markdown>
         <p>
           <Trans
             t={t}
-            i18nKey="Submit a link via <a>GitHub</a>"
+            i18nKey="submit_github_link"
             components={{
               a: <Link href={urls(locale).github} />,
             }}
@@ -63,7 +63,7 @@ export default async function TheSkepticsPage({
           <p>
             <Trans
               t={t}
-              i18nKey="Price data by <a>CoinMetrics.io</a>"
+              i18nKey="coinmetrics_data"
               components={{
                 a: <Link href="https://coinmetrics.io" />,
               }}
@@ -73,7 +73,7 @@ export default async function TheSkepticsPage({
             <p>
               <Trans
                 t={t}
-                i18nKey="Last updated: <date>{{lastUpdated}}</date>"
+                i18nKey="last_updated"
                 values={{ lastUpdated: formatDate(locale, lastUpdated) }}
                 components={{
                   date: <time dateTime={lastUpdated.toISOString()} />,
@@ -83,7 +83,7 @@ export default async function TheSkepticsPage({
           ) : null}
         </div>
       </PageHeader>
-      {error ? <div>{t("Error loading prices")}</div> : null}
+      {error ? <div>{t("price_loading_error")}</div> : null}
       <section>
         {skeptics.map((s) => (
           <SkepticListing

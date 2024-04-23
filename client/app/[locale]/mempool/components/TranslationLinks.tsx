@@ -2,8 +2,8 @@ import Link from "next/link";
 import { ElementType } from "react";
 
 import { RenderedItemsList } from "@/app/components/RenderedItemsList";
+import { languages } from "@/i18n";
 import { TranslationData } from "@/lib/api/schemas/shared";
-import languages from "@/locales/languages.json";
 
 type TranslationLinksProps = {
   as?: ElementType;
@@ -24,8 +24,8 @@ export const TranslationLinks = ({
       locale={locale}
       items={translations}
       renderItem={(item) => {
-        const language = languages.find((lang) => lang.code === item.locale);
-        return <Link href={urlFunc(item)}>{language?.name}</Link>;
+        const name = languages[item.locale];
+        return <Link href={urlFunc(item)}>{name}</Link>;
       }}
     />
   );

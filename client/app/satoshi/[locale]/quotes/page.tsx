@@ -53,11 +53,11 @@ export default async function QuotesIndex({
 
   return (
     <PageLayout t={t} locale={locale} generateHref={generateHref}>
-      <PageHeader title={t("The Quotable Satoshi")}>
+      <PageHeader title={t("quotable_satoshi")}>
         <figure>
           <blockquote>
             <Trans
-              i18nKey="It&lsquo;s very attractive to the libertarian viewpoint if we can explain it properly.<br><em>I&lsquo;m better with code than with words though.</em>"
+              i18nKey="satoshi_quote_extended"
               components={{
                 br: <br />,
                 em: <em />,
@@ -66,7 +66,7 @@ export default async function QuotesIndex({
           </blockquote>
           <figcaption>
             <Trans
-              i18nKey="<a>Satoshi Nakamoto</a>, {{date}}"
+              i18nKey="satoshi_citation"
               components={{
                 a: (
                   <Link
@@ -90,7 +90,7 @@ export default async function QuotesIndex({
         <p>
           <Trans
             t={t}
-            i18nKey="Special thanks to <a>Jordan Tuwiner</a> for indexing quotations."
+            i18nKey="quotable_satoshi_acknowledgements"
             components={{
               a: <Link href="https://charts.bitbo.io" />,
             }}
@@ -99,7 +99,7 @@ export default async function QuotesIndex({
         <p>
           <Trans
             t={t}
-            i18nKey="If there is a quotation or category you would like to add, please <contact>contact us</contact> or submit a pull request on <github>GitHub</github>."
+            i18nKey="add_quotation_request"
             components={{
               contact: <Link href={urls(locale).contact} />,
               github: <Link href={urls(locale).github} />,

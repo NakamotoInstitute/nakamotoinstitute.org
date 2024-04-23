@@ -19,7 +19,7 @@ export async function generateMetadata({
   const languages = generateHrefLangs([...locales], generateHref);
 
   return {
-    title: t("The Crypto-Mises Podcast"),
+    title: t("crypto_mises_podcast"),
     alternates: { languages },
   };
 }
@@ -32,7 +32,7 @@ export default async function PodcastIndex({
 
   return (
     <PageLayout t={t} locale={locale} generateHref={generateHref}>
-      <PageHeader title={t("The Crypto-Mises Podcast")} />
+      <PageHeader title={t("crypto_mises_podcast")} />
       <section>
         {episodes.map((e) => (
           <EpisodeListing key={e.slug} locale={locale} episode={e} />

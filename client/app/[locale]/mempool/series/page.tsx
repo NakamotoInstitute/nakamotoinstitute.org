@@ -19,7 +19,7 @@ export async function generateMetadata({
   const languages = generateHrefLangs([...locales], generateHref);
 
   return {
-    title: t("Mempool Series"),
+    title: t("mempool_series"),
     alternates: { languages },
   };
 }
@@ -49,8 +49,8 @@ export default async function SeriesIndex({
 
   return (
     <PageLayout t={t} locale={locale} generateHref={generateHref}>
-      <PageHeader title={t("Mempool Series")}>
-        <p>{t("Extended blogchains for a deeper dive")}</p>
+      <PageHeader title={t("mempool_series")}>
+        <p>{t("mempool_series_description")}</p>
       </PageHeader>
       <section>
         {allSeries.map((series) => (

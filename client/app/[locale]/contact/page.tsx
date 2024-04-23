@@ -16,7 +16,7 @@ export async function generateMetadata({
   const languages = generateHrefLangs([...locales], generateHref);
 
   return {
-    title: t("Contact"),
+    title: t("contact"),
     alternates: { languages },
   };
 }
@@ -28,7 +28,7 @@ export default async function ContactPage({
 
   return (
     <PageLayout t={t} locale={locale} generateHref={generateHref}>
-      <PageHeader title={t("Contact")} />
+      <PageHeader title={t("contact")} />
       <div className="text-center">
         <p>contact (at) nakamotoinstitute (dot) org</p>
       </div>

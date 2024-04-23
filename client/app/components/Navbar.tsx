@@ -4,7 +4,7 @@ import clsx from "clsx";
 import Link from "next/link";
 import { useState } from "react";
 
-import languages from "@/locales/languages.json";
+import { languages } from "@/i18n";
 
 import { LanguageToggle, ToggleLinkProps } from "./LanguageToggle";
 
@@ -23,7 +23,7 @@ export function Navbar({
   navLinks: AnchorProps[];
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const current = languages.find((lang) => lang.code === locale)!.name;
+  const current = languages[locale];
 
   return (
     <nav className="mb-4 border-b border-dashed">

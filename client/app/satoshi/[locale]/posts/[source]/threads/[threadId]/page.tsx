@@ -37,7 +37,7 @@ export async function generateMetadata({
   );
 
   return {
-    title: t("{{title}} - Thread", { title: threadData.thread.title }),
+    title: t("title_thread", { title: threadData.thread.title }),
     alternates: { languages },
   };
 }
@@ -106,7 +106,7 @@ async function ThreadPost({
         />
       </section>
       <footer className="flex justify-between border-t p-2">
-        <Link href={post.url}>{t("External link")}</Link>
+        <Link href={post.url}>{t("external_link")}</Link>
         {post.satoshiId ? (
           <Link
             href={urls(locale).satoshi.posts.sourcePost(
@@ -114,7 +114,7 @@ async function ThreadPost({
               post.satoshiId.toString(),
             )}
           >
-            {t("Permalink")}
+            {t("permalink")}
           </Link>
         ) : null}
       </footer>
@@ -151,7 +151,7 @@ export default async function PostSourceThreadDetail({
         title={thread.title}
         allLink={{
           href: generateHref(source, threadId)(locale),
-          text: t("View all posts"),
+          text: t("view_all_posts"),
         }}
         externalLink={thread.url}
         satoshiOnly={satoshiOnly}

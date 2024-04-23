@@ -42,21 +42,21 @@ async function SatoshiQuote({ t, locale, quote }: SatoshiQuoteProps) {
   if (quote.whitepaper) {
     subject = t("Bitcoin: A Peer-to-Peer Electronic Cash System");
     url = urls("en").library.doc("bitcoin");
-    label = t("View whitepaper");
+    label = t("view_whitepaper");
   } else if (quote.post) {
     subject = quote.post.subject;
     url = urls(locale).satoshi.posts.sourcePost(
       quote.post.source,
       quote.post.satoshiId.toString(),
     );
-    label = t("View post");
+    label = t("view_post");
   } else if (quote.email) {
     subject = quote.email.subject;
     url = urls(locale).satoshi.emails.sourceEmail(
       quote.email.source,
       quote.email.satoshiId.toString(),
     );
-    label = t("View email");
+    label = t("view_email");
   } else {
     return null;
   }
@@ -95,10 +95,7 @@ export default async function QuotesCategoryPage({
 
   return (
     <PageLayout t={t} locale={locale} generateHref={generateHref(slug)}>
-      <PageHeader
-        title={category.name}
-        superTitle={t("The Quotable Satoshi")}
-      />
+      <PageHeader title={category.name} superTitle={t("quotable_satoshi")} />
       <section>
         {quotes.map((q) => (
           <SatoshiQuote key={q.text} t={t} locale={locale} quote={q} />

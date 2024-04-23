@@ -18,7 +18,7 @@ export async function generateMetadata({
   const languages = generateHrefLangs([...locales], generateHref);
 
   return {
-    title: t("About"),
+    title: t("about"),
     alternates: { languages },
   };
 }
@@ -29,7 +29,7 @@ export default async function AboutPage({ params: { locale } }: LocaleParams) {
 
   return (
     <PageLayout t={t} locale={locale} generateHref={generateHref}>
-      <PageHeader title={t("About")} />
+      <PageHeader title={t("about")} />
       <Markdown className="page-content">{content}</Markdown>
     </PageLayout>
   );

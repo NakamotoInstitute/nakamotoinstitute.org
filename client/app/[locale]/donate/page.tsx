@@ -18,7 +18,7 @@ export async function generateMetadata({
   const languages = generateHrefLangs([...locales], generateHref);
 
   return {
-    title: t("Donate"),
+    title: t("donate"),
     alternates: { languages },
   };
 }
@@ -29,7 +29,7 @@ export default async function DonatePage({ params: { locale } }: LocaleParams) {
 
   return (
     <PageLayout t={t} locale={locale} generateHref={generateHref}>
-      <PageHeader title={t("Donate")} />
+      <PageHeader title={t("donate")} />
       <Markdown className="prose mx-auto mb-4">{content}</Markdown>
       <div className="text-center">
         <a
@@ -37,7 +37,7 @@ export default async function DonatePage({ params: { locale } }: LocaleParams) {
           href={urls(locale).donate.zaprite}
           role="button"
         >
-          {t("Donate")}
+          {t("donate")}
         </a>
       </div>
     </PageLayout>

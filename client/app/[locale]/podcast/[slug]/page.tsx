@@ -50,7 +50,7 @@ export default async function PodcastDetail({
         ></iframe>
         <p className="text-center">
           <Link href={urls(locale).podcast.episodeMp3(episode.slug)}>
-            {t("Download .mp3")}
+            {t("download_mp3")}
           </Link>
         </p>
       </section>

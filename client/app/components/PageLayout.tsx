@@ -32,17 +32,17 @@ export async function PageLayout({
       <Fathom siteId={env.FATHOM_ID!} />
       <Navbar
         locale={locale}
-        title={t("Satoshi Nakamoto Institute")}
-        mobileTitle={t("SNI")}
+        title={t("sni_full")}
+        mobileTitle={t("sni")}
         homeHref={urls(locale).home}
         navLinks={[
           {
             href: urls(locale).satoshi.index,
-            text: t("The Complete Satoshi"),
+            text: t("complete_satoshi"),
           },
-          { href: urls(locale).library.index, text: t("Library") },
-          { href: urls(locale).mempool.index, text: t("Mempool") },
-          { href: urls(locale).substack, text: t("Newsletter") },
+          { href: urls(locale).library.index, text: t("library") },
+          { href: urls(locale).mempool.index, text: t("mempool") },
+          { href: urls(locale).substack, text: t("newsletter") },
         ]}
         {...toggleProps}
       />

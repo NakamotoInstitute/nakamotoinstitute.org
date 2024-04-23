@@ -76,7 +76,7 @@ export default async function EmailDetail({
           </time>
         </p>
         <div className="flex gap-2">
-          <Link href={email.url}>{t("Original email")}</Link> •{" "}
+          <Link href={email.url}>{t("original_email")}</Link> •{" "}
           <Link
             href={{
               pathname: urls(locale).satoshi.emails.sourceThreadsDetail(
@@ -86,7 +86,7 @@ export default async function EmailDetail({
               hash: email.sourceId.toString(),
             }}
           >
-            {t("View in thread")}
+            {t("view_in_thread")}
           </Link>
         </div>
       </div>

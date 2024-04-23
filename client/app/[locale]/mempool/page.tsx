@@ -20,7 +20,7 @@ export async function generateMetadata({
   const languages = generateHrefLangs([...locales], generateHref);
 
   return {
-    title: t("The Memory Pool"),
+    title: t("memory_pool"),
     alternates: { languages },
   };
 }
@@ -33,17 +33,13 @@ export default async function MempoolIndex({
 
   return (
     <PageLayout t={t} locale={locale} generateHref={generateHref}>
-      <PageHeader title={t("The Memory Pool")}>
+      <PageHeader title={t("memory_pool")}>
+        <p>{t("memory_pool_description")}</p>
         <p>
-          {t(
-            "Where ideas wait to be mined into the blockchain of the collective conscience",
-          )}
+          <em>{t("mempool_invalid_transactions")}</em>
         </p>
         <p>
-          <em>{t("Some transactions may be invalid")}</em>
-        </p>
-        <p>
-          <Link href={urls(locale).mempool.rss}>{t("RSS Feed")}</Link>
+          <Link href={urls(locale).mempool.rss}>{t("rss_feed")}</Link>
         </p>
       </PageHeader>
       <section>

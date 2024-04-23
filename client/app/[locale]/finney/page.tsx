@@ -21,7 +21,7 @@ export async function generateMetadata({
   const languages = generateHrefLangs([...locales], generateHref);
 
   return {
-    title: t("Hal Finney"),
+    title: t("hal_finney"),
     alternates: { languages },
   };
 }
@@ -38,7 +38,7 @@ export default async function FinneyIndex({
 
   return (
     <PageLayout t={t} locale={locale} generateHref={generateHref}>
-      <PageHeader title={t("Hal Finney")}>
+      <PageHeader title={t("hal_finney")}>
         <p className="text-xl text-gray-500">
           {formatDateRange(locale, birthDate, deathDate)}
         </p>
@@ -57,9 +57,7 @@ export default async function FinneyIndex({
       <h2 className="mb-2 text-2xl font-medium">Code</h2>
       <ul>
         <li>
-          <Link href={urls(locale).finney.rpow}>
-            {t("RPOW - Reusable Proofs of Work")}
-          </Link>
+          <Link href={urls(locale).finney.rpow}>{t("rpow_title")}</Link>
         </li>
       </ul>
     </PageLayout>

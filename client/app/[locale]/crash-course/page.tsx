@@ -19,7 +19,7 @@ export async function generateMetadata({
   const languages = generateHrefLangs([...locales], generateHref);
 
   return {
-    title: t("The SNI Mempool Crash Course in Bitcoin Political Economy"),
+    title: t("sni_mempool_crash_course"),
     alternates: { languages },
   };
 }
@@ -33,13 +33,11 @@ export default async function CrashCoursePage({
 
   return (
     <PageLayout t={t} locale={locale} generateHref={generateHref}>
-      <PageHeader
-        title={t("The SNI Mempool Crash Course in Bitcoin Political Economy")}
-      >
+      <PageHeader title={t("sni_mempool_crash_course")}>
         <Image
           className="mx-auto my-4"
           src={cdnUrl("/img/mempool/hyperbitcoinization/BitcoinFace.png")}
-          alt={t("Hyperbitcoinization")}
+          alt={t("hyperbitcoinization")}
           width={600}
           height={341}
         />

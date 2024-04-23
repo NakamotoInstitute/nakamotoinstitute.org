@@ -12,13 +12,13 @@ export async function generateMetadata({
       types: {
         "application/rss+xml": [
           {
-            title: t("The Memory Pool"),
+            title: t("memory_pool"),
             url: urls(locale).mempool.rss,
           },
         ],
         "application/atom+xml": [
           {
-            title: t("The Memory Pool"),
+            title: t("memory_pool"),
             url: urls(locale).mempool.atom,
           },
         ],

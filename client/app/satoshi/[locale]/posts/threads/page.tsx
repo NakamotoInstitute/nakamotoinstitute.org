@@ -21,7 +21,7 @@ export async function generateMetadata({
   const languages = generateHrefLangs([...locales], generateHref);
 
   return {
-    title: t("Forum Threads"),
+    title: t("forum_threads"),
     alternates: { languages },
   };
 }
@@ -43,14 +43,14 @@ export default async function PostThreadsIndex({
 
   const navLinks = {
     main: {
-      text: t("View posts"),
+      text: t("view_posts"),
       href: urls(locale).satoshi.posts.index,
     },
     left: {
       text: formatPostSource("p2pfoundation"),
       href: urls(locale).satoshi.posts.sourceThreadsIndex("p2pfoundation"),
       sublink: {
-        text: t("Posts"),
+        text: t("posts"),
         href: urls(locale).satoshi.posts.sourceIndex("p2pfoundation"),
       },
     },
@@ -58,7 +58,7 @@ export default async function PostThreadsIndex({
       text: formatPostSource("bitcointalk"),
       href: urls(locale).satoshi.posts.sourceThreadsIndex("bitcointalk"),
       sublink: {
-        text: t("Posts"),
+        text: t("posts"),
         href: urls(locale).satoshi.posts.sourceIndex("bitcointalk"),
       },
     },
@@ -67,7 +67,7 @@ export default async function PostThreadsIndex({
   return (
     <IndexPageLayout
       t={t}
-      title={t("Forum Threads")}
+      title={t("forum_threads")}
       locale={locale}
       generateHref={generateHref}
       navLinks={navLinks}

@@ -56,7 +56,7 @@ export async function PostListing({ t, locale, post }: PostListingProps) {
             <div>
               <Trans
                 t={t}
-                i18nKey="Read in <links />"
+                i18nKey="translation_links"
                 components={{
                   links: (
                     <TranslationLinks
@@ -75,7 +75,7 @@ export async function PostListing({ t, locale, post }: PostListingProps) {
             <div>
               <Trans
                 t={t}
-                i18nKey="Added: <date>{{pubDate}}</date>"
+                i18nKey="added_date"
                 components={{
                   date: <time dateTime={post.added.toISOString()} />,
                 }}

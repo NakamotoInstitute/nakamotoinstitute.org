@@ -24,7 +24,7 @@ export async function generateMetadata({
   const languages = generateHrefLangs([...locales], generateHref(source));
 
   return {
-    title: t("{{source}} Threads", { source: formatPostSource(source) }),
+    title: t("source_threads", { source: formatPostSource(source) }),
     alternates: { languages },
   };
 }
@@ -39,14 +39,14 @@ export default async function PostSourceThreadsIndex({
 
   const navLinks = {
     main: {
-      text: t("View posts"),
+      text: t("view_posts"),
       href: urls(locale).satoshi.posts.sourceIndex(source),
     },
     left: {
-      text: t("All threads"),
+      text: t("all_threads"),
       href: urls(locale).satoshi.posts.threadsIndex,
       sublink: {
-        text: t("Posts"),
+        text: t("posts"),
         href: urls(locale).satoshi.posts.index,
       },
     },
@@ -54,7 +54,7 @@ export default async function PostSourceThreadsIndex({
       text: formatPostSource(otherSource),
       href: urls(locale).satoshi.posts.sourceThreadsIndex(otherSource),
       sublink: {
-        text: t("Posts"),
+        text: t("posts"),
         href: urls(locale).satoshi.posts.sourceIndex(otherSource),
       },
     },

@@ -12,12 +12,12 @@ type FooterProps = {
 
 export async function Footer({ t, locale }: FooterProps) {
   const links = [
-    { label: t("About"), url: urls(locale).about },
-    { label: t("Contact"), url: urls(locale).contact },
-    { label: t("Donate"), url: urls(locale).donate.index },
-    { label: t("Feed"), url: urls(locale).mempool.atom },
-    { label: t("Newsletter"), url: urls(locale).substack },
-    { label: t("GitHub"), url: urls(locale).github },
+    { label: t("about"), url: urls(locale).about },
+    { label: t("contact"), url: urls(locale).contact },
+    { label: t("donate"), url: urls(locale).donate.index },
+    { label: t("feed"), url: urls(locale).mempool.atom },
+    { label: t("newsletter"), url: urls(locale).substack },
+    { label: t("github"), url: urls(locale).github },
   ];
 
   return (
@@ -46,7 +46,7 @@ export async function Footer({ t, locale }: FooterProps) {
           <span className="block sm:ml-4 sm:inline">
             <Trans
               t={t}
-              i18nKey="Satoshi Nakamoto Institute is licensed under a <a>Creative Commons Attribution-ShareAlike 4.0 International License</a>. Some works may be subject to other licenses."
+              i18nKey="sni_cc_license"
               components={{
                 a: (
                   <Link

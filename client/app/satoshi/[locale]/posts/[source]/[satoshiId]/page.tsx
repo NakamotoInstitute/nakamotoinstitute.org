@@ -76,7 +76,7 @@ export default async function PostDetail({
           </time>
         </p>
         <div className="flex gap-2">
-          <Link href={post.url}>{t("Original post")}</Link> •{" "}
+          <Link href={post.url}>{t("original_post")}</Link> •{" "}
           <Link
             href={{
               pathname: urls(locale).satoshi.posts.sourceThreadsDetail(
@@ -86,7 +86,7 @@ export default async function PostDetail({
               hash: post.sourceId.toString(),
             }}
           >
-            {t("View in thread")}
+            {t("view_in_thread")}
           </Link>
         </div>
       </div>
