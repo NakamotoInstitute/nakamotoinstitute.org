@@ -2,6 +2,7 @@
   <blockquote>
     <p>널리 사용될 때를 대비해 비트코인을 조금 갖고 있는 것도 좋습니다. 충분히 많은 사람이 같은 생각을 하게 된다면, 그것은 자기 실현적 예언이 될 것입니다.</p>
   </blockquote>
+  
   <figcaption><a href="/satoshi/emails/cryptography/17/">사토시 나카모토</a>, 2009년 1월 17일</figcaption>
 </figure>
 
