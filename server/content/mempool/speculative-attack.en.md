@@ -3,10 +3,7 @@ title: Speculative Attack
 authors:
   - pierre-rochard
 date: 2014-07-04
-excerpt:
-  Bitcoin will overtake weak currencies like the dollar through speculative
-  attacks and currency crises, not through the careful evaluation of tech journalists
-  and 'mainstream consumers'.
+excerpt: Bitcoin will overtake weak currencies like the dollar through speculative attacks and currency crises, not through the careful evaluation of tech journalists and 'mainstream consumers'.
 image: joker-burning-money.jpg
 image_alt: The Joker demonetizing the USD
 ---
@@ -41,7 +38,7 @@ A few of the criticisms mentioned earlier are correct, yet they are complete [no
   <blockquote>
     <p>Historically, it has been good, strong currencies that have driven out bad, weak currencies. Over the span of several millennia, strong currencies have dominated and driven out weak in international competition. The <a href="http://en.wikipedia.org/wiki/Persian_daric">Persian daric</a>, the <a href="http://en.wikipedia.org/wiki/Tetradrachm">Greek tetradrachma</a>, the <a href="http://en.wikipedia.org/wiki/Stater">Macedonian stater</a>, and the <a href="http://en.wikipedia.org/wiki/Denarius">Roman denarius</a> did not become dominant currencies of the ancient world because they were “bad” or “weak.” The <a href="http://en.wikipedia.org/wiki/Florins">florins</a>, <a href="http://en.wikipedia.org/wiki/Ducats#Gold_ducat_of_Venice">ducats</a> and <a href="http://en.wikipedia.org/wiki/Sequin_%28coin%29">sequins</a> of the Italian city-states did not become the “dollars of the Middle Ages” because they were bad coins; they were among the best coins ever made. The <a href="http://en.wikipedia.org/wiki/Pound_sterling#Gold_standard">pound sterling</a> in the 19th century and the <a href="http://en.wikipedia.org/wiki/Dollar_hegemony">dollar</a> in the 20th century did not become the dominant currencies of their time because they were weak. Consistency, stability and high quality have been the attributes of great currencies that have won the competition for use as international money.</p>
   </blockquote>
-  <figcaption><a href="http://en.wikipedia.org/wiki/Robert_Mundell">Robert Mundell</a>, <a href="http://www.columbia.edu/~ram15/grash.html">“Uses and Abuses of Gresham’s Law in the History of Money”</a></figcaption>
+  <figcaption><a href="http://en.wikipedia.org/wiki/Robert_Mundell">Robert Mundell</a>, <a href="https://web.archive.org/web/20140813101718/http://www.columbia.edu/~ram15/grash.html">“Uses and Abuses of Gresham’s Law in the History of Money”</a></figcaption>
 </figure>
 
 Bitcoins are not just good money, they are the best money.[^5] The Bitcoin network has the best monetary policy[^6] and the best brand.[^7] We should therefore expect that bitcoins will drive out bad, weak currencies.[^8] By what process will bitcoins become the dominant currency? Which fiat currencies will be the first to disappear? These are the interesting questions of the day, as the necessary premises for these questions are already established truths.[^9]
@@ -95,10 +92,10 @@ A speculative attack that seems isolated to one or a few weak currencies, but ca
 
 ## Conclusion
 
-Bitcoin will become mainstream. The Bitcoin skeptics don't understand this due to their biases and lack of financial knowledge. First, they are in as strong an echo chamber as Bitcoin skeptics.[^10] They [rabidly search](http://www.reddit.com/r/buttcoin) for evidence that confirms their view of Bitcoin. Second, they misunderstand how strong currencies like bitcoin overtake weak currencies like the dollar: it is through speculative attacks and currency crises caused by [investors](http://en.wikipedia.org/wiki/George_Soros#Currency_speculation), not through the careful evaluation of tech journalists and 'mainstream consumers'. To honor these soon to be extinct skeptics, the Nakamoto Institute has launched [A Tribute to Bold Assertions](/the-skeptics/).
+Bitcoin will become mainstream. The Bitcoin skeptics don't understand this due to their biases and lack of financial knowledge. First, they are in as strong an echo chamber as Bitcoin skeptics.[^10] They [rabidly search](http://www.reddit.com/r/buttcoin) for evidence that confirms their view of Bitcoin. Second, they misunderstand how strong currencies like bitcoin overtake weak currencies like the dollar: it is through speculative attacks and currency crises caused by [investors](http://en.wikipedia.org/wiki/George_Soros#Currency_speculation), not through the careful evaluation of tech journalists and 'mainstream consumers'. To honor these soon to be extinct skeptics, the Nakamoto Institute has launched [A Tribute to Bold Assertions](/the-skeptics).
 
 [^1]: No, seriously, there are people on the Internet spending a non-trivial amount of time writing about a currency they think is going to fail yet continues to succeed beyond anyone's expectations. I get schadenfreude from their lack of schadenfreude. Granted, a few of them are being paid to write controversial click bait and/or just [concern trolling](http://www.urbandictionary.com/define.php?term=concern+troll) – both activities that I respect and understand.
-[^2]: This is generally stated by people who are in the 'out-group' and fantasize about being in the 'in-group' through politics/pedigree rather than economic/meritocratic processes. Demographically, they probably overlap with fans of [The Secret](http://en.wikipedia.org/wiki/The_Secret_%28book%29). Economically, they are without exception [bezzlers](http://trilema.com/2014/the-bezzle-usd-and-the-tide-usd/#footnote_1_53585).
+[^2]: This is generally stated by people who are in the 'out-group' and fantasize about being in the 'in-group' through politics/pedigree rather than economic/meritocratic processes. Demographically, they probably overlap with fans of [The Secret](<https://en.wikipedia.org/wiki/The_Secret_(Byrne_book)>). Economically, they are without exception [bezzlers](http://trilema.com/2014/the-bezzle-usd-and-the-tide-usd/#footnote_1_53585).
 [^3]: Bitcoin has entered its [Eternal September](http://en.wikipedia.org/wiki/Eternal_September), where every person new to Bitcoin thinks they have a unique understanding of Bitcoin and everyone ought to hear about it. There's an endless flood of newbies 'concerned' about such and such 'problem' with Bitcoin. The Bitcoin community does these arrivistes a real disservice by taking them seriously instead of just telling them 'read more'.
 [^4]: The opposite of Bitcoin Jesus. Bitcoin [Jonah](http://en.wikipedia.org/wiki/Jonah_complex) is a defeatist, self-sabotaging, and timid 'man' who is on a permanent quest to confirm Bitcoin's weakness.
 [^5]: [Bitcoin is the Best Unit of Account](/mempool/bitcoin-is-the-best-unit-of-account) by Daniel Krawisz
@@ -106,4 +103,4 @@ Bitcoin will become mainstream. The Bitcoin skeptics don't understand this due t
 [^7]: [Bitcoin Has No Image Problem](/mempool/bitcoin-has-no-image-problem) by Daniel Krawisz
 [^8]: [Hyperbitcoinization](/mempool/hyperbitcoinization) by Daniel Krawisz
 [^9]: If you disagree then either you have not been learning or you have not been engaging in the debate, go back to square one.
-[^10]: 'I live in a rather special world. I only know one person who voted for Nixon. Where they are I don't know. They're outside my ken. But sometimes when I'm in a theater I can feel them.' - [Pauline Kael](http://en.wikiquote.org/wiki/Pauline_Kael#Sourced)
+[^10]: 'I live in a rather special world. I only know one person who voted for Nixon. Where they are I don't know. They're outside my ken. But sometimes when I'm in a theater I can feel them.' - [Pauline Kael](http://en.wikiquote.org/wiki/Pauline_Kael)
