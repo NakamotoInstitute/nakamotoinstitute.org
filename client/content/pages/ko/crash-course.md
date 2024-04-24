@@ -1,6 +1,6 @@
 <figure>
   <blockquote>
-    <p>널리 사용될 때를 대비해 비트코인을 조금 갖고 있는 것이 합리적일 수 있습니다. 충분히 많은 사람이 같은 생각을 하게 된다면, 그것은 자기 실현적 예언이 될 것입니다.</p>
+    <p>널리 사용될 때를 대비해 비트코인을 조금 갖고 있는 것도 좋습니다. 충분히 많은 사람이 같은 생각을 하게 된다면, 그것은 자기 실현적 예언이 될 것입니다.</p>
   </blockquote>
   <figcaption><a href="/satoshi/emails/cryptography/17/">사토시 나카모토</a>, 2009년 1월 17일</figcaption>
 </figure>
@@ -25,7 +25,7 @@
 
 예상되는 성장을 고려하면, 사람들은 비트코인을 축적할 이유가 있습니다. 이는 네트워크의 가치를 높여, 축적할 이유를 더 많이 제공하게 됩니다. 또한 보유자들은 네트워크 전체를 더 가치 있게 만드는 오픈소스 개발에 투자함으로써 보유한 자산의 가치를 높일 수 있습니다.
 
-- 다니엘 크라위츠의  ["I'm Hoarding Bitcoins, and No You Can't Have Any"](/mempool/im-hoarding-bitcoins-and-no-you-cant-have-any)
+- 다니엘 크라위츠의 ["I'm Hoarding Bitcoins, and No You Can't Have Any"](/mempool/im-hoarding-bitcoins-and-no-you-cant-have-any)
 - 다니엘 크라위츠의 ["Bitcoin's Compound Rewards"](/mempool/bitcoins-compound-rewards)
 - 다니엘 크라위츠의 ["The Correct Strategy of Bitcoin Entrepreneurship"](/mempool/the-correct-strategy-of-bitcoin-entrepreneurship)
 
