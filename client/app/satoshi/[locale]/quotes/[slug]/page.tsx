@@ -40,7 +40,7 @@ async function SatoshiQuote({ t, locale, quote }: SatoshiQuoteProps) {
   let label: string;
 
   if (quote.whitepaper) {
-    subject = t("Bitcoin: A Peer-to-Peer Electronic Cash System");
+    subject = t("bitcoin_title");
     url = urls("en").library.doc("bitcoin");
     label = t("view_whitepaper");
   } else if (quote.post) {
