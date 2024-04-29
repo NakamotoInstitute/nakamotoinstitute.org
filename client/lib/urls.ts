@@ -66,6 +66,7 @@ export const urls = (locale: Locale) => {
       index: getUrl("/finney"),
       rpow: getUrl("/finney/rpow"),
     },
+    getInvolved: getUrl("/get-involved"),
     library: {
       index: getUrl("/library"),
       doc: (slug: string) => getUrl(`/library/${slug}`),
