@@ -43,5 +43,5 @@ import *args:
   {{docker_compose_cmd}} exec fastapi python cli.py content initialize {{args}}
 
 ruff *args:
-  {{docker_compose_cmd}} exec fastapi ruff {{args}} .
+  {{docker_compose_cmd}} exec fastapi ruff {{args}} check .
   {{docker_compose_cmd}} exec fastapi ruff format .
