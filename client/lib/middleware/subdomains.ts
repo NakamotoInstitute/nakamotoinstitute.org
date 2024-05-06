@@ -1,6 +1,6 @@
 import { NextRequest } from "next/server";
 
-import { domainToPathMapping } from "@/middleware";
+import { domainToPathMapping } from "@/lib/urls";
 
 const combinePath = (...parts: (string | undefined)[]) =>
   parts

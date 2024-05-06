@@ -1,10 +1,34 @@
 import { ToggleLinkProps } from "@/app/components/LanguageToggle";
 import { env } from "@/env";
 import { languages, locales } from "@/i18n";
-import { domainToPathMapping } from "@/middleware";
 
 import { EmailSource } from "./api/schemas/emails";
 import { ForumPostSource } from "./api/schemas/posts";
+
+const prodDomainToPathMapping = [
+  {
+    domain: env.SATOSHI_HOST,
+    path: "/satoshi",
+  },
+];
+
+const localDomainToPathMapping = [
+  {
+    domain: "satoshi.localhost",
+    path: "/satoshi",
+  },
+];
+
+export const domainToPathMapping = (() => {
+  switch (env.VERCEL_ENV) {
+    case "development":
+      return localDomainToPathMapping;
+    case "production":
+      return prodDomainToPathMapping;
+    default:
+      return [];
+  }
+})();
 
 const APP_BASE_URL = (() => {
   switch (env.VERCEL_ENV) {
