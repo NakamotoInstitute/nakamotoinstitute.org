@@ -24,6 +24,7 @@ const nextConfig = {
       },
     ],
   },
+  trailingSlash: true,
   async redirects() {
     const redirects = [
       {
@@ -35,7 +36,7 @@ const nextConfig = {
     if (env.VERCEL_ENV !== "preview") {
       redirects.push({
         source: "/satoshi/:path*",
-        destination: satoshiDestination,
+        destination: `${satoshiDestination}/:path*`,
         permanent: false,
       });
     }
