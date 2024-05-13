@@ -19,11 +19,11 @@ Three online schemes are presented here. Each relies on the same techniques for 
 
 ## Denominations and devaluing
 
-For simplicity and concreteness, but without loss of generality, a particular denomination scheme will be used here. It assigns the value of 1 cent to public exponent 3 in an RSA system, the value of 2 cents to exponent 5, 4 cents to exponent 7, and so on; each successive power-of-two value is represented by the corresponding odd prime public exponent, all with the same modulus. Much as in <sup><a href="#fnC89" id="refC89-5">[C89]</a></sup>, a third root of an image under the one-way function f (together with the pre-image modulo the bank's RSA composite) is worth 1 cent, a 7th root is worth 4 cents, and a 21st root 5 cents. In other words, a distinct public prime exponent is associated with each digit of the binary integer representation of an amount of payment; for a particular amount of payment, the product of all those prime exponents corresponding to 1 's in the binary representation of the amount is the public exponent of the signature.
+For simplicity and concreteness, but without loss of generality, a particular denomination scheme will be used here. It assigns the value of 1 cent to public exponent 3 in an RSA system, the value of 2 cents to exponent 5, 4 cents to exponent 7, and so on; each successive power-of-two value is represented by the corresponding odd prime public exponent, all with the same modulus. Much as in <sup><a href="#fnC89" id="refC89-2">[C89]</a></sup>, a third root of an image under the one-way function f (together with the pre-image modulo the bank's RSA composite) is worth 1 cent, a 7th root is worth 4 cents, and a 21st root 5 cents. In other words, a distinct public prime exponent is associated with each digit of the binary integer representation of an amount of payment; for a particular amount of payment, the product of all those prime exponents corresponding to 1 's in the binary representation of the amount is the public exponent of the signature.
 
 A signature on an image under f is "devalued" by raising it to the public powers corresponding to the coin values that should be removed. For instance, a note having a 21st root could be devalued from its 5 cent value, to 1 cent, simply by raising it to the 7th power.
 
-In earlier online payment systems,<sup><a href="#fnC89" id="refC89-2">[C89]</a></sup> the number of separate signatures needed for a payment was in general the Hamming weight of the binary representation of the amount. Since online systems would be used for higher-value payments (as mentioned above), and extra resolution may be desired to provide interest for unspent funds,<sup><a href="#fnC89" id="refC89-3">[C89]</a></sup> an average of roughly an order of magnitude is saved here.
+In earlier online payment systems,<sup><a href="#fnC89" id="refC89-3">[C89]</a></sup> the number of separate signatures needed for a payment was in general the Hamming weight of the binary representation of the amount. Since online systems would be used for higher-value payments (as mentioned above), and extra resolution may be desired to provide interest for unspent funds,<sup><a href="#fnC89" id="refC89-4">[C89]</a></sup> an average of roughly an order of magnitude is saved here.
 
 ## Cookie jar
 
@@ -82,7 +82,7 @@ PAYER                                        BANK
            Fig. 1.4. Cookie-jar deposit
 </pre>
 
-The cookie jar approach gives the effect of an online form of "offline checks",<sup><a href="#fnC89" id="refC89-4">[C89]</a></sup> in that notes of a fixed value are withdrawn and the unspent parts later credited to the payer during a refund transaction.
+The cookie jar approach gives the effect of an online form of "offline checks",<sup><a href="#fnC89" id="refC89-5">[C89]</a></sup> in that notes of a fixed value are withdrawn and the unspent parts later credited to the payer during a refund transaction.
 
 ## Declared note value
 
@@ -167,7 +167,7 @@ Combining online coins improves efficiency, use of funds, convenience, and priva
 
 <ol class="references">
   <li id="fnC89">
-    <p>Chaum, D., "Privacy Protected Payments: Unconditional Payer and/or Payee Anonymity," in Smart Card 2000, North-Holland, 1989, pp. 69-92.&nbsp;<a href="#refC89-1">↩</a>&nbsp;<a href="#refC89-5">↩</a>&nbsp;<a href="#refC89-2">↩</a>&nbsp;<a href="#refC89-3">↩</a>&nbsp;<a href="#refC89-4">↩</a></p>
+    <p>Chaum, D., "Privacy Protected Payments: Unconditional Payer and/or Payee Anonymity," in Smart Card 2000, North-Holland, 1989, pp. 69-92.&nbsp;<a href="#refC89-1">↩</a>&nbsp;<a href="#refC89-2">↩</a>&nbsp;<a href="#refC89-3">↩</a>&nbsp;<a href="#refC89-4">↩</a>&nbsp;<a href="#refC89-5">↩</a></p>
   </li>
 
   <li id="fnCFN88">
