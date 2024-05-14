@@ -14,11 +14,6 @@ export async function generateMetadata({
       default: `${t("complete_satoshi")} | ${siteTitle}`,
     },
     description: t("sni_mission_statement"),
-    robots: {
-      index: false,
-      follow: false,
-      nocache: true,
-    },
   };
 }
 
