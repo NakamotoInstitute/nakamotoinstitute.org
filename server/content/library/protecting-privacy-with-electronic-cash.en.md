@@ -8,6 +8,8 @@ categories:
   - cryptography
   - digital-cash
   - privacy
+formats:
+  - pdf
 doctype: essay
 external: https://github.com/Extropians/Extropy/blob/master/Extropy-10_1_Winter-Spring-1992.pdf
 ---
