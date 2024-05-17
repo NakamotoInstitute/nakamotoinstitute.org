@@ -1,5 +1,6 @@
 import { EmailSource } from "@/lib/api/schemas/emails";
 import { ForumPostSource } from "@/lib/api/schemas/posts";
+import { CapitalizedLocale } from "@/types/i18n";
 
 export function getNumericId(id: number | string) {
   return typeof id === "string" ? parseInt(id, 10) : id;
@@ -24,6 +25,14 @@ export function formatListWithPlaceholders(
   });
 
   return formatter.format(placeholders);
+}
+
+export function formatLocale(locale: Locale): CapitalizedLocale {
+  if (locale.includes("-")) {
+    const [lang, region] = locale.split("-");
+    return `${lang}-${region.toUpperCase()}` as CapitalizedLocale;
+  }
+  return locale as CapitalizedLocale;
 }
 
 export function otherEmailSource(source: EmailSource) {

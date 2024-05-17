@@ -13,6 +13,15 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
+  if (pathname === "/sitemap.xml") {
+    if (domainRewrite) {
+      return NextResponse.rewrite(
+        new URL(`${domainRewrite.path}/sitemap.xml`, request.url),
+      );
+    }
+    return NextResponse.next();
+  }
+
   return i18nRoutingMiddleware(request);
 }
 

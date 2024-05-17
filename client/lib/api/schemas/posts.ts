@@ -1,6 +1,7 @@
 import { z } from "zod";
 
-export const zForumPostSource = z.enum(["p2pfoundation", "bitcointalk"]);
+export const FORUM_POST_SOURCES = ["p2pfoundation", "bitcointalk"] as const
+export const zForumPostSource = z.enum(FORUM_POST_SOURCES);
 export type ForumPostSource = z.infer<typeof zForumPostSource>;
 
 const zForumPost = z.object({
