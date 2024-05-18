@@ -4,11 +4,9 @@ import { formatLocale } from "@/utils/strings";
 
 export type LocalizedUrlObject = { [K in CapitalizedLocale]: string };
 
-export const translatedLocales = allLocales.filter((loc) => loc !== "en");
-
 export function createLocalizedUrlObject(
   urlFunc: (locale: Locale) => string,
-  locales: Locale[] = translatedLocales,
+  locales: Locale[] = [...allLocales],
 ): LocalizedUrlObject {
   return locales.reduce((obj, locale) => {
     obj[formatLocale(locale)] = urlFunc(locale);

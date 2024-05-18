@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 
+import { locales } from "@/i18n";
 import { getEmailThreads, getSatoshiEmails } from "@/lib/api/emails";
 import { getForumThreads, getSatoshiPosts } from "@/lib/api/posts";
 import { getQuoteCategories } from "@/lib/api/quotes";
@@ -7,11 +8,7 @@ import { EMAIL_SOURCES } from "@/lib/api/schemas/emails";
 import { FORUM_POST_SOURCES } from "@/lib/api/schemas/posts";
 import { urls } from "@/lib/urls";
 import { Locale } from "@/types/i18n";
-import {
-  LocalizedUrlObject,
-  createLocalizedUrlObject,
-  translatedLocales,
-} from "@/utils/sitemap";
+import { LocalizedUrlObject, createLocalizedUrlObject } from "@/utils/sitemap";
 import { formatLocale } from "@/utils/strings";
 
 async function getEmailIndexUrls(): Promise<MetadataRoute.Sitemap> {
@@ -107,7 +104,7 @@ async function getQuoteCategoryUrls(): Promise<MetadataRoute.Sitemap> {
   return categories.map(({ slug }) => ({
     url: urls("en").satoshi.quoteCategory(slug),
     alternates: {
-      languages: translatedLocales.reduce((obj, locale) => {
+      languages: locales.reduce((obj, locale) => {
         obj[formatLocale(locale)] = urls(locale).satoshi.quoteCategory(slug);
         return obj;
       }, {} as LocalizedUrlObject),
