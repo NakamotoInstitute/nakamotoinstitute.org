@@ -26,7 +26,10 @@ export async function generateMetadata({
 
   return {
     title: t("the_skeptics"),
-    alternates: { languages },
+    alternates: {
+      canonical: generateHref(locale),
+      languages,
+    },
   };
 }
 

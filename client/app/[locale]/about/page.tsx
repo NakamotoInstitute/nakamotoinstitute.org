@@ -19,7 +19,10 @@ export async function generateMetadata({
 
   return {
     title: t("about"),
-    alternates: { languages },
+    alternates: {
+      canonical: generateHref(locale),
+      languages,
+    },
   };
 }
 

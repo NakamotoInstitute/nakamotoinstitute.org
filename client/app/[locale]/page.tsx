@@ -12,11 +12,16 @@ import { cdnUrl, urls } from "@/lib/urls";
 
 const generateHref = (loc: Locale) => urls(loc).home;
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({
+  params: { locale },
+}: LocaleParams): Promise<Metadata> {
   const languages = generateHrefLangs([...locales], generateHref);
 
   return {
-    alternates: { languages },
+    alternates: {
+      canonical: generateHref(locale),
+      languages,
+    },
   };
 }
 

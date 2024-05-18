@@ -21,7 +21,10 @@ export async function generateMetadata({
 
   return {
     title: t("code"),
-    alternates: { languages },
+    alternates: {
+      canonical: generateHref(locale),
+      languages,
+    },
   };
 }
 

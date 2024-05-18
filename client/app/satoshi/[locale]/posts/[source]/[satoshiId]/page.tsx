@@ -21,7 +21,7 @@ const generateHref =
     urls(l).satoshi.posts.sourcePost(source, satoshiId);
 
 export async function generateMetadata({
-  params: { source, satoshiId },
+  params: { locale, source, satoshiId },
 }: LocaleParams<{
   source: ForumPostSource;
   satoshiId: string;
@@ -34,7 +34,10 @@ export async function generateMetadata({
 
   return {
     title: postData.post.subject,
-    alternates: { languages },
+    alternates: {
+      canonical: generateHref(source, satoshiId)(locale),
+      languages,
+    },
   };
 }
 

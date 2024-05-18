@@ -20,7 +20,10 @@ export async function generateMetadata({
 
   return {
     title: t("mempool_series"),
-    alternates: { languages },
+    alternates: {
+      canonical: generateHref(locale),
+      languages,
+    },
   };
 }
 

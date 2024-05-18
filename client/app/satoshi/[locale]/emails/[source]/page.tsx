@@ -26,7 +26,10 @@ export async function generateMetadata({
 
   return {
     title: t("source_emails", { source: formatEmailSource(source) }),
-    alternates: { languages },
+    alternates: {
+      canonical: generateHref(source)(locale),
+      languages,
+    },
   };
 }
 

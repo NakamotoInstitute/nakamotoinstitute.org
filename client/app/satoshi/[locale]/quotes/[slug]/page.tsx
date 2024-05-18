@@ -17,14 +17,17 @@ const generateHref = (slug: string) => (l: Locale) =>
   urls(l).satoshi.quoteCategory(slug);
 
 export async function generateMetadata({
-  params: { slug },
+  params: { locale, slug },
 }: LocaleParams<{ slug: string }>): Promise<Metadata> {
   const { category } = await getQuoteCategory(slug);
   const languages = generateHrefLangs([...locales], generateHref(slug));
 
   return {
     title: category.name,
-    alternates: { languages },
+    alternates: {
+      canonical: generateHref(slug)(locale),
+      languages,
+    },
   };
 }
 

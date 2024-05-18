@@ -15,14 +15,17 @@ const generateHref = (slug: string) => (l: Locale) =>
   urls(l).podcast.episode(slug);
 
 export async function generateMetadata({
-  params: { slug },
+  params: { locale, slug },
 }: LocaleParams<{ slug: string }>): Promise<Metadata> {
   const episode = await getEpisode(slug);
   const languages = generateHrefLangs([...locales], generateHref(slug));
 
   return {
     title: episode.title,
-    alternates: { languages },
+    alternates: {
+      canonical: generateHref(slug)(locale),
+      languages,
+    },
   };
 }
 

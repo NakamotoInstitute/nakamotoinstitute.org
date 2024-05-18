@@ -24,7 +24,10 @@ export async function generateMetadata({
 
   return {
     title: series.title,
-    alternates: { languages },
+    alternates: {
+      canonical: urls(locale).mempool.seriesDetail(slug),
+      languages,
+    },
   };
 }
 

@@ -20,7 +20,7 @@ const generateHref = (source: EmailSource, satoshiId: string) => (l: Locale) =>
   urls(l).satoshi.emails.sourceEmail(source, satoshiId);
 
 export async function generateMetadata({
-  params: { source, satoshiId },
+  params: { source, satoshiId, locale },
 }: LocaleParams<{
   source: EmailSource;
   satoshiId: string;
@@ -33,7 +33,10 @@ export async function generateMetadata({
 
   return {
     title: emailData.email.subject,
-    alternates: { languages },
+    alternates: {
+      canonical: generateHref(source, satoshiId)(locale),
+      languages,
+    },
   };
 }
 

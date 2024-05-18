@@ -23,7 +23,10 @@ export async function generateMetadata({
 
   return {
     title: t("forum_posts"),
-    alternates: { languages },
+    alternates: {
+      canonical: generateHref(locale),
+      languages,
+    },
   };
 }
 

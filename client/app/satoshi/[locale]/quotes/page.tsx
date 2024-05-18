@@ -14,11 +14,16 @@ import { formatDate } from "@/utils/dates";
 
 const generateHref = (l: Locale) => urls(l).satoshi.quotesIndex;
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({
+  params: { locale },
+}: LocaleParams): Promise<Metadata> {
   const languages = generateHrefLangs([...locales], generateHref);
 
   return {
-    alternates: { languages },
+    alternates: {
+      canonical: generateHref(locale),
+      languages,
+    },
   };
 }
 

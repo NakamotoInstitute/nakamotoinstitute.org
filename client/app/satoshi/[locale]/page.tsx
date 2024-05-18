@@ -12,11 +12,16 @@ import { urls } from "@/lib/urls";
 
 const generateHref = (l: Locale) => urls(l).satoshi.index;
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({
+  params: { locale },
+}: LocaleParams): Promise<Metadata> {
   const languages = generateHrefLangs([...locales], generateHref);
 
   return {
-    alternates: { languages },
+    alternates: {
+      canonical: generateHref(locale),
+      languages,
+    },
   };
 }
 

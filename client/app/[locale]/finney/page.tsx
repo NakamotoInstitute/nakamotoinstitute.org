@@ -22,7 +22,10 @@ export async function generateMetadata({
 
   return {
     title: t("hal_finney"),
-    alternates: { languages },
+    alternates: {
+      canonical: generateHref(locale),
+      languages,
+    },
   };
 }
 

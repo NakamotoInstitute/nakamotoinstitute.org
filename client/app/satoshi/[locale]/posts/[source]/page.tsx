@@ -25,7 +25,10 @@ export async function generateMetadata({
 
   return {
     title: t("source_posts_title", { source: formatPostSource(source) }),
-    alternates: { languages },
+    alternates: {
+      canonical: generateHref(source)(locale),
+      languages,
+    },
   };
 }
 

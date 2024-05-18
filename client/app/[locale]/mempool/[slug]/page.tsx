@@ -28,7 +28,10 @@ export async function generateMetadata({
   );
   return {
     title: post.title,
-    alternates: { languages },
+    alternates: {
+      canonical: urls(locale).mempool.post(slug),
+      languages,
+    },
   };
 }
 

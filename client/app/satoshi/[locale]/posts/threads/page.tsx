@@ -22,7 +22,10 @@ export async function generateMetadata({
 
   return {
     title: t("forum_threads"),
-    alternates: { languages },
+    alternates: {
+      canonical: generateHref(locale),
+      languages,
+    },
   };
 }
 

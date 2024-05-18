@@ -20,7 +20,10 @@ export async function generateMetadata({
 
   return {
     title: t("crypto_mises_podcast"),
-    alternates: { languages },
+    alternates: {
+      canonical: generateHref(locale),
+      languages,
+    },
   };
 }
 

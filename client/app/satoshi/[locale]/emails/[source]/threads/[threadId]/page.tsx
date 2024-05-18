@@ -34,7 +34,10 @@ export async function generateMetadata({
 
   return {
     title: t("title_thread", { title: threadData.thread.title }),
-    alternates: { languages },
+    alternates: {
+      canonical: generateHref(source, threadId)(locale),
+      languages,
+    },
   };
 }
 

@@ -20,7 +20,10 @@ export async function generateMetadata({
 
   return {
     title: t("sni_mempool_crash_course"),
-    alternates: { languages },
+    alternates: {
+      canonical: generateHref(locale),
+      languages,
+    },
   };
 }
 

@@ -25,7 +25,10 @@ export async function generateMetadata({
 
   return {
     title: author.name,
-    alternates: { languages },
+    alternates: {
+      canonical: urls(locale).authors.detail(slug),
+      languages,
+    },
   };
 }
 

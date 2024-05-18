@@ -29,7 +29,10 @@ export async function generateMetadata({
 
   return {
     title: doc.title,
-    alternates: { languages },
+    alternates: {
+      canonical: urls(locale).library.doc(slug),
+      languages,
+    },
   };
 }
 
