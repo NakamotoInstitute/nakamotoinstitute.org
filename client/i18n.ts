@@ -11,6 +11,7 @@ export const languages = {
   ko: "한국어",
   "pt-br": "Português Brasil",
   ru: "Русский",
+  tr: "Türkçe",
   vi: "Tiếng Việt",
   "zh-cn": "简体中文",
 } as const;
@@ -28,6 +29,7 @@ export const locales = [
   "ko",
   "pt-br",
   "ru",
+  "tr",
   "vi",
   "zh-cn",
 ] as const;
