@@ -47,6 +47,16 @@ export async function PageLayout({
         {...toggleProps}
       />
       <main className={clsx("twbs-container mb-4 flex-grow pb-4", className)}>
+        <div className="mb-4 rounded bg-amber-100 px-5 py-3 text-yellow-800 sm:flex">
+          <div className="mr-auto">{t("timeless_beauty")}</div>
+          <div className="flex items-center">
+            <a href="https://news.nakamotoinstitute.org/p/help-give-sni-timeless-beauty">
+              {t("more_info")}
+            </a>
+            <div className="w-px bg-gray-500 mx-2 h-4" />
+            <a href="https://pay.zaprite.com/pl_saYgrVYmCi">{t("donate")}</a>
+          </div>
+        </div>
         {children}
       </main>
       <Footer t={t} locale={locale} />
