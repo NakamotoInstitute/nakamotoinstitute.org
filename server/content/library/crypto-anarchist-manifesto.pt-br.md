@@ -1,0 +1,18 @@
+---
+title: O Manifesto Cripto-Anarquista
+slug: o-manifesto-cripto-anarquista
+translators:
+  - luis-schwab
+---
+
+Um fantasma está assombrando o mundo moderno, o fantasma da cripto-anarquia.
+
+A tecnologia de computadores está prestes a permitir que indivíduos e grupos se comuniquem e interajam entre si de forma completamente anônima. Duas pessoas podem trocar mensagens, fechar negócios, e negociar contratos eletrônicos sem nunca saber o Nome Verdadeiro, ou identidade legal, do outro. Interações nas redes serão impossíveis de rastrear, por meio de extensivo re-roteamento de pacotes criptografados e caixas à prova de adulteração que implementam protocolos criptográficos com quase perfeita garantia contra adulteração. Reputações serão de suma importância, muito mais importante em negociações do que as classificações de crédito de hoje em dia. Esses desenvolvimentos irão alterar completamente a natureza da regulação estatal, a habilidade de taxar e controlar interações econômicas, a habilidade de manter informação em segredo, e vai alterar até mesmo a natureza da confiança e reputação.
+
+A tecnologia para essa revolução—e com certeza será uma revolução tanto social quanto econômica—já existe em teoria na última década. Os métodos são baseados em criptografia de chave pública, sistemas de prova _zero-knowledge_ interativos, e diversos protocolos de software para interação, autenticação, e verificação. O foco tem sido até então em conferências acadêmicas na Europa e nos E.U.A., conferências monitoradas de perto pela NSA (Agência de Segurança Nacional). Mas foi apenas recentemente que redes de computadores e computadores pessoais ganharam velocidade o suficiente para fazer essas ideias realizáveis na prática. E os próximos dez anos trarão velocidade o suficiente para fazer essas ideias economicamente viáveis e em essência imparáveis. Redes de alta velocidade, ISDN, caixas à prova de adulteração, smart cards, satélites, transmissores Ku-band, computadores pessoais multi-MIPS, e chips de criptografia em desenvolvimento serão algumas tecnologias que tornarão isso possível.
+
+O Estado sem dúvida vai tentar atrasar ou parar a distribuição dessa tecnologia, citando preocupações de segurança nacional, o uso da tecnologia por traficantes de drogas ou sonegadores de impostos, e medo de desintegração social. Muitas dessas preocupações são válidas; cripto-anarquia permitirá que segredos de estado sejam negociados livremente e permitirá que materiais ilegais e roubados sejam negociados. Um mercado automatizado anônimo tornará possível até os mais abomináveis mercados para assassinatos e extorsão. Diversos elementos criminosos e estrangeiros serão usuários ativos da CryptoNet. Mas isso não irá parar o avanço da cripto-anarquia.
+
+Assim como a tecnologia de impressão alterou e reduziu o poder das guildas medievais e a estrutura de poder social, também irão os métodos criptológicos fundamentalmente alterar a natureza de corporações e de interferência governamental em transações econômicas. Combinado com os emergentes mercados de informação, a cripto-anarquia irá criar um mercado líquido para todo e qualquer material que puder ser representado com palavras e imagens. Assim como uma invenção aparentemente insignificante como o arame farpado permitiu cercar vastos ranchos e fazendas, alterando assim a o conceito de terra e direitos de propriedade na fronteira Oeste, também irá a aparentemente insignificante descoberta de um ramo misterioso da matemática se tornar os alicates que cortarão o arame farpado que cerca a propriedade intelectual.
+
+Levantem-se, vocês não tem nada a perder além de suas cercas de arame farpado!
