@@ -7,7 +7,7 @@ import { PageLayout } from "@/app/components/PageLayout";
 import { locales } from "@/i18n";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
-import { urls } from "@/lib/urls";
+import { cdnUrl, urls } from "@/lib/urls";
 
 import { CodeTable } from "./components/CodeTable";
 
@@ -55,11 +55,11 @@ export default async function SatoshiCode({
           downloads={{
             release: {
               text: "bitcoin-nov08.tgz",
-              href: "https://s3.amazonaws.com/nakamotoinstitute/code/bitcoin-nov08.tgz",
+              href: cdnUrl("/code/bitcoin-nov08.tgz"),
               note: t("compressed_by_sni"),
             },
-            md5: { hash: "e9492e326512b55208c7d9f1db23e35a" },
-            sha1: { hash: "466e67a3ce0f7e0ca3661e6fb5e72b874015b0b7" },
+            md5: { hash: "7971fa6df9d192e295cf5160d5e181db" },
+            sha1: { hash: "27778468cf9bd4d16a8fe12412518bb9fe4dfffe" },
           }}
           source="https://bitcointalk.org/index.php?topic=382374.0"
         />
@@ -72,7 +72,7 @@ export default async function SatoshiCode({
             {
               release: {
                 text: "bitcoin-0.1.0.rar",
-                href: "https://s3.amazonaws.com/nakamotoinstitute/code/bitcoin-0.1.0.rar",
+                href: cdnUrl("/code/bitcoin-0.1.0.rar"),
               },
               md5: { hash: "91e2dfa2af043eabbb38964cbf368500" },
               sha1: { hash: "ec9ed4ccbc990eceb922ff0c4d71d1ad466990dd" },
@@ -80,7 +80,7 @@ export default async function SatoshiCode({
             {
               release: {
                 text: "bitcoin-0.1.0.tgz",
-                href: "https://s3.amazonaws.com/nakamotoinstitute/code/bitcoin-0.1.0.tgz",
+                href: cdnUrl("/code/bitcoin-0.1.0.tgz"),
               },
               md5: { hash: "dca1095f053a0c2dc90b19c92bd1ec00" },
               sha1: { hash: "35f83eaa334e0e447ceea77a7cc955a4ccdd1a1d" },
@@ -97,7 +97,7 @@ export default async function SatoshiCode({
           downloads={{
             release: {
               text: "bitcoin-0.1.3.rar",
-              href: "https://s3.amazonaws.com/nakamotoinstitute/code/bitcoin-0.1.3.rar",
+              href: cdnUrl("/code/bitcoin-0.1.3.rar"),
             },
             md5: { hash: "9a73e0826d5c069091600ca295c6d224" },
             sha1: {
