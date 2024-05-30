@@ -1,6 +1,6 @@
 alembic-postgresql-enum==1.2.0
 beautifulsoup4==4.12.3
-boto3==1.34.107
+boto3==1.34.115
 fastapi==0.111.0
 feedgen==1.0.0
 markdown-it-py==3.0.0
@@ -10,4 +10,3 @@ pydantic-settings==2.2.1
 pyyaml==6.0.1
 SQLAlchemy[asyncio,mypy]==2.0.30
 typer==0.12.3
-uvicorn[standard]==0.29.0
