@@ -35,7 +35,7 @@ const APP_BASE_URL = (() => {
     case "development":
       return "http://localhost:3000";
     case "production":
-      return env.APP_BASE_URL;
+      return env.APP_BASE_URL!;
     default:
       return `https://${env.VERCEL_URL}`;
   }

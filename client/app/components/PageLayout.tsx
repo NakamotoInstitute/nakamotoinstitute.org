@@ -29,7 +29,7 @@ export async function PageLayout({
 
   return (
     <body className="flex min-h-screen flex-col">
-      <Fathom siteId={env.FATHOM_ID!} />
+      {env.FATHOM_ID ? <Fathom siteId={env.FATHOM_ID} /> : null}
       <Navbar
         locale={locale}
         title={t("sni_full")}
