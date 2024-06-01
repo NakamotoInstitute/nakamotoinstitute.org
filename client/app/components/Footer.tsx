@@ -22,7 +22,7 @@ export async function Footer({ t, locale }: FooterProps) {
   ];
 
   return (
-    <footer className="mt-auto bg-neutral-100 px-3">
+    <footer className="mt-auto border-t-1 border-dotted border-night px-3">
       <div className="twbs-container py-3 text-sm">
         <ul className="align-center my-3 flex flex-col justify-between gap-2 sm:flex-row sm:text-center">
           {links.map(({ label, url }) => (

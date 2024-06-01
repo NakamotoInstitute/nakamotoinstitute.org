@@ -10,22 +10,16 @@ const config: Config = {
   safelist: ["twbs-container", "code", "quote", "codeheader", "quoteheader"],
   theme: {
     extend: {
+      colors: {
+        cream: "#f5f4ef",
+        night: "#212121",
+        cardinal: "#c21324", // Cardinal
+        windsor: "#442977", // Windsor purple
+        winter: "#5b8e7d", // Winter green
+        mariner: "#4059ad", // Mariner blue
+      },
       fontFamily: {
-        sans: [
-          "system-ui",
-          "-apple-system",
-          '"Segoe UI"',
-          "Roboto",
-          '"Helvetica Neue"',
-          '"Noto Sans"',
-          '"Liberation Sans"',
-          "Arial",
-          "sans-serif",
-          '"Apple Color Emoji"',
-          '"Segoe UI Emoji"',
-          '"Segoe UI Symbol"',
-          '"Noto Color Emoji"',
-        ],
+        serif: ["var(--font-stix)", "Times New Roman", "serif"],
         mono: ["var(--font-ibm-plex-mono)", "Courier New", "monospace"],
       },
       fontSize: {
