@@ -126,7 +126,7 @@ export default async function HomePage({ params: { locale } }: LocaleParams) {
           }}
         />
       </Banner>
-      <div className="mt-6 flex text-left flex-col sm:flex-row">
+      <div className="mt-6 flex flex-col text-left sm:flex-row">
         {latest ? (
           <HomeSection
             title={t("mempool")}

@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const EMAIL_SOURCES = ["cryptography", "bitcoin-list"] as const
+export const EMAIL_SOURCES = ["cryptography", "bitcoin-list"] as const;
 export const zEmailSource = z.enum(EMAIL_SOURCES);
 export type EmailSource = z.infer<typeof zEmailSource>;
 

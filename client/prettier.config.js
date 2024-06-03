@@ -1,9 +1,9 @@
 module.exports = {
-    plugins: [
-        'prettier-plugin-tailwindcss',
-        '@trivago/prettier-plugin-sort-imports',
-    ],
-    importOrder: ['^@/(.*)$', '^@main/(.*)$', '^@satoshi/(.*)$', '^[./]'],
-    importOrderSeparation: true,
-    importOrderSortSpecifiers: true,
+  plugins: [
+    "@trivago/prettier-plugin-sort-imports",
+    "prettier-plugin-tailwindcss",
+  ],
+  importOrder: ["^@/(.*)$", "^@main/(.*)$", "^@satoshi/(.*)$", "^[./]"],
+  importOrderSeparation: true,
+  importOrderSortSpecifiers: true,
 };
