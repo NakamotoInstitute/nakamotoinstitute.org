@@ -12,7 +12,7 @@ const config: Config = {
     extend: {
       colors: {
         cream: "#f5f4ef",
-        night: "#212121",
+        dark: "#212121",
         cardinal: "#c21324", // Cardinal
         windsor: "#442977", // Windsor purple
         winter: "#5b8e7d", // Winter green

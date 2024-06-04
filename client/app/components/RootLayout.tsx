@@ -25,7 +25,7 @@ export function RootLayout({ locale, children }: RootLayoutProps) {
       className={clsx(
         stix.variable,
         plexMono.variable,
-        "bg-cream text-night font-serif",
+        "text-dark bg-cream font-serif",
       )}
     >
       {children}

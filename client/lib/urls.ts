@@ -142,6 +142,8 @@ export const urls = (locale: Locale) => {
     skeptics: getUrl("/the-skeptics/"),
     github: "https://github.com/NakamotoInstitute/nakamotoinstitute.org",
     substack: "https://news.nakamotoinstitute.org",
+    x: "https://x.com/NakamotoInst",
+    nostr: "https://primal.net/sni",
   };
 };
 

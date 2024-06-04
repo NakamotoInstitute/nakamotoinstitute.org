@@ -14,37 +14,55 @@ export async function Footer({ t, locale }: FooterProps) {
   const links = [
     { label: t("about"), url: urls(locale).about },
     { label: t("contact"), url: urls(locale).contact },
-    { label: t("donate"), url: urls(locale).donate.index },
-    { label: t("get_involved"), url: urls(locale).getInvolved },
     { label: t("feed"), url: urls(locale).mempool.atom },
     { label: t("newsletter"), url: urls(locale).substack },
+    { label: t("donate"), url: urls(locale).donate.index },
+    { label: t("get_involved"), url: urls(locale).getInvolved },
     { label: t("github"), url: urls(locale).github },
+    { label: t("x"), url: urls(locale).x },
+    { label: t("nostr"), url: urls(locale).nostr },
   ];
 
   return (
-    <footer className="mt-auto border-t-1 border-dotted border-night px-3">
-      <div className="twbs-container py-3 text-sm">
-        <ul className="align-center my-3 flex flex-col justify-between gap-2 sm:flex-row sm:text-center">
+    <footer className="mt-auto border-t-1 border-dashed border-dark px-3">
+      <div className="twbs-container py-8">
+        <ul className="align-center flex flex-col justify-center gap-y-2 text-center sm:flex-row sm:flex-wrap sm:gap-x-8">
           {links.map(({ label, url }) => (
             <li key={label}>
-              <Link href={url}>{label}</Link>
+              <Link className="text-dark hover:text-dark" href={url}>
+                {label}
+              </Link>
             </li>
           ))}
         </ul>
-        <div className="mt-4 flex flex-col text-gray-500 sm:flex-row sm:items-center">
+        <div className="my-10">
+          <Image
+            className="mx-auto"
+            alt="SNI logo"
+            src={cdnUrl("/img/xxi-rough.svg")}
+            width={24}
+            height={38}
+          />
+          <div className="mt-3 text-center uppercase">
+            <p>{t("sni_full")}</p>
+            <p>{t("establish_block")}</p>
+            <p>{t("established_block_num")}</p>
+          </div>
+        </div>
+        <div className="mx-auto flex max-w-md flex-col gap-2">
           <Link
-            className="my-auto flex-shrink-0"
             rel="license"
             href="http://creativecommons.org/licenses/by-sa/4.0/"
           >
             <Image
+              className="mx-auto"
               alt="Creative Commons License"
-              src={cdnUrl("/img/cc-4-0-by-sa.png")}
-              width={88}
-              height={31}
+              src={cdnUrl("/img/cc-by-sa.svg")}
+              width={42}
+              height={12}
             />
           </Link>
-          <span className="block sm:ml-4 sm:inline">
+          <p className="text-center text-xs">
             <Trans
               t={t}
               i18nKey="sni_cc_license"
@@ -57,7 +75,7 @@ export async function Footer({ t, locale }: FooterProps) {
                 ),
               }}
             />
-          </span>
+          </p>
         </div>
       </div>
     </footer>
