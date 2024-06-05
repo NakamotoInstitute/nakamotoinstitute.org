@@ -9,7 +9,7 @@ weights:
     weight: 60
   - slug: improving-time-stamping
     weight: 50
-  - slug: secure-name-bit-strings
+  - slug: secure-names-bit-strings
     weight: 40
   - slug: hashcash
     weight: 30
