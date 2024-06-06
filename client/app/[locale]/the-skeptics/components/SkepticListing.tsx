@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import { Rehype } from "@/app/components/Rehype";
 import { Price, Skeptic } from "@/lib/api/schemas/skeptics";
+import { cdnUrl } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import { calculateDCA } from "@/utils/prices";
 import { commafy } from "@/utils/strings";
@@ -37,7 +38,9 @@ export async function SkepticListing({
           {formatDate(locale, skeptic.date)} • $
           {commafy(priceData.originalUsd.toFixed(2))}
         </p>
-        <h2 className="text-3xl">{skeptic.name}</h2>
+        <Link href={{ hash: skeptic.slug }}>
+          <h2 className="text-3xl">{skeptic.name}</h2>
+        </Link>
         <p className="italic">{skeptic.title}</p>
       </header>
       <section className="py-2">
@@ -45,6 +48,18 @@ export async function SkepticListing({
       </section>
       <section>
         {skeptic.excerpt ? <Rehype>{skeptic.excerpt}</Rehype> : null}
+        {skeptic.twitterScreenshot ? (
+          <img
+            className="mx-auto my-4"
+            src={cdnUrl(`/img/skeptics/${skeptic.slug}.jpg`)}
+          />
+        ) : null}
+        {skeptic.mediaEmbed ? (
+          <div
+            className="my-4 flex items-center justify-center"
+            dangerouslySetInnerHTML={{ __html: skeptic.mediaEmbed }}
+          />
+        ) : null}
         {skeptic.waybackLink ? (
           <p>
             <Link href={skeptic.waybackLink}>{t("archive_link")}</Link>
