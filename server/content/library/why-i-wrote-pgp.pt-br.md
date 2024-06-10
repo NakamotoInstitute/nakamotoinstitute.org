@@ -2,7 +2,7 @@
 title: Porque eu escrevi o PGP
 slug: porque-eu-escrevi-o-pgp
 translators:
-  - luisschwab
+  - luis-schwab
 ---
 
 <figure>
