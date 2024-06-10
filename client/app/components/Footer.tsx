@@ -29,7 +29,7 @@ export async function Footer({ t, locale }: FooterProps) {
         <ul className="align-center flex flex-col justify-center gap-y-2 text-center sm:flex-row sm:flex-wrap sm:gap-x-8">
           {links.map(({ label, url }) => (
             <li key={label}>
-              <Link className="text-dark hover:text-dark" href={url}>
+              <Link className="text-dark underline hover:text-dark" href={url}>
                 {label}
               </Link>
             </li>
@@ -69,6 +69,7 @@ export async function Footer({ t, locale }: FooterProps) {
               components={{
                 a: (
                   <Link
+                    className="text-dark underline hover:text-dark"
                     rel="license"
                     href="http://creativecommons.org/licenses/by-sa/4.0/"
                   />
