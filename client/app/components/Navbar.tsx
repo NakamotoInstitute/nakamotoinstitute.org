@@ -10,15 +10,13 @@ import { LanguageToggle, ToggleLinkProps } from "./LanguageToggle";
 
 export function Navbar({
   locale,
-  title,
-  mobileTitle,
+  logo,
   homeHref,
   navLinks,
   ...toggleProps
 }: ToggleLinkProps & {
   locale: Locale;
-  title: string;
-  mobileTitle: string;
+  logo: React.ReactNode;
   homeHref: string;
   navLinks: AnchorProps[];
 }) {
@@ -26,9 +24,9 @@ export function Navbar({
   const current = languages[locale];
 
   return (
-    <nav className="mb-4 border-b border-dashed">
+    <nav className="mb-4 border-b border-dashed border-dark">
       <div className="twbs-container font-bold">
-        <div className="relative flex h-16 items-center justify-between">
+        <div className="relative flex items-center justify-between py-6">
           <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
             <button
               id="mobileMenuButton"
@@ -75,21 +73,18 @@ export function Navbar({
           </div>
           <div className="flex flex-1 items-center justify-center md:items-stretch md:justify-start">
             <div className="flex flex-shrink-0 items-center">
-              <Link href={homeHref} className="hidden md:inline-block">
-                {title}
-              </Link>
-              <Link href={homeHref} className="md:hidden">
-                {mobileTitle}
-              </Link>
+              <Link href={homeHref}>{logo}</Link>
             </div>
-            <div className="hidden md:ml-auto md:block">
-              <div className="flex space-x-4">
-                {navLinks.map(({ href, text }) => (
-                  <Link key={text} href={href} className="p-2 text-sm">
-                    {text}
-                  </Link>
-                ))}
-              </div>
+            <div className="hidden h-12 items-center md:ml-auto md:flex md:space-x-4">
+              {navLinks.map(({ href, text }) => (
+                <Link
+                  key={text}
+                  href={href}
+                  className="p-2 text-dark hover:text-dark"
+                >
+                  {text}
+                </Link>
+              ))}
             </div>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 md:static md:inset-auto md:ml-6 md:pr-0">
@@ -100,7 +95,11 @@ export function Navbar({
       <div className={clsx("md:hidden", { hidden: !menuOpen })} id="mobileMenu">
         <div className="space-y-1 px-2 pb-3 pt-2">
           {navLinks.map(({ href, text }) => (
-            <Link key={text} href={href} className="block px-3 py-2 text-base">
+            <Link
+              key={text}
+              href={href}
+              className="block px-3 py-2 text-dark hover:text-dark"
+            >
               {text}
             </Link>
           ))}

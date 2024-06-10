@@ -1,8 +1,9 @@
 import clsx from "clsx";
 import { TFunction } from "i18next";
+import Image from "next/image";
 
 import { env } from "@/env";
-import { generateLocaleToggleLinks, urls } from "@/lib/urls";
+import { cdnUrl, generateLocaleToggleLinks, urls } from "@/lib/urls";
 
 import Fathom from "./Fathom";
 import { Footer } from "./Footer";
@@ -32,8 +33,14 @@ export async function PageLayout({
       {env.FATHOM_ID ? <Fathom siteId={env.FATHOM_ID} /> : null}
       <Navbar
         locale={locale}
-        title={t("sni_full")}
-        mobileTitle={t("sni")}
+        logo={
+          <Image
+            src={cdnUrl("/img/navbar-logo.svg")}
+            width={121}
+            height={48}
+            alt="SNI logo with text"
+          />
+        }
         homeHref={urls(locale).home}
         navLinks={[
           {

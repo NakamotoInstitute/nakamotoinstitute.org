@@ -22,8 +22,8 @@
   }
 
   .twbs-container {
-    @apply mx-auto px-3;
-    @apply w-full max-w-4xl;
+    @apply mx-auto px-4;
+    @apply w-full max-w-7xl;
   }
 
   .codeheader,
