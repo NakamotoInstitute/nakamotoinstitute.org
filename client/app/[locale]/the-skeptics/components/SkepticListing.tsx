@@ -49,9 +49,11 @@ export async function SkepticListing({
       <section>
         {skeptic.excerpt ? <Rehype>{skeptic.excerpt}</Rehype> : null}
         {skeptic.twitterScreenshot ? (
+          // eslint-disable-next-line @next/next/no-img-element
           <img
             className="mx-auto my-4"
             src={cdnUrl(`/img/skeptics/${skeptic.slug}.jpg`)}
+            alt=""
           />
         ) : null}
         {skeptic.mediaEmbed ? (
