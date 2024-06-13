@@ -10,12 +10,12 @@
     "translate:extract": "i18next -c ./i18next-parser.config.js --fail-on-warnings"
   },
   "dependencies": {
-    "@floating-ui/react": "^0.26.16",
+    "@floating-ui/react": "^0.26.17",
     "@t3-oss/env-nextjs": "^0.10.1",
     "@types/hast": "^3.0.4",
     "big.js": "^6.2.1",
     "clsx": "^2.1.1",
-    "fathom-client": "^3.6.0",
+    "fathom-client": "^3.7.0",
     "hast-util-to-jsx-runtime": "^2.3.0",
     "i18next": "^23.11.5",
     "i18next-parser": "^9.0.0",
@@ -50,7 +50,7 @@
     "eslint-config-prettier": "^9.1.0",
     "postcss": "^8.4.38",
     "prettier": "^3.3.2",
-    "prettier-plugin-tailwindcss": "^0.6.3",
+    "prettier-plugin-tailwindcss": "^0.6.4",
     "tailwindcss": "^3.4.4",
     "typescript": "^5.4.5"
   }
