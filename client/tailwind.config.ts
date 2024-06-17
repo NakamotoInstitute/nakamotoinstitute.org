@@ -1,5 +1,14 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 import { PluginAPI } from "tailwindcss/types/config";
+
+const round = (num: number) =>
+  num
+    .toFixed(7)
+    .replace(/(\.[0-9]+?)0+$/, "$1")
+    .replace(/\.0$/, "");
+const rem = (px: number) => `${round(px / 16)}rem`;
+const em = (px: number, base: number) => `${round(px / base)}em`;
 
 const config: Config = {
   content: [
@@ -37,6 +46,9 @@ const config: Config = {
       typography: ({ theme }: PluginAPI) => ({
         DEFAULT: {
           css: {
+            "--tw-prose-body": theme("colors.dark"),
+            "--tw-prose-links": theme("colors.dark"),
+            "--tw-prose-captions": theme("colors.dark"),
             "ol.references,ul.references": {
               listStyle: "none",
               padding: 0,
@@ -48,6 +60,19 @@ const config: Config = {
             "blockquote p:last-of-type::after": null,
             ".footnotes": {
               fontSize: "1rem",
+            },
+            lineHeight: em(26, 16),
+            h2: {
+              fontSize: em(18, 16),
+            },
+            h3: {
+              fontSize: em(17, 16),
+            },
+            h4: {
+              fontSize: em(16, 16),
+            },
+            h5: {
+              fontSize: em(16, 16),
             },
             pre: {
               strong: { color: "var(--tw-prose-pre-code)" },
@@ -78,6 +103,10 @@ const config: Config = {
                 },
               },
             },
+            figcaption: {
+              fontSize: em(13, 16),
+              lineHeight: round(16 / 13),
+            },
             "mjx-container": {
               margin: "0.5em 0",
               padding: "0.5em 0",
@@ -85,9 +114,46 @@ const config: Config = {
             },
           },
         },
+        lg: {
+          css: {
+            lineHeight: em(26, 18),
+            "ol.references,ul.references": {
+              padding: 0,
+              "& li": {
+                padding: 0,
+              },
+            },
+            h2: {
+              lineHeight: round(28 / 24),
+            },
+            h3: {
+              fontSize: em(22, 16),
+              lineHeight: round(26 / 22),
+            },
+            h4: {
+              fontSize: em(20, 16),
+              lineHeight: round(23 / 22),
+            },
+            h5: {
+              fontSize: em(18, 16),
+              lineHeight: round(21 / 18),
+            },
+            figcaption: {
+              fontSize: em(13, 16),
+              lineHeight: round(16 / 13),
+            },
+          },
+        },
       }),
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    plugin(({ addUtilities }) => {
+      addUtilities({
+        ".small-caps": { "font-variant-caps": "small-caps" },
+      });
+    }),
+  ],
 };
 export default config;

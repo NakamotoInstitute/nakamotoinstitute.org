@@ -59,7 +59,7 @@ export default async function MempoolPost({
       </Link>
       <article>
         <PostHeader t={t} locale={locale} post={post} />
-        <section className="prose mx-auto" dir={getDir(locale)}>
+        <section className="prose mx-auto md:prose-lg" dir={getDir(locale)}>
           <Rehype hasMath={post.hasMath}>{post.content}</Rehype>
           <hr />
           {post.translators.length > 0 ? (

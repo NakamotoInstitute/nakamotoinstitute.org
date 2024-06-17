@@ -17,19 +17,19 @@ export async function DocHeader({ t, locale, doc }: DocHeaderProps) {
     <>
       <header className="mx-auto mt-6 max-w-4xl text-center">
         <h1
-          className="mb-2 text-5xl font-medium"
+          className="mb-4 text-4xl font-medium md:mb-6 md:text-7xl"
           dangerouslySetInnerHTML={{ __html: doc.displayTitle ?? doc.title }}
         />
         {doc.subtitle ? (
-          <p className="mb-6 text-xl italic">{doc.subtitle}</p>
+          <p className="mb-4 text-xl italic md:mb-6">{doc.subtitle}</p>
         ) : null}
         <AuthorsLinks
-          className="mb-2 text-3xl font-medium"
-          itemClassName="text-gray-500 hover:text-gray-600"
+          className="small-caps mb-1 text-xl font-bold md:mb-4 md:text-2xl"
+          itemClassName="text-dark"
           locale={locale}
           authors={doc.authors}
         />
-        <p className="text-2xl font-medium">
+        <p className="small-caps text-xl font-bold opacity-60 md:text-2xl">
           <time
             dateTime={formatTimeAttr(doc.date, doc.granularity)}
             dangerouslySetInnerHTML={{

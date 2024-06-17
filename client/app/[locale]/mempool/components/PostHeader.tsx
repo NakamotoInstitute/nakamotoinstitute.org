@@ -59,8 +59,10 @@ export async function PostHeader({ t, locale, post }: PostHeaderProps) {
             seriesIndex={post.seriesIndex}
           />
         ) : null}
-        <h1 className="mb-6 text-7xl font-medium">{post.title}</h1>
-        <p className="text-2xl font-medium">
+        <h1 className="mb-4 text-4xl font-medium leading-[1.1] md:mb-6 md:text-7xl">
+          {post.title}
+        </h1>
+        <p className="small-caps mb-1 text-xl font-bold md:mb-4 md:text-2xl">
           <Trans
             t={t}
             i18nKey="by_authors"
@@ -70,12 +72,13 @@ export async function PostHeader({ t, locale, post }: PostHeaderProps) {
                   as={"span"}
                   locale={locale}
                   authors={post.authors}
+                  itemClassName="text-dark"
                 />
               ),
             }}
           />
         </p>
-        <p className="text-xl font-medium italic opacity-60">
+        <p className="small-caps text-xl font-bold opacity-60 md:text-2xl">
           <time dateTime={post.date.toISOString()}>
             {formatDate(locale, post.date)}
           </time>
@@ -96,7 +99,7 @@ export async function PostHeader({ t, locale, post }: PostHeaderProps) {
         {post.image ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            className="mx-auto block max-w-[640px] rounded-sm pt-6"
+            className="mx-auto block rounded-sm pt-6 md:max-w-[640px]"
             src={post.image}
             alt={post.imageAlt ?? ""}
           />
