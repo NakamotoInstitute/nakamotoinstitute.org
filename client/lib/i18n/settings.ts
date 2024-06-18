@@ -1,7 +1,6 @@
-import { defaultLocale, locales } from "@/i18n";
+import { defaultLocale, i18nLocales } from "@/i18n";
 
 export const fallbackLng = "en";
-export const languages = locales;
 export const defaultNS = "common";
 
 type KeySeparator = string | false | undefined;
@@ -12,7 +11,7 @@ export function getOptions(
 ) {
   return {
     // debug: true,
-    supportedLngs: languages,
+    supportedLngs: i18nLocales,
     keySeparator: false as KeySeparator,
     fallbackLng: defaultLocale,
     lng,

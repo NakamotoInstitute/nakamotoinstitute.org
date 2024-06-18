@@ -34,4 +34,22 @@ export const locales = [
   "zh-cn",
 ] as const;
 
+export const i18nLocales = [
+  "ar",
+  "de",
+  "en",
+  "es",
+  "fa",
+  "fi",
+  "fr",
+  "he",
+  "it",
+  "ko",
+  "pt-BR",
+  "ru",
+  "tr",
+  "vi",
+  "zh-CN",
+] as const;
+
 export const defaultLocale = "en";
