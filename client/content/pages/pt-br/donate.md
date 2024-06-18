@@ -1,1 +1,0 @@
-Doe para nos ajudar a avançar e preservar o conhecimento sobre o Bitcoin. O Instituto Satoshi Nakamoto é uma organização qualificada 501(c)(3) sem fins lucrativos. Contribuições para o Instituto Satoshi Nakamoto são dedutíveis de imposto em toda extensão da lei.
