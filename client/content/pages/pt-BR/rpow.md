@@ -10,7 +10,7 @@ Um cliente RPOW cria um token RPOW fornecendo uma string de proof-work de uma de
 
 O problema do gasto duplo é fundamental para todo o dinheiro digital. RPOW resolve este problema mantendo a propriedade dos tokens registrados em um servidor confiável. No entanto, o RPOW foi construído com um modelo de segurança sofisticado destinado a tornar o servidor que gerencia o registo de todos os tokens RPOW mais confiável do que um banco comum. Os servidores deveriam ser executados no processador criptográfico seguro IBM 4758, que é capaz de verificar com segurança o hash do software que está sendo executado. Servidores RPOW são capazes de cooperar para atender mais requisições.
 
-Para mais informações, por favor veja a [página original](/finney/rpow/index.html) de Hal Finney, que inclui um [overview](/finney/rpow/index.html), um [FAQ](/finney/rpow/faqs.html), uma [página de teoria](/finney/rpow/theory. tml), uma [apresentação](/finney/rpow/slides/slide001.html), e uma página muito interessante chamada [World of RPOW](/finney/rpow/world. tml) que explica como o RPOW teria escalado para servir o planeta inteiro.
+Para mais informações, por favor veja a [página original](/finney/rpow/index.html) de Hal Finney, que inclui um [overview](/finney/rpow/index.html), um [FAQ](/finney/rpow/faqs.html), uma [página de teoria](/finney/rpow/theory.html), uma [apresentação](/finney/rpow/slides/slide001.html), e uma página muito interessante chamada [World of RPOW](/finney/rpow/world.html) que explica como o RPOW teria escalado para servir o planeta inteiro.
 
 O código original pode ser encontrado no GitHub [aqui](https://github.com/NakamotoInstitute/RPOW).
 
