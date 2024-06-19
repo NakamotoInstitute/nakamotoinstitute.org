@@ -1,5 +1,5 @@
 ---
-title: O sistema bancário de reservas fracionárias está obsoleto
+title: O Sistema Bancário de Reservas Fracionárias Está Obsoleto
 slug: o-sistema-bancario-de-reservas-fracionarias-esta-obsoleto
 excerpt: Não existe razão para depositar seu dinheiro junto a um terceiro. O Bitcoin torna o sistema de reserva fracionária obsoleto.
 translators:
