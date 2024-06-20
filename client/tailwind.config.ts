@@ -49,6 +49,8 @@ const config: Config = {
             "--tw-prose-body": theme("colors.dark"),
             "--tw-prose-links": theme("colors.dark"),
             "--tw-prose-hr": theme("colors.dark"),
+            "--tw-prose-quotes": theme("colors.dark"),
+            "--tw-prose-quote-borders": theme("colors.dark"),
             "--tw-prose-captions": theme("colors.dark"),
             "ol.references,ul.references": {
               listStyle: "none",
@@ -120,6 +122,29 @@ const config: Config = {
               fontSize: em(13, 16),
               lineHeight: round(16 / 13),
             },
+            blockquote: {
+              fontWeight: 400,
+              borderLeft: "1px dashed",
+              quotes: null,
+            },
+            "figure:has(blockquote)": {
+              borderLeft: "1px dashed",
+              borderColor: "var(--tw-prose-quote-borders)",
+            },
+            "figure > blockquote": {
+              border: "none",
+              paddingInlineStart: em(16, 18),
+              "& > p:last-of-type": {
+                marginBottom: 0,
+              },
+            },
+            "blockquote ~ figcaption": {
+              fontSize: em(16, 16),
+              fontWeight: 500,
+              paddingInlineStart: em(16, 16),
+              fontVariantCaps: "small-caps",
+              marginTop: em(12, 16),
+            },
             "mjx-container": {
               margin: "0.5em 0",
               padding: "0.5em 0",
@@ -166,6 +191,10 @@ const config: Config = {
             figcaption: {
               fontSize: em(13, 16),
               lineHeight: round(16 / 13),
+            },
+            "blockquote ~ figcaption": {
+              fontSize: em(16, 18),
+              marginTop: em(12, 18),
             },
           },
         },
