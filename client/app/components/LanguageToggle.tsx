@@ -63,7 +63,7 @@ export function LanguageToggle({
           <ul>
             {links.map((link) => (
               <li key={link.href} className="mb-1 last:mb-0">
-                <Link href={link.href} className="text-dark hover:text-dark">
+                <Link href={link.href} className="text-dark">
                   {link.text}
                 </Link>
               </li>

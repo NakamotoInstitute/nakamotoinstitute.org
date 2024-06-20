@@ -3,12 +3,8 @@
 @tailwind utilities;
 
 @layer base {
-  a {
-    @apply text-blue-500;
-  }
-
   a:hover {
-    @apply text-blue-600;
+    @apply text-cardinal;
   }
 }
 
