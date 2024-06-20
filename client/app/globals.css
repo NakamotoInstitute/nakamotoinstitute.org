@@ -6,6 +6,10 @@
   a:hover {
     @apply text-cardinal;
   }
+
+  hr {
+    @apply border-dashed border-dark;
+  }
 }
 
 @layer components {

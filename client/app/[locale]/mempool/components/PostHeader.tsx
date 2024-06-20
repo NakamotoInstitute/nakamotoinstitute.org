@@ -105,7 +105,7 @@ export async function PostHeader({ t, locale, post }: PostHeaderProps) {
           />
         ) : null}
       </header>
-      <hr className="mx-auto my-7 w-12 border border-opacity-40 md:my-18" />
+      <hr className="mx-auto my-7 w-12 md:my-18" />
     </>
   );
 }

@@ -48,6 +48,7 @@ const config: Config = {
           css: {
             "--tw-prose-body": theme("colors.dark"),
             "--tw-prose-links": theme("colors.dark"),
+            "--tw-prose-hr": theme("colors.dark"),
             "--tw-prose-captions": theme("colors.dark"),
             "ol.references,ul.references": {
               listStyle: "none",

@@ -48,7 +48,7 @@ export async function DocHeader({ t, locale, doc }: DocHeaderProps) {
           />
         ) : null}
       </header>
-      <hr className="mx-auto my-7 w-12 border border-opacity-40 md:my-18" />
+      <hr className="mx-auto my-7 w-12 md:my-18" />
       {doc.content ? (
         <>
           <DocFormatLinks
@@ -56,7 +56,7 @@ export async function DocHeader({ t, locale, doc }: DocHeaderProps) {
             classes={{ root: "justify-center gap-3 font-medium" }}
             doc={doc}
           />
-          <hr className="mx-auto my-6 w-12 border-opacity-40" />
+          <hr className="mx-auto my-6 w-12" />
         </>
       ) : (
         <DocFormatLinks
