@@ -62,7 +62,7 @@ export async function PostHeader({ t, locale, post }: PostHeaderProps) {
         <h1 className="mb-4 text-4xl font-medium leading-[1.1] md:mb-6 md:text-7xl">
           {post.title}
         </h1>
-        <p className="small-caps mb-1 text-xl font-bold md:mb-4 md:text-2xl">
+        <p className="mb-1 text-xl font-bold small-caps md:mb-4 md:text-2xl">
           <Trans
             t={t}
             i18nKey="by_authors"
@@ -78,7 +78,7 @@ export async function PostHeader({ t, locale, post }: PostHeaderProps) {
             }}
           />
         </p>
-        <p className="small-caps text-xl font-bold opacity-60 md:text-2xl">
+        <p className="text-xl font-bold opacity-60 small-caps md:text-2xl">
           <time dateTime={post.date.toISOString()}>
             {formatDate(locale, post.date)}
           </time>
@@ -105,7 +105,7 @@ export async function PostHeader({ t, locale, post }: PostHeaderProps) {
           />
         ) : null}
       </header>
-      <hr className="mx-auto my-12 w-12 border border-opacity-40" />
+      <hr className="mx-auto my-7 w-12 border border-opacity-40 md:my-18" />
     </>
   );
 }

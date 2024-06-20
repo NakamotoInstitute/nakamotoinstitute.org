@@ -62,17 +62,29 @@ const config: Config = {
               fontSize: "1rem",
             },
             lineHeight: em(26, 16),
+            p: {
+              marginTop: em(22, 16),
+              marginBottom: em(22, 16),
+            },
             h2: {
               fontSize: em(18, 16),
+              marginTop: em(32, 18),
+              marginBottom: em(8, 18),
             },
             h3: {
               fontSize: em(17, 16),
+              marginTop: em(32, 17),
+              marginBottom: em(8, 17),
             },
             h4: {
               fontSize: em(16, 16),
+              marginTop: em(32, 16),
+              marginBottom: em(8, 16),
             },
             h5: {
               fontSize: em(16, 16),
+              marginTop: em(32, 16),
+              marginBottom: em(8, 16),
             },
             pre: {
               strong: { color: "var(--tw-prose-pre-code)" },
@@ -123,20 +135,32 @@ const config: Config = {
                 padding: 0,
               },
             },
+            p: {
+              marginTop: em(28, 18),
+              marginBottom: em(28, 18),
+            },
             h2: {
               lineHeight: round(28 / 24),
+              marginTop: em(40, 24),
+              marginBottom: em(16, 24),
             },
             h3: {
               fontSize: em(22, 16),
               lineHeight: round(26 / 22),
+              marginTop: em(40, 22),
+              marginBottom: em(16, 22),
             },
             h4: {
               fontSize: em(20, 16),
               lineHeight: round(23 / 22),
+              marginTop: em(40, 20),
+              marginBottom: em(16, 20),
             },
             h5: {
               fontSize: em(18, 16),
               lineHeight: round(21 / 18),
+              marginTop: em(40, 18),
+              marginBottom: em(16, 18),
             },
             figcaption: {
               fontSize: em(13, 16),

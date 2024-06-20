@@ -24,12 +24,12 @@ export async function DocHeader({ t, locale, doc }: DocHeaderProps) {
           <p className="mb-4 text-xl italic md:mb-6">{doc.subtitle}</p>
         ) : null}
         <AuthorsLinks
-          className="small-caps mb-1 text-xl font-bold md:mb-4 md:text-2xl"
+          className="mb-1 text-xl font-bold small-caps md:mb-4 md:text-2xl"
           itemClassName="text-dark"
           locale={locale}
           authors={doc.authors}
         />
-        <p className="small-caps text-xl font-bold opacity-60 md:text-2xl">
+        <p className="text-xl font-bold opacity-60 small-caps md:text-2xl">
           <time
             dateTime={formatTimeAttr(doc.date, doc.granularity)}
             dangerouslySetInnerHTML={{
@@ -48,7 +48,7 @@ export async function DocHeader({ t, locale, doc }: DocHeaderProps) {
           />
         ) : null}
       </header>
-      <hr className="mx-auto my-6 w-12 border border-opacity-40" />
+      <hr className="mx-auto my-7 w-12 border border-opacity-40 md:my-18" />
       {doc.content ? (
         <>
           <DocFormatLinks
