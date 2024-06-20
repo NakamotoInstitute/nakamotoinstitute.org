@@ -6,6 +6,7 @@ import "../globals.css";
 const stix = STIX_Two_Text({
   subsets: ["latin"],
   variable: "--font-stix",
+  style: ["normal", "italic"],
 });
 const plexMono = IBM_Plex_Mono({
   subsets: ["latin"],
@@ -25,7 +26,7 @@ export function RootLayout({ locale, children }: RootLayoutProps) {
       className={clsx(
         stix.variable,
         plexMono.variable,
-        "text-dark bg-cream font-serif",
+        "bg-cream font-serif text-dark",
       )}
     >
       {children}
