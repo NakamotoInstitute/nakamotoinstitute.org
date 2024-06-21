@@ -7,7 +7,7 @@ excerpt:
     uma moeda com custos de transação ainda mais baixos seja teoricamente
     impossível."
 translators:
-    - luisschwab
+    - luis-schwab
 ---
 
 A estratégia libertária para debilitar [moedas fiduciárias](https://pt.wikipedia.org/wiki/Moeda_fiduci%C3%A1ria) sempre foi centrada em [tornar o ouro e a prata alternativas viáveis](https://constitution.org/1-Activism/mon/greenspan_gold.txt). Esse esforço falhou pois é impossível competir uma moeda digital, como o dólar, com uma commodity física devido aos altos custos de transação associados. A única maneira para metais ganharem é se moedas fiduciárias falharem. Enquanto pode ser o caso que moedas fiduciárias inevitávelmente falham no longo prazo, esperar essa possibilidade é inaceitável dado a quantidade de dano que bancos centrais estão causando na acumulação de capital da humanidade.
