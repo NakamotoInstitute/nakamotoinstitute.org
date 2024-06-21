@@ -6,7 +6,7 @@ excerpt:
     virtudes que ajudaram grandes homens a resistir
     as tempestades da vida desde a antiguidade.
 translators:
-    - luisschwab
+    - luis-schwab
 ---
 
 <figure>
