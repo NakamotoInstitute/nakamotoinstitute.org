@@ -124,7 +124,7 @@
   "view_post": "View post",
   "view_email": "View email",
   "quotable_satoshi": "The Quotable Satoshi",
-  "satoshi_quote_extended": "It&lsquo;s very attractive to the libertarian viewpoint if we can explain it properly.<br><em>I&lsquo;m better with code than with words though.</em>",
+  "satoshi_quote_extended": "It’s very attractive to the libertarian viewpoint if we can explain it properly.<br><em>I’m better with code than with words though.</em>",
   "satoshi_citation": "<a>Satoshi Nakamoto</a>, {{date}}",
   "quotable_satoshi_acknowledgements": "Special thanks to <a>Jordan Tuwiner</a> for indexing quotations.",
   "add_quotation_request": "If there is a quotation or category you would like to add, please <contact>contact us</contact> or submit a pull request on <github>GitHub</github>."
