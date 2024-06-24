@@ -48,6 +48,8 @@ const config: Config = {
           css: {
             "--tw-prose-body": theme("colors.dark"),
             "--tw-prose-links": theme("colors.dark"),
+            "--tw-prose-counters": theme("colors.dark"),
+            "--tw-prose-bullets": theme("colors.dark"),
             "--tw-prose-hr": theme("colors.dark"),
             "--tw-prose-quotes": theme("colors.dark"),
             "--tw-prose-quote-borders": theme("colors.dark"),
