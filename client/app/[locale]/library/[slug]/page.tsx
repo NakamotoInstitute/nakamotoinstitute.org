@@ -5,6 +5,7 @@ import { Trans } from "react-i18next/TransWithoutContext";
 import { PageLayout } from "@/app/components/PageLayout";
 import { Rehype } from "@/app/components/Rehype";
 import { RenderedItemsList } from "@/app/components/RenderedItemsList";
+import { ReturnButton } from "@/app/components/ReturnButton";
 import { getLibraryDoc, getLibraryParams } from "@/lib/api/library";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { getDir } from "@/lib/i18n/utils";
@@ -55,9 +56,7 @@ export default async function LibraryDetail({
 
   return (
     <PageLayout t={t} locale={locale} generateHref={generateHref}>
-      <Link className="mb-4 block text-center" href={backHref}>
-        {backLabel}
-      </Link>
+      <ReturnButton url={backHref} label={backLabel} />
       <article>
         <DocHeader t={t} locale={locale} doc={doc} />
         {doc.content ? (
@@ -119,9 +118,7 @@ export default async function LibraryDetail({
           </>
         ) : null}
       </article>
-      <Link className="mt-4 block text-center" href={backHref}>
-        {backLabel}
-      </Link>
+      <ReturnButton className="mt-4" url={backHref} label={backLabel} />
     </PageLayout>
   );
 }
