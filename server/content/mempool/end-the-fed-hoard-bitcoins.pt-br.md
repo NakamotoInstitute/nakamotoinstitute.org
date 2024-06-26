@@ -1,13 +1,9 @@
 ---
-title: Acabe com o Fed: Acumule Bitcoins
+title: "Acabe com o Fed: Acumule Bitcoins"
 slug: acabe-com-o-fed-acumule-bitcoins
-excerpt:
-    "Baixos custos de transação tornam o Bitcoin o mais competitivo
-    meio de troca da história da humanidade, e talvez seja o caso que
-    uma moeda com custos de transação ainda mais baixos seja teoricamente
-    impossível."
+excerpt: Baixos custos de transação tornam o Bitcoin o mais competitivo meio de troca da história da humanidade, e talvez seja o caso que uma moeda com custos de transação ainda mais baixos seja teoricamente impossível.
 translators:
-    - luis-schwab
+  - luis-schwab
 ---
 
 A estratégia libertária para debilitar [moedas fiduciárias](https://pt.wikipedia.org/wiki/Moeda_fiduci%C3%A1ria) sempre foi centrada em [tornar o ouro e a prata alternativas viáveis](https://constitution.org/1-Activism/mon/greenspan_gold.txt). Esse esforço falhou pois é impossível competir uma moeda digital, como o dólar, com uma commodity física devido aos altos custos de transação associados. A única maneira para metais ganharem é se moedas fiduciárias falharem. Enquanto pode ser o caso que moedas fiduciárias inevitávelmente falham no longo prazo, esperar essa possibilidade é inaceitável dado a quantidade de dano que bancos centrais estão causando na acumulação de capital da humanidade.
@@ -46,5 +42,5 @@ Se você está interessado em acabar com bancos centrais, eu recomendo acumular 
 
 <figure>
   <img src="/static/img/mempool/end-the-fed-hoard-bitcoins/bitcoinfeedbackloops.jpg" alt="Bitcoin Feedback Loops" />
-  <figcaption>(Flow chart based on Zangelbert Bingledack's <a href="https://bitcointalk.org/index.php?topic=144911.0">post</a>.)</figcaption>
+  <figcaption>(Fluxograma baseado na <a href="https://bitcointalk.org/index.php?topic=144911.0">postagem</a> de Zangelbert Bingledack.)</figcaption>
 </figure>
