@@ -54,6 +54,9 @@ const config: Config = {
             "--tw-prose-quotes": theme("colors.dark"),
             "--tw-prose-quote-borders": theme("colors.dark"),
             "--tw-prose-captions": theme("colors.dark"),
+            "--tw-prose-code": theme("colors.dark"),
+            "--tw-prose-pre-code": theme("colors.dark"),
+            "--tw-prose-pre-bg": theme("colors.white"),
             "ol.references,ul.references": {
               listStyle: "none",
               padding: 0,
@@ -91,7 +94,14 @@ const config: Config = {
               marginTop: em(32, 16),
               marginBottom: em(8, 16),
             },
+            code: {
+              color: "var(--tw-prose-code)",
+              fontWeight: "600",
+            },
+            "code::before": null,
+            "code::after": null,
             pre: {
+              border: "1px dashed",
               strong: { color: "var(--tw-prose-pre-code)" },
             },
             figure: {

@@ -11,7 +11,7 @@ const stix = STIX_Two_Text({
 const plexMono = IBM_Plex_Mono({
   subsets: ["latin"],
   variable: "--font-ibm-plex-mono",
-  weight: ["400", "500"],
+  weight: ["400", "500", "600"],
 });
 
 type RootLayoutProps = {
