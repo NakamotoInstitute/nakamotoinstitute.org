@@ -1,19 +1,16 @@
 ---
 title: Meditações sobre Pesadelos Cypherpunks
-excerpt:
-    Nos proteger dos perigos da criptoanarquia requer
-    adotá-la ainda mais e internalizar e praticar as 
-    virtudes que ajudaram grandes homens a resistir
-    as tempestades da vida desde a antiguidade.
+slug: meditacoes-sobre-pesadelos-cypherpunks
+excerpt: Nos proteger dos perigos da criptoanarquia requer adotá-la ainda mais e internalizar e praticar as virtudes que ajudaram grandes homens a resistir as tempestades da vida desde a antiguidade.
 translators:
-    - luis-schwab
+  - luis-schwab
 ---
 
 <figure>
   <blockquote>
     <p>Algumas coisas estão sob nosso controle e outras não.</p>
   </blockquote>
-  <figcaption>Epicteto, <em>O Encheirídion</em></figcaption>
+  <figcaption>Epicteto, <em>O Enquirídio</em></figcaption>
 </figure>
 
 ## A Cripto Anarquia se Espalha
@@ -24,7 +21,7 @@ Em seu clássico ["O Manifesto Cripto Anarquista"](/pt-br/library/crypto-anarchi
 
 > Assim como a tecnologia de impressão alterou e reduziu o poder das guildas medievais e a estrutura de poder social, também irão os métodos criptológicos fundamentalmente alterar a natureza de corporações e de interferência governamental em transações econômicas. **Combinado com os emergentes mercados de informação, a cripto-anarquia irá criar um mercado líquido para todo e qualquer material que puder ser representado com palavras e imagens.** Assim como uma invenção aparentemente insignificante como o arame farpado permitiu cercar vastos ranchos e fazendas, alterando assim a o conceito de terra e direitos de propriedade na fronteira Oeste, também irá a aparentemente insignificante descoberta de um ramo misterioso da matemática se tornar os alicates que cortarão o arame farpado que cerca a propriedade intelectual.
 >
-> \[Ênfase minha/]
+> \[Ênfase minha\]
 
 Duas lições aqui:
 
@@ -39,8 +36,7 @@ E agora um website promovido pela conta do Twitter do WikiLeaks quer ir ao próx
 
 > Slur é um mercado open-source, descentralizado e anônimo para a venda de informações secretas em troca de bitcoin. Slur é escrito em C e opera sobre a rede Tor com transações de bitcoin pela [libbitcoin](https://libbitcoin.info/). Tanto compradores quanto vendedores são completamente anônimos e não existem restrições na informação leiloada. Não existe taxa de venda ou compra no mercado Slur exceto no caso de disputa, onde uma quantidade simbólica é paga a voluntários.
 
-
-Para tudo, desde segredos comerciais a segredos de Estado, exploits zero-day e “o banco de dados completo de redes sociais como o facebook", existirá um preço em Bitcoin. 
+Para tudo, desde segredos comerciais a segredos de Estado, exploits zero-day e “o banco de dados completo de redes sociais como o facebook", existirá um preço em Bitcoin.
 
 _Eu recomendaria a qualquer um vivo em 2014 a assumir não apenas que seus segredos serão vazados, mas viver como eles já tivessem sido vazados._
 
@@ -82,7 +78,7 @@ A solução para isso é em primeiro lugar mirar em ser virtuoso em pensamento e
   <blockquote>
 </figure>
 
-Como eu falei acima, [criptografia forte não é uma panaceia](/mempool/bitcoin-is-great-but-it-wont-fix-our-monkey-brains). Até mesmo a mais forte criptografia ponta-a-ponta não te protege da informação vazar do outro lado. É portanto importante saber e confiar em quem você está se comunicando, tanto em virtude e em capacidades de segurança. Confiar na comunicação criptográfica deve ser ter confiança em seu colega e compreender suas vulnerabilidades. Pessoas boas também podem ser hackeadas. 
+Como eu falei acima, [criptografia forte não é uma panaceia](/mempool/bitcoin-is-great-but-it-wont-fix-our-monkey-brains). Até mesmo a mais forte criptografia ponta-a-ponta não te protege da informação vazar do outro lado. É portanto importante saber e confiar em quem você está se comunicando, tanto em virtude e em capacidades de segurança. Confiar na comunicação criptográfica deve ser ter confiança em seu colega e compreender suas vulnerabilidades. Pessoas boas também podem ser hackeadas.
 
 Portanto, faça os melhores amigos. Construa laços fortes e confiáveis com outros indivíduos, e conheça os limites desses laços. Assine chaves, verifique digitais, e mais importante, saiba que valor vocês realmente dão um ao outro. Não deixe redes sociais desvalorizarem a palavra amigo, para não confraternizar com [golpistas](/mempool/everyones-a-scammer).
 
@@ -106,16 +102,16 @@ Para uma análise aprofundada sobre esse vazamento até agora, veja ["“The Sil
 
 A sabedoria estóica guiou grandes homens ao longo da história e continuará a fazê-lo.
 
-- [_Meditações_](https://en.wikisource.org/wiki/The_Thoughts_of_the_Emperor_Marcus_Aurelius_Antoninus)_ por Marco Aurélio
-- [_Cartas à Lucílio_](https://en.wikisource.org/wiki/Moral_letters_to_Lucilius)_ por Seneca
-- [_Encheirídion_](http://classics.mit.edu/Epictetus/epicench.html)_ por Epicteto
+- [_Meditações_](https://en.wikisource.org/wiki/The_Thoughts_of_the_Emperor_Marcus_Aurelius_Antoninus) por Marco Aurélio
+- [_Cartas à Lucílio_](https://en.wikisource.org/wiki/Moral_letters_to_Lucilius) por Seneca
+- [_O Enquirídio_](http://classics.mit.edu/Epictetus/epicench.html) por Epicteto
 - [_The Obstacle is the Way_](https://www.amazon.com/Obstacle-Way-Timeless-Turning-Triumph/dp/1591846358/) por Ryan Holiday
 
 ### Os Cypherpunks e Cripto-Anarquia
 
 Quanto melhor você entender a criptoanarquia, melhor poderá enfrentar o futuro.
 
-- [Instituto Satoshi Nakamoto]()
+- [Instituto Satoshi Nakamoto](/)
 - [Arquivos da lista de discussão Cypherpunk](http://cypherpunks.venona.com/date/)
 - [Ensaios, artigos e tutoriais concisos de Nick Szabo](http://szabo.best.vwh.net/)
 - [_This Machine Kills Secrets_](https://www.amazon.com/This-Machine-Kills-Secrets-Whistleblowers/dp/0142180491/) por Andy Greenberg
@@ -134,5 +130,5 @@ Amigos não deixam amigos não entenderem PGP e segurança de Bitcoin básicos.
 
 Tudo o que você lê provavelmente é mentira. Mantenha a relação sinal-ruído a mais alta possível.
 
-- [_Trust Mee, I'm Lying_](https://www.amazon.com/Trust-Me-Lying-Confessions-Manipulator/dp/1591846285/) por Ryan Holiday
+- [_Trust Me, I'm Lying_](https://www.amazon.com/Trust-Me-Lying-Confessions-Manipulator/dp/1591846285/) por Ryan Holiday
 - [_Fooled by Randomness_](https://www.amazon.com/Fooled-Randomness-Hidden-Markets-Incerto/dp/0812975219) por Nassim Nicholas Taleb
