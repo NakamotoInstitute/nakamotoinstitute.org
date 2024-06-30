@@ -1,0 +1,1 @@
+Dona para ayudarnos a avanzar y preservar el conocimiento de Bitcoin. El Instituto Satoshi Nakamoto es una organización sin fines de lucro titulada 501(c)(3). Las contribuciones a SNI son deducibles de impuestos hasta el máximo grado de la legislación.
