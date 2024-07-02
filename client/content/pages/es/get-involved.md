@@ -1,4 +1,4 @@
-El Instituto Satoshi Nakamoto se dedica a avanzar y preservar el conocimiento de la historia, la economía y la tecnología de Bitcoin. Creemos que Bitcoin es la clave para un futuro pacífico y próspero para todos, pero su éxito requiere que la gente lo entienda. Con su ayuda, podemos asegurarnos de que los bitcoiners futuros aprecien esta tecnología y la vean en todo su potencial. Por favor, considere involucrarse de una de las siguientes maneras:
+El Instituto Satoshi Nakamoto se dedica a fomentar y preservar el conocimiento de la historia, la economía y la tecnología de Bitcoin. Creemos que Bitcoin es la clave para un futuro pacífico y próspero para todos, pero su éxito depende de que la gente lo entienda. Con tu ayuda, podemos asegurarnos de que los bitcoiners del futuro aprecien esta tecnología y la vean en todo su potencial. Por favor, considere involucrarse de alguna de las siguientes maneras:
 
 ## Donar
 
@@ -6,7 +6,7 @@ El Instituto Satoshi Nakamoto es una organización sin fines de lucro y se basa 
 
 ## Código
 
-Como proyecto de código abierto, el Instituto Satoshi Nakamoto da la bienvenida a los desarrolladores voluntarios a contribuir a nuestra base de código. Todo nuestro código está alojado en [GitHub](https://github.com/NakamotoInstitute). Si usted tiene habilidades de desarrollo web o diseño y quiere ayudar a mejorar este sitio web, apreciaríamos mucho a sus contribuciones. Para empezar, echa un vistazo a [nuestros repositorios](https://github.com/NakamotoInstitute/nakamotoinstitute.org) en GitHub y consulta nuestra lista actual de problemas abiertos y solicitudes de características. Si tienes alguna pregunta, siéntete libre a abrir un problema o pull request.
+Como proyecto de código abierto, el Instituto Satoshi Nakamoto da la bienvenida a los desarrolladores voluntarios a contribuir a nuestra base de código. Todo nuestro código está alojado en [GitHub](https://github.com/NakamotoInstitute). Si usted tiene habilidades de desarrollo web o diseño y quiere ayudar a mejorar este sitio web, apreciaríamos mucho a sus contribuciones. Para empezar, echa un vistazo a [nuestros repositorios](https://github.com/NakamotoInstitute/nakamotoinstitute.org) en GitHub y consulta nuestra lista actual de problemas abiertos y solicitudes de funciones. Si tienes alguna pregunta, siéntete libre a abrir un problema o pull request.
 
 ## Traducir
 
@@ -14,4 +14,4 @@ Bitcoin es global, y también lo es nuestra misión. Queremos hacer que el conoc
 
 Si usted habla inglés y otro idioma, nos encantaría su ayuda con la traducción. Para unirte a nuestra comunidad de traducciones, rellena [este formulario](https://forms.gle/QbaYmkz1mJwBbErf6) expresando tu interés y conocimientos del idioma. Nos pondremos en contacto contigo con los siguientes pasos y agradecemos mucho cualquier ayuda de traducción que puedas proporcionar.
 
-También puedes enviar texto traducido directamente a través de pull request en [GitHub](https://github.com/NakamotoInstitute/nakamotoinstitute.org). o rellene este formulario expresando su interés y conocimientos lingüísticos. Nos pondremos en contacto contigo con los siguientes pasos y agradecemos mucho cualquier ayuda de traducción que puedas proporcionar.
+También puedes enviar texto traducido directamente a través de pull request en [GitHub](https://github.com/NakamotoInstitute/nakamotoinstitute.org) o rellene este formulario expresando su interés y capacidades lingüísticas. Nos pondremos en contacto contigo con los siguientes pasos y agradecemos mucho cualquier ayuda de traducción que puedas proporcionar.
