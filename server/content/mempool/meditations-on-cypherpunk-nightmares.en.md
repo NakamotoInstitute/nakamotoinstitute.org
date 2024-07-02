@@ -116,7 +116,7 @@ Stoic wisdom has guided great men throughout history and will continue to do so.
 
 The better you understand crypto-anarchy, the better you can contend with the future.
 
-- [Satoshi Nakamoto Institute]()
+- [Satoshi Nakamoto Institute](/)
 - [Cypherpunk mailing list archives](http://cypherpunks.venona.com/date/)
 - [Nick Szabo’s Essays, Papers, and Concise Tutorials](http://szabo.best.vwh.net/)
 - [_This Machine Kills Secrets_](http://amzn.com/0142180491) by Andy Greenberg
