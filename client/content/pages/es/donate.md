@@ -1,0 +1,1 @@
+Haz una donación para ayudarnos a fomentar y preservar el conocimiento de Bitcoin. El Instituto Satoshi Nakamoto (ISN) es una organización sin fines de lucro calificada según la sección 501(c)(3). Las contribuciones al ISN son deducibles de impuestos hasta el máximo grado de la ley.
