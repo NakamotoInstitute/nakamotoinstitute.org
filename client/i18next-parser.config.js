@@ -1,5 +1,5 @@
 module.exports = {
-  locales: ["en", "sk", "ko"],
+  locales: ["en"],
   defaultNamespace: "common",
   input: ["app/**/*.{js,jsx,ts,tsx}"],
   createOldCatalogs: false,
