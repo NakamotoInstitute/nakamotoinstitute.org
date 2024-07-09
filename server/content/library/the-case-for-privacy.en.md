@@ -193,11 +193,11 @@ We can and should fight a delaying action against the use of technology to restr
 
 <h3 id="references">References</h3>
 
-- Brin, David (1999), _The Transparent Society: Will Technology Force Us to Choose Between Privacy and Freedom?_ Perseus (The first chapter is webbed at [https://www.davidbrin.com/transparentsociety.html])
+- Brin, David (1999), _The Transparent Society: Will Technology Force Us to Choose Between Privacy and Freedom?_ Perseus (The first chapter is webbed at [https://www.davidbrin.com/transparentsociety.html](https://www.davidbrin.com/transparentsociety.html))
 
 - Etzioni, Amitai (1999), _The Limits of Privacy_, Basic Books.
 
-- Friedman, David (1996) "A World of Strong Privacy: Promises and Perils of Encryption," _Social Philosophy and Policy_, pp. 212-228. Webbed at [[http://www.daviddfriedman.com/Academic/Strong_Privacy/Strong_Privacy.html](http://www.daviddfriedman.com/Future_Imperfect.html)]
+- Friedman, David (1996) "A World of Strong Privacy: Promises and Perils of Encryption," _Social Philosophy and Policy_, pp. 212-228. Webbed at [http://www.daviddfriedman.com/Academic/Strong_Privacy/Strong_Privacy.html](http://www.daviddfriedman.com/Future_Imperfect.html)
 
 - Rummel, Rudolph J. (1999), Statistics of democide: _Genocide and mass murder since 1900_, Lit Verlag.
 
@@ -207,7 +207,7 @@ We can and should fight a delaying action against the use of technology to restr
 
 - Ellen Frankel Paul, Fred D. Miller, Jr., & Jeffrey Paul (Eds). (2000) _The Right to Privacy,_ Cambridge University Press.
 
-- [https://www.hawaii.edu/powerkills/20TH.HTM] (detailed statistics on 20<sup>th</sup> century democide)
+- [https://www.hawaii.edu/powerkills/20TH.HTM](https://www.hawaii.edu/powerkills/20TH.HTM) (detailed statistics on 20<sup>th</sup> century democide)
 
 - [http://www.daviddfriedman.com/future_imperfect_draft/future_imperfect.html](http://www.daviddfriedman.com/Future_Imperfect.html) (Much more detailed account of encryption, surveillance, and much else.)
 
