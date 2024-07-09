@@ -193,23 +193,23 @@ We can and should fight a delaying action against the use of technology to restr
 
 <h3 id="references">References</h3>
 
-Brin, David (1999), _The Transparent Society: Will Technology Force Us to Choose Between Privacy and Freedom?_ Perseus (The first chapter is webbed at [http://www.kithrup.com/brin/tschp1.html](http://www.kithrup.com/brin/tschp1.html))
+- Brin, David (1999), _The Transparent Society: Will Technology Force Us to Choose Between Privacy and Freedom?_ Perseus (The first chapter is webbed at [https://www.davidbrin.com/transparentsociety.html](https://www.davidbrin.com/transparentsociety.html))
 
-Etzioni, Amitai (1999), _The Limits of Privacy_, Basic Books.
+- Etzioni, Amitai (1999), _The Limits of Privacy_, Basic Books.
 
-Friedman, David (1996) "A World of Strong Privacy: Promises and Perils of Encryption," _Social Philosophy and Policy_, pp. 212-228. Webbed at [http://www.daviddfriedman.com/Academic/Strong_Privacy/Strong_Privacy.html](http://www.daviddfriedman.com/Academic/Strong_Privacy/Strong_Privacy.html)
+- Friedman, David (1996) "A World of Strong Privacy: Promises and Perils of Encryption," _Social Philosophy and Policy_, pp. 212-228. Webbed at [http://www.daviddfriedman.com/Academic/Strong_Privacy/Strong_Privacy.html](http://www.daviddfriedman.com/Future_Imperfect.html)
 
-Rummel, Rudolph J. (1999), Statistics of democide: _Genocide and mass murder since 1900_, Lit Verlag.
+- Rummel, Rudolph J. (1999), Statistics of democide: _Genocide and mass murder since 1900_, Lit Verlag.
 
 <h3 id="further-reading">Further Reading</h3>
 
-Anderson, Poul, _Shield_
+- Anderson, Poul, _Shield_
 
-Ellen Frankel Paul, Fred D. Miller, Jr., & Jeffrey Paul (Eds). (2000) _The Right to Privacy,_ Cambridge University Press.
+- Ellen Frankel Paul, Fred D. Miller, Jr., & Jeffrey Paul (Eds). (2000) _The Right to Privacy,_ Cambridge University Press.
 
-[http://www.mega.nu:8080/ampp/rummel/20th.htm](http://www.mega.nu:8080/ampp/rummel/20th.htm) (detailed statistics on 20<sup>th</sup> century democide)
+- [https://www.hawaii.edu/powerkills/20TH.HTM](https://www.hawaii.edu/powerkills/20TH.HTM) (detailed statistics on 20<sup>th</sup> century democide)
 
-[http://www.daviddfriedman.com/future_imperfect_draft/future_imperfect.html](http://www.daviddfriedman.com/future_imperfect_draft/future_imperfect.html) (Much more detailed account of encryption, surveillance, and much else.)
+- [http://www.daviddfriedman.com/future_imperfect_draft/future_imperfect.html](http://www.daviddfriedman.com/Future_Imperfect.html) (Much more detailed account of encryption, surveillance, and much else.)
 
 ---
 
