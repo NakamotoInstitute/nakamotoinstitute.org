@@ -30,25 +30,25 @@ external: http://konradsgraf.com/storage/On%20the%20Origins%20of%20Bitcoin%20Gra
 ## Table of Contents
 
 <ul class="contents">
-	<li><a href=#1>1. The battle that never was: The regression theorem versus Bitcoin</a></li>
-	<li><a href=#2>2. The “money or nothing” fallacy</a></li>
-	<li><a href=#3>3. Scarcity by the numbers</a></li>
-	<li><a href=#4>4. On technical concerns and comparative realism</a></li>
-	<li><a href=#5>5. Show your work: Narrow logical steps</a></li>
-	<li><a href=#6>6. The presence of pre-existing price constellations</a></li>
-	<li><a href=#7>7. Taking it back to steak, eggs, and flour</a></li>
-	<li><a href=#8>8. 120,000 years of “mere” collectibles</a></li>
-	<li><a href=#9>9. Technical and economic layers always present</a></li>
-	<li><a href=#10>10. The importance of system and unit perspectives</a></li>
-	<li><a href=#11>11. A well-documented illustration</a></li>
-	<li><a href=#12>12. The first emergence of Bitcoin prices for money</a></li>
-	<li><a href=#13>13. Distinguishing the early value components</a></li>
-	<li><a href=#14>14. Chalk this one up for the crazy ones too</a></li>
-	<li><a href=#Appendix-A>Appendix A: Monetary interpretation by year</a></li>
-	<li><a href=#Appendix-B>Appendix B: Five-year price formation chart</a></li>
-	<li><a href=#References>References</a></li>
-	<li><a href=#About>About the Author</a></li>
-	<li><a href=#Notes>Notes</a></li>
+	<li><a href="#1">1. The battle that never was: The regression theorem versus Bitcoin</a></li>
+	<li><a href="#2">2. The “money or nothing” fallacy</a></li>
+	<li><a href="#3">3. Scarcity by the numbers</a></li>
+	<li><a href="#4">4. On technical concerns and comparative realism</a></li>
+	<li><a href="#5">5. Show your work: Narrow logical steps</a></li>
+	<li><a href="#6">6. The presence of pre-existing price constellations</a></li>
+	<li><a href="#7">7. Taking it back to steak, eggs, and flour</a></li>
+	<li><a href="#8">8. 120,000 years of “mere” collectibles</a></li>
+	<li><a href="#9">9. Technical and economic layers always present</a></li>
+	<li><a href="#10">10. The importance of system and unit perspectives</a></li>
+	<li><a href="#11">11. A well-documented illustration</a></li>
+	<li><a href="#12">12. The first emergence of Bitcoin prices for money</a></li>
+	<li><a href="#13">13. Distinguishing the early value components</a></li>
+	<li><a href="#14">14. Chalk this one up for the crazy ones too</a></li>
+	<li><a href="#Appendix-A">Appendix A: Monetary interpretation by year</a></li>
+	<li><a href="#Appendix-B">Appendix B: Five-year price formation chart</a></li>
+	<li><a href="#References">References</a></li>
+	<li><a href="#About">About the Author</a></li>
+	<li><a href="#Notes">Notes</a></li>
 </ul>
 
 <h2 id="1">1. The battle that never was: The regression theorem versus Bitcoin</h2>
