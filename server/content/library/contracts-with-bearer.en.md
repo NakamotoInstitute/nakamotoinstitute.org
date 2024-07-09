@@ -70,7 +70,7 @@ With ideal two-way anonymous communications between use-once keys, and completel
 
 Issuance and cleared transfer of references to a distributed object conserves the usage of that object. This object becomes "scarce" in economic terms, just as use of physical objects is finite. Conserved objects provide the basis for a software economics that more closely resembles economics of scarce physical objects. Conserved objects can be used to selectively exclude not only scarce physical resources (such as CPU time, network bandwidth and response time, etc.), but also fruits of intellectual labor &ndash; as long as one is willing to pay the price to interact with that information over the network rather than locally (cf. content rights management). Conservation immunizes objects and the resources they encapsulate to denial of service attacks. Bearer certificate protocols can be used to transfer references to a particular instance or set of instances of an object, just as they can be used to transfer other kinds of standardized rights.
 
-To implement a full transaction of payment for services, we often need need more than just the digital cash protocol; we need a protocol that guarantees that service will be rendered if payment is made, and vice versa. Current commercial systems use a wide variety of techniques to accomplish this, such as certified mail, face to face exchange, reliance on credit history and collection agencies to extend credit, etc. I discuss such issues in my article on <a href="/formalizing-securing-relationships.html">smart contracts</a>.
+To implement a full transaction of payment for services, we often need need more than just the digital cash protocol; we need a protocol that guarantees that service will be rendered if payment is made, and vice versa. Current commercial systems use a wide variety of techniques to accomplish this, such as certified mail, face to face exchange, reliance on credit history and collection agencies to extend credit, etc. I discuss such issues in my article on <a href="/library/formalizing-securing-relationships/">smart contracts</a>.
 
 <!--
 <h4>Credentials</h4>
@@ -130,12 +130,12 @@ My thanks to David Chaum, Mark Miller, Bill Frantz, Norm Hardy, and many others 
 
 <ol>
   <li id="fn1">
-    <p>The first public references to this idea can be found <a href="http://www.i-m.com/archives/9412/0179.html">here</a>, <a href="/smart-contracts/">here</a>. I also referred to this idea during this period in many personal communications, using the phrases "digital bearer instrument", "digital bearer certificate", "scarce object", and "conserved object". The idea of digital bearer certificates as a serious proposal for the financial industry has been popularized, with many intruiging additional ideas, by Bob Hettinga.&nbsp;<a href="#ref1">↩</a></p>
+    <p>The first public references to this idea can be found <a href="https://web.archive.org/web/19991006004313/http://www.i-m.com/archives/9412/0179.html">here</a>, <a href="/library/smart-contracts/">here</a>. I also referred to this idea during this period in many personal communications, using the phrases "digital bearer instrument", "digital bearer certificate", "scarce object", and "conserved object". The idea of digital bearer certificates as a serious proposal for the financial industry has been popularized, with many intruiging additional ideas, by Bob Hettinga.&nbsp;<a href="#ref1">↩</a></p>
 	<!-- <p>The phrases "digital bearer certificate" and "digital bearer settlement(DBS)" were soon thereafter popularized by a correspondent of mine, Robert Hettinga, as referring to a legal/institutional idea of instant, irrevocable settlement made possible by both the instant clearing and privacy features of this technology.&nbsp;<a href="#ref1">↩</a></p> -->
   </li>
 
   <li id="fn2">
-    <p>David Chaum, <a href="http://www.digicash.com/news/archive/online.html">Online Cash Checks</a>&nbsp;<a href="#ref2">↩</a></p>
+    <p>David Chaum, <a href="/library/online-cash-checks/">Online Cash Checks</a>&nbsp;<a href="#ref2">↩</a></p>
   </li>
 
   <li id="fn3">
