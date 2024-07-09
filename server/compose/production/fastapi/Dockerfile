@@ -5,7 +5,7 @@ FROM python as builder
 COPY ./requirements .
 
 RUN pip wheel --wheel-dir /usr/src/app/wheels \
-  -r prod.txt
+  -r base.txt
 
 FROM python as runtime
 

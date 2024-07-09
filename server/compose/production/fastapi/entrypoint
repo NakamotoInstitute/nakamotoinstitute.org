@@ -9,4 +9,4 @@ python scripts/wait_for_postgres.py
 python -m alembic upgrade head
 python cli.py content initialize
 python cli.py cdn sync
-exec gunicorn sni.main:app --workers 4 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:8000
+exec uvicorn sni.main:app --host 0.0.0.0 --port 8000 --workers 4
