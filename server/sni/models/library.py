@@ -98,6 +98,36 @@ class Document(Base):
         return f"<Document({self.id})>"
 
 
+class DocumentNode(Base):
+    __tablename__ = "document_nodes"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    slug: Mapped[str] = mapped_column(String, nullable=False)
+    title: Mapped[str] = mapped_column(String, nullable=False)
+    heading: Mapped[str] = mapped_column(String, nullable=True)
+    subheading: Mapped[str] = mapped_column(String, nullable=True)
+    order: Mapped[int] = mapped_column(Integer, nullable=False)
+    document_translation_id: Mapped[int] = mapped_column(
+        ForeignKey("document_translations.id"), nullable=False
+    )
+    parent_id: Mapped[int] = mapped_column(
+        ForeignKey("document_nodes.id"), nullable=True
+    )
+
+    document_translation: Mapped["DocumentTranslation"] = relationship(
+        back_populates="nodes"
+    )
+    parent: Mapped["DocumentNode"] = relationship(
+        "DocumentNode",
+        back_populates="children",
+        remote_side=[id],
+        lazy="joined",
+    )
+    children: Mapped[list["DocumentNode"]] = relationship(
+        "DocumentNode", back_populates="parent", order_by=order, join_depth=1
+    )
+
+
 class DocumentTranslation(MarkdownContent):
     __tablename__ = "document_translations"
 
@@ -123,6 +153,7 @@ class DocumentTranslation(MarkdownContent):
     translators: Mapped[List["Translator"]] = relationship(
         secondary=document_translators, back_populates="docs"
     )
+    nodes = relationship("DocumentNode", back_populates="document_translation")
 
     __mapper_args__ = {"polymorphic_identity": "document"}
 

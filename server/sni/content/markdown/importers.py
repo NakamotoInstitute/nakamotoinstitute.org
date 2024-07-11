@@ -10,7 +10,7 @@ from sqlalchemy import select
 from sni.constants import Locales
 from sni.database import SessionLocalSync
 from sni.models import FileMetadata, MarkdownContent
-from sni.utils.files import get_file_hash, split_filename
+from sni.utils.files import get_directory_hash, get_file_hash, split_filename
 
 from .renderer import MDRender
 
@@ -30,7 +30,12 @@ class BaseMarkdownImporter(ABC):
 
     @property
     def filenames(self):
-        return sorted(os.listdir(self.directory_path))
+        files = [
+            f
+            for f in os.listdir(self.directory_path)
+            if os.path.isfile(os.path.join(self.directory_path, f))
+        ]
+        return sorted(files)
 
     def run_import(self, force: bool = False):
         self.force = force
@@ -78,6 +83,7 @@ class BaseMarkdownImporter(ABC):
             for content in self.db_session.scalars(
                 select(MarkdownContent).filter_by(content_type=self.content_key)
             ).all()
+            if os.path.isfile(content.file_metadata.filename)
         }
 
     def _get_file_hash(self, filepath):
@@ -382,3 +388,76 @@ class TranslatedMarkdownImporter(BaseMarkdownImporter):
         translation_data["file_metadata"] = metadata
         translation_data["content_type"] = self.content_key
         return translation_data
+
+
+class MarkdownDirectoryImporter(MarkdownImporter):
+    @property
+    def filenames(self):
+        dirs = [
+            d
+            for d in os.listdir(self.directory_path)
+            if os.path.isdir(os.path.join(self.directory_path, d))
+        ]
+        return sorted(dirs)
+
+    def _populate_files_from_db(self):
+        self.files_in_db = {
+            content.file_metadata.filename: content
+            for content in self.db_session.scalars(
+                select(MarkdownContent).filter_by(content_type=self.content_key)
+            ).all()
+            if os.path.isdir(content.file_metadata.filename)
+        }
+
+    def _get_file_hash(self, filepath):
+        return get_directory_hash(filepath)
+
+    def import_content(self):
+        self._populate_files_from_db()
+
+        for directory in self.filenames:
+            action = self._process_directory(directory)
+            self.actions[action] += 1
+
+        self.actions["deleted"] = self._process_deleted_files()
+        self.db_session.commit()
+
+    def _process_directory(self, directory):
+        dir_path = os.path.join(self.directory_path, directory)
+        # current_hash = self._get_file_hash(dir_path)
+        # current_timestamp = datetime.fromtimestamp(os.path.getmtime(dir_path))
+
+        # file_record = self.files_in_db.pop(dir_path, None)
+        new_metadata = None
+        action = "unchanged"
+
+        self._process_and_add_directory(new_metadata, dir_path, action)
+
+        return action
+
+    def _process_and_add_directory(self, metadata, directory, action):
+        manifest_file = os.path.join(directory, "manifest.md")
+        content_dir = os.path.join(directory, "content")
+
+        if os.path.isfile(manifest_file) and os.path.isdir(content_dir):
+            front_matter, html_content, markdown_content = MDRender.process_md(
+                manifest_file
+            )
+            manifest = self.manifest_schema.from_front_matter(front_matter)
+            markdown_files = manifest.gather_markdown_files(content_dir)
+            for md_file, parent, order in markdown_files:
+                front_matter, html_content, markdown_content = MDRender.process_md(
+                    md_file
+                )
+
+                # Create an instance of FrontMatter model
+                fm_instance = self.node_schema(
+                    heading=front_matter.get("heading"),
+                    title=front_matter["title"],
+                    subheading=front_matter.get("subheading"),
+                    parent=parent,
+                    order=order,
+                )
+
+                print(f"Processed {md_file} (Parent: {parent}, Order: {order})")
+                print(fm_instance.json())

@@ -3,7 +3,11 @@ from contextlib import contextmanager
 
 from sni.authors.importers import AuthorImporter
 from sni.database import SessionLocalSync
-from sni.library.importers import LibraryImporter, LibraryWeightImporter
+from sni.library.books.importers import LibraryBookImporter
+from sni.library.importers import (
+    LibraryImporter,
+    LibraryWeightImporter,
+)
 from sni.mempool.importers import MempoolImporter, MempoolSeriesImporter
 from sni.podcast.importers import EpisodeImporter
 from sni.satoshi.emails.importers import EmailImporter, EmailThreadImporter
@@ -69,9 +73,10 @@ def update_content(force: bool = False):
         AuthorImporter,
         TranslatorImporter,
         LibraryImporter,
-        MempoolSeriesImporter,
-        MempoolImporter,
-        EpisodeImporter,
+        LibraryBookImporter,
+        # MempoolSeriesImporter,
+        # MempoolImporter,
+        # EpisodeImporter,
     ]
     for importer in importers:
         instance = importer()
