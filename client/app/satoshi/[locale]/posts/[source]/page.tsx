@@ -10,6 +10,7 @@ import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import { formatPostSource, otherForumPostSource } from "@/utils/strings";
 
+import { SourceLink } from "@satoshi/components/IndexHeader";
 import { IndexPageLayout } from "@satoshi/components/IndexPageLayout";
 
 export const dynamicParams = false;
@@ -40,35 +41,39 @@ export default async function PostsSourceIndex({
 
   const otherSource = otherForumPostSource(source);
 
-  const navLinks = {
-    main: {
-      text: t("view_threads"),
-      href: urls(locale).satoshi.posts.sourceThreadsIndex(source),
-    },
-    left: {
-      text: t("all_posts"),
-      href: urls(locale).satoshi.posts.index,
-      sublink: {
-        text: t("threads"),
-        href: urls(locale).satoshi.posts.threadsIndex,
-      },
-    },
-    right: {
-      text: formatPostSource(otherSource),
-      href: urls(locale).satoshi.posts.sourceIndex(otherSource),
-      sublink: {
-        text: t("threads"),
-        href: urls(locale).satoshi.posts.sourceThreadsIndex(otherSource),
-      },
-    },
+  const allLink: SourceLink = {
+    name: t("all"),
+    href: urls(locale).satoshi.posts.index,
   };
+  const additionalLinks: SourceLink[] =
+    source === "p2pfoundation"
+      ? [
+          { name: formatPostSource("p2pfoundation"), active: true },
+          {
+            name: formatPostSource("bitcointalk"),
+            href: urls(locale).satoshi.posts.sourceIndex(otherSource),
+          },
+        ]
+      : [
+          {
+            name: formatPostSource("p2pfoundation"),
+            href: urls(locale).satoshi.posts.sourceIndex(otherSource),
+          },
+          { name: formatPostSource("bitcointalk"), active: true },
+        ];
+  const sourceLinks = [allLink, ...additionalLinks];
+
   return (
     <IndexPageLayout
       t={t}
-      title={t("source_posts_title", { source: formatPostSource(source) })}
+      title={t("forum_posts")}
       locale={locale}
       generateHref={generateHref(source)}
-      navLinks={navLinks}
+      sourceLinks={sourceLinks}
+      toggleLinks={{
+        active: "individual",
+        href: urls(locale).satoshi.posts.sourceThreadsIndex(source),
+      }}
     >
       <ul>
         {posts.map((p) => (

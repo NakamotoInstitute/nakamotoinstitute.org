@@ -26,6 +26,9 @@ const config: Config = {
         windsor: "#442977", // Windsor purple
         winter: "#5b8e7d", // Winter green
         mariner: "#4059ad", // Mariner blue
+        sand: "#e4e2d9",
+        taupe: "#7c7b72",
+        "taupe-light": "#bfbdb3",
       },
       fontFamily: {
         serif: ["var(--font-stix)", "Times New Roman", "serif"],

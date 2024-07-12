@@ -44,36 +44,30 @@ export default async function PostThreadsIndex({
     },
   );
 
-  const navLinks = {
-    main: {
-      text: t("view_posts"),
-      href: urls(locale).satoshi.posts.index,
-    },
-    left: {
-      text: formatPostSource("p2pfoundation"),
-      href: urls(locale).satoshi.posts.sourceThreadsIndex("p2pfoundation"),
-      sublink: {
-        text: t("posts"),
-        href: urls(locale).satoshi.posts.sourceIndex("p2pfoundation"),
-      },
-    },
-    right: {
-      text: formatPostSource("bitcointalk"),
-      href: urls(locale).satoshi.posts.sourceThreadsIndex("bitcointalk"),
-      sublink: {
-        text: t("posts"),
-        href: urls(locale).satoshi.posts.sourceIndex("bitcointalk"),
-      },
-    },
-  };
-
   return (
     <IndexPageLayout
       t={t}
-      title={t("forum_threads")}
+      title={t("forum_posts")}
       locale={locale}
       generateHref={generateHref}
-      navLinks={navLinks}
+      sourceLinks={[
+        {
+          name: t("all"),
+          active: true,
+        },
+        {
+          name: formatPostSource("p2pfoundation"),
+          href: urls(locale).satoshi.posts.sourceThreadsIndex("p2pfoundation"),
+        },
+        {
+          name: formatPostSource("bitcointalk"),
+          href: urls(locale).satoshi.posts.sourceThreadsIndex("bitcointalk"),
+        },
+      ]}
+      toggleLinks={{
+        active: "threads",
+        href: urls(locale).satoshi.posts.index,
+      }}
     >
       <section>
         {Object.entries(sortedThreads).map(([source, sourceThreads]) => {

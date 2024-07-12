@@ -11,6 +11,7 @@ import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import { formatEmailSource, otherEmailSource } from "@/utils/strings";
 
+import { SourceLink } from "@satoshi/components/IndexHeader";
 import { IndexPageLayout } from "@satoshi/components/IndexPageLayout";
 
 export const dynamicParams = false;
@@ -41,36 +42,39 @@ export default async function EmailsSourceIndex({
 
   const otherSource = otherEmailSource(source);
 
-  const navLinks = {
-    main: {
-      text: t("view_threads"),
-      href: urls(locale).satoshi.emails.sourceThreadsIndex(source),
-    },
-    left: {
-      text: t("all_emails"),
-      href: urls(locale).satoshi.emails.index,
-      sublink: {
-        text: t("threads"),
-        href: urls(locale).satoshi.emails.threadsIndex,
-      },
-    },
-    right: {
-      text: formatEmailSource(otherSource, true),
-      href: urls(locale).satoshi.emails.sourceIndex(otherSource),
-      sublink: {
-        text: t("threads"),
-        href: urls(locale).satoshi.emails.sourceThreadsIndex(otherSource),
-      },
-    },
+  const allLink: SourceLink = {
+    name: t("all"),
+    href: urls(locale).satoshi.emails.index,
   };
+  const additionalLinks: SourceLink[] =
+    source === "cryptography"
+      ? [
+          { name: formatEmailSource("cryptography"), active: true },
+          {
+            name: formatEmailSource("bitcoin-list"),
+            href: urls(locale).satoshi.emails.sourceIndex(otherSource),
+          },
+        ]
+      : [
+          {
+            name: formatEmailSource("cryptography"),
+            href: urls(locale).satoshi.emails.sourceIndex(otherSource),
+          },
+          { name: formatEmailSource("bitcoin-list"), active: true },
+        ];
+  const sourceLinks = [allLink, ...additionalLinks];
 
   return (
     <IndexPageLayout
       t={t}
-      title={t("source_emails", { source: formatEmailSource(source) })}
+      title={t("emails")}
       locale={locale}
       generateHref={generateHref(source)}
-      navLinks={navLinks}
+      sourceLinks={sourceLinks}
+      toggleLinks={{
+        active: "individual",
+        href: urls(locale).satoshi.emails.sourceThreadsIndex(source),
+      }}
     >
       <ul>
         {emails.map((e) => (

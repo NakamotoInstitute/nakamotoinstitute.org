@@ -36,36 +36,30 @@ export default async function EmailsIndex({
   const { t } = await i18nTranslation(locale);
   const emails = await getSatoshiEmails();
 
-  const navLinks = {
-    main: {
-      text: t("view_threads"),
-      href: urls(locale).satoshi.emails.threadsIndex,
-    },
-    left: {
-      text: formatEmailSource("cryptography", true),
-      href: urls(locale).satoshi.emails.sourceIndex("cryptography"),
-      sublink: {
-        text: t("threads"),
-        href: urls(locale).satoshi.emails.sourceThreadsIndex("cryptography"),
-      },
-    },
-    right: {
-      text: formatEmailSource("bitcoin-list", true),
-      href: urls(locale).satoshi.emails.sourceIndex("bitcoin-list"),
-      sublink: {
-        text: t("threads"),
-        href: urls(locale).satoshi.emails.sourceThreadsIndex("bitcoin-list"),
-      },
-    },
-  };
-
   return (
     <IndexPageLayout
       t={t}
-      title={t("emails")}
       locale={locale}
       generateHref={generateHref}
-      navLinks={navLinks}
+      title={t("emails")}
+      sourceLinks={[
+        {
+          name: t("all"),
+          active: true,
+        },
+        {
+          name: formatEmailSource("cryptography"),
+          href: urls(locale).satoshi.emails.sourceIndex("cryptography"),
+        },
+        {
+          name: formatEmailSource("bitcoin-list"),
+          href: urls(locale).satoshi.emails.sourceIndex("bitcoin-list"),
+        },
+      ]}
+      toggleLinks={{
+        active: "individual",
+        href: urls(locale).satoshi.emails.threadsIndex,
+      }}
     >
       <ul>
         {emails.map((e) => (

@@ -34,35 +34,30 @@ export default async function PostsIndex({ params: { locale } }: LocaleParams) {
   const { t } = await i18nTranslation(locale);
   const posts = await getSatoshiPosts();
 
-  const navLinks = {
-    main: {
-      text: t("view_threads"),
-      href: urls(locale).satoshi.posts.threadsIndex,
-    },
-    left: {
-      text: formatPostSource("p2pfoundation"),
-      href: urls(locale).satoshi.posts.sourceIndex("p2pfoundation"),
-      sublink: {
-        text: t("threads"),
-        href: urls(locale).satoshi.posts.sourceThreadsIndex("p2pfoundation"),
-      },
-    },
-    right: {
-      text: formatPostSource("bitcointalk"),
-      href: urls(locale).satoshi.posts.sourceIndex("bitcointalk"),
-      sublink: {
-        text: t("threads"),
-        href: urls(locale).satoshi.posts.sourceThreadsIndex("bitcointalk"),
-      },
-    },
-  };
   return (
     <IndexPageLayout
       t={t}
       title={t("forum_posts")}
       locale={locale}
       generateHref={generateHref}
-      navLinks={navLinks}
+      sourceLinks={[
+        {
+          name: t("all"),
+          active: true,
+        },
+        {
+          name: formatPostSource("p2pfoundation"),
+          href: urls(locale).satoshi.posts.sourceIndex("p2pfoundation"),
+        },
+        {
+          name: formatPostSource("bitcointalk"),
+          href: urls(locale).satoshi.posts.sourceIndex("bitcointalk"),
+        },
+      ]}
+      toggleLinks={{
+        active: "individual",
+        href: urls(locale).satoshi.posts.threadsIndex,
+      }}
     >
       <ul>
         {posts.map((p) => (
