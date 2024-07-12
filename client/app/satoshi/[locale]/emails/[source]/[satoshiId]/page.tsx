@@ -57,6 +57,10 @@ export default async function EmailDetail({
       t={t}
       locale={locale}
       generateHref={generateHref(source, satoshiId)}
+      breadcrumbs={[
+        { label: t("complete_satoshi"), href: urls(locale).satoshi.index },
+        { label: t("emails"), href: urls(locale).satoshi.emails.index },
+      ]}
     >
       <EmailNavigation
         t={t}

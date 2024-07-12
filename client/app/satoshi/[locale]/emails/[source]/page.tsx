@@ -70,6 +70,10 @@ export default async function EmailsSourceIndex({
       title={t("emails")}
       locale={locale}
       generateHref={generateHref(source)}
+      breadcrumbs={[
+        { label: t("complete_satoshi"), href: urls(locale).satoshi.index },
+        { label: t("emails"), href: urls(locale).satoshi.emails.index },
+      ]}
       sourceLinks={sourceLinks}
       toggleLinks={{
         active: "individual",

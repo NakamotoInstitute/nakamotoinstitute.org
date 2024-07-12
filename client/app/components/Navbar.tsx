@@ -24,7 +24,7 @@ export function Navbar({
   const current = languages[locale];
 
   return (
-    <nav className="mb-4 border-b border-dashed border-dark">
+    <nav className="border-b border-dashed border-dark">
       <div className="twbs-container font-bold">
         <div className="relative flex items-center justify-between py-6">
           <div className="absolute inset-y-0 left-0 flex items-center md:hidden">

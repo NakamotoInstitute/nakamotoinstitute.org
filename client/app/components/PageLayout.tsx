@@ -5,6 +5,7 @@ import Image from "next/image";
 import { env } from "@/env";
 import { cdnUrl, generateLocaleToggleLinks, urls } from "@/lib/urls";
 
+import { Breadcrumbs } from "./Breadcrumbs";
 import Fathom from "./Fathom";
 import { Footer } from "./Footer";
 import { Navbar } from "./Navbar";
@@ -14,6 +15,7 @@ export type PageLayoutProps = {
   className?: string;
   generateHref?: (locale: Locale) => string;
   locale: Locale;
+  breadcrumbs?: Breadcrumbs;
   children: React.ReactNode;
 };
 
@@ -22,6 +24,7 @@ export async function PageLayout({
   className,
   locale,
   generateHref,
+  breadcrumbs,
   children,
 }: PageLayoutProps) {
   const toggleProps = generateHref
@@ -53,7 +56,8 @@ export async function PageLayout({
         ]}
         {...toggleProps}
       />
-      <main className={clsx("twbs-container mb-4 flex-grow pb-4", className)}>
+      {breadcrumbs ? <Breadcrumbs breadcrumbs={breadcrumbs} /> : null}
+      <main className={clsx("twbs-container my-4 flex-grow pb-4", className)}>
         {children}
       </main>
       <Footer t={t} locale={locale} />

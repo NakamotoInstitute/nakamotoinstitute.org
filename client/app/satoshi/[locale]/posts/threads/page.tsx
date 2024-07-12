@@ -50,6 +50,10 @@ export default async function PostThreadsIndex({
       title={t("forum_posts")}
       locale={locale}
       generateHref={generateHref}
+      breadcrumbs={[
+        { label: t("complete_satoshi"), href: urls(locale).satoshi.index },
+        { label: t("forum_posts"), href: urls(locale).satoshi.emails.index },
+      ]}
       sourceLinks={[
         {
           name: t("all"),

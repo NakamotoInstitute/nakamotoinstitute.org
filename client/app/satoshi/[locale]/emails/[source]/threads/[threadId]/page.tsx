@@ -147,6 +147,10 @@ export default async function EmailSourceThreadDetail({
       t={t}
       locale={locale}
       generateHref={generateHref(source, threadId)}
+      breadcrumbs={[
+        { label: t("complete_satoshi"), href: urls(locale).satoshi.index },
+        { label: t("emails"), href: urls(locale).satoshi.emails.index },
+      ]}
     >
       <ThreadPageHeader
         t={t}

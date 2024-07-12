@@ -42,6 +42,10 @@ export default async function EmailsIndex({
       locale={locale}
       generateHref={generateHref}
       title={t("emails")}
+      breadcrumbs={[
+        { label: t("complete_satoshi"), href: urls(locale).satoshi.index },
+        { label: t("emails"), href: urls(locale).satoshi.emails.index },
+      ]}
       sourceLinks={[
         {
           name: t("all"),
