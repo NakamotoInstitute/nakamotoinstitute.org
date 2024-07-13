@@ -57,7 +57,7 @@ export default async function MempoolPost({
       generateHref={generateHref}
       breadcrumbs={[
         { label: t("mempool"), href: urls(locale).mempool.index },
-        { label: post.title, href: urls(locale).mempool.post(post.title) },
+        { label: post.title, href: urls(locale).mempool.post(post.slug) },
       ]}
     >
       <article>
