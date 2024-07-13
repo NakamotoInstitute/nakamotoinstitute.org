@@ -2,7 +2,7 @@
 
 <figure>
   <blockquote>
-    &ldquo;Proponemos una heurística global y moralmente obligatoria, según la cual a todo aquel que se involucre en una acción que pudiese generar daño a terceros, aunque sea de manera probabilística, se le debe exigir quedar expuesto él también a algún tipo de daño, independiente del contexto.&rdquo;
+    &ldquo;Proponemos una heurística global y moralmente obligatoria que cualquier persona involucrada en una acción que posiblemente pueda generar daño a otros, incluso probabilísticamente, se les debería exigir que estén expuestos a algún daño, independientemente del contexto.&rdquo;
   </blockquote>
   
   <figcaption>
