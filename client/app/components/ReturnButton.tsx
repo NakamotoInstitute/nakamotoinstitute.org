@@ -5,16 +5,13 @@ import { BackArrow } from "./BackArrow";
 type ReturnButtonProps = {
   className?: string;
   label: string;
-  url: string;
+  href: string;
 };
 
-export function ReturnButton({ className, label, url }: ReturnButtonProps) {
+export function ReturnButton({ className, label, href }: ReturnButtonProps) {
   return (
     <div className={className}>
-      <Link
-        className="group mb-4 flex items-center gap-2 md:gap-3 md:text-xl"
-        href={url}
-      >
+      <Link className="group flex items-center gap-2" href={href}>
         <BackArrow className="group-hover:stroke-cardinal" />
         <span>{label}</span>
       </Link>

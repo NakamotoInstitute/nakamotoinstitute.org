@@ -36,7 +36,18 @@ export default async function PodcastDetail({
   const episode = await getEpisode(slug);
 
   return (
-    <PageLayout t={t} locale={locale} generateHref={generateHref(slug)}>
+    <PageLayout
+      t={t}
+      locale={locale}
+      generateHref={generateHref(slug)}
+      breadcrumbs={[
+        { label: t("podcast"), href: urls(locale).podcast.index },
+        {
+          label: episode.title,
+          href: urls(locale).podcast.episode(episode.slug),
+        },
+      ]}
+    >
       <PageHeader title={episode.title}>
         <p>
           <time dateTime={episode.date.toISOString()}>

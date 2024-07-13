@@ -51,7 +51,15 @@ export default async function SeriesIndex({
   const allSeries = await getAllMempoolSeries(locale);
 
   return (
-    <PageLayout t={t} locale={locale} generateHref={generateHref}>
+    <PageLayout
+      t={t}
+      locale={locale}
+      generateHref={generateHref}
+      breadcrumbs={[
+        { label: t("mempool"), href: urls(locale).mempool.index },
+        { label: t("mempool_series"), href: urls(locale).mempool.seriesIndex },
+      ]}
+    >
       <PageHeader title={t("mempool_series")}>
         <p>{t("mempool_series_description")}</p>
       </PageHeader>

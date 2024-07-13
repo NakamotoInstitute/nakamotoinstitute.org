@@ -34,7 +34,15 @@ export default async function SatoshiCode({
   const { t } = await i18nTranslation(locale);
 
   return (
-    <PageLayout t={t} locale={locale} generateHref={generateHref}>
+    <PageLayout
+      t={t}
+      locale={locale}
+      generateHref={generateHref}
+      breadcrumbs={[
+        { label: t("complete_satoshi"), href: urls(locale).satoshi.index },
+        { label: t("code"), href: urls(locale).satoshi.code },
+      ]}
+    >
       <PageHeader title={t("code")}>
         <p>
           <Trans

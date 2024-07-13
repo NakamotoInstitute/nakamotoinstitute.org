@@ -42,9 +42,6 @@ export default async function MempoolPost({
   const { t } = await i18nTranslation(locale);
   const post = await getMempoolPost(slug, locale);
 
-  const backHref = urls(locale).mempool.index;
-  const backLabel = t("back_to_mempool");
-
   const generateHref = (l: Locale) => {
     const translation = post.translations.find((t) => t.locale === l);
     if (translation) {
@@ -54,8 +51,15 @@ export default async function MempoolPost({
   };
 
   return (
-    <PageLayout t={t} locale={locale} generateHref={generateHref}>
-      <ReturnButton url={backHref} label={backLabel} />
+    <PageLayout
+      t={t}
+      locale={locale}
+      generateHref={generateHref}
+      breadcrumbs={[
+        { label: t("mempool"), href: urls(locale).mempool.index },
+        { label: post.title, href: urls(locale).mempool.post(post.title) },
+      ]}
+    >
       <article>
         <PostHeader t={t} locale={locale} post={post} />
         <section className="prose mx-auto md:prose-lg" dir={getDir(locale)}>
@@ -126,7 +130,6 @@ export default async function MempoolPost({
           />
         </Link>
       ) : null}
-      <ReturnButton className="mt-4" url={backHref} label={backLabel} />
     </PageLayout>
   );
 }

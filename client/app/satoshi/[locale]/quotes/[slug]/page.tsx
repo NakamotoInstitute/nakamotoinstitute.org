@@ -97,7 +97,25 @@ export default async function QuotesCategoryPage({
   const { category, quotes } = await getQuoteCategory(slug);
 
   return (
-    <PageLayout t={t} locale={locale} generateHref={generateHref(slug)}>
+    <PageLayout
+      t={t}
+      locale={locale}
+      generateHref={generateHref(slug)}
+      breadcrumbs={[
+        {
+          label: t("complete_satoshi"),
+          href: urls(locale).satoshi.index,
+        },
+        {
+          label: t("quotable_satoshi"),
+          href: urls(locale).satoshi.quotesIndex,
+        },
+        {
+          label: category.name,
+          href: urls(locale).satoshi.quoteCategory(category.slug),
+        },
+      ]}
+    >
       <PageHeader title={category.name} superTitle={t("quotable_satoshi")} />
       <section>
         {quotes.map((q) => (

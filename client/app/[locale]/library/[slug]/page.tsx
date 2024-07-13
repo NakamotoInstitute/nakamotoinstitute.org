@@ -43,9 +43,6 @@ export default async function LibraryDetail({
   const { t } = await i18nTranslation(locale);
   const doc = await getLibraryDoc(slug, locale);
 
-  const backHref = urls(locale).library.index;
-  const backLabel = t("back_to_library");
-
   const generateHref = (l: Locale) => {
     const translation = doc.translations.find((t) => t.locale === l);
     if (translation) {
@@ -55,8 +52,15 @@ export default async function LibraryDetail({
   };
 
   return (
-    <PageLayout t={t} locale={locale} generateHref={generateHref}>
-      <ReturnButton url={backHref} label={backLabel} />
+    <PageLayout
+      t={t}
+      locale={locale}
+      generateHref={generateHref}
+      breadcrumbs={[
+        { label: t("library"), href: urls(locale).library.index },
+        { label: doc.title, href: urls(locale).library.doc(doc.slug) },
+      ]}
+    >
       <article>
         <DocHeader t={t} locale={locale} doc={doc} />
         {doc.content ? (
@@ -118,7 +122,6 @@ export default async function LibraryDetail({
           </>
         ) : null}
       </article>
-      <ReturnButton className="mt-4" url={backHref} label={backLabel} />
     </PageLayout>
   );
 }

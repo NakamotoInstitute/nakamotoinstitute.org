@@ -10,6 +10,7 @@
   "events": "Events",
   "no_events_message": "There are no events currently scheduled.",
   "hal_finney": "Hal Finney",
+  "rpow": "RPOW",
   "rpow_title": "RPOW - Reusable Proofs of Work",
   "archived_website": "Archived Website",
   "github": "GitHub",

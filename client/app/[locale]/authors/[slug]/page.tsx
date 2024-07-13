@@ -41,7 +41,15 @@ export default async function AuthorDetail({
   const generateHref = (l: Locale) => urls(l).authors.detail(slug);
 
   return (
-    <PageLayout t={t} locale={locale} generateHref={generateHref}>
+    <PageLayout
+      t={t}
+      locale={locale}
+      generateHref={generateHref}
+      breadcrumbs={[
+        { label: t("authors"), href: urls(locale).authors.index },
+        { label: author.name, href: urls(locale).authors.detail(author.slug) },
+      ]}
+    >
       <PageHeader title={author.name} />
       {library.length > 0 ? (
         <section>

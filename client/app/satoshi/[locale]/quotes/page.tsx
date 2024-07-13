@@ -57,7 +57,21 @@ export default async function QuotesIndex({
   const secondColumn = categories.slice(halfLength);
 
   return (
-    <PageLayout t={t} locale={locale} generateHref={generateHref}>
+    <PageLayout
+      t={t}
+      locale={locale}
+      generateHref={generateHref}
+      breadcrumbs={[
+        {
+          label: t("complete_satoshi"),
+          href: urls(locale).satoshi.index,
+        },
+        {
+          label: t("quotable_satoshi"),
+          href: urls(locale).satoshi.quotesIndex,
+        },
+      ]}
+    >
       <PageHeader title={t("quotable_satoshi")}>
         <figure>
           <blockquote>

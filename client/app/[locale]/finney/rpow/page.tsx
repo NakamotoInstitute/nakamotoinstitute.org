@@ -32,7 +32,15 @@ export default async function RPOWPage({ params: { locale } }: LocaleParams) {
   const content = await getPage("rpow", locale);
 
   return (
-    <PageLayout t={t} locale={locale} generateHref={generateHref}>
+    <PageLayout
+      t={t}
+      locale={locale}
+      generateHref={generateHref}
+      breadcrumbs={[
+        { label: t("hal_finney"), href: urls(locale).finney.index },
+        { label: t("RPOW"), href: urls(locale).finney.rpow },
+      ]}
+    >
       <PageHeader title={t("rpow_title")} />
       <div className="text-center">
         <p>
