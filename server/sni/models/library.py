@@ -10,6 +10,7 @@ from sqlalchemy import (
     Integer,
     String,
     Table,
+    Text,
     UniqueConstraint,
 )
 from sqlalchemy.orm import Mapped, mapped_column, relationship
@@ -107,6 +108,8 @@ class DocumentNode(Base):
     heading: Mapped[str] = mapped_column(String, nullable=True)
     subheading: Mapped[str] = mapped_column(String, nullable=True)
     order: Mapped[int] = mapped_column(Integer, nullable=False)
+    file_content: Mapped[str] = mapped_column(Text, nullable=False)
+    html_content: Mapped[str] = mapped_column(Text, nullable=False)
     document_translation_id: Mapped[int] = mapped_column(
         ForeignKey("document_translations.id"), nullable=False
     )

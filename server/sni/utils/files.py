@@ -1,5 +1,5 @@
-import os
 import hashlib
+import os
 
 
 def get_file_hash(filename, hash_function="sha256"):

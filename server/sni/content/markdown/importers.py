@@ -300,7 +300,7 @@ class TranslatedMarkdownImporter(BaseMarkdownImporter):
                 for key, value in translation_data.items():
                     setattr(existing_translation_entry, key, value)
                 existing_translation_entry.slug = slug
-                existing_translation_entry.locale = "en"
+                existing_translation_entry.locale = Locales.ENGLISH
                 existing_translation_entry.file_content = file_content
                 existing_translation_entry.html_content = html_content
                 self.db_session.add(existing_translation_entry)
@@ -424,40 +424,207 @@ class MarkdownDirectoryImporter(MarkdownImporter):
 
     def _process_directory(self, directory):
         dir_path = os.path.join(self.directory_path, directory)
-        # current_hash = self._get_file_hash(dir_path)
-        # current_timestamp = datetime.fromtimestamp(os.path.getmtime(dir_path))
+        current_hash = self._get_file_hash(dir_path)
+        current_timestamp = datetime.fromtimestamp(os.path.getmtime(dir_path))
 
-        # file_record = self.files_in_db.pop(dir_path, None)
+        file_record = self.files_in_db.pop(dir_path, None)
         new_metadata = None
-        action = "unchanged"
 
-        self._process_and_add_directory(new_metadata, dir_path, action)
+        if not file_record:
+            new_metadata = self._create_new_metadata(
+                dir_path, current_hash, current_timestamp
+            )
+            action = "new"
+        elif self._needs_update(file_record, current_hash, current_timestamp):
+            new_metadata = self._update_existing_metadata(
+                file_record, current_hash, current_timestamp
+            )
+            action = "updated"
+        else:
+            action = "unchanged"
+
+        if new_metadata:
+            self._process_and_add_directory(new_metadata, dir_path, directory, action)
 
         return action
 
-    def _process_and_add_directory(self, metadata, directory, action):
+    def _process_manifest_file(
+        self, filepath: str, canonical_schema, translation_schema, manifest_schema
+    ):
+        manifest_file = os.path.join(filepath, "manifest.md")
+        front_matter_dict, html_content, file_content = MDRender.process_md(
+            manifest_file
+        )
+        canonical_data = self.validate_front_matter(front_matter_dict, canonical_schema)
+        translation_data = self.validate_front_matter(
+            front_matter_dict, translation_schema
+        )
+        manifest_data = self.manifest_schema.from_front_matter(front_matter_dict)
+        return (
+            canonical_data,
+            translation_data,
+            manifest_data,
+            html_content,
+            file_content,
+        )
+
+    def _process_and_add_directory(self, metadata, directory, slug, action):
         manifest_file = os.path.join(directory, "manifest.md")
         content_dir = os.path.join(directory, "content")
 
         if os.path.isfile(manifest_file) and os.path.isdir(content_dir):
-            front_matter, html_content, markdown_content = MDRender.process_md(
-                manifest_file
+            (
+                validated_canonical_data,
+                validated_translation_data,
+                validated_manifest_data,
+                html_content,
+                file_content,
+            ) = self._process_manifest_file(
+                metadata.filename,
+                self.canonical_schema,
+                self.md_schema,
+                self.node_schema,
             )
-            manifest = self.manifest_schema.from_front_matter(front_matter)
-            markdown_files = manifest.gather_markdown_files(content_dir)
-            for md_file, parent, order in markdown_files:
-                front_matter, html_content, markdown_content = MDRender.process_md(
-                    md_file
-                )
 
-                # Create an instance of FrontMatter model
-                fm_instance = self.node_schema(
-                    heading=front_matter.get("heading"),
-                    title=front_matter["title"],
-                    subheading=front_matter.get("subheading"),
-                    parent=parent,
-                    order=order,
-                )
+            canonical_data = validated_canonical_data.dict()
+            translation_data = validated_translation_data.dict()
 
-                print(f"Processed {md_file} (Parent: {parent}, Order: {order})")
-                print(fm_instance.json())
+            if action == "updated":
+                existing_translation_entry = self.db_session.scalars(
+                    select(self.translation_model).filter_by(file_metadata=metadata)
+                ).first()
+                if existing_translation_entry:
+                    existing_canonical_entry = getattr(
+                        existing_translation_entry, self.content_key, None
+                    )
+
+                    self._delete_existing_nodes(existing_translation_entry.id)
+
+                    translation_entry_data = self.process_translation_additional_data(
+                        translation_data, existing_canonical_entry, metadata
+                    )
+
+                    for key, value in translation_data.items():
+                        setattr(existing_translation_entry, key, value)
+
+                    existing_translation_entry.slug = slug
+                    existing_translation_entry.locale = Locales.ENGLISH
+                    existing_translation_entry.file_content = file_content
+                    existing_translation_entry.html_content = html_content
+                    self.db_session.add(existing_translation_entry)
+
+                    existing_canonical_entry = getattr(
+                        existing_translation_entry, self.content_key, None
+                    )
+
+                    if existing_canonical_entry:
+                        canonical_entry_data = self.process_canonical_additional_data(
+                            canonical_data
+                        )
+                        for key, value in canonical_data.items():
+                            setattr(existing_canonical_entry, key, value)
+                        self.db_session.add(existing_canonical_entry)
+                    translation_entry = existing_translation_entry
+
+            elif action == "new":
+                canonical_entry_data = self.process_canonical_additional_data(
+                    canonical_data
+                )
+                canonical_entry = self.canonical_model(
+                    **canonical_entry_data, slug=slug
+                )
+                self.db_session.add(canonical_entry)
+                self.db_session.flush()
+
+                translation_entry_data = self.process_translation_additional_data(
+                    translation_data, canonical_entry, metadata
+                )
+                translation_entry = self.translation_model(
+                    **translation_entry_data,
+                    slug=slug,
+                    locale=Locales.ENGLISH,
+                    file_content=file_content,
+                    html_content=html_content,
+                    **{self.content_key: canonical_entry},
+                )
+                self.db_session.add(translation_entry)
+
+            self._insert_nodes(
+                validated_manifest_data.nodes,
+                None,
+                translation_entry.id,
+                1,
+                content_dir,
+            )
+
+    def process_canonical_additional_data(self, canonical_data):
+        return canonical_data
+
+    def process_translation_additional_data(
+        self, translation_data, canonical_entry, metadata
+    ):
+        return self._process_translation_metadata(translation_data, metadata)
+
+    def _process_translation_metadata(self, translation_data, metadata):
+        translation_data["file_metadata"] = metadata
+        translation_data["content_type"] = self.content_key
+        return translation_data
+
+    def _delete_existing_nodes(self, document_translation_id):
+        nodes_to_delete = self.db_session.scalars(
+            select(self.node_model).filter_by(
+                document_translation_id=document_translation_id
+            )
+        ).all()
+
+        for node in nodes_to_delete:
+            self.db_session.delete(node)
+
+        self.db_session.commit()
+
+    def _insert_nodes(
+        self, node_data, parent_id, document_translation_id, order, content_dir
+    ):
+        if isinstance(node_data, list):
+            for idx, child in enumerate(node_data, start=1):
+                self._insert_nodes(
+                    child, parent_id, document_translation_id, idx, content_dir
+                )
+        elif isinstance(node_data, str):
+            node = self._insert_node(
+                node_data, order, parent_id, document_translation_id, content_dir
+            )
+            return node.id
+        elif isinstance(node_data, self.node_schema):
+            node = self._insert_node(
+                node_data.slug, order, parent_id, document_translation_id, content_dir
+            )
+            node_id = node.id
+            for idx, child in enumerate(node_data.children, start=1):
+                self._insert_nodes(
+                    child, node_id, document_translation_id, idx, content_dir
+                )
+            return node_id
+
+    def _insert_node(
+        self, slug, order, parent_id, document_translation_id, content_dir
+    ):
+        md_file = os.path.join(content_dir, f"{slug}.md")
+        front_matter, html_content, markdown_content = MDRender.process_md(md_file)
+        validated_front_matter = self.validate_front_matter(
+            front_matter, self.node_content_schema
+        )
+
+        node = self.node_model(
+            slug=slug,
+            **validated_front_matter.dict(),
+            order=order,
+            html_content=html_content,
+            file_content=markdown_content,
+            parent_id=parent_id,
+            document_translation_id=document_translation_id,
+        )
+        self.db_session.add(node)
+        self.db_session.commit()
+
+        return node

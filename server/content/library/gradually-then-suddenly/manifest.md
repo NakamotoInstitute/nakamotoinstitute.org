@@ -1,7 +1,7 @@
 ---
 title: Gradually, Then Suddenly
 authors:
-  - parker-a-lewis
+  - parker-lewis
 date: 2023
 doctype: book
 nodes:

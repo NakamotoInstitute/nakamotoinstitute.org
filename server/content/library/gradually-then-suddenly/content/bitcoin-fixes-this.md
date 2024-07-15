@@ -4,7 +4,7 @@ title: Bitcoin Fixes This
 subheading: (Originally published on 30 August 2019)
 ---
 
-J## ackson Hole
+## Jackson Hole
 
 Each year central bankers, establishment economists, and talking heads from around the world descend on Jackson Hole, Wyoming to discuss the systemic issues that plague _our_ economy. Constantly searching for an answer but never seeming to find one. It is the perennial Jackson Hole dilemma. There is always much fanfare, and the 2019 edition was no different. Lawrence Summers, former US Treasury secretary and former president of Harvard University, may have best summarized, and inadvertently exposed, the issue with the whole spectacle in a twenty-­eight-­part tweet thread.<sup><a id="ref67" href="#fn67">[67]</a></sup> Summers questioned a number of foundational assumptions made by the establishment economic mainstream, of which he is a resident member, and also identified many symptoms of economic instability that have become increasingly systemic.
 

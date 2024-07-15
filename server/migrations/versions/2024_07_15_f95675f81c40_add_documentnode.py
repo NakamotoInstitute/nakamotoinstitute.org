@@ -1,8 +1,8 @@
 """Add DocumentNode
 
-Revision ID: 2c30ff8c1b01
+Revision ID: f95675f81c40
 Revises: 006948e4f251
-Create Date: 2024-07-15 16:55:38.705318
+Create Date: 2024-07-15 19:58:25.148463
 
 """
 
@@ -12,7 +12,7 @@ import sqlalchemy as sa
 from alembic import op
 
 # revision identifiers, used by Alembic.
-revision: str = "2c30ff8c1b01"
+revision: str = "f95675f81c40"
 down_revision: Union[str, None] = "006948e4f251"
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
@@ -28,6 +28,8 @@ def upgrade() -> None:
         sa.Column("heading", sa.String(), nullable=True),
         sa.Column("subheading", sa.String(), nullable=True),
         sa.Column("order", sa.Integer(), nullable=False),
+        sa.Column("file_content", sa.Text(), nullable=False),
+        sa.Column("html_content", sa.Text(), nullable=False),
         sa.Column("document_translation_id", sa.Integer(), nullable=False),
         sa.Column("parent_id", sa.Integer(), nullable=True),
         sa.ForeignKeyConstraint(

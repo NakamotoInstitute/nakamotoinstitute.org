@@ -3,14 +3,12 @@ from typing import Union
 
 from pydantic import BaseModel
 
-from sni.library.schemas import DocumentMDModel
-
 NodeType = Union[str, "Node"]
 NodeListType = list[NodeType]
 
 
 class Node(BaseModel):
-    name: str
+    slug: str
     children: NodeListType = []
 
     @classmethod
@@ -20,13 +18,13 @@ class Node(BaseModel):
         elif isinstance(node, dict):
             for key, value in node.items():
                 return cls(
-                    name=key, children=[cls.parse_node(child) for child in value]
+                    slug=key, children=[cls.parse_node(child) for child in value]
                 )
         else:
             raise ValueError(f"Invalid node type: {type(node)}")
 
 
-class BookMDModel(DocumentMDModel):
+class BookMDModel(BaseModel):
     nodes: NodeListType
 
     @classmethod
@@ -59,8 +57,6 @@ class BookMDModel(DocumentMDModel):
 
 
 class BookMDNodeModel(BaseModel):
-    heading: str | None
+    heading: str | None = None
     title: str
-    subheading: str | None
-    parent: str | None
-    order: int
+    subheading: str | None = None
