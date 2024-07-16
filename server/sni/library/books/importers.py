@@ -29,6 +29,7 @@ class LibraryBookImporter(MarkdownDirectoryImporter):
     manifest_schema = BookMDModel
     node_schema = Node
     node_content_schema = BookMDNodeModel
+    content_reference_id = "document_translation_id"
     content_key = "document"
 
     def process_canonical_additional_data(self, canonical_data):

@@ -548,6 +548,7 @@ class MarkdownDirectoryImporter(MarkdownImporter):
                     **{self.content_key: canonical_entry},
                 )
                 self.db_session.add(translation_entry)
+                self.db_session.flush()
 
             self._insert_nodes(
                 validated_manifest_data.nodes,
@@ -570,10 +571,10 @@ class MarkdownDirectoryImporter(MarkdownImporter):
         translation_data["content_type"] = self.content_key
         return translation_data
 
-    def _delete_existing_nodes(self, document_translation_id):
+    def _delete_existing_nodes(self, content_reference_id):
         nodes_to_delete = self.db_session.scalars(
             select(self.node_model).filter_by(
-                document_translation_id=document_translation_id
+                **{self.content_reference_id: content_reference_id}
             )
         ).all()
 
@@ -583,32 +584,30 @@ class MarkdownDirectoryImporter(MarkdownImporter):
         self.db_session.commit()
 
     def _insert_nodes(
-        self, node_data, parent_id, document_translation_id, order, content_dir
+        self, node_data, parent_id, content_reference_id, order, content_dir
     ):
         if isinstance(node_data, list):
             for idx, child in enumerate(node_data, start=1):
                 self._insert_nodes(
-                    child, parent_id, document_translation_id, idx, content_dir
+                    child, parent_id, content_reference_id, idx, content_dir
                 )
         elif isinstance(node_data, str):
             node = self._insert_node(
-                node_data, order, parent_id, document_translation_id, content_dir
+                node_data, order, parent_id, content_reference_id, content_dir
             )
             return node.id
         elif isinstance(node_data, self.node_schema):
             node = self._insert_node(
-                node_data.slug, order, parent_id, document_translation_id, content_dir
+                node_data.slug, order, parent_id, content_reference_id, content_dir
             )
             node_id = node.id
             for idx, child in enumerate(node_data.children, start=1):
                 self._insert_nodes(
-                    child, node_id, document_translation_id, idx, content_dir
+                    child, node_id, content_reference_id, idx, content_dir
                 )
             return node_id
 
-    def _insert_node(
-        self, slug, order, parent_id, document_translation_id, content_dir
-    ):
+    def _insert_node(self, slug, order, parent_id, content_reference_id, content_dir):
         md_file = os.path.join(content_dir, f"{slug}.md")
         front_matter, html_content, markdown_content = MDRender.process_md(md_file)
         validated_front_matter = self.validate_front_matter(
@@ -622,7 +621,7 @@ class MarkdownDirectoryImporter(MarkdownImporter):
             html_content=html_content,
             file_content=markdown_content,
             parent_id=parent_id,
-            document_translation_id=document_translation_id,
+            **{self.content_reference_id: content_reference_id},
         )
         self.db_session.add(node)
         self.db_session.commit()
