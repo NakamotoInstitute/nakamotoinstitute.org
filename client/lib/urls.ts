@@ -94,6 +94,8 @@ export const urls = (locale: Locale) => {
     library: {
       index: getUrl("/library/"),
       doc: (slug: string) => getUrl(`/library/${slug}/`),
+      docNode: (docSlug: string, nodeSlug: string) =>
+        getUrl(`/library/${docSlug}/${nodeSlug}/`),
     },
     mempool: {
       index: getUrl("/mempool/"),

@@ -34,7 +34,10 @@ async def get_node(
         select(DocumentNode)
         .options(
             joinedload(DocumentNode.document_translation).options(
-                joinedload(DocumentTranslation.document),
+                joinedload(DocumentTranslation.document).options(
+                    selectinload(Document.authors),
+                    selectinload(Document.translations),
+                ),
                 selectinload(DocumentTranslation.nodes),
             )
         )

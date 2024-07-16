@@ -155,6 +155,27 @@ class DocumentTranslation(MarkdownContent):
         )
 
     @property
+    def flattened_nodes(self):
+        def _flatten(node, all_nodes):
+            result = [node]
+            children = sorted(
+                (n for n in all_nodes if n.parent == node), key=lambda n: n.order
+            )
+            for child in children:
+                result.extend(_flatten(child, all_nodes))
+            return result
+
+        top_level_nodes = sorted(
+            (node for node in self.nodes if node.parent is None), key=lambda n: n.order
+        )
+
+        _flattened_nodes = []
+        for top_node in top_level_nodes:
+            _flattened_nodes.extend(_flatten(top_node, self.nodes))
+
+        return _flattened_nodes
+
+    @property
     def entry_node(self) -> "DocumentNode":
         return next(
             (node for node in self.nodes if node.parent is None and node.order == 1),
@@ -203,32 +224,16 @@ class DocumentNode(Base):
 
     @property
     def next(self):
-        nodes = self.document_translation.nodes
-        next_node = next(
-            (
-                node
-                for node in nodes
-                if node.order == self.order + 1 and node.parent == self.parent
-            ),
-            None,
-        )
-        if not next_node and self.parent:
-            next_node = self.parent.next
-
-        return next_node
+        nodes = self.document_translation.flattened_nodes
+        current_index = nodes.index(self)
+        if current_index < len(nodes) - 1:
+            return nodes[current_index + 1]
+        return None
 
     @property
     def previous(self):
-        nodes = self.document_translation.nodes
-        prev_node = next(
-            (
-                node
-                for node in nodes
-                if node.order == self.order - 1 and node.parent == self.parent
-            ),
-            None,
-        )
-        if not prev_node and self.parent:
-            prev_node = self.parent.previous
-
-        return prev_node
+        nodes = self.document_translation.flattened_nodes
+        current_index = nodes.index(self)
+        if current_index > 0:
+            return nodes[current_index - 1]
+        return None

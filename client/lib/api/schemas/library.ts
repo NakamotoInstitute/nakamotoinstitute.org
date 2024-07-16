@@ -9,6 +9,12 @@ export type LibraryFormat = z.infer<typeof zFormat>;
 export const zGranularity = z.enum(["DAY", "MONTH", "YEAR"]);
 export type Granularity = z.infer<typeof zGranularity>;
 
+const zNestedDocumentNode = z.object({
+  slug: z.string(),
+  title: z.string(),
+  navTitle: z.string().nullable(),
+});
+
 export const zDocumentFormat = z.object({
   url: z.string(),
   type: zFormat,
@@ -35,6 +41,7 @@ export const zDocument = zDocumentBase.extend({
   imageAlt: z.string().nullable(),
   hasMath: z.boolean(),
   translators: zTranslators,
+  entryNode: zNestedDocumentNode.nullable(),
 });
 export type Document = z.infer<typeof zDocument>;
 
@@ -48,3 +55,18 @@ export const zLibraryIndex = z.array(zDocumentIndex);
 export function getLibraryIndex() {
   return zLibraryIndex;
 }
+
+export const zDocumentNode = z.object({
+  heading: z.string().nullable(),
+  title: z.string(),
+  subheading: z.string().nullable(),
+  docTitle: z.string(),
+  docSlug: z.string(),
+  content: z.string(),
+  authors: z.lazy(() => getAuthorIndex()),
+  translations: zTranslations,
+  root: zNestedDocumentNode,
+  next: zNestedDocumentNode.nullable(),
+  previous: zNestedDocumentNode.nullable(),
+});
+export type DocumentNode = z.infer<typeof zDocumentNode>;

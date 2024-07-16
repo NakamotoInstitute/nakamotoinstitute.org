@@ -1,7 +1,9 @@
 import { TFunction } from "i18next";
+import Link from "next/link";
 
 import { AuthorsLinks } from "@/app/components/AuthorsLinks";
 import { Document } from "@/lib/api/schemas/library";
+import { urls } from "@/lib/urls";
 import { formatDocDate, formatTimeAttr } from "@/utils/dates";
 
 import { DocFormatLinks } from "./DocFormats";
@@ -58,6 +60,18 @@ export async function DocHeader({ t, locale, doc }: DocHeaderProps) {
             classes={{ root: "justify-center gap-3 font-medium" }}
             doc={doc}
           />
+          {doc.entryNode ? (
+            <p className="text-center">
+              <Link
+                href={urls(locale).library.docNode(
+                  doc.slug,
+                  doc.entryNode.slug,
+                )}
+              >
+                Read Online
+              </Link>
+            </p>
+          ) : null}
           <hr className="mx-auto my-6 w-12" />
         </>
       ) : (

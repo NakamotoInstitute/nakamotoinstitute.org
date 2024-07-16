@@ -192,6 +192,12 @@ class DocumentNodeModel(ORMModel):
     subheading: str | None = None
     doc_title: str = Field(validation_alias=AliasPath("document_translation", "title"))
     doc_slug: str = Field(validation_alias=AliasPath("document_translation", "slug"))
+    authors: list[AuthorModel] = Field(
+        validation_alias=AliasPath("document_translation", "document", "authors")
+    )
+    translations: list[TranslationSchema] = Field(
+        validation_alias=AliasPath("document_translation", "translations")
+    )
     html_content: str = Field(alias="content")
     root_parent: DocumentNodeBaseModel | None = Field(alias="root")
     next_node: DocumentNodeBaseModel | None = Field(alias="next")
