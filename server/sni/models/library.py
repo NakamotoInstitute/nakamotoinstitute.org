@@ -99,38 +99,6 @@ class Document(Base):
         return f"<Document({self.id})>"
 
 
-class DocumentNode(Base):
-    __tablename__ = "document_nodes"
-
-    id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    slug: Mapped[str] = mapped_column(String, nullable=False)
-    title: Mapped[str] = mapped_column(String, nullable=False)
-    heading: Mapped[str] = mapped_column(String, nullable=True)
-    subheading: Mapped[str] = mapped_column(String, nullable=True)
-    order: Mapped[int] = mapped_column(Integer, nullable=False)
-    file_content: Mapped[str] = mapped_column(Text, nullable=False)
-    html_content: Mapped[str] = mapped_column(Text, nullable=False)
-    document_translation_id: Mapped[int] = mapped_column(
-        ForeignKey("document_translations.id"), nullable=False
-    )
-    parent_id: Mapped[int] = mapped_column(
-        ForeignKey("document_nodes.id"), nullable=True
-    )
-
-    document_translation: Mapped["DocumentTranslation"] = relationship(
-        back_populates="nodes"
-    )
-    parent: Mapped["DocumentNode"] = relationship(
-        "DocumentNode",
-        back_populates="children",
-        remote_side=[id],
-        lazy="joined",
-    )
-    children: Mapped[list["DocumentNode"]] = relationship(
-        "DocumentNode", back_populates="parent", order_by=order, join_depth=1
-    )
-
-
 class DocumentTranslation(MarkdownContent):
     __tablename__ = "document_translations"
 
@@ -186,5 +154,81 @@ class DocumentTranslation(MarkdownContent):
             key=lambda t: t.locale,
         )
 
+    @property
+    def entry_node(self) -> "DocumentNode":
+        return next(
+            (node for node in self.nodes if node.parent is None and node.order == 1),
+            None,
+        )
+
     def __repr__(self) -> str:
         return f"<DocumentTranslation(locale={self.locale.value};slug={self.slug})>"
+
+
+class DocumentNode(Base):
+    __tablename__ = "document_nodes"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    slug: Mapped[str] = mapped_column(String, nullable=False, unique=True)
+    title: Mapped[str] = mapped_column(String, nullable=False)
+    nav_title: Mapped[str] = mapped_column(String, nullable=True)
+    heading: Mapped[str] = mapped_column(String, nullable=True)
+    subheading: Mapped[str] = mapped_column(String, nullable=True)
+    order: Mapped[int] = mapped_column(Integer, nullable=False)
+    file_content: Mapped[str] = mapped_column(Text, nullable=False)
+    html_content: Mapped[str] = mapped_column(Text, nullable=False)
+    document_translation_id: Mapped[int] = mapped_column(
+        ForeignKey("document_translations.id"), nullable=False
+    )
+    parent_id: Mapped[int] = mapped_column(
+        ForeignKey("document_nodes.id"), nullable=True
+    )
+
+    document_translation: Mapped[DocumentTranslation] = relationship(
+        back_populates="nodes"
+    )
+    parent: Mapped["DocumentNode"] = relationship(
+        "DocumentNode",
+        back_populates="children",
+        remote_side=[id],
+        lazy="joined",
+    )
+    children: Mapped[list["DocumentNode"]] = relationship(
+        "DocumentNode", back_populates="parent", order_by=order, join_depth=1
+    )
+
+    @property
+    def root_parent(self):
+        return self.document_translation.entry_node
+
+    @property
+    def next(self):
+        nodes = self.document_translation.nodes
+        next_node = next(
+            (
+                node
+                for node in nodes
+                if node.order == self.order + 1 and node.parent == self.parent
+            ),
+            None,
+        )
+        if not next_node and self.parent:
+            next_node = self.parent.next
+
+        return next_node
+
+    @property
+    def previous(self):
+        nodes = self.document_translation.nodes
+        prev_node = next(
+            (
+                node
+                for node in nodes
+                if node.order == self.order - 1 and node.parent == self.parent
+            ),
+            None,
+        )
+        if not prev_node and self.parent:
+            prev_node = self.parent.previous
+
+        return prev_node

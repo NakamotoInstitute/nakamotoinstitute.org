@@ -5,7 +5,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import joinedload, selectinload
 
 from sni.constants import LocaleType
-from sni.models import Document, DocumentTranslation
+from sni.models import Document, DocumentNode, DocumentTranslation
 
 
 async def get(
@@ -20,8 +20,31 @@ async def get(
             ),
             selectinload(DocumentTranslation.formats),
             selectinload(DocumentTranslation.translators),
+            selectinload(DocumentTranslation.nodes),
         )
         .filter_by(slug=slug, locale=locale)
+    )
+    return await db_session.scalar(query)
+
+
+async def get_node(
+    slug: str, *, doc_slug: str, db_session: AsyncSession, locale: LocaleType
+) -> DocumentNode | None:
+    query = (
+        select(DocumentNode)
+        .options(
+            joinedload(DocumentNode.document_translation).options(
+                joinedload(DocumentTranslation.document),
+                selectinload(DocumentTranslation.nodes),
+            )
+        )
+        .join(DocumentTranslation)
+        .join(Document)
+        .filter(
+            DocumentNode.slug == slug,
+            DocumentTranslation.slug == doc_slug,
+            DocumentTranslation.locale == locale,
+        )
     )
     return await db_session.scalar(query)
 
