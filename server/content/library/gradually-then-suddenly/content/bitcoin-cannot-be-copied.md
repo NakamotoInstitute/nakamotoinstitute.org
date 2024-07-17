@@ -45,7 +45,7 @@ These properties emerged organically and spontaneously as individual economic ac
   <figcaption><strong>Figure 6.4</strong></figcaption>
 </figure>
 
-## Economics Systems Converge on One Form of Money
+## Economic Systems Converge on One Form of Money
 
 Economic systems converge on a single form of money because the utility of money is liquidity and exchange rather than consumption or production. Every other fiat currency, commodity money, or cryptocurrency is competing for the exact same use case as bitcoin, whether it is understood or not. When evaluating monetary networks, it would be irrational to store value in a smaller, less liquid, and less secure network if a larger, more liquid, and more secure network were accessible. For example, if you worked for two weeks and your employer offered to pay you in a form of currency accepted by one billion people worldwide or a currency accepted by one million people, which would you choose? Would you request 99.9% of one and 0.1% of the other, or would you take your chances with your billion friends? If you are a US resident but travel to Europe one week a year, do you request that your employer pay you 1/52nd in euros each week or take your chances with dollars? The practical reality is that almost all individuals store value in a single form of money, not because others do not exist but rather because it is the most liquid and widely accepted asset to facilitate exchange within their local economy.
 

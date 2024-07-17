@@ -59,7 +59,7 @@ Money is the good that facilitates economic coordination between parties who oth
   <blockquote>
     <p>Money is one of the greatest instruments of freedom ever invented by man. [...] If we strive for money, it is because money offers us the widest choice in enjoying the fruits of our efforts.</p>
   </blockquote>
-  <figcaption>Frederich A. Hayek<sup><a id="ref42" href="#fn42">[42]</a></sup></figcaption>
+  <figcaption>Friedrich A. Hayek<sup><a id="ref42" href="#fn42">[42]</a></sup></figcaption>
 </figure>
 
 More specifically, money is the good that allows for specialization and the division of labor. It enables individuals to pursue their own interests. It is how individuals communicate their preferences to the world, whether through work or leisure, and it is what creates the range of choice we all take for granted. Our modern economy is built on the foundation of freedom that money provides---enabling a highly complex and specialized system, which affords a standard of living that prior generations would find hard to imagine.
@@ -94,7 +94,7 @@ As historical context, the US Federal Reserve expanded the monetary base from \$
   <figcaption><strong>Figure 8.3</strong><br />Source: Federal Reserve Economic Data (FRED)</figcaption>
 </figure>
 
-If you believe the developed world is not in a precarious situation or does not rely on a monetary foundation similar to Venezuela's, I would respectfully point to the Fed and its historical track record. Blink faith placed in this institution lacks all common sense. Consider the following quote from a resident Fed economist during the aftermath of the 2008 financial crisis, at a time when the Fed was in the middle innings of creating \$3.6 trillion new dollars as part of quantitative easing:
+If you believe the developed world is not in a precarious situation or does not rely on a monetary foundation similar to Venezuela's, I would respectfully point to the Fed and its historical track record. Blind faith placed in this institution lacks all common sense. Consider the following quote from a resident Fed economist during the aftermath of the 2008 financial crisis, at a time when the Fed was in the middle innings of creating \$3.6 trillion new dollars as part of quantitative easing:
 
 <figure>
   <blockquote>
