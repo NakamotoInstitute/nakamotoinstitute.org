@@ -35,7 +35,7 @@ Bitcoin is secured by a decentralized network of nodes (computers running the bi
 The work performed (running cryptographic hashing functions) requires computer processing power contributed by miners, operating twenty-­four hours a day, seven days a week. This processing power requires energy. For context, at 75 exahashes (75,000,000,000,000,000,000 hashes) per second,<sup><a id="ref40" href="#fn40">[40]</a></sup> the bitcoin network currently consumes approximately 7 gigawatts (7,000,000,000 watts) of power, which translates to \~\$9 million in energy per day (\~\$3.3 billion per year), assuming an average cost of 5 cents per kilowatt-­hour (kWh) for illustrative purposes. Based on US national averages, the bitcoin network consumes as much power as approximately 6 million homes.<sup><a id="ref41" href="#fn41">[41]</a></sup> By no means is this insignificant, but it is also what secures the bitcoin network.
 
 <figure id="figure-8.1">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations78.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations78.jpg" alt="" />
   <figcaption><strong>Figure 8.1</strong><br />Source: bitinfocharts.com</figcaption>
 </figure>
 
@@ -75,7 +75,7 @@ Venezuela provides a tangible macro and micro example of money's vital role in e
 How does this relate to bitcoin and energy consumption? As an energy-­rich country, oil was (and is) Venezuela's primary export, or rather, the principal good it needs to produce in order to trade. Despite its vast energy resources, Venezuela's oil production has plummeted.<sup><a id="ref45" href="#fn45">[45]</a></sup>
 
 <figure id="figure-8.2">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations79.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations79.jpg" alt="" />
   <figcaption><strong>Figure 8.2</strong><br />Source: US Energy Information Administration</figcaption>
 </figure>
 
@@ -90,7 +90,7 @@ Many sitting comfortably in the developed world will look at Venezuela and think
 As historical context, the US Federal Reserve expanded the monetary base from \$190 billion in 1984 to \$840 billion at the beginning of 2008, an increase of \$650 billion over twenty-­four years. Then, in response to the 2008 financial crisis, the Fed increased the money supply by nearly \$3.6 trillion over the subsequent five years to a peak of \$4.2 trillion in 2014.<sup><a id="ref46" href="#fn46">[46]</a></sup> The debasement occurred gradually until the financial crisis, which then resulted in a far more drastic increase in the money supply. In aggregate, the base money supply has increased by 22x since 1984. And it is not without consequence. As a function of quantitative easing, the US economy now sits further out on the same fragile ledge that existed during the financial crisis in 2008.
 
 <figure id="figure-8.3">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations80.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations80.jpg" alt="" />
   <figcaption><strong>Figure 8.3</strong><br />Source: Federal Reserve Economic Data (FRED)</figcaption>
 </figure>
 

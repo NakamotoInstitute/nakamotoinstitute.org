@@ -13,7 +13,7 @@ Bitcoin and its blockchain are dependent on each other. However, for those new t
 Setting biases aside, bitcoin is also the most practical entry point. There is no promise that you will come to the same conclusion that bitcoin is the fundamentally valuable innovation, but more often than not, those who take the time to intuitively understand how and why bitcoin works are more easily able to recognize the flaws inherent in other blockchain projects. And even if not, starting with bitcoin remains your best hope of making an informed and independent assessment. Ultimately, bitcoin is not about making money and it's not a get-­rich-­quick scheme. It is fundamentally about storing the value you have already created, and no one should risk that without a requisite knowledge base. Within the world of digital currencies, bitcoin has the longest track record to assess and the greatest number of resources to educate, which is why bitcoin is the best tool to learn.
 
 <figure id="figure-2.1">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations14.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations14.jpg" alt="" />
   <figcaption><strong>Figure 2.1</strong><br />Michael Caras, <em>Bitcoin Money</em> (2019); Saifedean Ammous, <em>The Bitcoin Standard</em> (2018); Yan Pritzker, <em>Inventing Bitcoin</em> (2019); Andreas Antonopoulos, <em>Mastering Bitcoin</em> (2017); Jimmy Song, <em>Programming Bitcoin</em> (2019).</figcaption>
 </figure>
 
@@ -28,7 +28,7 @@ Monetary systems converge on one medium because their utility is liquidity and e
 Bitcoin's transaction ledger is often thought of as a public blockchain that lives somewhere in the cloud, like a digital public square where all transactions are aggregated. However, there is no central source of truth. There are no oracles, and there is no central public blockchain to which everyone independently commits transactions. Instead, every participant within the network constructs and maintains its own independent version of the blockchain based on a common set of rules. No one trusts anyone and everyone validates everything. Participants are able to come to the same version of the truth without having to trust any other party. This is core to how bitcoin solves the problem of removing third-­party intermediaries from a digital cash system in the validation and final settlement of exchange.
 
 <figure id="figure-2.2">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations15.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations15.jpg" alt="" />
   <figcaption><strong>Figure 2.2</strong></figcaption>
 </figure>
 
@@ -43,7 +43,7 @@ Think of a block as a dataset that links the past to the present. Technically, i
 3. Coinbase transaction and transaction fees (compensation to miners for securing the network)
 
 <figure id="figure-2.3">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations16.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations16.jpg" alt="" />
   <figcaption><strong>Figure 2.3</strong></figcaption>
 </figure>
 
@@ -52,21 +52,21 @@ Miners solve blocks by expending energy resources to perform what is known as a 
 Adding a random nonce to a proposed block, which is an otherwise static dataset, causes each resulting output (or hash) to be unique. Imagine a dataset being changed a trillion times, by just changing one single random number in the dataset each time. Everything else but the random nonce remains the same. With each nonce checked, the resulting output has an equally small chance of achieving the network difficulty (i.e., representing a valid proof). While this process is often referred to as solving a highly complicated mathematical problem, in reality, it is difficult only because a valid proof requires guessing and checking trillions of possible solutions. There are no shortcuts. Energy must be expended. A valid proof is easy to verify by other nodes but probabilistically impossible to solve without expending a massive amount of resources. As more mining resources are added to the network, the network difficulty increases, requiring more inputs to be checked and more energy resources to be expended to solve each block. Essentially, miners face a material cost in solving blocks, but it remains trivial for all other nodes to validate the work at practically no cost.
 
 <figure id="figure-2.4">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations17.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations17.jpg" alt="" />
   <figcaption><strong>Figure 2.4</strong></figcaption>
 </figure>
 
 In aggregate, the incentive structure allows the network to reach consensus. Miners must incur significant up-­front costs to secure the network but are only paid if valid work is produced. The rest of the network can immediately determine whether work is valid or not based on consensus rules. While there are many consensus rules that determine whether a block is valid or not, if any pending transaction in a block is invalid, the entire block is invalid. For a transaction to be valid, it must have originated from a previously valid bitcoin block, and it cannot be a duplicate of a previously spent transaction. Separately, each block must build off of the most up-­to-­date version of history and include a valid coinbase transaction. A coinbase transaction rewards miners for producing valid work with newly issued bitcoin in return for securing the network (i.e., for enforcing the fixed supply and verifying valid transactions).
 
 <figure id="figure-2.5">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations18.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations18.jpg" alt="" />
   <figcaption><strong>Figure 2.5</strong></figcaption>
 </figure>
 
 Coinbase rewards are governed by a predetermined supply schedule. At the time of writing, 12.5 new bitcoin are issued in each valid block, and the reward will be cut in half to 6.25 new bitcoin in approximately eight months. Every 210,000 blocks (or approximately every four years), the coinbase reward is reduced by half until it ultimately reaches zero. If miners include an invalid reward in a proposed block, the rest of the network will reject it as invalid. This is the base mechanism that governs bitcoin's capped total supply of 21 million. However, software alone is insufficient to ensure either a fixed supply or an accurate transaction ledger. Economic incentives hold everything together.
 
 <figure id="figure-2.6">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations19.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations19.jpg" alt="" />
   <figcaption><strong>Figure 2.6</strong></figcaption>
 </figure>
 
@@ -89,7 +89,7 @@ Recall from "Bitcoin Obsoletes All Other Money*"* that if an asset's primary (if
 Without a native currency, a blockchain must rely on trust---i.e., the intervention of one or more third parties---for security, which eliminates the need for a blockchain in the first place. The security function of bitcoin (i.e., mining), which protects the validity of the chain on a trustless basis, requires significant up-­front capital investment and ongoing marginal costs in the form of energy consumption. To recoup that investment and provide a rate of return in the future, the payment in the form of bitcoin must more than offset the aggregate costs. If it were not expected to do so, such investments would not be made. Essentially, what miners are paid to protect (bitcoin) must be a reliable form of money to incentivize security investments.
 
 <figure id="figure-2.7">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations20.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations20.jpg" alt="" />
   <figcaption><strong>Figure 2.7</strong><br />Source: <em>The Bitcoin Standard</em> by Saifedean Ammous</figcaption>
 </figure>
 
@@ -104,7 +104,7 @@ Recall that bitcoin has no knowledge of the outside world. It only "knows" how t
 Immutability is an emergent property dependent on other emergent network properties. As bitcoin becomes more decentralized, it becomes increasingly difficult to alter the network's consensus rules or to invalidate or prevent otherwise valid transactions (i.e., censorship resistance). As bitcoin proves to be increasingly censorship-­resistant, confidence in the network grows, fueling adoption, which further decentralizes the network, including its mining function. In essence, bitcoin becomes more decentralized and more censorship-­resistant as it grows, which reinforces the immutability of its blockchain. It becomes increasingly difficult to change the history of the blockchain because each participant gradually represents a smaller and smaller share of the network. Regardless of how concentrated ownership of the network and mining may be at any point in time, both decentralize over time so long as value increases, which causes bitcoin to become more and more immutable.
 
 <figure id="figure-2.8">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations21.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations21.jpg" alt="" />
   <figcaption><strong>Figure 2.8</strong></figcaption>
 </figure>
 
@@ -119,7 +119,7 @@ The bitcoin network is an entirely independent, closed-­loop system. Its only c
 Every fiat currency, commodity money (e.g., gold), and cryptocurrency is competing for the exact same use case as bitcoin, whether it is consciously understood by market participants or not. Bitcoin is valuable because, in aggregate, it has achieved finite scarcity. Scarcity is the backbone of why bitcoin is secure as a monetary network, and it is a property that is dependent on many other emergent properties.
 
 <figure id="figure-2.9">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations22.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations22.jpg" alt="" />
   <figcaption><strong>Figure 2.9</strong><br />Inspired by <em>Zero to One</em> by Peter Thiel (2014)</figcaption>
 </figure>
 

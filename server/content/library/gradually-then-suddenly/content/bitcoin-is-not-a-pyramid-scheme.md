@@ -28,7 +28,7 @@ Bitcoin's utility is as money. It has a market because it solves a problem inher
 Bitcoin's innovation is that it represents a _superior_ form of money, which is finitely scarce. There is no future promise beyond bitcoin being a form of money that no one can print. The only utility of bitcoin is in holding it as a currency and transacting with it in the future, whether that be in exchange for legacy currencies or other goods and services. It will only maintain value if others demand it in the future, something that is true of any form of money. But money is not a collective hallucination or merely a belief system. Monetary goods have distinct properties which make them more or less effective in facilitating exchange. However, monetary properties are not absolute. The _relative_ strength of monetary properties between two forms of money provides the fundamental basis of demand of one versus the other. When the market evaluates bitcoin, it does so relative to other monetary mediums, principally the dollar.
 
 <figure id="figure-12.1">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations102.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations102.jpg" alt="" />
   <figcaption><strong>Figure 12.1</strong></figcaption>
 </figure>
 
@@ -39,7 +39,7 @@ Bitcoin is distinguished from its competition in many ways, but at its most basi
 There is no greater contrast between bitcoin and its competition than its absolute supply. Dollars are becoming more and more abundant over time as the Fed creates trillions more with each passing round of quantitative easing, and there will only ever be 21 million bitcoin. Would an individual rather be paid in a form of money that cannot be printed or, conversely, in one whose supply is rapidly increasing in quantity over time? Humans rely on money to facilitate trade and exchange. The determinant question of which is better rests principally in the supply of the currency. A form of money that cannot be printed will preserve value better into the future than one that can. All incentives revolve around bitcoin's fixed supply.
 
 <figure id="figure-12.2">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations103.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations103.jpg" alt="" />
   <figcaption><strong>Figure 12.2</strong><br />Source: Federal Reserve Economic Data (FRED)</figcaption>
 </figure>
 
@@ -48,7 +48,7 @@ There is no greater contrast between bitcoin and its competition than its absolu
 Bitcoin's fixed supply is the foundation, but it is also issued at a predictable rate. In the future, when bitcoin reaches its maximum supply, the rate of change thereafter will be zero. But on its way to that future state, bitcoin embeds a stable and predictable supply schedule, which is a distinct and equally important part of the equation to a fixed supply. No one knows when the Fed is going to arbitrarily create more money or to what extent, in either absolute or relative terms. In contrast, bitcoin are issued through a mining process that helps secure the network, and the network adjusts to ensure that bitcoin are issued on consistent time intervals. A certain number of bitcoin are issued every ten minutes (on average). Approximately every four years, that number is cut in half until no incremental bitcoin will be issued. If more mining resources are added to the network, the network adjusts to prevent bitcoin from being issued at a faster rate. More mining results in greater levels of network security without increasing the rate of issuance or increasing the total amount of bitcoin that will ultimately be issued.
 
 <figure id="figure-12.3">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations104.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations104.jpg" alt="" />
   <figcaption><strong>Figure 12.3</strong><br />Source: satoshi.info</figcaption>
 </figure>
 
@@ -61,7 +61,7 @@ By running a bitcoin full node, anyone can verify the number of valid bitcoin in
 The consensus mechanism that governs bitcoin is the foundation of its credibility and what ultimately sets bitcoin apart from its competition. In the central banking monetary model, twelve individuals (or thereabout) determine how and when to create billions, if not trillions, of dollars. Bitcoin, on the other hand, entrusts its monetary policy to a consensus mechanism of those that hold bitcoin as a currency. Even if an individual were to remain unconvinced that a currency with a fixed supply issued at a predictable rate is superior to one with an unpredictably inflating supply, it does not matter what any individual believes. If the market collectively determined that it would be better to remove the fixed supply cap, it is theoretically possible. However, to do so, a decentralized network (without any central coordination) would have to reach an overwhelming consensus to debase a currency that has been adopted principally for the reason that it cannot be printed. Bitcoin ultimately represents the contrast between monetary policy by consensus and monetary policy by central bank. Nothing occurs by dictate. The consensus of the network enforces the fixed supply, and everyone has an incentive to ensure that no one else can create more units of the currency arbitrarily.
 
 <figure id="figure-12.4">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations105.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations105.jpg" alt="" />
   <figcaption><strong>Figure 12.4</strong><br />Source: Personal bitcoin node</figcaption>
 </figure>
 
@@ -72,7 +72,7 @@ So no, bitcoin is not a pyramid scheme. It is not organized by a sketchy company
 Just because people who adopt bitcoin as money often advocate for it does not make it a pyramid scheme. Imagine you concluded that bitcoin is a superior form of money and that there is a fundamental and acute problem with central banks creating money arbitrarily out of thin air. Would you hide this secret from your friends and family? The skepticism for advocacy of bitcoin is healthy, but recognize that bitcoin adoption can only grow through education. If there is a moral case to educate your friends and family---which there is---it logically extends beyond that. But advocacy is not just altruistic. Most people struggle to grasp the properties that define money or to see how these properties exist in bitcoin. In many ways, bitcoin is not just a secret hiding in plain sight. It is the greatest secret that exists in the world. Once someone figures it out, often after years of denial and financial opportunity cost, it is perfectly logical to want to help others figure it out too. Some things are too good to keep secret, and there is a long-­term incentive for each holder of the currency if more people adopt it. Bitcoin becomes more secure, and its utility as money increases with greater adoption.
 
 <figure id="figure-12.5">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations106.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations106.jpg" alt="" />
   <figcaption><strong>Figure 12.5</strong><br />Source: Bitstamp</figcaption>
 </figure>
 

@@ -9,7 +9,7 @@ subheading: (Originally published on 2 August 2019)
 As kids, we all learn that money doesn't grow on trees. However, despite this timeless wisdom, we have become conditioned at a societal level to believe that it's not only possible but that it's a normal, necessary, and productive function of our economy---specifically the practice of printing massive amounts of money, the modern equivalent of money growing on trees. Ever since the Great Financial Crisis, it has become an uncomfortable fact of life. Before bitcoin, the privilege of creating new money out of thin air was reserved to global central banks, including the Federal Reserve.
 
 <figure id="figure-6.1">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations60.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations60.jpg" alt="" />
   <figcaption><strong>Figure 6.1</strong><br />Source: Federal Reserve Economic Data (FRED)</figcaption>
 </figure>
 
@@ -18,7 +18,7 @@ Bitcoin was specifically created to solve this problem---the problem of printing
 And here we collectively sit---in 2019, as of the time of writing---witnessing the monetization of an economic good (bitcoin) on the free market for the first time since gold emerged as money over thousands of years. Rather than pausing to contemplate the weight of this reality or attempting to understand how or why it is possible, many people skip right past bitcoin and instead focus their attention and efforts on some derivative or some way to solve a problem they didn't see in the first place. Everyone wants to get rich quick, and so long as there is money, there will also be alchemists. Those who attempt to copy bitcoin are our modern-­­day alchemists.
 
 <figure id="figure-6.2">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations61.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations61.jpg" alt="" />
   <figcaption><strong>Figure 6.2</strong></figcaption>
 </figure>
 
@@ -36,12 +36,12 @@ These properties emerged organically and spontaneously as individual economic ac
 4. Repeat---steps 1-­3 create a positive feedback loop.
 
 <figure id="figure-6.3">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations62.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations62.jpg" alt="" />
   <figcaption><strong>Figure 6.3</strong></figcaption>
 </figure>
 
 <figure id="figure-6.4">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations63.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations63.jpg" alt="" />
   <figcaption><strong>Figure 6.4</strong></figcaption>
 </figure>
 
@@ -62,7 +62,7 @@ Bitcoin is valuable not because of a particular feature but because it has achie
 However, one would likely never come to this conclusion without first developing their own understanding of the following: (1) that bitcoin is finitely scarce; (2) that bitcoin is valuable because it is scarce; and (3) that economic systems converge on one form of money (i.e., one monetary network and system) to facilitate trade. You may come to different conclusions, but this is the appropriate framework to consider when contemplating whether it is possible to copy (or outcompete) bitcoin rather than a framework based on any particular feature set. It is also important to recognize that conclusions drawn by any one person have very little, if any, bearing in the equation. Instead, what matters is what the market consensus believes and what the market converges on as the most credible long-­term store of value.
 
 <figure id="figure-6.5">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations64.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations64.jpg" alt="" />
   <figcaption><strong>Figure 6.5</strong><br />Source: <em>The Bitcoin Standard</em> by Saifedean Ammous</figcaption>
 </figure>
 
@@ -73,7 +73,7 @@ The empirical evidence (price and purchasing power) demonstrates that the market
 Nassim Taleb writes about how a very small intransigent minority can force its preference on the majority, referring to this phenomenon as "the minority rule" and explaining why "The Most Intolerant Wins."<sup><a id="ref20" href="#fn20">[20]</a></sup> Monetary systems are a perfect example of this phenomenon. If a very small minority converges on the conclusion that bitcoin has superior monetary properties and will not accept another form of currency as money, while market participants with less conviction accept both bitcoin and other currencies, the intolerant minority wins. This is exactly what is happening in the global competition for digital currency supremacy. A small minority of market participants have determined that only bitcoin is viable, while at the same time rejecting the monetary properties of all other digital currencies. Because of its intransigence, the minority slowly forces its preference on the majority.
 
 <figure id="figure-6.6">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations65.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations65.jpg" alt="" />
   <figcaption><strong>Figure 6.6</strong></figcaption>
 </figure>
 

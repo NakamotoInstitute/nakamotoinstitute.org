@@ -11,7 +11,7 @@ If one thing is certain, it is that bitcoin is humbling. It humbles everyone---s
 Every day, people evaluate whether to invest in stocks, bonds, or real estate, whether to buy a home or car, whether to purchase some consumer good, or conversely, whether to save. While there are exceptions to every rule, practically everyone is unequipped to evaluate bitcoin because it does not fit any existing mental framework. It is like asking someone with no concept of mathematics what two plus two equals. The answer may be obvious to those who know math, but for those who do not, it's wholly unrelatable. As an idea and application, bitcoin is incredibly abstract, largely because money is abstract. Trying to understand it can feel like staring into the abyss. Bitcoin is both difficult to see yet impossible to unsee once discovered. And the path from one extreme to the other is most often a journey, where the impossible first becomes possible, then probable, and ultimately inevitable for each individual.
 
 <figure id="figure-4.1">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations35.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations35.jpg" alt="" />
   <figcaption><strong>Figure 4.1</strong></figcaption>
 </figure>
 
@@ -37,7 +37,7 @@ Bitcoin is an adaptive and evolving system. It is not static. No one controls th
 As bitcoin survives shocks and as individuals learn from their errors and adapt to its volatility, bitcoin becomes tangibly more reliable. The network's demonstration of resilience and immunity reinforces trust in the network, which drives incremental adoption and makes bitcoin more resistant to future attacks or individual errors. It is a positive feedback loop. With every failed attempt to co-­opt or coerce the network, the bitcoin protocol hardens, and confidence increases. Every time bitcoin survives an attack, it is propelled forward in a fundamentally stronger state.
 
 <figure id="figure-4.2">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations36.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations36.jpg" alt="" />
   <figcaption><strong>Figure 4.2</strong></figcaption>
 </figure>
 
@@ -63,7 +63,7 @@ In 2017, a civil war of sorts emerged in bitcoin. Many of the largest companies 
 This episode in bitcoin's history demonstrated that no one had unilateral control over the network---not even the most powerful companies and miners working in concert could alter bitcoin. It was an incontrovertible demonstration of the network's resistance to censorship. While most participants likely supported the increase in the block size (or at least the idea), it was always a marginal issue. And when it comes to change, bitcoin's default position is no, even for seemingly inconsequential changes. Only an overwhelming majority of all participants (naturally with competing priorities) can change the network's consensus rules. In this instance, it was not really a debate about block size or transaction capacity---but instead whether bitcoin was sufficiently decentralized to prevent external forces from influencing the network and changing the consensus rules. If bitcoin had been susceptible to change by the dictate of a few centralized companies and miners, it would have established that bitcoin was censorable, which is a slippery slope. There would have been no reason to believe that other changes would not be forced upon the network in the future. Ultimately, it would have severely impaired the credibility of bitcoin's fixed 21 million supply.
 
 <figure id="figure-4.3">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations37.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations37.jpg" alt="" />
   <figcaption><strong>Figure 4.3</strong></figcaption>
 </figure>
 
@@ -179,7 +179,7 @@ Each form of stress hardens the bitcoin network and often for different reasons.
 </table>
 
 <figure id="figure-4.4">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations38.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations38.jpg" alt="" />
   <figcaption><strong>Figure 4.4</strong>—Source: Bloomberg</figcaption>
 </figure>
 
@@ -188,7 +188,7 @@ Separately, China has taken measures to restrict the ability of exchanges to fac
 An entirely different type of stress comes in the form of competing cryptocurrencies. There have been thousands of variations following bitcoin's launch in 2009, often espousing different purposes and "use cases." In reality, every single one has been competing with bitcoin as money (whether it is realized or not). Creators will call out perceived flaws in bitcoin and explain how their competing protocol intends to improve on its "limitations." However, despite thousands of competitors, bitcoin accounts for \~70% of all cryptocurrencies in terms of market value. And when adjusted for liquidity, the estimate is closer to \~90%. Meaning thousands of competing cryptocurrencies account for 10% to 30%.
 
 <figure id="figure-4.5">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations39.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations39.jpg" alt="" />
   <figcaption><strong>Figure 4.5</strong>—Source: Arcane Research</figcaption>
 </figure>
 
@@ -204,7 +204,7 @@ While external threats to the network create positive externalities, bitcoin als
 </figure>
 
 <figure id="figure-4.6">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations40.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations40.jpg" alt="" />
   <figcaption><strong>Figure 4.6</strong></figcaption>
 </figure>
 
@@ -217,7 +217,7 @@ Similar to the benefit provided by consistent stressors, volatility tangibly bui
 However, information is not just communicated through price volatility. Volatility is also how bitcoin gets distributed. Every bitcoin sold is a bitcoin bought. Consistently over time, the ownership of the network becomes more decentralized, and bouts of volatility result in greater distribution with large volumes of the currency changing hands. As the network becomes more decentralized, it similarly becomes more censorship-­resistant. As each individual within the network holds a smaller and smaller share of the currency (on average) over time, it results in a dynamic where price is decreasingly dependent on the preferences of a few large holders. This is not to say that there are no large holders remaining that can singularly influence price and volatility. But as a directional trend, any individual participant's impact on price diminishes over time, often directly through the distributive function of volatility. In very tangible ways, volatility strengthens bitcoin.
 
 <figure id="figure-4.7">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations41.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations41.jpg" alt="" />
   <figcaption><strong>Figure 4.7</strong>—Price Source: Bitstamp</figcaption>
 </figure>
 
@@ -245,12 +245,12 @@ While most people recognize that there is intelligent design in bitcoin's founda
 One week after the launch of bitcoin, Hal Finney famously tweeted to the world that he was "running bitcoin," becoming the first known person to join the network after its launch. In 2011, Ross Ulbricht was alleged to have created the Silk Road marketplace. This website ultimately leveraged bitcoin to facilitate online payments for drugs, establishing one of the earliest widespread uses of bitcoin in commerce and undoubtedly playing a material role in expanding early adoption and awareness. In 2014, the Tokyo-­based bitcoin exchange Mt. Gox was hacked, and that event may have had the single greatest influence on the advancement and proliferation of bitcoin hardware wallets as individuals and companies looked to eliminate the risks posed by third-­party exchanges. In 2017, after a bitcoin service provider drew the ire of Nicolas Dorier, he set out to build a product that would obsolete that provider and service, spawning one of the most exciting open-­source projects within bitcoin, the self-­hosted payment processor BTCPay Server.
 
 <figure id="figure-4.8">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations42.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations42.jpg" alt="" />
   <figcaption><strong>Figure 4.8</strong></figcaption>
 </figure>
 
 <figure id="figure-4.9">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations43.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations43.jpg" alt="" />
   <figcaption><strong>Figure 4.9</strong>—Source: Bloomberg</figcaption>
 </figure>
 

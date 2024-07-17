@@ -37,12 +37,12 @@ Bitcoin is money. Or rather, bitcoin has become money to me. It was a slow proce
 For me, the path involved first understanding why gold had emerged as money over thousands of years. What properties made one form of money better or worse than another, and what differentiated money as a unique economic good when compared to all other economic goods? _The Bitcoin Standard _(2018) by Saifedean Ammous was a formative resource for me in exploring these questions. When I applied the core principles to my own life experiences and separately to my understanding of the legacy financial system, bitcoin started to become intuitive. As part of my process, I found it helpful to consider bitcoin relative to two tangible guideposts: gold and the dollar. Does Bitcoin share the properties of either gold or the dollar? Is bitcoin _better_ than either or both? Because what makes something money is not absolute. Money is an A/B test. It is a choice between storing value in one medium rather than another, which always involves trade-­offs. Without first understanding the flaws of the legacy financial system and the currencies native to it (be it the dollar, euro, yen, pound, bolivar, peso, lira, etc.), I could never have arrived at the idea of bitcoin being money in a vacuum.
 
 <figure id="figure-0.1">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations.jpg" alt="" />
   <figcaption><strong>Figure 0.1</strong></figcaption>
 </figure>
 
 <figure id="figure-0.2">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations1.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations1.jpg" alt="" />
   <figcaption><strong>Figure 0.2</strong><br />Source: Yahoo Finance</figcaption>
 </figure>
 

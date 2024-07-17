@@ -15,7 +15,7 @@ It may sound crazy to believe that bitcoin will become the dominant global curre
 Evaluating one thousand possibilities in the hope of coming to the right solution may not be practical or possible. However, when taking a bottom-­up approach and developing conviction around a few foundational principles, it becomes more practical to arrive at a coherent answer. Combined, the following foundational principles bring simplicity and clarity to what may have once seemed too complex to possibly discern.
 
 <figure id="figure-1.1">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations2.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations2.jpg" alt="" />
   <figcaption><strong>Figure 1.1</strong></figcaption>
 </figure>
 
@@ -34,7 +34,7 @@ Money exists to communicate these preferences and, ultimately, to exchange value
 Without a common currency, there would be no concept of price. And without the concept of price, it would be impossible to do any range of economic calculations. The ability to perform economic calculations allows individuals to take independent actions, relying on the information communicated through a price system, to best satisfy their own needs by understanding the needs of others. It is a price system that allows supply and demand structures to form. And a price system is ultimately a necessity because it provides for the communication of information, without which the fulfillment of basic needs would not be possible. Imagine if nothing you consumed had a discernible price. How would you know what you needed to produce in order to obtain the goods you value in exchange? Recognize that your own conception of the value you produce, and the very existence of goods and services produced by others, would not be available if not for some expression of price existing. It becomes circular, but money is the good that allows the underlying structures of an economy to form through the price system. While often lamented as the root of all evil, money may just be the greatest accidental invention ever created and one that could not have emerged by conscious control.
 
 <figure id="figure-1.2">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations3.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations3.jpg" alt="" />
   <ficaption>Figure 1.2</figcaption>
 </figure>
 
@@ -63,7 +63,7 @@ Value is created by individuals through the fulfillment of goods and services. H
 In the production supply chain, money serves a distinct function from all other individual goods or services. It is the distinction between the fulfillment of preferences (production of goods and services) and the coordination of preferences (money). The fulfillment of preferences is dependent on the coordination of preferences, and the coordination of preferences is dependent on a price system, which can only form as a derivative of mass convergence on a single monetary medium. Without a pricing system, division of labor would not exist, at least not to the extent necessary to allow for the functioning of complex supply chains. This is the root-­level principle most miss when contemplating a world of many currencies. Any pricing system derives from a single currency. Convergence is a precursor. The concept of price (and relative price) would not exist if not for a critical mass of individuals producing a diverse range of goods and services and communicating the value of those goods and services through a common medium. As a result, it may be more accurate to say that economic systems emerge from the common use of a single monetary medium rather than _converge_ on one. Individuals converge on a single form of money, and the output is an economic system.
 
 <figure id="figure-1.3">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations4.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations4.jpg" alt="" />
   <figcaption><strong>Figure 1.3</strong></figcaption>
 </figure>
 
@@ -72,7 +72,7 @@ Whereas the value of all other goods and services is in their consumption, the v
 The ultimate goal is to reach a consensus so each individual can communicate and exchange value with the widest and most relevant set of trading partners. It is an objective evaluation of tangible goods based on an intersubjective need. The whole point is to find the one good that everyone can agree is (1) a relative constant, (2) measurable, and (3) functional in exchange. The existence of a constant creates order where none existed previously, but that constant must also be functional as both a measurement tool and a means of exchange. It is the combination of these characteristics---often described as aggregating the properties of scarcity, durability, fungibility, divisibility, and transferability---that is unique to money. Very few goods possess all of these properties, and every good is unique, with inherent properties that cause each to be better or worse in fulfilling certain functions within an economy. A is always different than B, and the combination of properties required for a good to be viable as money is so rare that the distinction from one to another is never marginal.
 
 <figure id="figure-1.4">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations5.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations5.jpg" alt="" />
   <figcaption><strong>Figure 1.4</strong></figcaption>
 </figure>
 
@@ -81,7 +81,7 @@ On a more practical level, everyone agrees on a single monetary good through whi
 Think of each individual as a potential trading partner. As individuals adopt the common medium as a standard of value, all existing participants in the monetary network gain new trading partners, as do those joining the network. There is mutual benefit to existing holders of the currency and new adopters that comes from increased adoption. As the monetary network expands, the range of choice also expands as more goods come to be denominated in and traded for the common medium of exchange. More prices exist, which enables more relative prices as a result. More information is aggregated into the common medium, which can then be relied upon by all individuals within the network (and the network as a whole) to better coordinate resources and respond to changing preferences via trade. The constant becomes more valuable and inherently more reliable as it communicates more information about more goods produced by more individuals. The more variable information communicated through the constant, the more constant it becomes relative to all other goods and services in aggregate.
 
 <figure id="figure-1.5">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations6.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations6.jpg" alt="" />
   <figcaption><strong>Figure 1.5</strong></figcaption>
 </figure>
 
@@ -92,7 +92,7 @@ Monetary networks ultimately accumulate the value of all other networks because 
 Admittedly, multiple currencies---the dollar, euro, yen, pound, franc, yuan, ruble, lira, peso, etc.---all coexist today. But this is not a natural phenomenon inherent to an open, global economy. Fiat currencies emerged as a fractional representation of gold, which the world had previously converged upon as a monetary standard. None would subsist without the forces of government intervention, nor would any fiat currency have ever emerged if not for the prior existence (and limitations) of gold---or the backing of another commodity metal---as a monetary medium. While modern monetary theorists and gold bugs alike will never admit it, the calamity that is all fiat systems is nothing more than the manifestation of gold's failure as a monetary medium. It is a dead man walking. Following the formal abandonment of the gold standard in 1971, the subsistence of jurisdictional fiat systems merely represents a transient departure from free-­market monetary forces. Modern fiat systems have only survived this long because a solution to the very problem created by fiat currencies did not yet exist. Bitcoin is that solution, and since its creation, individuals have been converging on it as a new monetary standard. It is a trend that will only continue as knowledge naturally distributes.
 
 <figure id="figure-1.6">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations7.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations7.jpg" alt="" />
   <figcaption><strong>Figure 1.6</strong><br />Source pricedinbitcoin21.com</figcaption>
 </figure>
 
@@ -105,26 +105,26 @@ The market is converging on bitcoin over time, and its value continues to increa
 Finite scarcity is a property no other form of money has ever or will ever achieve, and demand for bitcoin is fundamentally driven by that scarcity. However, scarcity is a two-­sided equation. A fixed supply may be the primary draw, but demand is a critical and often overlooked aspect of scarcity. Demand is what makes scarcity a utility as a constant in exchange. Bitcoin becomes increasingly scarce as a combined function of both increasing demand and a perfectly inelastic terminal supply. The scarcity of its fixed supply creates demand, but increasing demand creates greater scarcity. It sounds circular because it is. If there were 21 million bitcoin and only one person valued them, there would be nothing scarce or useful about bitcoin. But if 100 million people valued bitcoin, 21 million would start becoming scarce. And if the network grew to one billion people, 21 million would become extremely scarce, and the constant that bitcoin provides would offer even greater utility in facilitating trade.
 
 <figure id="figure-1.7">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations8.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations8.jpg" alt="" />
   <figcaption><strong>Figure 1.7</strong></figcaption>
 </figure>
 
 <figure id="figure-1.8">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations9.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations9.jpg" alt="" />
   <figcaption><strong>Figure 1.8</strong></figcaption>
 </figure>
 
 Increased demand combined with a fixed supply naturally results in bitcoin becoming more distributed. There is only so much to go around, and the pie ends up getting split up into smaller and smaller shares owned by more and more people. As more individuals value bitcoin, the network not only becomes a greater utility, but it also becomes more secure. It becomes a greater utility because more people are communicating in the same language of value and trading through a more reliable constant. And as more individuals participate in the network consensus mechanism, the entire system becomes more resistant to corruption and ultimately more secure. Recognize that there is nothing about a software application or a "blockchain" that guarantees a fixed supply, and bitcoin's supply schedule is not credible because software dictates it. Instead, 21 million is only credible because it is governed on a decentralized basis and by an ever-­increasing number of network participants. The more decentralized bitcoin becomes, the more secure it is. As more individuals participate in consensus, 21 million becomes a more credibly fixed number. Similarly, bitcoin becomes a more reliable constant as each individual controls a smaller and smaller share over time. As adoption increases, security and utility work in lockstep. Consider the distribution and relative density of bitcoin adoption worldwide. As reach and density within each market spread, bitcoin's constant hardens and becomes harder to change.
 
 <figure id="figure-1.9">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations10.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations10.jpg" alt="" />
   <figcaption><strong>Figure 1.9</strong><br />Source: Bitnodes.io</figcaption>
 </figure>
 
 As individuals increasingly opt in, bitcoin's terminal supply of 21 million becomes more and more credible. In the mind of those who adopt it, finite scarcity becomes what differentiates bitcoin from all other forms of money---both legacy currencies and competing cryptocurrencies alike. All other currencies either become centralized over time (e.g., the dollar, euro, yen, gold) or were too centralized from the start (e.g., all other cryptocurrencies) to credibly compete with a fixed supply of 21 million. Centralization inherently creates the need to rely on trust, and trust puts the supply of any currency at risk. As history has shown, the desire and impulse to print money are far too great to resist, and an inflating currency supply ultimately impairs demand and marginalizes utility of the currency in the function of exchange. Whereas all other currencies depend on trust, bitcoin provides a trustless constant. Twenty-­one million is only credible because bitcoin is decentralized, and bitcoin becomes increasingly decentralized over time. The best any other form of money could possibly do is match bitcoin. However, even that is not possible because individuals converge on a single form of money, and bitcoin has already beaten every other currency to the punch. Every other currency is ultimately competing against the ideal constant---one that is fixed, will not change, and does not rely on trust.
 
 <figure id="figure-1.10">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations11.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations11.jpg" alt="" />
   <figcaption><strong>Figure 1.10</strong><br />Source: Federal Reserve Economic Data (FRED)</figcaption>
 </figure>
 
@@ -133,7 +133,7 @@ All forms of money compete with each other for every exchange. If an asset's pri
 But remember, scarcity for scarcity's sake is not the goal of any money. Instead, the money that provides the greatest constant will facilitate exchange most effectively. The monetary good with the greatest relative scarcity will best preserve value between present and future exchanges over time. The relative price and relative value of all other goods is the information desired from the coordination function of money, and in every exchange, each individual is incentivized to maximize present value into the future. Finite scarcity in bitcoin provides the greatest assurance that value exchanged in the present will be preserved into the future. As more and more individuals collectively identify that bitcoin is the monetary good with the greatest relative scarcity, stability in its price will become an emergent property.
 
 <figure id="figure-1.11">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations12.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations12.jpg" alt="" />
   <figcaption><strong>Figure 1.11</strong></figcaption>
 </figure>
 
@@ -146,7 +146,7 @@ In the code, one bitcoin is represented as 100,000,000 sub-­units, with the sma
 In the A/B test of monetary competition, if A\>B, any amount of A will perform the function of money better than any amount of B. Over time, A will increase in purchasing power relative to B, whether for \$50 or \$50,000 worth of value. Never be confused by a list of cryptocurrencies trading on Coinbase that look like a better deal because the price is "cheap" whereas bitcoin appears "expensive." Remember that bitcoin can be divided into smaller or larger units to store more or less value. One bitcoin is an inherently arbitrary unit, as is one unit of any currency. The market test is whether A is more functional as money than B. It is an intersubjective decision, and while the market is communicating which network it believes performs the monetary function more effectively through price and value, network value is the output---not the input. The input is each individual evaluating the properties of the monetary good itself relative to others. If bitcoin is A in your evaluation, then there is no "too expensive." Bitcoin may be overvalued or undervalued at any point in time, but each individual that adopts bitcoin increases the value of the network (recall the discussion on trading partners and network connections). And the ability to be divided easily into very small units allows a practically limitless number of individuals to convert and communicate value through the network. If A is greater than B, and if A can support unlimited adoption, it eventually obsoletes the need for network B entirely.
 
 <figure id="figure-1.12">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations13.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations13.jpg" alt="" />
   <figcaption><strong>Figure 1.12</strong></figcaption>
 </figure>
 

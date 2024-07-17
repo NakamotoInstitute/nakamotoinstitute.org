@@ -9,26 +9,26 @@ subheading: (Originally published on 27 August 2020)
 At the 2020 Democratic National Convention, Congresswoman Alexandria Ocasio-­Cortez described the Bernie Sanders presidential campaign as "a movement that realizes the unsustainable brutality of an economy that rewards explosive inequalities of wealth for the few at the expense of long-­term stability for the many."<sup><a id="ref92" href="#fn92">[92]</a></sup> That the current economic system is working very well for a few at the expense of the many has become more widely recognized and accepted across both sides of the political aisle in recent years. While there is vehement disagreement on the appropriate solution, most everyone at least agrees that there is a problem. Fortunately or unfortunately, there is no political solution to a problem that is inherently economic in nature. It is unfortunate because politicians of all ideologies will make promises of grandeur while further dividing the nation in search of a political solution that does not exist. At the same time, it is fortunate that the answer is not political, as bridging partisan divides has historically proven to be a fool's errand.
 
 <figure id="figure-16.1">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations127.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations127.jpg" alt="" />
   <figcaption><strong>Figure 16.1</strong><br />Source: Federal Reserve Economic Data (FRED)</figcaption>
 </figure>
 
 <figure id="figure-16.2">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations128.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations128.jpg" alt="" />
   <figcaption><strong>Figure 16.2</strong><br />Source: statista.com</figcaption>
 </figure>
 
 The economic structure is, without a doubt, broken. Wealth gaps are only widening, and economic instability is everywhere. It's a reality that is hard to deny. The stock market and national average home values are back at all-­time highs while tens of millions of Americans are filing for unemployment and half of society has practically no savings. It is suffocating many, and it applies globally. Politicians are simply not the answer. The fundamental problem with the current economic structure lies not in politics but in the currencies that coordinate economic activity (e.g., the dollar, euro, yen, peso, bolivar, etc.), and no politician can fix problems that stem from the structural flaws inherent to modern money.
 
 <figure id="figure-16.3">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations129.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations129.jpg" alt="" />
   <figcaption><strong>Figure 16.3</strong><br />Sources: US Employment and Training Administration, S&amp;P Dow Jones Indices</figcaption>
 </figure>
 
 A currency is the foundation of an economy because it coordinates all economic activity via trade. If an economy is functionally breaking down, it would be more appropriate to say that the underlying currency is not effectively coordinating economic activity. The currency is the input, and the economy is the output. In short, the fly in the ointment is the money. While many are focused on how to address massive wealth inequality, very few make the connection to the money everyone is using as the source of the problem. It's not just that the economy is not working for many. The dollar as the primary mechanism for coordinating economic resources is failing everyone. Economic imbalance is the new normal, but nothing is normal about sustained imbalance. In fact, it is an economic oxymoron. Balance is critical to the functioning of any economy, and when functioning properly, an economy would naturally eliminate imbalance in its normal course. An economy that actively sustains imbalance, rather than eliminating it, is evidence itself of a broken economic structure. While the massive and growing economic imbalance that exists today is often believed to be endemic to capitalism, it is principally a result of central bank monetary policy and the failure of the dollar.
 
 <figure id="figure-16.4">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations130.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations130.jpg" alt="" />
   <figcaption><strong>Figure 16.4</strong><br />Portrait of Bitcoin Sign Guy during Janet Yellen’s Testimony (House Financial Services Committee Hearing on 12 July 2017) by Jim Fergus</figcaption>
 </figure>
 
@@ -41,7 +41,7 @@ Bitcoin is the polar opposite. It is one currency that works for all, now and in
 Think about money as the coordination function within an economy, where the utility of money is to intermediate a series of exchanges. Receive, hold, spend. It's that simple.<sup><a id="ref93" href="#fn93">[93]</a></sup> Money is the intermediary good used to both quantify and trade value. As the market converges on a common form of money, a price system emerges, allowing the subjective concept of value to be more objectively measured. Money is the pricing mechanism, and the output is a pricing system. The price system communicates information. It aggregates individual preferences within an economy and communicates those preferences through local prices, as measured in a common monetary medium. Every time a good or service is priced and bought, that is a communication of preference. Change in prices reflects changes in preferences. And because preferences are ever-­changing, so too are prices.
 
 <figure id="figure-16.5">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations131.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations131.jpg" alt="" />
   <figcaption><strong>Figure 16.5</strong></figcaption>
 </figure>
 
@@ -56,12 +56,12 @@ This process also impedes the ability of those on the lower end of the economic 
 As a tangible example, during the 2008 financial crisis, the value of real estate was declining. The economy's price mechanism was communicating that an imbalance existed in the value of real estate. In aggregate, market participants were communicating an increasing demand for money relative to a decreasing demand to hold real estate. At that particular moment in time, the actual amount of money and the available supply of real estate were not rapidly or meaningfully changing. Instead, preferences within the economy were shifting, as were relative price signals. Rather than allow the economy to find balance and eliminate imbalance, the Fed increased the supply of dollars to "stabilize" the dollar value of real estate. More literally, it created \$1.7 trillion to purchase mortgage-­backed securities as a direct means to prop up the value of real estate, particularly the housing market. Those that owned real estate or operated businesses dealing in the production (or financing) of real estate benefited disproportionately, and at the direct expense of those that did not. Imagine someone saving to buy a home. Just as prices were coming down, which would have made a home more affordable, the Fed stepped in to increase the price of real estate, specifically housing, making it that much more expensive and further out of reach. The marginal benefit skewed to those who "had" at the expense of those who "had not," just as it always does when imbalance is sustained.
 
 <figure id="figure-16.6">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations132.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations132.jpg" alt="" />
   <figcaption><strong>Figure 16.6</strong>—Source: Federal Reserve Economic Data (FRED)</figcaption>
 </figure>
 
 <figure id="figure-16.7">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations133.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations133.jpg" alt="" />
   <figcaption><strong>Figure 16.7</strong>—Sources: FHFA National Home Price Index, US Bureau of Labor Statistics</figcaption>
 </figure>
 
@@ -70,7 +70,7 @@ The Fed actively manipulated the value of real estate, but it also distorted all
 Rather than have a billion people who actually make up an economy set prices, a few people unilaterally change the whole game by clicking some buttons on a computer screen; it distorts the entire value chain of the pricing mechanism.
 
 <figure id="figure-16.8">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations134.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations134.jpg" alt="" />
   <figcaption><strong>Figure 16.8</strong></figcaption>
 </figure>
 
@@ -97,21 +97,21 @@ Most mainstream economics professors readily agree that price-­fixing or settin
 The effects of sustaining imbalance can be best understood and observed through the credit system, which is where the Fed directly intervenes and consequently where the greatest distortion and imbalance exists. As the economy slows, the Fed increases the supply of dollars in the financial system by purchasing debt instruments (typically government treasuries) and crediting the sellers' accounts with newly created dollars. At the onset, the credit system was just a tool to effect monetary policy. It was the mechanism through which the Fed pursued its price stability mandate. The playbook was as follows. The Fed would increase the supply of dollars by purchasing credit instruments and reduce interest rates by the same mechanism. This would induce economic expansion via cheap credit, and general price levels would stabilize. At least, that was the theory and intent.
 
 <figure id="figure-16.9">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations135.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations135.jpg" alt="" />
   <figcaption><strong>Figure 16.9</strong><br />Source: Board of Governors, Federal Reserve System (US); data as of the time of original publication (August 2020).</figcaption>
 </figure>
 
 Now the tail is wagging the dog. Today, the credit system in the US stands at more than \$75 trillion systemwide, whereas there are only \$4.5 trillion actual dollars within the banking system. Approximately \$17 of dollar-­denominated debt exists for every dollar (a debt-­to-­dollars ratio of 17:1). This degree of leverage is an economic imbalance, and it is only sustained as a function of the Fed. Each time the credit system attempts to contract, the Fed creates more dollars to help maintain the size of the credit system such that it can further expand. Because the credit system is now orders of magnitude larger than the base money supply, economic activity today is largely coordinated by the allocation and expansion of credit rather than by the base money itself. In aggregate, the credit system is the marginal price setter, given its size relative to the base money supply. The Fed's price stability mandate necessitates maintaining the size of the credit system, and in order to do so, the Fed must target asset prices that support existing debt levels. It has become circular. The Fed used the credit system as a tool to stabilize price levels, but now, to maintain stable prices, it must maintain the size of the credit system.
 
 <figure id="figure-16.10">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations136.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations136.jpg" alt="" />
   <figcaption><strong>Figure 16.10</strong><br />Source: Federal Reserve Economic Data (FRED)</figcaption>
 </figure>
 
 This vicious cycle only exists because the Fed has unilateral control of the money supply, which was not always the case. In 1971, President Nixon officially ended all convertibility of dollars to gold,<sup><a id="ref96" href="#fn96">[96]</a></sup> and the US government later decoupled the dollar's value from gold altogether in 1976. The Fed's creation in 1913 and President Roosevelt's 1933 ban on the private ownership of gold might have set the stage,<sup><a id="ref97" href="#fn97">[97]</a></sup> but the complete departure from gold as a monetary anchor in the 1970s removed constraints that otherwise prevented the true centralization of the money supply. Ever since, the Fed has had unilateral control of the money supply, and the removal of these constraints paved the way for the Great Monetary Inflation, a phenomenon Paul Tudor Jones recently wrote about.<sup><a id="ref98" href="#fn98">[98]</a></sup> The sea change in the 1970s is what opened the door for the Fed to take a more central role in actively managing the economy via the money supply. As a direct consequence, the base money supply and the credit system have expanded over the past five decades in ways that would otherwise not have been possible. Imbalances have been allowed to grow consistently over time, creating long-­term economic distortions.
 
 <figure id="figure-16.11">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations137.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations137.jpg" alt="" />
   <figcaption><strong>Figure 16.11</strong><br />Source: Source: Economic Policy Institute (data: US BEA, BLS)</figcaption>
 </figure>
 
@@ -122,7 +122,7 @@ While it should be obvious that asset price targeting advantages those with asse
 Increasing the supply of dollars naturally causes the value of each dollar to decline. Wages (labor) paid in dollars were devalued, and asset prices were directly manipulated higher. Inflation of almost all consumer goods broadly followed. It is the equivalent of being hit from both sides for those lowest on the economic spectrum without assets and little savings. Wages purchase less with each passing day, and it becomes measurably more difficult to accumulate the amount of savings necessary to purchase assets. Initially, the effects are, at best, zero-­sum. Those at the top benefit and those at the bottom suffer. In the end, everyone loses because the end game is economic instability. Notice the negative correlation below between housing prices and housing affordability (Figure 16.12), and then recognize that the Fed actively manipulates housing prices. Also recognize that housing prices are at an all-­time high (above 2007 bubble levels) while nearly half the country has no savings. This scenario can only exist in a manipulated world, and it crushes those without savings.
 
 <figure id="figure-16.12">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations138.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations138.jpg" alt="" />
   <figcaption><strong>Figure 16.12</strong><br />Source: Statista.com (data: US FHFA, National Association of Homebuilders)</figcaption>
 </figure>
 
@@ -187,7 +187,7 @@ A fixed supply ensures that any price change is driven exclusively by a change i
 This fundamental difference between the existing monetary structure and bitcoin changes the entire game---false price signals vs. true price signals. False price signals are equivalent to studying for a test believing you have a cheat sheet with the answers, training yourself based on that information, and then showing up only to find out that the test was entirely different. Everyone believes their actions are responses to reliable information (price signals), not realizing the information is being constantly manipulated by changes in the money supply. Each time a violent shock occurs within the system, everyone gets a hint that price signals are communicating bad information. The Fed steps in to stabilize prices, reassuring everyone to carry on while relying on the same bad information. This process has occurred every time the economy has attempted to rebalance structurally over the past fifty years. It is the primary reason violent shocks to the system are even possible. False signals try to correct, only to be sustained and exacerbated by exogenous forces.
 
 <figure id="figure-16.13">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations139.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations139.jpg" alt="" />
   <figcaption><strong>Figure 16.13</strong></figcaption>
 </figure>
 
@@ -198,38 +198,38 @@ Figuring out how to play a rigged game is no longer necessary because the rigged
 As more people adopt bitcoin, the currency is transferred from the haves to have-­nots. By making the nominal amount of bitcoin zero-­sum, it ensures that the economic system as a whole is non-­zero-­sum. To join the economy, you must deliver value to someone within the network. No value leaks outside the system. No inefficiency can be introduced through the production of money. Whether new entrants are joining the network or trade occurs between existing participants, bitcoin is always being transferred, and through that transfer, value is actually created. Recall that the valuable function of money is to coordinate economic activity. The production of money, on the other hand, creates no value and only serves to distort and impair the ability of a monetary medium to properly function. The nominal amount of money is not important. What is important is its ability to communicate reliable information and trade value between a broad set of economic participants.
 
 <figure id="figure-16.14">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations140.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations140.jpg" alt="" />
   <figcaption><strong>Figure 16.14</strong></figcaption>
 </figure>
 
 <figure id="figure-16.15">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations141.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations141.jpg" alt="" />
   <figcaption><strong>Figure 16.15</strong></figcaption>
 </figure>
 
 Money allows individuals to understand the relative value of their output and the relative preferences of others. Bitcoin, with a zero terminal rate of change, enables individuals to make better decisions (on average) in the pursuit of their own interests with more reliable information, free from distortions created by changes in the money supply. A fixed amount of currency combined with a growing number of people valuing it results in increased distribution of the currency over time. No more than 21 million bitcoin will ever exist, and no more than 21 million can ever be saved. Paradoxically, this will drive more people to save as the threat of debasement is eliminated. And as more people save in a currency with a fixed supply, it results in more and more people owning less and less. But through this function of more people possessing savings, economic stability is created. A fixed money supply naturally causes the currency to become further decentralized and more distributed, delivering greater balance.
 
 <figure id="figure-16.16">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations142.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations142.jpg" alt="" />
   <figcaption><strong>Figure 16.16</strong></figcaption>
 </figure>
 
 Centralized governance of the money supply allows the distribution of new currency units to consolidate, whereas a decentralized governance model enforcing a fixed supply ensures greater distribution of the currency over time. Follow the money. A centralized money supply causes wealth to centralize, and a decentralized money supply causes wealth to distribute. The structure of the currency dictates the respective wealth effects, and this trend can be observed in actual data. Bitcoin held in smaller denominations continues to grow steadily, while bitcoin held in larger denominations continues to decline. As the economic system grows, the currency becomes more widely distributed. The nominal amount held by each individual decreases (on average) while purchasing power increases. As more people demand the currency, its value rises. However, there is a terminally fixed supply. As increased demand naturally outpaces ever-­diminishing increases in supply, there becomes one principal way to acquire bitcoin: by delivering value to an existing currency holder. Over time, the currency transfers from relatively few early holders to a more widely distributed base. Everyone wins. The network utility increases as more participants voluntarily opt in, and the distribution of the currency becomes less and less concentrated, ensuring greater balance and reducing systemic risks posed by the existence of a few extremely large holders.
 
 <figure id="figure-16.17">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations143.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations143.jpg" alt="" />
   <figcaption><strong>Figure 16.17</strong>—Source: glassnode.com</figcaption>
 </figure>
 
 <figure id="figure-16.18">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations145.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations145.jpg" alt="" />
   <figcaption><strong>Figure 16.18</strong>—Source: glassnode.com</figcaption>
 </figure>
 
 When a monetary medium's incentives align individual and aggregate interests, non-­zero-­sum outcomes become the default, as does balance. Bitcoin is accessible to anyone, and everyone is afforded the same protections. Anyone that produces value and exchanges it for bitcoin is assured that their output will not be devalued in the future merely as a function of someone creating new units of money. Separately, everyone benefits from undistorted price signals. In bitcoin, both rich and poor alike receive these same protections equally. While it is no guarantee that someone else will value the currency more or less, it eliminates the possibility of a forced devaluation of labor and output stored in a monetary medium. In the current economic structure, the wealthiest better understand the effects of active monetary debasement and are best equipped to combat it. Logically, those on the lower end of the economic spectrum have more to gain by leveling the playing field. But fundamentally, it is not about rich and poor. Everyone benefits from the elimination of money production and an economy that provides greater balance, with more reliable information.
 
 <figure id="figure-16.19">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations146.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations146.jpg" alt="" />
   <figcaption><strong>Figure 16.19</strong></figcaption>
 </figure>
 

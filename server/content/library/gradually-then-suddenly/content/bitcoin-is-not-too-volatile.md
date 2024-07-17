@@ -26,21 +26,21 @@ Volatility and an asset's ability to store value are often misunderstood as bein
 The Fed has been highly effective in slowly devaluing the dollar, but always remember: _gradually, then suddenly_. Many people experience this critical mental block when thinking about bitcoin as a currency, and it is largely a function of time horizon. When central bankers across the world point to bitcoin as a poor store of value and not being functional as a currency due to volatility, they are thinking in days, weeks, months, and quarters while the rest of us plan for the long term: years, decades, and generations.
 
 <figure id="figure-7.1">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations66.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations66.jpg" alt="" />
   <figcaption><strong>Figure 7.1</strong><br />Source: US Bureau of Labor Statistics</figcaption>
 </figure>
 
-Despite the logical explanations, volatility is one aspect of bitcoin that particularly confounds the experts. For example, Bank of England Governor Mark Carney recently commented that bitcoin "has pretty much failed thus far on \[...\] the traditional aspects of money. It is not a store of value because it is all over the map. Nobody uses it as a medium of exchange."<sup><a id="ref24" href="#fn24">[24]</a></sup> The European Central Bank (ECB) has mused on Twitter that bitcoin is "not a currency," noting that it is "very volatile" while at the same time reassuring everyone that the ECB can "create" money to buy assets---the very same function that causes the euro to persistently lose its purchasing power.
+Despite the logical explanations, volatility is one aspect of bitcoin that particularly confounds the experts. For example, Bank of England Governor Mark Carney recently commented that bitcoin "has pretty much failed thus far on \[...\] the traditional aspects of money. It is not a store of value because it is all over the map. Nobody uses it as a mediumof exchange."<sup><a id="ref24" href="#fn24">[24]</a></sup> The European Central Bank (ECB) has mused on Twitter that bitcoin is "not a currency," noting that it is "very volatile" while at the same time reassuring everyone that the ECB can "create" money to buy assets---the very same function that causes the euro to persistently lose its purchasing power.
 
 The lack of self-­awareness is not lost on anyone here, but Mark Carney and the ECB are not alone. From former Fed Chairs Ben Bernanke<sup><a id="ref25" href="#fn25">[25]</a></sup> and Janet Yellen<sup><a id="ref26" href="#fn26">[26]</a></sup> to current US Treasury Secretary Mnuchin<sup><a id="ref27" href="#fn27">[27]</a></sup> and US President Trump<sup><a id="ref28" href="#fn28">[28]</a></sup>---all have at times trumpeted the idea that bitcoin is flawed as a currency or as a store of value due to its volatility. None seem to fully appreciate, or at least admit, that bitcoin is a direct response to the systemic problem of governments creating money via central banks or that bitcoin volatility is a necessary and healthy function of price discovery. Luckily, bitcoin is not too volatile to be a currency, and often the "experts" are not experts at all. The empirical evidence shows that bitcoin has proven to be an exceptional store of value over any extended time horizon despite its volatility. So how could an asset such as bitcoin be both highly volatile and an effective store of value?
 
 <figure id="figure-7.2">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations67.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations67.jpg" alt="" />
   <figcaption><strong>Figure 7.2</strong></figcaption>
 </figure>
 
 <figure id="figure-7.3">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations68.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations68.jpg" alt="" />
   <figcaption><strong>Figure 7.3</strong><br />Source: Bitstamp</figcaption>
 </figure>
 
@@ -49,7 +49,7 @@ The lack of self-­awareness is not lost on anyone here, but Mark Carney and the
 Consider why there is fundamental demand for bitcoin and why bitcoin is naturally volatile. Bitcoin is valuable because it has a fixed supply, and it is volatile for the very same reason. The fundamental demand driver for bitcoin as money is its scarcity. To revisit bitcoin's value function, decentralization and censorship resistance reinforce the credibility of bitcoin's scarcity (and fixed supply schedule) which is the basis of bitcoin's store-­of-­value use case.
 
 <figure id="figure-7.4">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations69.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations69.jpg" alt="" />
   <figcaption><strong>Figure 7.4</strong></figcaption>
 </figure>
 
@@ -62,12 +62,12 @@ Distribution of knowledge and development of infrastructure fuel adoption waves 
 _Knowledge → Infrastructure → Adoption → Value → Knowledge → Infrastructure_
 
 <figure id="figure-7.5">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations70.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations70.jpg" alt="" />
   <figcaption><strong>Figure 7.5</strong></figcaption>
 </figure>
 
 <figure id="figure-7.6">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations71.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations71.jpg" alt="" />
   <figcaption><strong>Figure 7.6</strong><br />Source: <em>Diffusion of Innovations</em> by Everett M. Rogers (1962)</figcaption>
 </figure>
 
@@ -85,7 +85,7 @@ So long as increases in adoption represent orders of magnitude, volatility is un
 At present, what happens between adoption waves is the natural function of price discovery as the market converges on a new equilibrium, which is never static. In bitcoin hype cycles, the rise, fall, stabilization, and rise again are almost rhythmic. It is also naturally explained by speculative fear, followed by the accumulation of fundamental knowledge and the addition of incremental infrastructure. Rome wasn't built in a day, and neither is bitcoin. Volatility and price discovery are core to the process of bitcoin adoption.
 
 <figure id="figure-7.7">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations72.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations72.jpg" alt="" />
   <figcaption><strong>Figure 7.7</strong></figcaption>
 </figure>
 
@@ -94,7 +94,7 @@ At present, what happens between adoption waves is the natural function of price
 For a more tangible explanation of the relationship between volatility and value, it is helpful to think about the most recent wave of adoption (as of the time of writing), a four-­year period between mid-­2015 and mid-­2019.
 
 <figure id="figure-7.8">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations73.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations73.jpg" alt="" />
   <figcaption><strong>Figure 7.8</strong></figcaption>
 </figure>
 
@@ -109,12 +109,12 @@ If someone can accept that bitcoin volatility is both natural and unavoidable, t
 Bitcoin volatility would be an issue if it existed in a vacuum. However, it does not. Diversification comes in the form of real productive assets as well as other monetary and financial assets, which mutes the impact of bitcoin's present volatility. Separately, information asymmetry exists. Those who understand bitcoin also understand that, in time, the cavalry is coming. More people will adopt bitcoin for the reason that it has fixed supply, but only as knowledge distributes. These concepts are obvious to those with exposure to bitcoin who actively account for its volatility in short-­ and long-­term planning. But it is less obvious to the skeptics, who struggle to grasp that bitcoin adoption is not an all-­or-­nothing proposition.
 
 <figure id="figure-7.9">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations74.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations74.jpg" alt="" />
   <figcaption><strong>Figure 7.9</strong></figcaption>
 </figure>
 
 <figure id="figure-7.10">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations75.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations75.jpg" alt="" />
   <figcaption><strong>Figure 7.10</strong></figcaption>
 </figure>
 
@@ -123,7 +123,7 @@ Bitcoin will continue to steal market share in the global store of value competi
 The example below highlights the risk and return profile of a portfolio with 1% and 3% exposure to bitcoin, compared to a traditional 60% equity, 40% bond portfolio.<sup><a id="ref33" href="#fn33">[33]</a></sup> It provides a look into how all volatility is typically managed and how a very small allocation to bitcoin historically would have resulted in greater return, with the volatility of bitcoin muted by exposure to other assets in a diversified portfolio.
 
 <figure id="figure-7.11">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations76.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations76.jpg" alt="" />
   <figcaption><strong>Figure 7.11</strong>—Source: "The Investment Case for Bitcoin," VanEck, 2019</figcaption>
 </figure>
 
@@ -143,7 +143,7 @@ Bitcoin will become a transactional currency over time. In the interim, it would
 Consider the individual or business that demands bitcoin in direct exchange for goods and services. Logically, that individual or business would first need to have determined that bitcoin would hold its value over a particular time horizon. If one did not believe in the fundamental demand case for bitcoin as a store of value, they simply would not trade real-­world goods and services in return. Bitcoin will transition to a transactional currency only as more people first understand why it will store value. As that occurs, bitcoin's liquidity will gradually migrate from other monetary assets (dollar, euro, yen, etc.) to the direct exchange for real goods and services. It will not be a flash cutover or a binary process. On a more standard path, adoption fuels infrastructure, and infrastructure fuels adoption. Transactional infrastructure is already being built, and more material investment will be prioritized as a sufficient number of individuals first adopt bitcoin as a store of wealth, necessitating the need for bitcoin payments.
 
 <figure id="figure-7.12">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations77.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations77.jpg" alt="" />
   <figcaption><strong>Figure 7.12</strong></figcaption>
 </figure>
 

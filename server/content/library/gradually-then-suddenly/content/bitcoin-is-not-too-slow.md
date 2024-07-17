@@ -11,12 +11,12 @@ In the book _Zero to One_, Peter Thiel outlines the impact of new technologies i
 However, Thiel also expressed the view that innovation has largely stagnated since the early 1970s, with technological progress being primarily _1 to n_ rather than _0 to 1_, which may have been true until the advent of bitcoin. As a monetary system, bitcoin is the ultimate _0 to 1_ technology leap, and it is fundamentally differentiated from the class of step-­function innovation that is the book's focus. Bitcoin is a monetary protocol built on digital scarcity, the impact of which will be far more consequential than steam engines and computer processors because of the critical role money plays in coordinating virtually all other economic resources.
 
 <figure id="figure-9.1">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations81.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations81.jpg" alt="" />
   <figcaption><strong>Figure 9.1</strong><br />Source: “Steam Engine” by Jacob Leupold (<em>Theatri Machinarum Hydraulicarum II, 1725</em)</figcaption>
 </figure>
 
 <figure id="figure-9.2">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations82.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations82.jpg" alt="" />
   <figcaption><strong>Figure 9.2</strong></figcaption>
 </figure>
 
@@ -34,7 +34,7 @@ There's a new meme floating around the internet; whatever the problem, _bitcoin 
 Hayek writes about the invention of money and the price mechanism as the tool that allows society to dispense with the need for "conscious control." Bitcoin is the superior successor to this mechanism, and its _0 to 1_ innovation is finite scarcity, not payments or transaction speed. While bitcoin's property of scarcity still needs further stress testing, it is a profound achievement, and it _is_ what makes bitcoin unique. Never before has any form of money, let alone a digital one, been finitely scarce. The significance (and relevance) is that finite scarcity serves as the foundation for the hardest form of money that has ever existed---hardest in the sense that, in a terminal state, no one can produce any more or at all---and anyone in the world can use it. There will only ever be 21 million bitcoin. That is the _0 to 1_ achievement and a phenomenon that almost certainly will not be repeated (see "Bitcoin Cannot Be Copied").
 
 <figure id="figure-9.3">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations83.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations83.jpg" alt="" />
   <figcaption><strong>Figure 9.3</strong><br />Source: Inspired by <em>Zero to One</em> by Peter Thiel (2014)</figcaption>
 </figure>
 
@@ -47,14 +47,14 @@ As traditionally defined, a payment rail is a network or platform that acts as f
 Much of the confusion in the philosophical (rather than technical) debate stems from the opening salvo of the bitcoin whitepaper: "a Peer-­to-­Peer Electronic Cash System."<sup><a id="ref51" href="#fn51">[51]</a></sup> It does say "purely peer-­to-­peer" after all. But this has been interpreted by some to imply that bitcoin needs to be able to handle every last transaction in the world between any two peers. Separately, others contend that if bitcoin transactions cannot occur at the scale or speed of Visa or Mastercard, the network is structurally flawed. Essentially, the argument made by skeptics is that if bitcoin cannot meet both of these standards, it fails on its promise. Thankfully, it does not. Visa and Mastercard are not money themselves. Each is a credit system that settles the transfer of money between two parties. It is also not practical or sensical for every person on earth to retain records of every transaction by and between every other person, which is what functionally occurs for each individual or business running a bitcoin node maintaining records of all bitcoin transactions throughout history.
 
 <figure id="figure-9.4">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations84.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations84.jpg" alt="" />
   <figcaption><strong>Figure 9.4</strong></figcaption>
 </figure>
 
 For additional background, valid bitcoin transactions are confirmed in timestamped batches and included in a "block." Blocks are solved every ten minutes _on average_ (but not precisely). The next block may be solved in one minute or twenty minutes, thirty seconds or thirty-­six minutes. The network adjusts such that blocks are solved _on average_ every ten minutes. How could a merchant or transaction processor operate in a world this slow or this unpredictable? Separately, each bitcoin transaction includes data, and each block has a defined maximum (or limited) amount of data it can include, typically defined as block space, to be accepted as valid. While the bitcoin network does not have a fixed transaction capacity by count, each bitcoin transaction consumes a certain amount of block space, which limits capacity. As a function of limited space and capacity, blocks include approximately 2,700 transactions on average. With ten-­minute average block intervals, six blocks per hour, twenty-­four hours per day, 365 days per year, that equates to a network transaction capacity of approximately 145 million transactions per year, equivalent to approximately 4.6 transactions per second. Visa, on the other hand, processes 124 billion transactions per year at a rate of \~4,000 transactions per second.<sup><a id="ref52" href="#fn52">[52]</a></sup>
 
 <figure id="figure-9.5">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations85.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations85.jpg" alt="" />
   <figcaption><strong>Figure 9.5</strong><br />Source: blockstream.info</figcaption>
 </figure>
 
@@ -71,7 +71,7 @@ The scarcity of the currency (i.e., the fixed supply) is tied to the scarcity of
 Everything comes with trade-­offs, but there are two holy grails in bitcoin: enforcing a fixed supply and preventing individual units of the currency from being spent multiple times (the double-­spending problem). The value of bitcoin is derived from its ability to secure each of these functions on a decentralized, trustless basis, and both are inextricably linked to the bitcoin network's limited transaction capacity. Think of the space within each bitcoin block as valuable digital real estate. All market participants seeking to clear bitcoin transactions have to compete for block space. Scarcity in block space is the function by which bitcoin's shared resource is optimized and how bitcoin solves for the "tragedy of the commons" problem. Competition for this scarce resource ensures that it is used efficiently and that its value is maximized. Scarcity causes market participants to compete with each other, bidding up the value of block space rather than shifting negative externalities onto the rest of the network.
 
 <figure id="figure-9.6">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations86.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations86.jpg" alt="" />
   <figcaption><strong>Figure 9.6</strong><br />Source: blockchain.com</figcaption>
 </figure>
 
@@ -80,7 +80,7 @@ In bitcoin's free market, the highest-­value and most profitable transactions a
 As discussed in "Bitcoin Does Not Waste Energy," miners secure the bitcoin network by devoting real-­world energy resources to run cryptographic hashing functions in an attempt to solve bitcoin blocks. By solving blocks, miners validate history and clear current transactions, which are then checked, validated, and propagated by the rest of the network nodes. In return for devoting resources to perform this function and secure the network, miners get paid in the network's native currency (bitcoin). The actual compensation paid to miners comes in two forms: newly issued bitcoin and transaction fees. Miners have to reliably expect that aggregate compensation will hold its value into the future in order to devote resources today.
 
 <figure id="figure-9.7">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations87.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations87.jpg" alt="" />
   <figcaption><strong>Figure 9.7</strong></figcaption>
 </figure>
 
@@ -99,7 +99,7 @@ Ultimately, bitcoin is not competing with Visa for supremacy in global payments.
 While it would require time and investment, Visa's payment network could sit on top of the bitcoin network much as it sits on top of the existing banking system. Rather than clearing dollars through a central bank, the final settlement of transactions would clear in bitcoin through the bitcoin network. In the existing architecture, the payment layer (Visa) and the settlement layer (banking network/central bank) are separate and distinct. Visa helps move dollars, but Visa is not the dollar. Visa is a technology company that provides a service. It has 17,000 employees.<sup><a id="ref53" href="#fn53">[53]</a></sup> Bitcoin has none.
 
 <figure id="figure-9.8">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations88.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations88.jpg" alt="" />
   <figcaption><strong>Figure 9.8</strong></figcaption>
 </figure>
 
@@ -112,7 +112,7 @@ When compared to its real competition (the dollar, euro, yen, etc., and the Fed,
 The pushback on this as a method to scale bitcoin is the risk of centralization. If bitcoin were to just sit in banks, it would increase the possibility that the bitcoin network could be co-­opted and undermined by a network of banks and central banks, whether to force changes to network consensus rules or censor end users. The point is that it would be functionally _possible_ and that money and payments technology are distinct problems. The fundamental reason is that there are two sides to every value transfer. One side almost always involves money, and the other is the fulfillment of goods and services. The nature of trade is such that the two sides of a value transfer generally occur through different processes and at different points in time.
 
 <figure id="figure-9.9">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations89.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations89.jpg" alt="" />
   <figcaption><strong>Figure 9.9</strong></figcaption>
 </figure>
 

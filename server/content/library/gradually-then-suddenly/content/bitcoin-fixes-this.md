@@ -11,7 +11,7 @@ Each year central bankers, establishment economists, and talking heads from arou
 The fundamental question from Summers: can central banking, as we know it, be the primary tool of macroeconomic stabilization in the industrial world over the next decade? Summers doubts that it can. However, he still could not be further from the target. The monoculture of economic thinking in the US believes central banking has a fundamental role to play in creating economic stability. Not just _a_ role but a fundamental one. What tools to use, how, when and to what degree it will be effective is the debate. Central banking is assumed at a foundational level as necessary to achieving economic stability. Even in Summers's own words, the question "Can central banking be the _primary_ tool?" carries that built-­in assumption, with primary being the key word. What the mainstream, including Summers, does not question---nor is it capable of questioning---is whether central banking _is_ the problem rather the solution. Whether it is the primary cause of macroeconomic instability rather than a source of stability.
 
 <figure id="figure-13.1">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations107.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations107.jpg" alt="" />
   <figcaption><strong>Figure 13.1</strong></figcaption>
 </figure>
 
@@ -20,7 +20,7 @@ The fundamental question from Summers: can central banking, as we know it, be th
 As a historical record, since the financial crisis, central banks have used quantitative easing as the primary tool to help stabilize the economy. Quantitative easing, or QE for short, is a term used to describe the operation of central banks increasing the money supply to "ease" financial conditions. The playbook is as follows: increase the money supply, reduce interest rates, manufacture price inflation, and reflate asset values such that existing debt levels can be sustained and more debt can be created. While central banks use many technical terms, increasing or decreasing the money supply is really the only tool in the tool kit to manipulate interest rates and to effect directional shifts in asset prices.
 
 <figure id="figure-13.2">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations108.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations108.jpg" alt="" />
   <figcaption><strong>Figure 13.2</strong></figcaption>
 </figure>
 
@@ -36,7 +36,7 @@ Despite record-­low interest rates today, the global economy has once again beg
 Ben Bernanke famously made this comment three months before Lehman Brothers failed and the first of three formal rounds of QE was introduced as a response to the Great Financial Crisis. QE1, QE2 and QE3 increased the money supply by \$1.3 trillion, \$0.6 trillion, and \$1.7 trillion, respectively. In total, the Fed introduced \$3.6 trillion new dollars into the banking system via QE from 2009 to 2014, quintupling the size of its balance sheet or increasing the base money supply fivefold.<sup><a id="ref69" href="#fn69">[69]</a></sup> The merits can be debated but the facts are the facts. Following the crisis, the Fed pursued QE on three separate and distinct occasions, each time in an attempt to stabilize the economy. Setting the technical jargon aside, it is all just money printing. If at first you do not succeed, print more money to stabilize the economy.
 
 <figure id="figure-13.3">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations109.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations109.jpg" alt="" />
   <figcaption><strong>Figure 13.3</strong>—Source: US Bureau of Labor Statistics and Federal Reserve Economic Data (FRED)</figcaption>
 </figure>
 
@@ -49,7 +49,7 @@ People often ask whether quantitative easing _works_. The short answer is no. Wh
 Through this course of action, the Fed inadvertently created the fragility and instability that existed in the financial system in 2008. By pursuing continual credit expansion, an unsustainable degree of system leverage was allowed to accumulate over the course of several decades. While similar policies had been pursued before, the financial crisis created an environment that triggered a more drastic response from the Fed. Simply put, the Fed needed a bigger boat. For context, the cumulative increase in the money supply through QE1, QE2, and QE3 of \$3.6 trillion over the five years following the crisis was 36x larger than the \$100 billion increase in the five years prior to 2008. This time _was_ different. The real issue was the sustained imbalances in the credit system accumulated over many cycles and the overall degree of leverage. Eventually, the bubble was destined to burst. An exogenous shock to the system was inevitable as a function of time and as the problem became worse with increasing size.
 
 <figure id="figure-13.4">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations110.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations110.jpg" alt="" />
   <figcaption><strong>Figure 13.4</strong>—Source: Federal Reserve Economic Data (FRED)</figcaption>
 </figure>
 

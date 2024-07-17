@@ -42,14 +42,14 @@ Bitcoin is finitely scarce, it is highly divisible, and it is capable of being s
 As kids, we all learn that money doesn't grow on trees, but at a societal level or as a country, any remnant of common sense seems to have left the building. Just in the last two months, central banks in the United States, Europe, and Japan (the Fed, ECB, and BoJ) have collectively inflated the supply of their respective currencies by \$3.3 trillion in aggregate---an increase of over 20%.
 
 <figure id="figure-15.1">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations117.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations117.jpg" alt="" />
   <figcaption><strong>Figure 15.1</strong><br />Source: Thomson Reuters Datastream</figcaption>
 </figure>
 
 The Fed alone has accounted for the majority, minting \$2.5 trillion and increasing the base money supply by over 60% (see Figure 13.9). It's also far from over. Trillions more will be created. It is not just a possibility. It is a certainty. That deep feeling of uncertainty many are experiencing, the one that says "this doesn't make any sense" or "this can't end well"---that's common sense speaking. Few carry that thought process out to its logical conclusion, often because it is uncomfortable to think about, but the sense of unease is reverberating throughout the country and the world. While not everyone is connecting the dots between the mass amounts of money being created and bitcoin's fixed supply, a growing number are. Time makes more converts than reason. An individual doesn't have to understand how or why there will only ever be 21 million bitcoin. All that must be recognized in practical experience is that dollars are going to be worth significantly less in the future, and then, the idea of a currency with a fixed supply naturally begins to make sense. In most cases, understanding exactly how bitcoin achieves its fixed supply comes after making the initial connection that the two are related. But even then, no one really needs to understand how bitcoin enforces its fixed supply to have an appreciation that a currency with a fixed supply would be valuable.
 
 <figure id="figure-15.2">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations118.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations118.jpg" alt="" />
   <figcaption><strong>Figure 15.2</strong></figcaption>
 </figure>
 
@@ -77,7 +77,7 @@ When the Fed creates \$2.5 trillion in a matter of weeks, it is consolidating th
 ## No Free Lunches, Just More Dollars
 
 <figure id="figure-15.3">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations119.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations119.jpg" alt="" />
   <figcaption><strong>Figure 15.3</strong><br />Sources: Federal Reserve Economic Data (FRED), US Bureau of Labor Statistics</figcaption>
 </figure>
 
@@ -86,28 +86,28 @@ Since 2007, the Fed balance sheet has increased over seven-­fold, but the labor
 In a theoretical world, if the Fed were to distribute the newly created money to individuals in equal proportion to the amount of currency previously held, the balance of power would not shift. In practice, the distribution of money is uneven, and the power shift is dramatic. The holders of financial assets (which the Fed purchases in the process of creating new dollars) and those with access to cheap credit (the government, large corporations, high-­net-­worth individuals, etc.) are heavily favored. In aggregate, the purchasing power of every dollar declines, just not immediately, and a small subset benefits at the cost of the whole (a phenomenon known as the Cantillon effect).
 
 <figure id="figure-15.4">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations120.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations120.jpg" alt="" />
   <figcaption><strong>Figure 15.4</strong><br />Source: Federal Reserve System (US), H.4.1 reports dated 27 Feb 2020 and 30 Apr 2020.</figcaption>
 </figure>
 
 Despite the consequences, the Fed takes these actions in an attempt to support a credit system that would otherwise collapse without an ever-­increasing supply of dollars. In the Fed's economy, the credit system is the price-­setting mechanism because the amount of dollar-­denominated debt far outstrips the supply of dollars, which is also why the purchasing power of each dollar does not immediately respond to an increase in the money supply. Instead, the effects of increasing the money supply are transmitted, over time, through an expansion of the credit system.
 
 <figure id="figure-15.5">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations121.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations121.jpg" alt="" />
   <figcaption><strong>Figure 15.5</strong><br />Source: Board of Governors, Federal Reserve (US); data as of original publication (May 2020).</figcaption>
 </figure>
 
 When the credit system attempts to contract, it represents the market and the individuals within an economy working to eliminate imbalances that exist. By flooding the market with dollars, the Fed prevents what otherwise would be the natural course. It overrides the market's price-­setting function and in doing so, fundamentally alters the structure of the economy. The market solution to the problem of too much debt is to reduce debt, while the Fed's solution is to increase the supply of dollars such that existing debt levels can be sustained. The goal is to first stabilize the credit system such that it can then expand further. The 2008 financial crisis provides a historical roadmap. In its immediate aftermath, the Fed created \$1.3 trillion new dollars in a matter of months. Despite this, the dollar initially strengthened as deflationary pressures in the credit system overwhelmed the increase in the money supply. However, as the credit system began to expand, the dollar's purchasing power soon resumed its gradual decline. Currently, the cause and effect of the Fed's monetary stimulus is primarily transmitted through the credit system. It was the case in the years following the 2008 crisis, and it will hold true this time, provided the credit system remains intact.
 
 <figure id="figure-15.6">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations122.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations122.jpg" alt="" />
   <figcaption><strong>Figure 15.6</strong><br />Source: US Bureau of Labor Statistics</figcaption>
 </figure>
 
 How the effects manifest in the real economy is complicated, but it does not take any sophistication to recognize the general trajectory or to identify the foundational flaws. More dollars result in each dollar becoming worth less. And the value of any good---including monetary goods---naturally trends toward its cost to produce. The marginal cost for the Fed to produce a dollar is zero. However, all the bailouts from both the Fed and Congress, whether to individuals or companies, are ultimately paid for by someone. It is axiomatic that _printing money (or creating digital dollars) does nothing to generate economic activity_. It only shifts the balance of power as to who allocates the money and prices risk. It strips power from the people and centralizes it to the government. It also fundamentally impairs the economy's function by distorting prices everywhere. But most seriously, it puts the stability of the underlying currency at risk, which is a cost everyone collectively pays. The Fed may be able to create dollars for free, and the Treasury may be able to borrow at near-­zero interest rates as a direct result, but there is still no such thing as a free lunch. Someone still has to do the work, and all printing money does is shift who has the dollars to coordinate and price that work.
 
 <figure id="figure-15.7">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations123.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations123.jpg" alt="" />
   <figcaption><strong>Figure 15.7</strong><br />Source: Federal Reserve Economic Data (FRED)</figcaption>
 </figure>
 
@@ -119,7 +119,7 @@ How the effects manifest in the real economy is complicated, but it does not tak
 </figure>
 
 <figure id="figure-15.8">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations124.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations124.jpg" alt="" />
   <figcaption><strong>Figure 15.8</strong><br />>Source: Board of Governors, Federal Reserve System (US), Z.1 Financial Accounts of the US</figcaption>
 </figure>
 
@@ -142,12 +142,12 @@ If the supply of bitcoin remains fixed at 21 million, more people will demand it
 A lot is happening in the background, but the supply of the currency drives everything. These are the dots that people worldwide are connecting. The Fed is creating trillions of dollars while bitcoin's issuance rate continues to programmatically reduce by half approximately every four years. While most may not be aware of these two divergent paths, a growing number of people are (as knowledge distributes with time). But even a small number of people figuring it out creates a significant imbalance between the demand for bitcoin and its supply. When this happens, the value of bitcoin goes up. It is that simple and that is what draws everyone else in: price. Price is what communicates information. All those otherwise not participating react to price signals. The underlying demand is ultimately dictated by fundamentals (even if speculation exists), but the majority do not need to understand those fundamentals to recognize that the market is sending a signal.
 
 <figure id="figure-15.9">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations125.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations125.jpg" alt="" />
   <figcaption><strong>Figure 15.9</strong><br />Source: Federal Reserve Economic Data (FRED)</figcaption>
 </figure>
 
 <figure id="figure-15.10">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations126.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations126.jpg" alt="" />
   <figcaption><strong>Figure 15.10</strong><br />Source: Bitstamp</figcaption>
 </figure>
 

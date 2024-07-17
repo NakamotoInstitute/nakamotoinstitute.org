@@ -11,7 +11,7 @@ The critics often clamor like a broken record that "bitcoin isn't backed by anyt
 Bitcoin is finitely scarce, and it is easier to transfer than its incumbent competitors. It is also decentralized, and more resistant to censorship or corruption as a result. There will only ever be 21 million bitcoin, and each bitcoin is divisible to eight decimal points (1 one-­hundred millionth). Value can be transferred to anyone and to anywhere in the world on a permissionless basis without reliance on any third-­party for final settlement. In aggregate, bitcoin is outcompeting its analog predecessors based on the credibility of its monetary properties, which are vastly superior to any other form of money used today. However, the key word is _credibility_. The emergent monetary properties in bitcoin are secured and reinforced through a combination of cryptography, a network of decentralized nodes enforcing a common set of consensus rules, and a robust mining network ensuring the integrity and immutability of bitcoin's transaction ledger. The currency itself is the keystone that binds the system together, creating economic incentives that allow the security columns to function as a whole. But even still, bitcoin's monetary properties are neither absolute nor considered in a vacuum. Instead, the strength and credibility of these properties are evaluated by the market _relative_ to the properties inherent in other monetary systems.
 
 <figure id="figure-3.1">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations23.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations23.jpg" alt="" />
   <figcaption><strong>Figure 3.1</strong><br />Source: Bitstamp</figcaption>
 </figure>
 
@@ -32,21 +32,21 @@ The value of the dollar did not emerge on the free market. Instead, it emerged a
 Over the course of the twentieth century, the dollar transitioned from a reserve-­backed currency to a debt-­backed currency. While most people never stop to consider why the dollar has value in the post-­gold era, the most common explanation remains that it is either a collective hallucination (i.e., the dollar has value simply because we all believe it does) or that it is a function of the government, the military, and taxes. Neither explanation has any basis in logic, nor is it the fundamental reason why the dollar retains value. Hundreds of millions of Americans are not all collectively hallucinating, and the dollar does not have value because of the military or the government's ability to tax. Instead, today, the dollar maintains its value as a function of debt and the relative scarcity of dollars to dollar-­denominated debt. In the dollar world, everything is a function of the credit system. The mechanisms that fund the government (taxes and deficit spending) are both dependent on the credit system, and the credit system is what allows the dollar to function in its current construct.
 
 <figure id="figure-3.2">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations24.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations24.jpg" alt="" />
   <figcaption><strong>Figure 3.2</strong><br />Source: Federal Reserve Economic Data (FRED)</figcaption>
 </figure>
 
 The size of the credit system is several times larger than US nominal GDP, and it is orders of magnitude larger than the base money supply. Because of the credit system's relative size, economic activity in the US is largely coordinated through the allocation and expansion of credit. The chart below indexes the rate of change of the credit system compared to the rate of change of both nominal GDP and federal tax receipts (from 1987 to today). In the Fed's system, credit expansion drives nominal GDP, which ultimately dictates the nominal level of federal tax receipts.
 
 <figure id="figure-3.3">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations25.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations25.jpg" alt="" />
   <figcaption><strong>Figure 3.3</strong><br />Source: Federal Reserve Economic Data (FRED)</figcaption>
 </figure>
 
 As of the time of writing, there is \$73 trillion of dollar-­denominated debt (fixed maturity / fixed liability) in the US credit system,<sup><a id="ref5" href="#fn5">[5]</a></sup> but there are only \$1.6 trillion actual dollars in the banking system.<sup><a id="ref6" href="#fn6">[6]</a></sup> Dollar debt creates future demand for dollars, and in the Fed's system, each dollar is leveraged approximately 40:1. If you borrow dollars today, you will need to source dollars in the future to repay that debt, and currently, each dollar in the banking system is owed 40 times over. The relationship between the size of the credit system relative to the amount of dollars creates scarcity in the dollar. In aggregate, everyone needs dollars to repay dollar-­denominated credit.
 
 <figure id="figure-3.4">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations26.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations26.jpg" alt="" />
   <figcaption><strong>Figure 3.4</strong><br />Source: Federal Reserve Economic Data (FRED)</figcaption>
 </figure>
 
@@ -59,7 +59,7 @@ The relationship between dollars and dollar credit keeps the Fed's game in play,
 _Too Much Debt → Create More Money → More Debt → Too Much Debt_
 
 <figure id="figure-3.5">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations27.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations27.jpg" alt="" />
   <figcaption><strong>Figure 3.5</strong><br />Source: Federal Reserve Economic Data (FRED)</figcaption>
 </figure>
 
@@ -107,14 +107,14 @@ In bitcoin, a full node is a computer or server that maintains a full version of
 The bitcoin network removes trust in any centralized third party through this mechanism, which hardens the credibility of its fixed supply. All nodes maintain a history of all transactions, allowing each node to determine whether any future transaction is valid. In aggregate, bitcoin represents the most secure computing network in the world because anyone can access it, and no one trusts anyone. The network is decentralized, and there are no single points of failure. Each node is also a redundancy to every other node, from a record-­keeping and validation perspective. Every node represents a check and balance on the rest of the network, and without a central source of truth, the network is resistant to attack and corruption. Any node could fail or could become corrupted, and the rest of the network would remain unimpacted. The more nodes that exist, the more decentralized bitcoin becomes, which increases redundancy and makes the network harder and harder to corrupt or censor.
 
 <figure id="figure-3.6">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations28.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations28.jpg" alt="" />
   <figcaption><strong>Figure 3.6</strong></figcaption>
 </figure>
 
 Each full node enforces the consensus rules of the network, a critical element of which is the currency's fixed supply. Each bitcoin block includes a predefined number of bitcoin to be issued, and each bitcoin transaction must have originated from a previously valid block in order to be valid. Every 210,000 blocks, the bitcoin issued in each valid block is cut in half until the amount of bitcoin issued ultimately reaches zero in approximately 2140, creating an asymptotic, capped supply schedule. Because each node independently validates every transaction and each block, the network collectively enforces the fixed 21 million supply. If any node were to broadcast an invalid transaction or block, the rest of the network would reject it and that node would fall out of consensus. Essentially, any node could attempt to create excess bitcoin, but every other node has an interest in ensuring the supply of bitcoin is consistent with the predefined fixed limit. Otherwise, the currency would be arbitrarily debased at the direct expense of the rest of the network. No one has an incentive to allow others to arbitrarily create money, and everyone has the incentive to prevent it from happening.
 
 <figure id="figure-3.7">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations239.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations239.jpg" alt="" />
   <figcaption><strong>Figure 3.7</strong></figcaption>
 </figure>
 
@@ -127,21 +127,21 @@ As part of the consensus mechanism, certain nodes (referred to as miners) also p
 For context, at 90 exahashes per second, approximately 9 gigawatts of power distributed throughout the world currently secures the bitcoin network, which equates to \~\$11 million per day (\~\$4 billion per year) of energy at a marginal cost of 5 cents per kWh (rough estimates). Blocks are solved on average every ten minutes, which translates to approximately 144 blocks per day. Across the network, each block currently requires approximately \$75,000 in energy expenditure to solve, and the reward per block is approximately \$100,000 (12.5 new bitcoin x \$8,000 per bitcoin as of the time of writing, excluding transaction fees). The higher the cost to solve a block, the more costly the network is to attack. The cost to solve a block represents the tangible resources it requires to write history to the bitcoin transaction ledger, which functionally clears transactions for final settlement. As the network grows, the network becomes more fragmented, and the economic value compensated to miners in aggregate increases. From a game-­theory perspective, more competition and greater opportunity cost make it harder to collude, and all network nodes validate the work performed by miners, which serves as a check and balance.
 
 <figure id="figure-3.8">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations30.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations30.jpg" alt="" />
   <figcaption><strong>Figure 3.8</strong><br />Source: bitinfocharts.com</figcaption>
 </figure>
 
 Recall that a predefined number of bitcoin are issued in each valid block (that is, until the 21 million limit is reached). The bitcoin issued in each block combined with network transaction fees represent the compensation to miners for performing the proof-­of-­work function. Importantly, the miners are paid exclusively in bitcoin to secure the network. As part of the block construction and proposal process, miners include the predefined number of bitcoin---consistent with the fixed supply schedule---to be issued as compensation for expending tangible, real-­world resources to secure the network. If a miner were to include an amount of bitcoin greater than the predefined supply schedule as compensation, the rest of the network would reject the block as invalid. As part of the security function, miners must validate and enforce the fixed supply of the currency in order to be compensated. Miners have material skin in the game in the form of up-­front capital costs (and energy expenditure), and invalid work is not rewarded or compensated.
 
 <figure id="figure-3.9">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations31.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations31.jpg" alt="" />
   <figcaption><strong>Figure 3.9</strong></figcaption>
 </figure>
 
 For a technical example, the valid reward paid to miners is halved every 210,000 blocks with the next halving of issuance scheduled to occur at block 630,000 (or approximately in May 2020). At that time and scheduled block, the valid reward will be reduced from 12.5 bitcoin to 6.25 bitcoin per block. Thereafter, if any miner includes an invalid reward (an amount greater than 6.25 bitcoin), the rest of the network will reject it as invalid. The halving event is important not just because the supply of newly issued bitcoin is reduced, but also because it demonstrates that the economic incentives of the network continue to effectively coordinate and enforce the fixed supply of the currency on an entirely decentralized basis. While bitcoin's fixed supply is actually enforced with each next block, the halving of the supply is a more tangible and observable datapoint to the outside world that the 21 million fixed supply is being enforced without any central coordination. If any miner ever attempts to cheat, it will be maximally penalized by the rest of the network. Nothing other than the economic incentives of the network coordinate this behavior. That it occurs on a decentralized basis without the coordination of any central authority reinforces the security of the network.
 
 <figure id="figure-3.10">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations32.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations32.jpg" alt="" />
   <figcaption><strong>Figure 3.10</strong></figcaption>
 </figure>
 
@@ -154,7 +154,7 @@ While miners construct, solve, and propose blocks and while nodes check and vali
 When a valid transaction is broadcast, bitcoin is spent (or transferred) to specific bitcoin public addresses. Public addresses are derived from public keys, which are derived from private keys. Public keys and public addresses can be calculated using a private key, but a private key cannot be calculated from a public key or public address. It is a one-­way function secured by advanced cryptography. Public keys and public addresses can be shared without revealing anything about the private keys. When a bitcoin is spent to a public address, it is essentially locked in a safe, and to unlock the safe to spend the bitcoin, a valid signature must be produced by the corresponding private key (every public key and address has a unique private key). The owner of the private key produces a unique signature, without revealing the secret itself. The rest of the network can verify that the holder of the private key produced a valid signature, without actually knowing any details of the private key itself. Public and private key pairs are the foundation of bitcoin. And ultimately, private keys control access rights to the economic value of the network---the units of currency.
 
 <figure id="figure-3.11">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations33.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations33.jpg" alt="" />
   <figcaption><strong>Figure 3.11</strong></figcaption>
 </figure>
 
@@ -167,7 +167,7 @@ This is why users controlling keys is such an important and significant ethos in
 In summary, the supply of bitcoin is governed by a network consensus mechanism, and miners perform a proof-­of-­work function that grounds bitcoin's security in the physical world. As part of the security function, miners get paid in bitcoin to solve blocks, which validate history and clear pending bitcoin transactions. If a miner attempts to compensate itself in an amount inconsistent with bitcoin's fixed supply, the rest of the network will reject the miner's work as invalid. The supply of the currency is integrated into bitcoin's security model, and real-­world energy resources must be expended for miners to be compensated. Still yet, every node within the network validates the work performed by all miners, such that no one can cheat without a material risk of penalty. Bitcoin's consensus mechanism and validation process ultimately governs the transfer of ownership of the network, but ownership of the network is controlled and protected by individual private keys held by users of the network.
 
 <figure id="figure-3.12">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations34.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations34.jpg" alt="" />
   <figcaption><strong>Figure 3.12</strong></figcaption>
 </figure>
 

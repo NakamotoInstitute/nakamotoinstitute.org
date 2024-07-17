@@ -16,7 +16,7 @@ If you happen to believe (or[]{#\_idTextAnchor125} have ever heard) that bitcoin
 </figure>
 
 <figure id="figure-10.1">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations90.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations90.jpg" alt="" />
   <figcaption><strong>Figure 10.1</strong></figcaption>
 </figure>
 
@@ -25,7 +25,7 @@ If bitcoin were principally used for illicit purposes, it may more logically fol
 Before turning the drugs narrative upside down, let's first recognize that criminals rely on any number of commonly trafficked tools and not just bitcoin: roads, the internet, the postal service, airports, the banking system, etc. All are used by criminals and often to facilitate crimes. However, criminals use each for personal, noncriminal activities too. And that is where the logic that bitcoin must be banned because it enables criminal activity completely breaks down. Crimes are crimes. There is nothing inherent in the tools used when committing a crime that makes them criminal. Using the postal service to send a letter to Mom is not a crime, but using it to send drugs is mail fraud. Likewise, using the dollar to purchase flowers for Mom is perfectly fine, but using dollars (or bitcoin) to purchase narcotics is a crime. Despite criminal use, no one is calling for the ban of roads, the internet, the postal service, etc. And you definitely do not see any prominent defenders of the public interest calling for a ban of the dollar, which just happens to be the preferred funding currency of criminals everywhere. While fear of criminal activity has consistently been used to infringe on the rights of law-­abiding citizens, believing bitcoin should be banned because drug dealers use it would be no different than calling for a ban on the dollar for the same reason.
 
 <figure id="figure-10.2">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations91.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations91.jpg" alt="" />
   <figcaption><strong>Figure 10.2</strong></figcaption>
 </figure>
 
@@ -45,7 +45,7 @@ The substance may be true, but these counternarratives fight the battle along th
 If bitcoin could work for drug dealers to facilitate commerce, could it not "work" to facilitate any other form of commerce? It does not require much imagination to carry forward the logic. If Person A would accept bitcoin for Good B, is it possible that any person might be willing to accept bitcoin for any good regardless of who or what? In the case of the Silk Road, drug dealers may not have fully understood why bitcoin "worked," but it worked well enough that they were willing to trade drugs for it. What they seemingly understood was that there was sufficient market demand for bitcoin to make it viable as a medium of exchange. And because it provided an electronic mechanism to facilitate transactions, it opened up a market and market mechanism that may have otherwise been unavailable. Love it or hate it, it was just a market taking advantage of new technology.
 
 <figure id="figure-10.3">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations92.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations92.jpg" alt="" />
   <figcaption><strong>Figure 10.3</strong><br />Source: Silk Road Payment System, government submitted exhibit<br />in the United States of America v. Ross William Ulbricht, 2015</figcaption>
 </figure>
 
@@ -71,7 +71,7 @@ Censorship resistance is the network's most critical property. It ensures that t
 From a practical perspective, the risk of censorship principally comes in two forms: forcing changes to the network's consensus rules and invalidating (or preventing) otherwise valid transactions. By design, anyone can access the bitcoin network on a permissionless basis by running a bitcoin full node. Each node can broadcast transactions to the rest of the network, and every node validates a full history of the bitcoin blockchain with each passing block based on a common set of rules.
 
 <figure id="figure-10.4">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations93.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations93.jpg" alt="" />
   <figcaption><strong>Figure 10.4</strong></figcaption>
 </figure>
 
@@ -80,7 +80,7 @@ Through this operation, nodes distributed throughout the world are able to come 
 What does all of this have to do with criminal use? If it were possible to censor criminal-­related activity within the network, either by inhibiting access to the network or by preventing otherwise valid transactions from being confirmed, it would demonstrate that it is possible to censor _any_ activity. The bitcoin network has no understanding of criminality or who defines it. It is amoral and apolitical. All bitcoin understands (when validating transactions) is its consensus rules. It is a closed-­loop system. A bitcoin transaction is valid if it is consistent with the network's consensus rules. If it were not, all bets would be off. If any activity within the network could be censored, it would establish that the network as a whole would be censorable, and the network's consensus rules would also be at risk.
 
 <figure id="figure-10.5">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations94.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations94.jpg" alt="" />
   <figcaption><strong>Figure 10.5</strong></figcaption>
 </figure>
 

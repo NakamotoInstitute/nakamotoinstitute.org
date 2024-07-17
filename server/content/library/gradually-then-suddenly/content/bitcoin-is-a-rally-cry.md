@@ -20,12 +20,12 @@ Minus the lionized heroes and a literal declaration of independence, bitcoin is 
 While bitcoin is valued for different reasons, it consistently appeals to those that have identified the inherent level of freedom afforded by such a powerful tool, particularly in a world full of never-­ending economic calamities. As the fragility and instability of the global financial system become more apparent by the day, central bankers and politicians scramble in a race to see who can provide more stimulus to an economy that is flatlining. Lest we forget, the instability in the financial system is not just appearing. It is reappearing. The structural issues now resurfacing are the same ones that existed during the 2008 financial crisis. Before the oil war and the global pandemic in 2020, the repo funding markets broke in September 2019.<sup><a id="ref78" href="#fn78">[78]</a></sup> The writing was not just on the wall. It was in the repo markets. If it were not these recent events acting as the accelerant, it was inevitable that an exogenous shock would expose what remained under the surface all along---a highly leveraged financial system primed to break at the first signs of any material stress.
 
 <figure id="figure-14.1">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations111.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations111.jpg" alt="" />
   <figcaption><strong>Figure 14.1</strong><br />Source: Federal Reserve Economic Data (FRED)</figcaption>
 </figure>
 
 <figure id="figure-14.2">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations112.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations112.jpg" alt="" />
   <figcaption><strong>Figure 14.2</strong><br />Source: Federal Reserve Economic Data (FRED)</figcaption>
 </figure>
 
@@ -36,7 +36,7 @@ From October 2017 to September 2019, the Fed reduced the supply of dollars in th
 Yep, you guessed it. The market crashed again. Credit markets became dislocated, and the Fed followed with a "whatever it takes" response, announcing an unlimited QE program.<sup><a id="ref79" href="#fn79">[79]</a></sup> Its three most aggressive moves to date all transpired within a ten-­day window. And as part of its latest unprecedented act, the Fed will begin buying corporate bonds on the secondary market while also participating in the primary issuances of corporate credit. It also expanded its purchases of mortgage-­backed securities to include commercial mortgage-­backed securities (commercial real estate). In addition, the Fed established a facility to issue asset-­backed securities in order to purchase student loans, auto loans, credit card loans, etc. All this without a price tag and just a promise to do whatever it takes. It would be funny if it weren't so serious. But the real question remains: if the Fed were in control, why was it so reactionary? Why did its plans change so drastically in a ten-­day period if it genuinely understood the extent of the issue? Never mind the unintended and unknowable consequences. It merely demonstrates that the Fed is not in control. Why would it have announced a \$700 billion QE program if it didn't expect it to work? It is a classic game of guess and check, except the consequences can never be checked (only the immediate market reactions). The problem is that the entire US economy is at stake.
 
 <figure id="figure-14.3">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations113.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations113.jpg" alt="" />
   <figcaption><strong>Figure 14.3</strong><br />Source: S&amp;P Dow Jones Indices</figcaption>
 </figure>
 
@@ -55,7 +55,7 @@ Yep, you guessed it. The market crashed again. Credit markets became dislocated,
 </figure>
 
 <figure id="figure-14.4">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations114.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations114.jpg" alt="" />
   <figcaption><strong>Figure 14.4</strong></figcaption>
 </figure>
 
@@ -82,7 +82,7 @@ The promise of bitcoin is a more stable monetary system. There are no promises a
 In his book _Antifragile_, Nassim Taleb describes antifragility as a quality that is not just robust or resilient but, instead, the opposite of fragile. Antifragile systems actually gain strength and feed on volatility.<sup><a id="ref83" href="#fn83">[83]</a></sup> The recent volatility in bitcoin is likely just the beginning, but it really represents uninterrupted and unceasing price discovery. There are no circuit breakers in bitcoin, and there are no bailouts. It is a market devoid of moral hazard, with each participant maximally accountable. When the dust settles, what does not kill bitcoin only makes it stronger---and in a literal sense. It is surviving and thriving in the wild without any central coordination. It is not for the faint of heart, but it is the land of the free and the home of the brave. When it survives, there will still only be 21 million bitcoin, and its very survival will reinforce its place in the world. With each monetary stimulus injected into the legacy financial system, bitcoin's core value function will become more apparent and more intuitive to more people. This will not just occur by chance either. It will be because of the stark contrast bitcoin provides. Even with its volatility, bitcoin is laying the foundation for a more stable monetary system.
 
 <figure id="figure-14.5">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations115.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations115.jpg" alt="" />
   <figcaption><strong>Figure 14.5</strong><br />Price Source: Bitstamp</figcaption>
 </figure>
 
@@ -91,7 +91,7 @@ Because bitcoin's supply cannot be manipulated, its price and its supply of cred
 For Joe Kernen, host of CNBC's _Squawk Box_ (your modern-­day average Joe), it was Facebook's Libra project that made bitcoin more intuitive. For others, it is hyperinflation in Venezuela. And now for many, it will increasingly become the incessant reality of recurring financial crises and QE. No matter how many cycles of QE the Fed and its global counterparts have in their bag of tricks, bitcoin is inevitably becoming a rallying cry for all those who see the impending train wreck and are unwilling to stand idly by. It is not just a collective act of civil disobedience. It is an individual recognition of the need to act in self-­preservation. There comes a time for most everyone when common sense and survival instinct naturally take the reins. The avenue may be different for each individual, but at the end of the day, bitcoin is a means to preserve some form of freedom that is otherwise being impaired or infringed. Whether governments attempt to ban bitcoin or it is mistakenly blamed for the failures of the legacy system, always remember the simplicity of what bitcoin represents. It is nothing more than the individual freedom to convert real-­world value into a form of money that cannot be manipulated. It is a most basic and fundamental freedom, but one that must be earned. So to all _Americans_ in the world, stay humble, stack sats, and hold the damn line. Whatever it takes.
 
 <figure id="figure-14.6">
-  <img src="static/img/library/gradually-then-suddenly/GTS-Illustrations116.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations116.jpg" alt="" />
   <figcaption><strong>Figure 14.6</strong></figcaption>
 </figure>
 
