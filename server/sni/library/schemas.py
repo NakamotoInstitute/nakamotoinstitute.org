@@ -158,6 +158,7 @@ class DocumentBaseModel(ORMModel):
 
 class DocumentIndexModel(DocumentBaseModel):
     has_content: bool = False
+    flattened_nodes: list["DocumentNodeBaseModel"] = Field(serialization_alias="nodes")
 
     @model_validator(mode="before")
     @classmethod

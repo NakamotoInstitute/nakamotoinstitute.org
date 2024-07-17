@@ -47,6 +47,7 @@ export type Document = z.infer<typeof zDocument>;
 
 export const zDocumentIndex = zDocumentBase.extend({
   hasContent: z.boolean(),
+  nodes: z.array(zNestedDocumentNode),
 });
 export type DocumentIndex = z.infer<typeof zDocumentIndex>;
 

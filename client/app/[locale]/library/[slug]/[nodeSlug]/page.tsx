@@ -20,7 +20,7 @@ export async function generateMetadata({
   return {
     title: node.title,
     alternates: {
-      canonical: urls(locale).library.doc(slug),
+      canonical: urls(locale).library.docNode(slug, nodeSlug),
     },
   };
 }

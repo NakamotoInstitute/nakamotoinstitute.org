@@ -72,6 +72,7 @@ async def get_all_by_locale(
                 selectinload(Document.translations),
             ),
             selectinload(DocumentTranslation.formats),
+            selectinload(DocumentTranslation.nodes),
         )
         .join(Document)
         .filter(DocumentTranslation.locale == locale)
