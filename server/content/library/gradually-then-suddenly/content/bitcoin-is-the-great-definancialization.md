@@ -1,7 +1,7 @@
 ---
 heading: Chapter Five
 title: Bitcoin Is the Great Definancialization
-subheading: (Originally published on 23 December 2020 in _The Bitcoin Times, Edition 3_)
+subheading: (Originally published on 23 December 2020 in <em>The Bitcoin Times, Edition 3</em>)
 ---
 
 ## Engineered Decay
@@ -66,7 +66,7 @@ The Fed may have thought it could print money as a means to induce productive in
 
 <figure id="figure-5.4">
   <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations48.jpg" alt="" />
-  <figcaption><strong>Figure 5.4</strong>—Source: Institute of International Finance</figcaption>
+  <figcaption><strong>Figure 5.4</strong><br />Source: Institute of International Finance</figcaption>
 </figure>
 
 The banking and wealth management industries have metastasized by this same function. It is like a drug dealer who creates his own market by giving the first hit away for free. Drug dealers create their own demand by getting the addict hooked. The dynamic is similar between the Fed and financialization via monetary debasement. The Fed created a problem, and then a treatment for the problem was necessary. By manufacturing money to lose value, markets for financial products emerged that otherwise would not. Products have been created to help people financially engineer their way out of the very hole created by the Fed. The need arises to take risk in an attempt to produce returns to replace what is lost via monetary inflation.
@@ -173,7 +173,7 @@ If monetary debasement induced financialization, it should be logical that a ret
 
 <figure>
   <blockquote>
-    <p>The market value of the Bloomberg Barclays Global Negative Yielding Debt Index rose to \$17.05 trillion [November 2020], the highest level ever recorded and narrowly eclipsing the \$17.04 trillion it reached in August 2019.</p>
+    <p>The market value of the Bloomberg Barclays Global Negative Yielding Debt Index rose to $17.05 trillion [November 2020], the highest level ever recorded and narrowly eclipsing the $17.04 trillion it reached in August 2019.</p>
   </blockquote>
   <figcaption>Bloomberg Markets, November 2020<sup><a id="ref19" href="#fn19">[19]</a></sup></figcaption>
 </figure>
@@ -217,12 +217,12 @@ The difference between saving in bitcoin (not taking risk) and financial investi
 
 <ol start="17">
   <li id="fn17">
-    <p>Ray Dalio, "I'm Ray Dalio---Founder of Bridgewater Associates and Author of <em>Principles: Life & Work</em>. Ask Me Anything," Reddit, r/IamA, 7 April 2020. <a href="#ref17">↩</a></p>
+    <p>Ray Dalio, “I’m Ray Dalio—Founder of Bridgewater Associates and Author of <em>Principles: Life & Work</em>. Ask Me Anything,” Reddit, r/IamA, 7 April 2020. <a href="#ref17">↩</a></p>
   </li>
   <li id="fn18">
-    <p>Milton Friedman, "Living Within Our Means," interview by Richard D. Heffner, <em>Open Minds</em>, PBS, 7 December 1975. <a href="#ref18">↩</a></p>
+    <p>Milton Friedman, “Living Within Our Means,” interview by Richard D. Heffner, <em>Open Minds</em>, PBS, 7 December 1975. <a href="#ref18">↩</a></p>
   </li>
   <li id="fn19">
-    <p>Cormac Mullen and John Ainger, "World's Negative-­Yield Debt Pile Has Just Hit a New Record," Bloomberg, 5 November 2020. <a href="#ref19">↩</a></p>
+    <p>Cormac Mullen and John Ainger, “World’s Negative-Yield Debt Pile Has Just Hit a New Record,” Bloomberg, 5 November 2020. <a href="#ref19">↩</a></p>
   </li>
 </ol>

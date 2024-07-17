@@ -34,14 +34,14 @@ Play this one out. When exactly would developed-­world governments step in and 
 
 <figure>
   <blockquote>
-    <p>I won't be talking about bitcoin in ten years, I can assure you that \[\...\] I would bet even in five or six years I'm no longer talking about bitcoin as Treasury Secretary. I'll have other priorities.</p>
+    <p>I won’t be talking about bitcoin in ten years, I can assure you that […] I would bet even in five or six years I’m no longer talking about bitcoin as Treasury Secretary. I’ll have other priorities.</p>
   </blockquote>
   <figcaption>US Treasury Secretary Steve Mnuchin (July 2019)<sup><a id="ref60" href="#fn60">[60]</a></sup></figcaption>
 </figure>
 
 <figure>
   <blockquote>
-    <p>I am not a fan of bitcoin [...], which [is] not money, and whose value is highly volatile and based on thin air.</p>
+    <p>I am not a fan of bitcoin […], which [is] not money, and whose value is highly volatile and based on thin air.</p>
   </blockquote>
   <figcaption>US President Donald Trump (July 2019)<sup><a id="ref61" href="#fn61">[61]</a></sup></figcaption>
 </figure>
@@ -59,7 +59,7 @@ Setting all else aside, think about what bitcoin represents at an atomic level a
 
 <figure>
   <blockquote>
-    <p>Money is one of the greatest instruments of freedom ever invented by man. It is money which in existing society opens an astounding range of choice to the poor man---a range greater than that which not many generations ago was open to the wealthy.</p>
+    <p>Money is one of the greatest instruments of freedom ever invented by man. It is money which in existing society opens an astounding range of choice to the poor man&mdash;a range greater than that which not many generations ago was open to the wealthy.</p>
   </blockquote>
   <figcaption>Friedrich A. Hayek<sup><a id="ref62" href="#fn62">[62]</a></sup></figcaption>
 </figure>
@@ -117,13 +117,13 @@ Banning bitcoin is a fool's errand. Some will try. All will fail. The very attem
     <p>Donald J. Trump (@realDonaldTrump), Twitter, 12 July 2019. <a href="#ref61">↩</a></p>
   </li>
   <li id="fn62">
-    <p>Friedrich A. Hayek, <em>The Road to Serfdom</em>, condensed version (<em>Reader's Digest</em>, April 1945), 62. <a href="#ref62">↩</a></p>
+    <p>Friedrich A. Hayek, <em>The Road to Serfdom</em>, condensed version (<em>Reader’s Digest</em>, April 1945), 62. <a href="#ref62">↩</a></p>
   </li>
   <li id="fn63">
-    <p>Franklin D. Roosevelt, <em>Executive Order 6102---Forbidding the Hoarding of Gold Coin, Gold Bullion and Gold Certificates</em>, 5 April 1933. <a href="#ref63">↩</a></p>
+    <p>Franklin D. Roosevelt, <em>Executive Order 6102—Forbidding the Hoarding of Gold Coin, Gold Bullion and Gold Certificates</em>, 5 April 1933. <a href="#ref63">↩</a></p>
   </li>
   <li id="fn64">
-    <p>Brian Chappatta, "Fed Brings a Bazooka to Its Fight with the Repo Market," <em>Bloomberg Opinion</em>, 11 October 2019. <a href="#ref64">↩</a></p>
+    <p>Brian Chappatta, “Fed Brings a Bazooka to Its Fight with the Repo Market,” <em>Bloomberg Opinion</em>, 11 October 2019. <a href="#ref64">↩</a></p>
   </li>
   <li id="fn65">
     <p>Sam Houston, <em>The Autobiography of Sam Houston</em>, ed. Donald Day (University of Oklahoma Press, 1954). <a href="#ref65">↩</a></p>

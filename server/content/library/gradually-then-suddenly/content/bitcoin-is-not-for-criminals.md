@@ -57,7 +57,7 @@ Focusing on criminals distracts from th[]{#\_idTextAnchor127}e more fundamental 
 
 <figure>
   <blockquote>
-    <p>The U.S. Treasury Department's Office of Foreign Assets Control (OFAC) has sanctioned three Chinese nationals and their cryptocurrency addresses, alleging they violated money laundering and drug smuggling laws. [...] The agency also listed a number of bitcoin addresses [...] that the agency claims belong to the Chinese citizens.</p>
+    <p>The U.S. Treasury Department’s Office of Foreign Assets Control (OFAC) has sanctioned three Chinese nationals and their cryptocurrency addresses, alleging they violated money laundering and drug smuggling laws. […] The agency also listed a number of bitcoin addresses […] that the agency claims belong to the Chinese citizens.</p>
   </blockquote>
   <figcaption><em>CoinDesk</em><sup><a id="ref58" href="#fn58">[58]</a></sup></figcaption>
 </figure>
@@ -92,7 +92,7 @@ Ultimately, bitcoin represents a []{#\_idTextAnchor129}technological advancement
 
 <figure>
   <blockquote>
-    <p>It is more important that innocence be protected than it is that guilt be punished, for guilt and crimes are so frequent in this world that they cannot all be punished. But if innocence itself is brought to the bar and condemned, perhaps to die, then the citizen will say, "whether I do good or whether I do evil is immaterial, for innocence itself is no protection," and if such an idea as that were to take hold in the mind of the citizen that would be the end of security whatsoever.</p>
+    <p>It is more important that innocence be protected than it is that guilt be punished, for guilt and crimes are so frequent in this world that they cannot all be punished. But if innocence itself is brought to the bar and condemned, perhaps to die, then the citizen will say, “whether I do good or whether I do evil is immaterial, for innocence itself is no protection,” and if such an idea as that were to take hold in the mind of the citizen that would be the end of security whatsoever.</p>
   </blockquote>
   <figcaption>John Adams, second President of the United States<sup><a id="ref59" href="#fn59">[59]</a></sup></figcaption>
 </figure>
@@ -103,18 +103,18 @@ The competition for bitcoin is global. Over time, those that produce the most re
 
 <ol start="55">
   <li id="fn55">
-    <p>Joe Manchin III, "Manchin Demands Federal Regulators Ban Bitcoin," press release, 26 February 2014. <a href="#ref55">↩</a></p>
+    <p>Joe Manchin III, “Manchin Demands Federal Regulators Ban Bitcoin,” press release, 26 February 2014. <a href="#ref55">↩</a></p>
   </li>
   <li id="fn56">
-    <p>Neeraj Agrawal, "A New Study Finds Less Than 1% of Bitcoin Transactions to Exchanges Are Illicit," Coin Center, 17 January 2018. <a href="#ref56">↩</a></p>
+    <p>Neeraj Agrawal, “A New Study Finds Less Than 1% of Bitcoin Transactions to Exchanges Are Illicit,” Coin Center, 17 January 2018. <a href="#ref56">↩</a></p>
   </li>
   <li id="fn57">
-    <p>US Attorney's Office, District of Oregon, "Silk Road Methamphetamine Distributors Indicted in Federal Case Involving Four Defendants," press release, 18 December 2013, updated 29 January 2015. <a href="#ref57">↩</a></p>
+    <p>US Attorney’s Office, District of Oregon, “Silk Road Methamphetamine Distributors Indicted in Federal Case Involving Four Defendants,” press release, 18 December 2013, updated 29 January 2015. <a href="#ref57">↩</a></p>
   </li>
   <li id="fn58">
-    <p>Nikhilesh De, "US Treasury Blacklists Bitcoin, Litecoin Addresses of Chinese Drug Kingpins," <em>CoinDesk</em>, 21 August 2019. <a href="#ref58">↩</a></p>
+    <p>Nikhilesh De, “US Treasury Blacklists Bitcoin, Litecoin Addresses of Chinese Drug Kingpins,” <em>CoinDesk</em>, 21 August 2019. <a href="#ref58">↩</a></p>
   </li>
   <li id="fn59">
-    <p>John Adams, "Argument for the Defense," <em>The Trial of William Wemms, James Hartegan, William M'Cauley...for the Murder of Crispus Attucks...Superior Court of Judicature, Court of Assize, and General Goal Delivery</em>, Boston, 3--4 December 1770. <a href="#ref59">↩</a></p>
+    <p>John Adams, “Argument for the Defense,” <em>The Trial of William Wemms, James Hartegan, William M’Cauley…for the Murder of Crispus Attucks…Superior Court of Judicature, Court of Assize, and General Goal Delivery</em>, Boston, 3–4 December 1770. <a href="#ref59">↩</a></p>
   </li>
 </ol>

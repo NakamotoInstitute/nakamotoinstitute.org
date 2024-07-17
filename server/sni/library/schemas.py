@@ -130,6 +130,7 @@ class BookMDNodeModel(BaseModel):
     heading: str | None = None
     title: str
     subheading: str | None = None
+    nav_title: str | None = None
 
 
 class DocumentFormatModel(ORMModel):

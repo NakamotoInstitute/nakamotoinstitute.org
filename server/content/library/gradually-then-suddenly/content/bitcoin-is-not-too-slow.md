@@ -137,18 +137,18 @@ It is a bit ridiculous to contemplate the problem bitcoin has already solved, to
     <p>Peter Thiel and Blake Masters, <em>Zero to One: Notes on Startups, or How to Build the Future</em> (Crown, 2014). <a href="#ref49">↩</a></p>
   </li>
   <li id="fn50">
-    <p>Friedrich A. Hayek, "The Use of Knowledge in Society," <em>American Economic Review</em> 35, no. 4 (September 1945): 527. <a href="#ref50">↩</a></p>
+    <p>Friedrich A. Hayek, “The Use of Knowledge in Society,” <em>American Economic Review</em> 35, no. 4 (September 1945): 527. <a href="#ref50">↩</a></p>
   </li>
   <li id="fn51">
-    <p>Satoshi Nakamoto, <em>Bitcoin: A Peer-­to-­Peer Electronic Cash System</em> (whitepaper, 31 October 2008). <a href="#ref51">↩</a></p>
+    <p>Satoshi Nakamoto, <em>Bitcoin: A Peer-to-Peer Electronic Cash System</em> (whitepaper, 31 October 2008). <a href="#ref51">↩</a></p>
   </li>
   <li id="fn52">
-    <p>Visa Inc., <em>Form 10-­K: Annual Report</em>, United States Securities and Exchange Commission (SEC) archives, fiscal year ended 30 September 2018. <a href="#ref52">↩</a></p>
+    <p>Visa Inc., <em>Form 10-K: Annual Report</em>, United States Securities and Exchange Commission (SEC) archives, fiscal year ended 30 September 2018. <a href="#ref52">↩</a></p>
   </li>
   <li id="fn53">
-    <p>Visa Inc., <em>Form 10-­K</em>. <a href="#ref53">↩</a></p>
+    <p>Visa Inc., <em>Form 10-K</em>. <a href="#ref53">↩</a></p>
   </li>
   <li id="fn54">
-    <p>Joseph Poon and Thaddeus Dryja, "The Bitcoin Lightning Network: Scalable Off-­Chain Instant Payments," (whitepaper, 14 January 2016). <a href="#ref54">↩</a></p>
+    <p>Joseph Poon and Thaddeus Dryja, “The Bitcoin Lightning Network: Scalable Off-Chain Instant Payments,” (whitepaper, 14 January 2016). <a href="#ref54">↩</a></p>
   </li>
 </ol>

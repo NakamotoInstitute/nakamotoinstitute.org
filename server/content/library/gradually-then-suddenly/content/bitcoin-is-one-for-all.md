@@ -57,12 +57,12 @@ As a tangible example, during the 2008 financial crisis, the value of real estat
 
 <figure id="figure-16.6">
   <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations132.jpg" alt="" />
-  <figcaption><strong>Figure 16.6</strong>—Source: Federal Reserve Economic Data (FRED)</figcaption>
+  <figcaption><strong>Figure 16.6</strong><br />Source: Federal Reserve Economic Data (FRED)</figcaption>
 </figure>
 
 <figure id="figure-16.7">
   <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations133.jpg" alt="" />
-  <figcaption><strong>Figure 16.7</strong>—Sources: FHFA National Home Price Index, US Bureau of Labor Statistics</figcaption>
+  <figcaption><strong>Figure 16.7</strong><br />Sources: FHFA National Home Price Index, US Bureau of Labor Statistics</figcaption>
 </figure>
 
 The Fed actively manipulated the value of real estate, but it also distorted all price signals within the economy by significantly increasing the money supply. The natural market function would have seen prices adjust to eliminate imbalance. But the Fed's solution was the opposite. It devalued the money (by increasing its supply) such that the value of real estate (among other goods) as priced in dollars would change the least. Rather than eliminate imbalance, the Fed's actions allowed imbalances to be sustained and actually grow. Sustaining imbalance is precisely what occurs each time the Fed intervenes to stabilize price levels. However, stability when achieved through manipulation merely suppresses volatility. It creates an unnatural rigidity in price when price fluctuation is both a desired state and the natural function of a market communicating changes in preferences to find balance. When imbalances that would otherwise be eliminated are allowed to be sustained through artificial means and for extended periods of time, it ultimately creates greater volatility in the long run and critically impairs the ability of a monetary medium to coordinate economic activity, which is its singular utility. Each time and cumulatively, it advantages and further embeds the incumbents, just as the market is working to eliminate imbalance.
@@ -78,7 +78,7 @@ By manipulating price levels, the Fed isn't just preventing smaller intermittent
 
 <figure>
   <blockquote>
-    <p>In fact, in the case discussed, the very measures which the dominant "macro-­economic" theory has recommended as a remedy for unemployment, namely the increase of aggregate demand, have become a cause of a very extensive misallocation of resources which is likely to make later large-­scale unemployment inevitable. The continuous injection of additional amounts of money at points of the economic system where it creates a temporary demand which must cease when the increase of the quantity of money stops or slows down, together with the expectation of a continuing rise of prices, draws labour and other resources into employments which can last only so long as the increase of the quantity of money continues at the same rate---or perhaps even only so long as it continues to accelerate at a given rate. What this policy has produced is not so much a level of employment that could not have been brought about in other ways, as a distribution of employment which cannot be indefinitely maintained and which after some time can be maintained only by a rate of inflation which would rapidly lead to a disorganisation of all economic activity. The fact is that by a mistaken theoretical view we have been led into a precarious position in which we cannot prevent substantial unemployment from re-­appearing; not because, as this view is sometimes misrepresented, this unemployment is deliberately brought about as a means to combat inflation, but because it is now bound to occur as a deeply regrettable but inescapable consequence of the mistaken policies of the past as soon as inflation ceases to accelerate.</p>
+    <p>In fact, in the case discussed, the very measures which the dominant “macro-economic” theory has recommended as a remedy for unemployment, namely the increase of aggregate demand, have become a cause of a very extensive misallocation of resources which is likely to make later large-scale unemployment inevitable. The continuous injection of additional amounts of money at points of the economic system where it creates a temporary demand which must cease when the increase of the quantity of money stops or slows down, together with the expectation of a continuing rise of prices, draws labour and other resources into employments which can last only so long as the increase of the quantity of money continues at the same rate—or perhaps even only so long as it continues to accelerate at a given rate. What this policy has produced is not so much a level of employment that could not have been brought about in other ways, as a distribution of employment which cannot be indefinitely maintained and which after some time can be maintained only by a rate of inflation which would rapidly lead to a disorganisation of all economic activity. The fact is that by a mistaken theoretical view we have been led into a precarious position in which we cannot prevent substantial unemployment from re-appearing; not because, as this view is sometimes misrepresented, this unemployment is deliberately brought about as a means to combat inflation, but because it is now bound to occur as a deeply regrettable but inescapable consequence of the mistaken policies of the past as soon as inflation ceases to accelerate.</p>
   </blockquote>
   <figcaption>Friedrich A. Hayek<sup><a id="ref94" href="#fn94">[94]</a></sup></figcaption>
 </figure>
@@ -87,7 +87,7 @@ Most mainstream economics professors readily agree that price-­fixing or settin
 
 <figure>
   <blockquote>
-    <p>We must look at the price system as such a mechanism for communicating information if we want to understand its real function---a function which, of course, it fulfills less perfectly as prices grow more rigid. (Even when quoted prices have become quite rigid, however, the forces which would operate through changes in price still operate to a considerable extent through changes in the other terms of the contract.) The most significant fact about this system is the economy of knowledge with which it operates, or how little the individual participants need to know in order to be able to take the right action. In abbreviated form, by a kind of symbol, only the most essential information is passed on, and passed on only to those concerned. It is more than a metaphor to describe the price system as a kind of machinery for registering change, or a system of telecommunications which enables individual producers to watch merely the movement of a few pointers, as an engineer might watch the hands of a few dials, in order to adjust their activities to changes of which they may never know more than is reflected in the price movement.</p>
+    <p>We must look at the price system as such a mechanism for communicating information if we want to understand its real function—a function which, of course, it fulfills less perfectly as prices grow more rigid. (Even when quoted prices have become quite rigid, however, the forces which would operate through changes in price still operate to a considerable extent through changes in the other terms of the contract.) The most significant fact about this system is the economy of knowledge with which it operates, or how little the individual participants need to know in order to be able to take the right action. In abbreviated form, by a kind of symbol, only the most essential information is passed on, and passed on only to those concerned. It is more than a metaphor to describe the price system as a kind of machinery for registering change, or a system of telecommunications which enables individual producers to watch merely the movement of a few pointers, as an engineer might watch the hands of a few dials, in order to adjust their activities to changes of which they may never know more than is reflected in the price movement.</p>
   </blockquote>
   <figcaption>Friedrich A. Hayek<sup><a id="ref95" href="#fn95">[95]</a></sup></figcaption>
 </figure>
@@ -138,7 +138,7 @@ While there is never perfect balance, the existence and fluctuation of price lev
 
 <figure>
   <blockquote>
-    <p>Prices and profits are all that most producers need to be able to serve the needs of men they do not know. They are tools for searching---just as, for the soldier or hunter or seaman, the telescope extends the range of vision.</p>
+    <p>Prices and profits are all that most producers need to be able to serve the needs of men they do not know. They are tools for searching—just as, for the soldier or hunter or seaman, the telescope extends the range of vision.</p>
   </blockquote>
   <figcaption>Friedrich A. Hayek<sup><a id="ref99" href="#fn99">[99]</a></sup></figcaption>
 </figure>
@@ -155,7 +155,7 @@ When the Fed intervenes to keep the dream alive, it prevents the economy from re
 
 <figure>
   <blockquote>
-    <p>Inequality is something that has been with us increasingly for more than four decades; it's not really related to monetary policy. It's more related to [stutter] there are a lot of theories on what causes it, but it's been something that's more or less been going up consistently for more than four decades, and there are a lot of different theories, one of which is just that globalization and technology call for rising levels of skills and aptitudes and education and that US educational attainment flattened out, certainly relative to our peers, over that period.</p>
+    <p>Inequality is something that has been with us increasingly for more than four decades; it’s not really related to monetary policy. It’s more related to [stutter] there are a lot of theories on what causes it, but it’s been something that’s more or less been going up consistently for more than four decades, and there are a lot of different theories, one of which is just that globalization and technology call for rising levels of skills and aptitudes and education and that US educational attainment flattened out, certainly relative to our peers, over that period.</p>
   </blockquote>
   <figcaption>Jerome Powell, chairman of the Federal Reserve, June 2020<sup><a id="ref100" href="#fn100">[100]</a></sup></figcaption>
 </figure>
@@ -168,7 +168,7 @@ Money is the bedrock of economic systems. Understanding the fundamental and foun
 
 <figure>
   <blockquote>
-    <p>But those who clamor for "conscious direction"---and who cannot believe that anything which has evolved without design (and even without our understanding it) should solve problems which we should not be able to solve consciously---should remember this: The problem is precisely how to extend the span of our utilization of resources beyond the span of the control of any one mind; and therefore, how to dispense with the need of conscious control, and how to provide inducements which will make the individuals do the desirable things without anyone having to tell them what to do.</p>
+    <p>But those who clamor for “conscious direction”—and who cannot believe that anything which has evolved without design (and even without our understanding it) should solve problems which we should not be able to solve consciously—should remember this: The problem is precisely how to extend the span of our utilization of resources beyond the span of the control of any one mind; and therefore, how to dispense with the need of conscious control, and how to provide inducements which will make the individuals do the desirable things without anyone having to tell them what to do.</p>
   </blockquote>
   <figcaption>Friedrich A. Hayek<sup><a id="ref101" href="#fn101">[101]</a></sup></figcaption>
 </figure>
@@ -177,7 +177,7 @@ With a fixed supply of 21 million, enforced on a decentralized basis and control
 
 <figure>
   <blockquote>
-    <p>Variation is information. When there is no variation, there is no information. [...] There is no freedom without noise---and no stability without volatility.</p>
+    <p>Variation is information. When there is no variation, there is no information. […] There is no freedom without noise—and no stability without volatility.</p>
   </blockquote>
   <figcaption>Nassim Taleb and Mark Blyth<sup><a id="ref102" href="#fn102">[102]</a></sup></figcaption>
 </figure>
@@ -218,12 +218,12 @@ Centralized governance of the money supply allows the distribution of new curren
 
 <figure id="figure-16.17">
   <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations143.jpg" alt="" />
-  <figcaption><strong>Figure 16.17</strong>—Source: glassnode.com</figcaption>
+  <figcaption><strong>Figure 16.17</strong><br />Source: glassnode.com</figcaption>
 </figure>
 
 <figure id="figure-16.18">
   <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations145.jpg" alt="" />
-  <figcaption><strong>Figure 16.18</strong>—Source: glassnode.com</figcaption>
+  <figcaption><strong>Figure 16.18</strong><br />Source: glassnode.com</figcaption>
 </figure>
 
 When a monetary medium's incentives align individual and aggregate interests, non-­zero-­sum outcomes become the default, as does balance. Bitcoin is accessible to anyone, and everyone is afforded the same protections. Anyone that produces value and exchanges it for bitcoin is assured that their output will not be devalued in the future merely as a function of someone creating new units of money. Separately, everyone benefits from undistorted price signals. In bitcoin, both rich and poor alike receive these same protections equally. While it is no guarantee that someone else will value the currency more or less, it eliminates the possibility of a forced devaluation of labor and output stored in a monetary medium. In the current economic structure, the wealthiest better understand the effects of active monetary debasement and are best equipped to combat it. Logically, those on the lower end of the economic spectrum have more to gain by leveling the playing field. But fundamentally, it is not about rich and poor. Everyone benefits from the elimination of money production and an economy that provides greater balance, with more reliable information.
@@ -250,25 +250,25 @@ The inception point of elevating any individual or society is finding a way to p
 
 <ol start="92">
   <li id="fn92">
-    <p>Rep. Alexandria Ocasio-­Cortez, speech, Democratic National Convention, 18 August 2020, Milwaukee, WI. <a href="#ref92">↩</a></p>
+    <p>Rep. Alexandria Ocasio-Cortez, speech, Democratic National Convention, 18 August 2020, Milwaukee, WI. <a href="#ref92">↩</a></p>
   </li>
   <li id="fn93">
     <p>Credit to Pierre Rochard for this distillation. <a href="#ref93">↩</a></p>
   </li>
   <li id="fn94">
-    <p>Friedrich A. Hayek, "The Pretense of Knowledge," Lecture in the Memory of Alfred Nobel, 11 December 1974, Stockholm, Sweden. <a href="#ref94">↩</a></p>
+    <p>Friedrich A. Hayek, “The Pretense of Knowledge,” Lecture in the Memory of Alfred Nobel, 11 December 1974, Stockholm, Sweden. <a href="#ref94">↩</a></p>
   </li>
   <li id="fn95">
-    <p>Friedrich A. Hayek, "The Use of Knowledge in Society," <em>American Economic Review</em> 35, no. 4 (September 1945): 526--527. <a href="#ref95">↩</a></p>
+    <p>Friedrich A. Hayek, “The Use of Knowledge in Society,” <em>American Economic Review</em> 35, no. 4 (September 1945): 526–527. <a href="#ref95">↩</a></p>
   </li>
   <li id="fn96">
     <p>Richard Nixon, public address to the nation, 15 August 1971. <a href="#ref96">↩</a></p>
   </li>
   <li id="fn97">
-    <p>Franklin D. Roosevelt, <em>Executive Order 6102---Forbidding the Hoarding of Gold Coin, Gold Bullion and Gold Certificates</em>, 5 April 1933. <a href="#ref97">↩</a></p>
+    <p>Franklin D. Roosevelt, <em>Executive Order 6102—Forbidding the Hoarding of Gold Coin, Gold Bullion and Gold Certificates</em>, 5 April 1933. <a href="#ref97">↩</a></p>
   </li>
   <li id="fn98">
-    <p>Paul Tudor Jones and Lorenzo Giorgianni, "Market Outlook---Macro Perspective: The Great Monetary Inflation" (whitepaper, 9 May 2020). <a href="#ref98">↩</a></p>
+    <p>Paul Tudor Jones and Lorenzo Giorgianni, “Market Outlook—Macro Perspective: The Great Monetary Inflation” (whitepaper, 9 May 2020). <a href="#ref98">↩</a></p>
   </li>
   <li id="fn99">
     <p>Friedrich A. Hayek, <em>The Fatal Conceit: The Errors of Socialism</em> (University of Chicago Press, 1988), 104. <a href="#ref99">↩</a></p>
@@ -277,10 +277,10 @@ The inception point of elevating any individual or society is finding a way to p
     <p>Jerome Powell, Press Conference, 10 June 2020. <a href="#ref100">↩</a></p>
   </li>
   <li id="fn101">
-    <p>Friedrich A. Hayek, "The Use of Knowledge in Society," <em>American Economic Review</em> 35, no. 4 (September 1945): 527. <a href="#ref101">↩</a></p>
+    <p>Friedrich A. Hayek, “The Use of Knowledge in Society,” <em>American Economic Review</em> 35, no. 4 (September 1945): 527. <a href="#ref101">↩</a></p>
   </li>
   <li id="fn102">
-    <p>Nassim N. Taleb and Mark Blyth, "The Black Swan of Cairo: How Suppressing Volatility Makes the World Less Predictable and More Dangerous," <em>Foreign Affairs</em> 90, no. 3 (May/June 2011). <a href="#ref102">↩</a></p>
+    <p>Nassim N. Taleb and Mark Blyth, “The Black Swan of Cairo: How Suppressing Volatility Makes the World Less Predictable and More Dangerous,” <em>Foreign Affairs</em> 90, no. 3 (May/June 2011). <a href="#ref102">↩</a></p>
   </li>
   <li id="fn103">
     <p>Saifedean Ammous, <em>The Bitcoin Standard: The Decentralized Alternative to Central Banking</em> (Wiley, 2018), 30. <a href="#ref103">↩</a></p>

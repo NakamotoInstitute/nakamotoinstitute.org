@@ -64,8 +64,8 @@ title: Table of Contents
 
 ## [Part IV: Conclusion & Acknowledgements](/library/gradually-then-suddenly/part-iv/)
 
-[Conclusion](/library/gradually-then-suddenly/conclusion/)
+- [Conclusion](/library/gradually-then-suddenly/conclusion/)
 
-[Acknowledgements](/library/gradually-then-suddenly/acknowledgements/)
+- [Acknowledgements](/library/gradually-then-suddenly/acknowledgements/)
 
-[Figures](/library/gradually-then-suddenly/figures/)
+- [Figures](/library/gradually-then-suddenly/figures/)

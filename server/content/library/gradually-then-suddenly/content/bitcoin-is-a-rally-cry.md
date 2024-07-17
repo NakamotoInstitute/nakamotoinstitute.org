@@ -42,14 +42,14 @@ Yep, you guessed it. The market crashed again. Credit markets became dislocated,
 
 <figure>
   <blockquote>
-    <p>There's an infinite amount of cash at the Federal Reserve.</p>
+    <p>There’s an infinite amount of cash at the Federal Reserve.</p>
   </blockquote>
   <figcaption>Neel Kashkari, president, Federal Reserve Bank of Minneapolis, March 2020<sup><a id="ref80" href="#fn80">[80]</a></sup></figcaption>
 </figure>
 
 <figure>
   <blockquote>
-    <p>To lend to a bank, we simply use the computer to mark up the size of the account they have with the Fed, [...] it's much more akin to printing money than it is borrowing.</p>
+    <p>To lend to a bank, we simply use the computer to mark up the size of the account they have with the Fed, […] it’s much more akin to printing money than it is borrowing.</p>
   </blockquote>
   <figcaption>Ben Bernanke, former chair, US Federal Reserve, March 2009<sup><a id="ref81" href="#fn81">[81]</a></sup></figcaption>
 </figure>
@@ -97,7 +97,7 @@ For Joe Kernen, host of CNBC's _Squawk Box_ (your modern-­day average Joe), it 
 
 <figure>
   <blockquote>
-    <p>The enemy has demanded a surrender. [...] I have answered the demand with a cannon shot.</p>
+    <p>The enemy has demanded a surrender. […] I have answered the demand with a cannon shot.</p>
   </blockquote>
   <figcaption>Lt. Colonel William B. Travis, February 1836<sup><a id="ref84" href="#fn84">[84]</a></sup></figcaption>
 </figure>
@@ -106,27 +106,27 @@ For Joe Kernen, host of CNBC's _Squawk Box_ (your modern-­day average Joe), it 
 
 <ol start="77">
   <li id="fn77">
-    <p>William Barret Travis, "To the People of Texas & All Americans in the World," an open letter from the Alamo, 24 February 1836. <a href="#ref77">↩</a></p>
+    <p>William Barret Travis, “To the People of Texas & All Americans in the World,” an open letter from the Alamo, 24 February 1836. <a href="#ref77">↩</a></p>
   </li>
   <li id="fn78">
-    <p>Summer Said and Benoit Faucon, "Inside Saudi Arabia's Decision to Launch an Oil-­Price War," <em>Wall Street Journal</em>, 10 March 2020; Liz Capo McCormick and Alexandra Harris, "The Repo Market's a Mess. (What's the Repo Market?)," <em>Bloomberg News</em>, 19 September 2019. <a href="#ref78">↩</a></p>
+    <p>Summer Said and Benoit Faucon, “Inside Saudi Arabia’s Decision to Launch an Oil-­Price War,” <em>Wall Street Journal</em>, 10 March 2020; Liz Capo McCormick and Alexandra Harris, “The Repo Market’s a Mess. (What’s the Repo Market?),” <em>Bloomberg News</em>, 19 September 2019. <a href="#ref78">↩</a></p>
   </li>
   <li id="fn79">
-    <p>Board of Governors of the Federal Reserve System, "Federal Reserve Announces Extensive New Measures to Support the Economy," press release, 23 March 2020. <a href="#ref79">↩</a></p>
+    <p>Board of Governors of the Federal Reserve System, “Federal Reserve Announces Extensive New Measures to Support the Economy,” press release, 23 March 2020. <a href="#ref79">↩</a></p>
   </li>
   <li id="fn80">
-    <p>Neel Kashkari, "Coronavirus and the economy: Best and worst-­case scenarios from Minneapolis Fed president," <em>60 Minutes</em>, Interview, 22 March 2020. <a href="#ref80">↩</a></p>
+    <p>Neel Kashkari, “Coronavirus and the economy: Best and worst-­case scenarios from Minneapolis Fed president,” <em>60 Minutes</em>, Interview, 22 March 2020. <a href="#ref80">↩</a></p>
   </li>
   <li id="fn81">
-    <p>Ben Bernanke, "The Chairman: Part 1," interview by Scott Pelley, <em>60 Minutes</em>, 15 Mar 2009. <a href="#ref81">↩</a></p>
+    <p>Ben Bernanke, “The Chairman: Part 1,” interview by Scott Pelley, <em>60 Minutes</em>, 15 Mar 2009. <a href="#ref81">↩</a></p>
   </li>
   <li id="fn82">
-    <p>Friedrich A. Hayek, <em>The Road to Serfdom</em>, condensed version (<em>Reader's Digest</em>, April 1945), 62. <a href="#ref82">↩</a></p>
+    <p>Friedrich A. Hayek, <em>The Road to Serfdom</em>, condensed version (<em>Reader’s Digest</em>, April 1945), 62. <a href="#ref82">↩</a></p>
   </li>
   <li id="fn83">
     <p>Nassim N. Taleb, <em>Antifragile: Things That Gain from Disorder</em> (Random House, 2012). <a href="#ref83">↩</a></p>
   </li>
   <li id="fn84">
-    <p>Travis, "To the People of Texas." <a href="#ref84">↩</a></p>
+    <p>Travis, “To the People of Texas.” <a href="#ref84">↩</a></p>
   </li>
 </ol>

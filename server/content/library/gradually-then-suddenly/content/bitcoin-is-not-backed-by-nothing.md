@@ -78,9 +78,9 @@ Remember that the dollar does not have any inherent monetary properties. No uniq
       <li>boring grey in colour</li>
       <li>not a good conductor of electricity</li>
       <li>not particularly strong, but not ductile or easily malleable either</li>
-      <li>not useful for any practical or ornamental purpose
+      <li>not useful for any practical or ornamental purpose</li>
     </ul>
-    <p>and one special, magical property:
+    <p>and one special, magical property:</p>
     <ul>
       <li>can be transported over a communications channel</li>
     </ul>
@@ -179,12 +179,12 @@ Bitcoin is distinct from all other digital forms of money, including the dollar,
 
 <ol start="5">
   <li id="fn5">
-    <p>Board of Governors of the Federal Reserve System (US), "All Sectors; Debt Securities and Loans; Liability, Level [TCMDO]," retrieved from Federal Reserve Economic Data (FRED), Federal Reserve Bank of St. Louis, 21 August 2019. <a href="#ref5">↩</a></p>
+    <p>Board of Governors of the Federal Reserve System (US), “All Sectors; Debt Securities and Loans; Liability, Level [TCMDO],” retrieved from Federal Reserve Economic Data (FRED), Federal Reserve Bank of St. Louis, 21 August 2019. <a href="#ref5">↩</a></p>
   </li>
   <li id="fn6">
     <p>Board of Governors of the Federal Reserve System (US), <em>H.4.1: Factors Affecting Reserve Balances of Depository Institutions and Condition Statement of Federal Reserve Banks</em>, Federal Reserve Statistical Release, 26 September 2019. <a href="#ref6">↩</a></p>
   </li>
   <li id="fn7">
-    <p>Satoshi Nakamoto, "Re: Bitcoin Does NOT Violate Mises' Regression Theorem," BitcoinTalk, Satoshi Nakamoto Institute, 27 August 2010. <a href="#ref7">↩</a></p>
+    <p>Satoshi Nakamoto, “Re: Bitcoin Does NOT Violate Mises’ Regression Theorem,” BitcoinTalk, Satoshi Nakamoto Institute, 27 August 2010. <a href="#ref7">↩</a></p>
   </li>
 </ol>

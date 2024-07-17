@@ -77,7 +77,7 @@ So long as increases in adoption represent orders of magnitude, volatility is un
 
 <figure>
   <blockquote>
-    <p>Establishment economists deride the fact that bitcoin is volatile, as if you can go from something that didn't exist to a stable form of money overnight. It's completely ludicrous.</p>
+    <p>Establishment economists deride the fact that bitcoin is volatile, as if you can go from something that didn’t exist to a stable form of money overnight. It’s completely ludicrous.</p>
   </blockquote>
   <figcaption>Vijay Boyapati<sup><a id="ref30" href="#fn30">[30]</a></sup></figcaption>
 </figure>
@@ -124,7 +124,7 @@ The example below highlights the risk and return profile of a portfolio with 1% 
 
 <figure id="figure-7.11">
   <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations76.jpg" alt="" />
-  <figcaption><strong>Figure 7.11</strong>—Source: "The Investment Case for Bitcoin," VanEck, 2019</figcaption>
+  <figcaption><strong>Figure 7.11</strong><br />Source: “The Investment Case for Bitcoin,” VanEck, 2019</figcaption>
 </figure>
 
 <figure>
@@ -151,7 +151,7 @@ Bitcoin's day-­to-­day liquidity will scale and diversify as a function of bot
 
 <figure>
   <blockquote>
-    <p>Complex systems that have artificially suppressed volatility tend to become extremely fragile, while at the same time exhibiting no visible risks. This is one of life's packages: there is no freedom without noise---and no stability without volatility.</p>
+    <p>Complex systems that have artificially suppressed volatility tend to become extremely fragile, while at the same time exhibiting no visible risks. This is one of life’s packages: there is no freedom without noise—and no stability without volatility.</p>
   </blockquote>
   <figcaption>Nassim N. Taleb and Mark Blyth<sup><a id="ref36" href="#fn36">[36]</a></sup></figcaption>
 </figure>
@@ -167,31 +167,31 @@ Bitcoin's day-­to-­day liquidity will scale and diversify as a function of bot
 
 <ol start="22">
   <li id="fn22">
-    <p>"The Skeptics: A Tribute to Bold Assertions," Satoshi Nakamoto Institute, accessed 8 August 2019. <a href="#ref22">↩</a></p>
+    <p>“The Skeptics: A Tribute to Bold Assertions,” Satoshi Nakamoto Institute, accessed 8 August 2019. <a href="#ref22">↩</a></p>
   </li>
   <li id="fn23">
     <p>Nassim N. Taleb, <em>Skin in the Game: Hidden Asymmetries in Daily Life</em>, (Random House, 2018). <a href="#ref23">↩</a></p>
   </li>
   <li id="fn24">
-    <p>David Milliken, "BoE's Carney says Bitcoin has pretty much failed as currency," <em>Reuters</em>, 19 February 2018. <a href="#ref24">↩</a></p>
+    <p>David Milliken, “BoE’s Carney says Bitcoin has pretty much failed as currency,” <em>Reuters</em>, 19 February 2018. <a href="#ref24">↩</a></p>
   </li>
   <li id="fn25">
-    <p>Ben Bernanke, "Ben Bernanke on Bubbles, Bitcoin, and Why He's Not a Republican Anymore," interview by Matt Phillips, <em>Quartz</em>, 19 November 2015. <a href="#ref25">↩</a></p>
+    <p>Ben Bernanke, “Ben Bernanke on Bubbles, Bitcoin, and Why He’s Not a Republican Anymore,” interview by Matt Phillips, <em>Quartz</em>, 19 November 2015. <a href="#ref25">↩</a></p>
   </li>
   <li id="fn26">
     <p>Janet Yellen, speech, Canada Fintech Forum, 29 October 2018, Montreal, Canada. <a href="#ref26">↩</a></p>
   </li>
   <li id="fn27">
-    <p>"White House Press Briefing by Treasury Secretary Steven Mnuchin on Regulatory Issues Associated with Cryptocurrency," news release, US Department of the Treasury, 15 July 2019. <a href="#ref27">↩</a></p>
+    <p>“White House Press Briefing by Treasury Secretary Steven Mnuchin on Regulatory Issues Associated with Cryptocurrency,” news release, US Department of the Treasury, 15 July 2019. <a href="#ref27">↩</a></p>
   </li>
   <li id="fn28">
-    <p>Billy Bambrough, "Donald Trump Unleashes Sudden Attack on Bitcoin," <em>Forbes</em>, 12 July 2019. <a href="#ref28">↩</a></p>
+    <p>Billy Bambrough, “Donald Trump Unleashes Sudden Attack on Bitcoin,” <em>Forbes</em>, 12 July 2019. <a href="#ref28">↩</a></p>
   </li>
   <li id="fn29">
-    <p>Nassim N. Taleb and Mark Blyth, "The Black Swan of Cairo: How Suppressing Volatility Makes the World Less Predictable and More Dangerous," <em>Foreign Affairs</em> 90, no. 3 (May/June 2011), 6. <a href="#ref29">↩</a></p>
+    <p>Nassim N. Taleb and Mark Blyth, “The Black Swan of Cairo: How Suppressing Volatility Makes the World Less Predictable and More Dangerous,” <em>Foreign Affairs</em> 90, no. 3 (May/June 2011), 6. <a href="#ref29">↩</a></p>
   </li>
   <li id="fn30">
-    <p>Vijay Boyapati, "How Bitcoin Mentally Captures People," interview by Stephen Livera, <em>Stephan Livera Podcast</em> (ep. 2), 28 July 2018. <a href="#ref30">↩</a></p>
+    <p>Vijay Boyapati, “How Bitcoin Mentally Captures People,” interview by Stephen Livera, <em>Stephan Livera Podcast</em> (ep. 2), 28 July 2018. <a href="#ref30">↩</a></p>
   </li>
   <li id="fn31">
     <p>Coinbase User Data, compiled by Alistair Milne, Altana Digital Currency Fund, 2019. <a href="#ref31">↩</a></p>
@@ -200,18 +200,18 @@ Bitcoin's day-­to-­day liquidity will scale and diversify as a function of bot
     <p>Board of Governors of the Federal Reserve System, <em>Z.1 Financial Accounts of the United States: Flow of Funds, balance Sheets, and Integrated Macroeconomic Accounts, First Quarter 2019</em>, Federal Reserve Statistical Release, 6 June 2019, 138. <a href="#ref32">↩</a></p>
   </li>
   <li id="fn33">
-    <p>"The Investment Case for Bitcoin," VanEck, 21 October 2019. <a href="#ref33">↩</a></p>
+    <p>“The Investment Case for Bitcoin,” VanEck, 21 October 2019. <a href="#ref33">↩</a></p>
   </li>
   <li id="fn34">
-    <p>Wences Casares, "The Case for a Small Allocation to Bitcoin," Kana and Katana, 1 March 2019. <a href="#ref34">↩</a></p>
+    <p>Wences Casares, “The Case for a Small Allocation to Bitcoin,” Kana and Katana, 1 March 2019. <a href="#ref34">↩</a></p>
   </li>
   <li id="fn35">
-    <p>This dynamic is known as the Lindy Effect. For more information, see "Lindy Effect," Wikipedia. <a href="#ref35">↩</a></p>
+    <p>This dynamic is known as the Lindy Effect. For more information, see “Lindy Effect,” Wikipedia. <a href="#ref35">↩</a></p>
   </li>
   <li id="fn36">
-    <p>Nassim N. Taleb and Mark Blyth, "The Black Swan of Cairo: How Suppressing Volatility Makes the World Less Predictable and More Dangerous," <em>Foreign Affairs</em> 90, no. 3 (May/June 2011), 6. <a href="#ref36">↩</a></p>
+    <p>Nassim N. Taleb and Mark Blyth, “The Black Swan of Cairo: How Suppressing Volatility Makes the World Less Predictable and More Dangerous,” <em>Foreign Affairs</em> 90, no. 3 (May/June 2011), 6. <a href="#ref36">↩</a></p>
   </li>
   <li id="fn37">
-    <p>Ben Bernanke, "Financial Markets, the Economic Outlook, and Monetary Policy," remarks before Women in Housing and Finance and Exchequer Club, Washington, DC, Speech, 10 January 2008. <a href="#ref37">↩</a></p>
+    <p>Ben Bernanke, “Financial Markets, the Economic Outlook, and Monetary Policy,” remarks before Women in Housing and Finance and Exchequer Club, Washington, DC, Speech, 10 January 2008. <a href="#ref37">↩</a></p>
   </li>
 </ol>

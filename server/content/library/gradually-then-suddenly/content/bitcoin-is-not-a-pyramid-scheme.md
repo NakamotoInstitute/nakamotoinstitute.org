@@ -10,7 +10,7 @@ A few years back, I received an email from a friend asking for my opinion about 
 
 <figure>
   <blockquote>
-    <p>A pyramid scheme is an investment fraud in which new participants' fees are typically used to pay money to existing participants for recruiting new members. Pyramid scheme organizers may pitch the scheme as a business opportunity such as a multi-­level marketing (MLM) program. Fraudsters frequently use social media, internet advertising, company websites, group presentations, conference calls, and YouTube videos to promote a pyramid scheme. All pyramid schemes eventually collapse, and most investors lose their money.</p>
+    <p>A pyramid scheme is an investment fraud in which new participants’ fees are typically used to pay money to existing participants for recruiting new members. Pyramid scheme organizers may pitch the scheme as a business opportunity such as a multi-level marketing (MLM) program. Fraudsters frequently use social media, internet advertising, company websites, group presentations, conference calls, and YouTube videos to promote a pyramid scheme. All pyramid schemes eventually collapse, and most investors lose their money.</p>
   </blockquote>
   <figcaption>US Securities and Exchange Commission<sup><a id="ref66" href="#fn66">[66]</a></sup></figcaption>
 </figure>
@@ -82,6 +82,6 @@ At the end of the day, the value of bitcoin is not dependent on any single indiv
 
 <ol start="66">
   <li id="fn66">
-    <p>"Pyramid Schemes," Investor.gov, US Securities and Exchange Commission. <a href="#ref66">↩</a></p>
+    <p>“Pyramid Schemes,” Investor.gov, US Securities and Exchange Commission. <a href="#ref66">↩</a></p>
   </li>
 </ol>

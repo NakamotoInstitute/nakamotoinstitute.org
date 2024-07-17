@@ -37,7 +37,7 @@ Ben Bernanke famously made this comment three months before Lehman Brothers fail
 
 <figure id="figure-13.3">
   <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations109.jpg" alt="" />
-  <figcaption><strong>Figure 13.3</strong>—Source: US Bureau of Labor Statistics and Federal Reserve Economic Data (FRED)</figcaption>
+  <figcaption><strong>Figure 13.3</strong><br />Source: US Bureau of Labor Statistics and Federal Reserve Economic Data (FRED)</figcaption>
 </figure>
 
 While QE isn't technically "printing money," the result is functionally the same. The Fed digitally creates new dollars on a ledger (literally out of thin air) and proceeds to use those dollars to purchase financial assets, such as US treasuries (government debt) and mortgage-­backed securities. As a net effect, more dollars exist within the banking system in the form of bank reserves that can then be used to lend or purchase other assets. In simple terms, more dollars exist, which causes the value of each individual dollar to decrease. However, the effect is not direct. Instead, it is transmitted gradually through the expansion of the credit system. Said another way, QE creates more dollars and allows banks to expand credit by multiples of each dollar created. This incremental credit (i.e., auto loans, mortgages, student loans, etc.) is then used to purchase goods in the real economy. However, creating money out of thin air does not magically create more goods and services. More base money exists and even more deposits exist as credit is created, which compete for a supply of goods and services that do not and cannot keep pace. That causes the value of the dollar to decline on a relative basis.
@@ -50,21 +50,21 @@ Through this course of action, the Fed inadvertently created the fragility and i
 
 <figure id="figure-13.4">
   <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations110.jpg" alt="" />
-  <figcaption><strong>Figure 13.4</strong>—Source: Federal Reserve Economic Data (FRED)</figcaption>
+  <figcaption><strong>Figure 13.4</strong><br />Source: Federal Reserve Economic Data (FRED)</figcaption>
 </figure>
 
 In the Fed's economy, the credit system became orders of magnitude larger than the amount of base money that existed. As a result, the credit system became the marginal price-­setting mechanism rather than the base money. Because the Fed has a mandate to maintain price stability, it must implicitly maintain the size of the credit system in order to sustain general price levels. During the financial crisis, the credit system began to collapse, and asset price levels rapidly declined in a disorderly fashion. To reverse the impact, the Fed was forced to drastically increase the money supply to maintain the size of the credit system, in a way it never had before. However, even after the height of the crisis, the Fed determined it was necessary to add trillions more in new dollars post-­QE1 to continue to support a languishing system, despite acknowledging the limitations of its monetary policy tools. This is the Fed's Catch-­22. Even when it seemingly knows better, the default position is to err on the side of more QE, not less. To try again what has not worked in the past to achieve stability. It is the definition of insanity.
 
 <figure>
   <blockquote>
-    <p>I'm perfectly willing to accept the argument that monetary policy is not the main tool, that this is not the main thing wrong with the economy, but it's our duty to do what we can, to be palliative, to help where we can, even if we can't solve fiscal, structural, and other problems.</p>
+    <p>I’m perfectly willing to accept the argument that monetary policy is not the main tool, that this is not the main thing wrong with the economy, but it’s our duty to do what we can, to be palliative, to help where we can, even if we can’t solve fiscal, structural, and other problems.</p>
   </blockquote>
   <figcaption>Ben Bernanke, former Fed chair, August 2011<sup><a id="ref71" href="#fn71">[71]</a></sup></figcaption>
 </figure>
 
 <figure>
   <blockquote>
-    <p>I don't think it is literally the case that monetary policy is completely ineffective. I think we can see the effects on financial markets, which in turn must be affecting wealth, confidence, and some other determinants of spending and production. To the extent that transmission is weaker, that could be used to argue for more stimulus rather than less stimulus.</p>
+    <p>I don’t think it is literally the case that monetary policy is completely ineffective. I think we can see the effects on financial markets, which in turn must be affecting wealth, confidence, and some other determinants of spending and production. To the extent that transmission is weaker, that could be used to argue for more stimulus rather than less stimulus.</p>
   </blockquote>
   <figcaption>Ben Bernanke, former Fed chair, September 2011<sup><a id="ref72" href="#fn72">[72]</a></sup></figcaption>
 </figure>
@@ -81,7 +81,7 @@ In "The Pretense of Knowledge," a speech delivered by Friedrich Hayek at the cer
 
 <figure>
   <blockquote>
-    <p>In fact, in the case discussed, the very measures which the dominant "macro-­economic" theory has recommended as a remedy for unemployment, namely, the increase of aggregate demand, have become a cause of a very extensive misallocation of resources which is likely to make later large-­scale unemployment inevitable. The continuous injection of additional amounts of money at points of the economic system where it creates a temporary demand which must cease when the increase of the quantity of money stops or slows down, together with the expectation of a continuing rise of prices, draws labor and other resources into which can last only so long as the increase of the quantity of money continues at the same rate---or perhaps even only so long as it continues to accelerate at a given rate. What this policy has produced is not so much a level of employment that could not have been brought about in other ways, as a distribution of employment which cannot be indefinitely maintained and which after some time can be maintained only by a rate of inflation which would rapidly lead to a disorganization of all economic activity.</p>
+    <p>In fact, in the case discussed, the very measures which the dominant “macro-economic” theory has recommended as a remedy for unemployment, namely, the increase of aggregate demand, have become a cause of a very extensive misallocation of resources which is likely to make later large-­scale unemployment inevitable. The continuous injection of additional amounts of money at points of the economic system where it creates a temporary demand which must cease when the increase of the quantity of money stops or slows down, together with the expectation of a continuing rise of prices, draws labor and other resources into which can last only so long as the increase of the quantity of money continues at the same rate—or perhaps even only so long as it continues to accelerate at a given rate. What this policy has produced is not so much a level of employment that could not have been brought about in other ways, as a distribution of employment which cannot be indefinitely maintained and which after some time can be maintained only by a rate of inflation which would rapidly lead to a disorganization of all economic activity.</p>
   </blockquote>
   <figcaption>Friedrich A. Hayek<sup><a id="ref74" href="#fn74">[74]</a></sup></figcaption>
 </figure>
@@ -90,7 +90,7 @@ The speech in its totality, including this excerpt, provides the counter-­narra
 
 <figure>
   <blockquote>
-    <p>I don't believe we shall ever have a good money again before we take the thing out of the hands of government, that is, we can't take them violently out of the hands of government, all we can do is by some sly roundabout way introduce something that they can't stop.</p>
+    <p>I don’t believe we shall ever have a good money again before we take the thing out of the hands of government, that is, we can’t take them violently out of the hands of government, all we can do is by some sly roundabout way introduce something that they can’t stop.</p>
   </blockquote>
   <figcaption>Friedrich A. Hayek<sup><a id="ref75" href="#fn75">[75]</a></sup></figcaption>
 </figure>
@@ -103,13 +103,13 @@ While not popular and certainly not accepted by Summers's Jackson Hole crowd, th
 
 <ol start="67">
   <li id="fn67">
-    <p>Lawrence H. Summers (_@LHSummers_), Twitter, <a href="https://twitter.com/LHSummers/status/1164490326549118976">https://twitter.com/LHSummers/status/1164490326549118976</a> 22 August 2019. <a href="#ref67">↩</a></p>
+    <p>Lawrence H. Summers (<em>@LHSummers</em>), Twitter, <a href="https://twitter.com/LHSummers/status/1164490326549118976">https://twitter.com/LHSummers/status/1164490326549118976</a> 22 August 2019. <a href="#ref67">↩</a></p>
   </li>
   <li id="fn68">
-    <p>Ben Bernanke, "Outstanding Issues in the Analysis of Inflation" (speech), Federal Reserve Bank of Boston's 53rd Annual Economic Conference, 9 June 2008, Chatham, MA. <a href="https://www.federalreserve.gov/newsevents/speech/bernanke20080609a.htm">https://www.federalreserve.gov/newsevents/speech/bernanke20080609a.htm</a> <a href="#ref68">↩</a></p>
+    <p>Ben Bernanke, “Outstanding Issues in the Analysis of Inflation” (speech), Federal Reserve Bank of Boston’s 53rd Annual Economic Conference, 9 June 2008, Chatham, MA. <a href="https://www.federalreserve.gov/newsevents/speech/bernanke20080609a.htm">https://www.federalreserve.gov/newsevents/speech/bernanke20080609a.htm</a> <a href="#ref68">↩</a></p>
   </li>
   <li id="fn69">
-    <p>Federal Reserve Bank of St. Louis, "Adjusted Monetary Base (DISCONTINUED)," retrieved from Federal Reserve Economic Data (FRED), Federal Reserve Bank of St. Louis, August 2019. <a href="#ref69">↩</a></p>
+    <p>Federal Reserve Bank of St. Louis, “Adjusted Monetary Base (DISCONTINUED),” retrieved from Federal Reserve Economic Data (FRED), Federal Reserve Bank of St. Louis, August 2019. <a href="#ref69">↩</a></p>
   </li>
   <li id="fn70">
     <p>Board of Governors of the Federal Reserve System, <em>Z.1 Financial Accounts of the United States: Flow of Funds, Balance Sheets, and Integrated Macroeconomic Accounts, First Quarter 2019</em>, Federal Reserve Statistical Release, 6 June 2019, 7. <a href="#ref70">↩</a></p>
@@ -118,18 +118,18 @@ While not popular and certainly not accepted by Summers's Jackson Hole crowd, th
     <p><em>Minutes of the Federal Open Market Committee</em>, a joint meeting of the Federal Open Market Committee and the Board of Governors of the Federal Reserve System, Washington, DC, 9 August 2011. <a href="#ref71">↩</a></p>
   </li>
   <li id="fn72">
-    <p><em>Minutes of the Federal Open Market Committee</em>, a joint meeting of the Federal Open Market Committee and the Board of Governors of the Federal Reserve System, Washington, DC, 20--21 September 2011. <a href="#ref72">↩</a></p>
+    <p><em>Minutes of the Federal Open Market Committee</em>, a joint meeting of the Federal Open Market Committee and the Board of Governors of the Federal Reserve System, Washington, DC, 20—21 September 2011. <a href="#ref72">↩</a></p>
   </li>
   <li id="fn73">
     <p>Board of Governors of the Federal Reserve System (US), <em>H.8: Assets and Liabilities of Commercial Banks in the United States</em>, Federal Reserve Statistical Release, 29 August 2008. <a href="#ref73">↩</a></p>
   </li>
   <li id="fn74">
-    <p>Friedrich A. Hayek, "The Pretense of Knowledge," Lecture in the Memory of Alfred Nobel, 11 December 1974, Stockholm, Sweden. <a href="#ref74">↩</a></p>
+    <p>Friedrich A. Hayek, “The Pretense of Knowledge,” Lecture in the Memory of Alfred Nobel, 11 December 1974, Stockholm, Sweden. <a href="#ref74">↩</a></p>
   </li>
   <li id="fn75">
-    <p>Friedrich A. Hayek, "Exclusive Interview with F.A. Hayek," interview by James U. Blanchard III, University of Freiburg, Germany, 1984. <a href="#ref75">↩</a></p>
+    <p>Friedrich A. Hayek, “Exclusive Interview with F.A. Hayek,” interview by James U. Blanchard III, University of Freiburg, Germany, 1984. <a href="#ref75">↩</a></p>
   </li>
   <li id="fn76">
-    <p>Reference the essay titled "Bitcoin Obsoletes All Other Money" for a fundamental discussion of why money converges on one medium. <a href="#ref76">↩</a></p>
+    <p>Reference the essay titled “Bitcoin Obsoletes All Other Money” for a fundamental discussion of why money converges on one medium. <a href="#ref76">↩</a></p>
   </li>
 </ol>

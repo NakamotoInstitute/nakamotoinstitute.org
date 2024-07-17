@@ -133,6 +133,6 @@ The real competition for bitcoin has been, and will remain, the legacy monetary 
 
 <ol start="4">
   <li id="fn4">
-    <p>Phil Geiger, "Bitcoin Refuses to Centralize," <em>Keeping Stock</em> (blog), Medium, 27 August 2018. <a href="#ref4">↩</a></p>
+    <p>Phil Geiger, “Bitcoin Refuses to Centralize,” <em>Keeping Stock</em> (blog), Medium, 27 August 2018. <a href="#ref4">↩</a></p>
   </li>
 </ol>

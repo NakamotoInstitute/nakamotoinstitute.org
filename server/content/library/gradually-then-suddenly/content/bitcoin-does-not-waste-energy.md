@@ -16,14 +16,14 @@ Concerned onlookers raise a red flag about the amount of energy consumed by the 
 
 <figure>
   <blockquote>
-    <p>The fundamentally wasteful nature of bitcoin mining means there's no easy technological solution coming.</p>
+    <p>The fundamentally wasteful nature of bitcoin mining means there’s no easy technological solution coming.</p>
   </blockquote>
   <figcaption><em>The Guardian</em><sup><a id="ref38" href="#fn38">[38]</a></sup></figcaption>
 </figure>
 
 <figure>
   <blockquote>
-    <p>In the context of climate change, raging wildfires, and record-­­breaking hurricanes, it's worth asking ourselves hard questions about Bitcoin's environmental impact.</p>
+    <p>In the context of climate change, raging wildfires, and record-­­breaking hurricanes, it’s worth asking ourselves hard questions about Bitcoin’s environmental impact.</p>
   </blockquote>
   <figcaption><em>Vice Media</em><sup><a id="ref39" href="#fn39">[39]</a></sup></figcaption>
 </figure>
@@ -57,7 +57,7 @@ Money is the good that facilitates economic coordination between parties who oth
 
 <figure>
   <blockquote>
-    <p>Money is one of the greatest instruments of freedom ever invented by man. [...] If we strive for money, it is because money offers us the widest choice in enjoying the fruits of our efforts.</p>
+    <p>Money is one of the greatest instruments of freedom ever invented by man. […] If we strive for money, it is because money offers us the widest choice in enjoying the fruits of our efforts.</p>
   </blockquote>
   <figcaption>Friedrich A. Hayek<sup><a id="ref42" href="#fn42">[42]</a></sup></figcaption>
 </figure>
@@ -117,7 +117,7 @@ What would be regrettable for society is if more countries were to deteriorate i
 
 <figure>
   <blockquote>
-    <p>If it prevents even one more tragic incidence of hyperinflation, the energy consumption required to mine \[bitcoin\] will be the best bargain humanity ever got.</p>
+    <p>If it prevents even one more tragic incidence of hyperinflation, the energy consumption required to mine [bitcoin] will be the best bargain humanity ever got.</p>
   </blockquote>
   <figcaption>Saifedean Ammous<sup><a id="ref48" href="#fn48">[48]</a></sup></figcaption>
 </figure>
@@ -130,36 +130,36 @@ Bitcoin will consume any and all energy resources necessary to secure its moneta
 
 <ol start="38">
   <li id="fn38">
-    <p>Alex Hern, "Bitcoin's Energy Usage Is Huge---We Can't Afford to Ignore It," <em>The Guardian</em>, 17 January 2018. <a href="#ref38">↩</a></p>
+    <p>Alex Hern, “Bitcoin’s Energy Usage Is Huge—We Can’t Afford to Ignore It,” <em>The Guardian</em>, 17 January 2018. <a href="#ref38">↩</a></p>
   </li>
   <li id="fn39">
-    <p>Christopher Malmo, "One Bitcoin Transaction Consumes as Much Energy As Your House Uses in a Week," <em>Vice Media,</em> 1 November 2017. <a href="#ref39">↩</a></p>
+    <p>Christopher Malmo, “One Bitcoin Transaction Consumes as Much Energy As Your House Uses in a Week,” <em>Vice Media,</em> 1 November 2017. <a href="#ref39">↩</a></p>
   </li>
   <li id="fn40">
-    <p>BitInfoCharts, "Bitcoin Hashrate historical chart," September 2017--August 2019, accessed 15 August 2019. <a href="#ref40">↩</a></p>
+    <p>BitInfoCharts, “Bitcoin Hashrate historical chart,” September 2017—August 2019, accessed 15 August 2019. <a href="#ref40">↩</a></p>
   </li>
   <li id="fn41">
-    <p>"2015 RECS Survey Data," Residential Energy Consumption Survey, US Energy Information Administration. <a href="#ref41">↩</a></p>
+    <p>“2015 RECS Survey Data,” Residential Energy Consumption Survey, US Energy Information Administration. <a href="#ref41">↩</a></p>
   </li>
   <li id="fn42">
-    <p>Friedrich A. Hayek, <em>The Road to Serfdom</em>, condensed version (<em>Reader's Digest</em>, April 1945). <a href="#ref42">↩</a></p>
+    <p>Friedrich A. Hayek, <em>The Road to Serfdom</em>, condensed version (<em>Reader’s Digest</em>, April 1945). <a href="#ref42">↩</a></p>
   </li>
   <li id="fn43">
-    <p>Leonard E. Read, "I, Pencil: My Family Tree as Told to Leonard E. Read," <em>The Freeman</em> (December 1958). <a href="#ref43">↩</a></p>
+    <p>Leonard E. Read, “I, Pencil: My Family Tree as Told to Leonard E. Read,” <em>The Freeman</em> (December 1958). <a href="#ref43">↩</a></p>
   </li>
   <li id="fn44">
-    <p>Milton Friedman, "The Power of the Market," <em>Free to Choose</em>, volume 1, <em>PBS</em>, 1980. The lesson of the pencil begins at 15:40. <a href="#ref44">↩</a></p>
+    <p>Milton Friedman, “The Power of the Market,” <em>Free to Choose</em>, volume 1, <em>PBS</em>, 1980. The lesson of the pencil begins at 15:40. <a href="#ref44">↩</a></p>
   </li>
   <li id="fn45">
-    <p>Emily Sandys, "Venezuelan Crude Oil Production Falls to Lowest Level Since January 2003," Today in Energy, US Energy Information Administration, 20 May 2019. <a href="#ref45">↩</a></p>
+    <p>Emily Sandys, “Venezuelan Crude Oil Production Falls to Lowest Level Since January 2003,” Today in Energy, US Energy Information Administration, 20 May 2019. <a href="#ref45">↩</a></p>
   </li>
   <li id="fn46">
-    <p>Federal Reserve Bank of St. Louis, "Adjusted Monetary Base (DISCONTINUED)," retrieved from Federal Reserve Economic Data (FRED), Federal Reserve Bank of St. Louis, July 2019. <a href="#ref46">↩</a></p>
+    <p>Federal Reserve Bank of St. Louis, “Adjusted Monetary Base (DISCONTINUED),” retrieved from Federal Reserve Economic Data (FRED), Federal Reserve Bank of St. Louis, July 2019. <a href="#ref46">↩</a></p>
   </li>
   <li id="fn47">
-    <p>[Minutes of the Federal Open Market Committee]{.Italic}, a joint meeting of the Federal Open Market Committee and the Board of Governors of the Federal Reserve System, Washington, DC, 9 August 2011. <a href="#ref47">↩</a></p>
+    <p><em>Minutes of the Federal Open Market Committee</em>, a joint meeting of the Federal Open Market Committee and the Board of Governors of the Federal Reserve System, Washington, DC, 9 August 2011. <a href="#ref47">↩</a></p>
   </li>
   <li id="fn48">
-    <p>Saifedean Ammous, "The Problem Bitcoin Solves," <em>The Spectator</em>, 10 November 2018. <a href="#ref48">↩</a></p>
+    <p>Saifedean Ammous, “The Problem Bitcoin Solves,” <em>The Spectator</em>, 10 November 2018. <a href="#ref48">↩</a></p>
   </li>
 </ol>

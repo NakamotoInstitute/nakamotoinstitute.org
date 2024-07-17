@@ -15,7 +15,7 @@ The financial crisis was triggered by extreme levels of leverage, built up over 
 
 <figure>
   <blockquote>
-    <p>The root problem with conventional currency is all the trust that's required to make it work. The central bank must be trusted not to debase the currency, but the history of fiat currencies is full of breaches of that trust. Banks must be trusted to hold our money and transfer it electronically, but they lend it out in waves of credit bubbles with barely a fraction in reserve.</p>
+    <p>The root problem with conventional currency is all the trust that’s required to make it work. The central bank must be trusted not to debase the currency, but the history of fiat currencies is full of breaches of that trust. Banks must be trusted to hold our money and transfer it electronically, but they lend it out in waves of credit bubbles with barely a fraction in reserve.</p>
   </blockquote>
   <figcaption>Satoshi Nakamoto, February 2009<sup><a id="ref1" href="#fn1">[1]</a></sup></figcaption>
 </figure>
@@ -355,6 +355,6 @@ There is a growing consensus that massive and expanding wealth gaps are a proble
 
 <ol start="1">
   <li id="fn1">
-    <p>Satoshi Nakamoto, "Bitcoin Open Source Implementation of P2P Currency," P2P Foundation, forum post, 11 February 2009. <a href="#ref1">↩</a></p>
- </li>
+    <p>Satoshi Nakamoto, “Bitcoin Open Source Implementation of P2P Currency,” P2P Foundation, forum post, 11 February 2009. <a href="#ref1">↩</a></p>
+  </li>
 </ol>

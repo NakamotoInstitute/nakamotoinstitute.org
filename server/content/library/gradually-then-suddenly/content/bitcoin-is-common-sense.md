@@ -25,14 +25,14 @@ Bitcoin is finitely scarce, it is highly divisible, and it is capable of being s
 
 <figure>
   <blockquote>
-    <p>It's probably rat poison squared.</p>
+    <p>It’s probably rat poison squared.</p>
   </blockquote>
   <figcaption>Warren Buffett, May 2018<sup><a id="ref86" href="#fn86">[86]</a></sup></figcaption>
 </figure>
 
 <figure>
   <blockquote>
-    <p>Bitcoin---there's even less you can do with it. \[...\] I'd rather have bananas. I can eat bananas.</p>
+    <p>Bitcoin—there’s even less you can do with it. […] I’d rather have bananas. I can eat bananas.</p>
   </blockquote>
   <figcaption>Mark Cuban, September 2019<sup><a id="ref87" href="#fn87">[87]</a></sup></figcaption>
 </figure>
@@ -63,7 +63,7 @@ Everything beyond this fundamental reality strays into abstract theory, relying 
 
 <figure>
   <blockquote>
-    <p>There's money and there's credit. The only thing that matters is spending and you can spend money and you can spend credit. And when credit goes down, you better put money into the system so you can have the same level of spending. That's what they did through the financial system and that thing worked.</p>
+    <p>There’s money and there’s credit. The only thing that matters is spending and you can spend money and you can spend credit. And when credit goes down, you better put money into the system so you can have the same level of spending. That’s what they did through the financial system and that thing worked.</p>
   </blockquote>
   <figcaption>Ray Dalio, September 2017<sup><a id="ref88" href="#fn88">[88]</a></sup></figcaption>
 </figure>
@@ -120,15 +120,15 @@ How the effects manifest in the real economy is complicated, but it does not tak
 
 <figure id="figure-15.8">
   <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations124.jpg" alt="" />
-  <figcaption><strong>Figure 15.8</strong><br />>Source: Board of Governors, Federal Reserve System (US), Z.1 Financial Accounts of the US</figcaption>
+  <figcaption><strong>Figure 15.8</strong><br />Source: Board of Governors, Federal Reserve System (US), Z.1 Financial Accounts of the US</figcaption>
 </figure>
 
 <figure>
   <blockquote>
-    <p>"Gospodin," he said presently, "you used an odd word earlier---odd to me, I mean..."</p>
-    <p>"Oh, tanstaafl. Means there ain't no such thing as a free lunch. And isn't," I added, pointing to a FREE LUNCH sign across room, "or these drinks would cost half as much. Was reminding her that anything free costs twice as much in long run or turns out worthless."</p>
-    <p>"An interesting philosophy."</p>
-    <p>"Not philosophy, fact. One way or other, what you get, you pay for."</p>
+    <p>“Gospodin,” he said presently, “you used an odd word earlier—odd to me, I mean…”</p>
+    <p>“Oh, tanstaafl. Means there ain’t no such thing as a free lunch. And isn’t,” I added, pointing to a FREE LUNCH sign across room, “or these drinks would cost half as much. Was reminding her that anything free costs twice as much in long run or turns out worthless.”</p>
+    <p>“An interesting philosophy.”</p>
+    <p>“Not philosophy, fact. One way or other, what you get, you pay for.”</p>
   </blockquote>
   <figcaption>from <em>The Moon is a Harsh Mistress</em><sup><a id="ref90" href="#fn90">[90]</a></sup></figcaption>
 </figure>
@@ -176,16 +176,16 @@ Bananas grow on trees. Money does not, and there still ain't no such thing as a 
     <p>Warren Buffet, speech, Berkshire Hathaway Annual General Meeting, 5 May 2018. <a href="#ref86">↩</a></p>
   </li>
   <li id="fn87">
-    <p>Mark Cuban, "Mark Cuban Answers Business Questions from Twitter | Tech Support," YouTube, <em>Wired</em>, 27 September 2019. <a href="#ref87">↩</a></p>
+    <p>Mark Cuban, “Mark Cuban Answers Business Questions from Twitter | Tech Support,” YouTube, <em>Wired</em>, 27 September 2019. <a href="#ref87">↩</a></p>
   </li>
   <li id="fn88">
-    <p>Ray Dalio, "Bridgewater founder Ray Dalio: We Have Two Economies Now," interview by Joe Kernan, <em>CNBC Squawk Box</em>, 19 September 2017. <a href="#ref88">↩</a></p>
+    <p>Ray Dalio, “Bridgewater founder Ray Dalio: We Have Two Economies Now,” interview by Joe Kernan, <em>CNBC Squawk Box</em>, 19 September 2017. <a href="#ref88">↩</a></p>
   </li>
   <li id="fn89">
     <p>Alexander Hamilton, <em>Final Version of the Second Report on the Further Provision Necessary for Establishing Public Credit (Report on a National Bank)</em>, US Department of Treasury, 13 December 1790. <a href="#ref89">↩</a></p>
   </li>
   <li id="fn90">
-    <p>Robert Heinlein, <em>The Moon is a Harsh Mistress</em> (G. P. Putnam's Sons, 1966). <a href="#ref90">↩</a></p>
+    <p>Robert Heinlein, <em>The Moon is a Harsh Mistress</em> (G. P. Putnam’s Sons, 1966). <a href="#ref90">↩</a></p>
   </li>
   <li id="fn91">
     <p>Paine, <em>Common Sense</em>. <a href="#ref91">↩</a></p>

@@ -92,9 +92,9 @@ In the world of digital currencies, diversifying by picking the field is the equ
 
 <ol start="20">
   <li id="fn20">
-    <p>Nassim N. Taleb, "The Most Intolerant Wins: The Dictatorship of the Small Minority," <em>Incerto</em> (blog), Medium, 19 August 2016. <a href="#ref20">↩</a></p>
+    <p>Nassim N. Taleb, “The Most Intolerant Wins: The Dictatorship of the Small Minority,” <em>Incerto</em> (blog), Medium, 19 August 2016. <a href="#ref20">↩</a></p>
   </li>
   <li id="fn21">
-    <p>Eric Schmidt and Jared Cohen, "The New Digital Age: Authors Eric Schmidt and Jared Cohen in Conversation with Facebook's Sheryl Sandberg," interview by Sheryl Sandberg (Mountain View, CA: Computer History Museum, 3 March 2014), catalog number 102740112. <a href="#ref21">↩</a></p>
+    <p>Eric Schmidt and Jared Cohen, “The New Digital Age: Authors Eric Schmidt and Jared Cohen in Conversation with Facebook’s Sheryl Sandberg,” interview by Sheryl Sandberg (Mountain View, CA: Computer History Museum, 3 March 2014), catalog number 102740112. <a href="#ref21">↩</a></p>
   </li>
 </ol>

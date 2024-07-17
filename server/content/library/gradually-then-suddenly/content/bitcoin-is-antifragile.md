@@ -21,7 +21,7 @@ Bitcoin is natively digital and powered by computers running software capable of
 
 <figure>
   <blockquote>
-    <p>Some things benefit from shocks; they thrive and grow when exposed to volatility, randomness, disorder, and stressors and love adventure, risk, and uncertainty. Yet, in spite of the ubiquity of the phenomenon, there is no word for the exact opposite of fragile. Let us call it antifragile. Antifragility is beyond resilience or robustness. The resilient resists shocks and stays the same; the antifragile gets better. This property is behind everything that has changed with time: evolution, culture, ideas, revolutions, political systems, technological innovation, cultural and economic success, corporate survival, good recipes (say, chicken soup or steak tartare with a drop of cognac), the rise of cities, cultures, legal systems, equatorial forests, bacterial resistance ... even our own existence as a species on this planet. And antifragility determines the boundary between what is living and organic (or complex), say, the human body, and what is inert, say, a physical object like the stapler on your desk. [...] The antifragile loves randomness and uncertainty, which also means—crucially—a love of errors, a certain class of errors.</p>
+    <p>Some things benefit from shocks; they thrive and grow when exposed to volatility, randomness, disorder, and stressors and love adventure, risk, and uncertainty. Yet, in spite of the ubiquity of the phenomenon, there is no word for the exact opposite of fragile. Let us call it antifragile. Antifragility is beyond resilience or robustness. The resilient resists shocks and stays the same; the antifragile gets better. This property is behind everything that has changed with time: evolution, culture, ideas, revolutions, political systems, technological innovation, cultural and economic success, corporate survival, good recipes (say, chicken soup or steak tartare with a drop of cognac), the rise of cities, cultures, legal systems, equatorial forests, bacterial resistance … even our own existence as a species on this planet. And antifragility determines the boundary between what is living and organic (or complex), say, the human body, and what is inert, say, a physical object like the stapler on your desk. […] The antifragile loves randomness and uncertainty, which also means—crucially—a love of errors, a certain class of errors.</p>
   </blockquote>
   <figcaption>Nassim Taleb<sup><a id="ref8" href="#fn8">[8]</a></sup></figcaption>
 </figure>
@@ -51,7 +51,7 @@ The lack of social order in bitcoin may be its single greatest asset. There is n
 
 <figure>
   <blockquote>
-    <p>The root problem with conventional currency is all the trust that's required to make it work. The central bank must be trusted not to debase the currency, but the history of fiat currencies is full of breaches of that trust.</p>
+    <p>The root problem with conventional currency is all the trust that’s required to make it work. The central bank must be trusted not to debase the currency, but the history of fiat currencies is full of breaches of that trust.</p>
   </blockquote>
   <figcaption>Satoshi Nakamoto<sup><a id="ref10" href="#fn10">[10]</a></sup></figcaption>
 </figure>
@@ -180,7 +180,7 @@ Each form of stress hardens the bitcoin network and often for different reasons.
 
 <figure id="figure-4.4">
   <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations38.jpg" alt="" />
-  <figcaption><strong>Figure 4.4</strong>—Source: Bloomberg</figcaption>
+  <figcaption><strong>Figure 4.4</strong><br />Source: Bloomberg</figcaption>
 </figure>
 
 Separately, China has taken measures to restrict the ability of exchanges to facilitate bitcoin trading and has expressed an interest in eliminating bitcoin mining. As they do in India, people continue to use bitcoin in China with no disruption to the network. Naturally, as government regulation in China has become more restrictive, miners have begun to look to more stable jurisdictions. Bitcoin mining in the United States (among other regions) continues to grow, with Peter Thiel recently backing a startup building out mining operations in West Texas.<sup><a id="ref12" href="#fn12">[12]</a></sup> Regardless of the threat, bitcoin exists beyond countries (and governments). The network organically adapts to jurisdictional risks and continues to function without interruption. As network participants observe the failed attempts to inhibit bitcoin's growth and witness how it adapts, bitcoin does not merely remain static. It actually becomes more resilient through this process by routing around and immunizing each passing threat.
@@ -189,7 +189,7 @@ An entirely different type of stress comes in the form of competing cryptocurren
 
 <figure id="figure-4.5">
   <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations39.jpg" alt="" />
-  <figcaption><strong>Figure 4.5</strong>—Source: Arcane Research</figcaption>
+  <figcaption><strong>Figure 4.5</strong><br />Source: Arcane Research</figcaption>
 </figure>
 
 That is the market distinguishing between bitcoin and the field. Competition is inherently good for bitcoin. Not only does each attempt to create a better bitcoin fail, but the repeated failures inform market participants that there is something that differentiates bitcoin. Even if the reason is not immediately self-­evident, the market still provides valuable information. Bitcoin does not just withstand the competition. It beats the competition. The market test teaches people that bitcoin cannot be copied better than any amount of reason and logic can. Through the failed experiences of competing currencies, bitcoin accumulates more human capital and a larger holder base, with the network growing as a direct result. If bitcoin were never tested or challenged, it would not have the opportunity to benefit from stress.
@@ -218,15 +218,15 @@ However, information is not just communicated through price volatility. Volatili
 
 <figure id="figure-4.7">
   <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations41.jpg" alt="" />
-  <figcaption><strong>Figure 4.7</strong>—Price Source: Bitstamp</figcaption>
+  <figcaption><strong>Figure 4.7</strong><br />Price Source: Bitstamp</figcaption>
 </figure>
 
 When network participants, individually and as a whole, observe bitcoin's continued survival, especially following extreme downside volatility, confidence in the network strengthens. At some price, individuals are willing to step in and catch the falling knife. Through these episodes, bitcoin accumulates more human capital. The weak hands get shaken out, but the strongest hands survive (often in the form of new holders), causing the network to become more resilient. Bitcoin does not merely remain static or simply absorb the disruption. It actively feeds on the chaos. In the end, near-­term volatility directly contributes to long-­term stability. By maintaining a fixed supply with highly variable present demand, the market performs price discovery twenty-­four hours a day, seven days a week. The intermittent stress trains and hardens all individual owners, which prevents the network from being exposed to systemic risk. All the while, the opposite is true of fiat currencies. Central banks maintain short-­term stability by suppressing volatility. The consequence is the accumulation of imbalances below the surface, leading to fragility. These policies all but ensure more severe systemic shocks in the long term, as has been witnessed with increasing regularity over the last two decades. Volatility in bitcoin benefits participants by communicating information with the least distortion. The contrast between the two competing systems could not be more extreme. Without volatility today, long-­term stability would not be possible.
 
 <figure>
   <blockquote>
-    <p>Complex systems that have artificially suppressed volatility tend to become extremely fragile, while at the same time exhibiting no visible risks. [...] Such environments eventually experience massive blowups, catching everyone off-­guard and undoing years of stability.</p>
-    <p>Variation is information. When there is no variation, there is no information [...] there is no freedom without noise---and no stability without volatility.</p>
+    <p>Complex systems that have artificially suppressed volatility tend to become extremely fragile, while at the same time exhibiting no visible risks. […] Such environments eventually experience massive blowups, catching everyone off-guard and undoing years of stability.</p>
+    <p>Variation is information. When there is no variation, there is no information […] there is no freedom without noise—and no stability without volatility.</p>
   </blockquote>
   <figcaption>Nassim Taleb and Mark Blyth<sup><a id="ref14" href="#fn14">[14]</a></sup></figcaption>
 </figure>
@@ -251,7 +251,7 @@ One week after the launch of bitcoin, Hal Finney famously tweeted to the world t
 
 <figure id="figure-4.9">
   <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations43.jpg" alt="" />
-  <figcaption><strong>Figure 4.9</strong>—Source: Bloomberg</figcaption>
+  <figcaption><strong>Figure 4.9</strong><br />Source: Bloomberg</figcaption>
 </figure>
 
 In 2018, Saifedean Ammous released the book _The Bitcoin Standard_, which has accelerated knowledge distribution and contributed to a wave of bitcoin adoption. There are obviously too many random acts to count or acknowledge. Still, the randomness derived from bitcoin's permissionless nature, lacking any conscious control, allowed it to evolve into the antifragile system it is today. Bitcoin would have never been viable as a currency if it was under the direction of any single individual, company, or country. If it had been, bitcoin would have always been dependent on trust and would have lacked the randomness necessary to create a system capable of dispensing with the need for conscious control. Randomness is irreplicable, and the foundation of bitcoin was built on it.
@@ -264,7 +264,7 @@ Beyond resilient, bitcoin does not just absorb shocks. It gets better as a direc
 
 <figure>
   <blockquote>
-    <p>But those who clamor for "conscious direction"---and who cannot believe that anything which has evolved without design (and even without our understanding it) should solve problems which we should not be able to solve consciously---should remember this: The problem is precisely how to extend the span of our utilization of resources beyond the span of the control of any one mind; and therefore, how to dispense with the need of conscious control, and how to provide inducements which will make the individuals do the desirable things without anyone having to tell them what to do.</p>
+    <p>But those who clamor for “conscious direction”—and who cannot believe that anything which has evolved without design (and even without our understanding it) should solve problems which we should not be able to solve consciously—should remember this: The problem is precisely how to extend the span of our utilization of resources beyond the span of the control of any one mind; and therefore, how to dispense with the need of conscious control, and how to provide inducements which will make the individuals do the desirable things without anyone having to tell them what to do.</p>
   </blockquote>
   <figcaption>Friedrich A. Hayek<sup><a id="ref16" href="#fn16">[16]</a></sup></figcaption>
 </figure>
@@ -279,24 +279,24 @@ Beyond resilient, bitcoin does not just absorb shocks. It gets better as a direc
     <p><em>Hearing: An Examination of Facebook and its Impact on the Financial Services and Housing Sectors, Before the House Financial Services Committee</em>, 116<sup>th</sup> Congress (23 October 2019) (questioning of Mark Zuckerberg, CEO and Chairman of Facebook). <a href="#ref9">↩</a></p>
   </li>
   <li id="fn10">
-    <p>Satoshi Nakamoto, "Bitcoin Open Source Implementation of P2P Currency," P2P Foundation, forum post, 11 February 2009. <a href="#ref10">↩</a></p>
+    <p>Satoshi Nakamoto, “Bitcoin Open Source Implementation of P2P Currency,” P2P Foundation, forum post, 11 February 2009. <a href="#ref10">↩</a></p>
   </li>
   <li id="fn11">
-    <p>Phil Geiger, "Bitcoin Refuses to Centralize," <em>Keeping Stock</em> (blog), Medium, 27 August 2018. <a href="#ref11">↩</a></p>
+    <p>Phil Geiger, “Bitcoin Refuses to Centralize,” <em>Keeping Stock</em> (blog), Medium, 27 August 2018. <a href="#ref11">↩</a></p>
   </li>
   <li id="fn12">
-    <p>Jeff John Roberts, "Texas Bitcoin Mining Startup Gets $50 Million From Peter Thiel to Steal China's Crypto Crown," <em>Fortune</em>, 15 October 2019. <a href="#ref12">↩</a></p>
+    <p>Jeff John Roberts, “Texas Bitcoin Mining Startup Gets $50 Million From Peter Thiel to Steal China’s Crypto Crown,” <em>Fortune</em>, 15 October 2019. <a href="#ref12">↩</a></p>
   </li>
   <li id="fn13">
-    <p>Olusegun Ogundeji, "Antonopoulos: Your Keys, Your Bitcoin. Not Your Keys, Not Your Bitcoin," Cointelegraph, 10 August 2016. <a href="#ref13">↩</a></p>
+    <p>Olusegun Ogundeji, “Antonopoulos: Your Keys, Your Bitcoin. Not Your Keys, Not Your Bitcoin,” Cointelegraph, 10 August 2016. <a href="#ref13">↩</a></p>
   </li>
   <li id="fn14">
-    <p>Nassim N. Taleb and Mark Blyth, "The Black Swan of Cairo: How Suppressing Volatility Makes the World Less Predictable and More Dangerous," <em>Foreign Affairs</em> 90, no. 3 (May/June 2011). <a href="#ref14">↩</a></p>
+    <p>Nassim N. Taleb and Mark Blyth, “The Black Swan of Cairo: How Suppressing Volatility Makes the World Less Predictable and More Dangerous,” <em>Foreign Affairs</em> 90, no. 3 (May/June 2011). <a href="#ref14">↩</a></p>
   </li>
   <li id="fn15">
-    <p>Friedrich A. Hayek, <em>The Counter-­Revolution of Science: Studies on the Abuse of Reason</em> (Glencoe, IL: Free Press, 1952), 84-­85. <a href="#ref15">↩</a></p>
+    <p>Friedrich A. Hayek, <em>The Counter-Revolution of Science: Studies on the Abuse of Reason</em> (Glencoe, IL: Free Press, 1952), 84-85. <a href="#ref15">↩</a></p>
   </li>
   <li id="fn16">
-    <p>Friedrich A. Hayek, "The Use of Knowledge in Society," <em>American Economic Review</em> 35, no. 4 (September 1945): 527. <a href="#ref16">↩</a></p>
+    <p>Friedrich A. Hayek, “The Use of Knowledge in Society,” <em>American Economic Review</em> 35, no. 4 (September 1945): 527. <a href="#ref16">↩</a></p>
   </li>
 </ol>

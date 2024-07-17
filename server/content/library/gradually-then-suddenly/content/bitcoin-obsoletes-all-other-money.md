@@ -40,7 +40,7 @@ Without a common currency, there would be no concept of price. And without the c
 
 <figure>
   <blockquote>
-    <p>I have deliberately used the word "marvel" to shock the reader out of the complacency with which we often take the working of this mechanism for granted. I am convinced that if it were the result of deliberate human design, and if the people guided by the price changes understood that their decisions have significance far beyond their immediate aim, this mechanism would have been acclaimed as one of the greatest triumphs of the human mind. Its misfortune is the double one that it is not the product of human design and that the people guided by it usually do not know why they are made to do what they do.</p>
+    <p>I have deliberately used the word “marvel” to shock the reader out of the complacency with which we often take the working of this mechanism for granted. I am convinced that if it were the result of deliberate human design, and if the people guided by the price changes understood that their decisions have significance far beyond their immediate aim, this mechanism would have been acclaimed as one of the greatest triumphs of the human mind. Its misfortune is the double one that it is not the product of human design and that the people guided by it usually do not know why they are made to do what they do.</p>
   </blockquote>
   <figcaption>Friedrich A. Hayek<sup><a id="ref2" href="#fn2">[2]</a></sup></figcaption>
 </figure>
@@ -178,10 +178,9 @@ At the end of the day, it does not matter how complicated bitcoin may seem. The 
 
 <ol start="2">
   <li id="fn2">
-    <p>Friedrich A. Hayek, "The Use of Knowledge in Society," <em>American Economic Review</em> 35, no. 4 (September 1945): 527. <a href="#ref2">↩</a></p>
+    <p>Friedrich A. Hayek, “The Use of Knowledge in Society,” <em>American Economic Review</em> 35, no. 4 (September 1945): 527. <a href="#ref2">↩</a></p>
   </li>
   <li id="fn3">
-    <p>Saifedean Ammous, <em>The Bitcoin Standard: The Decentralized Alternative to
-   Central Banking</em> (Wiley, 2018), 8. <a href="#ref3">↩</a></p>
+    <p>Saifedean Ammous, <em>The Bitcoin Standard: The Decentralized Alternative to Central Banking</em> (Wiley, 2018), 8. <a href="#ref3">↩</a></p>
   </li>
 </ol>

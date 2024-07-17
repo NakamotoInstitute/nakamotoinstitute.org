@@ -75,9 +75,10 @@ class MDRender:
         md = (
             MarkdownIt(
                 "commonmark",
-                {"breaks": False, "html": True},
+                {"breaks": False, "html": True, "typographer": True},
                 renderer_cls=SNIMarkdownRenderer,
             )
+            .enable(["replacements", "smartquotes"])
             .use(front_matter_plugin)
             .use(footnote_plugin)
             .use(deflist_plugin)
