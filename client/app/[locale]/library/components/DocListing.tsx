@@ -17,11 +17,11 @@ type DocListingProps = {
 export async function DocListing({ doc, locale, t }: DocListingProps) {
   return (
     <article className="border-b border-solid py-4 first:pt-0 last:border-b-0">
-      <header>
-        <h2 className="text-xl font-bold">
+      <header className="mb-1 md:mb-2">
+        <h2 className="font-bold text-cardinal md:text-xl">
           <Link href={urls(locale).library.doc(doc.slug)}>{doc.title}</Link>
         </h2>
-        <p>
+        <p className="small-caps max-sm:text-sm">
           <AuthorsLinks as="span" authors={doc.authors} locale={locale} />
           {" • "}
           <time dateTime={formatTimeAttr(doc.date, doc.granularity)}>

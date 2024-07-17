@@ -57,7 +57,12 @@ export async function PageLayout({
         {...toggleProps}
       />
       {breadcrumbs ? <Breadcrumbs breadcrumbs={breadcrumbs} /> : null}
-      <main className={clsx("twbs-container my-4 flex-grow pb-4", className)}>
+      <main
+        className={clsx(
+          "twbs-container my-10 flex-grow pb-4 md:mt-18",
+          className,
+        )}
+      >
         {children}
       </main>
       <Footer t={t} locale={locale} />
