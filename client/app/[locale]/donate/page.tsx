@@ -33,7 +33,7 @@ export default async function DonatePage({ params: { locale } }: LocaleParams) {
   return (
     <PageLayout t={t} locale={locale} generateHref={generateHref}>
       <PageHeader title={t("donate")} />
-      <Markdown className="prose mx-auto mb-4">{content}</Markdown>
+      <Markdown className="page-content mx-auto mb-4">{content}</Markdown>
       <div className="text-center">
         <a
           className="inline-block cursor-pointer select-none rounded border border-solid border-blue-600 bg-blue-600 px-3 py-1 text-white hover:border-blue-700 hover:bg-blue-700 hover:text-white focus:border-blue-700 focus:bg-blue-700 focus:text-white"

@@ -50,7 +50,7 @@ type PostHeaderProps = {
 export async function PostHeader({ t, locale, post }: PostHeaderProps) {
   return (
     <>
-      <header className="mt-17 mx-auto max-w-4xl text-center">
+      <header className="mt-17 text-center">
         {post.series && post.seriesIndex !== null ? (
           <SeriesHeader
             t={t}

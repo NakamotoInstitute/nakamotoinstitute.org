@@ -15,7 +15,7 @@ type DocHeaderProps = {
 export async function DocHeader({ t, locale, doc }: DocHeaderProps) {
   return (
     <>
-      <header className="mx-auto mt-6 max-w-4xl text-center">
+      <header className="mx-auto mt-6 text-center">
         <h1
           className="mb-4 text-4xl font-medium md:mb-6 md:text-7xl"
           dangerouslySetInnerHTML={{ __html: doc.displayTitle ?? doc.title }}

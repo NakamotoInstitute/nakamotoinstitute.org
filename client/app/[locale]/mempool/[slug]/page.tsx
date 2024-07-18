@@ -59,6 +59,7 @@ export default async function MempoolPost({
         { label: t("mempool"), href: urls(locale).mempool.index },
         { label: post.title, href: urls(locale).mempool.post(post.slug) },
       ]}
+      wide
     >
       <article>
         <PostHeader t={t} locale={locale} post={post} />

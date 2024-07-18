@@ -21,11 +21,6 @@
     @apply mb-4;
   }
 
-  .twbs-container {
-    @apply mx-auto px-4;
-    @apply w-full max-w-7xl;
-  }
-
   .codeheader,
   .quoteheader {
     @apply border border-neutral-300;

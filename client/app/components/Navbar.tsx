@@ -25,7 +25,7 @@ export function Navbar({
 
   return (
     <nav className="border-b border-dashed border-dark">
-      <div className="twbs-container font-bold">
+      <div className="mx-auto w-full max-w-screen-1.5xl px-4 font-bold">
         <div className="relative flex items-center justify-between py-6">
           <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
             <button

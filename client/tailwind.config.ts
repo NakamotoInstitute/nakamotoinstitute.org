@@ -16,7 +16,7 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  safelist: ["twbs-container", "code", "quote", "codeheader", "quoteheader"],
+  safelist: ["code", "quote", "codeheader", "quoteheader"],
   theme: {
     extend: {
       colors: {
@@ -46,6 +46,9 @@ const config: Config = {
       margin: {
         18: "4.5rem",
       },
+      spacing: {
+        "screen-1.5xl": "1440px",
+      },
       typography: ({ theme }: PluginAPI) => ({
         DEFAULT: {
           css: {
@@ -73,6 +76,7 @@ const config: Config = {
               fontSize: "1rem",
             },
             lineHeight: em(26, 16),
+            maxWidth: "70ch",
             p: {
               marginTop: em(22, 16),
               marginBottom: em(22, 16),
