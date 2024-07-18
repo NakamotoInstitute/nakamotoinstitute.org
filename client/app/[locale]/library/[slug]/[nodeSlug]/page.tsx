@@ -31,9 +31,6 @@ export default async function LibraryDetail({
   const { t } = await i18nTranslation(locale);
   const node = await getLibraryDocNode(nodeSlug, slug, locale);
 
-  const backHref = urls(locale).library.index;
-  const backLabel = t("back_to_library");
-
   const generateHref = (l: Locale) => {
     const translation = node.translations.find((t) => t.locale === l);
     if (translation) {
@@ -43,10 +40,20 @@ export default async function LibraryDetail({
   };
 
   return (
-    <PageLayout t={t} locale={locale} generateHref={generateHref}>
-      <Link className="mb-4 block text-center" href={backHref}>
-        {backLabel}
-      </Link>
+    <PageLayout
+      t={t}
+      locale={locale}
+      generateHref={generateHref}
+      breadcrumbs={[
+        { label: t("library"), href: urls(locale).library.index },
+        { label: node.docTitle, href: urls(locale).library.doc(node.docSlug) },
+        {
+          label: node.title,
+          href: urls(locale).library.docNode(slug, nodeSlug),
+        },
+      ]}
+      wide
+    >
       <div>
         <div>
           {node.previous ? (
@@ -77,9 +84,6 @@ export default async function LibraryDetail({
           <Rehype>{node.content}</Rehype>
         </section>
       </article>
-      <Link className="mt-4 block text-center" href={backHref}>
-        {backLabel}
-      </Link>
     </PageLayout>
   );
 }
