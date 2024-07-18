@@ -59,7 +59,11 @@ export default async function PostDetail({
       generateHref={generateHref(source, satoshiId)}
       breadcrumbs={[
         { label: t("complete_satoshi"), href: urls(locale).satoshi.index },
-        { label: t("forum_posts"), href: urls(locale).satoshi.emails.index },
+        { label: t("forum_posts"), href: urls(locale).satoshi.posts.index },
+        {
+          label: formatPostSource(source),
+          href: urls(locale).satoshi.posts.sourceIndex(source),
+        },
       ]}
     >
       <PostNavigation

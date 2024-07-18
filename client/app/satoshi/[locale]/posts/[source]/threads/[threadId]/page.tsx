@@ -149,7 +149,14 @@ export default async function PostSourceThreadDetail({
       generateHref={generateHref(source, threadId)}
       breadcrumbs={[
         { label: t("complete_satoshi"), href: urls(locale).satoshi.index },
-        { label: t("forum_posts"), href: urls(locale).satoshi.emails.index },
+        {
+          label: t("forum_posts"),
+          href: urls(locale).satoshi.posts.threadsIndex,
+        },
+        {
+          label: formatPostSource(source),
+          href: urls(locale).satoshi.posts.sourceThreadsIndex(source),
+        },
       ]}
     >
       <ThreadPageHeader

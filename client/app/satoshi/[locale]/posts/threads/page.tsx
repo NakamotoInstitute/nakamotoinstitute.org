@@ -52,7 +52,10 @@ export default async function PostThreadsIndex({
       generateHref={generateHref}
       breadcrumbs={[
         { label: t("complete_satoshi"), href: urls(locale).satoshi.index },
-        { label: t("forum_posts"), href: urls(locale).satoshi.emails.index },
+        {
+          label: t("forum_posts"),
+          href: urls(locale).satoshi.posts.threadsIndex,
+        },
       ]}
       sourceLinks={[
         {
