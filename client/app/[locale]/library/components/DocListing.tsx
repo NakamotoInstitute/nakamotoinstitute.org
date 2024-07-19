@@ -18,12 +18,17 @@ export async function DocListing({ doc, locale, t }: DocListingProps) {
   return (
     <article className="border-b border-solid py-4 first:pt-0 last:border-b-0">
       <header className="mb-1 md:mb-2">
-        <h2 className="font-bold text-cardinal md:text-xl">
-          <Link href={urls(locale).library.doc(doc.slug)}>{doc.title}</Link>
+        <h2 className="font-bold md:text-xl">
+          <Link
+            className="text-cardinal hover:underline"
+            href={urls(locale).library.doc(doc.slug)}
+          >
+            {doc.title}
+          </Link>
         </h2>
         <p className="small-caps max-sm:text-sm">
           <AuthorsLinks as="span" authors={doc.authors} locale={locale} />
-          {" • "}
+          <span className="mx-1">•</span>
           <time dateTime={formatTimeAttr(doc.date, doc.granularity)}>
             {formatDocDate(locale, doc.date, doc.granularity)}
           </time>

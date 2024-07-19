@@ -32,11 +32,16 @@ export async function PostListing({ t, locale, post }: PostListingProps) {
         ) : null}
         <h2 className="text-xl font-bold">
           {post.series?.chapterTitle ? `Chapter ${post.seriesIndex}: ` : null}
-          <Link href={urls(locale).mempool.post(post.slug)}>{post.title}</Link>
+          <Link
+            className="text-cardinal hover:underline"
+            href={urls(locale).mempool.post(post.slug)}
+          >
+            {post.title}
+          </Link>
         </h2>
         <p>
           <AuthorsLinks authors={post.authors} locale={locale} as="span" />
-          {" • "}
+          <span className="mx-1">•</span>
           <time dateTime={post.date.toISOString()}>
             {formatDate(locale, post.date)}
           </time>
