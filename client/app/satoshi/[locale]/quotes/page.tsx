@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { Metadata } from "next";
 import Link from "next/link";
 import { Trans } from "react-i18next/TransWithoutContext";
@@ -30,14 +31,24 @@ export async function generateMetadata({
 type LinkColumnProps = {
   locale: Locale;
   categories: QuoteCategory[];
+  last?: boolean;
 };
 
-function LinkColumn({ locale, categories }: LinkColumnProps) {
+function LinkColumn({ locale, categories, last = false }: LinkColumnProps) {
   return (
-    <ul className="w-1/2">
+    <ul className="md:w-1/2">
       {categories.map((c) => (
-        <li key={c.slug}>
-          <Link href={urls(locale).satoshi.quoteCategory(c.slug)}>
+        <li
+          className={clsx(
+            "border-b-1 border-dashed border-taupe-light py-2",
+            last ? "last:border-b-0" : "md:last:border-b-0",
+          )}
+          key={c.slug}
+        >
+          <Link
+            className="text-cardinal hover:underline"
+            href={urls(locale).satoshi.quoteCategory(c.slug)}
+          >
             {c.name}
           </Link>
         </li>
@@ -73,8 +84,8 @@ export default async function QuotesIndex({
       ]}
     >
       <PageHeader title={t("quotable_satoshi")}>
-        <figure>
-          <blockquote>
+        <figure className="border-l-1 border-dashed border-cardinal">
+          <blockquote className="px-4 italic">
             <Trans
               i18nKey="satoshi_quote_extended"
               components={{
@@ -83,7 +94,7 @@ export default async function QuotesIndex({
               }}
             />
           </blockquote>
-          <figcaption>
+          <figcaption className="mt-3 px-4 text-lg font-medium small-caps">
             <Trans
               i18nKey="satoshi_citation"
               components={{
@@ -94,24 +105,28 @@ export default async function QuotesIndex({
                 ),
               }}
               values={{
-                date: formatDate(locale, new Date(Date.UTC(2008, 11, 14))),
+                date: formatDate(locale, new Date(Date.UTC(2008, 10, 14))),
               }}
             />
           </figcaption>
         </figure>
       </PageHeader>
-      <section className="flex">
+      <section className="my-4 flex flex-col gap-x-6 border-b-1 border-t-1 border-dashed border-taupe-light md:flex-row">
         <LinkColumn locale={locale} categories={firstColumn} />
-        <LinkColumn locale={locale} categories={secondColumn} />
+        <LinkColumn locale={locale} categories={secondColumn} last />
       </section>
-      <hr className="my-4" />
-      <footer className="text-center italic">
+      <footer>
         <p>
           <Trans
             t={t}
             i18nKey="quotable_satoshi_acknowledgements"
             components={{
-              a: <Link href="https://charts.bitbo.io" />,
+              a: (
+                <Link
+                  className="text-cardinal hover:underline"
+                  href="https://charts.bitbo.io"
+                />
+              ),
             }}
           />
         </p>
@@ -120,8 +135,18 @@ export default async function QuotesIndex({
             t={t}
             i18nKey="add_quotation_request"
             components={{
-              contact: <Link href={urls(locale).contact} />,
-              github: <Link href={urls(locale).github} />,
+              contact: (
+                <Link
+                  className="text-cardinal hover:underline"
+                  href={urls(locale).contact}
+                />
+              ),
+              github: (
+                <Link
+                  className="text-cardinal hover:underline"
+                  href={urls(locale).github}
+                />
+              ),
             }}
           />
         </p>

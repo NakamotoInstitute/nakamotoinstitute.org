@@ -119,7 +119,7 @@
   "view_post": "게시글 보기",
   "view_email": "이메일 보기",
   "quotable_satoshi": "인용하기 좋은 사토시의 글",
-  "satoshi_quote_extended": "이 내용을 제대로 설명할 수만 있다면 자유주의자 관점에선 매우 매력적일 것입니다.<br><em>그렇지만 저는 글쓰기보단 코딩을 더 잘합니다.</em>",
+  "satoshi_quote_extended": "이 내용을 제대로 설명할 수만 있다면 자유주의자 관점에선 매우 매력적일 것입니다.<br>그렇지만 저는 글쓰기보단 코딩을 더 잘합니다.",
   "satoshi_citation": "<a>사토시 나카모토</a>, {{date}}",
   "quotable_satoshi_acknowledgements": "인용문을 색인 해주신 <a>Jordan Tuwiner</a> 님에게 감사드립니다.",
   "add_quotation_request": "추가하고 싶은 인용문이나 카테고리가 있다면 <contact>저희에게 연락</contact>하시거나 <github>GitHub</github>에 풀 리퀘스트를 제출해 주세요."
