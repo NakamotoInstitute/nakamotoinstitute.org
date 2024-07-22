@@ -32,7 +32,10 @@ type SatoshiSectionProps = AnchorProps & {
 const SatoshiSection = ({ text, href, children }: SatoshiSectionProps) => {
   return (
     <div>
-      <Link href={href} className="text-xl font-medium">
+      <Link
+        href={href}
+        className="text-xl font-medium text-cardinal hover:underline"
+      >
         {text}
       </Link>
       <p>{children}</p>
