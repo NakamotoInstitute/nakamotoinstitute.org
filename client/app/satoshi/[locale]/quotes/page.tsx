@@ -1,13 +1,12 @@
-import clsx from "clsx";
 import { Metadata } from "next";
 import Link from "next/link";
 import { Trans } from "react-i18next/TransWithoutContext";
 
+import { ListColumnLayout } from "@/app/components/ListColumnLayout";
 import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
 import { locales } from "@/i18n";
 import { getQuoteCategories } from "@/lib/api/quotes";
-import { QuoteCategory } from "@/lib/api/schemas/quotes";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
@@ -28,44 +27,11 @@ export async function generateMetadata({
   };
 }
 
-type LinkColumnProps = {
-  locale: Locale;
-  categories: QuoteCategory[];
-  last?: boolean;
-};
-
-function LinkColumn({ locale, categories, last = false }: LinkColumnProps) {
-  return (
-    <ul className="md:w-1/2">
-      {categories.map((c) => (
-        <li
-          className={clsx(
-            "border-b border-dashed border-taupe-light py-2",
-            last ? "last:border-b-0" : "md:last:border-b-0",
-          )}
-          key={c.slug}
-        >
-          <Link
-            className="text-cardinal hover:underline"
-            href={urls(locale).satoshi.quoteCategory(c.slug)}
-          >
-            {c.name}
-          </Link>
-        </li>
-      ))}
-    </ul>
-  );
-}
-
 export default async function QuotesIndex({
   params: { locale },
 }: LocaleParams) {
   const { t } = await i18nTranslation(locale);
   const categories = await getQuoteCategories();
-
-  const halfLength = Math.ceil(categories.length / 2);
-  const firstColumn = categories.slice(0, halfLength);
-  const secondColumn = categories.slice(halfLength);
 
   return (
     <PageLayout
@@ -111,10 +77,10 @@ export default async function QuotesIndex({
           </figcaption>
         </figure>
       </PageHeader>
-      <section className="my-4 flex flex-col gap-x-6 border-b border-t border-dashed border-taupe-light md:flex-row">
-        <LinkColumn locale={locale} categories={firstColumn} />
-        <LinkColumn locale={locale} categories={secondColumn} last />
-      </section>
+      <ListColumnLayout
+        items={categories}
+        hrefFunc={(slug: string) => urls(locale).satoshi.quoteCategory(slug)}
+      />
       <footer>
         <p>
           <Trans
