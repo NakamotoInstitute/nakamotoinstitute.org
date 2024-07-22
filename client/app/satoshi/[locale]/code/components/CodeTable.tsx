@@ -43,7 +43,7 @@ export async function CodeTable({
   source,
 }: CodeTableProps) {
   return (
-    <article className="border-t-1 border-dashed border-taupe-light pb-5 pt-7">
+    <article className="border-t border-dashed border-taupe-light pb-5 pt-7">
       <h2 className="mb-2.5 text-2xl font-bold">{title}</h2>
       <div>
         <CodeTableRow label={t("date")}>

@@ -8,8 +8,6 @@ import { MempoolPostIndex } from "@/lib/api/schemas/mempool";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 
-import { TranslationLinks } from "../components/TranslationLinks";
-
 type PostListingProps = {
   t: TFunction<string, string>;
   locale: Locale;
@@ -20,10 +18,10 @@ export async function PostListing({ t, locale, post }: PostListingProps) {
   const original = post.date.getTime() === post.added.getTime();
 
   return (
-    <article className="border-b border-solid py-4 first:pt-0 last:border-b-0">
-      <header>
+    <article className="grid-col-1 md:grid-col-2 grid border-t border-dashed border-taupe-light py-4 md:grid-cols-[7fr,3fr]">
+      <header className="order-1">
         {post.series ? (
-          <h3 className="text-md font-semibold">
+          <h3 className="text-sm small-caps">
             <Link href={urls(locale).mempool.seriesDetail(post.series.slug)}>
               {post.series.title}
             </Link>
@@ -39,7 +37,7 @@ export async function PostListing({ t, locale, post }: PostListingProps) {
             {post.title}
           </Link>
         </h2>
-        <p>
+        <p className="small-caps">
           <AuthorsLinks authors={post.authors} locale={locale} as="span" />
           <span className="mx-1">•</span>
           <time dateTime={post.date.toISOString()}>
@@ -47,49 +45,24 @@ export async function PostListing({ t, locale, post }: PostListingProps) {
           </time>
         </p>
       </header>
-      <section className="my-2">
+      <section className="order-2 my-2 md:order-3">
         <p className="italic">&ldquo;{post.excerpt}&rdquo;</p>
       </section>
-      {!original || post.translations.length > 0 ? (
-        <footer
-          className={clsx(
-            "flex flex-wrap gap-4 gap-y-2 text-sm text-gray-600",
-            post.translations.length > 0 ? "justify-between" : "justify-end",
-          )}
-        >
-          {post.translations.length > 0 ? (
-            <div>
-              <Trans
-                t={t}
-                i18nKey="translation_links"
-                components={{
-                  links: (
-                    <TranslationLinks
-                      locale={locale}
-                      translations={post.translations}
-                      urlFunc={(item) =>
-                        urls(item.locale).mempool.post(item.slug)
-                      }
-                    />
-                  ),
-                }}
-              />
-            </div>
-          ) : null}
-          {!original ? (
-            <div>
-              <Trans
-                t={t}
-                i18nKey="added_date"
-                components={{
-                  date: <time dateTime={post.added.toISOString()} />,
-                }}
-                values={{ pubDate: formatDate(locale, post.added) }}
-              />
-            </div>
-          ) : null}
-        </footer>
-      ) : undefined}
+
+      <footer className="order-3 text-sm text-dark/70 small-caps md:order-2 md:text-right">
+        {!original ? (
+          <span>
+            <Trans
+              t={t}
+              i18nKey="added_date"
+              components={{
+                date: <time dateTime={post.added.toISOString()} />,
+              }}
+              values={{ pubDate: formatDate(locale, post.added) }}
+            />
+          </span>
+        ) : null}
+      </footer>
     </article>
   );
 }

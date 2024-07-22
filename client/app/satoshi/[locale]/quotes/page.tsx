@@ -40,7 +40,7 @@ function LinkColumn({ locale, categories, last = false }: LinkColumnProps) {
       {categories.map((c) => (
         <li
           className={clsx(
-            "border-b-1 border-dashed border-taupe-light py-2",
+            "border-b border-dashed border-taupe-light py-2",
             last ? "last:border-b-0" : "md:last:border-b-0",
           )}
           key={c.slug}
@@ -111,7 +111,7 @@ export default async function QuotesIndex({
           </figcaption>
         </figure>
       </PageHeader>
-      <section className="my-4 flex flex-col gap-x-6 border-b-1 border-t-1 border-dashed border-taupe-light md:flex-row">
+      <section className="my-4 flex flex-col gap-x-6 border-b border-t border-dashed border-taupe-light md:flex-row">
         <LinkColumn locale={locale} categories={firstColumn} />
         <LinkColumn locale={locale} categories={secondColumn} last />
       </section>

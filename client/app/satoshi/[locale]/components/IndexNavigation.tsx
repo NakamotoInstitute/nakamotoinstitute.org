@@ -75,7 +75,7 @@ export async function IndexNavigation({
 
   return (
     <div>
-      <div className="flex items-center justify-between border-b-1 border-dashed border-taupe-light">
+      <div className="flex items-center justify-between border-b border-dashed border-taupe-light">
         <ul className="flex gap-x-4 text-taupe">
           {sourceLinks.map((sourceLink) => (
             <li

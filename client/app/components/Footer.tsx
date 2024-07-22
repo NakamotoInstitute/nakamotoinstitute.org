@@ -24,7 +24,7 @@ export async function Footer({ t, locale }: FooterProps) {
   ];
 
   return (
-    <footer className="mx-auto mt-auto w-full max-w-screen-1.5xl border-t-1 border-dashed border-dark px-4">
+    <footer className="mx-auto mt-auto w-full max-w-screen-1.5xl border-t border-dashed border-dark px-4">
       <div className="py-8">
         <ul className="align-center flex flex-col justify-center gap-y-2 text-center sm:flex-row sm:flex-wrap sm:gap-x-8">
           {links.map(({ label, url }) => (
