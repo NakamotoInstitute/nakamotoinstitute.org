@@ -34,9 +34,12 @@ type SeriesListingProps = {
 
 function SeriesListing({ locale, series }: SeriesListingProps) {
   return (
-    <article className="border-b border-solid py-4 first:pt-0 last:border-b-0">
-      <h2>
-        <Link href={urls(locale).mempool.seriesDetail(series.slug)}>
+    <article className="border-t border-dashed border-taupe-light py-4 last:border-b-0">
+      <h2 className="font-bold md:text-xl">
+        <Link
+          className="text-cardinal hover:underline"
+          href={urls(locale).mempool.seriesDetail(series.slug)}
+        >
           <em>{series.title}</em>
         </Link>
       </h2>

@@ -28,7 +28,7 @@ export async function PostListing({ t, locale, post }: PostListingProps) {
             {!post.series.chapterTitle ? ` (#${post.seriesIndex})` : null}
           </h3>
         ) : null}
-        <h2 className="text-xl font-bold">
+        <h2 className="font-bold md:text-xl">
           {post.series?.chapterTitle ? `Chapter ${post.seriesIndex}: ` : null}
           <Link
             className="text-cardinal hover:underline"
