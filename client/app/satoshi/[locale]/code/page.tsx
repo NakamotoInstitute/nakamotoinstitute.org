@@ -49,7 +49,12 @@ export default async function SatoshiCode({
             t={t}
             i18nKey="version_control_description"
             components={{
-              a: <Link href="https://github.com/bitcoin/bitcoin/" />,
+              a: (
+                <Link
+                  className="text-cardinal hover:underline"
+                  href="https://github.com/bitcoin/bitcoin/"
+                />
+              ),
             }}
           />
         </p>
