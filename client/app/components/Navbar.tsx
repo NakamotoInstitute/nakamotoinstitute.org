@@ -4,8 +4,6 @@ import clsx from "clsx";
 import Link from "next/link";
 import { useState } from "react";
 
-import { languages } from "@/i18n";
-
 import { LanguageToggle, ToggleLinkProps } from "./LanguageToggle";
 
 export function Navbar({
@@ -21,7 +19,6 @@ export function Navbar({
   navLinks: AnchorProps[];
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const current = languages[locale];
 
   return (
     <nav className="border-b border-dashed border-dark">
@@ -84,7 +81,7 @@ export function Navbar({
             </div>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 md:static md:inset-auto md:ml-6 md:pr-0">
-            <LanguageToggle current={current} {...toggleProps} />
+            <LanguageToggle current={locale} {...toggleProps} />
           </div>
         </div>
       </div>

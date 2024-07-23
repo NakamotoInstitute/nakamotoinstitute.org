@@ -1,6 +1,6 @@
 import { ToggleLinkProps } from "@/app/components/LanguageToggle";
 import { env } from "@/env";
-import { languages, locales } from "@/i18n";
+import { defaultLocale, languages, locales } from "@/i18n";
 
 import { EmailSource } from "./api/schemas/emails";
 import { ForumPostSource } from "./api/schemas/posts";
@@ -158,7 +158,7 @@ export const generateLocaleToggleLinks = (
       const name = languages[loc];
 
       if (loc === locale) {
-        acc.current = name;
+        acc.current = locale;
         return acc;
       }
 
@@ -169,6 +169,6 @@ export const generateLocaleToggleLinks = (
 
       return acc;
     },
-    { current: "", links: [] },
+    { current: defaultLocale, links: [] },
   );
 };
