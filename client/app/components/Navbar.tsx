@@ -4,6 +4,8 @@ import clsx from "clsx";
 import Link from "next/link";
 import { useState } from "react";
 
+import { urls } from "@/lib/urls";
+
 import { ButtonLink } from "./Button";
 import { LanguageToggle, ToggleLinkProps } from "./LanguageToggle";
 
@@ -12,12 +14,14 @@ export function Navbar({
   logo,
   homeHref,
   navLinks,
+  navButtons,
   ...toggleProps
 }: ToggleLinkProps & {
   locale: Locale;
   logo: React.ReactNode;
   homeHref: string;
   navLinks: AnchorProps[];
+  navButtons: React.ReactNode;
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -34,7 +38,7 @@ export function Navbar({
             ))}
           </div>
           <div className="ml-auto flex items-center gap-x-4">
-            <ButtonLink href="">Donate</ButtonLink>
+            {navButtons}
             <LanguageToggle current={locale} {...toggleProps} />
             <div className="flex items-center md:hidden">
               <button

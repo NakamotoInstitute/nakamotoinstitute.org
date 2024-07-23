@@ -6,6 +6,7 @@ import { env } from "@/env";
 import { cdnUrl, generateLocaleToggleLinks, urls } from "@/lib/urls";
 
 import { Breadcrumbs } from "./Breadcrumbs";
+import { ButtonLink } from "./Button";
 import Fathom from "./Fathom";
 import { Footer } from "./Footer";
 import { Navbar } from "./Navbar";
@@ -55,6 +56,11 @@ export async function PageLayout({
           { href: urls(locale).library.index, text: t("library") },
           { href: urls(locale).mempool.index, text: t("mempool") },
           { href: urls(locale).substack, text: t("newsletter") },
+        ]}
+        navButtons={[
+          <ButtonLink key="donate" href={urls(locale).donate.index}>
+            {t("donate")}
+          </ButtonLink>,
         ]}
         {...toggleProps}
       />
