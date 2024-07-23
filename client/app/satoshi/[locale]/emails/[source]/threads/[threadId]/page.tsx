@@ -14,7 +14,6 @@ import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import { formatEmailSource } from "@/utils/strings";
 
-import { EmailThreadNavigation } from "@satoshi/components/ContentNavigation";
 import { ThreadPageHeader } from "@satoshi/components/ThreadPageHeader";
 
 // export const dynamicParams = false;
@@ -166,16 +165,7 @@ export default async function EmailSourceThreadDetail({
         }}
         externalLink={thread.url}
         satoshiOnly={satoshiOnly}
-      >
-        <EmailThreadNavigation
-          t={t}
-          className="mb-4"
-          locale={locale}
-          next={next}
-          previous={previous}
-          source={thread.source}
-        />
-      </ThreadPageHeader>
+      />
       {emails.map((e, index) => (
         <ThreadEmail
           key={e.sourceId}
@@ -186,15 +176,6 @@ export default async function EmailSourceThreadDetail({
           satoshiOnly={satoshiOnly}
         />
       ))}
-      <EmailThreadNavigation
-        t={t}
-        className="mt-4"
-        locale={locale}
-        next={next}
-        previous={previous}
-        source={thread.source}
-        reverse
-      />
     </PageLayout>
   );
 }

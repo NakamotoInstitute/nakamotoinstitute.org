@@ -6,6 +6,7 @@ export type EmailSource = z.infer<typeof zEmailSource>;
 
 const zEmailBase = z.object({
   date: z.coerce.date(),
+  sentFrom: z.string(),
   subject: z.string(),
   text: z.string(),
   source: zEmailSource,
@@ -15,7 +16,6 @@ const zEmailBase = z.object({
 });
 
 export const zEmail = zEmailBase.extend({
-  sentFrom: z.string(),
   parentId: z.number().int().min(1).nullable(),
   satoshiId: z.number().int().min(1).nullable(),
 });

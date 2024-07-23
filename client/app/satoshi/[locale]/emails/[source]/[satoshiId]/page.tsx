@@ -12,7 +12,12 @@ import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import { formatEmailSource } from "@/utils/strings";
 
-import { EmailNavigation } from "@satoshi/components/ContentNavigation";
+import {
+  ContentBox,
+  ContentBoxBody,
+  ContentBoxFooter,
+  ContentBoxHeader,
+} from "../../../components/ContentBox";
 
 // export const dynamicParams = false;
 
@@ -66,57 +71,37 @@ export default async function EmailDetail({
         },
       ]}
     >
-      <EmailNavigation
-        t={t}
-        className="mb-2"
-        locale={locale}
-        source={email.source}
-        previous={previous}
-        next={next}
-      />
-      <div>
-        <h2 className="text-2xl">{formatEmailSource(email.source)}</h2>
-        <h1 className="text-4xl">{email.subject}</h1>
-        <p className="text-xl">
-          <time dateTime={email.date.toISOString()}>
-            {formatDate(locale, email.date, {
-              dateStyle: "long",
-              timeStyle: "long",
-              hourCycle: "h24",
-            })}
-          </time>
-        </p>
-        <div className="flex gap-2">
-          <Link href={email.url}>{t("original_email")}</Link> •{" "}
-          <Link
-            href={{
+      <ContentBox>
+        <ContentBoxHeader
+          locale={locale}
+          source={formatEmailSource(source)}
+          sourceId={email.sourceId}
+          from={email.sentFrom}
+          subject={email.subject}
+          date={email.date}
+        />
+        <ContentBoxBody>
+          <div
+            className="font-mono"
+            dangerouslySetInnerHTML={{
+              __html: email.text.replaceAll("\n", "<br />"),
+            }}
+          />
+        </ContentBoxBody>
+        <ContentBoxFooter
+          t={t}
+          hrefs={{
+            original: email.url,
+            thread: {
               pathname: urls(locale).satoshi.emails.sourceThreadsDetail(
                 email.source,
                 email.threadId.toString(),
               ),
               hash: email.sourceId.toString(),
-            }}
-          >
-            {t("view_in_thread")}
-          </Link>
-        </div>
-      </div>
-      <hr className="my-4" />
-      <div
-        className="font-mono"
-        dangerouslySetInnerHTML={{
-          __html: email.text.replaceAll("\n", "<br />"),
-        }}
-      />
-      <EmailNavigation
-        t={t}
-        className="mt-4"
-        locale={locale}
-        previous={previous}
-        next={next}
-        source={email.source}
-        reverse
-      />
+            },
+          }}
+        />
+      </ContentBox>
     </PageLayout>
   );
 }
