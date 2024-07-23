@@ -10,15 +10,26 @@ import { formatDate } from "@/utils/dates";
 
 type PostListingProps = {
   t: TFunction<string, string>;
+  className?: string;
   locale: Locale;
   post: MempoolPostIndex;
 };
 
-export async function PostListing({ t, locale, post }: PostListingProps) {
+export async function PostListing({
+  t,
+  className,
+  locale,
+  post,
+}: PostListingProps) {
   const original = post.date.getTime() === post.added.getTime();
 
   return (
-    <article className="grid-col-1 md:grid-col-2 grid border-t border-dashed border-taupe-light py-4 md:grid-cols-[7fr,3fr]">
+    <article
+      className={clsx(
+        "grid-col-1 md:grid-col-2 grid border-t border-dashed border-taupe-light py-4 last:border-b md:grid-cols-[7fr,3fr]",
+        className,
+      )}
+    >
       <header className="order-1">
         {post.series ? (
           <h3 className="text-sm small-caps">
