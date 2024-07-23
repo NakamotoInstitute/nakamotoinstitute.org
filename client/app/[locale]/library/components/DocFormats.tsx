@@ -2,6 +2,7 @@ import clsx from "clsx";
 import { TFunction } from "i18next";
 import Link from "next/link";
 
+import { ButtonLink } from "@/app/components/Button";
 import { Chip } from "@/app/components/Chip";
 import { Document, DocumentIndex } from "@/lib/api/schemas/library";
 
@@ -22,22 +23,22 @@ export async function DocFormatLinks({
 
   doc.formats?.forEach((format) =>
     links.push(
-      <Link key={format.type} className={classes?.link} href={format.url}>
+      <ButtonLink key={format.type} className={classes?.link} href={format.url}>
         {format.type === "epub" ? "ePub" : format.type.toUpperCase()}
-      </Link>,
+      </ButtonLink>,
     ),
   );
 
   if (doc.external) {
     links.push(
-      <Link key="link" href={doc.external} className={classes?.link}>
+      <ButtonLink key="link" href={doc.external} className={classes?.link}>
         {t("external_link")}
-      </Link>,
+      </ButtonLink>,
     );
   }
 
   return links ? (
-    <div className={clsx(className, classes?.root, "flex gap-3")}>{links}</div>
+    <div className={clsx(className, classes?.root, "flex gap-4")}>{links}</div>
   ) : null;
 }
 

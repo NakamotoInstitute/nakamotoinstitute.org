@@ -21,7 +21,9 @@ export async function DocHeader({ t, locale, doc }: DocHeaderProps) {
           dangerouslySetInnerHTML={{ __html: doc.displayTitle ?? doc.title }}
         />
         {doc.subtitle ? (
-          <p className="mb-4 text-xl italic md:mb-6">{doc.subtitle}</p>
+          <p className="mb-4 text-2xl font-semibold md:mb-6 md:text-3xl">
+            {doc.subtitle}
+          </p>
         ) : null}
         <AuthorsLinks
           className="mb-1 text-xl font-bold small-caps md:mb-4 md:text-2xl"
@@ -42,13 +44,13 @@ export async function DocHeader({ t, locale, doc }: DocHeaderProps) {
         {doc.image ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            className="mx-auto block rounded-sm pt-6"
+            className="mx-auto block max-w-screen-sm rounded-sm pt-6"
             src={doc.image}
             alt={doc.imageAlt ?? ""}
           />
         ) : null}
       </header>
-      <hr className="mx-auto my-7 w-12 md:my-18" />
+      <hr className="mx-auto my-4 w-12 md:my-6" />
       {doc.content ? (
         <>
           <DocFormatLinks
@@ -61,10 +63,7 @@ export async function DocHeader({ t, locale, doc }: DocHeaderProps) {
       ) : (
         <DocFormatLinks
           t={t}
-          classes={{
-            root: "text-center flex-col gap-3",
-            link: "text-lg font-medium",
-          }}
+          classes={{ root: "justify-center gap-3 font-medium" }}
           doc={doc}
         />
       )}
