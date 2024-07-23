@@ -38,7 +38,7 @@ export async function Breadcrumbs({ breadcrumbs }: BreadcrumbsProps) {
           );
         })}
       </ol>
-      <ReturnButton className="mx-auto w-fit md:hidden" {...returnCrumb} />
+      <ReturnButton className="ml-4 md:hidden" {...returnCrumb} />
     </nav>
   );
 }
