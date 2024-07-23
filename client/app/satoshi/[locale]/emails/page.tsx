@@ -1,14 +1,13 @@
 import { Metadata } from "next";
-import Link from "next/link";
 
 import { locales } from "@/i18n";
 import { getSatoshiEmails } from "@/lib/api/emails";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
-import { formatDate } from "@/utils/dates";
 import { formatEmailSource } from "@/utils/strings";
 
+import { ContentListing } from "@satoshi/components/ContentListing";
 import { IndexPageLayout } from "@satoshi/components/IndexPageLayout";
 
 export const dynamicParams = false;
@@ -41,7 +40,7 @@ export default async function EmailsIndex({
       t={t}
       locale={locale}
       generateHref={generateHref}
-      title={t("emails")}
+      type="emails"
       breadcrumbs={[
         { label: t("complete_satoshi"), href: urls(locale).satoshi.index },
         { label: t("emails"), href: urls(locale).satoshi.emails.index },
@@ -65,29 +64,20 @@ export default async function EmailsIndex({
         href: urls(locale).satoshi.emails.threadsIndex,
       }}
     >
-      <ul>
+      <section>
         {emails.map((e) => (
-          <li key={e.satoshiId}>
-            <Link
-              href={urls(locale).satoshi.emails.sourceEmail(
-                e.source,
-                e.satoshiId.toString(),
-              )}
-            >
-              {e.subject}
-            </Link>{" "}
-            <em>
-              (
-              {formatDate(locale, e.date, {
-                dateStyle: "medium",
-                timeStyle: "long",
-                hourCycle: "h24",
-              })}
-              )
-            </em>
-          </li>
+          <ContentListing
+            key={e.satoshiId}
+            locale={locale}
+            label={e.subject}
+            href={urls(locale).satoshi.emails.sourceEmail(
+              e.source,
+              e.satoshiId.toString(),
+            )}
+            date={e.date}
+          />
         ))}
-      </ul>
+      </section>
     </IndexPageLayout>
   );
 }

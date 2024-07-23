@@ -6,15 +6,13 @@ export type SourceLink =
 
 export type ToggleLinks = { active: "individual" | "threads"; href: string };
 
-export type IndexHeaderProps = {
-  title: string;
-} & IndexNavigationProps;
-
-export async function IndexHeader({ title, ...rest }: IndexHeaderProps) {
+export async function IndexHeader({ t, type, ...rest }: IndexNavigationProps) {
   return (
-    <header className="mb-6">
-      <h1 className="mb-2 text-4xl font-semibold">{title}</h1>
-      <IndexNavigation {...rest} />
+    <header>
+      <h1 className="mb-2 text-4xl font-semibold">
+        {type === "emails" ? t("emails") : t("forum_posts")}
+      </h1>
+      <IndexNavigation t={t} type={type} {...rest} />
     </header>
   );
 }

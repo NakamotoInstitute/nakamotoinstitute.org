@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Link from "next/link";
 
 import { locales } from "@/i18n";
 import { getForumThreadsBySource } from "@/lib/api/posts";
@@ -7,9 +6,9 @@ import { ForumPostSource, zForumPostSource } from "@/lib/api/schemas/posts";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
-import { formatDate } from "@/utils/dates";
 import { formatPostSource, otherForumPostSource } from "@/utils/strings";
 
+import { ContentListing } from "@satoshi/components/ContentListing";
 import { SourceLink } from "@satoshi/components/IndexHeader";
 import { IndexPageLayout } from "@satoshi/components/IndexPageLayout";
 
@@ -66,7 +65,7 @@ export default async function PostSourceThreadsIndex({
   return (
     <IndexPageLayout
       t={t}
-      title={t("forum_posts")}
+      type="posts"
       locale={locale}
       generateHref={generateHref(source)}
       breadcrumbs={[
@@ -86,21 +85,20 @@ export default async function PostSourceThreadsIndex({
         href: urls(locale).satoshi.posts.sourceIndex(source),
       }}
     >
-      <ul>
+      <section>
         {threads.map((t) => (
-          <li key={t.id}>
-            <Link
-              href={urls(locale).satoshi.posts.sourceThreadsDetail(
-                t.source,
-                t.id.toString(),
-              )}
-            >
-              {t.title}
-            </Link>{" "}
-            <em>({formatDate(locale, t.date)})</em>
-          </li>
+          <ContentListing
+            key={t.id}
+            locale={locale}
+            label={t.title}
+            href={urls(locale).satoshi.posts.sourceThreadsDetail(
+              t.source,
+              t.id.toString(),
+            )}
+            date={t.date}
+          />
         ))}
-      </ul>
+      </section>
     </IndexPageLayout>
   );
 }

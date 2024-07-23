@@ -5,6 +5,7 @@ type ToggleLinksProps = {
   t: TFunction<string, string>;
   active: "individual" | "threads";
   href: string;
+  individualLabel: string;
   isMobile?: boolean;
 };
 
@@ -12,6 +13,7 @@ async function ToggleLinks({
   active,
   href,
   t,
+  individualLabel,
   isMobile = false,
 }: ToggleLinksProps) {
   return (
@@ -29,7 +31,7 @@ async function ToggleLinks({
               { grow: isMobile },
             )}
           >
-            {t("individual")}
+            {individualLabel}
           </span>
           <a href={href} className={clsx("px-4 py-1", { grow: isMobile })}>
             {t("threads")}
@@ -38,7 +40,7 @@ async function ToggleLinks({
       ) : (
         <>
           <a href={href} className={clsx("px-4 py-1", { grow: isMobile })}>
-            {t("individual")}
+            {individualLabel}
           </a>
           <span
             className={clsx(
@@ -62,16 +64,19 @@ export type ToggleLinks = { active: "individual" | "threads"; href: string };
 
 export type IndexNavigationProps = {
   t: TFunction<string, string>;
+  type: "emails" | "posts";
   sourceLinks: SourceLink[];
   toggleLinks: ToggleLinks;
 };
 
 export async function IndexNavigation({
   t,
+  type,
   sourceLinks,
   toggleLinks,
 }: IndexNavigationProps) {
-  const toggleLinksProps = { ...toggleLinks, t };
+  const individualLabel = type === "emails" ? t("emails") : t("posts");
+  const toggleLinksProps = { ...toggleLinks, t, individualLabel };
 
   return (
     <div>

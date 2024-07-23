@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Link from "next/link";
 
 import { locales } from "@/i18n";
 import { getSatoshiEmailsBySource } from "@/lib/api/emails";
@@ -8,9 +7,9 @@ import { zEmailSource } from "@/lib/api/schemas/emails";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
-import { formatDate } from "@/utils/dates";
 import { formatEmailSource, otherEmailSource } from "@/utils/strings";
 
+import { ContentListing } from "@satoshi/components/ContentListing";
 import { SourceLink } from "@satoshi/components/IndexHeader";
 import { IndexPageLayout } from "@satoshi/components/IndexPageLayout";
 
@@ -67,7 +66,7 @@ export default async function EmailsSourceIndex({
   return (
     <IndexPageLayout
       t={t}
-      title={t("emails")}
+      type="emails"
       locale={locale}
       generateHref={generateHref(source)}
       breadcrumbs={[
@@ -84,29 +83,20 @@ export default async function EmailsSourceIndex({
         href: urls(locale).satoshi.emails.sourceThreadsIndex(source),
       }}
     >
-      <ul>
+      <section>
         {emails.map((e) => (
-          <li key={e.satoshiId}>
-            <Link
-              href={urls(locale).satoshi.emails.sourceEmail(
-                e.source,
-                e.satoshiId.toString(),
-              )}
-            >
-              {e.subject}
-            </Link>{" "}
-            <em>
-              (
-              {formatDate(locale, e.date, {
-                dateStyle: "medium",
-                timeStyle: "long",
-                hourCycle: "h24",
-              })}
-              )
-            </em>
-          </li>
+          <ContentListing
+            key={e.satoshiId}
+            locale={locale}
+            label={e.subject}
+            href={urls(locale).satoshi.emails.sourceEmail(
+              e.source,
+              e.satoshiId.toString(),
+            )}
+            date={e.date}
+          />
         ))}
-      </ul>
+      </section>
     </IndexPageLayout>
   );
 }
