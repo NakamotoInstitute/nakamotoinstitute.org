@@ -31,10 +31,10 @@ type SatoshiSectionProps = AnchorProps & {
 
 const SatoshiSection = ({ text, href, children }: SatoshiSectionProps) => {
   return (
-    <div>
+    <div className="border-b border-dashed border-taupe-light py-5 first:border-t">
       <Link
         href={href}
-        className="text-xl font-medium text-cardinal hover:underline"
+        className="text-xl font-bold text-cardinal hover:underline"
       >
         {text}
       </Link>
@@ -50,22 +50,14 @@ export default async function SatoshiIndex({
   const content = await getPage("complete-satoshi", locale);
 
   return (
-    <PageLayout
-      t={t}
-      className="text-center"
-      locale={locale}
-      generateHref={generateHref}
-    >
+    <PageLayout t={t} locale={locale} generateHref={generateHref}>
       <PageHeader title={t("complete_satoshi")}>
         <Markdown>{content}</Markdown>
-      </PageHeader>
-      <section>
-        <p>
+        <p className="underline">
           <Link href="/satoshinakamoto.asc">{t("satoshi_pgp_key")}</Link>
         </p>
-      </section>
-      <hr className="my-4" />
-      <section className="mx-auto flex flex-col gap-4">
+      </PageHeader>
+      <section>
         <SatoshiSection
           text={t("the_whitepaper")}
           href={urls(locale).library.doc("bitcoin")}
