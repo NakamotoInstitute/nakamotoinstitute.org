@@ -8,6 +8,7 @@ import {
   useFocus,
   useInteractions,
 } from "@floating-ui/react";
+import clsx from "clsx";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -45,7 +46,11 @@ export function LanguageToggle({
     <div>
       <button
         type="button"
-        className="border-1 border-dark px-2.5 py-2 text-sm text-dark focus:outline-none"
+        className={clsx(
+          "border-1 px-2.5 py-2 text-sm text-dark focus:outline-none",
+          isOpen && "border-dark",
+          !isOpen && "border-transparent",
+        )}
         ref={refs.setReference}
         {...getReferenceProps({
           onClick() {
