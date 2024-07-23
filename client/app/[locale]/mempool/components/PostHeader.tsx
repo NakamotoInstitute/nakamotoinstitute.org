@@ -21,15 +21,15 @@ async function SeriesHeader({
   seriesIndex,
 }: SeriesHeaderProps) {
   return (
-    <div className="mb-6">
-      <h2 className="text-3xl">
+    <div className="mb-6 text-center font-bold small-caps">
+      <h2>
         <Link href={urls(locale).mempool.seriesDetail(series.slug)}>
           {series.title}
         </Link>
         {!series.chapterTitle ? ` (#${seriesIndex})` : null}
       </h2>
       {series?.chapterTitle ? (
-        <p className="text-3xl">
+        <p className="-mb-4 mt-2 text-xl md:mt-3 md:text-4xl">
           <Trans
             t={t}
             i18nKey="chapter_index"
@@ -50,7 +50,7 @@ type PostHeaderProps = {
 export async function PostHeader({ t, locale, post }: PostHeaderProps) {
   return (
     <>
-      <header className="mt-17 text-center">
+      <header className="mx-auto text-center">
         {post.series && post.seriesIndex !== null ? (
           <SeriesHeader
             t={t}
@@ -62,22 +62,12 @@ export async function PostHeader({ t, locale, post }: PostHeaderProps) {
         <h1 className="mb-4 text-4xl font-medium leading-[1.1] md:mb-6 md:text-7xl">
           {post.title}
         </h1>
-        <p className="mb-1 text-xl font-bold small-caps md:mb-4 md:text-2xl">
-          <Trans
-            t={t}
-            i18nKey="by_authors"
-            components={{
-              authors: (
-                <AuthorsLinks
-                  as={"span"}
-                  locale={locale}
-                  authors={post.authors}
-                  itemClassName="text-dark"
-                />
-              ),
-            }}
-          />
-        </p>
+        <AuthorsLinks
+          className="mb-1 text-xl font-bold small-caps md:mb-4 md:text-2xl"
+          itemClassName="text-dark"
+          locale={locale}
+          authors={post.authors}
+        />
         <p className="text-xl font-bold opacity-60 small-caps md:text-2xl">
           <time dateTime={post.date.toISOString()}>
             {formatDate(locale, post.date)}
@@ -99,7 +89,7 @@ export async function PostHeader({ t, locale, post }: PostHeaderProps) {
         {post.image ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            className="mx-auto block rounded-sm pt-6 md:max-w-[640px]"
+            className="mx-auto mt-6 block max-w-screen-sm"
             src={post.image}
             alt={post.imageAlt ?? ""}
           />

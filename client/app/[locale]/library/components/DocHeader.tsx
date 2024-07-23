@@ -15,9 +15,9 @@ type DocHeaderProps = {
 export async function DocHeader({ t, locale, doc }: DocHeaderProps) {
   return (
     <>
-      <header className="mx-auto mt-6 text-center">
+      <header className="mx-auto text-center">
         <h1
-          className="mb-4 text-4xl font-medium md:mb-6 md:text-7xl"
+          className="mb-4 text-4xl font-medium leading-[1.1] md:mb-6 md:text-7xl"
           dangerouslySetInnerHTML={{ __html: doc.displayTitle ?? doc.title }}
         />
         {doc.subtitle ? (
@@ -44,7 +44,7 @@ export async function DocHeader({ t, locale, doc }: DocHeaderProps) {
         {doc.image ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            className="mx-auto block max-w-screen-sm rounded-sm pt-6"
+            className="mx-auto mt-6 block max-w-screen-sm"
             src={doc.image}
             alt={doc.imageAlt ?? ""}
           />
