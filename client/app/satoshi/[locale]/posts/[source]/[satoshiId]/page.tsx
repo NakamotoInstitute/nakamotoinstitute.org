@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
 import { locales } from "@/i18n";
 import { getForumPost } from "@/lib/api/posts";
@@ -17,7 +18,6 @@ import {
   ContentBoxHeader,
 } from "@satoshi/components/ContentBox";
 import { PostNavigation } from "@satoshi/components/ContentNavigation";
-import { ContentPageHeader } from "@satoshi/components/ContentPageHeader";
 
 export const dynamicParams = false;
 
@@ -71,8 +71,8 @@ export default async function PostDetail({
         },
       ]}
     >
-      <ContentPageHeader
-        source={formatPostSource(post.source)}
+      <PageHeader
+        superTitle={formatPostSource(post.source)}
         title={post.subject}
       >
         <PostNavigation
@@ -83,7 +83,7 @@ export default async function PostDetail({
           previous={previous}
           next={next}
         />
-      </ContentPageHeader>
+      </PageHeader>
 
       <ContentBox>
         <ContentBoxHeader

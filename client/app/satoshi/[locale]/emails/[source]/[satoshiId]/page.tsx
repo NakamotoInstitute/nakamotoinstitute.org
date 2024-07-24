@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
 import { locales } from "@/i18n";
 import { getEmail } from "@/lib/api/emails";
@@ -17,7 +18,6 @@ import {
   ContentBoxHeader,
 } from "@satoshi/components/ContentBox";
 import { EmailNavigation } from "@satoshi/components/ContentNavigation";
-import { ContentPageHeader } from "@satoshi/components/ContentPageHeader";
 
 // export const dynamicParams = false;
 
@@ -71,10 +71,7 @@ export default async function EmailDetail({
         },
       ]}
     >
-      <ContentPageHeader
-        source={formatEmailSource(source)}
-        title={email.subject}
-      >
+      <PageHeader superTitle={formatEmailSource(source)} title={email.subject}>
         <EmailNavigation
           t={t}
           locale={locale}
@@ -83,7 +80,7 @@ export default async function EmailDetail({
           previous={previous}
           next={next}
         />
-      </ContentPageHeader>
+      </PageHeader>
 
       <ContentBox>
         <ContentBoxHeader

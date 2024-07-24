@@ -26,7 +26,6 @@
   "link": "Link",
   "from": "From:",
   "subject": "Subject:",
-
   "bitcoin_context": "Bitcoin was not forged in a vacuum. These works serve to contextualize bitcoin into the broader story of cryptography and freedom.",
   "empty_library_message": "The library is empty for this language.",
   "back_to_mempool": "Back to the Memory Pool",

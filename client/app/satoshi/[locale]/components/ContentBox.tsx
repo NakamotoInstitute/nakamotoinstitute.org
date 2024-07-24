@@ -41,7 +41,7 @@ export type ContentBoxHeaderProps = {
   satoshi?: boolean;
   source?: string;
   sourceId?: string;
-  from: string;
+  from?: string;
   subject: string;
   date: Date;
 };
@@ -77,8 +77,12 @@ export async function ContentBoxHeader({
         </div>
       ) : null}
       <div className="grid grid-cols-[auto_1fr] gap-x-4 px-8 py-2">
-        <div>{t("from")}</div>
-        <div>{from}</div>
+        {from ? (
+          <>
+            <div>{t("from")}</div>
+            <div>{from}</div>
+          </>
+        ) : null}
         <div>{t("subject")}</div>
         <div className="font-bold">{subject}</div>
         <div>{t("date_colon")}</div>
@@ -98,12 +102,17 @@ export async function ContentBoxHeader({
 
 export type ContentBoxBodyProps = {
   mono?: boolean;
+  className?: string;
   children: React.ReactNode;
 };
 
-export async function ContentBoxBody({ mono, children }: ContentBoxBodyProps) {
+export async function ContentBoxBody({
+  className,
+  mono,
+  children,
+}: ContentBoxBodyProps) {
   return (
-    <section className={clsx("px-8 py-4", mono && "font-mono")}>
+    <section className={clsx(className, "px-8 py-4", mono && "font-mono")}>
       {children}
     </section>
   );
