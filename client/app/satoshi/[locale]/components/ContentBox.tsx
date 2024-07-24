@@ -1,32 +1,42 @@
 import clsx from "clsx";
 import { TFunction } from "i18next";
 import Link from "next/link";
+import { ElementType } from "react";
 import { UrlObject } from "url";
 
 import { formatDate } from "@/utils/dates";
 
 export type ContentBoxProps = {
+  as?: ElementType;
+  id?: string;
+  className?: string;
   alternate?: boolean;
   children: React.ReactNode;
 };
 
 export async function ContentBox({
+  as: WrapperComponent = "div",
+  id,
+  className,
   alternate = false,
   children,
 }: ContentBoxProps) {
   return (
-    <div
+    <WrapperComponent
+      id={id}
       className={clsx(
         "drop-shadow-sm",
-        alternate ? "bg-taupe-light" : "bg-white",
+        alternate ? "bg-sand" : "bg-white",
+        className,
       )}
     >
       {children}
-    </div>
+    </WrapperComponent>
   );
 }
 
 export type ContentBoxHeaderProps = {
+  t: TFunction<string, string>;
   locale: Locale;
   satoshi?: boolean;
   source?: string;
@@ -37,6 +47,7 @@ export type ContentBoxHeaderProps = {
 };
 
 export async function ContentBoxHeader({
+  t,
   locale,
   satoshi = true,
   source,
@@ -55,15 +66,22 @@ export async function ContentBoxHeader({
       {source || sourceId ? (
         <div className="flex justify-between border-b border-dashed border-taupe px-8 py-2">
           {source ? <div className="font-bold">{source}</div> : null}
-          {sourceId ? <div>#{sourceId}</div> : null}
+          {sourceId ? (
+            <Link
+              className="text-cardinal hover:underline"
+              href={{ hash: sourceId }}
+            >
+              #{sourceId}
+            </Link>
+          ) : null}
         </div>
       ) : null}
       <div className="grid grid-cols-[auto_1fr] gap-x-4 px-8 py-2">
-        <div>From:</div>
+        <div>{t("from")}</div>
         <div>{from}</div>
-        <div>Subject:</div>
+        <div>{t("subject")}</div>
         <div className="font-bold">{subject}</div>
-        <div>Date:</div>
+        <div>{t("date_colon")}</div>
         <div>
           <time dateTime={date.toISOString()}>
             {formatDate(locale, date, {
@@ -79,11 +97,16 @@ export async function ContentBoxHeader({
 }
 
 export type ContentBoxBodyProps = {
+  mono?: boolean;
   children: React.ReactNode;
 };
 
-export async function ContentBoxBody({ children }: ContentBoxBodyProps) {
-  return <section className="px-8 py-4">{children}</section>;
+export async function ContentBoxBody({ mono, children }: ContentBoxBodyProps) {
+  return (
+    <section className={clsx("px-8 py-4", mono && "font-mono")}>
+      {children}
+    </section>
+  );
 }
 
 export type ContentBoxFooterProps = {
@@ -91,21 +114,27 @@ export type ContentBoxFooterProps = {
   hrefs: {
     original: string;
     thread?: UrlObject;
+    permalink?: string;
   };
 };
 
 export async function ContentBoxFooter({
   t,
-  hrefs: { original, thread },
+  hrefs: { original, thread, permalink },
 }: ContentBoxFooterProps) {
   return (
-    <footer className="flex justify-between border-t border-dashed border-taupe px-8 py-4 font-mono text-cardinal">
+    <footer className="flex justify-between border-t border-dashed border-taupe px-8 py-4 font-mono text-sm text-cardinal">
       <Link className="text-cardinal hover:underline" href={original}>
         View original
       </Link>
       {thread ? (
         <Link className="text-cardinal hover:underline" href={thread}>
           {t("view_in_thread")}
+        </Link>
+      ) : null}
+      {permalink ? (
+        <Link className="text-cardinal hover:underline" href={permalink}>
+          {t("permalink")}
         </Link>
       ) : null}
     </footer>

@@ -87,14 +87,14 @@ export default async function EmailDetail({
 
       <ContentBox>
         <ContentBoxHeader
+          t={t}
           locale={locale}
           from={email.sentFrom}
           subject={email.subject}
           date={email.date}
         />
-        <ContentBoxBody>
+        <ContentBoxBody mono>
           <div
-            className="font-mono"
             dangerouslySetInnerHTML={{
               __html: email.text.replaceAll("\n", "<br />"),
             }}

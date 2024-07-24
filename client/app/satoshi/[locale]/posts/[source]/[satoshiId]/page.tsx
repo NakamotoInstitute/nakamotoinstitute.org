@@ -1,26 +1,23 @@
 import { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { PageLayout } from "@/app/components/PageLayout";
 import { locales } from "@/i18n";
-import { getForumPost, getSatoshiPosts } from "@/lib/api/posts";
+import { getForumPost } from "@/lib/api/posts";
 import { ForumPostSource } from "@/lib/api/schemas/posts";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
-import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
+import { generateHrefLangs } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
-import { formatDate } from "@/utils/dates";
 import { formatPostSource } from "@/utils/strings";
-
-import { PostNavigation } from "@satoshi/components/ContentNavigation";
 
 import {
   ContentBox,
   ContentBoxBody,
   ContentBoxFooter,
   ContentBoxHeader,
-} from "../../../components/ContentBox";
-import { ContentPageHeader } from "../../../components/ContentPageHeader";
+} from "@satoshi/components/ContentBox";
+import { PostNavigation } from "@satoshi/components/ContentNavigation";
+import { ContentPageHeader } from "@satoshi/components/ContentPageHeader";
 
 export const dynamicParams = false;
 
@@ -90,6 +87,7 @@ export default async function PostDetail({
 
       <ContentBox>
         <ContentBoxHeader
+          t={t}
           locale={locale}
           from={post.posterName}
           subject={post.subject}

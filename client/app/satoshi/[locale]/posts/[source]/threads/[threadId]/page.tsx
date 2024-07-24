@@ -1,7 +1,6 @@
 import clsx from "clsx";
 import { TFunction } from "i18next";
 import { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { PageLayout } from "@/app/components/PageLayout";
@@ -11,9 +10,14 @@ import { ForumPost, ForumPostSource } from "@/lib/api/schemas/posts";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
-import { formatDate } from "@/utils/dates";
 import { formatPostSource } from "@/utils/strings";
 
+import {
+  ContentBox,
+  ContentBoxBody,
+  ContentBoxFooter,
+  ContentBoxHeader,
+} from "@satoshi/components/ContentBox";
 import { PostThreadNavigation } from "@satoshi/components/ContentNavigation";
 import { ThreadPageHeader } from "@satoshi/components/ThreadPageHeader";
 
@@ -61,11 +65,11 @@ async function ThreadPost({
   satoshiOnly,
 }: ThreadPostProps) {
   return (
-    <article
+    <ContentBox
       id={post.sourceId}
+      as="article"
       className={clsx(
-        "mb-3 border-2 font-mono text-[13px] last:mb-0",
-        odd ? "bg-neutral-100" : "bg-white",
+        "mb-3 last:mb-0",
         !satoshiOnly &&
           post.source === "p2pfoundation" && [
             "relative",
@@ -78,50 +82,39 @@ async function ThreadPost({
             },
           ],
       )}
+      alternate={odd}
     >
-      <header className={clsx(post.satoshiId && "bg-amber-200")}>
-        <div className="flex justify-between border-b p-2">
-          <span className="font-bold">
-            {post.posterUrl ? (
-              <Link href={post.posterUrl}>{post.posterName}</Link>
-            ) : (
-              post.posterName
-            )}
-          </span>
-          <Link href={{ hash: post.sourceId }}>#{post.sourceId}</Link>
-        </div>
-        <div className="border-b p-2">
-          <h2 className="text-lg font-bold">{post.subject}</h2>
-          <time dateTime={post.date.toISOString()}>
-            {formatDate(locale, post.date, {
-              dateStyle: "long",
-              timeStyle: "long",
-            })}
-          </time>
-        </div>
-      </header>
-      <section>
+      <ContentBoxHeader
+        t={t}
+        locale={locale}
+        source={formatPostSource(post.source)}
+        sourceId={post.sourceId}
+        from={post.posterName}
+        subject={post.subject}
+        date={post.date}
+        satoshi={!!post.satoshiId}
+      />
+      <ContentBoxBody>
         <div
-          className="p-2 font-sans text-sm [&>.post>img]:inline"
+          className="[&>.post>img]:inline"
           dangerouslySetInnerHTML={{
             __html: post.text,
           }}
         />
-      </section>
-      <footer className="flex justify-between border-t p-2">
-        <Link href={post.url}>{t("external_link")}</Link>
-        {post.satoshiId ? (
-          <Link
-            href={urls(locale).satoshi.posts.sourcePost(
-              post.source,
-              post.satoshiId.toString(),
-            )}
-          >
-            {t("permalink")}
-          </Link>
-        ) : null}
-      </footer>
-    </article>
+      </ContentBoxBody>
+      <ContentBoxFooter
+        t={t}
+        hrefs={{
+          original: post.url,
+          permalink: post.satoshiId
+            ? urls(locale).satoshi.posts.sourcePost(
+                post.source,
+                post.satoshiId.toString(),
+              )
+            : undefined,
+        }}
+      />
+    </ContentBox>
   );
 }
 
