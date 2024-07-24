@@ -5,7 +5,6 @@ import { Trans } from "react-i18next/TransWithoutContext";
 import { PageLayout } from "@/app/components/PageLayout";
 import { Rehype } from "@/app/components/Rehype";
 import { RenderedItemsList } from "@/app/components/RenderedItemsList";
-import { ReturnButton } from "@/app/components/ReturnButton";
 import { getLibraryDoc, getLibraryParams } from "@/lib/api/library";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { getDir } from "@/lib/i18n/utils";

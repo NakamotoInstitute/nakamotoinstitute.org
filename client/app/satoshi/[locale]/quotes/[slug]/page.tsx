@@ -14,11 +14,7 @@ import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import { formatEmailSource, formatPostSource } from "@/utils/strings";
 
-import {
-  ContentBox,
-  ContentBoxBody,
-  ContentBoxHeader,
-} from "../../components/ContentBox";
+import { ContentBox, ContentBoxBody } from "@satoshi/components/ContentBox";
 
 const generateHref = (slug: string) => (l: Locale) =>
   urls(l).satoshi.quoteCategory(slug);
@@ -49,7 +45,6 @@ async function SatoshiQuote({ t, locale, quote }: SatoshiQuoteProps) {
   let subject: string | undefined = undefined;
   let url: string;
   let label: string;
-  let date: Date;
 
   if (quote.whitepaper) {
     source = t("bitcoin_title");
