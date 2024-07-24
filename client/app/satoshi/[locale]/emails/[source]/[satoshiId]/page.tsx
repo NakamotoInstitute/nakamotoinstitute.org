@@ -15,8 +15,9 @@ import {
   ContentBoxBody,
   ContentBoxFooter,
   ContentBoxHeader,
-} from "../../../components/ContentBox";
-import { EmailNavigation } from "../../../components/ContentNavigation";
+} from "@satoshi/components/ContentBox";
+import { EmailNavigation } from "@satoshi/components/ContentNavigation";
+import { ContentPageHeader } from "@satoshi/components/ContentPageHeader";
 
 // export const dynamicParams = false;
 
@@ -70,26 +71,23 @@ export default async function EmailDetail({
         },
       ]}
     >
-      <div className="mb-4">
-        <h1 className="mb-4 text-3xl font-semibold md:text-4xl">
-          {email.subject}
-        </h1>
-        <div className="flex items-center justify-between">
-          <EmailNavigation
-            t={t}
-            locale={locale}
-            id={email.satoshiId}
-            source={email.source}
-            previous={previous}
-            next={next}
-          />
-        </div>
-      </div>
+      <ContentPageHeader
+        source={formatEmailSource(source)}
+        title={email.subject}
+      >
+        <EmailNavigation
+          t={t}
+          locale={locale}
+          id={email.satoshiId}
+          source={email.source}
+          previous={previous}
+          next={next}
+        />
+      </ContentPageHeader>
+
       <ContentBox>
         <ContentBoxHeader
           locale={locale}
-          source={formatEmailSource(source)}
-          sourceId={email.sourceId}
           from={email.sentFrom}
           subject={email.subject}
           date={email.date}

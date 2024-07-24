@@ -1,5 +1,4 @@
 import { TFunction } from "i18next";
-import Link from "next/link";
 
 import { ToggleLink } from "@/app/components/ToggleLink";
 

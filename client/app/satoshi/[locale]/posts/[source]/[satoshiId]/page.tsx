@@ -14,6 +14,14 @@ import { formatPostSource } from "@/utils/strings";
 
 import { PostNavigation } from "@satoshi/components/ContentNavigation";
 
+import {
+  ContentBox,
+  ContentBoxBody,
+  ContentBoxFooter,
+  ContentBoxHeader,
+} from "../../../components/ContentBox";
+import { ContentPageHeader } from "../../../components/ContentPageHeader";
+
 export const dynamicParams = false;
 
 const generateHref =
@@ -66,56 +74,48 @@ export default async function PostDetail({
         },
       ]}
     >
-      <PostNavigation
-        t={t}
-        className="mb-2"
-        locale={locale}
-        source={post.source}
-        previous={previous}
-        next={next}
-      />
-      <div>
-        <h2 className="text-2xl">{formatPostSource(post.source)}</h2>
-        <h1 className="text-4xl">{post.subject}</h1>
-        <p className="text-xl">
-          <time dateTime={post.date.toISOString()}>
-            {formatDate(locale, post.date, {
-              dateStyle: "long",
-              timeStyle: "long",
-              hourCycle: "h24",
-            })}
-          </time>
-        </p>
-        <div className="flex gap-2">
-          <Link href={post.url}>{t("original_post")}</Link> •{" "}
-          <Link
-            href={{
+      <ContentPageHeader
+        source={formatPostSource(post.source)}
+        title={post.subject}
+      >
+        <PostNavigation
+          t={t}
+          locale={locale}
+          id={post.satoshiId}
+          source={post.source}
+          previous={previous}
+          next={next}
+        />
+      </ContentPageHeader>
+
+      <ContentBox>
+        <ContentBoxHeader
+          locale={locale}
+          from={post.posterName}
+          subject={post.subject}
+          date={post.date}
+        />
+        <ContentBoxBody>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: post.text,
+            }}
+          />
+        </ContentBoxBody>
+        <ContentBoxFooter
+          t={t}
+          hrefs={{
+            original: post.url,
+            thread: {
               pathname: urls(locale).satoshi.posts.sourceThreadsDetail(
-                post.source,
+                source,
                 post.threadId.toString(),
               ),
               hash: post.sourceId.toString(),
-            }}
-          >
-            {t("view_in_thread")}
-          </Link>
-        </div>
-      </div>
-      <hr className="my-4" />
-      <div
-        dangerouslySetInnerHTML={{
-          __html: post.text,
-        }}
-      />
-      <PostNavigation
-        t={t}
-        className="mt-4"
-        locale={locale}
-        previous={previous}
-        next={next}
-        source={post.source}
-        reverse
-      />
+            },
+          }}
+        />
+      </ContentBox>
     </PageLayout>
   );
 }

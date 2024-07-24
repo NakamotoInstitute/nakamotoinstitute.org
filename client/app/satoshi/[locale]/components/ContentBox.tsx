@@ -29,8 +29,8 @@ export async function ContentBox({
 export type ContentBoxHeaderProps = {
   locale: Locale;
   satoshi?: boolean;
-  source: string;
-  sourceId: string;
+  source?: string;
+  sourceId?: string;
   from: string;
   subject: string;
   date: Date;
@@ -52,10 +52,12 @@ export async function ContentBoxHeader({
         satoshi && "bg-dandelion",
       )}
     >
-      <div className="flex justify-between border-b border-dashed border-taupe px-8 py-2">
-        <div className="font-bold">{source}</div>
-        <div>#{sourceId}</div>
-      </div>
+      {source || sourceId ? (
+        <div className="flex justify-between border-b border-dashed border-taupe px-8 py-2">
+          {source ? <div className="font-bold">{source}</div> : null}
+          {sourceId ? <div>#{sourceId}</div> : null}
+        </div>
+      ) : null}
       <div className="grid grid-cols-[auto_1fr] gap-x-4 px-8 py-2">
         <div>From:</div>
         <div>{from}</div>
