@@ -5,6 +5,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { PageLayout } from "@/app/components/PageLayout";
+import { EmailThreadNavigation } from "@/app/satoshi/[locale]/components/ContentNavigation";
 import { locales } from "@/i18n";
 import { getEmailThread } from "@/lib/api/emails";
 import { EmailSource, EmailWithParent } from "@/lib/api/schemas/emails";
@@ -165,7 +166,16 @@ export default async function EmailSourceThreadDetail({
         }}
         externalLink={thread.url}
         satoshiOnly={satoshiOnly}
-      />
+      >
+        <EmailThreadNavigation
+          t={t}
+          locale={locale}
+          id={thread.id}
+          previous={previous}
+          next={next}
+          source={thread.source}
+        />
+      </ThreadPageHeader>
       {emails.map((e, index) => (
         <ThreadEmail
           key={e.sourceId}

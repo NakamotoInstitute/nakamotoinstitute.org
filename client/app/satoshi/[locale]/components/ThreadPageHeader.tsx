@@ -1,6 +1,8 @@
 import { TFunction } from "i18next";
 import Link from "next/link";
 
+import { ToggleLink } from "@/app/components/ToggleLink";
+
 type ThreadPageHeaderProps = {
   t: TFunction<string, string>;
   title: string;
@@ -22,19 +24,16 @@ export const ThreadPageHeader = async ({
 }: ThreadPageHeaderProps) => {
   return (
     <>
-      {children}
-      <div className="mb-4 text-center">
-        <p className="text-xl">{sourceTitle}</p>
-        <h1 className="text-4xl">{title}</h1>
-        <div className="flex flex-col gap-2">
-          {satoshiOnly ? (
-            <Link href={allLink.href}>{allLink.text}</Link>
-          ) : (
-            <Link href={{ query: { view: "satoshi" } }}>
-              {t("view_satoshi_only")}
-            </Link>
-          )}
-          <Link href={externalLink}>{t("external_link")}</Link>
+      <div className="mb-4">
+        <p className="mb-1 text-lg small-caps">{sourceTitle}</p>
+        <h1 className="mb-4 text-3xl font-semibold md:text-4xl">{title}</h1>
+        <div className="flex items-center justify-between">
+          {children}
+          <ToggleLink
+            label={t("satoshi_only")}
+            href={satoshiOnly ? allLink.href : { query: { view: "satoshi" } }}
+            active={satoshiOnly}
+          />
         </div>
       </div>
     </>

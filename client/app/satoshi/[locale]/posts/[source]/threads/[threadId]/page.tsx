@@ -172,8 +172,8 @@ export default async function PostSourceThreadDetail({
       >
         <PostThreadNavigation
           t={t}
-          className="mb-4"
           locale={locale}
+          id={thread.id}
           next={next}
           previous={previous}
           source={thread.source}
@@ -189,15 +189,6 @@ export default async function PostSourceThreadDetail({
           satoshiOnly={satoshiOnly}
         />
       ))}
-      <PostThreadNavigation
-        t={t}
-        className="mt-4"
-        locale={locale}
-        next={next}
-        previous={previous}
-        source={thread.source}
-        reverse
-      />
     </PageLayout>
   );
 }

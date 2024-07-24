@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { PageLayout } from "@/app/components/PageLayout";
@@ -9,7 +8,6 @@ import { EmailSource } from "@/lib/api/schemas/emails";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
-import { formatDate } from "@/utils/dates";
 import { formatEmailSource } from "@/utils/strings";
 
 import {
@@ -18,6 +16,7 @@ import {
   ContentBoxFooter,
   ContentBoxHeader,
 } from "../../../components/ContentBox";
+import { EmailNavigation } from "../../../components/ContentNavigation";
 
 // export const dynamicParams = false;
 
@@ -71,6 +70,21 @@ export default async function EmailDetail({
         },
       ]}
     >
+      <div className="mb-4">
+        <h1 className="mb-4 text-3xl font-semibold md:text-4xl">
+          {email.subject}
+        </h1>
+        <div className="flex items-center justify-between">
+          <EmailNavigation
+            t={t}
+            locale={locale}
+            id={email.satoshiId}
+            source={email.source}
+            previous={previous}
+            next={next}
+          />
+        </div>
+      </div>
       <ContentBox>
         <ContentBoxHeader
           locale={locale}
