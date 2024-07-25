@@ -4,9 +4,6 @@ import clsx from "clsx";
 import Link from "next/link";
 import { useState } from "react";
 
-import { urls } from "@/lib/urls";
-
-import { ButtonLink } from "./Button";
 import { LanguageToggle, ToggleLinkProps } from "./LanguageToggle";
 
 export function Navbar({

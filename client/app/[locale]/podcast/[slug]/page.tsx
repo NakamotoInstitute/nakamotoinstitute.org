@@ -1,8 +1,6 @@
 import { Metadata } from "next";
-import Link from "next/link";
 
 import { ButtonLink } from "@/app/components/Button";
-import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
 import { Rehype } from "@/app/components/Rehype";
 import { locales } from "@/i18n";

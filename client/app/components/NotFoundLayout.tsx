@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 import "@/app/globals.css";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 

@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Link from "next/link";
 
 import { ButtonLink } from "@/app/components/Button";
 import { Markdown } from "@/app/components/Markdown";

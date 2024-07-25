@@ -6,4 +6,5 @@ module.exports = {
   importOrder: ["^@/(.*)$", "^@main/(.*)$", "^@satoshi/(.*)$", "^[./]"],
   importOrderSeparation: true,
   importOrderSortSpecifiers: true,
+  tailwindFunctions: ["clsx"],
 };
