@@ -23,6 +23,7 @@ const config: Config = {
         cream: "#f5f4ef",
         dark: "#212121",
         cardinal: "#c21324", // Cardinal
+        crimson: "#e3455f",
         windsor: "#442977", // Windsor purple
         winter: "#5b8e7d", // Winter green
         mariner: "#4059ad", // Mariner blue
