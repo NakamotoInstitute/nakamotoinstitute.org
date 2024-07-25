@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 
+import { ButtonLink } from "@/app/components/Button";
 import { Markdown } from "@/app/components/Markdown";
 import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
@@ -42,25 +43,19 @@ export default async function RPOWPage({ params: { locale } }: LocaleParams) {
       ]}
     >
       <PageHeader title={t("rpow_title")} />
-      <div className="text-center">
-        <p>
-          <Link href="/finney/rpow/index.html">{t("archived_website")}</Link>
-        </p>
-        <p>
-          <Link href="https://github.com/NakamotoInstitute/RPOW">
-            {t("github")}
-          </Link>
-        </p>
-        <p>
-          <Link href="/library/rpow">{t("original_announcement")}</Link>
-        </p>
+      <div className="flex gap-3">
+        <ButtonLink href="/finney/rpow/index.html">
+          {t("archived_website")}
+        </ButtonLink>
+        <ButtonLink href="https://github.com/NakamotoInstitute/RPOW">
+          {t("github")}
+        </ButtonLink>
+        <ButtonLink href="/library/rpow">
+          {t("original_announcement")}
+        </ButtonLink>
       </div>
       <hr className="my-4" />
       <Markdown className="page-content">{content}</Markdown>
-      <hr className="my-4" />
-      <div className="text-center">
-        <Link href={urls(locale).finney.index}>{t("back")}</Link>
-      </div>
     </PageLayout>
   );
 }

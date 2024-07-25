@@ -52,15 +52,25 @@ export default async function FinneyIndex({
       <ul className="mb-4">
         {library.map((doc) => (
           <li key={doc.slug} className="mb-2">
-            <Link href={urls(locale).library.doc(doc.slug)}>{doc.title}</Link> (
-            {formatDate(locale, doc.date)})
+            <Link
+              className="text-cardinal hover:underline"
+              href={urls(locale).library.doc(doc.slug)}
+            >
+              {doc.title}
+            </Link>{" "}
+            ({formatDate(locale, doc.date)})
           </li>
         ))}
       </ul>
       <h2 className="mb-2 text-2xl font-medium">Code</h2>
       <ul>
         <li>
-          <Link href={urls(locale).finney.rpow}>{t("rpow_title")}</Link>
+          <Link
+            className="text-cardinal hover:underline"
+            href={urls(locale).finney.rpow}
+          >
+            {t("rpow_title")}
+          </Link>
         </li>
       </ul>
     </PageLayout>

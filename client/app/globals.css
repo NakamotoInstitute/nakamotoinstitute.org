@@ -21,6 +21,14 @@
     @apply mb-4;
   }
 
+  .page-content a {
+    @apply text-cardinal;
+
+    &:hover {
+      @apply underline;
+    }
+  }
+
   .codeheader,
   .quoteheader {
     @apply border border-neutral-300;

@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 
+import { ButtonLink } from "@/app/components/Button";
 import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
 import { Rehype } from "@/app/components/Rehype";
@@ -48,13 +49,17 @@ export default async function PodcastDetail({
         },
       ]}
     >
-      <PageHeader title={episode.title}>
-        <p>
+      <header className="mx-auto text-center">
+        <h1 className="mb-4 text-4xl font-medium leading-[1.1] md:mb-6 md:text-7xl">
+          {episode.title}
+        </h1>
+        <p className="text-xl font-bold opacity-60 small-caps md:text-2xl">
           <time dateTime={episode.date.toISOString()}>
             {formatDate(locale, episode.date)}
           </time>
         </p>
-      </PageHeader>
+      </header>
+      <hr className="mx-auto my-7 w-12 md:my-18" />
       <section className="prose mx-auto">
         <Rehype>{episode.content}</Rehype>
         <iframe
@@ -63,9 +68,12 @@ export default async function PodcastDetail({
           allowFullScreen
         ></iframe>
         <p className="text-center">
-          <Link href={urls(locale).podcast.episodeMp3(episode.slug)}>
+          <ButtonLink
+            className="no-underline"
+            href={urls(locale).podcast.episodeMp3(episode.slug)}
+          >
             {t("download_mp3")}
-          </Link>
+          </ButtonLink>
         </p>
       </section>
     </PageLayout>
