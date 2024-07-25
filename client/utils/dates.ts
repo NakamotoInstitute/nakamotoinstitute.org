@@ -33,16 +33,20 @@ export const formatDocDate = (
   locale: Locale,
   date: Date,
   granularity: Granularity,
+  short: boolean = false,
 ) => {
   switch (granularity) {
     case "YEAR":
       return formatDate(locale, date, { year: "numeric" });
 
     case "MONTH":
-      return formatDate(locale, date, { year: "numeric", month: "long" });
+      return formatDate(locale, date, {
+        year: "numeric",
+        month: short ? "short" : "long",
+      });
 
     case "DAY":
-      return formatDate(locale, date);
+      return formatDate(locale, date, { dateStyle: short ? "medium" : "long" });
 
     default:
       return "";

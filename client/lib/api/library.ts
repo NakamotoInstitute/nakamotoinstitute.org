@@ -9,6 +9,11 @@ export async function getLibraryDocs(locale: Locale) {
   return zLibraryIndex.parse(await res.json());
 }
 
+export async function getHomeLibraryDocs(locale: Locale) {
+  const res = await fetchAPI(`/library/home?locale=${locale}`);
+  return zLibraryIndex.parse(await res.json());
+}
+
 export async function getLibraryDoc(slug: string, locale: Locale) {
   const res = await fetchAPI(`/library/${slug}?locale=${locale}`);
   if (res.status === 404) {

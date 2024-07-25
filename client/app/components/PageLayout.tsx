@@ -66,16 +66,12 @@ export async function PageLayout({
       />
       {breadcrumbs ? <Breadcrumbs breadcrumbs={breadcrumbs} /> : null}
       <main
-        className={clsx(
-          "mx-auto w-full flex-grow px-4 pb-4",
-          {
-            "max-w-[872px]": size === "md",
-            "max-w-[960px]": size === "lg",
-            "max-w-screen-1.5xl": size === "xl",
-            "my-10 md:mt-18": size !== "xl",
-          },
-          className,
-        )}
+        className={clsx(className, "mx-auto w-full flex-grow px-4", {
+          "max-w-[872px]": size === "md",
+          "max-w-[960px]": size === "lg",
+          "max-w-screen-1.5xl": size === "xl",
+          "my-10 pb-4 md:mt-18": size !== "xl",
+        })}
       >
         {children}
       </main>

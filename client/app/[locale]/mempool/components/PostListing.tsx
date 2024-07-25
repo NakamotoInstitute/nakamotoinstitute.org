@@ -8,6 +8,30 @@ import { MempoolPostIndex } from "@/lib/api/schemas/mempool";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 
+type PostListingAuthorsProps = {
+  post: MempoolPostIndex;
+  locale: Locale;
+  small?: boolean;
+};
+
+export async function PostListingAuthors({
+  post,
+  locale,
+  small = false,
+}: PostListingAuthorsProps) {
+  return (
+    <p className={clsx("small-caps", small ? "text-xs" : "max-sm:text-sm")}>
+      <AuthorsLinks as="span" authors={post.authors} locale={locale} />
+      <span className="mx-1">•</span>
+      <time dateTime={post.date.toISOString()}>
+        {formatDate(locale, post.date, {
+          dateStyle: small ? "medium" : "long",
+        })}
+      </time>
+    </p>
+  );
+}
+
 type PostListingProps = {
   t: TFunction<string, string>;
   className?: string;
@@ -48,13 +72,7 @@ export async function PostListing({
             {post.title}
           </Link>
         </h2>
-        <p className="small-caps">
-          <AuthorsLinks authors={post.authors} locale={locale} as="span" />
-          <span className="mx-1">•</span>
-          <time dateTime={post.date.toISOString()}>
-            {formatDate(locale, post.date)}
-          </time>
-        </p>
+        <PostListingAuthors locale={locale} post={post} />
       </header>
       <section className="order-2 my-2 md:order-3">
         <p className="italic">&ldquo;{post.excerpt}&rdquo;</p>

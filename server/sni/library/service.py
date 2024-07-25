@@ -1,6 +1,6 @@
 from typing import Sequence
 
-from sqlalchemy import select
+from sqlalchemy import case, select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import joinedload, selectinload
 
@@ -50,6 +50,31 @@ async def get_all_by_locale(
         .join(Document)
         .filter(DocumentTranslation.locale == locale)
         .order_by(Document.weight.desc(), DocumentTranslation.sort_title.asc())
+    )
+
+    result = await db_session.scalars(query)
+    return result.all()
+
+
+async def get_some_by_slugs_and_locale(
+    slugs: list[str], *, db_session: AsyncSession, locale: LocaleType
+) -> Sequence[DocumentTranslation]:
+    order_case = case(
+        {slug: index for index, slug in enumerate(slugs)}, value=Document.slug
+    )
+
+    query = (
+        select(DocumentTranslation)
+        .options(
+            joinedload(DocumentTranslation.document).options(
+                selectinload(Document.authors),
+                selectinload(Document.translations),
+            ),
+            selectinload(DocumentTranslation.formats),
+        )
+        .join(Document, DocumentTranslation.document_id == Document.id)
+        .filter(DocumentTranslation.locale == locale, Document.slug.in_(slugs))
+        .order_by(order_case)
     )
 
     result = await db_session.scalars(query)

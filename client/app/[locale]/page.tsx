@@ -1,9 +1,11 @@
 import clsx from "clsx";
 import { Metadata } from "next";
 import Link from "next/link";
+import { Trans } from "react-i18next/TransWithoutContext";
 
 import { PageLayout } from "@/app/components/PageLayout";
 import { locales } from "@/i18n";
+import { getHomeLibraryDocs } from "@/lib/api/library";
 import { getLatestMempoolPost } from "@/lib/api/mempool";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
@@ -11,6 +13,8 @@ import { urls } from "@/lib/urls";
 
 import { ArrowRight } from "../components/ArrowRight";
 import { ButtonLink } from "../components/Button";
+import { DocListingAuthors } from "./library/components/DocListing";
+import { PostListingAuthors } from "./mempool/components/PostListing";
 
 const generateHref = (loc: Locale) => urls(loc).home;
 
@@ -70,30 +74,31 @@ async function Box({ title, className, link, children }: BoxProps) {
 
 export default async function HomePage({ params: { locale } }: LocaleParams) {
   const { t } = await i18nTranslation(locale);
-  const latest = await getLatestMempoolPost(locale);
+  const [latest, docs] = await Promise.all([
+    getLatestMempoolPost(locale),
+    getHomeLibraryDocs(locale),
+  ]);
+
+  const viewAllLabel = t("view_all");
+  const readMoreLabel = t("read_more");
 
   return (
-    <PageLayout
-      t={t}
-      locale={locale}
-      size="xl"
-      className="pb-0"
-      generateHref={generateHref}
-    >
+    <PageLayout t={t} locale={locale} size="xl" generateHref={generateHref}>
       <div className="-mx-4 grid grid-cols-1 md:grid-cols-[1fr,3fr] md:grid-rows-2">
-        <GridItem className="px-5 py-12 text-center text-3xl font-semibold md:px-8 md:py-7 md:text-left md:max-lg:text-2xl lg:text-3xl">
-          The Satoshi Nakamoto Institute is advancing and preserving bitcoin
-          knowledge
+        <GridItem className="px-5 py-12 md:py-7">
+          <h1 className="text-center text-3xl font-semibold md:text-left md:max-lg:text-2xl lg:text-3xl">
+            {t("mission_statement")}
+          </h1>
         </GridItem>
-        <GridItem className="md:grid-rows[1fr_1fr_1fr_1fr_auto] grid grid-cols-1 md:row-span-2 md:grid-cols-2 md:border-l md:border-r lg:grid-cols-3">
-          <GridItem className="border-b pb-8 md:col-span-2 md:p-5 lg:col-span-3">
-            Update about something new
-          </GridItem>
+        <GridItem className="md:grid-rows[1fr_1fr_1fr_1fr_auto] grid grid-cols-1 md:row-span-2 md:grid-cols-2 md:border-l lg:grid-cols-3 min-[1441px]:border-r">
+          {/* <GridItem className="border-b pb-8 md:col-span-2 md:p-5 lg:col-span-3">
+          </GridItem> */}
           <Box
-            title="The Complete Satoshi"
+            title={t("complete_satoshi")}
             className="border-b px-5 py-10 md:px-4 md:py-5"
-            link={{ label: "View all", href: urls(locale).satoshi.index }}
+            link={{ label: viewAllLabel, href: urls(locale).satoshi.index }}
           >
+            <p>{t("complete_satoshi_tag")}</p>
             <div>
               <div className="mb-2">
                 <h4>
@@ -101,10 +106,10 @@ export default async function HomePage({ params: { locale } }: LocaleParams) {
                     className="text-cardinal hover:underline"
                     href={urls(locale).library.doc("bitcoin")}
                   >
-                    The Whitepaper
+                    {t("the_whitepaper")}
                   </Link>
                 </h4>
-                <p className="text-xs">The original vision</p>
+                <p className="text-xs">{t("original_vision")}</p>
               </div>
               <div className="mb-2">
                 <h4>
@@ -112,10 +117,10 @@ export default async function HomePage({ params: { locale } }: LocaleParams) {
                     className="text-cardinal hover:underline"
                     href={urls(locale).satoshi.emails.index}
                   >
-                    Emails
+                    {t("emails")}
                   </Link>
                 </h4>
-                <p className="text-xs">It all began here</p>
+                <p className="text-xs">{t("it_all_began_here")}</p>
               </div>
               <div>
                 <h4>
@@ -123,111 +128,125 @@ export default async function HomePage({ params: { locale } }: LocaleParams) {
                     className="text-cardinal hover:underline"
                     href={urls(locale).satoshi.posts.index}
                   >
-                    Forum Posts
+                    {t("forum_posts")}
                   </Link>
                 </h4>
-                <p className="text-xs">Where an idea flourished</p>
+                <p className="text-xs">{t("idea_flourished")}</p>
               </div>
             </div>
           </Box>
           <Box
-            title="Library"
+            title={t("library")}
             className="border-b px-5 py-10 md:border-l md:px-4 md:py-5"
-            link={{ label: "View all", href: urls(locale).library.index }}
+            link={{ label: viewAllLabel, href: urls(locale).library.index }}
           >
             <p>{t("bitcoin_context")}</p>
+            <div>
+              {docs.map((doc) => (
+                <div key={doc.slug} className="mb-2 last:mb-0">
+                  <Link
+                    className="text-cardinal hover:underline"
+                    href={urls(locale).library.doc(doc.slug)}
+                  >
+                    {doc.title}
+                  </Link>
+                  <DocListingAuthors locale={locale} doc={doc} small />
+                </div>
+              ))}
+            </div>
           </Box>
           <Box
-            title="The Mempool"
+            title={t("memory_pool")}
             className="border-b px-5 py-10 md:px-4 md:py-5 lg:border-l"
-            link={{ label: "View all", href: urls(locale).mempool.index }}
+            link={{ label: viewAllLabel, href: urls(locale).mempool.index }}
           >
-            <p>
-              Where ideas wait to be mined into the blockchain of the collective
-              conscience. Some transactions may be invalid.
-            </p>
+            <p>{t("memory_pool_description")}</p>
+            {latest ? (
+              <div>
+                <h4>
+                  <Link
+                    className="text-cardinal hover:underline"
+                    href={urls(locale).mempool.post(latest.slug)}
+                  >
+                    {latest.title}
+                  </Link>
+                </h4>
+                <PostListingAuthors locale={locale} post={latest} small />
+              </div>
+            ) : null}
           </Box>
 
           <Box
-            title="Crash Course"
+            title={t("crash_course")}
             className="border-b px-5 py-10 md:px-4 md:py-5 md:max-lg:border-l"
-            link={{ label: "Read more", href: urls(locale).crashCourse }}
+            link={{ label: readMoreLabel, href: urls(locale).crashCourse }}
           >
-            <p>
-              A partial annotated bibliography of the Mempool, building the case
-              for why bitcoin will displace all competing currencies, including
-              altcoins, fiat money, and precious metals.
-            </p>
+            <p>{t("crash_course_description")}</p>
           </Box>
           <Box
-            title="The Skeptics"
+            title={t("the_skeptics")}
             className="border-b px-5 py-10 md:px-4 md:py-5 lg:border-l"
-            link={{ label: "Read more", href: urls(locale).skeptics }}
+            link={{ label: readMoreLabel, href: urls(locale).skeptics }}
           >
-            <p>A tribute to bold assertions.</p>
+            <p>{t("skeptics_tribute")}</p>
           </Box>
           <Box
-            title="Tribute to Hal Finney"
+            title={t("hal_finney_tribute")}
             className="border-b px-5 py-10 md:border-l md:px-4 md:py-5"
-            link={{ label: "Read more", href: urls(locale).finney.index }}
+            link={{ label: readMoreLabel, href: urls(locale).finney.index }}
           >
-            <p>Celebrating the cypherpunk and early bitcoin developer</p>
+            <p>{t("finney_tag")}</p>
             <div>
               <h4>
                 <Link
                   className="text-cardinal hover:underline"
                   href={urls(locale).finney.rpow}
                 >
-                  RPOW - Reusable Proofs of Work
+                  {t("rpow_title")}
                 </Link>
               </h4>
-              <p className="text-xs">See the original code and website</p>
+              <p className="text-xs">{t("rpow_tag")}</p>
             </div>
           </Box>
           <Box
-            title="Podcast"
+            title={t("podcast")}
             className="border-b px-5 py-10 md:border-b-0 md:px-4 md:py-5"
-            link={{ label: "Read more", href: urls(locale).podcast.index }}
+            link={{ label: readMoreLabel, href: urls(locale).podcast.index }}
           >
-            <p>
-              Recorded in 2014 and 2015, the Crypto-Mises Podcast featured
-              discussions on bitcoin economics.
-            </p>
+            <p>{t("podcast_description")}</p>
           </Box>
           <Box
-            title="Get Involved"
+            title={t("get_involved")}
             className="border-b px-5 py-10 md:border-b-0 md:border-l md:px-4 md:py-5"
-            link={{ label: "Read more", href: urls(locale).getInvolved }}
+            link={{ label: readMoreLabel, href: urls(locale).getInvolved }}
           >
-            <p>Help us educate the world about bitcoin.</p>
+            <p>{t("get_involved_call")}</p>
           </Box>
           <GridItem className="md:min-h-48 lg:border-l" />
           <GridItem className="hidden md:block md:min-h-48" />
         </GridItem>
-        <GridItem className="px-6">
+        <GridItem className="px-5 pt-4 md:pt-0">
           <div className="flex flex-col gap-4">
-            <div className="flex gap-4 border border-dashed border-taupe-light p-4">
+            <div className="flex items-center justify-between gap-4 border border-dashed border-taupe-light p-4 md:items-start">
               <div>
-                <h4 className="font-semibold">Read our newsletter</h4>
-                <p className="text-sm text-taupe">
-                  Receive email updates about the Satoshi Nakamoto Institute
-                </p>
+                <h4 className="font-semibold">{t("newsletter_call")}</h4>
+                <p className="text-sm text-taupe">{t("newsletter_signup")}</p>
               </div>
               <ArrowRight className="min-w-fit" />
             </div>
             <div className="border-l-[3px] border-cardinal bg-white p-4 shadow-sm">
               <div className="text-xs text-taupe">
                 <h4 className="mb-2 text-base font-semibold text-dark">
-                  Support SNI
+                  {t("support")}
                 </h4>
-                <p className="mb-2">
-                  Donate to help us advance and preserve bitcoin knowledge. The
-                  Satoshi Nakamoto Institute is a qualified 501(c)(3) nonprofit
-                  organization.
-                </p>
+                <p className="mb-2">{t("donation_message")}</p>
                 <p className="italic">
-                  Contributions to SNI are <strong>tax-deductible</strong> and
-                  support the proliferation of bitcoin education worldwide.
+                  <Trans
+                    i18nKey="donation_message_cont"
+                    components={{
+                      strong: <strong />,
+                    }}
+                  />
                 </p>
               </div>
               <hr className="my-4 border-taupe-light" />
@@ -236,7 +255,7 @@ export default async function HomePage({ params: { locale } }: LocaleParams) {
                   className="flex gap-1"
                   href={urls(locale).donate.index}
                 >
-                  <span>Donate</span>
+                  <span>{t("donate")}</span>
                   <ArrowRight />
                 </ButtonLink>
               </div>

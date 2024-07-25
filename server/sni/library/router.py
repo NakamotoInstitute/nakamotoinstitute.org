@@ -25,6 +25,18 @@ async def get_library_params(db: AsyncSession = Depends(get_db)) -> Any:
     return await service.get_params(db_session=db)
 
 
+@router.get("/home", response_model=list[DocumentIndexModel])
+async def get_home_library_docs(
+    locale: LocaleType = "en", db: AsyncSession = Depends(get_db)
+) -> Any:
+    result = await service.get_some_by_slugs_and_locale(
+        ["bitcoin", "shelling-out", "cypherpunk-manifesto"],
+        db_session=db,
+        locale=locale,
+    )
+    return result
+
+
 @router.get("/{slug}", response_model=DocumentModel)
 async def get_library_doc(
     slug: str, locale: LocaleType = "en", db: AsyncSession = Depends(get_db)

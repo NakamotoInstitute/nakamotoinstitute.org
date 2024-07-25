@@ -9,6 +9,28 @@ import { formatDocDate, formatTimeAttr } from "@/utils/dates";
 
 import { DocFormatChips } from "./DocFormats";
 
+type DocListingAuthorsProps = {
+  doc: DocumentIndex;
+  locale: Locale;
+  small?: boolean;
+};
+
+export async function DocListingAuthors({
+  doc,
+  locale,
+  small = false,
+}: DocListingAuthorsProps) {
+  return (
+    <p className={clsx("small-caps", small ? "text-xs" : "max-sm:text-sm")}>
+      <AuthorsLinks as="span" authors={doc.authors} locale={locale} />
+      <span className="mx-1">•</span>
+      <time dateTime={formatTimeAttr(doc.date, doc.granularity)}>
+        {formatDocDate(locale, doc.date, doc.granularity, small)}
+      </time>
+    </p>
+  );
+}
+
 type DocListingProps = {
   doc: DocumentIndex;
   className?: string;
@@ -38,13 +60,7 @@ export async function DocListing({
             {doc.title}
           </Link>
         </h2>
-        <p className="small-caps max-sm:text-sm">
-          <AuthorsLinks as="span" authors={doc.authors} locale={locale} />
-          <span className="mx-1">•</span>
-          <time dateTime={formatTimeAttr(doc.date, doc.granularity)}>
-            {formatDocDate(locale, doc.date, doc.granularity)}
-          </time>
-        </p>
+        <DocListingAuthors locale={locale} doc={doc} />
       </header>
       <section>
         <DocFormatChips t={t} className="pt-1" doc={doc} />
