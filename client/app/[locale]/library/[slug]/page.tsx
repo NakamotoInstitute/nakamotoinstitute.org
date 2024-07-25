@@ -59,7 +59,7 @@ export default async function LibraryDetail({
         { label: t("library"), href: urls(locale).library.index },
         { label: doc.title, href: urls(locale).library.doc(doc.slug) },
       ]}
-      wide
+      size="lg"
     >
       <article>
         <DocHeader t={t} locale={locale} doc={doc} />

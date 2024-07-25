@@ -15,7 +15,7 @@ export type PageLayoutProps = {
   t: TFunction<string, string>;
   className?: string;
   generateHref?: (locale: Locale) => string;
-  wide?: boolean;
+  size?: "md" | "lg" | "xl";
   locale: Locale;
   breadcrumbs?: Breadcrumbs;
   children: React.ReactNode;
@@ -27,7 +27,7 @@ export async function PageLayout({
   locale,
   generateHref,
   breadcrumbs,
-  wide = false,
+  size = "md",
   children,
 }: PageLayoutProps) {
   const toggleProps = generateHref
@@ -67,8 +67,13 @@ export async function PageLayout({
       {breadcrumbs ? <Breadcrumbs breadcrumbs={breadcrumbs} /> : null}
       <main
         className={clsx(
-          "mx-auto my-10 w-full flex-grow px-4 pb-4 md:mt-18",
-          wide ? "max-w-[960px]" : "max-w-[872px]",
+          "mx-auto w-full flex-grow px-4 pb-4",
+          {
+            "max-w-[872px]": size === "md",
+            "max-w-[960px]": size === "lg",
+            "max-w-screen-1.5xl": size === "xl",
+            "my-10 md:mt-18": size !== "xl",
+          },
           className,
         )}
       >
