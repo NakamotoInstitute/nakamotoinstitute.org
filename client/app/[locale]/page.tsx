@@ -84,7 +84,7 @@ export default async function HomePage({ params: { locale } }: LocaleParams) {
 
   return (
     <PageLayout t={t} locale={locale} size="xl" generateHref={generateHref}>
-      <div className="-mx-4 grid grid-cols-1 md:grid-cols-[1fr,3fr] md:grid-rows-2">
+      <div className="-mx-4 grid grid-cols-1 md:grid-cols-[1fr,3fr] md:grid-rows-[28rem_auto]">
         <GridItem className="px-5 py-12 md:py-7">
           <h1 className="text-center text-3xl font-semibold md:text-left md:max-lg:text-2xl lg:text-3xl">
             {t("mission_statement")}
@@ -225,7 +225,7 @@ export default async function HomePage({ params: { locale } }: LocaleParams) {
           <GridItem className="md:min-h-48 lg:border-l" />
           <GridItem className="hidden md:block md:min-h-48" />
         </GridItem>
-        <GridItem className="px-5 pt-4 md:pt-0">
+        <GridItem className="px-5 py-4 md:pt-0">
           <div className="flex flex-col gap-4">
             <div className="flex items-center justify-between gap-4 border border-dashed border-taupe-light p-4 md:items-start">
               <div>
