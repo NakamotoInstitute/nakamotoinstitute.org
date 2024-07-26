@@ -280,7 +280,7 @@ export default async function HomePage({ params: { locale } }: LocaleParams) {
               <div>
                 <ButtonLink
                   className="flex gap-1"
-                  href={urls(locale).donate.index}
+                  href={urls(locale).donate.zaprite}
                 >
                   <span>{t("donate")}</span>
                   <ArrowRight />

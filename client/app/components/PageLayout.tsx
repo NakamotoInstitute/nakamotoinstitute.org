@@ -61,7 +61,7 @@ export async function PageLayout({
           { href: urls(locale).substack, text: t("newsletter") },
         ]}
         navButtons={[
-          <ButtonLink key="donate" href={urls(locale).donate.index}>
+          <ButtonLink key="donate" href={urls(locale).donate.zaprite}>
             {t("donate")}
           </ButtonLink>,
         ]}
