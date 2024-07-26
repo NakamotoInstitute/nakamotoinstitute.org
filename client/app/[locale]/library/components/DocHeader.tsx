@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { TFunction } from "i18next";
 import Image from "next/image";
 import Link from "next/link";
@@ -61,7 +62,7 @@ export async function DocHeader({ t, locale, doc }: DocHeaderProps) {
           <DocFormatLinks
             t={t}
             locale={locale}
-            classes={{ root: "justify-center gap-3 font-medium" }}
+            className="justify-center gap-3 font-medium"
             doc={doc}
           />
           <hr className="mx-auto my-6 w-12" />
@@ -70,7 +71,7 @@ export async function DocHeader({ t, locale, doc }: DocHeaderProps) {
         <DocFormatLinks
           t={t}
           locale={locale}
-          classes={{ root: "justify-center gap-3 font-medium" }}
+          className="justify-center gap-3 font-medium"
           doc={doc}
         />
       )}

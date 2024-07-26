@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import Link, { LinkProps } from "next/link";
 
-type ButtonLinkProps = Omit<
+export type ButtonLinkProps = Omit<
   React.AnchorHTMLAttributes<HTMLAnchorElement>,
   keyof LinkProps
 > &

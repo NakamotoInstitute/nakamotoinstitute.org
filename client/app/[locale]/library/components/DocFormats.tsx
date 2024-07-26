@@ -1,11 +1,14 @@
 import clsx from "clsx";
 import { TFunction } from "i18next";
-import Link from "next/link";
 
-import { ButtonLink } from "@/app/components/Button";
+import { ButtonLink, ButtonLinkProps } from "@/app/components/Button";
 import { Chip } from "@/app/components/Chip";
 import { Document, DocumentIndex } from "@/lib/api/schemas/library";
 import { urls } from "@/lib/urls";
+
+async function DocFormatButtonLink({ className, ...rest }: ButtonLinkProps) {
+  return <ButtonLink className={clsx(className, "w-28")} {...rest} />;
+}
 
 type DocFormatLinksProps = {
   t: TFunction<string, string>;
@@ -24,44 +27,54 @@ export async function DocFormatLinks({
 }: DocFormatLinksProps) {
   const links: React.ReactNode[] = [];
 
+  const buttonClasses = clsx(classes?.link, "w-28");
+
   if (doc.entryNode) {
     links.push(
-      <ButtonLink
+      <DocFormatButtonLink
         key="online"
         href={urls(locale).library.docNode(doc.slug, doc.entryNode.slug)}
-        className={classes?.link}
+        className={buttonClasses}
       >
         {t("read_online")}
-      </ButtonLink>,
+      </DocFormatButtonLink>,
     );
   }
 
   doc.formats?.forEach((format) =>
     links.push(
-      <ButtonLink key={format.type} className={classes?.link} href={format.url}>
+      <DocFormatButtonLink
+        key={format.type}
+        className={buttonClasses}
+        href={format.url}
+      >
         {format.type === "epub" ? "ePub" : format.type.toUpperCase()}
-      </ButtonLink>,
+      </DocFormatButtonLink>,
     ),
   );
 
   if (doc.external) {
     links.push(
-      <ButtonLink key="link" href={doc.external} className={classes?.link}>
+      <DocFormatButtonLink
+        key="link"
+        href={doc.external}
+        className={buttonClasses}
+      >
         {t("external_link")}
-      </ButtonLink>,
+      </DocFormatButtonLink>,
     );
   }
 
   if (doc.purchaseLink) {
     links.push(
-      <ButtonLink
+      <DocFormatButtonLink
         key="purchase"
         variant="secondary"
         href={doc.purchaseLink}
-        className={classes?.link}
+        className={buttonClasses}
       >
         {t("buy_now")}
-      </ButtonLink>,
+      </DocFormatButtonLink>,
     );
   }
 
