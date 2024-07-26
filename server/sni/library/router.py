@@ -8,7 +8,12 @@ from sni.database import get_db
 from sni.shared.schemas import SlugParamModel
 
 from . import service
-from .schemas import DocumentIndexModel, DocumentModel, DocumentNodeModel
+from .schemas import (
+    DocumentIndexModel,
+    DocumentModel,
+    DocumentNodeModel,
+    DocumentNodeParamsModel,
+)
 
 router = APIRouter()
 
@@ -23,6 +28,11 @@ async def get_library_docs(
 @router.get("/params", response_model=list[SlugParamModel])
 async def get_library_params(db: AsyncSession = Depends(get_db)) -> Any:
     return await service.get_params(db_session=db)
+
+
+@router.get("/params/nodes", response_model=list[DocumentNodeParamsModel])
+async def get_library_node_params(db: AsyncSession = Depends(get_db)) -> Any:
+    return await service.get_node_params(db_session=db)
 
 
 @router.get("/home", response_model=list[DocumentIndexModel])

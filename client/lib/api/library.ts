@@ -1,7 +1,12 @@
 import { notFound } from "next/navigation";
 
 import fetchAPI from "./fetchAPI";
-import { zDocument, zDocumentNode, zLibraryIndex } from "./schemas/library";
+import {
+  zDocNodeSlugParamsResponse,
+  zDocument,
+  zDocumentNode,
+  zLibraryIndex,
+} from "./schemas/library";
 import { zSlugParamsResponse } from "./schemas/shared";
 
 export async function getLibraryDocs(locale: Locale) {
@@ -37,4 +42,9 @@ export async function getLibraryDocNode(
 export async function getLibraryParams() {
   const res = await fetchAPI("/library/params");
   return zSlugParamsResponse.parse(await res.json());
+}
+
+export async function getLibraryNodeParams() {
+  const res = await fetchAPI("/library/params/nodes");
+  return zDocNodeSlugParamsResponse.parse(await res.json());
 }

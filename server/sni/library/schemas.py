@@ -6,6 +6,7 @@ from typing import Any, Literal, Union
 from pydantic import AliasPath, BaseModel, Field, field_serializer, model_validator
 
 from sni.constants import DocumentFormats, Locales
+from sni.shared.schemas import SlugParamModel
 
 from ..authors.schemas.base import AuthorModel
 from ..shared.schemas import ORMModel, TranslationSchema
@@ -208,3 +209,7 @@ class DocumentNodeModel(ORMModel):
     root_parent: DocumentNodeBaseModel | None = Field(alias="root")
     next_node: DocumentNodeBaseModel | None = Field(alias="next")
     previous_node: DocumentNodeBaseModel | None = Field(alias="previous")
+
+
+class DocumentNodeParamsModel(SlugParamModel):
+    node_slug: str

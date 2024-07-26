@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 import { getAuthorIndex } from "./authors";
-import { zTranslations, zTranslators } from "./shared";
+import { zSlugParam, zTranslations, zTranslators } from "./shared";
 
 export const zFormat = z.enum(["pdf", "epub", "mobi", "txt"]);
 export type LibraryFormat = z.infer<typeof zFormat>;
@@ -72,3 +72,10 @@ export const zDocumentNode = z.object({
   previous: zNestedDocumentNode.nullable(),
 });
 export type DocumentNode = z.infer<typeof zDocumentNode>;
+
+const zDocNodeSlugParam = zSlugParam.extend({
+  nodeSlug: z.string(),
+});
+export type DocNodeSlugParam = z.infer<typeof zDocNodeSlugParam>;
+
+export const zDocNodeSlugParamsResponse = z.array(zDocNodeSlugParam);

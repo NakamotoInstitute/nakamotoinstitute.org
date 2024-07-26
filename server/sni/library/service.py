@@ -1,8 +1,8 @@
-from typing import Sequence
+from typing import Any, Sequence
 
-from sqlalchemy import case, select
+from sqlalchemy import case, join, select
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy.orm import joinedload, selectinload
+from sqlalchemy.orm import aliased, joinedload, selectinload
 
 from sni.constants import LocaleType
 from sni.models import Document, DocumentNode, DocumentTranslation
@@ -59,6 +59,30 @@ async def get_params(*, db_session: AsyncSession) -> list[dict[str, LocaleType]]
     all_params = result.all()
 
     return [dict(slug=slug, locale=locale) for (slug, locale) in all_params]
+
+
+async def get_node_params(*, db_session: AsyncSession) -> Any:
+    DocumentTranslationAlias = aliased(DocumentTranslation)
+
+    query = select(
+        DocumentNode.slug,
+        DocumentTranslationAlias.slug,
+        DocumentTranslationAlias.locale,
+    ).select_from(
+        join(
+            DocumentNode,
+            DocumentTranslationAlias,
+            DocumentNode.document_translation_id == DocumentTranslationAlias.id,
+        )
+    )
+
+    result = await db_session.execute(query)
+    all_params = result.all()
+
+    return [
+        dict(node_slug=node_slug, slug=document_slug, locale=locale)
+        for (node_slug, document_slug, locale) in all_params
+    ]
 
 
 async def get_all_by_locale(

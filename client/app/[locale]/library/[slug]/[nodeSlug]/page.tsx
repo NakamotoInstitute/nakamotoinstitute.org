@@ -5,7 +5,7 @@ import { ArrowLeft } from "@/app/components/ArrowLeft";
 import { ArrowRight } from "@/app/components/ArrowRight";
 import { PageLayout } from "@/app/components/PageLayout";
 import { Rehype } from "@/app/components/Rehype";
-import { getLibraryDocNode, getLibraryParams } from "@/lib/api/library";
+import { getLibraryDocNode, getLibraryNodeParams } from "@/lib/api/library";
 import { DocumentNode } from "@/lib/api/schemas/library";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { getDir } from "@/lib/i18n/utils";
@@ -102,5 +102,5 @@ export default async function LibraryNodeDetail({
 }
 
 export async function generateStaticParams() {
-  return getLibraryParams();
+  return getLibraryNodeParams();
 }
