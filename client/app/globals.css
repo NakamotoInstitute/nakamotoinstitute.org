@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 @layer base {
-  a {
-    @apply text-blue-500;
+  a:hover {
+    @apply text-cardinal;
   }
 
-  a:hover {
-    @apply text-blue-600;
+  hr {
+    @apply border-dashed border-dark;
   }
 }
 
@@ -21,9 +21,24 @@
     @apply mb-4;
   }
 
-  .twbs-container {
-    @apply mx-auto px-3;
-    @apply w-full max-w-4xl;
+  .page-content a {
+    @apply text-cardinal;
+
+    &:hover {
+      @apply underline;
+    }
+  }
+
+  .page-content figure {
+    @apply border-l-1 border-dashed border-dark;
+
+    & > blockquote {
+      @apply px-4 italic;
+    }
+
+    & > figcaption {
+      @apply mt-2 px-4 font-medium small-caps;
+    }
   }
 
   .codeheader,

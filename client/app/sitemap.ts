@@ -43,22 +43,34 @@ async function getAuthorUrls(): Promise<MetadataRoute.Sitemap> {
 
 async function getLibraryUrls(): Promise<MetadataRoute.Sitemap> {
   const libraryDocs = await getLibraryDocs("en");
-  return libraryDocs.map((doc) => ({
-    url: urls("en").library.doc(doc.slug),
-    alternates: {
-      languages: doc.translations.reduce(
-        (obj, translation) => {
-          obj[formatLocale(translation.locale)] = urls(
-            translation.locale,
-          ).library.doc(translation.slug);
-          return obj;
+  return libraryDocs.flatMap((doc) => {
+    const urlMap: MetadataRoute.Sitemap = [
+      {
+        url: urls("en").library.doc(doc.slug),
+        alternates: {
+          languages: doc.translations.reduce(
+            (obj, translation) => {
+              obj[formatLocale(translation.locale)] = urls(
+                translation.locale,
+              ).library.doc(translation.slug);
+              return obj;
+            },
+            doc.translations.length > 0
+              ? ({ en: urls("en").library.doc(doc.slug) } as LocalizedUrlObject)
+              : ({} as LocalizedUrlObject),
+          ),
         },
-        doc.translations.length > 0
-          ? ({ en: urls("en").library.doc(doc.slug) } as LocalizedUrlObject)
-          : ({} as LocalizedUrlObject),
-      ),
-    },
-  }));
+      },
+    ];
+
+    doc.nodes?.forEach((node) => {
+      urlMap.push({
+        url: urls("en").library.docNode(doc.slug, node.slug),
+      });
+    });
+
+    return urlMap;
+  });
 }
 
 async function getMempoolUrls(): Promise<MetadataRoute.Sitemap> {

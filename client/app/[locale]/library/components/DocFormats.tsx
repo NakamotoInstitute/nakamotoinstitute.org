@@ -1,12 +1,18 @@
 import clsx from "clsx";
 import { TFunction } from "i18next";
-import Link from "next/link";
 
+import { ButtonLink, ButtonLinkProps } from "@/app/components/Button";
 import { Chip } from "@/app/components/Chip";
 import { Document, DocumentIndex } from "@/lib/api/schemas/library";
+import { urls } from "@/lib/urls";
+
+async function DocFormatButtonLink({ className, ...rest }: ButtonLinkProps) {
+  return <ButtonLink className={clsx(className, "w-28")} {...rest} />;
+}
 
 type DocFormatLinksProps = {
   t: TFunction<string, string>;
+  locale: Locale;
   className?: string;
   doc: Document;
   classes?: { root?: string; link?: string };
@@ -14,30 +20,66 @@ type DocFormatLinksProps = {
 
 export async function DocFormatLinks({
   t,
+  locale,
   classes,
   className,
   doc,
 }: DocFormatLinksProps) {
   const links: React.ReactNode[] = [];
 
+  const buttonClasses = clsx(classes?.link, "w-28");
+
+  if (doc.entryNode) {
+    links.push(
+      <DocFormatButtonLink
+        key="online"
+        href={urls(locale).library.docNode(doc.slug, doc.entryNode.slug)}
+        className={buttonClasses}
+      >
+        {t("read_online")}
+      </DocFormatButtonLink>,
+    );
+  }
+
   doc.formats?.forEach((format) =>
     links.push(
-      <Link key={format.type} className={classes?.link} href={format.url}>
+      <DocFormatButtonLink
+        key={format.type}
+        className={buttonClasses}
+        href={format.url}
+      >
         {format.type === "epub" ? "ePub" : format.type.toUpperCase()}
-      </Link>,
+      </DocFormatButtonLink>,
     ),
   );
 
   if (doc.external) {
     links.push(
-      <Link key="link" href={doc.external} className={classes?.link}>
+      <DocFormatButtonLink
+        key="link"
+        href={doc.external}
+        className={buttonClasses}
+      >
         {t("external_link")}
-      </Link>,
+      </DocFormatButtonLink>,
+    );
+  }
+
+  if (doc.purchaseLink) {
+    links.push(
+      <DocFormatButtonLink
+        key="purchase"
+        variant="secondary"
+        href={doc.purchaseLink}
+        className={buttonClasses}
+      >
+        {t("buy_now")}
+      </DocFormatButtonLink>,
     );
   }
 
   return links ? (
-    <div className={clsx(className, classes?.root, "flex gap-3")}>{links}</div>
+    <div className={clsx(className, classes?.root, "flex gap-4")}>{links}</div>
   ) : null;
 }
 

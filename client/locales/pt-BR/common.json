@@ -42,6 +42,7 @@
   "newsletter_signup": "Inscreva-se na nossa <a>newsletter</a> para receber atualizações por e-mail.",
   "rpow_banner": "Confira o código original e o site das <a>Provas de Trabalho Reutilizáveis</a> de Hal Finney",
   "skeptics_banner": "Preste respeito aos profetas visionários de <a>Os Céticos: Um Tributo para as Afirmações Ousadas</a>",
+  "skeptics_tribute_capitalized": "Um Tributo às Afirmações Ousadas",
   "crash_course_banner": "Leia o <a>Curso Intensivo em Economia Política do Bitcoin</a>",
   "podcast": "Podcast",
   "see_episodes": "Veja os episódios",
@@ -124,7 +125,7 @@
   "view_post": "Exibir publicação",
   "view_email": "Exibir email",
   "quotable_satoshi": "O Satoshi Citável",
-  "satoshi_quote_extended": "É muito atraente para o ponto de vista libertário se conseguirmos explicá-lo corretamente.<br><em>Porém, sou melhor com código do que com palavras.</em>",
+  "satoshi_quote_extended": "É muito atraente para o ponto de vista libertário se conseguirmos explicá-lo corretamente.<br>Porém, sou melhor com código do que com palavras.",
   "satoshi_citation": "<a>Satoshi Nakamoto</a>, {{date}}",
   "quotable_satoshi_acknowledgements": "Um agradecimento especial ao <a>Jordan Tuwiner</a> pela indexação de citações.",
   "add_quotation_request": "Se houver uma citação ou categoria que você gostaria de adicionar, por favor <contact>entre em contato conosco</contact> ou envie um pull request no <github>GitHub</github>."

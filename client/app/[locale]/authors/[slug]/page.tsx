@@ -41,21 +41,41 @@ export default async function AuthorDetail({
   const generateHref = (l: Locale) => urls(l).authors.detail(slug);
 
   return (
-    <PageLayout t={t} locale={locale} generateHref={generateHref}>
+    <PageLayout
+      t={t}
+      locale={locale}
+      generateHref={generateHref}
+      breadcrumbs={[
+        { label: t("authors"), href: urls(locale).authors.index },
+        { label: author.name, href: urls(locale).authors.detail(author.slug) },
+      ]}
+    >
       <PageHeader title={author.name} />
       {library.length > 0 ? (
         <section>
-          <h2 className="text-3xl">{t("library")}</h2>
+          <h2 className="mb-5 text-2xl font-bold">{t("library")}</h2>
           {library.map((doc) => (
-            <DocListing key={doc.slug} t={t} doc={doc} locale={locale} />
+            <DocListing
+              className="first-of-type:border-t-0 first-of-type:pt-0"
+              key={doc.slug}
+              t={t}
+              doc={doc}
+              locale={locale}
+            />
           ))}
         </section>
       ) : null}
       {mempool.length > 0 ? (
         <section>
-          <h2 className="text-3xl">{t("mempool")}</h2>
+          <h2 className="mb-5 text-2xl font-bold">{t("mempool")}</h2>
           {mempool.map((post) => (
-            <PostListing key={post.slug} t={t} post={post} locale={locale} />
+            <PostListing
+              className="first-of-type:border-t-0 first-of-type:pt-0"
+              key={post.slug}
+              t={t}
+              post={post}
+              locale={locale}
+            />
           ))}
         </section>
       ) : null}

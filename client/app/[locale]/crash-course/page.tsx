@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import Image from "next/image";
 
 import { Markdown } from "@/app/components/Markdown";
-import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
 import { locales } from "@/i18n";
 import { getPage } from "@/lib/content";
@@ -36,7 +35,10 @@ export default async function CrashCoursePage({
 
   return (
     <PageLayout t={t} locale={locale} generateHref={generateHref}>
-      <PageHeader title={t("sni_mempool_crash_course")}>
+      <div className="mx-auto text-center">
+        <h1 className="mb-4 text-4xl font-medium leading-[1.1] md:mb-6 md:text-7xl">
+          {t("sni_mempool_crash_course")}
+        </h1>
         <Image
           className="mx-auto my-4"
           src={cdnUrl("/img/mempool/hyperbitcoinization/BitcoinFace.png")}
@@ -44,7 +46,8 @@ export default async function CrashCoursePage({
           width={600}
           height={341}
         />
-      </PageHeader>
+      </div>
+      <hr className="mx-auto my-7 w-12 md:my-18" />
       <Markdown className="prose mx-auto">{content}</Markdown>
     </PageLayout>
   );

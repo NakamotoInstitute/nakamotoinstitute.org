@@ -41,6 +41,7 @@
   "newsletter_signup": "이메일로 최신 정보를 받아보시려면 <a>뉴스레터</a>를 구독하세요.",
   "rpow_banner": "할 피니의 <a>재사용할 수 있는 작업 증명</a>에 대한 원본 코드와 웹사이트를 확인해 보세요",
   "skeptics_banner": "<a>회의론자들: 용감한 주장에 대한 헌사</a>에서 선견지명 있는 예언가들에게 경의를 표해 보세요",
+  "skeptics_tribute_capitalized": "용감한 주장에 대한 헌사",
   "crash_course_banner": "<a>비트코인 정치경제학 속성 과정</a>을 읽어보세요",
   "podcast": "팟캐스트",
   "see_episodes": "에피소드 보기",
@@ -119,7 +120,7 @@
   "view_post": "게시글 보기",
   "view_email": "이메일 보기",
   "quotable_satoshi": "인용하기 좋은 사토시의 글",
-  "satoshi_quote_extended": "이 내용을 제대로 설명할 수만 있다면 자유주의자 관점에선 매우 매력적일 것입니다.<br><em>그렇지만 저는 글쓰기보단 코딩을 더 잘합니다.</em>",
+  "satoshi_quote_extended": "이 내용을 제대로 설명할 수만 있다면 자유주의자 관점에선 매우 매력적일 것입니다.<br>그렇지만 저는 글쓰기보단 코딩을 더 잘합니다.",
   "satoshi_citation": "<a>사토시 나카모토</a>, {{date}}",
   "quotable_satoshi_acknowledgements": "인용문을 색인 해주신 <a>Jordan Tuwiner</a> 님에게 감사드립니다.",
   "add_quotation_request": "추가하고 싶은 인용문이나 카테고리가 있다면 <contact>저희에게 연락</contact>하시거나 <github>GitHub</github>에 풀 리퀘스트를 제출해 주세요."

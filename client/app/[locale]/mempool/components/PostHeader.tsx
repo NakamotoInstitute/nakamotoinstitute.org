@@ -1,4 +1,5 @@
 import { TFunction } from "i18next";
+import Image from "next/image";
 import Link from "next/link";
 import { Trans } from "react-i18next/TransWithoutContext";
 
@@ -21,15 +22,15 @@ async function SeriesHeader({
   seriesIndex,
 }: SeriesHeaderProps) {
   return (
-    <div className="mb-6">
-      <h2 className="text-3xl">
+    <div className="mb-6 text-center font-bold small-caps">
+      <h2>
         <Link href={urls(locale).mempool.seriesDetail(series.slug)}>
           {series.title}
         </Link>
         {!series.chapterTitle ? ` (#${seriesIndex})` : null}
       </h2>
       {series?.chapterTitle ? (
-        <p className="text-3xl">
+        <p className="-mb-4 mt-2 text-xl md:mt-3 md:text-4xl">
           <Trans
             t={t}
             i18nKey="chapter_index"
@@ -50,7 +51,7 @@ type PostHeaderProps = {
 export async function PostHeader({ t, locale, post }: PostHeaderProps) {
   return (
     <>
-      <header className="mt-17 mx-auto max-w-4xl text-center">
+      <header className="mx-auto text-center">
         {post.series && post.seriesIndex !== null ? (
           <SeriesHeader
             t={t}
@@ -59,23 +60,16 @@ export async function PostHeader({ t, locale, post }: PostHeaderProps) {
             seriesIndex={post.seriesIndex}
           />
         ) : null}
-        <h1 className="mb-6 text-7xl font-medium">{post.title}</h1>
-        <p className="text-2xl font-medium">
-          <Trans
-            t={t}
-            i18nKey="by_authors"
-            components={{
-              authors: (
-                <AuthorsLinks
-                  as={"span"}
-                  locale={locale}
-                  authors={post.authors}
-                />
-              ),
-            }}
-          />
-        </p>
-        <p className="text-xl font-medium italic opacity-60">
+        <h1 className="mb-4 text-4xl font-medium leading-[1.1] md:mb-6 md:text-7xl">
+          {post.title}
+        </h1>
+        <AuthorsLinks
+          className="mb-1 text-xl font-bold small-caps md:mb-4 md:text-2xl"
+          itemClassName="text-dark"
+          locale={locale}
+          authors={post.authors}
+        />
+        <p className="text-xl font-bold opacity-60 small-caps md:text-2xl">
           <time dateTime={post.date.toISOString()}>
             {formatDate(locale, post.date)}
           </time>
@@ -94,15 +88,17 @@ export async function PostHeader({ t, locale, post }: PostHeaderProps) {
           </p>
         ) : null}
         {post.image ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            className="mx-auto block max-w-[640px] rounded-sm pt-6"
-            src={post.image}
-            alt={post.imageAlt ?? ""}
-          />
+          <div className="relative mx-auto mt-6 h-48 max-w-screen-sm sm:h-60 md:h-80">
+            <Image
+              className="object-contain"
+              src={post.image}
+              alt={post.imageAlt ?? ""}
+              fill
+            />
+          </div>
         ) : null}
       </header>
-      <hr className="mx-auto my-12 w-12 border border-opacity-40" />
+      <hr className="mx-auto my-4 w-12 md:my-6" />
     </>
   );
 }

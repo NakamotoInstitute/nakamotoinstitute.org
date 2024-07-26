@@ -11,20 +11,23 @@ type EpisodeListingProps = {
 
 export function EpisodeListing({ locale, episode }: EpisodeListingProps) {
   return (
-    <article className="border-b border-solid py-4 first:pt-0 last:border-b-0">
+    <article className="border-t border-dashed border-taupe-light py-4 last:border-b">
       <header>
-        <h2 className="text-2xl">
-          <Link href={urls(locale).podcast.episode(episode.slug)}>
+        <h2 className="font-bold md:text-xl">
+          <Link
+            className="text-cardinal hover:underline"
+            href={urls(locale).podcast.episode(episode.slug)}
+          >
             {episode.title}
           </Link>
         </h2>
-        <p>
+        <p className="small-caps">
           <time dateTime={episode.date.toISOString()}>
             {formatDate(locale, episode.date)}
           </time>
         </p>
       </header>
-      <section>{episode.summary}</section>
+      <section className="my-2 italic">{episode.summary}</section>
     </article>
   );
 }

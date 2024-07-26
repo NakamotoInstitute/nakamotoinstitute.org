@@ -1,10 +1,12 @@
 import datetime
+import os
 import re
-from typing import Any, Literal
+from typing import Any, Literal, Union
 
 from pydantic import AliasPath, BaseModel, Field, field_serializer, model_validator
 
 from sni.constants import DocumentFormats, Locales
+from sni.shared.schemas import SlugParamModel
 
 from ..authors.schemas.base import AuthorModel
 from ..shared.schemas import ORMModel, TranslationSchema
@@ -20,6 +22,7 @@ class DocumentCanonicalMDModel(BaseModel):
     image: str | None = None
     doctype: str
     has_math: bool = False
+    purchase_link: str | None = None
 
     @model_validator(mode="before")
     @classmethod
@@ -72,6 +75,66 @@ class DocumentTranslationMDModel(DocumentMDModel):
     translators: list[str] = []
 
 
+NodeType = Union[str, "Node"]
+NodeListType = list[NodeType]
+
+
+class Node(BaseModel):
+    slug: str
+    children: NodeListType = []
+
+    @classmethod
+    def parse_node(cls, node):
+        if isinstance(node, str):
+            return node
+        elif isinstance(node, dict):
+            for key, value in node.items():
+                return cls(
+                    slug=key, children=[cls.parse_node(child) for child in value]
+                )
+        else:
+            raise ValueError(f"Invalid node type: {type(node)}")
+
+
+class BookMDModel(BaseModel):
+    nodes: NodeListType
+
+    @classmethod
+    def parse_nodes(cls, nodes):
+        return [Node.parse_node(node) for node in nodes]
+
+    @classmethod
+    def from_front_matter(cls, data: dict):
+        data["nodes"] = cls.parse_nodes(data.get("nodes", []))
+        return cls(**data)
+
+    def gather_markdown_files(
+        self, base_path
+    ) -> list[tuple[str, Union[str, None], int]]:
+        markdown_files = []
+
+        def _gather_files(node, parent, current_path, order):
+            if isinstance(node, str):
+                markdown_files.append(
+                    (os.path.join(current_path, f"{node}.md"), parent, order)
+                )
+            elif isinstance(node, Node):
+                for idx, child in enumerate(node.children, start=1):
+                    _gather_files(child, node.name, current_path, idx)
+
+        for idx, node in enumerate(self.nodes, start=1):
+            _gather_files(node, None, base_path, idx)
+
+        return markdown_files
+
+
+class BookMDNodeModel(BaseModel):
+    heading: str | None = None
+    title: str
+    subheading: str | None = None
+    nav_title: str | None = None
+
+
 class DocumentFormatModel(ORMModel):
     url: str
     type: DocumentFormats
@@ -97,12 +160,19 @@ class DocumentBaseModel(ORMModel):
 
 class DocumentIndexModel(DocumentBaseModel):
     has_content: bool = False
+    flattened_nodes: list["DocumentNodeBaseModel"] = Field(serialization_alias="nodes")
 
     @model_validator(mode="before")
     @classmethod
     def check_content(cls, data: Any) -> Any:
         data.has_content = bool(data.html_content)
         return data
+
+
+class DocumentNodeBaseModel(ORMModel):
+    slug: str
+    title: str
+    nav_title: str | None = None
 
 
 class DocumentModel(DocumentBaseModel):
@@ -117,3 +187,29 @@ class DocumentModel(DocumentBaseModel):
         serialization_alias="hasMath",
     )
     translators: list[TranslatorModel]
+    entry_node: DocumentNodeBaseModel | None
+    purchase_link: str | None = Field(
+        validation_alias=AliasPath("document", "purchase_link")
+    )
+
+
+class DocumentNodeModel(ORMModel):
+    heading: str | None = None
+    title: str
+    subheading: str | None = None
+    doc_title: str = Field(validation_alias=AliasPath("document_translation", "title"))
+    doc_slug: str = Field(validation_alias=AliasPath("document_translation", "slug"))
+    authors: list[AuthorModel] = Field(
+        validation_alias=AliasPath("document_translation", "document", "authors")
+    )
+    translations: list[TranslationSchema] = Field(
+        validation_alias=AliasPath("document_translation", "translations")
+    )
+    html_content: str = Field(alias="content")
+    root_parent: DocumentNodeBaseModel | None = Field(alias="root")
+    next_node: DocumentNodeBaseModel | None = Field(alias="next")
+    previous_node: DocumentNodeBaseModel | None = Field(alias="previous")
+
+
+class DocumentNodeParamsModel(SlugParamModel):
+    node_slug: str

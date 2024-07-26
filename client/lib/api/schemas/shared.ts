@@ -9,7 +9,7 @@ export const zLocale = z.string().refine(
   { message: "Invalid locale" },
 );
 
-const zSlugParam = z.object({
+export const zSlugParam = z.object({
   locale: zLocale,
   slug: z.string(),
 });

@@ -1,6 +1,6 @@
 import { Metadata } from "next";
-import Link from "next/link";
 
+import { ListColumnLayout } from "@/app/components/ListColumnLayout";
 import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
 import { locales } from "@/i18n";
@@ -36,15 +36,10 @@ export default async function AuthorsIndex({
   return (
     <PageLayout t={t} locale={locale} generateHref={generateHref}>
       <PageHeader title={t("authors")} />
-      <ul>
-        {authors.map((author) => (
-          <li key={author.slug}>
-            <Link href={urls(locale).authors.detail(author.slug)}>
-              {author.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <ListColumnLayout
+        items={authors}
+        hrefFunc={(slug: string) => urls(locale).authors.detail(slug)}
+      />
     </PageLayout>
   );
 }

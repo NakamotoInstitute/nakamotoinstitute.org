@@ -1,27 +1,27 @@
-import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout, PageLayoutProps } from "@/app/components/PageLayout";
 
-import { IndexLinks, IndexNavigation } from "./IndexNavigation";
+import { IndexHeader } from "./IndexHeader";
+import { IndexNavigationProps } from "./IndexNavigation";
 
-type IndexPageLayoutProps = PageLayoutProps & {
-  title: string;
-  navLinks: IndexLinks;
-};
+type IndexPageLayoutProps = PageLayoutProps & IndexNavigationProps;
 
-export const IndexPageLayout = ({
-  title,
-  navLinks,
+export const IndexPageLayout = async ({
+  t,
+  type,
+  sourceLinks,
+  toggleLinks,
   children,
   ...rest
 }: IndexPageLayoutProps) => {
   return (
-    <PageLayout {...rest}>
-      <PageHeader title={title}>
-        <IndexNavigation links={navLinks} />
-      </PageHeader>
+    <PageLayout t={t} {...rest}>
+      <IndexHeader
+        t={t}
+        type={type}
+        sourceLinks={sourceLinks}
+        toggleLinks={toggleLinks}
+      />
       {children}
-      <hr className="my-4" />
-      <IndexNavigation links={navLinks} reverse />
     </PageLayout>
   );
 };

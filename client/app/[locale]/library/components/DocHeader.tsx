@@ -1,7 +1,11 @@
+import clsx from "clsx";
 import { TFunction } from "i18next";
+import Image from "next/image";
+import Link from "next/link";
 
 import { AuthorsLinks } from "@/app/components/AuthorsLinks";
 import { Document } from "@/lib/api/schemas/library";
+import { urls } from "@/lib/urls";
 import { formatDocDate, formatTimeAttr } from "@/utils/dates";
 
 import { DocFormatLinks } from "./DocFormats";
@@ -15,21 +19,23 @@ type DocHeaderProps = {
 export async function DocHeader({ t, locale, doc }: DocHeaderProps) {
   return (
     <>
-      <header className="mx-auto mt-6 max-w-4xl text-center">
+      <header className="mx-auto text-center">
         <h1
-          className="mb-2 text-5xl font-medium"
+          className="mb-4 text-4xl font-medium leading-[1.1] md:mb-6 md:text-7xl"
           dangerouslySetInnerHTML={{ __html: doc.displayTitle ?? doc.title }}
         />
         {doc.subtitle ? (
-          <p className="mb-6 text-xl italic">{doc.subtitle}</p>
+          <p className="mb-4 text-2xl font-semibold md:mb-6 md:text-3xl">
+            {doc.subtitle}
+          </p>
         ) : null}
         <AuthorsLinks
-          className="mb-2 text-3xl font-medium"
-          itemClassName="text-gray-500 hover:text-gray-600"
+          className="mb-1 text-xl font-bold small-caps md:mb-4 md:text-2xl"
+          itemClassName="text-dark"
           locale={locale}
           authors={doc.authors}
         />
-        <p className="text-2xl font-medium">
+        <p className="text-xl font-bold opacity-60 small-caps md:text-2xl">
           <time
             dateTime={formatTimeAttr(doc.date, doc.granularity)}
             dangerouslySetInnerHTML={{
@@ -40,31 +46,32 @@ export async function DocHeader({ t, locale, doc }: DocHeaderProps) {
           />
         </p>
         {doc.image ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            className="mx-auto block rounded-sm pt-6"
-            src={doc.image}
-            alt={doc.imageAlt ?? ""}
-          />
+          <div className="relative mx-auto mt-6 h-48 max-w-screen-sm sm:h-60 md:h-80">
+            <Image
+              className="object-contain"
+              src={doc.image}
+              alt={doc.imageAlt ?? ""}
+              fill
+            />
+          </div>
         ) : null}
       </header>
-      <hr className="mx-auto my-6 w-12 border border-opacity-40" />
+      <hr className="mx-auto my-4 w-12 md:my-6" />
       {doc.content ? (
         <>
           <DocFormatLinks
             t={t}
-            classes={{ root: "justify-center gap-3 font-medium" }}
+            locale={locale}
+            className="justify-center gap-3 font-medium"
             doc={doc}
           />
-          <hr className="mx-auto my-6 w-12 border-opacity-40" />
+          <hr className="mx-auto my-6 w-12" />
         </>
       ) : (
         <DocFormatLinks
           t={t}
-          classes={{
-            root: "text-center flex-col gap-3",
-            link: "text-lg font-medium",
-          }}
+          locale={locale}
+          className="justify-center gap-3 font-medium"
           doc={doc}
         />
       )}

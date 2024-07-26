@@ -31,9 +31,7 @@ export default async function EventsPage({ params: { locale } }: LocaleParams) {
   return (
     <PageLayout t={t} locale={locale} generateHref={generateHref}>
       <PageHeader title={t("events")} />
-      <div className="text-center">
-        <p>{t("no_events_message")}</p>
-      </div>
+      <p>{t("no_events_message")}</p>
     </PageLayout>
   );
 }

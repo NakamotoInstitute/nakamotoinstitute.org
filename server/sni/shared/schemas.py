@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import AliasGenerator, BaseModel, ConfigDict
 from pydantic.alias_generators import to_camel
 
 from sni.constants import Locales
@@ -12,6 +12,10 @@ class ORMModel(BaseModel):
 
 
 class SlugParamModel(BaseModel):
+    model_config = ConfigDict(
+        alias_generator=AliasGenerator(serialization_alias=to_camel)
+    )
+
     slug: str
     locale: Locales
 

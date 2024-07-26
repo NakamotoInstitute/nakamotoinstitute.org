@@ -12,6 +12,9 @@ import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
+import { formatEmailSource, formatPostSource } from "@/utils/strings";
+
+import { ContentBox, ContentBoxBody } from "@satoshi/components/ContentBox";
 
 const generateHref = (slug: string) => (l: Locale) =>
   urls(l).satoshi.quoteCategory(slug);
@@ -38,15 +41,17 @@ type SatoshiQuoteProps = {
 };
 
 async function SatoshiQuote({ t, locale, quote }: SatoshiQuoteProps) {
-  let subject: string;
+  let source: string;
+  let subject: string | undefined = undefined;
   let url: string;
   let label: string;
 
   if (quote.whitepaper) {
-    subject = t("bitcoin_title");
+    source = t("bitcoin_title");
     url = urls("en").library.doc("bitcoin");
     label = t("view_whitepaper");
   } else if (quote.post) {
+    source = formatPostSource(quote.post.source);
     subject = quote.post.subject;
     url = urls(locale).satoshi.posts.sourcePost(
       quote.post.source,
@@ -54,6 +59,7 @@ async function SatoshiQuote({ t, locale, quote }: SatoshiQuoteProps) {
     );
     label = t("view_post");
   } else if (quote.email) {
+    source = formatEmailSource(quote.email.source);
     subject = quote.email.subject;
     url = urls(locale).satoshi.emails.sourceEmail(
       quote.email.source,
@@ -65,28 +71,52 @@ async function SatoshiQuote({ t, locale, quote }: SatoshiQuoteProps) {
   }
 
   return (
-    <article className="border-b py-4 first:pt-0 last:border-b-0">
-      <h2 className="text-2xl">{subject}</h2>
-      <p>
-        <time>{formatDate(locale, quote.date)}</time> -{" "}
-        <Link href={url}>{label}</Link>
-      </p>
-      <p className="py-2">{quote.text}</p>
-      <RenderedItemsList
-        className="text-sm"
-        locale={locale}
-        items={quote.categories}
-        renderItem={(item) => (
-          <Link
-            key={item.slug}
-            href={urls(locale).satoshi.quoteCategory(item.slug)}
-          >
-            {item.name}
-          </Link>
-        )}
-        options={{ type: "unit" }}
-      />
-    </article>
+    <ContentBox as="article" className="mb-3 last:mb-0">
+      <header className="border-b border-dashed border-taupe bg-dandelion font-mono">
+        <div className="border-b border-dashed border-taupe px-8 py-2">
+          {source ? <div className="font-bold">{source}</div> : null}
+        </div>
+        <div className="grid grid-cols-[auto_1fr] gap-x-4 px-8 py-2">
+          {subject ? (
+            <>
+              <div>{t("subject")}</div>
+              <div className="font-bold">{subject}</div>
+            </>
+          ) : null}
+          <div>{t("date_colon")}</div>
+          <div>
+            <time dateTime={quote.date.toISOString()}>
+              {formatDate(locale, quote.date, {
+                dateStyle: "long",
+                timeStyle: quote.whitepaper ? undefined : "long",
+                hourCycle: "h24",
+              })}
+            </time>
+          </div>
+        </div>
+      </header>
+      <ContentBoxBody mono={!!quote.email}>{quote.text}</ContentBoxBody>
+      <footer className="flex flex-col justify-between gap-2 border-t border-dashed border-taupe px-8 py-4 font-mono text-sm md:flex-row">
+        <Link className="text-cardinal hover:underline" href={url}>
+          {label}
+        </Link>
+        <RenderedItemsList
+          className="text-xs"
+          locale={locale}
+          items={quote.categories}
+          renderItem={(item) => (
+            <Link
+              key={item.slug}
+              className="text-cardinal hover:underline"
+              href={urls(locale).satoshi.quoteCategory(item.slug)}
+            >
+              {item.name}
+            </Link>
+          )}
+          options={{ type: "unit" }}
+        />
+      </footer>
+    </ContentBox>
   );
 }
 
@@ -97,7 +127,25 @@ export default async function QuotesCategoryPage({
   const { category, quotes } = await getQuoteCategory(slug);
 
   return (
-    <PageLayout t={t} locale={locale} generateHref={generateHref(slug)}>
+    <PageLayout
+      t={t}
+      locale={locale}
+      generateHref={generateHref(slug)}
+      breadcrumbs={[
+        {
+          label: t("complete_satoshi"),
+          href: urls(locale).satoshi.index,
+        },
+        {
+          label: t("quotable_satoshi"),
+          href: urls(locale).satoshi.quotesIndex,
+        },
+        {
+          label: category.name,
+          href: urls(locale).satoshi.quoteCategory(category.slug),
+        },
+      ]}
+    >
       <PageHeader title={category.name} superTitle={t("quotable_satoshi")} />
       <section>
         {quotes.map((q) => (

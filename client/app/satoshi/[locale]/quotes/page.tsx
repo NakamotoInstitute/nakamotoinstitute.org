@@ -2,11 +2,11 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { Trans } from "react-i18next/TransWithoutContext";
 
+import { ListColumnLayout } from "@/app/components/ListColumnLayout";
 import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
 import { locales } from "@/i18n";
 import { getQuoteCategories } from "@/lib/api/quotes";
-import { QuoteCategory } from "@/lib/api/schemas/quotes";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
@@ -27,40 +27,31 @@ export async function generateMetadata({
   };
 }
 
-type LinkColumnProps = {
-  locale: Locale;
-  categories: QuoteCategory[];
-};
-
-function LinkColumn({ locale, categories }: LinkColumnProps) {
-  return (
-    <ul className="w-1/2">
-      {categories.map((c) => (
-        <li key={c.slug}>
-          <Link href={urls(locale).satoshi.quoteCategory(c.slug)}>
-            {c.name}
-          </Link>
-        </li>
-      ))}
-    </ul>
-  );
-}
-
 export default async function QuotesIndex({
   params: { locale },
 }: LocaleParams) {
   const { t } = await i18nTranslation(locale);
   const categories = await getQuoteCategories();
 
-  const halfLength = Math.ceil(categories.length / 2);
-  const firstColumn = categories.slice(0, halfLength);
-  const secondColumn = categories.slice(halfLength);
-
   return (
-    <PageLayout t={t} locale={locale} generateHref={generateHref}>
+    <PageLayout
+      t={t}
+      locale={locale}
+      generateHref={generateHref}
+      breadcrumbs={[
+        {
+          label: t("complete_satoshi"),
+          href: urls(locale).satoshi.index,
+        },
+        {
+          label: t("quotable_satoshi"),
+          href: urls(locale).satoshi.quotesIndex,
+        },
+      ]}
+    >
       <PageHeader title={t("quotable_satoshi")}>
-        <figure>
-          <blockquote>
+        <figure className="border-l-1 border-dashed border-cardinal">
+          <blockquote className="px-4 italic">
             <Trans
               i18nKey="satoshi_quote_extended"
               components={{
@@ -69,7 +60,7 @@ export default async function QuotesIndex({
               }}
             />
           </blockquote>
-          <figcaption>
+          <figcaption className="mt-3 px-4 text-lg font-medium small-caps">
             <Trans
               i18nKey="satoshi_citation"
               components={{
@@ -80,24 +71,28 @@ export default async function QuotesIndex({
                 ),
               }}
               values={{
-                date: formatDate(locale, new Date(Date.UTC(2008, 11, 14))),
+                date: formatDate(locale, new Date(Date.UTC(2008, 10, 14))),
               }}
             />
           </figcaption>
         </figure>
       </PageHeader>
-      <section className="flex">
-        <LinkColumn locale={locale} categories={firstColumn} />
-        <LinkColumn locale={locale} categories={secondColumn} />
-      </section>
-      <hr className="my-4" />
-      <footer className="text-center italic">
+      <ListColumnLayout
+        items={categories}
+        hrefFunc={(slug: string) => urls(locale).satoshi.quoteCategory(slug)}
+      />
+      <footer>
         <p>
           <Trans
             t={t}
             i18nKey="quotable_satoshi_acknowledgements"
             components={{
-              a: <Link href="https://charts.bitbo.io" />,
+              a: (
+                <Link
+                  className="text-cardinal hover:underline"
+                  href="https://charts.bitbo.io"
+                />
+              ),
             }}
           />
         </p>
@@ -106,8 +101,18 @@ export default async function QuotesIndex({
             t={t}
             i18nKey="add_quotation_request"
             components={{
-              contact: <Link href={urls(locale).contact} />,
-              github: <Link href={urls(locale).github} />,
+              contact: (
+                <Link
+                  className="text-cardinal hover:underline"
+                  href={urls(locale).contact}
+                />
+              ),
+              github: (
+                <Link
+                  className="text-cardinal hover:underline"
+                  href={urls(locale).github}
+                />
+              ),
             }}
           />
         </p>

@@ -38,7 +38,7 @@ export default async function LibraryIndex({
   return (
     <PageLayout t={t} locale={locale} generateHref={generateHref}>
       <PageHeader title={t("library")}>
-        <p>{t("bitcoin_context")}</p>
+        <p className="text-lg">{t("bitcoin_context")}</p>
       </PageHeader>
       <section>
         {docs.length > 0 ? (

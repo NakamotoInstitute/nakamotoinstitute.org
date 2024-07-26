@@ -46,7 +46,19 @@ export default async function SeriesDetail({
   };
 
   return (
-    <PageLayout t={t} locale={locale} generateHref={generateHref}>
+    <PageLayout
+      t={t}
+      locale={locale}
+      generateHref={generateHref}
+      breadcrumbs={[
+        { label: t("mempool"), href: urls(locale).mempool.index },
+        { label: t("mempool_series"), href: urls(locale).mempool.seriesIndex },
+        {
+          label: series.title,
+          href: urls(locale).mempool.seriesDetail(series.slug),
+        },
+      ]}
+    >
       <PageHeader title={series.title} />
       <section>
         {posts?.map((post) => (

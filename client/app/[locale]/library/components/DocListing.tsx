@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { TFunction } from "i18next";
 import Link from "next/link";
 
@@ -8,26 +9,58 @@ import { formatDocDate, formatTimeAttr } from "@/utils/dates";
 
 import { DocFormatChips } from "./DocFormats";
 
+type DocListingAuthorsProps = {
+  doc: DocumentIndex;
+  locale: Locale;
+  small?: boolean;
+};
+
+export async function DocListingAuthors({
+  doc,
+  locale,
+  small = false,
+}: DocListingAuthorsProps) {
+  return (
+    <p className={clsx("small-caps", small ? "text-xs" : "max-sm:text-sm")}>
+      <AuthorsLinks as="span" authors={doc.authors} locale={locale} />
+      <span className="mx-1">•</span>
+      <time dateTime={formatTimeAttr(doc.date, doc.granularity)}>
+        {formatDocDate(locale, doc.date, doc.granularity, small)}
+      </time>
+    </p>
+  );
+}
+
 type DocListingProps = {
   doc: DocumentIndex;
+  className?: string;
   locale: Locale;
   t: TFunction<string, string>;
 };
 
-export async function DocListing({ doc, locale, t }: DocListingProps) {
+export async function DocListing({
+  doc,
+  className,
+  locale,
+  t,
+}: DocListingProps) {
   return (
-    <article className="border-b border-solid py-4 first:pt-0 last:border-b-0">
-      <header>
-        <h2 className="text-xl font-bold">
-          <Link href={urls(locale).library.doc(doc.slug)}>{doc.title}</Link>
+    <article
+      className={clsx(
+        "border-t border-dashed border-taupe-light py-4 last:border-b",
+        className,
+      )}
+    >
+      <header className="mb-1 md:mb-2">
+        <h2 className="font-bold md:text-xl">
+          <Link
+            className="text-cardinal hover:underline"
+            href={urls(locale).library.doc(doc.slug)}
+          >
+            {doc.title}
+          </Link>
         </h2>
-        <p>
-          <AuthorsLinks as="span" authors={doc.authors} locale={locale} />
-          {" • "}
-          <time dateTime={formatTimeAttr(doc.date, doc.granularity)}>
-            {formatDocDate(locale, doc.date, doc.granularity)}
-          </time>
-        </p>
+        <DocListingAuthors locale={locale} doc={doc} />
       </header>
       <section>
         <DocFormatChips t={t} className="pt-1" doc={doc} />

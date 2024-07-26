@@ -31,39 +31,43 @@ export async function SkepticListing({
   return (
     <article
       id={skeptic.slug}
-      className="border-b border-solid py-4 first:pt-0 last:border-b-0"
+      className="border-t border-dashed border-taupe py-4 last:border-b"
     >
       <header>
-        <p className="text-2xl">
+        <p className="text-lg">
           {formatDate(locale, skeptic.date)} • $
           {commafy(priceData.originalUsd.toFixed(2))}
         </p>
         <Link href={{ hash: skeptic.slug }}>
-          <h2 className="text-3xl">{skeptic.name}</h2>
+          <h2 className="text-2xl font-semibold">{skeptic.name}</h2>
         </Link>
-        <p className="italic">{skeptic.title}</p>
+        <p className="small-caps">{skeptic.title}</p>
       </header>
-      <section className="py-2">
+      <section className="mb-2 py-2">
         <SkepticPriceData t={t} priceData={priceData} />
       </section>
       <section>
-        {skeptic.excerpt ? <Rehype>{skeptic.excerpt}</Rehype> : null}
+        {skeptic.excerpt ? (
+          <div className="italic-regular-em mb-4 italic">
+            <Rehype>{skeptic.excerpt}</Rehype>
+          </div>
+        ) : null}
         {skeptic.twitterScreenshot ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            className="mx-auto my-4"
+            className="mx-auto mb-4"
             src={cdnUrl(`/img/skeptics/${skeptic.slug}.jpg`)}
             alt=""
           />
         ) : null}
         {skeptic.mediaEmbed ? (
           <div
-            className="my-4 flex items-center justify-center"
+            className="mb-4 flex items-center justify-center"
             dangerouslySetInnerHTML={{ __html: skeptic.mediaEmbed }}
           />
         ) : null}
         {skeptic.waybackLink ? (
-          <p>
+          <p className="text-sm small-caps">
             <Link href={skeptic.waybackLink}>{t("archive_link")}</Link>
           </p>
         ) : null}

@@ -42,7 +42,9 @@ export default async function MempoolIndex({
           <em>{t("mempool_invalid_transactions")}</em>
         </p>
         <p>
-          <Link href={urls(locale).mempool.rss}>{t("rss_feed")}</Link>
+          <Link className="underline" href={urls(locale).mempool.rss}>
+            {t("rss_feed")}
+          </Link>
         </p>
       </PageHeader>
       <section>

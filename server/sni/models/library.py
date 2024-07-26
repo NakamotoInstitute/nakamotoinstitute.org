@@ -10,6 +10,7 @@ from sqlalchemy import (
     Integer,
     String,
     Table,
+    Text,
     UniqueConstraint,
 )
 from sqlalchemy.orm import Mapped, mapped_column, relationship
@@ -87,6 +88,7 @@ class Document(Base):
     )
     has_math: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
     weight: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
+    purchase_link: Mapped[str] = mapped_column(String, nullable=True)
 
     @property
     def image_url(self):
@@ -123,6 +125,7 @@ class DocumentTranslation(MarkdownContent):
     translators: Mapped[List["Translator"]] = relationship(
         secondary=document_translators, back_populates="docs"
     )
+    nodes = relationship("DocumentNode", back_populates="document_translation")
 
     __mapper_args__ = {"polymorphic_identity": "document"}
 
@@ -152,5 +155,86 @@ class DocumentTranslation(MarkdownContent):
             key=lambda t: t.locale,
         )
 
+    @property
+    def flattened_nodes(self):
+        def _flatten(node, all_nodes):
+            result = [node]
+            children = sorted(
+                (n for n in all_nodes if n.parent == node), key=lambda n: n.order
+            )
+            for child in children:
+                result.extend(_flatten(child, all_nodes))
+            return result
+
+        top_level_nodes = sorted(
+            (node for node in self.nodes if node.parent is None), key=lambda n: n.order
+        )
+
+        _flattened_nodes = []
+        for top_node in top_level_nodes:
+            _flattened_nodes.extend(_flatten(top_node, self.nodes))
+
+        return _flattened_nodes
+
+    @property
+    def entry_node(self) -> "DocumentNode":
+        return next(
+            (node for node in self.nodes if node.parent is None and node.order == 1),
+            None,
+        )
+
     def __repr__(self) -> str:
         return f"<DocumentTranslation(locale={self.locale.value};slug={self.slug})>"
+
+
+class DocumentNode(Base):
+    __tablename__ = "document_nodes"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    slug: Mapped[str] = mapped_column(String, nullable=False, unique=True)
+    title: Mapped[str] = mapped_column(String, nullable=False)
+    nav_title: Mapped[str] = mapped_column(String, nullable=True)
+    heading: Mapped[str] = mapped_column(String, nullable=True)
+    subheading: Mapped[str] = mapped_column(String, nullable=True)
+    order: Mapped[int] = mapped_column(Integer, nullable=False)
+    file_content: Mapped[str] = mapped_column(Text, nullable=False)
+    html_content: Mapped[str] = mapped_column(Text, nullable=False)
+    document_translation_id: Mapped[int] = mapped_column(
+        ForeignKey("document_translations.id"), nullable=False
+    )
+    parent_id: Mapped[int] = mapped_column(
+        ForeignKey("document_nodes.id"), nullable=True
+    )
+
+    document_translation: Mapped[DocumentTranslation] = relationship(
+        back_populates="nodes"
+    )
+    parent: Mapped["DocumentNode"] = relationship(
+        "DocumentNode",
+        back_populates="children",
+        remote_side=[id],
+        lazy="joined",
+    )
+    children: Mapped[list["DocumentNode"]] = relationship(
+        "DocumentNode", back_populates="parent", order_by=order, join_depth=1
+    )
+
+    @property
+    def root_parent(self):
+        return self.document_translation.entry_node
+
+    @property
+    def next(self):
+        nodes = self.document_translation.flattened_nodes
+        current_index = nodes.index(self)
+        if current_index < len(nodes) - 1:
+            return nodes[current_index + 1]
+        return None
+
+    @property
+    def previous(self):
+        nodes = self.document_translation.flattened_nodes
+        current_index = nodes.index(self)
+        if current_index > 0:
+            return nodes[current_index - 1]
+        return None

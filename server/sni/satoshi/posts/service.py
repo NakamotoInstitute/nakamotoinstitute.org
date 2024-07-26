@@ -98,7 +98,7 @@ async def get_thread_posts(
     )
     if satoshi:
         query = query.filter(ForumPost.satoshi_id.isnot(None))
-    query = query.order_by(ForumPost.date)
+    query = query.order_by(ForumPost.id)
 
     result = await db_session.scalars(query)
     return result.all()

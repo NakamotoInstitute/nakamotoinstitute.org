@@ -1,9 +1,13 @@
 import clsx from "clsx";
 import { TFunction } from "i18next";
+import Image from "next/image";
 
 import { env } from "@/env";
-import { generateLocaleToggleLinks, urls } from "@/lib/urls";
+import { cdnUrl, generateLocaleToggleLinks, urls } from "@/lib/urls";
 
+import { AdditionalNavigation } from "./AdditionalNavigation";
+import { Breadcrumbs } from "./Breadcrumbs";
+import { ButtonLink } from "./Button";
 import Fathom from "./Fathom";
 import { Footer } from "./Footer";
 import { Navbar } from "./Navbar";
@@ -12,7 +16,10 @@ export type PageLayoutProps = {
   t: TFunction<string, string>;
   className?: string;
   generateHref?: (locale: Locale) => string;
+  size?: "md" | "lg" | "xl";
   locale: Locale;
+  breadcrumbs?: Breadcrumbs;
+  additionalNav?: React.ReactNode;
   children: React.ReactNode;
 };
 
@@ -21,6 +28,9 @@ export async function PageLayout({
   className,
   locale,
   generateHref,
+  breadcrumbs,
+  additionalNav,
+  size = "md",
   children,
 }: PageLayoutProps) {
   const toggleProps = generateHref
@@ -29,11 +39,17 @@ export async function PageLayout({
 
   return (
     <body className="flex min-h-screen flex-col">
-      <Fathom siteId={env.FATHOM_ID!} />
+      {env.FATHOM_ID ? <Fathom siteId={env.FATHOM_ID} /> : null}
       <Navbar
         locale={locale}
-        title={t("sni_full")}
-        mobileTitle={t("sni")}
+        logo={
+          <Image
+            src={cdnUrl("/img/navbar-logo.svg")}
+            width={121}
+            height={48}
+            alt="SNI logo with text"
+          />
+        }
         homeHref={urls(locale).home}
         navLinks={[
           {
@@ -44,9 +60,25 @@ export async function PageLayout({
           { href: urls(locale).mempool.index, text: t("mempool") },
           { href: urls(locale).substack, text: t("newsletter") },
         ]}
+        navButtons={[
+          <ButtonLink key="donate" href={urls(locale).donate.zaprite}>
+            {t("donate")}
+          </ButtonLink>,
+        ]}
         {...toggleProps}
       />
-      <main className={clsx("twbs-container mb-4 flex-grow pb-4", className)}>
+      {breadcrumbs ? <Breadcrumbs breadcrumbs={breadcrumbs} /> : null}
+      {additionalNav ? (
+        <AdditionalNavigation>{additionalNav}</AdditionalNavigation>
+      ) : null}
+      <main
+        className={clsx(className, "mx-auto w-full flex-grow px-4", {
+          "max-w-[872px]": size === "md",
+          "max-w-[960px]": size === "lg",
+          "max-w-screen-1.5xl": size === "xl",
+          "my-10 pb-4 md:mt-18": size !== "xl",
+        })}
+      >
         {children}
       </main>
       <Footer t={t} locale={locale} />

@@ -3,6 +3,7 @@ from .content import FileMetadata, JSONFile, MarkdownContent, YAMLFile  # noqa: 
 from .library import (  # noqa: F401
     Document,
     DocumentFormat,
+    DocumentNode,
     DocumentTranslation,
     LibraryWeightFile,
     document_authors,

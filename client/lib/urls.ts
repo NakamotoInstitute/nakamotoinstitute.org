@@ -1,6 +1,6 @@
 import { ToggleLinkProps } from "@/app/components/LanguageToggle";
 import { env } from "@/env";
-import { languages, locales } from "@/i18n";
+import { defaultLocale, languages, locales } from "@/i18n";
 
 import { EmailSource } from "./api/schemas/emails";
 import { ForumPostSource } from "./api/schemas/posts";
@@ -35,7 +35,7 @@ const APP_BASE_URL = (() => {
     case "development":
       return "http://localhost:3000";
     case "production":
-      return env.APP_BASE_URL;
+      return env.APP_BASE_URL!;
     default:
       return `https://${env.VERCEL_URL}`;
   }
@@ -94,6 +94,8 @@ export const urls = (locale: Locale) => {
     library: {
       index: getUrl("/library/"),
       doc: (slug: string) => getUrl(`/library/${slug}/`),
+      docNode: (docSlug: string, nodeSlug: string) =>
+        getUrl(`/library/${docSlug}/${nodeSlug}/`),
     },
     mempool: {
       index: getUrl("/mempool/"),
@@ -142,6 +144,8 @@ export const urls = (locale: Locale) => {
     skeptics: getUrl("/the-skeptics/"),
     github: "https://github.com/NakamotoInstitute/nakamotoinstitute.org",
     substack: "https://news.nakamotoinstitute.org",
+    x: "https://x.com/NakamotoInst",
+    nostr: "https://primal.net/sni",
   };
 };
 
@@ -156,7 +160,7 @@ export const generateLocaleToggleLinks = (
       const name = languages[loc];
 
       if (loc === locale) {
-        acc.current = name;
+        acc.current = locale;
         return acc;
       }
 
@@ -167,6 +171,6 @@ export const generateLocaleToggleLinks = (
 
       return acc;
     },
-    { current: "", links: [] },
+    { current: defaultLocale, links: [] },
   );
 };

@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Link from "next/link";
 
 import { locales } from "@/i18n";
 import { getSatoshiEmailsBySource } from "@/lib/api/emails";
@@ -8,9 +7,10 @@ import { zEmailSource } from "@/lib/api/schemas/emails";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
-import { formatDate } from "@/utils/dates";
 import { formatEmailSource, otherEmailSource } from "@/utils/strings";
 
+import { ContentListing } from "@satoshi/components/ContentListing";
+import { SourceLink } from "@satoshi/components/IndexHeader";
 import { IndexPageLayout } from "@satoshi/components/IndexPageLayout";
 
 export const dynamicParams = false;
@@ -41,60 +41,62 @@ export default async function EmailsSourceIndex({
 
   const otherSource = otherEmailSource(source);
 
-  const navLinks = {
-    main: {
-      text: t("view_threads"),
-      href: urls(locale).satoshi.emails.sourceThreadsIndex(source),
-    },
-    left: {
-      text: t("all_emails"),
-      href: urls(locale).satoshi.emails.index,
-      sublink: {
-        text: t("threads"),
-        href: urls(locale).satoshi.emails.threadsIndex,
-      },
-    },
-    right: {
-      text: formatEmailSource(otherSource, true),
-      href: urls(locale).satoshi.emails.sourceIndex(otherSource),
-      sublink: {
-        text: t("threads"),
-        href: urls(locale).satoshi.emails.sourceThreadsIndex(otherSource),
-      },
-    },
+  const allLink: SourceLink = {
+    name: t("all"),
+    href: urls(locale).satoshi.emails.index,
   };
+  const additionalLinks: SourceLink[] =
+    source === "cryptography"
+      ? [
+          { name: formatEmailSource("cryptography"), active: true },
+          {
+            name: formatEmailSource("bitcoin-list"),
+            href: urls(locale).satoshi.emails.sourceIndex(otherSource),
+          },
+        ]
+      : [
+          {
+            name: formatEmailSource("cryptography"),
+            href: urls(locale).satoshi.emails.sourceIndex(otherSource),
+          },
+          { name: formatEmailSource("bitcoin-list"), active: true },
+        ];
+  const sourceLinks = [allLink, ...additionalLinks];
 
   return (
     <IndexPageLayout
       t={t}
-      title={t("source_emails", { source: formatEmailSource(source) })}
+      type="emails"
       locale={locale}
       generateHref={generateHref(source)}
-      navLinks={navLinks}
+      breadcrumbs={[
+        { label: t("complete_satoshi"), href: urls(locale).satoshi.index },
+        { label: t("emails"), href: urls(locale).satoshi.emails.index },
+        {
+          label: formatEmailSource(source, true),
+          href: urls(locale).satoshi.emails.sourceIndex(source),
+        },
+      ]}
+      sourceLinks={sourceLinks}
+      toggleLinks={{
+        active: "individual",
+        href: urls(locale).satoshi.emails.sourceThreadsIndex(source),
+      }}
     >
-      <ul>
+      <section>
         {emails.map((e) => (
-          <li key={e.satoshiId}>
-            <Link
-              href={urls(locale).satoshi.emails.sourceEmail(
-                e.source,
-                e.satoshiId.toString(),
-              )}
-            >
-              {e.subject}
-            </Link>{" "}
-            <em>
-              (
-              {formatDate(locale, e.date, {
-                dateStyle: "medium",
-                timeStyle: "long",
-                hourCycle: "h24",
-              })}
-              )
-            </em>
-          </li>
+          <ContentListing
+            key={e.satoshiId}
+            locale={locale}
+            label={e.subject}
+            href={urls(locale).satoshi.emails.sourceEmail(
+              e.source,
+              e.satoshiId.toString(),
+            )}
+            date={e.date}
+          />
         ))}
-      </ul>
+      </section>
     </IndexPageLayout>
   );
 }

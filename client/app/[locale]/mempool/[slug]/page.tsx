@@ -5,6 +5,7 @@ import { Trans } from "react-i18next/TransWithoutContext";
 import { PageLayout } from "@/app/components/PageLayout";
 import { Rehype } from "@/app/components/Rehype";
 import { RenderedItemsList } from "@/app/components/RenderedItemsList";
+import { ReturnButton } from "@/app/components/ReturnButton";
 import { getMempoolParams, getMempoolPost } from "@/lib/api/mempool";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { getDir } from "@/lib/i18n/utils";
@@ -41,9 +42,6 @@ export default async function MempoolPost({
   const { t } = await i18nTranslation(locale);
   const post = await getMempoolPost(slug, locale);
 
-  const backHref = urls(locale).mempool.index;
-  const backLabel = t("back_to_mempool");
-
   const generateHref = (l: Locale) => {
     const translation = post.translations.find((t) => t.locale === l);
     if (translation) {
@@ -53,13 +51,19 @@ export default async function MempoolPost({
   };
 
   return (
-    <PageLayout t={t} locale={locale} generateHref={generateHref}>
-      <Link className="mb-4 block text-center" href={backHref}>
-        {backLabel}
-      </Link>
+    <PageLayout
+      t={t}
+      locale={locale}
+      generateHref={generateHref}
+      breadcrumbs={[
+        { label: t("mempool"), href: urls(locale).mempool.index },
+        { label: post.title, href: urls(locale).mempool.post(post.slug) },
+      ]}
+      size="lg"
+    >
       <article>
         <PostHeader t={t} locale={locale} post={post} />
-        <section className="prose mx-auto" dir={getDir(locale)}>
+        <section className="prose mx-auto md:prose-lg" dir={getDir(locale)}>
           <Rehype hasMath={post.hasMath}>{post.content}</Rehype>
           <hr />
           {post.translators.length > 0 ? (
@@ -127,9 +131,6 @@ export default async function MempoolPost({
           />
         </Link>
       ) : null}
-      <Link className="mt-4 block text-center" href={backHref}>
-        {backLabel}
-      </Link>
     </PageLayout>
   );
 }

@@ -1,57 +1,107 @@
 import clsx from "clsx";
-import Link from "next/link";
+import { TFunction } from "i18next";
 
-type IndexLinkWithSublink = AnchorProps & {
-  sublink?: AnchorProps;
+type ToggleLinksProps = {
+  t: TFunction<string, string>;
+  active: "individual" | "threads";
+  href: string;
+  individualLabel: string;
+  isMobile?: boolean;
 };
 
-export type IndexLinks = {
-  main: AnchorProps;
-  left: IndexLinkWithSublink;
-  right: IndexLinkWithSublink;
-};
-
-type IndexNavigationProps = {
-  links: IndexLinks;
-  reverse?: boolean;
-};
-
-export const IndexNavigation = ({
-  links: { main, left, right },
-  reverse = false,
-}: IndexNavigationProps) => {
-  const renderLink = (link: AnchorProps) =>
-    link.href ? (
-      <Link href={link.href}>{link.text}</Link>
-    ) : (
-      <span>{link.text}</span>
-    );
-
+async function ToggleLinks({
+  active,
+  href,
+  t,
+  individualLabel,
+  isMobile = false,
+}: ToggleLinksProps) {
   return (
-    <div className="grid grid-cols-2 grid-rows-2 gap-y-2 text-center">
-      <div className={clsx("col-span-2", reverse && "order-2")}>
-        {renderLink(main)}
-      </div>
-      <div className="border-r border-gray-400 pr-2 text-right">
-        {renderLink(left)}
-        {left.sublink ? (
-          <>
-            {" ("}
-            {renderLink(left.sublink)}
-            {")"}
-          </>
-        ) : null}
-      </div>
-      <div className="pl-2 text-left">
-        {renderLink(right)}
-        {right.sublink ? (
-          <>
-            {" ("}
-            {renderLink(right.sublink)}
-            {")"}
-          </>
-        ) : null}
-      </div>
+    <div
+      className={clsx("flex rounded-lg bg-sand p-0.5 text-center", {
+        "mt-4 md:hidden": isMobile,
+        "hidden md:flex": !isMobile,
+      })}
+    >
+      {active === "individual" ? (
+        <>
+          <span
+            className={clsx(
+              "cursor-pointer rounded-lg bg-white px-4 py-1 shadow",
+              { grow: isMobile },
+            )}
+          >
+            {individualLabel}
+          </span>
+          <a href={href} className={clsx("px-4 py-1", { grow: isMobile })}>
+            {t("threads")}
+          </a>
+        </>
+      ) : (
+        <>
+          <a href={href} className={clsx("px-4 py-1", { grow: isMobile })}>
+            {individualLabel}
+          </a>
+          <span
+            className={clsx(
+              "cursor-pointer rounded-lg bg-white px-4 py-1 shadow",
+              { grow: isMobile },
+            )}
+          >
+            {t("threads")}
+          </span>
+        </>
+      )}
     </div>
   );
+}
+
+export type SourceLink =
+  | { name: string; href: string; active?: false }
+  | { name: string; active: true };
+
+export type ToggleLinks = { active: "individual" | "threads"; href: string };
+
+export type IndexNavigationProps = {
+  t: TFunction<string, string>;
+  type: "emails" | "posts";
+  sourceLinks: SourceLink[];
+  toggleLinks: ToggleLinks;
 };
+
+export async function IndexNavigation({
+  t,
+  type,
+  sourceLinks,
+  toggleLinks,
+}: IndexNavigationProps) {
+  const individualLabel = type === "emails" ? t("emails") : t("posts");
+  const toggleLinksProps = { ...toggleLinks, t, individualLabel };
+
+  return (
+    <div>
+      <div className="flex items-center justify-between border-b border-dashed border-taupe-light">
+        <ul className="flex gap-x-4 text-taupe">
+          {sourceLinks.map((sourceLink) => (
+            <li
+              key={sourceLink.name}
+              className={clsx(
+                "py-3",
+                sourceLink.active &&
+                  "-mb-[1px] border-b-2 border-cardinal text-dark",
+              )}
+            >
+              {sourceLink.active ? (
+                <span className="cursor-pointer">{sourceLink.name}</span>
+              ) : (
+                <a href={sourceLink.href}>{sourceLink.name}</a>
+              )}
+            </li>
+          ))}
+        </ul>
+        <ToggleLinks {...toggleLinksProps} />
+      </div>
+      <ToggleLinks {...toggleLinksProps} isMobile />
+    </div>
+  );
+}
