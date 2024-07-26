@@ -51,24 +51,37 @@ export default async function TheSkepticsPage({
 
   return (
     <PageLayout t={t} locale={locale} generateHref={generateHref}>
-      <PageHeader title={t("the_skeptics")}>
-        <Markdown>{content}</Markdown>
-        <p>
-          <Trans
-            t={t}
-            i18nKey="submit_github_link"
-            components={{
-              a: <Link href={urls(locale).github} />,
-            }}
-          />
-        </p>
-        <div>
+      <PageHeader
+        title={t("the_skeptics")}
+        subtitle={t("skeptics_tribute_capitalized")}
+      >
+        <Markdown className="page-content">{content}</Markdown>
+        <div className="mt-4">
+          <p>
+            <Trans
+              t={t}
+              i18nKey="submit_github_link"
+              components={{
+                a: (
+                  <Link
+                    className="text-cardinal hover:underline"
+                    href={urls(locale).github}
+                  />
+                ),
+              }}
+            />
+          </p>
           <p>
             <Trans
               t={t}
               i18nKey="coinmetrics_data"
               components={{
-                a: <Link href="https://coinmetrics.io" />,
+                a: (
+                  <Link
+                    className="text-cardinal hover:underline"
+                    href="https://coinmetrics.io"
+                  />
+                ),
               }}
             />
           </p>

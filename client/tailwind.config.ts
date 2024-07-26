@@ -227,6 +227,7 @@ const config: Config = {
     plugin(({ addUtilities }) => {
       addUtilities({
         ".small-caps": { "font-variant-caps": "small-caps" },
+        ".italic-regular-em": { em: { fontStyle: "normal" } },
       });
     }),
   ],

@@ -29,6 +29,18 @@
     }
   }
 
+  .page-content figure {
+    @apply border-l-1 border-dashed border-dark;
+
+    & > blockquote {
+      @apply px-4 italic;
+    }
+
+    & > figcaption {
+      @apply mt-2 px-4 font-medium small-caps;
+    }
+  }
+
   .codeheader,
   .quoteheader {
     @apply border border-neutral-300;

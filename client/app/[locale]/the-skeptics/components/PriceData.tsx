@@ -68,7 +68,7 @@ export async function SkepticPriceData({
   priceData: { usdInvested, totalBtc, usdValue, change },
 }: SkepticPriceDataProps) {
   return (
-    <div className="flex flex-col flex-wrap justify-between border-b border-t border-opacity-25 py-2 md:flex-row">
+    <div className="flex flex-col flex-wrap justify-between border-y border-dashed border-taupe-light py-2 md:flex-row">
       <PriceDatum label={t("daily_buy")} amount={Big(DAILY_BUY)} />
       <PriceDatum label={t("total_invested")} amount={usdInvested} />
       <PriceDatum
