@@ -4,6 +4,7 @@ authors:
   - parker-lewis
 date: 2023
 doctype: book
+purchase_link: https://thesaifhouse.com/#Gradually-Then-Suddenly
 nodes:
   - table-of-contents
   - copyright

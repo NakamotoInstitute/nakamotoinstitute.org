@@ -57,26 +57,16 @@ export async function DocHeader({ t, locale, doc }: DocHeaderProps) {
         <>
           <DocFormatLinks
             t={t}
+            locale={locale}
             classes={{ root: "justify-center gap-3 font-medium" }}
             doc={doc}
           />
-          {doc.entryNode ? (
-            <p className="text-center">
-              <Link
-                href={urls(locale).library.docNode(
-                  doc.slug,
-                  doc.entryNode.slug,
-                )}
-              >
-                Read Online
-              </Link>
-            </p>
-          ) : null}
           <hr className="mx-auto my-6 w-12" />
         </>
       ) : (
         <DocFormatLinks
           t={t}
+          locale={locale}
           classes={{ root: "justify-center gap-3 font-medium" }}
           doc={doc}
         />

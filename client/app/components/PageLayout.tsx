@@ -5,6 +5,7 @@ import Image from "next/image";
 import { env } from "@/env";
 import { cdnUrl, generateLocaleToggleLinks, urls } from "@/lib/urls";
 
+import { AdditionalNavigation } from "./AdditionalNavigation";
 import { Breadcrumbs } from "./Breadcrumbs";
 import { ButtonLink } from "./Button";
 import Fathom from "./Fathom";
@@ -18,6 +19,7 @@ export type PageLayoutProps = {
   size?: "md" | "lg" | "xl";
   locale: Locale;
   breadcrumbs?: Breadcrumbs;
+  additionalNav?: React.ReactNode;
   children: React.ReactNode;
 };
 
@@ -27,6 +29,7 @@ export async function PageLayout({
   locale,
   generateHref,
   breadcrumbs,
+  additionalNav,
   size = "md",
   children,
 }: PageLayoutProps) {
@@ -65,6 +68,9 @@ export async function PageLayout({
         {...toggleProps}
       />
       {breadcrumbs ? <Breadcrumbs breadcrumbs={breadcrumbs} /> : null}
+      {additionalNav ? (
+        <AdditionalNavigation>{additionalNav}</AdditionalNavigation>
+      ) : null}
       <main
         className={clsx(className, "mx-auto w-full flex-grow px-4", {
           "max-w-[872px]": size === "md",

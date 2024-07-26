@@ -42,6 +42,7 @@ export const zDocument = zDocumentBase.extend({
   hasMath: z.boolean(),
   translators: zTranslators,
   entryNode: zNestedDocumentNode.nullable(),
+  purchaseLink: z.string().nullable(),
 });
 export type Document = z.infer<typeof zDocument>;
 

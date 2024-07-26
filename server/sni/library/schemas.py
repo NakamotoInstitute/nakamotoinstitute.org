@@ -21,6 +21,7 @@ class DocumentCanonicalMDModel(BaseModel):
     image: str | None = None
     doctype: str
     has_math: bool = False
+    purchase_link: str | None = None
 
     @model_validator(mode="before")
     @classmethod
@@ -186,6 +187,9 @@ class DocumentModel(DocumentBaseModel):
     )
     translators: list[TranslatorModel]
     entry_node: DocumentNodeBaseModel | None
+    purchase_link: str | None = Field(
+        validation_alias=AliasPath("document", "purchase_link")
+    )
 
 
 class DocumentNodeModel(ORMModel):

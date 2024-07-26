@@ -1,9 +1,12 @@
 import { Metadata } from "next";
 import Link from "next/link";
 
+import { ArrowLeft } from "@/app/components/ArrowLeft";
+import { ArrowRight } from "@/app/components/ArrowRight";
 import { PageLayout } from "@/app/components/PageLayout";
 import { Rehype } from "@/app/components/Rehype";
 import { getLibraryDocNode, getLibraryParams } from "@/lib/api/library";
+import { DocumentNode } from "@/lib/api/schemas/library";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { getDir } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
@@ -25,7 +28,37 @@ export async function generateMetadata({
   };
 }
 
-export default async function LibraryDetail({
+type NodeNavigationProps = {
+  locale: Locale;
+  node: DocumentNode;
+};
+
+async function NodeNavigation({ node, locale }: NodeNavigationProps) {
+  return (
+    <div className="mx-auto flex w-full max-w-[960px] flex-col gap-2 px-4 md:flex-row md:justify-between">
+      {node.previous ? (
+        <Link
+          className="group flex gap-2 max-md:mx-auto"
+          href={urls(locale).library.docNode(node.docSlug, node.previous.slug)}
+        >
+          <ArrowLeft className="group-hover:text-cardinal" />
+          <span>{node.previous.navTitle ?? node.previous.title}</span>
+        </Link>
+      ) : null}
+      {node.next ? (
+        <Link
+          className="ml-auto flex gap-2 max-md:mr-auto"
+          href={urls(locale).library.docNode(node.docSlug, node.next.slug)}
+        >
+          <span>{node.next.navTitle ?? node.next.title}</span>
+          <ArrowRight className="group-hover:text-cardinal" />
+        </Link>
+      ) : null}
+    </div>
+  );
+}
+
+export default async function LibraryNodeDetail({
   params: { slug, nodeSlug, locale },
 }: LocaleParams<{ slug: string; nodeSlug: string }>) {
   const { t } = await i18nTranslation(locale);
@@ -46,40 +79,20 @@ export default async function LibraryDetail({
       generateHref={generateHref}
       breadcrumbs={[
         { label: t("library"), href: urls(locale).library.index },
-        { label: node.docTitle, href: urls(locale).library.doc(node.docSlug) },
+        {
+          label: node.docTitle,
+          href: urls(locale).library.doc(node.docSlug),
+        },
         {
           label: node.title,
           href: urls(locale).library.docNode(slug, nodeSlug),
         },
       ]}
-      wide
+      additionalNav={<NodeNavigation locale={locale} node={node} />}
+      size="lg"
     >
-      <div>
-        <div>
-          {node.previous ? (
-            <>
-              Previous:{" "}
-              <Link
-                href={urls(locale).library.docNode(slug, node.previous.slug)}
-              >
-                {node.previous.navTitle ?? node.previous.title}
-              </Link>
-            </>
-          ) : null}
-        </div>
-        <div>
-          {node.next ? (
-            <>
-              Next:{" "}
-              <Link href={urls(locale).library.docNode(slug, node.next.slug)}>
-                {node.next.navTitle ?? node.next.title}
-              </Link>
-            </>
-          ) : null}
-        </div>
-      </div>
       <article>
-        <NodeHeader t={t} locale={locale} node={node} />
+        <NodeHeader node={node} hr={!!node.content ? "bottom" : "middle"} />
         <section className="prose mx-auto" dir={getDir(locale)}>
           <Rehype>{node.content}</Rehype>
         </section>

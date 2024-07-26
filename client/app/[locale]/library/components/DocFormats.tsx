@@ -5,9 +5,11 @@ import Link from "next/link";
 import { ButtonLink } from "@/app/components/Button";
 import { Chip } from "@/app/components/Chip";
 import { Document, DocumentIndex } from "@/lib/api/schemas/library";
+import { urls } from "@/lib/urls";
 
 type DocFormatLinksProps = {
   t: TFunction<string, string>;
+  locale: Locale;
   className?: string;
   doc: Document;
   classes?: { root?: string; link?: string };
@@ -15,11 +17,24 @@ type DocFormatLinksProps = {
 
 export async function DocFormatLinks({
   t,
+  locale,
   classes,
   className,
   doc,
 }: DocFormatLinksProps) {
   const links: React.ReactNode[] = [];
+
+  if (doc.entryNode) {
+    links.push(
+      <ButtonLink
+        key="online"
+        href={urls(locale).library.docNode(doc.slug, doc.entryNode.slug)}
+        className={classes?.link}
+      >
+        {t("read_online")}
+      </ButtonLink>,
+    );
+  }
 
   doc.formats?.forEach((format) =>
     links.push(
@@ -33,6 +48,19 @@ export async function DocFormatLinks({
     links.push(
       <ButtonLink key="link" href={doc.external} className={classes?.link}>
         {t("external_link")}
+      </ButtonLink>,
+    );
+  }
+
+  if (doc.purchaseLink) {
+    links.push(
+      <ButtonLink
+        key="purchase"
+        variant="secondary"
+        href={doc.purchaseLink}
+        className={classes?.link}
+      >
+        {t("buy_now")}
       </ButtonLink>,
     );
   }

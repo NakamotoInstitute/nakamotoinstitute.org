@@ -88,6 +88,7 @@ class Document(Base):
     )
     has_math: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
     weight: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
+    purchase_link: Mapped[str] = mapped_column(String, nullable=True)
 
     @property
     def image_url(self):
