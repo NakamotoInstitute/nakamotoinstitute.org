@@ -37,6 +37,7 @@ async def get_documents(
                 selectinload(Document.authors), selectinload(Document.translations)
             ),
             selectinload(DocumentTranslationAlias.formats),
+            selectinload(DocumentTranslationAlias.nodes),
         )
         .join(Document)
         .join(document_authors)

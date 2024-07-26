@@ -1,4 +1,5 @@
 import { TFunction } from "i18next";
+import Image from "next/image";
 import Link from "next/link";
 import { Trans } from "react-i18next/TransWithoutContext";
 
@@ -87,15 +88,17 @@ export async function PostHeader({ t, locale, post }: PostHeaderProps) {
           </p>
         ) : null}
         {post.image ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            className="mx-auto mt-6 block max-w-screen-sm"
-            src={post.image}
-            alt={post.imageAlt ?? ""}
-          />
+          <div className="relative mx-auto mt-6 h-80 max-w-screen-sm">
+            <Image
+              className="object-contain"
+              src={post.image}
+              alt={post.imageAlt ?? ""}
+              fill
+            />
+          </div>
         ) : null}
       </header>
-      <hr className="mx-auto my-7 w-12 md:my-18" />
+      <hr className="mx-auto my-4 w-12 md:my-6" />
     </>
   );
 }

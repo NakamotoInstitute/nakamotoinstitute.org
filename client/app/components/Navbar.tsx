@@ -26,7 +26,13 @@ export function Navbar({
     <nav className="border-b border-dashed border-dark">
       <div className="mx-auto w-full max-w-screen-1.5xl px-4 font-bold">
         <div className="grid grid-cols-[auto_1fr] items-center gap-x-4 py-6 md:grid-cols-[1fr_auto_1fr]">
-          <Link href={homeHref}>{logo}</Link>
+          <div>
+            <div className="max-w-fit">
+              <Link className="max-w-fit" href={homeHref}>
+                {logo}
+              </Link>
+            </div>
+          </div>
           <div className="mx-auto hidden h-12 items-center md:flex">
             {navLinks.map(({ href, text }) => (
               <Link key={text} href={href} className="p-2 text-dark">

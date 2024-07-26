@@ -98,6 +98,7 @@ async def get_some_by_slugs_and_locale(
                 selectinload(Document.translations),
             ),
             selectinload(DocumentTranslation.formats),
+            selectinload(DocumentTranslation.nodes),
         )
         .join(Document, DocumentTranslation.document_id == Document.id)
         .filter(DocumentTranslation.locale == locale, Document.slug.in_(slugs))

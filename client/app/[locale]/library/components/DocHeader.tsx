@@ -1,4 +1,5 @@
 import { TFunction } from "i18next";
+import Image from "next/image";
 import Link from "next/link";
 
 import { AuthorsLinks } from "@/app/components/AuthorsLinks";
@@ -44,12 +45,14 @@ export async function DocHeader({ t, locale, doc }: DocHeaderProps) {
           />
         </p>
         {doc.image ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            className="mx-auto mt-6 block max-w-screen-sm"
-            src={doc.image}
-            alt={doc.imageAlt ?? ""}
-          />
+          <div className="relative mx-auto mt-6 h-80 max-w-screen-sm">
+            <Image
+              className="object-contain"
+              src={doc.image}
+              alt={doc.imageAlt ?? ""}
+              fill
+            />
+          </div>
         ) : null}
       </header>
       <hr className="mx-auto my-4 w-12 md:my-6" />

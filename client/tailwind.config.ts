@@ -160,7 +160,7 @@ const config: Config = {
               },
             },
             "blockquote ~ figcaption": {
-              fontSize: em(16, 16),
+              fontSize: em(15, 16),
               fontWeight: 500,
               paddingInlineStart: em(16, 16),
               fontVariantCaps: "small-caps",
@@ -187,24 +187,25 @@ const config: Config = {
               marginBottom: em(28, 18),
             },
             h2: {
+              fontSize: em(24, 18),
               lineHeight: round(28 / 24),
               marginTop: em(40, 24),
               marginBottom: em(16, 24),
             },
             h3: {
-              fontSize: em(22, 16),
+              fontSize: em(22, 18),
               lineHeight: round(26 / 22),
               marginTop: em(40, 22),
               marginBottom: em(16, 22),
             },
             h4: {
-              fontSize: em(20, 16),
+              fontSize: em(20, 18),
               lineHeight: round(23 / 22),
               marginTop: em(40, 20),
               marginBottom: em(16, 20),
             },
             h5: {
-              fontSize: em(18, 16),
+              fontSize: em(18, 18),
               lineHeight: round(21 / 18),
               marginTop: em(40, 18),
               marginBottom: em(16, 18),

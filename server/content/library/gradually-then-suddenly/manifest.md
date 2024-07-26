@@ -5,6 +5,7 @@ authors:
 date: 2023
 doctype: book
 purchase_link: https://thesaifhouse.com/#Gradually-Then-Suddenly
+image: GTS-Painting.jpg
 nodes:
   - table-of-contents
   - copyright

@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Trans } from "react-i18next/TransWithoutContext";
 
@@ -9,7 +10,7 @@ import { getHomeLibraryDocs } from "@/lib/api/library";
 import { getLatestMempoolPost } from "@/lib/api/mempool";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
-import { urls } from "@/lib/urls";
+import { cdnUrl, urls } from "@/lib/urls";
 
 import { ArrowRight } from "../components/ArrowRight";
 import { ButtonLink } from "../components/Button";
@@ -91,8 +92,34 @@ export default async function HomePage({ params: { locale } }: LocaleParams) {
           </h1>
         </GridItem>
         <GridItem className="md:grid-rows[1fr_1fr_1fr_1fr_auto] grid grid-cols-1 md:row-span-2 md:grid-cols-2 md:border-l lg:grid-cols-3 min-[1441px]:border-r">
-          {/* <GridItem className="border-b pb-8 md:col-span-2 md:p-5 lg:col-span-3">
-          </GridItem> */}
+          <GridItem className="border-b pb-8 md:col-span-2 md:p-5 lg:col-span-3">
+            <div className="relative h-56 w-full">
+              <Image
+                src={cdnUrl(
+                  "/img/library/gradually-then-suddenly/GTS-Painting.jpg",
+                )}
+                fill
+                className="object-cover"
+                alt="Gradually, Then Suddenly painting"
+              />
+            </div>
+            <div className="mt-4 flex flex-col items-baseline gap-1 max-md:px-5 lg:flex-row lg:gap-3.5">
+              <h3 className="text-xl font-bold">
+                <Trans
+                  i18nKey="gts_announcement"
+                  components={{
+                    i: <em />,
+                  }}
+                />
+              </h3>
+              <Link
+                className="font-semibold text-cardinal hover:underline"
+                href={urls("en").library.doc("gradually-then-suddenly")}
+              >
+                {t("read_more")}
+              </Link>
+            </div>
+          </GridItem>
           <Box
             title={t("complete_satoshi")}
             className="border-b px-5 py-10 md:px-4 md:py-5"
