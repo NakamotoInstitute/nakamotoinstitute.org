@@ -21,7 +21,7 @@ export async function generateMetadata({
   const node = await getLibraryDocNode(nodeSlug, slug, locale);
 
   return {
-    title: node.title,
+    title: `${node.title} | ${node.docTitle}`,
     alternates: {
       canonical: urls(locale).library.docNode(slug, nodeSlug),
     },
