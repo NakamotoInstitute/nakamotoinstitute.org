@@ -254,13 +254,15 @@ export default async function HomePage({ params: { locale } }: LocaleParams) {
         </GridItem>
         <GridItem className="px-5 py-4 md:pt-0">
           <div className="flex flex-col gap-4">
-            <div className="flex items-center justify-between gap-4 border border-dashed border-taupe-light p-4 md:items-start">
-              <div>
-                <h4 className="font-semibold">{t("newsletter_call")}</h4>
-                <p className="text-sm text-taupe">{t("newsletter_signup")}</p>
+            <Link href={urls(locale).substack}>
+              <div className="flex items-center justify-between gap-4 border border-dashed border-taupe-light p-4 md:items-start">
+                <div>
+                  <h4 className="font-semibold">{t("newsletter_call")}</h4>
+                  <p className="text-sm text-taupe">{t("newsletter_signup")}</p>
+                </div>
+                <ArrowRight className="min-w-fit" />
               </div>
-              <ArrowRight className="min-w-fit" />
-            </div>
+            </Link>
             <div className="border-l-[3px] border-cardinal bg-white p-4 shadow-sm">
               <div className="text-xs text-taupe">
                 <h4 className="mb-2 text-base font-semibold text-dark">
