@@ -3,8 +3,9 @@ title: Gradually, Then Suddenly
 authors:
   - parker-lewis
 date: 2023
+display_date: Published 2023
 doctype: book
-purchase_link: https://thesaifhouse.com/#Gradually-Then-Suddenly
+purchase_link: https://academy.saifedean.com/product/gradually-then-suddenly-hardcover/
 image: GTS-Painting.jpg
 nodes:
   - table-of-contents
