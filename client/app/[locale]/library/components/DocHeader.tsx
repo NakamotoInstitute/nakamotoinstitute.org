@@ -45,7 +45,7 @@ export async function DocHeader({ t, locale, doc }: DocHeaderProps) {
           />
         </p>
         {doc.image ? (
-          <div className="relative mx-auto mt-6 h-80 max-w-screen-sm">
+          <div className="relative mx-auto mt-6 h-48 max-w-screen-sm sm:h-60 md:h-80">
             <Image
               className="object-contain"
               src={doc.image}

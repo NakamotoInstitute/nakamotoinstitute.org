@@ -88,7 +88,7 @@ export async function PostHeader({ t, locale, post }: PostHeaderProps) {
           </p>
         ) : null}
         {post.image ? (
-          <div className="relative mx-auto mt-6 h-80 max-w-screen-sm">
+          <div className="relative mx-auto mt-6 h-48 max-w-screen-sm sm:h-60 md:h-80">
             <Image
               className="object-contain"
               src={post.image}
