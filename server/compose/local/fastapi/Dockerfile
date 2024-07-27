@@ -1,13 +1,13 @@
-FROM python:3.11-slim as python
+FROM python:3.11-slim AS python
 
-FROM python as builder
+FROM python AS builder
 
 COPY ./requirements .
 
 RUN pip wheel --wheel-dir /usr/src/app/wheels \
   -r dev.txt
 
-FROM python as runtime
+FROM python AS runtime
 
 ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1
