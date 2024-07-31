@@ -31,14 +31,17 @@ The frontend uses [`pnpm`](https://github.com/pnpm/pnpm) for package management.
 - **Getting Started**:
 
   1. Navigate to the client directory: `cd client`.
-  2. Copy `.env.local.example` to `.env.local`.
-  3. Update your `/etc/hosts` file with `satoshi.localhost`:
+  2. Update your `/etc/hosts` file with `satoshi.localhost`:
      ```
      127.0.0.1   satoshi.localhost
      ::1         satoshi.localhost
      ```
-  4. Install dependencies: `pnpm i`.
-  5. Start the development server: `pnpm dev`.
+     **Note:** if you do not want these redirects, instead add `.env.local` to the client directory:
+     ```
+     MAP_DOMAIN=false
+     ```
+  3. Install dependencies: `pnpm i`.
+  4. Start the development server: `pnpm dev`.
 
 - **Website Access**: The site is available at `http://localhost:3000`.
 

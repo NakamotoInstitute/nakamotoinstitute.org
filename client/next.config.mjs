@@ -4,10 +4,13 @@ import { fileURLToPath } from "node:url";
 const jiti = createJiti(fileURLToPath(import.meta.url));
 const { env } = jiti("./env");
 
-const satoshiDestination =
-  env.VERCEL_ENV === "development"
-    ? `http://satoshi.localhost:${env.PORT}`
-    : `https://${env.SATOSHI_HOST}`;
+const satoshiDestination = `${
+  env.VERCEL_ENV === "development" ? "http://" : "https://"
+}${
+  env.MAP_DOMAIN || env.VERCEL_ENV === "production"
+    ? `satoshi.${env.VERCEL_URL}`
+    : `${env.VERCEL_URL}/satoshi`
+}`;
 
 const cdnBaseUrl = new URL(env.CDN_BASE_URL);
 
@@ -33,7 +36,10 @@ const nextConfig = {
         permanent: true,
       },
     ];
-    if (env.VERCEL_ENV !== "preview") {
+    if (
+      env.VERCEL_ENV === "production" ||
+      (env.VERCEL_ENV === "development" && env.MAP_DOMAIN)
+    ) {
       redirects.push({
         source: "/satoshi/:path*",
         destination: `${satoshiDestination}/:path*`,

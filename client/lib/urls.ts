@@ -7,7 +7,7 @@ import { ForumPostSource } from "./api/schemas/posts";
 
 const prodDomainToPathMapping = [
   {
-    domain: env.SATOSHI_HOST,
+    domain: `satoshi.${env.VERCEL_PROJECT_PRODUCTION_URL}`,
     path: "/satoshi",
   },
 ];
@@ -19,29 +19,21 @@ const localDomainToPathMapping = [
   },
 ];
 
-export const domainToPathMapping = (() => {
-  switch (env.VERCEL_ENV) {
-    case "development":
-      return localDomainToPathMapping;
-    case "production":
-      return prodDomainToPathMapping;
-    default:
-      return [];
-  }
-})();
+export const domainToPathMapping =
+  env.VERCEL_ENV === "development"
+    ? env.MAP_DOMAIN
+      ? localDomainToPathMapping
+      : []
+    : env.VERCEL_ENV === "production"
+      ? prodDomainToPathMapping
+      : [];
 
-const APP_BASE_URL = (() => {
-  switch (env.VERCEL_ENV) {
-    case "development":
-      return "http://localhost:3000";
-    case "production":
-      return env.APP_BASE_URL!;
-    default:
-      return `https://${env.VERCEL_URL}`;
-  }
-})();
-
-const satoshiBase = "/satoshi";
+const APP_BASE_URL =
+  env.VERCEL_ENV === "development"
+    ? "http://localhost:3000"
+    : env.VERCEL_ENV === "production"
+      ? `https://${env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : `https://${env.VERCEL_URL}`;
 
 export const toFullUrl = (relativeUrl: string) => {
   let baseUrl = APP_BASE_URL;
@@ -66,9 +58,7 @@ export const urls = (locale: Locale) => {
 
   const getSatoshiUrl = (path: string) => {
     const fullPath =
-      locale === "en" && env.VERCEL_ENV !== "preview"
-        ? `${satoshiBase}${path}`
-        : `${satoshiBase}/${locale}${path}`;
+      locale === "en" ? `/satoshi${path}` : `/satoshi/${locale}${path}`;
     return toFullUrl(fullPath);
   };
 
