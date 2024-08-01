@@ -1,7 +1,7 @@
 ---
 heading: Chapter Two
 title: Bitcoin, Not Blockchain
-subheading: (Originally published on 6 September 2019)
+subheading: Originally published<br />on 6 September 2019
 ---
 
 ## Parsing the Landscape

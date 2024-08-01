@@ -20,6 +20,7 @@ export type PageLayoutProps = {
   locale: Locale;
   breadcrumbs?: Breadcrumbs;
   additionalNav?: React.ReactNode;
+  footerNav?: React.ReactNode;
   children: React.ReactNode;
 };
 
@@ -30,6 +31,7 @@ export async function PageLayout({
   generateHref,
   breadcrumbs,
   additionalNav,
+  footerNav,
   size = "md",
   children,
 }: PageLayoutProps) {
@@ -73,14 +75,17 @@ export async function PageLayout({
       ) : null}
       <main
         className={clsx(className, "mx-auto w-full flex-grow px-4", {
-          "max-w-[872px]": size === "md",
-          "max-w-[960px]": size === "lg",
+          "max-w-3.5xl": size === "md",
+          "max-w-4.5xl": size === "lg",
           "max-w-screen-1.5xl": size === "xl",
           "my-10 pb-4 md:mt-18": size !== "xl",
         })}
       >
         {children}
       </main>
+      {footerNav ? (
+        <AdditionalNavigation bottom>{footerNav}</AdditionalNavigation>
+      ) : null}
       <Footer t={t} locale={locale} />
     </body>
   );

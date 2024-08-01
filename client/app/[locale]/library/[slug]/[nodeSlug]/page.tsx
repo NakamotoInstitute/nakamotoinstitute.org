@@ -35,24 +35,35 @@ type NodeNavigationProps = {
 
 async function NodeNavigation({ node, locale }: NodeNavigationProps) {
   return (
-    <div className="mx-auto flex w-full max-w-[960px] flex-col gap-2 px-4 md:flex-row md:justify-between">
+    <div className="max-w-4.5xl mx-auto flex w-full justify-between gap-5 px-4">
       {node.previous ? (
-        <Link
-          className="group flex gap-2 max-md:mx-auto"
-          href={urls(locale).library.docNode(node.docSlug, node.previous.slug)}
-        >
-          <ArrowLeft className="group-hover:text-cardinal" />
-          <span>{node.previous.navTitle ?? node.previous.title}</span>
-        </Link>
+        <div className="min-w-0 flex-1 flex-shrink-0">
+          <Link
+            className="group flex items-center justify-start gap-2"
+            href={urls(locale).library.docNode(
+              node.docSlug,
+              node.previous.slug,
+            )}
+          >
+            <ArrowLeft className="flex-shrink-0 group-hover:text-cardinal" />
+            <span className="truncate">
+              {node.previous.navTitle ?? node.previous.title}
+            </span>
+          </Link>
+        </div>
       ) : null}
       {node.next ? (
-        <Link
-          className="ml-auto flex gap-2 max-md:mr-auto"
-          href={urls(locale).library.docNode(node.docSlug, node.next.slug)}
-        >
-          <span>{node.next.navTitle ?? node.next.title}</span>
-          <ArrowRight className="group-hover:text-cardinal" />
-        </Link>
+        <div className="min-w-0 flex-1 flex-shrink-0">
+          <Link
+            className="ml-auto flex items-center justify-end gap-2"
+            href={urls(locale).library.docNode(node.docSlug, node.next.slug)}
+          >
+            <span className="truncate">
+              {node.next.navTitle ?? node.next.title}
+            </span>
+            <ArrowRight className="flex-shrink-0 group-hover:text-cardinal" />
+          </Link>
+        </div>
       ) : null}
     </div>
   );
@@ -72,6 +83,8 @@ export default async function LibraryNodeDetail({
     return urls(l).library.index;
   };
 
+  const nodeNav = <NodeNavigation locale={locale} node={node} />;
+
   return (
     <PageLayout
       t={t}
@@ -88,7 +101,8 @@ export default async function LibraryNodeDetail({
           href: urls(locale).library.docNode(slug, nodeSlug),
         },
       ]}
-      additionalNav={<NodeNavigation locale={locale} node={node} />}
+      additionalNav={nodeNav}
+      footerNav={nodeNav}
       size="lg"
     >
       <article>

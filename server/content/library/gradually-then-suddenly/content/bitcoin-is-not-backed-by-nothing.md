@@ -1,7 +1,7 @@
 ---
 heading: Chapter Three
 title: Bitcoin Is Not Backed by Nothing
-subheading: (Originally published on 27 September 2019)
+subheading: Originally published<br />on 27 September 2019
 ---
 
 ## Popular Misbelief

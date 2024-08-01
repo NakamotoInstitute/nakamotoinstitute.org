@@ -49,6 +49,9 @@ const config: Config = {
         18: "4.5rem",
       },
       spacing: {
+        prose: "70ch",
+        "3.5xl": "54.5rem",
+        "4.5xl": "60rem",
         "screen-1.5xl": "1440px",
       },
       typography: ({ theme }: PluginAPI) => ({
@@ -78,7 +81,7 @@ const config: Config = {
               fontSize: "1rem",
             },
             lineHeight: em(26, 16),
-            maxWidth: "70ch",
+            maxWidth: theme("spacing.prose"),
             p: {
               marginTop: em(22, 16),
               marginBottom: em(22, 16),

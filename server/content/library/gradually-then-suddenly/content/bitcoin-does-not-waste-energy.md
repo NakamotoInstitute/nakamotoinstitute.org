@@ -1,7 +1,7 @@
 ---
 heading: Chapter Eight
 title: Bitcoin Does Not Waste Energy
-subheading: (Originally published 16 August 2019)
+subheading: Originally published<br />on 16 August 2019
 ---
 
 ## The Long Game

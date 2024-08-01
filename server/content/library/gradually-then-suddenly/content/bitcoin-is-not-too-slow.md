@@ -1,7 +1,7 @@
 ---
 heading: Chapter Nine
 title: Bitcoin Is Not Too Slow
-subheading: (Originally published on 23 August 2019)
+subheading: Originally published<br />on 23 August 2019
 ---
 
 ## The Ultimate Technology Leap

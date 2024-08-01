@@ -1,7 +1,7 @@
 ---
 heading: Chapter Eleven
 title: Bitcoin Cannot Be Banned
-subheading: (Originally published on 8 November 2019)
+subheading: Originally published<br />on 8 November 2019
 ---
 
 ## Is Bitcoin Functional as Money?

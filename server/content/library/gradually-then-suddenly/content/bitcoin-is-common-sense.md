@@ -1,7 +1,7 @@
 ---
 heading: Chapter Fifteen
 title: Bitcoin Is Common Sense
-subheading: (Originally published on 1 May 2020)
+subheading: Originally published<br />on 1 May 2020
 ---
 
 ## Old Habits Die Hard

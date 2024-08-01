@@ -1,6 +1,6 @@
 ---
 title: Introduction
-subheading: (Authored March 2023)
+subheading: Authored March 2023
 ---
 
 ## Perfect Timing

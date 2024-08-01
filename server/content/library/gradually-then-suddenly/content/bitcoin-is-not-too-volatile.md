@@ -1,7 +1,7 @@
 ---
 heading: Chapter Seven
 title: Bitcoin Is Not Too Volatile
-subheading: (Originally published on 9 August 2019)
+subheading: Originally published<br />on 9 August 2019
 ---
 
 ## A Common Refrain

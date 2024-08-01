@@ -1,7 +1,7 @@
 ---
 heading: Chapter Four
 title: Bitcoin Is Antifragile
-subheading: (Originally published on 12 June 2020)
+subheading: Originally published<br />on 12 June 2020
 ---
 
 ## Lacking a Baseline

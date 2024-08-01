@@ -1,7 +1,7 @@
 ---
 heading: Chapter Five
 title: Bitcoin Is the Great Definancialization
-subheading: (Originally published on 23 December 2020 in <em>The Bitcoin Times, Edition 3</em>)
+subheading: Originally published<br />on 23 December 2020 in <em>The Bitcoin Times, Edition 3</em>
 ---
 
 ## Engineered Decay

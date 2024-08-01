@@ -1,6 +1,6 @@
 ---
 title: Conclusion
-subheading: (Authored March 2023)
+subheading: Authored March 2023
 ---
 
 ## The Greatest Asymmetry

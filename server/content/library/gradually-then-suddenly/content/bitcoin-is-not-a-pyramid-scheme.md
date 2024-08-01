@@ -1,7 +1,7 @@
 ---
 heading: Chapter Twelve
 title: Bitcoin Is Not a Pyramid Scheme
-subheading: (Originally published on 18 October 2019)
+subheading: Originally published<br />on 18 October 2019
 ---
 
 ## Run, Don't Walk

@@ -1,7 +1,7 @@
 ---
 heading: Chapter One
 title: Bitcoin Obsoletes All Other Money
-subheading: (Originally published on 24 January 2020)
+subheading: Originally published<br />on 24 January 2020
 ---
 
 ## One Thousand Possibilities, 999 Problems

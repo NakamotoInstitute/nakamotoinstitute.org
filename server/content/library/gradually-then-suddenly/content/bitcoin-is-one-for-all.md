@@ -1,7 +1,7 @@
 ---
 heading: Chapter Sixteen
 title: Bitcoin Is One for All
-subheading: (Originally published on 27 August 2020)
+subheading: Originally published<br />on 27 August 2020
 ---
 
 ## Non-­Political Solutions

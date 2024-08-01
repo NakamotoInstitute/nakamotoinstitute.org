@@ -1,7 +1,7 @@
 ---
 heading: Chapter Thirteen
 title: Bitcoin Fixes This
-subheading: (Originally published on 30 August 2019)
+subheading: Originally published<br />on 30 August 2019
 ---
 
 ## Jackson Hole

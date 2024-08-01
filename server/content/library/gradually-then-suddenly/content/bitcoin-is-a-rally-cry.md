@@ -1,7 +1,7 @@
 ---
 heading: Chapter Fourteen
 title: Bitcoin Is a Rally Cry
-subheading: (Originally published on 26 March 2020)
+subheading: Originally published<br />on 26 March 2020
 ---
 
 ## A Fundamental and Inalienable Right

@@ -1,7 +1,7 @@
 ---
 heading: Chapter Ten
 title: Bitcoin Is Not for Criminals
-subheading: (Originally published on 29 November 2019)
+subheading: Originally published<br />on 29 November 2019
 ---
 
 ## Not Inherently Criminal

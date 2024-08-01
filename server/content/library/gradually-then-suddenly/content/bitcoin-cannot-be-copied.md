@@ -1,7 +1,7 @@
 ---
 heading: Chapter Six
 title: Bitcoin Cannot Be Copied
-subheading: (Originally published on 2 August 2019)
+subheading: Originally published<br />on 2 August 2019
 ---
 
 ## Alchemy
