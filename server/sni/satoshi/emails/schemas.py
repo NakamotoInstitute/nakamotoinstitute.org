@@ -6,7 +6,7 @@ from pydantic.alias_generators import to_camel
 
 from sni.shared.schemas import IterableRootModel, ORMModel
 
-EmailSource = Literal["cryptography", "bitcoin-list"]
+EmailSource = Literal["cryptography", "bitcoin-list", "p2presearch"]
 
 
 class EmailThreadJSONModel(BaseModel):

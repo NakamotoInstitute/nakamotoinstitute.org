@@ -110,5 +110,19 @@
     "source": "bitcoin-list",
     "date": "2010-12-13T16:12:09Z",
     "url": "https://sourceforge.net/p/bitcoin/mailman/message/26744510/"
+  },
+  {
+    "id": 17,
+    "title": "[p2p-research] Bitcoin open source implementation of P2P currency",
+    "source": "p2presearch",
+    "date": "2009-02-11T22:37:54Z",
+    "url": "https://diyhpl.us/~bryan/irc/bitcoin-satoshi/p2presearch-again/p2pfoundation.net/backups/p2p_research-archives/2009-February/001347.html"
+  },
+  {
+    "id": 18,
+    "title": "[p2p-research] Bitcoin P2P e-currency v0.1 released",
+    "source": "p2presearch",
+    "date": "2009-02-13T18:52:41Z",
+    "url": "https://diyhpl.us/~bryan/irc/bitcoin-satoshi/p2presearch-again/p2pfoundation.net/backups/p2p_research-archives/2009-February/001371.html"
   }
 ]

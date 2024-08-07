@@ -43,6 +43,7 @@ export function formatEmailSource(source: EmailSource, short: boolean = false) {
   return {
     "bitcoin-list": "bitcoin-list",
     cryptography: short ? "Cryptography" : "Cryptography Mailing List",
+    p2presearch: short ? "p2presearch" : "P2P Research List",
   }[source];
 }
 

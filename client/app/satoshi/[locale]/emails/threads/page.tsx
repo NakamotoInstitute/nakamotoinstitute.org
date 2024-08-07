@@ -44,6 +44,7 @@ export default async function EmailThreadsIndex({
     {
       cryptography: [],
       "bitcoin-list": [],
+      p2presearch: [],
     } as { [K in EmailSource]: EmailThread[] },
   );
 
@@ -69,6 +70,10 @@ export default async function EmailThreadsIndex({
         {
           name: formatEmailSource("bitcoin-list"),
           href: urls(locale).satoshi.emails.sourceThreadsIndex("bitcoin-list"),
+        },
+        {
+          name: formatEmailSource("p2presearch"),
+          href: urls(locale).satoshi.emails.sourceThreadsIndex("p2presearch"),
         },
       ]}
       toggleLinks={{
