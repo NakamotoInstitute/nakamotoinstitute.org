@@ -49,9 +49,16 @@ type ThreadEmailProps = {
   locale: Locale;
   email: EmailWithParent;
   odd: boolean;
+  satoshiOnly: boolean;
 };
 
-async function ThreadEmail({ t, locale, email, odd }: ThreadEmailProps) {
+async function ThreadEmail({
+  t,
+  locale,
+  email,
+  odd,
+  satoshiOnly,
+}: ThreadEmailProps) {
   return (
     <ContentBox
       id={email.sourceId}
@@ -68,6 +75,8 @@ async function ThreadEmail({ t, locale, email, odd }: ThreadEmailProps) {
         subject={email.subject}
         date={email.date}
         satoshi={!!email.satoshiId}
+        parentId={satoshiOnly ? undefined : email.parent?.sourceId}
+        replies={satoshiOnly ? undefined : email.replies}
       />
       <ContentBoxBody mono>
         <div
@@ -151,6 +160,7 @@ export default async function EmailSourceThreadDetail({
           locale={locale}
           email={e}
           odd={index % 2 !== 0}
+          satoshiOnly={satoshiOnly}
         />
       ))}
     </PageLayout>
