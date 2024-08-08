@@ -68,11 +68,11 @@ class Quote(Base):
     date: Mapped[datetime.date] = mapped_column(Date, nullable=False)
     whitepaper: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
     email_id: Mapped[int] = mapped_column(
-        Integer, ForeignKey("emails.satoshi_id"), nullable=True
+        Integer, ForeignKey("emails.satoshi_id", ondelete="CASCADE"), nullable=True
     )
     email: Mapped["Email"] = relationship(back_populates="quotes")
     post_id: Mapped[int] = mapped_column(
-        Integer, ForeignKey("forum_posts.satoshi_id"), nullable=True
+        Integer, ForeignKey("forum_posts.satoshi_id", ondelete="CASCADE"), nullable=True
     )
     post: Mapped["ForumPost"] = relationship(back_populates="quotes")
     categories: Mapped[List[QuoteCategory]] = relationship(

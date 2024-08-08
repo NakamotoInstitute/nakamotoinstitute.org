@@ -1,4 +1,4 @@
-from pydantic import AliasGenerator, BaseModel, ConfigDict
+from pydantic import AliasGenerator, BaseModel, ConfigDict, RootModel
 from pydantic.alias_generators import to_camel
 
 from sni.constants import Locales
@@ -9,6 +9,14 @@ class ORMModel(BaseModel):
         alias_generator = to_camel
         populate_by_name = True
         from_attributes = True
+
+
+class IteratableRootModel(RootModel):
+    def __iter__(self):
+        return iter(self.root)
+
+    def __getitem__(self, idx: int):
+        return self.root[idx]
 
 
 class SlugParamModel(BaseModel):

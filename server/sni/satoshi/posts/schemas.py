@@ -4,7 +4,7 @@ from typing import Literal
 from pydantic import AliasPath, BaseModel, Field, field_validator
 from pydantic.alias_generators import to_camel
 
-from sni.shared.schemas import ORMModel
+from sni.shared.schemas import IteratableRootModel, ORMModel
 
 ForumPostSource = Literal["p2pfoundation", "bitcointalk"]
 
@@ -15,6 +15,10 @@ class ForumThreadJSONModel(BaseModel):
     source: ForumPostSource
     date: datetime.datetime
     url: str
+
+
+class ForumThreadsJSONModel(IteratableRootModel):
+    root: list[ForumThreadJSONModel]
 
 
 class ForumPostJSONModel(BaseModel):
@@ -43,6 +47,10 @@ class ForumPostJSONModel(BaseModel):
         if v and v < 1:
             raise ValueError("must be greater than or equal to 1")
         return v
+
+
+class ForumPostsJSONModel(IteratableRootModel):
+    root: list[ForumPostJSONModel]
 
 
 class ForumPostBaseModel(ORMModel):

@@ -4,12 +4,16 @@ from typing import Optional
 from pydantic import AliasPath, BaseModel, Field, model_validator
 from pydantic.alias_generators import to_camel
 
-from sni.shared.schemas import ORMModel
+from sni.shared.schemas import IteratableRootModel, ORMModel
 
 
 class QuoteCategoryJSONModel(BaseModel):
     name: str
     slug: str
+
+
+class QuoteCategoriesJSONModel(IteratableRootModel):
+    root: list[QuoteCategoryJSONModel]
 
 
 class QuoteBaseModel(BaseModel):
@@ -28,6 +32,10 @@ class QuoteBaseModel(BaseModel):
 
 class QuoteJSONModel(QuoteBaseModel):
     categories: list[str]
+
+
+class QuotesJSONModel(IteratableRootModel):
+    root: list[QuoteJSONModel]
 
 
 class QuoteCategoryBaseModel(QuoteCategoryJSONModel, ORMModel):
