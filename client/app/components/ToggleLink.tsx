@@ -16,8 +16,10 @@ export async function ToggleLink({ href, label, active }: ToggleLinkProps) {
     >
       <div
         className={clsx(
-          "w-12 rounded-md p-0.5",
-          active ? "bg-dandelion" : "bg-sand group-hover:bg-taupe-light",
+          "flex w-12 rounded-md p-0.5",
+          active
+            ? "justify-end bg-dandelion"
+            : "bg-sand group-hover:bg-taupe-light",
         )}
       >
         <div className="h-5 w-[1.375rem] rounded-md bg-white drop-shadow-sm"></div>
