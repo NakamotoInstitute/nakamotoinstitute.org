@@ -72,7 +72,9 @@ class Email(Base):
     )
     thread_id = mapped_column(Integer, ForeignKey("email_threads.id"), nullable=False)
     thread: Mapped[EmailThread] = relationship(back_populates="emails")
-    quotes: Mapped[List["Quote"]] = relationship(back_populates="email")
+    quotes: Mapped[List["Quote"]] = relationship(
+        back_populates="email", cascade="all, delete-orphan"
+    )
     file_id: Mapped[int] = mapped_column(Integer, ForeignKey("json_files.id"))
     file: Mapped[EmailFile] = relationship("EmailFile", back_populates="emails")
 

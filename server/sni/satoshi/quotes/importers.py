@@ -2,12 +2,12 @@ from sni.content.json import JSONImporter
 from sni.models import Quote, QuoteCategory, QuoteCategoryFile, QuoteFile
 from sni.shared.service import get
 
-from .schemas import QuoteCategoryJSONModel, QuoteJSONModel
+from .schemas import QuoteCategoriesJSONModel, QuotesJSONModel
 
 
 class QuoteImporter(JSONImporter):
     file_path = "data/quotes.json"
-    schema = QuoteJSONModel
+    schema = QuotesJSONModel
     model = Quote
     file_model = QuoteFile
     content_type = "quotes"
@@ -22,7 +22,7 @@ class QuoteImporter(JSONImporter):
 
 class QuoteCategoryImporter(JSONImporter):
     file_path = "data/quote_categories.json"
-    schema = QuoteCategoryJSONModel
+    schema = QuoteCategoriesJSONModel
     model = QuoteCategory
     file_model = QuoteCategoryFile
     content_type = "quote_categories"

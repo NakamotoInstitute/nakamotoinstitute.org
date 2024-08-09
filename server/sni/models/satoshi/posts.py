@@ -68,7 +68,9 @@ class ForumPost(Base):
         Integer, ForeignKey("forum_threads.id"), nullable=False
     )
     thread: Mapped[ForumThread] = relationship(back_populates="posts")
-    quotes: Mapped[List["Quote"]] = relationship(back_populates="post")
+    quotes: Mapped[List["Quote"]] = relationship(
+        back_populates="post", cascade="all, delete-orphan"
+    )
     file_id: Mapped[int] = mapped_column(Integer, ForeignKey("json_files.id"))
     file: Mapped[ForumPostFile] = relationship("ForumPostFile", back_populates="posts")
 

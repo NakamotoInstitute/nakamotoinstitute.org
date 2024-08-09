@@ -3,7 +3,7 @@ from datetime import datetime
 from typing import Any, Dict, List, Type
 
 from pydantic import BaseModel, ValidationError
-from sqlalchemy import delete, select
+from sqlalchemy import delete, insert, select
 from sqlalchemy.orm import Session
 
 from sni.models import FileMetadata
@@ -79,12 +79,12 @@ class JSONImporter:
         self.delete_dependent_entities()
         self.db_session.execute(delete(self.model))
 
-    def validate_data(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    def validate_data(self, data: list[dict[str, Any]]) -> Dict[str, Any]:
         if not self.schema:
             raise ValueError("Pydantic schema not defined in subclass")
 
         try:
-            return self.schema(**data).dict()
+            return self.schema.model_validate(data).dict()
         except ValidationError as e:
             print(f"Validation error: {e}")
             raise
@@ -92,11 +92,12 @@ class JSONImporter:
     def process_item_data(self, item_data: Dict) -> Dict:
         return item_data
 
-    def process_data(self, json_data: List[Dict[str, Any]]):
-        for item_data in json_data:
-            processed_item_data = self.process_item_data(item_data)
-            new_thread = self.model(**processed_item_data, file_id=self.json_file.id)
-            self.db_session.add(new_thread)
+    def process_data(self, validated_data: List[Dict[str, Any]]):
+        new_items = [
+            {**self.process_item_data(item_data), "file_id": self.json_file.id}
+            for item_data in validated_data
+        ]
+        self.db_session.execute(insert(self.model), new_items)
 
     def commit_changes(self):
         try:
@@ -109,7 +110,7 @@ class JSONImporter:
         print(f"Importing {self.model.__name__}...", end="")
         json_data = self.load_json_data(self.file_path, force)
         if self.file_updated or force:
-            validated_data = [self.validate_data(item) for item in json_data]
+            validated_data = self.validate_data(json_data)
             self.process_data(validated_data)
             self.commit_changes()
         print("DONE")

@@ -8,12 +8,12 @@ from sni.models import (
 )
 from sni.satoshi.quotes.importers import QuoteImporter
 
-from .schemas import ForumPostJSONModel, ForumThreadJSONModel
+from .schemas import ForumPostsJSONModel, ForumThreadsJSONModel
 
 
 class ForumPostImporter(JSONImporter):
     file_path = "data/forum_posts.json"
-    schema = ForumPostJSONModel
+    schema = ForumPostsJSONModel
     model = ForumPost
     file_model = ForumPostFile
     content_type = "forum_posts"
@@ -25,7 +25,7 @@ class ForumPostImporter(JSONImporter):
 
 class ForumThreadImporter(JSONImporter):
     file_path = "data/forum_threads.json"
-    schema = ForumThreadJSONModel
+    schema = ForumThreadsJSONModel
     model = ForumThread
     file_model = ForumThreadFile
     content_type = "forum_threads"

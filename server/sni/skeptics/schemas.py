@@ -2,7 +2,7 @@ import datetime
 
 from pydantic import BaseModel, field_serializer
 
-from sni.shared.schemas import ORMModel
+from sni.shared.schemas import IteratableRootModel, ORMModel
 
 
 class SkepticJSONModel(BaseModel):
@@ -17,6 +17,10 @@ class SkepticJSONModel(BaseModel):
     media_embed: str | None = None
     twitter_screenshot: bool = False
     wayback_link: str | None = None
+
+
+class SkepticsJSONModel(IteratableRootModel):
+    root: list[SkepticJSONModel]
 
 
 class SkepticModel(ORMModel):

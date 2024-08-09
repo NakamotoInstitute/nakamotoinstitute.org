@@ -4,7 +4,7 @@ from typing import Literal
 from pydantic import AliasPath, BaseModel, Field, field_serializer
 from pydantic.alias_generators import to_camel
 
-from sni.shared.schemas import ORMModel
+from sni.shared.schemas import IteratableRootModel, ORMModel
 
 EmailSource = Literal["cryptography", "bitcoin-list"]
 
@@ -15,6 +15,10 @@ class EmailThreadJSONModel(BaseModel):
     source: EmailSource
     url: str
     date: datetime.datetime
+
+
+class EmailThreadsJSONModel(IteratableRootModel):
+    root: list[EmailThreadJSONModel]
 
 
 class EmailJSONModel(BaseModel):
@@ -28,6 +32,10 @@ class EmailJSONModel(BaseModel):
     source_id: str
     parent_id: int | None = None
     satoshi_id: int | None = None
+
+
+class EmailsJSONModel(IteratableRootModel):
+    root: list[EmailJSONModel]
 
 
 class EmailThreadBaseModel(EmailThreadJSONModel, ORMModel):
