@@ -11,7 +11,7 @@ class ORMModel(BaseModel):
         from_attributes = True
 
 
-class IteratableRootModel(RootModel):
+class IterableRootModel(RootModel):
     def __iter__(self):
         return iter(self.root)
 

@@ -3,11 +3,12 @@ from typing import Any, Sequence, Type
 
 import yaml
 from pydantic import BaseModel, Field, ValidationError
-from sqlalchemy import select
+from sqlalchemy import select, update
 from sqlalchemy.orm import Session
 
 from sni.database import Base
 from sni.models import FileMetadata, YAMLFile
+from sni.shared.schemas import IterableRootModel
 from sni.utils.files import get_file_hash
 
 
@@ -16,8 +17,8 @@ class SlugWeight(BaseModel):
     weight: int = Field(ge=0)
 
 
-class SlugWeights(BaseModel):
-    weights: list[SlugWeight]
+class SlugWeights(IterableRootModel):
+    root: list[SlugWeight]
 
 
 class WeightImporter:
@@ -75,23 +76,28 @@ class WeightImporter:
     def process_item_data(self, item_data: dict) -> dict:
         return item_data
 
-    def process_data(self, items: Sequence[Base], slug_weights: dict[str, int]):
+    def process_data(self, items: Sequence[Base], validated_data: SlugWeights):
+        mappings = []
+
         for item in items:
-            weight = slug_weights.get(item.slug, 0)
-            if self.parent:
-                parent = getattr(item, self.parent)
-                parent.weight = weight
-                self.db_session.add(parent)
+            matching_data = next(
+                (data for data in validated_data if data.slug == item.slug), None
+            )
+            weight = matching_data.weight if matching_data else 0
+            if self.parent_model:
+                mappings.append({"id": getattr(item, self.parent_id), "weight": weight})
             else:
-                item.weight = weight
-                self.db_session.add(item)
+                mappings.append({"id": item.id, "weight": weight})
+
+        update_class = self.parent_model if self.parent_model else self.model
+        self.db_session.execute(update(update_class), mappings)
 
     def validate_data(self, data: dict[str, Any]) -> dict[str, Any]:
         if not self.schema:
             raise ValueError("Pydantic schema not defined in subclass")
 
         try:
-            return self.schema(**data).dict()
+            return self.schema.model_validate(data)
         except ValidationError as e:
             print(f"Validation error: {e}")
             raise
@@ -109,10 +115,7 @@ class WeightImporter:
         if self.file_updated or force:
             self.items = self.db_session.scalars(select(self.model)).unique().all()
             validated_data = self.validate_data(yaml_data)
-            slug_weights = {
-                item["slug"]: item["weight"] for item in validated_data["weights"]
-            }
-            self.process_data(self.items, slug_weights)
+            self.process_data(self.items, validated_data)
             self.commit_changes()
         print("DONE")
 

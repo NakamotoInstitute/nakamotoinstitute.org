@@ -23,7 +23,8 @@ from .schemas import (
 class LibraryWeightImporter(WeightImporter):
     file_path = "data/weights/library.yaml"
     model = DocumentTranslation
-    parent = "document"
+    parent_id = "document_id"
+    parent_model = Document
     file_model = LibraryWeightFile
     content_type = "library_weights"
 
