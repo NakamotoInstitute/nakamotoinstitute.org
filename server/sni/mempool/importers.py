@@ -11,9 +11,7 @@ from sni.shared.service import get
 
 from .schemas import (
     MempoolCanonicalMDModel,
-    MempoolMDModel,
     MempoolSeriesCanonicalMDModel,
-    MempoolSeriesMDModel,
     MempoolSeriesTranslationMDModel,
     MempoolTranslationMDModel,
 )
@@ -25,7 +23,6 @@ class MempoolImporter(TranslatedMarkdownImporter):
     canonical_model = BlogPost
     translation_model = BlogPostTranslation
     canonical_schema = MempoolCanonicalMDModel
-    md_schema = MempoolMDModel
     translation_schema = MempoolTranslationMDModel
     content_key = "blog_post"
 
@@ -82,7 +79,6 @@ class MempoolSeriesImporter(TranslatedMarkdownImporter):
     canonical_model = BlogSeries
     translation_model = BlogSeriesTranslation
     canonical_schema = MempoolSeriesCanonicalMDModel
-    md_schema = MempoolSeriesMDModel
     translation_schema = MempoolSeriesTranslationMDModel
     content_key = "blog_series"
 

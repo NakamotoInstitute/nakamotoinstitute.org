@@ -280,7 +280,7 @@ class TranslatedMarkdownImporter(BaseMarkdownImporter):
             html_content,
             file_content,
         ) = self._process_canonical_file(
-            metadata.filename, self.canonical_schema, self.md_schema
+            metadata.filename, self.canonical_schema, self.translation_schema
         )
 
         canonical_data = validated_canonical_data.dict()
@@ -297,7 +297,7 @@ class TranslatedMarkdownImporter(BaseMarkdownImporter):
                 translation_entry_data = self.process_translation_additional_data(
                     translation_data, existing_canonical_entry, metadata
                 )
-                for key, value in translation_data.items():
+                for key, value in translation_entry_data.items():
                     setattr(existing_translation_entry, key, value)
                 existing_translation_entry.slug = slug
                 existing_translation_entry.locale = Locales.ENGLISH
@@ -363,7 +363,7 @@ class TranslatedMarkdownImporter(BaseMarkdownImporter):
             existing_translation_entry = self.db_session.scalars(
                 select(self.translation_model).filter_by(file_metadata=metadata)
             ).first()
-            for key, value in translation_data.items():
+            for key, value in translation_entry_data.items():
                 setattr(existing_translation_entry, key, value)
             existing_translation_entry.locale = locale
             existing_translation_entry.file_content = file_content
@@ -482,7 +482,7 @@ class MarkdownDirectoryImporter(MarkdownImporter):
             ) = self._process_manifest_file(
                 metadata.filename,
                 self.canonical_schema,
-                self.md_schema,
+                self.translation_schema,
                 self.node_schema,
             )
 
@@ -504,7 +504,7 @@ class MarkdownDirectoryImporter(MarkdownImporter):
                         translation_data, existing_canonical_entry, metadata
                     )
 
-                    for key, value in translation_data.items():
+                    for key, value in translation_entry_data.items():
                         setattr(existing_translation_entry, key, value)
 
                     existing_translation_entry.slug = slug

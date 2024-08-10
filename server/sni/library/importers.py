@@ -15,7 +15,6 @@ from .schemas import (
     BookMDModel,
     BookMDNodeModel,
     DocumentCanonicalMDModel,
-    DocumentMDModel,
     DocumentTranslationMDModel,
     Node,
 )
@@ -35,7 +34,6 @@ class LibraryImporter(TranslatedMarkdownImporter):
     canonical_model = Document
     translation_model = DocumentTranslation
     canonical_schema = DocumentCanonicalMDModel
-    md_schema = DocumentMDModel
     translation_schema = DocumentTranslationMDModel
     content_key = "document"
 
@@ -88,7 +86,6 @@ class LibraryBookImporter(MarkdownDirectoryImporter):
     translation_model = DocumentTranslation
     node_model = DocumentNode
     canonical_schema = DocumentCanonicalMDModel
-    md_schema = DocumentMDModel
     translation_schema = DocumentTranslationMDModel
     manifest_schema = BookMDModel
     node_schema = Node
