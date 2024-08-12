@@ -14,7 +14,7 @@ external: https://libbitcoin.dyne.org/libbitcoin-manifesto.pdf
 
 <figure>
   <blockquote>
-    <p>“Tools for The People”</p>
+    <p>Tools for The People</p>
   </blockquote>
   <figcaption>Cody Wilson, Defense Distributed</figcaption>
 </figure>
@@ -58,7 +58,7 @@ Lets talk about good values.
 Responsibility is about fulfilling your needs to have a dignified existence, and then expanding that circle to the people around you. To help bring up and out the potential of other free people so that together we thrive. Community and collective action is absolutely essential if we want to rise up. The system thrives by separating people into isolated pockets who get their information from TV and their culture from corporations. United together, we are stronger.
 
 <blockquote>
-	<p>“Vires in numeris”</p>
+	<p>Vires in numeris</p>
 </blockquote>
 
 Independence and autonomy is the ability to act. If we always need third parties and central organisations to resolve disputes, solve our problems and coordinate us then we are doomed as a species. Central authorities are always a magnet for corruption and that will never change. Learn to be self reliant and make things happen.
@@ -145,15 +145,15 @@ Time we stick our flag in the ground, and make our stand.
   <figcaption>Wired September article about Bitcoin Foundation joining a task force to combat child pornography.</figcaption>
 </figure>
 
-One day master told slave: “Do this small thing and everything is fine. Keep up the good work.”. The slave was happy because not much was asked so he started to create something cool. The master walked in a week later, and said “do this as well”. The slave was shocked. “But master, we had an agreement, you said I only needed to do this?”. Master responded “I changed my mind. You need to do this as well.”. The slave reluctantly agreed. At least it wasn't that bad.
+One day master told slave: “Do this small thing and everything is fine. Keep up the good work.” The slave was happy because not much was asked so he started to create something cool. The master walked in a week later, and said “do this as well.” The slave was shocked. “But master, we had an agreement, you said I only needed to do this?” Master responded “I changed my mind. You need to do this as well.” The slave reluctantly agreed. At least it wasn't that bad.
 
 Over time, the master more and more increased his demands on the slave. By now the slave had created something totally wonderful and was dependant on it, but the master controlled his work and owned him.
 
 <figure>
   <blockquote>
-    <p>The task of an activist is not to negotiate systems of power with as much personal integrity as possible- it's to dismantle those systems.</p>
+    <p>The task of an activist is not to negotiate systems of power with as much personal integrity as possible—it's to dismantle those systems.</p>
   </blockquote>
-  <figcaption>Lierra Keith</figcaption>
+  <figcaption>Lierre Keith</figcaption>
 </figure>
 
 The road is long, and real work is needed. Less talk, more action. There are too few people in this world working on worthwhile things for the people. But eventhough the work-load is immense and daunting, there are concrete steps to achieve the global objective.
