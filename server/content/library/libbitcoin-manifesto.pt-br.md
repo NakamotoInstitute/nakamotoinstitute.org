@@ -2,12 +2,12 @@
 title: O Manifesto libbitcoin
 slug: manifesto-libbitcoin
 translators:
-    - luis-schwab
+  - luis-schwab
 ---
 
 <figure>
   <blockquote>
-    <p>“Ferramentas para O Povo”</p>
+    <p>Ferramentas para O Povo</p>
   </blockquote>
   <figcaption>Cody Wilson, Defense Distributed</figcaption>
 </figure>
@@ -51,7 +51,7 @@ Vamos falar sobre bons valores.
 Responsabilidade é atender às suas necessidades de ter uma existência digna e, em seguida, expandir esse círculo para as pessoas ao seu redor. Para ajudar a trazer à tona o potencial de outras pessoas livres para que juntos prosperemos. A ação comunitária e coletiva é absolutamente essencial se quisermos nos levantar. O sistema prospera separando as pessoas em bolsões isolados que obtêm a sua informação através da televisão e a sua cultura através das corporações. Unidos, somos mais fortes.
 
 <blockquote>
-    <p>“Vires in numeris”</p>
+    <p>Vires in numeris</p>
 </blockquote>
 
 Independência e autonomia é a capacidade de agir. Se precisarmos sempre de terceiros e de organizações centrais para resolver disputas, resolver os nossos problemas e coordenar-nos, então estamos condenados como espécie. As autoridades centrais são sempre um ímã para a corrupção e isso nunca mudará. Aprenda a ser autossuficiente e fazer as coisas acontecerem.
@@ -138,7 +138,7 @@ Está na hora de fincarmos a nossa bandeira no chão e tomarmos posição.
   <figcaption>Artigo de setembro da Wired sobre a adesão da Bitcoin Foundation a uma força-tarefa para combater a pornografia infantil.</figcaption>
 </figure>
 
-Um dia o mestre disse ao escravo: “Faça essa pequena coisa e tudo ficará bem. Mantenha o bom trabalho.". O escravo ficou feliz porque não foi pedido muito, então ele começou a criar algo legal. O mestre entrou uma semana depois e disse “faça isso também”. O escravo ficou chocado. “Mas mestre, tínhamos um acordo, você disse que eu só precisava fazer isso?”. O Mestre respondeu: “Mudei de ideia. Você precisa fazer isso também.” O escravo concordou relutantemente. Pelo menos não foi tão ruim.
+Um dia o mestre disse ao escravo: “Faça essa pequena coisa e tudo ficará bem. Mantenha o bom trabalho." O escravo ficou feliz porque não foi pedido muito, então ele começou a criar algo legal. O mestre entrou uma semana depois e disse “faça isso também.” O escravo ficou chocado. “Mas mestre, tínhamos um acordo, você disse que eu só precisava fazer isso?” O Mestre respondeu: “Mudei de ideia. Você precisa fazer isso também.” O escravo concordou relutantemente. Pelo menos não foi tão ruim.
 
 Com o tempo, o senhor aumentou cada vez mais suas exigências sobre o escravo. A essa altura o escravo já havia criado algo totalmente maravilhoso e dependia dele, mas o senhor controlava seu trabalho e era dono dele.
 
@@ -146,7 +146,7 @@ Com o tempo, o senhor aumentou cada vez mais suas exigências sobre o escravo. A
   <blockquote>
     <p>A tarefa de um ativista não é negociar sistemas de poder com tanta integridade pessoal quanto possível – é desmantelar esses sistemas.</p>
   </blockquote>
-  <figcaption>Lierra Keith</figcaption>
+  <figcaption>Lierre Keith</figcaption>
 </figure>
 
 O caminho é longo e é necessário trabalho de verdade. Fale menos e faça mais. Há muito poucas pessoas neste mundo trabalhando em coisas que valem a pena para as pessoas. Mas embora a carga de trabalho seja imensa e assustadora, existem medidas concretas para alcançar o objetivo global.
