@@ -5,6 +5,10 @@ services:
       dockerfile: ./compose/production/fastapi/Dockerfile
     depends_on:
       - postgres
+    volumes:
+      - ./content:/app/content:z
+      - ./data:/app/data:z
+      - ./static:/app/static:z
     env_file:
       - ./.envs/.production/.fastapi
       - ./.envs/.production/.postgres
