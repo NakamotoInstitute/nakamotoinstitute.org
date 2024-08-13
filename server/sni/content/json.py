@@ -3,7 +3,7 @@ from datetime import datetime
 from typing import Any, Dict, List, Type
 
 from pydantic import BaseModel, ValidationError
-from sqlalchemy import delete, insert, select
+from sqlalchemy import delete, select
 from sqlalchemy.orm import Session
 
 from sni.models import FileMetadata
@@ -93,11 +93,11 @@ class JSONImporter:
         return item_data
 
     def process_data(self, validated_data: List[Dict[str, Any]]):
-        new_items = [
-            {**self.process_item_data(item_data), "file_id": self.json_file.id}
-            for item_data in validated_data
-        ]
-        self.db_session.execute(insert(self.model), new_items)
+        for item_data in validated_data:
+            new_item = self.model(
+                **self.process_item_data(item_data), file_id=self.json_file.id
+            )
+            self.db_session.add(new_item)
 
     def commit_changes(self):
         try:
