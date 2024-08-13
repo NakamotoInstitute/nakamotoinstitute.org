@@ -10,31 +10,27 @@ async function DocFormatButtonLink({ className, ...rest }: ButtonLinkProps) {
   return <ButtonLink className={clsx(className, "w-28")} {...rest} />;
 }
 
-type DocFormatLinksProps = {
+type DocFormatLinkProps = {
   t: TFunction<string, string>;
   locale: Locale;
-  className?: string;
   doc: Document;
-  classes?: { root?: string; link?: string };
+  buttonClassName?: string;
 };
 
-export async function DocFormatLinks({
+export function getDocFormatLinks({
   t,
   locale,
-  classes,
-  className,
   doc,
-}: DocFormatLinksProps) {
+  buttonClassName,
+}: DocFormatLinkProps): React.ReactNode[] {
   const links: React.ReactNode[] = [];
-
-  const buttonClasses = clsx(classes?.link, "w-28");
 
   if (doc.entryNode) {
     links.push(
       <DocFormatButtonLink
         key="online"
         href={urls(locale).library.docNode(doc.slug, doc.entryNode.slug)}
-        className={buttonClasses}
+        className={buttonClassName}
       >
         {t("read_online")}
       </DocFormatButtonLink>,
@@ -45,7 +41,7 @@ export async function DocFormatLinks({
     links.push(
       <DocFormatButtonLink
         key={format.type}
-        className={buttonClasses}
+        className={buttonClassName}
         href={format.url}
       >
         {format.type === "epub" ? "ePub" : format.type.toUpperCase()}
@@ -58,7 +54,7 @@ export async function DocFormatLinks({
       <DocFormatButtonLink
         key="link"
         href={doc.external}
-        className={buttonClasses}
+        className={buttonClassName}
       >
         {t("external_link")}
       </DocFormatButtonLink>,
@@ -71,16 +67,37 @@ export async function DocFormatLinks({
         key="purchase"
         variant="secondary"
         href={doc.purchaseLink}
-        className={buttonClasses}
+        className={buttonClassName}
       >
         {t("buy_now")}
       </DocFormatButtonLink>,
     );
   }
 
-  return links ? (
-    <div className={clsx(className, classes?.root, "flex gap-4")}>{links}</div>
-  ) : null;
+  return links;
+}
+
+type DocFormatLinksBoxProps = {
+  links: React.ReactNode[];
+  className?: string;
+  border?: boolean;
+};
+
+export function DocFormatLinksContainer({
+  links,
+  className,
+  border = false,
+}: DocFormatLinksBoxProps) {
+  if (links.length === 0) return null;
+
+  return (
+    <>
+      <div className={clsx(className, "flex justify-center gap-4")}>
+        {links}
+      </div>
+      {border && <hr className="mx-auto my-6 w-12" />}
+    </>
+  );
 }
 
 type DocFormatChipsProps = {

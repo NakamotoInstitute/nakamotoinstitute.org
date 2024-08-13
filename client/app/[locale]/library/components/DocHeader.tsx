@@ -1,14 +1,11 @@
-import clsx from "clsx";
 import { TFunction } from "i18next";
 import Image from "next/image";
-import Link from "next/link";
 
 import { AuthorsLinks } from "@/app/components/AuthorsLinks";
 import { Document } from "@/lib/api/schemas/library";
-import { urls } from "@/lib/urls";
 import { formatDocDate, formatTimeAttr } from "@/utils/dates";
 
-import { DocFormatLinks } from "./DocFormats";
+import { DocFormatLinksContainer, getDocFormatLinks } from "./DocFormats";
 
 type DocHeaderProps = {
   t: TFunction<string, string>;
@@ -17,6 +14,8 @@ type DocHeaderProps = {
 };
 
 export async function DocHeader({ t, locale, doc }: DocHeaderProps) {
+  const formatLinks = getDocFormatLinks({ t, locale, doc });
+
   return (
     <>
       <header className="mx-auto text-center">
@@ -57,24 +56,11 @@ export async function DocHeader({ t, locale, doc }: DocHeaderProps) {
         ) : null}
       </header>
       <hr className="mx-auto my-4 w-12 md:my-6" />
-      {doc.content ? (
-        <>
-          <DocFormatLinks
-            t={t}
-            locale={locale}
-            className="justify-center gap-3 font-medium"
-            doc={doc}
-          />
-          <hr className="mx-auto my-6 w-12" />
-        </>
-      ) : (
-        <DocFormatLinks
-          t={t}
-          locale={locale}
-          className="justify-center gap-3 font-medium"
-          doc={doc}
-        />
-      )}
+      <DocFormatLinksContainer
+        links={formatLinks}
+        className="justify-center gap-3"
+        border={!!doc.content}
+      />
     </>
   );
 }
