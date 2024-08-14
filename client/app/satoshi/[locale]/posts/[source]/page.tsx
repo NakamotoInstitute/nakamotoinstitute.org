@@ -2,14 +2,17 @@ import { Metadata } from "next";
 
 import { locales } from "@/i18n";
 import { getSatoshiPostsBySource } from "@/lib/api/posts";
-import { ForumPostSource, zForumPostSource } from "@/lib/api/schemas/posts";
+import {
+  FORUM_POST_SOURCES,
+  ForumPostSource,
+  zForumPostSource,
+} from "@/lib/api/schemas/posts";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
-import { formatPostSource, otherForumPostSource } from "@/utils/strings";
+import { formatPostSource } from "@/utils/strings";
 
 import { ContentListing } from "@satoshi/components/ContentListing";
-import { SourceLink } from "@satoshi/components/IndexHeader";
 import { IndexPageLayout } from "@satoshi/components/IndexPageLayout";
 
 export const dynamicParams = false;
@@ -38,29 +41,14 @@ export default async function PostsSourceIndex({
   const { t } = await i18nTranslation(locale);
   const posts = await getSatoshiPostsBySource(source);
 
-  const otherSource = otherForumPostSource(source);
-
-  const allLink: SourceLink = {
-    name: t("all"),
-    href: urls(locale).satoshi.posts.index,
-  };
-  const additionalLinks: SourceLink[] =
-    source === "p2pfoundation"
-      ? [
-          { name: formatPostSource("p2pfoundation"), active: true },
-          {
-            name: formatPostSource("bitcointalk"),
-            href: urls(locale).satoshi.posts.sourceIndex(otherSource),
-          },
-        ]
-      : [
-          {
-            name: formatPostSource("p2pfoundation"),
-            href: urls(locale).satoshi.posts.sourceIndex(otherSource),
-          },
-          { name: formatPostSource("bitcointalk"), active: true },
-        ];
-  const sourceLinks = [allLink, ...additionalLinks];
+  const sourceLinks = [
+    { name: t("all"), href: urls(locale).satoshi.posts.index },
+    ...FORUM_POST_SOURCES.map((s) => ({
+      name: formatPostSource(s),
+      href: urls(locale).satoshi.posts.sourceIndex(s),
+      active: s === source,
+    })),
+  ];
 
   return (
     <IndexPageLayout

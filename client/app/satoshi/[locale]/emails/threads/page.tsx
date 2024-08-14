@@ -2,15 +2,19 @@ import { Metadata } from "next";
 
 import { locales } from "@/i18n";
 import { getEmailThreads } from "@/lib/api/emails";
-import { EmailSource, EmailThread } from "@/lib/api/schemas/emails";
+import {
+  EMAIL_SOURCES,
+  EmailSource,
+  EmailThread,
+} from "@/lib/api/schemas/emails";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatEmailSource } from "@/utils/strings";
 
+import { ContentListing } from "@satoshi/components/ContentListing";
+import { SourceLink } from "@satoshi/components/IndexHeader";
 import { IndexPageLayout } from "@satoshi/components/IndexPageLayout";
-
-import { ContentListing } from "../../components/ContentListing";
 
 export const dynamicParams = false;
 
@@ -41,12 +45,24 @@ export default async function EmailThreadsIndex({
       acc[thread.source].push(thread);
       return acc;
     },
-    {
-      cryptography: [],
-      "bitcoin-list": [],
-      p2presearch: [],
-    } as { [K in EmailSource]: EmailThread[] },
+    Object.fromEntries(
+      EMAIL_SOURCES.map((source) => [source, [] as EmailThread[]]),
+    ) as {
+      [K in EmailSource]: EmailThread[];
+    },
   );
+
+  const sourceLinks = [
+    {
+      name: t("all"),
+      href: urls(locale).satoshi.emails.threadsIndex,
+      active: true,
+    },
+    ...EMAIL_SOURCES.map((s) => ({
+      name: formatEmailSource(s),
+      href: urls(locale).satoshi.emails.sourceThreadsIndex(s),
+    })),
+  ];
 
   return (
     <IndexPageLayout
@@ -58,24 +74,7 @@ export default async function EmailThreadsIndex({
         { label: t("complete_satoshi"), href: urls(locale).satoshi.index },
         { label: t("emails"), href: urls(locale).satoshi.emails.threadsIndex },
       ]}
-      sourceLinks={[
-        {
-          name: t("all"),
-          active: true,
-        },
-        {
-          name: formatEmailSource("cryptography"),
-          href: urls(locale).satoshi.emails.sourceThreadsIndex("cryptography"),
-        },
-        {
-          name: formatEmailSource("bitcoin-list"),
-          href: urls(locale).satoshi.emails.sourceThreadsIndex("bitcoin-list"),
-        },
-        {
-          name: formatEmailSource("p2presearch"),
-          href: urls(locale).satoshi.emails.sourceThreadsIndex("p2presearch"),
-        },
-      ]}
+      sourceLinks={sourceLinks}
       toggleLinks={{
         active: "threads",
         href: urls(locale).satoshi.emails.index,

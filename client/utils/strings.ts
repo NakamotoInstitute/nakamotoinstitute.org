@@ -35,20 +35,12 @@ export function formatLocale(locale: Locale): CapitalizedLocale {
   return locale as CapitalizedLocale;
 }
 
-export function otherEmailSource(source: EmailSource) {
-  return source === "cryptography" ? "bitcoin-list" : "cryptography";
-}
-
 export function formatEmailSource(source: EmailSource, short: boolean = false) {
   return {
     "bitcoin-list": "bitcoin-list",
     cryptography: short ? "Cryptography" : "Cryptography Mailing List",
     p2presearch: short ? "p2presearch" : "P2P Research List",
   }[source];
-}
-
-export function otherForumPostSource(source: ForumPostSource) {
-  return source === "bitcointalk" ? "p2pfoundation" : "bitcointalk";
 }
 
 export function formatPostSource(source: ForumPostSource) {
