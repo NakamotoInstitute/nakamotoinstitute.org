@@ -2,12 +2,14 @@ import { Metadata } from "next";
 
 import { locales } from "@/i18n";
 import { getSatoshiEmails } from "@/lib/api/emails";
+import { EMAIL_SOURCES } from "@/lib/api/schemas/emails";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 import { formatEmailSource } from "@/utils/strings";
 
 import { ContentListing } from "@satoshi/components/ContentListing";
+import { SourceLink } from "@satoshi/components/IndexHeader";
 import { IndexPageLayout } from "@satoshi/components/IndexPageLayout";
 
 export const dynamicParams = false;
@@ -35,6 +37,14 @@ export default async function EmailsIndex({
   const { t } = await i18nTranslation(locale);
   const emails = await getSatoshiEmails();
 
+  const sourceLinks: SourceLink[] = [
+    { name: t("all"), active: true },
+    ...EMAIL_SOURCES.map((s) => ({
+      name: formatEmailSource(s),
+      href: urls(locale).satoshi.emails.sourceIndex(s),
+    })),
+  ];
+
   return (
     <IndexPageLayout
       t={t}
@@ -45,20 +55,7 @@ export default async function EmailsIndex({
         { label: t("complete_satoshi"), href: urls(locale).satoshi.index },
         { label: t("emails"), href: urls(locale).satoshi.emails.index },
       ]}
-      sourceLinks={[
-        {
-          name: t("all"),
-          active: true,
-        },
-        {
-          name: formatEmailSource("cryptography"),
-          href: urls(locale).satoshi.emails.sourceIndex("cryptography"),
-        },
-        {
-          name: formatEmailSource("bitcoin-list"),
-          href: urls(locale).satoshi.emails.sourceIndex("bitcoin-list"),
-        },
-      ]}
+      sourceLinks={sourceLinks}
       toggleLinks={{
         active: "individual",
         href: urls(locale).satoshi.emails.threadsIndex,

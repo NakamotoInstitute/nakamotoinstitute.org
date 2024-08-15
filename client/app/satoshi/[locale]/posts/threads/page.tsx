@@ -2,7 +2,11 @@ import { Metadata } from "next";
 
 import { locales } from "@/i18n";
 import { getForumThreads } from "@/lib/api/posts";
-import { ForumPostSource, ForumThread } from "@/lib/api/schemas/posts";
+import {
+  FORUM_POST_SOURCES,
+  ForumPostSource,
+  ForumThread,
+} from "@/lib/api/schemas/posts";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
@@ -38,10 +42,24 @@ export default async function PostThreadsIndex({
       acc[thread.source].push(thread);
       return acc;
     },
-    { p2pfoundation: [], bitcointalk: [] } as {
+    Object.fromEntries(
+      FORUM_POST_SOURCES.map((source) => [source, [] as ForumThread[]]),
+    ) as {
       [K in ForumPostSource]: ForumThread[];
     },
   );
+
+  const sourceLinks = [
+    {
+      name: t("all"),
+      href: urls(locale).satoshi.posts.threadsIndex,
+      active: true,
+    },
+    ...FORUM_POST_SOURCES.map((s) => ({
+      name: formatPostSource(s),
+      href: urls(locale).satoshi.posts.sourceThreadsIndex(s),
+    })),
+  ];
 
   return (
     <IndexPageLayout
@@ -56,20 +74,7 @@ export default async function PostThreadsIndex({
           href: urls(locale).satoshi.posts.threadsIndex,
         },
       ]}
-      sourceLinks={[
-        {
-          name: t("all"),
-          active: true,
-        },
-        {
-          name: formatPostSource("p2pfoundation"),
-          href: urls(locale).satoshi.posts.sourceThreadsIndex("p2pfoundation"),
-        },
-        {
-          name: formatPostSource("bitcointalk"),
-          href: urls(locale).satoshi.posts.sourceThreadsIndex("bitcointalk"),
-        },
-      ]}
+      sourceLinks={sourceLinks}
       toggleLinks={{
         active: "threads",
         href: urls(locale).satoshi.posts.index,

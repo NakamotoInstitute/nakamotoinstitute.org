@@ -2,15 +2,14 @@ import { Metadata } from "next";
 
 import { locales } from "@/i18n";
 import { getSatoshiEmailsBySource } from "@/lib/api/emails";
-import { EmailSource } from "@/lib/api/schemas/emails";
+import { EMAIL_SOURCES, EmailSource } from "@/lib/api/schemas/emails";
 import { zEmailSource } from "@/lib/api/schemas/emails";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
-import { formatEmailSource, otherEmailSource } from "@/utils/strings";
+import { formatEmailSource } from "@/utils/strings";
 
 import { ContentListing } from "@satoshi/components/ContentListing";
-import { SourceLink } from "@satoshi/components/IndexHeader";
 import { IndexPageLayout } from "@satoshi/components/IndexPageLayout";
 
 export const dynamicParams = false;
@@ -39,29 +38,14 @@ export default async function EmailsSourceIndex({
   const { t } = await i18nTranslation(locale);
   const emails = await getSatoshiEmailsBySource(source);
 
-  const otherSource = otherEmailSource(source);
-
-  const allLink: SourceLink = {
-    name: t("all"),
-    href: urls(locale).satoshi.emails.index,
-  };
-  const additionalLinks: SourceLink[] =
-    source === "cryptography"
-      ? [
-          { name: formatEmailSource("cryptography"), active: true },
-          {
-            name: formatEmailSource("bitcoin-list"),
-            href: urls(locale).satoshi.emails.sourceIndex(otherSource),
-          },
-        ]
-      : [
-          {
-            name: formatEmailSource("cryptography"),
-            href: urls(locale).satoshi.emails.sourceIndex(otherSource),
-          },
-          { name: formatEmailSource("bitcoin-list"), active: true },
-        ];
-  const sourceLinks = [allLink, ...additionalLinks];
+  const sourceLinks = [
+    { name: t("all"), href: urls(locale).satoshi.emails.index },
+    ...EMAIL_SOURCES.map((s) => ({
+      name: formatEmailSource(s),
+      href: urls(locale).satoshi.emails.sourceIndex(s),
+      active: s === source,
+    })),
+  ];
 
   return (
     <IndexPageLayout
