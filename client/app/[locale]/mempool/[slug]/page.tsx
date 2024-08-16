@@ -5,7 +5,7 @@ import { Trans } from "react-i18next/TransWithoutContext";
 import { PageLayout } from "@/app/components/PageLayout";
 import { Rehype } from "@/app/components/Rehype";
 import { RenderedItemsList } from "@/app/components/RenderedItemsList";
-import { ReturnButton } from "@/app/components/ReturnButton";
+import { openGraphImages } from "@/app/shared-metadata";
 import { getMempoolParams, getMempoolPost } from "@/lib/api/mempool";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { getDir } from "@/lib/i18n/utils";
@@ -20,19 +20,27 @@ export async function generateMetadata({
   params: { locale, slug },
 }: LocaleParams<{ slug: string }>): Promise<Metadata> {
   const post = await getMempoolPost(slug, locale);
-  const languages = post.translations.reduce(
-    (acc, t) => {
-      acc[t.locale] = urls(t.locale).mempool.post(t.slug);
-      return acc;
-    },
-    {} as Record<Locale, string>,
+
+  const languages = Object.fromEntries(
+    post.translations.map((t) => [
+      t.locale,
+      urls(t.locale).mempool.post(t.slug),
+    ]),
   );
+
+  if (post.image) {
+    openGraphImages.push(post.image);
+  }
+
   return {
     title: post.title,
+    description: post.excerpt,
     alternates: {
       canonical: urls(locale).mempool.post(slug),
       languages,
     },
+    openGraph: { images: openGraphImages },
+    twitter: { images: openGraphImages },
   };
 }
 
