@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 import { RootLayout } from "@/app/components/RootLayout";
+import { openGraphImages } from "@/app/shared-metadata";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
-import { cdnUrl } from "@/lib/urls";
 
 export async function generateMetadata({
   params: { locale },
@@ -15,24 +15,8 @@ export async function generateMetadata({
       default: `${t("complete_satoshi")} | ${siteTitle}`,
     },
     description: t("sni_mission_statement"),
-    openGraph: {
-      images: [
-        {
-          url: cdnUrl("/img/sni_opengraph_1200.jpg"),
-          width: 1200,
-          height: 675,
-        },
-      ],
-    },
-    twitter: {
-      images: [
-        {
-          url: cdnUrl("/img/sni_opengraph_1200.jpg"),
-          width: 1200,
-          height: 675,
-        },
-      ],
-    },
+    openGraph: { images: openGraphImages },
+    twitter: { images: openGraphImages },
   };
 }
 
