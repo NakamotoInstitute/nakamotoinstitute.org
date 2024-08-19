@@ -327,6 +327,7 @@ class TranslatedMarkdownImporter(BaseMarkdownImporter):
             translation_entry_data = self.process_translation_additional_data(
                 translation_data, canonical_entry, metadata
             )
+            translation_entry_data.pop("slug", None)
             translation_entry = self.translation_model(
                 **translation_entry_data,
                 slug=slug,
@@ -539,6 +540,7 @@ class MarkdownDirectoryImporter(MarkdownImporter):
                 translation_entry_data = self.process_translation_additional_data(
                     translation_data, canonical_entry, metadata
                 )
+                translation_entry_data.pop("slug")
                 translation_entry = self.translation_model(
                     **translation_entry_data,
                     slug=slug,
