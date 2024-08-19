@@ -82,7 +82,12 @@ export async function PostHeader({ t, locale, post }: PostHeaderProps) {
               values={{ originalSite: post.originalSite }}
               components={{
                 em: <em className="not-italic" />,
-                a: <Link href={post.originalUrl} />,
+                a: (
+                  <Link
+                    className="text-cardinal hover:underline"
+                    href={post.originalUrl}
+                  />
+                ),
               }}
             />
           </p>
