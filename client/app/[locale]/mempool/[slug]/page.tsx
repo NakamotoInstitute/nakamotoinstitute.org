@@ -28,10 +28,6 @@ export async function generateMetadata({
     ]),
   );
 
-  if (post.image) {
-    openGraphImages.push(post.image);
-  }
-
   return {
     title: post.title,
     description: post.excerpt,
@@ -39,8 +35,8 @@ export async function generateMetadata({
       canonical: urls(locale).mempool.post(slug),
       languages,
     },
-    openGraph: { images: openGraphImages },
-    twitter: { images: openGraphImages },
+    openGraph: { images: post.image ?? openGraphImages },
+    twitter: { images: post.image ?? openGraphImages },
   };
 }
 
