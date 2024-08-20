@@ -4,7 +4,6 @@ import fetchAPI from "./fetchAPI";
 import {
   zMempoolIndex,
   zMempoolPost,
-  zMempoolPostIndex,
   zMempoolSeriesDetail,
   zMempoolSeriesIndex,
 } from "./schemas/mempool";
@@ -23,12 +22,12 @@ export async function getMempoolPost(slug: string, locale: Locale) {
   return zMempoolPost.parse(await res.json());
 }
 
-export async function getLatestMempoolPost(locale: Locale) {
+export async function getLatestMempoolPosts(locale: Locale) {
   const res = await fetchAPI(`/mempool/latest?locale=${locale}`);
   if (res.status === 404) {
-    return null;
+    return [];
   }
-  return zMempoolPostIndex.parse(await res.json());
+  return zMempoolIndex.parse(await res.json());
 }
 
 export async function getMempoolParams() {

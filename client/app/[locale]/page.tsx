@@ -7,7 +7,7 @@ import { Trans } from "react-i18next/TransWithoutContext";
 import { PageLayout } from "@/app/components/PageLayout";
 import { locales } from "@/i18n";
 import { getHomeLibraryDocs } from "@/lib/api/library";
-import { getLatestMempoolPost } from "@/lib/api/mempool";
+import { getLatestMempoolPosts } from "@/lib/api/mempool";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { cdnUrl, urls } from "@/lib/urls";
@@ -76,7 +76,7 @@ async function Box({ title, className, link, children }: BoxProps) {
 export default async function HomePage({ params: { locale } }: LocaleParams) {
   const { t } = await i18nTranslation(locale);
   const [latest, docs] = await Promise.all([
-    getLatestMempoolPost(locale),
+    getLatestMempoolPosts(locale),
     getHomeLibraryDocs(locale),
   ]);
 
@@ -188,19 +188,21 @@ export default async function HomePage({ params: { locale } }: LocaleParams) {
             link={{ label: viewAllLabel, href: urls(locale).mempool.index }}
           >
             <p>{t("memory_pool_description")}</p>
-            {latest ? (
-              <div>
-                <h4>
-                  <Link
-                    className="text-cardinal hover:underline"
-                    href={urls(locale).mempool.post(latest.slug)}
-                  >
-                    {latest.title}
-                  </Link>
-                </h4>
-                <PostListingAuthors locale={locale} post={latest} small />
-              </div>
-            ) : null}
+            <div>
+              {latest.map((post) => (
+                <div key={post.slug} className="mb-2 last:mb-0">
+                  <h4>
+                    <Link
+                      className="text-cardinal hover:underline"
+                      href={urls(locale).mempool.post(post.slug)}
+                    >
+                      {post.title}
+                    </Link>
+                  </h4>
+                  <PostListingAuthors locale={locale} post={post} small />
+                </div>
+              ))}
+            </div>
           </Box>
 
           <Box

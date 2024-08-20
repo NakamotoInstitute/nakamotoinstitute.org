@@ -1,6 +1,7 @@
 from typing import Any
 
 from fastapi import APIRouter, Depends, HTTPException, Response
+from pydantic.types import PositiveInt
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from sni.constants import LocaleType
@@ -59,15 +60,15 @@ async def get_mempool_posts(
     return await service.get_all_posts_by_locale(db_session=db, locale=locale)
 
 
-@router.get("/latest", response_model=MempoolPostIndexModel)
+@router.get("/latest", response_model=list[MempoolPostIndexModel])
 async def get_latest_mempool_post(
-    locale: LocaleType = "en", db: AsyncSession = Depends(get_db)
+    locale: LocaleType = "en", num: PositiveInt = 3, db: AsyncSession = Depends(get_db)
 ) -> Any:
-    post = await service.get_latest_post(db_session=db, locale=locale)
-    if not post:
+    posts = await service.get_latest_posts(db_session=db, locale=locale, num=num)
+    if not posts:
         raise HTTPException(status_code=404, detail="Mempool post not found")
 
-    return post
+    return posts
 
 
 @router.get("/params", response_model=list[SlugParamModel])

@@ -57,9 +57,11 @@ async def get_all_posts_by_locale(
     return result.all()
 
 
-async def get_latest_post(
-    *, db_session: AsyncSession, locale: LocaleType = "en"
-) -> BlogPostTranslation | None:
+async def get_latest_posts(
+    *, db_session: AsyncSession, locale: LocaleType = "en", num: int = 3
+) -> list[BlogPostTranslation]:
+    num = max(1, num)
+
     query = (
         select(BlogPostTranslation)
         .options(
@@ -72,9 +74,11 @@ async def get_latest_post(
         .filter_by(locale=locale)
         .join(BlogPost)
         .order_by(BlogPost.added.desc())
+        .limit(num)
     )
 
-    return await db_session.scalar(query)
+    result = await db_session.scalars(query)
+    return result.all()
 
 
 async def get_series(
