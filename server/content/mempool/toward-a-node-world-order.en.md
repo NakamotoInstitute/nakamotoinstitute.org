@@ -222,7 +222,7 @@ Since bitcoin's genesis block, humanity no longer needs to place its trust in th
       <p><a href="https://mises.org/library/slavery-profitability-and-market-process">“Slavery, Profitability, and the Market Process”</a> by Mark Thornton <a href="#fnref4">↩︎</a></p>
     </li>
     <li id="fn5">
-      <p>For more on money as a hedge against future uncertainty, see <a href="/library/the-yield-from-money-held-reconsidered">“‘The Yield from Money Held’ Reconsidered”</a> by Hans-Hermann Hoppe. For more on how the quality of a money affects its purchasing power, see <a href="https://mises.org/library/quality-money">“The Quality of Money”</a> by Philipp Bagus. <a href="#fnref5">↩︎</a></p>
+      <p>For more on money as a hedge against future uncertainty, see <a href="/library/the-yield-from-money-held-reconsidered">“‘The Yield from Money Held’ Reconsidered”</a> by Hans-Hermann Hoppe. For more on how the quality of a money affects its purchasing power, see <a href="/library/the-quality-of-money/">“The Quality of Money”</a> by Philipp Bagus. <a href="#fnref5">↩︎</a></p>
     </li>
     <li id="fn6">
       <p>Also see <a href="/library/on-the-origins-of-money/"><em>On the Origins of Money</em></a> by Carl Menger, and <a href="https://saifedean.com/tfs"><em>The Fiat Standard</em></a> by Saifedean Ammous. <a href="#fnref6">↩︎</a></p>
