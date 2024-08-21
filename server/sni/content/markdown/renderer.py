@@ -67,6 +67,8 @@ class MDRender:
             href = a.get("href")
             if href and href.startswith("/static"):
                 a["href"] = href.replace("/static", settings.CDN_BASE_URL)
+            elif href and href.startswith("/satoshi"):
+                a["href"] = href.replace("/satoshi", settings.SATOSHI_URL)
 
         return str(soup)
 

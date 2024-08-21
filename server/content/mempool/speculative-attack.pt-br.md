@@ -65,7 +65,7 @@ A minha previsão é que o sangramento lento tem [acelerado](http://www.google.c
   <blockquote>
     <p>Talvez faça sentido adquirir alguns, apenas para garantir se eventualmente funcionar. Se algumas pessoas pensarem da mesma maneira, isso se torna uma profecia auto-realizável. Assim que for inicializado, existem inúmeras aplicações se você puder pagar alguns centavos para um site tão facilmente quanto colocar algumas moedas em uma máquina de bebidas.</p>
   </blockquote>
-  <figcaption><a href="https://satoshi.nakamotoinstitute.org/emails/cryptography/17/">Satoshi Nakamoto</a>, 17/1/2009</figcaption>
+  <figcaption><a href="/satoshi/emails/cryptography/17/">Satoshi Nakamoto</a>, 17/1/2009</figcaption>
 </figure>
 
 O sangramento lento leva a uma crise nas moedas conforme o valor esperado do bitcoin se solidifica na mente das pessoas. Primeiramente, elas são conservadoras, investem "apenas o que podem perder". Depois de 12-18 meses, o pequeno acúmulo de bitcoins aumentou dramaticamente em valor. Elas não veem razão para que essa tendência de longo prazo se reverta: os fundamentos tem melhorado e mesmo assim a adoção continua baixa. A confiança aumenta. Elas compram mais bitcoins. Elas racionalizam: "bem, é apenas \[1-5%\] dos meus investimentos". Elas veem o preço desabar algumas vezes, devido a explosão de bolhas ou apenas uma variedade de vendas em pânico - o que seduz as pessoas a comprarem mais, "uma pechincha". Bitcoin cresce no lado dos ativos dos seus balanços patrimoniais.
@@ -93,12 +93,21 @@ Um ataque especulativo que parece isolado em uma ou algumas moedas fracas, mas q
 O Bitcoin se tornará dominante. Os céticos do Bitcoin não entendem isso devido aos seus preconceitos e a falta de conhecimento financeiro. Primeiro, eles vêm fortes como Bitcoin céticos em uma câmara de eco.[^10] Eles [rapidamente procuram](http://www.reddit.com/r/buttcoin) por evidências que confirmam suas visões do Bitcoin. Em segundo lugar, eles mal entendem como moedas fortes ultrapassam moedas fracas como o dólar: é através de ataques especulativos e crises monetárias causadas por [investidores](https://pt.wikipedia.org/wiki/George_Soros), e não através de uma avaliação cuidadosa de jornalistas de tecnologia e "consumidores convencionais". Para honrar esses céticos que serão extintos em breve, o Instituto Nakamoto lançou [um tributo para afirmações ousadas](/the-skeptics).
 
 [^1]: Não, seriamente, existem pessoas na Internet gastando um período de tempo não trivial escrevendo sobre uma moeda que eles acham que irá fracassar mas continua tendo sucesso além da expectativa de qualquer um. Sua alegria maligna me causa alegria maligna. Seguramente, alguns deles estão sendo pagos para escrever "caça-cliques" controversos e/ou [trolling disfarçado de preocupação](http://www.urbandictionary.com/define.php?term=concern+troll) - ambas atividades que eu respeito e entendo.
+
 [^2]: Isso é geralmente argumentado por pessoas que estão fora do grupo e fantasiam sobre estar dentro através de política/ascendência ao invés de processos econômicos/meritocráticos. Demograficamente, eles provavelmente coincidem com fãs do [O Segredo](https://pt.wikipedia.org/wiki/Rhonda_Byrne#The_Secret_-_O_Segredo). Economicamente, eles são sem exceção [enganadores](http://trilema.com/2014/the-bezzle-usd-and-the-tide-usd/#footnote_1_53585).
+
 [^3]: O Bitcoin entrou em [Setembro Eterno](https://pt.wikipedia.org/wiki/Setembro_Eterno), onde toda pessoa nova no Bitcoin pensa que possui um entendimento único sobre o assunto e todos devem escutá-la. Há uma interminável enchente de novatos "preocupados" com tal e tal "problema" com o Bitcoin. A comunidade Bitcoin faz um desserviço a essas pessoas ao levá-las a sério, ao invés de simplesmente dizer para que "leiam mais".
+
 [^4]: O oposto do Jesus Bitcoin. [Jonah](https://en.wikipedia.org/wiki/Jonah_complex) Bitcoin é um cara derrotista, auto-sabotador, e "tímido" que está em uma busca permanente para confirmar as "fraquezas" do Bitcoin.
+
 [^5]: [Bitcoin is the Best Unit of Account](/mempool/bitcoin-is-the-best-unit-of-account) by Daniel Krawisz
+
 [^6]: [The Bitcoin Central Bank’s Perfect Monetary Policy](/mempool/the-bitcoin-central-banks-perfect-monetary-policy) by Pierre Rochard
+
 [^7]: [Bitcoin Has No Image Problem](/mempool/bitcoin-has-no-image-problem) by Daniel Krawisz
+
 [^8]: [Hyperbitcoinization](/mempool/hyperbitcoinization) by Daniel Krawisz
+
 [^9]: Se você discorda, você não tem aprendido ou não tem participado do debate, volte ao primeiro quadro.
+
 [^10]: "Eu vivo em um mundo especial. Eu apenas conheço uma pessoa que votou no Nixon. Onde ela está eu não sei. Está fora do meu alcance. Mas as vezes quando estou no teatro eu posso senti-lá." - [Pauline Kael](http://en.wikiquote.org/wiki/Pauline_Kael)

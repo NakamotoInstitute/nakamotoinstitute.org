@@ -67,7 +67,7 @@ My own prediction is that slow bleed has been [accelerating](http://www.google.c
   <blockquote>
     <p>It might make sense just to get some in case it catches on. If enough people think the same way, that becomes a self fulfilling prophecy. Once it gets bootstrapped, there are so many applications if you could effortlessly pay a few cents to a website as easily as dropping coins in a vending machine.</p>
   </blockquote>
-  <figcaption><a href="https://satoshi.nakamotoinstitute.org/emails/cryptography/17/">Satoshi Nakamoto</a>, 1/17/2009</figcaption>
+  <figcaption><a href="/satoshi/emails/cryptography/17/">Satoshi Nakamoto</a>, 1/17/2009</figcaption>
 </figure>
 
 Slow bleed leads to currency crisis as the expected value of bitcoins solidifies in people's minds. At first they are conservative, they invest "what they can afford to lose". After 12-18 months, their small stash of bitcoins has dramatically increased in value. They see no reason why this long term trend should reverse: the fundamentals have improved and yet adoption remains low. Their confidence increases. They buy more bitcoins. They rationalize: "well, it's only \[1-5%\] of my investments". They see the price crash a few times, due to bubbles bursting or just garden-variety panic sales – it entices them to buy more, "a bargain". Bitcoin grows on the asset side of their balance sheet.
@@ -95,12 +95,21 @@ A speculative attack that seems isolated to one or a few weak currencies, but ca
 Bitcoin will become mainstream. The Bitcoin skeptics don't understand this due to their biases and lack of financial knowledge. First, they are in as strong an echo chamber as Bitcoin skeptics.[^10] They [rabidly search](http://www.reddit.com/r/buttcoin) for evidence that confirms their view of Bitcoin. Second, they misunderstand how strong currencies like bitcoin overtake weak currencies like the dollar: it is through speculative attacks and currency crises caused by [investors](http://en.wikipedia.org/wiki/George_Soros#Currency_speculation), not through the careful evaluation of tech journalists and 'mainstream consumers'. To honor these soon to be extinct skeptics, the Nakamoto Institute has launched [A Tribute to Bold Assertions](/the-skeptics).
 
 [^1]: No, seriously, there are people on the Internet spending a non-trivial amount of time writing about a currency they think is going to fail yet continues to succeed beyond anyone's expectations. I get schadenfreude from their lack of schadenfreude. Granted, a few of them are being paid to write controversial click bait and/or just [concern trolling](http://www.urbandictionary.com/define.php?term=concern+troll) – both activities that I respect and understand.
+
 [^2]: This is generally stated by people who are in the 'out-group' and fantasize about being in the 'in-group' through politics/pedigree rather than economic/meritocratic processes. Demographically, they probably overlap with fans of [The Secret](<https://en.wikipedia.org/wiki/The_Secret_(Byrne_book)>). Economically, they are without exception [bezzlers](http://trilema.com/2014/the-bezzle-usd-and-the-tide-usd/#footnote_1_53585).
+
 [^3]: Bitcoin has entered its [Eternal September](http://en.wikipedia.org/wiki/Eternal_September), where every person new to Bitcoin thinks they have a unique understanding of Bitcoin and everyone ought to hear about it. There's an endless flood of newbies 'concerned' about such and such 'problem' with Bitcoin. The Bitcoin community does these arrivistes a real disservice by taking them seriously instead of just telling them 'read more'.
+
 [^4]: The opposite of Bitcoin Jesus. Bitcoin [Jonah](http://en.wikipedia.org/wiki/Jonah_complex) is a defeatist, self-sabotaging, and timid 'man' who is on a permanent quest to confirm Bitcoin's weakness.
+
 [^5]: [Bitcoin is the Best Unit of Account](/mempool/bitcoin-is-the-best-unit-of-account) by Daniel Krawisz
+
 [^6]: [The Bitcoin Central Bank’s Perfect Monetary Policy](/mempool/the-bitcoin-central-banks-perfect-monetary-policy) by Pierre Rochard
+
 [^7]: [Bitcoin Has No Image Problem](/mempool/bitcoin-has-no-image-problem) by Daniel Krawisz
+
 [^8]: [Hyperbitcoinization](/mempool/hyperbitcoinization) by Daniel Krawisz
+
 [^9]: If you disagree then either you have not been learning or you have not been engaging in the debate, go back to square one.
+
 [^10]: 'I live in a rather special world. I only know one person who voted for Nixon. Where they are I don't know. They're outside my ken. But sometimes when I'm in a theater I can feel them.' - [Pauline Kael](http://en.wikiquote.org/wiki/Pauline_Kael)

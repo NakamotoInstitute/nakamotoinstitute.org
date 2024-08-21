@@ -1,9 +1,12 @@
-from pydantic import model_validator
+from urllib.parse import urlparse
+
+from pydantic import computed_field, model_validator
 from pydantic_settings import BaseSettings
 
 from .constants import Environment
 
 DEFAULT_BASE_URL = "http://localhost:8000"
+DEFAULT_SITE_URL = "http://localhost:3000"
 DEBUG_CDN_BASE_URL = f"{DEFAULT_BASE_URL}/static"
 
 
@@ -13,6 +16,8 @@ class Settings(BaseSettings):
     )
     ENVIRONMENT: Environment = Environment.PRODUCTION
     BASE_URL: str | None = None
+    SITE_URL: str | None = None
+    SATOSHI_REDIRECT: bool = True
     CDN_ACCESS_KEY: str | None = None
     CDN_SECRET_KEY: str | None = None
     CDN_BUCKET_NAME: str | None = None
@@ -24,6 +29,18 @@ class Settings(BaseSettings):
     def check_base_url(self) -> "Settings":
         if self.ENVIRONMENT.is_debug and self.BASE_URL is None:
             self.BASE_URL = DEFAULT_BASE_URL
+        return self
+
+    @model_validator(mode="after")
+    def check_site_url(self) -> "Settings":
+        if self.ENVIRONMENT.is_debug and self.SITE_URL is None:
+            self.SITE_URL = DEFAULT_SITE_URL
+        return self
+
+    @model_validator(mode="after")
+    def check_satoshi_redirect(self) -> "Settings":
+        if not self.ENVIRONMENT.is_debug:
+            self.SATOSHI_REDIRECT = True
         return self
 
     @model_validator(mode="after")
@@ -52,6 +69,14 @@ class Settings(BaseSettings):
             self.CDN_BASE_URL = DEBUG_CDN_BASE_URL
 
         return self
+
+    @computed_field
+    def SATOSHI_URL(self) -> str:
+        if not self.SATOSHI_REDIRECT:
+            return f"{self.SITE_URL}/satoshi"
+        else:
+            parsed_url = urlparse(self.SITE_URL)
+            return f"{parsed_url.scheme}://satoshi.{parsed_url.netloc}"
 
 
 settings = Settings()

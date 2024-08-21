@@ -375,7 +375,7 @@ Whatever the balance of historical investigation suggests was the case with moni
   </li>
 
   <li>
-    <p>———. 2008b. <a href="https://satoshi.nakamotoinstitute.org/emails/cryptography/13/">“Re: Bitcoin P2P e-cash paper 2008-11-17 12:04:47 UTC.”</a> <em>The Cryptography Mailing List</em>.</p>
+    <p>———. 2008b. <a href="/satoshi/emails/cryptography/13/">“Re: Bitcoin P2P e-cash paper 2008-11-17 12:04:47 UTC.”</a> <em>The Cryptography Mailing List</em>.</p>
   </li>
 
   <li>
