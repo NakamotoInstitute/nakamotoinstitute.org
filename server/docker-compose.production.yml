@@ -27,7 +27,7 @@ services:
       - ./site:/srv
       - caddy_data:/data
       - caddy_config:/config
-    
+
   postgres:
     image: postgres:16
     volumes:

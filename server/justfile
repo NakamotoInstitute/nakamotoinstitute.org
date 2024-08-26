@@ -12,6 +12,9 @@ build:
 up *args:
   {{docker_compose_cmd}} up {{args}} -d
 
+watch *args:
+  {{docker_compose_cmd}} watch {{args}}
+
 stop:
   {{docker_compose_cmd}} stop
 

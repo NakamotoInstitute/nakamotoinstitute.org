@@ -1,28 +1,18 @@
-FROM python:3.11-slim AS python
+FROM python:3.12-slim
 
-FROM python AS builder
+# Install uv
+COPY --from=ghcr.io/astral-sh/uv:0.4 /uv /bin/uv
 
-COPY ./requirements .
+# Copy the application into the container.
+COPY . /app
 
-RUN pip wheel --wheel-dir /usr/src/app/wheels \
-  -r dev.txt
-
-FROM python AS runtime
-
-ENV PYTHONUNBUFFERED 1
-ENV PYTHONDONTWRITEBYTECODE 1
-
+# Install the application dependencies.
 WORKDIR /app
-COPY --from=builder /usr/src/app/wheels  /wheels/
-
-RUN pip install --no-cache-dir --no-index --find-links=/wheels/ /wheels/* \
-  && rm -rf /wheels/
+RUN uv sync --no-cache
 
 COPY ./compose/local/fastapi/entrypoint /entrypoint
 RUN sed -i 's/\r$//g' /entrypoint
 RUN chmod +x /entrypoint
-
-COPY . /app
 
 EXPOSE 8000
 

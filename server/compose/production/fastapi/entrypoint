@@ -4,9 +4,9 @@ set -o errexit
 set -o pipefail
 set -o nounset
 
-python scripts/wait_for_postgres.py
+/app/.venv/bin/python scripts/wait_for_postgres.py
 
-python -m alembic upgrade head
-python cli.py content initialize
-python cli.py cdn sync
-exec uvicorn sni.main:app --host 0.0.0.0 --port 8000 --workers 4
+/app/.venv/bin/python -m alembic upgrade head
+/app/.venv/bin/python cli.py content initialize
+/app/.venv/bin/python cli.py cdn sync
+/app/.venv/bin/uvicorn sni.main:app --host 0.0.0.0 --port 8000 --workers 4

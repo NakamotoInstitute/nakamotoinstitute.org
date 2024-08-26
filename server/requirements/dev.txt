@@ -1,4 +1,0 @@
--r base.txt
-ruff==0.6.2
-types-beautifulsoup4==4.12.0.20240511
-types-PyYaml==6.0.12.20240808
