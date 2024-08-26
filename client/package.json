@@ -10,8 +10,8 @@
     "translate:extract": "i18next -c ./i18next-parser.config.js --fail-on-warnings"
   },
   "dependencies": {
-    "@floating-ui/react": "^0.26.22",
-    "@t3-oss/env-nextjs": "^0.11.0",
+    "@floating-ui/react": "^0.26.23",
+    "@t3-oss/env-nextjs": "^0.11.1",
     "@types/hast": "^3.0.4",
     "big.js": "^6.2.1",
     "clsx": "^2.1.1",
