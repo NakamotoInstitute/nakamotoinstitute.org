@@ -191,7 +191,7 @@ class DocumentNode(Base):
     __tablename__ = "document_nodes"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    slug: Mapped[str] = mapped_column(String, nullable=False, unique=True)
+    slug: Mapped[str] = mapped_column(String, nullable=False)
     title: Mapped[str] = mapped_column(String, nullable=False)
     nav_title: Mapped[str] = mapped_column(String, nullable=True)
     heading: Mapped[str] = mapped_column(String, nullable=True)
@@ -218,6 +218,8 @@ class DocumentNode(Base):
     children: Mapped[list["DocumentNode"]] = relationship(
         "DocumentNode", back_populates="parent", order_by=order, join_depth=1
     )
+
+    __table_args__ = (UniqueConstraint("slug", "document_translation_id"),)
 
     @property
     def root_parent(self):
