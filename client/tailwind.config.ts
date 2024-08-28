@@ -174,6 +174,13 @@ const config: Config = {
               padding: "0.5em 0",
               overflowX: "scroll",
             },
+            "ol.bibliography,ul.bibliography": {
+              paddingInlineStart: em(40, 16),
+              li: {
+                listStyle: "none",
+                textIndent: em(-40, 16),
+              },
+            },
           },
         },
         lg: {

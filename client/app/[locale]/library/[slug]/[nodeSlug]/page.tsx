@@ -21,7 +21,7 @@ export async function generateMetadata({
   const node = await getLibraryDocNode(nodeSlug, slug, locale);
 
   return {
-    title: `${node.title} | ${node.docTitle}`,
+    title: node.heading ? `${node.heading}: ${node.title}` : node.title,
     alternates: {
       canonical: urls(locale).library.docNode(slug, nodeSlug),
     },
@@ -35,7 +35,7 @@ type NodeNavigationProps = {
 
 async function NodeNavigation({ node, locale }: NodeNavigationProps) {
   return (
-    <div className="max-w-4.5xl mx-auto flex w-full justify-between gap-5 px-4">
+    <div className="mx-auto flex w-full max-w-4.5xl justify-between gap-5 px-4">
       {node.previous ? (
         <div className="min-w-0 flex-1 flex-shrink-0">
           <Link
