@@ -148,11 +148,11 @@ const config: Config = {
             },
             blockquote: {
               fontWeight: 400,
-              borderLeft: "1px dashed",
+              borderInlineStart: "1px dashed",
               quotes: null,
             },
             "figure:has(blockquote)": {
-              borderLeft: "1px dashed",
+              borderInlineStart: "1px dashed",
               borderColor: "var(--tw-prose-quote-borders)",
             },
             "figure > blockquote": {
