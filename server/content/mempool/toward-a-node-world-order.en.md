@@ -240,7 +240,7 @@ Since bitcoin's genesis block, humanity no longer needs to place its trust in th
       <p><a href="/satoshi/posts/bitcointalk/511/">Posted on Bitcointalk</a> on November 25, 2010 <a href="#fnref10">↩︎</a></p>
     </li>
     <li id="fn11">
-      <p>See <a href="https://www.gwern.net/Bitcoin-is-Worse-is-Better">“Bitcoin is Worse is Better”</a> by Gwern Branwen. <a href="#fnref11">↩︎</a></p>
+      <p>See <a href="/library/bitcoin-is-worse-is-better/">“Bitcoin is Worse is Better”</a> by Gwern Branwen. <a href="#fnref11">↩︎</a></p>
     </li>
     <li id="fn12">
       <p>A pruned node can discard data that has already been verified and is not needed for further verification, but archival nodes retain entire copies of the blockchain for permanent record keeping. <a href="#fnref12">↩︎</a></p>

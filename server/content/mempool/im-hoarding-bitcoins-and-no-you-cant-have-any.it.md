@@ -1,7 +1,6 @@
 ---
 title: Accumulo bitcoin e no, non ne do a nessuno!
 slug: accumulo-bitcoin-e-no-non-ne-do-a-nessuno
-image: uncle-scrooge.jpg
 image_alt: Uncle Scrooge
 translators:
   - il-portico-dipinto
