@@ -8,7 +8,7 @@ display_date: Originally published in 1997
 categories:
   - cryptography
 doctype: essay
-external: http://web.archive.org/web/20061230075325/http://www.theiia.org/ITAudit/index.cfm?act=itaudit.archive&fid=216
+external: https://web.archive.org/web/20140406003844/http://szabo.best.vwh.net/msc.html
 ---
 
 Imagine the ideal protocol. It would have the most trustworthy third party imaginable &ndash; a diety who is on _everybody's_ side. All the parties would send their inputs to God. God would reliably determine the results and return the outputs. God being the ultimate in confessional discretion, no party would learn anything more about the other parties' inputs than they could learn from their own inputs and the output.

@@ -41,7 +41,7 @@ With mutually confidential auditing we will be able to gain high confidence in t
   </li>
 
   <li id="fn4">
-    <p><a href="/the-god-protocols/">Overview</a>; Quorum systems model, http://szabo.best.vwh.net/quorum.html&nbsp;<a href="#ref4">↩</a></p>
+    <p><a href="/the-god-protocols/">Overview</a>; Quorum systems model, <a href="/library/quorum-systems/">“Quorum Systems”</a>&nbsp;<a href="#ref4">↩</a></p>
   </li>
 </ol>
 
