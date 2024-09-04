@@ -14,7 +14,7 @@ excerpt: Sanayi Devrimi, insanlığı Malthus tuzağından kurtardı. Bitcoin de
   <figcaption>Ludwig von Mises, <em>The Theory of Money and Credit</em><sup><a href="#fn1" id="fnref1">[1]</a></sup></figcaption>
 </figure>
 
-## Introduction
+## Giriş
 
 İnsanın başlangıçtaki ilk durumu yoksulluktur. Doğa, mevcut araçların kıtlığı konusunda merhametsizdir. Belirli bir miktarda teknolojiye sahip belirli bir miktarda toprak üzerinde, emeğin çıktısının fiziksel bir sınırı vardır. Hans-Hermann Hoppe’nın gözlemlediği gibi:
 
@@ -34,13 +34,11 @@ Malthus tuzağı kırılmıştır, ancak insanlığın daha da zengin bir işbir
 
 Mükemmel kesinliğin olduğu bir dünyada paraya ihtiyaç yoktur. Ludwig von Mises, _İnsan Eylemi adlı başyapıtında_ “dengeli dönüşüm ekonomisi” (evenly rotating economy) olarak adlandırdığı varsayımsal durumu, değişimin ve dolayısıyla belirsizliğin olmadığı bir durum olarak tanımlar. Bu dengede eylem yoktur, çünkü kaynakların ne zaman ve nasıl tahsis edileceği ve takas edileceğine dair tüm bilgiler zaten bilinmektedir.
 
-Mükemmel kesinliğin olduğu bir dünyada paraya ihtiyaç yoktur. Ludwig von Mises, _İnsan Eylemi adlı başyapıtında_ “dengeli dönüşüm ekonomisi” (evenly rotating economy) olarak adlandırdığı varsayımsal durumu, değişimin ve dolayısıyla belirsizliğin olmadığı bir durum olarak tanımlar. Bu dengede eylem yoktur, çünkü kaynakların ne zaman ve nasıl tahsis edileceği ve takas edileceğine dair tüm bilgiler zaten bilinmektedir.
-
 Ancak gerçek dünyada geleceği bilmiyoruz. Belirsizlikle karşı karşıyayız ve bununla başa çıkmak için elimizde çok az araç var. Koşullar ve tercihler hem kendimiz hem de başkaları için her an değişebilir. Bu nedenle hazırlık yapmak zorundayız.<sup><a href="#fn5" id="fnref5">[5]</a></sup> İstediğimiz kaynakları elde etmek için doğrudan değiş tokuşa güvenemeyiz, çünkü bu, ihtiyaçların karşılıklı çakışması sorununu (double coincidence of wants problem) yaratabilir. Başkaları bizim istediğimiz şeylere sahip olmayabilir ya da onlar bizim sahip olduğumuz şeyleri istemeyebilir ya da tam tersi olabilir. Bu belirsizlikle başa çıkmak için, malları sırf kendileri için değil, ticaret yapmak istediğimiz kişiler tarafından istenme ihtimalinin daha yüksek olduğunu düşündüğümüz için edinmeye başlarız. Bu mallar “mübadele araçları” olarak sınıflandırılabilir.
 
 Her mal aynı derecede kullanışlı değildir. Eğer mal dayanıklı değilse, piyasa aktörü gelecekte ticaret yapmak istediğinde hâlâ kullanışlı olacağından emin olamaz. Eğer taşınabilir değilse, gelecekte ticaret yapmak istediği yerde bulunmayabilir. Bölünebilir değilse, gelecekte ticaret yapmak istediği miktarda mevcut olmayabilir. Bir piyasa aktörü, bu belirsizliklerle en iyi şekilde başa çıkabilecek ve mümkün olan en fazla zaman, mekân ve ölçekte satılabilir kalacak bir mal seçmek isteyecektir. Mises’in _The Theory of Money and Credit_’te belirttiği gibi, “mübadele aracı olarak kullanılan bir dizi maldan daha az pazarlanabilir olanların, en sonunda evrensel olarak mübadele aracı işlevi gören, yani para işlevi gören tek bir mal kalana kadar birer birer reddedilmesi kaçınılmaz bir eğilimdir.”<sup><a href="#fn6" id="fnref6">[6]</a></sup>
 
-Tarihsel olarak, en çok satılabilir mala yönelik bu piyasa rekabeti, düşük arz artış oranı, dayanıklılık, işlenebilirlik gibi cazip fiziksel özellikleri nedeniyle altın üzerinde yoğunlaşmıştır. Ancak, bu özellikler o zamanlar faydalı olsa da, uzun vadede yeterli olmadıkları açıktır..
+Tarihsel olarak, en çok satılabilir mala yönelik bu piyasa rekabeti, düşük arz artış oranı, dayanıklılık, işlenebilirlik gibi cazip fiziksel özellikleri nedeniyle altın üzerinde yoğunlaşmıştır. Ancak, bu özellikler o zamanlar faydalı olsa da, uzun vadede yeterli olmadıkları açıktır.
 
 ## Devlet ve Motivasyonu
 
