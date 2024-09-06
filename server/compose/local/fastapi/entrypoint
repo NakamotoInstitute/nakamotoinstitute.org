@@ -4,7 +4,7 @@ set -o errexit
 set -o pipefail
 set -o nounset
 
-/app/.venv/bin/python scripts/wait_for_postgres.py
+python scripts/wait_for_postgres.py
 
-/app/.venv/bin/python -m alembic upgrade head
-/app/.venv/bin/uvicorn sni.main:app --reload --reload-include "**/*.md" --reload-include "**/*.json" --host 0.0.0.0
+python -m alembic upgrade head
+uvicorn sni.main:app --reload --reload-include "**/*.md" --reload-include "**/*.json" --host 0.0.0.0

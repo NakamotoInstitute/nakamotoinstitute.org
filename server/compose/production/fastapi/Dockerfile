@@ -14,6 +14,8 @@ COPY ./compose/production/fastapi/entrypoint /entrypoint
 RUN sed -i 's/\r$//g' /entrypoint
 RUN chmod +x /entrypoint
 
+ENV PATH="/app/.venv/bin:$PATH"
+
 EXPOSE 8000
 
 CMD ["/entrypoint"]
