@@ -1,32 +1,35 @@
-from sni.content.json import JSONImporter
-from sni.content.markdown.renderer import MDRender
-from sni.models import (
-    ForumPost,
-    ForumPostFile,
-    ForumThread,
-    ForumThreadFile,
-)
-from sni.satoshi.quotes.importers import QuoteImporter
+from sni.content.json import import_json_data
+from sni.content.markdown.renderer import MDRenderer
+from sni.models import ForumPost, ForumThread, Quote
 
 from .schemas import ForumPostsJSONModel, ForumThreadsJSONModel
 
 
-class ForumPostImporter(JSONImporter):
-    file_path = "data/forum_posts.json"
-    schema = ForumPostsJSONModel
-    model = ForumPost
-    file_model = ForumPostFile
-    content_type = "forum_posts"
-
-    def process_item_data(self, item_data):
-        item_data["text"] = MDRender.process_html(item_data["text"])
+def import_forum_posts(
+    db_session, force: bool = False, force_conditions: list[bool] = []
+):
+    def process_item_data(item_data):
+        item_data["text"] = MDRenderer.process_html(item_data["text"])
         return item_data
 
+    return import_json_data(
+        db_session,
+        model=ForumPost,
+        schema=ForumPostsJSONModel,
+        file_path="data/forum_posts.json",
+        force=force or any(force_conditions),
+        process_item=process_item_data,
+    )
 
-class ForumThreadImporter(JSONImporter):
-    file_path = "data/forum_threads.json"
-    schema = ForumThreadsJSONModel
-    model = ForumThread
-    file_model = ForumThreadFile
-    content_type = "forum_threads"
-    dependent_importers = [QuoteImporter, ForumPostImporter]
+
+def import_forum_threads(
+    db_session, force: bool = False, force_conditions: list[bool] = []
+):
+    return import_json_data(
+        db_session,
+        model=ForumThread,
+        schema=ForumThreadsJSONModel,
+        file_path="data/forum_threads.json",
+        dependent_models=[Quote, ForumPost],
+        force=force or any(force_conditions),
+    )

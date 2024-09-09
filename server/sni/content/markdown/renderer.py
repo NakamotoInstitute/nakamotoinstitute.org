@@ -48,7 +48,7 @@ class SNIMarkdownRenderer(RendererHTML):
         return self.renderToken(tokens, idx, options, env)
 
 
-class MDRender:
+class MDRenderer:
     """
     Class to process Markdown files and convert them to HTML.
     Handles front matter using YAML.

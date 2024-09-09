@@ -7,4 +7,4 @@ set -o nounset
 python scripts/wait_for_postgres.py
 
 python -m alembic upgrade head
-uvicorn sni.main:app --reload --reload-include "**/*.md" --reload-include "**/*.json" --host 0.0.0.0
+uvicorn sni.main:app --reload --reload-include "**/*.md" --reload-include "**/*.json" --reload-include "**/*.yaml" --host 0.0.0.0

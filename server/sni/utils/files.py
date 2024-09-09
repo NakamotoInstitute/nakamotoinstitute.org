@@ -15,7 +15,7 @@ def get_file_hash(filename, hash_function="sha256"):
 
 def get_directory_hash(directory):
     sha256_hash = hashlib.sha256()
-    for root, dirs, files in os.walk(directory):
+    for root, _, files in os.walk(directory):
         for file in sorted(files):
             filepath = os.path.join(root, file)
             file_hash = get_file_hash(filepath)

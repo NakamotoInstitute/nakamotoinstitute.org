@@ -1,18 +1,19 @@
-import collections
 import os
 from abc import ABC, abstractmethod
-from datetime import datetime
-from typing import Any, Type
 
-from pydantic import BaseModel, ValidationError
 from sqlalchemy import select
 
 from sni.constants import Locales
 from sni.database import SessionLocalSync
-from sni.models import FileMetadata, MarkdownContent
-from sni.utils.files import get_directory_hash, get_file_hash, split_filename
+from sni.models import HTMLRenderableContent, MarkdownContent
+from sni.utils.files import split_filename
 
-from .renderer import MDRender
+from ..metadata import Actions, MetadataManager
+from .file_processor import process_file
+
+
+def select_schemas(schemas: dict, *keys: str) -> dict:
+    return {k: schemas[k] for k in keys}
 
 
 class BaseMarkdownImporter(ABC):
@@ -20,9 +21,14 @@ class BaseMarkdownImporter(ABC):
 
     def __init__(self):
         self.files_in_db = {}
-        self.actions = collections.Counter(new=0, updated=0, deleted=0, unchanged=0)
         self.db_session = SessionLocalSync()
         self.force = False
+        self.metadata_manager = MetadataManager(self.db_session, force=self.force)
+        self.schemas = self.get_schema_dict()
+
+    @abstractmethod
+    def get_schema_dict(self) -> dict:
+        raise NotImplementedError
 
     @abstractmethod
     def import_content(self) -> None:
@@ -39,148 +45,93 @@ class BaseMarkdownImporter(ABC):
 
     def run_import(self, force: bool = False):
         self.force = force
+        self.metadata_manager.force = force
         print(f"Importing {self.content_type}...", end="")
         try:
             self.import_content()
         finally:
             self.db_session.close()
         print("DONE")
-        print(
-            "{new_files} new, {updated_files} updated, {deleted_files} deleted".format(
-                new_files=self.actions["new"],
-                updated_files=self.actions["updated"],
-                deleted_files=self.actions["deleted"],
-            )
-        )
+        print(self.metadata_manager.get_action_summary())
         print()
-
-    def validate_front_matter(
-        self, front_matter: dict[Any, Any] | None, schema: Type[BaseModel]
-    ) -> BaseModel | None:
-        try:
-            return schema.parse_obj(front_matter)
-        except ValidationError as e:
-            print(f"Validation error: {e}")
-            return None
-
-    def process_markdown_file(
-        self, filepath: str, schema: Type[BaseModel]
-    ) -> tuple[dict[Any, Any] | None, str, str]:
-        raw_front_matter, html_content, markdown_content = MDRender.process_md(filepath)
-
-        if raw_front_matter:
-            validated_front_matter = self.validate_front_matter(
-                raw_front_matter, schema
-            )
-            if validated_front_matter:
-                return validated_front_matter.dict(), html_content, markdown_content
-
-        return None, html_content, markdown_content
 
     def _populate_files_from_db(self):
         self.files_in_db = {
-            content.file_metadata.filename: content
-            for content in self.db_session.scalars(
-                select(MarkdownContent).filter_by(content_type=self.content_key)
-            ).all()
-            if os.path.isfile(content.file_metadata.filename)
+            item.content.file_metadata.filename: item
+            for item in self.db_session.scalars(select(self.model)).all()
+            if os.path.isfile(item.content.file_metadata.filename)
         }
-
-    def _get_file_hash(self, filepath):
-        return get_file_hash(filepath)
-
-    def _needs_update(self, file_record, current_hash, current_timestamp):
-        return self.force or file_record.file_metadata.hash != current_hash
-
-    def _create_new_metadata(self, filepath, current_hash, current_timestamp):
-        new_metadata = FileMetadata(
-            filename=filepath, hash=current_hash, last_modified=current_timestamp
-        )
-        self.db_session.add(new_metadata)
-        return new_metadata
-
-    def _update_existing_metadata(self, file_record, current_hash, current_timestamp):
-        current_metadata = file_record.file_metadata
-        current_metadata.hash = current_hash
-        current_metadata.last_modified = current_timestamp
-        self.db_session.add(current_metadata)
-        return current_metadata
 
     def _process_deleted_files(self):
         deleted_files_count = len(self.files_in_db)
         for deleted_file in self.files_in_db.values():
             self.db_session.delete(deleted_file)
+            self.metadata_manager.record_action(Actions.DELETED)
         return deleted_files_count
 
 
 class MarkdownImporter(BaseMarkdownImporter):
+    def get_schema_dict(self):
+        return {"canonical": self.schema}
+
     def import_content(self):
         self._populate_files_from_db()
 
         for filename in self.filenames:
-            action = self._process_file(filename)
-            self.actions[action] += 1
+            self._process_file(filename)
 
-        self.actions["deleted"] = self._process_deleted_files()
+        self._process_deleted_files()
         self.db_session.commit()
 
     def _process_file(self, filename):
         filepath = os.path.join(self.directory_path, filename)
-        current_hash = self._get_file_hash(filepath)
-        current_timestamp = datetime.fromtimestamp(os.path.getmtime(filepath))
-
-        file_record = self.files_in_db.pop(filepath, None)
-        new_metadata = None
-
-        if not file_record:
-            new_metadata = self._create_new_metadata(
-                filepath, current_hash, current_timestamp
-            )
-            action = "new"
-        elif self._needs_update(file_record, current_hash, current_timestamp):
-            new_metadata = self._update_existing_metadata(
-                file_record, current_hash, current_timestamp
-            )
-            action = "updated"
-        else:
-            action = "unchanged"
+        existing_file = self.files_in_db.pop(filepath, None)
+        old_metadata = existing_file.content.file_metadata if existing_file else None
+        action, new_metadata = self.metadata_manager.process_file(
+            filepath, old_metadata
+        )
 
         if new_metadata:
             slug, *_ = split_filename(filename)
             self._process_and_add_file(new_metadata, slug, action)
 
-        return action
+        self.metadata_manager.record_action(action)
 
     def _process_and_add_file(self, metadata, slug, action):
-        validated_data, html_content, file_content = self.process_markdown_file(
-            metadata.filename, self.schema
+        results, html_content, file_content = process_file(
+            metadata.filename, self.schemas
         )
+        canonical_data = results["canonical"].data
 
-        if action == "updated":
+        if action == Actions.UPDATED:
             existing_entry = self.db_session.scalars(
-                select(self.model).filter_by(file_metadata=metadata)
+                select(self.model)
+                .join(self.model.content)
+                .filter(HTMLRenderableContent.file_metadata == metadata)
             ).first()
             if existing_entry:
-                for key, value in validated_data.items():
+                existing_entry.content.file_content = file_content
+                existing_entry.content.html_content = html_content
+                existing_entry.content.file_metadata = metadata
+                for key, value in canonical_data.items():
                     setattr(existing_entry, key, value)
                 existing_entry.slug = slug
-                existing_entry.file_content = file_content
-                existing_entry.html_content = html_content
-                existing_entry.file_metadata = metadata
-                existing_entry.content_type = self.content_key
             else:
                 raise ValueError(
                     f"No existing {self.model.__name__} found for updated metadata: {metadata.id}"  # noqa: E501
                 )
 
-        elif action == "new":
-            new_entry = self.model(
-                **validated_data,
-                slug=slug,
+        elif action == Actions.NEW:
+            new_content = MarkdownContent(
                 file_content=file_content,
                 html_content=html_content,
                 file_metadata=metadata,
-                content_type=self.content_key,
+            )
+            self.db_session.add(new_content)
+            new_entry = self.model(
+                **canonical_data,
+                slug=slug,
+                content=new_content,
             )
             self.db_session.add(new_entry)
 
@@ -193,6 +144,12 @@ class TranslatedMarkdownImporter(BaseMarkdownImporter):
             self.english_filenames,
             self.non_english_filenames,
         ) = self._categorize_filenames()
+
+    def get_schema_dict(self):
+        return {
+            "canonical": self.canonical_schema,
+            "translation": self.translation_schema,
+        }
 
     def _categorize_filenames(self):
         english_filenames = []
@@ -207,24 +164,29 @@ class TranslatedMarkdownImporter(BaseMarkdownImporter):
 
         return english_filenames, non_english_filenames
 
+    def _populate_files_from_db(self):
+        self.files_in_db = {
+            item.content.file_metadata.filename: item
+            for item in self.db_session.scalars(select(self.translation_model)).all()
+            if os.path.isfile(item.content.file_metadata.filename)
+        }
+
     def import_content(self):
         self._populate_files_from_db()
         self._import_english_content()
         self.db_session.commit()
         self._populate_content_map_from_db()
         self._import_translated_content()
-        self.actions["deleted"] = self._process_deleted_files()
+        self._process_deleted_files()
         self.db_session.commit()
 
     def _import_english_content(self):
         for filename in self.english_filenames:
-            action = self._process_file(filename)
-            self.actions[action] += 1
+            self._process_file(filename)
 
     def _import_translated_content(self):
         for filename in self.non_english_filenames:
-            action = self._process_file(filename, english=False)
-            self.actions[action] += 1
+            self._process_file(filename, english=False)
 
     def _populate_content_map_from_db(self):
         all_canonical_entries = self.db_session.query(self.canonical_model).all()
@@ -239,24 +201,11 @@ class TranslatedMarkdownImporter(BaseMarkdownImporter):
 
     def _process_file(self, filename, english=True):
         filepath = os.path.join(self.directory_path, filename)
-        current_hash = get_file_hash(filepath)
-        current_timestamp = datetime.fromtimestamp(os.path.getmtime(filepath))
-
-        file_record = self.files_in_db.pop(filepath, None)
-        new_metadata = None
-
-        if not file_record:
-            new_metadata = self._create_new_metadata(
-                filepath, current_hash, current_timestamp
-            )
-            action = "new"
-        elif self._needs_update(file_record, current_hash, current_timestamp):
-            new_metadata = self._update_existing_metadata(
-                file_record, current_hash, current_timestamp
-            )
-            action = "updated"
-        else:
-            action = "unchanged"
+        existing_file = self.files_in_db.pop(filepath, None)
+        old_metadata = existing_file.content.file_metadata if existing_file else None
+        action, new_metadata = self.metadata_manager.process_file(
+            filepath, old_metadata
+        )
 
         if new_metadata:
             slug, locale, *_ = split_filename(filename)
@@ -265,30 +214,21 @@ class TranslatedMarkdownImporter(BaseMarkdownImporter):
             else:
                 self.process_and_add_translated_file(new_metadata, slug, locale, action)
 
-        return action
-
-    def _process_canonical_file(self, filepath: str, canonical_schema, schema):
-        front_matter_dict, html_content, file_content = MDRender.process_md(filepath)
-        canonical_data = self.validate_front_matter(front_matter_dict, canonical_schema)
-        translation_data = self.validate_front_matter(front_matter_dict, schema)
-        return canonical_data, translation_data, html_content, file_content
+        self.metadata_manager.record_action(action)
 
     def process_and_add_canonical_file(self, metadata, slug, action):
-        (
-            validated_canonical_data,
-            validated_translation_data,
-            html_content,
-            file_content,
-        ) = self._process_canonical_file(
-            metadata.filename, self.canonical_schema, self.translation_schema
+        results, html_content, file_content = process_file(
+            metadata.filename, select_schemas(self.schemas, "canonical", "translation")
         )
 
-        canonical_data = validated_canonical_data.dict()
-        translation_data = validated_translation_data.dict()
+        canonical_data = results["canonical"].data
+        translation_data = results["translation"].data
 
-        if action == "updated":
+        if action == Actions.UPDATED:
             existing_translation_entry = self.db_session.scalars(
-                select(self.translation_model).filter_by(file_metadata=metadata)
+                select(self.translation_model)
+                .join(self.translation_model.content)
+                .filter(HTMLRenderableContent.file_metadata == metadata)
             ).first()
             if existing_translation_entry:
                 existing_canonical_entry = getattr(
@@ -301,8 +241,8 @@ class TranslatedMarkdownImporter(BaseMarkdownImporter):
                     setattr(existing_translation_entry, key, value)
                 existing_translation_entry.slug = slug
                 existing_translation_entry.locale = Locales.ENGLISH
-                existing_translation_entry.file_content = file_content
-                existing_translation_entry.html_content = html_content
+                existing_translation_entry.content.file_content = file_content
+                existing_translation_entry.content.html_content = html_content
                 self.db_session.add(existing_translation_entry)
 
                 existing_canonical_entry = getattr(
@@ -316,7 +256,7 @@ class TranslatedMarkdownImporter(BaseMarkdownImporter):
                         setattr(existing_canonical_entry, key, value)
                     self.db_session.add(existing_canonical_entry)
 
-        elif action == "new":
+        elif action == Actions.NEW:
             canonical_entry_data = self.process_canonical_additional_data(
                 canonical_data
             )
@@ -328,12 +268,18 @@ class TranslatedMarkdownImporter(BaseMarkdownImporter):
                 translation_data, canonical_entry, metadata
             )
             translation_entry_data.pop("slug", None)
+
+            new_content = MarkdownContent(
+                file_content=file_content,
+                html_content=html_content,
+                file_metadata=metadata,
+            )
+            self.db_session.add(new_content)
             translation_entry = self.translation_model(
                 **translation_entry_data,
                 slug=slug,
                 locale=Locales.ENGLISH,
-                file_content=file_content,
-                html_content=html_content,
+                content=new_content,
                 **{self.content_key: canonical_entry},
             )
             self.db_session.add(translation_entry)
@@ -347,9 +293,10 @@ class TranslatedMarkdownImporter(BaseMarkdownImporter):
         return self._process_translation_metadata(translation_data, metadata)
 
     def process_and_add_translated_file(self, metadata, slug, locale, action):
-        translation_data, html_content, file_content = self.process_markdown_file(
-            metadata.filename, self.translation_schema
+        results, html_content, file_content = process_file(
+            metadata.filename, select_schemas(self.schemas, "translation")
         )
+        translation_data = results["translation"].data
 
         canonical_entry = self.content_map.get(slug)
         if not canonical_entry:
@@ -360,22 +307,30 @@ class TranslatedMarkdownImporter(BaseMarkdownImporter):
             translation_data, canonical_entry, metadata
         )
 
-        if action == "updated":
+        if action == Actions.UPDATED:
             existing_translation_entry = self.db_session.scalars(
-                select(self.translation_model).filter_by(file_metadata=metadata)
+                select(self.translation_model)
+                .join(self.translation_model.content)
+                .filter(HTMLRenderableContent.file_metadata == metadata)
             ).first()
             for key, value in translation_entry_data.items():
                 setattr(existing_translation_entry, key, value)
             existing_translation_entry.locale = locale
-            existing_translation_entry.file_content = file_content
-            existing_translation_entry.html_content = html_content
+            existing_translation_entry.content.file_content = file_content
+            existing_translation_entry.content.html_content = html_content
+            existing_translation_entry.content.file_metadata = metadata
             self.db_session.add(existing_translation_entry)
-        elif action == "new":
+        elif action == Actions.NEW:
+            new_content = MarkdownContent(
+                file_content=file_content,
+                html_content=html_content,
+                file_metadata=metadata,
+            )
+            self.db_session.add(new_content)
             translation_entry = self.translation_model(
                 **translation_entry_data,
                 locale=locale,
-                file_content=file_content,
-                html_content=html_content,
+                content=new_content,
                 **{self.content_key: canonical_entry["canonical"]},
             )
             self.db_session.add(translation_entry)
@@ -386,12 +341,18 @@ class TranslatedMarkdownImporter(BaseMarkdownImporter):
         return self._process_translation_metadata(translation_data, metadata)
 
     def _process_translation_metadata(self, translation_data, metadata):
-        translation_data["file_metadata"] = metadata
-        translation_data["content_type"] = self.content_key
         return translation_data
 
 
 class MarkdownDirectoryImporter(MarkdownImporter):
+    def get_schema_dict(self):
+        return {
+            "manifest": self.manifest_schema,
+            "canonical": self.canonical_schema,
+            "translation": self.translation_schema,
+            "node_content": self.node_content_schema,
+        }
+
     @property
     def filenames(self):
         dirs = [
@@ -403,96 +364,52 @@ class MarkdownDirectoryImporter(MarkdownImporter):
 
     def _populate_files_from_db(self):
         self.files_in_db = {
-            content.file_metadata.filename: content
-            for content in self.db_session.scalars(
-                select(MarkdownContent).filter_by(content_type=self.content_key)
-            ).all()
-            if os.path.isdir(content.file_metadata.filename)
+            item.content.file_metadata.filename: item
+            for item in self.db_session.scalars(select(self.translation_model)).all()
+            if os.path.isdir(item.content.file_metadata.filename)
         }
-
-    def _get_file_hash(self, filepath):
-        return get_directory_hash(filepath)
 
     def import_content(self):
         self._populate_files_from_db()
 
         for directory in self.filenames:
-            action = self._process_directory(directory)
-            self.actions[action] += 1
+            self._process_directory(directory)
 
-        self.actions["deleted"] = self._process_deleted_files()
+        self._process_deleted_files()
         self.db_session.commit()
 
     def _process_directory(self, directory):
         dir_path = os.path.join(self.directory_path, directory)
-        current_hash = self._get_file_hash(dir_path)
-        current_timestamp = datetime.fromtimestamp(os.path.getmtime(dir_path))
-
-        file_record = self.files_in_db.pop(dir_path, None)
-        new_metadata = None
-
-        if not file_record:
-            new_metadata = self._create_new_metadata(
-                dir_path, current_hash, current_timestamp
-            )
-            action = "new"
-        elif self._needs_update(file_record, current_hash, current_timestamp):
-            new_metadata = self._update_existing_metadata(
-                file_record, current_hash, current_timestamp
-            )
-            action = "updated"
-        else:
-            action = "unchanged"
+        existing_file = self.files_in_db.pop(dir_path, None)
+        action, new_metadata = self.metadata_manager.process_file(
+            dir_path, existing_file.content.file_metadata if existing_file else None
+        )
 
         if new_metadata:
             self._process_and_add_directory(new_metadata, dir_path, directory, action)
 
-        return action
-
-    def _process_manifest_file(
-        self, filepath: str, canonical_schema, translation_schema, manifest_schema
-    ):
-        manifest_file = os.path.join(filepath, "manifest.md")
-        front_matter_dict, html_content, file_content = MDRender.process_md(
-            manifest_file
-        )
-        canonical_data = self.validate_front_matter(front_matter_dict, canonical_schema)
-        translation_data = self.validate_front_matter(
-            front_matter_dict, translation_schema
-        )
-        manifest_data = self.manifest_schema.from_front_matter(front_matter_dict)
-        return (
-            canonical_data,
-            translation_data,
-            manifest_data,
-            html_content,
-            file_content,
-        )
+        self.metadata_manager.record_action(action)
 
     def _process_and_add_directory(self, metadata, directory, slug, action):
         manifest_file = os.path.join(directory, "manifest.md")
         content_dir = os.path.join(directory, "content")
 
         if os.path.isfile(manifest_file) and os.path.isdir(content_dir):
-            (
-                validated_canonical_data,
-                validated_translation_data,
-                validated_manifest_data,
-                html_content,
-                file_content,
-            ) = self._process_manifest_file(
-                metadata.filename,
-                self.canonical_schema,
-                self.translation_schema,
-                self.node_schema,
+            results, html_content, file_content = process_file(
+                manifest_file,
+                select_schemas(self.schemas, "manifest", "canonical", "translation"),
             )
+            manifest_data = results["manifest"].data
+            canonical_data = results["canonical"].data
+            translation_data = results["translation"].data
 
-            canonical_data = validated_canonical_data.dict()
-            translation_data = validated_translation_data.dict()
+            translation_entry = None
 
-            if action == "updated":
+            if action == Actions.UPDATED:
                 existing_translation_entry = self.db_session.scalars(
-                    select(self.translation_model).filter_by(file_metadata=metadata)
+                    select(self.translation_model)
+                    .join(self.translation_model.content)
+                    .filter(HTMLRenderableContent.file_metadata == metadata)
                 ).first()
                 if existing_translation_entry:
                     existing_canonical_entry = getattr(
@@ -510,8 +427,8 @@ class MarkdownDirectoryImporter(MarkdownImporter):
 
                     existing_translation_entry.slug = slug
                     existing_translation_entry.locale = Locales.ENGLISH
-                    existing_translation_entry.file_content = file_content
-                    existing_translation_entry.html_content = html_content
+                    existing_translation_entry.content.file_content = file_content
+                    existing_translation_entry.content.html_content = html_content
                     self.db_session.add(existing_translation_entry)
 
                     existing_canonical_entry = getattr(
@@ -527,7 +444,7 @@ class MarkdownDirectoryImporter(MarkdownImporter):
                         self.db_session.add(existing_canonical_entry)
                     translation_entry = existing_translation_entry
 
-            elif action == "new":
+            elif action == Actions.NEW:
                 canonical_entry_data = self.process_canonical_additional_data(
                     canonical_data
                 )
@@ -541,24 +458,31 @@ class MarkdownDirectoryImporter(MarkdownImporter):
                     translation_data, canonical_entry, metadata
                 )
                 translation_entry_data.pop("slug")
+
+                new_content = MarkdownContent(
+                    file_content=file_content,
+                    html_content=html_content,
+                    file_metadata=metadata,
+                )
+                self.db_session.add(new_content)
                 translation_entry = self.translation_model(
                     **translation_entry_data,
                     slug=slug,
                     locale=Locales.ENGLISH,
-                    file_content=file_content,
-                    html_content=html_content,
+                    content=new_content,
                     **{self.content_key: canonical_entry},
                 )
                 self.db_session.add(translation_entry)
                 self.db_session.flush()
 
-            self._insert_nodes(
-                validated_manifest_data.nodes,
-                None,
-                translation_entry.id,
-                1,
-                content_dir,
-            )
+            if translation_entry:
+                self._insert_nodes(
+                    manifest_data["nodes"],
+                    None,
+                    translation_entry.id,
+                    1,
+                    content_dir,
+                )
 
     def process_canonical_additional_data(self, canonical_data):
         return canonical_data
@@ -569,8 +493,6 @@ class MarkdownDirectoryImporter(MarkdownImporter):
         return self._process_translation_metadata(translation_data, metadata)
 
     def _process_translation_metadata(self, translation_data, metadata):
-        translation_data["file_metadata"] = metadata
-        translation_data["content_type"] = self.content_key
         return translation_data
 
     def _delete_existing_nodes(self, content_reference_id):
@@ -611,17 +533,17 @@ class MarkdownDirectoryImporter(MarkdownImporter):
 
     def _insert_node(self, slug, order, parent_id, content_reference_id, content_dir):
         md_file = os.path.join(content_dir, f"{slug}.md")
-        front_matter, html_content, markdown_content = MDRender.process_md(md_file)
-        validated_front_matter = self.validate_front_matter(
-            front_matter, self.node_content_schema
+        results, html_content, file_content = process_file(
+            md_file, select_schemas(self.schemas, "node_content")
         )
+        node_data = results["node_content"].data
 
         node = self.node_model(
             slug=slug,
-            **validated_front_matter.dict(),
+            **node_data,
             order=order,
             html_content=html_content,
-            file_content=markdown_content,
+            file_content=file_content,
             parent_id=parent_id,
             **{self.content_reference_id: content_reference_id},
         )

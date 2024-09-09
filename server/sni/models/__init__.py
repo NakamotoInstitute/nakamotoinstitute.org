@@ -1,5 +1,12 @@
 from .authors import Author  # noqa: F401
-from .content import FileMetadata, JSONFile, MarkdownContent, YAMLFile  # noqa: F401
+from .content import (  # noqa: F401
+    Content,
+    FileMetadata,
+    JSONContent,
+    MarkdownContent,
+    YAMLContent,
+    HTMLRenderableContent,
+)
 from .library import (  # noqa: F401
     Document,
     DocumentFormat,
@@ -19,18 +26,11 @@ from .mempool import (  # noqa: F401
     blog_post_translators,
 )
 from .podcast import Episode  # noqa: F401
-from .satoshi.emails import Email, EmailFile, EmailThread, EmailThreadFile  # noqa: F401
-from .satoshi.posts import (  # noqa: F401
-    ForumPost,
-    ForumPostFile,
-    ForumThread,
-    ForumThreadFile,
-)
+from .satoshi.emails import Email, EmailThread  # noqa: F401
+from .satoshi.posts import ForumPost, ForumThread  # noqa: F401
 from .satoshi.quotes import (  # noqa: F401
     Quote,
     QuoteCategory,
-    QuoteCategoryFile,
-    QuoteFile,
 )
-from .skeptics import Skeptic, SkepticFile  # noqa: F401
+from .skeptics import Skeptic  # noqa: F401
 from .translators import Translator  # noqa: F401

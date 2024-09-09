@@ -14,6 +14,7 @@ async def get(
     query = (
         select(DocumentTranslation)
         .options(
+            selectinload(DocumentTranslation.content),
             joinedload(DocumentTranslation.document).options(
                 selectinload(Document.authors),
                 selectinload(Document.translations),
@@ -91,6 +92,7 @@ async def get_all_by_locale(
     query = (
         select(DocumentTranslation)
         .options(
+            selectinload(DocumentTranslation.content),
             joinedload(DocumentTranslation.document).options(
                 selectinload(Document.authors),
                 selectinload(Document.translations),
@@ -98,6 +100,7 @@ async def get_all_by_locale(
             selectinload(DocumentTranslation.formats),
             selectinload(DocumentTranslation.nodes),
         )
+        .join(DocumentTranslation.content)
         .join(Document)
         .filter(DocumentTranslation.locale == locale)
         .order_by(Document.weight.desc(), DocumentTranslation.sort_title.asc())
@@ -117,6 +120,7 @@ async def get_some_by_slugs_and_locale(
     query = (
         select(DocumentTranslation)
         .options(
+            selectinload(DocumentTranslation.content),
             joinedload(DocumentTranslation.document).options(
                 selectinload(Document.authors),
                 selectinload(Document.translations),

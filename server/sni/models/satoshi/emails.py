@@ -5,20 +5,10 @@ from sqlalchemy import DateTime, ForeignKey, Integer, String, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from sni.database import Base
-from sni.models.content import JSONFile
+from sni.models.content import JSONContent
 
 if TYPE_CHECKING:
     from sni.models.satoshi.quotes import Quote
-
-
-class EmailThreadFile(JSONFile):
-    threads: Mapped[List["EmailThread"]] = relationship(
-        "EmailThread", back_populates="file"
-    )
-
-    __mapper_args__ = {
-        "polymorphic_identity": "email_threads",
-    }
 
 
 class EmailThread(Base):
@@ -30,21 +20,13 @@ class EmailThread(Base):
     url: Mapped[str] = mapped_column(String, nullable=False)
     source: Mapped[str] = mapped_column(String, nullable=False)
     emails: Mapped[List["Email"]] = relationship(back_populates="thread")
-    file_id: Mapped[int] = mapped_column(Integer, ForeignKey("json_files.id"))
-    file: Mapped[EmailThreadFile] = relationship(
-        "EmailThreadFile", back_populates="threads"
+    content_id: Mapped[int] = mapped_column(
+        Integer, ForeignKey("json_content.id", ondelete="CASCADE"), nullable=False
     )
+    content: Mapped[JSONContent] = relationship("JSONContent")
 
     def __repr__(self):
         return f"<EmailThread {self.title}>"
-
-
-class EmailFile(JSONFile):
-    emails: Mapped[List["Email"]] = relationship("Email", back_populates="file")
-
-    __mapper_args__ = {
-        "polymorphic_identity": "emails",
-    }
 
 
 class Email(Base):
@@ -76,8 +58,10 @@ class Email(Base):
     quotes: Mapped[List["Quote"]] = relationship(
         back_populates="email", cascade="all, delete-orphan"
     )
-    file_id: Mapped[int] = mapped_column(Integer, ForeignKey("json_files.id"))
-    file: Mapped[EmailFile] = relationship("EmailFile", back_populates="emails")
+    content_id: Mapped[int] = mapped_column(
+        Integer, ForeignKey("json_content.id", ondelete="CASCADE"), nullable=False
+    )
+    content: Mapped[JSONContent] = relationship("JSONContent")
 
     def __repr__(self):
         return f"<Email {self.subject} - {self.source_id}>"

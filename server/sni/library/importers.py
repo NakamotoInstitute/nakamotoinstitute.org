@@ -1,12 +1,11 @@
 from sni.content.markdown import MarkdownDirectoryImporter, TranslatedMarkdownImporter
-from sni.content.yaml import WeightImporter
+from sni.content.yaml import import_yaml_weights
 from sni.models import (
     Author,
     Document,
     DocumentFormat,
     DocumentNode,
     DocumentTranslation,
-    LibraryWeightFile,
     Translator,
 )
 from sni.shared.service import get, get_or_create
@@ -20,13 +19,15 @@ from .schemas import (
 )
 
 
-class LibraryWeightImporter(WeightImporter):
-    file_path = "data/weights/library.yaml"
-    model = DocumentTranslation
-    parent_id = "document_id"
-    parent_model = Document
-    file_model = LibraryWeightFile
-    content_type = "library_weights"
+def import_library_weights(
+    db_session, force: bool = False, force_conditions: list[bool] = []
+):
+    return import_yaml_weights(
+        db_session,
+        Document,
+        "data/weights/library.yaml",
+        force=force or any(force_conditions),
+    )
 
 
 class LibraryImporter(TranslatedMarkdownImporter):

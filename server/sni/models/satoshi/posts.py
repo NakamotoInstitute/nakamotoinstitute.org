@@ -5,20 +5,10 @@ from sqlalchemy import CheckConstraint, DateTime, ForeignKey, Integer, String, T
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from sni.database import Base
-from sni.models.content import JSONFile
+from sni.models.content import JSONContent
 
 if TYPE_CHECKING:
     from sni.models.satoshi.quotes import Quote
-
-
-class ForumThreadFile(JSONFile):
-    threads: Mapped[List["ForumThread"]] = relationship(
-        "ForumThread", back_populates="file"
-    )
-
-    __mapper_args__ = {
-        "polymorphic_identity": "forum_threads",
-    }
 
 
 class ForumThread(Base):
@@ -30,21 +20,13 @@ class ForumThread(Base):
     url: Mapped[str] = mapped_column(String, nullable=False)
     source: Mapped[str] = mapped_column(String, nullable=False)
     posts: Mapped[List["ForumPost"]] = relationship(back_populates="thread")
-    file_id: Mapped[int] = mapped_column(Integer, ForeignKey("json_files.id"))
-    file: Mapped[ForumThreadFile] = relationship(
-        "ForumThreadFile", back_populates="threads"
+    content_id: Mapped[int] = mapped_column(
+        Integer, ForeignKey("json_content.id", ondelete="CASCADE"), nullable=False
     )
+    content: Mapped[JSONContent] = relationship("JSONContent")
 
     def __repr__(self):
         return f"<ForumThread {self.title}>"
-
-
-class ForumPostFile(JSONFile):
-    posts: Mapped[List["ForumPost"]] = relationship("ForumPost", back_populates="file")
-
-    __mapper_args__ = {
-        "polymorphic_identity": "forum_posts",
-    }
 
 
 class ForumPost(Base):
@@ -72,8 +54,10 @@ class ForumPost(Base):
     quotes: Mapped[List["Quote"]] = relationship(
         back_populates="post", cascade="all, delete-orphan"
     )
-    file_id: Mapped[int] = mapped_column(Integer, ForeignKey("json_files.id"))
-    file: Mapped[ForumPostFile] = relationship("ForumPostFile", back_populates="posts")
+    content_id: Mapped[int] = mapped_column(
+        Integer, ForeignKey("json_content.id", ondelete="CASCADE"), nullable=False
+    )
+    content: Mapped[JSONContent] = relationship("JSONContent")
 
     def __repr__(self):
         return f"<ForumPost {self.subject} - {self.source_id}>"

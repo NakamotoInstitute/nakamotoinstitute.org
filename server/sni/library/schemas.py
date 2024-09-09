@@ -103,10 +103,12 @@ class BookMDModel(BaseModel):
     def parse_nodes(cls, nodes):
         return [Node.parse_node(node) for node in nodes]
 
+    @model_validator(mode="before")
     @classmethod
-    def from_front_matter(cls, data: dict):
-        data["nodes"] = cls.parse_nodes(data.get("nodes", []))
-        return cls(**data)
+    def parse_front_matter(cls, data: Any) -> Any:
+        if isinstance(data, dict):
+            data["nodes"] = cls.parse_nodes(data.get("nodes", []))
+        return data
 
     def gather_markdown_files(
         self, base_path
@@ -165,7 +167,7 @@ class DocumentIndexModel(DocumentBaseModel):
     @model_validator(mode="before")
     @classmethod
     def check_content(cls, data: Any) -> Any:
-        data.has_content = bool(data.html_content)
+        data.has_content = bool(data.content.html_content)
         return data
 
 
@@ -176,7 +178,9 @@ class DocumentNodeBaseModel(ORMModel):
 
 
 class DocumentModel(DocumentBaseModel):
-    html_content: str = Field(alias="content")
+    html_content: str = Field(
+        validation_alias=AliasPath("content", "html_content"), alias="content"
+    )
     subtitle: str | None
     display_title: str | None
     display_date: str | None

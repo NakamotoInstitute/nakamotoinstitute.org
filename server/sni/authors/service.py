@@ -33,8 +33,10 @@ async def get_documents(
     query = (
         select(DocumentTranslationAlias)
         .options(
+            selectinload(DocumentTranslationAlias.content),
             joinedload(DocumentTranslationAlias.document).options(
-                selectinload(Document.authors), selectinload(Document.translations)
+                selectinload(Document.authors),
+                selectinload(Document.translations),
             ),
             selectinload(DocumentTranslationAlias.formats),
             selectinload(DocumentTranslationAlias.nodes),
@@ -60,11 +62,12 @@ async def get_blog_posts(
     query = (
         select(BlogPostTranslationAlias)
         .options(
+            selectinload(BlogPostTranslationAlias.content),
             joinedload(BlogPostTranslationAlias.blog_post).options(
                 selectinload(BlogPost.authors),
                 selectinload(BlogPost.translations),
                 joinedload(BlogPost.series).selectinload(BlogSeries.translations),
-            )
+            ),
         )
         .join(BlogPost)
         .join(blog_post_authors)

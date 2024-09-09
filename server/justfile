@@ -34,7 +34,7 @@ bash:
   just exec bash
 
 mm *args:
-  just run alembic revision --autogenerate -m "{{args}}"
+  just run alembic revision --autogenerate -m \"{{args}}\"
 
 migrate:
   just run alembic upgrade head

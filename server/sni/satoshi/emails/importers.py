@@ -1,22 +1,27 @@
-from sni.content.json import JSONImporter
-from sni.models import Email, EmailFile, EmailThread, EmailThreadFile
-from sni.satoshi.quotes.importers import QuoteImporter
+from sni.content.json import import_json_data
+from sni.models import Email, EmailThread, Quote
 
 from .schemas import EmailsJSONModel, EmailThreadsJSONModel
 
 
-class EmailImporter(JSONImporter):
-    file_path = "data/emails.json"
-    schema = EmailsJSONModel
-    model = Email
-    file_model = EmailFile
-    content_type = "emails"
+def import_emails(db_session, force: bool = False, force_conditions: list[bool] = []):
+    return import_json_data(
+        db_session,
+        model=Email,
+        schema=EmailsJSONModel,
+        file_path="data/emails.json",
+        force=force or any(force_conditions),
+    )
 
 
-class EmailThreadImporter(JSONImporter):
-    file_path = "data/email_threads.json"
-    schema = EmailThreadsJSONModel
-    model = EmailThread
-    file_model = EmailThreadFile
-    content_type = "email_threads"
-    dependent_importers = [QuoteImporter, EmailImporter]
+def import_email_threads(
+    db_session, force: bool = False, force_conditions: list[bool] = []
+):
+    return import_json_data(
+        db_session,
+        model=EmailThread,
+        schema=EmailThreadsJSONModel,
+        file_path="data/email_threads.json",
+        dependent_models=[Email, Quote],
+        force=force or any(force_conditions),
+    )

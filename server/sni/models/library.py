@@ -18,10 +18,11 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sni.config import settings
 from sni.constants import DocumentFormats, Locales
 from sni.database import Base
-from sni.models.content import MarkdownContent, YAMLFile
+from sni.models.content import YAMLContent
 
 if TYPE_CHECKING:
     from sni.models.authors import Author
+    from sni.models.content import HTMLRenderableContent
     from sni.models.translators import Translator
 
 document_authors = Table(
@@ -63,10 +64,17 @@ class DocumentFormat(Base):
     )
 
 
-class LibraryWeightFile(YAMLFile):
-    __mapper_args__ = {
-        "polymorphic_identity": "library_weights",
-    }
+class LibraryWeightFile(Base):
+    __tablename__ = "library_weight_files"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    content_id: Mapped[int] = mapped_column(
+        Integer, ForeignKey("yaml_content.id"), unique=True
+    )
+    content: Mapped[YAMLContent] = relationship("YAMLContent")
+
+    def __repr__(self) -> str:
+        return f"<LibraryWeightFile(id={self.id})>"
 
 
 class Document(Base):
@@ -100,12 +108,12 @@ class Document(Base):
         return f"<Document({self.id})>"
 
 
-class DocumentTranslation(MarkdownContent):
+class DocumentTranslation(Base):
     __tablename__ = "document_translations"
 
-    id: Mapped[int] = mapped_column(
-        Integer, ForeignKey("markdown_content.id"), primary_key=True
-    )
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    content_id: Mapped[int] = mapped_column(ForeignKey("content.id"), unique=True)
+    content: Mapped["HTMLRenderableContent"] = relationship(uselist=False)
     locale: Mapped[Locales] = mapped_column(
         Enum(Locales, values_callable=lambda x: [e.value for e in x]), nullable=False
     )

@@ -17,7 +17,7 @@ from .middleware import APIKeyMiddleware
 
 
 @asynccontextmanager
-async def lifespan(app: FastAPI):
+async def lifespan(_: FastAPI):
     if settings.ENVIRONMENT.is_debug:
         update_content()
     yield

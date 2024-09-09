@@ -1,3 +1,6 @@
+import logging
+from contextlib import contextmanager
+
 from sqlalchemy import MetaData, create_engine
 from sqlalchemy.ext.asyncio import async_sessionmaker, create_async_engine
 from sqlalchemy.orm import DeclarativeBase, sessionmaker
@@ -14,6 +17,20 @@ SessionLocalSync = sessionmaker(autocommit=False, autoflush=False, bind=engine_s
 async def get_db():
     async with SessionLocal() as session:
         yield session
+
+
+@contextmanager
+def session_scope():
+    db_session = SessionLocalSync()
+    try:
+        yield db_session
+        db_session.commit()
+    except Exception as e:
+        logging.error(f"Error during update: {e}")
+        db_session.rollback()
+        raise
+    finally:
+        db_session.close()
 
 
 class Base(DeclarativeBase):

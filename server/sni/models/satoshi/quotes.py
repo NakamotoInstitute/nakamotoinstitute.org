@@ -5,7 +5,7 @@ from sqlalchemy import Boolean, Column, Date, ForeignKey, Integer, String, Table
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from sni.database import Base
-from sni.models.content import JSONFile
+from sni.models.content import JSONContent
 
 if TYPE_CHECKING:
     from sni.models.satoshi.emails import Email
@@ -24,16 +24,6 @@ quote_quote_categories = Table(
 )
 
 
-class QuoteCategoryFile(JSONFile):
-    categories: Mapped[List["QuoteCategory"]] = relationship(
-        "QuoteCategory", back_populates="file"
-    )
-
-    __mapper_args__ = {
-        "polymorphic_identity": "quote_categories",
-    }
-
-
 class QuoteCategory(Base):
     __tablename__ = "quote_categories"
 
@@ -43,21 +33,13 @@ class QuoteCategory(Base):
     quotes: Mapped[List["Quote"]] = relationship(
         secondary=quote_quote_categories, back_populates="categories"
     )
-    file_id: Mapped[int] = mapped_column(Integer, ForeignKey("json_files.id"))
-    file: Mapped[QuoteCategoryFile] = relationship(
-        "QuoteCategoryFile", back_populates="categories"
+    content_id: Mapped[int] = mapped_column(
+        Integer, ForeignKey("json_content.id", ondelete="CASCADE"), nullable=False
     )
+    content: Mapped[JSONContent] = relationship("JSONContent")
 
     def __repr__(self) -> str:
         return f"<QuoteCategory({self.slug})"
-
-
-class QuoteFile(JSONFile):
-    quotes: Mapped[List["Quote"]] = relationship("Quote", back_populates="file")
-
-    __mapper_args__ = {
-        "polymorphic_identity": "quotes",
-    }
 
 
 class Quote(Base):
@@ -78,5 +60,7 @@ class Quote(Base):
     categories: Mapped[List[QuoteCategory]] = relationship(
         secondary=quote_quote_categories, back_populates="quotes"
     )
-    file_id: Mapped[int] = mapped_column(Integer, ForeignKey("json_files.id"))
-    file: Mapped[QuoteFile] = relationship("QuoteFile", back_populates="quotes")
+    content_id: Mapped[int] = mapped_column(
+        Integer, ForeignKey("json_content.id", ondelete="CASCADE"), nullable=False
+    )
+    content: Mapped[JSONContent] = relationship("JSONContent")

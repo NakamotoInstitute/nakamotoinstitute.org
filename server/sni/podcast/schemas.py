@@ -1,6 +1,6 @@
 import datetime
 
-from pydantic import BaseModel, Field
+from pydantic import AliasPath, BaseModel, Field
 
 from sni.shared.schemas import ORMModel
 
@@ -16,4 +16,6 @@ class EpisodeMDModel(BaseModel):
 
 class EpisodeModel(EpisodeMDModel, ORMModel):
     slug: str
-    html_content: str = Field(alias="content")
+    html_content: str = Field(
+        validation_alias=AliasPath("content", "html_content"), alias="content"
+    )

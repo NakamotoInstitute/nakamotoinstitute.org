@@ -8,7 +8,6 @@ export const zAuthor = z.object({
   name: z.string(),
   sortName: z.string(),
   slug: z.string(),
-  content: z.string(),
 });
 export type Author = z.infer<typeof zAuthor>;
 

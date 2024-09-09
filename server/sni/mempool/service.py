@@ -14,6 +14,7 @@ async def get_post(
     query = (
         select(BlogPostTranslation)
         .options(
+            selectinload(BlogPostTranslation.content),
             joinedload(BlogPostTranslation.blog_post).options(
                 selectinload(BlogPost.authors),
                 selectinload(BlogPost.translations),
@@ -41,11 +42,12 @@ async def get_all_posts_by_locale(
     query = (
         select(BlogPostTranslation)
         .options(
+            selectinload(BlogPostTranslation.content),
             joinedload(BlogPostTranslation.blog_post).options(
                 selectinload(BlogPost.authors),
                 selectinload(BlogPost.translations),
                 joinedload(BlogPost.series).selectinload(BlogSeries.translations),
-            )
+            ),
         )
         .join(BlogPost)
         .outerjoin(BlogSeries)
@@ -65,11 +67,12 @@ async def get_latest_posts(
     query = (
         select(BlogPostTranslation)
         .options(
+            selectinload(BlogPostTranslation.content),
             joinedload(BlogPostTranslation.blog_post).options(
                 selectinload(BlogPost.authors),
                 selectinload(BlogPost.translations),
                 joinedload(BlogPost.series).selectinload(BlogSeries.translations),
-            )
+            ),
         )
         .filter_by(locale=locale)
         .join(BlogPost)
@@ -106,11 +109,12 @@ async def get_series_posts(
     query = (
         select(BlogPostTranslation)
         .options(
+            selectinload(BlogPostTranslation.content),
             joinedload(BlogPostTranslation.blog_post).options(
                 joinedload(BlogPost.series),
                 selectinload(BlogPost.authors),
                 selectinload(BlogPost.translations),
-            )
+            ),
         )
         .join(BlogPost)
         .filter(
