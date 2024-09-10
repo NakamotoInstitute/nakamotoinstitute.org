@@ -1,18 +1,8 @@
-import { URL } from "url";
+import { OpenGraph } from "next/dist/lib/metadata/types/opengraph-types";
 
 import { cdnUrl } from "@/lib/urls";
 
-type OGImage = string | OGImageDescriptor | URL;
-type OGImageDescriptor = {
-  url: string | URL;
-  secureUrl?: string | URL;
-  alt?: string;
-  type?: string;
-  width?: string | number;
-  height?: string | number;
-};
-
-export const openGraphImages: OGImage[] = [
+export const openGraphImages: OpenGraph["images"] = [
   {
     url: cdnUrl("/img/sni_opengraph_1200.jpg"),
     width: 1200,
