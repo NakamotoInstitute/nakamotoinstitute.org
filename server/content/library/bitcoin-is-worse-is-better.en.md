@@ -105,7 +105,7 @@ I think it's instructive to look at Satoshi's [ANN thread](http://localhost:3000
 - [domination of the hash tree](/satoshi/emails/cryptography/threads/1/#014857) by fast nodes and starvation of transactions
 - [pseudonymity & linkable transactions](/satoshi/emails/cryptography/threads/1/#014859)[^22] (irreversible transactions also implies [double-spend](/satoshi/emails/cryptography/threads/1/#014864) must be very quickly detectable)
 
-[Nick Szabo](https://unenumerated.blogspot.com/2011/05/bitcoin-what-took-ye-so-long.html) summarizes the early reaction:
+[Nick Szabo](/library/bitcoin-what-took-ye-so-long/) summarizes the early reaction:
 
 > Bitcoin is not a list of cryptographic features, it's a very complex system of interacting mathematics and protocols in pursuit of what was a very unpopular goal. While the security technology is very far from trivial, the "why" was by far the biggest stumbling block---nearly everybody who heard the general idea thought it was a very bad idea. Myself, Wei Dai, and Hal Finney were the only people I know of who liked the idea (or in Dai's case his related idea) enough to pursue it to any significant extent until Nakamoto (assuming Nakamoto is not really Finney or Dai). Only Finney ([RPOW](/finney/rpow/index.html)) and Nakamoto were motivated enough to actually implement such a scheme.
 
@@ -163,7 +163,7 @@ Nick Szabo and Zooko Wilcox-O'Hearn disagree strongly with the thesis that "Bitc
 
 > Gwern's post fails to appreciate the technical advances that BitCoin originated. I have been trying, off and on, to invent a decentralized digital payment system for fifteen years (since I was at DigiCash). I wasn't sure that a practical system was even _possible_, until BitCoin was actually implemented and became as popular as it has. Scientific advances often seem obvious in retrospect, and so it is with BitCoin.[^35]
 
-Nick Szabo [thinks](https://unenumerated.blogspot.com/2011/05/bitcoin-what-took-ye-so-long.html "Bitcoin, what took ye so long?") that the main blocking factors were:
+Nick Szabo [thinks](/library/bitcoin-what-took-ye-so-long/ "Bitcoin, what took ye so long?") that the main blocking factors were:
 
 1. ideological beliefs about the nature of money (liberals not interested in non-state currencies, and Austrians believing that currencies must have intrinsic value)
 1. obscurity of bit gold-like ideas
@@ -241,7 +241,7 @@ So in a way, this scam embodies the old saw "you can't cheat an honest man".[^37
 [^5]: In the same vein of 'the network is a third party which keeps a copy of all signed transactions', you could include Ian Grigg's 2005 paper ["Triple Entry Accounting"](/library/triple-entry-accounting/).
 
 [^6]:
-    I had a hard time figuring out when bit gold was first thought of; Szabo [kindly blogged](https://unenumerated.blogspot.com/2011/05/bitcoin-what-took-ye-so-long.html) that he had written about it in 1998 on a private mailing list:
+    I had a hard time figuring out when bit gold was first thought of; Szabo [kindly blogged](/library/bitcoin-what-took-ye-so-long/) that he had written about it in 1998 on a private mailing list:
 
     > Here are some more specific reasons why the ideas behind Bitcoin were very far from obvious: (1) only a few people had read of the bit gold ideas, which although I came up with them in 1998 (at the same time and on the same private mailing list [[libtech](https://lists.langara.bc.ca/mailman/listinfo/libtech-l)] where Dai was coming up with b-money---it's a long story) were mostly not described in public until 2005, although various pieces of it I described earlier, for example the crucial Byzantine-replicated chain-of-signed-transactions part of it which I generalized into what I call secure property titles.
 
@@ -341,7 +341,7 @@ So in a way, this scam embodies the old saw "you can't cheat an honest man".[^37
     > ...it involved major technical and conceptual/philosophical advances on the existing state-of-the-art, and these advances didn't originate from nor was likely funded/supported by academia, government or industry. Also, its social impact seems larger---if Craigslist or PayPal didn't exist, something essentially identical would have been created very soon anyway, but if Bitcoin didn't exist, another Bitcoin may not have been created for another decade, and/or may have been created with very different characteristics, for example it might have been coded with a monetary policy that emphasized price stability instead of a fixed supply of money.
 
 [^25]:
-    Computing power is useful because it's impossible to fake: you either can regularly bruteforce a hash or you cannot, assuming the hash is still secure. But strictly speaking there are other possible unfakeable properties which future digital cryptographic currencies may use; Szabo lists [3 others](https://unenumerated.blogspot.com/2011/05/bitcoin-what-took-ye-so-long.html):
+    Computing power is useful because it's impossible to fake: you either can regularly bruteforce a hash or you cannot, assuming the hash is still secure. But strictly speaking there are other possible unfakeable properties which future digital cryptographic currencies may use; Szabo lists [3 others](/library/bitcoin-what-took-ye-so-long/):
 
     > Canonically Byzantine agreement assumed each node had a secure true-name identity, but because privacy is a desiderata, and because it would be very difficult to implement such a secure identity system on the Internet, we have to use some characteristic of users provable within the Bitcoin or bit gold system to weigh Byzantine "votes". I've now come up with a list of provable attributes in Bitcoin (or bit gold) by which message correctness "votes" might be weighed:
     >
