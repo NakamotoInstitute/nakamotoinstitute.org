@@ -21,30 +21,30 @@ stop:
 down:
   {{docker_compose_cmd}} down
 
+logs *args: 
+  {{docker_compose_cmd}} logs {{args}} -f
+
 run *args:
-  {{docker_compose_cmd}} run --rm {{args}}
+  {{docker_compose_cmd}} run --rm fastapi {{args}}
 
 exec *args:
   {{docker_compose_cmd}} exec fastapi {{args}}
 
 bash:
-  {{docker_compose_cmd}} exec fastapi bash
-
-logs *args: 
-  {{docker_compose_cmd}} logs {{args}} -f
+  just exec bash
 
 mm *args:
-  {{docker_compose_cmd}} exec fastapi alembic revision --autogenerate -m "{{args}}"
+  just run alembic revision --autogenerate -m "{{args}}"
 
 migrate:
-  {{docker_compose_cmd}} exec fastapi alembic upgrade head
+  just run alembic upgrade head
 
 downgrade *args:
-  {{docker_compose_cmd}} exec fastapi alembic downgrade {{args}}
+  just run alembic downgrade {{args}}
 
 import *args:
-  {{docker_compose_cmd}} exec fastapi python cli.py content initialize {{args}}
+  just run python cli.py content initialize {{args}}
 
 ruff *args:
-  {{docker_compose_cmd}} exec fastapi ruff {{args}} check .
-  {{docker_compose_cmd}} exec fastapi ruff format .
+  just run ruff {{args}} check .
+  just run ruff format .
