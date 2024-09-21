@@ -92,7 +92,7 @@ This view of tradition unifies evolutionary epistemology and hermeneutics, and s
 <h2 id="references">References</h2>
 
 <ol class="references" start="0">
-  <li id="fn0">[0] Szabo, <a href="https://web.archive.org/web/20160417035001/http://szabo.best.vwh.net/tradition.html">"Objective Versus Intersubjective Truths"</a></li>
+  <li id="fn0">[0] Szabo, <a href="/library/objective-versus-intersubjective-truth/">"Objective Versus Intersubjective Truths"</a></li>
   <li id="fn1">[1] Radzinsky & Bartley ed., <em>Evolutionary Epistemology</em> <a href="#ref1">↩</a></li>
   <li id="fn2">[2] Dawkins, <em>The Selfish Gene</em> <a id="ref2-1" href="#fn2">[2]</a> <a id="ref2-2" href="#fn2">[2]</a></li>
   <li id="fn3">Heidegger, <em>Early Greeks Thinkers</em> <a href="#ref3-1">↩</a></li>
