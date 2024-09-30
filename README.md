@@ -11,7 +11,7 @@ The server relies on Docker Compose for environment management. Ensure Docker Co
 - **Getting Started**:
 
   1. Access the server directory: `cd server`.
-  2. Set the `ENV` environment variable to `local` (if using `just`): `export ENV=local`.
+  2. If you are using `just`, set `ENV=local` in `.justenv`.
   3. Build the Docker environment:
      - Execute: `docker compose -f docker-compose.local.yml build`
      - Or use `just build` for a simplified process.
