@@ -1,5 +1,5 @@
 import { locales as allLocales } from "@/i18n";
-import { CapitalizedLocale, Locale } from "@/types/i18n";
+import { CapitalizedLocale } from "@/types/i18n";
 import { formatLocale } from "@/utils/strings";
 
 export type LocalizedUrlObject = { [K in CapitalizedLocale]: string };

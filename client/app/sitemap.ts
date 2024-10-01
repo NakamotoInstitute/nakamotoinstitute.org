@@ -6,7 +6,6 @@ import { getLibraryDocs } from "@/lib/api/library";
 import { getMempoolPosts, getMempoolSeriesParams } from "@/lib/api/mempool";
 import { getEpisodes } from "@/lib/api/podcast";
 import { urls } from "@/lib/urls";
-import { Locale } from "@/types/i18n";
 import { LocalizedUrlObject, createLocalizedUrlObject } from "@/utils/sitemap";
 import { formatLocale } from "@/utils/strings";
 

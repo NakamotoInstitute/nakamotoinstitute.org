@@ -7,7 +7,6 @@ import { getQuoteCategories } from "@/lib/api/quotes";
 import { EMAIL_SOURCES } from "@/lib/api/schemas/emails";
 import { FORUM_POST_SOURCES } from "@/lib/api/schemas/posts";
 import { urls } from "@/lib/urls";
-import { Locale } from "@/types/i18n";
 import { LocalizedUrlObject, createLocalizedUrlObject } from "@/utils/sitemap";
 import { formatLocale } from "@/utils/strings";
 
