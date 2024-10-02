@@ -23,11 +23,42 @@ Venezuela, Argentina, and Turkey all have governments, militaries, and the autho
 
 The value of the dollar did not emerge on the free market. Instead, it emerged as a fractional representation of gold (and silver, initially). Essentially, the dollar was a solution to the limitations that existed in the convertibility and transferability of gold, having no inherent monetary properties of its own. From the onset, the dollar as a currency system was always based on trust: deposit gold at a bank, accept dollars in return, and trust that dollars could be converted back to gold at a fixed amount in the future. Gold's limitation and ultimate failure as money is the dollar system, and without gold, the dollar would have never existed in its current construct. Here is a quick review of the dollar's history with gold:
 
----
-
-1900 The Gold Standard Act of 1900 established that gold was the only metal that could be converted into the dollar; gold was convertible to dollars at a rate of \$20.67 per oz. 1913 The Federal Reserve was created as part of the Federal Reserve Act of 1913. 1933 President Roosevelt banned the hoarding (saving) of gold via Executive Order 6102, requiring citizens to convert gold to dollars at \$20.67 per oz. or face a penalty in the form of a fine up to \$10,000 and/or up to five to ten years imprisonment. 1934 President Roosevelt signed the Gold Reserve Act, devaluing the dollar by approximately 40% to \$35 per oz. of gold. 1944 The Bretton Woods Agreement formalized the ability of foreign governments and central banks to convert gold to dollars (and vice versa) at \$35 per oz. and established fixed exchange ratios between dollars and other foreign currencies. 1971 President Nixon officially ended all convertibility of dollars to gold, effectively ending the Bretton Woods system. The value of the dollar was changed to \$38 per oz. of gold. 1973 The US government repriced gold to \$42 per oz. 1976 The US government then decoupled the value of the dollar from gold altogether in 1976.
-
----
+<figure>
+  <table>
+    <tr>
+      <td>1900</td>
+      <td>The Gold Standard Act established gold as the only metal convertible to dollars at $20.67 per oz.</td>
+    </tr>
+    <tr>
+      <td>1913</td>
+      <td>The Federal Reserve was created as part of the Federal Reserve Act.</td>
+    </tr>
+    <tr>
+      <td>1933</td>
+      <td>President Roosevelt banned gold hoarding via Executive Order 6102, requiring conversion to dollars at $20.67 per oz. or face penalties.</td>
+    </tr>
+    <tr>
+      <td>1934</td>
+      <td>The Gold Reserve Act devalued the dollar by ~40% to $35 per oz. of gold.</td>
+    </tr>
+    <tr>
+      <td>1944</td>
+      <td>The Bretton Woods Agreement formalized gold-dollar convertibility at $35 per oz. and established fixed exchange ratios with other currencies.</td>
+    </tr>
+    <tr>
+      <td>1971</td>
+      <td>President Nixon ended dollar-gold convertibility, ending Bretton Woods. Dollar value changed to $38 per oz. of gold.</td>
+    </tr>
+    <tr>
+      <td>1973</td>
+      <td>US government repriced gold to $42 per oz.</td>
+    </tr>
+    <tr>
+      <td>1976</td>
+      <td>US government decoupled the dollar's value from gold entirely.</td>
+    </tr>
+  </table>
+</figure>
 
 Over the course of the twentieth century, the dollar transitioned from a reserve-­backed currency to a debt-­backed currency. While most people never stop to consider why the dollar has value in the post-­gold era, the most common explanation remains that it is either a collective hallucination (i.e., the dollar has value simply because we all believe it does) or that it is a function of the government, the military, and taxes. Neither explanation has any basis in logic, nor is it the fundamental reason why the dollar retains value. Hundreds of millions of Americans are not all collectively hallucinating, and the dollar does not have value because of the military or the government's ability to tax. Instead, today, the dollar maintains its value as a function of debt and the relative scarcity of dollars to dollar-­denominated debt. In the dollar world, everything is a function of the credit system. The mechanisms that fund the government (taxes and deficit spending) are both dependent on the credit system, and the credit system is what allows the dollar to function in its current construct.
 
@@ -138,7 +169,7 @@ Recall that a predefined number of bitcoin are issued in each valid block (that 
   <figcaption><strong>Figure 3.9</strong></figcaption>
 </figure>
 
-For a technical example, the valid reward paid to miners is halved every 210,000 blocks with the next halving of issuance scheduled to occur at block 630,000 (or approximately in May 2020). At that time and scheduled block, the valid reward will be reduced from 12.5 bitcoin to 6.25 bitcoin per block. Thereafter, if any miner includes an invalid reward (an amount greater than 6.25 bitcoin), the rest of the network will reject it as invalid. The halving event is important not just because the supply of newly issued bitcoin is reduced, but also because it demonstrates that the economic incentives of the network continue to effectively coordinate and enforce the fixed supply of the currency on an entirely decentralized basis. While bitcoin's fixed supply is actually enforced with each next block, the halving of the supply is a more tangible and observable datapoint to the outside world that the 21 million fixed supply is being enforced without any central coordination. If any miner ever attempts to cheat, it will be maximally penalized by the rest of the network. Nothing other than the economic incentives of the network coordinate this behavior. That it occurs on a decentralized basis without the coordination of any central authority reinforces the security of the network.
+For a technical example, the valid reward paid to miners is halved every 210,000 blocks with the next halving of issuance scheduled to occur at block 630,000 (or approximately in May 2020). At that time and scheduled block, the valid reward will be reduced from 12.5 bitcoin to 6.25 bitcoin per block. Thereafter, if any miner includes an invalid reward (an amount greater than 6.25 bitcoin), the rest of the network will reject it as invalid. The halving event is important not just because the supply of newly issued bitcoin is reduced, but also because it demonstrates that the economic incentives of the network continue to effectively coordinate and enforce the fixed supply of the currency on an entirely decentralized basis. If any miner ever attempts to cheat, it will be maximally penalized by the rest of the network. Nothing other than the economic incentives of the network coordinate this behavior. That it occurs on a decentralized basis without the coordination of any central authority reinforces the security of the network.
 
 <figure id="figure-3.10">
   <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations32.jpg" alt="" />
