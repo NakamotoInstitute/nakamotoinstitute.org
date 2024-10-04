@@ -120,6 +120,10 @@ const config: Config = {
               "& > img": {
                 marginLeft: "auto",
                 marginRight: "auto",
+                "&.img-dark-bg": {
+                  backgroundColor: "var(--tw-prose-pre-code)",
+                  padding: "0.5rem",
+                },
               },
               "& > .img-container": {
                 display: "flex",
