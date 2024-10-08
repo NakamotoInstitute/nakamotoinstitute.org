@@ -102,14 +102,14 @@ Bitcoin will become mainstream. The Bitcoin skeptics don't understand this due t
 
 [^4]: The opposite of Bitcoin Jesus. Bitcoin [Jonah](http://en.wikipedia.org/wiki/Jonah_complex) is a defeatist, self-sabotaging, and timid 'man' who is on a permanent quest to confirm Bitcoin's weakness.
 
-[^5]: [Bitcoin is the Best Unit of Account](/mempool/bitcoin-is-the-best-unit-of-account) by Daniel Krawisz
+[^5]: [Bitcoin is the Best Unit of Account](/mempool/bitcoin-is-the-best-unit-of-account/) by Daniel Krawisz
 
-[^6]: [The Bitcoin Central Bank’s Perfect Monetary Policy](/mempool/the-bitcoin-central-banks-perfect-monetary-policy) by Pierre Rochard
+[^6]: [The Bitcoin Central Bank’s Perfect Monetary Policy](/mempool/the-bitcoin-central-banks-perfect-monetary-policy/) by Pierre Rochard
 
-[^7]: [Bitcoin Has No Image Problem](/mempool/bitcoin-has-no-image-problem) by Daniel Krawisz
+[^7]: [Bitcoin Has No Image Problem](/mempool/bitcoin-has-no-image-problem/) by Daniel Krawisz
 
-[^8]: [Hyperbitcoinization](/mempool/hyperbitcoinization) by Daniel Krawisz
+[^8]: [Hyperbitcoinization](/mempool/hyperbitcoinization/) by Daniel Krawisz
 
 [^9]: If you disagree then either you have not been learning or you have not been engaging in the debate, go back to square one.
 
-[^10]: 'I live in a rather special world. I only know one person who voted for Nixon. Where they are I don't know. They're outside my ken. But sometimes when I'm in a theater I can feel them.' - [Pauline Kael](http://en.wikiquote.org/wiki/Pauline_Kael)
+[^10]: "I live in a rather special world. I only know one person who voted for Nixon. Where they are I don't know. They're outside my ken. But sometimes when I'm in a theater I can feel them." – [Pauline Kael](http://en.wikiquote.org/wiki/Pauline_Kael)
