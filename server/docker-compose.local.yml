@@ -5,6 +5,8 @@ services:
       dockerfile: ./compose/local/fastapi/Dockerfile
     depends_on:
       - postgres
+    volumes:
+      - ./migrations:/app/migrations:z
     env_file:
       - ./.envs/.local/.fastapi
       - ./.envs/.local/.postgres

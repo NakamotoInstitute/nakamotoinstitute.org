@@ -16,6 +16,7 @@ const zEmailBase = z.object({
   source: zEmailSource,
   sourceId: z.string(),
   url: z.string(),
+  disclaimer: z.string().nullable(),
   threadId: z.number().int().min(1),
 });
 

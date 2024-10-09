@@ -16,6 +16,7 @@ const zForumPost = z.object({
   nestedLevel: z.number().int().min(0),
   posterName: z.string(),
   posterUrl: z.string().nullable(),
+  disclaimer: z.string().nullable(),
 });
 export type ForumPost = z.infer<typeof zForumPost>;
 

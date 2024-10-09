@@ -28,6 +28,7 @@ class EmailJSONModel(BaseModel):
     text: str
     date: datetime.datetime
     url: str
+    disclaimer: str | None = None
     thread_id: int
     source_id: str
     parent_id: int | None = None
@@ -53,6 +54,7 @@ class EmailBaseModel(ORMModel):
     text: str
     date: datetime.datetime
     url: str
+    disclaimer: str | None = None
     thread_id: int
     source_id: str
     parent_id: int | None

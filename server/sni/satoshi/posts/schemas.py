@@ -29,6 +29,7 @@ class ForumPostJSONModel(BaseModel):
     text: str
     date: datetime.datetime
     url: str
+    disclaimer: str | None = None
     thread_id: int
     source_id: str
     nested_level: int = 0
@@ -60,6 +61,7 @@ class ForumPostBaseModel(ORMModel):
     text: str
     date: datetime.datetime
     url: str
+    disclaimer: str | None = None
     thread_id: int
     source_id: str
     nested_level: int = 0

@@ -239,7 +239,17 @@ const config: Config = {
   },
   plugins: [
     require("@tailwindcss/typography"),
-    plugin(({ addUtilities }) => {
+    plugin(({ addComponents, addUtilities, theme }) => {
+      addComponents({
+        ".disclaimer": {
+          a: {
+            color: theme("colors.cardinal"),
+            "&:hover": {
+              textDecoration: "underline",
+            },
+          },
+        },
+      });
       addUtilities({
         ".small-caps": { "font-variant-caps": "small-caps" },
         ".italic-regular-em": { em: { fontStyle: "normal" } },

@@ -14,6 +14,7 @@ import { formatEmailSource } from "@/utils/strings";
 import {
   ContentBox,
   ContentBoxBody,
+  ContentBoxDisclaimer,
   ContentBoxFooter,
   ContentBoxHeader,
 } from "@satoshi/components/ContentBox";
@@ -85,6 +86,9 @@ async function ThreadEmail({
           }}
         />
       </ContentBoxBody>
+      {email.disclaimer && (
+        <ContentBoxDisclaimer t={t} disclaimer={email.disclaimer} />
+      )}
       <ContentBoxFooter
         t={t}
         hrefs={{

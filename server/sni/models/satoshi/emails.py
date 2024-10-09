@@ -58,6 +58,7 @@ class Email(Base):
     date: Mapped[datetime.datetime] = mapped_column(DateTime, nullable=False)
     text: Mapped[str] = mapped_column(Text, nullable=False)
     source_id: Mapped[str] = mapped_column(String, nullable=False)
+    disclaimer: Mapped[str] = mapped_column(String, nullable=True)
     parent_id: Mapped[int] = mapped_column(
         Integer, ForeignKey("emails.id"), nullable=True
     )

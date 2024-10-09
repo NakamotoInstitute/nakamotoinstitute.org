@@ -58,6 +58,7 @@ class ForumPost(Base):
     poster_url: Mapped[str] = mapped_column(String, nullable=True)
     date: Mapped[datetime.datetime] = mapped_column(DateTime, nullable=False)
     text: Mapped[str] = mapped_column(Text, nullable=False)
+    disclaimer: Mapped[str] = mapped_column(String, nullable=True)
     nested_level: Mapped[int] = mapped_column(
         Integer,
         CheckConstraint("nested_level >= 0", name="nested_level"),

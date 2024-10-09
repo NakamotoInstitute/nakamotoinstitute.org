@@ -14,6 +14,7 @@ import { formatPostSource } from "@/utils/strings";
 import {
   ContentBox,
   ContentBoxBody,
+  ContentBoxDisclaimer,
   ContentBoxFooter,
   ContentBoxHeader,
 } from "@satoshi/components/ContentBox";
@@ -100,6 +101,9 @@ export default async function PostDetail({
             }}
           />
         </ContentBoxBody>
+        {post.disclaimer && (
+          <ContentBoxDisclaimer t={t} disclaimer={post.disclaimer} />
+        )}
         <ContentBoxFooter
           t={t}
           hrefs={{

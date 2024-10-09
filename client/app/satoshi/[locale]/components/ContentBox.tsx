@@ -152,6 +152,26 @@ export async function ContentBoxBody({
   );
 }
 
+export type ContentBoxDisclaimerProps = {
+  t: TFunction<string, string>;
+  disclaimer: string;
+};
+
+export async function ContentBoxDisclaimer({
+  t,
+  disclaimer,
+}: ContentBoxDisclaimerProps) {
+  return (
+    <div className="border-t border-dashed border-taupe px-8 py-4 text-sm">
+      <h3 className="me-0.5 inline font-bold">{t("disclaimer")}</h3>
+      <p
+        className="disclaimer inline"
+        dangerouslySetInnerHTML={{ __html: disclaimer }}
+      />
+    </div>
+  );
+}
+
 export type ContentBoxFooterProps = {
   t: TFunction<string, string>;
   hrefs: {
