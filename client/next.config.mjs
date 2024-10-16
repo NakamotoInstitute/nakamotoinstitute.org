@@ -2,7 +2,7 @@ import { createJiti } from "jiti";
 import { fileURLToPath } from "node:url";
 
 const jiti = createJiti(fileURLToPath(import.meta.url));
-const { env } = jiti("./env");
+const { env } = await jiti.import("./env.ts");
 
 const satoshiDestination = `${
   env.VERCEL_ENV === "development" ? "http://" : "https://"
