@@ -14,7 +14,7 @@
 
 @layer components {
   .page-content > h2 {
-      @apply mb-2 text-3xl font-medium;
+    @apply mb-2 text-3xl font-medium;
   }
 
   .page-content > p {
@@ -50,12 +50,12 @@
 
   .code,
   .quote {
-    @apply border border-neutral-300 border-t-0;
+    @apply border border-t-0 border-neutral-300;
     @apply p-1.5;
   }
 
   .code {
-    @apply font-mono whitespace-pre-wrap;
+    @apply whitespace-pre-wrap font-mono;
   }
 
   .quote {

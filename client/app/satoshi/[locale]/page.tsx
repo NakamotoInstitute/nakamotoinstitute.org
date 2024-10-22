@@ -12,9 +12,11 @@ import { urls } from "@/lib/urls";
 
 const generateHref = (l: Locale) => urls(l).satoshi.index;
 
-export async function generateMetadata({
-  params: { locale },
-}: LocaleParams): Promise<Metadata> {
+export async function generateMetadata(props: LocaleParams): Promise<Metadata> {
+  const params = await props.params;
+
+  const { locale } = params;
+
   const languages = generateHrefLangs([...locales], generateHref);
 
   return {
@@ -43,9 +45,11 @@ const SatoshiSection = ({ text, href, children }: SatoshiSectionProps) => {
   );
 };
 
-export default async function SatoshiIndex({
-  params: { locale },
-}: LocaleParams) {
+export default async function SatoshiIndex(props: LocaleParams) {
+  const params = await props.params;
+
+  const { locale } = params;
+
   const { t } = await i18nTranslation(locale);
   const content = await getPage("complete-satoshi", locale);
 

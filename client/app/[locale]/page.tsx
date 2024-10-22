@@ -19,9 +19,11 @@ import { PostListingAuthors } from "./mempool/components/PostListing";
 
 const generateHref = (loc: Locale) => urls(loc).home;
 
-export async function generateMetadata({
-  params: { locale },
-}: LocaleParams): Promise<Metadata> {
+export async function generateMetadata(props: LocaleParams): Promise<Metadata> {
+  const params = await props.params;
+
+  const { locale } = params;
+
   const languages = generateHrefLangs([...locales], generateHref);
 
   return {
@@ -73,7 +75,11 @@ async function Box({ title, className, link, children }: BoxProps) {
   );
 }
 
-export default async function HomePage({ params: { locale } }: LocaleParams) {
+export default async function HomePage(props: LocaleParams) {
+  const params = await props.params;
+
+  const { locale } = params;
+
   const { t } = await i18nTranslation(locale);
   const [latest, docs] = await Promise.all([
     getLatestMempoolPosts(locale),

@@ -48,7 +48,7 @@ export async function SkepticListing({
       </section>
       <section>
         {skeptic.excerpt ? (
-          <div className="italic-regular-em mb-4 italic">
+          <div className="mb-4 italic italic-regular-em">
             <Rehype>{skeptic.excerpt}</Rehype>
           </div>
         ) : null}

@@ -28,12 +28,16 @@ const generateHref =
   (source: ForumPostSource, threadId: string) => (l: Locale) =>
     urls(l).satoshi.posts.sourceThreadsDetail(source, threadId);
 
-export async function generateMetadata({
-  params: { locale, source, threadId },
-}: LocaleParams<{
-  source: ForumPostSource;
-  threadId: string;
-}>): Promise<Metadata> {
+export async function generateMetadata(
+  props: LocaleParams<{
+    source: ForumPostSource;
+    threadId: string;
+  }>,
+): Promise<Metadata> {
+  const params = await props.params;
+
+  const { locale, source, threadId } = params;
+
   const threadData = await getForumThread(source, threadId);
   const { t } = await i18nTranslation(locale);
   const languages = generateHrefLangs(
@@ -122,13 +126,20 @@ async function ThreadPost({
   );
 }
 
-export default async function PostSourceThreadDetail({
-  params: { source, threadId, locale },
-  searchParams: { view },
-}: LocaleParams<
-  { source: ForumPostSource; threadId: string },
-  { searchParams: { [key: string]: string | string[] | undefined } }
->) {
+export default async function PostSourceThreadDetail(
+  props: LocaleParams<
+    { source: ForumPostSource; threadId: string },
+    { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }
+  >,
+) {
+  const searchParams = await props.searchParams;
+
+  const { view } = searchParams;
+
+  const params = await props.params;
+
+  const { source, threadId, locale } = params;
+
   const satoshiOnly = view === "satoshi";
   const threadData = await getForumThread(source, threadId, view === "satoshi");
   if (!threadData) {

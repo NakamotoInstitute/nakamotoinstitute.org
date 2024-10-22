@@ -26,9 +26,13 @@ import { ThreadPageHeader } from "@satoshi/components/ThreadPageHeader";
 const generateHref = (source: EmailSource, threadId: string) => (l: Locale) =>
   urls(l).satoshi.emails.sourceThreadsDetail(source, threadId);
 
-export async function generateMetadata({
-  params: { locale, source, threadId },
-}: LocaleParams<{ source: EmailSource; threadId: string }>): Promise<Metadata> {
+export async function generateMetadata(
+  props: LocaleParams<{ source: EmailSource; threadId: string }>,
+): Promise<Metadata> {
+  const params = await props.params;
+
+  const { locale, source, threadId } = params;
+
   const threadData = await getEmailThread(source, threadId);
   const { t } = await i18nTranslation(locale);
   const languages = generateHrefLangs(
@@ -105,13 +109,20 @@ async function ThreadEmail({
   );
 }
 
-export default async function EmailSourceThreadDetail({
-  params: { locale, source, threadId },
-  searchParams: { view },
-}: LocaleParams<
-  { source: EmailSource; threadId: string },
-  { searchParams: { [key: string]: string | string[] | undefined } }
->) {
+export default async function EmailSourceThreadDetail(
+  props: LocaleParams<
+    { source: EmailSource; threadId: string },
+    { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }
+  >,
+) {
+  const searchParams = await props.searchParams;
+
+  const { view } = searchParams;
+
+  const params = await props.params;
+
+  const { locale, source, threadId } = params;
+
   const satoshiOnly = view === "satoshi";
 
   const threadData = await getEmailThread(source, threadId, satoshiOnly);

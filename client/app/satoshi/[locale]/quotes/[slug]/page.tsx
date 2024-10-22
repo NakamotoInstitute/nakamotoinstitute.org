@@ -19,9 +19,13 @@ import { ContentBox, ContentBoxBody } from "@satoshi/components/ContentBox";
 const generateHref = (slug: string) => (l: Locale) =>
   urls(l).satoshi.quoteCategory(slug);
 
-export async function generateMetadata({
-  params: { locale, slug },
-}: LocaleParams<{ slug: string }>): Promise<Metadata> {
+export async function generateMetadata(
+  props: LocaleParams<{ slug: string }>,
+): Promise<Metadata> {
+  const params = await props.params;
+
+  const { locale, slug } = params;
+
   const { category } = await getQuoteCategory(slug);
   const languages = generateHrefLangs([...locales], generateHref(slug));
 
@@ -120,9 +124,13 @@ async function SatoshiQuote({ t, locale, quote }: SatoshiQuoteProps) {
   );
 }
 
-export default async function QuotesCategoryPage({
-  params: { locale, slug },
-}: LocaleParams<{ slug: string }>) {
+export default async function QuotesCategoryPage(
+  props: LocaleParams<{ slug: string }>,
+) {
+  const params = await props.params;
+
+  const { locale, slug } = params;
+
   const { t } = await i18nTranslation(locale);
   const { category, quotes } = await getQuoteCategory(slug);
 

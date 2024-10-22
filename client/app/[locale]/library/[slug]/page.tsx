@@ -15,9 +15,13 @@ import { DocHeader } from "../components/DocHeader";
 
 export const dynamicParams = false;
 
-export async function generateMetadata({
-  params: { locale, slug },
-}: LocaleParams<{ slug: string }>): Promise<Metadata> {
+export async function generateMetadata(
+  props: LocaleParams<{ slug: string }>,
+): Promise<Metadata> {
+  const params = await props.params;
+
+  const { locale, slug } = params;
+
   const doc = await getLibraryDoc(slug, locale);
   const languages = doc.translations.reduce(
     (acc, t) => {
@@ -36,9 +40,13 @@ export async function generateMetadata({
   };
 }
 
-export default async function LibraryDetail({
-  params: { slug, locale },
-}: LocaleParams<{ slug: string }>) {
+export default async function LibraryDetail(
+  props: LocaleParams<{ slug: string }>,
+) {
+  const params = await props.params;
+
+  const { slug, locale } = params;
+
   const { t } = await i18nTranslation(locale);
   const doc = await getLibraryDoc(slug, locale);
 

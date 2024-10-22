@@ -13,9 +13,13 @@ import { formatDate } from "@/utils/dates";
 const generateHref = (slug: string) => (l: Locale) =>
   urls(l).podcast.episode(slug);
 
-export async function generateMetadata({
-  params: { locale, slug },
-}: LocaleParams<{ slug: string }>): Promise<Metadata> {
+export async function generateMetadata(
+  props: LocaleParams<{ slug: string }>,
+): Promise<Metadata> {
+  const params = await props.params;
+
+  const { locale, slug } = params;
+
   const episode = await getEpisode(slug);
   const languages = generateHrefLangs([...locales], generateHref(slug));
 
@@ -28,9 +32,13 @@ export async function generateMetadata({
   };
 }
 
-export default async function PodcastDetail({
-  params: { locale, slug },
-}: LocaleParams<{ slug: string }>) {
+export default async function PodcastDetail(
+  props: LocaleParams<{ slug: string }>,
+) {
+  const params = await props.params;
+
+  const { locale, slug } = params;
+
   const { t } = await i18nTranslation(locale);
   const episode = await getEpisode(slug);
 

@@ -13,9 +13,11 @@ import { CodeTable } from "./components/CodeTable";
 
 const generateHref = (l: Locale) => urls(l).satoshi.code;
 
-export async function generateMetadata({
-  params: { locale },
-}: LocaleParams): Promise<Metadata> {
+export async function generateMetadata(props: LocaleParams): Promise<Metadata> {
+  const params = await props.params;
+
+  const { locale } = params;
+
   const { t } = await i18nTranslation(locale);
   const languages = generateHrefLangs([...locales], generateHref);
 
@@ -28,9 +30,11 @@ export async function generateMetadata({
   };
 }
 
-export default async function SatoshiCode({
-  params: { locale },
-}: LocaleParams) {
+export default async function SatoshiCode(props: LocaleParams) {
+  const params = await props.params;
+
+  const { locale } = params;
+
   const { t } = await i18nTranslation(locale);
 
   return (

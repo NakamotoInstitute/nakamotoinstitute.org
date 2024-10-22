@@ -14,9 +14,11 @@ export const dynamicParams = false;
 
 const generateHref = (l: Locale) => urls(l).library.index;
 
-export async function generateMetadata({
-  params: { locale },
-}: LocaleParams): Promise<Metadata> {
+export async function generateMetadata(props: LocaleParams): Promise<Metadata> {
+  const params = await props.params;
+
+  const { locale } = params;
+
   const { t } = await i18nTranslation(locale);
   const languages = generateHrefLangs([...locales], generateHref);
 
@@ -29,9 +31,11 @@ export async function generateMetadata({
   };
 }
 
-export default async function LibraryIndex({
-  params: { locale },
-}: LocaleParams) {
+export default async function LibraryIndex(props: LocaleParams) {
+  const params = await props.params;
+
+  const { locale } = params;
+
   const { t } = await i18nTranslation(locale);
   const docs = await getLibraryDocs(locale);
 

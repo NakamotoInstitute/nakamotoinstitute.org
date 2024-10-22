@@ -15,9 +15,13 @@ import { NodeHeader } from "../../components/NodeHeader";
 
 export const dynamicParams = false;
 
-export async function generateMetadata({
-  params: { locale, slug, nodeSlug },
-}: LocaleParams<{ slug: string; nodeSlug: string }>): Promise<Metadata> {
+export async function generateMetadata(
+  props: LocaleParams<{ slug: string; nodeSlug: string }>,
+): Promise<Metadata> {
+  const params = await props.params;
+
+  const { locale, slug, nodeSlug } = params;
+
   const node = await getLibraryDocNode(nodeSlug, slug, locale);
 
   return {
@@ -69,9 +73,13 @@ async function NodeNavigation({ node, locale }: NodeNavigationProps) {
   );
 }
 
-export default async function LibraryNodeDetail({
-  params: { slug, nodeSlug, locale },
-}: LocaleParams<{ slug: string; nodeSlug: string }>) {
+export default async function LibraryNodeDetail(
+  props: LocaleParams<{ slug: string; nodeSlug: string }>,
+) {
+  const params = await props.params;
+
+  const { slug, nodeSlug, locale } = params;
+
   const { t } = await i18nTranslation(locale);
   const node = await getLibraryDocNode(nodeSlug, slug, locale);
 

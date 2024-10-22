@@ -1,5 +1,7 @@
 import { getPodcastFeed } from "@/lib/api/podcast";
 
+export const dynamic = "force-static";
+
 export async function GET() {
   const content = await getPodcastFeed();
 

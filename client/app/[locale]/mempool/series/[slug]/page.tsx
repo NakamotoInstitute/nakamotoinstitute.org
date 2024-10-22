@@ -10,9 +10,13 @@ import { PostListing } from "@main/mempool/components/PostListing";
 
 export const dynamicParams = false;
 
-export async function generateMetadata({
-  params: { locale, slug },
-}: LocaleParams<{ slug: string }>): Promise<Metadata> {
+export async function generateMetadata(
+  props: LocaleParams<{ slug: string }>,
+): Promise<Metadata> {
+  const params = await props.params;
+
+  const { locale, slug } = params;
+
   const { series } = await getMempoolSeries(slug, locale);
   const languages = series.translations.reduce(
     (acc, t) => {
@@ -31,9 +35,13 @@ export async function generateMetadata({
   };
 }
 
-export default async function SeriesDetail({
-  params: { slug, locale },
-}: LocaleParams<{ slug: string }>) {
+export default async function SeriesDetail(
+  props: LocaleParams<{ slug: string }>,
+) {
+  const params = await props.params;
+
+  const { slug, locale } = params;
+
   const { t } = await i18nTranslation(locale);
   const { series, posts } = await getMempoolSeries(slug, locale);
 

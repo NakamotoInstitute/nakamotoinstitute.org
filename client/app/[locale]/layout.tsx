@@ -5,9 +5,11 @@ import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 
 import { RootLayout } from "../components/RootLayout";
 
-export async function generateMetadata({
-  params: { locale },
-}: LocaleParams): Promise<Metadata> {
+export async function generateMetadata(props: LocaleParams): Promise<Metadata> {
+  const params = await props.params;
+
+  const { locale } = params;
+
   const { t } = await i18nTranslation(locale);
   const siteTitle = t("sni_full");
   return {
@@ -21,11 +23,16 @@ export async function generateMetadata({
   };
 }
 
-export default function MainLayout({
-  params: { locale },
-  children,
-}: LocaleParams & {
-  children: React.ReactNode;
-}) {
+export default async function MainLayout(
+  props: LocaleParams & {
+    children: React.ReactNode;
+  },
+) {
+  const params = await props.params;
+
+  const { locale } = params;
+
+  const { children } = props;
+
   return <RootLayout locale={locale}>{children}</RootLayout>;
 }

@@ -8,8 +8,8 @@ export default async function fetchAPI(
     ? { "X-API-Key": env.API_KEY, ...options.headers }
     : options.headers;
   return fetch(`${env.API_URL}${endpoint}`, {
-    ...options,
     cache: env.VERCEL_ENV === "development" ? "no-store" : "force-cache",
+    ...options,
     headers,
   });
 }

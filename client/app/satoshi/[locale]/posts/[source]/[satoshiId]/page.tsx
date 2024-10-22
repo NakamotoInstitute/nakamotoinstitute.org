@@ -26,12 +26,16 @@ const generateHref =
   (source: ForumPostSource, satoshiId: string) => (l: Locale) =>
     urls(l).satoshi.posts.sourcePost(source, satoshiId);
 
-export async function generateMetadata({
-  params: { locale, source, satoshiId },
-}: LocaleParams<{
-  source: ForumPostSource;
-  satoshiId: string;
-}>): Promise<Metadata> {
+export async function generateMetadata(
+  props: LocaleParams<{
+    source: ForumPostSource;
+    satoshiId: string;
+  }>,
+): Promise<Metadata> {
+  const params = await props.params;
+
+  const { locale, source, satoshiId } = params;
+
   const postData = await getForumPost(source, satoshiId);
   const languages = generateHrefLangs(
     [...locales],
@@ -47,9 +51,13 @@ export async function generateMetadata({
   };
 }
 
-export default async function PostDetail({
-  params: { source, satoshiId, locale },
-}: LocaleParams<{ source: ForumPostSource; satoshiId: string }>) {
+export default async function PostDetail(
+  props: LocaleParams<{ source: ForumPostSource; satoshiId: string }>,
+) {
+  const params = await props.params;
+
+  const { source, satoshiId, locale } = params;
+
   const postData = await getForumPost(source, satoshiId);
   if (!postData) {
     return notFound();

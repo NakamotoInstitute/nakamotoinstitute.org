@@ -16,9 +16,11 @@ export const dynamicParams = false;
 
 const generateHref = (l: Locale) => urls(l).satoshi.emails.index;
 
-export async function generateMetadata({
-  params: { locale },
-}: LocaleParams): Promise<Metadata> {
+export async function generateMetadata(props: LocaleParams): Promise<Metadata> {
+  const params = await props.params;
+
+  const { locale } = params;
+
   const { t } = await i18nTranslation(locale);
   const languages = generateHrefLangs([...locales], generateHref);
 
@@ -31,9 +33,11 @@ export async function generateMetadata({
   };
 }
 
-export default async function EmailsIndex({
-  params: { locale },
-}: LocaleParams) {
+export default async function EmailsIndex(props: LocaleParams) {
+  const params = await props.params;
+
+  const { locale } = params;
+
   const { t } = await i18nTranslation(locale);
   const emails = await getSatoshiEmails();
 

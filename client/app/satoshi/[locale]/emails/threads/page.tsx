@@ -20,9 +20,11 @@ export const dynamicParams = false;
 
 const generateHref = (l: Locale) => urls(l).satoshi.emails.threadsIndex;
 
-export async function generateMetadata({
-  params: { locale },
-}: LocaleParams): Promise<Metadata> {
+export async function generateMetadata(props: LocaleParams): Promise<Metadata> {
+  const params = await props.params;
+
+  const { locale } = params;
+
   const { t } = await i18nTranslation(locale);
   const languages = generateHrefLangs([...locales], generateHref);
 
@@ -35,9 +37,11 @@ export async function generateMetadata({
   };
 }
 
-export default async function EmailThreadsIndex({
-  params: { locale },
-}: LocaleParams) {
+export default async function EmailThreadsIndex(props: LocaleParams) {
+  const params = await props.params;
+
+  const { locale } = params;
+
   const { t } = await i18nTranslation(locale);
   const threads = await getEmailThreads();
   const sortedThreads = threads.reduce(

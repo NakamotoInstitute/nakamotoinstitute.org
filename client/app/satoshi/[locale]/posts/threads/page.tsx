@@ -17,9 +17,11 @@ import { IndexPageLayout } from "@satoshi/components/IndexPageLayout";
 
 const generateHref = (l: Locale) => urls(l).satoshi.posts.threadsIndex;
 
-export async function generateMetadata({
-  params: { locale },
-}: LocaleParams): Promise<Metadata> {
+export async function generateMetadata(props: LocaleParams): Promise<Metadata> {
+  const params = await props.params;
+
+  const { locale } = params;
+
   const { t } = await i18nTranslation(locale);
   const languages = generateHrefLangs([...locales], generateHref);
 
@@ -32,9 +34,11 @@ export async function generateMetadata({
   };
 }
 
-export default async function PostThreadsIndex({
-  params: { locale },
-}: LocaleParams) {
+export default async function PostThreadsIndex(props: LocaleParams) {
+  const params = await props.params;
+
+  const { locale } = params;
+
   const { t } = await i18nTranslation(locale);
   const threads = await getForumThreads();
   const sortedThreads = threads.reduce(

@@ -20,9 +20,13 @@ export const dynamicParams = false;
 const generateHref = (source: ForumPostSource) => (l: Locale) =>
   urls(l).satoshi.posts.sourceThreadsIndex(source);
 
-export async function generateMetadata({
-  params: { locale, source },
-}: LocaleParams<{ source: ForumPostSource }>): Promise<Metadata> {
+export async function generateMetadata(
+  props: LocaleParams<{ source: ForumPostSource }>,
+): Promise<Metadata> {
+  const params = await props.params;
+
+  const { locale, source } = params;
+
   const { t } = await i18nTranslation(locale);
   const languages = generateHrefLangs([...locales], generateHref(source));
 
@@ -35,9 +39,13 @@ export async function generateMetadata({
   };
 }
 
-export default async function PostSourceThreadsIndex({
-  params: { source, locale },
-}: LocaleParams<{ source: ForumPostSource }>) {
+export default async function PostSourceThreadsIndex(
+  props: LocaleParams<{ source: ForumPostSource }>,
+) {
+  const params = await props.params;
+
+  const { source, locale } = params;
+
   const { t } = await i18nTranslation(locale);
   const threads = await getForumThreadsBySource(source);
 

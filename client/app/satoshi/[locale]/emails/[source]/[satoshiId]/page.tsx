@@ -25,12 +25,16 @@ import { EmailNavigation } from "@satoshi/components/ContentNavigation";
 const generateHref = (source: EmailSource, satoshiId: string) => (l: Locale) =>
   urls(l).satoshi.emails.sourceEmail(source, satoshiId);
 
-export async function generateMetadata({
-  params: { source, satoshiId, locale },
-}: LocaleParams<{
-  source: EmailSource;
-  satoshiId: string;
-}>): Promise<Metadata> {
+export async function generateMetadata(
+  props: LocaleParams<{
+    source: EmailSource;
+    satoshiId: string;
+  }>,
+): Promise<Metadata> {
+  const params = await props.params;
+
+  const { source, satoshiId, locale } = params;
+
   const emailData = await getEmail(source, satoshiId);
   const languages = generateHrefLangs(
     [...locales],
@@ -46,9 +50,13 @@ export async function generateMetadata({
   };
 }
 
-export default async function EmailDetail({
-  params: { locale, source, satoshiId },
-}: LocaleParams<{ source: EmailSource; satoshiId: string }>) {
+export default async function EmailDetail(
+  props: LocaleParams<{ source: EmailSource; satoshiId: string }>,
+) {
+  const params = await props.params;
+
+  const { locale, source, satoshiId } = params;
+
   const { t } = await i18nTranslation(locale);
   const emailData = await getEmail(source, satoshiId);
 

@@ -16,9 +16,13 @@ import { TranslationLinks } from "../components/TranslationLinks";
 
 export const dynamicParams = false;
 
-export async function generateMetadata({
-  params: { locale, slug },
-}: LocaleParams<{ slug: string }>): Promise<Metadata> {
+export async function generateMetadata(
+  props: LocaleParams<{ slug: string }>,
+): Promise<Metadata> {
+  const params = await props.params;
+
+  const { locale, slug } = params;
+
   const post = await getMempoolPost(slug, locale);
 
   const languages = Object.fromEntries(
@@ -40,9 +44,13 @@ export async function generateMetadata({
   };
 }
 
-export default async function MempoolPost({
-  params: { slug, locale },
-}: LocaleParams<{ slug: string }>) {
+export default async function MempoolPost(
+  props: LocaleParams<{ slug: string }>,
+) {
+  const params = await props.params;
+
+  const { slug, locale } = params;
+
   const { t } = await i18nTranslation(locale);
   const post = await getMempoolPost(slug, locale);
 

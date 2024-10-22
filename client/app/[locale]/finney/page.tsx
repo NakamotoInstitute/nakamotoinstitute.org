@@ -14,9 +14,11 @@ import { formatDate, formatDateRange } from "@/utils/dates";
 
 const generateHref = (l: Locale) => urls(l).finney.index;
 
-export async function generateMetadata({
-  params: { locale },
-}: LocaleParams): Promise<Metadata> {
+export async function generateMetadata(props: LocaleParams): Promise<Metadata> {
+  const params = await props.params;
+
+  const { locale } = params;
+
   const { t } = await i18nTranslation(locale);
   const languages = generateHrefLangs([...locales], generateHref);
 
@@ -29,9 +31,11 @@ export async function generateMetadata({
   };
 }
 
-export default async function FinneyIndex({
-  params: { locale },
-}: LocaleParams) {
+export default async function FinneyIndex(props: LocaleParams) {
+  const params = await props.params;
+
+  const { locale } = params;
+
   const { t } = await i18nTranslation(locale);
   const content = await getPage("finney", locale);
   const { library } = await getAuthor("hal-finney", "en");

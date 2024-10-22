@@ -11,9 +11,11 @@ import { urls } from "@/lib/urls";
 
 const generateHref = (l: Locale) => urls(l).about;
 
-export async function generateMetadata({
-  params: { locale },
-}: LocaleParams): Promise<Metadata> {
+export async function generateMetadata(props: LocaleParams): Promise<Metadata> {
+  const params = await props.params;
+
+  const { locale } = params;
+
   const { t } = await i18nTranslation(locale);
   const languages = generateHrefLangs([...locales], generateHref);
 
@@ -26,7 +28,11 @@ export async function generateMetadata({
   };
 }
 
-export default async function AboutPage({ params: { locale } }: LocaleParams) {
+export default async function AboutPage(props: LocaleParams) {
+  const params = await props.params;
+
+  const { locale } = params;
+
   const content = await getPage("about", locale);
   const { t } = await i18nTranslation(locale);
 

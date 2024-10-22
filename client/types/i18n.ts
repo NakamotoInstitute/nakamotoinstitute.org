@@ -3,7 +3,7 @@ import { locales } from "@/i18n";
 declare global {
   type Locale = (typeof locales)[number];
   type LocaleParams<T = object, U = object> = {
-    params: { locale: Locale } & T;
+    params: Promise<{ locale: Locale } & T>;
   } & U;
 }
 

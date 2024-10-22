@@ -12,9 +12,11 @@ import { urls } from "@/lib/urls";
 
 const generateHref = (l: Locale) => urls(l).mempool.seriesIndex;
 
-export async function generateMetadata({
-  params: { locale },
-}: LocaleParams): Promise<Metadata> {
+export async function generateMetadata(props: LocaleParams): Promise<Metadata> {
+  const params = await props.params;
+
+  const { locale } = params;
+
   const { t } = await i18nTranslation(locale);
   const languages = generateHrefLangs([...locales], generateHref);
 
@@ -47,9 +49,11 @@ function SeriesListing({ locale, series }: SeriesListingProps) {
   );
 }
 
-export default async function SeriesIndex({
-  params: { locale },
-}: LocaleParams) {
+export default async function SeriesIndex(props: LocaleParams) {
+  const params = await props.params;
+
+  const { locale } = params;
+
   const { t } = await i18nTranslation(locale);
   const allSeries = await getAllMempoolSeries(locale);
 
