@@ -1,20 +1,41 @@
 FROM python:3.12-slim
 
+ENV PYTHONUNBUFFERED=1
+
+WORKDIR /app/
+
 # Install uv
 COPY --from=ghcr.io/astral-sh/uv:0.4 /uv /bin/uv
 
-# Copy the application into the container.
-COPY . /app
+# Place executables in the environment at the front of the path
+# Ref: https://docs.astral.sh/uv/guides/integration/docker/#using-the-environment
+ENV PATH="/app/.venv/bin:$PATH"
 
-# Install the application dependencies.
-WORKDIR /app
-RUN uv sync --frozen --no-cache --no-dev
+# Compile bytecode
+# Ref: https://docs.astral.sh/uv/guides/integration/docker/#compiling-bytecode
+ENV UV_COMPILE_BYTECODE=1
+
+# uv Cache
+# Ref: https://docs.astral.sh/uv/guides/integration/docker/#caching
+ENV UV_LINK_MODE=copy
+
+# Install dependencies
+# Ref: https://docs.astral.sh/uv/guides/integration/docker/#intermediate-layers
+RUN --mount=type=cache,target=/root/.cache/uv \
+    --mount=type=bind,source=uv.lock,target=uv.lock \
+    --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
+    uv sync --frozen --no-install-project --no-dev
+
+ENV PYTHONPATH=/app
+
+COPY . /app
 
 COPY ./compose/production/fastapi/entrypoint /entrypoint
 RUN sed -i 's/\r$//g' /entrypoint
 RUN chmod +x /entrypoint
 
-ENV PATH="/app/.venv/bin:$PATH"
+RUN --mount=type=cache,target=/root/.cache/uv \
+    uv sync
 
 EXPOSE 8000
 

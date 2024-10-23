@@ -21,6 +21,8 @@ The server relies on Docker Compose for environment management. Ensure Docker Co
 
   This will automatically handle data migrations and imports.
 
+- **Updating Dependencies**: You will need to install `uv` and run `uv sync` locally to update the dependencies in `uv.lock`.
+
 - **API Access**: The API is accessible at `http://localhost:8000`.
 
 - **Local Document Serving**: For local serving of PDFs, ePubs, etc., download the necessary files from [here](https://cdn.nakamotoinstitute.org/docs/sni-docs.zip) and place them in `server/static/docs`.
