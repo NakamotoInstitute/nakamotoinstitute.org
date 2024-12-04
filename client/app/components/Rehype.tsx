@@ -32,7 +32,7 @@ export function Rehype({ hasMath, children }: RehypeProps) {
       {hasMath ? (
         <Script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" />
       ) : null}
-      {file.result}
+      {file.result as React.ReactNode}
     </>
   );
 }
