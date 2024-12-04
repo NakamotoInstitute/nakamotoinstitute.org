@@ -2,10 +2,10 @@ from .authors import Author  # noqa: F401
 from .content import (  # noqa: F401
     Content,
     FileMetadata,
+    HTMLRenderableContent,
     JSONContent,
     MarkdownContent,
     YAMLContent,
-    HTMLRenderableContent,
 )
 from .library import (  # noqa: F401
     Document,
