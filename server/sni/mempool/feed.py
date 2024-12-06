@@ -60,6 +60,6 @@ def generate_mempool_feed(
         fe.dc.dc_creator(creator=[author.name for author in authors])
         fe.author([{"name": author.name} for author in authors])
         fe.description(post.excerpt)
-        fe.content(post.html_content, type="CDATA")
+        fe.content(post.content.html_content, type="CDATA")
 
     return fg
