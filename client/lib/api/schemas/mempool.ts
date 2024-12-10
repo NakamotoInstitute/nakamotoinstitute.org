@@ -16,6 +16,7 @@ export const zMempoolSeriesIndex = z.array(zMempoolSeries);
 const zMempoolPostBase = z.object({
   locale: z.string(),
   title: z.string(),
+  subtitle: z.string().nullable(),
   slug: z.string(),
   excerpt: z.string(),
   image: z.string().nullable(),

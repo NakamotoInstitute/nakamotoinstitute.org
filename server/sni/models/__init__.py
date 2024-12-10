@@ -12,7 +12,6 @@ from .library import (  # noqa: F401
     DocumentFormat,
     DocumentNode,
     DocumentTranslation,
-    LibraryWeightFile,
     document_authors,
     document_formats,
     document_translators,

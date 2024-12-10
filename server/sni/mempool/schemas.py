@@ -30,6 +30,7 @@ class MempoolCanonicalMDModel(BaseModel):
 
 class BaseMempoolMDModel(BaseModel):
     title: str
+    subtitle: str | None = None
     image_alt: str | None = None
 
 
@@ -71,6 +72,7 @@ class MempoolSeriesBaseModel(ORMModel):
 class MempoolPostBaseModel(ORMModel):
     locale: Locales
     title: str
+    subtitle: str | None = None
     slug: str
     excerpt: str
     image: str | None = Field(validation_alias=AliasPath("blog_post", "image_url"))

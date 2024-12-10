@@ -63,6 +63,11 @@ export async function PostHeader({ t, locale, post }: PostHeaderProps) {
         <h1 className="mb-4 text-4xl font-medium leading-[1.1] md:mb-6 md:text-7xl">
           {post.title}
         </h1>
+        {post.subtitle ? (
+          <p className="mb-4 text-2xl font-semibold md:mb-6 md:text-3xl">
+            {post.subtitle}
+          </p>
+        ) : null}
         <AuthorsLinks
           className="mb-1 text-xl font-bold small-caps md:mb-4 md:text-2xl"
           itemClassName="text-dark"

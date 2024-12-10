@@ -18,7 +18,6 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sni.config import settings
 from sni.constants import DocumentFormats, Locales
 from sni.database import Base
-from sni.models.content import YAMLContent
 
 if TYPE_CHECKING:
     from sni.models.authors import Author
@@ -62,19 +61,6 @@ class DocumentFormat(Base):
     documents: Mapped[List["DocumentTranslation"]] = relationship(
         secondary=document_formats, back_populates="formats"
     )
-
-
-class LibraryWeightFile(Base):
-    __tablename__ = "library_weight_files"
-
-    id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    content_id: Mapped[int] = mapped_column(
-        Integer, ForeignKey("yaml_content.id"), unique=True
-    )
-    content: Mapped[YAMLContent] = relationship("YAMLContent")
-
-    def __repr__(self) -> str:
-        return f"<LibraryWeightFile(id={self.id})>"
 
 
 class Document(Base):

@@ -87,6 +87,7 @@ class BlogPostTranslation(Base):
         Enum(Locales, values_callable=lambda x: [e.value for e in x]), nullable=False
     )
     title: Mapped[str] = mapped_column(String, nullable=False)
+    subtitle: Mapped[str] = mapped_column(String, nullable=True)
     slug: Mapped[str] = mapped_column(String, nullable=False)
     excerpt: Mapped[str] = mapped_column(Text, nullable=False)
     image_alt: Mapped[str] = mapped_column(String, nullable=True)
