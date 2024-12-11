@@ -13,7 +13,7 @@ export type RenderedItemsListProps<T> = {
   locale: Locale;
 };
 
-export function RenderedItemsList<T = any>({
+export function RenderedItemsList<T = unknown>({
   as: WrapperComponent = "p",
   items,
   renderItem,

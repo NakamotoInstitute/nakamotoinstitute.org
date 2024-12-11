@@ -49,7 +49,7 @@ export default async function TheSkepticsPage(props: LocaleParams) {
   try {
     prices = await fetchPriceHistory(60 * 60);
     lastUpdated = prices[prices.length - 1].date;
-  } catch (err) {
+  } catch {
     error = true;
   }
 

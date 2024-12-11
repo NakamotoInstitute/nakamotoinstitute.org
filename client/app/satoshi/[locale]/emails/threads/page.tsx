@@ -13,7 +13,6 @@ import { urls } from "@/lib/urls";
 import { formatEmailSource } from "@/utils/strings";
 
 import { ContentListing } from "@satoshi/components/ContentListing";
-import { SourceLink } from "@satoshi/components/IndexHeader";
 import { IndexPageLayout } from "@satoshi/components/IndexPageLayout";
 
 export const dynamicParams = false;

@@ -18,7 +18,6 @@ export const ThreadPageHeader = async ({
   title,
   satoshiOnly,
   allLink,
-  externalLink,
   children,
 }: ThreadPageHeaderProps) => {
   return (
