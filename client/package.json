@@ -24,7 +24,7 @@
     "next": "15.1.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "react-i18next": "^15.1.4",
+    "react-i18next": "^15.2.0",
     "react-markdown": "^9.0.1",
     "rehype-mathjax": "^6.0.0",
     "rehype-parse": "^9.0.1",
@@ -38,6 +38,7 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.2.0",
     "@tailwindcss/typography": "^0.5.15",
     "@trivago/prettier-plugin-sort-imports": "^5.2.0",
     "@types/big.js": "^6.2.2",
@@ -48,7 +49,6 @@
     "eslint": "^9.16.0",
     "eslint-config-next": "15.1.0",
     "eslint-config-prettier": "^9.1.0",
-    "@eslint/eslintrc": "^3.2.0",
     "postcss": "^8.4.49",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.9",
