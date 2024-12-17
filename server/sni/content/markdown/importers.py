@@ -399,7 +399,9 @@ class MarkdownDirectoryImporter(MarkdownImporter):
                 manifest_file,
                 select_schemas(self.schemas, "manifest", "canonical", "translation"),
             )
-            manifest_data = results["manifest"].data
+            # We want to check against the validated data model when inserting nodes,
+            # not the raw data
+            manifest_schema_data = results["manifest"].model
             canonical_data = results["canonical"].data
             translation_data = results["translation"].data
 
@@ -477,7 +479,7 @@ class MarkdownDirectoryImporter(MarkdownImporter):
 
             if translation_entry:
                 self._insert_nodes(
-                    manifest_data["nodes"],
+                    manifest_schema_data.nodes,
                     None,
                     translation_entry.id,
                     1,
