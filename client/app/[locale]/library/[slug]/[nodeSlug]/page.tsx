@@ -41,7 +41,7 @@ async function NodeNavigation({ node, locale }: NodeNavigationProps) {
   return (
     <div className="mx-auto flex w-full max-w-4.5xl justify-between gap-5 px-4">
       {node.previous ? (
-        <div className="min-w-0 flex-1 flex-shrink-0">
+        <div className="min-w-0">
           <Link
             className="group flex items-center justify-start gap-2"
             href={urls(locale).library.docNode(
@@ -57,7 +57,7 @@ async function NodeNavigation({ node, locale }: NodeNavigationProps) {
         </div>
       ) : null}
       {node.next ? (
-        <div className="min-w-0 flex-1 flex-shrink-0">
+        <div className="min-w-0">
           <Link
             className="ml-auto flex items-center justify-end gap-2"
             href={urls(locale).library.docNode(node.docSlug, node.next.slug)}
