@@ -145,7 +145,7 @@ The bitcoin network removes trust in any centralized third party through this me
 Each full node enforces the consensus rules of the network, a critical element of which is the currency's fixed supply. Each bitcoin block includes a predefined number of bitcoin to be issued, and each bitcoin transaction must have originated from a previously valid block in order to be valid. Every 210,000 blocks, the bitcoin issued in each valid block is cut in half until the amount of bitcoin issued ultimately reaches zero in approximately 2140, creating an asymptotic, capped supply schedule. Because each node independently validates every transaction and each block, the network collectively enforces the fixed 21 million supply. If any node were to broadcast an invalid transaction or block, the rest of the network would reject it and that node would fall out of consensus. Essentially, any node could attempt to create excess bitcoin, but every other node has an interest in ensuring the supply of bitcoin is consistent with the predefined fixed limit. Otherwise, the currency would be arbitrarily debased at the direct expense of the rest of the network. No one has an incentive to allow others to arbitrarily create money, and everyone has the incentive to prevent it from happening.
 
 <figure id="figure-3.7">
-  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations239.jpg" alt="" />
+  <img src="/static/img/library/gradually-then-suddenly/GTS-Illustrations29.jpg" alt="" />
   <figcaption><strong>Figure 3.7</strong></figcaption>
 </figure>
 
