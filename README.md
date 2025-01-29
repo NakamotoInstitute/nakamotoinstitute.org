@@ -34,7 +34,8 @@ The frontend uses [`pnpm`](https://github.com/pnpm/pnpm) for package management.
 - **Getting Started**:
 
   1. Navigate to the client directory: `cd client`.
-  2. Update your `/etc/hosts` file with `satoshi.localhost`:
+  2. Copy `.env.example` to `.env.local` and set `VERCEL_ENV=development`.
+  3. Update your `/etc/hosts` file with `satoshi.localhost`:
      ```
      127.0.0.1   satoshi.localhost
      ::1         satoshi.localhost
@@ -43,8 +44,8 @@ The frontend uses [`pnpm`](https://github.com/pnpm/pnpm) for package management.
      ```
      MAP_DOMAIN=false
      ```
-  3. Install dependencies: `pnpm i`.
-  4. Start the development server: `pnpm dev`.
+  4. Install dependencies: `pnpm i`.
+  5. Start the development server: `pnpm dev`.
 
 - **Website Access**: The site is available at `http://localhost:3000`.
 
