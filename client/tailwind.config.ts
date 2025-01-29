@@ -1,3 +1,4 @@
+import typography from "@tailwindcss/typography";
 import type { Config } from "tailwindcss";
 import plugin from "tailwindcss/plugin";
 import { PluginAPI } from "tailwindcss/types/config";
@@ -7,7 +8,6 @@ const round = (num: number) =>
     .toFixed(7)
     .replace(/(\.[0-9]+?)0+$/, "$1")
     .replace(/\.0$/, "");
-const rem = (px: number) => `${round(px / 16)}rem`;
 const em = (px: number, base: number) => `${round(px / base)}em`;
 
 const config: Config = {
@@ -238,7 +238,7 @@ const config: Config = {
     },
   },
   plugins: [
-    require("@tailwindcss/typography"),
+    typography,
     plugin(({ addComponents, addUtilities, theme }) => {
       addComponents({
         ".disclaimer": {
