@@ -4,26 +4,26 @@ version = "0.1.0"
 description = "Advancing and preserving bitcoin knowledge"
 requires-python = ">=3.12"
 dependencies = [
-    "alembic-postgresql-enum==1.4.0",
+    "alembic-postgresql-enum==1.5.0",
     "beautifulsoup4==4.12.3",
-    "boto3==1.35.75",
-    "fastapi[standard]==0.115.6",
+    "boto3==1.36.8",
+    "fastapi[standard]==0.115.7",
     "feedgen==1.0.0",
     "markdown-it-py==3.0.0",
     "mdit-py-plugins==0.4.2",
-    "psycopg[binary,pool]==3.2.3",
-    "pydantic-settings==2.6.1",
+    "psycopg[binary,pool]==3.2.4",
+    "pydantic-settings==2.7.1",
     "pyyaml==6.0.2",
-    "SQLAlchemy[asyncio,mypy]==2.0.36",
+    "SQLAlchemy[asyncio,mypy]==2.0.37",
     "typer==0.15.1",
 ]
 
 [tool.uv]
 package = false
 dev-dependencies = [
-    "ruff==0.8.1",
+    "ruff==0.9.3",
     "types-beautifulsoup4==4.12.0.20241020",
-    "types-PyYaml==6.0.12.20240917",
+    "types-PyYaml==6.0.12.20241230",
 ]
 
 [tool.ruff]
