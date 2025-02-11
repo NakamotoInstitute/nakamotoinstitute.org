@@ -6,6 +6,7 @@ date: 2014-05-03
 excerpt:
   The difference between money and a bubble is that a commodity whose price
   is a bubble actually has some underlying value.
+has_math: true
 ---
 
 ## The Value of Money
@@ -30,9 +31,9 @@ Money, however, need not have any ultimate use. It may only ever passed around f
 
 ## Metcalfe’s Law
 
-Some of the theory of money can be understood in terms of [Metcalfe’s law](https://en.wikipedia.org/wiki/Metcalfe's_law) from computer networking. Metcalfe’s law says that the value of a network is proportional to the square of the number of nodes. The rationale is that the network should be valued according to the number of connections it supports, which is approximately proportional to _n_2 (for large \_n_). Consequently, as the network grows, it presents a better and better opportunity for new members. As new members enter, the network improves for all its present members.
+Some of the theory of money can be understood in terms of [Metcalfe’s law](https://en.wikipedia.org/wiki/Metcalfe's_law) from computer networking. Metcalfe’s law says that the value of a network is proportional to the square of the number of nodes. The rationale is that the network should be valued according to the number of connections it supports, which is approximately proportional to $n^2$ (for large $n$). Consequently, as the network grows, it presents a better and better opportunity for new members. As new members enter, the network improves for all its present members.
 
-Metcalfe’s law must be adjusted slightly to apply to media of exchange because some nodes in the trade network will be more valuable than others. Those who have a lot of the medium are potentially able to spend more than those who have little. Therefore, use the market cap of the medium of exchange as _n_ instead of the number of people. Similarly, some transactions are also worth more than others, so it makes sense to use the transaction volume rather than the number of transactions.
+Metcalfe’s law must be adjusted slightly to apply to media of exchange because some nodes in the trade network will be more valuable than others. Those who have a lot of the medium are potentially able to spend more than those who have little. Therefore, use the market cap of the medium of exchange as $n$ instead of the number of people. Similarly, some transactions are also worth more than others, so it makes sense to use the transaction volume rather than the number of transactions.
 
 A striking test of Metcalfe’s law in Bitcoin recently appeared on the [Bitcointalk forums](https://bitcointalk.org/index.php?topic=366214.msg5919365#msg5919365), created by Peter R. I have made my own chart here.
 
@@ -67,4 +68,5 @@ Every time you buy Bitcoin, a fairy gets its wings. Now clap your hands, click y
 \[Update 5/15/2014: Clarified section ‘Appraising Bitcoin’ in response to criticisms.\]
 
 [^1]: One of the best arguments against the bubble theory of Bitcoin was presented by Peter Šurda in ["The Economics of Bitcoin"](/static/docs/economics-of-bitcoin.pdf), in which he asks "What would replace Bitcoin?" The point of the question is that because Bitcoin reduces transaction costs over its alternatives, people have at least _some_ reason to continue holding it until a superior alternative emerges.
+
 [^2]: This analysis leaves something to explain—if the value of a medium of exchange is just the market cap, why does Bitcoin go through hype cycles? Every time Bitcoin goes up in price, that is an increase in its underlying value, so why does its price ever crash? I don’t know the answer, but I think I have a reasonable hypothesis: the network takes time to adjust to the enormous number of newcomers during each hype cycle. Each member of the network adds value, but this takes time—the members of the network must learn something about one another before the value they add to the network is more fully realized. If this effect is real, then the price could temporarily rise more rapidly than the growth that the network can support.
