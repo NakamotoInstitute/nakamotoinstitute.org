@@ -1,22 +1,27 @@
 import Link from "next/link";
 
-import { Episode } from "@/lib/api/schemas/podcast";
+import { BaseEpisode } from "@/lib/api/schemas/podcasts";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 
 type EpisodeListingProps = {
   locale: Locale;
-  episode: Episode;
+  episode: BaseEpisode;
+  podcastSlug: string;
 };
 
-export function EpisodeListing({ locale, episode }: EpisodeListingProps) {
+export function EpisodeListing({
+  locale,
+  episode,
+  podcastSlug,
+}: EpisodeListingProps) {
   return (
     <article className="border-t border-dashed border-taupe-light py-4 last:border-b">
       <header>
         <h2 className="font-bold md:text-xl">
           <Link
             className="text-cardinal hover:underline"
-            href={urls(locale).podcast.episode(episode.slug)}
+            href={urls(locale).podcasts.episode(podcastSlug, episode.slug)}
           >
             {episode.title}
           </Link>

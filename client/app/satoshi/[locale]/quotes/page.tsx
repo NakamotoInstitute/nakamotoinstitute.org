@@ -9,7 +9,7 @@ import { locales } from "@/i18n";
 import { getQuoteCategories } from "@/lib/api/quotes";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
-import { urls } from "@/lib/urls";
+import { externalUrls, urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 
 const generateHref = (l: Locale) => urls(l).satoshi.quotesIndex;
@@ -114,7 +114,7 @@ export default async function QuotesIndex(props: LocaleParams) {
               github: (
                 <Link
                   className="text-cardinal hover:underline"
-                  href={urls(locale).github}
+                  href={externalUrls.github}
                 />
               ),
             }}

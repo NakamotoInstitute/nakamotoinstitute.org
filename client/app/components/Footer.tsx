@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Trans } from "react-i18next/TransWithoutContext";
 
-import { cdnUrl, urls } from "@/lib/urls";
+import { cdnUrl, externalUrls, urls } from "@/lib/urls";
 
 type FooterProps = {
   t: TFunction<string, string>;
@@ -14,13 +14,14 @@ export async function Footer({ t, locale }: FooterProps) {
   const links = [
     { label: t("about"), url: urls(locale).about },
     { label: t("contact"), url: urls(locale).contact },
+    { label: t("podcasts"), url: urls(locale).podcasts.index },
     { label: t("feed"), url: urls(locale).mempool.atom },
-    { label: t("newsletter"), url: urls(locale).substack },
+    { label: t("newsletter"), url: externalUrls.substack },
     { label: t("donate"), url: urls(locale).donate.index },
     { label: t("get_involved"), url: urls(locale).getInvolved },
-    { label: t("github"), url: urls(locale).github },
-    { label: t("x"), url: urls(locale).x },
-    { label: t("nostr"), url: urls(locale).nostr },
+    { label: t("github"), url: externalUrls.github },
+    { label: t("x"), url: externalUrls.x },
+    { label: t("nostr"), url: externalUrls.nostr },
   ];
 
   return (

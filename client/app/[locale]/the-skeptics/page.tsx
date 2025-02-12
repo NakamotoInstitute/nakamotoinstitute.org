@@ -11,7 +11,7 @@ import { fetchPriceHistory, getSkeptics } from "@/lib/api/skeptics";
 import { getPage } from "@/lib/content";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
-import { urls } from "@/lib/urls";
+import { externalUrls, urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 
 import { SkepticListing } from "./components/SkepticListing";
@@ -69,7 +69,7 @@ export default async function TheSkepticsPage(props: LocaleParams) {
                 a: (
                   <Link
                     className="text-cardinal hover:underline"
-                    href={urls(locale).github}
+                    href={externalUrls.github}
                   />
                 ),
               }}

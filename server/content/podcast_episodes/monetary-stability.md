@@ -1,5 +1,7 @@
 ---
+podcast: the-crypto-mises-podcast
 title: Monetary Stability
+episode_number: 2
 date: 2015-01-07 17:00:00 -6
 duration: "17:09"
 summary: Daniel Krawisz and Michael Goldstein discuss why the desire for monetary stability is based on economic fallacies.

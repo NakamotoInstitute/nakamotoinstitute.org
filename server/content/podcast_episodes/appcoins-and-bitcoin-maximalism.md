@@ -1,5 +1,7 @@
 ---
+podcast: the-crypto-mises-podcast
 title: Appcoins and Bitcoin Maximalism
+episode_number: 1
 date: 2014-12-22 17:00:00 -6
 duration: "38:30"
 summary: Daniel Krawisz and Michael Goldstein discuss appcoins and Vitalik Buterin's critique of "Bitcoin maximalism."

@@ -6,7 +6,7 @@ from sni.library.importers import (
     import_library_weights,
 )
 from sni.mempool.importers import MempoolImporter, MempoolSeriesImporter
-from sni.podcast.importers import EpisodeImporter
+from sni.podcasts.importers import EpisodeImporter, PodcastImporter
 from sni.satoshi.emails.importers import import_email_threads, import_emails
 from sni.satoshi.posts.importers import import_forum_posts, import_forum_threads
 from sni.satoshi.quotes.importers import import_quote_categories, import_quotes
@@ -39,6 +39,7 @@ def update_content(force: bool = False):
             LibraryBookImporter,
             MempoolSeriesImporter,
             MempoolImporter,
+            PodcastImporter,
             EpisodeImporter,
         ]
         for importer in importers:

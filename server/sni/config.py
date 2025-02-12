@@ -11,6 +11,9 @@ DEBUG_CDN_BASE_URL = f"{DEFAULT_BASE_URL}/static"
 
 
 class Settings(BaseSettings):
+    SITE_NAME: str = "Satoshi Nakamoto Institute"
+    SITE_ADMIN_NAME: str = "Michael Goldstein"
+    SITE_ADMIN_EMAIL: str = "admin@nakamotoinstitute.org"
     SQLALCHEMY_DATABASE_URI: str = (
         "postgresql+psycopg://myuser:mysecretpassword@127.0.0.1:5432/mydatabase"
     )

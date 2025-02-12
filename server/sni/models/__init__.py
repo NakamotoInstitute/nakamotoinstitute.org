@@ -24,7 +24,7 @@ from .mempool import (  # noqa: F401
     blog_post_authors,
     blog_post_translators,
 )
-from .podcast import Episode  # noqa: F401
+from .podcasts import Episode, Podcast  # noqa: F401
 from .satoshi.emails import Email, EmailThread  # noqa: F401
 from .satoshi.posts import ForumPost, ForumThread  # noqa: F401
 from .satoshi.quotes import (  # noqa: F401

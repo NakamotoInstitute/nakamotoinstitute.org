@@ -3,7 +3,12 @@ import { TFunction } from "i18next";
 import Image from "next/image";
 
 import { env } from "@/env";
-import { cdnUrl, generateLocaleToggleLinks, urls } from "@/lib/urls";
+import {
+  cdnUrl,
+  externalUrls,
+  generateLocaleToggleLinks,
+  urls,
+} from "@/lib/urls";
 
 import { AdditionalNavigation } from "./AdditionalNavigation";
 import { Breadcrumbs } from "./Breadcrumbs";
@@ -60,7 +65,7 @@ export async function PageLayout({
           },
           { href: urls(locale).library.index, text: t("library") },
           { href: urls(locale).mempool.index, text: t("mempool") },
-          { href: urls(locale).substack, text: t("newsletter") },
+          { href: externalUrls.substack, text: t("newsletter") },
         ]}
         navButtons={[
           <ButtonLink key="donate" href={urls(locale).donate.zaprite}>

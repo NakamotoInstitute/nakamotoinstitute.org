@@ -8,9 +8,10 @@ import { PageLayout } from "@/app/components/PageLayout";
 import { locales } from "@/i18n";
 import { getHomeLibraryDocs } from "@/lib/api/library";
 import { getLatestMempoolPosts } from "@/lib/api/mempool";
+import { getHomePodcasts } from "@/lib/api/podcasts";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
-import { cdnUrl, urls } from "@/lib/urls";
+import { cdnUrl, externalUrls, urls } from "@/lib/urls";
 
 import { ArrowRight } from "../components/ArrowRight";
 import { ButtonLink } from "../components/Button";
@@ -81,9 +82,10 @@ export default async function HomePage(props: LocaleParams) {
   const { locale } = params;
 
   const { t } = await i18nTranslation(locale);
-  const [latest, docs] = await Promise.all([
+  const [latest, docs, podcasts] = await Promise.all([
     getLatestMempoolPosts(locale),
     getHomeLibraryDocs(locale),
+    getHomePodcasts(),
   ]);
 
   const viewAllLabel = t("view_all");
@@ -244,11 +246,38 @@ export default async function HomePage(props: LocaleParams) {
             </div>
           </Box>
           <Box
-            title={t("podcast")}
+            title={t("podcasts")}
             className="border-b px-5 py-10 md:border-b-0 md:px-4 md:py-5"
-            link={{ label: readMoreLabel, href: urls(locale).podcast.index }}
+            link={{ label: viewAllLabel, href: urls(locale).podcasts.index }}
           >
             <p>{t("podcast_description")}</p>
+            <div>
+              {podcasts.map((podcast) => (
+                <div key={podcast.slug} className="mb-2 last:mb-0">
+                  <div className="flex items-center gap-2">
+                    <h4 className="inline-block">
+                      <Link
+                        className="text-cardinal hover:underline"
+                        href={urls(locale).podcasts.show(podcast.slug)}
+                      >
+                        {podcast.name}
+                      </Link>
+                    </h4>
+                    {podcast.defunct && (
+                      <span
+                        className="text-xs text-gray-600"
+                        dir={locale === "ar" ? "rtl" : "ltr"}
+                      >
+                        [{t("defunct")}]
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-xs">
+                    {podcast.descriptionShort ?? podcast.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </Box>
           <Box
             title={t("get_involved")}
@@ -262,7 +291,7 @@ export default async function HomePage(props: LocaleParams) {
         </GridItem>
         <GridItem className="px-5 py-4 md:pt-0">
           <div className="flex flex-col gap-4">
-            <Link href={urls(locale).substack}>
+            <Link href={externalUrls.substack}>
               <div className="flex items-center justify-between gap-4 border border-dashed border-taupe-light p-4 md:items-start">
                 <div>
                   <h4 className="font-semibold">{t("newsletter_call")}</h4>

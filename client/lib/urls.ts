@@ -95,11 +95,14 @@ export const urls = (locale: Locale) => {
       rss: getUrl("/mempool/feed.xml"),
       atom: getUrl("/mempool/atom.xml"),
     },
-    podcast: {
-      index: getUrl("/podcast/"),
-      episode: (slug: string) => getUrl(`/podcast/${slug}/`),
-      episodeMp3: (slug: string) => cdnUrl(`/cryptomises/${slug}.mp3`),
-      rss: getUrl("/podcast/feed.xml"),
+    podcasts: {
+      index: getUrl("/podcasts/"),
+      show: (slug: string) => getUrl(`/podcasts/${slug}/`),
+      episode: (slug: string, episodeSlug: string) =>
+        getUrl(`/podcasts/${slug}/${episodeSlug}/`),
+      episodeMp3: (slug: string, episodeSlug: string) =>
+        cdnUrl(`/cryptomises/${slug}/${episodeSlug}.mp3`),
+      rss: (slug: string) => getUrl(`/podcasts/${slug}/feed.xml`),
     },
     satoshi: {
       index: getSatoshiUrl("/"),
@@ -132,11 +135,22 @@ export const urls = (locale: Locale) => {
       quoteCategory: (slug: string) => getSatoshiUrl(`/quotes/${slug}/`),
     },
     skeptics: getUrl("/the-skeptics/"),
-    github: "https://github.com/NakamotoInstitute/nakamotoinstitute.org",
-    substack: "https://news.nakamotoinstitute.org",
-    x: "https://x.com/NakamotoInst",
-    nostr: "https://primal.net/sni",
   };
+};
+
+export const externalUrls = {
+  github: "https://github.com/NakamotoInstitute/nakamotoinstitute.org",
+  nostr: "https://primal.net/sni",
+  rumble: {
+    channel: "https://rumble.com/c/c-7381366",
+    link: (id: string) => `https://rumble.com/${id}.html`,
+  },
+  substack: "https://news.nakamotoinstitute.org",
+  x: "https://x.com/NakamotoInst",
+  youtube: {
+    channel: "https://www.youtube.com/@SatoshiNakamotoInstitute",
+    embed: (id: string) => `https://www.youtube.com/embed/${id}?rel=0`,
+  },
 };
 
 export const cdnUrl = (path: string) => env.CDN_BASE_URL + path;

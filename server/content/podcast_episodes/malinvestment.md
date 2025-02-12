@@ -1,5 +1,7 @@
 ---
+podcast: the-crypto-mises-podcast
 title: Malinvestment
+episode_number: 3
 date: 2015-01-25 17:00:00 -6
 duration: "21:23"
 summary: Daniel Krawisz and Michael Goldstein discuss why so many ideas in the Bitcoin world are terrible investments and pitch a startup of their own.

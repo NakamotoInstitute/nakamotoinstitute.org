@@ -4,7 +4,7 @@ import { locales } from "@/i18n";
 import { getAuthorParams } from "@/lib/api/authors";
 import { getLibraryDocs } from "@/lib/api/library";
 import { getMempoolPosts, getMempoolSeriesParams } from "@/lib/api/mempool";
-import { getEpisodes } from "@/lib/api/podcast";
+import { getEpisodes, getPodcasts } from "@/lib/api/podcasts";
 import { urls } from "@/lib/urls";
 import { LocalizedUrlObject, createLocalizedUrlObject } from "@/utils/sitemap";
 import { formatLocale } from "@/utils/strings";
@@ -99,19 +99,41 @@ async function getMempoolSeriesUrls(): Promise<MetadataRoute.Sitemap> {
   }));
 }
 
-async function getPodcastUrls(): Promise<MetadataRoute.Sitemap> {
-  const episodes = await getEpisodes();
-  return episodes.map((episode) => ({
-    url: urls("en").podcast.episode(episode.slug),
+async function getPodcastsUrls(): Promise<MetadataRoute.Sitemap> {
+  const podcasts = await getPodcasts();
+  return podcasts.map((podcast) => ({
+    url: urls("en").podcasts.show(podcast.slug),
     alternates: {
       languages: locales.reduce(
         (obj, locale) => {
-          obj[formatLocale(locale)] = urls(locale).podcast.episode(
-            episode.slug,
+          obj[formatLocale(locale)] = urls(locale).podcasts.show(podcast.slug);
+          return obj;
+        },
+        { en: urls("en").podcasts.show(podcast.slug) } as LocalizedUrlObject,
+      ),
+    },
+  }));
+}
+
+async function getPodcastEpisodesUrls(): Promise<MetadataRoute.Sitemap> {
+  const episodes = await getEpisodes();
+  return episodes.map((episode) => ({
+    url: urls("en").podcasts.episode(episode.podcastSlug, episode.episodeSlug),
+    alternates: {
+      languages: locales.reduce(
+        (obj, locale) => {
+          obj[formatLocale(locale)] = urls(locale).podcasts.episode(
+            episode.podcastSlug,
+            episode.episodeSlug,
           );
           return obj;
         },
-        { en: urls("en").podcast.episode(episode.slug) } as LocalizedUrlObject,
+        {
+          en: urls("en").podcasts.episode(
+            episode.podcastSlug,
+            episode.episodeSlug,
+          ),
+        } as LocalizedUrlObject,
       ),
     },
   }));
@@ -131,7 +153,7 @@ async function getPageUrls(): Promise<MetadataRoute.Sitemap> {
     (locale: Locale) => urls(locale).library.index,
     (locale: Locale) => urls(locale).mempool.index,
     (locale: Locale) => urls(locale).mempool.seriesIndex,
-    (locale: Locale) => urls(locale).podcast.index,
+    (locale: Locale) => urls(locale).podcasts.index,
     (locale: Locale) => urls(locale).skeptics,
   ];
 
@@ -150,14 +172,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     libraryUrls,
     mempoolUrls,
     mempoolSeriesUrls,
-    podcastUrls,
+    podcastsUrls,
+    podcastEpisodesUrls,
   ] = await Promise.all([
     getPageUrls(),
     getAuthorUrls(),
     getLibraryUrls(),
     getMempoolUrls(),
     getMempoolSeriesUrls(),
-    getPodcastUrls(),
+    getPodcastsUrls(),
+    getPodcastEpisodesUrls(),
   ]);
 
   return [
@@ -166,6 +190,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...libraryUrls,
     ...mempoolUrls,
     ...mempoolSeriesUrls,
-    ...podcastUrls,
+    ...podcastsUrls,
+    ...podcastEpisodesUrls,
   ];
 }

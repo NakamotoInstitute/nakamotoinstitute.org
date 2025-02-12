@@ -113,6 +113,7 @@ class MarkdownImporter(BaseMarkdownImporter):
                 existing_entry.content.file_content = file_content
                 existing_entry.content.html_content = html_content
                 existing_entry.content.file_metadata = metadata
+                canonical_data = self.process_canonical_additional_data(canonical_data)
                 for key, value in canonical_data.items():
                     setattr(existing_entry, key, value)
                 existing_entry.slug = slug
@@ -122,6 +123,7 @@ class MarkdownImporter(BaseMarkdownImporter):
                 )
 
         elif action == Actions.NEW:
+            canonical_data = self.process_canonical_additional_data(canonical_data)
             new_content = MarkdownContent(
                 file_content=file_content,
                 html_content=html_content,
@@ -134,6 +136,9 @@ class MarkdownImporter(BaseMarkdownImporter):
                 content=new_content,
             )
             self.db_session.add(new_entry)
+
+    def process_canonical_additional_data(self, canonical_data):
+        return canonical_data
 
 
 class TranslatedMarkdownImporter(BaseMarkdownImporter):

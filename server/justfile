@@ -39,6 +39,9 @@ mm *args:
 migrate:
   just run alembic upgrade head
 
+upgrade *args:
+  just run alembic upgrade {{args}}
+
 downgrade *args:
   just run alembic downgrade {{args}}
 
