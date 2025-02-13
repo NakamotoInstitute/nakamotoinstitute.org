@@ -18,6 +18,7 @@ class PodcastMDModel(BaseModel):
     external_feed: str | None = None
     spotify_url: str | None = None
     apple_podcasts_url: str | None = None
+    fountain_url: str | None = None
     on_youtube: bool = False
     on_rumble: bool = False
 
@@ -48,6 +49,7 @@ class BasePodcastModel(ORMModel):
 class PodcastModel(BasePodcastModel):
     spotify_url: str | None
     apple_podcasts_url: str | None
+    fountain_url: str | None
     on_youtube: bool
     on_rumble: bool
 

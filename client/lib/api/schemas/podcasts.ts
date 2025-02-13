@@ -25,6 +25,7 @@ export type EpisodeIndex = z.infer<typeof zEpisodeIndex>;
 export const zPodcast = zBasePodcast.extend({
   spotifyUrl: z.string().nullable(),
   applePodcastsUrl: z.string().nullable(),
+  fountainUrl: z.string().nullable(),
   onYoutube: z.boolean(),
   onRumble: z.boolean(),
 });

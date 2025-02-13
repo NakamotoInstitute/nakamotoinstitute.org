@@ -68,20 +68,26 @@ export default async function PodcastIndex(
               podcast.spotifyUrl
                 ? {
                     href: podcast.spotifyUrl,
-                    label: "Spotify",
+                    label: t("spotify"),
                   }
                 : false,
               podcast.applePodcastsUrl
                 ? {
                     href: podcast.applePodcastsUrl,
-                    label: "Apple Podcasts",
+                    label: t("apple_podcasts"),
+                  }
+                : false,
+              podcast.fountainUrl
+                ? {
+                    href: podcast.fountainUrl,
+                    label: t("fountain"),
                   }
                 : false,
               {
                 href:
                   podcast.externalFeed ??
                   urls(locale).podcasts.rss(podcastSlug),
-                label: "RSS Feed",
+                label: t("rss_feed"),
               },
             ]}
           />
@@ -92,11 +98,11 @@ export default async function PodcastIndex(
               links={[
                 podcast.onYoutube && {
                   href: externalUrls.youtube.channel,
-                  label: "YouTube",
+                  label: t("youtube"),
                 },
                 podcast.onRumble && {
                   href: externalUrls.rumble.channel,
-                  label: "Rumble",
+                  label: t("rumble"),
                 },
               ]}
             />

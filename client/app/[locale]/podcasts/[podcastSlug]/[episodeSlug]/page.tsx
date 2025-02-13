@@ -93,7 +93,14 @@ export default async function EpisodeDetail(
         {episode.podcast.spotifyUrl && (
           <li>
             <Link className="underline" href={episode.podcast.spotifyUrl}>
-              Spotify
+              {t("spotify")}
+            </Link>
+          </li>
+        )}
+        {episode.podcast.fountainUrl && (
+          <li>
+            <Link className="underline" href={episode.podcast.fountainUrl}>
+              {t("fountain")}
             </Link>
           </li>
         )}
@@ -139,7 +146,7 @@ export default async function EpisodeDetail(
               className="no-underline"
               href={externalUrls.rumble.link(episode.rumbleId)}
             >
-              Watch on Rumble
+              {t("watch_on_rumble")}
             </ButtonLink>
           </p>
         )}

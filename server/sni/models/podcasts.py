@@ -30,6 +30,7 @@ class Podcast(Base):
     external_feed: Mapped[str] = mapped_column(String, nullable=True)
     spotify_url: Mapped[str] = mapped_column(String, nullable=True)
     apple_podcasts_url: Mapped[str] = mapped_column(String, nullable=True)
+    fountain_url: Mapped[str] = mapped_column(String, nullable=True)
     on_youtube: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
     on_rumble: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
 
