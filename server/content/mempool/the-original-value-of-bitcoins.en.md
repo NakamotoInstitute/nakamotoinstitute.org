@@ -47,7 +47,7 @@ The Bitcoin paradox is that bitcoins appear to have no use other than as a mediu
 
 There are two fallacies inherent in the statement of this apparent paradox. The first is an argument from lack of imagination. Just because the nature of bitcoins' original value is unclear does not mean that there isn't one. The second is a violation of subjectivism, which is fundamental to Austrian methodology. The economist need not demand to understand the _reasons_ why people value anything—demand is proven by the fact that something has a price, not by the fact that the economist understands why people pay for it. I don't deny that a lottery ticket is an economic good even though I can't understand why anyone would buy them.
 
-Bitcoins are known to be a medium of exchange today. This proves that the regression theorem must apply to them even if it is hard to understand the original demand.[^3]] It is also empirically known that they were sold for dollars before ever being used as a medium of exchange.[^4] This confirms what must necessarily have been true according to the regression theorem.
+Bitcoins are known to be a medium of exchange today. This proves that the regression theorem must apply to them even if it is hard to understand the original demand.[^3] It is also empirically known that they were sold for dollars before ever being used as a medium of exchange.[^4] This confirms what must necessarily have been true according to the regression theorem.
 
 The correct approach should have been clear to any Austrian economist, but until recently, Austrian analyses of Bitcoin have been superficial. It is not yet generally understood among Austrians that Bitcoin is fundamentally different from both gold and fiat currencies, and therefore requires a fundamental analysis going back to first principles. This may have to be reiterated a few more times before the Austrian movement is convinced.
 
@@ -84,9 +84,13 @@ This explains how an appreciation of Bitcoin's engineering could lead someone to
 At that point, bitcoins had developed an exchange value. Both groups of entrepreneurs were happy because both had turned a profit. Bitcoin was still not money, but its potential was far easier for others to grasp. Thus, new entrepreneurs entered the market, both as merchants and investors. This cycle repeated itself to this day, and there is no reason that it will not continue as long as there are people ready to stake money on the vision of a Bitcoin economy.
 
 [^1]: The regression theorem is credited to Ludwig von Mises in Mises, L., _[The Theory of Money and Credit](https://mises.org/books/tmc.pdf)_, Yale University Press, 1953 but Carl Menger nearly had it all figured it out in Menger, C., _[Principles of Economics](https://mises.org/Books/Mengerprinciples.pdf)_, Ludwig von Mises Institute, 2007.
+
 [^2]: Please see Šurda, P., ["Economics of Bitcoin: is Bitcoin an Alternative to Fiat Currencies and Gold?"](/static/docs/economics-of-bitcoin.pdf), 2012, pp. 38-41 for Šurda's discussion of the regression theorem, upon which I have relied quite heavily.
+
 [^3]: This argument has emphasized by other pro-Bitcoin Austrians. See [Šurda, 2012](/static/docs/economics-of-bitcoin.pdf), Graf, K., ["Bitcoins, the Regression Theorem, and that Curious but Unthreatening Empirical World"](http://konradsgraf.com/blog1/2013/2/27/in-depth-bitcoins-the-regression-theorem-and-that-curious-bu.html), 23 Feb 2013, and Selgin, G., ["Bitcoin"](http://www.freebanking.org/2013/04/22/bitcoin/), 22 Apr 2013.
+
 [^4]: See [Šurda, 2012](/static/docs/economics-of-bitcoin.pdf), pp. 41-42.
+
 [^5]:
     See Gertchev, N., "The Moneyness of Bitcoins", Mises Daily, 14 Apr 2013 for an article that gives subjective arguments against Bitcoin. See Shostak, F., ["The Bitcoin Money Myth"](http://mises.org/daily/6411/The-Bitcoin-Money-Myth), _Mises Daily_, 17 Apr 2013 for an article which falls into numerous fallacies in an attempt to refute Bitcoin. This article is so sloppy that it could not even manage to spell "Nakamoto" correctly. Though it is an embarrassment, is useful as a compendium of fallacies and as an indication of the level of disdain and ignorance with which some Austrians discuss Bitcoin. I will briefly discuss its problems.
 
@@ -99,7 +103,11 @@ At that point, bitcoins had developed an exchange value. Both groups of entrepre
     Fourth, he then goes on to say that "Bitcoin can function only as long as individuals know that they can convert it into fiat money" and "Bitcoin is not a new form of money that replaces previous forms, but rather a new way of employing existent money in transactions". These statements are both obviously ridiculous. He apparently regards fiat currencies as somehow the _real_ yardstick because of their historical ties to gold and therefore simply will not take Bitcoin seriously. Shostak is guilty of historicism.
 
 [^6]: See Pattison, M., ["Buying into Bitcoin: An Austrian Analysis of the Virtual Currency's Sustainability"](http://www2.gcc.edu/dept/econ/ASSC/Papers%202012/Buying%20into%20Bitcoin.pdf), 14 Dec 2011 for the most detailed article which makes this argument.
+
 [^7]: [Šurda, 2012](/static/docs/economics-of-bitcoin.pdf), pp. 37-38.
+
 [^8]: This is an explanation proposed in [Graf, 2013](http://konradsgraf.com/blog1/2013/2/27/in-depth-bitcoins-the-regression-theorem-and-that-curious-bu.html). However, Graf is really just making the point that we do not need to state bitcoins' original value to say that they _had_ value.
+
 [^9]: [Graf, 2013](http://konradsgraf.com/blog1/2013/2/27/in-depth-bitcoins-the-regression-theorem-and-that-curious-bu.html).
+
 [^10]: [Šurda, 2012](/static/docs/economics-of-bitcoin.pdf), pg. 42.
