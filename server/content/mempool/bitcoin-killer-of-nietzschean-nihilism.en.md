@@ -50,9 +50,13 @@ Bitcoin will win, crushing nihilism and fulfilling Nietzsche’s vision of _Übe
 Only Bitcoin can give us life.
 
 [^1]: [Power](http://bitcoinpete.com/2014/04/27/philanthropy-not-power/ "“Philanthropy.” Not Power.")!
+
 [^2]: Art, eg. [Bitcoin](http://bitcoinpete.com/2014/03/19/there-is-no-bitcoin-2-0/#footnote_2_197).
+
 [^3]: “With the collapse of metaphysical and theological foundations and sanctions for traditional morality only a pervasive sense of purposelessness and meaninglessness would remain. And the triumph of meaninglessness is the triumph of nihilism: ‘God is dead.’” via [Britannica](http://www.britannica.com/EBchecked/topic/414670/Friedrich-Nietzsche/23658/Nietzsches-mature-philosophy).
+
 [^4]: “Nietzsche thought the emerging nationalism of his day represented one such ominous surrogate god, in which the nation-state would be invested with transcendent value and purpose. And just as absoluteness of doctrine had found expression in philosophy and religion, absoluteness would become attached to the nation-state with missionary fervour. The slaughter of rivals and the conquest of the earth would proceed under banners of universal brotherhood, democracy, and socialism.” via [Britannica](http://www.britannica.com/EBchecked/topic/414670/Friedrich-Nietzsche/23658/Nietzsches-mature-philosophy).
+
 [^5]:
     **mircea_popescu:** i know of no previous instance of a mechanism working so efficiently in all human technical history.
     **mircea_popescu:** a self adjusting mechanism that turns maxint variation into \[.5,1.5\] ?
@@ -60,5 +64,7 @@ Only Bitcoin can give us life.
     via [#bitcoin-assets](http://log.bitcoin-assets.com/?date=13-03-2014#558018).
 
 [^6]: Nietzsche maintained that the distinction between good and bad was originally descriptive, that is, a nonmoral reference to those who were privileged, the masters, as opposed to those who were base, the slaves. The good/evil contrast arose when slaves avenged themselves by converting attributes of mastery into vices. If the favoured, the “good,” were powerful, it was said that the meek would inherit the earth. Pride became sin. Charity, humility, and obedience replaced competition, pride, and autonomy. Crucial to the triumph of slave morality was its claim to being the only true morality. This insistence on absoluteness is as essential to philosophical as to religious ethics.” From [Britannica](http://www.britannica.com/EBchecked/topic/414670/Friedrich-Nietzsche/23658/Nietzsches-mature-philosophy).
+
 [^7]: [He called me greedy](http://bitcoinpete.com/2014/04/20/the-brokenness-of-maidsafe/#comment-197)! Waaaah!
+
 [^8]: “The desire to annoy no one, to harm no one, can equally well be the sign of a just as of an anxious disposition.” – Nietzsche

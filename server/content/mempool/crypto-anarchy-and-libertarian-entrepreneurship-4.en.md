@@ -103,8 +103,13 @@ But the world still hangs in the balance. People are blundering along the path t
 My prescriptions are simple: promote Bitcoin and oppose proprietary software and proprietary devices. These will greatly diminish the risk imposed on us from the banking and financial industries, and from the software and computer industries. If you are a coder, improve cryptographic free software, such as Bitcoin, Tor, or RetroShare. Above all, however, is to keep the mind open for new ideas. Search for government risks that have not yet been addressed. Search for new services that can be provided by cryptographic communities. Stay one step ahead of the government and don't get embroiled in politics.
 
 [^1]: See Anderson, R., ["'Trusted Computing' Frequently Asked Questions"](http://www.cl.cam.ac.uk/~rja14/tcpa-faq.html), Jul 2003 and Stallman, R., ["Can You Trust Your Computer?"](https://www.gnu.org/philosophy/can-you-trust.html), 28 Feb 2013 for discussions of Trusted (Treacherous) Computing. See [Wikipedia](http://en.wikipedia.org/wiki/Fritz-chip) for a more neutral explanation.
+
 [^2]: Wikipedia, ["Trusted Computing Platform"](https://en.wikipedia.org/wiki/Trusted_Platform_Module), Wikimedia Foundation, 6 May 2013.
+
 [^3]: See Stallman, R., ["The GNU Project"](https://www.gnu.org/gnu/thegnuproject.html), 28 Feb 2013 for a history of the GNU Project.
+
 [^4]: See Stallman, R., ["What is Free Software"](https://www.gnu.org/philosophy/free-sw.html), 28 Feb 2013 for a much more detailed description. Also see Stallman, R., [_Free Software, Free Society: Selected Essays of Richard Stallman_](http://www.gnu.org/philosophy/fsfs/rms-essays.pdf), GNU Press, 2002 for a wonderful collection of essays expounding upon the philosophy of free software.
+
 [^5]: See Stallman, R., ["What is Copyleft?"](https://www.gnu.org/philosophy/freedom-or-power.html), 28 Feb 2013 and Stallman, R., ["Freedom or Power"](https://www.gnu.org/philosophy/freedom-or-power.html), 28 Feb 2013 for Stallman's views on copyleft.
+
 [^6]: See Block, W., ["Toward a Libertarian Theory of Inalienability: A Critique of Rothbard, Barnett, Smith, Kinsella, Gordon, and Epstein"](http://mises.org/journals/jls/17_2/17_2_3.pdf), vol. 17, no. 2, _Journal of Libertarian Studies_, 2003, pp. 39-85 for a libertarian defense of voluntary slavery. See Kinsella, N., ["How We Come to Own Ourselves"](http://www.mises.org/story/2291), _Mises Daily_, 7 Sep 2006 for a libertarian argument against it.

@@ -87,4 +87,5 @@ There is one other service people might want that I have not provided for: anony
 [_Chapter 4: The Risk From the Software Industry_](/mempool/crypto-anarchy-and-libertarian-entrepreneurship-4/ "Crypto-Anarchy and Libertarian Entrepreneurship – Chapter 4: The Risk From the Software Industry")
 
 [^1]: See Stallings, W., _Cryptography and Network Security: Principles and Practice, 5th ed._, Pearson Education, 2011 for an introduction to cryptography that explains everything I introduce here in detail. Or just read [Wikipedia](http://en.wikipedia.org/wiki/Public-key_cryptography).
+
 [^2]: In fact you would more likely you would use something called [Diffie-Hellman](http://www.youtube.com/watch?v=YEBfamv-_do) key exchange to establish a communication channel. The principle is the same even though it is slightly different than the method I explained.

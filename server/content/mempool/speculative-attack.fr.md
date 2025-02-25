@@ -98,12 +98,21 @@ Une attaque spéculative qui semble isolée à une ou quelques monnaies faibles,
 Le Bitcoin va se généraliser. Les sceptiques du Bitcoin ne le comprennent pas en raison de leur préjugés et de leur manque de connaissances financières. Premièrement, ils se trouvent dans une chambre d'écho aussi forte ques les sceptiques du Bitcoin.[^10] Ils [cherchent rageusement](http://www.reddit.com/r/buttcoin) des preuves qui confirment leur point de vue sur le bitcoin. Deuxièmement, ils comprennent mal comment des monnaies fortes comme le Bitcoin prennent le dessus sur des monnaies faibles comme le dollar : c'est par le biais d'attaques spéculatives causées par les [investisseurs](https://fr.wikipedia.org/wiki/George_Soros), et non par l'évaluation des journalistes tech et des "consommateurs grand public". Pour rendre hommage à ces sceptiques sur la voie de l'extinction, le _Nakamoto Institute_ a lancé un [Hommage aux Affirmations Effrontées](/the-skeptics).
 
 [^1]: Non, sérieusement, il y a des gens sur Internet qui passent un temps non négligeable à écrire sur une monnaie dont ils pensent qu'elle va échouer bien qu'elle continue pourtant à réussir au-delà des attentes de tous. Leur manque de schadendreude me procudre du schadenfreude. Il est vrai que quelques-uns d'entre eux sont payés pour écrire des articles controversés et/ou pour [troller](http://www.urbandictionary.com/define.php?term=concern+troll) - des activités que je respecte et comprends.
+
 [^2]: C'est ce qu'affirment généralement ceux qui font partie du "groupe out" et qui fantasment à l'idée d'être dans le "groupe in" au travers de la politique ou de leur pédigré plutôt qu'au travers de processus économiques ou méritocratiques. D'un point de vue démographique, ils correspondent probablement aux fans de [The Secret](http://en.wikipedia.org/wiki/The_Secret_%28book%29). Économiquement, ils sont sans exception des [bezzlers](http://trilema.com/2014/the-bezzle-usd-and-the-tide-usd/#footnote_1_53585).
+
 [^3]: Bitcoin est entré dans son [Septembre Éternel](https://fr.wikipedia.org/wiki/Septembre_%C3%A9ternel) où chaque personne nouvelle dans Bitcoin pense qu'elle a une compréhension unique de Bitcoin et que tout le monde devrait en entendre parler. Il y a un afflux sans fin de débutants "inquiets" de tel et tel "problème" avec Bitcoin. La communauté Bitcoin rend un mauvais service à ces arrivistes en les prenant au sérieux au lieu de leur dire simplement "lis plus".
+
 [^4]: L'opposé de Bitcoin Jesus. Bitcon [Jonah](https://en.wikipedia.org/wiki/Jonah_complex) est un défaitiste, s'auto-sabotant, et un "homme" timide en quête permanente d'affirmer les faiblessses de Bitcoin.
+
 [^5]: [Bitcoin is the Best Unit of Account](/mempool/bitcoin-is-the-best-unit-of-account) par Daniel Krawisz
+
 [^6]: [The Bitcoin Central Bank’s Perfect Monetary Policy](/mempool/the-bitcoin-central-banks-perfect-monetary-policy) par Pierre Rochard
+
 [^7]: [Bitcoin Has No Image Problem](/mempool/bitcoin-has-no-image-problem) par Daniel Krawisz
+
 [^8]: [Hyperbitcoinisation](/fr/mempool/hyperbitcoinisation) par Daniel Krawisz
+
 [^9]: Si vous n'êtes pas d'accord, soit vous n'avez pas étudié, soit vous n'avez pas pris part au débat, retournez à la première case.
+
 [^10]: 'Je vis dans un monde plutôt spécial. Je ne connais qu'une personne qui a voté pour Nixon. Où sont-elles, je ne sais pas. Elles sont hors de mon champ de vision. Mais parfois quand je suis dans un théâtre, je peux les sentir'. - [Pauline Kael](https://en.wikiquote.org/wiki/Pauline_Kael#Sourced)

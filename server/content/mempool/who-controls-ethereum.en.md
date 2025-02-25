@@ -75,7 +75,9 @@ The process will tend to benefit the Bitcoin network because investors will gain
     I am not saying that the bug in the DAO was not obviously a bug; I am saying that similar cases are possible which are not so clear-cut. The devs are opening up an endless unresolvable debate by intervening. Ultimately, the only way to distinguish between an obvious bug and one which is not so obvious is to have some subjective principle embodied in a bunch of specific cases that a human has to look at and make a judgement. That’s just the legal system we have now and I thought that’s what Ethereum was supposed to avoid. Also, did you know that DAO stands for “distributed autonomous organization”? Well obviously it’s _not_ that if it needs a central body to fix it every time it screws up.
 
 [^2]: Also, don’t take this as a recommendation. Just because I took a risk does not mean you should.
+
 [^3]: Note that if ETC wins, the miners will have had nothing to do with it. The miners who chose to mine ETC instead of ETH chose it because it was more profitable to mine, not because they thought it was better. Thus, the miners do not control Ethereum. The investors control which fork is more profitable to mine, and therefore they control the miners.
+
 [^4]:
     Although Rawls is considered to be more of a socialist and Hayek more of a libertarian, their philosophies are pretty similar, although I think Hayek's fits better here because Hayek specifically emphasized the importance of abstract rules, whereas Rawls is more interested in preventing class interests from influencing our politics.
 

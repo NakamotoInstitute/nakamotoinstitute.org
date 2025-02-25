@@ -59,6 +59,9 @@ In a democracy, no individual vision can change the world. This is why politics 
 [_Chapter 4: The Risk From the Software Industry_](/mempool/crypto-anarchy-and-libertarian-entrepreneurship-4/ "Crypto-Anarchy and Libertarian Entrepreneurship – Chapter 4: The Risk From the Software Industry")
 
 [^1]: See Long, R., Johnson, C., ["Libertarian Feminism: Can This Marriage Be Saved?"](http://charleswjohnson.name/essays/libertarian-feminism/), 1 May 2005 for a libertarian take on feminism. See Block, W., ["Environmentalism and Economic Freedom: The Case for Private Property Rights"](http://mises.org/etexts/environfreedom.pdf), vol. 17, _Journal of Business Ethics_, 1998, pp. 1887-1899 for an argument for libertarian environmentalism.
+
 [^2]: When I speak of "government attack," this is not to imply that the government is the instigator. The leaders of the industry may be the ones to make the first move. No matter who takes the initiative, it is still a government attack because the government is used as a weapon to change the interests served by an industry from the consumers to someone else's.
+
 [^3]: See Ludlow, [Crypto Anarchy, Cyberstates, and Pirate Utopias](http://monoskop.org/images/4/42/Ludlow_Peter_Crypto_Anarchy_Cyberstates_and_Pirate_Utopias.pdf), Massachusetts Institute of Technology, 2001 for an anthology of works related to crypto-anarchy, both pro and con. I do not actually like this book. It explains nothing about cryptography and contains little that would not already be understood by an anarcho-capitalist. However, it is the only published book on crypto-anarchy, so at least there's that.
+
 [^4]: See May, T., ["The Cyphernomicon"](/static/docs/cyphernomicon.txt), 1994, by one of the earliest crypto-anarchist writers. See his ["The Crypto-Anarchist Manifesto"](/crypto-anarchist-manifesto/), 1988, for a brief but stirring statement of crypto-anarchy.

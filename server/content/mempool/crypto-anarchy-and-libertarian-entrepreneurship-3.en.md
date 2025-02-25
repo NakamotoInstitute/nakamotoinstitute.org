@@ -62,7 +62,11 @@ As a matter of libertarian strategy, we should convince people to use cryptograp
 [_Chapter 4: The Risk From the Software Industry_](/mempool/crypto-anarchy-and-libertarian-entrepreneurship-4/ "Crypto-Anarchy and Libertarian Entrepreneurship – Chapter 4: The Risk From the Software Industry")
 
 [^1]: Nakamoto, S., ["Bitcoin: A Peer-to-Peer Electronic Cash System"](/bitcoin/), 2008\.
+
 [^2]: Miers, I., Garman, C., Green, M., Rubin, A., ["Zerocoin: Anonymous Distributed E-Cash from Bitcoin"](http://spar.isi.jhu.edu/~mgreen/ZerocoinOakland.pdf), 9 Apr 2013.
+
 [^3]: See Gertchev, N., ["The Moneyness of Bitcoin"](http://mises.org/daily/6399/The-Moneyness-of-Bitcoins), Mises Daily, 14 Apr 2013 for an article that substitutes subjective preference for economic theory. See Korda, P., ["Bitcoin: Money of the Future or Old-Fashioned Bubble?"](http://mises.org/daily/6401/Bitcoin-Money-of-the-Future-or-OldFashioned-Bubble), Mises Daily, 9 Apr 2013 for a lot of irrelevant non sequiturs. See Shostak, F., ["The Bitcoin Money Myth"](http://mises.org/daily/6411/The-Bitcoin-Money-Myth), Mises Daily, 17 Apr 2013 for the most absurd Bitcoin article I have ever seen.
+
 [^4]: See Šurda, P., ["Economics of Bitcoin: is Bitcoin an Alternative to Fiat Currencies and Gold?"](/static/docs/economics-of-bitcoin.pdf), 2012 for an excellent and detailed analysis of Bitcoin. Also see the author's [blog](http://www.economicsofbitcoin.com/). See Graf, K., ["Bitcoins, the Regression Theorem, and that Curious but Unthreatening Empirical World"](http://konradsgraf.com/blog1/2013/2/27/in-depth-bitcoins-the-regression-theorem-and-that-curious-bu.html), 23 Feb 2013 for a wonderful discussion of Bitcoin and the regression theorem. Also see that author's [blog](http://konradsgraf.com/).
+
 [^5]: There is a wonderful program called [RetroShare](http://retroshare.sourceforge.net/) that replicates many of Facebook's features over an encrypted, distributed network with no central server. However, this program still needs a lot of work before it has a chance of becoming popular.

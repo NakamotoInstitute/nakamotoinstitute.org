@@ -166,10 +166,17 @@ _\[Update 8/25/2013: the Freicoin was altered from an earlier version to correct
 _\[Update 8/28/2013: two citations added. Last paragraph added to section on competition.\]_
 
 [^1]: See Miers, I., Garman, C., Green, M., Rubin, A., ["Zerocoin: Anonymous Distributed E-Cash from Bitcoin"](http://spar.isi.jhu.edu/~mgreen/ZerocoinOakland.pdf), 9 Apr 2013 to learn about Zerocoin, a proposal that would greatly improve Bitcoin's anonymity. It would be wonderful if this could be made to work, but it would require a substantial coordinated effort to implement because it would involve an incompatible change to the Bitcoin protocol. This is actually one way an altcoin might be useful—its could implement Zerocoin as practice for doing the same to Bitcoin later. See J.D.Bruce, ["Purely P2P Crypto-Currency With Finite Mini-Blockchain"](http://www.bitfreak.info/files/pp2p-ccmbc-rev1.pdf), Apr 2013 for a proposal to limit the size of the block chain. Right now, the block chain becomes more costly to store as it grows and there is no built-in means to compensate for that. This paper shows that it is possible to split the functions of the block chain among three different data structures whose total size increases far more slowly. It is already possible for users (but not miners) to store shortened versions of the block chain, a feature which has been implemented in clients like MultiBit. However, the shortened block chain requires the client to make some assumptions about the validity of the full block chain which are not necessary with the Mini-Blockchain.
+
 [^2]: See Hayek, F., _The Road to Serfdom_, Routledge Classics, 2006, "Why the Worst Get On Top" and Hoppe, H., _Democracy: The God That Failed_, Transaction Publishers, 2007, "On Time Preference, Government, and the Process of Decivilization" for discussions of the bad sort of competition.
+
 [^3]: Bastiat, F., _[Petition of the Manufacturers of Candles, Waxlights, Lamps, Candlelights, Street Lamps, Snuffers, Extinguishers, and the Producers of Oil, Tallow, Resin, Alcohol, and, Generally, of Everything Connected with Lighting](https://mises.org/books/bastiat1.pdf)_, vol. 1, The Ludwig von Mises Institute, 2007.
+
 [^4]: O.Karame, G., Androulaki, E., Capkun, S., ["Two Bitcoins for the Price of One? Double-Spending Attacks on Fast Payments in Bitcoin"](http://eprint.iacr.org/2012/248.pdf), _Cryptology ePrint Archive_, 2012\.
+
 [^5]: See Grinstead, C., Snell, J., _[Introduction to Probability](http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/amsbook.mac.pdf)_, American Mathematical Society for a pleasant discussion of random walks. See if you can solve the problem of the 51% attack yourself!
+
 [^6]: King, S., Nadal, S., ["PPCoin: Peer-to-Peer Crypto-Currency with Proof-of-Stake"](http://barkingshibes.com/wp-content/uploads/2014/02/ppcoin-paper.pdf), 19 Aug 2012.
+
 [^7]: King, S., ["Primecoin: Cryptocurrency with Prime Number Proof-of-Work"](http://ppcoin.org/static/primecoin-paper.pdf), 7 Jul 2013.
+
 [^8]: Freicoin Developers, ["Freicoin: About"](http://freico.in/about/), 2013\.
