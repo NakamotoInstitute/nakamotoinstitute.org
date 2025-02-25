@@ -1,7 +1,5 @@
 import typography from "@tailwindcss/typography";
 import type { Config } from "tailwindcss";
-import plugin from "tailwindcss/plugin";
-import { PluginAPI } from "tailwindcss/types/config";
 
 const round = (num: number) =>
   num
@@ -16,58 +14,22 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  safelist: ["code", "quote", "codeheader", "quoteheader"],
   theme: {
     extend: {
-      colors: {
-        cream: "#f5f4ef",
-        dark: "#212121",
-        cardinal: "#c21324", // Cardinal
-        crimson: "#e3455f",
-        windsor: "#442977", // Windsor purple
-        winter: "#5b8e7d", // Winter green
-        mariner: "#4059ad", // Mariner blue
-        dandelion: "#ffd470",
-        sand: "#e4e2d9",
-        taupe: "#7c7b72",
-        "taupe-light": "#bfbdb3",
-      },
-      fontFamily: {
-        serif: ["var(--font-stix)", "Times New Roman", "serif"],
-        mono: ["var(--font-ibm-plex-mono)", "Courier New", "monospace"],
-      },
-      fontSize: {
-        reg: ["1.5rem", { lineHeight: "1.5", letterSpacing: "-0.01em" }],
-      },
-      borderWidth: {
-        1: "1px",
-      },
-      letterSpacing: {
-        normal: "-0.01em",
-      },
-      margin: {
-        18: "4.5rem",
-      },
-      spacing: {
-        prose: "70ch",
-        "3.5xl": "54.5rem",
-        "4.5xl": "60rem",
-        "screen-1.5xl": "1440px",
-      },
-      typography: ({ theme }: PluginAPI) => ({
+      typography: {
         DEFAULT: {
           css: {
-            "--tw-prose-body": theme("colors.dark"),
-            "--tw-prose-links": theme("colors.dark"),
-            "--tw-prose-counters": theme("colors.dark"),
-            "--tw-prose-bullets": theme("colors.dark"),
-            "--tw-prose-hr": theme("colors.dark"),
-            "--tw-prose-quotes": theme("colors.dark"),
-            "--tw-prose-quote-borders": theme("colors.dark"),
-            "--tw-prose-captions": theme("colors.dark"),
-            "--tw-prose-code": theme("colors.dark"),
-            "--tw-prose-pre-code": theme("colors.dark"),
-            "--tw-prose-pre-bg": theme("colors.white"),
+            "--tw-prose-body": "var(--color-dark)",
+            "--tw-prose-links": "var(--color-dark)",
+            "--tw-prose-counters": "var(--color-dark)",
+            "--tw-prose-bullets": "var(--color-dark)",
+            "--tw-prose-hr": "var(--color-dark)",
+            "--tw-prose-quotes": "var(--color-dark)",
+            "--tw-prose-quote-borders": "var(--color-dark)",
+            "--tw-prose-captions": "var(--color-dark)",
+            "--tw-prose-code": "var(--color-dark)",
+            "--tw-prose-pre-code": "var(--color-dark)",
+            "--tw-prose-pre-bg": "var(--color-white)",
             "ol.references,ul.references": {
               listStyle: "none",
               padding: 0,
@@ -81,7 +43,7 @@ const config: Config = {
               fontSize: "1rem",
             },
             lineHeight: em(26, 16),
-            maxWidth: theme("spacing.prose"),
+            maxWidth: "var(--spacing-prose)",
             p: {
               marginTop: em(22, 16),
               marginBottom: em(22, 16),
@@ -234,27 +196,9 @@ const config: Config = {
             },
           },
         },
-      }),
+      },
     },
   },
-  plugins: [
-    typography,
-    plugin(({ addComponents, addUtilities, theme }) => {
-      addComponents({
-        ".disclaimer": {
-          a: {
-            color: theme("colors.cardinal"),
-            "&:hover": {
-              textDecoration: "underline",
-            },
-          },
-        },
-      });
-      addUtilities({
-        ".small-caps": { "font-variant-caps": "small-caps" },
-        ".italic-regular-em": { em: { fontStyle: "normal" } },
-      });
-    }),
-  ],
+  plugins: [typography],
 };
 export default config;

@@ -20,7 +20,7 @@ export async function DocHeader({ t, locale, doc }: DocHeaderProps) {
     <>
       <header className="mx-auto text-center">
         <h1
-          className="mb-4 text-4xl font-medium leading-[1.1] md:mb-6 md:text-7xl"
+          className="mb-4 text-4xl leading-[1.1] font-medium md:mb-6 md:text-7xl"
           dangerouslySetInnerHTML={{ __html: doc.displayTitle ?? doc.title }}
         />
         {doc.subtitle ? (
@@ -29,12 +29,12 @@ export async function DocHeader({ t, locale, doc }: DocHeaderProps) {
           </p>
         ) : null}
         <AuthorsLinks
-          className="mb-1 text-xl font-bold small-caps md:mb-4 md:text-2xl"
+          className="small-caps mb-1 text-xl font-bold md:mb-4 md:text-2xl"
           itemClassName="text-dark"
           locale={locale}
           authors={doc.authors}
         />
-        <p className="text-xl font-bold opacity-60 small-caps md:text-2xl">
+        <p className="small-caps text-xl font-bold opacity-60 md:text-2xl">
           <time
             dateTime={formatTimeAttr(doc.date, doc.granularity)}
             dangerouslySetInnerHTML={{
@@ -45,7 +45,7 @@ export async function DocHeader({ t, locale, doc }: DocHeaderProps) {
           />
         </p>
         {doc.image ? (
-          <div className="relative mx-auto mt-6 h-48 max-w-screen-sm sm:h-60 md:h-80">
+          <div className="relative mx-auto mt-6 h-48 max-w-(--breakpoint-sm) sm:h-60 md:h-80">
             <Image
               className="object-contain"
               src={doc.image}

@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Image from "next/image";
 
-import { Markdown } from "@/app/components/Markdown";
+import { MarkdownContent } from "@/app/components/Markdown";
 import { PageLayout } from "@/app/components/PageLayout";
 import { locales } from "@/i18n";
 import { getPage } from "@/lib/content";
@@ -40,7 +40,7 @@ export default async function CrashCoursePage(props: LocaleParams) {
   return (
     <PageLayout t={t} locale={locale} generateHref={generateHref}>
       <div className="mx-auto text-center">
-        <h1 className="mb-4 text-4xl font-medium leading-[1.1] md:mb-6 md:text-7xl">
+        <h1 className="mb-4 text-4xl leading-[1.1] font-medium md:mb-6 md:text-7xl">
           {t("sni_mempool_crash_course")}
         </h1>
         <Image
@@ -52,7 +52,7 @@ export default async function CrashCoursePage(props: LocaleParams) {
         />
       </div>
       <hr className="mx-auto my-7 w-12 md:my-18" />
-      <Markdown className="prose mx-auto">{content}</Markdown>
+      <MarkdownContent className="prose mx-auto">{content}</MarkdownContent>
     </PageLayout>
   );
 }

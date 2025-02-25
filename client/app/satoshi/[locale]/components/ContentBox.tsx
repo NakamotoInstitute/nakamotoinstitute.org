@@ -25,7 +25,7 @@ export async function ContentBox({
     <WrapperComponent
       id={id}
       className={clsx(
-        "drop-shadow-sm",
+        "drop-shadow-xs",
         alternate ? "bg-sand" : "bg-white",
         className,
       )}
@@ -62,15 +62,15 @@ export async function ContentBoxHeader({
 }: ContentBoxHeaderProps) {
   const hasReplyBox = parentId || (replies && replies.length > 0);
   return (
-    <header className={clsx("border-b border-dashed border-taupe font-mono")}>
+    <header className={clsx("border-taupe border-b border-dashed font-mono")}>
       <div
         className={clsx(
-          hasReplyBox && "border-b border-dashed border-taupe",
+          hasReplyBox && "border-taupe border-b border-dashed",
           satoshi && "bg-dandelion",
         )}
       >
         {source || sourceId ? (
-          <div className="flex justify-between border-b border-dashed border-taupe px-8 py-2">
+          <div className="border-taupe flex justify-between border-b border-dashed px-8 py-2">
             {source ? <div className="font-bold">{source}</div> : null}
             {sourceId ? (
               <Link
@@ -162,10 +162,10 @@ export async function ContentBoxDisclaimer({
   disclaimer,
 }: ContentBoxDisclaimerProps) {
   return (
-    <div className="border-t border-dashed border-taupe px-8 py-4 text-sm">
+    <div className="border-taupe border-t border-dashed px-8 py-4 text-sm">
       <h3 className="me-0.5 inline font-bold">{t("disclaimer")}</h3>
       <p
-        className="disclaimer inline"
+        className="[&_a]:text-cardinal inline [&_a]:hover:underline"
         dangerouslySetInnerHTML={{ __html: disclaimer }}
       />
     </div>
@@ -186,7 +186,7 @@ export async function ContentBoxFooter({
   hrefs: { original, thread, permalink },
 }: ContentBoxFooterProps) {
   return (
-    <footer className="flex justify-between border-t border-dashed border-taupe px-8 py-4 font-mono text-sm text-cardinal">
+    <footer className="border-taupe text-cardinal flex justify-between border-t border-dashed px-8 py-4 font-mono text-sm">
       <Link className="text-cardinal hover:underline" href={original}>
         View original
       </Link>

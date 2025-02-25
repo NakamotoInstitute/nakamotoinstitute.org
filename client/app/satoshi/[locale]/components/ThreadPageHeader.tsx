@@ -23,7 +23,7 @@ export const ThreadPageHeader = async ({
   return (
     <>
       <div className="mb-4">
-        <p className="mb-1 text-lg small-caps">{sourceTitle}</p>
+        <p className="small-caps mb-1 text-lg">{sourceTitle}</p>
         <h1 className="mb-4 text-3xl font-semibold md:text-4xl">{title}</h1>
         <div className="flex items-center justify-between">
           {children}

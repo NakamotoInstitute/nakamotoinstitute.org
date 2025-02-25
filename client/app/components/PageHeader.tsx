@@ -16,7 +16,7 @@ export function PageHeader({
   return (
     <header className="mb-4">
       {superTitle ? (
-        <h2 className="mb-1 text-lg small-caps">{superTitle}</h2>
+        <h2 className="small-caps mb-1 text-lg">{superTitle}</h2>
       ) : null}
       <h1
         className={clsx(

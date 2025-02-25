@@ -16,7 +16,7 @@ export function EpisodeListing({
   podcastSlug,
 }: EpisodeListingProps) {
   return (
-    <article className="border-t border-dashed border-taupe-light py-4 last:border-b">
+    <article className="border-taupe-light border-t border-dashed py-4 last:border-b">
       <header>
         <h2 className="font-bold md:text-xl">
           <Link

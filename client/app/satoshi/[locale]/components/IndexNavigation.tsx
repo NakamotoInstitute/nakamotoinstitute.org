@@ -18,7 +18,7 @@ async function ToggleLinks({
 }: ToggleLinksProps) {
   return (
     <div
-      className={clsx("flex rounded-lg bg-sand p-0.5 text-center", {
+      className={clsx("bg-sand flex rounded-lg p-0.5 text-center", {
         "mt-4 md:hidden": isMobile,
         "hidden md:flex": !isMobile,
       })}
@@ -27,7 +27,7 @@ async function ToggleLinks({
         <>
           <span
             className={clsx(
-              "cursor-pointer rounded-lg bg-white px-4 py-1 shadow",
+              "cursor-pointer rounded-lg bg-white px-4 py-1 shadow-sm",
               { grow: isMobile },
             )}
           >
@@ -44,7 +44,7 @@ async function ToggleLinks({
           </a>
           <span
             className={clsx(
-              "cursor-pointer rounded-lg bg-white px-4 py-1 shadow",
+              "cursor-pointer rounded-lg bg-white px-4 py-1 shadow-sm",
               { grow: isMobile },
             )}
           >
@@ -80,15 +80,15 @@ export async function IndexNavigation({
 
   return (
     <div>
-      <div className="flex items-center justify-between border-b border-dashed border-taupe-light">
-        <ul className="flex gap-x-4 text-taupe">
+      <div className="border-taupe-light flex items-center justify-between border-b border-dashed">
+        <ul className="text-taupe flex gap-x-4">
           {sourceLinks.map((sourceLink) => (
             <li
               key={sourceLink.name}
               className={clsx(
                 "py-3",
                 sourceLink.active &&
-                  "-mb-[1px] border-b-2 border-cardinal text-dark",
+                  "border-cardinal text-dark -mb-[1px] border-b-2",
               )}
             >
               {sourceLink.active ? (

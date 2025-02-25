@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { Trans } from "react-i18next/TransWithoutContext";
 
-import { Markdown } from "@/app/components/Markdown";
+import { PageContent } from "@/app/components/Markdown";
 import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
 import { locales } from "@/i18n";
@@ -59,7 +59,7 @@ export default async function TheSkepticsPage(props: LocaleParams) {
         title={t("the_skeptics")}
         subtitle={t("skeptics_tribute_capitalized")}
       >
-        <Markdown className="page-content">{content}</Markdown>
+        <PageContent>{content}</PageContent>
         <div className="mt-4">
           <p>
             <Trans

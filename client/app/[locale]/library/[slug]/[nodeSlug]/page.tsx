@@ -39,7 +39,7 @@ type NodeNavigationProps = {
 
 async function NodeNavigation({ node, locale }: NodeNavigationProps) {
   return (
-    <div className="mx-auto flex w-full max-w-4.5xl justify-between gap-5 px-4">
+    <div className="mx-auto flex w-full max-w-240 justify-between gap-5 px-4">
       {node.previous ? (
         <div className="min-w-0">
           <Link
@@ -49,7 +49,7 @@ async function NodeNavigation({ node, locale }: NodeNavigationProps) {
               node.previous.slug,
             )}
           >
-            <ArrowLeft className="flex-shrink-0 group-hover:text-cardinal" />
+            <ArrowLeft className="group-hover:text-cardinal shrink-0" />
             <span className="truncate">
               {node.previous.navTitle ?? node.previous.title}
             </span>
@@ -65,7 +65,7 @@ async function NodeNavigation({ node, locale }: NodeNavigationProps) {
             <span className="truncate">
               {node.next.navTitle ?? node.next.title}
             </span>
-            <ArrowRight className="flex-shrink-0 group-hover:text-cardinal" />
+            <ArrowRight className="group-hover:text-cardinal shrink-0" />
           </Link>
         </div>
       ) : null}

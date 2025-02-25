@@ -25,8 +25,8 @@ export async function Footer({ t, locale }: FooterProps) {
   ];
 
   return (
-    <footer className="mt-auto w-full border-t border-dashed border-dark">
-      <div className="mx-auto max-w-screen-1.5xl px-4 py-8">
+    <footer className="border-dark mt-auto w-full border-t border-dashed">
+      <div className="max-w-[theme(screens.1.5xl)] mx-auto px-4 py-8">
         <ul className="align-center flex flex-wrap justify-center gap-8 text-center">
           {links.map(({ label, url }) => (
             <li key={label}>
@@ -60,7 +60,7 @@ export async function Footer({ t, locale }: FooterProps) {
               alt="Creative Commons License"
               src={cdnUrl("/img/cc-by-sa.svg")}
               width={42}
-              height={12}
+              height={13}
             />
           </Link>
           <p className="text-center text-xs">

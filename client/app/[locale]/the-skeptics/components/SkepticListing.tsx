@@ -31,7 +31,7 @@ export async function SkepticListing({
   return (
     <article
       id={skeptic.slug}
-      className="border-t border-dashed border-taupe py-4 last:border-b"
+      className="border-taupe border-t border-dashed py-4 last:border-b"
     >
       <header>
         <p className="text-lg">
@@ -48,7 +48,7 @@ export async function SkepticListing({
       </section>
       <section>
         {skeptic.excerpt ? (
-          <div className="mb-4 italic italic-regular-em">
+          <div className="italic-regular-em mb-4 italic">
             <Rehype>{skeptic.excerpt}</Rehype>
           </div>
         ) : null}
@@ -67,7 +67,7 @@ export async function SkepticListing({
           />
         ) : null}
         {skeptic.waybackLink ? (
-          <p className="text-sm small-caps">
+          <p className="small-caps text-sm">
             <Link href={skeptic.waybackLink}>{t("archive_link")}</Link>
           </p>
         ) : null}

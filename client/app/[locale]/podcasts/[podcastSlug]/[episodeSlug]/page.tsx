@@ -69,19 +69,19 @@ export default async function EpisodeDetail(
       ]}
     >
       <header className="mx-auto text-center">
-        <h2 className="mb-4 text-2xl leading-[1.1] small-caps md:mb-6 md:text-4xl">
+        <h2 className="small-caps mb-4 text-2xl leading-[1.1] md:mb-6 md:text-4xl">
           {t("episode_number", { number: episode.episodeNumber })}
         </h2>
-        <h1 className="mb-4 text-4xl font-medium leading-[1.1] md:mb-6 md:text-7xl">
+        <h1 className="mb-4 text-4xl leading-[1.1] font-medium md:mb-6 md:text-7xl">
           {episode.title}
         </h1>
-        <p className="text-xl font-bold opacity-60 small-caps md:text-2xl">
+        <p className="small-caps text-xl font-bold opacity-60 md:text-2xl">
           <time dateTime={episode.date.toISOString()}>
             {formatDate(locale, episode.date)}
           </time>
         </p>
       </header>
-      <hr className="mx-auto mb-4 mt-7 w-12 md:mt-18" />
+      <hr className="mx-auto mt-7 mb-4 w-12 md:mt-18" />
       <ul className="mx-auto flex justify-center gap-4">
         {episode.podcast.applePodcastsUrl && (
           <li>
@@ -130,7 +130,7 @@ export default async function EpisodeDetail(
           </Link>
         </li>
       </ul>
-      <hr className="mx-auto mb-7 mt-4 w-12 md:mb-18" />
+      <hr className="mx-auto mt-4 mb-7 w-12 md:mb-18" />
       <section className="prose mx-auto">
         <Rehype>{episode.content}</Rehype>
         {episode.youtubeId && (

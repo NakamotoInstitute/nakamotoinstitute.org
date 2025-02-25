@@ -33,10 +33,10 @@ type SatoshiSectionProps = AnchorProps & {
 
 const SatoshiSection = ({ text, href, children }: SatoshiSectionProps) => {
   return (
-    <div className="border-b border-dashed border-taupe-light py-5 first:border-t">
+    <div className="border-taupe-light border-b border-dashed py-5 first:border-t">
       <Link
         href={href}
-        className="text-xl font-bold text-cardinal hover:underline"
+        className="text-cardinal text-xl font-bold hover:underline"
       >
         {text}
       </Link>

@@ -36,7 +36,7 @@ type SeriesListingProps = {
 
 function SeriesListing({ locale, series }: SeriesListingProps) {
   return (
-    <article className="border-t border-dashed border-taupe-light py-4 last:border-b-0">
+    <article className="border-taupe-light border-t border-dashed py-4 last:border-b-0">
       <h2 className="font-bold md:text-xl">
         <Link
           className="text-cardinal hover:underline"

@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import Link from "next/link";
 import Script from "next/script";
 import ReactMarkdown, { Options } from "react-markdown";
@@ -24,7 +25,6 @@ type MarkdownProps = {
 };
 
 export async function Markdown({
-  className,
   children,
   hasMath,
   remarkPlugins,
@@ -69,16 +69,18 @@ export async function Markdown({
         <Script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" />
       ) : null}
       <ReactMarkdown
-        className={className}
         remarkPlugins={mergedRemarkPlugins}
         rehypePlugins={mergedRehypePlugins}
         remarkRehypeOptions={mergedRemarkRehypeOptions}
         components={{
-          a(props) {
-            const { children, href, ref, ...rest } = props;
+          a: ({
+            children,
+            href,
+            ref,
+            ...rest
+          }: React.ComponentPropsWithRef<"a">) => {
             if (href?.startsWith("/")) {
               return (
-                // Todo: figure out how to forward this ref
                 <Link href={toFullUrl(href)} {...rest}>
                   {children}
                 </Link>
@@ -95,5 +97,40 @@ export async function Markdown({
         {children}
       </ReactMarkdown>
     </>
+  );
+}
+
+export type MarkdownContentProps = {
+  className?: string;
+} & MarkdownProps;
+
+export async function MarkdownContent({
+  className,
+  ...props
+}: MarkdownContentProps) {
+  return (
+    <div className={className}>
+      <Markdown {...props} />
+    </div>
+  );
+}
+
+export async function PageContent({
+  className,
+  ...props
+}: MarkdownContentProps) {
+  return (
+    <MarkdownContent
+      className={clsx(
+        "[&_h2]:mb-2 [&_h2]:text-3xl [&_h2]:font-medium",
+        "[&_p]:mb-4",
+        "[&_a]:text-cardinal [&_a]:hover:underline",
+        "[&_figure]:border-dark [&_figure]:border-l-1 [&_figure]:border-dashed",
+        "[&_figure_blockquote]:px-4 [&_figure_blockquote]:italic",
+        "[&_figure_figcaption]:small-caps [&_figure_figcaption]:mt-2 [&_figure_figcaption]:px-4 [&_figure_figcaption]:font-medium",
+        className,
+      )}
+      {...props}
+    />
   );
 }

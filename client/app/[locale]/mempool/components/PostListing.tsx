@@ -50,13 +50,13 @@ export async function PostListing({
   return (
     <article
       className={clsx(
-        "grid-col-1 md:grid-col-2 grid border-t border-dashed border-taupe-light py-4 last:border-b md:grid-cols-[7fr,3fr]",
+        "grid-col-1 md:grid-col-2 border-taupe-light grid border-t border-dashed py-4 last:border-b md:grid-cols-[7fr_3fr]",
         className,
       )}
     >
       <header className="order-1">
         {post.series ? (
-          <h3 className="text-sm small-caps">
+          <h3 className="small-caps text-sm">
             <Link href={urls(locale).mempool.seriesDetail(post.series.slug)}>
               {post.series.title}
             </Link>
@@ -78,7 +78,7 @@ export async function PostListing({
         <p className="italic">&ldquo;{post.excerpt}&rdquo;</p>
       </section>
 
-      <footer className="order-3 text-sm text-dark/70 small-caps md:order-2 md:text-right">
+      <footer className="text-dark/70 small-caps order-3 text-sm md:order-2 md:text-right">
         {!original ? (
           <span>
             <Trans

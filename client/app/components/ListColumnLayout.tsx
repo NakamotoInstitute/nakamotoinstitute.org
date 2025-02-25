@@ -24,7 +24,7 @@ function LinkColumn({
       {items.map((item) => (
         <li
           className={clsx(
-            "border-b border-dashed border-taupe-light py-2",
+            "border-taupe-light border-b border-dashed py-2",
             !last
               ? "md:last:border-b-0"
               : equal
@@ -56,7 +56,7 @@ export function ListColumnLayout({ hrefFunc, items }: ListColumnLayoutProps) {
   const secondColumn = items.slice(halfLength);
 
   return (
-    <section className="my-4 flex flex-col gap-x-6 border-b border-t border-dashed border-taupe-light md:flex-row">
+    <section className="border-taupe-light my-4 flex flex-col gap-x-6 border-t border-b border-dashed md:flex-row">
       <LinkColumn items={firstColumn} hrefFunc={hrefFunc} />
       <LinkColumn
         items={secondColumn}

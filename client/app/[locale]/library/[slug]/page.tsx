@@ -73,7 +73,7 @@ export default async function LibraryDetail(
         <DocHeader t={t} locale={locale} doc={doc} />
         {doc.content ? (
           <>
-            <section className="prose mx-auto md:prose-lg" dir={getDir(locale)}>
+            <section className="prose md:prose-lg mx-auto" dir={getDir(locale)}>
               <Rehype hasMath={doc.hasMath}>{doc.content}</Rehype>
               {doc.translators.length > 0 ? (
                 <>

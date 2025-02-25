@@ -13,7 +13,7 @@ export async function AdditionalNavigation({
     <nav
       aria-label="additional"
       className={clsx(
-        "border-dashed border-dark py-3",
+        "border-dark border-dashed py-3",
         bottom ? "border-t" : "border-b",
       )}
     >

@@ -79,10 +79,10 @@ export async function PageLayout({
         <AdditionalNavigation>{additionalNav}</AdditionalNavigation>
       ) : null}
       <main
-        className={clsx(className, "mx-auto w-full flex-grow px-4", {
-          "max-w-3.5xl": size === "md",
-          "max-w-4.5xl": size === "lg",
-          "max-w-screen-1.5xl": size === "xl",
+        className={clsx(className, "mx-auto w-full grow px-4", {
+          "max-w-218": size === "md",
+          "max-w-240": size === "lg",
+          "max-w-360": size === "xl",
           "my-10 pb-4 md:mt-18": size !== "xl",
         })}
       >

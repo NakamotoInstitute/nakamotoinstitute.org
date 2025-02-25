@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 import { ButtonLink } from "@/app/components/Button";
-import { Markdown } from "@/app/components/Markdown";
+import { PageContent } from "@/app/components/Markdown";
 import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
 import { locales } from "@/i18n";
@@ -58,7 +58,7 @@ export default async function RPOWPage(props: LocaleParams) {
         </ButtonLink>
       </div>
       <hr className="my-4" />
-      <Markdown className="page-content">{content}</Markdown>
+      <PageContent>{content}</PageContent>
     </PageLayout>
   );
 }

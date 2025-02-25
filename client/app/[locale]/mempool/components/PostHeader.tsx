@@ -22,7 +22,7 @@ async function SeriesHeader({
   seriesIndex,
 }: SeriesHeaderProps) {
   return (
-    <div className="mb-6 text-center font-bold small-caps">
+    <div className="small-caps mb-6 text-center font-bold">
       <h2>
         <Link href={urls(locale).mempool.seriesDetail(series.slug)}>
           {series.title}
@@ -30,7 +30,7 @@ async function SeriesHeader({
         {!series.chapterTitle ? ` (#${seriesIndex})` : null}
       </h2>
       {series?.chapterTitle ? (
-        <p className="-mb-4 mt-2 text-xl md:mt-3 md:text-4xl">
+        <p className="mt-2 -mb-4 text-xl md:mt-3 md:text-4xl">
           <Trans
             t={t}
             i18nKey="chapter_index"
@@ -60,7 +60,7 @@ export async function PostHeader({ t, locale, post }: PostHeaderProps) {
             seriesIndex={post.seriesIndex}
           />
         ) : null}
-        <h1 className="mb-4 text-4xl font-medium leading-[1.1] md:mb-6 md:text-7xl">
+        <h1 className="mb-4 text-4xl leading-[1.1] font-medium md:mb-6 md:text-7xl">
           {post.title}
         </h1>
         {post.subtitle ? (
@@ -69,12 +69,12 @@ export async function PostHeader({ t, locale, post }: PostHeaderProps) {
           </p>
         ) : null}
         <AuthorsLinks
-          className="mb-1 text-xl font-bold small-caps md:mb-4 md:text-2xl"
+          className="small-caps mb-1 text-xl font-bold md:mb-4 md:text-2xl"
           itemClassName="text-dark"
           locale={locale}
           authors={post.authors}
         />
-        <p className="text-xl font-bold opacity-60 small-caps md:text-2xl">
+        <p className="small-caps text-xl font-bold opacity-60 md:text-2xl">
           <time dateTime={post.date.toISOString()}>
             {formatDate(locale, post.date)}
           </time>
@@ -98,7 +98,7 @@ export async function PostHeader({ t, locale, post }: PostHeaderProps) {
           </p>
         ) : null}
         {post.image ? (
-          <div className="relative mx-auto mt-6 h-48 max-w-screen-sm sm:h-60 md:h-80">
+          <div className="relative mx-auto mt-6 h-48 max-w-(--breakpoint-sm) sm:h-60 md:h-80">
             <Image
               className="object-contain"
               src={post.image}

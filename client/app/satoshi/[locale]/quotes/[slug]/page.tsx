@@ -76,8 +76,8 @@ async function SatoshiQuote({ t, locale, quote }: SatoshiQuoteProps) {
 
   return (
     <ContentBox as="article" className="mb-3 last:mb-0">
-      <header className="border-b border-dashed border-taupe bg-dandelion font-mono">
-        <div className="border-b border-dashed border-taupe px-8 py-2">
+      <header className="border-taupe bg-dandelion border-b border-dashed font-mono">
+        <div className="border-taupe border-b border-dashed px-8 py-2">
           {source ? <div className="font-bold">{source}</div> : null}
         </div>
         <div className="grid grid-cols-[auto_1fr] gap-x-4 px-8 py-2">
@@ -100,7 +100,7 @@ async function SatoshiQuote({ t, locale, quote }: SatoshiQuoteProps) {
         </div>
       </header>
       <ContentBoxBody mono={!!quote.email}>{quote.text}</ContentBoxBody>
-      <footer className="flex flex-col justify-between gap-2 border-t border-dashed border-taupe px-8 py-4 font-mono text-sm md:flex-row">
+      <footer className="border-taupe flex flex-col justify-between gap-2 border-t border-dashed px-8 py-4 font-mono text-sm md:flex-row">
         <Link className="text-cardinal hover:underline" href={url}>
           {label}
         </Link>

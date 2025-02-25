@@ -1,64 +1,63 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
+@theme {
+  --color-cream: #f5f4ef;
+  --color-dark: #212121;
+  --color-cardinal: #c21324;
+  --color-crimson: #e3455f;
+  --color-windsor: #442977;
+  --color-winter: #5b8e7d;
+  --color-mariner: #4059ad;
+  --color-dandelion: #ffd470;
+  --color-sand: #e4e2d9;
+  --color-taupe: #7c7b72;
+  --color-taupe-light: #bfbdb3;
+
+  --font-serif: var(--font-stix), "Times New Roman", serif;
+  --font-mono: var(--font-ibm-plex-mono), "Courier New", monospace;
+
+  --spacing-prose: 70ch;
+}
+
+@config '../tailwind.config.ts';
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
 @layer base {
-  a:hover {
-    @apply text-cardinal;
-  }
-
-  hr {
-    @apply border-dashed border-dark;
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
   }
 }
 
-@layer components {
-  .page-content > h2 {
-    @apply mb-2 text-3xl font-medium;
+@utility small-caps {
+  font-variant-caps: small-caps;
+}
+
+@utility italic-regular-em {
+  em {
+    font-style: normal;
+  }
+}
+
+@import "./safelist.css";
+
+@layer base {
+  a:hover {
+    color: var(--color-cardinal);
   }
 
-  .page-content > p {
-    @apply mb-4;
-  }
-
-  .page-content a {
-    @apply text-cardinal;
-
-    &:hover {
-      @apply underline;
-    }
-  }
-
-  .page-content figure {
-    @apply border-l-1 border-dashed border-dark;
-
-    & > blockquote {
-      @apply px-4 italic;
-    }
-
-    & > figcaption {
-      @apply mt-2 px-4 font-medium small-caps;
-    }
-  }
-
-  .codeheader,
-  .quoteheader {
-    @apply border border-neutral-300;
-    @apply p-1.5;
-    @apply font-bold;
-  }
-
-  .code,
-  .quote {
-    @apply border border-t-0 border-neutral-300;
-    @apply p-1.5;
-  }
-
-  .code {
-    @apply whitespace-pre-wrap font-mono;
-  }
-
-  .quote {
-    @apply mb-3;
+  hr {
+    border-style: dashed;
+    border-color: var(--color-dark);
   }
 }

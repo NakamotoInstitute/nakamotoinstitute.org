@@ -47,7 +47,7 @@ export function LanguageToggle({
       <button
         type="button"
         className={clsx(
-          "border-1 px-2.5 py-2 text-sm text-dark focus:outline-none",
+          "text-dark border-1 px-2.5 py-2 text-sm focus:outline-hidden",
           isOpen && "border-dark",
           !isOpen && "border-transparent",
         )}
@@ -63,7 +63,7 @@ export function LanguageToggle({
       </button>
       {isOpen ? (
         <div
-          className="z-50 mt-3 w-56 rounded-sm bg-white p-2 font-semibold shadow-lg"
+          className="z-50 mt-3 w-56 rounded-xs bg-white p-2 font-semibold shadow-lg"
           ref={refs.setFloating}
           style={floatingStyles}
           {...getFloatingProps()}
@@ -73,7 +73,7 @@ export function LanguageToggle({
               <li key={link.href} className="mb-1 last:mb-0">
                 <Link
                   href={link.href}
-                  className="block rounded-sm p-3 hover:bg-cream hover:text-dark"
+                  className="hover:bg-cream hover:text-dark block rounded-xs p-3"
                 >
                   {link.text}
                 </Link>

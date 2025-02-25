@@ -13,10 +13,10 @@ type CodeTableRowProps = {
 function CodeTableRow({ label, children }: CodeTableRowProps) {
   return (
     <div className="mb-4 flex flex-col last:mb-0 md:mb-3 md:flex-row md:gap-4">
-      <div className="flex-shrink-0 flex-grow basis-1/6 font-bold md:text-right">
+      <div className="shrink-0 grow basis-1/6 font-bold md:text-right">
         {label}
       </div>
-      <div className="flex-shrink-0 flex-grow basis-5/6">{children}</div>
+      <div className="shrink-0 grow basis-5/6">{children}</div>
     </div>
   );
 }
@@ -43,7 +43,7 @@ export async function CodeTable({
   source,
 }: CodeTableProps) {
   return (
-    <article className="border-t border-dashed border-taupe-light pb-5 pt-7">
+    <article className="border-taupe-light border-t border-dashed pt-7 pb-5">
       <h2 className="mb-2.5 text-2xl font-bold">{title}</h2>
       <div>
         <CodeTableRow label={t("date")}>
@@ -68,7 +68,7 @@ export async function CodeTable({
         ) : null}
         <CodeTableRow label={t("source")}>
           <Link
-            className="break-words text-cardinal hover:underline"
+            className="text-cardinal break-words hover:underline"
             href={source}
           >
             {source}

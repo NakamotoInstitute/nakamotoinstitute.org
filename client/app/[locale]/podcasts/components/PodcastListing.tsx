@@ -22,7 +22,7 @@ export async function PodcastListing({
   return (
     <article
       className={clsx(
-        "border-t border-dashed border-taupe-light py-4 last:border-b",
+        "border-taupe-light border-t border-dashed py-4 last:border-b",
         className,
       )}
     >

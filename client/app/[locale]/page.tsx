@@ -42,7 +42,7 @@ type GridItemProps = {
 
 async function GridItem({ className, children }: GridItemProps) {
   return (
-    <div className={clsx(className, "border-dashed border-dark")}>
+    <div className={clsx(className, "border-dark border-dashed")}>
       {children}
     </div>
   );
@@ -65,7 +65,7 @@ async function Box({ title, className, link, children }: BoxProps) {
       {children}
       {link ? (
         <Link
-          className="mt-auto inline-flex items-center gap-1 text-sm font-medium small-caps"
+          className="small-caps mt-auto inline-flex items-center gap-1 text-sm font-medium"
           href={link.href}
         >
           <span>{link.label}</span>
@@ -93,13 +93,13 @@ export default async function HomePage(props: LocaleParams) {
 
   return (
     <PageLayout t={t} locale={locale} size="xl" generateHref={generateHref}>
-      <div className="-mx-4 grid grid-cols-1 md:grid-cols-[1fr,3fr] md:grid-rows-[28rem_auto]">
+      <div className="-mx-4 grid grid-cols-1 md:grid-cols-[1fr_3fr] md:grid-rows-[28rem_auto]">
         <GridItem className="px-5 py-12 md:py-7">
           <h1 className="text-center text-3xl font-semibold md:text-left md:max-lg:text-2xl lg:text-3xl">
             {t("mission_statement")}
           </h1>
         </GridItem>
-        <GridItem className="md:grid-rows[1fr_1fr_1fr_1fr_auto] grid grid-cols-1 md:row-span-2 md:grid-cols-2 md:border-l lg:grid-cols-3 min-[1441px]:border-r">
+        <GridItem className="md:grid-rows[1fr_1fr_1fr_1fr_auto] grid grid-cols-1 min-[1441px]:border-r md:row-span-2 md:grid-cols-2 md:border-l lg:grid-cols-3">
           <GridItem className="border-b pb-8 md:col-span-2 md:p-5 lg:col-span-3">
             <div className="relative h-56 w-full">
               <Image
@@ -109,6 +109,7 @@ export default async function HomePage(props: LocaleParams) {
                 fill
                 className="object-cover"
                 alt="Gradually, Then Suddenly painting"
+                priority
               />
             </div>
             <div className="mt-4 flex flex-col items-baseline gap-1 max-md:px-5 lg:flex-row lg:gap-3.5">
@@ -121,7 +122,7 @@ export default async function HomePage(props: LocaleParams) {
                 />
               </h3>
               <Link
-                className="font-semibold text-cardinal hover:underline"
+                className="text-cardinal font-semibold hover:underline"
                 href={urls("en").library.doc("gradually-then-suddenly")}
               >
                 {t("read_more")}
@@ -292,17 +293,17 @@ export default async function HomePage(props: LocaleParams) {
         <GridItem className="px-5 py-4 md:pt-0">
           <div className="flex flex-col gap-4">
             <Link href={externalUrls.substack}>
-              <div className="flex items-center justify-between gap-4 border border-dashed border-taupe-light p-4 md:items-start">
+              <div className="border-taupe-light flex items-center justify-between gap-4 border border-dashed p-4 md:items-start">
                 <div>
                   <h4 className="font-semibold">{t("newsletter_call")}</h4>
-                  <p className="text-sm text-taupe">{t("newsletter_signup")}</p>
+                  <p className="text-taupe text-sm">{t("newsletter_signup")}</p>
                 </div>
                 <ArrowRight className="min-w-fit" />
               </div>
             </Link>
-            <div className="border-l-[3px] border-cardinal bg-white p-4 shadow-sm">
-              <div className="text-xs text-taupe">
-                <h4 className="mb-2 text-base font-semibold text-dark">
+            <div className="border-cardinal border-l-[3px] bg-white p-4 shadow-xs">
+              <div className="text-taupe text-xs">
+                <h4 className="text-dark mb-2 text-base font-semibold">
                   {t("support")}
                 </h4>
                 <p className="mb-2">{t("donation_message")}</p>
@@ -315,7 +316,7 @@ export default async function HomePage(props: LocaleParams) {
                   />
                 </p>
               </div>
-              <hr className="my-4 border-taupe-light" />
+              <hr className="border-taupe-light my-4" />
               <div>
                 <ButtonLink
                   className="flex gap-1"

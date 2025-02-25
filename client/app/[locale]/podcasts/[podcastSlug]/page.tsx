@@ -56,12 +56,12 @@ export default async function PodcastIndex(
     >
       <PageHeader title={podcast.name} />
       {podcast.defunct ? (
-        <p className="border-t border-dashed border-taupe-light py-4">
+        <p className="border-taupe-light border-t border-dashed py-4">
           {t("podcast_defunct")}
         </p>
       ) : null}
       <section>
-        <div className="border-t border-dashed border-taupe-light py-4">
+        <div className="border-taupe-light border-t border-dashed py-4">
           <LinkList
             title={t("listen")}
             links={[

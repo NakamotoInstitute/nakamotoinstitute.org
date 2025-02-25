@@ -20,11 +20,11 @@ export const ButtonLink = ({
     <Link
       href={href}
       className={clsx(
-        "ring-offset-background focus-visible:ring-ring inline-flex h-10 items-center justify-center whitespace-nowrap px-4 py-3 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+        "ring-offset-background focus-visible:ring-ring inline-flex h-10 items-center justify-center px-4 py-3 text-sm font-medium whitespace-nowrap transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50",
         {
-          "bg-cardinal text-white hover:bg-crimson hover:text-white":
+          "bg-cardinal hover:bg-crimson text-white hover:text-white":
             variant === "primary",
-          "bg-white text-cardinal hover:text-dark": variant === "secondary",
+          "text-cardinal hover:text-dark bg-white": variant === "secondary",
         },
         className,
       )}

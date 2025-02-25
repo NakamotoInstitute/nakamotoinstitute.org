@@ -18,7 +18,7 @@ export async function Breadcrumbs({ breadcrumbs }: BreadcrumbsProps) {
   return (
     <nav
       aria-label="breadcrumb"
-      className="border-b border-dashed border-dark py-3"
+      className="border-dark border-b border-dashed py-3"
     >
       <ol className="hidden justify-center gap-x-2 md:flex">
         {breadcrumbs.map((breadcrumb, index) => {

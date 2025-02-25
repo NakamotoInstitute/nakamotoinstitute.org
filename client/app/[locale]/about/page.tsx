@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-import { Markdown } from "@/app/components/Markdown";
+import { PageContent } from "@/app/components/Markdown";
 import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
 import { locales } from "@/i18n";
@@ -39,7 +39,7 @@ export default async function AboutPage(props: LocaleParams) {
   return (
     <PageLayout t={t} locale={locale} generateHref={generateHref}>
       <PageHeader title={t("about")} />
-      <Markdown className="page-content">{content}</Markdown>
+      <PageContent>{content}</PageContent>
     </PageLayout>
   );
 }

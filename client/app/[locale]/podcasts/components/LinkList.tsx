@@ -20,7 +20,7 @@ export function LinkList({ title, links }: LinkListProps) {
           .map((link, i) => (
             <li
               key={i}
-              className="before:mx-2 before:text-taupe before:content-['•'] first:before:mx-0 first:before:content-none"
+              className="before:text-taupe before:mx-2 before:content-['•'] first:before:mx-0 first:before:content-none"
             >
               <Link href={link.href} className="underline">
                 {link.label}

@@ -11,13 +11,13 @@ export type ArrowButtonProps = {
 export function ArrowLink({ direction, href }: ArrowButtonProps) {
   return href ? (
     <Link
-      className="inline-flex items-center justify-center rounded-full border border-taupe-light p-1.5"
+      className="border-taupe-light inline-flex items-center justify-center rounded-full border p-1.5"
       href={href}
     >
       {direction === "left" ? <ArrowLeft /> : <ArrowRight />}
     </Link>
   ) : (
-    <span className="inline-flex items-center justify-center rounded-full border border-taupe-light bg-taupe-light p-1.5">
+    <span className="border-taupe-light bg-taupe-light inline-flex items-center justify-center rounded-full border p-1.5">
       {direction === "left" ? <ArrowLeft /> : <ArrowRight />}
     </span>
   );

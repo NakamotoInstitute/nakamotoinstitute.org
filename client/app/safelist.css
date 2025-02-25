@@ -1,0 +1,23 @@
+.codeheader {
+  @apply border border-neutral-300;
+  @apply p-1.5;
+  @apply font-bold;
+}
+
+.quoteheader {
+  @apply border border-neutral-300;
+  @apply p-1.5;
+  @apply font-bold;
+}
+
+.code {
+  @apply border border-t-0 border-neutral-300;
+  @apply p-1.5;
+  @apply font-mono whitespace-pre-wrap;
+}
+
+.quote {
+  @apply border border-t-0 border-neutral-300;
+  @apply p-1.5;
+  @apply mb-3;
+}

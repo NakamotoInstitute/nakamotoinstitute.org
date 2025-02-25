@@ -16,7 +16,7 @@ export function ContentListing({
   date,
 }: ContentListingProps) {
   return (
-    <article className="border-b border-dashed border-taupe-light py-5">
+    <article className="border-taupe-light border-b border-dashed py-5">
       <h3 className="text-xl font-bold">
         <Link className="text-cardinal hover:underline" href={href}>
           {label}
