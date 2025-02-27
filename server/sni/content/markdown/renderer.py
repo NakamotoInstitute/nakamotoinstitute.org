@@ -10,8 +10,33 @@ from mdit_py_plugins.deflist import deflist_plugin
 from mdit_py_plugins.dollarmath import dollarmath_plugin
 from mdit_py_plugins.footnote import footnote_plugin
 from mdit_py_plugins.front_matter import front_matter_plugin
+from pygments import highlight as pygments_highlight
+from pygments.formatters import HtmlFormatter
+from pygments.lexers import get_lexer_by_name
+from pygments.util import ClassNotFound
 
 from sni.config import settings
+
+
+def highlight_code(code: str, lang: str, attrs: str) -> str:
+    """
+    Highlight code blocks using Pygments with standard classes.
+    The client will style these classes with Tailwind.
+    """
+    if not lang:
+        return f"<pre><code>{code}</code></pre>"
+
+    pre_class = f"hl-code language-{lang}"
+
+    try:
+        lexer = get_lexer_by_name(lang, stripall=True)
+        formatter = HtmlFormatter(nowrap=True, classprefix="")
+        highlighted_code = pygments_highlight(code, lexer, formatter)
+    except ClassNotFound:
+        # Fallback for unknown languages
+        highlighted_code = code
+
+    return f'<pre class="{pre_class}"><code>{highlighted_code}</code></pre>'
 
 
 def render_math_inline(
@@ -77,7 +102,12 @@ class MDRenderer:
         md = (
             MarkdownIt(
                 "commonmark",
-                {"breaks": False, "html": True, "typographer": True},
+                {
+                    "breaks": False,
+                    "html": True,
+                    "typographer": True,
+                    "highlight": highlight_code,
+                },
                 renderer_cls=SNIMarkdownRenderer,
             )
             .enable(["replacements", "smartquotes"])

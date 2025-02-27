@@ -13,6 +13,7 @@ dependencies = [
     "mdit-py-plugins==0.4.2",
     "psycopg[binary,pool]==3.2.5",
     "pydantic-settings==2.8.0",
+    "pygments>=2.19.1",
     "pyyaml==6.0.2",
     "SQLAlchemy[asyncio,mypy]==2.0.38",
     "typer==0.15.1",
