@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -21,7 +21,7 @@
     "i18next-parser": "^9.3.0",
     "i18next-resources-to-backend": "^1.2.1",
     "jiti": "^2.4.2",
-    "next": "15.1.7",
+    "next": "15.2.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-i18next": "^15.4.1",
@@ -44,10 +44,10 @@
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@types/big.js": "^6.2.2",
     "@types/node": "^22.13.5",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
+    "@types/react": "19.0.10",
+    "@types/react-dom": "19.0.4",
     "eslint": "^9.21.0",
-    "eslint-config-next": "15.1.7",
+    "eslint-config-next": "15.2.0",
     "eslint-config-prettier": "^10.0.2",
     "postcss": "^8.5.3",
     "prettier": "^3.5.2",
@@ -62,6 +62,10 @@
     "onlyBuiltDependencies": [
       "esbuild",
       "sharp"
-    ]
+    ],
+    "overrides": {
+      "@types/react": "19.0.10",
+      "@types/react-dom": "19.0.4"
+    }
   }
 }
