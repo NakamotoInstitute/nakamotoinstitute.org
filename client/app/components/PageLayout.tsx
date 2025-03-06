@@ -68,7 +68,7 @@ export async function PageLayout({
           { href: externalUrls.substack, text: t("newsletter") },
         ]}
         navButtons={[
-          <ButtonLink key="donate" href={urls(locale).donate.zaprite}>
+          <ButtonLink key="donate" href={externalUrls.zaprite}>
             {t("donate")}
           </ButtonLink>,
         ]}

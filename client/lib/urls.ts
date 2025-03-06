@@ -73,7 +73,6 @@ export const urls = (locale: Locale) => {
     crashCourse: getUrl("/crash-course/"),
     donate: {
       index: getUrl("/donate/"),
-      zaprite: "https://pay.zaprite.com/pl_vNYDp4YBSd",
     },
     events: getUrl("/events/"),
     finney: {
@@ -151,6 +150,7 @@ export const externalUrls = {
     channel: "https://www.youtube.com/@SatoshiNakamotoInstitute",
     embed: (id: string) => `https://www.youtube.com/embed/${id}?rel=0`,
   },
+  zaprite: "https://pay.zaprite.com/pl_vNYDp4YBSd",
 };
 
 export const cdnUrl = (path: string) => env.CDN_BASE_URL + path;

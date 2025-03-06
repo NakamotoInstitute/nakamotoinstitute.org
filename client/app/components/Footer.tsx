@@ -17,7 +17,7 @@ export async function Footer({ t, locale }: FooterProps) {
     { label: t("podcasts"), url: urls(locale).podcasts.index },
     { label: t("feed"), url: urls(locale).mempool.atom },
     { label: t("newsletter"), url: externalUrls.substack },
-    { label: t("donate"), url: urls(locale).donate.index },
+    { label: t("donate"), url: externalUrls.zaprite },
     { label: t("get_involved"), url: urls(locale).getInvolved },
     { label: t("github"), url: externalUrls.github },
     { label: t("x"), url: externalUrls.x },

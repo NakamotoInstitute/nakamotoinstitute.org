@@ -18,4 +18,4 @@ class BaseURLGenerator(ABC):
 
     @property
     def donate(self) -> str:
-        return f"{self.base_url}/donate"
+        return f"{self.base_url}/donate/"

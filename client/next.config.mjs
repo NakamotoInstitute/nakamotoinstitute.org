@@ -1,8 +1,14 @@
 import { createJiti } from "jiti";
 import { fileURLToPath } from "node:url";
 
-const jiti = createJiti(fileURLToPath(import.meta.url));
+const jiti = createJiti(fileURLToPath(import.meta.url), {
+  alias: {
+    '@': fileURLToPath(new URL('./', import.meta.url))
+  }
+});
 const { env } = await jiti.import("./env.ts");
+const { externalUrls } = await jiti.import("./lib/urls.ts");
+
 
 const satoshiDestination = `${
   env.VERCEL_ENV === "development" ? "http://" : "https://"
@@ -34,6 +40,11 @@ const nextConfig = {
         source: "/bitcoin.pdf",
         destination: `${cdnBaseUrl}/docs/bitcoin.pdf`,
         permanent: true,
+      },
+      {
+        source: "/donate/",
+        destination: externalUrls.zaprite,
+        permanent: false,
       },
     ];
     if (

@@ -8,7 +8,7 @@ import { locales } from "@/i18n";
 import { getPage } from "@/lib/content";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
-import { urls } from "@/lib/urls";
+import { externalUrls, urls } from "@/lib/urls";
 
 const generateHref = (l: Locale) => urls(l).donate.index;
 
@@ -41,7 +41,7 @@ export default async function DonatePage(props: LocaleParams) {
     <PageLayout t={t} locale={locale} generateHref={generateHref}>
       <PageHeader title={t("donate")} />
       <Markdown className="page-content mb-4">{content}</Markdown>
-      <ButtonLink href={urls(locale).donate.zaprite}>{t("donate")}</ButtonLink>
+      <ButtonLink href={externalUrls.zaprite}>{t("donate")}</ButtonLink>
     </PageLayout>
   );
 }

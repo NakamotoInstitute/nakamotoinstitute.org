@@ -318,10 +318,7 @@ export default async function HomePage(props: LocaleParams) {
               </div>
               <hr className="border-taupe-light my-4" />
               <div>
-                <ButtonLink
-                  className="flex gap-1"
-                  href={urls(locale).donate.zaprite}
-                >
+                <ButtonLink className="flex gap-1" href={externalUrls.zaprite}>
                   <span>{t("donate")}</span>
                   <ArrowRight />
                 </ButtonLink>
