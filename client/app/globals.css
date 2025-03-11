@@ -49,7 +49,6 @@
   }
 }
 
-
 @layer base {
   a:hover {
     color: var(--color-cardinal);
