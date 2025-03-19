@@ -4,7 +4,7 @@ episode_number: 5
 title: "The Original Value of Bitcoins"
 date: 2025-03-12
 summary: 'Michael Goldstein and Pierre Rochard discuss Daniel Krawisz''s 2013 article "The Original Value of Bitcoins"'
-mp3_url: https://traffic.libsyn.com/forcedn/644f5696-c625-468a-a0c3-f02493f7b768/thereorg-ep004-the-proof-of-work-concept.mp3
+mp3_url: https://traffic.libsyn.com/forcedn/644f5696-c625-468a-a0c3-f02493f7b768/thereorg-ep005-the-original-value-of-bitcoins.mp3
 youtube_id: VMg1U_Nhqek
 rumble_id: v6qjdqm-the-reorg-episode-5-the-original-value-of-bitcoins
 ---
