@@ -19,7 +19,7 @@ everyone else involved to do the same. Regardless of any other merits the
 rules have, the mere _prospect_ of rewards will make success more likely for
 them.
 
-I suggest that Bitcoin works like this. Yes, Bitcoin is a great as a payment
+I suggest that Bitcoin works like this. Yes, Bitcoin is great as a payment
 system and so on, but I think its value as an investment prospect should be
 taken more seriously. If Bitcoin succeeds, then obviously its early adopters
 will benefit enormously. And the earlier you buy in, the more you benefit.
