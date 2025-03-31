@@ -18,6 +18,7 @@ const zNestedDocumentNode = z.object({
 export const zDocumentFormat = z.object({
   url: z.string(),
   type: zFormat,
+  volume: z.number().nullable(),
 });
 export type DocumentFormat = z.infer<typeof zDocumentFormat>;
 

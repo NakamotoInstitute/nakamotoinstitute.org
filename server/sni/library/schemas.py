@@ -53,18 +53,36 @@ class DocumentCanonicalMDModel(BaseModel):
         return data
 
 
+class DocumentFormat(BaseModel):
+    type: DocumentFormats
+    volume: int | None = None
+
+
 class DocumentMDModel(BaseModel):
     title: str
     subtitle: str | None = None
     external: str | None = None
     sort_title: str | None = None
     image_alt: str | None = None
-    formats: list[DocumentFormats] = []
+    formats: list[DocumentFormat] = []
 
     @model_validator(mode="after")
     def check_sort_title(self) -> "DocumentMDModel":
         self.sort_title = self.sort_title or self.title
         return self
+
+    @model_validator(mode="before")
+    @classmethod
+    def parse_formats(cls, data: Any) -> Any:
+        if isinstance(data, dict) and "formats" in data:
+            formats = []
+            for fmt in data["formats"]:
+                if isinstance(fmt, str):
+                    formats.append({"type": fmt})  # Convert "pdf" -> {"type": "pdf"}
+                else:
+                    formats.append(fmt)  # Keep {"type": "pdf", "volume": 1} as is
+            data["formats"] = formats
+        return data
 
 
 class DocumentTranslationMDModel(DocumentMDModel):
@@ -140,6 +158,7 @@ class BookMDNodeModel(BaseModel):
 class DocumentFormatModel(ORMModel):
     url: str
     type: DocumentFormats
+    volume: int | None = None
 
 
 class DocumentBaseModel(ORMModel):

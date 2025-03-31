@@ -40,11 +40,12 @@ export function getDocFormatLinks({
   doc.formats?.forEach((format) =>
     links.push(
       <DocFormatButtonLink
-        key={format.type}
+        key={format.volume ? `${format.type}-${format.volume}` : format.type}
         className={buttonClassName}
         href={format.url}
       >
         {format.type === "epub" ? "ePub" : format.type.toUpperCase()}
+        {format.volume ? ` (Vol. ${format.volume})` : ""}
       </DocFormatButtonLink>,
     ),
   );
@@ -117,11 +118,10 @@ export async function DocFormatChips({
     chips.push(<Chip key="html">HTML</Chip>);
   }
 
-  doc.formats?.forEach((format) =>
+  const formatTypes = new Set(doc.formats?.map((f) => f.type));
+  formatTypes.forEach((type) =>
     chips.push(
-      <Chip key={format.type}>
-        {format.type === "epub" ? "ePub" : format.type.toUpperCase()}
-      </Chip>,
+      <Chip key={type}>{type === "epub" ? "ePub" : type.toUpperCase()}</Chip>,
     ),
   );
 

@@ -56,11 +56,13 @@ class DocumentFormat(Base):
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     format_type: Mapped[str] = mapped_column(
         Enum(DocumentFormats, values_callable=lambda x: [e.value for e in x]),
-        unique=True,
     )
+    volume: Mapped[int | None] = mapped_column(Integer, nullable=True)
     documents: Mapped[List["DocumentTranslation"]] = relationship(
         secondary=document_formats, back_populates="formats"
     )
+
+    __table_args__ = (UniqueConstraint("format_type", "volume"),)
 
 
 class Document(Base):
@@ -126,17 +128,26 @@ class DocumentTranslation(Base):
     __table_args__ = (UniqueConstraint("document_id", "locale"),)
 
     @property
-    def serialized_formats(self) -> list[str]:
+    def serialized_formats(self) -> list[dict]:
         serialized_formats = []
         for fmt in self.formats:
             if self.slug == self.document.slug and self.locale != Locales.ENGLISH:
                 slug = f"{self.slug}_{self.locale.value}"
             else:
                 slug = self.slug
+
             format_type = fmt.format_type.value
-            filename = f"{settings.CDN_BASE_URL}/docs/{slug}.{format_type}"
-            serialized_formats.append({"url": filename, "type": format_type})
-        return sorted(serialized_formats, key=lambda x: x["type"])
+            if fmt.volume is not None:
+                filename = (
+                    f"{settings.CDN_BASE_URL}/docs/{slug}_vol{fmt.volume}.{format_type}"
+                )
+            else:
+                filename = f"{settings.CDN_BASE_URL}/docs/{slug}.{format_type}"
+
+            serialized_formats.append(
+                {"url": filename, "type": format_type, "volume": fmt.volume}
+            )
+        return sorted(serialized_formats, key=lambda x: (x["type"], x.get("volume", 0)))
 
     @property
     def translations(self) -> list[Self]:

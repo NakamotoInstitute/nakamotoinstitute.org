@@ -30,6 +30,22 @@ def import_library_weights(
     )
 
 
+def load_formats(db_session, formats):
+    loaded_formats = []
+    for fmt in formats:
+        if isinstance(fmt, str):
+            fmt = {"type": fmt}
+        loaded_formats.append(
+            get_or_create(
+                DocumentFormat,
+                db_session=db_session,
+                format_type=fmt["type"],
+                volume=fmt.get("volume"),
+            )
+        )
+    return loaded_formats
+
+
 class LibraryImporter(TranslatedMarkdownImporter):
     directory_path = "content/library"
     content_type = "Library"
@@ -49,10 +65,9 @@ class LibraryImporter(TranslatedMarkdownImporter):
     def process_translation_additional_data(
         self, translation_data, canonical_entry, metadata
     ):
-        translation_data["formats"] = [
-            get_or_create(DocumentFormat, db_session=self.db_session, format_type=fmt)
-            for fmt in translation_data.pop("formats", [])
-        ]
+        translation_data["formats"] = load_formats(
+            self.db_session, translation_data.pop("formats", [])
+        )
         translation_data["translators"] = [
             get(Translator, db_session=self.db_session, slug=slug)
             for slug in translation_data.pop("translators", [])
@@ -67,10 +82,9 @@ class LibraryImporter(TranslatedMarkdownImporter):
         translation_data["external"] = (
             translation_data.get("external") or canonical_entry["translation"].external
         )
-        translation_data["formats"] = [
-            get_or_create(DocumentFormat, db_session=self.db_session, format_type=fmt)
-            for fmt in translation_data.pop("formats")
-        ]
+        translation_data["formats"] = load_formats(
+            self.db_session, translation_data.pop("formats", [])
+        )
         translation_data["translators"] = [
             get(Translator, db_session=self.db_session, slug=slug)
             for slug in translation_data.pop("translators", [])
@@ -105,10 +119,9 @@ class LibraryBookImporter(MarkdownDirectoryImporter):
     def process_translation_additional_data(
         self, translation_data, canonical_entry, metadata
     ):
-        translation_data["formats"] = [
-            get_or_create(DocumentFormat, db_session=self.db_session, format_type=fmt)
-            for fmt in translation_data.pop("formats", [])
-        ]
+        translation_data["formats"] = load_formats(
+            self.db_session, translation_data.pop("formats", [])
+        )
         translation_data["translators"] = [
             get(Translator, db_session=self.db_session, slug=slug)
             for slug in translation_data.pop("translators", [])
