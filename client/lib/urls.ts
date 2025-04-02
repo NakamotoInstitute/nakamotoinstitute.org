@@ -141,7 +141,7 @@ export const externalUrls = {
   github: "https://github.com/NakamotoInstitute/nakamotoinstitute.org",
   nostr: "https://primal.net/sni",
   rumble: {
-    channel: "https://rumble.com/c/c-7381366",
+    channel: "https://rumble.com/c/SatoshiNakamotoInstitute",
     link: (id: string) => `https://rumble.com/${id}.html`,
   },
   substack: "https://news.nakamotoinstitute.org",
