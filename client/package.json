@@ -10,7 +10,7 @@
     "translate:extract": "i18next -c ./i18next-parser.config.js --fail-on-warnings"
   },
   "dependencies": {
-    "@floating-ui/react": "^0.27.5",
+    "@floating-ui/react": "^0.27.6",
     "@t3-oss/env-nextjs": "^0.12.0",
     "@types/hast": "^3.0.4",
     "big.js": "^6.2.2",
@@ -21,9 +21,9 @@
     "i18next-parser": "^9.3.0",
     "i18next-resources-to-backend": "^1.2.1",
     "jiti": "^2.4.2",
-    "next": "15.2.3",
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
+    "next": "15.2.4",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
     "react-i18next": "^15.4.1",
     "react-markdown": "^10.1.0",
     "rehype-mathjax": "^7.1.0",
@@ -39,21 +39,21 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
-    "@tailwindcss/postcss": "^4.0.15",
+    "@tailwindcss/postcss": "^4.1.3",
     "@tailwindcss/typography": "^0.5.16",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@types/big.js": "^6.2.2",
-    "@types/node": "^22.13.11",
-    "@types/react": "19.0.12",
-    "@types/react-dom": "19.0.4",
-    "eslint": "^9.23.0",
-    "eslint-config-next": "15.2.3",
+    "@types/node": "^22.14.0",
+    "@types/react": "19.1.0",
+    "@types/react-dom": "19.1.1",
+    "eslint": "^9.24.0",
+    "eslint-config-next": "15.2.4",
     "eslint-config-prettier": "^10.1.1",
     "postcss": "^8.5.3",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
-    "tailwindcss": "^4.0.15",
-    "typescript": "^5.8.2"
+    "tailwindcss": "^4.1.3",
+    "typescript": "^5.8.3"
   },
   "pnpm": {
     "ignoredBuiltDependencies": [
@@ -64,8 +64,8 @@
       "sharp"
     ],
     "overrides": {
-      "@types/react": "19.0.12",
-      "@types/react-dom": "19.0.4"
+      "@types/react": "19.1.0",
+      "@types/react-dom": "19.1.1"
     }
   }
 }
