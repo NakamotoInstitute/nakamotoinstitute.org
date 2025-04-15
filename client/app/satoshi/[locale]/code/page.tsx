@@ -109,7 +109,7 @@ export default async function SatoshiCode(props: LocaleParams) {
           t={t}
           locale={locale}
           title={t("bitcoin_v013")}
-          date={new Date(2008, 10, 16)}
+          date={new Date(2009, 0, 13)}
           dateRef="https://bitcointalk.org/index.php?topic=49815.msg593132#msg593132"
           downloads={{
             release: {
