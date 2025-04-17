@@ -35,7 +35,11 @@ export function Navbar({
           </div>
           <div className="mx-auto hidden h-12 items-center md:flex">
             {navLinks.map(({ href, text }) => (
-              <Link key={text} href={href} className="text-dark p-2">
+              <Link
+                key={text}
+                href={href}
+                className="text-dark hover:text-cardinal active:text-cardinal p-2"
+              >
                 {text}
               </Link>
             ))}
@@ -93,7 +97,11 @@ export function Navbar({
       <div className={clsx("md:hidden", { hidden: !menuOpen })} id="mobileMenu">
         <div className="space-y-1 px-2 pt-2 pb-3">
           {navLinks.map(({ href, text }) => (
-            <Link key={text} href={href} className="text-dark block px-3 py-2">
+            <Link
+              key={text}
+              href={href}
+              className="text-dark hover:text-cardinal active:text-cardinal block px-3 py-2"
+            >
               {text}
             </Link>
           ))}
