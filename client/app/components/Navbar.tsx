@@ -51,7 +51,7 @@ export function Navbar({
               <button
                 id="mobileMenuButton"
                 type="button"
-                className="inline-flex items-center justify-center rounded-md p-2 focus:ring-2 focus:outline-hidden focus:ring-inset"
+                className="inline-flex cursor-pointer items-center justify-center rounded-md p-2 focus:ring-2 focus:outline-hidden focus:ring-inset"
                 aria-controls="mobile-menu"
                 aria-expanded={menuOpen}
                 onClick={() => setMenuOpen(!menuOpen)}

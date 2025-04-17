@@ -47,7 +47,7 @@ export function LanguageToggle({
       <button
         type="button"
         className={clsx(
-          "text-dark border-1 px-2.5 py-2 text-sm focus:outline-hidden",
+          "text-dark cursor-pointer border-1 px-2.5 py-2 text-sm focus:outline-hidden",
           isOpen && "border-dark",
           !isOpen && "border-transparent",
         )}
