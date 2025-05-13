@@ -164,7 +164,7 @@ great by joining in.
 <figure>
   <img src="/static/img/mempool/bitcoin-has-no-image-problem/miss-sunshine.jpg" alt="" />
   <figcaption>When you’re an immortal distributed system that can’t be controlled, you don’t have to care what other people think.</figcaption>
-</figures>
+</figure>
 
 Bitcoin is stronger than all its enemies put together. It is so strong that
 its image does not matter one bit. It is the 800-pound gorilla that can sleep
