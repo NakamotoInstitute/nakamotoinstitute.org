@@ -68,16 +68,38 @@ export default async function SatoshiCode(props: LocaleParams) {
           t={t}
           locale={locale}
           title={t("bitcoin_pre_release")}
-          date={new Date(2008, 10, 16)}
-          downloads={{
-            release: {
-              text: "bitcoin-nov08.tgz",
-              href: cdnUrl("/code/bitcoin-nov08.tgz"),
-              note: t("compressed_by_sni"),
+          date={new Date(2008, 10, 15)}
+          downloads={[
+            {
+              release: {
+                text: "bitcoin-nov08.rar",
+                href: cdnUrl("/code/bitcoin-nov08.rar"),
+              },
+              md5: {
+                hash: "1de1b45c425c1cebb2b3280baffe7f25",
+                note: t("calculated_by_sni"),
+              },
+              sha1: {
+                hash: "43808c09e6ea1432111027133712d9d18d4a8537",
+                note: t("calculated_by_sni"),
+              },
             },
-            md5: { hash: "7971fa6df9d192e295cf5160d5e181db" },
-            sha1: { hash: "27778468cf9bd4d16a8fe12412518bb9fe4dfffe" },
-          }}
+            {
+              release: {
+                text: "bitcoin-nov08.tgz",
+                href: cdnUrl("/code/bitcoin-nov08.tgz"),
+                note: t("compressed_by_sni"),
+              },
+              md5: {
+                hash: "232aaa88ca9874583adcfdbf226c2be7",
+                note: t("calculated_by_sni"),
+              },
+              sha1: {
+                hash: "bfb12761d38513239aabb777532be4c056c172a6",
+                note: t("calculated_by_sni"),
+              },
+            },
+          ]}
           source="https://bitcointalk.org/index.php?topic=382374.0"
         />
         <CodeTable
