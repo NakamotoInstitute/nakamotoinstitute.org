@@ -1,5 +1,4 @@
 ---
-podcast: the-reorg
 episode_number: 13
 title: "Appcoins Are Snake Oil"
 date: 2025-05-07

@@ -1,5 +1,4 @@
 ---
-podcast: the-reorg
 episode_number: 12
 title: "The Coming Demise of the Altcoins (And What You Can Do to Hasten It)"
 date: 2025-04-30

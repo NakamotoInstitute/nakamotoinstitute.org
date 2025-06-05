@@ -1,5 +1,4 @@
 ---
-podcast: the-reorg
 episode_number: 2
 title: "Fractional Reserve Banking is Obsolete"
 date: 2025-02-19

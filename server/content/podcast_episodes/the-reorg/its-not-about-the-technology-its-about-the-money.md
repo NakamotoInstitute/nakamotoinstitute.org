@@ -1,5 +1,4 @@
 ---
-podcast: the-reorg
 episode_number: 14
 title: "It's Not About the Technology, It's About the Money"
 date: 2025-05-14

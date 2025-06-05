@@ -1,5 +1,4 @@
 ---
-podcast: the-reorg
 episode_number: 17
 title: How to Market Bitcoin
 date: 2025-06-04

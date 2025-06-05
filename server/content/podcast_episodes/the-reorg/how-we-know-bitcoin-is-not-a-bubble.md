@@ -1,5 +1,4 @@
 ---
-podcast: the-reorg
 episode_number: 7
 title: "How We Know Bitcoin is Not a Bubble"
 date: 2025-03-26

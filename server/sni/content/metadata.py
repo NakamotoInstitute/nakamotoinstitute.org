@@ -16,10 +16,6 @@ class Actions(Enum):
     DELETED = "deleted"
 
 
-def needs_update(force: bool, file_metadata: FileMetadata, current_hash: str) -> bool:
-    return force or file_metadata.hash != current_hash
-
-
 def get_hash(filepath: str) -> str:
     return (
         get_directory_hash(filepath)
@@ -28,33 +24,45 @@ def get_hash(filepath: str) -> str:
     )
 
 
-def process_metadata(
-    db_session: Session,
-    filepath: str,
-    existing_metadata: FileMetadata | None,
-    force: bool = False,
-) -> tuple[Actions, FileMetadata | None]:
+def create_metadata_for_new_file(filepath: str) -> FileMetadata:
     current_hash = get_hash(filepath)
     current_timestamp = datetime.fromtimestamp(os.path.getmtime(filepath))
+    return FileMetadata(
+        filename=filepath,
+        hash=current_hash,
+        last_modified=current_timestamp,
+    )
 
-    action = Actions.UNCHANGED
-    metadata = existing_metadata
 
+def update_metadata_if_needed(
+    filepath: str, existing_metadata: FileMetadata, force=False
+) -> tuple[Actions, FileMetadata]:
+    current_hash = get_hash(filepath)
+    if not force and existing_metadata.hash == current_hash:
+        return Actions.UNCHANGED, existing_metadata
+
+    current_timestamp = datetime.fromtimestamp(os.path.getmtime(filepath))
+    existing_metadata.hash = current_hash
+    existing_metadata.last_modified = current_timestamp
+    return Actions.UPDATED, existing_metadata
+
+
+def process_metadata(
+    db_session, filepath: str, existing_metadata: FileMetadata | None, force=False
+) -> tuple[Actions, FileMetadata]:
     if not existing_metadata:
-        metadata = FileMetadata(
-            filename=filepath, hash=current_hash, last_modified=current_timestamp
-        )
-        action = Actions.NEW
-    elif needs_update(force, existing_metadata, current_hash):
-        metadata.hash = current_hash
-        metadata.last_modified = current_timestamp
-        action = Actions.UPDATED
-
-    if action != Actions.UNCHANGED:
+        metadata = create_metadata_for_new_file(filepath)
         db_session.add(metadata)
         db_session.flush()
-
-    return action, metadata
+        return Actions.NEW, metadata
+    else:
+        action, updated_metadata = update_metadata_if_needed(
+            filepath, existing_metadata, force
+        )
+        if action != Actions.UNCHANGED:
+            db_session.add(updated_metadata)
+            db_session.flush()
+        return action, updated_metadata
 
 
 class MetadataManager:
@@ -79,3 +87,22 @@ class MetadataManager:
         return process_metadata(
             self.db_session, filepath, existing_metadata, self.force
         )
+
+    def create_metadata(self, filepath: str) -> FileMetadata:
+        metadata = create_metadata_for_new_file(filepath)
+        self.db_session.add(metadata)
+        self.db_session.flush()
+        self.record_action(Actions.NEW)
+        return metadata
+
+    def update_metadata(
+        self, filepath: str, existing_metadata: FileMetadata
+    ) -> tuple[Actions, FileMetadata]:
+        action, updated_metadata = update_metadata_if_needed(
+            filepath, existing_metadata, self.force
+        )
+        if action != Actions.UNCHANGED:
+            self.db_session.add(updated_metadata)
+            self.db_session.flush()
+            self.record_action(action)
+        return action, updated_metadata

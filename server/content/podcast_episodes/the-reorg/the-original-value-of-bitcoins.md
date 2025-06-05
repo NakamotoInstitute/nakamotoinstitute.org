@@ -1,5 +1,4 @@
 ---
-podcast: the-reorg
 episode_number: 5
 title: "The Original Value of Bitcoins"
 date: 2025-03-12

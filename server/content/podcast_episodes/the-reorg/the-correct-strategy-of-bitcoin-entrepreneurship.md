@@ -1,5 +1,4 @@
 ---
-podcast: the-reorg
 episode_number: 10
 title: "The Correct Strategy of Bitcoin Entrepreneurship"
 date: 2025-04-16

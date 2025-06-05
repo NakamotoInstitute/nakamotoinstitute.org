@@ -24,7 +24,6 @@ class PodcastMDModel(BaseModel):
 
 
 class EpisodeMDModel(BaseModel):
-    podcast: str
     title: str
     date: datetime.datetime
     duration: str | None = None

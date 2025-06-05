@@ -1,5 +1,4 @@
 ---
-podcast: the-crypto-mises-podcast
 title: Monetary Stability
 episode_number: 2
 date: 2015-01-07 17:00:00 -6

@@ -1,5 +1,4 @@
 ---
-podcast: the-reorg
 episode_number: 9
 title: "Bitcoin's Compound Rewards"
 date: 2025-04-09

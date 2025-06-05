@@ -1,5 +1,4 @@
 ---
-podcast: the-reorg
 episode_number: 3
 title: "The Bitcoin Central Bank's Perfect Monetary Policy"
 date: 2025-02-26

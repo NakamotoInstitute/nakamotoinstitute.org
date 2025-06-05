@@ -1,5 +1,4 @@
 ---
-podcast: the-reorg
 episode_number: 16
 title: Bitcoin Has No Image Problem
 date: 2025-05-28

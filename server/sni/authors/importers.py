@@ -1,12 +1,17 @@
-from sni.content.markdown import MarkdownImporter
+from sni.content.markdown import create_basic_importer
+from sni.database import SessionLocalSync
 from sni.models import Author
 
 from .schemas.base import AuthorMDModel
 
 
-class AuthorImporter(MarkdownImporter):
-    directory_path = "content/authors"
-    content_type = "Author"
-    model = Author
-    schema = AuthorMDModel
-    content_key = "author"
+def import_authors(directory: str, force: bool = False):
+    with SessionLocalSync() as session:
+        importer = create_basic_importer(
+            directory=directory,
+            session=session,
+            canonical_model=Author,
+            schema=AuthorMDModel,
+            force=force,
+        )
+        importer.run()

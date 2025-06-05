@@ -1,5 +1,4 @@
 ---
-podcast: the-reorg
 episode_number: 4
 title: "The Proof-of-Work Concept"
 date: 2025-03-05

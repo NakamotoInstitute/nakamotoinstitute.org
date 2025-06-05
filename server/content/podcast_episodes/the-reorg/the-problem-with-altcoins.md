@@ -1,5 +1,4 @@
 ---
-podcast: the-reorg
 episode_number: 11
 title: "The Problem with Altcoins"
 date: 2025-04-23

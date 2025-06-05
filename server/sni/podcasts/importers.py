@@ -1,37 +1,42 @@
-from sni.content.markdown import MarkdownImporter
+from pathlib import Path
+
+from sni.content.markdown import BasicHandler, create_basic_importer
+from sni.database import SessionLocalSync
 from sni.models import Episode, Podcast
 from sni.shared.service import get
 
 from .schemas import EpisodeMDModel, PodcastMDModel
 
 
-class PodcastImporter(MarkdownImporter):
-    directory_path = "content/podcasts"
-    content_type = "Podcast"
-    model = Podcast
-    schema = PodcastMDModel
-    content_key = "podcast"
+def import_podcasts(directory: str, force: bool = False):
+    with SessionLocalSync() as session:
+        importer = create_basic_importer(
+            directory=directory,
+            session=session,
+            canonical_model=Podcast,
+            schema=PodcastMDModel,
+            force=force,
+        )
+        importer.run()
 
 
-def import_podcast():
-    podcast_importer = PodcastImporter()
-    podcast_importer.run_import()
-
-
-class EpisodeImporter(MarkdownImporter):
-    directory_path = "content/podcast_episodes"
-    content_type = "Episode"
-    model = Episode
-    schema = EpisodeMDModel
-    content_key = "episode"
-
-    def process_canonical_additional_data(self, canonical_data):
+class EpisodeHandler(BasicHandler):
+    def process_canonical_data(self, canonical_data, fs_record):
+        podcast_slug = Path(fs_record["filepath"]).parent.name
         canonical_data["podcast"] = get(
-            Podcast, db_session=self.db_session, slug=canonical_data.pop("podcast")
+            Podcast, db_session=self.session, slug=podcast_slug
         )
         return canonical_data
 
 
-def import_episode():
-    episode_importer = EpisodeImporter()
-    episode_importer.run_import()
+def import_episodes(directory: str, force: bool = False):
+    with SessionLocalSync() as session:
+        importer = create_basic_importer(
+            directory=directory,
+            session=session,
+            canonical_model=Episode,
+            handler_class=EpisodeHandler,
+            schema=EpisodeMDModel,
+            force=force,
+        )
+        importer.run()

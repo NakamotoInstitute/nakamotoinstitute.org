@@ -1,5 +1,4 @@
 ---
-podcast: the-reorg
 episode_number: 15
 title: "I Love Bitcoin's Volatility"
 date: 2025-05-21

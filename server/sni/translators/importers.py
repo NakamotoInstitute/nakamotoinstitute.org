@@ -1,12 +1,17 @@
-from sni.content.markdown import MarkdownImporter
+from sni.content.markdown import create_basic_importer
+from sni.database import SessionLocalSync
 from sni.models import Translator
 
 from .schemas import TranslatorMDModel
 
 
-class TranslatorImporter(MarkdownImporter):
-    directory_path = "content/translators"
-    content_type = "Translator"
-    model = Translator
-    schema = TranslatorMDModel
-    content_key = "translator"
+def import_translators(directory: str, force: bool = False):
+    with SessionLocalSync() as session:
+        importer = create_basic_importer(
+            directory=directory,
+            session=session,
+            canonical_model=Translator,
+            schema=TranslatorMDModel,
+            force=force,
+        )
+        importer.run()

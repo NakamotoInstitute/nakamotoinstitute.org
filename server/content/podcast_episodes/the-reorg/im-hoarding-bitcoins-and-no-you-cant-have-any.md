@@ -1,5 +1,4 @@
 ---
-podcast: the-reorg
 episode_number: 8
 title: "I'm Hoarding Bitcoins, and No You Can't Have Any"
 date: 2025-04-02

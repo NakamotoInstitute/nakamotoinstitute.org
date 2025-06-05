@@ -1,5 +1,4 @@
 ---
-podcast: the-reorg
 episode_number: 1
 title: "End the Fed: Hoard Bitcoins"
 date: 2025-02-12

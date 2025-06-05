@@ -1,4 +1,5 @@
-from sni.content.markdown import TranslatedMarkdownImporter
+from sni.content.markdown import TranslatedHandler, create_translated_importer
+from sni.database import SessionLocalSync
 from sni.models import (
     Author,
     BlogPost,
@@ -17,72 +18,64 @@ from .schemas import (
 )
 
 
-class MempoolImporter(TranslatedMarkdownImporter):
-    directory_path = "content/mempool"
-    content_type = "Mempool"
-    canonical_model = BlogPost
-    translation_model = BlogPostTranslation
-    canonical_schema = MempoolCanonicalMDModel
-    translation_schema = MempoolTranslationMDModel
-    content_key = "blog_post"
-
-    def process_canonical_additional_data(self, canonical_data):
+class MempoolHandler(TranslatedHandler):
+    def process_canonical_data(self, canonical_data, fs_record):
         canonical_data["authors"] = [
-            get(Author, db_session=self.db_session, slug=author)
+            get(Author, db_session=self.session, slug=author)
             for author in canonical_data.pop("authors")
         ]
         series = canonical_data.pop("series")
         canonical_data["series"] = (
-            get(
-                BlogSeriesTranslation, db_session=self.db_session, slug=series
-            ).blog_series
+            get(BlogSeriesTranslation, db_session=self.session, slug=series).blog_series
             if series
             else None
         )
         return canonical_data
 
-    def process_translation_additional_data(
-        self, translation_data, canonical_entry, metadata
+    def process_translation_data(
+        self, translation_data, locale, canonical_translation, fs_record
     ):
         translation_data["translators"] = [
-            get(Translator, db_session=self.db_session, slug=slug)
+            get(Translator, db_session=self.session, slug=slug)
             for slug in translation_data.pop("translators", [])
         ]
-        return super().process_translation_additional_data(
-            translation_data, canonical_entry, metadata
+        if locale != "en":
+            translation_data["excerpt"] = (
+                translation_data.get("excerpt") or canonical_translation.excerpt
+            )
+        return translation_data
+
+
+def import_mempool_posts(directory: str, force: bool = False):
+    with SessionLocalSync() as session:
+        importer = create_translated_importer(
+            directory=directory,
+            session=session,
+            handler_class=MempoolHandler,
+            canonical_model=BlogPost,
+            translation_model=BlogPostTranslation,
+            schemas={
+                "canonical": MempoolCanonicalMDModel,
+                "translation": MempoolTranslationMDModel,
+            },
+            content_key="blog_post",
+            force=force,
         )
+        importer.run()
 
-    def process_translation_for_translated_file(
-        self, translation_data, canonical_entry, metadata
-    ):
-        translation_data["excerpt"] = (
-            translation_data.get("excerpt") or canonical_entry["translation"].excerpt
+
+def import_mempool_series(directory: str, force: bool = False):
+    with SessionLocalSync() as session:
+        importer = create_translated_importer(
+            directory=directory,
+            session=session,
+            canonical_model=BlogSeries,
+            translation_model=BlogSeriesTranslation,
+            schemas={
+                "canonical": MempoolSeriesCanonicalMDModel,
+                "translation": MempoolSeriesTranslationMDModel,
+            },
+            content_key="blog_series",
+            force=force,
         )
-        translation_data["translators"] = [
-            get(Translator, db_session=self.db_session, slug=slug)
-            for slug in translation_data.pop("translators", [])
-        ]
-
-        return super().process_translation_for_translated_file(
-            translation_data, canonical_entry, metadata
-        )
-
-
-def import_mempool():
-    mempool_importer = MempoolImporter()
-    mempool_importer.run_import()
-
-
-class MempoolSeriesImporter(TranslatedMarkdownImporter):
-    directory_path = "content/mempool_series"
-    content_type = "Mempool series"
-    canonical_model = BlogSeries
-    translation_model = BlogSeriesTranslation
-    canonical_schema = MempoolSeriesCanonicalMDModel
-    translation_schema = MempoolSeriesTranslationMDModel
-    content_key = "blog_series"
-
-
-def import_mempool_series():
-    mempool_series_importer = MempoolSeriesImporter()
-    mempool_series_importer.run_import()
+        importer.run()

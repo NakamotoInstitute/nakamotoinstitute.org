@@ -1,5 +1,4 @@
 ---
-podcast: the-reorg
 episode_number: 6
 title: Why Bitcoin Will Continue to Grow
 date: 2025-03-19
