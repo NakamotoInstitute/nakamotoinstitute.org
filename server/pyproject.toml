@@ -6,7 +6,7 @@ requires-python = ">=3.12"
 dependencies = [
     "alembic-postgresql-enum==1.7.0",
     "beautifulsoup4==4.13.4",
-    "boto3==1.38.17",
+    "boto3==1.38.30",
     "fastapi[standard]==0.115.12",
     "feedgen==1.0.0",
     "markdown-it-py==3.0.0",
@@ -16,13 +16,13 @@ dependencies = [
     "pygments>=2.19.1",
     "pyyaml==6.0.2",
     "SQLAlchemy[asyncio]==2.0.41",
-    "typer==0.15.4",
+    "typer==0.16.0",
 ]
 
 [tool.uv]
 package = false
 dev-dependencies = [
-    "ruff==0.11.10",
+    "ruff==0.11.12",
     "types-beautifulsoup4==4.12.0.20250516",
     "types-PyYaml==6.0.12.20250516",
 ]
