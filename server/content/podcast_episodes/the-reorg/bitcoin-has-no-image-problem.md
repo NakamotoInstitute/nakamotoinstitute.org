@@ -12,7 +12,7 @@ Michael Goldstein and Pierre Rochard discuss Daniel Krawisz's 2014 article "Bitc
 
 Related links:
 
-- ["Bitcoin Has No Image"](https://nakamotoinstitute.org/mempool/bitcoin-has-no-image-problem/) by Daniel Krawisz
+- ["Bitcoin Has No Image"](/mempool/bitcoin-has-no-image-problem/) by Daniel Krawisz
 - [Silk Road seizure price chart](<https://en.wikipedia.org/wiki/Silk_Road_(marketplace)#/media/File:Bitcoin_October_2013.png>)
 - ["Eppur si muove"](https://en.wikipedia.org/wiki/And_yet_it_moves)
-- [The SNI Mempool Crash Course in Bitcoin Political Economy](https://nakamotoinstitute.org/crash-course/)
+- [The SNI Mempool Crash Course in Bitcoin Political Economy](/crash-course/)

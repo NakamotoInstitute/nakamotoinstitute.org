@@ -12,6 +12,6 @@ Michael Goldstein and Pierre Rochard discuss Daniel Krawisz's 2014 article "The 
 
 Related links:
 
-- ["The Coming Demise of the Altcoins (And What You Can Do to Hasten It)"](https://nakamotoinstitute.org/mempool/the-coming-demise-of-altcoins/) by Daniel Krawisz
+- ["The Coming Demise of the Altcoins (And What You Can Do to Hasten It)"](/mempool/the-coming-demise-of-altcoins/) by Daniel Krawisz
 - [Historical altcoin chart (03/14/2014)](https://coinmarketcap.com/historical/20140314/)
-- [The SNI Mempool Crash Course in Bitcoin Political Economy](https://nakamotoinstitute.org/crash-course/)
+- [The SNI Mempool Crash Course in Bitcoin Political Economy](/crash-course/)

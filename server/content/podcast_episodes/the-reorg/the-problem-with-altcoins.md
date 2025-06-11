@@ -12,8 +12,8 @@ Michael Goldstein and Pierre Rochard discuss Daniel Krawisz's 2013 article "The 
 
 Related links:
 
-- ["The Problem with Altcoins"](https://nakamotoinstitute.org/mempool/the-problem-with-altcoins/) by Daniel Krawisz
+- ["The Problem with Altcoins"](/mempool/the-problem-with-altcoins/) by Daniel Krawisz
 - [Historical altcoin chart (08/22/2013)](https://coinmarketcap.com/historical/20130822/)
 - [BIP 0050](https://en.bitcoin.it/wiki/BIP_0050)
 - ["A complete history of Bitcoin's consensus forks – 2022 Update"](https://blog.bitmex.com/a-complete-history-of-bitcoins-consensus-forks-2022-update/) by BitMEX Research
-- [The SNI Mempool Crash Course in Bitcoin Political Economy](https://nakamotoinstitute.org/crash-course/)
+- [The SNI Mempool Crash Course in Bitcoin Political Economy](/crash-course/)

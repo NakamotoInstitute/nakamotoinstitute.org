@@ -12,5 +12,5 @@ Michael Goldstein and Pierre Rochard discuss Daniel Krawisz's 2014 article "How 
 
 Related links:
 
-- ["How to Market Bitcoin"](https://nakamotoinstitute.org/mempool/how-to-market-bitcoin/) by Daniel Krawisz
-- [The SNI Mempool Crash Course in Bitcoin Political Economy](https://nakamotoinstitute.org/crash-course/)
+- ["How to Market Bitcoin"](/mempool/how-to-market-bitcoin/) by Daniel Krawisz
+- [The SNI Mempool Crash Course in Bitcoin Political Economy](/crash-course/)
