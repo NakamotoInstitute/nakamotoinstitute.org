@@ -248,7 +248,7 @@ export default async function HomePage(props: LocaleParams) {
           </Box>
           <Box
             title={t("podcasts")}
-            className="border-b px-5 py-10 md:border-b-0 md:px-4 md:py-5"
+            className="border-b px-5 py-10 md:px-4 md:py-5 lg:border-b-0"
             link={{ label: viewAllLabel, href: urls(locale).podcasts.index }}
           >
             <p>{t("podcast_description")}</p>
@@ -281,13 +281,20 @@ export default async function HomePage(props: LocaleParams) {
             </div>
           </Box>
           <Box
+            title={t("authors")}
+            className="border-b px-5 py-10 md:border-l md:px-4 md:py-5 lg:border-b-0"
+            link={{ label: viewAllLabel, href: urls(locale).authors.index }}
+          >
+            <p>{t("authors_description")}</p>
+          </Box>
+          <Box
             title={t("get_involved")}
-            className="border-b px-5 py-10 md:border-b-0 md:border-l md:px-4 md:py-5"
+            className="border-b px-5 py-10 md:border-b-0 md:px-4 md:py-5 lg:border-l"
             link={{ label: readMoreLabel, href: urls(locale).getInvolved }}
           >
             <p>{t("get_involved_call")}</p>
           </Box>
-          <GridItem className="md:min-h-48 lg:border-l" />
+          <GridItem className="hidden md:block md:min-h-48 md:border-l lg:border-l-0" />
           <GridItem className="hidden md:block md:min-h-48" />
         </GridItem>
         <GridItem className="px-5 py-4 md:pt-0">

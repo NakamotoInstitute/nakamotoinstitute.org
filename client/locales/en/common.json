@@ -3,6 +3,7 @@
   "library": "Library",
   "mempool": "Mempool",
   "authors": "Authors",
+  "authors_description": "Featured authors of the Satoshi Nakamoto Institute",
   "contact": "Contact",
   "gts_announcement": "<i>Gradually, Then Suddenly</i> by Parker Lewis now online",
   "sni_mempool_crash_course": "The SNI Mempool Crash Course in Bitcoin Political Economy",
