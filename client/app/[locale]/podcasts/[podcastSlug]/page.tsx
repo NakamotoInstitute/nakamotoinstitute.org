@@ -94,6 +94,7 @@ export default async function PodcastIndex(
 
           {(podcast.onYoutube || podcast.onRumble) && (
             <LinkList
+              className="max-md:mt-4"
               title={t("watch")}
               links={[
                 podcast.onYoutube && {

@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import Link from "next/link";
 
 type Link = {
@@ -8,19 +9,25 @@ type Link = {
 type LinkListProps = {
   title: string;
   links: (Link | false)[];
+  className?: string;
 };
 
-export function LinkList({ title, links }: LinkListProps) {
+export function LinkList({ title, links, className }: LinkListProps) {
   return (
-    <div className="flex items-baseline gap-2">
-      <h2 className="font-bold">{title}:</h2>
-      <ul className="flex items-center">
+    <div
+      className={clsx(
+        "flex flex-col items-baseline md:flex-row md:gap-2",
+        className,
+      )}
+    >
+      <p className="font-bold">{title}:</p>
+      <ul className="flex flex-col md:flex-row md:items-center">
         {links
           .filter((link): link is Link => Boolean(link))
           .map((link, i) => (
             <li
               key={i}
-              className="before:text-taupe before:mx-2 before:content-['•'] first:before:mx-0 first:before:content-none"
+              className="before:text-taupe first:before:mx-0 first:before:content-none md:before:mx-2 md:before:content-['•']"
             >
               <Link href={link.href} className="underline">
                 {link.label}

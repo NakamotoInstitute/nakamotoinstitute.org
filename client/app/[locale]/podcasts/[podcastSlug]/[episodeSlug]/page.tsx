@@ -82,7 +82,7 @@ export default async function EpisodeDetail(
         </p>
       </header>
       <hr className="mx-auto mt-7 mb-4 w-12 md:mt-18" />
-      <ul className="mx-auto flex justify-center gap-4">
+      <ul className="mx-auto flex flex-col justify-center gap-4 md:flex-row">
         {episode.podcast.applePodcastsUrl && (
           <li>
             <Link className="underline" href={episode.podcast.applePodcastsUrl}>
