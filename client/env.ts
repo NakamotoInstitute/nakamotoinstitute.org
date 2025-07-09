@@ -24,15 +24,13 @@ export const env = createEnv({
           .optional()
           .transform((s) => s === undefined || s === "true"),
     API_URL:
-      isProd || isPreview
-        ? z.string().url()
-        : z.string().url().default("http://127.0.0.1:8000"),
+      isProd || isPreview ? z.url() : z.url().default("http://127.0.0.1:8000"),
     FATHOM_ID: isProd ? z.string() : z.string().optional(),
     API_KEY: isProd ? z.string() : z.string().optional(),
     CDN_BASE_URL:
       isProd || isPreview
-        ? z.string().url()
-        : z.string().url().default("http://localhost:8000/static"),
+        ? z.url()
+        : z.url().default("http://localhost:8000/static"),
   },
   experimental__runtimeEnv: process.env,
   extends: [vercel()],

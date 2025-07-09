@@ -2,12 +2,9 @@ import { z } from "zod";
 
 import { locales } from "@/i18n";
 
-export const zLocale = z.string().refine(
-  (val): val is Locale => {
-    return locales.includes(val as Locale);
-  },
-  { message: "Invalid locale" },
-);
+export const zLocale = z.enum(locales, {
+  message: "Invalid locale",
+});
 
 export const zSlugParam = z.object({
   locale: zLocale,
