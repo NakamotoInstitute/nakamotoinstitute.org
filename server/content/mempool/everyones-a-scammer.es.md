@@ -52,7 +52,7 @@ Por lo tanto los comercios están en una excelente posición. Pueden disminuir c
 
 > [Mis] clientes están dentro de la primera oleada de usuarios de Bitcoin, y estamos encantados de aceptar la criptomoneda como forma de pago. Tal como tú, también creemos que Bitcoin puede ser el futuro del dinero digital. Pero si estás ahorrándolos y esperando que algún día te harán rico, será mejor que los gastes si quieres que sean exitosos.
 
-Por "mí" me refiero a Newegg. Su reciente post se llama [“Why Saving Your Bitcoin is Not a Good Idea”](http://blog.newegg.com/saving-bitcoin-good-idea/) (por qué ahorrar tus bitcoins no es una buena idea). ¿La razón? Porque significa que no los estás gastando en Newegg.
+Por "mí" me refiero a Newegg. Su reciente post se llama [“Why Saving Your Bitcoin is Not a Good Idea”](https://www.newegg.com/insider/saving-bitcoin-good-idea/) (por qué ahorrar tus bitcoins no es una buena idea). ¿La razón? Porque significa que no los estás gastando en Newegg.
 
 La mayoría de los comercios incluso eligen vender inmediatamente los Bitcoins que reciben. Ellos te estafan con los bitcoins que ni siquiera quieren, sin ningún interés en el valor futuro de la red.
 

@@ -52,7 +52,7 @@ So merchants are in a good position. They can save money on their business, and 
 
 > [My] shoppers are among the first wave of Bitcoin users and we’re thrilled to accept the cryptocurrency as a form of payment. Just like you, we also believe Bitcoin can be the future of digital currency. But if you’ve been saving it and hoping it will make you rich one day, you’re better off spending it if you want it to succeed.
 
-By me, I mean Newegg. Their recent blog post is called, [“Why Saving Your Bitcoin is Not a Good Idea”](http://blog.newegg.com/saving-bitcoin-good-idea/). The reason? It means you aren’t spending at Newegg.
+By me, I mean Newegg. Their recent blog post is called, [“Why Saving Your Bitcoin is Not a Good Idea”](https://www.newegg.com/insider/saving-bitcoin-good-idea/). The reason? It means you aren’t spending at Newegg.
 
 Most merchants even choose to immediately sell the bitcoins they receive. They scam you out of bitcoins they do not even want, uninterested in the future value of the network.
 

@@ -53,7 +53,7 @@ Kauppiaat ovat siis hyvässä asemassa. He voivat säästää rahaa liiketoiminn
 
 > Ostajani ovat Bitcoinin käyttäjien ensimmäinen aalto, ja olemme innoissamme hyväksyessämme kryptovaluutan maksutapana. Aivan kuten sinäkin, uskomme myös, että Bitcoin voi olla digitaalisen valuutan tulevaisuus. Mutta jos olet säästänyt sitä toivoen, että se tekee sinusta rikkaan jonain päivänä, sinun kannattaa kuluttaa sitä, jos haluat sen menestyvän.
 
-Minulla tarkoitan Neweggia. Heidän hiljattainen blogikirjoituksensa oli nimeltään “[Why Saving Your Bitcoin is Not a Good Idea](http://blog.newegg.com/saving-bitcoin-good-idea/)”. Syy? Se tarkoittaa, ettet kuluta Neweggissa.
+Minulla tarkoitan Neweggia. Heidän hiljattainen blogikirjoituksensa oli nimeltään “[Why Saving Your Bitcoin is Not a Good Idea](https://www.newegg.com/insider/saving-bitcoin-good-idea/)”. Syy? Se tarkoittaa, ettet kuluta Neweggissa.
 
 Useimmat kauppiaat päättävät jo myydä saamansa bitcoinit. He huijaavat sinulta bitcoinisi, joita he eivät edes halua ja eivät ole kiinnostuneita verkon tulevasta arvosta.
 
