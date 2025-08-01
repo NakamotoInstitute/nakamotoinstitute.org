@@ -155,7 +155,7 @@ class TranslatedHandler:
             fpath = fs_record[locale]
             db_translation = translations.get(locale)
             if locale in new_locales:
-                self._create_translation(fpath, slug, locale, db_translation, fs_record)
+                self._create_translation(fpath, slug, locale, en_translation, fs_record)
             else:
                 self._update_translation(
                     fpath, db_translation, locale, db_translation, fs_record
