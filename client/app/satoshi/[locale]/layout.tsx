@@ -23,15 +23,9 @@ export async function generateMetadata(props: LocaleParams): Promise<Metadata> {
 }
 
 export default async function SatoshiLayout(
-  props: LocaleParams & {
-    children: React.ReactNode;
-  },
+  props: LayoutProps<"/satoshi/[locale]">,
 ) {
-  const params = await props.params;
+  const { locale } = await props.params;
 
-  const { locale } = params;
-
-  const { children } = props;
-
-  return <RootLayout locale={locale}>{children}</RootLayout>;
+  return <RootLayout locale={locale as Locale}>{props.children}</RootLayout>;
 }

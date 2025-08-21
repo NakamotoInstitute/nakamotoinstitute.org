@@ -21,7 +21,6 @@ export async function generateMetadata(
   const { author, locales } = await getAuthor(slug, locale);
   const languages = locales.reduce(
     (acc, loc) => {
-      console.log(loc);
       acc[loc] = urls(loc).authors.detail(slug);
       return acc;
     },
