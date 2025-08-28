@@ -5,8 +5,8 @@ description = "Advancing and preserving bitcoin knowledge"
 requires-python = ">=3.12"
 dependencies = [
     "alembic-postgresql-enum==1.8.0",
-    "beautifulsoup4==4.13.4",
-    "boto3==1.40.12",
+    "beautifulsoup4==4.13.5",
+    "boto3==1.40.19",
     "fastapi[standard]==0.116.1",
     "feedgen==1.0.0",
     "markdown-it-py==4.0.0",
@@ -22,9 +22,9 @@ dependencies = [
 [tool.uv]
 package = false
 dev-dependencies = [
-    "ruff==0.12.9",
+    "ruff==0.12.11",
     "types-beautifulsoup4==4.12.0.20250516",
-    "types-PyYaml==6.0.12.20250809",
+    "types-PyYaml==6.0.12.20250822",
 ]
 
 [tool.ruff]
