@@ -5,6 +5,8 @@ import { Trans } from "react-i18next/TransWithoutContext";
 
 import { cdnUrl, externalUrls, urls } from "@/lib/urls";
 
+import { DonationLink } from "./DonationLink";
+
 type FooterProps = {
   t: TFunction<string, string>;
   locale: Locale;
@@ -30,12 +32,21 @@ export async function Footer({ t, locale }: FooterProps) {
         <ul className="align-center flex flex-wrap justify-center gap-8 text-center">
           {links.map(({ label, url }) => (
             <li key={label}>
-              <Link
-                className="text-dark hover:text-cardinal active:text-cardinal underline"
-                href={url}
-              >
-                {label}
-              </Link>
+              {label === t("donate") ? (
+                <DonationLink
+                  className="text-dark hover:text-cardinal active:text-cardinal underline"
+                  trackingLocation="footer"
+                >
+                  {label}
+                </DonationLink>
+              ) : (
+                <Link
+                  className="text-dark hover:text-cardinal active:text-cardinal underline"
+                  href={url}
+                >
+                  {label}
+                </Link>
+              )}
             </li>
           ))}
         </ul>

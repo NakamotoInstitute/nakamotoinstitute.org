@@ -5,6 +5,9 @@ import { defaultLocale, languages, locales } from "@/i18n";
 import { EmailSource } from "./api/schemas/emails";
 import { ForumPostSource } from "./api/schemas/posts";
 
+// Re-export client-safe URLs for backward compatibility
+export { externalUrls } from "@/lib/urls-client";
+
 const prodDomainToPathMapping = [
   {
     domain: `satoshi.${env.VERCEL_PROJECT_PRODUCTION_URL}`,
@@ -137,21 +140,6 @@ export const urls = (locale: Locale) => {
   };
 };
 
-export const externalUrls = {
-  github: "https://github.com/NakamotoInstitute/nakamotoinstitute.org",
-  nostr: "https://primal.net/sni",
-  rumble: {
-    channel: "https://rumble.com/c/SatoshiNakamotoInstitute",
-    link: (id: string) => `https://rumble.com/${id}.html`,
-  },
-  substack: "https://news.nakamotoinstitute.org",
-  x: "https://x.com/NakamotoInst",
-  youtube: {
-    channel: "https://www.youtube.com/@SatoshiNakamotoInstitute",
-    embed: (id: string) => `https://www.youtube.com/embed/${id}?rel=0`,
-  },
-  zaprite: "https://pay.zaprite.com/pl_vNYDp4YBSd",
-};
 
 export const cdnUrl = (path: string) => env.CDN_BASE_URL + path;
 

@@ -15,6 +15,7 @@ export const ButtonLink = ({
   variant = "primary",
   href,
   children,
+  ...props
 }: ButtonLinkProps) => {
   return (
     <Link
@@ -28,6 +29,7 @@ export const ButtonLink = ({
         },
         className,
       )}
+      {...props}
     >
       {children}
     </Link>

@@ -14,7 +14,7 @@ import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { cdnUrl, externalUrls, urls } from "@/lib/urls";
 
 import { ArrowRight } from "../components/ArrowRight";
-import { ButtonLink } from "../components/Button";
+import { DonationButton } from "../components/DonationButton";
 import { DocListingAuthors } from "./library/components/DocListing";
 import { PostListingAuthors } from "./mempool/components/PostListing";
 
@@ -325,10 +325,10 @@ export default async function HomePage(props: LocaleParams) {
               </div>
               <hr className="border-taupe-light my-4" />
               <div>
-                <ButtonLink className="flex gap-1" href={externalUrls.zaprite}>
+                <DonationButton className="flex gap-1" trackingLocation="home">
                   <span>{t("donate")}</span>
                   <ArrowRight />
-                </ButtonLink>
+                </DonationButton>
               </div>
             </div>
           </div>

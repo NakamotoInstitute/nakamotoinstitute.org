@@ -12,7 +12,7 @@ import {
 
 import { AdditionalNavigation } from "./AdditionalNavigation";
 import { Breadcrumbs } from "./Breadcrumbs";
-import { ButtonLink } from "./Button";
+import { DonationButton } from "./DonationButton";
 import Fathom from "./Fathom";
 import { Footer } from "./Footer";
 import { Navbar } from "./Navbar";
@@ -68,9 +68,9 @@ export async function PageLayout({
           { href: externalUrls.substack, text: t("newsletter") },
         ]}
         navButtons={[
-          <ButtonLink key="donate" href={externalUrls.zaprite}>
+          <DonationButton key="donate" trackingLocation="nav">
             {t("donate")}
-          </ButtonLink>,
+          </DonationButton>,
         ]}
         {...toggleProps}
       />
