@@ -36,18 +36,18 @@
     "remark-math": "^6.0.0",
     "unified": "^11.0.5",
     "unist-util-visit": "^5.0.0",
-    "zod": "^4.1.8"
+    "zod": "^4.1.11"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
     "@tailwindcss/postcss": "^4.1.13",
-    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/typography": "^0.5.18",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@types/big.js": "^6.2.2",
-    "@types/node": "^24.4.0",
+    "@types/node": "^24.5.2",
     "@types/react": "19.1.13",
     "@types/react-dom": "19.1.9",
-    "eslint": "^9.35.0",
+    "eslint": "^9.36.0",
     "eslint-config-next": "15.5.3",
     "eslint-config-prettier": "^10.1.8",
     "postcss": "^8.5.6",
