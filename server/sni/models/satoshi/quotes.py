@@ -64,3 +64,6 @@ class Quote(Base):
         Integer, ForeignKey("json_content.id", ondelete="CASCADE"), nullable=False
     )
     content: Mapped[JSONContent] = relationship("JSONContent")
+
+    def __repr__(self) -> str:
+        return f"<Quote({self.id})>"

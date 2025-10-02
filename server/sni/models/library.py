@@ -1,5 +1,6 @@
 import datetime
-from typing import TYPE_CHECKING, List, Literal, Self
+from functools import cached_property
+from typing import TYPE_CHECKING, Literal, Self
 
 from sqlalchemy import (
     Boolean,
@@ -58,7 +59,7 @@ class DocumentFormat(Base):
         Enum(DocumentFormats, values_callable=lambda x: [e.value for e in x]),
     )
     volume: Mapped[int | None] = mapped_column(Integer, nullable=True)
-    documents: Mapped[List["DocumentTranslation"]] = relationship(
+    documents: Mapped[list["DocumentTranslation"]] = relationship(
         secondary=document_formats, back_populates="formats"
     )
 
@@ -76,10 +77,10 @@ class Document(Base):
         String, nullable=False
     )
     doctype: Mapped[str] = mapped_column(String, nullable=False)
-    authors: Mapped[List["Author"]] = relationship(
+    authors: Mapped[list["Author"]] = relationship(
         secondary=document_authors, back_populates="docs"
     )
-    translations: Mapped[List["DocumentTranslation"]] = relationship(
+    translations: Mapped[list["DocumentTranslation"]] = relationship(
         back_populates="document"
     )
     has_math: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
@@ -115,15 +116,15 @@ class DocumentTranslation(Base):
     image_alt: Mapped[str] = mapped_column(String, nullable=True)
     document_id: Mapped[int] = mapped_column(ForeignKey("documents.id"))
     document: Mapped[Document] = relationship(back_populates="translations")
-    formats: Mapped[List[DocumentFormat]] = relationship(
+    formats: Mapped[list[DocumentFormat]] = relationship(
         secondary=document_formats, back_populates="documents"
     )
-    translators: Mapped[List["Translator"]] = relationship(
+    translators: Mapped[list["Translator"]] = relationship(
         secondary=document_translators, back_populates="docs"
     )
-    nodes = relationship("DocumentNode", back_populates="document_translation")
-
-    __mapper_args__ = {"polymorphic_identity": "document"}
+    nodes: Mapped[list["DocumentNode"]] = relationship(
+        "DocumentNode", back_populates="document_translation"
+    )
 
     __table_args__ = (UniqueConstraint("document_id", "locale"),)
 
@@ -160,7 +161,7 @@ class DocumentTranslation(Base):
             key=lambda t: t.locale,
         )
 
-    @property
+    @cached_property
     def flattened_nodes(self):
         def _flatten(node, all_nodes):
             result = [node]
@@ -181,7 +182,7 @@ class DocumentTranslation(Base):
 
         return _flattened_nodes
 
-    @property
+    @cached_property
     def entry_node(self) -> "DocumentNode":
         return next(
             (node for node in self.nodes if node.parent is None and node.order == 1),

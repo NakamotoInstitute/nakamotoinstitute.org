@@ -48,7 +48,7 @@ class BlogPost(Base):
     __tablename__ = "blog_posts"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    slug: Mapped[int] = mapped_column(String, nullable=False)
+    slug: Mapped[str] = mapped_column(String, nullable=False)
     image: Mapped[str] = mapped_column(String, nullable=True)
     date: Mapped[datetime.date] = mapped_column(Date, nullable=False)
     added: Mapped[datetime.date] = mapped_column(Date, nullable=True)
@@ -134,7 +134,7 @@ class BlogSeries(Base):
     __tablename__ = "blog_series"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    slug: Mapped[int] = mapped_column(String, nullable=False)
+    slug: Mapped[str] = mapped_column(String, nullable=False)
     chapter_title: Mapped[bool] = mapped_column(Boolean)
     blog_posts: Mapped[List["BlogPost"]] = relationship(back_populates="series")
     translations: Mapped[List["BlogSeriesTranslation"]] = relationship(

@@ -35,7 +35,6 @@ class HTMLRenderableContent(Content):
 
     __mapper_args__ = {
         "polymorphic_identity": "html_renderable_content",
-        "polymorphic_on": "content_type",
     }
 
 

@@ -1,4 +1,4 @@
-from typing import TYPE_CHECKING, List
+from typing import TYPE_CHECKING
 
 from sqlalchemy import ForeignKey, Integer, String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
@@ -22,10 +22,10 @@ class Author(Base):
     slug: Mapped[str] = mapped_column(String, unique=True, nullable=False)
     name: Mapped[str] = mapped_column(String, nullable=False)
     sort_name: Mapped[str] = mapped_column(String, nullable=False)
-    posts: Mapped[List["BlogPost"]] = relationship(
+    posts: Mapped[list["BlogPost"]] = relationship(
         secondary=blog_post_authors, back_populates="authors"
     )
-    docs: Mapped[List["Document"]] = relationship(
+    docs: Mapped[list["Document"]] = relationship(
         secondary=document_authors, back_populates="authors"
     )
 
