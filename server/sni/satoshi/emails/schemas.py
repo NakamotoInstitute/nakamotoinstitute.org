@@ -1,7 +1,7 @@
 import datetime
 from typing import Literal
 
-from pydantic import AliasPath, BaseModel, Field, field_serializer
+from pydantic import AliasPath, BaseModel, ConfigDict, Field, field_serializer
 from pydantic.alias_generators import to_camel
 
 from sni.shared.schemas import IterableRootModel, ORMModel
@@ -40,8 +40,7 @@ class EmailsJSONModel(IterableRootModel):
 
 
 class EmailThreadBaseModel(EmailThreadJSONModel, ORMModel):
-    date: datetime.datetime
-    url: str
+    pass
 
 
 class EmailReplyModel(ORMModel):
@@ -63,7 +62,7 @@ class EmailBaseModel(ORMModel):
     replies: list[EmailReplyModel]
 
     @field_serializer("date")
-    def serialize_date(self, date: datetime.date) -> str:
+    def serialize_date(self, date: datetime.datetime) -> str:
         return date.isoformat()
 
     @field_serializer("replies")
@@ -77,13 +76,12 @@ class ThreadEmailModel(EmailBaseModel):
 
 
 class EmailThreadModel(BaseModel):
+    model_config = ConfigDict(alias_generator=to_camel)
+
     emails: list[ThreadEmailModel]
     thread: EmailThreadBaseModel
     previous: EmailThreadBaseModel | None
     next: EmailThreadBaseModel | None
-
-    class Config:
-        alias_generator = to_camel
 
 
 class SatoshiEmailModel(EmailBaseModel):
@@ -91,9 +89,8 @@ class SatoshiEmailModel(EmailBaseModel):
 
 
 class EmailDetailModel(BaseModel):
+    model_config = ConfigDict(alias_generator=to_camel)
+
     email: SatoshiEmailModel
     previous: SatoshiEmailModel | None
     next: SatoshiEmailModel | None
-
-    class Config:
-        alias_generator = to_camel

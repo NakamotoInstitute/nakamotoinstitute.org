@@ -1,7 +1,6 @@
 import datetime
-from typing import Optional
 
-from pydantic import AliasPath, BaseModel, Field, model_validator
+from pydantic import AliasPath, BaseModel, ConfigDict, Field, model_validator
 from pydantic.alias_generators import to_camel
 
 from sni.shared.schemas import IterableRootModel, ORMModel
@@ -39,35 +38,34 @@ class QuotesJSONModel(IterableRootModel):
 
 
 class QuoteCategoryBaseModel(QuoteCategoryJSONModel, ORMModel):
-    class Config:
-        alias_generator = to_camel
-        populate_by_name = True
-        from_attributes = True
+    pass
 
 
 class QuoteItemModel(BaseModel):
+    model_config = ConfigDict(
+        alias_generator=to_camel,
+        populate_by_name=True,
+        from_attributes=True,
+    )
+
     satoshi_id: int
     subject: str
     source: str = Field(validation_alias=AliasPath("thread", "source"))
 
-    class Config:
-        alias_generator = to_camel
-        populate_by_name = True
-        from_attributes = True
-
 
 class QuoteModel(BaseModel):
+    model_config = ConfigDict(
+        alias_generator=to_camel,
+        populate_by_name=True,
+        from_attributes=True,
+    )
+
     whitepaper: bool = False
     text: str
-    post: Optional[QuoteItemModel] = None
-    email: Optional[QuoteItemModel] = None
+    post: QuoteItemModel | None = None
+    email: QuoteItemModel | None = None
     date: datetime.date
     categories: list[QuoteCategoryBaseModel]
-
-    class Config:
-        alias_generator = to_camel
-        populate_by_name = True
-        from_attributes = True
 
 
 class QuoteCategoryModel(BaseModel):

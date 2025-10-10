@@ -1,5 +1,3 @@
-from typing import Optional
-
 from pydantic import BaseModel
 
 from sni.shared.schemas import ORMModel
@@ -7,7 +5,7 @@ from sni.shared.schemas import ORMModel
 
 class TranslatorBaseModel(BaseModel):
     name: str
-    url: Optional[str] = None
+    url: str | None = None
 
 
 class TranslatorMDModel(TranslatorBaseModel):

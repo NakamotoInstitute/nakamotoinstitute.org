@@ -1,7 +1,7 @@
 import datetime
 from typing import Literal
 
-from pydantic import AliasPath, BaseModel, Field, field_validator
+from pydantic import AliasPath, BaseModel, ConfigDict, Field, field_validator
 from pydantic.alias_generators import to_camel
 
 from sni.shared.schemas import IterableRootModel, ORMModel
@@ -44,8 +44,8 @@ class ForumPostJSONModel(BaseModel):
 
     @field_validator("satoshi_id")
     @classmethod
-    def satoshi_id_must_be_gte_one(cls, v: int) -> int:
-        if v and v < 1:
+    def satoshi_id_must_be_gte_one(cls, v: int | None) -> int | None:
+        if v is not None and v < 1:
             raise ValueError("must be greater than or equal to 1")
         return v
 
@@ -70,8 +70,7 @@ class ForumPostBaseModel(ORMModel):
 
 
 class ForumThreadBaseModel(ForumThreadJSONModel, ORMModel):
-    date: datetime.datetime
-    url: str
+    pass
 
 
 class ForumPostModel(ForumPostBaseModel):
@@ -79,13 +78,12 @@ class ForumPostModel(ForumPostBaseModel):
 
 
 class ForumThreadModel(BaseModel):
+    model_config = ConfigDict(alias_generator=to_camel)
+
     posts: list[ForumPostModel]
     thread: ForumThreadBaseModel
     previous: ForumThreadBaseModel | None
     next: ForumThreadBaseModel | None
-
-    class Config:
-        alias_generator = to_camel
 
 
 class SatoshiForumPostModel(ForumPostBaseModel):
@@ -93,9 +91,8 @@ class SatoshiForumPostModel(ForumPostBaseModel):
 
 
 class ForumPostDetailModel(BaseModel):
+    model_config = ConfigDict(alias_generator=to_camel)
+
     post: SatoshiForumPostModel
     previous: SatoshiForumPostModel | None
     next: SatoshiForumPostModel | None
-
-    class Config:
-        alias_generator = to_camel
