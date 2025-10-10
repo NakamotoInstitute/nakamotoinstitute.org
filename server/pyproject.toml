@@ -6,8 +6,8 @@ requires-python = ">=3.12"
 dependencies = [
     "alembic-postgresql-enum==1.8.0",
     "beautifulsoup4==4.14.2",
-    "boto3==1.40.48",
-    "fastapi[standard]==0.118.2",
+    "boto3==1.40.49",
+    "fastapi[standard]==0.118.3",
     "feedgen==1.0.0",
     "markdown-it-py==4.0.0",
     "mdit-py-plugins==0.5.0",
@@ -15,7 +15,7 @@ dependencies = [
     "pydantic-settings==2.11.0",
     "pygments>=2.19.1",
     "pyyaml==6.0.3",
-    "SQLAlchemy[asyncio]==2.0.43",
+    "SQLAlchemy[asyncio]==2.0.44",
     "typer==0.19.2",
 ]
 
