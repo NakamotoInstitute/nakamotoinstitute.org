@@ -13,7 +13,7 @@ import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { cdnUrl, externalUrls, urls } from "@/lib/urls";
 
-import { ArrowRight } from "../components/ArrowRight";
+import { Arrow } from "../components/Arrow";
 import { DonationButton } from "../components/DonationButton";
 import { DocListingAuthors } from "./library/components/DocListing";
 import { PostListingAuthors } from "./mempool/components/PostListing";
@@ -69,7 +69,7 @@ async function Box({ title, className, link, children }: BoxProps) {
           href={link.href}
         >
           <span>{link.label}</span>
-          <ArrowRight />
+          <Arrow direction="right" />
         </Link>
       ) : null}
     </GridItem>
@@ -305,7 +305,7 @@ export default async function HomePage(props: LocaleParams) {
                   <h4 className="font-semibold">{t("newsletter_call")}</h4>
                   <p className="text-taupe text-sm">{t("newsletter_signup")}</p>
                 </div>
-                <ArrowRight className="min-w-fit" />
+                <Arrow direction="right" className="min-w-fit" />
               </div>
             </Link>
             <div className="border-cardinal border-l-[3px] bg-white p-4 shadow-xs">
@@ -327,7 +327,7 @@ export default async function HomePage(props: LocaleParams) {
               <div>
                 <DonationButton className="flex gap-1" trackingLocation="home">
                   <span>{t("donate")}</span>
-                  <ArrowRight />
+                  <Arrow direction="right" />
                 </DonationButton>
               </div>
             </div>

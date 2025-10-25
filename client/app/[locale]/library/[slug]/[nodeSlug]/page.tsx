@@ -1,8 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 
-import { ArrowLeft } from "@/app/components/ArrowLeft";
-import { ArrowRight } from "@/app/components/ArrowRight";
+import { Arrow } from "@/app/components/Arrow";
 import { PageLayout } from "@/app/components/PageLayout";
 import { Rehype } from "@/app/components/Rehype";
 import { getLibraryDocNode, getLibraryNodeParams } from "@/lib/api/library";
@@ -49,7 +48,7 @@ async function NodeNavigation({ node, locale }: NodeNavigationProps) {
               node.previous.slug,
             )}
           >
-            <ArrowLeft className="group-hover:text-cardinal shrink-0" />
+            <Arrow direction="left" className="group-hover:text-cardinal shrink-0" />
             <span className="truncate">
               {node.previous.navTitle ?? node.previous.title}
             </span>
@@ -57,15 +56,15 @@ async function NodeNavigation({ node, locale }: NodeNavigationProps) {
         </div>
       ) : null}
       {node.next ? (
-        <div className="min-w-0">
+        <div className="ml-auto min-w-0">
           <Link
-            className="ml-auto flex items-center justify-end gap-2"
+            className="flex items-center justify-end gap-2"
             href={urls(locale).library.docNode(node.docSlug, node.next.slug)}
           >
             <span className="truncate">
               {node.next.navTitle ?? node.next.title}
             </span>
-            <ArrowRight className="group-hover:text-cardinal shrink-0" />
+            <Arrow direction="right" className="group-hover:text-cardinal shrink-0" />
           </Link>
         </div>
       ) : null}

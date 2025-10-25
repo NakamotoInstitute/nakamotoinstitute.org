@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { BackArrow } from "./BackArrow";
+import { Arrow } from "./Arrow";
 
 type ReturnButtonProps = {
   className?: string;
@@ -12,7 +12,7 @@ export function ReturnButton({ className, label, href }: ReturnButtonProps) {
   return (
     <div className={className}>
       <Link className="group flex items-center gap-2" href={href}>
-        <BackArrow className="group-hover:stroke-cardinal" />
+        <Arrow direction="back" className="group-hover:stroke-cardinal" />
         <span>{label}</span>
       </Link>
     </div>

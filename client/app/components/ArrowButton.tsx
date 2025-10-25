@@ -1,7 +1,6 @@
 import Link from "next/link";
 
-import { ArrowLeft } from "./ArrowLeft";
-import { ArrowRight } from "./ArrowRight";
+import { Arrow } from "./Arrow";
 
 export type ArrowButtonProps = {
   direction: "left" | "right";
@@ -14,11 +13,11 @@ export function ArrowLink({ direction, href }: ArrowButtonProps) {
       className="border-taupe-light inline-flex items-center justify-center rounded-full border p-1.5"
       href={href}
     >
-      {direction === "left" ? <ArrowLeft /> : <ArrowRight />}
+      <Arrow direction={direction} />
     </Link>
   ) : (
     <span className="border-taupe-light bg-taupe-light inline-flex items-center justify-center rounded-full border p-1.5">
-      {direction === "left" ? <ArrowLeft /> : <ArrowRight />}
+      <Arrow direction={direction} />
     </span>
   );
 }
