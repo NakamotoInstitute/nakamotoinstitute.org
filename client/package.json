@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "translate:extract": "i18next -c ./i18next-parser.config.js --fail-on-warnings"
   },

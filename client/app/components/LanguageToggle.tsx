@@ -64,7 +64,7 @@ export function LanguageToggle({
       {isOpen ? (
         <div
           className="z-50 mt-3 w-56 rounded-xs bg-white p-2 font-semibold shadow-lg"
-          ref={refs.setFloating}
+          ref={refs.setFloating} // eslint-disable-line react-hooks/refs
           style={floatingStyles}
           {...getFloatingProps()}
         >
