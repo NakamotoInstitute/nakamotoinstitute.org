@@ -3,42 +3,61 @@ import clsx from "clsx";
 import { TFunction } from "i18next";
 
 import { DCAData } from "@/utils/prices";
-import { commafy } from "@/utils/strings";
 
 const DAILY_BUY = new Big(1);
+
+// USD is always formatted as en-US (historical price data)
+const USD_FORMATTER = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+});
+
+const getBtcFormatter = (locale: Locale) =>
+  new Intl.NumberFormat(locale, {
+    minimumFractionDigits: 8,
+    maximumFractionDigits: 8,
+  });
+
+const getPercentFormatter = (locale: Locale) =>
+  new Intl.NumberFormat(locale, {
+    style: "percent",
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+
+export type Format = "usd" | "btc" | "percent";
+
+export function formatAmount(
+  amount: number,
+  format: Format,
+  locale: Locale,
+): string {
+  switch (format) {
+    case "usd":
+      return USD_FORMATTER.format(amount);
+    case "btc":
+      return getBtcFormatter(locale).format(amount);
+    case "percent":
+      return getPercentFormatter(locale).format(amount / 100);
+  }
+}
 
 type PriceDatumProps = {
   label: string;
   amount: Big;
-  type?: "usd" | "btc" | "perc";
-  unit?: boolean;
+  format: Format;
+  locale: Locale;
   colored?: boolean;
 };
 
 function PriceDatum({
   label,
   amount,
-  type = "usd",
-  unit = true,
+  format,
+  locale,
   colored = false,
 }: PriceDatumProps) {
-  const precision = type === "btc" ? 8 : 2;
-  let formattedAmount = commafy(amount.toFixed(precision));
-
-  // Add units if necessary
-  if (unit) {
-    switch (type) {
-      case "usd":
-        formattedAmount = `$${formattedAmount}`;
-        break;
-      case "btc":
-        formattedAmount = `${formattedAmount} BTC`;
-        break;
-      case "perc":
-        formattedAmount = `${formattedAmount}%`;
-        break;
-    }
-  }
+  const formattedAmount = formatAmount(amount.toNumber(), format, locale);
 
   return (
     <div className="flex flex-row whitespace-nowrap md:flex-col md:text-center">
@@ -60,28 +79,46 @@ function PriceDatum({
 
 type SkepticPriceDataProps = {
   t: TFunction<string, string>;
+  locale: Locale;
   priceData: DCAData;
 };
 
-export async function SkepticPriceData({
+export function SkepticPriceData({
   t,
+  locale,
   priceData: { usdInvested, totalBtc, usdValue, change },
 }: SkepticPriceDataProps) {
   return (
     <div className="border-taupe-light flex flex-col flex-wrap justify-between border-y border-dashed py-2 md:flex-row">
-      <PriceDatum label={t("daily_buy")} amount={Big(DAILY_BUY)} />
-      <PriceDatum label={t("total_invested")} amount={usdInvested} />
+      <PriceDatum
+        label={t("daily_buy")}
+        amount={Big(DAILY_BUY)}
+        format="usd"
+        locale={locale}
+      />
+      <PriceDatum
+        label={t("total_invested")}
+        amount={usdInvested}
+        format="usd"
+        locale={locale}
+      />
       <PriceDatum
         label={t("btc_balance")}
         amount={totalBtc}
-        type="btc"
-        unit={false}
+        format="btc"
+        locale={locale}
       />
-      <PriceDatum label={t("current_value")} amount={usdValue} />
+      <PriceDatum
+        label={t("current_value")}
+        amount={usdValue}
+        format="usd"
+        locale={locale}
+      />
       <PriceDatum
         label={t("percent_change")}
         amount={change}
-        type="perc"
+        format="percent"
+        locale={locale}
         colored
       />
     </div>

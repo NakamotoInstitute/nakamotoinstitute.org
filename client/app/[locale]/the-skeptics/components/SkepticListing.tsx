@@ -7,9 +7,8 @@ import { Price, Skeptic } from "@/lib/api/schemas/skeptics";
 import { cdnUrl } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import { calculateDCA } from "@/utils/prices";
-import { commafy } from "@/utils/strings";
 
-import { SkepticPriceData } from "./PriceData";
+import { formatAmount, SkepticPriceData } from "./PriceData";
 
 const DAILY_BUY = new Big(1);
 
@@ -35,8 +34,8 @@ export async function SkepticListing({
     >
       <header>
         <p className="text-lg">
-          {formatDate(locale, skeptic.date)} • $
-          {commafy(priceData.originalUsd.toFixed(2))}
+          {formatDate(locale, skeptic.date)} •{" "}
+          {formatAmount(priceData.originalUsd.toNumber(), "usd", locale)}
         </p>
         <Link href={{ hash: skeptic.slug }}>
           <h2 className="text-2xl font-semibold">{skeptic.name}</h2>
@@ -44,7 +43,7 @@ export async function SkepticListing({
         <p className="small-caps">{skeptic.title}</p>
       </header>
       <section className="mb-2 py-2">
-        <SkepticPriceData t={t} priceData={priceData} />
+        <SkepticPriceData t={t} locale={locale} priceData={priceData} />
       </section>
       <section>
         {skeptic.excerpt ? (
