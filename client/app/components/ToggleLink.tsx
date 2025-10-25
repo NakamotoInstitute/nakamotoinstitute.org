@@ -8,7 +8,7 @@ export type ToggleLinkProps = {
   active: boolean;
 };
 
-export async function ToggleLink({ href, label, active }: ToggleLinkProps) {
+export function ToggleLink({ href, label, active }: ToggleLinkProps) {
   return (
     <Link
       className="group hover:bg-sand hover:text-dark flex items-center gap-2 rounded-lg p-1 pr-2"

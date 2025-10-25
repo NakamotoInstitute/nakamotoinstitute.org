@@ -13,7 +13,7 @@ export type BreadcrumbsProps = {
   breadcrumbs: Breadcrumbs;
 };
 
-export async function Breadcrumbs({ breadcrumbs }: BreadcrumbsProps) {
+export function Breadcrumbs({ breadcrumbs }: BreadcrumbsProps) {
   const returnCrumb = breadcrumbs[breadcrumbs.length - 2];
   return (
     <nav

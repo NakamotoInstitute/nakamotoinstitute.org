@@ -5,7 +5,7 @@ export type AdditionalNavigationProps = {
   children: React.ReactNode;
 };
 
-export async function AdditionalNavigation({
+export function AdditionalNavigation({
   bottom = false,
   children,
 }: AdditionalNavigationProps) {

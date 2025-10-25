@@ -15,7 +15,7 @@ type DocListingAuthorsProps = {
   small?: boolean;
 };
 
-export async function DocListingAuthors({
+export function DocListingAuthors({
   doc,
   locale,
   small = false,
@@ -38,7 +38,7 @@ type DocListingProps = {
   t: TFunction<string, string>;
 };
 
-export async function DocListing({
+export function DocListing({
   doc,
   className,
   locale,

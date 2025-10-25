@@ -14,7 +14,7 @@ type PostListingAuthorsProps = {
   small?: boolean;
 };
 
-export async function PostListingAuthors({
+export function PostListingAuthors({
   post,
   locale,
   small = false,
@@ -39,7 +39,7 @@ type PostListingProps = {
   post: MempoolPostIndex;
 };
 
-export async function PostListing({
+export function PostListing({
   t,
   className,
   locale,

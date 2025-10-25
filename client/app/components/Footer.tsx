@@ -12,7 +12,7 @@ type FooterProps = {
   locale: Locale;
 };
 
-export async function Footer({ t, locale }: FooterProps) {
+export function Footer({ t, locale }: FooterProps) {
   const links = [
     { label: t("about"), url: urls(locale).about },
     { label: t("contact"), url: urls(locale).contact },

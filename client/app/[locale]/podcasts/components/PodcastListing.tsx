@@ -13,7 +13,7 @@ type PodcastListingProps = {
   t: TFunction<string, string>;
 };
 
-export async function PodcastListing({
+export function PodcastListing({
   podcast,
   className,
   locale,

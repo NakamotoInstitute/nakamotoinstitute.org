@@ -19,7 +19,7 @@ type SkepticProps = {
   prices: Price[];
 };
 
-export async function SkepticListing({
+export function SkepticListing({
   t,
   locale,
   skeptic,
