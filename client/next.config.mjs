@@ -21,6 +21,7 @@ const cdnBaseUrl = new URL(env.CDN_BASE_URL);
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
+    dangerouslyAllowLocalIP: env.VERCEL_ENV === "development",
     remotePatterns: [
       {
         protocol: cdnBaseUrl.protocol.replace(/:$/, ""),

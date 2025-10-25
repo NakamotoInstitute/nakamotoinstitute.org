@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 
-import { i18nRoutingMiddleware } from "@/lib/middleware/i18n";
-import { subdomainRouting } from "@/lib/middleware/subdomains";
+import { i18nRoutingProxy } from "@/lib/proxy/i18n";
+import { subdomainRouting } from "@/lib/proxy/subdomains";
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const domainRewrite = subdomainRouting(request);
 
@@ -22,7 +22,7 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  return i18nRoutingMiddleware(request);
+  return i18nRoutingProxy(request);
 }
 
 export const config = {

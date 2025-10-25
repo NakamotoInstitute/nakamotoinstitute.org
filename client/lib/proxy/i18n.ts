@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 import { defaultLocale, locales } from "@/i18n";
 
-// Portions of i18n middleware code adapted from next-intl
+// Portions of i18n proxy code adapted from next-intl
 // https://github.com/amannn/next-intl
 //
 // MIT License
@@ -54,7 +54,7 @@ function resolveLocale(request: NextRequest) {
   return { locale, ...rest };
 }
 
-export function i18nRoutingMiddleware(request: NextRequest) {
+export function i18nRoutingProxy(request: NextRequest) {
   const { locale } = resolveLocale(request);
 
   const isRoot = request.nextUrl.pathname === "/";
