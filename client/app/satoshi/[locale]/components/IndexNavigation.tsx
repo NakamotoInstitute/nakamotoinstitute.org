@@ -88,7 +88,7 @@ export async function IndexNavigation({
               className={clsx(
                 "py-3",
                 sourceLink.active &&
-                  "border-cardinal text-dark -mb-[1px] border-b-2",
+                  "border-cardinal text-dark -mb-px border-b-2",
               )}
             >
               {sourceLink.active ? (

@@ -54,7 +54,7 @@ export default async function QuotesIndex(props: LocaleParams) {
       ]}
     >
       <PageHeader title={t("quotable_satoshi")}>
-        <figure className="border-cardinal border-l-1 border-dashed">
+        <figure className="border-cardinal border-l border-dashed">
           <blockquote className="px-4 italic">
             <Trans
               i18nKey="satoshi_quote_extended"

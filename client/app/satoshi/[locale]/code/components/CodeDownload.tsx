@@ -26,12 +26,12 @@ export function CodeDownload({ release, md5, sha1 }: CodeDownloadProps) {
       <ul className="pl-8 max-sm:space-y-2.5">
         <li>
           <span className="text-taupe">MD5:</span>{" "}
-          <code className="break-words">{md5.hash}</code>
+          <code className="wrap-break-word">{md5.hash}</code>
           {md5.note ? ` ${md5.note}` : null}
         </li>
         <li>
           <span className="text-taupe">SHA1:</span>{" "}
-          <code className="break-words">{sha1.hash}</code>
+          <code className="wrap-break-word">{sha1.hash}</code>
           {sha1.note ? ` ${sha1.note}` : null}
         </li>
       </ul>

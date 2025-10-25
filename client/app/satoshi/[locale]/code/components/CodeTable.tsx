@@ -68,7 +68,7 @@ export async function CodeTable({
         ) : null}
         <CodeTableRow label={t("source")}>
           <Link
-            className="text-cardinal break-words hover:underline"
+            className="text-cardinal wrap-break-word hover:underline"
             href={source}
           >
             {source}

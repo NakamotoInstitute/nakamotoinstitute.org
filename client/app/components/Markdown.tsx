@@ -125,7 +125,7 @@ export async function PageContent({
         "[&_h2]:mb-2 [&_h2]:text-3xl [&_h2]:font-medium",
         "[&_p]:mb-4",
         "[&_a]:text-cardinal [&_a]:hover:underline",
-        "[&_figure]:border-dark [&_figure]:border-l-1 [&_figure]:border-dashed",
+        "[&_figure]:border-dark [&_figure]:border-l [&_figure]:border-dashed",
         "[&_figure_blockquote]:px-4 [&_figure_blockquote]:italic",
         "[&_figure_figcaption]:small-caps [&_figure_figcaption]:mt-2 [&_figure_figcaption]:px-4 [&_figure_figcaption]:font-medium",
         className,

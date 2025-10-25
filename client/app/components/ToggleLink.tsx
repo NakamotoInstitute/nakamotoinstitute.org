@@ -22,7 +22,7 @@ export async function ToggleLink({ href, label, active }: ToggleLinkProps) {
             : "bg-sand group-hover:bg-taupe-light",
         )}
       >
-        <div className="h-5 w-[1.375rem] rounded-md bg-white drop-shadow-xs"></div>
+        <div className="h-5 w-5.5 rounded-md bg-white drop-shadow-xs"></div>
       </div>
       <span>{label}</span>
     </Link>
