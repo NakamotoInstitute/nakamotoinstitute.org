@@ -22,21 +22,23 @@ const localDomainToPathMapping = [
   },
 ];
 
-export const domainToPathMapping =
-  env.VERCEL_ENV === "development"
-    ? env.MAP_DOMAIN
-      ? localDomainToPathMapping
-      : []
-    : env.VERCEL_ENV === "production"
-      ? prodDomainToPathMapping
-      : [];
+function getDomainToPathMapping() {
+  if (env.VERCEL_ENV === "development" && env.MAP_DOMAIN) {
+    return localDomainToPathMapping;
+  }
+  if (env.VERCEL_ENV === "production") {
+    return prodDomainToPathMapping;
+  }
+  return [];
+}
 
-const APP_BASE_URL =
-  env.VERCEL_ENV === "development"
-    ? "http://localhost:3000"
-    : env.VERCEL_ENV === "production"
-      ? `https://${env.VERCEL_PROJECT_PRODUCTION_URL}`
-      : `https://${env.VERCEL_URL}`;
+export const domainToPathMapping = getDomainToPathMapping();
+
+const APP_BASE_URL = {
+  development: "http://localhost:3000",
+  production: `https://${env.VERCEL_PROJECT_PRODUCTION_URL}`,
+  preview: `https://${env.VERCEL_URL}`,
+}[env.VERCEL_ENV];
 
 export const toFullUrl = (relativeUrl: string) => {
   let baseUrl = APP_BASE_URL;
