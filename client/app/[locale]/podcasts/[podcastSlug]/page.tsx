@@ -22,7 +22,7 @@ export async function generateMetadata(
 
   const podcast = await getPodcast(podcastSlug);
   const generateHref = (l: Locale) => urls(l).podcasts.show(podcastSlug);
-  const languages = generateHrefLangs([...locales], generateHref);
+  const languages = generateHrefLangs(locales, generateHref);
 
   return {
     title: podcast.name,

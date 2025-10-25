@@ -36,10 +36,7 @@ export async function generateMetadata(
   const { source, satoshiId, locale } = params;
 
   const emailData = await getEmail(source, satoshiId);
-  const languages = generateHrefLangs(
-    [...locales],
-    generateHref(source, satoshiId),
-  );
+  const languages = generateHrefLangs(locales, generateHref(source, satoshiId));
 
   return {
     title: emailData.email.subject,

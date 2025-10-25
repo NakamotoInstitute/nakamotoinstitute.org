@@ -48,7 +48,10 @@ async function NodeNavigation({ node, locale }: NodeNavigationProps) {
               node.previous.slug,
             )}
           >
-            <Arrow direction="left" className="group-hover:text-cardinal shrink-0" />
+            <Arrow
+              direction="left"
+              className="group-hover:text-cardinal shrink-0"
+            />
             <span className="truncate">
               {node.previous.navTitle ?? node.previous.title}
             </span>
@@ -64,7 +67,10 @@ async function NodeNavigation({ node, locale }: NodeNavigationProps) {
             <span className="truncate">
               {node.next.navTitle ?? node.next.title}
             </span>
-            <Arrow direction="right" className="group-hover:text-cardinal shrink-0" />
+            <Arrow
+              direction="right"
+              className="group-hover:text-cardinal shrink-0"
+            />
           </Link>
         </div>
       ) : null}

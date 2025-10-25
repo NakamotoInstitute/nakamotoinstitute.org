@@ -22,7 +22,7 @@ export const getDir = (locale: Locale) => {
 };
 
 export const generateHrefLangs = (
-  _locales: Locale[],
+  _locales: readonly Locale[],
   generateHref: (_locale: Locale) => string,
 ) => {
   return _locales.reduce(

@@ -37,10 +37,7 @@ export async function generateMetadata(
   const { locale, source, satoshiId } = params;
 
   const postData = await getForumPost(source, satoshiId);
-  const languages = generateHrefLangs(
-    [...locales],
-    generateHref(source, satoshiId),
-  );
+  const languages = generateHrefLangs(locales, generateHref(source, satoshiId));
 
   return {
     title: postData.post.subject,

@@ -38,12 +38,7 @@ type DocListingProps = {
   t: TFunction<string, string>;
 };
 
-export function DocListing({
-  doc,
-  className,
-  locale,
-  t,
-}: DocListingProps) {
+export function DocListing({ doc, className, locale, t }: DocListingProps) {
   return (
     <article
       className={clsx(

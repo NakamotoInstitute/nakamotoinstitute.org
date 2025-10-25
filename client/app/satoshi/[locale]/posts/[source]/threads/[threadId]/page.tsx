@@ -40,10 +40,7 @@ export async function generateMetadata(
 
   const threadData = await getForumThread(source, threadId);
   const { t } = await i18nTranslation(locale);
-  const languages = generateHrefLangs(
-    [...locales],
-    generateHref(source, threadId),
-  );
+  const languages = generateHrefLangs(locales, generateHref(source, threadId));
 
   return {
     title: t("title_thread", { title: threadData.thread.title }),

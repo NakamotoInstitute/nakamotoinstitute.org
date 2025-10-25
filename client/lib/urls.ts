@@ -142,7 +142,6 @@ export const urls = (locale: Locale) => {
   };
 };
 
-
 export const cdnUrl = (path: string) => env.CDN_BASE_URL + path;
 
 export const generateLocaleToggleLinks = (

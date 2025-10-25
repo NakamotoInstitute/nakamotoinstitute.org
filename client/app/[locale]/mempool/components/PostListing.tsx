@@ -39,12 +39,7 @@ type PostListingProps = {
   post: MempoolPostIndex;
 };
 
-export function PostListing({
-  t,
-  className,
-  locale,
-  post,
-}: PostListingProps) {
+export function PostListing({ t, className, locale, post }: PostListingProps) {
   const original = post.date.getTime() === post.added.getTime();
 
   return (

@@ -25,7 +25,7 @@ export async function generateMetadata(
   const { locale, source } = params;
 
   const { t } = await i18nTranslation(locale);
-  const languages = generateHrefLangs([...locales], generateHref(source));
+  const languages = generateHrefLangs(locales, generateHref(source));
 
   return {
     title: t("source_emails", { source: formatEmailSource(source) }),

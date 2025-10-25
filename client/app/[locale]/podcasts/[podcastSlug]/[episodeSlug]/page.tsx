@@ -26,7 +26,7 @@ export async function generateMetadata(
 
   const episode = await getEpisode(podcastSlug, episodeSlug);
   const generateHref = makeGenerateHref(podcastSlug, episodeSlug);
-  const languages = generateHrefLangs([...locales], generateHref);
+  const languages = generateHrefLangs(locales, generateHref);
 
   return {
     title: episode.title,

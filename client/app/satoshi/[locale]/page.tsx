@@ -17,7 +17,7 @@ export async function generateMetadata(props: LocaleParams): Promise<Metadata> {
 
   const { locale } = params;
 
-  const languages = generateHrefLangs([...locales], generateHref);
+  const languages = generateHrefLangs(locales, generateHref);
 
   return {
     alternates: {

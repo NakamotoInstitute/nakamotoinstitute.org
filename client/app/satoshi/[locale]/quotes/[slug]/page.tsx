@@ -27,7 +27,7 @@ export async function generateMetadata(
   const { locale, slug } = params;
 
   const { category } = await getQuoteCategory(slug);
-  const languages = generateHrefLangs([...locales], generateHref(slug));
+  const languages = generateHrefLangs(locales, generateHref(slug));
 
   return {
     title: category.name,

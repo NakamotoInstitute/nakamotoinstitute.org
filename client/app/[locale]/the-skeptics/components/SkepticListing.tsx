@@ -8,7 +8,7 @@ import { cdnUrl } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import { calculateDCA } from "@/utils/prices";
 
-import { formatAmount, SkepticPriceData } from "./PriceData";
+import { SkepticPriceData, formatAmount } from "./PriceData";
 
 const DAILY_BUY = new Big(1);
 
@@ -19,12 +19,7 @@ type SkepticProps = {
   prices: Price[];
 };
 
-export function SkepticListing({
-  t,
-  locale,
-  skeptic,
-  prices,
-}: SkepticProps) {
+export function SkepticListing({ t, locale, skeptic, prices }: SkepticProps) {
   const priceData = calculateDCA(skeptic.date, prices, DAILY_BUY);
 
   return (

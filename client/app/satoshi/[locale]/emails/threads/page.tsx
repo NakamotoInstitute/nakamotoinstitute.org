@@ -25,7 +25,7 @@ export async function generateMetadata(props: LocaleParams): Promise<Metadata> {
   const { locale } = params;
 
   const { t } = await i18nTranslation(locale);
-  const languages = generateHrefLangs([...locales], generateHref);
+  const languages = generateHrefLangs(locales, generateHref);
 
   return {
     title: t("email_threads"),
