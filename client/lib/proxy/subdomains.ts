@@ -7,17 +7,17 @@ const combinePath = (...parts: (string | undefined)[]) =>
     .filter((part) => part !== undefined)
     .map((part, i) => {
       if (i > 0) {
-        part = part?.replace(/^\/+/, "");
+        part = part.replace(/^\/+/, "");
       }
       if (i < parts.length - 1) {
-        part = part?.replace(/\/+$/, "");
+        part = part.replace(/\/+$/, "");
       }
       return part;
     })
     .join("/");
 
 export const subdomainRouting = (request: NextRequest) => {
-  const [domain] = request?.headers?.get("host")?.split(":") ?? [];
+  const [domain] = request.headers.get("host")?.split(":") ?? [];
   const domainRewrite = domainToPathMapping.find(
     (map) => map.domain === domain,
   );

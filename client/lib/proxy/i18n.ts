@@ -28,7 +28,7 @@ import { defaultLocale, locales } from "@/i18n";
 // SOFTWARE.
 
 function getPathnameToken(pathname: string, i: number) {
-  return pathname?.split("/")[i];
+  return pathname.split("/")[i];
 }
 
 function getLocaleFromPathname(pathname: string) {

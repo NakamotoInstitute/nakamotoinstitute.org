@@ -148,22 +148,21 @@ export const generateLocaleToggleLinks = (
   locale: string,
   generateHref: (locale: Locale) => string,
 ): ToggleLinkProps => {
-  return locales.reduce<ToggleLinkProps>(
-    (acc, loc) => {
-      const name = languages[loc];
+  const links: AnchorProps[] = [];
+  let current: Locale = defaultLocale;
 
-      if (loc === locale) {
-        acc.current = locale;
-        return acc;
-      }
+  for (const loc of locales) {
+    const name = languages[loc];
 
-      acc.links?.push({
+    if (loc === locale) {
+      current = loc;
+    } else {
+      links.push({
         text: name,
         href: generateHref(loc),
       });
+    }
+  }
 
-      return acc;
-    },
-    { current: defaultLocale, links: [] },
-  );
+  return { current, links };
 };
