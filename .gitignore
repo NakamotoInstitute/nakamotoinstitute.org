@@ -101,3 +101,5 @@ server/.justenv
 *.rar
 *.tgz
 *.zip
+
+.claude/settings.local.json
