@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const zBasePodcast = z.object({
+export const zPodcastBase = z.object({
   slug: z.string(),
   name: z.string(),
   sortName: z.string(),
@@ -9,20 +9,20 @@ export const zBasePodcast = z.object({
   externalFeed: z.string().nullable(),
   defunct: z.boolean(),
 });
-export type BasePodcast = z.infer<typeof zBasePodcast>;
+export type PodcastBase = z.infer<typeof zPodcastBase>;
 
-export const zBaseEpisode = z.object({
+export const zEpisodeBase = z.object({
   slug: z.string(),
   title: z.string(),
   summary: z.string().nullable(),
   date: z.coerce.date(),
 });
-export type BaseEpisode = z.infer<typeof zBaseEpisode>;
+export type EpisodeBase = z.infer<typeof zEpisodeBase>;
 
-export const zEpisodeIndex = z.array(zBaseEpisode);
+export const zEpisodeIndex = z.array(zEpisodeBase);
 export type EpisodeIndex = z.infer<typeof zEpisodeIndex>;
 
-export const zPodcast = zBasePodcast.extend({
+export const zPodcast = zPodcastBase.extend({
   spotifyUrl: z.string().nullable(),
   applePodcastsUrl: z.string().nullable(),
   fountainUrl: z.string().nullable(),
@@ -31,7 +31,7 @@ export const zPodcast = zBasePodcast.extend({
 });
 export type Podcast = z.infer<typeof zPodcast>;
 
-export const zEpisode = zBaseEpisode.extend({
+export const zEpisode = zEpisodeBase.extend({
   content: z.string(),
   duration: z.string().nullable(),
   notes: z.string().nullable(),
@@ -57,5 +57,5 @@ export type EpisodeParams = z.infer<typeof zEpisodeParams>;
 export const zEpisodeParamsIndex = z.array(zEpisodeParams);
 export type EpisodeParamsIndex = z.infer<typeof zEpisodeParamsIndex>;
 
-export const zPodcastIndex = z.array(zBasePodcast);
+export const zPodcastIndex = z.array(zPodcastBase);
 export type PodcastIndex = z.infer<typeof zPodcastIndex>;

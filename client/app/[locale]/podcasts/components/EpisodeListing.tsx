@@ -1,12 +1,12 @@
 import Link from "next/link";
 
-import { BaseEpisode } from "@/lib/api/schemas/podcasts";
+import { EpisodeBase } from "@/lib/api/schemas/podcasts";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 
 type EpisodeListingProps = {
   locale: Locale;
-  episode: BaseEpisode;
+  episode: EpisodeBase;
   podcastSlug: string;
 };
 

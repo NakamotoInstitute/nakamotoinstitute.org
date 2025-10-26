@@ -3,11 +3,11 @@ import { TFunction } from "i18next";
 import Link from "next/link";
 
 import { Chip } from "@/app/components/Chip";
-import { BasePodcast } from "@/lib/api/schemas/podcasts";
+import { PodcastBase } from "@/lib/api/schemas/podcasts";
 import { urls } from "@/lib/urls";
 
 type PodcastListingProps = {
-  podcast: BasePodcast;
+  podcast: PodcastBase;
   className?: string;
   locale: Locale;
   t: TFunction<string, string>;

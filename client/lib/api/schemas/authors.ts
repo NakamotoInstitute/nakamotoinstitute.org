@@ -1,7 +1,7 @@
 import { z } from "zod";
 
-import { getLibraryIndex } from "./library";
-import { getMempoolIndex } from "./mempool";
+import { zLibraryIndex } from "./library";
+import { zMempoolIndex } from "./mempool";
 import { zLocale } from "./shared";
 
 export const zAuthor = z.object({
@@ -13,13 +13,9 @@ export type Author = z.infer<typeof zAuthor>;
 
 export const zAuthorIndex = z.array(zAuthor);
 
-export function getAuthorIndex() {
-  return zAuthorIndex;
-}
-
 export const zAuthorDetail = z.object({
   author: zAuthor,
-  library: z.lazy(() => getLibraryIndex()),
-  mempool: z.lazy(() => getMempoolIndex()),
+  library: z.lazy(() => zLibraryIndex),
+  mempool: z.lazy(() => zMempoolIndex),
   locales: z.array(zLocale),
 });
