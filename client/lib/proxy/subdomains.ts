@@ -16,16 +16,21 @@ const combinePath = (...parts: (string | undefined)[]) =>
     })
     .join("/");
 
-export const subdomainRouting = (request: NextRequest) => {
+export type SubdomainRoutingResult = {
+  mapping: (typeof domainToPathMapping)[number] | null;
+  newPathname: string;
+};
+
+export const subdomainRouting = (
+  request: NextRequest,
+): SubdomainRoutingResult => {
   const [domain] = request.headers.get("host")?.split(":") ?? [];
-  const domainRewrite = domainToPathMapping.find(
-    (map) => map.domain === domain,
-  );
-  if (domainRewrite) {
-    request.nextUrl.pathname = combinePath(
-      domainRewrite.path,
-      request.nextUrl.pathname,
-    );
+  const mapping = domainToPathMapping.find((map) => map.domain === domain);
+
+  if (mapping) {
+    const newPathname = combinePath(mapping.path, request.nextUrl.pathname);
+    return { mapping, newPathname };
   }
-  return domainRewrite;
+
+  return { mapping: null, newPathname: request.nextUrl.pathname };
 };

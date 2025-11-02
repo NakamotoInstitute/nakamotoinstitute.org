@@ -61,12 +61,6 @@ export const urls = (locale: Locale) => {
     return toFullUrl(fullPath);
   };
 
-  const getSatoshiUrl = (path: string) => {
-    const fullPath =
-      locale === "en" ? `/satoshi${path}` : `/satoshi/${locale}${path}`;
-    return toFullUrl(fullPath);
-  };
-
   return {
     home: getUrl("/"),
     about: getUrl("/about/"),
@@ -109,34 +103,34 @@ export const urls = (locale: Locale) => {
       rss: (slug: string) => getUrl(`/podcasts/${slug}/feed.xml`),
     },
     satoshi: {
-      index: getSatoshiUrl("/"),
-      code: getSatoshiUrl("/code/"),
+      index: getUrl("/satoshi/"),
+      code: getUrl("/satoshi/code/"),
       emails: {
-        index: getSatoshiUrl("/emails/"),
-        threadsIndex: getSatoshiUrl("/emails/threads/"),
+        index: getUrl("/satoshi/emails/"),
+        threadsIndex: getUrl("/satoshi/emails/threads/"),
         sourceIndex: (source: EmailSource) =>
-          getSatoshiUrl(`/emails/${source}/`),
+          getUrl(`/satoshi/emails/${source}/`),
         sourceEmail: (source: EmailSource, id: string) =>
-          getSatoshiUrl(`/emails/${source}/${id}/`),
+          getUrl(`/satoshi/emails/${source}/${id}/`),
         sourceThreadsIndex: (source: EmailSource) =>
-          getSatoshiUrl(`/emails/${source}/threads/`),
+          getUrl(`/satoshi/emails/${source}/threads/`),
         sourceThreadsDetail: (source: EmailSource, id: string) =>
-          getSatoshiUrl(`/emails/${source}/threads/${id}/`),
+          getUrl(`/satoshi/emails/${source}/threads/${id}/`),
       },
       posts: {
-        index: getSatoshiUrl("/posts/"),
-        threadsIndex: getSatoshiUrl("/posts/threads/"),
+        index: getUrl("/satoshi/posts/"),
+        threadsIndex: getUrl("/satoshi/posts/threads/"),
         sourceIndex: (source: ForumPostSource) =>
-          getSatoshiUrl(`/posts/${source}/`),
+          getUrl(`/satoshi/posts/${source}/`),
         sourcePost: (source: ForumPostSource, id: string) =>
-          getSatoshiUrl(`/posts/${source}/${id}/`),
+          getUrl(`/satoshi/posts/${source}/${id}/`),
         sourceThreadsIndex: (source: ForumPostSource) =>
-          getSatoshiUrl(`/posts/${source}/threads/`),
+          getUrl(`/satoshi/posts/${source}/threads/`),
         sourceThreadsDetail: (source: ForumPostSource, id: string) =>
-          getSatoshiUrl(`/posts/${source}/threads/${id}/`),
+          getUrl(`/satoshi/posts/${source}/threads/${id}/`),
       },
-      quotesIndex: getSatoshiUrl("/quotes/"),
-      quoteCategory: (slug: string) => getSatoshiUrl(`/quotes/${slug}/`),
+      quotesIndex: getUrl("/satoshi/quotes/"),
+      quoteCategory: (slug: string) => getUrl(`/satoshi/quotes/${slug}/`),
     },
     skeptics: getUrl("/the-skeptics/"),
   };

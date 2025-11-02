@@ -17,9 +17,11 @@ export async function generateMetadata(props: LocaleParams): Promise<Metadata> {
 
   const { locale } = params;
 
+  const { t } = await i18nTranslation(locale);
   const languages = generateHrefLangs(locales, generateHref);
 
   return {
+    title: t("complete_satoshi"),
     alternates: {
       canonical: generateHref(locale),
       languages,

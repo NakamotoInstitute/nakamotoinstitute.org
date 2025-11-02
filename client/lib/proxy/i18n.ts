@@ -2,125 +2,66 @@ import { NextRequest, NextResponse } from "next/server";
 
 import { defaultLocale, locales } from "@/i18n";
 
-// Portions of i18n proxy code adapted from next-intl
-// https://github.com/amannn/next-intl
-//
-// MIT License
-//
-// Copyright (c) 2020 Jan Amann
-
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-
-// The above copyright notice and this permission notice shall be included in all
-// copies or substantial portions of the Software.
-
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-// SOFTWARE.
-
-function getPathnameToken(pathname: string, i: number) {
-  return pathname.split("/")[i];
+/**
+ * Extract locale prefix from pathname (first segment after /)
+ * Returns undefined if no locale prefix or not a valid locale
+ */
+function getLocalePrefix(pathname: string): Locale | undefined {
+  const firstSegment = pathname.split("/")[1];
+  return locales.includes(firstSegment as Locale)
+    ? (firstSegment as Locale)
+    : undefined;
 }
 
-function getLocaleFromPathname(pathname: string) {
-  const localeCandidate = getPathnameToken(pathname, 1);
-  const satoshiPath = localeCandidate === "satoshi";
-  const pathLocale = satoshiPath
-    ? getPathnameToken(pathname, 2)
-    : localeCandidate;
-  return { satoshiPath, pathLocale };
+/**
+ * Resolve the locale for this request
+ * If path has valid locale prefix, use it; otherwise use default
+ */
+function resolveLocale(pathname: string): Locale {
+  return getLocalePrefix(pathname) ?? defaultLocale;
 }
 
-function resolveLocale(request: NextRequest) {
-  let locale: Locale;
-  const { pathLocale, ...rest } = getLocaleFromPathname(
-    request.nextUrl.pathname,
-  );
-  if (locales.includes(pathLocale as Locale)) {
-    locale = pathLocale as Locale;
-  } else {
-    locale = defaultLocale;
-  }
-
-  return { locale, ...rest };
-}
-
+/**
+ * i18n routing middleware
+ *
+ * Routing rules:
+ * 1. Root path (/) → rewrite to /en (default locale)
+ * 2. Path without locale (/library/) → rewrite to /en/library/ (default) or redirect to /es/library/ (non-default)
+ * 3. Path with default locale (/en/library/) → redirect to /library/ (strip default locale)
+ * 4. Path with non-default locale (/es/library/) → pass through (already correct)
+ */
 export function i18nRoutingProxy(request: NextRequest) {
-  const { locale } = resolveLocale(request);
+  const { pathname, search } = request.nextUrl;
+  const locale = resolveLocale(pathname);
+  const localePrefix = getLocalePrefix(pathname);
+  const isDefaultLocale = locale === defaultLocale;
 
-  const isRoot = request.nextUrl.pathname === "/";
-  const hasMatchedDefaultLocale = locale === defaultLocale;
+  // Helper to build path with query params
+  const withSearch = (path: string) => search ? `${path}${search}` : path;
 
-  function rewrite(url: string) {
-    return NextResponse.rewrite(new URL(url, request.url));
+  // Case 1: Root path → rewrite to /en (or default locale)
+  if (pathname === "/") {
+    return NextResponse.rewrite(new URL(withSearch(`/${locale}`), request.url));
   }
 
-  function redirect(url: string) {
-    const urlObj = new URL(url, request.url);
-    return NextResponse.redirect(urlObj.toString());
+  // Case 2: Path has locale prefix
+  if (localePrefix) {
+    // Case 2a: Default locale prefix (/en/...) → redirect to remove it
+    if (isDefaultLocale) {
+      const pathWithoutLocale = pathname.replace(`/${localePrefix}`, "") || "/";
+      return NextResponse.redirect(new URL(withSearch(pathWithoutLocale), request.url));
+    }
+
+    // Case 2b: Non-default locale prefix (/es/...) → pass through
+    return NextResponse.next();
   }
 
-  let response;
-
-  if (isRoot) {
-    let pathWithSearch = `/${locale}`;
-    if (request.nextUrl.search) {
-      pathWithSearch += request.nextUrl.search;
-    }
-
-    if (hasMatchedDefaultLocale) {
-      response = NextResponse.rewrite(new URL(pathWithSearch, request.url));
-    }
-  } else {
-    const { pathLocale: pathLocaleCandidate, satoshiPath } =
-      getLocaleFromPathname(request.nextUrl.pathname);
-    const pathLocale = locales.includes(pathLocaleCandidate as Locale)
-      ? pathLocaleCandidate
-      : undefined;
-    const hasLocalePrefix = pathLocale !== undefined;
-
-    let pathWithSearch = request.nextUrl.pathname;
-    if (request.nextUrl.search) {
-      pathWithSearch += request.nextUrl.search;
-    }
-
-    if (hasLocalePrefix) {
-      const basePath = pathWithSearch.replace(`/${pathLocale}`, "") || "/";
-
-      if (pathLocale === locale) {
-        if (hasMatchedDefaultLocale) {
-          response = redirect(basePath);
-        } else {
-          response = satoshiPath
-            ? rewrite(pathWithSearch)
-            : NextResponse.next();
-        }
-      }
-    } else {
-      if (hasMatchedDefaultLocale) {
-        let rewriteUrl = `/${locale}${pathWithSearch}`;
-        if (satoshiPath) {
-          const parts = rewriteUrl.split("/");
-          const temp = parts[1];
-          parts[1] = parts[2];
-          parts[2] = temp;
-          rewriteUrl = parts.join("/");
-        }
-        response = rewrite(rewriteUrl);
-      } else {
-        response = redirect(`/${locale}${pathWithSearch}`);
-      }
-    }
+  // Case 3: No locale prefix
+  // Case 3a: Default locale → rewrite to add /en prefix
+  if (isDefaultLocale) {
+    return NextResponse.rewrite(new URL(withSearch(`/${locale}${pathname}`), request.url));
   }
 
-  return response;
+  // Case 3b: Non-default locale → redirect to add locale prefix
+  return NextResponse.redirect(new URL(withSearch(`/${locale}${pathname}`), request.url));
 }

@@ -7,12 +7,13 @@ const jiti = createJiti(import.meta.url, {
 });
 const { env } = await jiti.import("./env.ts");
 const { externalUrls } = await jiti.import("./lib/urls.ts");
+const { locales, defaultLocale } = await jiti.import("./i18n.ts");
 
 const satoshiDestination = `${
   env.VERCEL_ENV === "development" ? "http://" : "https://"
 }${
   env.MAP_DOMAIN || env.VERCEL_ENV === "production"
-    ? `satoshi.${env.VERCEL_URL}`
+    ? `satoshi.${env.VERCEL_PROJECT_PRODUCTION_URL}`
     : `${env.VERCEL_URL}/satoshi`
 }`;
 
@@ -50,11 +51,26 @@ const nextConfig = {
       env.VERCEL_ENV === "production" ||
       (env.VERCEL_ENV === "development" && env.MAP_DOMAIN)
     ) {
-      redirects.push({
-        source: "/satoshi/:path*",
-        destination: `${satoshiDestination}/:path*`,
-        permanent: false,
-      });
+      redirects.push(
+        // No locale prefix - preserve path as-is
+        {
+          source: "/satoshi/:path*",
+          destination: `${satoshiDestination}/:path*`,
+          permanent: false,
+        },
+        // Default locale (en) - strip it from destination
+        {
+          source: "/en/satoshi/:path*",
+          destination: `${satoshiDestination}/:path*`,
+          permanent: false,
+        },
+        // Non-default locales - preserve locale in destination
+        {
+          source: `/:locale(${locales.filter((l) => l !== defaultLocale).join("|")})/satoshi/:path*`,
+          destination: `${satoshiDestination}/:locale/:path*`,
+          permanent: false,
+        }
+      );
     }
     return redirects;
   },
