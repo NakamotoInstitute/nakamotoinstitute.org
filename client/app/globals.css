@@ -19,7 +19,7 @@
   --spacing-prose: 70ch;
 }
 
-@config '../tailwind.config.ts';
+@config "../tailwind.config.ts";
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,

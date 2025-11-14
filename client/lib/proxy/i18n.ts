@@ -37,7 +37,7 @@ export function i18nRoutingProxy(request: NextRequest) {
   const isDefaultLocale = locale === defaultLocale;
 
   // Helper to build path with query params
-  const withSearch = (path: string) => search ? `${path}${search}` : path;
+  const withSearch = (path: string) => (search ? `${path}${search}` : path);
 
   // Case 1: Root path → rewrite to /en (or default locale)
   if (pathname === "/") {
@@ -49,7 +49,9 @@ export function i18nRoutingProxy(request: NextRequest) {
     // Case 2a: Default locale prefix (/en/...) → redirect to remove it
     if (isDefaultLocale) {
       const pathWithoutLocale = pathname.replace(`/${localePrefix}`, "") || "/";
-      return NextResponse.redirect(new URL(withSearch(pathWithoutLocale), request.url));
+      return NextResponse.redirect(
+        new URL(withSearch(pathWithoutLocale), request.url),
+      );
     }
 
     // Case 2b: Non-default locale prefix (/es/...) → pass through
@@ -59,9 +61,13 @@ export function i18nRoutingProxy(request: NextRequest) {
   // Case 3: No locale prefix
   // Case 3a: Default locale → rewrite to add /en prefix
   if (isDefaultLocale) {
-    return NextResponse.rewrite(new URL(withSearch(`/${locale}${pathname}`), request.url));
+    return NextResponse.rewrite(
+      new URL(withSearch(`/${locale}${pathname}`), request.url),
+    );
   }
 
   // Case 3b: Non-default locale → redirect to add locale prefix
-  return NextResponse.redirect(new URL(withSearch(`/${locale}${pathname}`), request.url));
+  return NextResponse.redirect(
+    new URL(withSearch(`/${locale}${pathname}`), request.url),
+  );
 }

@@ -69,7 +69,7 @@ const nextConfig = {
           source: `/:locale(${locales.filter((l) => l !== defaultLocale).join("|")})/satoshi/:path*`,
           destination: `${satoshiDestination}/:locale/:path*`,
           permanent: false,
-        }
+        },
       );
     }
     return redirects;

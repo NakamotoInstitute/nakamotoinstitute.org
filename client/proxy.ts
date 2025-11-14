@@ -31,7 +31,11 @@ export function proxy(request: NextRequest) {
   // If subdomain mapping exists, insert subdomain path after locale
   if (subdomainResult.mapping) {
     // If i18n returned a redirect, pass it through
-    if (i18nResponse instanceof NextResponse && i18nResponse.status >= 300 && i18nResponse.status < 400) {
+    if (
+      i18nResponse instanceof NextResponse &&
+      i18nResponse.status >= 300 &&
+      i18nResponse.status < 400
+    ) {
       return i18nResponse;
     }
 
@@ -53,7 +57,9 @@ export function proxy(request: NextRequest) {
       return NextResponse.rewrite(new URL(newPathname + search, request.url));
     } else {
       // Root path, just add subdomain
-      return NextResponse.rewrite(new URL(subdomainResult.mapping.path, request.url));
+      return NextResponse.rewrite(
+        new URL(subdomainResult.mapping.path, request.url),
+      );
     }
   }
 
