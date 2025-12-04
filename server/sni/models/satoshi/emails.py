@@ -53,7 +53,9 @@ class Email(Base):
     replies: Mapped[List["Email"]] = relationship(
         "Email", back_populates="parent", join_depth=1
     )
-    thread_id: Mapped[int] = mapped_column(Integer, ForeignKey("email_threads.id"), nullable=False)
+    thread_id: Mapped[int] = mapped_column(
+        Integer, ForeignKey("email_threads.id"), nullable=False
+    )
     thread: Mapped[EmailThread] = relationship(back_populates="emails")
     quotes: Mapped[List["Quote"]] = relationship(
         back_populates="email", cascade="all, delete-orphan"
