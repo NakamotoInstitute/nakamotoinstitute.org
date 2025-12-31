@@ -1,5 +1,5 @@
 import datetime
-from typing import TYPE_CHECKING, List
+from typing import TYPE_CHECKING
 
 from sqlalchemy import Boolean, Column, Date, ForeignKey, Integer, String, Table, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
@@ -30,7 +30,7 @@ class QuoteCategory(Base):
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     name: Mapped[str] = mapped_column(String, nullable=False)
     slug: Mapped[str] = mapped_column(String, unique=True, nullable=False)
-    quotes: Mapped[List["Quote"]] = relationship(
+    quotes: Mapped[list["Quote"]] = relationship(
         secondary=quote_quote_categories, back_populates="categories"
     )
     content_id: Mapped[int] = mapped_column(
@@ -57,7 +57,7 @@ class Quote(Base):
         Integer, ForeignKey("forum_posts.satoshi_id", ondelete="CASCADE"), nullable=True
     )
     post: Mapped["ForumPost"] = relationship(back_populates="quotes")
-    categories: Mapped[List[QuoteCategory]] = relationship(
+    categories: Mapped[list[QuoteCategory]] = relationship(
         secondary=quote_quote_categories, back_populates="quotes"
     )
     content_id: Mapped[int] = mapped_column(

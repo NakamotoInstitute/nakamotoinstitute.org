@@ -1,4 +1,5 @@
 import datetime
+from typing import ClassVar
 
 from sqlalchemy import DateTime, ForeignKey, Integer, String, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
@@ -21,7 +22,7 @@ class Content(Base):
     )
     content_type: Mapped[str] = mapped_column(String(50))
 
-    __mapper_args__ = {
+    __mapper_args__: ClassVar[dict] = {
         "polymorphic_identity": "content",
         "polymorphic_on": "content_type",
     }
@@ -33,7 +34,7 @@ class HTMLRenderableContent(Content):
     id: Mapped[int] = mapped_column(ForeignKey("content.id"), primary_key=True)
     html_content: Mapped[str] = mapped_column(Text, nullable=False)
 
-    __mapper_args__ = {
+    __mapper_args__: ClassVar[dict] = {
         "polymorphic_identity": "html_renderable_content",
     }
 
@@ -45,7 +46,7 @@ class MarkdownContent(HTMLRenderableContent):
         ForeignKey("html_renderable_content.id"), primary_key=True
     )
 
-    __mapper_args__ = {"polymorphic_identity": "markdown"}
+    __mapper_args__: ClassVar[dict] = {"polymorphic_identity": "markdown"}
 
 
 class JSONContent(Content):
@@ -53,7 +54,7 @@ class JSONContent(Content):
 
     id: Mapped[int] = mapped_column(ForeignKey("content.id"), primary_key=True)
 
-    __mapper_args__ = {"polymorphic_identity": "json"}
+    __mapper_args__: ClassVar[dict] = {"polymorphic_identity": "json"}
 
 
 class YAMLContent(Content):
@@ -61,7 +62,7 @@ class YAMLContent(Content):
 
     id: Mapped[int] = mapped_column(ForeignKey("content.id"), primary_key=True)
 
-    __mapper_args__ = {"polymorphic_identity": "yaml"}
+    __mapper_args__: ClassVar[dict] = {"polymorphic_identity": "yaml"}
 
 
 class FileMetadata(Base):

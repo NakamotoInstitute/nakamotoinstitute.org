@@ -1,4 +1,5 @@
-from typing import Sequence, cast
+from collections.abc import Sequence
+from typing import cast
 
 import yaml
 from bs4 import BeautifulSoup
@@ -132,5 +133,5 @@ class MDRenderer:
 
     @classmethod
     def _get_file_content(cls, md_file_path: str) -> str:
-        with open(md_file_path, "r", encoding="utf-8") as reader:
+        with open(md_file_path, encoding="utf-8") as reader:
             return reader.read()

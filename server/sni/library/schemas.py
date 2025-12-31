@@ -130,7 +130,7 @@ class BookMDModel(BaseModel):
 
     def gather_markdown_files(
         self, base_path
-    ) -> list[tuple[str, Union[str, None], int]]:
+    ) -> list[tuple[str, str | None, int]]:
         markdown_files = []
 
         def _gather_files(node, parent, current_path, order):

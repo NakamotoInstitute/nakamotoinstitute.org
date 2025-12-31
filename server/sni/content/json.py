@@ -1,5 +1,5 @@
 import json
-from typing import Callable, Type
+from collections.abc import Callable
 
 from pydantic import BaseModel
 from sqlalchemy import delete, select
@@ -13,12 +13,12 @@ from .metadata import Actions, process_metadata
 
 def import_json_data(
     db_session: Session,
-    model: Type[Base],
-    schema: Type[BaseModel],
+    model: type[Base],
+    schema: type[BaseModel],
     file_path: str,
     force: bool = False,
     process_item: Callable[[dict], dict] = lambda x: x,
-    dependent_models: list[Type[Base]] = [],
+    dependent_models: list[type[Base]] | None = None,
 ):
     print(f"Importing {model.__name__}...", end="")
     existing_metadata = db_session.scalars(
@@ -39,7 +39,7 @@ def import_json_data(
         validated_data = schema.model_validate(data).model_dump()
 
         # Delete dependent data
-        for dep_model in dependent_models:
+        for dep_model in (dependent_models or []):
             db_session.execute(delete(dep_model))
         db_session.execute(delete(model))
 

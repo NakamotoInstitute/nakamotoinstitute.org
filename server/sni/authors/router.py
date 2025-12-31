@@ -1,4 +1,4 @@
-from typing import Any, List
+from typing import Any
 
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -13,14 +13,14 @@ from .schemas.response import AuthorDetailModel, AuthorModel
 router = APIRouter()
 
 
-@router.get("", response_model=List[AuthorModel])
+@router.get("", response_model=list[AuthorModel])
 async def get_authors(
     locale: LocaleType = "en", db: AsyncSession = Depends(get_db)
 ) -> Any:
     return await service.get_all_by_locale(db_session=db, locale=locale)
 
 
-@router.get("/params", response_model=List[SlugParamModel])
+@router.get("/params", response_model=list[SlugParamModel])
 async def get_author_params(db: AsyncSession = Depends(get_db)) -> Any:
     return await service.get_params(db_session=db)
 

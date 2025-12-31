@@ -25,13 +25,13 @@ from .schemas import (
 
 
 def import_library_weights(
-    db_session, force: bool = False, force_conditions: list[bool] = []
+    db_session, force: bool = False, force_conditions: list[bool] | None = None
 ):
     return import_yaml_weights(
         db_session,
         Document,
         "data/weights/library.yaml",
-        force=force or any(force_conditions),
+        force=force or any(force_conditions or []),
     )
 
 

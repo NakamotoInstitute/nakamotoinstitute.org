@@ -1,5 +1,5 @@
 import datetime
-from typing import TYPE_CHECKING, List
+from typing import TYPE_CHECKING
 
 from sqlalchemy import CheckConstraint, DateTime, ForeignKey, Integer, String, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
@@ -19,7 +19,7 @@ class ForumThread(Base):
     date: Mapped[datetime.datetime] = mapped_column(DateTime, nullable=False)
     url: Mapped[str] = mapped_column(String, nullable=False)
     source: Mapped[str] = mapped_column(String, nullable=False)
-    posts: Mapped[List["ForumPost"]] = relationship(back_populates="thread")
+    posts: Mapped[list["ForumPost"]] = relationship(back_populates="thread")
     content_id: Mapped[int] = mapped_column(
         Integer, ForeignKey("json_content.id", ondelete="CASCADE"), nullable=False
     )
@@ -51,7 +51,7 @@ class ForumPost(Base):
         Integer, ForeignKey("forum_threads.id"), nullable=False
     )
     thread: Mapped[ForumThread] = relationship(back_populates="posts")
-    quotes: Mapped[List["Quote"]] = relationship(
+    quotes: Mapped[list["Quote"]] = relationship(
         back_populates="post", cascade="all, delete-orphan"
     )
     content_id: Mapped[int] = mapped_column(

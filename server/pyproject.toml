@@ -30,4 +30,8 @@ dev = [
 package = false
 
 [tool.ruff]
-lint.select = ["E", "F", "I"]
+lint.select = ["E", "F", "I", "B", "UP", "SIM", "RUF"]
+
+[tool.ruff.lint.per-file-ignores]
+"**/router.py" = ["B008"]
+"**/routers.py" = ["B008"]

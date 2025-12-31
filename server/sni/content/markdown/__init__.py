@@ -10,8 +10,8 @@ from .importers import (
 
 __all__ = [
     "BasicHandler",
-    "ManifestBasedTranslatedHandler",
     "Importer",
+    "ManifestBasedTranslatedHandler",
     "TranslatedHandler",
     "create_basic_importer",
     "create_directory_translated_importer",

@@ -1,4 +1,4 @@
-from typing import Sequence
+from collections.abc import Sequence
 
 from sqlalchemy import or_, select, union
 from sqlalchemy.ext.asyncio import AsyncSession

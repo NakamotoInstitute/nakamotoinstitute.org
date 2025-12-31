@@ -1,5 +1,5 @@
 import datetime
-from typing import TYPE_CHECKING, List
+from typing import TYPE_CHECKING
 
 from sqlalchemy import (
     Boolean,
@@ -54,10 +54,10 @@ class BlogPost(Base):
     added: Mapped[datetime.date] = mapped_column(Date, nullable=True)
     original_url: Mapped[str] = mapped_column(String, nullable=True)
     original_site: Mapped[str] = mapped_column(String, nullable=True)
-    authors: Mapped[List["Author"]] = relationship(
+    authors: Mapped[list["Author"]] = relationship(
         secondary=blog_post_authors, back_populates="posts"
     )
-    translations: Mapped[List["BlogPostTranslation"]] = relationship(
+    translations: Mapped[list["BlogPostTranslation"]] = relationship(
         back_populates="blog_post"
     )
     series: Mapped["BlogSeries"] = relationship(back_populates="blog_posts")
@@ -96,7 +96,7 @@ class BlogPostTranslation(Base):
     translation_site_url: Mapped[str] = mapped_column(String, nullable=True)
     blog_post_id: Mapped[int] = mapped_column(ForeignKey("blog_posts.id"))
     blog_post: Mapped[BlogPost] = relationship(back_populates="translations")
-    translators: Mapped[List["Translator"]] = relationship(
+    translators: Mapped[list["Translator"]] = relationship(
         secondary=blog_post_translators, back_populates="posts"
     )
 
@@ -136,8 +136,8 @@ class BlogSeries(Base):
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     slug: Mapped[str] = mapped_column(String, nullable=False)
     chapter_title: Mapped[bool] = mapped_column(Boolean)
-    blog_posts: Mapped[List["BlogPost"]] = relationship(back_populates="series")
-    translations: Mapped[List["BlogSeriesTranslation"]] = relationship(
+    blog_posts: Mapped[list["BlogPost"]] = relationship(back_populates="series")
+    translations: Mapped[list["BlogSeriesTranslation"]] = relationship(
         back_populates="blog_series"
     )
 

@@ -1,5 +1,6 @@
+from typing import Annotated
+
 import typer
-from typing_extensions import Annotated
 
 from sni.content.update import update_content
 

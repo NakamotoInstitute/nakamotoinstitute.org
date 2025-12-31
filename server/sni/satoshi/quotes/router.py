@@ -1,4 +1,3 @@
-from typing import List
 
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -11,7 +10,7 @@ from .schemas import QuoteCategoryBaseModel, QuoteCategoryModel
 router = APIRouter()
 
 
-@router.get("", response_model=List[QuoteCategoryBaseModel])
+@router.get("", response_model=list[QuoteCategoryBaseModel])
 async def get_quote_categories(db: AsyncSession = Depends(get_db)):
     return await service.get_all(db_session=db)
 

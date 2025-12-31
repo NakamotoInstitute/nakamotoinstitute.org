@@ -1,5 +1,5 @@
 import datetime
-from typing import TYPE_CHECKING, List
+from typing import TYPE_CHECKING
 
 from sqlalchemy import DateTime, ForeignKey, Integer, String, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
@@ -19,7 +19,7 @@ class EmailThread(Base):
     date: Mapped[datetime.datetime] = mapped_column(DateTime, nullable=False)
     url: Mapped[str] = mapped_column(String, nullable=False)
     source: Mapped[str] = mapped_column(String, nullable=False)
-    emails: Mapped[List["Email"]] = relationship(back_populates="thread")
+    emails: Mapped[list["Email"]] = relationship(back_populates="thread")
     content_id: Mapped[int] = mapped_column(
         Integer, ForeignKey("json_content.id", ondelete="CASCADE"), nullable=False
     )
@@ -50,14 +50,14 @@ class Email(Base):
         remote_side=[id],
         lazy="joined",
     )
-    replies: Mapped[List["Email"]] = relationship(
+    replies: Mapped[list["Email"]] = relationship(
         "Email", back_populates="parent", join_depth=1
     )
     thread_id: Mapped[int] = mapped_column(
         Integer, ForeignKey("email_threads.id"), nullable=False
     )
     thread: Mapped[EmailThread] = relationship(back_populates="emails")
-    quotes: Mapped[List["Quote"]] = relationship(
+    quotes: Mapped[list["Quote"]] = relationship(
         back_populates="email", cascade="all, delete-orphan"
     )
     content_id: Mapped[int] = mapped_column(

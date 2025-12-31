@@ -1,4 +1,3 @@
-from typing import Type
 
 import yaml
 from pydantic import BaseModel, Field, ValidationError
@@ -22,7 +21,7 @@ class SlugWeights(IterableRootModel):
 
 def import_yaml_weights(
     db_session: Session,
-    model: Type[Base],
+    model: type[Base],
     file_path: str,
     force: bool = False,
 ) -> bool:
@@ -40,7 +39,7 @@ def import_yaml_weights(
         return False
 
     try:
-        with open(file_path, "r") as file:
+        with open(file_path) as file:
             raw_content = file.read()
             yaml_data = yaml.safe_load(raw_content)
         validated_data = SlugWeights.model_validate(yaml_data)

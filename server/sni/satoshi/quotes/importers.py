@@ -5,7 +5,9 @@ from sni.shared.service import get
 from .schemas import QuoteCategoriesJSONModel, QuotesJSONModel
 
 
-def import_quotes(db_session, force: bool = False, force_conditions: list[bool] = []):
+def import_quotes(
+    db_session, force: bool = False, force_conditions: list[bool] | None = None
+):
     def process_item_data(item_data):
         item_data["categories"] = [
             get(QuoteCategory, db_session=db_session, slug=category)
@@ -18,13 +20,13 @@ def import_quotes(db_session, force: bool = False, force_conditions: list[bool] 
         model=Quote,
         schema=QuotesJSONModel,
         file_path="data/quotes.json",
-        force=force or any(force_conditions),
+        force=force or any(force_conditions or []),
         process_item=process_item_data,
     )
 
 
 def import_quote_categories(
-    db_session, force: bool = False, force_conditions: list[bool] = []
+    db_session, force: bool = False, force_conditions: list[bool] | None = None
 ):
     return import_json_data(
         db_session,
@@ -32,5 +34,5 @@ def import_quote_categories(
         schema=QuoteCategoriesJSONModel,
         file_path="data/quote_categories.json",
         dependent_models=[Quote],
-        force=force or any(force_conditions),
+        force=force or any(force_conditions or []),
     )

@@ -1,11 +1,9 @@
 from dataclasses import dataclass
-from typing import Any, Type, TypeVar
+from typing import Any
 
 from pydantic import BaseModel, ValidationError
 
 from .renderer import MDRenderer
-
-T = TypeVar("T", bound=BaseModel)
 
 
 @dataclass
@@ -16,7 +14,9 @@ class ValidationResult:
     is_valid: bool
 
 
-def validate_single(data: dict[Any, Any] | None, schema: Type[T]) -> ValidationResult:
+def validate_single[T: BaseModel](
+    data: dict[Any, Any] | None, schema: type[T]
+) -> ValidationResult:
     if not data:
         return ValidationResult(None, None, ["No front matter provided"], False)
 
@@ -33,14 +33,14 @@ def validate_single(data: dict[Any, Any] | None, schema: Type[T]) -> ValidationR
 
 
 def validate_front_matter(
-    data: dict[Any, Any] | None, schemas: dict[str, Type[BaseModel]]
+    data: dict[Any, Any] | None, schemas: dict[str, type[BaseModel]]
 ) -> dict[str, ValidationResult]:
     return {key: validate_single(data, schema) for key, schema in schemas.items()}
 
 
 def process_file(
     filepath: str,
-    schemas: dict[str, Type[BaseModel]],
+    schemas: dict[str, type[BaseModel]],
 ) -> tuple[dict[str, ValidationResult], str, str]:
     raw_front_matter, processed_content, raw_content = MDRenderer.process_md(filepath)
     validation_results = validate_front_matter(raw_front_matter, schemas)

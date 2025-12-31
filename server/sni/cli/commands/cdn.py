@@ -1,10 +1,10 @@
 import fnmatch
 import os
 from pathlib import Path
+from typing import Annotated
 
 import boto3
 import typer
-from typing_extensions import Annotated
 
 from sni.config import settings
 
@@ -61,7 +61,7 @@ def list_files_recursive(directory):
             yield path
 
 
-def sync_directory(local_directory, bucket_name, exclusion_patterns=[]):
+def sync_directory(local_directory, bucket_name, exclusion_patterns=None):
     local_files = {
         str(f.relative_to(local_directory)): f
         for f in list_files_recursive(local_directory)
@@ -79,7 +79,8 @@ def sync_directory(local_directory, bucket_name, exclusion_patterns=[]):
     for file_key in r2_files:
         if file_key not in local_files:
             if not any(
-                fnmatch.fnmatch(file_key, pattern) for pattern in exclusion_patterns
+                fnmatch.fnmatch(file_key, pattern)
+                for pattern in (exclusion_patterns or [])
             ):
                 delete_file(bucket_name, file_key)
             else:
