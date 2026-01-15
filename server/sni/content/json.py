@@ -39,7 +39,7 @@ def import_json_data(
         validated_data = schema.model_validate(data).model_dump()
 
         # Delete dependent data
-        for dep_model in (dependent_models or []):
+        for dep_model in dependent_models or []:
             db_session.execute(delete(dep_model))
         db_session.execute(delete(model))
 

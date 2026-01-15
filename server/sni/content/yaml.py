@@ -1,4 +1,3 @@
-
 import yaml
 from pydantic import BaseModel, Field, ValidationError
 from sqlalchemy import select, update

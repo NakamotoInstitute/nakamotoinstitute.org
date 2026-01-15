@@ -128,9 +128,7 @@ class BookMDModel(BaseModel):
             data["nodes"] = cls.parse_nodes(data.get("nodes", []))
         return data
 
-    def gather_markdown_files(
-        self, base_path
-    ) -> list[tuple[str, str | None, int]]:
+    def gather_markdown_files(self, base_path) -> list[tuple[str, str | None, int]]:
         markdown_files = []
 
         def _gather_files(node, parent, current_path, order):
