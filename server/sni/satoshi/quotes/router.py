@@ -1,7 +1,6 @@
-from fastapi import APIRouter, Depends, HTTPException
-from sqlalchemy.ext.asyncio import AsyncSession
+from fastapi import APIRouter, HTTPException
 
-from sni.database import get_db
+from sni.shared.dependencies import DB
 
 from . import service
 from .schemas import QuoteCategoryBaseModel, QuoteCategoryModel
@@ -10,12 +9,12 @@ router = APIRouter()
 
 
 @router.get("", response_model=list[QuoteCategoryBaseModel])
-async def get_quote_categories(db: AsyncSession = Depends(get_db)):
+async def get_quote_categories(db: DB):
     return await service.get_all(db_session=db)
 
 
 @router.get("/{slug}", response_model=QuoteCategoryModel)
-async def get_quote_category(slug: str, db: AsyncSession = Depends(get_db)):
+async def get_quote_category(slug: str, db: DB):
     category = await service.get_category(slug, db_session=db)
     if not category:
         raise HTTPException(status_code=404, detail="Category not found")

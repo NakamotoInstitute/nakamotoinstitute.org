@@ -1,10 +1,8 @@
 from typing import Any
 
-from fastapi import APIRouter, Depends, HTTPException
-from sqlalchemy.ext.asyncio import AsyncSession
+from fastapi import APIRouter, HTTPException
 
-from sni.constants import LocaleType
-from sni.database import get_db
+from sni.shared.dependencies import DB, Locale
 from sni.shared.schemas import SlugParamModel
 
 from . import service
@@ -14,21 +12,17 @@ router = APIRouter()
 
 
 @router.get("", response_model=list[AuthorModel])
-async def get_authors(
-    locale: LocaleType = "en", db: AsyncSession = Depends(get_db)
-) -> Any:
+async def get_authors(locale: Locale, db: DB) -> Any:
     return await service.get_all_by_locale(db_session=db, locale=locale)
 
 
 @router.get("/params", response_model=list[SlugParamModel])
-async def get_author_params(db: AsyncSession = Depends(get_db)) -> Any:
+async def get_author_params(db: DB) -> Any:
     return await service.get_params(db_session=db)
 
 
 @router.get("/{slug}", response_model=AuthorDetailModel)
-async def get_author(
-    slug: str, locale: LocaleType = "en", db: AsyncSession = Depends(get_db)
-) -> Any:
+async def get_author(slug: str, locale: Locale, db: DB) -> Any:
     author = await service.get(slug, db_session=db, locale=locale)
     if not author:
         raise HTTPException(status_code=404, detail="Author not found")
