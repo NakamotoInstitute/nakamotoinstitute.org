@@ -33,3 +33,7 @@ class TranslationSchema(ORMModel):
     locale: Locales
     title: str
     slug: str
+
+
+class ErrorModel(BaseModel):
+    detail: str
