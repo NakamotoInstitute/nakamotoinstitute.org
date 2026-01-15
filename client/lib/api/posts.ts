@@ -1,3 +1,5 @@
+import { cache } from "react";
+
 import { notFound } from "next/navigation";
 
 import { getNumericId } from "@/utils/strings";
@@ -16,17 +18,16 @@ export async function getSatoshiPosts() {
   return zForumPostIndex.parse(await res.json());
 }
 
-export async function getForumPost(
-  source: ForumPostSource,
-  satoshiId: string | number,
-) {
-  const satoshiIdNum = getNumericId(satoshiId);
-  const res = await fetchAPI(`/satoshi/posts/${source}/${satoshiIdNum}`);
-  if (res.status === 404 || res.status === 422) {
-    notFound();
-  }
-  return zForumPostDetail.parse(await res.json());
-}
+export const getForumPost = cache(
+  async (source: ForumPostSource, satoshiId: string | number) => {
+    const satoshiIdNum = getNumericId(satoshiId);
+    const res = await fetchAPI(`/satoshi/posts/${source}/${satoshiIdNum}`);
+    if (res.status === 404 || res.status === 422) {
+      notFound();
+    }
+    return zForumPostDetail.parse(await res.json());
+  },
+);
 
 export async function getSatoshiPostsBySource(source: ForumPostSource) {
   const res = await fetchAPI(`/satoshi/posts/${source}`);
@@ -38,20 +39,22 @@ export async function getForumThreads() {
   return zForumThreadIndex.parse(await res.json());
 }
 
-export async function getForumThread(
-  source: ForumPostSource,
-  threadId: string | number,
-  satoshiOnly: boolean = false,
-) {
-  const threadIdNum = getNumericId(threadId);
-  const res = await fetchAPI(
-    `/satoshi/posts/${source}/threads/${threadIdNum}?satoshi=${satoshiOnly}`,
-  );
-  if (res.status === 404 || res.status === 422) {
-    notFound();
-  }
-  return zForumThreadDetail.parse(await res.json());
-}
+export const getForumThread = cache(
+  async (
+    source: ForumPostSource,
+    threadId: string | number,
+    satoshiOnly: boolean = false,
+  ) => {
+    const threadIdNum = getNumericId(threadId);
+    const res = await fetchAPI(
+      `/satoshi/posts/${source}/threads/${threadIdNum}?satoshi=${satoshiOnly}`,
+    );
+    if (res.status === 404 || res.status === 422) {
+      notFound();
+    }
+    return zForumThreadDetail.parse(await res.json());
+  },
+);
 
 export async function getForumThreadsBySource(source: ForumPostSource) {
   const res = await fetchAPI(`/satoshi/posts/${source}/threads`);

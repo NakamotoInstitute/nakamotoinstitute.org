@@ -81,8 +81,8 @@ export default async function HomePage(props: LocaleParams) {
 
   const { locale } = params;
 
-  const { t } = await i18nTranslation(locale);
-  const [latest, docs, podcasts] = await Promise.all([
+  const [{ t }, latest, docs, podcasts] = await Promise.all([
+    i18nTranslation(locale),
     getLatestMempoolPosts(locale),
     getHomeLibraryDocs(locale),
     getHomePodcasts(),

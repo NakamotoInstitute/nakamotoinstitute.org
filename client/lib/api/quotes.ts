@@ -1,3 +1,5 @@
+import { cache } from "react";
+
 import { notFound } from "next/navigation";
 
 import fetchAPI from "./fetchAPI";
@@ -8,10 +10,10 @@ export async function getQuoteCategories() {
   return zQuoteCategoryIndex.parse(await res.json());
 }
 
-export async function getQuoteCategory(slug: string) {
+export const getQuoteCategory = cache(async (slug: string) => {
   const res = await fetchAPI(`/satoshi/quotes/${slug}`);
   if (res.status === 404) {
     notFound();
   }
   return zQuoteCategoryDetail.parse(await res.json());
-}
+});

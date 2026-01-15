@@ -1,3 +1,5 @@
+import { cache } from "react";
+
 import fetchAPI from "./fetchAPI";
 import {
   zEpisode,
@@ -21,15 +23,17 @@ export async function getEpisodes() {
   return zEpisodeParamsIndex.parse(await res.json());
 }
 
-export async function getPodcast(slug: string) {
+export const getPodcast = cache(async (slug: string) => {
   const res = await fetchAPI(`/podcasts/${slug}`);
   return zPodcastDetail.parse(await res.json());
-}
+});
 
-export async function getEpisode(podcastSlug: string, episodeSlug: string) {
-  const res = await fetchAPI(`/podcasts/${podcastSlug}/${episodeSlug}`);
-  return zEpisode.parse(await res.json());
-}
+export const getEpisode = cache(
+  async (podcastSlug: string, episodeSlug: string) => {
+    const res = await fetchAPI(`/podcasts/${podcastSlug}/${episodeSlug}`);
+    return zEpisode.parse(await res.json());
+  },
+);
 
 export async function getPodcastFeed(podcastSlug: string) {
   const res = await fetchAPI(`/podcasts/${podcastSlug}/feed`);

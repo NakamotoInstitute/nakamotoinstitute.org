@@ -40,18 +40,16 @@ export default async function TheSkepticsPage(props: LocaleParams) {
 
   const { locale } = params;
 
-  const content = await getPage("the-skeptics", locale);
-  const { t } = await i18nTranslation(locale);
-  let error = false;
-  let prices: Price[] = [];
-  let lastUpdated;
-  const skeptics = await getSkeptics();
-  try {
-    prices = await fetchPriceHistory(60 * 60);
-    lastUpdated = prices[prices.length - 1].date;
-  } catch {
-    error = true;
-  }
+  const [content, { t }, skeptics, priceResult] = await Promise.all([
+    getPage("the-skeptics", locale),
+    i18nTranslation(locale),
+    getSkeptics(),
+    fetchPriceHistory(60 * 60)
+      .then((prices) => ({ prices, error: false as const }))
+      .catch(() => ({ prices: [] as Price[], error: true as const })),
+  ]);
+  const { prices, error } = priceResult;
+  const lastUpdated = prices.length > 0 ? prices[prices.length - 1].date : null;
 
   return (
     <PageLayout t={t} locale={locale} generateHref={generateHref}>

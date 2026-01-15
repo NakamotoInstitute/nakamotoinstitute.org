@@ -66,19 +66,17 @@ export async function Markdown({
   return (
     <>
       {hasMath ? (
-        <Script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" />
+        <Script
+          src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"
+          strategy="lazyOnload"
+        />
       ) : null}
       <ReactMarkdown
         remarkPlugins={mergedRemarkPlugins}
         rehypePlugins={mergedRehypePlugins}
         remarkRehypeOptions={mergedRemarkRehypeOptions}
         components={{
-          a: ({
-            children,
-            href,
-            ref,
-            ...rest
-          }: React.ComponentPropsWithRef<"a">) => {
+          a: ({ children, href, node: _node, ref: _ref, ...rest }) => {
             if (href?.startsWith("/")) {
               return (
                 <Link href={toFullUrl(href)} {...rest}>
@@ -87,7 +85,7 @@ export async function Markdown({
               );
             }
             return (
-              <a ref={ref} href={href} {...rest}>
+              <a href={href} {...rest}>
                 {children}
               </a>
             );

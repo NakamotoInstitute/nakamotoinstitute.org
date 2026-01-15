@@ -1,3 +1,5 @@
+import { cache } from "react";
+
 import { notFound } from "next/navigation";
 
 import fetchAPI from "./fetchAPI";
@@ -19,25 +21,23 @@ export async function getHomeLibraryDocs(locale: Locale) {
   return zLibraryIndex.parse(await res.json());
 }
 
-export async function getLibraryDoc(slug: string, locale: Locale) {
+export const getLibraryDoc = cache(async (slug: string, locale: Locale) => {
   const res = await fetchAPI(`/library/${slug}?locale=${locale}`);
   if (res.status === 404) {
     notFound();
   }
   return zDocument.parse(await res.json());
-}
+});
 
-export async function getLibraryDocNode(
-  slug: string,
-  docSlug: string,
-  locale: Locale,
-) {
-  const res = await fetchAPI(`/library/${docSlug}/${slug}?locale=${locale}`);
-  if (res.status === 404) {
-    notFound();
-  }
-  return zDocumentNode.parse(await res.json());
-}
+export const getLibraryDocNode = cache(
+  async (slug: string, docSlug: string, locale: Locale) => {
+    const res = await fetchAPI(`/library/${docSlug}/${slug}?locale=${locale}`);
+    if (res.status === 404) {
+      notFound();
+    }
+    return zDocumentNode.parse(await res.json());
+  },
+);
 
 export async function getLibraryParams() {
   const res = await fetchAPI("/library/params");

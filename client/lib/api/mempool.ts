@@ -1,3 +1,5 @@
+import { cache } from "react";
+
 import { notFound } from "next/navigation";
 
 import fetchAPI from "./fetchAPI";
@@ -14,13 +16,13 @@ export async function getMempoolPosts(locale: Locale) {
   return zMempoolIndex.parse(await res.json());
 }
 
-export async function getMempoolPost(slug: string, locale: Locale) {
+export const getMempoolPost = cache(async (slug: string, locale: Locale) => {
   const res = await fetchAPI(`/mempool/${slug}?locale=${locale}`);
   if (res.status === 404) {
     notFound();
   }
   return zMempoolPost.parse(await res.json());
-}
+});
 
 export async function getLatestMempoolPosts(locale: Locale) {
   const res = await fetchAPI(`/mempool/latest?locale=${locale}`);
@@ -40,13 +42,15 @@ export async function getAllMempoolSeries(locale: Locale) {
   return zMempoolSeriesIndex.parse(await res.json());
 }
 
-export async function getMempoolSeries(slug: string, locale: Locale) {
-  const res = await fetchAPI(`/mempool/series/${slug}?locale=${locale}`);
-  if (res.status === 404) {
-    notFound();
-  }
-  return zMempoolSeriesDetail.parse(await res.json());
-}
+export const getMempoolSeries = cache(
+  async (slug: string, locale: Locale) => {
+    const res = await fetchAPI(`/mempool/series/${slug}?locale=${locale}`);
+    if (res.status === 404) {
+      notFound();
+    }
+    return zMempoolSeriesDetail.parse(await res.json());
+  },
+);
 
 export async function getMempoolSeriesParams() {
   const res = await fetchAPI("/mempool/series/params");

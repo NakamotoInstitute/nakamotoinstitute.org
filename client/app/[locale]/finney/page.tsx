@@ -36,9 +36,11 @@ export default async function FinneyIndex(props: LocaleParams) {
 
   const { locale } = params;
 
-  const { t } = await i18nTranslation(locale);
-  const content = await getPage("finney", locale);
-  const { library } = await getAuthor("hal-finney", "en");
+  const [{ t }, content, { library }] = await Promise.all([
+    i18nTranslation(locale),
+    getPage("finney", locale),
+    getAuthor("hal-finney", "en"),
+  ]);
 
   const birthDate = new Date(Date.UTC(1956, 4, 4));
   const deathDate = new Date(Date.UTC(2014, 7, 28));

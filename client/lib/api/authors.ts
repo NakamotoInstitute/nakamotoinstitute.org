@@ -1,3 +1,5 @@
+import { cache } from "react";
+
 import { notFound } from "next/navigation";
 
 import fetchAPI from "./fetchAPI";
@@ -9,13 +11,13 @@ export async function getAuthors(locale: Locale) {
   return zAuthorIndex.parse(await res.json());
 }
 
-export async function getAuthor(slug: string, locale: Locale) {
+export const getAuthor = cache(async (slug: string, locale: Locale) => {
   const res = await fetchAPI(`/authors/${slug}?locale=${locale}`);
   if (res.status === 404) {
     notFound();
   }
   return zAuthorDetail.parse(await res.json());
-}
+});
 
 export async function getAuthorParams() {
   const res = await fetchAPI("/authors/params");
