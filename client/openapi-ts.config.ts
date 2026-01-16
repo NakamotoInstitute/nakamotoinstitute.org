@@ -19,8 +19,20 @@ export default defineConfig({
     {
       name: "zod",
       dates: { offset: true, local: true },
+      "~resolvers": {
+        string(ctx) {
+          const { $, schema, symbols } = ctx;
+          const { z } = symbols;
+          if (schema.format === "date" || schema.format === "date-time") {
+            return $(z).attr("coerce").attr("date").call();
+          }
+        },
+      },
     },
-    "@hey-api/client-next",
+    {
+      name: "@hey-api/client-next",
+      throwOnError: true,
+    },
     {
       name: "@hey-api/sdk",
       validator: "zod",
