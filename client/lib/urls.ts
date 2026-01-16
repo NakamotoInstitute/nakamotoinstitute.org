@@ -2,8 +2,7 @@ import { ToggleLinkProps } from "@/app/components/LanguageToggle";
 import { env } from "@/env";
 import { defaultLocale, languages, locales } from "@/i18n";
 
-import { EmailSource } from "./api/schemas/emails";
-import { ForumPostSource } from "./api/schemas/posts";
+import { EmailSource, ForumPostSource } from "./api";
 
 // Re-export client-safe URLs for backward compatibility
 export { externalUrls } from "@/lib/urls-client";

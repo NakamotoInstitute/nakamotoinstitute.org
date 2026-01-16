@@ -6,8 +6,7 @@ import { PageContent } from "@/app/components/Markdown";
 import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
 import { locales } from "@/i18n";
-import { Price } from "@/lib/api/schemas/skeptics";
-import { fetchPriceHistory, getSkeptics } from "@/lib/api/skeptics";
+import { api, fetchPriceHistory, type Price, Skeptic } from "@/lib/api";
 import { getPage } from "@/lib/content";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
@@ -40,10 +39,10 @@ export default async function TheSkepticsPage(props: LocaleParams) {
 
   const { locale } = params;
 
-  const [content, { t }, skeptics, priceResult] = await Promise.all([
+  const [content, { t }, { data: skeptics }, priceResult] = await Promise.all([
     getPage("the-skeptics", locale),
     i18nTranslation(locale),
-    getSkeptics(),
+    api.skeptics.getSkeptics(),
     fetchPriceHistory(60 * 60)
       .then((prices) => ({ prices, error: false as const }))
       .catch(() => ({ prices: [] as Price[], error: true as const })),
@@ -103,7 +102,7 @@ export default async function TheSkepticsPage(props: LocaleParams) {
       </PageHeader>
       {error ? <div>{t("price_loading_error")}</div> : null}
       <section>
-        {skeptics.map((s) => (
+        {skeptics.map((s: Skeptic) => (
           <SkepticListing
             key={s.slug}
             t={t}

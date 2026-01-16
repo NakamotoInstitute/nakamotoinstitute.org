@@ -35,7 +35,7 @@ class EpisodeMDModel(BaseModel):
     episode_number: int | None = None
 
 
-class BasePodcastModel(ORMModel):
+class PodcastBase(ORMModel):
     slug: str
     name: str
     sort_name: str
@@ -45,7 +45,7 @@ class BasePodcastModel(ORMModel):
     defunct: bool
 
 
-class PodcastModel(BasePodcastModel):
+class Podcast(PodcastBase):
     spotify_url: str | None
     apple_podcasts_url: str | None
     fountain_url: str | None
@@ -53,8 +53,8 @@ class PodcastModel(BasePodcastModel):
     on_rumble: bool
 
 
-class PodcastDetailModel(PodcastModel):
-    episodes: list["BaseEpisodeModel"]
+class PodcastDetail(Podcast):
+    episodes: list["EpisodeBase"]
 
 
 class EpisodeParams(ORMModel):
@@ -62,18 +62,18 @@ class EpisodeParams(ORMModel):
     episode_slug: str = Field(validation_alias=AliasPath("slug"))
 
 
-class BaseEpisodeModel(ORMModel):
+class EpisodeBase(ORMModel):
     slug: str
     title: str
     date: datetime.datetime
     summary: str | None
 
 
-class EpisodeModel(EpisodeMDModel, ORMModel):
+class Episode(EpisodeMDModel, ORMModel):
     slug: str
     html_content: str = Field(
         validation_alias=AliasPath("content", "html_content"), alias="content"
     )
-    podcast: PodcastModel
+    podcast: Podcast
     mp3_url: str | None
     episode_number: int | None

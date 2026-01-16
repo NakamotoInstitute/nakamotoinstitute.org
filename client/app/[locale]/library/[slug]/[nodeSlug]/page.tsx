@@ -4,8 +4,7 @@ import Link from "next/link";
 import { Arrow } from "@/app/components/Arrow";
 import { PageLayout } from "@/app/components/PageLayout";
 import { Rehype } from "@/app/components/Rehype";
-import { getLibraryDocNode, getLibraryNodeParams } from "@/lib/api/library";
-import { DocumentNode } from "@/lib/api/schemas/library";
+import { api, DocumentNode, Locale, TranslationSchema } from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { getDir } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
@@ -21,7 +20,10 @@ export async function generateMetadata(
 
   const { locale, slug, nodeSlug } = params;
 
-  const node = await getLibraryDocNode(nodeSlug, slug, locale);
+  const { data: node } = await api.library.getLibraryDocNode({
+    path: { doc_slug: slug, slug: nodeSlug },
+    query: { locale },
+  });
 
   return {
     title: node.heading ? `${node.heading}: ${node.title}` : node.title,
@@ -86,10 +88,13 @@ export default async function LibraryNodeDetail(
   const { slug, nodeSlug, locale } = params;
 
   const { t } = await i18nTranslation(locale);
-  const node = await getLibraryDocNode(nodeSlug, slug, locale);
+  const { data: node } = await api.library.getLibraryDocNode({
+    path: { doc_slug: slug, slug: nodeSlug },
+    query: { locale },
+  });
 
   const generateHref = (l: Locale) => {
-    const translation = node.translations.find((t) => t.locale === l);
+    const translation = node.translations.find((t: TranslationSchema) => t.locale === l);
     if (translation) {
       return urls(l).library.doc(translation.slug);
     }
@@ -129,5 +134,6 @@ export default async function LibraryNodeDetail(
 }
 
 export async function generateStaticParams() {
-  return getLibraryNodeParams();
+  const { data } = await api.library.getLibraryNodeParams();
+  return data;
 }

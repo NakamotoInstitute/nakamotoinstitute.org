@@ -12,5 +12,5 @@ class TranslatorMDModel(TranslatorBaseModel):
     pass
 
 
-class TranslatorModel(TranslatorBaseModel, ORMModel):
+class Translator(TranslatorBaseModel, ORMModel):
     slug: str

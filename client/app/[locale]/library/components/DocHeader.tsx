@@ -2,7 +2,7 @@ import { TFunction } from "i18next";
 import Image from "next/image";
 
 import { AuthorsLinks } from "@/app/components/AuthorsLinks";
-import { Document } from "@/lib/api/schemas/library";
+import { Document } from "@/lib/api";
 import { formatDocDate, formatTimeAttr } from "@/utils/dates";
 
 import { DocFormatLinksContainer, getDocFormatLinks } from "./DocFormats";

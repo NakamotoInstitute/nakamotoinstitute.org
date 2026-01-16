@@ -1,4 +1,4 @@
-import { DocumentNode } from "@/lib/api/schemas/library";
+import { DocumentNode } from "@/lib/api";
 
 type NodeHeaderProps = {
   node: DocumentNode;

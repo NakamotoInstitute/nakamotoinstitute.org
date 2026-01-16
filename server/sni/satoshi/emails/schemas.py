@@ -1,12 +1,10 @@
 import datetime
-from typing import Literal
 
 from pydantic import AliasPath, BaseModel, ConfigDict, Field, field_serializer
 from pydantic.alias_generators import to_camel
 
+from sni.constants import EmailSource
 from sni.shared.schemas import IterableRootModel, ORMModel
-
-EmailSource = Literal["cryptography", "bitcoin-list", "p2p-research"]
 
 
 class EmailThreadJSONModel(BaseModel):
@@ -39,15 +37,15 @@ class EmailsJSONModel(IterableRootModel):
     root: list[EmailJSONModel]
 
 
-class EmailThreadBaseModel(EmailThreadJSONModel, ORMModel):
+class EmailThreadBase(EmailThreadJSONModel, ORMModel):
     pass
 
 
-class EmailReplyModel(ORMModel):
+class EmailReply(ORMModel):
     source_id: str
 
 
-class EmailBaseModel(ORMModel):
+class EmailBase(ORMModel):
     sent_from: str
     subject: str
     text: str
@@ -58,39 +56,35 @@ class EmailBaseModel(ORMModel):
     source_id: str
     parent_id: int | None
     satoshi_id: int | None
-    source: str = Field(validation_alias=AliasPath("thread", "source"))
-    replies: list[EmailReplyModel]
-
-    @field_serializer("date")
-    def serialize_date(self, date: datetime.datetime) -> str:
-        return date.isoformat()
+    source: EmailSource = Field(validation_alias=AliasPath("thread", "source"))
+    replies: list[EmailReply]
 
     @field_serializer("replies")
     def serialize_replies(self, replies) -> list[str]:
-        """Convert EmailReplyModel to source_id string."""
+        """Convert EmailReply to source_id string."""
         return sorted([reply.source_id for reply in replies])
 
 
-class ThreadEmailModel(EmailBaseModel):
-    parent: EmailBaseModel | None
+class ThreadEmail(EmailBase):
+    parent: EmailBase | None
 
 
-class EmailThreadModel(BaseModel):
+class EmailThread(BaseModel):
     model_config = ConfigDict(alias_generator=to_camel)
 
-    emails: list[ThreadEmailModel]
-    thread: EmailThreadBaseModel
-    previous: EmailThreadBaseModel | None
-    next: EmailThreadBaseModel | None
+    emails: list[ThreadEmail]
+    thread: EmailThreadBase
+    previous: EmailThreadBase | None
+    next: EmailThreadBase | None
 
 
-class SatoshiEmailModel(EmailBaseModel):
+class SatoshiEmail(EmailBase):
     satoshi_id: int
 
 
-class EmailDetailModel(BaseModel):
+class EmailDetail(BaseModel):
     model_config = ConfigDict(alias_generator=to_camel)
 
-    email: SatoshiEmailModel
-    previous: SatoshiEmailModel | None
-    next: SatoshiEmailModel | None
+    email: SatoshiEmail
+    previous: SatoshiEmail | None
+    next: SatoshiEmail | None

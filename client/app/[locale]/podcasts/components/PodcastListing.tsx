@@ -3,7 +3,7 @@ import { TFunction } from "i18next";
 import Link from "next/link";
 
 import { Chip } from "@/app/components/Chip";
-import { PodcastBase } from "@/lib/api/schemas/podcasts";
+import { PodcastBase } from "@/lib/api";
 import { urls } from "@/lib/urls";
 
 type PodcastListingProps = {

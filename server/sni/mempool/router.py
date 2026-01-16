@@ -6,15 +6,15 @@ from pydantic.types import PositiveInt
 from sni.shared.dependencies import DB, Locale
 from sni.shared.feed import FeedFormat
 from sni.shared.responses import AtomResponse, RSSResponse
-from sni.shared.schemas import ErrorModel, SlugParamModel
+from sni.shared.schemas import Error, SlugParam
 
 from . import service
 from .feed import generate_mempool_feed
 from .schemas import (
-    MempoolPostIndexModel,
-    MempoolPostModel,
-    MempoolSeriesFullModel,
-    MempoolSeriesModel,
+    MempoolPost,
+    MempoolPostIndex,
+    MempoolSeries,
+    MempoolSeriesFull,
 )
 
 series_router = APIRouter()
@@ -23,7 +23,7 @@ series_router = APIRouter()
 @series_router.get(
     "",
     summary="Get all series",
-    response_model=list[MempoolSeriesModel],
+    response_model=list[MempoolSeries],
     status_code=status.HTTP_200_OK,
     responses={status.HTTP_200_OK: {"description": "All series"}},
 )
@@ -34,7 +34,7 @@ async def get_all_mempool_series(locale: Locale, db: DB) -> Any:
 @series_router.get(
     "/params",
     summary="Get series params",
-    response_model=list[SlugParamModel],
+    response_model=list[SlugParam],
     status_code=status.HTTP_200_OK,
     responses={status.HTTP_200_OK: {"description": "Series slugs for SSG"}},
 )
@@ -46,12 +46,12 @@ async def get_mempool_series_params(db: DB) -> Any:
 @series_router.get(
     "/{slug}",
     summary="Get series by slug",
-    response_model=MempoolSeriesFullModel,
+    response_model=MempoolSeriesFull,
     status_code=status.HTTP_200_OK,
     responses={
         status.HTTP_200_OK: {"description": "Series with posts"},
         status.HTTP_404_NOT_FOUND: {
-            "model": ErrorModel,
+            "model": Error,
             "description": "Mempool series not found",
         },
     },
@@ -76,7 +76,7 @@ router.include_router(series_router, prefix="/series")
 @router.get(
     "",
     summary="Get all posts",
-    response_model=list[MempoolPostIndexModel],
+    response_model=list[MempoolPostIndex],
     status_code=status.HTTP_200_OK,
     responses={status.HTTP_200_OK: {"description": "All posts"}},
 )
@@ -87,7 +87,7 @@ async def get_mempool_posts(locale: Locale, db: DB) -> Any:
 @router.get(
     "/latest",
     summary="Get latest posts",
-    response_model=list[MempoolPostIndexModel],
+    response_model=list[MempoolPostIndex],
     status_code=status.HTTP_200_OK,
     responses={status.HTTP_200_OK: {"description": "Latest N posts"}},
 )
@@ -99,7 +99,7 @@ async def get_latest_mempool_posts(locale: Locale, db: DB, num: PositiveInt = 3)
 @router.get(
     "/params",
     summary="Get post params",
-    response_model=list[SlugParamModel],
+    response_model=list[SlugParam],
     status_code=status.HTTP_200_OK,
     responses={status.HTTP_200_OK: {"description": "Post slugs for SSG"}},
 )
@@ -113,11 +113,19 @@ async def get_mempool_params(db: DB) -> Any:
     summary="Get RSS/Atom feed",
     response_class=Response,
     status_code=status.HTTP_200_OK,
-    responses={status.HTTP_200_OK: {"description": "RSS/Atom feed"}},
+    responses={
+        status.HTTP_200_OK: {
+            "description": "RSS/Atom feed",
+            "content": {
+                "application/rss+xml": {"schema": {"type": "string"}},
+                "application/atom+xml": {"schema": {"type": "string"}},
+            },
+        }
+    },
 )
 async def generate_feed(
     locale: Locale, db: DB, format: FeedFormat = FeedFormat.rss
-) -> Any:
+) -> Response:
     """Returns RSS or Atom feed based on format parameter."""
     posts = await service.get_all_posts_by_locale(db_session=db, locale=locale)
     feed = generate_mempool_feed(posts, locale, format)
@@ -131,12 +139,12 @@ async def generate_feed(
 @router.get(
     "/{slug}",
     summary="Get post by slug",
-    response_model=MempoolPostModel,
+    response_model=MempoolPost,
     status_code=status.HTTP_200_OK,
     responses={
         status.HTTP_200_OK: {"description": "Post with content"},
         status.HTTP_404_NOT_FOUND: {
-            "model": ErrorModel,
+            "model": Error,
             "description": "Mempool post not found",
         },
     },

@@ -4,11 +4,11 @@ from fastapi import APIRouter, HTTPException, Response, status
 
 from sni.shared.dependencies import DB
 from sni.shared.responses import RSSResponse
-from sni.shared.schemas import ErrorModel
+from sni.shared.schemas import Error
 
 from . import service
 from .feed import generate_podcast_feed
-from .schemas import BasePodcastModel, EpisodeModel, EpisodeParams, PodcastDetailModel
+from .schemas import Episode, EpisodeParams, PodcastBase, PodcastDetail
 
 router = APIRouter()
 
@@ -16,7 +16,7 @@ router = APIRouter()
 @router.get(
     "",
     summary="Get all podcasts",
-    response_model=list[BasePodcastModel],
+    response_model=list[PodcastBase],
     status_code=status.HTTP_200_OK,
     responses={status.HTTP_200_OK: {"description": "All podcasts"}},
 )
@@ -27,7 +27,7 @@ async def get_podcasts(db: DB) -> Any:
 @router.get(
     "/home",
     summary="Get featured podcasts",
-    response_model=list[BasePodcastModel],
+    response_model=list[PodcastBase],
     status_code=status.HTTP_200_OK,
     responses={status.HTTP_200_OK: {"description": "Featured podcasts"}},
 )
@@ -52,9 +52,12 @@ async def get_episodes(db: DB) -> Any:
     response_class=Response,
     status_code=status.HTTP_200_OK,
     responses={
-        status.HTTP_200_OK: {"description": "RSS feed"},
+        status.HTTP_200_OK: {
+            "description": "RSS feed",
+            "content": {"application/rss+xml": {"schema": {"type": "string"}}},
+        },
         status.HTTP_404_NOT_FOUND: {
-            "model": ErrorModel,
+            "model": Error,
             "description": "Podcast not found",
         },
     },
@@ -73,12 +76,12 @@ async def generate_feed(podcast_slug: str, db: DB) -> Response:
 @router.get(
     "/{podcast_slug}",
     summary="Get podcast by slug",
-    response_model=PodcastDetailModel,
+    response_model=PodcastDetail,
     status_code=status.HTTP_200_OK,
     responses={
         status.HTTP_200_OK: {"description": "Podcast with episodes"},
         status.HTTP_404_NOT_FOUND: {
-            "model": ErrorModel,
+            "model": Error,
             "description": "Podcast not found",
         },
     },
@@ -94,12 +97,12 @@ async def get_podcast(podcast_slug: str, db: DB) -> Any:
 @router.get(
     "/{podcast_slug}/{episode_slug}",
     summary="Get episode by slug",
-    response_model=EpisodeModel,
+    response_model=Episode,
     status_code=status.HTTP_200_OK,
     responses={
         status.HTTP_200_OK: {"description": "Episode details"},
         status.HTTP_404_NOT_FOUND: {
-            "model": ErrorModel,
+            "model": Error,
             "description": "Episode not found",
         },
     },

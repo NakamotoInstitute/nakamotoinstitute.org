@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { Author } from "@/lib/api/schemas/authors";
+import { Author } from "@/lib/api";
 import { urls } from "@/lib/urls";
 
 import { RenderedItemsList, RenderedItemsListProps } from "./RenderedItemsList";

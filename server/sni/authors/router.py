@@ -3,10 +3,10 @@ from typing import Any
 from fastapi import APIRouter, HTTPException, status
 
 from sni.shared.dependencies import DB, Locale
-from sni.shared.schemas import ErrorModel, SlugParamModel
+from sni.shared.schemas import Error, SlugParam
 
 from . import service
-from .schemas.response import AuthorDetailModel, AuthorModel
+from .schemas.response import Author, AuthorDetail
 
 router = APIRouter()
 
@@ -14,7 +14,7 @@ router = APIRouter()
 @router.get(
     "",
     summary="Get all authors",
-    response_model=list[AuthorModel],
+    response_model=list[Author],
     status_code=status.HTTP_200_OK,
     responses={status.HTTP_200_OK: {"description": "All authors"}},
 )
@@ -25,7 +25,7 @@ async def get_authors(locale: Locale, db: DB) -> Any:
 @router.get(
     "/params",
     summary="Get author params",
-    response_model=list[SlugParamModel],
+    response_model=list[SlugParam],
     status_code=status.HTTP_200_OK,
     responses={status.HTTP_200_OK: {"description": "Author slugs for SSG"}},
 )
@@ -37,12 +37,12 @@ async def get_author_params(db: DB) -> Any:
 @router.get(
     "/{slug}",
     summary="Get author by slug",
-    response_model=AuthorDetailModel,
+    response_model=AuthorDetail,
     status_code=status.HTTP_200_OK,
     responses={
         status.HTTP_200_OK: {"description": "Author with works"},
         status.HTTP_404_NOT_FOUND: {
-            "model": ErrorModel,
+            "model": Error,
             "description": "Author not found",
         },
     },

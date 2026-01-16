@@ -5,7 +5,7 @@ import { Trans } from "react-i18next/TransWithoutContext";
 import { PageLayout } from "@/app/components/PageLayout";
 import { Rehype } from "@/app/components/Rehype";
 import { RenderedItemsList } from "@/app/components/RenderedItemsList";
-import { getLibraryDoc, getLibraryParams } from "@/lib/api/library";
+import { api, Locale, TranslationSchema } from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { getDir } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
@@ -22,9 +22,12 @@ export async function generateMetadata(
 
   const { locale, slug } = params;
 
-  const doc = await getLibraryDoc(slug, locale);
+  const { data: doc } = await api.library.getLibraryDoc({
+    path: { slug },
+    query: { locale },
+  });
   const languages = doc.translations.reduce(
-    (acc, t) => {
+    (acc: Record<Locale, string>, t: TranslationSchema) => {
       acc[t.locale] = urls(t.locale).library.doc(t.slug);
       return acc;
     },
@@ -48,10 +51,13 @@ export default async function LibraryDetail(
   const { slug, locale } = params;
 
   const { t } = await i18nTranslation(locale);
-  const doc = await getLibraryDoc(slug, locale);
+  const { data: doc } = await api.library.getLibraryDoc({
+    path: { slug },
+    query: { locale },
+  });
 
   const generateHref = (l: Locale) => {
-    const translation = doc.translations.find((t) => t.locale === l);
+    const translation = doc.translations.find((t: TranslationSchema) => t.locale === l);
     if (translation) {
       return urls(l).library.doc(translation.slug);
     }
@@ -135,5 +141,6 @@ export default async function LibraryDetail(
 }
 
 export async function generateStaticParams() {
-  return getLibraryParams();
+  const { data } = await api.library.getLibraryParams();
+  return data;
 }

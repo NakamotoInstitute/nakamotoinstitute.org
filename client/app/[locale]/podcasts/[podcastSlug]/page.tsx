@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
 import { locales } from "@/i18n";
-import { getPodcast, getPodcasts } from "@/lib/api/podcasts";
+import { api, EpisodeBase, PodcastBase } from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { externalUrls, urls } from "@/lib/urls";
@@ -20,7 +20,9 @@ export async function generateMetadata(
 
   const { locale, podcastSlug } = params;
 
-  const podcast = await getPodcast(podcastSlug);
+  const { data: podcast } = await api.podcasts.getPodcast({
+    path: { podcast_slug: podcastSlug },
+  });
   const generateHref = (l: Locale) => urls(l).podcasts.show(podcastSlug);
   const languages = generateHrefLangs(locales, generateHref);
 
@@ -41,7 +43,9 @@ export default async function PodcastIndex(
   const { locale, podcastSlug } = params;
 
   const { t } = await i18nTranslation(locale);
-  const podcast = await getPodcast(podcastSlug);
+  const { data: podcast } = await api.podcasts.getPodcast({
+    path: { podcast_slug: podcastSlug },
+  });
   const generateHref = (l: Locale) => urls(l).podcasts.show(podcastSlug);
 
   return (
@@ -111,7 +115,7 @@ export default async function PodcastIndex(
         </div>
       </section>
       <section>
-        {podcast.episodes.map((e) => (
+        {podcast.episodes.map((e: EpisodeBase) => (
           <EpisodeListing
             key={e.slug}
             locale={locale}
@@ -125,9 +129,9 @@ export default async function PodcastIndex(
 }
 
 export async function generateStaticParams() {
-  const podcasts = await getPodcasts();
+  const { data: podcasts } = await api.podcasts.getPodcasts();
   return getLocaleParams((locale) =>
-    podcasts.map((p) => ({
+    podcasts.map((p: PodcastBase) => ({
       locale,
       podcastSlug: p.slug,
     })),

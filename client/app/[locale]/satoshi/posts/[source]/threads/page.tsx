@@ -1,12 +1,7 @@
 import { Metadata } from "next";
 
 import { locales } from "@/i18n";
-import { getForumThreadsBySource } from "@/lib/api/posts";
-import {
-  FORUM_POST_SOURCES,
-  ForumPostSource,
-  zForumPostSource,
-} from "@/lib/api/schemas/posts";
+import { api, FORUM_POST_SOURCES, ForumPostSource, ForumThreadBase } from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
@@ -47,7 +42,9 @@ export default async function PostSourceThreadsIndex(
   const { source, locale } = params;
 
   const { t } = await i18nTranslation(locale);
-  const threads = await getForumThreadsBySource(source);
+  const { data: threads } = await api.satoshi.getForumThreadsBySource({
+    path: { source },
+  });
 
   const sourceLinks = [
     { name: t("all"), href: urls(locale).satoshi.posts.threadsIndex },
@@ -82,7 +79,7 @@ export default async function PostSourceThreadsIndex(
       }}
     >
       <section>
-        {threads.map((t) => (
+        {threads.map((t: ForumThreadBase) => (
           <ContentListing
             key={t.id}
             locale={locale}
@@ -101,6 +98,6 @@ export default async function PostSourceThreadsIndex(
 
 export function generateStaticParams() {
   return getLocaleParams((locale) =>
-    zForumPostSource.options.map((source) => ({ locale, source })),
+    FORUM_POST_SOURCES.map((source) => ({ locale, source })),
   );
 }

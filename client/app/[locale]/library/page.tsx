@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
 import { locales } from "@/i18n";
-import { getLibraryDocs } from "@/lib/api/library";
+import { api, DocumentIndex } from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
@@ -37,7 +37,7 @@ export default async function LibraryIndex(props: LocaleParams) {
   const { locale } = params;
 
   const { t } = await i18nTranslation(locale);
-  const docs = await getLibraryDocs(locale);
+  const { data: docs } = await api.library.getLibraryDocs({ query: { locale } });
 
   return (
     <PageLayout t={t} locale={locale} generateHref={generateHref}>
@@ -46,7 +46,7 @@ export default async function LibraryIndex(props: LocaleParams) {
       </PageHeader>
       <section>
         {docs.length > 0 ? (
-          docs.map((doc) => (
+          docs.map((doc: DocumentIndex) => (
             <DocListing key={doc.slug} doc={doc} locale={locale} t={t} />
           ))
         ) : (

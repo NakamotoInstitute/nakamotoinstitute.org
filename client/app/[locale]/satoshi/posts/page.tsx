@@ -1,8 +1,7 @@
 import { Metadata } from "next";
 
 import { locales } from "@/i18n";
-import { getSatoshiPosts } from "@/lib/api/posts";
-import { FORUM_POST_SOURCES } from "@/lib/api/schemas/posts";
+import { api, FORUM_POST_SOURCES, SatoshiForumPost } from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
@@ -38,7 +37,7 @@ export default async function PostsIndex(props: LocaleParams) {
   const { locale } = params;
 
   const { t } = await i18nTranslation(locale);
-  const posts = await getSatoshiPosts();
+  const { data: posts } = await api.satoshi.getForumPosts();
 
   const sourceLinks = [
     { name: t("all"), href: urls(locale).satoshi.posts.index, active: true },
@@ -65,7 +64,7 @@ export default async function PostsIndex(props: LocaleParams) {
       }}
     >
       <section>
-        {posts.map((p) => (
+        {posts.map((p: SatoshiForumPost) => (
           <ContentListing
             key={p.satoshiId}
             locale={locale}

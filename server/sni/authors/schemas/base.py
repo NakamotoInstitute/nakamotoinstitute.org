@@ -8,7 +8,7 @@ class AuthorMDModel(BaseModel):
     sort_name: str
 
 
-class AuthorModel(ORMModel):
+class Author(ORMModel):
     slug: str
     name: str
     sort_name: str

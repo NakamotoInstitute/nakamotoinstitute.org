@@ -1,12 +1,7 @@
 import { Metadata } from "next";
 
 import { locales } from "@/i18n";
-import { getForumThreads } from "@/lib/api/posts";
-import {
-  FORUM_POST_SOURCES,
-  ForumPostSource,
-  ForumThread,
-} from "@/lib/api/schemas/posts";
+import { api, FORUM_POST_SOURCES, ForumPostSource, ForumThreadBase } from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
@@ -40,16 +35,19 @@ export default async function PostThreadsIndex(props: LocaleParams) {
   const { locale } = params;
 
   const { t } = await i18nTranslation(locale);
-  const threads = await getForumThreads();
+  const { data: threads } = await api.satoshi.getForumThreads();
   const sortedThreads = threads.reduce(
-    (acc, thread) => {
-      acc[thread.source].push(thread);
+    (
+      acc: { [K in ForumPostSource]: ForumThreadBase[] },
+      thread: ForumThreadBase,
+    ) => {
+      acc[thread.source as ForumPostSource].push(thread);
       return acc;
     },
     Object.fromEntries(
-      FORUM_POST_SOURCES.map((source) => [source, [] as ForumThread[]]),
+      FORUM_POST_SOURCES.map((source) => [source, [] as ForumThreadBase[]]),
     ) as {
-      [K in ForumPostSource]: ForumThread[];
+      [K in ForumPostSource]: ForumThreadBase[];
     },
   );
 
@@ -92,7 +90,7 @@ export default async function PostThreadsIndex(props: LocaleParams) {
               <h2 className="text-2xl font-bold">
                 {formatPostSource(typedSource)}
               </h2>
-              {sourceThreads.map((thread) => (
+              {(sourceThreads as ForumThreadBase[]).map((thread: ForumThreadBase) => (
                 <ContentListing
                   key={thread.id}
                   locale={locale}

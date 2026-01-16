@@ -5,7 +5,7 @@ import { Markdown } from "@/app/components/Markdown";
 import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
 import { locales } from "@/i18n";
-import { getAuthor } from "@/lib/api/authors";
+import { api, DocumentIndex } from "@/lib/api";
 import { getPage } from "@/lib/content";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
@@ -36,10 +36,10 @@ export default async function FinneyIndex(props: LocaleParams) {
 
   const { locale } = params;
 
-  const [{ t }, content, { library }] = await Promise.all([
+  const [{ t }, content, { data: { library } }] = await Promise.all([
     i18nTranslation(locale),
     getPage("finney", locale),
-    getAuthor("hal-finney", "en"),
+    api.authors.getAuthor({ path: { slug: "hal-finney" }, query: { locale: "en" } }),
   ]);
 
   const birthDate = new Date(Date.UTC(1956, 4, 4));
@@ -56,7 +56,7 @@ export default async function FinneyIndex(props: LocaleParams) {
       <hr className="my-4" />
       <h2 className="mb-2 text-2xl font-medium">Library</h2>
       <ul className="mb-4">
-        {library.map((doc) => (
+        {library.map((doc: DocumentIndex) => (
           <li key={doc.slug} className="mb-2">
             <Link
               className="text-cardinal hover:underline"

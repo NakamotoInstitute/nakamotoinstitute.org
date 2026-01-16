@@ -3,14 +3,14 @@ from typing import Any
 from fastapi import APIRouter, HTTPException, status
 
 from sni.shared.dependencies import DB, Locale
-from sni.shared.schemas import ErrorModel, SlugParamModel
+from sni.shared.schemas import Error, SlugParam
 
 from . import service
 from .schemas import (
-    DocumentIndexModel,
-    DocumentModel,
-    DocumentNodeModel,
-    DocumentNodeParamsModel,
+    Document,
+    DocumentIndex,
+    DocumentNode,
+    DocumentNodeParams,
 )
 
 router = APIRouter()
@@ -19,7 +19,7 @@ router = APIRouter()
 @router.get(
     "",
     summary="Get all documents",
-    response_model=list[DocumentIndexModel],
+    response_model=list[DocumentIndex],
     status_code=status.HTTP_200_OK,
     responses={status.HTTP_200_OK: {"description": "All documents"}},
 )
@@ -30,7 +30,7 @@ async def get_library_docs(locale: Locale, db: DB) -> Any:
 @router.get(
     "/params",
     summary="Get document params",
-    response_model=list[SlugParamModel],
+    response_model=list[SlugParam],
     status_code=status.HTTP_200_OK,
     responses={status.HTTP_200_OK: {"description": "Doc slugs for SSG"}},
 )
@@ -42,7 +42,7 @@ async def get_library_params(db: DB) -> Any:
 @router.get(
     "/params/nodes",
     summary="Get document node params",
-    response_model=list[DocumentNodeParamsModel],
+    response_model=list[DocumentNodeParams],
     status_code=status.HTTP_200_OK,
     responses={status.HTTP_200_OK: {"description": "Node slugs for SSG"}},
 )
@@ -54,7 +54,7 @@ async def get_library_node_params(db: DB) -> Any:
 @router.get(
     "/home",
     summary="Get featured documents",
-    response_model=list[DocumentIndexModel],
+    response_model=list[DocumentIndex],
     status_code=status.HTTP_200_OK,
     responses={status.HTTP_200_OK: {"description": "Featured docs"}},
 )
@@ -71,12 +71,12 @@ async def get_home_library_docs(locale: Locale, db: DB) -> Any:
 @router.get(
     "/{slug}",
     summary="Get document by slug",
-    response_model=DocumentModel,
+    response_model=Document,
     status_code=status.HTTP_200_OK,
     responses={
         status.HTTP_200_OK: {"description": "Document with content"},
         status.HTTP_404_NOT_FOUND: {
-            "model": ErrorModel,
+            "model": Error,
             "description": "Document not found",
         },
     },
@@ -92,12 +92,12 @@ async def get_library_doc(slug: str, locale: Locale, db: DB) -> Any:
 @router.get(
     "/{doc_slug}/{slug}",
     summary="Get document node by slug",
-    response_model=DocumentNodeModel,
+    response_model=DocumentNode,
     status_code=status.HTTP_200_OK,
     responses={
         status.HTTP_200_OK: {"description": "Document section"},
         status.HTTP_404_NOT_FOUND: {
-            "model": ErrorModel,
+            "model": Error,
             "description": "Document node not found",
         },
     },

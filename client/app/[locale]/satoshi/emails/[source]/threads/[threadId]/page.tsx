@@ -4,8 +4,7 @@ import { notFound } from "next/navigation";
 
 import { PageLayout } from "@/app/components/PageLayout";
 import { locales } from "@/i18n";
-import { getEmailThread } from "@/lib/api/emails";
-import { EmailSource, EmailWithParent } from "@/lib/api/schemas/emails";
+import { api, EmailSource, type ThreadEmail as ThreadEmailType } from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
@@ -33,7 +32,9 @@ export async function generateMetadata(
 
   const { locale, source, threadId } = params;
 
-  const threadData = await getEmailThread(source, threadId);
+  const { data: threadData } = await api.satoshi.getEmailThreadBySource({
+    path: { source, thread_id: parseInt(threadId) },
+  });
   const { t } = await i18nTranslation(locale);
   const languages = generateHrefLangs(locales, generateHref(source, threadId));
 
@@ -49,7 +50,7 @@ export async function generateMetadata(
 type ThreadEmailProps = {
   t: TFunction<string, string>;
   locale: Locale;
-  email: EmailWithParent;
+  email: ThreadEmailType;
   odd: boolean;
   satoshiOnly: boolean;
 };
@@ -122,7 +123,10 @@ export default async function EmailSourceThreadDetail(
 
   const satoshiOnly = view === "satoshi";
 
-  const threadData = await getEmailThread(source, threadId, satoshiOnly);
+  const { data: threadData } = await api.satoshi.getEmailThreadBySource({
+    path: { source, thread_id: parseInt(threadId) },
+    query: satoshiOnly ? { satoshi: true } : undefined,
+  });
   if (!threadData) {
     return notFound();
   }
@@ -165,7 +169,7 @@ export default async function EmailSourceThreadDetail(
           source={thread.source}
         />
       </ThreadPageHeader>
-      {emails.map((e, index) => (
+      {emails.map((e: ThreadEmailType, index: number) => (
         <ThreadEmail
           key={e.sourceId}
           t={t}

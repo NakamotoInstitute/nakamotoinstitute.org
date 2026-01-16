@@ -5,7 +5,7 @@ import { ButtonLink } from "@/app/components/Button";
 import { PageLayout } from "@/app/components/PageLayout";
 import { Rehype } from "@/app/components/Rehype";
 import { locales } from "@/i18n";
-import { getEpisode, getEpisodes } from "@/lib/api/podcasts";
+import { api, EpisodeParams } from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { externalUrls, urls } from "@/lib/urls";
@@ -24,7 +24,9 @@ export async function generateMetadata(
 
   const { locale, podcastSlug, episodeSlug } = params;
 
-  const episode = await getEpisode(podcastSlug, episodeSlug);
+  const { data: episode } = await api.podcasts.getEpisode({
+    path: { podcast_slug: podcastSlug, episode_slug: episodeSlug },
+  });
   const generateHref = makeGenerateHref(podcastSlug, episodeSlug);
   const languages = generateHrefLangs(locales, generateHref);
 
@@ -45,7 +47,9 @@ export default async function EpisodeDetail(
   const { locale, podcastSlug, episodeSlug } = params;
 
   const { t } = await i18nTranslation(locale);
-  const episode = await getEpisode(podcastSlug, episodeSlug);
+  const { data: episode } = await api.podcasts.getEpisode({
+    path: { podcast_slug: podcastSlug, episode_slug: episodeSlug },
+  });
   const generateHref = makeGenerateHref(podcastSlug, episodeSlug);
 
   return (
@@ -156,9 +160,9 @@ export default async function EpisodeDetail(
 }
 
 export async function generateStaticParams() {
-  const episodes = await getEpisodes();
+  const { data: episodes } = await api.podcasts.getEpisodes();
   return getLocaleParams((locale) =>
-    episodes.map((e) => ({
+    episodes.map((e: EpisodeParams) => ({
       locale,
       podcastSlug: e.podcastSlug,
       episodeSlug: e.episodeSlug,

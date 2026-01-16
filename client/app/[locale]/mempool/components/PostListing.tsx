@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Trans } from "react-i18next/TransWithoutContext";
 
 import { AuthorsLinks } from "@/app/components/AuthorsLinks";
-import { MempoolPostIndex } from "@/lib/api/schemas/mempool";
+import { MempoolPostIndex } from "@/lib/api";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 

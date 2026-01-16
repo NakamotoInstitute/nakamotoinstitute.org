@@ -1,18 +1,16 @@
 import datetime
 import os
 import re
-from typing import Any, Literal, Union
+from typing import Any, Union
 
-from pydantic import AliasPath, BaseModel, Field, field_serializer, model_validator
+from pydantic import AliasPath, BaseModel, Field, model_validator
 
-from sni.constants import DocumentFormats, Locales
-from sni.shared.schemas import SlugParamModel
+from sni.constants import DocumentFormats, Granularity, Locale
+from sni.shared.schemas import SlugParam
 
-from ..authors.schemas.base import AuthorModel
+from ..authors.schemas.base import Author
 from ..shared.schemas import ORMModel, TranslationSchema
-from ..translators.schemas import TranslatorModel
-
-Granularity = Literal["DAY", "MONTH", "YEAR"]
+from ..translators.schemas import Translator
 
 
 class DocumentCanonicalMDModel(BaseModel):
@@ -53,7 +51,7 @@ class DocumentCanonicalMDModel(BaseModel):
         return data
 
 
-class DocumentFormat(BaseModel):
+class DocumentFormatMD(BaseModel):
     type: DocumentFormats
     volume: int | None = None
 
@@ -64,7 +62,7 @@ class DocumentMDModel(BaseModel):
     external: str | None = None
     sort_title: str | None = None
     image_alt: str | None = None
-    formats: list[DocumentFormat] = []
+    formats: list[DocumentFormatMD] = []
 
     @model_validator(mode="after")
     def check_sort_title(self) -> "DocumentMDModel":
@@ -153,33 +151,29 @@ class BookMDNodeModel(BaseModel):
     nav_title: str | None = None
 
 
-class DocumentFormatModel(ORMModel):
+class DocumentFormat(ORMModel):
     url: str
     type: DocumentFormats
     volume: int | None = None
 
 
-class DocumentBaseModel(ORMModel):
-    locale: Locales
+class DocumentBase(ORMModel):
+    locale: Locale
     title: str
     slug: str
     date: datetime.date = Field(validation_alias=AliasPath("document", "date"))
-    granularity: str = Field(validation_alias=AliasPath("document", "granularity"))
-    external: str | None
-    authors: list[AuthorModel] = Field(
-        validation_alias=AliasPath("document", "authors")
+    granularity: Granularity = Field(
+        validation_alias=AliasPath("document", "granularity")
     )
+    external: str | None
+    authors: list[Author] = Field(validation_alias=AliasPath("document", "authors"))
     translations: list[TranslationSchema]
-    formats: list[DocumentFormatModel] = Field(validation_alias="serialized_formats")
-
-    @field_serializer("date")
-    def serialize_date(self, date: datetime.date) -> str:
-        return date.isoformat()
+    formats: list[DocumentFormat] = Field(validation_alias="serialized_formats")
 
 
-class DocumentIndexModel(DocumentBaseModel):
+class DocumentIndex(DocumentBase):
     has_content: bool = False
-    flattened_nodes: list["DocumentNodeBaseModel"] = Field(serialization_alias="nodes")
+    flattened_nodes: list["DocumentNodeBase"] = Field(serialization_alias="nodes")
 
     @model_validator(mode="before")
     @classmethod
@@ -188,13 +182,13 @@ class DocumentIndexModel(DocumentBaseModel):
         return data
 
 
-class DocumentNodeBaseModel(ORMModel):
+class DocumentNodeBase(ORMModel):
     slug: str
     title: str
     nav_title: str | None = None
 
 
-class DocumentModel(DocumentBaseModel):
+class Document(DocumentBase):
     html_content: str = Field(
         validation_alias=AliasPath("content", "html_content"), alias="content"
     )
@@ -207,30 +201,30 @@ class DocumentModel(DocumentBaseModel):
         validation_alias=AliasPath("document", "has_math"),
         serialization_alias="hasMath",
     )
-    translators: list[TranslatorModel]
-    entry_node: DocumentNodeBaseModel | None
+    translators: list[Translator]
+    entry_node: DocumentNodeBase | None
     purchase_link: str | None = Field(
         validation_alias=AliasPath("document", "purchase_link")
     )
 
 
-class DocumentNodeModel(ORMModel):
+class DocumentNode(ORMModel):
     heading: str | None = None
     title: str
     subheading: str | None = None
     doc_title: str = Field(validation_alias=AliasPath("document_translation", "title"))
     doc_slug: str = Field(validation_alias=AliasPath("document_translation", "slug"))
-    authors: list[AuthorModel] = Field(
+    authors: list[Author] = Field(
         validation_alias=AliasPath("document_translation", "document", "authors")
     )
     translations: list[TranslationSchema] = Field(
         validation_alias=AliasPath("document_translation", "translations")
     )
     html_content: str = Field(alias="content")
-    root_parent: DocumentNodeBaseModel | None = Field(alias="root")
-    next_node: DocumentNodeBaseModel | None = Field(alias="next")
-    previous_node: DocumentNodeBaseModel | None = Field(alias="previous")
+    root_parent: DocumentNodeBase | None = Field(alias="root")
+    next_node: DocumentNodeBase | None = Field(alias="next")
+    previous_node: DocumentNodeBase | None = Field(alias="previous")
 
 
-class DocumentNodeParamsModel(SlugParamModel):
+class DocumentNodeParams(SlugParam):
     node_slug: str

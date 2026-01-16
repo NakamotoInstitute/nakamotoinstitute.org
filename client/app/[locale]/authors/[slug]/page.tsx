@@ -2,7 +2,12 @@ import { Metadata } from "next";
 
 import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
-import { getAuthor, getAuthorParams } from "@/lib/api/authors";
+import {
+  api,
+  DocumentIndex,
+  Locale,
+  MempoolPostIndex,
+} from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { urls } from "@/lib/urls";
 
@@ -18,9 +23,14 @@ export async function generateMetadata(
 
   const { locale, slug } = params;
 
-  const { author, locales } = await getAuthor(slug, locale);
+  const {
+    data: { author, locales },
+  } = await api.authors.getAuthor({
+    path: { slug },
+    query: { locale },
+  });
   const languages = locales.reduce(
-    (acc, loc) => {
+    (acc: Record<Locale, string>, loc: Locale) => {
       acc[loc] = urls(loc).authors.detail(slug);
       return acc;
     },
@@ -44,7 +54,12 @@ export default async function AuthorDetail(
   const { slug, locale } = params;
 
   const { t } = await i18nTranslation(locale);
-  const { author, mempool, library } = await getAuthor(slug, locale);
+  const {
+    data: { author, mempool, library },
+  } = await api.authors.getAuthor({
+    path: { slug },
+    query: { locale },
+  });
 
   const generateHref = (l: Locale) => urls(l).authors.detail(slug);
 
@@ -62,7 +77,7 @@ export default async function AuthorDetail(
       {library.length > 0 ? (
         <section>
           <h2 className="mb-5 text-2xl font-bold">{t("library")}</h2>
-          {library.map((doc) => (
+          {library.map((doc: DocumentIndex) => (
             <DocListing
               className="first-of-type:border-t-0 first-of-type:pt-0"
               key={doc.slug}
@@ -76,7 +91,7 @@ export default async function AuthorDetail(
       {mempool.length > 0 ? (
         <section>
           <h2 className="mb-5 text-2xl font-bold">{t("mempool")}</h2>
-          {mempool.map((post) => (
+          {mempool.map((post: MempoolPostIndex) => (
             <PostListing
               className="first-of-type:border-t-0 first-of-type:pt-0"
               key={post.slug}
@@ -92,5 +107,6 @@ export default async function AuthorDetail(
 }
 
 export async function generateStaticParams() {
-  return getAuthorParams();
+  const { data } = await api.authors.getAuthorParams();
+  return data;
 }

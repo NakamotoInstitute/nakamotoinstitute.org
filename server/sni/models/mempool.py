@@ -16,7 +16,7 @@ from sqlalchemy import (
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from sni.config import settings
-from sni.constants import Locales
+from sni.constants import Locale
 from sni.database import Base
 
 if TYPE_CHECKING:
@@ -83,8 +83,8 @@ class BlogPostTranslation(Base):
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     content_id: Mapped[int] = mapped_column(ForeignKey("content.id"), unique=True)
     content: Mapped["HTMLRenderableContent"] = relationship(uselist=False)
-    locale: Mapped[Locales] = mapped_column(
-        Enum(Locales, values_callable=lambda x: [e.value for e in x]), nullable=False
+    locale: Mapped[Locale] = mapped_column(
+        Enum(Locale, values_callable=lambda x: [e.value for e in x]), nullable=False
     )
     title: Mapped[str] = mapped_column(String, nullable=False)
     subtitle: Mapped[str] = mapped_column(String, nullable=True)
@@ -153,8 +153,8 @@ class BlogSeriesTranslation(Base):
     content: Mapped["HTMLRenderableContent"] = relationship(uselist=False)
     title: Mapped[str] = mapped_column(String, nullable=False)
     slug: Mapped[str] = mapped_column(String, unique=True, nullable=False)
-    locale: Mapped[Locales] = mapped_column(
-        Enum(Locales, values_callable=lambda x: [e.value for e in x]), nullable=False
+    locale: Mapped[Locale] = mapped_column(
+        Enum(Locale, values_callable=lambda x: [e.value for e in x]), nullable=False
     )
     blog_series_id: Mapped[int] = mapped_column(ForeignKey("blog_series.id"))
     blog_series: Mapped[BlogSeries] = relationship(back_populates="translations")

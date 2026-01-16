@@ -1,12 +1,7 @@
 import { Metadata } from "next";
 
 import { locales } from "@/i18n";
-import { getEmailThreadsBySource } from "@/lib/api/emails";
-import {
-  EMAIL_SOURCES,
-  EmailSource,
-  zEmailSource,
-} from "@/lib/api/schemas/emails";
+import { api, EMAIL_SOURCES, EmailSource, EmailThreadBase } from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
@@ -47,7 +42,9 @@ export default async function EmailSourceThreadsIndex(
   const { locale, source } = params;
 
   const { t } = await i18nTranslation(locale);
-  const threads = await getEmailThreadsBySource(source);
+  const { data: threads } = await api.satoshi.getEmailThreadsBySource({
+    path: { source },
+  });
 
   const sourceLinks = [
     { name: t("all"), href: urls(locale).satoshi.emails.index },
@@ -79,7 +76,7 @@ export default async function EmailSourceThreadsIndex(
       }}
     >
       <section>
-        {threads.map((t) => (
+        {threads.map((t: EmailThreadBase) => (
           <ContentListing
             key={t.id}
             locale={locale}
@@ -98,6 +95,6 @@ export default async function EmailSourceThreadsIndex(
 
 export function generateStaticParams() {
   return getLocaleParams((locale) =>
-    zEmailSource.options.map((source) => ({ locale, source })),
+    EMAIL_SOURCES.map((source) => ({ locale, source })),
   );
 }

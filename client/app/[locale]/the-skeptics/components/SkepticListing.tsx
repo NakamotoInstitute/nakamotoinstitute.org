@@ -3,7 +3,7 @@ import { TFunction } from "i18next";
 import Link from "next/link";
 
 import { Rehype } from "@/app/components/Rehype";
-import { Price, Skeptic } from "@/lib/api/schemas/skeptics";
+import { Price, Skeptic } from "@/lib/api";
 import { cdnUrl } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 import { calculateDCA } from "@/utils/prices";

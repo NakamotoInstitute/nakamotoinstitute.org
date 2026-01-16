@@ -5,8 +5,7 @@ import { notFound } from "next/navigation";
 
 import { PageLayout } from "@/app/components/PageLayout";
 import { locales } from "@/i18n";
-import { getForumThread } from "@/lib/api/posts";
-import { ForumPost, ForumPostSource } from "@/lib/api/schemas/posts";
+import { api, ForumPost, ForumPostSource } from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
@@ -38,7 +37,9 @@ export async function generateMetadata(
 
   const { locale, source, threadId } = params;
 
-  const threadData = await getForumThread(source, threadId);
+  const { data: threadData } = await api.satoshi.getForumThreadBySource({
+    path: { source, thread_id: parseInt(threadId) },
+  });
   const { t } = await i18nTranslation(locale);
   const languages = generateHrefLangs(locales, generateHref(source, threadId));
 
@@ -77,10 +78,10 @@ async function ThreadPost({
             "relative",
             {
               "before:absolute before:-left-6 before:content-['↳']":
-                post.nestedLevel > 0,
-              "ml-6": post.nestedLevel === 1,
-              "ml-12": post.nestedLevel === 2,
-              "ml-18": post.nestedLevel === 3,
+                (post.nestedLevel ?? 0) > 0,
+              "ml-6": (post.nestedLevel ?? 0) === 1,
+              "ml-12": (post.nestedLevel ?? 0) === 2,
+              "ml-18": (post.nestedLevel ?? 0) === 3,
             },
           ],
       )}
@@ -138,7 +139,10 @@ export default async function PostSourceThreadDetail(
   const { source, threadId, locale } = params;
 
   const satoshiOnly = view === "satoshi";
-  const threadData = await getForumThread(source, threadId, view === "satoshi");
+  const { data: threadData } = await api.satoshi.getForumThreadBySource({
+    path: { source, thread_id: parseInt(threadId) },
+    query: satoshiOnly ? { satoshi: true } : undefined,
+  });
   if (!threadData) {
     return notFound();
   }
@@ -184,7 +188,7 @@ export default async function PostSourceThreadDetail(
           source={thread.source}
         />
       </ThreadPageHeader>
-      {posts.map((p, index) => (
+      {posts.map((p: ForumPost, index: number) => (
         <ThreadPost
           key={p.sourceId}
           t={t}

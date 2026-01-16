@@ -1,8 +1,7 @@
 import { Metadata } from "next";
 
 import { locales } from "@/i18n";
-import { getSatoshiEmails } from "@/lib/api/emails";
-import { EMAIL_SOURCES } from "@/lib/api/schemas/emails";
+import { api, EMAIL_SOURCES, SatoshiEmail } from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
@@ -39,7 +38,7 @@ export default async function EmailsIndex(props: LocaleParams) {
   const { locale } = params;
 
   const { t } = await i18nTranslation(locale);
-  const emails = await getSatoshiEmails();
+  const { data: emails } = await api.satoshi.getEmails();
 
   const sourceLinks: SourceLink[] = [
     { name: t("all"), active: true },
@@ -66,7 +65,7 @@ export default async function EmailsIndex(props: LocaleParams) {
       }}
     >
       <section>
-        {emails.map((e) => (
+        {emails.map((e: SatoshiEmail) => (
           <ContentListing
             key={e.satoshiId}
             locale={locale}

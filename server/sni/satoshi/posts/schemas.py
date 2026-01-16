@@ -1,12 +1,10 @@
 import datetime
-from typing import Literal
 
 from pydantic import AliasPath, BaseModel, ConfigDict, Field, field_validator
 from pydantic.alias_generators import to_camel
 
+from sni.constants import ForumPostSource
 from sni.shared.schemas import IterableRootModel, ORMModel
-
-ForumPostSource = Literal["p2pfoundation", "bitcointalk"]
 
 
 class ForumThreadJSONModel(BaseModel):
@@ -54,7 +52,7 @@ class ForumPostsJSONModel(IterableRootModel):
     root: list[ForumPostJSONModel]
 
 
-class ForumPostBaseModel(ORMModel):
+class ForumPostBase(ORMModel):
     poster_name: str
     poster_url: str | None
     subject: str
@@ -66,33 +64,33 @@ class ForumPostBaseModel(ORMModel):
     source_id: str
     nested_level: int = 0
     satoshi_id: int | None
-    source: str = Field(validation_alias=AliasPath("thread", "source"))
+    source: ForumPostSource = Field(validation_alias=AliasPath("thread", "source"))
 
 
-class ForumThreadBaseModel(ForumThreadJSONModel, ORMModel):
+class ForumThreadBase(ForumThreadJSONModel, ORMModel):
     pass
 
 
-class ForumPostModel(ForumPostBaseModel):
+class ForumPost(ForumPostBase):
     pass
 
 
-class ForumThreadModel(BaseModel):
+class ForumThread(BaseModel):
     model_config = ConfigDict(alias_generator=to_camel)
 
-    posts: list[ForumPostModel]
-    thread: ForumThreadBaseModel
-    previous: ForumThreadBaseModel | None
-    next: ForumThreadBaseModel | None
+    posts: list[ForumPost]
+    thread: ForumThreadBase
+    previous: ForumThreadBase | None
+    next: ForumThreadBase | None
 
 
-class SatoshiForumPostModel(ForumPostBaseModel):
+class SatoshiForumPost(ForumPostBase):
     satoshi_id: int
 
 
-class ForumPostDetailModel(BaseModel):
+class ForumPostDetail(BaseModel):
     model_config = ConfigDict(alias_generator=to_camel)
 
-    post: SatoshiForumPostModel
-    previous: SatoshiForumPostModel | None
-    next: SatoshiForumPostModel | None
+    post: SatoshiForumPost
+    previous: SatoshiForumPost | None
+    next: SatoshiForumPost | None

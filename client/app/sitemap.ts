@@ -1,18 +1,22 @@
 import type { MetadataRoute } from "next";
 
 import { locales } from "@/i18n";
-import { getAuthorParams } from "@/lib/api/authors";
-import { getLibraryDocs } from "@/lib/api/library";
-import { getMempoolPosts, getMempoolSeriesParams } from "@/lib/api/mempool";
-import { getEpisodes, getPodcasts } from "@/lib/api/podcasts";
+import {
+  api,
+  PodcastBase,
+  DocumentIndex,
+  EpisodeParams,
+  MempoolPostIndex,
+  SlugParam,
+} from "@/lib/api";
 import { urls } from "@/lib/urls";
 import { LocalizedUrlObject, createLocalizedUrlObject } from "@/utils/sitemap";
 import { formatLocale } from "@/utils/strings";
 
 async function getAuthorUrls(): Promise<MetadataRoute.Sitemap> {
-  const authors = await getAuthorParams();
+  const { data: authors } = await api.authors.getAuthorParams();
   const cleanedAuthors = authors.reduce(
-    (acc, author) => {
+    (acc: { [slug: string]: Locale[] }, author: SlugParam) => {
       if (!acc[author.slug]) {
         acc[author.slug] = [];
       }
@@ -41,8 +45,8 @@ async function getAuthorUrls(): Promise<MetadataRoute.Sitemap> {
 }
 
 async function getLibraryUrls(): Promise<MetadataRoute.Sitemap> {
-  const libraryDocs = await getLibraryDocs("en");
-  return libraryDocs.flatMap((doc) => {
+  const { data: libraryDocs } = await api.library.getLibraryDocs({ query: { locale: "en" } });
+  return libraryDocs.flatMap((doc: DocumentIndex) => {
     const urlMap: MetadataRoute.Sitemap = [
       {
         url: urls("en").library.doc(doc.slug),
@@ -73,8 +77,8 @@ async function getLibraryUrls(): Promise<MetadataRoute.Sitemap> {
 }
 
 async function getMempoolUrls(): Promise<MetadataRoute.Sitemap> {
-  const mempoolPosts = await getMempoolPosts("en");
-  return mempoolPosts.map((post) => ({
+  const { data: mempoolPosts } = await api.mempool.getMempoolPosts({ query: { locale: "en" } });
+  return mempoolPosts.map((post: MempoolPostIndex) => ({
     url: urls("en").mempool.post(post.slug),
     alternates: {
       languages: post.translations.reduce(
@@ -93,15 +97,15 @@ async function getMempoolUrls(): Promise<MetadataRoute.Sitemap> {
 }
 
 async function getMempoolSeriesUrls(): Promise<MetadataRoute.Sitemap> {
-  const mempoolSeries = await getMempoolSeriesParams();
-  return mempoolSeries.map((series) => ({
+  const { data: mempoolSeries } = await api.mempool.getMempoolSeriesParams();
+  return mempoolSeries.map((series: SlugParam) => ({
     url: urls("en").mempool.seriesDetail(series.slug),
   }));
 }
 
 async function getPodcastsUrls(): Promise<MetadataRoute.Sitemap> {
-  const podcasts = await getPodcasts();
-  return podcasts.map((podcast) => ({
+  const { data: podcasts } = await api.podcasts.getPodcasts();
+  return podcasts.map((podcast: PodcastBase) => ({
     url: urls("en").podcasts.show(podcast.slug),
     alternates: {
       languages: locales.reduce(
@@ -116,8 +120,8 @@ async function getPodcastsUrls(): Promise<MetadataRoute.Sitemap> {
 }
 
 async function getPodcastEpisodesUrls(): Promise<MetadataRoute.Sitemap> {
-  const episodes = await getEpisodes();
-  return episodes.map((episode) => ({
+  const { data: episodes } = await api.podcasts.getEpisodes();
+  return episodes.map((episode: EpisodeParams) => ({
     url: urls("en").podcasts.episode(episode.podcastSlug, episode.episodeSlug),
     alternates: {
       languages: locales.reduce(

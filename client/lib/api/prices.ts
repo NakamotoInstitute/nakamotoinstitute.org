@@ -1,10 +1,19 @@
-import fetchAPI from "./fetchAPI";
-import { zPriceData, zSkepticsIndex } from "./schemas/skeptics";
+import Big from "big.js";
+import { z } from "zod";
 
-export async function getSkeptics() {
-  const res = await fetchAPI(`/skeptics`);
-  return zSkepticsIndex.parse(await res.json());
-}
+const zPriceDatum = z
+  .object({
+    PriceUSD: z.string(),
+    time: z.coerce.date(),
+  })
+  .transform(({ PriceUSD, time }) => ({
+    price: Big(PriceUSD),
+    date: time,
+  }));
+
+export type Price = z.infer<typeof zPriceDatum>;
+
+const zPriceData = z.array(zPriceDatum);
 
 const PRICE_API_URL =
   "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=btc&metrics=PriceUSD&frequency=1d&page_size=10000";

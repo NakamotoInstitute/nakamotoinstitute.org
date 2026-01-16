@@ -1,12 +1,7 @@
 import { Metadata } from "next";
 
 import { locales } from "@/i18n";
-import { getEmailThreads } from "@/lib/api/emails";
-import {
-  EMAIL_SOURCES,
-  EmailSource,
-  EmailThread,
-} from "@/lib/api/schemas/emails";
+import { api, EMAIL_SOURCES, EmailSource, EmailThreadBase } from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
@@ -42,16 +37,19 @@ export default async function EmailThreadsIndex(props: LocaleParams) {
   const { locale } = params;
 
   const { t } = await i18nTranslation(locale);
-  const threads = await getEmailThreads();
+  const { data: threads } = await api.satoshi.getEmailThreads();
   const sortedThreads = threads.reduce(
-    (acc, thread) => {
-      acc[thread.source].push(thread);
+    (
+      acc: { [K in EmailSource]: EmailThreadBase[] },
+      thread: EmailThreadBase,
+    ) => {
+      acc[thread.source as EmailSource].push(thread);
       return acc;
     },
     Object.fromEntries(
-      EMAIL_SOURCES.map((source) => [source, [] as EmailThread[]]),
+      EMAIL_SOURCES.map((source) => [source, [] as EmailThreadBase[]]),
     ) as {
-      [K in EmailSource]: EmailThread[];
+      [K in EmailSource]: EmailThreadBase[];
     },
   );
 
@@ -91,7 +89,7 @@ export default async function EmailThreadsIndex(props: LocaleParams) {
               <h2 className="text-2xl font-bold">
                 {formatEmailSource(typedSource)}
               </h2>
-              {sourceThreads.map((thread) => (
+              {(sourceThreads as EmailThreadBase[]).map((thread: EmailThreadBase) => (
                 <ContentListing
                   key={thread.id}
                   locale={locale}

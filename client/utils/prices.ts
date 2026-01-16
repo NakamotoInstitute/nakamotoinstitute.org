@@ -1,6 +1,6 @@
 import Big from "big.js";
 
-import { Price } from "@/lib/api/schemas/skeptics";
+import { Price } from "@/lib/api";
 import { calculateDayDifference } from "@/utils/dates";
 
 export function calculateDCA(date: Date, prices: Price[], dailyBuy: Big) {

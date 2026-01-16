@@ -18,7 +18,7 @@ class Environment(str, Enum):
 
 
 @unique
-class Locales(str, Enum):
+class Locale(str, Enum):
     ARABIC = "ar"
     GERMAN = "de"
     ENGLISH = "en"
@@ -61,3 +61,23 @@ class DocumentFormats(Enum):
     EPUB = "epub"
     MOBI = "mobi"
     TXT = "txt"
+
+
+@unique
+class EmailSource(str, Enum):
+    CRYPTOGRAPHY = "cryptography"
+    BITCOIN_LIST = "bitcoin-list"
+    P2P_RESEARCH = "p2p-research"
+
+
+@unique
+class ForumPostSource(str, Enum):
+    P2PFOUNDATION = "p2pfoundation"
+    BITCOINTALK = "bitcointalk"
+
+
+@unique
+class Granularity(str, Enum):
+    DAY = "DAY"
+    MONTH = "MONTH"
+    YEAR = "YEAR"

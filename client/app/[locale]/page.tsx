@@ -6,9 +6,12 @@ import { Trans } from "react-i18next/TransWithoutContext";
 
 import { PageLayout } from "@/app/components/PageLayout";
 import { locales } from "@/i18n";
-import { getHomeLibraryDocs } from "@/lib/api/library";
-import { getLatestMempoolPosts } from "@/lib/api/mempool";
-import { getHomePodcasts } from "@/lib/api/podcasts";
+import {
+  api,
+  PodcastBase,
+  DocumentIndex,
+  MempoolPostIndex,
+} from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { cdnUrl, externalUrls, urls } from "@/lib/urls";
@@ -81,12 +84,13 @@ export default async function HomePage(props: LocaleParams) {
 
   const { locale } = params;
 
-  const [{ t }, latest, docs, podcasts] = await Promise.all([
-    i18nTranslation(locale),
-    getLatestMempoolPosts(locale),
-    getHomeLibraryDocs(locale),
-    getHomePodcasts(),
-  ]);
+  const [{ t }, { data: latest }, { data: docs }, { data: podcasts }] =
+    await Promise.all([
+      i18nTranslation(locale),
+      api.mempool.getLatestMempoolPosts({ query: { locale } }),
+      api.library.getHomeLibraryDocs({ query: { locale } }),
+      api.podcasts.getHomePodcasts(),
+    ]);
 
   const viewAllLabel = t("view_all");
   const readMoreLabel = t("read_more");
@@ -178,7 +182,7 @@ export default async function HomePage(props: LocaleParams) {
           >
             <p>{t("bitcoin_context")}</p>
             <div>
-              {docs.map((doc) => (
+              {docs.map((doc: DocumentIndex) => (
                 <div key={doc.slug} className="mb-2 last:mb-0">
                   <Link
                     className="text-cardinal hover:underline"
@@ -198,7 +202,7 @@ export default async function HomePage(props: LocaleParams) {
           >
             <p>{t("memory_pool_description")}</p>
             <div>
-              {latest.map((post) => (
+              {latest.map((post: MempoolPostIndex) => (
                 <div key={post.slug} className="mb-2 last:mb-0">
                   <h4>
                     <Link
@@ -253,7 +257,7 @@ export default async function HomePage(props: LocaleParams) {
           >
             <p>{t("podcast_description")}</p>
             <div>
-              {podcasts.map((podcast) => (
+              {podcasts.map((podcast: PodcastBase) => (
                 <div key={podcast.slug} className="mb-2 last:mb-0">
                   <div className="flex items-center gap-2">
                     <h4 className="inline-block">

@@ -3,16 +3,15 @@ from typing import Any
 from fastapi import APIRouter, HTTPException, status
 
 from sni.shared.dependencies import DB
-from sni.shared.schemas import ErrorModel
+from sni.shared.schemas import Error
 
 from . import service
 from .schemas import (
-    EmailBaseModel,
-    EmailDetailModel,
+    EmailDetail,
     EmailSource,
-    EmailThreadBaseModel,
-    EmailThreadModel,
-    SatoshiEmailModel,
+    EmailThread,
+    EmailThreadBase,
+    SatoshiEmail,
 )
 
 router = APIRouter()
@@ -21,7 +20,7 @@ router = APIRouter()
 @router.get(
     "",
     summary="Get all emails",
-    response_model=list[EmailBaseModel],
+    response_model=list[SatoshiEmail],
     status_code=status.HTTP_200_OK,
     responses={status.HTTP_200_OK: {"description": "All emails"}},
 )
@@ -32,7 +31,7 @@ async def get_emails(db: DB) -> Any:
 @router.get(
     "/threads",
     summary="Get all email threads",
-    response_model=list[EmailThreadBaseModel],
+    response_model=list[EmailThreadBase],
     status_code=status.HTTP_200_OK,
     responses={status.HTTP_200_OK: {"description": "All threads"}},
 )
@@ -43,7 +42,7 @@ async def get_email_threads(db: DB) -> Any:
 @router.get(
     "/{source}",
     summary="Get emails by source",
-    response_model=list[SatoshiEmailModel],
+    response_model=list[SatoshiEmail],
     status_code=status.HTTP_200_OK,
     responses={status.HTTP_200_OK: {"description": "Emails by source"}},
 )
@@ -54,7 +53,7 @@ async def get_emails_by_source(source: EmailSource, db: DB) -> Any:
 @router.get(
     "/{source}/threads",
     summary="Get email threads by source",
-    response_model=list[EmailThreadBaseModel],
+    response_model=list[EmailThreadBase],
     status_code=status.HTTP_200_OK,
     responses={status.HTTP_200_OK: {"description": "Threads by source"}},
 )
@@ -65,12 +64,12 @@ async def get_email_threads_by_source(source: EmailSource, db: DB) -> Any:
 @router.get(
     "/{source}/threads/{thread_id}",
     summary="Get email thread by ID",
-    response_model=EmailThreadModel,
+    response_model=EmailThread,
     status_code=status.HTTP_200_OK,
     responses={
         status.HTTP_200_OK: {"description": "Thread with emails"},
         status.HTTP_404_NOT_FOUND: {
-            "model": ErrorModel,
+            "model": Error,
             "description": "Email thread not found",
         },
     },
@@ -99,12 +98,12 @@ async def get_email_thread_by_source(
 @router.get(
     "/{source}/{satoshi_id}",
     summary="Get email by Satoshi ID",
-    response_model=EmailDetailModel,
+    response_model=EmailDetail,
     status_code=status.HTTP_200_OK,
     responses={
         status.HTTP_200_OK: {"description": "Email with nav"},
         status.HTTP_404_NOT_FOUND: {
-            "model": ErrorModel,
+            "model": Error,
             "description": "Email not found",
         },
     },

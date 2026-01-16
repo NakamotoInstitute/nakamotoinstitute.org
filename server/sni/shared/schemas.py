@@ -1,7 +1,7 @@
 from pydantic import AliasGenerator, BaseModel, ConfigDict, RootModel
 from pydantic.alias_generators import to_camel
 
-from sni.constants import Locales
+from sni.constants import Locale
 
 
 class ORMModel(BaseModel):
@@ -20,20 +20,20 @@ class IterableRootModel(RootModel):
         return self.root[idx]
 
 
-class SlugParamModel(BaseModel):
+class SlugParam(BaseModel):
     model_config = ConfigDict(
         alias_generator=AliasGenerator(serialization_alias=to_camel)
     )
 
     slug: str
-    locale: Locales
+    locale: Locale
 
 
 class TranslationSchema(ORMModel):
-    locale: Locales
+    locale: Locale
     title: str
     slug: str
 
 
-class ErrorModel(BaseModel):
+class Error(BaseModel):
     detail: str

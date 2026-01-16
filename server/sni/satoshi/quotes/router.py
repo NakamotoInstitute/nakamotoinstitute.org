@@ -3,10 +3,10 @@ from typing import Any
 from fastapi import APIRouter, HTTPException, status
 
 from sni.shared.dependencies import DB
-from sni.shared.schemas import ErrorModel
+from sni.shared.schemas import Error
 
 from . import service
-from .schemas import QuoteCategoryBaseModel, QuoteCategoryModel
+from .schemas import QuoteCategory, QuoteCategoryBase
 
 router = APIRouter()
 
@@ -14,7 +14,7 @@ router = APIRouter()
 @router.get(
     "",
     summary="Get all quote categories",
-    response_model=list[QuoteCategoryBaseModel],
+    response_model=list[QuoteCategoryBase],
     status_code=status.HTTP_200_OK,
     responses={status.HTTP_200_OK: {"description": "All categories"}},
 )
@@ -25,12 +25,12 @@ async def get_quote_categories(db: DB) -> Any:
 @router.get(
     "/{slug}",
     summary="Get quote category by slug",
-    response_model=QuoteCategoryModel,
+    response_model=QuoteCategory,
     status_code=status.HTTP_200_OK,
     responses={
         status.HTTP_200_OK: {"description": "Category with quotes"},
         status.HTTP_404_NOT_FOUND: {
-            "model": ErrorModel,
+            "model": Error,
             "description": "Category not found",
         },
     },

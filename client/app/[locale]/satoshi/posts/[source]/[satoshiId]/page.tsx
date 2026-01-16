@@ -4,8 +4,7 @@ import { notFound } from "next/navigation";
 import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
 import { locales } from "@/i18n";
-import { getForumPost } from "@/lib/api/posts";
-import { ForumPostSource } from "@/lib/api/schemas/posts";
+import { api, ForumPostSource } from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
@@ -36,7 +35,9 @@ export async function generateMetadata(
 
   const { locale, source, satoshiId } = params;
 
-  const postData = await getForumPost(source, satoshiId);
+  const { data: postData } = await api.satoshi.getForumPostBySource({
+    path: { source, satoshi_id: parseInt(satoshiId) },
+  });
   const languages = generateHrefLangs(locales, generateHref(source, satoshiId));
 
   return {
@@ -55,7 +56,9 @@ export default async function PostDetail(
 
   const { source, satoshiId, locale } = params;
 
-  const postData = await getForumPost(source, satoshiId);
+  const { data: postData } = await api.satoshi.getForumPostBySource({
+    path: { source, satoshi_id: parseInt(satoshiId) },
+  });
   if (!postData) {
     return notFound();
   }

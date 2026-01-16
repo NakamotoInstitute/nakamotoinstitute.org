@@ -4,7 +4,7 @@ import { ListColumnLayout } from "@/app/components/ListColumnLayout";
 import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
 import { locales } from "@/i18n";
-import { getAuthors } from "@/lib/api/authors";
+import { api } from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
@@ -34,7 +34,7 @@ export default async function AuthorsIndex(props: LocaleParams) {
   const { locale } = params;
 
   const { t } = await i18nTranslation(locale);
-  const authors = await getAuthors(locale);
+  const { data: authors } = await api.authors.getAuthors({ query: { locale } });
   const generateHref = (l: Locale) => urls(l).authors.index;
 
   return (

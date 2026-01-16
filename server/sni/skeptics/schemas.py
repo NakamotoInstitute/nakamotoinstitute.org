@@ -23,7 +23,7 @@ class SkepticsJSONModel(IterableRootModel):
     root: list[SkepticJSONModel]
 
 
-class SkepticModel(ORMModel):
+class Skeptic(ORMModel):
     name: str
     slug: str
     title: str
@@ -35,10 +35,6 @@ class SkepticModel(ORMModel):
     media_embed: str | None = None
     twitter_screenshot: bool = False
     wayback_link: str | None = None
-
-    @field_serializer("date")
-    def serialize_date(self, date: datetime.date) -> str:
-        return date.isoformat()
 
     @field_serializer("link")
     def serialize_link(self, link) -> list[str]:

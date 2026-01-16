@@ -1,4 +1,4 @@
-import { getMempoolFeed } from "@/lib/api/mempool";
+import { api, Locale } from "@/lib/api";
 
 export const dynamic = "force-static";
 
@@ -7,7 +7,9 @@ export async function GET(
   ctx: RouteContext<"/[locale]/mempool/feed.xml">,
 ) {
   const { locale } = await ctx.params;
-  const content = await getMempoolFeed(locale as Locale, "rss");
+  const { data: content } = await api.mempool.generateFeed({
+    query: { locale: locale as Locale, format: "rss" },
+  });
 
   return new Response(content, {
     headers: {

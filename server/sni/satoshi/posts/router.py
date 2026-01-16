@@ -3,16 +3,15 @@ from typing import Any
 from fastapi import APIRouter, HTTPException, status
 
 from sni.shared.dependencies import DB
-from sni.shared.schemas import ErrorModel
+from sni.shared.schemas import Error
 
 from . import service
 from .schemas import (
-    ForumPostBaseModel,
-    ForumPostDetailModel,
-    ForumPostModel,
+    ForumPostDetail,
     ForumPostSource,
-    ForumThreadBaseModel,
-    ForumThreadModel,
+    ForumThread,
+    ForumThreadBase,
+    SatoshiForumPost,
 )
 
 router = APIRouter()
@@ -21,7 +20,7 @@ router = APIRouter()
 @router.get(
     "",
     summary="Get all forum posts",
-    response_model=list[ForumPostBaseModel],
+    response_model=list[SatoshiForumPost],
     status_code=status.HTTP_200_OK,
     responses={status.HTTP_200_OK: {"description": "All posts"}},
 )
@@ -32,7 +31,7 @@ async def get_forum_posts(db: DB) -> Any:
 @router.get(
     "/threads",
     summary="Get all forum threads",
-    response_model=list[ForumThreadBaseModel],
+    response_model=list[ForumThreadBase],
     status_code=status.HTTP_200_OK,
     responses={status.HTTP_200_OK: {"description": "All threads"}},
 )
@@ -43,7 +42,7 @@ async def get_forum_threads(db: DB) -> Any:
 @router.get(
     "/{source}",
     summary="Get forum posts by source",
-    response_model=list[ForumPostModel],
+    response_model=list[SatoshiForumPost],
     status_code=status.HTTP_200_OK,
     responses={status.HTTP_200_OK: {"description": "Posts by source"}},
 )
@@ -54,7 +53,7 @@ async def get_forum_posts_by_source(source: ForumPostSource, db: DB) -> Any:
 @router.get(
     "/{source}/threads",
     summary="Get forum threads by source",
-    response_model=list[ForumThreadBaseModel],
+    response_model=list[ForumThreadBase],
     status_code=status.HTTP_200_OK,
     responses={status.HTTP_200_OK: {"description": "Threads by source"}},
 )
@@ -65,12 +64,12 @@ async def get_forum_threads_by_source(source: ForumPostSource, db: DB) -> Any:
 @router.get(
     "/{source}/threads/{thread_id}",
     summary="Get forum thread by ID",
-    response_model=ForumThreadModel,
+    response_model=ForumThread,
     status_code=status.HTTP_200_OK,
     responses={
         status.HTTP_200_OK: {"description": "Thread with posts"},
         status.HTTP_404_NOT_FOUND: {
-            "model": ErrorModel,
+            "model": Error,
             "description": "Forum thread not found",
         },
     },
@@ -99,12 +98,12 @@ async def get_forum_thread_by_source(
 @router.get(
     "/{source}/{satoshi_id}",
     summary="Get forum post by Satoshi ID",
-    response_model=ForumPostDetailModel,
+    response_model=ForumPostDetail,
     status_code=status.HTTP_200_OK,
     responses={
         status.HTTP_200_OK: {"description": "Post with nav"},
         status.HTTP_404_NOT_FOUND: {
-            "model": ErrorModel,
+            "model": Error,
             "description": "Forum post not found",
         },
     },

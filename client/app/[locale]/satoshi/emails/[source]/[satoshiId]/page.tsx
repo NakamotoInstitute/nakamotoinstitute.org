@@ -4,8 +4,7 @@ import { notFound } from "next/navigation";
 import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
 import { locales } from "@/i18n";
-import { getEmail } from "@/lib/api/emails";
-import { EmailSource } from "@/lib/api/schemas/emails";
+import { api, EmailSource } from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
@@ -35,7 +34,9 @@ export async function generateMetadata(
 
   const { source, satoshiId, locale } = params;
 
-  const emailData = await getEmail(source, satoshiId);
+  const { data: emailData } = await api.satoshi.getEmailBySource({
+    path: { source, satoshi_id: parseInt(satoshiId) },
+  });
   const languages = generateHrefLangs(locales, generateHref(source, satoshiId));
 
   return {
@@ -55,7 +56,9 @@ export default async function EmailDetail(
   const { locale, source, satoshiId } = params;
 
   const { t } = await i18nTranslation(locale);
-  const emailData = await getEmail(source, satoshiId);
+  const { data: emailData } = await api.satoshi.getEmailBySource({
+    path: { source, satoshi_id: parseInt(satoshiId) },
+  });
 
   if (!emailData) {
     return notFound();

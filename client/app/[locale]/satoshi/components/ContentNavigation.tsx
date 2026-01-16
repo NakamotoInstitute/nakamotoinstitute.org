@@ -4,14 +4,12 @@ import { TFunction } from "i18next";
 import { ArrowLink } from "@/app/components/ArrowButton";
 import {
   EmailSource,
-  EmailThread,
-  SatoshiEmail,
-} from "@/lib/api/schemas/emails";
-import {
+  EmailThreadBase,
   ForumPostSource,
-  ForumThread,
+  ForumThreadBase,
+  SatoshiEmail,
   SatoshiForumPost,
-} from "@/lib/api/schemas/posts";
+} from "@/lib/api";
 import { urls } from "@/lib/urls";
 
 type ContentNavigationProps = {
@@ -80,7 +78,7 @@ export const EmailNavigation = async ({
   );
 };
 
-export type EmailThreadNavProps = NavProps<EmailThread, EmailSource>;
+export type EmailThreadNavProps = NavProps<EmailThreadBase, EmailSource>;
 
 export const EmailThreadNavigation = async ({
   locale,
@@ -146,7 +144,7 @@ export const PostNavigation = async ({
   );
 };
 
-export type PostThreadNavProps = NavProps<ForumThread, ForumPostSource>;
+export type PostThreadNavProps = NavProps<ForumThreadBase, ForumPostSource>;
 
 export const PostThreadNavigation = async ({
   locale,

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { EpisodeBase } from "@/lib/api/schemas/podcasts";
+import { EpisodeBase } from "@/lib/api";
 import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 

@@ -37,11 +37,11 @@ class QuotesJSONModel(IterableRootModel):
     root: list[QuoteJSONModel]
 
 
-class QuoteCategoryBaseModel(QuoteCategoryJSONModel, ORMModel):
+class QuoteCategoryBase(QuoteCategoryJSONModel, ORMModel):
     pass
 
 
-class QuoteItemModel(BaseModel):
+class QuoteItem(BaseModel):
     model_config = ConfigDict(
         alias_generator=to_camel,
         populate_by_name=True,
@@ -53,7 +53,7 @@ class QuoteItemModel(BaseModel):
     source: str = Field(validation_alias=AliasPath("thread", "source"))
 
 
-class QuoteModel(BaseModel):
+class Quote(BaseModel):
     model_config = ConfigDict(
         alias_generator=to_camel,
         populate_by_name=True,
@@ -62,12 +62,12 @@ class QuoteModel(BaseModel):
 
     whitepaper: bool = False
     text: str
-    post: QuoteItemModel | None = None
-    email: QuoteItemModel | None = None
+    post: QuoteItem | None = None
+    email: QuoteItem | None = None
     date: datetime.date
-    categories: list[QuoteCategoryBaseModel]
+    categories: list[QuoteCategoryBase]
 
 
-class QuoteCategoryModel(BaseModel):
-    category: QuoteCategoryBaseModel
-    quotes: list[QuoteModel]
+class QuoteCategory(BaseModel):
+    category: QuoteCategoryBase
+    quotes: list[Quote]

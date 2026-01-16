@@ -1,12 +1,12 @@
 import datetime
 from typing import Any
 
-from pydantic import AliasPath, BaseModel, Field, field_serializer, model_validator
+from pydantic import AliasPath, BaseModel, Field, model_validator
 
-from sni.authors.schemas.base import AuthorModel
-from sni.constants import Locales
+from sni.authors.schemas.base import Author
+from sni.constants import Locale
 from sni.shared.schemas import ORMModel, TranslationSchema
-from sni.translators.schemas import TranslatorModel
+from sni.translators.schemas import Translator
 
 
 class MempoolCanonicalMDModel(BaseModel):
@@ -59,8 +59,8 @@ class MempoolSeriesTranslationMDModel(MempoolSeriesMDModel):
     slug: str | None = None
 
 
-class MempoolSeriesBaseModel(ORMModel):
-    locale: Locales
+class MempoolSeriesBase(ORMModel):
+    locale: Locale
     title: str
     slug: str
     chapter_title: bool | None = Field(
@@ -69,8 +69,8 @@ class MempoolSeriesBaseModel(ORMModel):
     )
 
 
-class MempoolPostBaseModel(ORMModel):
-    locale: Locales
+class MempoolPostBase(ORMModel):
+    locale: Locale
     title: str
     subtitle: str | None = None
     slug: str
@@ -90,26 +90,16 @@ class MempoolPostBaseModel(ORMModel):
     translation_site_url: str | None
     date: datetime.date = Field(validation_alias=AliasPath("blog_post", "date"))
     added: datetime.date = Field(validation_alias=AliasPath("blog_post", "added"))
-    authors: list[AuthorModel] = Field(
-        validation_alias=AliasPath("blog_post", "authors")
-    )
+    authors: list[Author] = Field(validation_alias=AliasPath("blog_post", "authors"))
     translations: list[TranslationSchema]
     series_index: int | None = Field(
         validation_alias=AliasPath("blog_post", "series_index"),
         serialization_alias="seriesIndex",
     )
-    series: MempoolSeriesBaseModel | None = None
-
-    @field_serializer("date")
-    def serialize_date(self, date: datetime.date) -> str:
-        return date.isoformat()
-
-    @field_serializer("added")
-    def serialize_added(self, added: datetime.date) -> str:
-        return added.isoformat()
+    series: MempoolSeriesBase | None = None
 
 
-class MempoolPostIndexModel(MempoolPostBaseModel):
+class MempoolPostIndex(MempoolPostBase):
     has_content: bool = False
 
     @model_validator(mode="before")
@@ -119,7 +109,7 @@ class MempoolPostIndexModel(MempoolPostBaseModel):
         return data
 
 
-class MempoolPostModel(MempoolPostBaseModel):
+class MempoolPost(MempoolPostBase):
     html_content: str = Field(
         validation_alias=AliasPath("content", "html_content"), alias="content"
     )
@@ -127,13 +117,13 @@ class MempoolPostModel(MempoolPostBaseModel):
         validation_alias=AliasPath("blog_post", "has_math"),
         serialization_alias="hasMath",
     )
-    translators: list[TranslatorModel]
+    translators: list[Translator]
 
 
-class MempoolSeriesModel(MempoolSeriesBaseModel):
-    translations: list[MempoolSeriesBaseModel]
+class MempoolSeries(MempoolSeriesBase):
+    translations: list[MempoolSeriesBase]
 
 
-class MempoolSeriesFullModel(BaseModel):
-    series: MempoolSeriesModel
-    posts: list[MempoolPostIndexModel]
+class MempoolSeriesFull(BaseModel):
+    series: MempoolSeries
+    posts: list[MempoolPostIndex]

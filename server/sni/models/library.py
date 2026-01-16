@@ -1,6 +1,6 @@
 import datetime
 from functools import cached_property
-from typing import TYPE_CHECKING, Literal, Self
+from typing import TYPE_CHECKING, Self
 
 from sqlalchemy import (
     Boolean,
@@ -17,7 +17,7 @@ from sqlalchemy import (
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from sni.config import settings
-from sni.constants import DocumentFormats, Locales
+from sni.constants import DocumentFormats, Granularity, Locale
 from sni.database import Base
 
 if TYPE_CHECKING:
@@ -73,9 +73,7 @@ class Document(Base):
     slug: Mapped[str] = mapped_column(String, nullable=False)
     image: Mapped[str] = mapped_column(String, nullable=True)
     date: Mapped[datetime.date] = mapped_column(Date, nullable=False)
-    granularity: Mapped[Literal["DAY", "MONTH", "YEAR"]] = mapped_column(
-        String, nullable=False
-    )
+    granularity: Mapped[Granularity] = mapped_column(String, nullable=False)
     doctype: Mapped[str] = mapped_column(String, nullable=False)
     authors: Mapped[list["Author"]] = relationship(
         secondary=document_authors, back_populates="docs"
@@ -103,8 +101,8 @@ class DocumentTranslation(Base):
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     content_id: Mapped[int] = mapped_column(ForeignKey("content.id"), unique=True)
     content: Mapped["HTMLRenderableContent"] = relationship(uselist=False)
-    locale: Mapped[Locales] = mapped_column(
-        Enum(Locales, values_callable=lambda x: [e.value for e in x]), nullable=False
+    locale: Mapped[Locale] = mapped_column(
+        Enum(Locale, values_callable=lambda x: [e.value for e in x]), nullable=False
     )
     title: Mapped[str] = mapped_column(String, nullable=False)
     sort_title: Mapped[str] = mapped_column(String, nullable=True)
@@ -132,7 +130,7 @@ class DocumentTranslation(Base):
     def serialized_formats(self) -> list[dict]:
         serialized_formats = []
         for fmt in self.formats:
-            if self.slug == self.document.slug and self.locale != Locales.ENGLISH:
+            if self.slug == self.document.slug and self.locale != Locale.ENGLISH:
                 slug = f"{self.slug}_{self.locale.value}"
             else:
                 slug = self.slug

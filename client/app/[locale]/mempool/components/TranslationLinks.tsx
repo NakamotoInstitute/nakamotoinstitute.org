@@ -3,13 +3,13 @@ import { ElementType } from "react";
 
 import { RenderedItemsList } from "@/app/components/RenderedItemsList";
 import { languages } from "@/i18n";
-import { TranslationData } from "@/lib/api/schemas/shared";
+import { TranslationSchema } from "@/lib/api";
 
 type TranslationLinksProps = {
   as?: ElementType;
   locale: Locale;
-  translations: TranslationData[];
-  urlFunc: (item: TranslationData) => string;
+  translations: TranslationSchema[];
+  urlFunc: (item: TranslationSchema) => string;
 };
 
 export const TranslationLinks = ({

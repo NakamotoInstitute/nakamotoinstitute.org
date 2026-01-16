@@ -2,7 +2,12 @@ import { Metadata } from "next";
 
 import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
-import { getMempoolSeries, getMempoolSeriesParams } from "@/lib/api/mempool";
+import {
+  api,
+  Locale,
+  MempoolPostIndex,
+  TranslationSchema,
+} from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { urls } from "@/lib/urls";
 
@@ -17,9 +22,14 @@ export async function generateMetadata(
 
   const { locale, slug } = params;
 
-  const { series } = await getMempoolSeries(slug, locale);
+  const {
+    data: { series },
+  } = await api.mempool.getMempoolSeries({
+    path: { slug },
+    query: { locale },
+  });
   const languages = series.translations.reduce(
-    (acc, t) => {
+    (acc: Record<Locale, string>, t: TranslationSchema) => {
       acc[t.locale] = urls(t.locale).mempool.seriesDetail(t.slug);
       return acc;
     },
@@ -43,10 +53,15 @@ export default async function SeriesDetail(
   const { slug, locale } = params;
 
   const { t } = await i18nTranslation(locale);
-  const { series, posts } = await getMempoolSeries(slug, locale);
+  const {
+    data: { series, posts },
+  } = await api.mempool.getMempoolSeries({
+    path: { slug },
+    query: { locale },
+  });
 
   const generateHref = (l: Locale) => {
-    const translation = series.translations.find((t) => t.locale === l);
+    const translation = series.translations.find((t: TranslationSchema) => t.locale === l);
     if (translation) {
       return urls(l).mempool.seriesDetail(translation.slug);
     }
@@ -69,7 +84,7 @@ export default async function SeriesDetail(
     >
       <PageHeader title={series.title} />
       <section>
-        {posts?.map((post) => (
+        {posts?.map((post: MempoolPostIndex) => (
           <PostListing key={post.slug} t={t} locale={locale} post={post} />
         ))}
       </section>
@@ -78,5 +93,6 @@ export default async function SeriesDetail(
 }
 
 export async function generateStaticParams() {
-  return getMempoolSeriesParams();
+  const { data } = await api.mempool.getMempoolSeriesParams();
+  return data;
 }

@@ -1,5 +1,4 @@
-import { EmailSource } from "@/lib/api/schemas/emails";
-import { ForumPostSource } from "@/lib/api/schemas/posts";
+import { EmailSource, ForumPostSource } from "@/lib/api";
 import { CapitalizedLocale } from "@/types/i18n";
 
 export function getNumericId(id: number | string) {

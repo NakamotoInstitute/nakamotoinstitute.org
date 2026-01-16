@@ -1,4 +1,4 @@
-import { Granularity } from "@/lib/api/schemas/library";
+import { Granularity } from "@/lib/api";
 
 export const formatDate = (
   locale: Locale,

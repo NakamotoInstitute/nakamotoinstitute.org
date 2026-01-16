@@ -3,7 +3,7 @@ import { TFunction } from "i18next";
 
 import { ButtonLink, ButtonLinkProps } from "@/app/components/Button";
 import { Chip } from "@/app/components/Chip";
-import { Document, DocumentIndex } from "@/lib/api/schemas/library";
+import { Document, DocumentIndex } from "@/lib/api";
 import { urls } from "@/lib/urls";
 
 async function DocFormatButtonLink({ className, ...rest }: ButtonLinkProps) {

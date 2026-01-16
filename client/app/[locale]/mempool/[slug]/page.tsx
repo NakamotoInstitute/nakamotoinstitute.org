@@ -6,7 +6,7 @@ import { PageLayout } from "@/app/components/PageLayout";
 import { Rehype } from "@/app/components/Rehype";
 import { RenderedItemsList } from "@/app/components/RenderedItemsList";
 import { openGraphImages } from "@/app/shared-metadata";
-import { getMempoolParams, getMempoolPost } from "@/lib/api/mempool";
+import { api, TranslationSchema } from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { getDir } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
@@ -23,10 +23,13 @@ export async function generateMetadata(
 
   const { locale, slug } = params;
 
-  const post = await getMempoolPost(slug, locale);
+  const { data: post } = await api.mempool.getMempoolPost({
+    path: { slug },
+    query: { locale },
+  });
 
   const languages = Object.fromEntries(
-    post.translations.map((t) => [
+    post.translations.map((t: TranslationSchema) => [
       t.locale,
       urls(t.locale).mempool.post(t.slug),
     ]),
@@ -52,10 +55,13 @@ export default async function MempoolPost(
   const { slug, locale } = params;
 
   const { t } = await i18nTranslation(locale);
-  const post = await getMempoolPost(slug, locale);
+  const { data: post } = await api.mempool.getMempoolPost({
+    path: { slug },
+    query: { locale },
+  });
 
   const generateHref = (l: Locale) => {
-    const translation = post.translations.find((t) => t.locale === l);
+    const translation = post.translations.find((t: TranslationSchema) => t.locale === l);
     if (translation) {
       return urls(l).mempool.post(translation.slug);
     }
@@ -150,5 +156,6 @@ export default async function MempoolPost(
 }
 
 export async function generateStaticParams() {
-  return getMempoolParams();
+  const { data } = await api.mempool.getMempoolParams();
+  return data;
 }

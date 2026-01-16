@@ -1,6 +1,7 @@
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
+from fastapi.routing import APIRoute
 from fastapi.staticfiles import StaticFiles
 
 from sni.authors.router import router as authors_router
@@ -16,6 +17,15 @@ from .constants import STATIC_ROUTE
 from .middleware import APIKeyMiddleware
 
 
+def generate_operation_id(route: APIRoute) -> str:
+    """Generate clean operationIds for SDK generation.
+
+    Produces IDs like 'authors-get_all' instead of 'get_authors_authors_get'.
+    """
+    tag = route.tags[0] if route.tags else "default"
+    return f"{tag}-{route.name}"
+
+
 @asynccontextmanager
 async def lifespan(_: FastAPI):
     if settings.ENVIRONMENT.is_debug:
@@ -23,7 +33,7 @@ async def lifespan(_: FastAPI):
     yield
 
 
-app = FastAPI(lifespan=lifespan)
+app = FastAPI(lifespan=lifespan, generate_unique_id_function=generate_operation_id)
 
 if settings.API_KEY:
     app.add_middleware(APIKeyMiddleware)

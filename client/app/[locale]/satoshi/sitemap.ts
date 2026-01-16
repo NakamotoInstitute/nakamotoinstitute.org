@@ -1,11 +1,16 @@
 import type { MetadataRoute } from "next";
 
 import { locales } from "@/i18n";
-import { getEmailThreads, getSatoshiEmails } from "@/lib/api/emails";
-import { getForumThreads, getSatoshiPosts } from "@/lib/api/posts";
-import { getQuoteCategories } from "@/lib/api/quotes";
-import { EMAIL_SOURCES } from "@/lib/api/schemas/emails";
-import { FORUM_POST_SOURCES } from "@/lib/api/schemas/posts";
+import {
+  api,
+  EMAIL_SOURCES,
+  EmailThreadBase,
+  FORUM_POST_SOURCES,
+  ForumThreadBase,
+  QuoteCategoryBase,
+  SatoshiEmail,
+  SatoshiForumPost,
+} from "@/lib/api";
 import { urls } from "@/lib/urls";
 import { LocalizedUrlObject, createLocalizedUrlObject } from "@/utils/sitemap";
 import { formatLocale } from "@/utils/strings";
@@ -31,8 +36,8 @@ async function getEmailIndexUrls(): Promise<MetadataRoute.Sitemap> {
 }
 
 async function getEmailUrls(): Promise<MetadataRoute.Sitemap> {
-  const emails = await getSatoshiEmails();
-  return emails.map(({ source, satoshiId }) => ({
+  const { data: emails } = await api.satoshi.getEmails();
+  return emails.map(({ source, satoshiId }: SatoshiEmail) => ({
     url: urls("en").satoshi.emails.sourceEmail(source, satoshiId.toString()),
     alternates: {
       languages: createLocalizedUrlObject((locale: Locale) =>
@@ -43,8 +48,8 @@ async function getEmailUrls(): Promise<MetadataRoute.Sitemap> {
 }
 
 async function getEmailThreadUrls(): Promise<MetadataRoute.Sitemap> {
-  const threads = await getEmailThreads();
-  return threads.map(({ source, id }) => ({
+  const { data: threads } = await api.satoshi.getEmailThreads();
+  return threads.map(({ source, id }: EmailThreadBase) => ({
     url: urls("en").satoshi.emails.sourceThreadsDetail(source, id.toString()),
     alternates: {
       languages: createLocalizedUrlObject((locale: Locale) =>
@@ -75,8 +80,8 @@ async function getPostIndexUrls(): Promise<MetadataRoute.Sitemap> {
 }
 
 async function getPostUrls(): Promise<MetadataRoute.Sitemap> {
-  const posts = await getSatoshiPosts();
-  return posts.map(({ source, satoshiId }) => ({
+  const { data: posts } = await api.satoshi.getForumPosts();
+  return posts.map(({ source, satoshiId }: SatoshiForumPost) => ({
     url: urls("en").satoshi.posts.sourcePost(source, satoshiId.toString()),
     alternates: {
       languages: createLocalizedUrlObject((locale: Locale) =>
@@ -87,8 +92,8 @@ async function getPostUrls(): Promise<MetadataRoute.Sitemap> {
 }
 
 async function getPostThreadUrls(): Promise<MetadataRoute.Sitemap> {
-  const threads = await getForumThreads();
-  return threads.map(({ source, id }) => ({
+  const { data: threads } = await api.satoshi.getForumThreads();
+  return threads.map(({ source, id }: ForumThreadBase) => ({
     url: urls("en").satoshi.posts.sourceThreadsDetail(source, id.toString()),
     alternates: {
       languages: createLocalizedUrlObject((locale: Locale) =>
@@ -99,8 +104,8 @@ async function getPostThreadUrls(): Promise<MetadataRoute.Sitemap> {
 }
 
 async function getQuoteCategoryUrls(): Promise<MetadataRoute.Sitemap> {
-  const categories = await getQuoteCategories();
-  return categories.map(({ slug }) => ({
+  const { data: categories } = await api.satoshi.getQuoteCategories();
+  return categories.map(({ slug }: QuoteCategoryBase) => ({
     url: urls("en").satoshi.quoteCategory(slug),
     alternates: {
       languages: locales.reduce((obj, locale) => {

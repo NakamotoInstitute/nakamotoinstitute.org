@@ -51,3 +51,6 @@ import *args:
 ruff *args:
   just run ruff {{args}} check .
   just run ruff format .
+
+openapi:
+  {{docker_compose_cmd}} run --rm fastapi python -c "import json; from sni.main import app; print(json.dumps(app.openapi()))" > ../client/openapi.json
