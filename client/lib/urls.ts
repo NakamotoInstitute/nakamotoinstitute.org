@@ -56,8 +56,13 @@ export const toFullUrl = (relativeUrl: string) => {
 
 export const urls = (locale: Locale) => {
   const getUrl = (path: string) => {
-    const fullPath = locale === "en" ? path : `/${locale}${path}`;
-    return toFullUrl(fullPath);
+    const fullUrl = toFullUrl(path);
+    if (locale === "en") {
+      return fullUrl;
+    }
+    const url = new URL(fullUrl);
+    url.pathname = `/${locale}${url.pathname}`;
+    return url.href;
   };
 
   return {
