@@ -36,7 +36,7 @@ title: Figures
 
 [2.3](/library/gradually-then-suddenly/bitcoin-not-blockchain/#figure-2.3). Valid Block Construction (selected elements)
 
-[2.4](/library/gradually-then-suddenly/bitcoin-not-blockchain/#figure-2.4). Proof-­of-­Work Function (simplified)
+[2.4](/library/gradually-then-suddenly/bitcoin-not-blockchain/#figure-2.4). Proof-of-Work Function (simplified)
 
 [2.5](/library/gradually-then-suddenly/bitcoin-not-blockchain/#figure-2.5). Bitcoin Supply Curve with Halving Epochs
 
@@ -62,7 +62,7 @@ title: Figures
 
 [3.7](/library/gradually-then-suddenly/bitcoin-is-not-backed-by-nothing/#figure-3.7). Bitcoin Supply Curve with Halving Epochs
 
-[3.8](/library/gradually-then-suddenly/bitcoin-is-not-backed-by-nothing/#figure-3.8). Bitcoin Hashrate, 30-­Day Moving Average, 2018–2019
+[3.8](/library/gradually-then-suddenly/bitcoin-is-not-backed-by-nothing/#figure-3.8). Bitcoin Hashrate, 30-Day Moving Average, 2018–2019
 
 [3.9](/library/gradually-then-suddenly/bitcoin-is-not-backed-by-nothing/#figure-3.9). Acceptance and Rejection of Proposed Blocks at Halving
 
@@ -112,7 +112,7 @@ title: Figures
 
 [5.11](/library/gradually-then-suddenly/bitcoin-is-the-great-definancialization/#figure-5.11). Uncapped Demand vs. Fixed Supply
 
-[5.12](/library/gradually-then-suddenly/bitcoin-is-the-great-definancialization/#figure-5.12). Market Value of Negative-­Yielding Bonds, Bloomberg Barclays Global-­Aggregate Index
+[5.12](/library/gradually-then-suddenly/bitcoin-is-the-great-definancialization/#figure-5.12). Market Value of Negative-Yielding Bonds, Bloomberg Barclays Global-Aggregate Index
 
 [5.13](/library/gradually-then-suddenly/bitcoin-is-the-great-definancialization/#figure-5.13). Global Government 10Y Bond Yields, 20 December 2020
 
@@ -142,7 +142,7 @@ title: Figures
 
 [7.5](/library/gradually-then-suddenly/bitcoin-is-not-too-volatile/#figure-7.5). Fixed Supply vs. Expanding Demand
 
-[7.6](/library/gradually-then-suddenly/bitcoin-is-not-too-volatile/#figure-7.6). Stages of Technology Adoption (S-­Curve)
+[7.6](/library/gradually-then-suddenly/bitcoin-is-not-too-volatile/#figure-7.6). Stages of Technology Adoption (S-Curve)
 
 [7.7](/library/gradually-then-suddenly/bitcoin-is-not-too-volatile/#figure-7.7). Bitcoin Adoption Waves (Simplified)
 
@@ -156,7 +156,7 @@ title: Figures
 
 [7.12](/library/gradually-then-suddenly/bitcoin-is-not-too-volatile/#figure-7.12). Bitcoin’s Path to Full Monetization
 
-[8.1](/library/gradually-then-suddenly/bitcoin-does-not-waste-energy/#figure-8.1). Bitcoin Hashrate, 30-­Day Simple Moving Average
+[8.1](/library/gradually-then-suddenly/bitcoin-does-not-waste-energy/#figure-8.1). Bitcoin Hashrate, 30-Day Simple Moving Average
 
 [8.2](/library/gradually-then-suddenly/bitcoin-does-not-waste-energy/#figure-8.2). Venezuela Monthly Crude Oil Production, 2000–2019
 
@@ -246,7 +246,7 @@ title: Figures
 
 [15.6](/library/gradually-then-suddenly/bitcoin-is-common-sense/#figure-15.6). Consumer Price Index: Purchasing Power of Consumer Dollar in US City Average
 
-[15.7](/library/gradually-then-suddenly/bitcoin-is-common-sense/#figure-15.7). Total US Debt System-­Wide vs. Fed Balance Sheet Assets, 2005–2019
+[15.7](/library/gradually-then-suddenly/bitcoin-is-common-sense/#figure-15.7). Total US Debt System-Wide vs. Fed Balance Sheet Assets, 2005–2019
 
 [15.8](/library/gradually-then-suddenly/bitcoin-is-common-sense/#figure-15.8). US Credit System Expansion and Federal Government Share of US Credit System
 
@@ -264,7 +264,7 @@ title: Figures
 
 [16.5](/library/gradually-then-suddenly/bitcoin-is-one-for-all/#figure-16.5). Value Creation and Communication through a Single Monetary Medium
 
-[16.6](/library/gradually-then-suddenly/bitcoin-is-one-for-all/#figure-16.6). Mortgage-­Backed Securities Held by the Federal Reserve: All Maturities, 2007–2018
+[16.6](/library/gradually-then-suddenly/bitcoin-is-one-for-all/#figure-16.6). Mortgage-Backed Securities Held by the Federal Reserve: All Maturities, 2007–2018
 
 [16.7](/library/gradually-then-suddenly/bitcoin-is-one-for-all/#figure-16.7). US National Home Price Index, Home Ownership, Labor Participation, 2007–2019
 
