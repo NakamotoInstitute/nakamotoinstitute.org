@@ -57,6 +57,7 @@ export default async function QuotesIndex(props: LocaleParams) {
         <figure className="border-cardinal border-l border-dashed">
           <blockquote className="px-4 italic">
             <Trans
+              t={t}
               i18nKey="satoshi_quote_extended"
               components={{
                 br: <br />,
@@ -66,6 +67,7 @@ export default async function QuotesIndex(props: LocaleParams) {
           </blockquote>
           <figcaption className="small-caps mt-3 px-4 text-lg font-medium">
             <Trans
+              t={t}
               i18nKey="satoshi_citation"
               components={{
                 a: (
