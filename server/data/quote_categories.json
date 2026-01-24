@@ -94,5 +94,9 @@
   {
     "slug": "addresses",
     "name": "Addresses"
+  },
+  {
+    "slug": "zero-knowledge",
+    "name": "Zero-Knowledge Proofs"
   }
 ]
