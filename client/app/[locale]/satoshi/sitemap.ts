@@ -2,7 +2,6 @@ import type { MetadataRoute } from "next";
 
 import { locales } from "@/i18n";
 import {
-  api,
   EMAIL_SOURCES,
   EmailThreadBase,
   FORUM_POST_SOURCES,
@@ -10,6 +9,7 @@ import {
   QuoteCategoryBase,
   SatoshiEmail,
   SatoshiForumPost,
+  api,
 } from "@/lib/api";
 import { urls } from "@/lib/urls";
 import { LocalizedUrlObject, createLocalizedUrlObject } from "@/utils/sitemap";

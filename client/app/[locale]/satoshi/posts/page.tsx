@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 import { locales } from "@/i18n";
-import { api, FORUM_POST_SOURCES, SatoshiForumPost } from "@/lib/api";
+import { FORUM_POST_SOURCES, SatoshiForumPost, api } from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";

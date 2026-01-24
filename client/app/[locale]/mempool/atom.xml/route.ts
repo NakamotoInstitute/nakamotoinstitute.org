@@ -1,4 +1,4 @@
-import { api, Locale } from "@/lib/api";
+import { Locale, api } from "@/lib/api";
 
 export const dynamic = "force-static";
 

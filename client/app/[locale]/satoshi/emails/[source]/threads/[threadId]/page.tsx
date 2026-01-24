@@ -4,7 +4,11 @@ import { notFound } from "next/navigation";
 
 import { PageLayout } from "@/app/components/PageLayout";
 import { locales } from "@/i18n";
-import { api, EmailSource, type ThreadEmail as ThreadEmailType } from "@/lib/api";
+import {
+  EmailSource,
+  type ThreadEmail as ThreadEmailType,
+  api,
+} from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";

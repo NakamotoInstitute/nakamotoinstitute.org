@@ -1,7 +1,12 @@
 import { Metadata } from "next";
 
 import { locales } from "@/i18n";
-import { api, FORUM_POST_SOURCES, ForumPostSource, ForumThreadBase } from "@/lib/api";
+import {
+  FORUM_POST_SOURCES,
+  ForumPostSource,
+  ForumThreadBase,
+  api,
+} from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
@@ -90,18 +95,20 @@ export default async function PostThreadsIndex(props: LocaleParams) {
               <h2 className="text-2xl font-bold">
                 {formatPostSource(typedSource)}
               </h2>
-              {(sourceThreads as ForumThreadBase[]).map((thread: ForumThreadBase) => (
-                <ContentListing
-                  key={thread.id}
-                  locale={locale}
-                  label={thread.title}
-                  href={urls(locale).satoshi.posts.sourceThreadsDetail(
-                    thread.source,
-                    thread.id.toString(),
-                  )}
-                  date={thread.date}
-                />
-              ))}
+              {(sourceThreads as ForumThreadBase[]).map(
+                (thread: ForumThreadBase) => (
+                  <ContentListing
+                    key={thread.id}
+                    locale={locale}
+                    label={thread.title}
+                    href={urls(locale).satoshi.posts.sourceThreadsDetail(
+                      thread.source,
+                      thread.id.toString(),
+                    )}
+                    date={thread.date}
+                  />
+                ),
+              )}
             </div>
           );
         })}

@@ -2,12 +2,12 @@ import type { MetadataRoute } from "next";
 
 import { locales } from "@/i18n";
 import {
-  api,
-  PodcastBase,
   DocumentIndex,
   EpisodeParams,
   MempoolPostIndex,
+  PodcastBase,
   SlugParam,
+  api,
 } from "@/lib/api";
 import { urls } from "@/lib/urls";
 import { LocalizedUrlObject, createLocalizedUrlObject } from "@/utils/sitemap";
@@ -45,7 +45,9 @@ async function getAuthorUrls(): Promise<MetadataRoute.Sitemap> {
 }
 
 async function getLibraryUrls(): Promise<MetadataRoute.Sitemap> {
-  const { data: libraryDocs } = await api.library.getLibraryDocs({ query: { locale: "en" } });
+  const { data: libraryDocs } = await api.library.getLibraryDocs({
+    query: { locale: "en" },
+  });
   return libraryDocs.flatMap((doc: DocumentIndex) => {
     const urlMap: MetadataRoute.Sitemap = [
       {
@@ -77,7 +79,9 @@ async function getLibraryUrls(): Promise<MetadataRoute.Sitemap> {
 }
 
 async function getMempoolUrls(): Promise<MetadataRoute.Sitemap> {
-  const { data: mempoolPosts } = await api.mempool.getMempoolPosts({ query: { locale: "en" } });
+  const { data: mempoolPosts } = await api.mempool.getMempoolPosts({
+    query: { locale: "en" },
+  });
   return mempoolPosts.map((post: MempoolPostIndex) => ({
     url: urls("en").mempool.post(post.slug),
     alternates: {

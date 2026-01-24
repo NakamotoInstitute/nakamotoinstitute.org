@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 import { locales } from "@/i18n";
-import { api, EMAIL_SOURCES, SatoshiEmail } from "@/lib/api";
+import { EMAIL_SOURCES, SatoshiEmail, api } from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";

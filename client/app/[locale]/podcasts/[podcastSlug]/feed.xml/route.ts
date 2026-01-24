@@ -1,4 +1,4 @@
-import { api, PodcastBase } from "@/lib/api";
+import { PodcastBase, api } from "@/lib/api";
 import { getLocaleParams } from "@/lib/i18n/utils";
 
 export const dynamic = "force-static";

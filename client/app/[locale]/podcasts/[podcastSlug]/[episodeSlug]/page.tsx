@@ -5,7 +5,7 @@ import { ButtonLink } from "@/app/components/Button";
 import { PageLayout } from "@/app/components/PageLayout";
 import { Rehype } from "@/app/components/Rehype";
 import { locales } from "@/i18n";
-import { api, EpisodeParams } from "@/lib/api";
+import { EpisodeParams, api } from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { externalUrls, urls } from "@/lib/urls";

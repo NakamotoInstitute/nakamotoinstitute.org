@@ -1,2 +1,4 @@
 public/finney
-pnpm-lock.yaml
+bun.lock
+lib/api/generated
+openapi.json

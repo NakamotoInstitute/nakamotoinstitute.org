@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 import { locales } from "@/i18n";
-import { api, EMAIL_SOURCES, EmailBase, EmailSource } from "@/lib/api";
+import { EMAIL_SOURCES, EmailBase, EmailSource, api } from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
@@ -42,7 +42,9 @@ export default async function EmailsSourceIndex(
   const { locale, source } = params;
 
   const { t } = await i18nTranslation(locale);
-  const { data: emails } = await api.satoshi.getEmailsBySource({ path: { source } });
+  const { data: emails } = await api.satoshi.getEmailsBySource({
+    path: { source },
+  });
 
   const sourceLinks = [
     { name: t("all"), href: urls(locale).satoshi.emails.index },

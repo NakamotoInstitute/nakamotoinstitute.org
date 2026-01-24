@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Arrow } from "@/app/components/Arrow";
 import { PageLayout } from "@/app/components/PageLayout";
 import { Rehype } from "@/app/components/Rehype";
-import { api, DocumentNode, Locale, TranslationSchema } from "@/lib/api";
+import { DocumentNode, Locale, TranslationSchema, api } from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { getDir } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
@@ -94,7 +94,9 @@ export default async function LibraryNodeDetail(
   });
 
   const generateHref = (l: Locale) => {
-    const translation = node.translations.find((t: TranslationSchema) => t.locale === l);
+    const translation = node.translations.find(
+      (t: TranslationSchema) => t.locale === l,
+    );
     if (translation) {
       return urls(l).library.doc(translation.slug);
     }

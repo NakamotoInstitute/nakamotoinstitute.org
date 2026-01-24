@@ -6,7 +6,7 @@ import { PageLayout } from "@/app/components/PageLayout";
 import { Rehype } from "@/app/components/Rehype";
 import { RenderedItemsList } from "@/app/components/RenderedItemsList";
 import { openGraphImages } from "@/app/shared-metadata";
-import { api, TranslationSchema } from "@/lib/api";
+import { TranslationSchema, api } from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { getDir } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
@@ -61,7 +61,9 @@ export default async function MempoolPost(
   });
 
   const generateHref = (l: Locale) => {
-    const translation = post.translations.find((t: TranslationSchema) => t.locale === l);
+    const translation = post.translations.find(
+      (t: TranslationSchema) => t.locale === l,
+    );
     if (translation) {
       return urls(l).mempool.post(translation.slug);
     }
