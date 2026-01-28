@@ -12,7 +12,7 @@ doctype: essay
 external: http://web.archive.org/web/20160620184813/http://szabo.best.vwh.net/smart_contracts_glossary.html
 ---
 
-<a name="agent"></a>_Agent_: A person or organization, usually represented by a true name or nym. Also, a computer program controlled by, and acting on behalf of, an agent. More generally, a combination of a nym with a persistent pattern of behavior, upon which can be based a reputation. Note that this differs from the legal and business definitions of"agent", but corresponds more closely to the economics and computer science uses of the term.
+<a name="agent"></a>_Agent_: A person or organization, usually represented by a true name or nym. Also, a computer program controlled by, and acting on behalf of, an agent. More generally, a combination of a nym with a persistent pattern of behavior, upon which can be based a reputation. Note that this differs from the legal and business definitions of "agent", but corresponds more closely to the economics and computer science uses of the term.
 
 <a name="contract"></a>_Contract_: A set of agreements or promises between agents.
 
@@ -28,17 +28,17 @@ external: http://web.archive.org/web/20160620184813/http://szabo.best.vwh.net/sm
 
 <a name="protocol"></a>_Protocol_: A sequence of messages between multiple agents.
 
-<a name="smartcontract"></a>_Smart contract_: A set of promises, including protocols within which the parties perform on the other promises. The protocols are usually implemented with programs on a computer network, orin other forms of digital electronics, thus these contracts are "smarter" than their paper-based ancestors. No use of artificial intelligence is implied.
+<a name="smartcontract"></a>_Smart contract_: A set of promises, including protocols within which the parties perform on the other promises. The protocols are usually implemented with programs on a computer network, or in other forms of digital electronics, thus these contracts are "smarter" than their paper-based ancestors. No use of artificial intelligence is implied.
 
 <a name="aliceandbob"></a>_Alice and Bob_: Our exemplar parties to a smart contract.
 
-<a name="eve"></a>_Eve_: Our exemplar eavesdropper, whose objective is to find out valuable information about about a contract and its performance without being a party to that contract.
+<a name="eve"></a>_Eve_: Our exemplar eavesdropper, whose objective is to find out valuable information about a contract and its performance without being a party to that contract.
 
-<a name="mallet"></a>_Mallet_: Our exemplar active attacker. His objective might either be stealing something of value involved in the performance of a smart contract, or denying it to the parties to the contract. He might either be an economically rational agent, out for pure personal gain,or Byzantine, a worst-case attacker who inflicts the greatest possible damage on one or more of the parties regardless of personal loss.
+<a name="mallet"></a>_Mallet_: Our exemplar active attacker. His objective might either be stealing something of value involved in the performance of a smart contract, or denying it to the parties to the contract. He might either be an economically rational agent, out for pure personal gain, or Byzantine, a worst-case attacker who inflicts the greatest possible damage on one or more of the parties regardless of personal loss.
 
 <a name="mediator"></a>_Mediator_: A third party involved realtime in the protocols between smart contract parties, trusted with some of the contents and/or performance of that contract.
 
-<a name="arbitrator"></a>_Arbitrator_: A third party trusted with some of the contents,and some of the history of performance, of a contract, and trusted by contracted parties to resolve disputes arising from that contract fairly.
+<a name="arbitrator"></a>_Arbitrator_: A third party trusted with some of the contents, and some of the history of performance, of a contract, and trusted by contracted parties to resolve disputes arising from that contract fairly.
 
 <a name="unbundling"></a>_Unbundling_: The principle of distribution of trust. Unbundling of mediation and arbitration functions separates tasks, spreads risk, minimizes vulnerability, and reduces linkability, but often at the cost of greater complexity.
 
@@ -74,7 +74,7 @@ external: http://web.archive.org/web/20160620184813/http://szabo.best.vwh.net/sm
 
 <a name="is-a-personcredential"></a>_Is-a-person credential_: In Chaumian credentials, the true name credential, used to prove the linkage of otherwise unlinkable nyms, and to prevent the transfer of nyms between agents.
 
-<a name="key"></a>_Key_: A focus of obscurity and control; a random number drawn from a name space so large that a lucky guess is vastly improbable. The public key half of an assymetric key pair can also act as a nym.
+<a name="key"></a>_Key_: A focus of obscurity and control; a random number drawn from a name space so large that a lucky guess is vastly improbable. The public key half of an asymmetric key pair can also act as a nym.
 
 <a name="biometric"></a>_Biometric_: Information pattern used to identify a particular body, such as a fingerprint, autograph, retina scan, password, etc.
 
@@ -82,9 +82,9 @@ external: http://web.archive.org/web/20160620184813/http://szabo.best.vwh.net/sm
 
 <a name="secretkeycryptography"></a>_Secret key (symmetric) cryptography_: Uses a key shared between agents to communicate with confidentiality and authentication.
 
-<a name="publickeycryptography"></a>_Public key (assymmetric) cryptography_: Uses two keys, the private key and the public key. The public key is used to encrypt objects,and to verify digital signatures. The private key is used to to decrypt and sign objects, and is typically kept secret by one or more key holders. Allows key distribution without exposing the key.
+<a name="publickeycryptography"></a>_Public key (asymmetric) cryptography_: Uses two keys, the private key and the public key. The public key is used to encrypt objects, and to verify digital signatures. The private key is used to decrypt and sign objects, and is typically kept secret by one or more key holders. Allows key distribution without exposing the key.
 
-<a name="secretsharing"></a>_Secret sharing_: method of splitting a key (and thus, in effect,any object encrypted with that key) into N parts, of which only M are needed to recreate the key, but less than M of the parts provide no information about the key. A potent tool for distributing control over objects between agents.
+<a name="secretsharing"></a>_Secret sharing_: method of splitting a key (and thus, in effect, any object encrypted with that key) into N parts, of which only M are needed to recreate the key, but less than M of the parts provide no information about the key. A potent tool for distributing control over objects between agents.
 
 <a name="digitalsignature"></a>_Digital signature_: Cryptographic protocol, based on public key cryptography, that proves that an object was in active contact with the private key corresponding to the signature: the object was actively "signed" with that key. Probably should have been called a "digital stamp" or "digital seal" since its function resembles more those methods than an autograph.
 
@@ -92,7 +92,7 @@ external: http://web.archive.org/web/20160620184813/http://szabo.best.vwh.net/sm
 
 <a name="blindsignature"></a>_Blind signature_: digital signature and secret-key encryption protocols that together have the mathematical property of commutativity, so that they can be stripped in reverse of the order they were applied. The effect is that Bob "signs" an object, for which he can verify its general form, but cannot see its specific content. Typically the key of the signature defines the meaning of the signed object, rather than the contents of the object signed, so that Bob doesn't end up signing a blank check. Used in digital bearer instruments, where Bob is the clearing agent, and Chaumian credentials, where Bob is the credential issuer.
 
-<a name="digitalbearerinstruments"></a>_Digital bearer instruments_: Objects identified by a unique key,and issued, cleared, and redeemed by a clearing agent. When an the object is transferred, the transferee can request the clearing agent to verify that the key has never before been cleared, and issue a new key. The clearing agent prevents multiple clearing of particular objects, but can be prevented from linking particular objects one or both of the clearing nyms who transferred that object. These instruments come in an "online" variety, cleared during every transfer, and thus both verifiable and observable, and an "offline" variety, which can be transferred without being cleared, but is only verifiable when finally cleared, by revealing any the clearing nym of any intermediate holder who transferred the object multiple times (a breach of contract). Privacy from the clearing agent can take the form of transferree-unlinkability, transferrer-unlinkability, or "double blinded" where both transferrer and transferee are unlinkable by the clearing agent. Digital cash is a popular form of digital bearer instrument.
+<a name="digitalbearerinstruments"></a>_Digital bearer instruments_: Objects identified by a unique key, and issued, cleared, and redeemed by a clearing agent. When an object is transferred, the transferee can request the clearing agent to verify that the key has never before been cleared, and issue a new key. The clearing agent prevents multiple clearing of particular objects, but can be prevented from linking particular objects one or both of the clearing nyms who transferred that object. These instruments come in an "online" variety, cleared during every transfer, and thus both verifiable and observable, and an "offline" variety, which can be transferred without being cleared, but is only verifiable when finally cleared, by revealing any the clearing nym of any intermediate holder who transferred the object multiple times (a breach of contract). Privacy from the clearing agent can take the form of transferree-unlinkability, transferrer-unlinkability, or "double blinded" where both transferrer and transferee are unlinkable by the clearing agent. Digital cash is a popular form of digital bearer instrument.
 
 <a name="locality"></a>_Locality_: _ immediacy, such as that provided by online clearing of digital bearer instruments _ dealing with the agents one knows best \* dealing in one's area of specialty
 
@@ -110,7 +110,7 @@ external: http://web.archive.org/web/20160620184813/http://szabo.best.vwh.net/sm
 
 <a name="contingentcontract"></a>_Contingent contract_: Contains terms which depend on the choice of a party or a state of the world. An option is an example of a contingent contract.
 
-<a name="derivative"></a>_Derivative_: A call or put option, future, or synthetic asset;such a contract is "derived" from a basic underlying security.
+<a name="derivative"></a>_Derivative_: A call or put option, future, or synthetic asset; such a contract is "derived" from a basic underlying security.
 
 <a name="syntheticasset"></a>_Synthetic asset_: A derivative constructed, or "synthesized", by combining securities and other derivatives. Cash flows for sophisticated synthetics can be calculated to high precision, by means of finely grained decision trees.
 
