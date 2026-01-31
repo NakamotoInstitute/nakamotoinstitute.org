@@ -3,6 +3,7 @@ services:
     build:
       context: .
       dockerfile: ./compose/production/fastapi/Dockerfile
+    restart: unless-stopped
     depends_on:
       - postgres
     volumes:
@@ -30,6 +31,7 @@ services:
 
   postgres:
     image: postgres:16
+    restart: unless-stopped
     volumes:
       - sni_postgres_data:/var/lib/postgresql/data
       - sni_postgres_data_backups:/backups
