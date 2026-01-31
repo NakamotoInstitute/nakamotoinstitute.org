@@ -42,6 +42,11 @@ if settings.API_KEY:
 if settings.ENVIRONMENT.is_debug:
     app.mount(STATIC_ROUTE, StaticFiles(directory="static"), name="static")
 
+@app.get("/health")
+async def health():
+    return {"status": "ok"}
+
+
 app.include_router(authors_router, tags=["authors"], prefix="/authors")
 app.include_router(library_router, tags=["library"], prefix="/library")
 app.include_router(mempool_router, tags=["mempool"], prefix="/mempool")

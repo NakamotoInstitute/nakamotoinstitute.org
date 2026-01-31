@@ -1,0 +1,136 @@
+name: Deploy
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  wait-for-ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lewagon/wait-on-check-action@v1.3.4
+        with:
+          ref: ${{ github.sha }}
+          running-workflow-name: wait-for-ci
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+  detect-changes:
+    runs-on: ubuntu-latest
+    needs: wait-for-ci
+    outputs:
+      server: ${{ steps.filter.outputs.server }}
+      content: ${{ steps.filter.outputs.content }}
+      static: ${{ steps.filter.outputs.static }}
+      client: ${{ steps.filter.outputs.client }}
+      deploy_relevant: ${{ steps.relevant.outputs.deploy_relevant }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            server:
+              - 'server/**'
+              - '!server/content/**'
+              - '!server/data/**'
+              - '!server/static/**'
+            content:
+              - 'server/content/**'
+              - 'server/data/**'
+            static:
+              - 'server/static/**'
+            client:
+              - 'client/**'
+      - id: relevant
+        run: |
+          if [[ "${{ steps.filter.outputs.server }}" == "true" || \
+                "${{ steps.filter.outputs.content }}" == "true" || \
+                "${{ steps.filter.outputs.static }}" == "true" || \
+                "${{ steps.filter.outputs.client }}" == "true" ]]; then
+            echo "deploy_relevant=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "deploy_relevant=false" >> "$GITHUB_OUTPUT"
+          fi
+
+  deploy-backend:
+    runs-on: ubuntu-latest
+    needs: detect-changes
+    if: needs.detect-changes.outputs.server == 'true'
+    steps:
+      - name: Deploy backend
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            cd ${{ secrets.VPS_PROJECT_PATH }}
+            git pull
+            cd server
+            just up --build
+      - name: Wait for health check
+        run: |
+          for i in $(seq 1 60); do
+            if curl -sf "${{ secrets.BACKEND_HEALTH_URL }}" > /dev/null 2>&1; then
+              echo "Health check passed"
+              exit 0
+            fi
+            echo "Attempt $i/60 - waiting..."
+            sleep 5
+          done
+          echo "Health check timed out"
+          exit 1
+
+  import-content:
+    runs-on: ubuntu-latest
+    needs: [detect-changes, deploy-backend]
+    if: always() && needs.detect-changes.outputs.content == 'true' && needs.detect-changes.outputs.server != 'true' && needs.deploy-backend.result != 'failure'
+    steps:
+      - name: Import content
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            cd ${{ secrets.VPS_PROJECT_PATH }}
+            git pull
+            cd server
+            just import
+      - name: Wait for health check
+        run: |
+          for i in $(seq 1 60); do
+            if curl -sf "${{ secrets.BACKEND_HEALTH_URL }}" > /dev/null 2>&1; then
+              echo "Health check passed"
+              exit 0
+            fi
+            echo "Attempt $i/60 - waiting..."
+            sleep 5
+          done
+          echo "Health check timed out"
+          exit 1
+
+  cdn-sync:
+    runs-on: ubuntu-latest
+    needs: [detect-changes, deploy-backend]
+    if: always() && needs.detect-changes.outputs.static == 'true' && needs.detect-changes.outputs.server != 'true' && needs.deploy-backend.result != 'failure'
+    steps:
+      - name: Sync CDN
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            cd ${{ secrets.VPS_PROJECT_PATH }}
+            git pull
+            cd server
+            just cdn-sync
+
+  deploy-frontend:
+    runs-on: ubuntu-latest
+    needs: [detect-changes, deploy-backend, import-content, cdn-sync]
+    if: always() && needs.detect-changes.outputs.deploy_relevant == 'true' && needs.deploy-backend.result != 'failure' && needs.import-content.result != 'failure' && needs.cdn-sync.result != 'failure'
+    steps:
+      - name: Trigger Vercel deploy
+        run: curl -X POST "${{ secrets.VERCEL_DEPLOY_HOOK }}"

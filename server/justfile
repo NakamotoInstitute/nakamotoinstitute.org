@@ -48,6 +48,9 @@ downgrade *args:
 import *args:
   just run python cli.py content initialize {{args}}
 
+cdn-sync:
+  just run python cli.py cdn sync
+
 ruff *args:
   just run ruff {{args}} check .
   just run ruff format .

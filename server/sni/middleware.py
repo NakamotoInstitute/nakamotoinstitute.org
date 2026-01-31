@@ -8,6 +8,9 @@ from .constants import STATIC_ROUTE
 
 class APIKeyMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):
+        if request.url.path == "/health":
+            return await call_next(request)
+
         if settings.ENVIRONMENT.is_debug and request.url.path.startswith(STATIC_ROUTE):
             return await call_next(request)
 
