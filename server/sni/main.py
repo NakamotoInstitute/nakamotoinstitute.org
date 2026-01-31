@@ -42,6 +42,7 @@ if settings.API_KEY:
 if settings.ENVIRONMENT.is_debug:
     app.mount(STATIC_ROUTE, StaticFiles(directory="static"), name="static")
 
+
 @app.get("/health")
 async def health():
     return {"status": "ok"}
