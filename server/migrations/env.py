@@ -20,7 +20,8 @@ if config.config_file_name is not None:
 # target_metadata = mymodel.Base.metadata
 
 from sni.database import Base  # noqa: E402
-from sni.models import *  # noqa: E402, F403
+
+import sni.models  # noqa: E402, F401
 
 target_metadata = Base.metadata
 
