@@ -1,6 +1,7 @@
 import { TFunction } from "i18next";
 import { Metadata } from "next";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
@@ -31,13 +32,14 @@ export async function generateMetadata(
 
   const { locale, slug } = params;
 
-  const {
-    data: { category },
-  } = await api.satoshi.getQuoteCategory({ path: { slug } });
+  const { data } = await api.satoshi.getQuoteCategory({ path: { slug } });
+  if (!data) {
+    return {};
+  }
   const languages = generateHrefLangs(locales, generateHref(slug));
 
   return {
-    title: category.name,
+    title: data.category.name,
     alternates: {
       canonical: generateHref(slug)(locale),
       languages,
@@ -141,11 +143,13 @@ export default async function QuotesCategoryPage(
   const { locale, slug } = params;
 
   const { t } = await i18nTranslation(locale);
-  const {
-    data: { category, quotes },
-  } = await api.satoshi.getQuoteCategory({
+  const { data } = await api.satoshi.getQuoteCategory({
     path: { slug },
   });
+  if (!data) {
+    return notFound();
+  }
+  const { category, quotes } = data;
 
   return (
     <PageLayout
