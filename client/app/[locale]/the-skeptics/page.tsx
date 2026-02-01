@@ -39,7 +39,7 @@ export default async function TheSkepticsPage(props: LocaleParams) {
 
   const { locale } = params;
 
-  const [content, { t }, { data: skeptics }, priceResult] = await Promise.all([
+  const [content, { t }, { data: skeptics = [] }, priceResult] = await Promise.all([
     getPage("the-skeptics", locale),
     i18nTranslation(locale),
     api.skeptics.getSkeptics(),

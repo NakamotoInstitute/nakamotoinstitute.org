@@ -54,7 +54,7 @@ export default async function SeriesIndex(props: LocaleParams) {
   const { locale } = params;
 
   const { t } = await i18nTranslation(locale);
-  const { data: allSeries } = await api.mempool.getAllMempoolSeries({
+  const { data: allSeries = [] } = await api.mempool.getAllMempoolSeries({
     query: { locale },
   });
 

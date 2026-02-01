@@ -37,7 +37,7 @@ export default async function PodcastsIndex(props: LocaleParams) {
   const { locale } = params;
 
   const { t } = await i18nTranslation(locale);
-  const { data: podcasts } = await api.podcasts.getPodcasts();
+  const { data: podcasts = [] } = await api.podcasts.getPodcasts();
 
   return (
     <PageLayout t={t} locale={locale} generateHref={generateHref}>

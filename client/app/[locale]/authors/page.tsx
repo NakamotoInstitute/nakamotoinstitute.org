@@ -34,7 +34,7 @@ export default async function AuthorsIndex(props: LocaleParams) {
   const { locale } = params;
 
   const { t } = await i18nTranslation(locale);
-  const { data: authors } = await api.authors.getAuthors({ query: { locale } });
+  const { data: authors = [] } = await api.authors.getAuthors({ query: { locale } });
   const generateHref = (l: Locale) => urls(l).authors.index;
 
   return (

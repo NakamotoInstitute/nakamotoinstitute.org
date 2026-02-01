@@ -47,7 +47,7 @@ export default async function PostsSourceIndex(
   const { source, locale } = params;
 
   const { t } = await i18nTranslation(locale);
-  const { data: posts } = await api.satoshi.getForumPostsBySource({
+  const { data: posts = [] } = await api.satoshi.getForumPostsBySource({
     path: { source },
   });
 

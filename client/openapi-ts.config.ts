@@ -31,7 +31,6 @@ export default defineConfig({
     },
     {
       name: "@hey-api/client-next",
-      throwOnError: true,
     },
     {
       name: "@hey-api/sdk",

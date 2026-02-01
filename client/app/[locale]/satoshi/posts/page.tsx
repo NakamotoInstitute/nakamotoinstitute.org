@@ -37,7 +37,7 @@ export default async function PostsIndex(props: LocaleParams) {
   const { locale } = params;
 
   const { t } = await i18nTranslation(locale);
-  const { data: posts } = await api.satoshi.getForumPosts();
+  const { data: posts = [] } = await api.satoshi.getForumPosts();
 
   const sourceLinks = [
     { name: t("all"), href: urls(locale).satoshi.posts.index, active: true },

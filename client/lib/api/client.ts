@@ -6,7 +6,7 @@ import { client } from "./generated/client.gen";
 client.setConfig({
   baseUrl: env.API_URL,
   headers: env.API_KEY ? { "X-API-Key": env.API_KEY } : undefined,
-  throwOnError: true,
+
   cache: env.VERCEL_ENV === "development" ? "no-store" : "force-cache",
 });
 

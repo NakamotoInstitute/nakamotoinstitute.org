@@ -1,7 +1,6 @@
 import { TFunction } from "i18next";
 import { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
 
 import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
@@ -13,6 +12,7 @@ import {
   Quote,
   QuoteCategoryBase,
   api,
+  getOrNotFound,
 } from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
@@ -32,10 +32,9 @@ export async function generateMetadata(
 
   const { locale, slug } = params;
 
-  const { data } = await api.satoshi.getQuoteCategory({ path: { slug } });
-  if (!data) {
-    return {};
-  }
+  const data = await getOrNotFound(
+    api.satoshi.getQuoteCategory({ path: { slug } }),
+  );
   const languages = generateHrefLangs(locales, generateHref(slug));
 
   return {
@@ -143,13 +142,9 @@ export default async function QuotesCategoryPage(
   const { locale, slug } = params;
 
   const { t } = await i18nTranslation(locale);
-  const { data } = await api.satoshi.getQuoteCategory({
-    path: { slug },
-  });
-  if (!data) {
-    return notFound();
-  }
-  const { category, quotes } = data;
+  const { category, quotes } = await getOrNotFound(
+    api.satoshi.getQuoteCategory({ path: { slug } }),
+  );
 
   return (
     <PageLayout
@@ -184,6 +179,6 @@ export default async function QuotesCategoryPage(
 export async function generateStaticParams() {
   const { data: categories } = await api.satoshi.getQuoteCategories();
   return getLocaleParams((locale) =>
-    categories.map((c: QuoteCategoryBase) => ({ locale, slug: c.slug })),
+    (categories ?? []).map((c: QuoteCategoryBase) => ({ locale, slug: c.slug })),
   );
 }

@@ -9,7 +9,7 @@ export async function GET(
   { params }: { params: Promise<{ podcastSlug: string }> },
 ) {
   const { podcastSlug } = await params;
-  const { data: content } = await api.podcasts.generateFeed({
+  const { data: content = "" } = await api.podcasts.generateFeed({
     path: { podcast_slug: podcastSlug },
   });
 
@@ -24,7 +24,7 @@ export async function GET(
 export async function generateStaticParams() {
   const { data: podcasts } = await api.podcasts.getPodcasts();
   return getLocaleParams((locale) =>
-    podcasts
+    (podcasts ?? [])
       .filter((p: PodcastBase) => !p.externalFeed)
       .map((p: PodcastBase) => ({ locale, podcastSlug: p.slug })),
   );

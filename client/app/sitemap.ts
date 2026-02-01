@@ -14,7 +14,7 @@ import { LocalizedUrlObject, createLocalizedUrlObject } from "@/utils/sitemap";
 import { formatLocale } from "@/utils/strings";
 
 async function getAuthorUrls(): Promise<MetadataRoute.Sitemap> {
-  const { data: authors } = await api.authors.getAuthorParams();
+  const { data: authors = [] } = await api.authors.getAuthorParams();
   const cleanedAuthors = authors.reduce(
     (acc: { [slug: string]: Locale[] }, author: SlugParam) => {
       if (!acc[author.slug]) {
@@ -45,7 +45,7 @@ async function getAuthorUrls(): Promise<MetadataRoute.Sitemap> {
 }
 
 async function getLibraryUrls(): Promise<MetadataRoute.Sitemap> {
-  const { data: libraryDocs } = await api.library.getLibraryDocs({
+  const { data: libraryDocs = [] } = await api.library.getLibraryDocs({
     query: { locale: "en" },
   });
   return libraryDocs.flatMap((doc: DocumentIndex) => {
@@ -79,7 +79,7 @@ async function getLibraryUrls(): Promise<MetadataRoute.Sitemap> {
 }
 
 async function getMempoolUrls(): Promise<MetadataRoute.Sitemap> {
-  const { data: mempoolPosts } = await api.mempool.getMempoolPosts({
+  const { data: mempoolPosts = [] } = await api.mempool.getMempoolPosts({
     query: { locale: "en" },
   });
   return mempoolPosts.map((post: MempoolPostIndex) => ({
@@ -101,14 +101,14 @@ async function getMempoolUrls(): Promise<MetadataRoute.Sitemap> {
 }
 
 async function getMempoolSeriesUrls(): Promise<MetadataRoute.Sitemap> {
-  const { data: mempoolSeries } = await api.mempool.getMempoolSeriesParams();
+  const { data: mempoolSeries = [] } = await api.mempool.getMempoolSeriesParams();
   return mempoolSeries.map((series: SlugParam) => ({
     url: urls("en").mempool.seriesDetail(series.slug),
   }));
 }
 
 async function getPodcastsUrls(): Promise<MetadataRoute.Sitemap> {
-  const { data: podcasts } = await api.podcasts.getPodcasts();
+  const { data: podcasts = [] } = await api.podcasts.getPodcasts();
   return podcasts.map((podcast: PodcastBase) => ({
     url: urls("en").podcasts.show(podcast.slug),
     alternates: {
@@ -124,7 +124,7 @@ async function getPodcastsUrls(): Promise<MetadataRoute.Sitemap> {
 }
 
 async function getPodcastEpisodesUrls(): Promise<MetadataRoute.Sitemap> {
-  const { data: episodes } = await api.podcasts.getEpisodes();
+  const { data: episodes = [] } = await api.podcasts.getEpisodes();
   return episodes.map((episode: EpisodeParams) => ({
     url: urls("en").podcasts.episode(episode.podcastSlug, episode.episodeSlug),
     alternates: {

@@ -7,6 +7,9 @@ export * from "./generated";
 // Client instance
 export { api } from "./client";
 
+// Helpers
+export { getOrNotFound } from "./helpers";
+
 // External price API
 export { fetchPriceHistory, type Price } from "./prices";
 

@@ -4,7 +4,13 @@ import Link from "next/link";
 import { Arrow } from "@/app/components/Arrow";
 import { PageLayout } from "@/app/components/PageLayout";
 import { Rehype } from "@/app/components/Rehype";
-import { DocumentNode, Locale, TranslationSchema, api } from "@/lib/api";
+import {
+  DocumentNode,
+  Locale,
+  TranslationSchema,
+  api,
+  getOrNotFound,
+} from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { getDir } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
@@ -20,10 +26,12 @@ export async function generateMetadata(
 
   const { locale, slug, nodeSlug } = params;
 
-  const { data: node } = await api.library.getLibraryDocNode({
-    path: { doc_slug: slug, slug: nodeSlug },
-    query: { locale },
-  });
+  const node = await getOrNotFound(
+    api.library.getLibraryDocNode({
+      path: { doc_slug: slug, slug: nodeSlug },
+      query: { locale },
+    }),
+  );
 
   return {
     title: node.heading ? `${node.heading}: ${node.title}` : node.title,
@@ -88,10 +96,12 @@ export default async function LibraryNodeDetail(
   const { slug, nodeSlug, locale } = params;
 
   const { t } = await i18nTranslation(locale);
-  const { data: node } = await api.library.getLibraryDocNode({
-    path: { doc_slug: slug, slug: nodeSlug },
-    query: { locale },
-  });
+  const node = await getOrNotFound(
+    api.library.getLibraryDocNode({
+      path: { doc_slug: slug, slug: nodeSlug },
+      query: { locale },
+    }),
+  );
 
   const generateHref = (l: Locale) => {
     const translation = node.translations.find(
@@ -137,5 +147,5 @@ export default async function LibraryNodeDetail(
 
 export async function generateStaticParams() {
   const { data } = await api.library.getLibraryNodeParams();
-  return data;
+  return data ?? [];
 }

@@ -1,11 +1,10 @@
 import clsx from "clsx";
 import { TFunction } from "i18next";
 import { Metadata } from "next";
-import { notFound } from "next/navigation";
 
 import { PageLayout } from "@/app/components/PageLayout";
 import { locales } from "@/i18n";
-import { ForumPost, ForumPostSource, api } from "@/lib/api";
+import { ForumPost, ForumPostSource, api, getOrNotFound } from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
@@ -37,9 +36,11 @@ export async function generateMetadata(
 
   const { locale, source, threadId } = params;
 
-  const { data: threadData } = await api.satoshi.getForumThreadBySource({
-    path: { source, thread_id: parseInt(threadId) },
-  });
+  const threadData = await getOrNotFound(
+    api.satoshi.getForumThreadBySource({
+      path: { source, thread_id: parseInt(threadId) },
+    }),
+  );
   const { t } = await i18nTranslation(locale);
   const languages = generateHrefLangs(locales, generateHref(source, threadId));
 
@@ -139,15 +140,12 @@ export default async function PostSourceThreadDetail(
   const { source, threadId, locale } = params;
 
   const satoshiOnly = view === "satoshi";
-  const { data: threadData } = await api.satoshi.getForumThreadBySource({
-    path: { source, thread_id: parseInt(threadId) },
-    query: satoshiOnly ? { satoshi: true } : undefined,
-  });
-  if (!threadData) {
-    return notFound();
-  }
-
-  const { thread, posts, next, previous } = threadData;
+  const { thread, posts, next, previous } = await getOrNotFound(
+    api.satoshi.getForumThreadBySource({
+      path: { source, thread_id: parseInt(threadId) },
+      query: satoshiOnly ? { satoshi: true } : undefined,
+    }),
+  );
 
   const { t } = await i18nTranslation(locale);
 

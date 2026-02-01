@@ -40,7 +40,7 @@ export default async function PostThreadsIndex(props: LocaleParams) {
   const { locale } = params;
 
   const { t } = await i18nTranslation(locale);
-  const { data: threads } = await api.satoshi.getForumThreads();
+  const { data: threads = [] } = await api.satoshi.getForumThreads();
   const sortedThreads = threads.reduce(
     (
       acc: { [K in ForumPostSource]: ForumThreadBase[] },

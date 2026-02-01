@@ -42,7 +42,7 @@ export default async function EmailSourceThreadsIndex(
   const { locale, source } = params;
 
   const { t } = await i18nTranslation(locale);
-  const { data: threads } = await api.satoshi.getEmailThreadsBySource({
+  const { data: threads = [] } = await api.satoshi.getEmailThreadsBySource({
     path: { source },
   });
 

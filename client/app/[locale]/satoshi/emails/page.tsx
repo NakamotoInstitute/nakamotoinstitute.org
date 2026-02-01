@@ -38,7 +38,7 @@ export default async function EmailsIndex(props: LocaleParams) {
   const { locale } = params;
 
   const { t } = await i18nTranslation(locale);
-  const { data: emails } = await api.satoshi.getEmails();
+  const { data: emails = [] } = await api.satoshi.getEmails();
 
   const sourceLinks: SourceLink[] = [
     { name: t("all"), active: true },

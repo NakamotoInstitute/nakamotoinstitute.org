@@ -37,7 +37,7 @@ export default async function LibraryIndex(props: LocaleParams) {
   const { locale } = params;
 
   const { t } = await i18nTranslation(locale);
-  const { data: docs } = await api.library.getLibraryDocs({
+  const { data: docs = [] } = await api.library.getLibraryDocs({
     query: { locale },
   });
 

@@ -7,7 +7,7 @@ export async function GET(
   ctx: RouteContext<"/[locale]/mempool/atom.xml">,
 ) {
   const { locale } = await ctx.params;
-  const { data: content } = await api.mempool.generateFeed({
+  const { data: content = "" } = await api.mempool.generateFeed({
     query: { locale: locale as Locale, format: "atom" },
   });
 

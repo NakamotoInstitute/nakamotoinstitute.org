@@ -36,7 +36,7 @@ export default async function MempoolIndex(props: LocaleParams) {
   const { locale } = params;
 
   const { t } = await i18nTranslation(locale);
-  const { data: posts } = await api.mempool.getMempoolPosts({
+  const { data: posts = [] } = await api.mempool.getMempoolPosts({
     query: { locale },
   });
 

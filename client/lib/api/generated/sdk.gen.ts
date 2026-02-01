@@ -51,7 +51,7 @@ export class Authors extends HeyApiClient {
     /**
      * Get all authors
      */
-    public getAuthors<ThrowOnError extends boolean = true>(options: Options<GetAuthorsData, ThrowOnError>) {
+    public getAuthors<ThrowOnError extends boolean = false>(options: Options<GetAuthorsData, ThrowOnError>) {
         return (options.client ?? this.client).get<GetAuthorsResponses, GetAuthorsErrors, ThrowOnError>({
             requestValidator: async (data) => await zGetAuthorsData.parseAsync(data),
             responseTransformer: async (data) => await zGetAuthorsResponse.parseAsync(data),
@@ -65,7 +65,7 @@ export class Authors extends HeyApiClient {
      *
      * Get author slugs for static site generation.
      */
-    public getAuthorParams<ThrowOnError extends boolean = true>(options?: Options<GetAuthorsParamsData, ThrowOnError>) {
+    public getAuthorParams<ThrowOnError extends boolean = false>(options?: Options<GetAuthorsParamsData, ThrowOnError>) {
         return (options?.client ?? this.client).get<GetAuthorsParamsResponses, unknown, ThrowOnError>({
             requestValidator: async (data) => await zGetAuthorsParamsData.parseAsync(data),
             responseTransformer: async (data) => await zGetAuthorsParamsResponse.parseAsync(data),
@@ -79,7 +79,7 @@ export class Authors extends HeyApiClient {
      *
      * Returns author details with their library docs and mempool posts.
      */
-    public getAuthor<ThrowOnError extends boolean = true>(options: Options<GetAuthorsBySlugData, ThrowOnError>) {
+    public getAuthor<ThrowOnError extends boolean = false>(options: Options<GetAuthorsBySlugData, ThrowOnError>) {
         return (options.client ?? this.client).get<GetAuthorsBySlugResponses, GetAuthorsBySlugErrors, ThrowOnError>({
             requestValidator: async (data) => await zGetAuthorsBySlugData.parseAsync(data),
             responseTransformer: async (data) => await zGetAuthorsBySlugResponse.parseAsync(data),
@@ -93,7 +93,7 @@ export class Library extends HeyApiClient {
     /**
      * Get all documents
      */
-    public getLibraryDocs<ThrowOnError extends boolean = true>(options: Options<GetLibraryData, ThrowOnError>) {
+    public getLibraryDocs<ThrowOnError extends boolean = false>(options: Options<GetLibraryData, ThrowOnError>) {
         return (options.client ?? this.client).get<GetLibraryResponses, GetLibraryErrors, ThrowOnError>({
             requestValidator: async (data) => await zGetLibraryData.parseAsync(data),
             responseTransformer: async (data) => await zGetLibraryResponse.parseAsync(data),
@@ -107,7 +107,7 @@ export class Library extends HeyApiClient {
      *
      * Get document slugs for static site generation.
      */
-    public getLibraryParams<ThrowOnError extends boolean = true>(options?: Options<GetLibraryParamsData, ThrowOnError>) {
+    public getLibraryParams<ThrowOnError extends boolean = false>(options?: Options<GetLibraryParamsData, ThrowOnError>) {
         return (options?.client ?? this.client).get<GetLibraryParamsResponses, unknown, ThrowOnError>({
             requestValidator: async (data) => await zGetLibraryParamsData.parseAsync(data),
             responseTransformer: async (data) => await zGetLibraryParamsResponse.parseAsync(data),
@@ -121,7 +121,7 @@ export class Library extends HeyApiClient {
      *
      * Get document node slugs for static site generation.
      */
-    public getLibraryNodeParams<ThrowOnError extends boolean = true>(options?: Options<GetLibraryParamsNodesData, ThrowOnError>) {
+    public getLibraryNodeParams<ThrowOnError extends boolean = false>(options?: Options<GetLibraryParamsNodesData, ThrowOnError>) {
         return (options?.client ?? this.client).get<GetLibraryParamsNodesResponses, unknown, ThrowOnError>({
             requestValidator: async (data) => await zGetLibraryParamsNodesData.parseAsync(data),
             responseTransformer: async (data) => await zGetLibraryParamsNodesResponse.parseAsync(data),
@@ -135,7 +135,7 @@ export class Library extends HeyApiClient {
      *
      * Returns Bitcoin whitepaper, Shelling Out, and Cypherpunk Manifesto.
      */
-    public getHomeLibraryDocs<ThrowOnError extends boolean = true>(options: Options<GetLibraryHomeData, ThrowOnError>) {
+    public getHomeLibraryDocs<ThrowOnError extends boolean = false>(options: Options<GetLibraryHomeData, ThrowOnError>) {
         return (options.client ?? this.client).get<GetLibraryHomeResponses, GetLibraryHomeErrors, ThrowOnError>({
             requestValidator: async (data) => await zGetLibraryHomeData.parseAsync(data),
             responseTransformer: async (data) => await zGetLibraryHomeResponse.parseAsync(data),
@@ -147,7 +147,7 @@ export class Library extends HeyApiClient {
     /**
      * Get document by slug
      */
-    public getLibraryDoc<ThrowOnError extends boolean = true>(options: Options<GetLibraryBySlugData, ThrowOnError>) {
+    public getLibraryDoc<ThrowOnError extends boolean = false>(options: Options<GetLibraryBySlugData, ThrowOnError>) {
         return (options.client ?? this.client).get<GetLibraryBySlugResponses, GetLibraryBySlugErrors, ThrowOnError>({
             requestValidator: async (data) => await zGetLibraryBySlugData.parseAsync(data),
             responseTransformer: async (data) => await zGetLibraryBySlugResponse.parseAsync(data),
@@ -161,7 +161,7 @@ export class Library extends HeyApiClient {
      *
      * Get a section or chapter within a document.
      */
-    public getLibraryDocNode<ThrowOnError extends boolean = true>(options: Options<GetLibraryByDocSlugBySlugData, ThrowOnError>) {
+    public getLibraryDocNode<ThrowOnError extends boolean = false>(options: Options<GetLibraryByDocSlugBySlugData, ThrowOnError>) {
         return (options.client ?? this.client).get<GetLibraryByDocSlugBySlugResponses, GetLibraryByDocSlugBySlugErrors, ThrowOnError>({
             requestValidator: async (data) => await zGetLibraryByDocSlugBySlugData.parseAsync(data),
             responseTransformer: async (data) => await zGetLibraryByDocSlugBySlugResponse.parseAsync(data),
@@ -175,7 +175,7 @@ export class Mempool extends HeyApiClient {
     /**
      * Get all series
      */
-    public getAllMempoolSeries<ThrowOnError extends boolean = true>(options: Options<GetMempoolSeriesData, ThrowOnError>) {
+    public getAllMempoolSeries<ThrowOnError extends boolean = false>(options: Options<GetMempoolSeriesData, ThrowOnError>) {
         return (options.client ?? this.client).get<GetMempoolSeriesResponses, GetMempoolSeriesErrors, ThrowOnError>({
             requestValidator: async (data) => await zGetMempoolSeriesData.parseAsync(data),
             responseTransformer: async (data) => await zGetMempoolSeriesResponse.parseAsync(data),
@@ -189,7 +189,7 @@ export class Mempool extends HeyApiClient {
      *
      * Get series slugs for static site generation.
      */
-    public getMempoolSeriesParams<ThrowOnError extends boolean = true>(options?: Options<GetMempoolSeriesParamsData, ThrowOnError>) {
+    public getMempoolSeriesParams<ThrowOnError extends boolean = false>(options?: Options<GetMempoolSeriesParamsData, ThrowOnError>) {
         return (options?.client ?? this.client).get<GetMempoolSeriesParamsResponses, unknown, ThrowOnError>({
             requestValidator: async (data) => await zGetMempoolSeriesParamsData.parseAsync(data),
             responseTransformer: async (data) => await zGetMempoolSeriesParamsResponse.parseAsync(data),
@@ -203,7 +203,7 @@ export class Mempool extends HeyApiClient {
      *
      * Returns series details with all posts in the series.
      */
-    public getMempoolSeries<ThrowOnError extends boolean = true>(options: Options<GetMempoolSeriesBySlugData, ThrowOnError>) {
+    public getMempoolSeries<ThrowOnError extends boolean = false>(options: Options<GetMempoolSeriesBySlugData, ThrowOnError>) {
         return (options.client ?? this.client).get<GetMempoolSeriesBySlugResponses, GetMempoolSeriesBySlugErrors, ThrowOnError>({
             requestValidator: async (data) => await zGetMempoolSeriesBySlugData.parseAsync(data),
             responseTransformer: async (data) => await zGetMempoolSeriesBySlugResponse.parseAsync(data),
@@ -215,7 +215,7 @@ export class Mempool extends HeyApiClient {
     /**
      * Get all posts
      */
-    public getMempoolPosts<ThrowOnError extends boolean = true>(options: Options<GetMempoolData, ThrowOnError>) {
+    public getMempoolPosts<ThrowOnError extends boolean = false>(options: Options<GetMempoolData, ThrowOnError>) {
         return (options.client ?? this.client).get<GetMempoolResponses, GetMempoolErrors, ThrowOnError>({
             requestValidator: async (data) => await zGetMempoolData.parseAsync(data),
             responseTransformer: async (data) => await zGetMempoolResponse.parseAsync(data),
@@ -229,7 +229,7 @@ export class Mempool extends HeyApiClient {
      *
      * Returns the N most recent posts. Defaults to 3.
      */
-    public getLatestMempoolPosts<ThrowOnError extends boolean = true>(options: Options<GetMempoolLatestData, ThrowOnError>) {
+    public getLatestMempoolPosts<ThrowOnError extends boolean = false>(options: Options<GetMempoolLatestData, ThrowOnError>) {
         return (options.client ?? this.client).get<GetMempoolLatestResponses, GetMempoolLatestErrors, ThrowOnError>({
             requestValidator: async (data) => await zGetMempoolLatestData.parseAsync(data),
             responseTransformer: async (data) => await zGetMempoolLatestResponse.parseAsync(data),
@@ -243,7 +243,7 @@ export class Mempool extends HeyApiClient {
      *
      * Get post slugs for static site generation.
      */
-    public getMempoolParams<ThrowOnError extends boolean = true>(options?: Options<GetMempoolParamsData, ThrowOnError>) {
+    public getMempoolParams<ThrowOnError extends boolean = false>(options?: Options<GetMempoolParamsData, ThrowOnError>) {
         return (options?.client ?? this.client).get<GetMempoolParamsResponses, unknown, ThrowOnError>({
             requestValidator: async (data) => await zGetMempoolParamsData.parseAsync(data),
             responseTransformer: async (data) => await zGetMempoolParamsResponse.parseAsync(data),
@@ -257,7 +257,7 @@ export class Mempool extends HeyApiClient {
      *
      * Returns RSS or Atom feed based on format parameter.
      */
-    public generateFeed<ThrowOnError extends boolean = true>(options: Options<GetMempoolFeedData, ThrowOnError>) {
+    public generateFeed<ThrowOnError extends boolean = false>(options: Options<GetMempoolFeedData, ThrowOnError>) {
         return (options.client ?? this.client).get<GetMempoolFeedResponses, GetMempoolFeedErrors, ThrowOnError>({
             requestValidator: async (data) => await zGetMempoolFeedData.parseAsync(data),
             responseTransformer: async (data) => await zGetMempoolFeedResponse.parseAsync(data),
@@ -269,7 +269,7 @@ export class Mempool extends HeyApiClient {
     /**
      * Get post by slug
      */
-    public getMempoolPost<ThrowOnError extends boolean = true>(options: Options<GetMempoolBySlugData, ThrowOnError>) {
+    public getMempoolPost<ThrowOnError extends boolean = false>(options: Options<GetMempoolBySlugData, ThrowOnError>) {
         return (options.client ?? this.client).get<GetMempoolBySlugResponses, GetMempoolBySlugErrors, ThrowOnError>({
             requestValidator: async (data) => await zGetMempoolBySlugData.parseAsync(data),
             responseTransformer: async (data) => await zGetMempoolBySlugResponse.parseAsync(data),
@@ -283,7 +283,7 @@ export class Podcasts extends HeyApiClient {
     /**
      * Get all podcasts
      */
-    public getPodcasts<ThrowOnError extends boolean = true>(options?: Options<GetPodcastsData, ThrowOnError>) {
+    public getPodcasts<ThrowOnError extends boolean = false>(options?: Options<GetPodcastsData, ThrowOnError>) {
         return (options?.client ?? this.client).get<GetPodcastsResponses, unknown, ThrowOnError>({
             requestValidator: async (data) => await zGetPodcastsData.parseAsync(data),
             responseTransformer: async (data) => await zGetPodcastsResponse.parseAsync(data),
@@ -295,7 +295,7 @@ export class Podcasts extends HeyApiClient {
     /**
      * Get featured podcasts
      */
-    public getHomePodcasts<ThrowOnError extends boolean = true>(options?: Options<GetPodcastsHomeData, ThrowOnError>) {
+    public getHomePodcasts<ThrowOnError extends boolean = false>(options?: Options<GetPodcastsHomeData, ThrowOnError>) {
         return (options?.client ?? this.client).get<GetPodcastsHomeResponses, unknown, ThrowOnError>({
             requestValidator: async (data) => await zGetPodcastsHomeData.parseAsync(data),
             responseTransformer: async (data) => await zGetPodcastsHomeResponse.parseAsync(data),
@@ -307,7 +307,7 @@ export class Podcasts extends HeyApiClient {
     /**
      * Get all episodes
      */
-    public getEpisodes<ThrowOnError extends boolean = true>(options?: Options<GetPodcastsEpisodesData, ThrowOnError>) {
+    public getEpisodes<ThrowOnError extends boolean = false>(options?: Options<GetPodcastsEpisodesData, ThrowOnError>) {
         return (options?.client ?? this.client).get<GetPodcastsEpisodesResponses, unknown, ThrowOnError>({
             requestValidator: async (data) => await zGetPodcastsEpisodesData.parseAsync(data),
             responseTransformer: async (data) => await zGetPodcastsEpisodesResponse.parseAsync(data),
@@ -321,7 +321,7 @@ export class Podcasts extends HeyApiClient {
      *
      * Returns 404 if podcast not found or has external feed.
      */
-    public generateFeed<ThrowOnError extends boolean = true>(options: Options<GetPodcastsByPodcastSlugFeedData, ThrowOnError>) {
+    public generateFeed<ThrowOnError extends boolean = false>(options: Options<GetPodcastsByPodcastSlugFeedData, ThrowOnError>) {
         return (options.client ?? this.client).get<GetPodcastsByPodcastSlugFeedResponses, GetPodcastsByPodcastSlugFeedErrors, ThrowOnError>({
             requestValidator: async (data) => await zGetPodcastsByPodcastSlugFeedData.parseAsync(data),
             responseTransformer: async (data) => await zGetPodcastsByPodcastSlugFeedResponse.parseAsync(data),
@@ -333,7 +333,7 @@ export class Podcasts extends HeyApiClient {
     /**
      * Get podcast by slug
      */
-    public getPodcast<ThrowOnError extends boolean = true>(options: Options<GetPodcastsByPodcastSlugData, ThrowOnError>) {
+    public getPodcast<ThrowOnError extends boolean = false>(options: Options<GetPodcastsByPodcastSlugData, ThrowOnError>) {
         return (options.client ?? this.client).get<GetPodcastsByPodcastSlugResponses, GetPodcastsByPodcastSlugErrors, ThrowOnError>({
             requestValidator: async (data) => await zGetPodcastsByPodcastSlugData.parseAsync(data),
             responseTransformer: async (data) => await zGetPodcastsByPodcastSlugResponse.parseAsync(data),
@@ -345,7 +345,7 @@ export class Podcasts extends HeyApiClient {
     /**
      * Get episode by slug
      */
-    public getEpisode<ThrowOnError extends boolean = true>(options: Options<GetPodcastsByPodcastSlugByEpisodeSlugData, ThrowOnError>) {
+    public getEpisode<ThrowOnError extends boolean = false>(options: Options<GetPodcastsByPodcastSlugByEpisodeSlugData, ThrowOnError>) {
         return (options.client ?? this.client).get<GetPodcastsByPodcastSlugByEpisodeSlugResponses, GetPodcastsByPodcastSlugByEpisodeSlugErrors, ThrowOnError>({
             requestValidator: async (data) => await zGetPodcastsByPodcastSlugByEpisodeSlugData.parseAsync(data),
             responseTransformer: async (data) => await zGetPodcastsByPodcastSlugByEpisodeSlugResponse.parseAsync(data),
@@ -359,7 +359,7 @@ export class Satoshi extends HeyApiClient {
     /**
      * Get all emails
      */
-    public getEmails<ThrowOnError extends boolean = true>(options?: Options<GetSatoshiEmailsData, ThrowOnError>) {
+    public getEmails<ThrowOnError extends boolean = false>(options?: Options<GetSatoshiEmailsData, ThrowOnError>) {
         return (options?.client ?? this.client).get<GetSatoshiEmailsResponses, unknown, ThrowOnError>({
             requestValidator: async (data) => await zGetSatoshiEmailsData.parseAsync(data),
             responseTransformer: async (data) => await zGetSatoshiEmailsResponse.parseAsync(data),
@@ -371,7 +371,7 @@ export class Satoshi extends HeyApiClient {
     /**
      * Get all email threads
      */
-    public getEmailThreads<ThrowOnError extends boolean = true>(options?: Options<GetSatoshiEmailsThreadsData, ThrowOnError>) {
+    public getEmailThreads<ThrowOnError extends boolean = false>(options?: Options<GetSatoshiEmailsThreadsData, ThrowOnError>) {
         return (options?.client ?? this.client).get<GetSatoshiEmailsThreadsResponses, unknown, ThrowOnError>({
             requestValidator: async (data) => await zGetSatoshiEmailsThreadsData.parseAsync(data),
             responseTransformer: async (data) => await zGetSatoshiEmailsThreadsResponse.parseAsync(data),
@@ -383,7 +383,7 @@ export class Satoshi extends HeyApiClient {
     /**
      * Get emails by source
      */
-    public getEmailsBySource<ThrowOnError extends boolean = true>(options: Options<GetSatoshiEmailsBySourceData, ThrowOnError>) {
+    public getEmailsBySource<ThrowOnError extends boolean = false>(options: Options<GetSatoshiEmailsBySourceData, ThrowOnError>) {
         return (options.client ?? this.client).get<GetSatoshiEmailsBySourceResponses, GetSatoshiEmailsBySourceErrors, ThrowOnError>({
             requestValidator: async (data) => await zGetSatoshiEmailsBySourceData.parseAsync(data),
             responseTransformer: async (data) => await zGetSatoshiEmailsBySourceResponse.parseAsync(data),
@@ -395,7 +395,7 @@ export class Satoshi extends HeyApiClient {
     /**
      * Get email threads by source
      */
-    public getEmailThreadsBySource<ThrowOnError extends boolean = true>(options: Options<GetSatoshiEmailsBySourceThreadsData, ThrowOnError>) {
+    public getEmailThreadsBySource<ThrowOnError extends boolean = false>(options: Options<GetSatoshiEmailsBySourceThreadsData, ThrowOnError>) {
         return (options.client ?? this.client).get<GetSatoshiEmailsBySourceThreadsResponses, GetSatoshiEmailsBySourceThreadsErrors, ThrowOnError>({
             requestValidator: async (data) => await zGetSatoshiEmailsBySourceThreadsData.parseAsync(data),
             responseTransformer: async (data) => await zGetSatoshiEmailsBySourceThreadsResponse.parseAsync(data),
@@ -409,7 +409,7 @@ export class Satoshi extends HeyApiClient {
      *
      * Returns thread with emails and previous/next navigation.
      */
-    public getEmailThreadBySource<ThrowOnError extends boolean = true>(options: Options<GetSatoshiEmailsBySourceThreadsByThreadIdData, ThrowOnError>) {
+    public getEmailThreadBySource<ThrowOnError extends boolean = false>(options: Options<GetSatoshiEmailsBySourceThreadsByThreadIdData, ThrowOnError>) {
         return (options.client ?? this.client).get<GetSatoshiEmailsBySourceThreadsByThreadIdResponses, GetSatoshiEmailsBySourceThreadsByThreadIdErrors, ThrowOnError>({
             requestValidator: async (data) => await zGetSatoshiEmailsBySourceThreadsByThreadIdData.parseAsync(data),
             responseTransformer: async (data) => await zGetSatoshiEmailsBySourceThreadsByThreadIdResponse.parseAsync(data),
@@ -423,7 +423,7 @@ export class Satoshi extends HeyApiClient {
      *
      * Returns email with previous/next navigation.
      */
-    public getEmailBySource<ThrowOnError extends boolean = true>(options: Options<GetSatoshiEmailsBySourceBySatoshiIdData, ThrowOnError>) {
+    public getEmailBySource<ThrowOnError extends boolean = false>(options: Options<GetSatoshiEmailsBySourceBySatoshiIdData, ThrowOnError>) {
         return (options.client ?? this.client).get<GetSatoshiEmailsBySourceBySatoshiIdResponses, GetSatoshiEmailsBySourceBySatoshiIdErrors, ThrowOnError>({
             requestValidator: async (data) => await zGetSatoshiEmailsBySourceBySatoshiIdData.parseAsync(data),
             responseTransformer: async (data) => await zGetSatoshiEmailsBySourceBySatoshiIdResponse.parseAsync(data),
@@ -435,7 +435,7 @@ export class Satoshi extends HeyApiClient {
     /**
      * Get all forum posts
      */
-    public getForumPosts<ThrowOnError extends boolean = true>(options?: Options<GetSatoshiPostsData, ThrowOnError>) {
+    public getForumPosts<ThrowOnError extends boolean = false>(options?: Options<GetSatoshiPostsData, ThrowOnError>) {
         return (options?.client ?? this.client).get<GetSatoshiPostsResponses, unknown, ThrowOnError>({
             requestValidator: async (data) => await zGetSatoshiPostsData.parseAsync(data),
             responseTransformer: async (data) => await zGetSatoshiPostsResponse.parseAsync(data),
@@ -447,7 +447,7 @@ export class Satoshi extends HeyApiClient {
     /**
      * Get all forum threads
      */
-    public getForumThreads<ThrowOnError extends boolean = true>(options?: Options<GetSatoshiPostsThreadsData, ThrowOnError>) {
+    public getForumThreads<ThrowOnError extends boolean = false>(options?: Options<GetSatoshiPostsThreadsData, ThrowOnError>) {
         return (options?.client ?? this.client).get<GetSatoshiPostsThreadsResponses, unknown, ThrowOnError>({
             requestValidator: async (data) => await zGetSatoshiPostsThreadsData.parseAsync(data),
             responseTransformer: async (data) => await zGetSatoshiPostsThreadsResponse.parseAsync(data),
@@ -459,7 +459,7 @@ export class Satoshi extends HeyApiClient {
     /**
      * Get forum posts by source
      */
-    public getForumPostsBySource<ThrowOnError extends boolean = true>(options: Options<GetSatoshiPostsBySourceData, ThrowOnError>) {
+    public getForumPostsBySource<ThrowOnError extends boolean = false>(options: Options<GetSatoshiPostsBySourceData, ThrowOnError>) {
         return (options.client ?? this.client).get<GetSatoshiPostsBySourceResponses, GetSatoshiPostsBySourceErrors, ThrowOnError>({
             requestValidator: async (data) => await zGetSatoshiPostsBySourceData.parseAsync(data),
             responseTransformer: async (data) => await zGetSatoshiPostsBySourceResponse.parseAsync(data),
@@ -471,7 +471,7 @@ export class Satoshi extends HeyApiClient {
     /**
      * Get forum threads by source
      */
-    public getForumThreadsBySource<ThrowOnError extends boolean = true>(options: Options<GetSatoshiPostsBySourceThreadsData, ThrowOnError>) {
+    public getForumThreadsBySource<ThrowOnError extends boolean = false>(options: Options<GetSatoshiPostsBySourceThreadsData, ThrowOnError>) {
         return (options.client ?? this.client).get<GetSatoshiPostsBySourceThreadsResponses, GetSatoshiPostsBySourceThreadsErrors, ThrowOnError>({
             requestValidator: async (data) => await zGetSatoshiPostsBySourceThreadsData.parseAsync(data),
             responseTransformer: async (data) => await zGetSatoshiPostsBySourceThreadsResponse.parseAsync(data),
@@ -485,7 +485,7 @@ export class Satoshi extends HeyApiClient {
      *
      * Returns thread with posts and previous/next navigation.
      */
-    public getForumThreadBySource<ThrowOnError extends boolean = true>(options: Options<GetSatoshiPostsBySourceThreadsByThreadIdData, ThrowOnError>) {
+    public getForumThreadBySource<ThrowOnError extends boolean = false>(options: Options<GetSatoshiPostsBySourceThreadsByThreadIdData, ThrowOnError>) {
         return (options.client ?? this.client).get<GetSatoshiPostsBySourceThreadsByThreadIdResponses, GetSatoshiPostsBySourceThreadsByThreadIdErrors, ThrowOnError>({
             requestValidator: async (data) => await zGetSatoshiPostsBySourceThreadsByThreadIdData.parseAsync(data),
             responseTransformer: async (data) => await zGetSatoshiPostsBySourceThreadsByThreadIdResponse.parseAsync(data),
@@ -499,7 +499,7 @@ export class Satoshi extends HeyApiClient {
      *
      * Returns post with previous/next navigation.
      */
-    public getForumPostBySource<ThrowOnError extends boolean = true>(options: Options<GetSatoshiPostsBySourceBySatoshiIdData, ThrowOnError>) {
+    public getForumPostBySource<ThrowOnError extends boolean = false>(options: Options<GetSatoshiPostsBySourceBySatoshiIdData, ThrowOnError>) {
         return (options.client ?? this.client).get<GetSatoshiPostsBySourceBySatoshiIdResponses, GetSatoshiPostsBySourceBySatoshiIdErrors, ThrowOnError>({
             requestValidator: async (data) => await zGetSatoshiPostsBySourceBySatoshiIdData.parseAsync(data),
             responseTransformer: async (data) => await zGetSatoshiPostsBySourceBySatoshiIdResponse.parseAsync(data),
@@ -511,7 +511,7 @@ export class Satoshi extends HeyApiClient {
     /**
      * Get all quote categories
      */
-    public getQuoteCategories<ThrowOnError extends boolean = true>(options?: Options<GetSatoshiQuotesData, ThrowOnError>) {
+    public getQuoteCategories<ThrowOnError extends boolean = false>(options?: Options<GetSatoshiQuotesData, ThrowOnError>) {
         return (options?.client ?? this.client).get<GetSatoshiQuotesResponses, unknown, ThrowOnError>({
             requestValidator: async (data) => await zGetSatoshiQuotesData.parseAsync(data),
             responseTransformer: async (data) => await zGetSatoshiQuotesResponse.parseAsync(data),
@@ -525,7 +525,7 @@ export class Satoshi extends HeyApiClient {
      *
      * Returns category details with all quotes in that category.
      */
-    public getQuoteCategory<ThrowOnError extends boolean = true>(options: Options<GetSatoshiQuotesBySlugData, ThrowOnError>) {
+    public getQuoteCategory<ThrowOnError extends boolean = false>(options: Options<GetSatoshiQuotesBySlugData, ThrowOnError>) {
         return (options.client ?? this.client).get<GetSatoshiQuotesBySlugResponses, GetSatoshiQuotesBySlugErrors, ThrowOnError>({
             requestValidator: async (data) => await zGetSatoshiQuotesBySlugData.parseAsync(data),
             responseTransformer: async (data) => await zGetSatoshiQuotesBySlugResponse.parseAsync(data),
@@ -541,7 +541,7 @@ export class Skeptics extends HeyApiClient {
      *
      * Returns all Bitcoin skeptic predictions.
      */
-    public getSkeptics<ThrowOnError extends boolean = true>(options?: Options<GetSkepticsData, ThrowOnError>) {
+    public getSkeptics<ThrowOnError extends boolean = false>(options?: Options<GetSkepticsData, ThrowOnError>) {
         return (options?.client ?? this.client).get<GetSkepticsResponses, unknown, ThrowOnError>({
             requestValidator: async (data) => await zGetSkepticsData.parseAsync(data),
             responseTransformer: async (data) => await zGetSkepticsResponse.parseAsync(data),

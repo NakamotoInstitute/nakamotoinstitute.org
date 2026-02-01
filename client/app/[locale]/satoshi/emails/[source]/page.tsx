@@ -42,7 +42,7 @@ export default async function EmailsSourceIndex(
   const { locale, source } = params;
 
   const { t } = await i18nTranslation(locale);
-  const { data: emails } = await api.satoshi.getEmailsBySource({
+  const { data: emails = [] } = await api.satoshi.getEmailsBySource({
     path: { source },
   });
 

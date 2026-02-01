@@ -35,7 +35,7 @@ export default async function QuotesIndex(props: LocaleParams) {
   const { locale } = params;
 
   const { t } = await i18nTranslation(locale);
-  const { data: categories } = await api.satoshi.getQuoteCategories();
+  const { data: categories = [] } = await api.satoshi.getQuoteCategories();
 
   return (
     <PageLayout

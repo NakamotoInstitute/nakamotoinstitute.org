@@ -79,7 +79,7 @@ export default async function HomePage(props: LocaleParams) {
 
   const { locale } = params;
 
-  const [{ t }, { data: latest }, { data: docs }, { data: podcasts }] =
+  const [{ t }, { data: latest = [] }, { data: docs = [] }, { data: podcasts = [] }] =
     await Promise.all([
       i18nTranslation(locale),
       api.mempool.getLatestMempoolPosts({ query: { locale } }),

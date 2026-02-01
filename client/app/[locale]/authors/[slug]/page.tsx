@@ -2,7 +2,13 @@ import { Metadata } from "next";
 
 import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
-import { DocumentIndex, Locale, MempoolPostIndex, api } from "@/lib/api";
+import {
+  DocumentIndex,
+  Locale,
+  MempoolPostIndex,
+  api,
+  getOrNotFound,
+} from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { urls } from "@/lib/urls";
 
@@ -18,12 +24,12 @@ export async function generateMetadata(
 
   const { locale, slug } = params;
 
-  const {
-    data: { author, locales },
-  } = await api.authors.getAuthor({
-    path: { slug },
-    query: { locale },
-  });
+  const { author, locales } = await getOrNotFound(
+    api.authors.getAuthor({
+      path: { slug },
+      query: { locale },
+    }),
+  );
   const languages = locales.reduce(
     (acc: Record<Locale, string>, loc: Locale) => {
       acc[loc] = urls(loc).authors.detail(slug);
@@ -49,12 +55,12 @@ export default async function AuthorDetail(
   const { slug, locale } = params;
 
   const { t } = await i18nTranslation(locale);
-  const {
-    data: { author, mempool, library },
-  } = await api.authors.getAuthor({
-    path: { slug },
-    query: { locale },
-  });
+  const { author, mempool, library } = await getOrNotFound(
+    api.authors.getAuthor({
+      path: { slug },
+      query: { locale },
+    }),
+  );
 
   const generateHref = (l: Locale) => urls(l).authors.detail(slug);
 
@@ -103,5 +109,5 @@ export default async function AuthorDetail(
 
 export async function generateStaticParams() {
   const { data } = await api.authors.getAuthorParams();
-  return data;
+  return data ?? [];
 }

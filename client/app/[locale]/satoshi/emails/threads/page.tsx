@@ -37,7 +37,7 @@ export default async function EmailThreadsIndex(props: LocaleParams) {
   const { locale } = params;
 
   const { t } = await i18nTranslation(locale);
-  const { data: threads } = await api.satoshi.getEmailThreads();
+  const { data: threads = [] } = await api.satoshi.getEmailThreads();
   const sortedThreads = threads.reduce(
     (
       acc: { [K in EmailSource]: EmailThreadBase[] },

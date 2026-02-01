@@ -36,7 +36,7 @@ async function getEmailIndexUrls(): Promise<MetadataRoute.Sitemap> {
 }
 
 async function getEmailUrls(): Promise<MetadataRoute.Sitemap> {
-  const { data: emails } = await api.satoshi.getEmails();
+  const { data: emails = [] } = await api.satoshi.getEmails();
   return emails.map(({ source, satoshiId }: SatoshiEmail) => ({
     url: urls("en").satoshi.emails.sourceEmail(source, satoshiId.toString()),
     alternates: {
@@ -48,7 +48,7 @@ async function getEmailUrls(): Promise<MetadataRoute.Sitemap> {
 }
 
 async function getEmailThreadUrls(): Promise<MetadataRoute.Sitemap> {
-  const { data: threads } = await api.satoshi.getEmailThreads();
+  const { data: threads = [] } = await api.satoshi.getEmailThreads();
   return threads.map(({ source, id }: EmailThreadBase) => ({
     url: urls("en").satoshi.emails.sourceThreadsDetail(source, id.toString()),
     alternates: {
@@ -80,7 +80,7 @@ async function getPostIndexUrls(): Promise<MetadataRoute.Sitemap> {
 }
 
 async function getPostUrls(): Promise<MetadataRoute.Sitemap> {
-  const { data: posts } = await api.satoshi.getForumPosts();
+  const { data: posts = [] } = await api.satoshi.getForumPosts();
   return posts.map(({ source, satoshiId }: SatoshiForumPost) => ({
     url: urls("en").satoshi.posts.sourcePost(source, satoshiId.toString()),
     alternates: {
@@ -92,7 +92,7 @@ async function getPostUrls(): Promise<MetadataRoute.Sitemap> {
 }
 
 async function getPostThreadUrls(): Promise<MetadataRoute.Sitemap> {
-  const { data: threads } = await api.satoshi.getForumThreads();
+  const { data: threads = [] } = await api.satoshi.getForumThreads();
   return threads.map(({ source, id }: ForumThreadBase) => ({
     url: urls("en").satoshi.posts.sourceThreadsDetail(source, id.toString()),
     alternates: {
@@ -104,7 +104,7 @@ async function getPostThreadUrls(): Promise<MetadataRoute.Sitemap> {
 }
 
 async function getQuoteCategoryUrls(): Promise<MetadataRoute.Sitemap> {
-  const { data: categories } = await api.satoshi.getQuoteCategories();
+  const { data: categories = [] } = await api.satoshi.getQuoteCategories();
   return categories.map(({ slug }: QuoteCategoryBase) => ({
     url: urls("en").satoshi.quoteCategory(slug),
     alternates: {

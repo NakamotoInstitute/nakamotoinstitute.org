@@ -47,7 +47,7 @@ export default async function PostSourceThreadsIndex(
   const { source, locale } = params;
 
   const { t } = await i18nTranslation(locale);
-  const { data: threads } = await api.satoshi.getForumThreadsBySource({
+  const { data: threads = [] } = await api.satoshi.getForumThreadsBySource({
     path: { source },
   });
 

@@ -2,7 +2,13 @@ import { Metadata } from "next";
 
 import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
-import { Locale, MempoolPostIndex, TranslationSchema, api } from "@/lib/api";
+import {
+  Locale,
+  MempoolPostIndex,
+  TranslationSchema,
+  api,
+  getOrNotFound,
+} from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { urls } from "@/lib/urls";
 
@@ -17,12 +23,12 @@ export async function generateMetadata(
 
   const { locale, slug } = params;
 
-  const {
-    data: { series },
-  } = await api.mempool.getMempoolSeries({
-    path: { slug },
-    query: { locale },
-  });
+  const { series } = await getOrNotFound(
+    api.mempool.getMempoolSeries({
+      path: { slug },
+      query: { locale },
+    }),
+  );
   const languages = series.translations.reduce(
     (acc: Record<Locale, string>, t: TranslationSchema) => {
       acc[t.locale] = urls(t.locale).mempool.seriesDetail(t.slug);
@@ -48,12 +54,12 @@ export default async function SeriesDetail(
   const { slug, locale } = params;
 
   const { t } = await i18nTranslation(locale);
-  const {
-    data: { series, posts },
-  } = await api.mempool.getMempoolSeries({
-    path: { slug },
-    query: { locale },
-  });
+  const { series, posts } = await getOrNotFound(
+    api.mempool.getMempoolSeries({
+      path: { slug },
+      query: { locale },
+    }),
+  );
 
   const generateHref = (l: Locale) => {
     const translation = series.translations.find(
@@ -91,5 +97,5 @@ export default async function SeriesDetail(
 
 export async function generateStaticParams() {
   const { data } = await api.mempool.getMempoolSeriesParams();
-  return data;
+  return data ?? [];
 }
