@@ -1,25 +1,27 @@
 import { NextRequest, NextResponse } from "next/server";
 
 import { i18nRoutingProxy } from "@/lib/proxy/i18n";
-import { subdomainRouting } from "@/lib/proxy/subdomains";
+import { domainToPathMapping } from "@/lib/urls";
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Detect subdomain mapping (but don't apply yet)
-  const subdomainResult = subdomainRouting(request);
+  const [domain] = request.headers.get("host")?.split(":") ?? [];
+  const subdomain =
+    domainToPathMapping.find((map) => map.domain === domain) ?? null;
 
   // RPOW bypass - only serve on main domain (no subdomain mapping)
   const isRpowRequest = /^\/finney\/rpow\/.+/i.test(pathname);
-  if (!subdomainResult.mapping && isRpowRequest) {
+  if (!subdomain && isRpowRequest) {
     return NextResponse.next();
   }
 
   // Sitemap - subdomain-specific routing
   if (pathname === "/sitemap.xml") {
-    if (subdomainResult.mapping) {
+    if (subdomain) {
       return NextResponse.rewrite(
-        new URL(`/en${subdomainResult.mapping.path}/sitemap.xml`, request.url),
+        new URL(`/en${subdomain.path}/sitemap.xml`, request.url),
       );
     }
     return NextResponse.next();
@@ -29,7 +31,7 @@ export function proxy(request: NextRequest) {
   const i18nResponse = i18nRoutingProxy(request);
 
   // If subdomain mapping exists, insert subdomain path after locale
-  if (subdomainResult.mapping) {
+  if (subdomain) {
     // If i18n returned a redirect, pass it through
     if (
       i18nResponse instanceof NextResponse &&
@@ -50,7 +52,7 @@ export function proxy(request: NextRequest) {
     const parts = pathToTransform.split("/").filter(Boolean);
     if (parts.length > 0) {
       // Insert subdomain path after first segment (locale)
-      parts.splice(1, 0, subdomainResult.mapping.path.replace(/^\//, ""));
+      parts.splice(1, 0, subdomain.path.replace(/^\//, ""));
       const newPathname = `/${parts.join("/")}`;
       // Preserve query params
       const search = request.nextUrl.search;
@@ -58,7 +60,7 @@ export function proxy(request: NextRequest) {
     } else {
       // Root path, just add subdomain
       return NextResponse.rewrite(
-        new URL(subdomainResult.mapping.path, request.url),
+        new URL(subdomain.path, request.url),
       );
     }
   }
