@@ -34,6 +34,7 @@ export async function generateMetadata(
 
   return {
     title: episode.title,
+    description: episode.summary ?? undefined,
     alternates: {
       canonical: generateHref(locale),
       languages,

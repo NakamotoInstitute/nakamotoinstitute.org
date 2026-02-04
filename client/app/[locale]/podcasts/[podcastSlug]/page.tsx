@@ -30,6 +30,7 @@ export async function generateMetadata(
 
   return {
     title: podcast.name,
+    description: podcast.descriptionShort ?? podcast.description,
     alternates: {
       canonical: urls(locale).podcasts.show(podcastSlug),
       languages,

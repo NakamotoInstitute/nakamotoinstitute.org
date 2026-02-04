@@ -42,6 +42,9 @@ export async function generateMetadata(
 
   return {
     title: emailData.email.subject,
+    description:
+      emailData.email.text.replace(/\n/g, " ").trim().slice(0, 160).trimEnd() +
+      "…",
     alternates: {
       canonical: generateHref(source, satoshiId)(locale),
       languages,

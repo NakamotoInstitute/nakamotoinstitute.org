@@ -33,7 +33,7 @@ function getDomainToPathMapping() {
 
 export const domainToPathMapping = getDomainToPathMapping();
 
-const APP_BASE_URL = {
+export const APP_BASE_URL = {
   development: "http://localhost:3000",
   production: `https://${env.VERCEL_PROJECT_PRODUCTION_URL}`,
   preview: `https://${env.VERCEL_URL}`,

@@ -41,8 +41,18 @@ export async function generateMetadata(
   );
   const languages = generateHrefLangs(locales, generateHref(source, satoshiId));
 
+  const stripped = postData.post.text
+    .replace(/<div class="quoteheader">.*?<\/div>/gs, "")
+    .replace(/<div class="quote">.*?<\/div>/gs, "")
+    .replace(/<div class="codeheader">.*?<\/div>/gs, "")
+    .replace(/<div class="code">.*?<\/div>/gs, "");
+  const plainText = stripped.replace(/<[^>]*>/g, "").trim();
+  const description = plainText
+    ? plainText.slice(0, 160).trimEnd() + "…"
+    : undefined;
   return {
     title: postData.post.subject,
+    description,
     alternates: {
       canonical: generateHref(source, satoshiId)(locale),
       languages,

@@ -44,7 +44,7 @@ export async function generateMetadata(
       canonical: urls(locale).mempool.post(slug),
       languages,
     },
-    openGraph: { images: post.image ?? openGraphImages },
+    openGraph: { type: "article", images: post.image ?? openGraphImages },
     twitter: { images: post.image ?? openGraphImages },
   };
 }

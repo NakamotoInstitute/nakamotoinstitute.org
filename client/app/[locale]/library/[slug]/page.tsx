@@ -5,10 +5,12 @@ import { Trans } from "react-i18next/TransWithoutContext";
 import { PageLayout } from "@/app/components/PageLayout";
 import { Rehype } from "@/app/components/Rehype";
 import { RenderedItemsList } from "@/app/components/RenderedItemsList";
+import { openGraphImages } from "@/app/shared-metadata";
 import { Locale, TranslationSchema, api, getOrNotFound } from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { getDir } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
+import { formatDocDate } from "@/utils/dates";
 
 import { TranslationLinks } from "../../mempool/components/TranslationLinks";
 import { DocHeader } from "../components/DocHeader";
@@ -36,11 +38,22 @@ export async function generateMetadata(
     {} as Record<Locale, string>,
   );
 
+  const authorNames = doc.authors.map((a) => a.name).join(", ");
+  const description = `By ${authorNames}, ${formatDocDate(locale, doc.date, doc.granularity)}`;
+
   return {
     title: doc.title,
+    description,
     alternates: {
       canonical: urls(locale).library.doc(slug),
       languages,
+    },
+    openGraph: {
+      type: "article",
+      images: doc.image ? [{ url: doc.image }] : openGraphImages,
+    },
+    twitter: {
+      images: doc.image ? [{ url: doc.image }] : openGraphImages,
     },
   };
 }
