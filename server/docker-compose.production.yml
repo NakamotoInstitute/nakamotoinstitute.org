@@ -5,7 +5,8 @@ services:
       dockerfile: ./compose/production/fastapi/Dockerfile
     restart: unless-stopped
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
     volumes:
       - ./content:/app/content:z
       - ./data:/app/data:z
@@ -37,6 +38,11 @@ services:
       - sni_postgres_data_backups:/backups
     env_file:
       - ./.envs/.production/.postgres
+    healthcheck:
+      test: ["CMD-ONLY", "pg_isready"]
+      interval: 1s
+      timeout: 3s
+      retries: 5
 
 volumes:
   caddy_data:

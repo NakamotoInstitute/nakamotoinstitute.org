@@ -4,7 +4,8 @@ services:
       context: .
       dockerfile: ./compose/local/fastapi/Dockerfile
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
     volumes:
       - ./migrations:/app/migrations:z
     env_file:
@@ -42,6 +43,11 @@ services:
       - ./.envs/.local/.postgres
     ports:
       - "5234:5432"
+    healthcheck:
+      test: ["CMD-ONLY", "pg_isready"]
+      interval: 1s
+      timeout: 3s
+      retries: 5
 
 volumes:
   sni_local_postgres_data: {}
