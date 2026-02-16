@@ -56,19 +56,19 @@ const nextConfig = {
         {
           source: "/satoshi/:path*",
           destination: `${satoshiDestination}/:path*`,
-          permanent: false,
+          permanent: true,
         },
         // Default locale (en) - strip it from destination
         {
           source: "/en/satoshi/:path*",
           destination: `${satoshiDestination}/:path*`,
-          permanent: false,
+          permanent: true,
         },
         // Non-default locales - preserve locale in destination
         {
           source: `/:locale(${locales.filter((l) => l !== defaultLocale).join("|")})/satoshi/:path*`,
           destination: `${satoshiDestination}/:locale/:path*`,
-          permanent: false,
+          permanent: true,
         },
       );
     }

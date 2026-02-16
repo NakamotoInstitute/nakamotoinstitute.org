@@ -9,7 +9,7 @@ import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
 
-const generateHref = (l: Locale) => urls(l).about;
+const generateHref = (l: Locale) => urls(l).getInvolved;
 
 export async function generateMetadata(props: LocaleParams): Promise<Metadata> {
   const params = await props.params;
