@@ -55,14 +55,15 @@ export default async function AuthorDetail(
   const { slug, locale } = params;
 
   const { t } = await i18nTranslation(locale);
-  const { author, mempool, library } = await getOrNotFound(
+  const { author, locales, mempool, library } = await getOrNotFound(
     api.authors.getAuthor({
       path: { slug },
       query: { locale },
     }),
   );
 
-  const generateHref = (l: Locale) => urls(l).authors.detail(slug);
+  const generateHref = (l: Locale) =>
+    locales.includes(l) ? urls(l).authors.detail(slug) : urls(l).authors.index;
 
   return (
     <PageLayout
