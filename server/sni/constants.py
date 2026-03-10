@@ -1,10 +1,10 @@
-from enum import Enum, unique
+from enum import Enum, StrEnum, unique
 from typing import Literal
 
 STATIC_ROUTE = "/static"
 
 
-class Environment(str, Enum):
+class Environment(StrEnum):
     LOCAL = "LOCAL"
     PRODUCTION = "PRODUCTION"
 
@@ -18,7 +18,7 @@ class Environment(str, Enum):
 
 
 @unique
-class Locale(str, Enum):
+class Locale(StrEnum):
     ARABIC = "ar"
     GERMAN = "de"
     ENGLISH = "en"
@@ -64,20 +64,20 @@ class DocumentFormats(Enum):
 
 
 @unique
-class EmailSource(str, Enum):
+class EmailSource(StrEnum):
     CRYPTOGRAPHY = "cryptography"
     BITCOIN_LIST = "bitcoin-list"
     P2P_RESEARCH = "p2p-research"
 
 
 @unique
-class ForumPostSource(str, Enum):
+class ForumPostSource(StrEnum):
     P2PFOUNDATION = "p2pfoundation"
     BITCOINTALK = "bitcointalk"
 
 
 @unique
-class Granularity(str, Enum):
+class Granularity(StrEnum):
     DAY = "DAY"
     MONTH = "MONTH"
     YEAR = "YEAR"

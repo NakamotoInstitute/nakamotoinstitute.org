@@ -9,8 +9,8 @@ export default defineConfig({
   input: "./openapi.json",
   output: {
     path: "lib/api/generated",
+    postProcess: ["prettier"],
   },
-  postProcess: ["prettier"],
   plugins: [
     {
       name: "@hey-api/typescript",

@@ -1,6 +1,6 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class FeedFormat(str, Enum):
+class FeedFormat(StrEnum):
     rss = "rss"
     atom = "atom"
