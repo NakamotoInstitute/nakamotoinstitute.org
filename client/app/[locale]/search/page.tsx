@@ -8,6 +8,7 @@ import { PageLayout } from "@/app/components/PageLayout";
 import { SearchHighlight } from "@/app/components/SearchHighlight";
 import { locales } from "@/i18n";
 import { CountsByCategory, SearchResult, api } from "@/lib/api";
+import { focusRing, focusUnderline } from "@/lib/focusRing";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs, getLocaleParams } from "@/lib/i18n/utils";
 import { searchResultHref } from "@/lib/searchResultHref";
@@ -16,13 +17,7 @@ import { formatDate } from "@/utils/dates";
 
 export const dynamicParams = false;
 
-const CATEGORIES = [
-  "satoshi",
-  "library",
-  "mempool",
-  "authors",
-  "podcasts",
-] as const;
+const CATEGORIES = ["satoshi", "library", "mempool", "podcasts"] as const;
 
 type Category = (typeof CATEGORIES)[number];
 
@@ -30,7 +25,6 @@ const CATEGORY_LABEL_KEYS = {
   satoshi: "complete_satoshi",
   library: "library",
   mempool: "mempool",
-  authors: "authors",
   podcasts: "podcasts",
 } as const satisfies Record<Category, string>;
 
@@ -138,6 +132,7 @@ function TabBar({ t, locale, q, active, counts }: TabBarProps) {
             aria-current={isActive ? "page" : undefined}
             className={clsx(
               "small-caps text-sm",
+              focusUnderline,
               isActive
                 ? "text-cardinal font-bold"
                 : "text-dark/70 hover:text-cardinal",
@@ -167,7 +162,7 @@ function ResultRow({ t, locale, item }: ResultRowProps) {
     <article className="border-taupe-light border-t border-dashed py-4 first:border-t-0">
       <h3 className="font-bold md:text-lg">
         <Link
-          className="text-cardinal hover:underline"
+          className={clsx("text-cardinal hover:underline", focusUnderline)}
           href={searchResultHref(locale, item)}
         >
           {item.title}
@@ -236,7 +231,10 @@ async function GroupedResults({ t, locale, q }: GroupedResultsProps) {
               {count > items.length ? (
                 <p className="mt-3">
                   <Link
-                    className="text-cardinal small-caps text-sm hover:underline"
+                    className={clsx(
+                      "text-cardinal small-caps text-sm hover:underline",
+                      focusUnderline,
+                    )}
                     href={urls(locale).search({ q, tab: category })}
                   >
                     {t("search_see_all")} (
@@ -298,7 +296,10 @@ async function FlatResults({ t, locale, q, tab, page }: FlatResultsProps) {
             <nav className="mt-6 flex justify-between">
               {hasPrev ? (
                 <Link
-                  className="text-cardinal small-caps text-sm hover:underline"
+                  className={clsx(
+                    "text-cardinal small-caps text-sm hover:underline",
+                    focusUnderline,
+                  )}
                   href={urls(locale).search({ q, tab, page: page - 1 })}
                 >
                   &larr; Previous
@@ -308,7 +309,10 @@ async function FlatResults({ t, locale, q, tab, page }: FlatResultsProps) {
               )}
               {hasNext ? (
                 <Link
-                  className="text-cardinal small-caps text-sm hover:underline"
+                  className={clsx(
+                    "text-cardinal small-caps text-sm hover:underline",
+                    focusUnderline,
+                  )}
                   href={urls(locale).search({ q, tab, page: page + 1 })}
                 >
                   Next &rarr;
@@ -345,7 +349,10 @@ function EmptyPrompt({ locale }: { locale: Locale }) {
         {EXAMPLE_QUERIES.map((example) => (
           <li key={example}>
             <Link
-              className="border-taupe-light text-cardinal small-caps inline-block rounded-full border border-dashed px-3 py-1 text-sm hover:underline"
+              className={clsx(
+                "border-taupe-light text-cardinal small-caps inline-block rounded-full border border-dashed px-3 py-1 text-sm hover:underline",
+                focusRing,
+              )}
               href={urls(locale).search({ q: example })}
             >
               {example}

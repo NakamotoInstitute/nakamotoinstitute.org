@@ -8,6 +8,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 import { SearchHighlight } from "@/app/components/SearchHighlight";
 import type { CountsByCategory, SearchResponse, SearchResult } from "@/lib/api";
+import { focusRing, focusRingInset } from "@/lib/focusRing";
 import { isRtl } from "@/i18n";
 
 export type SearchLabels = {
@@ -36,12 +37,8 @@ const CATEGORY_ORDER: CategoryKey[] = [
   "satoshi",
   "library",
   "mempool",
-  "authors",
   "podcasts",
 ];
-
-// A17: zero-query example pills.
-const EXAMPLE_QUERIES = ["Proof of Work", "Hal Finney", "Block Size"];
 
 const DEBOUNCE_MS = 250;
 
@@ -82,6 +79,22 @@ function SearchIcon({ className }: { className?: string }) {
   );
 }
 
+// Shimmer placeholder shown while a query is pending, so the results area never
+// flashes "no results" before the fetch settles.
+function ResultsSkeleton() {
+  return (
+    <div className="space-y-4 px-2 py-2" aria-hidden="true">
+      {[0, 1, 2, 3].map((row) => (
+        <div key={row} className="space-y-1.5">
+          <div className="bg-sand h-4 w-1/2 rounded-sm motion-safe:animate-pulse" />
+          <div className="bg-sand/60 h-3 w-full rounded-sm motion-safe:animate-pulse" />
+          <div className="bg-sand/60 h-3 w-4/5 rounded-sm motion-safe:animate-pulse" />
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export function SearchCommand({
   locale,
   labels,
@@ -97,7 +110,12 @@ export function SearchCommand({
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<PaletteResult[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [counts, setCounts] = useState<CountsByCategory | null>(null);
+  const [selected, setSelected] = useState<Set<CategoryKey>>(new Set());
+  // The query that the currently-displayed results reflect. Set only in the
+  // async fetch callbacks (never synchronously in an effect), so it doubles as
+  // the "settled" signal: results are pending whenever it lags the input.
+  const [resultsQuery, setResultsQuery] = useState("");
 
   const triggerRef = useRef<HTMLAnchorElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -111,8 +129,23 @@ export function SearchCommand({
     setOpen(false);
     setQuery("");
     setResults([]);
-    setLoading(false);
+    setCounts(null);
+    setSelected(new Set());
+    setResultsQuery("");
     abortRef.current?.abort();
+  }, []);
+
+  // Toggle a category in/out of the "search in" filter (empty set = everywhere).
+  const toggleCategory = useCallback((category: CategoryKey) => {
+    setSelected((prev) => {
+      const next = new Set(prev);
+      if (next.has(category)) {
+        next.delete(category);
+      } else {
+        next.add(category);
+      }
+      return next;
+    });
   }, []);
 
   // Global ⌘K / Ctrl+K (and optional "/") to open from any page.
@@ -158,11 +191,11 @@ export function SearchCommand({
 
       if (trimmed.length === 0) {
         setResults([]);
-        setLoading(false);
+        setCounts(null);
+        setResultsQuery("");
         return;
       }
 
-      setLoading(true);
       const controller = new AbortController();
       abortRef.current = controller;
 
@@ -174,14 +207,16 @@ export function SearchCommand({
         .then((data) => {
           if (controller.signal.aborted) return;
           setResults(data?.results ?? []);
-          setLoading(false);
+          setCounts(data?.countsByCategory ?? null);
+          setResultsQuery(trimmed);
         })
         .catch((error: unknown) => {
           if (error instanceof DOMException && error.name === "AbortError") {
             return;
           }
           setResults([]);
-          setLoading(false);
+          setCounts(null);
+          setResultsQuery(trimmed);
         });
     }, DEBOUNCE_MS);
 
@@ -201,18 +236,33 @@ export function SearchCommand({
   const goToSearchPage = useCallback(() => {
     const trimmed = query.trim();
     if (trimmed.length === 0) return;
+    const params = new URLSearchParams({ q: trimmed });
+    // Carry a single selected category through to the results page's tab.
+    if (selected.size === 1) params.set("tab", [...selected][0]);
     const separator = searchHref.includes("?") ? "&" : "?";
-    closeAndGo(`${searchHref}${separator}q=${encodeURIComponent(trimmed)}`);
-  }, [query, searchHref, closeAndGo]);
+    closeAndGo(`${searchHref}${separator}${params.toString()}`);
+  }, [query, selected, searchHref, closeAndGo]);
 
-  // Group results by category, preserving rank order within each bucket.
-  const grouped = CATEGORY_ORDER.map((category) => ({
-    category,
-    items: results.filter((item) => item.category === category),
-  })).filter((group) => group.items.length > 0);
+  // Group results by category (rank order preserved), limited to the selected
+  // categories — an empty selection means "search everywhere".
+  const grouped = CATEGORY_ORDER.filter(
+    (category) => selected.size === 0 || selected.has(category),
+  )
+    .map((category) => ({
+      category,
+      items: results.filter((item) => item.category === category),
+    }))
+    .filter((group) => group.items.length > 0);
 
-  const hasQuery = query.trim().length > 0;
-  const showNoResults = hasQuery && !loading && results.length === 0;
+  const trimmedQuery = query.trim();
+  const hasQuery = trimmedQuery.length > 0;
+  // A query is "pending" until the on-screen results reflect it — this covers
+  // both the debounce window and the in-flight fetch, so we can show a loading
+  // skeleton instead of briefly flashing "no results".
+  const pending = hasQuery && resultsQuery !== trimmedQuery;
+  const showNoResults = hasQuery && !pending && grouped.length === 0;
+  // Matches exist, but not in the categories the user filtered to.
+  const filteredEverythingOut = showNoResults && results.length > 0;
 
   return (
     <>
@@ -241,7 +291,10 @@ export function SearchCommand({
             setOpen(true);
           }}
           aria-label={labels.search}
-          className="text-taupe hover:text-dark flex items-center transition-colors focus:outline-hidden"
+          className={clsx(
+            "text-taupe hover:text-cardinal flex items-center rounded-xs transition-colors",
+            focusRing,
+          )}
         >
           {/* Mobile (< md): icon only */}
           <span className="flex items-center p-2 md:hidden">
@@ -249,7 +302,7 @@ export function SearchCommand({
             <span className="sr-only">{labels.search}</span>
           </span>
           {/* Desktop (>= md): fake input with ⌘K hint */}
-          <span className="border-sand hover:border-dark hidden h-9 w-56 items-center gap-x-2 rounded-xs border px-3 text-sm font-normal transition-colors md:flex">
+          <span className="border-sand hover:border-cardinal hidden h-10 w-56 items-center gap-x-2 rounded-xs border px-3 text-sm font-normal transition-colors md:flex">
             <SearchIcon className="h-4 w-4 shrink-0" />
             <span className="text-taupe truncate text-start">
               {labels.placeholder}
@@ -261,14 +314,17 @@ export function SearchCommand({
         </a>
 
         <Dialog.Portal>
-          <Dialog.Overlay className="bg-dark/40 fixed inset-0 z-50 motion-safe:transition-opacity motion-safe:duration-150 motion-safe:data-[state=closed]:opacity-0" />
+          {/* Mobile: dim only below the navbar so the header stays visible;
+              desktop: full-screen dim behind the centered card. */}
+          <Dialog.Overlay className="bg-dark/40 fixed inset-x-0 top-24 bottom-0 z-50 md:top-0 motion-safe:transition-opacity motion-safe:duration-150 motion-safe:data-[state=closed]:opacity-0" />
           <Dialog.Content
             dir={dir}
             aria-label={labels.search}
             className={clsx(
               "fixed z-50 flex flex-col bg-white shadow-lg focus:outline-hidden",
-              // Mobile: full-screen sheet with safe-area padding.
-              "inset-0 h-[100dvh] w-full pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]",
+              // Mobile: panel anchored below the navbar (keeps the header
+              // visible under its dashed border), filling to the bottom.
+              "inset-x-0 top-24 bottom-0 w-full pb-[env(safe-area-inset-bottom)]",
               // Desktop: centered panel.
               "md:inset-auto md:start-1/2 md:top-24 md:h-auto md:max-h-[70vh] md:w-full md:max-w-xl md:-translate-x-1/2 md:rounded-md md:pt-0 md:pb-0 rtl:md:translate-x-1/2",
               "motion-safe:transition motion-safe:duration-150 motion-safe:data-[state=closed]:opacity-0",
@@ -291,8 +347,10 @@ export function SearchCommand({
               loop
               className="flex min-h-0 flex-1 flex-col"
               onKeyDown={(event) => {
-                // Enter with no item focused -> navigate to the /search page.
+                // Only the text input submits to the results page; the filter
+                // chips and icon buttons handle their own Enter/Space.
                 if (event.key === "Enter" && !event.defaultPrevented) {
+                  if (event.target !== inputRef.current) return;
                   const hasActive = event.currentTarget.querySelector(
                     '[cmdk-item=""][aria-selected="true"]',
                   );
@@ -304,7 +362,34 @@ export function SearchCommand({
               }}
             >
               <div className="border-sand flex items-center gap-x-2 border-b px-4 py-3">
-                <SearchIcon className="text-taupe h-5 w-5 shrink-0" />
+                {/* Mobile: leading back control to dismiss the full-screen
+                    sheet (no overlay to tap, no Esc key on touch keyboards). */}
+                <button
+                  type="button"
+                  onClick={closePalette}
+                  aria-label="Close search"
+                  className={clsx(
+                    "text-taupe hover:text-dark -ms-1 flex shrink-0 cursor-pointer items-center rounded-xs transition-colors md:hidden",
+                    focusRing,
+                  )}
+                >
+                  <svg
+                    className="h-6 w-6 rtl:rotate-180"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M15 19.5 7.5 12l7.5-7.5"
+                    />
+                  </svg>
+                </button>
+                <SearchIcon className="text-taupe hidden h-5 w-5 shrink-0 md:block" />
                 <Command.Input
                   ref={inputRef}
                   value={query}
@@ -322,10 +407,13 @@ export function SearchCommand({
                       inputRef.current?.focus();
                     }}
                     aria-label="Clear search"
-                    className="text-taupe hover:text-dark flex shrink-0 cursor-pointer items-center transition-colors"
+                    className={clsx(
+                      "text-taupe hover:text-dark -me-1 flex shrink-0 cursor-pointer items-center rounded-xs transition-colors",
+                      focusRing,
+                    )}
                   >
                     <svg
-                      className="h-5 w-5"
+                      className="h-6 w-6"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -343,44 +431,80 @@ export function SearchCommand({
                 ) : null}
               </div>
 
-              <div aria-live="polite" className="sr-only">
-                {loading
-                  ? labels.placeholder
-                  : showNoResults
-                    ? labels.noResults.replace("{{query}}", query.trim())
-                    : ""}
+              {/* Category filter — choose where to search (multi-select).
+                  An empty selection searches everywhere; counts appear once a
+                  query is entered. */}
+              <div className="border-sand flex flex-wrap items-center gap-2 border-b px-4 py-2.5">
+                {CATEGORY_ORDER.map((category) => {
+                  const isSelected = selected.has(category);
+                  const count = counts?.[category];
+                  return (
+                    <button
+                      key={category}
+                      type="button"
+                      role="checkbox"
+                      aria-checked={isSelected}
+                      onClick={() => toggleCategory(category)}
+                      className={clsx(
+                        "flex cursor-pointer items-center gap-x-1.5 rounded-full border px-3 py-1 text-sm transition-colors",
+                        focusRing,
+                        isSelected
+                          ? "border-cardinal bg-cardinal text-white"
+                          : "border-sand text-dark hover:border-dark",
+                      )}
+                    >
+                      <span>{categoryLabel(labels, category)}</span>
+                      {hasQuery && count !== undefined ? (
+                        <span
+                          className={clsx(
+                            "text-xs tabular-nums motion-safe:animate-count-in",
+                            isSelected ? "text-white/80" : "text-taupe",
+                          )}
+                        >
+                          {new Intl.NumberFormat(locale).format(count)}
+                        </span>
+                      ) : null}
+                    </button>
+                  );
+                })}
               </div>
 
-              <Command.List className="min-h-0 flex-1 overflow-y-auto overscroll-contain p-2">
+              <div aria-live="polite" className="sr-only">
+                {showNoResults
+                  ? labels.noResults.replace("{{query}}", query.trim())
+                  : ""}
+              </div>
+
+              <Command.List
+                aria-busy={pending}
+                className="min-h-0 flex-1 overflow-y-auto overscroll-contain p-2"
+              >
                 {!hasQuery ? (
-                  <div className="px-2 py-3">
-                    <p className="text-taupe text-sm">{labels.placeholder}</p>
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      {EXAMPLE_QUERIES.map((example) => (
-                        <button
-                          key={example}
-                          type="button"
-                          onClick={() => {
-                            setQuery(example);
-                            inputRef.current?.focus();
-                          }}
-                          className="border-sand text-dark hover:border-dark hover:text-cardinal cursor-pointer rounded-full border px-3 py-1 text-sm transition-colors"
-                        >
-                          {example}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
+                  <p className="text-taupe px-2 py-8 text-center text-sm">
+                    Don&rsquo;t trust. Verify.
+                  </p>
                 ) : null}
 
+                {pending && grouped.length === 0 ? <ResultsSkeleton /> : null}
+
                 {showNoResults ? (
-                  <Command.Empty className="px-2 py-6 text-sm">
-                    <p className="text-dark">
-                      {labels.noResults.replace("{{query}}", query.trim())}
-                    </p>
-                    <p className="text-taupe mt-1">
-                      Try checking your spelling or using broader terms.
-                    </p>
+                  <Command.Empty className="px-2 py-8 text-center text-sm">
+                    {filteredEverythingOut ? (
+                      <p className="text-dark">
+                        {selected.size === 1
+                          ? "No results in the selected category."
+                          : "No results in the selected categories."}
+                      </p>
+                    ) : (
+                      <>
+                        <p className="text-dark">
+                          {labels.noResults.replace("{{query}}", query.trim())}
+                        </p>
+                        <p className="text-taupe mt-1">
+                          Try checking your spelling or using broader terms.
+                        </p>
+                      </>
+                    )}
                   </Command.Empty>
                 ) : null}
 
@@ -414,7 +538,10 @@ export function SearchCommand({
                 <button
                   type="button"
                   onClick={goToSearchPage}
-                  className="border-sand text-dark hover:bg-cream flex w-full shrink-0 cursor-pointer items-center justify-between border-t px-4 py-3 text-sm font-bold transition-colors"
+                  className={clsx(
+                    "border-sand text-dark hover:bg-cream flex w-full shrink-0 cursor-pointer items-center justify-between border-t px-4 py-3 text-sm font-bold transition-colors",
+                    focusRingInset,
+                  )}
                 >
                   <span>{labels.seeAll}</span>
                   <kbd className="border-sand text-taupe rounded-xs border px-1.5 py-0.5 font-mono text-xs">

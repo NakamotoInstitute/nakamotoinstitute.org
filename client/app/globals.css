@@ -17,6 +17,23 @@
   --font-mono: var(--font-ibm-plex-mono), "Courier New", monospace;
 
   --spacing-prose: 70ch;
+
+  /* Search filter-chip count badge: a gentle one-time entrance when results
+     first load. Applied via `motion-safe:animate-count-in`; because the badge
+     stays mounted across per-keystroke updates, it plays once and is not
+     re-triggered on every count change. */
+  --animate-count-in: count-in 180ms cubic-bezier(0.22, 1, 0.36, 1);
+
+  @keyframes count-in {
+    from {
+      opacity: 0;
+      transform: translateY(2px) scale(0.85);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
 }
 
 @config "../tailwind.config.ts";
