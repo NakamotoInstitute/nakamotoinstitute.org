@@ -3,10 +3,12 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import clsx from "clsx";
 import { Command } from "cmdk";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 
+import { CloseIcon } from "@/app/components/CloseIcon";
 import { SearchHighlight } from "@/app/components/SearchHighlight";
+import { SearchIcon } from "@/app/components/SearchIcon";
 import type { CountsByCategory, SearchResponse, SearchResult } from "@/lib/api";
 import { focusRing, focusRingInset } from "@/lib/focusRing";
 import { isRtl } from "@/i18n";
@@ -59,26 +61,6 @@ function categoryLabel(labels: SearchLabels, category: CategoryKey): string {
   }
 }
 
-function SearchIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      strokeWidth={2}
-      aria-hidden="true"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="m21 21-4.35-4.35M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14Z"
-      />
-    </svg>
-  );
-}
-
 // Shimmer placeholder shown while a query is pending, so the results area never
 // flashes "no results" before the fetch settles.
 function ResultsSkeleton() {
@@ -121,6 +103,16 @@ export function SearchCommand({
   const inputRef = useRef<HTMLInputElement>(null);
   const abortRef = useRef<AbortController | null>(null);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Hide the navbar trigger on the /search page itself (the page has its own
+  // input box); the global ⌘K shortcut still opens the palette there. Compared
+  // by pathname so it holds across locales (searchHref carries the locale).
+  const pathname = usePathname();
+  const searchPathname = new URL(searchHref, "http://n").pathname.replace(
+    /\/+$/,
+    "",
+  );
+  const isSearchPage = (pathname ?? "").replace(/\/+$/, "") === searchPathname;
 
   // Close + reset all transient state. Routed through every close path (Esc,
   // overlay click, ⌘K toggle, navigation) so resetting happens in an event
@@ -273,45 +265,47 @@ export function SearchCommand({
         open={open}
         onOpenChange={(next) => (next ? setOpen(true) : closePalette())}
       >
-        <a
-          ref={triggerRef}
-          href={searchHref}
-          onClick={(event) => {
-            // Allow modified clicks (new tab) and middle-clicks to pass through.
-            if (
-              event.metaKey ||
-              event.ctrlKey ||
-              event.shiftKey ||
-              event.altKey ||
-              event.button !== 0
-            ) {
-              return;
-            }
-            event.preventDefault();
-            setOpen(true);
-          }}
-          aria-label={labels.search}
-          className={clsx(
-            "text-taupe hover:text-cardinal flex items-center rounded-xs transition-colors",
-            focusRing,
-          )}
-        >
-          {/* Mobile (< md): icon only */}
-          <span className="flex items-center p-2 md:hidden">
-            <SearchIcon className="h-5 w-5" />
-            <span className="sr-only">{labels.search}</span>
-          </span>
-          {/* Desktop (>= md): fake input with ⌘K hint */}
-          <span className="border-sand hover:border-cardinal hidden h-10 w-56 items-center gap-x-2 rounded-xs border px-3 text-sm font-normal transition-colors md:flex">
-            <SearchIcon className="h-4 w-4 shrink-0" />
-            <span className="text-taupe truncate text-start">
-              {labels.placeholder}
+        {isSearchPage ? null : (
+          <a
+            ref={triggerRef}
+            href={searchHref}
+            onClick={(event) => {
+              // Allow modified clicks (new tab) and middle-clicks to pass through.
+              if (
+                event.metaKey ||
+                event.ctrlKey ||
+                event.shiftKey ||
+                event.altKey ||
+                event.button !== 0
+              ) {
+                return;
+              }
+              event.preventDefault();
+              setOpen(true);
+            }}
+            aria-label={labels.search}
+            className={clsx(
+              "text-taupe hover:text-cardinal flex items-center rounded-xs transition-colors",
+              focusRing,
+            )}
+          >
+            {/* Mobile (< md): icon only */}
+            <span className="flex items-center p-2 md:hidden">
+              <SearchIcon className="h-5 w-5" />
+              <span className="sr-only">{labels.search}</span>
             </span>
-            <kbd className="border-sand text-taupe ms-auto rounded-xs border px-1.5 py-0.5 font-mono text-xs">
-              ⌘K
-            </kbd>
-          </span>
-        </a>
+            {/* Desktop (>= md): fake input with ⌘K hint */}
+            <span className="border-sand hover:border-cardinal hidden h-10 w-56 items-center gap-x-2 rounded-xs border px-3 text-sm font-normal transition-colors md:flex">
+              <SearchIcon className="h-4 w-4 shrink-0" />
+              <span className="text-taupe truncate text-start">
+                {labels.placeholder}
+              </span>
+              <kbd className="border-sand text-taupe ms-auto rounded-xs border px-1.5 py-0.5 font-mono text-xs">
+                ⌘K
+              </kbd>
+            </span>
+          </a>
+        )}
 
         <Dialog.Portal>
           {/* Mobile: dim only below the navbar so the header stays visible;
@@ -330,9 +324,12 @@ export function SearchCommand({
               "motion-safe:transition motion-safe:duration-150 motion-safe:data-[state=closed]:opacity-0",
             )}
             onCloseAutoFocus={(event) => {
-              // Esc/close restores focus to the trigger.
-              event.preventDefault();
-              triggerRef.current?.focus();
+              // Esc/close restores focus to the trigger when it exists; on
+              // /search the trigger is hidden, so let focus return naturally.
+              if (triggerRef.current) {
+                event.preventDefault();
+                triggerRef.current.focus();
+              }
             }}
           >
             <Dialog.Title className="sr-only">{labels.search}</Dialog.Title>
@@ -412,21 +409,7 @@ export function SearchCommand({
                       focusRing,
                     )}
                   >
-                    <svg
-                      className="h-6 w-6"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                      aria-hidden="true"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M6 18 18 6M6 6l12 12"
-                      />
-                    </svg>
+                    <CloseIcon className="h-6 w-6" />
                   </button>
                 ) : null}
               </div>

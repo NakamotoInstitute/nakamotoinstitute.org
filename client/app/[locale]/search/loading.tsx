@@ -1,4 +1,4 @@
-const TAB_WIDTHS = ["w-10", "w-24", "w-16", "w-20", "w-20", "w-20"];
+const TAB_WIDTHS = ["w-10", "w-24", "w-16", "w-20", "w-20"];
 const ROW_COUNT = 6;
 
 export default function SearchLoading() {
@@ -8,7 +8,10 @@ export default function SearchLoading() {
       aria-hidden="true"
     >
       {/* Page heading */}
-      <div className="bg-taupe-light/60 mb-6 h-9 w-64 animate-pulse rounded" />
+      <div className="bg-taupe-light/60 mb-4 h-9 w-32 animate-pulse rounded" />
+
+      {/* Search box */}
+      <div className="bg-taupe-light/60 mb-6 h-12 w-full max-w-xl animate-pulse rounded-xs" />
 
       {/* Tab bar */}
       <div className="border-taupe-light mb-6 flex flex-wrap gap-x-4 gap-y-2 border-b border-dashed pb-3">

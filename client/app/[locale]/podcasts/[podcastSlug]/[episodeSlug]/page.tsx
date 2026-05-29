@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 
+import { BackToSearch } from "@/app/components/BackToSearch";
 import { ButtonLink } from "@/app/components/Button";
 import { PageLayout } from "@/app/components/PageLayout";
 import { Rehype } from "@/app/components/Rehype";
@@ -43,9 +44,13 @@ export async function generateMetadata(
 }
 
 export default async function EpisodeDetail(
-  props: LocaleParams<{ podcastSlug: string; episodeSlug: string }>,
+  props: LocaleParams<
+    { podcastSlug: string; episodeSlug: string },
+    { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }
+  >,
 ) {
   const params = await props.params;
+  const searchParams = await props.searchParams;
 
   const { locale, podcastSlug, episodeSlug } = params;
 
@@ -77,6 +82,12 @@ export default async function EpisodeDetail(
         },
       ]}
     >
+      <BackToSearch
+        locale={locale}
+        from={searchParams.from}
+        q={searchParams.q}
+        tab={searchParams.tab}
+      />
       <header className="mx-auto text-center">
         <h2 className="small-caps mb-4 text-2xl leading-[1.1] md:mb-6 md:text-4xl">
           {t("episode_number", { number: String(episode.episodeNumber ?? "") })}

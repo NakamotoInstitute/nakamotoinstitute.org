@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 
+import { BackToSearch } from "@/app/components/BackToSearch";
 import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
 import { locales } from "@/i18n";
@@ -61,9 +62,13 @@ export async function generateMetadata(
 }
 
 export default async function PostDetail(
-  props: LocaleParams<{ source: ForumPostSource; satoshiId: string }>,
+  props: LocaleParams<
+    { source: ForumPostSource; satoshiId: string },
+    { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }
+  >,
 ) {
   const params = await props.params;
+  const searchParams = await props.searchParams;
 
   const { source, satoshiId, locale } = params;
 
@@ -89,6 +94,12 @@ export default async function PostDetail(
         },
       ]}
     >
+      <BackToSearch
+        locale={locale}
+        from={searchParams.from}
+        q={searchParams.q}
+        tab={searchParams.tab}
+      />
       <PageHeader
         superTitle={formatPostSource(post.source)}
         title={post.subject}

@@ -3,9 +3,11 @@ import { TFunction } from "i18next";
 import { Metadata } from "next";
 import Link from "next/link";
 
+import { CloseIcon } from "@/app/components/CloseIcon";
 import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
 import { SearchHighlight } from "@/app/components/SearchHighlight";
+import { SearchIcon } from "@/app/components/SearchIcon";
 import { locales } from "@/i18n";
 import { CountsByCategory, SearchResult, api } from "@/lib/api";
 import { focusRing, focusUnderline } from "@/lib/focusRing";
@@ -47,6 +49,21 @@ function parsePage(page: string | undefined): number {
   return Number.isFinite(n) && n > 1 ? Math.floor(n) : 1;
 }
 
+// Marks a result's destination URL as "came from search" (carrying the query
+// and, for a category view, the active tab) so the detail page can render a
+// "back to results" link.
+function withSearchOrigin(
+  href: string,
+  q: string,
+  tab: "all" | Category,
+): string {
+  const params = new URLSearchParams({ from: "search", q });
+  if (tab !== "all") {
+    params.set("tab", tab);
+  }
+  return `${href}${href.includes("?") ? "&" : "?"}${params.toString()}`;
+}
+
 export async function generateMetadata(props: LocaleParams): Promise<Metadata> {
   const params = await props.params;
 
@@ -83,7 +100,9 @@ export default async function SearchPage(props: SearchPageProps) {
 
   return (
     <PageLayout t={t} locale={locale} generateHref={generateHref} size="lg">
-      <PageHeader title={t("search_placeholder")} />
+      <PageHeader title={t("search")}>
+        <SearchBox t={t} locale={locale} q={q} tab={tab} />
+      </PageHeader>
       {q ? (
         tab === "all" ? (
           <GroupedResults t={t} locale={locale} q={q} />
@@ -94,6 +113,58 @@ export default async function SearchPage(props: SearchPageProps) {
         <EmptyPrompt locale={locale} />
       )}
     </PageLayout>
+  );
+}
+
+type SearchBoxProps = {
+  t: TFunction<"common">;
+  locale: Locale;
+  q: string;
+  tab: "all" | Category;
+};
+
+// Server-rendered, JS-free search box. Submits a GET to /search (which resets
+// to page 1) and preserves the active category via a hidden field. The global
+// ⌘K palette still works on this page for users who prefer it.
+function SearchBox({ t, locale, q, tab }: SearchBoxProps) {
+  return (
+    <form
+      role="search"
+      method="get"
+      action={urls(locale).search()}
+      className="mt-1 max-w-xl"
+    >
+      <div className="border-sand focus-within:border-cardinal flex h-12 items-center gap-x-2 rounded-xs border px-3 transition-colors">
+        <SearchIcon className="text-taupe h-5 w-5 shrink-0" />
+        <input
+          type="search"
+          name="q"
+          defaultValue={q}
+          placeholder={t("search_placeholder")}
+          aria-label={t("search")}
+          autoComplete="off"
+          // text-base (>=16px) prevents iOS Safari auto-zoom; the native WebKit
+          // clear button is hidden in favour of the shared CloseIcon below.
+          className="text-dark placeholder:text-taupe w-full bg-transparent text-base outline-hidden [&::-webkit-search-cancel-button]:appearance-none"
+        />
+        {tab !== "all" ? <input type="hidden" name="tab" value={tab} /> : null}
+        {q ? (
+          <a
+            href={urls(locale).search()}
+            aria-label="Clear search"
+            className={clsx(
+              "text-taupe hover:text-dark flex shrink-0 items-center rounded-xs transition-colors",
+              focusRing,
+            )}
+          >
+            <CloseIcon className="h-6 w-6" />
+          </a>
+        ) : null}
+        <button type="submit" className="sr-only">
+          {t("search")}
+        </button>
+      </div>
+    </form>
   );
 }
 
@@ -153,9 +224,11 @@ type ResultRowProps = {
   t: TFunction<"common">;
   locale: Locale;
   item: SearchResult;
+  q: string;
+  tab: "all" | Category;
 };
 
-function ResultRow({ t, locale, item }: ResultRowProps) {
+function ResultRow({ t, locale, item, q, tab }: ResultRowProps) {
   const date = item.date ? new Date(item.date) : null;
 
   return (
@@ -163,7 +236,7 @@ function ResultRow({ t, locale, item }: ResultRowProps) {
       <h3 className="font-bold md:text-lg">
         <Link
           className={clsx("text-cardinal hover:underline", focusUnderline)}
-          href={searchResultHref(locale, item)}
+          href={withSearchOrigin(searchResultHref(locale, item), q, tab)}
         >
           {item.title}
         </Link>
@@ -225,6 +298,8 @@ async function GroupedResults({ t, locale, q }: GroupedResultsProps) {
                     t={t}
                     locale={locale}
                     item={item}
+                    q={q}
+                    tab="all"
                   />
                 ))}
               </div>
@@ -289,6 +364,8 @@ async function FlatResults({ t, locale, q, tab, page }: FlatResultsProps) {
                 t={t}
                 locale={locale}
                 item={item}
+                q={q}
+                tab={tab}
               />
             ))}
           </div>
