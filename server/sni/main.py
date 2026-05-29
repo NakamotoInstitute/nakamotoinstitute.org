@@ -10,6 +10,7 @@ from sni.library.router import router as library_router
 from sni.mempool.router import router as mempool_router
 from sni.podcasts.router import router as podcast_router
 from sni.satoshi.router import router as satoshi_router
+from sni.search.router import router as search_router
 from sni.skeptics.router import router as skeptics_router
 
 from .config import settings
@@ -53,4 +54,5 @@ app.include_router(library_router, tags=["library"], prefix="/library")
 app.include_router(mempool_router, tags=["mempool"], prefix="/mempool")
 app.include_router(podcast_router, tags=["podcasts"], prefix="/podcasts")
 app.include_router(satoshi_router, tags=["satoshi"], prefix="/satoshi")
+app.include_router(search_router, tags=["search"], prefix="/search")
 app.include_router(skeptics_router, tags=["skeptics"], prefix="/skeptics")

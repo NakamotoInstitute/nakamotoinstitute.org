@@ -42,6 +42,32 @@ export type AuthorDetail = {
 };
 
 /**
+ * CountsByCategory
+ */
+export type CountsByCategory = {
+    /**
+     * Satoshi
+     */
+    satoshi?: number;
+    /**
+     * Library
+     */
+    library?: number;
+    /**
+     * Mempool
+     */
+    mempool?: number;
+    /**
+     * Authors
+     */
+    authors?: number;
+    /**
+     * Podcasts
+     */
+    podcasts?: number;
+};
+
+/**
  * Document
  */
 export type Document = {
@@ -1174,6 +1200,61 @@ export type SatoshiForumPost = {
 };
 
 /**
+ * SearchResponse
+ */
+export type SearchResponse = {
+    /**
+     * Query
+     */
+    query: string;
+    /**
+     * Total
+     */
+    total: number;
+    countsByCategory: CountsByCategory;
+    /**
+     * Results
+     */
+    results: Array<SearchResult>;
+};
+
+/**
+ * SearchResult
+ */
+export type SearchResult = {
+    /**
+     * Entitytype
+     */
+    entityType: string;
+    /**
+     * Category
+     */
+    category: string;
+    /**
+     * Title
+     */
+    title: string;
+    /**
+     * Snippet
+     */
+    snippet: string;
+    /**
+     * Ref
+     */
+    ref: {
+        [key: string]: unknown;
+    };
+    /**
+     * Date
+     */
+    date?: Date | null;
+    /**
+     * Rank
+     */
+    rank: number;
+};
+
+/**
  * Skeptic
  */
 export type Skeptic = {
@@ -1335,6 +1416,30 @@ export type ValidationError = {
      * Error Type
      */
     type: string;
+    /**
+     * Input
+     */
+    input?: unknown;
+    /**
+     * Context
+     */
+    ctx?: {
+        [key: string]: unknown;
+    };
+};
+
+export type GetHealthData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/health';
+};
+
+export type GetHealthResponses = {
+    /**
+     * Successful Response
+     */
+    200: unknown;
 };
 
 export type GetAuthorsData = {
@@ -2402,6 +2507,48 @@ export type GetSatoshiQuotesBySlugResponses = {
 };
 
 export type GetSatoshiQuotesBySlugResponse = GetSatoshiQuotesBySlugResponses[keyof GetSatoshiQuotesBySlugResponses];
+
+export type GetSearchData = {
+    body?: never;
+    path?: never;
+    query: {
+        /**
+         * Q
+         */
+        q: string;
+        /**
+         * Locale
+         */
+        locale: 'ar' | 'de' | 'en' | 'es' | 'fa' | 'fi' | 'fr' | 'he' | 'it' | 'ko' | 'pt-br' | 'ru' | 'tr' | 'vi' | 'zh-cn';
+        /**
+         * Category
+         */
+        category?: string | null;
+        /**
+         * Page
+         */
+        page?: number;
+    };
+    url: '/search';
+};
+
+export type GetSearchErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+};
+
+export type GetSearchError = GetSearchErrors[keyof GetSearchErrors];
+
+export type GetSearchResponses = {
+    /**
+     * Search results
+     */
+    200: SearchResponse;
+};
+
+export type GetSearchResponse = GetSearchResponses[keyof GetSearchResponses];
 
 export type GetSkepticsData = {
     body?: never;

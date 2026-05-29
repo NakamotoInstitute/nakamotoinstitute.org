@@ -4,8 +4,8 @@ import * as z from 'zod';
 
 import type { Client, Options as Options2, TDataShape } from './client';
 import { client } from './client.gen';
-import type { GetAuthorsBySlugData, GetAuthorsBySlugErrors, GetAuthorsBySlugResponses, GetAuthorsData, GetAuthorsErrors, GetAuthorsParamsData, GetAuthorsParamsResponses, GetAuthorsResponses, GetLibraryByDocSlugBySlugData, GetLibraryByDocSlugBySlugErrors, GetLibraryByDocSlugBySlugResponses, GetLibraryBySlugData, GetLibraryBySlugErrors, GetLibraryBySlugResponses, GetLibraryData, GetLibraryErrors, GetLibraryHomeData, GetLibraryHomeErrors, GetLibraryHomeResponses, GetLibraryParamsData, GetLibraryParamsNodesData, GetLibraryParamsNodesResponses, GetLibraryParamsResponses, GetLibraryResponses, GetMempoolBySlugData, GetMempoolBySlugErrors, GetMempoolBySlugResponses, GetMempoolData, GetMempoolErrors, GetMempoolFeedData, GetMempoolFeedErrors, GetMempoolFeedResponses, GetMempoolLatestData, GetMempoolLatestErrors, GetMempoolLatestResponses, GetMempoolParamsData, GetMempoolParamsResponses, GetMempoolResponses, GetMempoolSeriesBySlugData, GetMempoolSeriesBySlugErrors, GetMempoolSeriesBySlugResponses, GetMempoolSeriesData, GetMempoolSeriesErrors, GetMempoolSeriesParamsData, GetMempoolSeriesParamsResponses, GetMempoolSeriesResponses, GetPodcastsByPodcastSlugByEpisodeSlugData, GetPodcastsByPodcastSlugByEpisodeSlugErrors, GetPodcastsByPodcastSlugByEpisodeSlugResponses, GetPodcastsByPodcastSlugData, GetPodcastsByPodcastSlugErrors, GetPodcastsByPodcastSlugFeedData, GetPodcastsByPodcastSlugFeedErrors, GetPodcastsByPodcastSlugFeedResponses, GetPodcastsByPodcastSlugResponses, GetPodcastsData, GetPodcastsEpisodesData, GetPodcastsEpisodesResponses, GetPodcastsHomeData, GetPodcastsHomeResponses, GetPodcastsResponses, GetSatoshiEmailsBySourceBySatoshiIdData, GetSatoshiEmailsBySourceBySatoshiIdErrors, GetSatoshiEmailsBySourceBySatoshiIdResponses, GetSatoshiEmailsBySourceData, GetSatoshiEmailsBySourceErrors, GetSatoshiEmailsBySourceResponses, GetSatoshiEmailsBySourceThreadsByThreadIdData, GetSatoshiEmailsBySourceThreadsByThreadIdErrors, GetSatoshiEmailsBySourceThreadsByThreadIdResponses, GetSatoshiEmailsBySourceThreadsData, GetSatoshiEmailsBySourceThreadsErrors, GetSatoshiEmailsBySourceThreadsResponses, GetSatoshiEmailsData, GetSatoshiEmailsResponses, GetSatoshiEmailsThreadsData, GetSatoshiEmailsThreadsResponses, GetSatoshiPostsBySourceBySatoshiIdData, GetSatoshiPostsBySourceBySatoshiIdErrors, GetSatoshiPostsBySourceBySatoshiIdResponses, GetSatoshiPostsBySourceData, GetSatoshiPostsBySourceErrors, GetSatoshiPostsBySourceResponses, GetSatoshiPostsBySourceThreadsByThreadIdData, GetSatoshiPostsBySourceThreadsByThreadIdErrors, GetSatoshiPostsBySourceThreadsByThreadIdResponses, GetSatoshiPostsBySourceThreadsData, GetSatoshiPostsBySourceThreadsErrors, GetSatoshiPostsBySourceThreadsResponses, GetSatoshiPostsData, GetSatoshiPostsResponses, GetSatoshiPostsThreadsData, GetSatoshiPostsThreadsResponses, GetSatoshiQuotesBySlugData, GetSatoshiQuotesBySlugErrors, GetSatoshiQuotesBySlugResponses, GetSatoshiQuotesData, GetSatoshiQuotesResponses, GetSkepticsData, GetSkepticsResponses } from './types.gen';
-import { zGetAuthorsBySlugPath, zGetAuthorsBySlugQuery, zGetAuthorsBySlugResponse, zGetAuthorsParamsResponse, zGetAuthorsQuery, zGetAuthorsResponse, zGetLibraryByDocSlugBySlugPath, zGetLibraryByDocSlugBySlugQuery, zGetLibraryByDocSlugBySlugResponse, zGetLibraryBySlugPath, zGetLibraryBySlugQuery, zGetLibraryBySlugResponse, zGetLibraryHomeQuery, zGetLibraryHomeResponse, zGetLibraryParamsNodesResponse, zGetLibraryParamsResponse, zGetLibraryQuery, zGetLibraryResponse, zGetMempoolBySlugPath, zGetMempoolBySlugQuery, zGetMempoolBySlugResponse, zGetMempoolFeedQuery, zGetMempoolFeedResponse, zGetMempoolLatestQuery, zGetMempoolLatestResponse, zGetMempoolParamsResponse, zGetMempoolQuery, zGetMempoolResponse, zGetMempoolSeriesBySlugPath, zGetMempoolSeriesBySlugQuery, zGetMempoolSeriesBySlugResponse, zGetMempoolSeriesParamsResponse, zGetMempoolSeriesQuery, zGetMempoolSeriesResponse, zGetPodcastsByPodcastSlugByEpisodeSlugPath, zGetPodcastsByPodcastSlugByEpisodeSlugResponse, zGetPodcastsByPodcastSlugFeedPath, zGetPodcastsByPodcastSlugFeedResponse, zGetPodcastsByPodcastSlugPath, zGetPodcastsByPodcastSlugResponse, zGetPodcastsEpisodesResponse, zGetPodcastsHomeResponse, zGetPodcastsResponse, zGetSatoshiEmailsBySourceBySatoshiIdPath, zGetSatoshiEmailsBySourceBySatoshiIdResponse, zGetSatoshiEmailsBySourcePath, zGetSatoshiEmailsBySourceResponse, zGetSatoshiEmailsBySourceThreadsByThreadIdPath, zGetSatoshiEmailsBySourceThreadsByThreadIdQuery, zGetSatoshiEmailsBySourceThreadsByThreadIdResponse, zGetSatoshiEmailsBySourceThreadsPath, zGetSatoshiEmailsBySourceThreadsResponse, zGetSatoshiEmailsResponse, zGetSatoshiEmailsThreadsResponse, zGetSatoshiPostsBySourceBySatoshiIdPath, zGetSatoshiPostsBySourceBySatoshiIdResponse, zGetSatoshiPostsBySourcePath, zGetSatoshiPostsBySourceResponse, zGetSatoshiPostsBySourceThreadsByThreadIdPath, zGetSatoshiPostsBySourceThreadsByThreadIdQuery, zGetSatoshiPostsBySourceThreadsByThreadIdResponse, zGetSatoshiPostsBySourceThreadsPath, zGetSatoshiPostsBySourceThreadsResponse, zGetSatoshiPostsResponse, zGetSatoshiPostsThreadsResponse, zGetSatoshiQuotesBySlugPath, zGetSatoshiQuotesBySlugResponse, zGetSatoshiQuotesResponse, zGetSkepticsResponse } from './zod.gen';
+import type { GetAuthorsBySlugData, GetAuthorsBySlugErrors, GetAuthorsBySlugResponses, GetAuthorsData, GetAuthorsErrors, GetAuthorsParamsData, GetAuthorsParamsResponses, GetAuthorsResponses, GetHealthData, GetHealthResponses, GetLibraryByDocSlugBySlugData, GetLibraryByDocSlugBySlugErrors, GetLibraryByDocSlugBySlugResponses, GetLibraryBySlugData, GetLibraryBySlugErrors, GetLibraryBySlugResponses, GetLibraryData, GetLibraryErrors, GetLibraryHomeData, GetLibraryHomeErrors, GetLibraryHomeResponses, GetLibraryParamsData, GetLibraryParamsNodesData, GetLibraryParamsNodesResponses, GetLibraryParamsResponses, GetLibraryResponses, GetMempoolBySlugData, GetMempoolBySlugErrors, GetMempoolBySlugResponses, GetMempoolData, GetMempoolErrors, GetMempoolFeedData, GetMempoolFeedErrors, GetMempoolFeedResponses, GetMempoolLatestData, GetMempoolLatestErrors, GetMempoolLatestResponses, GetMempoolParamsData, GetMempoolParamsResponses, GetMempoolResponses, GetMempoolSeriesBySlugData, GetMempoolSeriesBySlugErrors, GetMempoolSeriesBySlugResponses, GetMempoolSeriesData, GetMempoolSeriesErrors, GetMempoolSeriesParamsData, GetMempoolSeriesParamsResponses, GetMempoolSeriesResponses, GetPodcastsByPodcastSlugByEpisodeSlugData, GetPodcastsByPodcastSlugByEpisodeSlugErrors, GetPodcastsByPodcastSlugByEpisodeSlugResponses, GetPodcastsByPodcastSlugData, GetPodcastsByPodcastSlugErrors, GetPodcastsByPodcastSlugFeedData, GetPodcastsByPodcastSlugFeedErrors, GetPodcastsByPodcastSlugFeedResponses, GetPodcastsByPodcastSlugResponses, GetPodcastsData, GetPodcastsEpisodesData, GetPodcastsEpisodesResponses, GetPodcastsHomeData, GetPodcastsHomeResponses, GetPodcastsResponses, GetSatoshiEmailsBySourceBySatoshiIdData, GetSatoshiEmailsBySourceBySatoshiIdErrors, GetSatoshiEmailsBySourceBySatoshiIdResponses, GetSatoshiEmailsBySourceData, GetSatoshiEmailsBySourceErrors, GetSatoshiEmailsBySourceResponses, GetSatoshiEmailsBySourceThreadsByThreadIdData, GetSatoshiEmailsBySourceThreadsByThreadIdErrors, GetSatoshiEmailsBySourceThreadsByThreadIdResponses, GetSatoshiEmailsBySourceThreadsData, GetSatoshiEmailsBySourceThreadsErrors, GetSatoshiEmailsBySourceThreadsResponses, GetSatoshiEmailsData, GetSatoshiEmailsResponses, GetSatoshiEmailsThreadsData, GetSatoshiEmailsThreadsResponses, GetSatoshiPostsBySourceBySatoshiIdData, GetSatoshiPostsBySourceBySatoshiIdErrors, GetSatoshiPostsBySourceBySatoshiIdResponses, GetSatoshiPostsBySourceData, GetSatoshiPostsBySourceErrors, GetSatoshiPostsBySourceResponses, GetSatoshiPostsBySourceThreadsByThreadIdData, GetSatoshiPostsBySourceThreadsByThreadIdErrors, GetSatoshiPostsBySourceThreadsByThreadIdResponses, GetSatoshiPostsBySourceThreadsData, GetSatoshiPostsBySourceThreadsErrors, GetSatoshiPostsBySourceThreadsResponses, GetSatoshiPostsData, GetSatoshiPostsResponses, GetSatoshiPostsThreadsData, GetSatoshiPostsThreadsResponses, GetSatoshiQuotesBySlugData, GetSatoshiQuotesBySlugErrors, GetSatoshiQuotesBySlugResponses, GetSatoshiQuotesData, GetSatoshiQuotesResponses, GetSearchData, GetSearchErrors, GetSearchResponses, GetSkepticsData, GetSkepticsResponses } from './types.gen';
+import { zGetAuthorsBySlugPath, zGetAuthorsBySlugQuery, zGetAuthorsBySlugResponse, zGetAuthorsParamsResponse, zGetAuthorsQuery, zGetAuthorsResponse, zGetLibraryByDocSlugBySlugPath, zGetLibraryByDocSlugBySlugQuery, zGetLibraryByDocSlugBySlugResponse, zGetLibraryBySlugPath, zGetLibraryBySlugQuery, zGetLibraryBySlugResponse, zGetLibraryHomeQuery, zGetLibraryHomeResponse, zGetLibraryParamsNodesResponse, zGetLibraryParamsResponse, zGetLibraryQuery, zGetLibraryResponse, zGetMempoolBySlugPath, zGetMempoolBySlugQuery, zGetMempoolBySlugResponse, zGetMempoolFeedQuery, zGetMempoolFeedResponse, zGetMempoolLatestQuery, zGetMempoolLatestResponse, zGetMempoolParamsResponse, zGetMempoolQuery, zGetMempoolResponse, zGetMempoolSeriesBySlugPath, zGetMempoolSeriesBySlugQuery, zGetMempoolSeriesBySlugResponse, zGetMempoolSeriesParamsResponse, zGetMempoolSeriesQuery, zGetMempoolSeriesResponse, zGetPodcastsByPodcastSlugByEpisodeSlugPath, zGetPodcastsByPodcastSlugByEpisodeSlugResponse, zGetPodcastsByPodcastSlugFeedPath, zGetPodcastsByPodcastSlugFeedResponse, zGetPodcastsByPodcastSlugPath, zGetPodcastsByPodcastSlugResponse, zGetPodcastsEpisodesResponse, zGetPodcastsHomeResponse, zGetPodcastsResponse, zGetSatoshiEmailsBySourceBySatoshiIdPath, zGetSatoshiEmailsBySourceBySatoshiIdResponse, zGetSatoshiEmailsBySourcePath, zGetSatoshiEmailsBySourceResponse, zGetSatoshiEmailsBySourceThreadsByThreadIdPath, zGetSatoshiEmailsBySourceThreadsByThreadIdQuery, zGetSatoshiEmailsBySourceThreadsByThreadIdResponse, zGetSatoshiEmailsBySourceThreadsPath, zGetSatoshiEmailsBySourceThreadsResponse, zGetSatoshiEmailsResponse, zGetSatoshiEmailsThreadsResponse, zGetSatoshiPostsBySourceBySatoshiIdPath, zGetSatoshiPostsBySourceBySatoshiIdResponse, zGetSatoshiPostsBySourcePath, zGetSatoshiPostsBySourceResponse, zGetSatoshiPostsBySourceThreadsByThreadIdPath, zGetSatoshiPostsBySourceThreadsByThreadIdQuery, zGetSatoshiPostsBySourceThreadsByThreadIdResponse, zGetSatoshiPostsBySourceThreadsPath, zGetSatoshiPostsBySourceThreadsResponse, zGetSatoshiPostsResponse, zGetSatoshiPostsThreadsResponse, zGetSatoshiQuotesBySlugPath, zGetSatoshiQuotesBySlugResponse, zGetSatoshiQuotesResponse, zGetSearchQuery, zGetSearchResponse, zGetSkepticsResponse } from './zod.gen';
 
 export type Options<TData extends TDataShape = TDataShape, ThrowOnError extends boolean = boolean, TResponse = unknown> = Options2<TData, ThrowOnError, TResponse> & {
     /**
@@ -46,6 +46,23 @@ class HeyApiRegistry<T> {
     
     set(value: T, key?: string): void {
         this.instances.set(key ?? this.defaultKey, value);
+    }
+}
+
+export class Default extends HeyApiClient {
+    /**
+     * Health
+     */
+    public health<ThrowOnError extends boolean = false>(options?: Options<GetHealthData, ThrowOnError>) {
+        return (options?.client ?? this.client).get<GetHealthResponses, unknown, ThrowOnError>({
+            requestValidator: async (data) => await z.object({
+                body: z.never().optional(),
+                path: z.never().optional(),
+                query: z.never().optional()
+            }).parseAsync(data),
+            url: '/health',
+            ...options
+        });
     }
 }
 
@@ -685,6 +702,24 @@ export class Satoshi extends HeyApiClient {
     }
 }
 
+export class Search extends HeyApiClient {
+    /**
+     * Site-wide search
+     */
+    public search<ThrowOnError extends boolean = false>(options: Options<GetSearchData, ThrowOnError>) {
+        return (options.client ?? this.client).get<GetSearchResponses, GetSearchErrors, ThrowOnError>({
+            requestValidator: async (data) => await z.object({
+                body: z.never().optional(),
+                path: z.never().optional(),
+                query: zGetSearchQuery
+            }).parseAsync(data),
+            responseTransformer: async (data) => await zGetSearchResponse.parseAsync(data),
+            url: '/search',
+            ...options
+        });
+    }
+}
+
 export class Skeptics extends HeyApiClient {
     /**
      * Get all skeptics
@@ -716,6 +751,11 @@ export class Api extends HeyApiClient {
         Api.__registry.set(this, args?.key);
     }
     
+    private _default?: Default;
+    get default(): Default {
+        return this._default ??= new Default({ client: this.client });
+    }
+    
     private _authors?: Authors;
     get authors(): Authors {
         return this._authors ??= new Authors({ client: this.client });
@@ -739,6 +779,11 @@ export class Api extends HeyApiClient {
     private _satoshi?: Satoshi;
     get satoshi(): Satoshi {
         return this._satoshi ??= new Satoshi({ client: this.client });
+    }
+    
+    private _search?: Search;
+    get search(): Search {
+        return this._search ??= new Search({ client: this.client });
     }
     
     private _skeptics?: Skeptics;

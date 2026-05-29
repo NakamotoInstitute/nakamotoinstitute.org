@@ -12,6 +12,17 @@ export const zAuthor = z.object({
 });
 
 /**
+ * CountsByCategory
+ */
+export const zCountsByCategory = z.object({
+    satoshi: z.int().optional().default(0),
+    library: z.int().optional().default(0),
+    mempool: z.int().optional().default(0),
+    authors: z.int().optional().default(0),
+    podcasts: z.int().optional().default(0)
+});
+
+/**
  * DocumentFormats
  */
 export const zDocumentFormats = z.enum([
@@ -378,6 +389,29 @@ export const zForumPostDetail = z.object({
 });
 
 /**
+ * SearchResult
+ */
+export const zSearchResult = z.object({
+    entityType: z.string(),
+    category: z.string(),
+    title: z.string(),
+    snippet: z.string(),
+    ref: z.record(z.string(), z.unknown()),
+    date: z.coerce.date().nullish(),
+    rank: z.number()
+});
+
+/**
+ * SearchResponse
+ */
+export const zSearchResponse = z.object({
+    query: z.string(),
+    total: z.int(),
+    countsByCategory: zCountsByCategory,
+    results: z.array(zSearchResult)
+});
+
+/**
  * Skeptic
  */
 export const zSkeptic = z.object({
@@ -584,7 +618,9 @@ export const zMempoolPost = z.object({
 export const zValidationError = z.object({
     loc: z.array(z.union([z.string(), z.int()])),
     msg: z.string(),
-    type: z.string()
+    type: z.string(),
+    input: z.unknown().optional(),
+    ctx: z.record(z.string(), z.unknown()).optional()
 });
 
 /**
@@ -1148,6 +1184,34 @@ export const zGetSatoshiQuotesBySlugPath = z.object({
  * Category with quotes
  */
 export const zGetSatoshiQuotesBySlugResponse = zQuoteCategory;
+
+export const zGetSearchQuery = z.object({
+    q: z.string(),
+    locale: z.enum([
+        'ar',
+        'de',
+        'en',
+        'es',
+        'fa',
+        'fi',
+        'fr',
+        'he',
+        'it',
+        'ko',
+        'pt-br',
+        'ru',
+        'tr',
+        'vi',
+        'zh-cn'
+    ]),
+    category: z.string().nullish(),
+    page: z.int().optional().default(1)
+});
+
+/**
+ * Search results
+ */
+export const zGetSearchResponse = zSearchResponse;
 
 /**
  * Response Skeptics-Get Skeptics
