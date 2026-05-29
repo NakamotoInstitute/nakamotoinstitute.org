@@ -1,6 +1,8 @@
 import clsx from "clsx";
 import { IBM_Plex_Mono, STIX_Two_Text } from "next/font/google";
 
+import { isRtl } from "@/i18n";
+
 import "../globals.css";
 
 const stix = STIX_Two_Text({
@@ -25,6 +27,7 @@ export function RootLayout({ locale, children }: RootLayoutProps) {
   return (
     <html
       lang={locale}
+      dir={isRtl(locale) ? "rtl" : "ltr"}
       className={clsx(
         stix.variable,
         plexMono.variable,

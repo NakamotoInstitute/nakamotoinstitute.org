@@ -15,10 +15,12 @@
   },
   "dependencies": {
     "@floating-ui/react": "^0.27.19",
+    "@radix-ui/react-dialog": "^1.1.15",
     "@t3-oss/env-nextjs": "^0.13.11",
     "@types/hast": "^3.0.4",
     "big.js": "^7.0.1",
     "clsx": "^2.1.1",
+    "cmdk": "^1.1.1",
     "fathom-client": "^3.7.2",
     "hast-util-to-jsx-runtime": "^2.3.6",
     "i18next": "26.0.6",
