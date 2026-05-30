@@ -3,6 +3,7 @@ import { TFunction } from "i18next";
 import { Metadata } from "next";
 import Link from "next/link";
 
+import { Arrow } from "@/app/components/Arrow";
 import { CloseIcon } from "@/app/components/CloseIcon";
 import { PageHeader } from "@/app/components/PageHeader";
 import { PageLayout } from "@/app/components/PageLayout";
@@ -110,7 +111,7 @@ export default async function SearchPage(props: SearchPageProps) {
           <FlatResults t={t} locale={locale} q={q} tab={tab} page={page} />
         )
       ) : (
-        <EmptyPrompt locale={locale} />
+        <EmptyPrompt t={t} locale={locale} />
       )}
     </PageLayout>
   );
@@ -151,7 +152,7 @@ function SearchBox({ t, locale, q, tab }: SearchBoxProps) {
         {q ? (
           <a
             href={urls(locale).search()}
-            aria-label="Clear search"
+            aria-label={t("search_clear")}
             className={clsx(
               "text-taupe hover:text-dark flex shrink-0 items-center rounded-xs transition-colors",
               focusRing,
@@ -266,8 +267,11 @@ type GroupedResultsProps = {
 };
 
 async function GroupedResults({ t, locale, q }: GroupedResultsProps) {
+  // no-store: search is request-time and must never be served from Next's data
+  // cache (stale after an index rebuild; unbounded per-query cache entries).
   const { data } = await api.search.search({
     query: { q, locale },
+    cache: "no-store",
   });
 
   if (!data) {
@@ -336,8 +340,10 @@ type FlatResultsProps = {
 };
 
 async function FlatResults({ t, locale, q, tab, page }: FlatResultsProps) {
+  // no-store: see GroupedResults — search responses must not be cached.
   const { data } = await api.search.search({
     query: { q, locale, category: tab, page },
+    cache: "no-store",
   });
 
   if (!data) {
@@ -374,12 +380,13 @@ async function FlatResults({ t, locale, q, tab, page }: FlatResultsProps) {
               {hasPrev ? (
                 <Link
                   className={clsx(
-                    "text-cardinal small-caps text-sm hover:underline",
+                    "text-cardinal small-caps inline-flex items-center gap-x-1.5 text-sm hover:underline",
                     focusUnderline,
                   )}
                   href={urls(locale).search({ q, tab, page: page - 1 })}
                 >
-                  &larr; Previous
+                  <Arrow direction="left" className="rtl:rotate-180" />
+                  {t("search_previous")}
                 </Link>
               ) : (
                 <span />
@@ -387,12 +394,13 @@ async function FlatResults({ t, locale, q, tab, page }: FlatResultsProps) {
               {hasNext ? (
                 <Link
                   className={clsx(
-                    "text-cardinal small-caps text-sm hover:underline",
+                    "text-cardinal small-caps inline-flex items-center gap-x-1.5 text-sm hover:underline",
                     focusUnderline,
                   )}
                   href={urls(locale).search({ q, tab, page: page + 1 })}
                 >
-                  Next &rarr;
+                  {t("search_next")}
+                  <Arrow direction="right" className="rtl:rotate-180" />
                 </Link>
               ) : (
                 <span />
@@ -411,17 +419,21 @@ function NoResults({ t, q }: { t: TFunction<"common">; q: string }) {
   return (
     <div className="py-8">
       <p className="text-lg">{t("search_no_results", { query: q })}</p>
-      <p className="text-dark/70 mt-2">
-        Try broadening your search or using fewer, more general terms.
-      </p>
+      <p className="text-dark/70 mt-2">{t("search_no_results_hint")}</p>
     </div>
   );
 }
 
-function EmptyPrompt({ locale }: { locale: Locale }) {
+function EmptyPrompt({
+  t,
+  locale,
+}: {
+  t: TFunction<"common">;
+  locale: Locale;
+}) {
   return (
     <div className="py-8">
-      <p className="text-lg">Explore the archives. Try:</p>
+      <p className="text-lg">{t("search_explore_prompt")}</p>
       <ul className="mt-3 flex flex-wrap gap-2">
         {EXAMPLE_QUERIES.map((example) => (
           <li key={example}>

@@ -4,7 +4,13 @@ import * as Dialog from "@radix-ui/react-dialog";
 import clsx from "clsx";
 import { Command } from "cmdk";
 import { usePathname, useRouter } from "next/navigation";
-import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  useSyncExternalStore,
+} from "react";
 
 import { CloseIcon } from "@/app/components/CloseIcon";
 import { SearchHighlight } from "@/app/components/SearchHighlight";
@@ -17,6 +23,13 @@ export type SearchLabels = {
   search: string;
   placeholder: string;
   noResults: string;
+  noResultsInCategory: string;
+  noResultsInCategories: string;
+  resultsAnnounce: string;
+  broadenHint: string;
+  emptyTagline: string;
+  clearSearch: string;
+  closeSearch: string;
   seeAll: string;
   all: string;
   satoshi: string;
@@ -43,6 +56,27 @@ const CATEGORY_ORDER: CategoryKey[] = [
 ];
 
 const DEBOUNCE_MS = 250;
+
+// useSyncExternalStore helpers for the platform-aware shortcut hint. The store
+// never changes (subscribe is a no-op); the server snapshot defaults to ⌘ so SSR
+// and the first client render agree, then the client snapshot corrects to Ctrl on
+// non-Apple platforms — no set-state-in-effect, no hydration mismatch.
+const subscribeNoop = () => () => {};
+const getIsMac = () =>
+  /mac|iphone|ipad|ipod/i.test(navigator.platform || navigator.userAgent);
+const getIsMacServer = () => true;
+
+// Tag a result href as "came from search" so the destination page renders a
+// "back to results" link (mirrors the /search page). Any #fragment (e.g. the
+// skeptics anchor) must stay after the query string, so split it off first.
+function withSearchOrigin(href: string, query: string, tab?: string): string {
+  const hashAt = href.indexOf("#");
+  const base = hashAt === -1 ? href : href.slice(0, hashAt);
+  const hash = hashAt === -1 ? "" : href.slice(hashAt);
+  const params = new URLSearchParams({ from: "search", q: query });
+  if (tab) params.set("tab", tab);
+  return `${base}${base.includes("?") ? "&" : "?"}${params.toString()}${hash}`;
+}
 
 function categoryLabel(labels: SearchLabels, category: CategoryKey): string {
   switch (category) {
@@ -98,6 +132,8 @@ export function SearchCommand({
   // async fetch callbacks (never synchronously in an effect), so it doubles as
   // the "settled" signal: results are pending whenever it lags the input.
   const [resultsQuery, setResultsQuery] = useState("");
+  // ⌘ vs Ctrl in the shortcut hint, read client-side (see helpers above).
+  const isMac = useSyncExternalStore(subscribeNoop, getIsMac, getIsMacServer);
 
   const triggerRef = useRef<HTMLAnchorElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -214,6 +250,9 @@ export function SearchCommand({
 
     return () => {
       if (debounceRef.current) clearTimeout(debounceRef.current);
+      // Cancel any in-flight request too, so unmount mid-fetch doesn't settle
+      // state on a gone component (keystroke changes are already covered above).
+      abortRef.current?.abort();
     };
   }, [query, locale]);
 
@@ -235,6 +274,12 @@ export function SearchCommand({
     closeAndGo(`${searchHref}${separator}${params.toString()}`);
   }, [query, selected, searchHref, closeAndGo]);
 
+  // Results in categories the palette can actually display. Authors are indexed
+  // but intentionally not a palette category, so author rows never render here.
+  const displayableResults = results.filter((item) =>
+    CATEGORY_ORDER.includes(item.category as CategoryKey),
+  );
+
   // Group results by category (rank order preserved), limited to the selected
   // categories — an empty selection means "search everywhere".
   const grouped = CATEGORY_ORDER.filter(
@@ -253,8 +298,15 @@ export function SearchCommand({
   // skeleton instead of briefly flashing "no results".
   const pending = hasQuery && resultsQuery !== trimmedQuery;
   const showNoResults = hasQuery && !pending && grouped.length === 0;
-  // Matches exist, but not in the categories the user filtered to.
-  const filteredEverythingOut = showNoResults && results.length > 0;
+  // Displayable matches exist, but the active filter hides them all. Gated on an
+  // active selection so an authors-only match (no filter) shows the plain "no
+  // results" copy, not a misleading "nothing in the selected category".
+  const filteredEverythingOut =
+    showNoResults && selected.size > 0 && displayableResults.length > 0;
+  // Total matches across displayable categories — announced to screen readers.
+  const displayableTotal = counts
+    ? CATEGORY_ORDER.reduce((sum, category) => sum + (counts[category] ?? 0), 0)
+    : 0;
 
   return (
     <>
@@ -301,7 +353,7 @@ export function SearchCommand({
                 {labels.placeholder}
               </span>
               <kbd className="border-sand text-taupe ms-auto rounded-xs border px-1.5 py-0.5 font-mono text-xs">
-                ⌘K
+                {isMac ? "⌘K" : "Ctrl K"}
               </kbd>
             </span>
           </a>
@@ -364,7 +416,7 @@ export function SearchCommand({
                 <button
                   type="button"
                   onClick={closePalette}
-                  aria-label="Close search"
+                  aria-label={labels.closeSearch}
                   className={clsx(
                     "text-taupe hover:text-dark -ms-1 flex shrink-0 cursor-pointer items-center rounded-xs transition-colors md:hidden",
                     focusRing,
@@ -392,6 +444,7 @@ export function SearchCommand({
                   value={query}
                   onValueChange={setQuery}
                   placeholder={labels.placeholder}
+                  aria-label={labels.search}
                   // text-base (>=16px) prevents iOS Safari auto-zoom on focus.
                   className="text-dark placeholder:text-taupe w-full bg-transparent text-base outline-hidden"
                   autoFocus
@@ -403,7 +456,7 @@ export function SearchCommand({
                       setQuery("");
                       inputRef.current?.focus();
                     }}
-                    aria-label="Clear search"
+                    aria-label={labels.clearSearch}
                     className={clsx(
                       "text-taupe hover:text-dark -me-1 flex shrink-0 cursor-pointer items-center rounded-xs transition-colors",
                       focusRing,
@@ -417,7 +470,7 @@ export function SearchCommand({
               {/* Category filter — choose where to search (multi-select).
                   An empty selection searches everywhere; counts appear once a
                   query is entered. */}
-              <div className="border-sand flex flex-wrap items-center gap-2 border-b px-4 py-2.5">
+              <div className="border-sand flex items-center gap-2 overflow-x-auto border-b px-4 py-2.5 [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                 {CATEGORY_ORDER.map((category) => {
                   const isSelected = selected.has(category);
                   const count = counts?.[category];
@@ -429,7 +482,7 @@ export function SearchCommand({
                       aria-checked={isSelected}
                       onClick={() => toggleCategory(category)}
                       className={clsx(
-                        "flex cursor-pointer items-center gap-x-1.5 rounded-full border px-3 py-1 text-sm transition-colors",
+                        "flex shrink-0 cursor-pointer items-center gap-x-1.5 rounded-full border px-3 py-1 text-sm whitespace-nowrap transition-colors",
                         focusRing,
                         isSelected
                           ? "border-cardinal bg-cardinal text-white"
@@ -453,9 +506,16 @@ export function SearchCommand({
               </div>
 
               <div aria-live="polite" className="sr-only">
-                {showNoResults
-                  ? labels.noResults.replace("{{query}}", query.trim())
-                  : ""}
+                {pending
+                  ? ""
+                  : showNoResults
+                    ? labels.noResults.replace("{{query}}", trimmedQuery)
+                    : hasQuery && counts
+                      ? labels.resultsAnnounce.replace(
+                          "{{count}}",
+                          String(displayableTotal),
+                        )
+                      : ""}
               </div>
 
               <Command.List
@@ -464,7 +524,7 @@ export function SearchCommand({
               >
                 {!hasQuery ? (
                   <p className="text-taupe px-2 py-8 text-center text-sm">
-                    Don&rsquo;t trust. Verify.
+                    {labels.emptyTagline}
                   </p>
                 ) : null}
 
@@ -475,8 +535,8 @@ export function SearchCommand({
                     {filteredEverythingOut ? (
                       <p className="text-dark">
                         {selected.size === 1
-                          ? "No results in the selected category."
-                          : "No results in the selected categories."}
+                          ? labels.noResultsInCategory
+                          : labels.noResultsInCategories}
                       </p>
                     ) : (
                       <>
@@ -484,7 +544,7 @@ export function SearchCommand({
                           {labels.noResults.replace("{{query}}", query.trim())}
                         </p>
                         <p className="text-taupe mt-1">
-                          Try checking your spelling or using broader terms.
+                          {labels.broadenHint}
                         </p>
                       </>
                     )}
@@ -498,7 +558,13 @@ export function SearchCommand({
                     className="[&_[cmdk-group-heading]]:text-taupe [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-bold [&_[cmdk-group-heading]]:uppercase"
                   >
                     {group.items.map((item, index) => {
-                      const href = item.href;
+                      // Carry the query (and a single active category as the tab)
+                      // so the detail page shows a "back to results" link.
+                      const href = withSearchOrigin(
+                        item.href,
+                        trimmedQuery,
+                        selected.size === 1 ? [...selected][0] : undefined,
+                      );
                       return (
                         <Command.Item
                           key={`${group.category}-${index}-${item.title}`}
