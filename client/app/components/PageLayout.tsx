@@ -72,6 +72,26 @@ export async function PageLayout({
             {t("donate")}
           </DonationButton>,
         ]}
+        searchHref={urls(locale).search()}
+        searchLabels={{
+          search: t("search"),
+          placeholder: t("search_placeholder"),
+          noResults: t("search_no_results"),
+          noResultsInCategory: t("search_no_results_in_category"),
+          noResultsInCategories: t("search_no_results_in_categories"),
+          resultsAnnounce: t("search_results_announce"),
+          broadenHint: t("search_broaden_hint"),
+          emptyTagline: t("search_empty_tagline"),
+          clearSearch: t("search_clear"),
+          closeSearch: t("search_close"),
+          seeAll: t("search_see_all"),
+          all: t("all"),
+          satoshi: t("complete_satoshi"),
+          library: t("library"),
+          mempool: t("mempool"),
+          authors: t("authors"),
+          podcasts: t("podcasts"),
+        }}
         {...toggleProps}
       />
       {breadcrumbs ? <Breadcrumbs breadcrumbs={breadcrumbs} /> : null}

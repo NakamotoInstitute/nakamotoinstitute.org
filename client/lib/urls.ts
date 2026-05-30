@@ -68,6 +68,14 @@ export const urls = (locale: Locale) => {
   return {
     home: getUrl("/"),
     about: getUrl("/about/"),
+    search: (params?: { q?: string; tab?: string; page?: number }) => {
+      const query = new URLSearchParams();
+      if (params?.q) query.set("q", params.q);
+      if (params?.tab) query.set("tab", params.tab);
+      if (params?.page && params.page > 1) query.set("page", String(params.page));
+      const qs = query.toString();
+      return getUrl(`/search/${qs ? `?${qs}` : ""}`);
+    },
     authors: {
       index: getUrl("/authors/"),
       detail: (slug: string) => getUrl(`/authors/${slug}/`),

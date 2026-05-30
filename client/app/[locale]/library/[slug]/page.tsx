@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { Trans } from "react-i18next/TransWithoutContext";
 
+import { BackToSearch } from "@/app/components/BackToSearch";
 import { PageLayout } from "@/app/components/PageLayout";
 import { Rehype } from "@/app/components/Rehype";
 import { RenderedItemsList } from "@/app/components/RenderedItemsList";
@@ -59,9 +60,13 @@ export async function generateMetadata(
 }
 
 export default async function LibraryDetail(
-  props: LocaleParams<{ slug: string }>,
+  props: LocaleParams<
+    { slug: string },
+    { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }
+  >,
 ) {
   const params = await props.params;
+  const searchParams = await props.searchParams;
 
   const { slug, locale } = params;
 
@@ -94,6 +99,12 @@ export default async function LibraryDetail(
       ]}
       size="lg"
     >
+      <BackToSearch
+        locale={locale}
+        from={searchParams.from}
+        q={searchParams.q}
+        tab={searchParams.tab}
+      />
       <article>
         <DocHeader t={t} locale={locale} doc={doc} />
         {doc.content ? (

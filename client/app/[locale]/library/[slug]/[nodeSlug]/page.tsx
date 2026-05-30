@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 import { Arrow } from "@/app/components/Arrow";
+import { BackToSearch } from "@/app/components/BackToSearch";
 import { PageLayout } from "@/app/components/PageLayout";
 import { Rehype } from "@/app/components/Rehype";
 import {
@@ -89,9 +90,13 @@ async function NodeNavigation({ node, locale }: NodeNavigationProps) {
 }
 
 export default async function LibraryNodeDetail(
-  props: LocaleParams<{ slug: string; nodeSlug: string }>,
+  props: LocaleParams<
+    { slug: string; nodeSlug: string },
+    { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }
+  >,
 ) {
   const params = await props.params;
+  const searchParams = await props.searchParams;
 
   const { slug, nodeSlug, locale } = params;
 
@@ -135,6 +140,12 @@ export default async function LibraryNodeDetail(
       footerNav={nodeNav}
       size="lg"
     >
+      <BackToSearch
+        locale={locale}
+        from={searchParams.from}
+        q={searchParams.q}
+        tab={searchParams.tab}
+      />
       <article>
         <NodeHeader node={node} hr={!!node.content ? "bottom" : "middle"} />
         <section className="prose mx-auto" dir={getDir(locale)}>

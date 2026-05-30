@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 import { LanguageToggle, ToggleLinkProps } from "./LanguageToggle";
+import { SearchCommand, SearchLabels } from "./SearchCommand";
 
 export function Navbar({
   locale,
@@ -12,6 +13,8 @@ export function Navbar({
   homeHref,
   navLinks,
   navButtons,
+  searchLabels,
+  searchHref,
   ...toggleProps
 }: ToggleLinkProps & {
   locale: Locale;
@@ -19,6 +22,8 @@ export function Navbar({
   homeHref: string;
   navLinks: AnchorProps[];
   navButtons: React.ReactNode;
+  searchLabels: SearchLabels;
+  searchHref: string;
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -44,7 +49,12 @@ export function Navbar({
               </Link>
             ))}
           </div>
-          <div className="ml-auto flex items-center gap-x-4">
+          <div className="ms-auto flex items-center gap-x-4">
+            <SearchCommand
+              locale={locale}
+              labels={searchLabels}
+              searchHref={searchHref}
+            />
             {navButtons}
             <LanguageToggle current={locale} {...toggleProps} />
             <div className="flex items-center md:hidden">

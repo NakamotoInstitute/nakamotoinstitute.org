@@ -10,6 +10,7 @@ from sni.podcasts.importers import import_episodes, import_podcasts
 from sni.satoshi.emails.importers import import_email_threads, import_emails
 from sni.satoshi.posts.importers import import_forum_posts, import_forum_threads
 from sni.satoshi.quotes.importers import import_quote_categories, import_quotes
+from sni.search.rebuild import rebuild_search_index
 from sni.skeptics.importers import import_skeptics
 from sni.translators.importers import import_translators
 
@@ -43,3 +44,4 @@ def update_content(force: bool = False):
 
     with session_scope() as session:
         import_library_weights(session, force=True)
+        rebuild_search_index(session)

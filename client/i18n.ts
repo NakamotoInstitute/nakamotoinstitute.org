@@ -43,3 +43,9 @@ export const defaultLocale = "en";
 export function isLocale(value: string): value is (typeof locales)[number] {
   return (locales as readonly string[]).includes(value);
 }
+
+const rtlLocales = new Set(["ar", "fa", "he"]);
+
+export function isRtl(locale: string): boolean {
+  return rtlLocales.has(locale);
+}

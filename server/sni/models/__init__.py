@@ -31,5 +31,6 @@ from .satoshi.quotes import (  # noqa: F401
     Quote,
     QuoteCategory,
 )
+from .search import SearchIndex  # noqa: F401
 from .skeptics import Skeptic  # noqa: F401
 from .translators import Translator  # noqa: F401
