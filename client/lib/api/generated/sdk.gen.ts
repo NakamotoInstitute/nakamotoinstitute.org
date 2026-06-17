@@ -2,7 +2,7 @@
 
 import * as z from 'zod';
 
-import type { Client, Options as Options2, TDataShape } from './client';
+import type { Client, ClientMeta, Options as Options2, RequestResult, TDataShape } from './client';
 import { client } from './client.gen';
 import type { GetAuthorsBySlugData, GetAuthorsBySlugErrors, GetAuthorsBySlugResponses, GetAuthorsData, GetAuthorsErrors, GetAuthorsParamsData, GetAuthorsParamsResponses, GetAuthorsResponses, GetLibraryByDocSlugBySlugData, GetLibraryByDocSlugBySlugErrors, GetLibraryByDocSlugBySlugResponses, GetLibraryBySlugData, GetLibraryBySlugErrors, GetLibraryBySlugResponses, GetLibraryData, GetLibraryErrors, GetLibraryHomeData, GetLibraryHomeErrors, GetLibraryHomeResponses, GetLibraryParamsData, GetLibraryParamsNodesData, GetLibraryParamsNodesResponses, GetLibraryParamsResponses, GetLibraryResponses, GetMempoolBySlugData, GetMempoolBySlugErrors, GetMempoolBySlugResponses, GetMempoolData, GetMempoolErrors, GetMempoolFeedData, GetMempoolFeedErrors, GetMempoolFeedResponses, GetMempoolLatestData, GetMempoolLatestErrors, GetMempoolLatestResponses, GetMempoolParamsData, GetMempoolParamsResponses, GetMempoolResponses, GetMempoolSeriesBySlugData, GetMempoolSeriesBySlugErrors, GetMempoolSeriesBySlugResponses, GetMempoolSeriesData, GetMempoolSeriesErrors, GetMempoolSeriesParamsData, GetMempoolSeriesParamsResponses, GetMempoolSeriesResponses, GetPodcastsByPodcastSlugByEpisodeSlugData, GetPodcastsByPodcastSlugByEpisodeSlugErrors, GetPodcastsByPodcastSlugByEpisodeSlugResponses, GetPodcastsByPodcastSlugData, GetPodcastsByPodcastSlugErrors, GetPodcastsByPodcastSlugFeedData, GetPodcastsByPodcastSlugFeedErrors, GetPodcastsByPodcastSlugFeedResponses, GetPodcastsByPodcastSlugResponses, GetPodcastsData, GetPodcastsEpisodesData, GetPodcastsEpisodesResponses, GetPodcastsHomeData, GetPodcastsHomeResponses, GetPodcastsResponses, GetSatoshiEmailsBySourceBySatoshiIdData, GetSatoshiEmailsBySourceBySatoshiIdErrors, GetSatoshiEmailsBySourceBySatoshiIdResponses, GetSatoshiEmailsBySourceData, GetSatoshiEmailsBySourceErrors, GetSatoshiEmailsBySourceResponses, GetSatoshiEmailsBySourceThreadsByThreadIdData, GetSatoshiEmailsBySourceThreadsByThreadIdErrors, GetSatoshiEmailsBySourceThreadsByThreadIdResponses, GetSatoshiEmailsBySourceThreadsData, GetSatoshiEmailsBySourceThreadsErrors, GetSatoshiEmailsBySourceThreadsResponses, GetSatoshiEmailsData, GetSatoshiEmailsResponses, GetSatoshiEmailsThreadsData, GetSatoshiEmailsThreadsResponses, GetSatoshiPostsBySourceBySatoshiIdData, GetSatoshiPostsBySourceBySatoshiIdErrors, GetSatoshiPostsBySourceBySatoshiIdResponses, GetSatoshiPostsBySourceData, GetSatoshiPostsBySourceErrors, GetSatoshiPostsBySourceResponses, GetSatoshiPostsBySourceThreadsByThreadIdData, GetSatoshiPostsBySourceThreadsByThreadIdErrors, GetSatoshiPostsBySourceThreadsByThreadIdResponses, GetSatoshiPostsBySourceThreadsData, GetSatoshiPostsBySourceThreadsErrors, GetSatoshiPostsBySourceThreadsResponses, GetSatoshiPostsData, GetSatoshiPostsResponses, GetSatoshiPostsThreadsData, GetSatoshiPostsThreadsResponses, GetSatoshiQuotesBySlugData, GetSatoshiQuotesBySlugErrors, GetSatoshiQuotesBySlugResponses, GetSatoshiQuotesData, GetSatoshiQuotesResponses, GetSkepticsData, GetSkepticsResponses } from './types.gen';
 import { zGetAuthorsBySlugPath, zGetAuthorsBySlugQuery, zGetAuthorsBySlugResponse, zGetAuthorsParamsResponse, zGetAuthorsQuery, zGetAuthorsResponse, zGetLibraryByDocSlugBySlugPath, zGetLibraryByDocSlugBySlugQuery, zGetLibraryByDocSlugBySlugResponse, zGetLibraryBySlugPath, zGetLibraryBySlugQuery, zGetLibraryBySlugResponse, zGetLibraryHomeQuery, zGetLibraryHomeResponse, zGetLibraryParamsNodesResponse, zGetLibraryParamsResponse, zGetLibraryQuery, zGetLibraryResponse, zGetMempoolBySlugPath, zGetMempoolBySlugQuery, zGetMempoolBySlugResponse, zGetMempoolFeedQuery, zGetMempoolFeedResponse, zGetMempoolLatestQuery, zGetMempoolLatestResponse, zGetMempoolParamsResponse, zGetMempoolQuery, zGetMempoolResponse, zGetMempoolSeriesBySlugPath, zGetMempoolSeriesBySlugQuery, zGetMempoolSeriesBySlugResponse, zGetMempoolSeriesParamsResponse, zGetMempoolSeriesQuery, zGetMempoolSeriesResponse, zGetPodcastsByPodcastSlugByEpisodeSlugPath, zGetPodcastsByPodcastSlugByEpisodeSlugResponse, zGetPodcastsByPodcastSlugFeedPath, zGetPodcastsByPodcastSlugFeedResponse, zGetPodcastsByPodcastSlugPath, zGetPodcastsByPodcastSlugResponse, zGetPodcastsEpisodesResponse, zGetPodcastsHomeResponse, zGetPodcastsResponse, zGetSatoshiEmailsBySourceBySatoshiIdPath, zGetSatoshiEmailsBySourceBySatoshiIdResponse, zGetSatoshiEmailsBySourcePath, zGetSatoshiEmailsBySourceResponse, zGetSatoshiEmailsBySourceThreadsByThreadIdPath, zGetSatoshiEmailsBySourceThreadsByThreadIdQuery, zGetSatoshiEmailsBySourceThreadsByThreadIdResponse, zGetSatoshiEmailsBySourceThreadsPath, zGetSatoshiEmailsBySourceThreadsResponse, zGetSatoshiEmailsResponse, zGetSatoshiEmailsThreadsResponse, zGetSatoshiPostsBySourceBySatoshiIdPath, zGetSatoshiPostsBySourceBySatoshiIdResponse, zGetSatoshiPostsBySourcePath, zGetSatoshiPostsBySourceResponse, zGetSatoshiPostsBySourceThreadsByThreadIdPath, zGetSatoshiPostsBySourceThreadsByThreadIdQuery, zGetSatoshiPostsBySourceThreadsByThreadIdResponse, zGetSatoshiPostsBySourceThreadsPath, zGetSatoshiPostsBySourceThreadsResponse, zGetSatoshiPostsResponse, zGetSatoshiPostsThreadsResponse, zGetSatoshiQuotesBySlugPath, zGetSatoshiQuotesBySlugResponse, zGetSatoshiQuotesResponse, zGetSkepticsResponse } from './zod.gen';
@@ -18,7 +18,7 @@ export type Options<TData extends TDataShape = TDataShape, ThrowOnError extends 
      * You can pass arbitrary values through the `meta` object. This can be
      * used to access values that aren't defined as part of the SDK function.
      */
-    meta?: Record<string, unknown>;
+    meta?: keyof ClientMeta extends never ? Record<string, unknown> : ClientMeta;
 };
 
 class HeyApiClient {
@@ -53,7 +53,7 @@ export class Authors extends HeyApiClient {
     /**
      * Get all authors
      */
-    public getAuthors<ThrowOnError extends boolean = false>(options: Options<GetAuthorsData, ThrowOnError>) {
+    public getAuthors<ThrowOnError extends boolean = false>(options: Options<GetAuthorsData, ThrowOnError>): RequestResult<GetAuthorsResponses, GetAuthorsErrors, ThrowOnError> {
         return (options.client ?? this.client).get<GetAuthorsResponses, GetAuthorsErrors, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -71,7 +71,7 @@ export class Authors extends HeyApiClient {
      *
      * Get author slugs for static site generation.
      */
-    public getAuthorParams<ThrowOnError extends boolean = false>(options?: Options<GetAuthorsParamsData, ThrowOnError>) {
+    public getAuthorParams<ThrowOnError extends boolean = false>(options?: Options<GetAuthorsParamsData, ThrowOnError>): RequestResult<GetAuthorsParamsResponses, unknown, ThrowOnError> {
         return (options?.client ?? this.client).get<GetAuthorsParamsResponses, unknown, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -89,7 +89,7 @@ export class Authors extends HeyApiClient {
      *
      * Returns author details with their library docs and mempool posts.
      */
-    public getAuthor<ThrowOnError extends boolean = false>(options: Options<GetAuthorsBySlugData, ThrowOnError>) {
+    public getAuthor<ThrowOnError extends boolean = false>(options: Options<GetAuthorsBySlugData, ThrowOnError>): RequestResult<GetAuthorsBySlugResponses, GetAuthorsBySlugErrors, ThrowOnError> {
         return (options.client ?? this.client).get<GetAuthorsBySlugResponses, GetAuthorsBySlugErrors, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -107,7 +107,7 @@ export class Library extends HeyApiClient {
     /**
      * Get all documents
      */
-    public getLibraryDocs<ThrowOnError extends boolean = false>(options: Options<GetLibraryData, ThrowOnError>) {
+    public getLibraryDocs<ThrowOnError extends boolean = false>(options: Options<GetLibraryData, ThrowOnError>): RequestResult<GetLibraryResponses, GetLibraryErrors, ThrowOnError> {
         return (options.client ?? this.client).get<GetLibraryResponses, GetLibraryErrors, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -125,7 +125,7 @@ export class Library extends HeyApiClient {
      *
      * Get document slugs for static site generation.
      */
-    public getLibraryParams<ThrowOnError extends boolean = false>(options?: Options<GetLibraryParamsData, ThrowOnError>) {
+    public getLibraryParams<ThrowOnError extends boolean = false>(options?: Options<GetLibraryParamsData, ThrowOnError>): RequestResult<GetLibraryParamsResponses, unknown, ThrowOnError> {
         return (options?.client ?? this.client).get<GetLibraryParamsResponses, unknown, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -143,7 +143,7 @@ export class Library extends HeyApiClient {
      *
      * Get document node slugs for static site generation.
      */
-    public getLibraryNodeParams<ThrowOnError extends boolean = false>(options?: Options<GetLibraryParamsNodesData, ThrowOnError>) {
+    public getLibraryNodeParams<ThrowOnError extends boolean = false>(options?: Options<GetLibraryParamsNodesData, ThrowOnError>): RequestResult<GetLibraryParamsNodesResponses, unknown, ThrowOnError> {
         return (options?.client ?? this.client).get<GetLibraryParamsNodesResponses, unknown, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -161,7 +161,7 @@ export class Library extends HeyApiClient {
      *
      * Returns Bitcoin whitepaper, Shelling Out, and Cypherpunk Manifesto.
      */
-    public getHomeLibraryDocs<ThrowOnError extends boolean = false>(options: Options<GetLibraryHomeData, ThrowOnError>) {
+    public getHomeLibraryDocs<ThrowOnError extends boolean = false>(options: Options<GetLibraryHomeData, ThrowOnError>): RequestResult<GetLibraryHomeResponses, GetLibraryHomeErrors, ThrowOnError> {
         return (options.client ?? this.client).get<GetLibraryHomeResponses, GetLibraryHomeErrors, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -177,7 +177,7 @@ export class Library extends HeyApiClient {
     /**
      * Get document by slug
      */
-    public getLibraryDoc<ThrowOnError extends boolean = false>(options: Options<GetLibraryBySlugData, ThrowOnError>) {
+    public getLibraryDoc<ThrowOnError extends boolean = false>(options: Options<GetLibraryBySlugData, ThrowOnError>): RequestResult<GetLibraryBySlugResponses, GetLibraryBySlugErrors, ThrowOnError> {
         return (options.client ?? this.client).get<GetLibraryBySlugResponses, GetLibraryBySlugErrors, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -195,7 +195,7 @@ export class Library extends HeyApiClient {
      *
      * Get a section or chapter within a document.
      */
-    public getLibraryDocNode<ThrowOnError extends boolean = false>(options: Options<GetLibraryByDocSlugBySlugData, ThrowOnError>) {
+    public getLibraryDocNode<ThrowOnError extends boolean = false>(options: Options<GetLibraryByDocSlugBySlugData, ThrowOnError>): RequestResult<GetLibraryByDocSlugBySlugResponses, GetLibraryByDocSlugBySlugErrors, ThrowOnError> {
         return (options.client ?? this.client).get<GetLibraryByDocSlugBySlugResponses, GetLibraryByDocSlugBySlugErrors, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -213,7 +213,7 @@ export class Mempool extends HeyApiClient {
     /**
      * Get all series
      */
-    public getAllMempoolSeries<ThrowOnError extends boolean = false>(options: Options<GetMempoolSeriesData, ThrowOnError>) {
+    public getAllMempoolSeries<ThrowOnError extends boolean = false>(options: Options<GetMempoolSeriesData, ThrowOnError>): RequestResult<GetMempoolSeriesResponses, GetMempoolSeriesErrors, ThrowOnError> {
         return (options.client ?? this.client).get<GetMempoolSeriesResponses, GetMempoolSeriesErrors, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -231,7 +231,7 @@ export class Mempool extends HeyApiClient {
      *
      * Get series slugs for static site generation.
      */
-    public getMempoolSeriesParams<ThrowOnError extends boolean = false>(options?: Options<GetMempoolSeriesParamsData, ThrowOnError>) {
+    public getMempoolSeriesParams<ThrowOnError extends boolean = false>(options?: Options<GetMempoolSeriesParamsData, ThrowOnError>): RequestResult<GetMempoolSeriesParamsResponses, unknown, ThrowOnError> {
         return (options?.client ?? this.client).get<GetMempoolSeriesParamsResponses, unknown, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -249,7 +249,7 @@ export class Mempool extends HeyApiClient {
      *
      * Returns series details with all posts in the series.
      */
-    public getMempoolSeries<ThrowOnError extends boolean = false>(options: Options<GetMempoolSeriesBySlugData, ThrowOnError>) {
+    public getMempoolSeries<ThrowOnError extends boolean = false>(options: Options<GetMempoolSeriesBySlugData, ThrowOnError>): RequestResult<GetMempoolSeriesBySlugResponses, GetMempoolSeriesBySlugErrors, ThrowOnError> {
         return (options.client ?? this.client).get<GetMempoolSeriesBySlugResponses, GetMempoolSeriesBySlugErrors, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -265,7 +265,7 @@ export class Mempool extends HeyApiClient {
     /**
      * Get all posts
      */
-    public getMempoolPosts<ThrowOnError extends boolean = false>(options: Options<GetMempoolData, ThrowOnError>) {
+    public getMempoolPosts<ThrowOnError extends boolean = false>(options: Options<GetMempoolData, ThrowOnError>): RequestResult<GetMempoolResponses, GetMempoolErrors, ThrowOnError> {
         return (options.client ?? this.client).get<GetMempoolResponses, GetMempoolErrors, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -283,7 +283,7 @@ export class Mempool extends HeyApiClient {
      *
      * Returns the N most recent posts. Defaults to 3.
      */
-    public getLatestMempoolPosts<ThrowOnError extends boolean = false>(options: Options<GetMempoolLatestData, ThrowOnError>) {
+    public getLatestMempoolPosts<ThrowOnError extends boolean = false>(options: Options<GetMempoolLatestData, ThrowOnError>): RequestResult<GetMempoolLatestResponses, GetMempoolLatestErrors, ThrowOnError> {
         return (options.client ?? this.client).get<GetMempoolLatestResponses, GetMempoolLatestErrors, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -301,7 +301,7 @@ export class Mempool extends HeyApiClient {
      *
      * Get post slugs for static site generation.
      */
-    public getMempoolParams<ThrowOnError extends boolean = false>(options?: Options<GetMempoolParamsData, ThrowOnError>) {
+    public getMempoolParams<ThrowOnError extends boolean = false>(options?: Options<GetMempoolParamsData, ThrowOnError>): RequestResult<GetMempoolParamsResponses, unknown, ThrowOnError> {
         return (options?.client ?? this.client).get<GetMempoolParamsResponses, unknown, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -319,7 +319,7 @@ export class Mempool extends HeyApiClient {
      *
      * Returns RSS or Atom feed based on format parameter.
      */
-    public generateFeed<ThrowOnError extends boolean = false>(options: Options<GetMempoolFeedData, ThrowOnError>) {
+    public generateFeed<ThrowOnError extends boolean = false>(options: Options<GetMempoolFeedData, ThrowOnError>): RequestResult<GetMempoolFeedResponses, GetMempoolFeedErrors, ThrowOnError> {
         return (options.client ?? this.client).get<GetMempoolFeedResponses, GetMempoolFeedErrors, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -335,7 +335,7 @@ export class Mempool extends HeyApiClient {
     /**
      * Get post by slug
      */
-    public getMempoolPost<ThrowOnError extends boolean = false>(options: Options<GetMempoolBySlugData, ThrowOnError>) {
+    public getMempoolPost<ThrowOnError extends boolean = false>(options: Options<GetMempoolBySlugData, ThrowOnError>): RequestResult<GetMempoolBySlugResponses, GetMempoolBySlugErrors, ThrowOnError> {
         return (options.client ?? this.client).get<GetMempoolBySlugResponses, GetMempoolBySlugErrors, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -353,7 +353,7 @@ export class Podcasts extends HeyApiClient {
     /**
      * Get all podcasts
      */
-    public getPodcasts<ThrowOnError extends boolean = false>(options?: Options<GetPodcastsData, ThrowOnError>) {
+    public getPodcasts<ThrowOnError extends boolean = false>(options?: Options<GetPodcastsData, ThrowOnError>): RequestResult<GetPodcastsResponses, unknown, ThrowOnError> {
         return (options?.client ?? this.client).get<GetPodcastsResponses, unknown, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -369,7 +369,7 @@ export class Podcasts extends HeyApiClient {
     /**
      * Get featured podcasts
      */
-    public getHomePodcasts<ThrowOnError extends boolean = false>(options?: Options<GetPodcastsHomeData, ThrowOnError>) {
+    public getHomePodcasts<ThrowOnError extends boolean = false>(options?: Options<GetPodcastsHomeData, ThrowOnError>): RequestResult<GetPodcastsHomeResponses, unknown, ThrowOnError> {
         return (options?.client ?? this.client).get<GetPodcastsHomeResponses, unknown, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -385,7 +385,7 @@ export class Podcasts extends HeyApiClient {
     /**
      * Get all episodes
      */
-    public getEpisodes<ThrowOnError extends boolean = false>(options?: Options<GetPodcastsEpisodesData, ThrowOnError>) {
+    public getEpisodes<ThrowOnError extends boolean = false>(options?: Options<GetPodcastsEpisodesData, ThrowOnError>): RequestResult<GetPodcastsEpisodesResponses, unknown, ThrowOnError> {
         return (options?.client ?? this.client).get<GetPodcastsEpisodesResponses, unknown, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -403,7 +403,7 @@ export class Podcasts extends HeyApiClient {
      *
      * Returns 404 if podcast not found or has external feed.
      */
-    public generateFeed<ThrowOnError extends boolean = false>(options: Options<GetPodcastsByPodcastSlugFeedData, ThrowOnError>) {
+    public generateFeed<ThrowOnError extends boolean = false>(options: Options<GetPodcastsByPodcastSlugFeedData, ThrowOnError>): RequestResult<GetPodcastsByPodcastSlugFeedResponses, GetPodcastsByPodcastSlugFeedErrors, ThrowOnError> {
         return (options.client ?? this.client).get<GetPodcastsByPodcastSlugFeedResponses, GetPodcastsByPodcastSlugFeedErrors, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -419,7 +419,7 @@ export class Podcasts extends HeyApiClient {
     /**
      * Get podcast by slug
      */
-    public getPodcast<ThrowOnError extends boolean = false>(options: Options<GetPodcastsByPodcastSlugData, ThrowOnError>) {
+    public getPodcast<ThrowOnError extends boolean = false>(options: Options<GetPodcastsByPodcastSlugData, ThrowOnError>): RequestResult<GetPodcastsByPodcastSlugResponses, GetPodcastsByPodcastSlugErrors, ThrowOnError> {
         return (options.client ?? this.client).get<GetPodcastsByPodcastSlugResponses, GetPodcastsByPodcastSlugErrors, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -435,7 +435,7 @@ export class Podcasts extends HeyApiClient {
     /**
      * Get episode by slug
      */
-    public getEpisode<ThrowOnError extends boolean = false>(options: Options<GetPodcastsByPodcastSlugByEpisodeSlugData, ThrowOnError>) {
+    public getEpisode<ThrowOnError extends boolean = false>(options: Options<GetPodcastsByPodcastSlugByEpisodeSlugData, ThrowOnError>): RequestResult<GetPodcastsByPodcastSlugByEpisodeSlugResponses, GetPodcastsByPodcastSlugByEpisodeSlugErrors, ThrowOnError> {
         return (options.client ?? this.client).get<GetPodcastsByPodcastSlugByEpisodeSlugResponses, GetPodcastsByPodcastSlugByEpisodeSlugErrors, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -453,7 +453,7 @@ export class Satoshi extends HeyApiClient {
     /**
      * Get all emails
      */
-    public getEmails<ThrowOnError extends boolean = false>(options?: Options<GetSatoshiEmailsData, ThrowOnError>) {
+    public getEmails<ThrowOnError extends boolean = false>(options?: Options<GetSatoshiEmailsData, ThrowOnError>): RequestResult<GetSatoshiEmailsResponses, unknown, ThrowOnError> {
         return (options?.client ?? this.client).get<GetSatoshiEmailsResponses, unknown, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -469,7 +469,7 @@ export class Satoshi extends HeyApiClient {
     /**
      * Get all email threads
      */
-    public getEmailThreads<ThrowOnError extends boolean = false>(options?: Options<GetSatoshiEmailsThreadsData, ThrowOnError>) {
+    public getEmailThreads<ThrowOnError extends boolean = false>(options?: Options<GetSatoshiEmailsThreadsData, ThrowOnError>): RequestResult<GetSatoshiEmailsThreadsResponses, unknown, ThrowOnError> {
         return (options?.client ?? this.client).get<GetSatoshiEmailsThreadsResponses, unknown, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -485,7 +485,7 @@ export class Satoshi extends HeyApiClient {
     /**
      * Get emails by source
      */
-    public getEmailsBySource<ThrowOnError extends boolean = false>(options: Options<GetSatoshiEmailsBySourceData, ThrowOnError>) {
+    public getEmailsBySource<ThrowOnError extends boolean = false>(options: Options<GetSatoshiEmailsBySourceData, ThrowOnError>): RequestResult<GetSatoshiEmailsBySourceResponses, GetSatoshiEmailsBySourceErrors, ThrowOnError> {
         return (options.client ?? this.client).get<GetSatoshiEmailsBySourceResponses, GetSatoshiEmailsBySourceErrors, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -501,7 +501,7 @@ export class Satoshi extends HeyApiClient {
     /**
      * Get email threads by source
      */
-    public getEmailThreadsBySource<ThrowOnError extends boolean = false>(options: Options<GetSatoshiEmailsBySourceThreadsData, ThrowOnError>) {
+    public getEmailThreadsBySource<ThrowOnError extends boolean = false>(options: Options<GetSatoshiEmailsBySourceThreadsData, ThrowOnError>): RequestResult<GetSatoshiEmailsBySourceThreadsResponses, GetSatoshiEmailsBySourceThreadsErrors, ThrowOnError> {
         return (options.client ?? this.client).get<GetSatoshiEmailsBySourceThreadsResponses, GetSatoshiEmailsBySourceThreadsErrors, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -519,7 +519,7 @@ export class Satoshi extends HeyApiClient {
      *
      * Returns thread with emails and previous/next navigation.
      */
-    public getEmailThreadBySource<ThrowOnError extends boolean = false>(options: Options<GetSatoshiEmailsBySourceThreadsByThreadIdData, ThrowOnError>) {
+    public getEmailThreadBySource<ThrowOnError extends boolean = false>(options: Options<GetSatoshiEmailsBySourceThreadsByThreadIdData, ThrowOnError>): RequestResult<GetSatoshiEmailsBySourceThreadsByThreadIdResponses, GetSatoshiEmailsBySourceThreadsByThreadIdErrors, ThrowOnError> {
         return (options.client ?? this.client).get<GetSatoshiEmailsBySourceThreadsByThreadIdResponses, GetSatoshiEmailsBySourceThreadsByThreadIdErrors, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -537,7 +537,7 @@ export class Satoshi extends HeyApiClient {
      *
      * Returns email with previous/next navigation.
      */
-    public getEmailBySource<ThrowOnError extends boolean = false>(options: Options<GetSatoshiEmailsBySourceBySatoshiIdData, ThrowOnError>) {
+    public getEmailBySource<ThrowOnError extends boolean = false>(options: Options<GetSatoshiEmailsBySourceBySatoshiIdData, ThrowOnError>): RequestResult<GetSatoshiEmailsBySourceBySatoshiIdResponses, GetSatoshiEmailsBySourceBySatoshiIdErrors, ThrowOnError> {
         return (options.client ?? this.client).get<GetSatoshiEmailsBySourceBySatoshiIdResponses, GetSatoshiEmailsBySourceBySatoshiIdErrors, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -553,7 +553,7 @@ export class Satoshi extends HeyApiClient {
     /**
      * Get all forum posts
      */
-    public getForumPosts<ThrowOnError extends boolean = false>(options?: Options<GetSatoshiPostsData, ThrowOnError>) {
+    public getForumPosts<ThrowOnError extends boolean = false>(options?: Options<GetSatoshiPostsData, ThrowOnError>): RequestResult<GetSatoshiPostsResponses, unknown, ThrowOnError> {
         return (options?.client ?? this.client).get<GetSatoshiPostsResponses, unknown, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -569,7 +569,7 @@ export class Satoshi extends HeyApiClient {
     /**
      * Get all forum threads
      */
-    public getForumThreads<ThrowOnError extends boolean = false>(options?: Options<GetSatoshiPostsThreadsData, ThrowOnError>) {
+    public getForumThreads<ThrowOnError extends boolean = false>(options?: Options<GetSatoshiPostsThreadsData, ThrowOnError>): RequestResult<GetSatoshiPostsThreadsResponses, unknown, ThrowOnError> {
         return (options?.client ?? this.client).get<GetSatoshiPostsThreadsResponses, unknown, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -585,7 +585,7 @@ export class Satoshi extends HeyApiClient {
     /**
      * Get forum posts by source
      */
-    public getForumPostsBySource<ThrowOnError extends boolean = false>(options: Options<GetSatoshiPostsBySourceData, ThrowOnError>) {
+    public getForumPostsBySource<ThrowOnError extends boolean = false>(options: Options<GetSatoshiPostsBySourceData, ThrowOnError>): RequestResult<GetSatoshiPostsBySourceResponses, GetSatoshiPostsBySourceErrors, ThrowOnError> {
         return (options.client ?? this.client).get<GetSatoshiPostsBySourceResponses, GetSatoshiPostsBySourceErrors, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -601,7 +601,7 @@ export class Satoshi extends HeyApiClient {
     /**
      * Get forum threads by source
      */
-    public getForumThreadsBySource<ThrowOnError extends boolean = false>(options: Options<GetSatoshiPostsBySourceThreadsData, ThrowOnError>) {
+    public getForumThreadsBySource<ThrowOnError extends boolean = false>(options: Options<GetSatoshiPostsBySourceThreadsData, ThrowOnError>): RequestResult<GetSatoshiPostsBySourceThreadsResponses, GetSatoshiPostsBySourceThreadsErrors, ThrowOnError> {
         return (options.client ?? this.client).get<GetSatoshiPostsBySourceThreadsResponses, GetSatoshiPostsBySourceThreadsErrors, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -619,7 +619,7 @@ export class Satoshi extends HeyApiClient {
      *
      * Returns thread with posts and previous/next navigation.
      */
-    public getForumThreadBySource<ThrowOnError extends boolean = false>(options: Options<GetSatoshiPostsBySourceThreadsByThreadIdData, ThrowOnError>) {
+    public getForumThreadBySource<ThrowOnError extends boolean = false>(options: Options<GetSatoshiPostsBySourceThreadsByThreadIdData, ThrowOnError>): RequestResult<GetSatoshiPostsBySourceThreadsByThreadIdResponses, GetSatoshiPostsBySourceThreadsByThreadIdErrors, ThrowOnError> {
         return (options.client ?? this.client).get<GetSatoshiPostsBySourceThreadsByThreadIdResponses, GetSatoshiPostsBySourceThreadsByThreadIdErrors, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -637,7 +637,7 @@ export class Satoshi extends HeyApiClient {
      *
      * Returns post with previous/next navigation.
      */
-    public getForumPostBySource<ThrowOnError extends boolean = false>(options: Options<GetSatoshiPostsBySourceBySatoshiIdData, ThrowOnError>) {
+    public getForumPostBySource<ThrowOnError extends boolean = false>(options: Options<GetSatoshiPostsBySourceBySatoshiIdData, ThrowOnError>): RequestResult<GetSatoshiPostsBySourceBySatoshiIdResponses, GetSatoshiPostsBySourceBySatoshiIdErrors, ThrowOnError> {
         return (options.client ?? this.client).get<GetSatoshiPostsBySourceBySatoshiIdResponses, GetSatoshiPostsBySourceBySatoshiIdErrors, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -653,7 +653,7 @@ export class Satoshi extends HeyApiClient {
     /**
      * Get all quote categories
      */
-    public getQuoteCategories<ThrowOnError extends boolean = false>(options?: Options<GetSatoshiQuotesData, ThrowOnError>) {
+    public getQuoteCategories<ThrowOnError extends boolean = false>(options?: Options<GetSatoshiQuotesData, ThrowOnError>): RequestResult<GetSatoshiQuotesResponses, unknown, ThrowOnError> {
         return (options?.client ?? this.client).get<GetSatoshiQuotesResponses, unknown, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -671,7 +671,7 @@ export class Satoshi extends HeyApiClient {
      *
      * Returns category details with all quotes in that category.
      */
-    public getQuoteCategory<ThrowOnError extends boolean = false>(options: Options<GetSatoshiQuotesBySlugData, ThrowOnError>) {
+    public getQuoteCategory<ThrowOnError extends boolean = false>(options: Options<GetSatoshiQuotesBySlugData, ThrowOnError>): RequestResult<GetSatoshiQuotesBySlugResponses, GetSatoshiQuotesBySlugErrors, ThrowOnError> {
         return (options.client ?? this.client).get<GetSatoshiQuotesBySlugResponses, GetSatoshiQuotesBySlugErrors, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -691,7 +691,7 @@ export class Skeptics extends HeyApiClient {
      *
      * Returns all Bitcoin skeptic predictions.
      */
-    public getSkeptics<ThrowOnError extends boolean = false>(options?: Options<GetSkepticsData, ThrowOnError>) {
+    public getSkeptics<ThrowOnError extends boolean = false>(options?: Options<GetSkepticsData, ThrowOnError>): RequestResult<GetSkepticsResponses, unknown, ThrowOnError> {
         return (options?.client ?? this.client).get<GetSkepticsResponses, unknown, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
@@ -706,7 +706,7 @@ export class Skeptics extends HeyApiClient {
 }
 
 export class Api extends HeyApiClient {
-    public static readonly __registry = new HeyApiRegistry<Api>();
+    public static readonly __registry: HeyApiRegistry<Api> = new HeyApiRegistry<Api>();
     
     constructor(args?: {
         client?: Client;
