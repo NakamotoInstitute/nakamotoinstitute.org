@@ -6,7 +6,13 @@ import { PageLayout } from "@/app/components/PageLayout";
 import { Rehype } from "@/app/components/Rehype";
 import { RenderedItemsList } from "@/app/components/RenderedItemsList";
 import { openGraphImages } from "@/app/shared-metadata";
-import { Locale, TranslationSchema, api, getOrNotFound } from "@/lib/api";
+import {
+  Locale,
+  TranslationSchema,
+  api,
+  getOrNotFound,
+  getStaticParamsOrThrow,
+} from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { getDir } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
@@ -160,6 +166,6 @@ export default async function LibraryDetail(
 }
 
 export async function generateStaticParams() {
-  const { data } = await api.library.getLibraryParams();
-  return data ?? [];
+  const result = await api.library.getLibraryParams();
+  return getStaticParamsOrThrow(result);
 }

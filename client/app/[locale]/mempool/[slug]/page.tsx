@@ -6,7 +6,12 @@ import { PageLayout } from "@/app/components/PageLayout";
 import { Rehype } from "@/app/components/Rehype";
 import { RenderedItemsList } from "@/app/components/RenderedItemsList";
 import { openGraphImages } from "@/app/shared-metadata";
-import { TranslationSchema, api, getOrNotFound } from "@/lib/api";
+import {
+  TranslationSchema,
+  api,
+  getOrNotFound,
+  getStaticParamsOrThrow,
+} from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { getDir } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
@@ -162,6 +167,6 @@ export default async function MempoolPost(
 }
 
 export async function generateStaticParams() {
-  const { data } = await api.mempool.getMempoolParams();
-  return data ?? [];
+  const result = await api.mempool.getMempoolParams();
+  return getStaticParamsOrThrow(result);
 }

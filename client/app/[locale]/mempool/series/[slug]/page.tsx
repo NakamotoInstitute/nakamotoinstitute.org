@@ -8,6 +8,7 @@ import {
   TranslationSchema,
   api,
   getOrNotFound,
+  getStaticParamsOrThrow,
 } from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { urls } from "@/lib/urls";
@@ -96,6 +97,6 @@ export default async function SeriesDetail(
 }
 
 export async function generateStaticParams() {
-  const { data } = await api.mempool.getMempoolSeriesParams();
-  return data ?? [];
+  const result = await api.mempool.getMempoolSeriesParams();
+  return getStaticParamsOrThrow(result);
 }
