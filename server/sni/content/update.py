@@ -26,7 +26,11 @@ def update_content(force: bool = False):
 
         # Import quotes
         quote_category_updated = import_quote_categories(db_session, force)
-        import_quotes(db_session, force, [quote_category_updated])
+        import_quotes(
+            db_session,
+            force,
+            [quote_category_updated, email_thread_updated, forum_thread_updated],
+        )
 
         # Import skeptics
         import_skeptics(db_session, force)
