@@ -119,7 +119,7 @@ class MDRenderer:
                 },
                 renderer_cls=SNIMarkdownRenderer,
             )
-            .enable(["replacements", "smartquotes"])
+            .enable(["smartquotes"])
             .use(front_matter_plugin)
             .use(sub_plugin)
             .use(footnote_plugin)
