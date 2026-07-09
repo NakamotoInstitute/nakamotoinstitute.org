@@ -8,7 +8,11 @@ export * from "./generated";
 export { api } from "./client";
 
 // Helpers
-export { getOrNotFound } from "./helpers";
+export {
+  getOrNotFound,
+  getStaticParamsOrThrow,
+  parseApiIdOrNotFound,
+} from "./helpers";
 
 // External price API
 export { fetchPriceHistory, type Price } from "./prices";

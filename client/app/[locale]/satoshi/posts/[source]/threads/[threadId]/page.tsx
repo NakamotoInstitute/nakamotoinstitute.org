@@ -4,7 +4,13 @@ import { Metadata } from "next";
 
 import { PageLayout } from "@/app/components/PageLayout";
 import { locales } from "@/i18n";
-import { ForumPost, ForumPostSource, api, getOrNotFound } from "@/lib/api";
+import {
+  ForumPost,
+  ForumPostSource,
+  api,
+  getOrNotFound,
+  parseApiIdOrNotFound,
+} from "@/lib/api";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { generateHrefLangs } from "@/lib/i18n/utils";
 import { urls } from "@/lib/urls";
@@ -35,10 +41,11 @@ export async function generateMetadata(
   const params = await props.params;
 
   const { locale, source, threadId } = params;
+  const parsedThreadId = parseApiIdOrNotFound(threadId);
 
   const threadData = await getOrNotFound(
     api.satoshi.getForumThreadBySource({
-      path: { source, thread_id: parseInt(threadId) },
+      path: { source, thread_id: parsedThreadId },
     }),
   );
   const { t } = await i18nTranslation(locale);
@@ -138,11 +145,12 @@ export default async function PostSourceThreadDetail(
   const params = await props.params;
 
   const { source, threadId, locale } = params;
+  const parsedThreadId = parseApiIdOrNotFound(threadId);
 
   const satoshiOnly = view === "satoshi";
   const { thread, posts, next, previous } = await getOrNotFound(
     api.satoshi.getForumThreadBySource({
-      path: { source, thread_id: parseInt(threadId) },
+      path: { source, thread_id: parsedThreadId },
       query: satoshiOnly ? { satoshi: true } : undefined,
     }),
   );
