@@ -141,11 +141,11 @@ class TranslatedHandler:
         new_locales = fs_locales - db_locales
         deleted_locales = db_locales - fs_locales
         existing_locales = fs_locales & db_locales
+        en_translation = translations.get("en")
 
         # Update canonical and English translation
         if "en" in fs_locales:
             en_file = fs_record["en"]
-            en_translation = translations.get("en")
             self._update_canonical(en_file, canonical_entry, en_translation, fs_record)
 
         # New and updated translations (excluding English, already handled)
@@ -158,7 +158,11 @@ class TranslatedHandler:
                 self._create_translation(fpath, slug, locale, en_translation, fs_record)
             else:
                 self._update_translation(
-                    fpath, db_translation, locale, db_translation, fs_record
+                    fpath,
+                    db_translation,
+                    locale,
+                    en_translation or db_translation,
+                    fs_record,
                 )
 
         # Deleted translations
