@@ -1,5 +1,5 @@
 import fnmatch
-import os
+import hashlib
 from pathlib import Path
 from typing import Annotated
 
@@ -29,8 +29,34 @@ app = typer.Typer(help="Manage static files")
 
 def get_r2_files(bucket_name):
     """List all files in the R2 bucket."""
-    response = client.list_objects_v2(Bucket=bucket_name)
-    return [item["Key"] for item in response.get("Contents", [])]
+    paginator = client.get_paginator("list_objects_v2")
+    files = {}
+    for page in paginator.paginate(Bucket=bucket_name):
+        files.update(
+            {item["Key"]: item.get("ETag", "") for item in page.get("Contents", [])}
+        )
+    return files
+
+
+def local_md5_hexdigest(file_path):
+    """Return the local file's MD5 hex digest."""
+    md5 = hashlib.md5(usedforsecurity=False)
+    with open(file_path, "rb") as f:
+        for chunk in iter(lambda: f.read(1024 * 1024), b""):
+            md5.update(chunk)
+    return md5.hexdigest()
+
+
+def should_upload_file(file_path, remote_etag):
+    """Return true when the local file is missing remotely or differs."""
+    if not remote_etag:
+        return True
+
+    remote_md5 = remote_etag.strip('"')
+    if "-" in remote_md5:
+        return True
+
+    return local_md5_hexdigest(file_path) != remote_md5
 
 
 def upload_file(file_path, bucket_name, file_key):
@@ -66,13 +92,11 @@ def sync_directory(local_directory, bucket_name, exclusion_patterns=None):
         str(f.relative_to(local_directory)): f
         for f in list_files_recursive(local_directory)
     }
-    r2_files = set(get_r2_files(bucket_name))
+    r2_files = get_r2_files(bucket_name)
 
     # Upload or update files
     for file_key, file_path in local_files.items():
-        if file_key not in r2_files or os.path.getmtime(file_path) > os.path.getctime(
-            file_path
-        ):
+        if should_upload_file(file_path, r2_files.get(file_key)):
             upload_file(file_path, bucket_name, file_key)
 
     # Delete files that are not in local directory or excluded
