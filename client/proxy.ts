@@ -71,6 +71,6 @@ export function proxy(request: NextRequest) {
 export const config = {
   // Skip all paths that should not be localized.
   matcher: [
-    "/((?!api/|_next/|_vercel/|\\.well-known/|favicon\\.ico$|icon\\.png$|apple-icon.png$|manifest\\.webmanifest$|satoshinakamoto\\.asc$).*)",
+    "/((?!api/|_next/|_vercel/|\\.well-known/|favicon\\.ico$|icon\\.png$|apple-icon.png$|manifest\\.webmanifest$|robots\\.txt$|satoshinakamoto\\.asc$).*)",
   ],
 };
