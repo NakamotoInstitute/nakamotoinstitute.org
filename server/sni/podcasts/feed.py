@@ -7,13 +7,17 @@ from sni.utils.dates import localize_time
 
 
 class URLGenerator(BaseURLGenerator):
+    def __init__(self, locale_str: str, podcast_slug: str) -> None:
+        super().__init__(locale_str)
+        self.podcast_slug = podcast_slug
+
     @property
     def index(self) -> str:
-        return f"{self.base_url}/podcast"
+        return f"{self.base_url}/podcasts/{self.podcast_slug}"
 
     @property
     def rss(self) -> str:
-        return f"{self.index}/rss"
+        return f"{self.index}/feed.xml"
 
     def episode(self, slug: str) -> str:
         return f"{self.index}/{slug}"
@@ -35,7 +39,7 @@ def generate_podcast_feed(
     podcast: Podcast,
 ) -> FeedGenerator:
     locale = "en"
-    urls = URLGenerator(locale)
+    urls = URLGenerator(locale, podcast.slug)
 
     fg = FeedGenerator()
     fg.load_extension("podcast")

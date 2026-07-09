@@ -16,11 +16,11 @@ class URLGenerator(BaseURLGenerator):
 
     @property
     def rss(self) -> str:
-        return f"{self.index}/rss"
+        return f"{self.index}/feed.xml"
 
     @property
     def atom(self) -> str:
-        return f"{self.index}/atom"
+        return f"{self.index}/atom.xml"
 
     def post(self, slug: str) -> str:
         return f"{self.index}/{slug}"
@@ -47,6 +47,8 @@ def generate_mempool_feed(
     fg.language(locale)
     fg.generator(generator=None)
 
+    content_type = "CDATA" if format == FeedFormat.rss else "html"
+
     for post in reversed(posts):
         authors = post.blog_post.authors
 
@@ -60,6 +62,6 @@ def generate_mempool_feed(
         fe.dc.dc_creator(creator=[author.name for author in authors])
         fe.author([{"name": author.name} for author in authors])
         fe.description(post.excerpt)
-        fe.content(post.content.html_content, type="CDATA")
+        fe.content(post.content.html_content, type=content_type)
 
     return fg
