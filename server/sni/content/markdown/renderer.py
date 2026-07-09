@@ -1,3 +1,4 @@
+import html
 from collections.abc import Sequence
 from typing import cast
 
@@ -26,9 +27,9 @@ def highlight_code(code: str, lang: str, attrs: str) -> str:
     The client will style these classes with Tailwind.
     """
     if not lang:
-        return f"<pre><code>{code}</code></pre>"
+        return f"<pre><code>{html.escape(code)}</code></pre>"
 
-    pre_class = f"hl-code language-{lang}"
+    pre_class = f"hl-code language-{html.escape(lang, quote=True)}"
 
     try:
         lexer = get_lexer_by_name(lang, stripall=True)
@@ -36,7 +37,7 @@ def highlight_code(code: str, lang: str, attrs: str) -> str:
         highlighted_code = pygments_highlight(code, lexer, formatter)
     except ClassNotFound:
         # Fallback for unknown languages
-        highlighted_code = code
+        highlighted_code = html.escape(code)
 
     return f'<pre class="{pre_class}"><code>{highlighted_code}</code></pre>'
 
@@ -48,7 +49,10 @@ def render_math_inline(
     options: OptionsDict,
     env: EnvType,
 ) -> str:
-    return f"<span class='language-math math-inline'>{tokens[idx].content}</span>"
+    return (
+        "<span class='language-math math-inline'>"
+        f"{html.escape(tokens[idx].content)}</span>"
+    )
 
 
 def render_math_block(
@@ -58,7 +62,10 @@ def render_math_block(
     options: OptionsDict,
     env: EnvType,
 ) -> str:
-    return f'<div class="language-math math-display">\n{tokens[idx].content}\n</div>\n'
+    return (
+        '<div class="language-math math-display">\n'
+        f"{html.escape(tokens[idx].content)}\n</div>\n"
+    )
 
 
 class SNIMarkdownRenderer(RendererHTML):
