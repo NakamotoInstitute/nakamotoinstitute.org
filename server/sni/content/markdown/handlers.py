@@ -436,7 +436,7 @@ class ManifestBasedTranslatedHandler:
         ).all()
         for node in nodes_to_delete:
             self.session.delete(node)
-        self.session.commit()
+        self.session.flush()
 
     def _insert_nodes(
         self, node_data, parent_id, content_reference_id, order, content_dir
@@ -478,6 +478,6 @@ class ManifestBasedTranslatedHandler:
             **{self.content_reference_id: content_reference_id},
         )
         self.session.add(node)
-        self.session.commit()
+        self.session.flush()
 
         return node
