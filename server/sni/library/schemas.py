@@ -220,6 +220,12 @@ class DocumentNode(ORMModel):
     translations: list[TranslationSchema] = Field(
         validation_alias=AliasPath("document_translation", "translations")
     )
+    has_math: bool = Field(
+        validation_alias=AliasPath(
+            "document_translation", "document", "has_math"
+        ),
+        serialization_alias="hasMath",
+    )
     html_content: str = Field(alias="content")
     root_parent: DocumentNodeBase | None = Field(alias="root")
     next_node: DocumentNodeBase | None = Field(alias="next")

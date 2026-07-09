@@ -4,7 +4,7 @@ import * as z from 'zod';
 
 import type { Client, ClientMeta, Options as Options2, RequestResult, TDataShape } from './client';
 import { client } from './client.gen';
-import type { GetAuthorsBySlugData, GetAuthorsBySlugErrors, GetAuthorsBySlugResponses, GetAuthorsData, GetAuthorsErrors, GetAuthorsParamsData, GetAuthorsParamsResponses, GetAuthorsResponses, GetLibraryByDocSlugBySlugData, GetLibraryByDocSlugBySlugErrors, GetLibraryByDocSlugBySlugResponses, GetLibraryBySlugData, GetLibraryBySlugErrors, GetLibraryBySlugResponses, GetLibraryData, GetLibraryErrors, GetLibraryHomeData, GetLibraryHomeErrors, GetLibraryHomeResponses, GetLibraryParamsData, GetLibraryParamsNodesData, GetLibraryParamsNodesResponses, GetLibraryParamsResponses, GetLibraryResponses, GetMempoolBySlugData, GetMempoolBySlugErrors, GetMempoolBySlugResponses, GetMempoolData, GetMempoolErrors, GetMempoolFeedData, GetMempoolFeedErrors, GetMempoolFeedResponses, GetMempoolLatestData, GetMempoolLatestErrors, GetMempoolLatestResponses, GetMempoolParamsData, GetMempoolParamsResponses, GetMempoolResponses, GetMempoolSeriesBySlugData, GetMempoolSeriesBySlugErrors, GetMempoolSeriesBySlugResponses, GetMempoolSeriesData, GetMempoolSeriesErrors, GetMempoolSeriesParamsData, GetMempoolSeriesParamsResponses, GetMempoolSeriesResponses, GetPodcastsByPodcastSlugByEpisodeSlugData, GetPodcastsByPodcastSlugByEpisodeSlugErrors, GetPodcastsByPodcastSlugByEpisodeSlugResponses, GetPodcastsByPodcastSlugData, GetPodcastsByPodcastSlugErrors, GetPodcastsByPodcastSlugFeedData, GetPodcastsByPodcastSlugFeedErrors, GetPodcastsByPodcastSlugFeedResponses, GetPodcastsByPodcastSlugResponses, GetPodcastsData, GetPodcastsEpisodesData, GetPodcastsEpisodesResponses, GetPodcastsHomeData, GetPodcastsHomeResponses, GetPodcastsResponses, GetSatoshiEmailsBySourceBySatoshiIdData, GetSatoshiEmailsBySourceBySatoshiIdErrors, GetSatoshiEmailsBySourceBySatoshiIdResponses, GetSatoshiEmailsBySourceData, GetSatoshiEmailsBySourceErrors, GetSatoshiEmailsBySourceResponses, GetSatoshiEmailsBySourceThreadsByThreadIdData, GetSatoshiEmailsBySourceThreadsByThreadIdErrors, GetSatoshiEmailsBySourceThreadsByThreadIdResponses, GetSatoshiEmailsBySourceThreadsData, GetSatoshiEmailsBySourceThreadsErrors, GetSatoshiEmailsBySourceThreadsResponses, GetSatoshiEmailsData, GetSatoshiEmailsResponses, GetSatoshiEmailsThreadsData, GetSatoshiEmailsThreadsResponses, GetSatoshiPostsBySourceBySatoshiIdData, GetSatoshiPostsBySourceBySatoshiIdErrors, GetSatoshiPostsBySourceBySatoshiIdResponses, GetSatoshiPostsBySourceData, GetSatoshiPostsBySourceErrors, GetSatoshiPostsBySourceResponses, GetSatoshiPostsBySourceThreadsByThreadIdData, GetSatoshiPostsBySourceThreadsByThreadIdErrors, GetSatoshiPostsBySourceThreadsByThreadIdResponses, GetSatoshiPostsBySourceThreadsData, GetSatoshiPostsBySourceThreadsErrors, GetSatoshiPostsBySourceThreadsResponses, GetSatoshiPostsData, GetSatoshiPostsResponses, GetSatoshiPostsThreadsData, GetSatoshiPostsThreadsResponses, GetSatoshiQuotesBySlugData, GetSatoshiQuotesBySlugErrors, GetSatoshiQuotesBySlugResponses, GetSatoshiQuotesData, GetSatoshiQuotesResponses, GetSkepticsData, GetSkepticsResponses } from './types.gen';
+import type { GetAuthorsBySlugData, GetAuthorsBySlugErrors, GetAuthorsBySlugResponses, GetAuthorsData, GetAuthorsErrors, GetAuthorsParamsData, GetAuthorsParamsResponses, GetAuthorsResponses, GetHealthData, GetHealthResponses, GetLibraryByDocSlugBySlugData, GetLibraryByDocSlugBySlugErrors, GetLibraryByDocSlugBySlugResponses, GetLibraryBySlugData, GetLibraryBySlugErrors, GetLibraryBySlugResponses, GetLibraryData, GetLibraryErrors, GetLibraryHomeData, GetLibraryHomeErrors, GetLibraryHomeResponses, GetLibraryParamsData, GetLibraryParamsNodesData, GetLibraryParamsNodesResponses, GetLibraryParamsResponses, GetLibraryResponses, GetMempoolBySlugData, GetMempoolBySlugErrors, GetMempoolBySlugResponses, GetMempoolData, GetMempoolErrors, GetMempoolFeedData, GetMempoolFeedErrors, GetMempoolFeedResponses, GetMempoolLatestData, GetMempoolLatestErrors, GetMempoolLatestResponses, GetMempoolParamsData, GetMempoolParamsResponses, GetMempoolResponses, GetMempoolSeriesBySlugData, GetMempoolSeriesBySlugErrors, GetMempoolSeriesBySlugResponses, GetMempoolSeriesData, GetMempoolSeriesErrors, GetMempoolSeriesParamsData, GetMempoolSeriesParamsResponses, GetMempoolSeriesResponses, GetPodcastsByPodcastSlugByEpisodeSlugData, GetPodcastsByPodcastSlugByEpisodeSlugErrors, GetPodcastsByPodcastSlugByEpisodeSlugResponses, GetPodcastsByPodcastSlugData, GetPodcastsByPodcastSlugErrors, GetPodcastsByPodcastSlugFeedData, GetPodcastsByPodcastSlugFeedErrors, GetPodcastsByPodcastSlugFeedResponses, GetPodcastsByPodcastSlugResponses, GetPodcastsData, GetPodcastsEpisodesData, GetPodcastsEpisodesResponses, GetPodcastsHomeData, GetPodcastsHomeResponses, GetPodcastsResponses, GetSatoshiEmailsBySourceBySatoshiIdData, GetSatoshiEmailsBySourceBySatoshiIdErrors, GetSatoshiEmailsBySourceBySatoshiIdResponses, GetSatoshiEmailsBySourceData, GetSatoshiEmailsBySourceErrors, GetSatoshiEmailsBySourceResponses, GetSatoshiEmailsBySourceThreadsByThreadIdData, GetSatoshiEmailsBySourceThreadsByThreadIdErrors, GetSatoshiEmailsBySourceThreadsByThreadIdResponses, GetSatoshiEmailsBySourceThreadsData, GetSatoshiEmailsBySourceThreadsErrors, GetSatoshiEmailsBySourceThreadsResponses, GetSatoshiEmailsData, GetSatoshiEmailsResponses, GetSatoshiEmailsThreadsData, GetSatoshiEmailsThreadsResponses, GetSatoshiPostsBySourceBySatoshiIdData, GetSatoshiPostsBySourceBySatoshiIdErrors, GetSatoshiPostsBySourceBySatoshiIdResponses, GetSatoshiPostsBySourceData, GetSatoshiPostsBySourceErrors, GetSatoshiPostsBySourceResponses, GetSatoshiPostsBySourceThreadsByThreadIdData, GetSatoshiPostsBySourceThreadsByThreadIdErrors, GetSatoshiPostsBySourceThreadsByThreadIdResponses, GetSatoshiPostsBySourceThreadsData, GetSatoshiPostsBySourceThreadsErrors, GetSatoshiPostsBySourceThreadsResponses, GetSatoshiPostsData, GetSatoshiPostsResponses, GetSatoshiPostsThreadsData, GetSatoshiPostsThreadsResponses, GetSatoshiQuotesBySlugData, GetSatoshiQuotesBySlugErrors, GetSatoshiQuotesBySlugResponses, GetSatoshiQuotesData, GetSatoshiQuotesResponses, GetSkepticsData, GetSkepticsResponses } from './types.gen';
 import { zGetAuthorsBySlugPath, zGetAuthorsBySlugQuery, zGetAuthorsBySlugResponse, zGetAuthorsParamsResponse, zGetAuthorsQuery, zGetAuthorsResponse, zGetLibraryByDocSlugBySlugPath, zGetLibraryByDocSlugBySlugQuery, zGetLibraryByDocSlugBySlugResponse, zGetLibraryBySlugPath, zGetLibraryBySlugQuery, zGetLibraryBySlugResponse, zGetLibraryHomeQuery, zGetLibraryHomeResponse, zGetLibraryParamsNodesResponse, zGetLibraryParamsResponse, zGetLibraryQuery, zGetLibraryResponse, zGetMempoolBySlugPath, zGetMempoolBySlugQuery, zGetMempoolBySlugResponse, zGetMempoolFeedQuery, zGetMempoolFeedResponse, zGetMempoolLatestQuery, zGetMempoolLatestResponse, zGetMempoolParamsResponse, zGetMempoolQuery, zGetMempoolResponse, zGetMempoolSeriesBySlugPath, zGetMempoolSeriesBySlugQuery, zGetMempoolSeriesBySlugResponse, zGetMempoolSeriesParamsResponse, zGetMempoolSeriesQuery, zGetMempoolSeriesResponse, zGetPodcastsByPodcastSlugByEpisodeSlugPath, zGetPodcastsByPodcastSlugByEpisodeSlugResponse, zGetPodcastsByPodcastSlugFeedPath, zGetPodcastsByPodcastSlugFeedResponse, zGetPodcastsByPodcastSlugPath, zGetPodcastsByPodcastSlugResponse, zGetPodcastsEpisodesResponse, zGetPodcastsHomeResponse, zGetPodcastsResponse, zGetSatoshiEmailsBySourceBySatoshiIdPath, zGetSatoshiEmailsBySourceBySatoshiIdResponse, zGetSatoshiEmailsBySourcePath, zGetSatoshiEmailsBySourceResponse, zGetSatoshiEmailsBySourceThreadsByThreadIdPath, zGetSatoshiEmailsBySourceThreadsByThreadIdQuery, zGetSatoshiEmailsBySourceThreadsByThreadIdResponse, zGetSatoshiEmailsBySourceThreadsPath, zGetSatoshiEmailsBySourceThreadsResponse, zGetSatoshiEmailsResponse, zGetSatoshiEmailsThreadsResponse, zGetSatoshiPostsBySourceBySatoshiIdPath, zGetSatoshiPostsBySourceBySatoshiIdResponse, zGetSatoshiPostsBySourcePath, zGetSatoshiPostsBySourceResponse, zGetSatoshiPostsBySourceThreadsByThreadIdPath, zGetSatoshiPostsBySourceThreadsByThreadIdQuery, zGetSatoshiPostsBySourceThreadsByThreadIdResponse, zGetSatoshiPostsBySourceThreadsPath, zGetSatoshiPostsBySourceThreadsResponse, zGetSatoshiPostsResponse, zGetSatoshiPostsThreadsResponse, zGetSatoshiQuotesBySlugPath, zGetSatoshiQuotesBySlugResponse, zGetSatoshiQuotesResponse, zGetSkepticsResponse } from './zod.gen';
 
 export type Options<TData extends TDataShape = TDataShape, ThrowOnError extends boolean = boolean, TResponse = unknown> = Options2<TData, ThrowOnError, TResponse> & {
@@ -49,16 +49,33 @@ class HeyApiRegistry<T> {
     }
 }
 
+export class Default extends HeyApiClient {
+    /**
+     * Health
+     */
+    public health<ThrowOnError extends boolean = false>(options?: Options<GetHealthData, ThrowOnError>): RequestResult<GetHealthResponses, unknown, ThrowOnError> {
+        return (options?.client ?? this.client).get<GetHealthResponses, unknown, ThrowOnError>({
+            requestValidator: async (data) => await z.object({
+                body: z.never().optional(),
+                path: z.never().optional(),
+                query: z.never().optional()
+            }).parseAsync(data),
+            url: '/health',
+            ...options
+        });
+    }
+}
+
 export class Authors extends HeyApiClient {
     /**
      * Get all authors
      */
-    public getAuthors<ThrowOnError extends boolean = false>(options: Options<GetAuthorsData, ThrowOnError>): RequestResult<GetAuthorsResponses, GetAuthorsErrors, ThrowOnError> {
-        return (options.client ?? this.client).get<GetAuthorsResponses, GetAuthorsErrors, ThrowOnError>({
+    public getAuthors<ThrowOnError extends boolean = false>(options?: Options<GetAuthorsData, ThrowOnError>): RequestResult<GetAuthorsResponses, GetAuthorsErrors, ThrowOnError> {
+        return (options?.client ?? this.client).get<GetAuthorsResponses, GetAuthorsErrors, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
                 path: z.never().optional(),
-                query: zGetAuthorsQuery
+                query: zGetAuthorsQuery.optional()
             }).parseAsync(data),
             responseTransformer: async (data) => await zGetAuthorsResponse.parseAsync(data),
             url: '/authors',
@@ -94,7 +111,7 @@ export class Authors extends HeyApiClient {
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
                 path: zGetAuthorsBySlugPath,
-                query: zGetAuthorsBySlugQuery
+                query: zGetAuthorsBySlugQuery.optional()
             }).parseAsync(data),
             responseTransformer: async (data) => await zGetAuthorsBySlugResponse.parseAsync(data),
             url: '/authors/{slug}',
@@ -107,12 +124,12 @@ export class Library extends HeyApiClient {
     /**
      * Get all documents
      */
-    public getLibraryDocs<ThrowOnError extends boolean = false>(options: Options<GetLibraryData, ThrowOnError>): RequestResult<GetLibraryResponses, GetLibraryErrors, ThrowOnError> {
-        return (options.client ?? this.client).get<GetLibraryResponses, GetLibraryErrors, ThrowOnError>({
+    public getLibraryDocs<ThrowOnError extends boolean = false>(options?: Options<GetLibraryData, ThrowOnError>): RequestResult<GetLibraryResponses, GetLibraryErrors, ThrowOnError> {
+        return (options?.client ?? this.client).get<GetLibraryResponses, GetLibraryErrors, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
                 path: z.never().optional(),
-                query: zGetLibraryQuery
+                query: zGetLibraryQuery.optional()
             }).parseAsync(data),
             responseTransformer: async (data) => await zGetLibraryResponse.parseAsync(data),
             url: '/library',
@@ -161,12 +178,12 @@ export class Library extends HeyApiClient {
      *
      * Returns Bitcoin whitepaper, Shelling Out, and Cypherpunk Manifesto.
      */
-    public getHomeLibraryDocs<ThrowOnError extends boolean = false>(options: Options<GetLibraryHomeData, ThrowOnError>): RequestResult<GetLibraryHomeResponses, GetLibraryHomeErrors, ThrowOnError> {
-        return (options.client ?? this.client).get<GetLibraryHomeResponses, GetLibraryHomeErrors, ThrowOnError>({
+    public getHomeLibraryDocs<ThrowOnError extends boolean = false>(options?: Options<GetLibraryHomeData, ThrowOnError>): RequestResult<GetLibraryHomeResponses, GetLibraryHomeErrors, ThrowOnError> {
+        return (options?.client ?? this.client).get<GetLibraryHomeResponses, GetLibraryHomeErrors, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
                 path: z.never().optional(),
-                query: zGetLibraryHomeQuery
+                query: zGetLibraryHomeQuery.optional()
             }).parseAsync(data),
             responseTransformer: async (data) => await zGetLibraryHomeResponse.parseAsync(data),
             url: '/library/home',
@@ -182,7 +199,7 @@ export class Library extends HeyApiClient {
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
                 path: zGetLibraryBySlugPath,
-                query: zGetLibraryBySlugQuery
+                query: zGetLibraryBySlugQuery.optional()
             }).parseAsync(data),
             responseTransformer: async (data) => await zGetLibraryBySlugResponse.parseAsync(data),
             url: '/library/{slug}',
@@ -200,7 +217,7 @@ export class Library extends HeyApiClient {
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
                 path: zGetLibraryByDocSlugBySlugPath,
-                query: zGetLibraryByDocSlugBySlugQuery
+                query: zGetLibraryByDocSlugBySlugQuery.optional()
             }).parseAsync(data),
             responseTransformer: async (data) => await zGetLibraryByDocSlugBySlugResponse.parseAsync(data),
             url: '/library/{doc_slug}/{slug}',
@@ -213,12 +230,12 @@ export class Mempool extends HeyApiClient {
     /**
      * Get all series
      */
-    public getAllMempoolSeries<ThrowOnError extends boolean = false>(options: Options<GetMempoolSeriesData, ThrowOnError>): RequestResult<GetMempoolSeriesResponses, GetMempoolSeriesErrors, ThrowOnError> {
-        return (options.client ?? this.client).get<GetMempoolSeriesResponses, GetMempoolSeriesErrors, ThrowOnError>({
+    public getAllMempoolSeries<ThrowOnError extends boolean = false>(options?: Options<GetMempoolSeriesData, ThrowOnError>): RequestResult<GetMempoolSeriesResponses, GetMempoolSeriesErrors, ThrowOnError> {
+        return (options?.client ?? this.client).get<GetMempoolSeriesResponses, GetMempoolSeriesErrors, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
                 path: z.never().optional(),
-                query: zGetMempoolSeriesQuery
+                query: zGetMempoolSeriesQuery.optional()
             }).parseAsync(data),
             responseTransformer: async (data) => await zGetMempoolSeriesResponse.parseAsync(data),
             url: '/mempool/series',
@@ -254,7 +271,7 @@ export class Mempool extends HeyApiClient {
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
                 path: zGetMempoolSeriesBySlugPath,
-                query: zGetMempoolSeriesBySlugQuery
+                query: zGetMempoolSeriesBySlugQuery.optional()
             }).parseAsync(data),
             responseTransformer: async (data) => await zGetMempoolSeriesBySlugResponse.parseAsync(data),
             url: '/mempool/series/{slug}',
@@ -265,12 +282,12 @@ export class Mempool extends HeyApiClient {
     /**
      * Get all posts
      */
-    public getMempoolPosts<ThrowOnError extends boolean = false>(options: Options<GetMempoolData, ThrowOnError>): RequestResult<GetMempoolResponses, GetMempoolErrors, ThrowOnError> {
-        return (options.client ?? this.client).get<GetMempoolResponses, GetMempoolErrors, ThrowOnError>({
+    public getMempoolPosts<ThrowOnError extends boolean = false>(options?: Options<GetMempoolData, ThrowOnError>): RequestResult<GetMempoolResponses, GetMempoolErrors, ThrowOnError> {
+        return (options?.client ?? this.client).get<GetMempoolResponses, GetMempoolErrors, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
                 path: z.never().optional(),
-                query: zGetMempoolQuery
+                query: zGetMempoolQuery.optional()
             }).parseAsync(data),
             responseTransformer: async (data) => await zGetMempoolResponse.parseAsync(data),
             url: '/mempool',
@@ -283,12 +300,12 @@ export class Mempool extends HeyApiClient {
      *
      * Returns the N most recent posts. Defaults to 3.
      */
-    public getLatestMempoolPosts<ThrowOnError extends boolean = false>(options: Options<GetMempoolLatestData, ThrowOnError>): RequestResult<GetMempoolLatestResponses, GetMempoolLatestErrors, ThrowOnError> {
-        return (options.client ?? this.client).get<GetMempoolLatestResponses, GetMempoolLatestErrors, ThrowOnError>({
+    public getLatestMempoolPosts<ThrowOnError extends boolean = false>(options?: Options<GetMempoolLatestData, ThrowOnError>): RequestResult<GetMempoolLatestResponses, GetMempoolLatestErrors, ThrowOnError> {
+        return (options?.client ?? this.client).get<GetMempoolLatestResponses, GetMempoolLatestErrors, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
                 path: z.never().optional(),
-                query: zGetMempoolLatestQuery
+                query: zGetMempoolLatestQuery.optional()
             }).parseAsync(data),
             responseTransformer: async (data) => await zGetMempoolLatestResponse.parseAsync(data),
             url: '/mempool/latest',
@@ -319,12 +336,12 @@ export class Mempool extends HeyApiClient {
      *
      * Returns RSS or Atom feed based on format parameter.
      */
-    public generateFeed<ThrowOnError extends boolean = false>(options: Options<GetMempoolFeedData, ThrowOnError>): RequestResult<GetMempoolFeedResponses, GetMempoolFeedErrors, ThrowOnError> {
-        return (options.client ?? this.client).get<GetMempoolFeedResponses, GetMempoolFeedErrors, ThrowOnError>({
+    public generateFeed<ThrowOnError extends boolean = false>(options?: Options<GetMempoolFeedData, ThrowOnError>): RequestResult<GetMempoolFeedResponses, GetMempoolFeedErrors, ThrowOnError> {
+        return (options?.client ?? this.client).get<GetMempoolFeedResponses, GetMempoolFeedErrors, ThrowOnError>({
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
                 path: z.never().optional(),
-                query: zGetMempoolFeedQuery
+                query: zGetMempoolFeedQuery.optional()
             }).parseAsync(data),
             responseTransformer: async (data) => await zGetMempoolFeedResponse.parseAsync(data),
             url: '/mempool/feed',
@@ -340,7 +357,7 @@ export class Mempool extends HeyApiClient {
             requestValidator: async (data) => await z.object({
                 body: z.never().optional(),
                 path: zGetMempoolBySlugPath,
-                query: zGetMempoolBySlugQuery
+                query: zGetMempoolBySlugQuery.optional()
             }).parseAsync(data),
             responseTransformer: async (data) => await zGetMempoolBySlugResponse.parseAsync(data),
             url: '/mempool/{slug}',
@@ -714,6 +731,11 @@ export class Api extends HeyApiClient {
     }) {
         super(args);
         Api.__registry.set(this, args?.key);
+    }
+    
+    private _default?: Default;
+    get default(): Default {
+        return this._default ??= new Default({ client: this.client });
     }
     
     private _authors?: Authors;

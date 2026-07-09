@@ -138,7 +138,7 @@ export default async function LibraryNodeDetail(
       <article>
         <NodeHeader node={node} hr={!!node.content ? "bottom" : "middle"} />
         <section className="prose mx-auto" dir={getDir(locale)}>
-          <Rehype>{node.content}</Rehype>
+          <Rehype hasMath={node.hasMath}>{node.content}</Rehype>
         </section>
       </article>
     </PageLayout>

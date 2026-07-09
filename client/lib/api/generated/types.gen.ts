@@ -221,6 +221,10 @@ export type DocumentNode = {
      */
     translations: Array<TranslationSchema>;
     /**
+     * Hasmath
+     */
+    hasMath: boolean;
+    /**
      * Content
      */
     content: string;
@@ -1335,16 +1339,40 @@ export type ValidationError = {
      * Error Type
      */
     type: string;
+    /**
+     * Input
+     */
+    input?: unknown;
+    /**
+     * Context
+     */
+    ctx?: {
+        [key: string]: unknown;
+    };
+};
+
+export type GetHealthData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/health';
+};
+
+export type GetHealthResponses = {
+    /**
+     * Successful Response
+     */
+    200: unknown;
 };
 
 export type GetAuthorsData = {
     body?: never;
     path?: never;
-    query: {
+    query?: {
         /**
          * Locale
          */
-        locale: 'ar' | 'de' | 'en' | 'es' | 'fa' | 'fi' | 'fr' | 'he' | 'it' | 'ko' | 'pt-br' | 'ru' | 'tr' | 'vi' | 'zh-cn';
+        locale?: 'ar' | 'de' | 'en' | 'es' | 'fa' | 'fi' | 'fr' | 'he' | 'it' | 'ko' | 'pt-br' | 'ru' | 'tr' | 'vi' | 'zh-cn';
     };
     url: '/authors';
 };
@@ -1395,11 +1423,11 @@ export type GetAuthorsBySlugData = {
          */
         slug: string;
     };
-    query: {
+    query?: {
         /**
          * Locale
          */
-        locale: 'ar' | 'de' | 'en' | 'es' | 'fa' | 'fi' | 'fr' | 'he' | 'it' | 'ko' | 'pt-br' | 'ru' | 'tr' | 'vi' | 'zh-cn';
+        locale?: 'ar' | 'de' | 'en' | 'es' | 'fa' | 'fi' | 'fr' | 'he' | 'it' | 'ko' | 'pt-br' | 'ru' | 'tr' | 'vi' | 'zh-cn';
     };
     url: '/authors/{slug}';
 };
@@ -1429,11 +1457,11 @@ export type GetAuthorsBySlugResponse = GetAuthorsBySlugResponses[keyof GetAuthor
 export type GetLibraryData = {
     body?: never;
     path?: never;
-    query: {
+    query?: {
         /**
          * Locale
          */
-        locale: 'ar' | 'de' | 'en' | 'es' | 'fa' | 'fi' | 'fr' | 'he' | 'it' | 'ko' | 'pt-br' | 'ru' | 'tr' | 'vi' | 'zh-cn';
+        locale?: 'ar' | 'de' | 'en' | 'es' | 'fa' | 'fi' | 'fr' | 'he' | 'it' | 'ko' | 'pt-br' | 'ru' | 'tr' | 'vi' | 'zh-cn';
     };
     url: '/library';
 };
@@ -1497,11 +1525,11 @@ export type GetLibraryParamsNodesResponse = GetLibraryParamsNodesResponses[keyof
 export type GetLibraryHomeData = {
     body?: never;
     path?: never;
-    query: {
+    query?: {
         /**
          * Locale
          */
-        locale: 'ar' | 'de' | 'en' | 'es' | 'fa' | 'fi' | 'fr' | 'he' | 'it' | 'ko' | 'pt-br' | 'ru' | 'tr' | 'vi' | 'zh-cn';
+        locale?: 'ar' | 'de' | 'en' | 'es' | 'fa' | 'fi' | 'fr' | 'he' | 'it' | 'ko' | 'pt-br' | 'ru' | 'tr' | 'vi' | 'zh-cn';
     };
     url: '/library/home';
 };
@@ -1534,11 +1562,11 @@ export type GetLibraryBySlugData = {
          */
         slug: string;
     };
-    query: {
+    query?: {
         /**
          * Locale
          */
-        locale: 'ar' | 'de' | 'en' | 'es' | 'fa' | 'fi' | 'fr' | 'he' | 'it' | 'ko' | 'pt-br' | 'ru' | 'tr' | 'vi' | 'zh-cn';
+        locale?: 'ar' | 'de' | 'en' | 'es' | 'fa' | 'fi' | 'fr' | 'he' | 'it' | 'ko' | 'pt-br' | 'ru' | 'tr' | 'vi' | 'zh-cn';
     };
     url: '/library/{slug}';
 };
@@ -1577,11 +1605,11 @@ export type GetLibraryByDocSlugBySlugData = {
          */
         doc_slug: string;
     };
-    query: {
+    query?: {
         /**
          * Locale
          */
-        locale: 'ar' | 'de' | 'en' | 'es' | 'fa' | 'fi' | 'fr' | 'he' | 'it' | 'ko' | 'pt-br' | 'ru' | 'tr' | 'vi' | 'zh-cn';
+        locale?: 'ar' | 'de' | 'en' | 'es' | 'fa' | 'fi' | 'fr' | 'he' | 'it' | 'ko' | 'pt-br' | 'ru' | 'tr' | 'vi' | 'zh-cn';
     };
     url: '/library/{doc_slug}/{slug}';
 };
@@ -1611,11 +1639,11 @@ export type GetLibraryByDocSlugBySlugResponse = GetLibraryByDocSlugBySlugRespons
 export type GetMempoolSeriesData = {
     body?: never;
     path?: never;
-    query: {
+    query?: {
         /**
          * Locale
          */
-        locale: 'ar' | 'de' | 'en' | 'es' | 'fa' | 'fi' | 'fr' | 'he' | 'it' | 'ko' | 'pt-br' | 'ru' | 'tr' | 'vi' | 'zh-cn';
+        locale?: 'ar' | 'de' | 'en' | 'es' | 'fa' | 'fi' | 'fr' | 'he' | 'it' | 'ko' | 'pt-br' | 'ru' | 'tr' | 'vi' | 'zh-cn';
     };
     url: '/mempool/series';
 };
@@ -1666,11 +1694,11 @@ export type GetMempoolSeriesBySlugData = {
          */
         slug: string;
     };
-    query: {
+    query?: {
         /**
          * Locale
          */
-        locale: 'ar' | 'de' | 'en' | 'es' | 'fa' | 'fi' | 'fr' | 'he' | 'it' | 'ko' | 'pt-br' | 'ru' | 'tr' | 'vi' | 'zh-cn';
+        locale?: 'ar' | 'de' | 'en' | 'es' | 'fa' | 'fi' | 'fr' | 'he' | 'it' | 'ko' | 'pt-br' | 'ru' | 'tr' | 'vi' | 'zh-cn';
     };
     url: '/mempool/series/{slug}';
 };
@@ -1700,11 +1728,11 @@ export type GetMempoolSeriesBySlugResponse = GetMempoolSeriesBySlugResponses[key
 export type GetMempoolData = {
     body?: never;
     path?: never;
-    query: {
+    query?: {
         /**
          * Locale
          */
-        locale: 'ar' | 'de' | 'en' | 'es' | 'fa' | 'fi' | 'fr' | 'he' | 'it' | 'ko' | 'pt-br' | 'ru' | 'tr' | 'vi' | 'zh-cn';
+        locale?: 'ar' | 'de' | 'en' | 'es' | 'fa' | 'fi' | 'fr' | 'he' | 'it' | 'ko' | 'pt-br' | 'ru' | 'tr' | 'vi' | 'zh-cn';
     };
     url: '/mempool';
 };
@@ -1732,11 +1760,11 @@ export type GetMempoolResponse = GetMempoolResponses[keyof GetMempoolResponses];
 export type GetMempoolLatestData = {
     body?: never;
     path?: never;
-    query: {
+    query?: {
         /**
          * Locale
          */
-        locale: 'ar' | 'de' | 'en' | 'es' | 'fa' | 'fi' | 'fr' | 'he' | 'it' | 'ko' | 'pt-br' | 'ru' | 'tr' | 'vi' | 'zh-cn';
+        locale?: 'ar' | 'de' | 'en' | 'es' | 'fa' | 'fi' | 'fr' | 'he' | 'it' | 'ko' | 'pt-br' | 'ru' | 'tr' | 'vi' | 'zh-cn';
         /**
          * Num
          */
@@ -1786,11 +1814,11 @@ export type GetMempoolParamsResponse = GetMempoolParamsResponses[keyof GetMempoo
 export type GetMempoolFeedData = {
     body?: never;
     path?: never;
-    query: {
+    query?: {
         /**
          * Locale
          */
-        locale: 'ar' | 'de' | 'en' | 'es' | 'fa' | 'fi' | 'fr' | 'he' | 'it' | 'ko' | 'pt-br' | 'ru' | 'tr' | 'vi' | 'zh-cn';
+        locale?: 'ar' | 'de' | 'en' | 'es' | 'fa' | 'fi' | 'fr' | 'he' | 'it' | 'ko' | 'pt-br' | 'ru' | 'tr' | 'vi' | 'zh-cn';
         format?: FeedFormat;
     };
     url: '/mempool/feed';
@@ -1822,11 +1850,11 @@ export type GetMempoolBySlugData = {
          */
         slug: string;
     };
-    query: {
+    query?: {
         /**
          * Locale
          */
-        locale: 'ar' | 'de' | 'en' | 'es' | 'fa' | 'fi' | 'fr' | 'he' | 'it' | 'ko' | 'pt-br' | 'ru' | 'tr' | 'vi' | 'zh-cn';
+        locale?: 'ar' | 'de' | 'en' | 'es' | 'fa' | 'fi' | 'fr' | 'he' | 'it' | 'ko' | 'pt-br' | 'ru' | 'tr' | 'vi' | 'zh-cn';
     };
     url: '/mempool/{slug}';
 };

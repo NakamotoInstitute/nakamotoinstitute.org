@@ -468,6 +468,7 @@ export const zDocumentNode = z.object({
     docSlug: z.string(),
     authors: z.array(zAuthor),
     translations: z.array(zTranslationSchema),
+    hasMath: z.boolean(),
     content: z.string(),
     root: zDocumentNodeBase.nullable(),
     next: zDocumentNodeBase.nullable(),
@@ -584,7 +585,9 @@ export const zMempoolPost = z.object({
 export const zValidationError = z.object({
     loc: z.array(z.union([z.string(), z.int()])),
     msg: z.string(),
-    type: z.string()
+    type: z.string(),
+    input: z.unknown().optional(),
+    ctx: z.record(z.string(), z.unknown()).optional()
 });
 
 /**
@@ -611,7 +614,7 @@ export const zGetAuthorsQuery = z.object({
         'tr',
         'vi',
         'zh-cn'
-    ])
+    ]).optional().default('en')
 });
 
 /**
@@ -649,7 +652,7 @@ export const zGetAuthorsBySlugQuery = z.object({
         'tr',
         'vi',
         'zh-cn'
-    ])
+    ]).optional().default('en')
 });
 
 /**
@@ -674,7 +677,7 @@ export const zGetLibraryQuery = z.object({
         'tr',
         'vi',
         'zh-cn'
-    ])
+    ]).optional().default('en')
 });
 
 /**
@@ -715,7 +718,7 @@ export const zGetLibraryHomeQuery = z.object({
         'tr',
         'vi',
         'zh-cn'
-    ])
+    ]).optional().default('en')
 });
 
 /**
@@ -746,7 +749,7 @@ export const zGetLibraryBySlugQuery = z.object({
         'tr',
         'vi',
         'zh-cn'
-    ])
+    ]).optional().default('en')
 });
 
 /**
@@ -776,7 +779,7 @@ export const zGetLibraryByDocSlugBySlugQuery = z.object({
         'tr',
         'vi',
         'zh-cn'
-    ])
+    ]).optional().default('en')
 });
 
 /**
@@ -801,7 +804,7 @@ export const zGetMempoolSeriesQuery = z.object({
         'tr',
         'vi',
         'zh-cn'
-    ])
+    ]).optional().default('en')
 });
 
 /**
@@ -839,7 +842,7 @@ export const zGetMempoolSeriesBySlugQuery = z.object({
         'tr',
         'vi',
         'zh-cn'
-    ])
+    ]).optional().default('en')
 });
 
 /**
@@ -864,7 +867,7 @@ export const zGetMempoolQuery = z.object({
         'tr',
         'vi',
         'zh-cn'
-    ])
+    ]).optional().default('en')
 });
 
 /**
@@ -891,7 +894,7 @@ export const zGetMempoolLatestQuery = z.object({
         'tr',
         'vi',
         'zh-cn'
-    ]),
+    ]).optional().default('en'),
     num: z.int().gt(0).optional().default(3)
 });
 
@@ -926,7 +929,7 @@ export const zGetMempoolFeedQuery = z.object({
         'tr',
         'vi',
         'zh-cn'
-    ]),
+    ]).optional().default('en'),
     format: zFeedFormat.optional().default('rss')
 });
 
@@ -956,7 +959,7 @@ export const zGetMempoolBySlugQuery = z.object({
         'tr',
         'vi',
         'zh-cn'
-    ])
+    ]).optional().default('en')
 });
 
 /**
