@@ -1,6 +1,6 @@
-from typing import Any
+from typing import Annotated, Any
 
-from fastapi import APIRouter, HTTPException, status
+from fastapi import APIRouter, HTTPException, Path, status
 
 from sni.shared.dependencies import DB
 from sni.shared.schemas import Error
@@ -75,7 +75,10 @@ async def get_forum_threads_by_source(source: ForumPostSource, db: DB) -> Any:
     },
 )
 async def get_forum_thread_by_source(
-    source: ForumPostSource, thread_id: int, db: DB, satoshi: bool = False
+    source: ForumPostSource,
+    thread_id: Annotated[int, Path(ge=1, le=2_147_483_646)],
+    db: DB,
+    satoshi: bool = False,
 ) -> Any:
     """Returns thread with posts and previous/next navigation."""
     thread = await service.get_thread(thread_id, db_session=db)
@@ -109,7 +112,9 @@ async def get_forum_thread_by_source(
     },
 )
 async def get_forum_post_by_source(
-    source: ForumPostSource, satoshi_id: int, db: DB
+    source: ForumPostSource,
+    satoshi_id: Annotated[int, Path(ge=1, le=2_147_483_646)],
+    db: DB,
 ) -> Any:
     """Returns post with previous/next navigation."""
     post = await service.get_post_by_source(source, satoshi_id, db_session=db)
