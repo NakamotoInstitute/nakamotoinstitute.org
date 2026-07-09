@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+
 import { PodcastBase, api } from "@/lib/api";
 import { getLocaleParams } from "@/lib/i18n/utils";
 
@@ -9,9 +11,14 @@ export async function GET(
   { params }: { params: Promise<{ podcastSlug: string }> },
 ) {
   const { podcastSlug } = await params;
-  const { data: content = "" } = await api.podcasts.generateFeed({
+  const result = await api.podcasts.generateFeed({
     path: { podcast_slug: podcastSlug },
   });
+  const { data: content, error, response } = result;
+  if (content === undefined) {
+    if (response?.status === 404) notFound();
+    throw error instanceof Error ? error : new Error("Failed to generate podcast feed");
+  }
 
   return new Response(content, {
     headers: {

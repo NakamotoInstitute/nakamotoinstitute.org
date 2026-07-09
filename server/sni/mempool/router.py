@@ -27,7 +27,7 @@ series_router = APIRouter()
     status_code=status.HTTP_200_OK,
     responses={status.HTTP_200_OK: {"description": "All series"}},
 )
-async def get_all_mempool_series(locale: Locale, db: DB) -> Any:
+async def get_all_mempool_series(db: DB, locale: Locale = "en") -> Any:
     return await service.get_all_series_by_locale(db_session=db, locale=locale)
 
 
@@ -56,7 +56,7 @@ async def get_mempool_series_params(db: DB) -> Any:
         },
     },
 )
-async def get_mempool_series(slug: str, locale: Locale, db: DB) -> Any:
+async def get_mempool_series(slug: str, db: DB, locale: Locale = "en") -> Any:
     """Returns series details with all posts in the series."""
     series = await service.get_series(slug, db_session=db, locale=locale)
     if not series:
@@ -80,7 +80,7 @@ router.include_router(series_router, prefix="/series")
     status_code=status.HTTP_200_OK,
     responses={status.HTTP_200_OK: {"description": "All posts"}},
 )
-async def get_mempool_posts(locale: Locale, db: DB) -> Any:
+async def get_mempool_posts(db: DB, locale: Locale = "en") -> Any:
     return await service.get_all_posts_by_locale(db_session=db, locale=locale)
 
 
@@ -91,7 +91,9 @@ async def get_mempool_posts(locale: Locale, db: DB) -> Any:
     status_code=status.HTTP_200_OK,
     responses={status.HTTP_200_OK: {"description": "Latest N posts"}},
 )
-async def get_latest_mempool_posts(locale: Locale, db: DB, num: PositiveInt = 3) -> Any:
+async def get_latest_mempool_posts(
+    db: DB, locale: Locale = "en", num: PositiveInt = 3
+) -> Any:
     """Returns the N most recent posts. Defaults to 3."""
     return await service.get_latest_posts(db_session=db, locale=locale, num=num)
 
@@ -124,10 +126,13 @@ async def get_mempool_params(db: DB) -> Any:
     },
 )
 async def generate_feed(
-    locale: Locale, db: DB, format: FeedFormat = FeedFormat.rss
+    db: DB, locale: Locale = "en", format: FeedFormat = FeedFormat.rss
 ) -> Response:
     """Returns RSS or Atom feed based on format parameter."""
     posts = await service.get_all_posts_by_locale(db_session=db, locale=locale)
+    if not posts:
+        raise HTTPException(status_code=404, detail="Feed not found")
+
     feed = generate_mempool_feed(posts, locale, format)
 
     if format == FeedFormat.rss:
@@ -149,7 +154,7 @@ async def generate_feed(
         },
     },
 )
-async def get_mempool_post(slug: str, locale: Locale, db: DB) -> Any:
+async def get_mempool_post(slug: str, db: DB, locale: Locale = "en") -> Any:
     post = await service.get_post(slug, db_session=db, locale=locale)
     if not post:
         raise HTTPException(status_code=404, detail="Mempool post not found")

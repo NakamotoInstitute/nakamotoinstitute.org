@@ -11,9 +11,16 @@ export async function GET(
 ) {
   const { locale } = await ctx.params;
   if (!isLocale(locale)) notFound();
-  const { data: content = "" } = await api.mempool.generateFeed({
+  const result = await api.mempool.generateFeed({
     query: { locale, format: "atom" },
   });
+  const { data: content, error, response } = result;
+  if (content === undefined) {
+    if (response?.status === 404) notFound();
+    throw error instanceof Error
+      ? error
+      : new Error("Failed to generate mempool Atom feed");
+  }
 
   return new Response(content, {
     headers: {
