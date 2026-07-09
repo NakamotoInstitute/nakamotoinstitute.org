@@ -18,7 +18,7 @@ router = APIRouter()
     status_code=status.HTTP_200_OK,
     responses={status.HTTP_200_OK: {"description": "All authors"}},
 )
-async def get_authors(locale: Locale, db: DB) -> Any:
+async def get_authors(db: DB, locale: Locale = "en") -> Any:
     return await service.get_all_by_locale(db_session=db, locale=locale)
 
 
@@ -47,13 +47,15 @@ async def get_author_params(db: DB) -> Any:
         },
     },
 )
-async def get_author(slug: str, locale: Locale, db: DB) -> Any:
+async def get_author(slug: str, db: DB, locale: Locale = "en") -> Any:
     """Returns author details with their library docs and mempool posts."""
     author = await service.get(slug, db_session=db, locale=locale)
     if not author:
         raise HTTPException(status_code=404, detail="Author not found")
 
-    locales = await service.get_author_locales(author.id, db_session=db)
+    locales = await service.get_author_locales(
+        author.id, db_session=db, locale=locale
+    )
 
     library_docs = await service.get_documents(author.id, db_session=db, locale=locale)
     mempool_posts = await service.get_blog_posts(

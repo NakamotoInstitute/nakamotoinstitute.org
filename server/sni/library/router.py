@@ -23,7 +23,7 @@ router = APIRouter()
     status_code=status.HTTP_200_OK,
     responses={status.HTTP_200_OK: {"description": "All documents"}},
 )
-async def get_library_docs(locale: Locale, db: DB) -> Any:
+async def get_library_docs(db: DB, locale: Locale = "en") -> Any:
     return await service.get_all_by_locale(db_session=db, locale=locale)
 
 
@@ -58,7 +58,7 @@ async def get_library_node_params(db: DB) -> Any:
     status_code=status.HTTP_200_OK,
     responses={status.HTTP_200_OK: {"description": "Featured docs"}},
 )
-async def get_home_library_docs(locale: Locale, db: DB) -> Any:
+async def get_home_library_docs(db: DB, locale: Locale = "en") -> Any:
     """Returns Bitcoin whitepaper, Shelling Out, and Cypherpunk Manifesto."""
     result = await service.get_some_by_slugs_and_locale(
         ["bitcoin", "shelling-out", "cypherpunk-manifesto"],
@@ -81,7 +81,7 @@ async def get_home_library_docs(locale: Locale, db: DB) -> Any:
         },
     },
 )
-async def get_library_doc(slug: str, locale: Locale, db: DB) -> Any:
+async def get_library_doc(slug: str, db: DB, locale: Locale = "en") -> Any:
     doc = await service.get(slug, db_session=db, locale=locale)
     if not doc:
         raise HTTPException(status_code=404, detail="Document not found")
@@ -102,7 +102,9 @@ async def get_library_doc(slug: str, locale: Locale, db: DB) -> Any:
         },
     },
 )
-async def get_library_doc_node(slug: str, doc_slug: str, locale: Locale, db: DB) -> Any:
+async def get_library_doc_node(
+    slug: str, doc_slug: str, db: DB, locale: Locale = "en"
+) -> Any:
     """Get a section or chapter within a document."""
     node = await service.get_node(slug, doc_slug=doc_slug, db_session=db, locale=locale)
     if not node:
