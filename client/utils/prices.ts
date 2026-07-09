@@ -4,9 +4,13 @@ import { Price } from "@/lib/api";
 import { calculateDayDifference } from "@/utils/dates";
 
 export function calculateDCA(date: Date, prices: Price[], dailyBuy: Big) {
+  if (prices.length < 2) return null;
+
   const idx = prices.findIndex(
     (item) => item.date.getTime() === date.getTime(),
   );
+  if (idx === -1 || prices.length - idx < 2) return null;
+
   const dcaPrices = prices.slice(idx);
   const [first, ...rest] = dcaPrices;
   const last = rest[rest.length - 1];

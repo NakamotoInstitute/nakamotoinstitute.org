@@ -80,7 +80,7 @@ function PriceDatum({
 type SkepticPriceDataProps = {
   t: TFunction<"common">;
   locale: Locale;
-  priceData: DCAData;
+  priceData: NonNullable<DCAData>;
 };
 
 export function SkepticPriceData({

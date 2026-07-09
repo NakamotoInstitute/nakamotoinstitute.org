@@ -29,17 +29,21 @@ export function SkepticListing({ t, locale, skeptic, prices }: SkepticProps) {
     >
       <header>
         <p className="text-lg">
-          {formatDate(locale, skeptic.date)} •{" "}
-          {formatAmount(priceData.originalUsd.toNumber(), "usd", locale)}
+          {formatDate(locale, skeptic.date)}
+          {priceData ? (
+            <> • {formatAmount(priceData.originalUsd.toNumber(), "usd", locale)}</>
+          ) : null}
         </p>
         <Link href={{ hash: skeptic.slug }}>
           <h2 className="text-2xl font-semibold">{skeptic.name}</h2>
         </Link>
         <p className="small-caps">{skeptic.title}</p>
       </header>
-      <section className="mb-2 py-2">
-        <SkepticPriceData t={t} locale={locale} priceData={priceData} />
-      </section>
+      {priceData ? (
+        <section className="mb-2 py-2">
+          <SkepticPriceData t={t} locale={locale} priceData={priceData} />
+        </section>
+      ) : null}
       <section>
         {skeptic.excerpt ? (
           <div className="italic-regular-em mb-4 italic">
