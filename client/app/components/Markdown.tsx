@@ -25,6 +25,7 @@ type MarkdownProps = {
 };
 
 export async function Markdown({
+  className,
   children,
   hasMath,
   remarkPlugins,
@@ -63,6 +64,32 @@ export async function Markdown({
     ...remarkRehypeOptions,
   };
 
+  const content = (
+    <ReactMarkdown
+      remarkPlugins={mergedRemarkPlugins}
+      rehypePlugins={mergedRehypePlugins}
+      remarkRehypeOptions={mergedRemarkRehypeOptions}
+      components={{
+        a: ({ children, href, node: _node, ref: _ref, ...rest }) => {
+          if (href?.startsWith("/")) {
+            return (
+              <Link href={toFullUrl(href)} {...rest}>
+                {children}
+              </Link>
+            );
+          }
+          return (
+            <a href={href} {...rest}>
+              {children}
+            </a>
+          );
+        },
+      }}
+    >
+      {children}
+    </ReactMarkdown>
+  );
+
   return (
     <>
       {hasMath ? (
@@ -71,54 +98,17 @@ export async function Markdown({
           strategy="lazyOnload"
         />
       ) : null}
-      <ReactMarkdown
-        remarkPlugins={mergedRemarkPlugins}
-        rehypePlugins={mergedRehypePlugins}
-        remarkRehypeOptions={mergedRemarkRehypeOptions}
-        components={{
-          a: ({ children, href, node: _node, ref: _ref, ...rest }) => {
-            if (href?.startsWith("/")) {
-              return (
-                <Link href={toFullUrl(href)} {...rest}>
-                  {children}
-                </Link>
-              );
-            }
-            return (
-              <a href={href} {...rest}>
-                {children}
-              </a>
-            );
-          },
-        }}
-      >
-        {children}
-      </ReactMarkdown>
+      {className ? <div className={className}>{content}</div> : content}
     </>
-  );
-}
-
-export type MarkdownContentProps = {
-  className?: string;
-} & MarkdownProps;
-
-export async function MarkdownContent({
-  className,
-  ...props
-}: MarkdownContentProps) {
-  return (
-    <div className={className}>
-      <Markdown {...props} />
-    </div>
   );
 }
 
 export async function PageContent({
   className,
   ...props
-}: MarkdownContentProps) {
+}: MarkdownProps) {
   return (
-    <MarkdownContent
+    <Markdown
       className={clsx(
         "[&_h2]:mb-2 [&_h2]:text-3xl [&_h2]:font-medium",
         "[&_p]:mb-4",

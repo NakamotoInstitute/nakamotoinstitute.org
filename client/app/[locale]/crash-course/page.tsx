@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Image from "next/image";
 
-import { MarkdownContent } from "@/app/components/Markdown";
+import { Markdown } from "@/app/components/Markdown";
 import { PageLayout } from "@/app/components/PageLayout";
 import { locales } from "@/i18n";
 import { getPage } from "@/lib/content";
@@ -52,7 +52,7 @@ export default async function CrashCoursePage(props: LocaleParams) {
         />
       </div>
       <hr className="mx-auto my-7 w-12 md:my-18" />
-      <MarkdownContent className="prose mx-auto">{content}</MarkdownContent>
+      <Markdown className="prose mx-auto">{content}</Markdown>
     </PageLayout>
   );
 }

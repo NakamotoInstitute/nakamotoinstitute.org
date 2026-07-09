@@ -40,7 +40,7 @@ export default async function DonatePage(props: LocaleParams) {
   return (
     <PageLayout t={t} locale={locale} generateHref={generateHref}>
       <PageHeader title={t("donate")} />
-      <Markdown className="page-content mb-4">{content}</Markdown>
+      <Markdown className="mb-4">{content}</Markdown>
       <DonationButton trackingLocation="page">{t("donate")}</DonationButton>
     </PageLayout>
   );
