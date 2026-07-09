@@ -89,6 +89,30 @@ export default async function HomePage(props: LocaleParams) {
 
   const viewAllLabel = t("view_all");
   const readMoreLabel = t("read_more");
+  const newsletterSignup = t("newsletter_signup");
+  const newsletterSignupHasLink = newsletterSignup.includes("<a>");
+  const newsletterCard = (
+    <div className="border-taupe-light flex items-center justify-between gap-4 border border-dashed p-4 md:items-start">
+      <div>
+        <h4 className="font-semibold">{t("newsletter_call")}</h4>
+        <p className="text-taupe text-sm">
+          <Trans
+            t={t}
+            i18nKey="newsletter_signup"
+            components={{
+              a: (
+                <Link
+                  className="text-cardinal hover:underline"
+                  href={externalUrls.substack}
+                />
+              ),
+            }}
+          />
+        </p>
+      </div>
+      <Arrow direction="right" className="min-w-fit" />
+    </div>
+  );
 
   return (
     <PageLayout t={t} locale={locale} size="xl" generateHref={generateHref}>
@@ -299,15 +323,11 @@ export default async function HomePage(props: LocaleParams) {
         </GridItem>
         <GridItem className="px-5 py-4 md:pt-0">
           <div className="flex flex-col gap-4">
-            <Link href={externalUrls.substack}>
-              <div className="border-taupe-light flex items-center justify-between gap-4 border border-dashed p-4 md:items-start">
-                <div>
-                  <h4 className="font-semibold">{t("newsletter_call")}</h4>
-                  <p className="text-taupe text-sm">{t("newsletter_signup")}</p>
-                </div>
-                <Arrow direction="right" className="min-w-fit" />
-              </div>
-            </Link>
+            {newsletterSignupHasLink ? (
+              newsletterCard
+            ) : (
+              <Link href={externalUrls.substack}>{newsletterCard}</Link>
+            )}
             <div className="border-cardinal border-l-[3px] bg-white p-4 shadow-xs">
               <div className="text-taupe text-xs">
                 <h4 className="text-dark mb-2 text-base font-semibold">
