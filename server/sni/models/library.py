@@ -79,7 +79,7 @@ class Document(Base):
         secondary=document_authors, back_populates="docs"
     )
     translations: Mapped[list["DocumentTranslation"]] = relationship(
-        back_populates="document"
+        back_populates="document", cascade="all, delete-orphan"
     )
     has_math: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
     weight: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
@@ -121,7 +121,9 @@ class DocumentTranslation(Base):
         secondary=document_translators, back_populates="docs"
     )
     nodes: Mapped[list["DocumentNode"]] = relationship(
-        "DocumentNode", back_populates="document_translation"
+        "DocumentNode",
+        back_populates="document_translation",
+        cascade="all, delete-orphan",
     )
 
     __table_args__ = (UniqueConstraint("document_id", "locale"),)

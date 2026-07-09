@@ -58,7 +58,7 @@ class BlogPost(Base):
         secondary=blog_post_authors, back_populates="posts"
     )
     translations: Mapped[list["BlogPostTranslation"]] = relationship(
-        back_populates="blog_post"
+        back_populates="blog_post", cascade="all, delete-orphan"
     )
     series: Mapped["BlogSeries"] = relationship(back_populates="blog_posts")
     series_id: Mapped[int] = mapped_column(ForeignKey("blog_series.id"), nullable=True)
@@ -138,7 +138,7 @@ class BlogSeries(Base):
     chapter_title: Mapped[bool] = mapped_column(Boolean)
     blog_posts: Mapped[list["BlogPost"]] = relationship(back_populates="series")
     translations: Mapped[list["BlogSeriesTranslation"]] = relationship(
-        back_populates="blog_series"
+        back_populates="blog_series", cascade="all, delete-orphan"
     )
 
     def __repr__(self) -> str:
