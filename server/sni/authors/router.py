@@ -53,9 +53,7 @@ async def get_author(slug: str, db: DB, locale: Locale = "en") -> Any:
     if not author:
         raise HTTPException(status_code=404, detail="Author not found")
 
-    locales = await service.get_author_locales(
-        author.id, db_session=db, locale=locale
-    )
+    locales = await service.get_author_locales(author.id, db_session=db, locale=locale)
 
     library_docs = await service.get_documents(author.id, db_session=db, locale=locale)
     mempool_posts = await service.get_blog_posts(

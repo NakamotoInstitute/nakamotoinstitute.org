@@ -221,9 +221,7 @@ class DocumentNode(ORMModel):
         validation_alias=AliasPath("document_translation", "translations")
     )
     has_math: bool = Field(
-        validation_alias=AliasPath(
-            "document_translation", "document", "has_math"
-        ),
+        validation_alias=AliasPath("document_translation", "document", "has_math"),
         serialization_alias="hasMath",
     )
     html_content: str = Field(alias="content")
