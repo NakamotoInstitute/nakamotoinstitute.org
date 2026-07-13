@@ -64,8 +64,10 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
+            set -euo pipefail
             cd ${{ secrets.VPS_PROJECT_PATH }}
-            git pull
+            git fetch origin
+            git reset --hard origin/master
             cd server
             just up --build
       - name: Wait for health check
@@ -93,8 +95,10 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
+            set -euo pipefail
             cd ${{ secrets.VPS_PROJECT_PATH }}
-            git pull
+            git fetch origin
+            git reset --hard origin/master
             cd server
             just import
       - name: Wait for health check
@@ -122,8 +126,10 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
+            set -euo pipefail
             cd ${{ secrets.VPS_PROJECT_PATH }}
-            git pull
+            git fetch origin
+            git reset --hard origin/master
             cd server
             just cdn-sync
 
