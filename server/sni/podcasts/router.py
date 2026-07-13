@@ -70,7 +70,13 @@ async def generate_feed(podcast_slug: str, db: DB) -> Response:
 
     feed = generate_podcast_feed(podcast)
 
-    return RSSResponse(content=feed.rss_str(pretty=True))
+    # feedgen predates Apple's true/false itunes:explicit values and refuses
+    # to emit them, so rewrite the legacy value after serialization.
+    content = feed.rss_str(pretty=True).replace(
+        b"<itunes:explicit>no</itunes:explicit>",
+        b"<itunes:explicit>false</itunes:explicit>",
+    )
+    return RSSResponse(content=content)
 
 
 @router.get(
