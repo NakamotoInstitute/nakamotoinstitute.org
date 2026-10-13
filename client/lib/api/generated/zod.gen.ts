@@ -1054,7 +1054,7 @@ export const zGetSatoshiEmailsBySourceThreadsResponse = z.array(zEmailThreadBase
 
 export const zGetSatoshiEmailsBySourceThreadsByThreadIdPath = z.object({
     source: zEmailSource,
-    thread_id: z.int()
+    thread_id: z.int().gte(1).lte(2147483646)
 });
 
 export const zGetSatoshiEmailsBySourceThreadsByThreadIdQuery = z.object({
@@ -1068,7 +1068,7 @@ export const zGetSatoshiEmailsBySourceThreadsByThreadIdResponse = zEmailThread;
 
 export const zGetSatoshiEmailsBySourceBySatoshiIdPath = z.object({
     source: zEmailSource,
-    satoshi_id: z.int()
+    satoshi_id: z.int().gte(1).lte(2147483646)
 });
 
 /**
@@ -1114,7 +1114,7 @@ export const zGetSatoshiPostsBySourceThreadsResponse = z.array(zForumThreadBase)
 
 export const zGetSatoshiPostsBySourceThreadsByThreadIdPath = z.object({
     source: zForumPostSource,
-    thread_id: z.int()
+    thread_id: z.int().gte(1).lte(2147483646)
 });
 
 export const zGetSatoshiPostsBySourceThreadsByThreadIdQuery = z.object({
@@ -1128,7 +1128,7 @@ export const zGetSatoshiPostsBySourceThreadsByThreadIdResponse = zForumThread;
 
 export const zGetSatoshiPostsBySourceBySatoshiIdPath = z.object({
     source: zForumPostSource,
-    satoshi_id: z.int()
+    satoshi_id: z.int().gte(1).lte(2147483646)
 });
 
 /**
