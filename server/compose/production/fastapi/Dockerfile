@@ -1,11 +1,11 @@
-FROM python:3.12-slim
+FROM python:3.14-slim
 
 ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app/
 
 # Install uv
-COPY --from=ghcr.io/astral-sh/uv:0.11 /uv /bin/uv
+COPY --from=ghcr.io/astral-sh/uv:0.13 /uv /bin/uv
 
 # Place executables in the environment at the front of the path
 # Ref: https://docs.astral.sh/uv/guides/integration/docker/#using-the-environment
