@@ -6,24 +6,24 @@ requires-python = ">=3.12"
 dependencies = [
     "alembic-postgresql-enum==1.10.0",
     "beautifulsoup4==4.15.0",
-    "boto3==1.43.47",
-    "fastapi[standard]==0.139.0",
+    "boto3==1.43.112",
+    "fastapi[standard]==0.143.0",
     "feedgen==1.0.0",
     "markdown-it-py==4.2.0",
     "mdit-py-plugins==0.6.1",
-    "psycopg[binary,pool]==3.3.4",
-    "pydantic-settings==2.14.2",
-    "pygments==2.20.0",
+    "psycopg[binary,pool]==3.3.6",
+    "pydantic-settings==2.15.0",
+    "pygments==2.21.0",
     "pyyaml==6.0.3",
-    "SQLAlchemy[asyncio]==2.0.51",
-    "typer==0.26.8",
+    "SQLAlchemy[asyncio]==2.1.4",
+    "typer==0.27.3",
 ]
 
 [dependency-groups]
 dev = [
-    "ruff==0.15.21",
+    "ruff==0.17.0",
     "types-beautifulsoup4==4.12.0.20250516",
-    "types-PyYaml==6.0.12.20260518",
+    "types-PyYaml==6.0.12.20260906",
 ]
 
 [tool.uv]

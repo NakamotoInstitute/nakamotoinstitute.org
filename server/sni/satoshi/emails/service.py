@@ -36,7 +36,7 @@ async def get_satoshi_emails_by_source(
         .options(joinedload(Email.thread), selectinload(Email.replies))
         .filter(Email.satoshi_id.isnot(None))
         .join(EmailThread)
-        .filter_by(source=source)
+        .filter(EmailThread.source == source)
         .order_by(Email.date)
     )
 
@@ -50,9 +50,9 @@ async def get_satoshi_email_by_source(
     query = (
         select(Email)
         .options(joinedload(Email.thread), selectinload(Email.replies))
-        .filter_by(satoshi_id=satoshi_id)
+        .filter(Email.satoshi_id == satoshi_id)
         .join(EmailThread)
-        .filter_by(source=source)
+        .filter(EmailThread.source == source)
     )
 
     return await db_session.scalar(query)
@@ -62,7 +62,7 @@ async def get_email(satoshi_id: int, *, db_session: AsyncSession) -> Email | Non
     query = (
         select(Email)
         .options(selectinload(Email.replies), joinedload(Email.thread))
-        .filter_by(satoshi_id=satoshi_id)
+        .filter(Email.satoshi_id == satoshi_id)
     )
 
     return await db_session.scalar(query)
