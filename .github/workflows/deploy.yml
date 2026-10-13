@@ -8,7 +8,7 @@ jobs:
   wait-for-ci:
     runs-on: ubuntu-latest
     steps:
-      - uses: lewagon/wait-on-check-action@v1.3.4
+      - uses: lewagon/wait-on-check-action@v1.9.1
         with:
           ref: ${{ github.sha }}
           running-workflow-name: wait-for-ci
@@ -24,8 +24,8 @@ jobs:
       client: ${{ steps.filter.outputs.client }}
       deploy_relevant: ${{ steps.relevant.outputs.deploy_relevant }}
     steps:
-      - uses: actions/checkout@v5
-      - uses: dorny/paths-filter@v3
+      - uses: actions/checkout@v7
+      - uses: dorny/paths-filter@v4
         id: filter
         with:
           filters: |
