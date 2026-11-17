@@ -14,9 +14,9 @@ jobs:
         working-directory: server
     steps:
       - uses: actions/checkout@v7
-      - uses: astral-sh/setup-uv@v10.3.0
+      - uses: astral-sh/setup-uv@v10.3.3
         with:
-          version: "latest"
+          version: "0.13.9"
       - run: uv sync --only-group dev
       - run: uv run ruff check .
       - run: uv run ruff format --check .
