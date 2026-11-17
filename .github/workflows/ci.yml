@@ -32,4 +32,5 @@ jobs:
       - run: bun install
       - run: bunx next typegen
       - run: bun run lint
+      - run: bun run format:check
       - run: bun run typecheck
