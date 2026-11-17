@@ -19,9 +19,7 @@ type MarkdownProps = {
   rehypePlugins?: Options["rehypePlugins"];
   additionalRehypePlugins?: NonNullable<Options["rehypePlugins"]>;
   remarkRehypeOptions?:
-    | Partial<Options["remarkRehypeOptions"]>
-    | null
-    | undefined;
+    Partial<Options["remarkRehypeOptions"]> | null | undefined;
 };
 
 export async function Markdown({
@@ -103,10 +101,7 @@ export async function Markdown({
   );
 }
 
-export async function PageContent({
-  className,
-  ...props
-}: MarkdownProps) {
+export async function PageContent({ className, ...props }: MarkdownProps) {
   return (
     <Markdown
       className={clsx(

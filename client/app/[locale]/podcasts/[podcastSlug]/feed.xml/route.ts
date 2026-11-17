@@ -17,7 +17,9 @@ export async function GET(
   const { data: content, error, response } = result;
   if (content === undefined) {
     if (response?.status === 404) notFound();
-    throw error instanceof Error ? error : new Error("Failed to generate podcast feed");
+    throw error instanceof Error
+      ? error
+      : new Error("Failed to generate podcast feed");
   }
 
   return new Response(content, {

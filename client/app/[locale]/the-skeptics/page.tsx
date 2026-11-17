@@ -39,14 +39,15 @@ export default async function TheSkepticsPage(props: LocaleParams) {
 
   const { locale } = params;
 
-  const [content, { t }, { data: skeptics = [] }, priceResult] = await Promise.all([
-    getPage("the-skeptics", locale),
-    i18nTranslation(locale),
-    api.skeptics.getSkeptics(),
-    fetchPriceHistory(60 * 60)
-      .then((prices) => ({ prices, error: false as const }))
-      .catch(() => ({ prices: [] as Price[], error: true as const })),
-  ]);
+  const [content, { t }, { data: skeptics = [] }, priceResult] =
+    await Promise.all([
+      getPage("the-skeptics", locale),
+      i18nTranslation(locale),
+      api.skeptics.getSkeptics(),
+      fetchPriceHistory(60 * 60)
+        .then((prices) => ({ prices, error: false as const }))
+        .catch(() => ({ prices: [] as Price[], error: true as const })),
+    ]);
   const { prices, error } = priceResult;
   const lastUpdated = prices.length > 0 ? prices[prices.length - 1].date : null;
 

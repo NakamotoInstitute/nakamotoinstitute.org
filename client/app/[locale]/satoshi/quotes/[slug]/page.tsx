@@ -179,6 +179,9 @@ export default async function QuotesCategoryPage(
 export async function generateStaticParams() {
   const { data: categories } = await api.satoshi.getQuoteCategories();
   return getLocaleParams((locale) =>
-    (categories ?? []).map((c: QuoteCategoryBase) => ({ locale, slug: c.slug })),
+    (categories ?? []).map((c: QuoteCategoryBase) => ({
+      locale,
+      slug: c.slug,
+    })),
   );
 }

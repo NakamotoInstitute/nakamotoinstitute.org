@@ -2,3 +2,4 @@ public/finney
 bun.lock
 lib/api/generated
 openapi.json
+types/resources.d.ts

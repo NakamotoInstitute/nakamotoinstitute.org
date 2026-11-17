@@ -79,13 +79,17 @@ export default async function HomePage(props: LocaleParams) {
 
   const { locale } = params;
 
-  const [{ t }, { data: latest = [] }, { data: docs = [] }, { data: podcasts = [] }] =
-    await Promise.all([
-      i18nTranslation(locale),
-      api.mempool.getLatestMempoolPosts({ query: { locale } }),
-      api.library.getHomeLibraryDocs({ query: { locale } }),
-      api.podcasts.getHomePodcasts(),
-    ]);
+  const [
+    { t },
+    { data: latest = [] },
+    { data: docs = [] },
+    { data: podcasts = [] },
+  ] = await Promise.all([
+    i18nTranslation(locale),
+    api.mempool.getLatestMempoolPosts({ query: { locale } }),
+    api.library.getHomeLibraryDocs({ query: { locale } }),
+    api.podcasts.getHomePodcasts(),
+  ]);
 
   const viewAllLabel = t("view_all");
   const readMoreLabel = t("read_more");

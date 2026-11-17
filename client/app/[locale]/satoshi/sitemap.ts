@@ -108,10 +108,13 @@ async function getQuoteCategoryUrls(): Promise<MetadataRoute.Sitemap> {
   return categories.map(({ slug }: QuoteCategoryBase) => ({
     url: urls("en").satoshi.quoteCategory(slug),
     alternates: {
-      languages: locales.reduce((obj, locale) => {
-        obj[formatLocale(locale)] = urls(locale).satoshi.quoteCategory(slug);
-        return obj;
-      }, {} as Record<string, string>),
+      languages: locales.reduce(
+        (obj, locale) => {
+          obj[formatLocale(locale)] = urls(locale).satoshi.quoteCategory(slug);
+          return obj;
+        },
+        {} as Record<string, string>,
+      ),
     },
   }));
 }

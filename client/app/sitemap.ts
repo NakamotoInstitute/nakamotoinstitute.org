@@ -61,7 +61,10 @@ async function getLibraryUrls(): Promise<MetadataRoute.Sitemap> {
               return obj;
             },
             doc.translations.length > 0
-              ? ({ en: urls("en").library.doc(doc.slug) } as Record<string, string>)
+              ? ({ en: urls("en").library.doc(doc.slug) } as Record<
+                  string,
+                  string
+                >)
               : ({} as Record<string, string>),
           ),
         },
@@ -93,7 +96,10 @@ async function getMempoolUrls(): Promise<MetadataRoute.Sitemap> {
           return obj;
         },
         post.translations.length > 0
-          ? ({ en: urls("en").mempool.post(post.slug) } as Record<string, string>)
+          ? ({ en: urls("en").mempool.post(post.slug) } as Record<
+              string,
+              string
+            >)
           : ({} as Record<string, string>),
       ),
     },
@@ -101,7 +107,8 @@ async function getMempoolUrls(): Promise<MetadataRoute.Sitemap> {
 }
 
 async function getMempoolSeriesUrls(): Promise<MetadataRoute.Sitemap> {
-  const { data: mempoolSeries = [] } = await api.mempool.getMempoolSeriesParams();
+  const { data: mempoolSeries = [] } =
+    await api.mempool.getMempoolSeriesParams();
   return mempoolSeries.map((series: SlugParam) => ({
     url: urls("en").mempool.seriesDetail(series.slug),
   }));
@@ -117,7 +124,10 @@ async function getPodcastsUrls(): Promise<MetadataRoute.Sitemap> {
           obj[formatLocale(locale)] = urls(locale).podcasts.show(podcast.slug);
           return obj;
         },
-        { en: urls("en").podcasts.show(podcast.slug) } as Record<string, string>,
+        { en: urls("en").podcasts.show(podcast.slug) } as Record<
+          string,
+          string
+        >,
       ),
     },
   }));

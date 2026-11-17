@@ -59,9 +59,7 @@ export function proxy(request: NextRequest) {
       return NextResponse.rewrite(new URL(newPathname + search, request.url));
     } else {
       // Root path, just add subdomain
-      return NextResponse.rewrite(
-        new URL(subdomain.path, request.url),
-      );
+      return NextResponse.rewrite(new URL(subdomain.path, request.url));
     }
   }
 

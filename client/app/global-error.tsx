@@ -1,8 +1,8 @@
 "use client";
 
-import "./globals.css";
-
 import { ErrorFallback } from "@/app/components/ErrorFallback";
+
+import "./globals.css";
 
 type GlobalErrorProps = {
   error: Error & { digest?: string };

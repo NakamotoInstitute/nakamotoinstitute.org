@@ -2,7 +2,7 @@
   <blockquote>
     <p>Tal vez tenga sentido conseguir algunos por si se vuelve popular. Si suficiente gente piensa de la misma manera, eso se convierte en una profecía autocumplida.</p>
   </blockquote>
-  
+
   <figcaption><a href="/satoshi/emails/cryptography/17/">Satoshi Nakamoto</a>, 1/17/2009</figcaption>
 </figure>
 

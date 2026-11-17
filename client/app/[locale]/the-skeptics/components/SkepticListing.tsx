@@ -31,7 +31,10 @@ export function SkepticListing({ t, locale, skeptic, prices }: SkepticProps) {
         <p className="text-lg">
           {formatDate(locale, skeptic.date)}
           {priceData ? (
-            <> • {formatAmount(priceData.originalUsd.toNumber(), "usd", locale)}</>
+            <>
+              {" "}
+              • {formatAmount(priceData.originalUsd.toNumber(), "usd", locale)}
+            </>
           ) : null}
         </p>
         <Link href={{ hash: skeptic.slug }}>

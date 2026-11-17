@@ -4,8 +4,8 @@ import { notFound } from "next/navigation";
 import { openGraphImages } from "@/app/shared-metadata";
 import { isLocale } from "@/i18n";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
-import { xHandle } from "@/lib/urls-client";
 import { APP_BASE_URL } from "@/lib/urls";
+import { xHandle } from "@/lib/urls-client";
 
 import { RootLayout } from "../components/RootLayout";
 
